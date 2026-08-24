@@ -1,13 +1,13 @@
 ---
 doc_id: ihpmay2025
-doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY"
+doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-015-33-simultaneous-uniformization
 section_title: "Simultaneous uniformization"
 section_number: 3.3
 pages: 23-24
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
-doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 Bers [8] showed that B gives a complete parametrization of QF (S).
 Theorem 3.6. The map

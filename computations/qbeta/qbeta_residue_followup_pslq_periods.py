@@ -36,8 +36,9 @@ import _path_bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 Q_PROTON_50 = mp.mpf("1.10997858275138080759166909561")
 # Step-1 (PR #1727) tail_mean — the precision-limiting empirical input.

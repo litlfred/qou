@@ -1,13 +1,13 @@
 ---
 doc_id: ant-v14-n7-s-p01
-doc_title: "p-adic Asai L-functions of Bianchi modular forms David Loeﬄerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the"
+doc_title: "p-adic Asai L-functions of Bianchi modular forms"
 section_id: sec-002-3-siegel-units-and-weight-2-asaieisenstein-eleme
 section_title: "Siegel units and weight 2 Asai–Eisenstein elements"
 section_number: 3
 pages: 14-17
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
-doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction"
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms — 13 sections: Introduction; Preliminaries and notation; Siegel units and weight 2 Asai–Eis"
 ---
 3A. Modular units. Let U⊂ GL2(ˆZ) be an open compact subgroup, with associated symmetric space
 YQ(U). In this section, we work exclusively overQ, so we shall drop the subscriptQ from the notation. As

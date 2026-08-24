@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0906.1500v4
-doc_title: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
+doc_title: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds"
 section_id: sec-016-41-the-ﬁgure-eight-knot-exterior-we-consider-the
 section_title: "The ﬁgure eight knot exterior. We consider the ﬁgure eight knot K as in Fig-"
 section_number: 4.1
 pages: 12-13
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
-doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
+doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
 ---
 ure 2. The knot group π1(EK) is expressed as
 EK = ⟨x, y | [x−1, y]x = y[x−1, y]⟩

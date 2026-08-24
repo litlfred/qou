@@ -42,7 +42,12 @@ from pathlib import Path
 
 import mpmath as mp
 
-mp.mp.dps = 50
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 RESIDUE_A = mp.mpf("1.804e-15")
 # h_q at proton-pinned q_0 (post 2026-05-28 re-pin)

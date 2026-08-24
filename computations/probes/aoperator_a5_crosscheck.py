@@ -144,9 +144,9 @@ def all_diags(parts, q_str, W_inner, label):
         td = time.time()
         diags[xi], d = diag_rho_float(xi, q_str, W_inner)
         if d >= 1000:
-            print(f"   ρ_ξ {xi} d={d}: {time.time()-td:.1f}s "
-                  f"(cum {time.time()-t0:.0f}s)", flush=True)
-    print(f"[{label}] all ρ_ξ diagonals (float64): {time.time()-t0:.0f}s", flush=True)
+            print(f"   ρ_ξ {xi} d={d}: {float(time.time()-td):.1f}s "
+                  f"(cum {float(time.time()-t0):.0f}s)", flush=True)
+    print(f"[{label}] all ρ_ξ diagonals (float64): {float(time.time()-t0):.0f}s", flush=True)
     DIAG_CACHE.write_bytes(pickle.dumps(
         {"key": key, "diags": {k: v for k, v in diags.items()}}))
     return diags
@@ -277,7 +277,8 @@ def main() -> int:
     # ---- (A4) float64 path self-check on the real ⁴He word --------------------
     w4 = atom_braid_word_3A(2, 2)
     Wi4, Id4, bl4, ni4 = peel(w4, 4)
-    print(f"[A4 self-check] n_inner={ni4} |W_inner|={len(Wi4)} bridge_d={Id4:.4f}", flush=True)
+    print(f"[A4 self-check] n_inner={ni4} |W_inner|={len(Wi4)} "
+          f"bridge_d={mp.nstr(Id4, 5)}", flush=True)  # display only; mpf has no %f
     diags4 = {xi: diag_rho_float(xi, q_str, Wi4)[0] for xi in partitions_of(ni4)}
     RB4 = {nu: rho_full_float(nu, q_str, bl4) for nu in partitions_of(3)}
     worst_fy = 0.0   # fast vs exact chi_young
@@ -290,16 +291,16 @@ def main() -> int:
         orig = combiner_chi_float(lam, ni4, Id4, diags4, RB4, q_str)
         worst_fy = max(worst_fy, abs(fast - ref))
         worst_fo = max(worst_fo, abs(fast - orig))
-    print(f"[A4-a] max|fast − chi_young|       (small-d λ⊢12) = {worst_fy:.2e}"
+    print(f"[A4-a] max|fast − chi_young|       (small-d λ⊢12) = {float(worst_fy):.2e}"
           f"   {'OK' if worst_fy < 1e-6 else 'FAIL'}", flush=True)
-    print(f"[A4-b] max|fast − orig combiner|   (small-d λ⊢12) = {worst_fo:.2e}"
+    print(f"[A4-b] max|fast − orig combiner|   (small-d λ⊢12) = {float(worst_fo):.2e}"
           f"   {'OK' if worst_fo < 1e-6 else 'FAIL'}\n", flush=True)
     xi_cache.clear()   # ξ⊢9 cache is useless for the ξ⊢12 A5 run
 
     # ---- (A5) fast combiner vs the fine-Bratteli transfer on the real ⁵He word
     w5 = atom_braid_word_3A(2, 3)
     Wi5, Id5, bl5, ni5 = peel(w5, 5)
-    print(f"[A5] ⁵He n_inner={ni5} |W_inner|={len(Wi5)} bridge_d={Id5:.4f}"
+    print(f"[A5] ⁵He n_inner={ni5} |W_inner|={len(Wi5)} bridge_d={float(Id5):.4f}"
           f"  #ξ⊢{ni5}={len(partitions_of(ni5))}", flush=True)
     diags5 = all_diags(partitions_of(ni5), q_str, Wi5, "A5")
     RB5 = {nu: rho_full_float(nu, q_str, bl5) for nu in partitions_of(3)}
@@ -307,7 +308,7 @@ def main() -> int:
     t0 = time.time()
     chi_ref = chi_all_lambda_reduced_block(w5, 15, q=None)
     chi_ref = {tuple(k): float(v) for k, v in chi_ref.items()}
-    print(f"[A5] transfer reference (all λ⊢15): {time.time()-t0:.0f}s", flush=True)
+    print(f"[A5] transfer reference (all λ⊢15): {float(time.time()-t0):.0f}s", flush=True)
 
     # combiner over all λ⊢15, with progress + checkpoint (resume on reclaim).
     chi_comb: dict = {}
@@ -324,10 +325,10 @@ def main() -> int:
             done = sum(1 for l in lams if l in chi_comb)
             el = time.time() - t0
             eta = el / done * (len(lams) - done) if done else 0
-            print(f"   λ {done}/{len(lams)}  elapsed {el:.0f}s  ETA {eta:.0f}s", flush=True)
+            print(f"   λ {done}/{len(lams)}  elapsed {float(el):.0f}s  ETA {float(eta):.0f}s", flush=True)
             CHI_CKPT.write_text(json.dumps({str(k): v for k, v in chi_comb.items()}))
     comb_secs = time.time() - t0
-    print(f"[A5] combiner all-λ χ (float64): {comb_secs:.0f}s", flush=True)
+    print(f"[A5] combiner all-λ χ (float64): {float(comb_secs):.0f}s", flush=True)
 
     worst = max(abs(chi_comb[k] - chi_ref[k]) for k in chi_comb)
     denom = max(abs(chi_ref[k]) for k in chi_ref) or 1.0
@@ -335,12 +336,12 @@ def main() -> int:
     y = {tuple(k): float(v) for k, v in y_lambda_at(15, Q0).items()}
     trM_comb = sum(y[k] * chi_comb[k] for k in chi_comb)
     trM_ref = sum(y[k] * chi_ref[k] for k in chi_ref)
-    print(f"\n[A5] per-λ max|χ_comb − χ_transfer| (all {len(chi_comb)}) = {worst:.2e}"
-          f"  at {argworst}  (rel to max|χ| {worst/denom:.2e})", flush=True)
-    print(f"[A5] tr_M_combiner = {trM_comb:.10g}", flush=True)
-    print(f"[A5] tr_M_transfer = {trM_ref:.10g}", flush=True)
+    print(f"\n[A5] per-λ max|χ_comb − χ_transfer| (all {len(chi_comb)}) = {float(worst):.2e}"
+          f"  at {argworst}  (rel to max|χ| {float(worst/denom):.2e})", flush=True)
+    print(f"[A5] tr_M_combiner = {float(trM_comb):.10g}", flush=True)
+    print(f"[A5] tr_M_transfer = {float(trM_ref):.10g}", flush=True)
     rel = abs(trM_comb - trM_ref) / (abs(trM_ref) or 1.0)
-    print(f"[A5] |Δtr_M|={abs(trM_comb-trM_ref):.2e}  rel={rel:.2e}"
+    print(f"[A5] |Δtr_M|={float(abs(trM_comb-trM_ref)):.2e}  rel={float(rel):.2e}"
           f"   {'OK — combiner reproduces transfer at A=5 (float64)' if rel < 1e-5 else 'CHECK'}",
           flush=True)
 
@@ -356,11 +357,11 @@ def main() -> int:
         {"name": "a5_per_lambda_max_abs_diff", "computed": float(worst), "expected": 0.0,
          "passed": bool(worst / denom < 1e-8), "tolerance": float(denom * 1e-8),
          "source": f"A5 ⁵He: max over all {len(chi_comb)} λ⊢15 of |χ_comb − χ_transfer| "
-                   f"(rel to max|χ| = {worst/denom:.2e}) at λ={argworst}."},
+                   f"(rel to max|χ| = {float(worst/denom):.2e}) at λ={argworst}."},
         {"name": "a5_trM_combiner_vs_transfer", "computed": float(rel), "expected": 0.0,
          "passed": bool(rel < 1e-5), "tolerance": 1e-5,
          "source": f"A5 ⁵He: relative |Δtr_M| between the operator combiner and the "
-                   f"fine-Bratteli transfer (tr_M = Σ_λ y_λ χ^λ = {trM_ref:.10g})."},
+                   f"fine-Bratteli transfer (tr_M = Σ_λ y_λ χ^λ = {float(trM_ref):.10g})."},
     ]
     try:
         sha = subprocess.check_output(

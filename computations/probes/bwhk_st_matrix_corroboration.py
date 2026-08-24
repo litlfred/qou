@@ -72,7 +72,9 @@ from mpmath import mp, mpf, sqrt  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 # canonical muon-q₀, read at runtime from the pinning witness (§q₀ anchor convention;
 # drift-proof, full 50-dps) — never hardcode, never the float64 mass_endomorphism.q0.
 import json as _json  # noqa: E402

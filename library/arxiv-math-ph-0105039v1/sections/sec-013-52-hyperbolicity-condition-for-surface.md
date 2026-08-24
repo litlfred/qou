@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-ph-0105039v1
-doc_title: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI †"
+doc_title: "Hyperbolic Structure Arising from a Knot Invariant"
 section_id: sec-013-52-hyperbolicity-condition-for-surface
 section_title: "Hyperbolicity Condition for Surface"
 section_number: 5.2
 pages: 18-20
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
-doc_brief: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI † — We study the knot invariant based on the quantum dilogarithm function."
+doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
 ---
 We ﬁrst consider a surface Da, which is surrounded by alternating crossings as in Fig. 7. W e
 assign octahedron for each crossing following eq. (5.7), and introduce variables as shown there. A

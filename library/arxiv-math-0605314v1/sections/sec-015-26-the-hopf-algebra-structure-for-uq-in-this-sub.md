@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0605314v1
-doc_title: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO"
+doc_title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres"
 section_id: sec-015-26-the-hopf-algebra-structure-for-uq-in-this-sub
 section_title: "The Hopf algebra structure for ˜Uq. In this subsection, we show that"
 section_number: 2.6
 pages: 10-11
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
-doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
+doc_brief: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring"
 ---
 the Z[q,q −1]-algebra ˜Uq inherits from Uh a complete Hopf algebra structure over
 Z[q,q −1]. (This fact is observed in [19] as a corollary to the case of a Z[v,v −1]-form

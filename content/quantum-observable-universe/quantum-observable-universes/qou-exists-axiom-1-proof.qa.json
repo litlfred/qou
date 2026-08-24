@@ -1371,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.445Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). no assertion-by-denial; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1390,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.486Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). no setup-then-reframe construction; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1409,6 +1441,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 41 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.526Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). em-dash count 0 in the block; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1428,6 +1476,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 41 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.566Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). no reflex three-item list; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1447,6 +1511,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.607Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). final sentence is substantive, not a quotable placed for closure; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1466,6 +1546,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.646Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). no narration of the author's own emphasis; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1485,6 +1581,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.687Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). no block-final restatement of what the text established; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1504,6 +1616,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.727Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). no personal or institutional-warmth register; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1523,6 +1651,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.768Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). no unqualified maximum-strength claim; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1542,6 +1686,22 @@
         "reviewed_at": "2026-08-15T10:30:59.959Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e216cd8e436d",
+          "ts": "f618c20f509f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:31.812Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, five lines, cites woronowicz1987). reads aloud without stalling; proof, five lines, cites woronowicz1987.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1564,5 +1724,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:31.812Z"
 }

@@ -69,6 +69,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 ATOM_ORACLE = {
     "D": "chi-deuteron-h6-at-q0-50dps.witness.json",
@@ -116,7 +117,7 @@ def validate_toolchain(dps: int = 50) -> bool:
 
 
 if __name__ == "__main__":
-    mp.mp.dps = 50
+    set_compute_dps()
     print("F-matrix recoupling — validation harness (design in module docstring)")
     ok = validate_toolchain()
     for atom in ("D", "T", "3He", "4He"):

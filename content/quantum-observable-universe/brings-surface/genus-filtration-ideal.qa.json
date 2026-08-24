@@ -1776,6 +1776,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.077Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'fixed by the Iwahori--Hecke algebra rather than chosen' is the no-free-parameter claim itself, not manufactured emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1795,6 +1810,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.144Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Single paragraph: claim, proof status, obstruction. No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1814,6 +1844,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 47 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.215Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes in 99 words."
       }
     ],
     "trap-triples": [
@@ -1833,6 +1878,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 47 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.282Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1852,6 +1912,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.357Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on the ideal's action on T_{2,p}, a technical statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1871,6 +1946,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.434Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis; 'The embeddability count is proved; ... is verified numerically' is an epistemic-tier statement, which the corpus requires."
       }
     ],
     "trap-thesis-restatement": [
@@ -1890,6 +1980,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.490Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "99 words, no restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1909,6 +2014,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.556Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1928,6 +2048,21 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.601Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Claims are tiered (proved vs verified numerically) rather than maximal."
       }
     ],
     "trap-nonspeakable": [
@@ -1947,6 +2082,22 @@
         "reviewed_at": "2026-08-15T10:30:58.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0b4461e1e746",
+          "ts": "eb6c40976f1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:23.659Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The opening clause 'the embeddable torus knots T_{r,s}, r in {2,3}, number at least the five irreducibles' uses 'number' as a verb across an interrupted subject, which slows a read-aloud, but it parses in one pass.",
+        "notes": "Optional: 'the number of embeddable torus knots T_{r,s} with r in {2,3} is at least five, the count of irreducibles of H_2(q) (+) H_3(q)'. Verified: 2 partitions of 2 plus 3 partitions of 3 = 5 irreducibles."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1970,5 +2121,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T23:31:53.340Z"
+  "updated_at": "2026-08-19T21:35:23.659Z"
 }

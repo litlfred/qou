@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0005038v1
-doc_title: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW"
+doc_title: "Braid groups are linear"
 section_id: sec-004-13-notation-if-α-and-β-are-arcs-in-d-p-such-αs-β
 section_title: "Notation. If α and β are arcs in D \ P such α(s) ⁄= β(s) for all s ∈ I then"
 section_number: 1.3
 pages: 2-4
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
-doc_brief: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
+doc_brief: "Braid groups are linear — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 we deﬁne {α, β} to be the arc in C given by
 {α, β}(s) = {α(s), β(s)}.

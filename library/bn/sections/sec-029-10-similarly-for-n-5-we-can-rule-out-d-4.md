@@ -1,13 +1,13 @@
 ---
 doc_id: bn
-doc_title: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009"
+doc_title: "Braid groups and Hodge theory"
 section_id: sec-029-10-similarly-for-n-5-we-can-rule-out-d-4
 section_title: "Similarly, for n = 5 we can rule out d = 4"
 section_number: 10
 pages: 36-38
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
-doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
+doc_brief: "Braid groups and Hodge theory — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their"
 ---
 by checking that r(A) > 1 at q = ζ4; and for n = 7 we can rule out d = 6
 by checking that r(A) > 1 at q = ζ6. (Here we have used the fact that

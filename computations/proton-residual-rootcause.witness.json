@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T13:34:51.979104+00:00",
-  "commitSha": "4e6e67e0994d6b3b68448e46eed77676fb0b91eb",
+  "computedAt": "2026-08-21T15:00:46.396438+00:00",
+  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 174,
+  "durationMs": 17,
   "computation": "proton-residual-rootcause",
   "scriptFile": "proton_residual_rootcause.py",
   "scriptHash": "cf6474542b36",
-  "scriptCommitSha": "9346e7a29d1e4005c9f5d657a8f6dbe4bf8ebdbc",
+  "scriptCommitSha": "423fdf4cfd3deb677d995790565e64c1192738b4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,130 +20,129 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Phase 1 diagnostic on the proton 544k ppb defect (target 1 ppb).  Computes m_p via the mass-endomorphism-tower formula using four independent Phi_q implementations: legacy-product f64, legacy-product MPFR50, Euler-series MPFR50, and per-block aggregate.  Reports pairwise diffs + Branch-A truncation depth to localise the defect in (1) f64 mantissa, (2) product-vs-series truncation bias, (3) per-block aliasing, or (4) upstream V_hat / formula structure.  See docs/audits/2026-05-09-mass-table-1ppb-audit.md for the audit.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
-    "q_0": 1.1099785955573347,
-    "z_markov": 0.6126880505488901,
+    "q_0": 1.1099785827513808,
+    "z_markov": 0.6126880371464652,
     "dps_mpfr_branches": 50,
-    "V_e": 0.6730159519475388,
-    "V_proton_g0": 1.080215294503779,
-    "V_proton_g1": 0.9469372315845926,
+    "V_e": 0.6730159107881489,
+    "V_proton_g0": 1.080215192517655,
+    "V_proton_g1": 0.9469372320656944,
     "M_P_CODATA_MeV": 938.27208816,
     "M_E_CODATA_MeV": 0.51099895069,
-    "m_e_Hecke_legacy_f64": 1893.1903022145145
+    "m_e_Hecke_legacy_f64": 1893.1908635298025
   },
   "data": {
     "branch_a_legacy_f64": {
-      "T1_abs_prod": "1.022896080492743926067204576326319180488223059704",
-      "T2_phi_V0": "16728821.939383817125074758018395506756486694290991",
-      "T3_phi_V1": "240467.84103902230870963099527546817789776599142017",
-      "T4_z2_phi_V0V1": "656994.36716231212848901290258509118802854553438224",
-      "phi_V0V1": "1750180.4390575776012480358301442821254585734850248",
-      "m_Hecke": "17626285.170481232055017327983460642448732186305017",
-      "m_p_MeV": "4757.5847056383486828181821709542028726780500919394",
-      "ppb_vs_codata": "4070581088.0170357868590167905333622615670825445779"
+      "T1_abs_prod": "1.0228959844379794128097393751225958918135088565756",
+      "T2_phi_V0": "16728764.77716962013076411015260922160280539395499",
+      "T3_phi_V1": "240468.2049881502222029310833121731825925008744449",
+      "T4_z2_phi_V0V1": "656993.57566651828799700865363465310028314697866055",
+      "phi_V0V1": "1750178.4071456800779408634980159882913302370339509",
+      "m_Hecke": "17626227.580720273078943462699295423008276933621604",
+      "m_p_MeV": "4757.5677507644011675933028739492922564906522058831",
+      "ppb_vs_codata": "4070563017.7001613239206824322269438100970194615343"
     },
     "branch_b_legacy_mpfr": {
-      "T1_abs_prod": 1.0228960804927438,
-      "T2_phi_V0": "16728821.939383844390429009077496435489920990438674",
-      "T3_phi_V1": "240467.84103902257418157481314791988016508883639345",
-      "T4_z2_phi_V0V1": "656994.36716231299971309105296011950366921807472153",
-      "phi_V0V1": "1750180.4390575797689114025853182441184987391522414",
-      "m_Hecke": "17626285.170481260457067601010809051200074477838012",
-      "m_Hecke_mpf_str": "17626285.1704812604570676010108",
-      "m_p_MeV": "4757.5847056383563489349322857611278785194837995523",
-      "ppb_vs_codata": "4070581088.017043957321345205799336666931959179932"
+      "T1_abs_prod": 1.0228959844379795,
+      "T2_phi_V0": "16728764.777169727168850083689377846746948381282683",
+      "T3_phi_V1": "240468.20498815135014617232759937239596002858769025",
+      "T4_z2_phi_V0V1": "656993.57566652168250102315297482416378509193088819",
+      "phi_V0V1": "1750178.4071456894053628209834577891761861507442972",
+      "m_Hecke": "17626227.58072038463947669197969141842928939361477",
+      "m_Hecke_mpf_str": "17626227.5807203846394766919797",
+      "m_p_MeV": "4757.5677507644312793567371695183383246175517986802",
+      "ppb_vs_codata": "4070563017.7001934167046565844294978450262919616769"
     },
     "branch_c_euler_mpfr": {
-      "T1_abs_prod": "1.022896080492743926067204576326319180488223059704",
-      "T2_phi_V0": "16728821.939383903785959380728602548067828231007516",
-      "T3_phi_V1": "4326724.4145851611607852918483445471406817719673015",
-      "T4_z2_phi_V0V1": "656994.36716231482773040029776416525852438717136743",
-      "phi_V0V1": "1750180.4390575846386032855120898526553393152693275",
-      "m_Hecke": "21712541.744027460267218998941915836793353570634408",
-      "m_Hecke_mpf_str": "21712541.7440274602672189989419",
+      "T1_abs_prod": "1.0228959844379794128097393751225958918135088565756",
+      "T2_phi_V0": "16728764.777169654386091885831532746933668186507482",
+      "T3_phi_V1": "4326730.958200405930503406903941881905148637373599",
+      "T4_z2_phi_V0V1": "656993.57566651944245863800769975217544449298965152",
+      "phi_V0V1": "1750178.4071456834380688339835733474519378474101512",
+      "m_Hecke": "21712490.333932564197033343552913756136857208684242",
+      "m_Hecke_mpf_str": "21712490.3339325641970333435529",
       "fallback_to_product": [
         true,
         false,
         true
       ],
-      "m_p_MeV": "5860.5233900853182880714264552232320908630106943715",
-      "ppb_vs_codata": "5246080922.6224638948555433264601349774171809239274"
+      "m_p_MeV": "5860.5077761784002269819049820124235326993102469685",
+      "ppb_vs_codata": "5246064281.4933979319451621680737852484787430739271"
     },
     "branch_d_per_block": {
-      "m_sym": 216479456.61773333,
-      "m_std": 216551427.02441248,
-      "m_alt": 157394073.07780272,
-      "m_Hecke_sum_blocks": 590424956.7199485,
+      "m_sym": 216479815.2004587,
+      "m_std": 216551785.71458513,
+      "m_alt": 157394335.66936144,
+      "m_Hecke_sum_blocks": 590425936.5844053,
       "per_block_V_per_gen": {
         "sym": [
-          1.8803878084767578,
-          0.7352177611058625
+          1.8803876760558125,
+          0.7352177856708941
         ],
         "std": [
-          1.2824205802255821,
-          0.8934352738524304
+          1.2824204700738204,
+          0.893435280545192
         ],
         "alt": [
-          -0.537615990702016,
-          1.3750029012325014
+          -0.5376160272724128,
+          1.375002851992555
         ]
       },
-      "m_p_MeV_via_m_e_ratio": 159364.08135630543,
-      "ppb_vs_codata": 168848472918.79547
+      "m_p_MeV_via_m_e_ratio": 159364.2985854406,
+      "ppb_vs_codata": 168848704439.2019
     },
     "pairwise_diffs_hecke": {
-      "B_minus_A": "0.000000028402050273027348408751342291532995187180422067329",
-      "C_minus_B": "4086256.5735461998101513979311067855932790927963966",
-      "C_minus_A": "4086256.5735462282122016709584551943446213843293918",
-      "D_minus_A": "572798671.54946729814212622670403935755126781369498"
+      "B_minus_A": "0.00000011156053322928039599542101245999316618318241121463",
+      "C_minus_B": "4086262.7532121795575566515732223377075678150694712",
+      "C_minus_A": "4086262.7532122911180898808536183331285802750626373",
+      "D_minus_A": "572799709.0036850299224603458944545769917230663784"
     },
     "branch_a_truncation_telemetry": {
       "phi_V0": {
-        "z": "1.0802152945037789764702137631654190062710725510177",
+        "z": "1.0802151925176549728293910742273853603444152965989",
         "diverged_at_radius": false,
         "iters": 354,
-        "last_term": "9.8206555001471696688923962974545115624928710986729e-17",
-        "product": "16728821.939383817125074758018395506756486694290991",
+        "last_term": "9.8206946819594560685985621131463360658910316460168e-17",
+        "product": "16728764.77716962013076411015260922160280539395499",
         "converged_below_1e-16": true,
         "max_iter_hit": false
       },
       "phi_V1": {
-        "z": "0.94693723158459266987380823417165099967884419764704",
+        "z": "0.94693723206569441181644994313718357411361388910176",
         "diverged_at_radius": false,
         "iters": 353,
-        "last_term": "9.555775787562581388212923748482221483900503775435e-17",
-        "product": "240467.84103902230870963099527546817789776599142017",
+        "last_term": "9.5558147093743975136322278838180879067735839193498e-17",
+        "product": "240468.2049881502222029310833121731825925008744449",
         "converged_below_1e-16": true,
         "max_iter_hit": false
       },
       "phi_V0V1": {
-        "z": "1.022896080492743926067204576326319180488223059704",
+        "z": "1.0228959844379794128097393751225958918135088565756",
         "diverged_at_radius": false,
         "iters": 354,
-        "last_term": "9.2995443316553641574900860373915901553541645045864e-17",
-        "product": "1750180.4390575776012480358301442821254585734850248",
+        "last_term": "9.2995814390969724265845889335632594509147459754052e-17",
+        "product": "1750178.4071456800779408634980159882913302370339509",
         "converged_below_1e-16": true,
         "max_iter_hit": false
       }
     },
     "diagnosis_notes": [
-      "f64 mantissa is NOT the bottleneck: rel(B,A)=1.611e-15",
+      "f64 mantissa is NOT the bottleneck: rel(B,A)=6.329e-15",
       "EULER_SERIES_INADEQUATE_FOR_PROTON: max |v|=1.0802 >= 0.85; the Euler-series form converges too slowly here. Stay with the product form for proton-scale V_hat. Euler series only useful when |v| is well below 1 (e.g. deuteron level).",
       "PER_BLOCK_FORMULA_DIFFERS: rel(D,A)=32.5; per-block reformulation sums three block-masses rather than applying Phi_q to the aggregate V_hat.  Cannot be calibrated via the same m_e ratio — needs three E_0 scales (see per_block_phi_q.fit_three_E0).",
       "NAIVE_TOWER_RESIDUAL: Branch A m_p = 4757.6 MeV gives 4.0e+9 ppb error vs CODATA.  This is the *uncalibrated* mass-endomorphism tower (1.83% admitted in mass_endomorphism.py:26).  The 544k ppb in proton-mass-50dps.derivation.json is a DIFFERENT CHAIN that adds Terms 2-6 atop this base; the SCRIPT_CITED Terms 2-6 are where the residual 544k ppb actually lives."
     ],
     "finding": "Phase-1 root-cause finding: the 1.83% naive tower residual + the 544k ppb proton-mass-50dps residual are NOT in Phi_q precision (f64 == MPFR50 to ~1e-14) and NOT in product-vs-series convergence for |v| < 0.85.  The defect is structural: it lives in Terms 2-6 (SCRIPT_CITED frontier) of the unified mass formula.  T1 (n=6 Frobenius codim closure) and SCRIPT_CITED -> DERIVED migration of Terms 2-6 are the next levers.  Per-block reformulation (Branch D) is a structural reframe, not a precision fix.",
     "relative_diffs": {
-      "rel_B_A": "0.0000000000000016113463499723871137964494798085422584550322162467",
-      "rel_C_B": "0.23182744032698697284601008085372357973219190637969",
-      "rel_D_A": "32.496845819148220115117782675790649446318580971719"
+      "rel_B_A": "0.000000000000006329234813199979036533086200426659366870844488349",
+      "rel_C_B": "0.23182854836628484246096410707668918787970964625065",
+      "rel_D_A": "32.497010853883364409520159456546423469782338352064"
     },
     "lean_uniqueness_ref": {
       "nucleus": "proton",
@@ -152,6 +151,6 @@
       "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

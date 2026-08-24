@@ -1136,6 +1136,176 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.495Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.533Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.573Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.612Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.651Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.692Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.732Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.771Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.810Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b69c855d9928",
+          "ts": "174da9507776"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:53.848Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
     ]
   },
   "$schema": "block-qa/v1",
@@ -1149,5 +1319,5 @@
     "md": "b69c855d9928",
     "ts": "174da9507776"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:01:53.848Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1002.0126v1
-doc_title: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI"
+doc_title: "An introduction to the volume conjecture"
 section_id: sec-002-21-braid-presentation-of-a-link
 section_title: "Braid presentation of a link"
 section_number: 2.1
 pages: 2-4
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
-doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
+doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 go downwards monotonically from a set of ﬁxed n points to another set of ﬁxed n
 points as shown in Figure 1. The set of all n-braids makes a group Bn with product

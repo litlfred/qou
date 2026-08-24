@@ -192,13 +192,17 @@ theorem ladder_carriers_transposition_stable :
 /-! ### Part 2 — anchor dominance -/
 
 /-- Recorded fixed point at the proton anchor (`alpha-em-form-ladder.witness.json`). -/
-def predProton : ℝ := 137.035999313169
+def predProton : ℝ := 137.035999313169  -- noqa: P31 - RECORDED witness output, not CODATA
 
 /-- Recorded fixed point at the muon anchor. -/
-def predMuon : ℝ := 137.036010116763
+def predMuon : ℝ := 137.036010116763  -- noqa: P31 - RECORDED witness output, not CODATA
 
 /-- The reference value the witness scores against. -/
-def refCodata : ℝ := 137.035999084
+-- noqa: P31 - the CODATA-2018 Cs-recoil value the RECORDED witness scored
+-- against. It must track alpha-em-form-ladder.witness.json, not the table:
+-- bumping it here alone would desynchronise the Lean from the residuals
+-- below, which were computed against this reference.
+def refCodata : ℝ := 137.035999084  -- noqa: P31
 
 /-- Recorded proton-anchored residual, in ppb. -/
 def residProtonPpb : ℝ := 1.6723270482102428

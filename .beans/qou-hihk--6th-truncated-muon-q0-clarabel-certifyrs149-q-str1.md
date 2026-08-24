@@ -1,10 +1,11 @@
 ---
 # qou-hihk
 title: '6th truncated-muon q0: clarabel_certify.rs:149 q_str=1.10998 feeds Stern-Brocot rationalisation (BLOCKED: no gfortran here)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-19T21:19:18Z
-updated_at: 2026-08-19T21:19:18Z
+updated_at: 2026-08-21T21:27:55Z
 ---
 
 FOUND 2026-08-19 during the PR #5344 rebase, by grepping the truncated
@@ -49,3 +50,28 @@ are unchanged at q_max = 10_000, say so -- that is the useful result either way.
 ALSO NOTE. v9.rs:802 and v9.rs:888 already carry "WAS the 5-significant-digit
 literal 1.10998" comments, i.e. a sibling fixed those two independently. The
 truncated spelling has now bitten three separate audits; grep BOTH spellings.
+
+
+FIXED 2026-08-21, and the blocker was liftable after all.
+
+BLOCKER LIFTED: gfortran was simply installable (apt-get install -y gfortran ->
+GNU Fortran 13.3.0). The bean recorded 'cannot be run in this sandbox' because
+netlib-src failed for want of a Fortran compiler; I had not tried installing one.
+With it, clarabel-certify builds under --features clarabel-sdp and runs.
+
+FIX: clarabel_certify.rs:149 q_str '1.10998' -> the canonical 50-dps proton pin
+'1.1099785827513808075916690956107688798744991218736'.
+
+OUTPUT RE-VERIFIED as the gram::Q_0 scope note requires -- not a blind
+substitution. Built and ran the certificate before and after:
+
+    THE OUTPUT IS BYTE-IDENTICAL.
+
+That is the useful result this bean asked for either way. Why: the Stern-Brocot
+rationalisation runs at q_max = 10000 and the one tightened block is d=2 with
+max_denom_bits=1 -- a rational of denominator ~2. A 1277 ppb shift in q does not
+move it. alpha* = 1.0000000000, Sturm-chain PSD verified, aggregate unchanged.
+
+SCOPE: this says the certificate is insensitive to the anchor error AT THIS
+q_max WITH THESE BLOCKS. It does not say the literal did not matter -- it was
+wrong, and is now right. A larger q_max or different blocks could differ.

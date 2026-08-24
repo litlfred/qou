@@ -1,13 +1,13 @@
 ---
 doc_id: angled-survey
-doc_title: "Contemporary Mathematics From angled triangulations to hyperbolic structures"
+doc_title: "From angled triangulations to hyperbolic structures"
 section_id: sec-028-66-weil-rigidity-we-close-this-paper-with-an-app
 section_title: "Weil rigidity. We close this paper with an application whose statement"
 section_number: 6.6
 pages: 23-23
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
-doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
+doc_brief: "From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifoldM with"
 ---
 has nothing to do with triangulations. The following rigidity theorem, due to Weil
 [32], precedes Mostow–Prasad rigidity by a dozen years.

@@ -1524,6 +1524,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:48.957Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "'Use the roots not as a universal constant but as the initial guesses' and 'cannot be a literal canonical identity' are load-bearing methodological and scope distinctions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1543,6 +1558,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.000Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "Conjecture, table, proof sketch, computational implication, scope. No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1562,6 +1592,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 854 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.043Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "One prose dash in a long block, appending the step-3 identification inside the bridge argument."
       }
     ],
     "trap-triples": [
@@ -1581,6 +1626,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 854 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.085Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "'the algebraic singularities, the classical Li_2 branch structure, and the Thurston cusp equations' names the three columns of the block's own table; the manifold triple m004 / m003 / L6a4 is the data actually run."
       }
     ],
     "trap-closing-aphorism": [
@@ -1600,6 +1660,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.127Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "Closes on a scope statement bounding the conjecture's canonical form."
       }
     ],
     "trap-meta-commentary": [
@@ -1619,6 +1694,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.170Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "'Phrased motivically' signposts a reformulation; no narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1638,6 +1728,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.217Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "The final sentence synthesises the two bracketing witnesses into the structural-versus-canonical split, which neither bullet states on its own."
       }
     ],
     "trap-performed-warmth": [
@@ -1657,6 +1762,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.257Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1676,6 +1796,23 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.300Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "severity": "minor",
+        "evidence": "'the zeros are the EXACT INITIAL SEED VALUES for the Newton-Raphson solver' is contradicted by the block's own later section, which reports the bare seeds 0.4-0.9 away from SnapPy's shapes and concludes 'the pole-to-cusp bijection cannot be a literal canonical identity'.",
+        "notes": "PROPOSED: drop 'exact' — 'are the initial seed values'. I recomputed the distance range from computations/snappy-cusp-seeding.witness.json across m004, m003 and L6a4: 0.4004 to 0.9148, so the block's own '0.4-0.9' is accurate and only 'exact' is not. SECOND ITEM: 'The solver converges in O(1) Newton steps per cusp ... instead of the O(log eps^-1) steps needed when starting from a generic universal z_q' is an unmeasured comparison — neither witness reports a generic-start baseline — and Newton's quadratic convergence makes an in-basin generic start O(log log 1/eps), not O(log 1/eps); the measured 9-11 iterations is consistent with either. EVERYTHING ELSE VERIFIES: Phi_n = 1/(x;q)_n with n simple zeros at x = q^{-k} for k = 0..n-1; the Faddeev limit (1-q) log Phi_n -> Li_2(x); the four-row algebraic/archimedean/geometric table is internally consistent; L6a4 is the Borromean rings (witness volume 7.327724753) and m004 and m003 both have volume 2.029883213 = Vol(4_1), with m004 shapes 0.5 +- 0.8660254i = exp(i pi/3). The block's honesty is exemplary: it states that the Lean class has NO instance and that a previous revision's fabricated z = 2 skeleton instance was removed."
       }
     ],
     "trap-nonspeakable": [
@@ -1695,6 +1832,21 @@
         "reviewed_at": "2026-08-15T10:31:00.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5f016ac7e77d",
+          "ts": "553831ec8fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:49.343Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "Long but sectioned, with the dense material carried by the table and the numbered proof sketch rather than by noun chains."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1718,5 +1870,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:37:49.343Z"
 }

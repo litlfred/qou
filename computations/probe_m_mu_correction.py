@@ -7,9 +7,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from q_parameter import Q_50_DIGIT_STR
+from _precision import set_compute_dps  # noqa: E402
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     
     # 1. Quantum integers

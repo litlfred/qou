@@ -1,13 +1,13 @@
 ---
 doc_id: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3
-doc_title: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+doc_title: "On Ohtsuki's invariants of integral homology 3-spheres"
 section_id: sec-020-9-e-glmt--1m-t--i-llt--1
 section_title: "E gl',m'(t- 1)m'-t'--i-l+l;t- 1)"
 section_number: 9
 pages: 18-19
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
-doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
+doc_brief: "On Ohtsuki's invariants of integral homology 3-spheres — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres"
 ---
 m' =0 
 221 ' 

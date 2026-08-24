@@ -1,13 +1,13 @@
 ---
 doc_id: 104171-qt-83
-doc_title: "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot T omotada Ohtsuki1"
+doc_title: "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot"
 section_id: sec-001-calculation-by-the-saddle-point-method
 section_title: "Calculation by the saddle point method"
 section_number: null
 pages: 14-25
 source_pdf: 10.4171-qt-83.pdf
 source_sha256: d95b9363de2766d2
-doc_brief: "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki1 — We give a presentation of the asymptotic"
+doc_brief: "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot — We give a presentation of the asymptotic expansion of the Kas haev invariant of the52 knot."
 ---
 In this section, we calculate Gaussian integrals by the sadd le point method.
 We calculate a Gaussian integral in Proposition /three.prop./one.prop, a Gaussian integral with per-

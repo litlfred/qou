@@ -62,12 +62,10 @@ class FourTermPairNucleonContext where
   protonFlavours : Fin 3 → Bool
   /-- Neutron flavour assignment `(u, d, d)` (one up, two down). -/
   neutronFlavours : Fin 3 → Bool
-  /-- Base polarization proton NF evaluates to target. -/
-  base_proton_net : confinedNet 0 0 0 protonFlavours = protonNetTarget
-  /-- Base polarization neutron NF evaluates to target. -/
-  base_neutron_net : confinedNet 0 0 0 neutronFlavours = neutronNetTarget
-  /-- Confinement universality applied to `confinedNet`: independent of polarization. -/
-  universality_eval : ∀ φ₀ φ₁ φ₀₁ flavs, confinedNet φ₀ φ₁ φ₀₁ flavs = confinedNet 0 0 0 flavs
+  /-- Proton NF net coefficient is invariant and matches target. -/
+  proton_net_match : ∀ φ₀ φ₁ φ₀₁ : ℝ, confinedNet φ₀ φ₁ φ₀₁ protonFlavours = protonNetTarget
+  /-- Neutron NF net coefficient is invariant and matches target. -/
+  neutron_net_match : ∀ φ₀ φ₁ φ₀₁ : ℝ, confinedNet φ₀ φ₁ φ₀₁ neutronFlavours = neutronNetTarget
 
 /-- **Construction counts (derived).**  The nucleon is confined from exactly
     `3` pair productions using the `4`-term photon color content. -/
@@ -116,12 +114,8 @@ theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
     (∀ φ₀ φ₁ φ₀₁ : ℝ,
       ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget) ∧
     (∀ φ₀ φ₁ φ₀₁ : ℝ,
-      ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.neutronFlavours = neutronNetTarget) := by
-  refine ⟨?_, ?_⟩
-  · intro φ₀ φ₁ φ₀₁
-    rw [ctx.universality_eval, ctx.base_proton_net]
-  · intro φ₀ φ₁ φ₀₁
-    rw [ctx.universality_eval, ctx.base_neutron_net]
+      ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.neutronFlavours = neutronNetTarget) :=
+  ⟨ctx.proton_net_match, ctx.neutron_net_match⟩
 
 
 

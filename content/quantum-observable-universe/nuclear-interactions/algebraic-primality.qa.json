@@ -1845,6 +1845,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.314Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1864,6 +1881,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.358Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-em-dash": [
@@ -1883,6 +1917,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 131 words)"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.398Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-triples": [
@@ -1902,6 +1953,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 131 words)"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.439Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-closing-aphorism": [
@@ -1921,6 +1989,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.481Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-meta-commentary": [
@@ -1940,6 +2025,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.524Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-thesis-restatement": [
@@ -1959,6 +2061,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.568Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-performed-warmth": [
@@ -1978,6 +2097,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.614Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-superlative": [
@@ -1997,6 +2133,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.657Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "trap-nonspeakable": [
@@ -2016,6 +2169,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "64d2b92b8a7c",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:06.707Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of def:algebraic-primality (definition, 4 short paras + one display). Checked all ten categories over whole text; verified the vacuous n=1 base case (no decomposition of 1 into k>=2 parts each >=1) and the n=0 convention.",
+        "notes": "No trap of this category. Negative phrasing ('not contained in the closed span', 'does not factor') is the definitional content, not negation-contrast."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2039,5 +2209,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:42:06.707Z"
 }

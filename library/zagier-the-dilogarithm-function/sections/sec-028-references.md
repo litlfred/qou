@@ -1,13 +1,13 @@
 ---
 doc_id: zagier-the-dilogarithm-function
-doc_title: "The Dilogarithm Function Don Zagier"
+doc_title: "The dilogarithm function"
 section_id: sec-028-references
 section_title: "References"
 section_number: null
 pages: 18-20
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
-doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The dilogarithm function — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 [1] S. BLOCH: Applications of the dilogarithm function in algebraic K-
 theory and algebraic geometry, in: Proc. of the International Symp. on

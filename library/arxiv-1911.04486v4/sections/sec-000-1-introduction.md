@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1911.04486v4
-doc_title: ""
+doc_title: "Knots and the Maxwell Equations"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 2-7
 source_pdf: 1911.04486v4.pdf
 source_sha256: 53a34938c0e63bad
-doc_brief: "Knots and the Maxwell Equations Ion V. Vancea Grupo de F´ ısica Teórica e Matemática F´ ısica Departamento de F´ ısica Universidade Federal Rural do Rio de Janeiro — In this chapter, we review the"
+doc_brief: "Knots and the Maxwell Equations — In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld"
 ---
 The discovery of the knot solutions of Maxwell’s equations in the vacuum
 represents one of the most exciting results obtained recently in the modern

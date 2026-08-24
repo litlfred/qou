@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0906.1500v4
-doc_title: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
+doc_title: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds"
 section_id: sec-021-62-proof-of-theorem-5-we-begin-by-introducing-th
 section_title: "Proof of Theorem 5. We begin by introducing the complexes needed in the proof"
 section_number: 6.2
 pages: 16-18
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
-doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
+doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
 ---
 and some notation.
 Let C∗ = C∗(M ; sl2(C)ρ) and C∗(t) = C∗(M ; sl2(C(t))ρ). We deﬁne a pair of com-

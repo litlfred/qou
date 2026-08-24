@@ -4,8 +4,15 @@ the only thing the Z=N/Z!=N claim depends on."""
 import sys,math,time
 sys.path[:0]=['/home/user/qou/computations','/home/user/qou/computations/substrate',
               '/home/user/qou/computations/hecke','/home/user/qou/computations/deltalambda']
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge, mpmath as mp
-mp.mp.dps=50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from schur_principal_mpmath import partitions_of,_f_lambda,schur_principal_mpmath,_wenzl_constants
 from threerow_chi_sparse import chi_atom_sparse
 Q0=mp.mpf('1.1099785827513808076')

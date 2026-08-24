@@ -1764,6 +1764,21 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.557Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'$G^{-1}$ does not exist' and 'The earlier reading ... is **withdrawn**' are factual corrections, not assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1783,6 +1798,21 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.599Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'Any statement about the signature must name its pairing' introduces the two pairings it then computes; the sentence is discharged, not used as a reframe."
       }
     ],
     "trap-em-dash": [
@@ -1802,6 +1832,21 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 263 words)"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.637Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Three em-dashes in 452 words; one appends the measured determinant to the identity claim, the other two form a true parenthetical around the star-pairing justification."
       }
     ],
     "trap-triples": [
@@ -1821,6 +1866,21 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 263 words)"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.680Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'The Markov-trace computation ..., the operator-identification ..., and the annihilation identity ...' lists the three sections of the referenced context block."
       }
     ],
     "trap-closing-aphorism": [
@@ -1840,6 +1900,21 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.723Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The statement's last line, 'What survives both pairings is the single null direction under D', asserts a pairing-independent invariant that the two computed spectra actually support (a zero eigenvalue under D in both)."
       }
     ],
     "trap-meta-commentary": [
@@ -1859,6 +1934,22 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.759Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'Any statement about the signature must name its pairing' prevents a real misreading and is stated directly rather than narrated — the load-bearing-disambiguation carve-out.",
+        "notes": "AUTHORNOTES FLAG (AGENTS.md 4d, one-voice Cat. H): two status leaks sit inside the proposition. (i) the title, 'Proposition (symbolic entries, with the $z^3$ substitution still to be propagated)'; (ii) 'The earlier reading of this block as indefinite or Lorentzian is **withdrawn** (commit 748ba9b1); it was an artefact of quoting the bilinear pairing without saying so.' Both belong in authorNotes (kinds 'status' and 'refined-framing'); a commit sha does not belong in a theorem statement."
       }
     ],
     "trap-thesis-restatement": [
@@ -1878,6 +1969,21 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.795Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No closing restatement; each sentence adds a distinct measured fact."
       }
     ],
     "trap-performed-warmth": [
@@ -1897,6 +2003,21 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.831Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1916,6 +2037,22 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.867Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'the correct one' for the star pairing is argued ($T_w^* = T_{w^{-1}}$ swaps $L_+ \\leftrightarrow L_-$), not asserted bare.",
+        "notes": "Advisory (AGENTS.md 7a): the block writes $T_w$ twice ('tr_M(T_w) = z^{l(w)}', '$T_w^* = T_{w^{-1}}$'). 7a bans $T$ for the GENERATOR (sigma_i); $T_w$ for the standard basis is standard usage, so flagged advisory only, but the rest of this block and its siblings use $b_i$."
       }
     ],
     "trap-nonspeakable": [
@@ -1935,6 +2072,22 @@
         "reviewed_at": "2026-08-15T10:31:00.461Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "16b259ed5b29",
+          "ts": "0e57f4c9fab1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:07.903Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "One 20-word interruption ('On the **star** pairing ... — the correct one, since ... — the form is positive'), well marked by its dash pair; the rest reads aloud.",
+        "notes": "VERIFIED NUMERICS (mpmath, 30 dps, proton pin q_0 = 1.1099785827513808...): every quoted number reproduces ONLY if tr_M(e^-) = h z^2 + z is already substituted — det G under D = 0 (2e-32 at 30 dps), spectrum (-0.752702113, 0, +0.752702113 x3, +4.23033923); under C det G = -0.1892052191 and spectrum (-0.855067262, +0.101796671, +0.855067262 x3, +3.47694981). Both match the block digit for digit. But the DISPLAYED matrix uses the naive z^3, and the block twice says so ('written using the naive length rule', '(subject to the same uncorrected $z^3$ entries)'). With the naive entries the same computation gives det G = -0.334741 under D (NONZERO) and eigenvalues (-0.882746, 0.291531, 0.337224, 0.882746, 1.213874, 3.599663) — no null direction at all. So the block's central claim 'det G = 0 identically' is false OF THE MATRIX AS PRINTED, and the 'still to be propagated' caveat is stale relative to its own numbers. Fix: propagate z^3 -> hz^2+z in the six explicit entries and inside g_15/g_34/g_35/g_55, and delete both caveats."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1958,5 +2111,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:51:07.903Z"
 }

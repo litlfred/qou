@@ -36,6 +36,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 @lru_cache(maxsize=64)
@@ -150,7 +151,7 @@ def _self_test() -> int:
     from lr_coefficients import partitions_of
     from mass_at_3A_proper import atom_braid_word_3A
     from q_parameter import Q_50_DIGIT_STR
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     word = atom_braid_word_3A(1, 1)  # deuteron H_6 word (color-weighted pn)
     max_rel = mp.mpf(0)

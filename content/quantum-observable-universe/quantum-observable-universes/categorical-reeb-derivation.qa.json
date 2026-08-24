@@ -1817,6 +1817,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.406Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1836,6 +1851,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.441Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-em-dash": [
@@ -1855,6 +1885,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.477Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-triples": [
@@ -1874,6 +1919,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.514Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-closing-aphorism": [
@@ -1893,6 +1953,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.550Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-meta-commentary": [
@@ -1912,6 +1987,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.586Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-thesis-restatement": [
@@ -1931,6 +2021,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.625Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-performed-warmth": [
@@ -1950,6 +2055,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.663Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-superlative": [
@@ -1969,6 +2089,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.698Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "trap-nonspeakable": [
@@ -1988,6 +2123,21 @@
         "reviewed_at": "2026-08-15T10:30:59.943Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.731Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, bolded term, two numbered axioms, then four interpretive sentences (period \\Omega_q, observer drift, discrete spectrum, fundamental modes). All ten categories checked. trap-closing-aphorism considered on 'Each eigenvalue of \\xi_q corresponds to a fundamental mode of the substrate.' and PASSED: it asserts a (contentful, if unbacked) correspondence rather than supplying a quotable closer. trap-triples n/a -- two axioms, not three. OUT-OF-SCOPE observations reported to the caller: (i) same duplicate-defined-term collision recorded on def:categorical-reeb -- both blocks bold 'categorical Reeb derivation' for different objects with different normalisations (\\xi_q\\circ\\varTheta=\\varTheta here vs \\varTheta_A(\\xi)=\\mathrm{id}_{\\mathbf{1}} there). (ii) SYMBOL COLLISION -- the period is written \\Omega_q while \\Omega^k(A) denotes the differential forms throughout this same chapter. (iii) 'the observer drift' takes a definite article on a term introduced nowhere in the block, and 'uniquely determined by' is asserted with no uniqueness argument or sibling proposition for \\xi_q."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2011,5 +2161,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:01:57.731Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1810.11563v1
-doc_title: "Three Lectures on Complexity and Black Holes Leonard Susskind"
+doc_title: "Three Lectures on Complexity and Black Holes"
 section_id: sec-041-222-expending-uncomplexity-and-negentropy
 section_title: "Expending Uncomplexity and Negentropy"
 section_number: 22.2
 pages: 75-76
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 The uncomplexity of|max⟩ is zero but by adding the clean qubit we bought ourselves an
 uncomplexity 2K. But the action of the circuit will inevitably increase the complexity by

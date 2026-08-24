@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route41_ladder_rank",
   "bean": "qou-0yqu",
-  "dps": 40,
+  "dps": 70,
   "follows": "Route 40 (qbeta_5two_route40_distribution_factors_probe.py)",
   "retracts": [
     "the Li2-form five-term RHS used in a first draft of this search (G1) -- the argument set is right, the identity is Rogers-L, not Li2 plus a log product",
@@ -11,7 +11,7 @@
     {
       "gate": "G1",
       "claim": "the five-term identity on this argument set is a ROGERS-L statement -- sum of L over the five pentagon arguments is pi^2/2, exact at generic real points. The second half is the negative control: the Li2-plus-log-product RHS written in a first draft FAILS at the same points, by an amount that varies with the point, so it is not a constant offset but a wrong identity",
-      "worst_residual_rogersL_form": "0.0",
+      "worst_residual_rogersL_form": "7.244543263e-71",
       "smallest_residual_of_the_WRONG_form": "3.101179238",
       "pass": true
     },

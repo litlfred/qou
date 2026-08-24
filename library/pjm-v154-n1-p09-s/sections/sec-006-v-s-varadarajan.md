@@ -1,13 +1,13 @@
 ---
 doc_id: pjm-v154-n1-p09-s
-doc_title: "Pacific Journal of Mathematics THE PERIOD MA TRIX OF BRING’S CURVE"
+doc_title: "The period matrix of Bring's curve"
 section_id: sec-006-v-s-varadarajan
 section_title: "S. VARADARAJAN"
 section_number: V
 pages: 24-24
 source_pdf: pjm-v154-n1-p09-s.pdf
 source_sha256: cbf5c02babe5a61e
-doc_brief: "Pacific Journal of Mathematics THE PERIOD MATRIX OF BRING’S CURVE — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
+doc_brief: "The period matrix of Bring's curve — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
 ---
 (Managing Editor)
 University of California

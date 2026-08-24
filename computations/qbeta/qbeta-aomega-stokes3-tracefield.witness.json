@@ -60,12 +60,14 @@
     }
   ],
   "allPassed": true,
-  "scriptFile": "qbeta_aomega_stokes3_tracefield_probe.py",
-  "durationMs": 130,
-  "scriptHash": "de325d2c3f91",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "scriptHash": "687a845a0b1d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "sympy",
-  "computedAt": "2026-07-18T19:19:22.402028+00:00",
-  "engineVersion": "sympy 1.14.0"
+  "computedAt": "2026-08-23T09:44:53.595027+00:00",
+  "durationMs": 61,
+  "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "qbeta_aomega_stokes3_tracefield_probe.py"
 }

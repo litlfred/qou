@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1208.1663v2
-doc_title: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers"
+doc_title: "The 3D index of an ideal triangulation and angle structures"
 section_id: sec-001-2-index-structures-angle-structures-and-the-3d-i
 section_title: "Index structures, angle structures and the 3D index"
 section_number: 2
 pages: 3-5
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
-doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
+doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 2.1. Index structures. Consider two r×s matrices A and B with integer entries and a
 column vector v∈ Zr, and let M = (A|B|v).

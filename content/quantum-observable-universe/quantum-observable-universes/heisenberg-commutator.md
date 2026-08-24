@@ -2,4 +2,4 @@ The Heisenberg uncertainty principle emerges as a fibre coordinate measurement. 
 
 As $q \to 1$, the observer sits at the base of the Reeb fibre, where $d_q = d$, and $[\hat{X}, \hat{P}]_q \to 0$. As $q \to \infty$, the observer sits at the tip of the fibre, where $d_q \to \pi_V \circ d$, and $[\hat{X}, \hat{P}]_q \to J$.
 
-Geometrically, $[\hat{X}, \hat{P}]_q$ equals $\varTheta(\xi_q)$, the $q$-deformed Reeb field evaluated on the contact form. The field $\xi_q$ is the unique direction along which $d\varTheta$ degenerates, encoding the obstruction to commutativity. Uncertainty constitutes displacement along the Reeb fibre. The observer's position in the fibre determines how much the observables fail to commute.
+Geometrically, $[\hat{X}, \hat{P}]_q$ equals $\varTheta(\xi_q)$, the $q$-deformed Reeb field evaluated on the contact form. The field $\xi_q$ is the unique direction along which $d\varTheta$ degenerates, encoding the obstruction to commutativity. The observer's position in the fibre determines how much the observables fail to commute.

@@ -1,13 +1,13 @@
 ---
 doc_id: disssubmission
-doc_title: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVER"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-029-24-the-andre-kahn-quotient
 section_title: "The Andr´e-Kahn quotient"
 section_number: 2.4
 pages: 40-41
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
-doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 121 sections: Acknowledgements; Introduction; Introduction"
 ---
 For the Tannakian arguments to be given below, we want to work with
 rigid symmetric monoidal categories which are at the same time semisimple

@@ -37,8 +37,9 @@ from qbeta_chain4_demazure_fund_weights import (  # noqa: E402
     report_proximity,
     witness_safe,
 )
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 RESIDUE_A = mp.mpf("1.804e-15")
 Q_PROTON_50 = mp.mpf("1.10997858275138080759166909561")

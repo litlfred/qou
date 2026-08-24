@@ -3,8 +3,9 @@
 title: Cite 2304.12545v1 (1).pdf at conj:borromean-bloch-group-element
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:35:44Z
-updated_at: 2026-08-08T23:35:44Z
+updated_at: 2026-08-21T17:04:44Z
 ---
 
 def:quantum-bloch-group and conj:borromean-bloch-group-element both state Bloch-group/regulator facts (5-term relation, Beilinson regulator = Bloch-Wigner dilogarithm, volume as regulator evaluation) without a source for the extended/lifted version now being used downstream.
@@ -19,3 +20,10 @@ Source: `library/arxiv-2304.12545v1/2304.12545v1 (1).pdf` — no `references.ts`
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-2304.12545v1/  ->  [arxiv-2304.12545v1]
+  HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [arxiv-2304.12545v1] as the citation key when you do it.

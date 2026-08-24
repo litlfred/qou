@@ -1,13 +1,13 @@
 ---
 doc_id: 2018sorus020
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Reidemeister torsion on character varieties"
 section_id: sec-014-115-saitos-theorem-and-some-consequences
 section_title: "Saito’s Theorem and some consequences"
 section_number: 1.1.5
 pages: 23-24
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
+doc_brief: "Reidemeister torsion on character varieties — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ"
 ---
 From the equivalence of the two deﬁnitions of the character variety, we know that
 any character χ ∈ X(Γ) is the character of a representation ρ : Γ → SL2(k).

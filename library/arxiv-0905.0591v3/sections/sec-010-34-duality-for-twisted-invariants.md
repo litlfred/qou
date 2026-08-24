@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0905.0591v3
-doc_title: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS"
+doc_title: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS"
 section_id: sec-010-34-duality-for-twisted-invariants
 section_title: "Duality for twisted invariants"
 section_number: 3.4
 pages: 9-11
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
-doc_brief: "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 r ↦→
 r. Let F be a free abelian group, with its natural involution. We exte nd the involution

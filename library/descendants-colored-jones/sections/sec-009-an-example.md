@@ -1,13 +1,13 @@
 ---
 doc_id: descendants-colored-jones
-doc_title: "Pure and Applied Mathematics Quarterly"
+doc_title: "The descendant colored Jones polynomials"
 section_id: sec-009-an-example
 section_title: "An example"
 section_number: null
 pages: 23-24
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
-doc_brief: "Pure and Applied Mathematics Quarterly The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the"
+doc_brief: "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 In this sub-section we write an explicit expression for the invariant ⟨41⟩N,n of
 the simplest hyperbolic knot 4 1 in the case of a primitive N-th root of unity

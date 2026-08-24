@@ -1,13 +1,13 @@
 ---
 doc_id: monodromyhitchiny
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the monodromy of the Hitchin connection"
 section_id: sec-026-10-yves-laszlo-christian-pauly-and-christoph-sor
 section_title: "YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER"
 section_number: 10
 pages: 11-12
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
+doc_brief: "On the monodromy of the Hitchin connection — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND ; Introduction; Review of mapping class groups, mo"
 ---
 Here ⟨.|.⟩ denotes the standard pairing between H⃗λ,µ,µ † and its dual H†
 ⃗λ,µ,µ †. It is shown in

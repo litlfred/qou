@@ -1,13 +1,13 @@
 ---
 doc_id: 1172-2
-doc_title: "1 =x>O 2 1.1 $O$8$a$K. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 12 $*Ni$N8@MU. . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 2 $L^{2}$-torsion4 2.1 =tD"
+doc_title: "L^2-torsion of 3-manifolds"
 section_id: sec-000-33-lumathrmcmathrmkn8x0
 section_title: "L\'u$\mathrm{c}\mathrm{k}$$N8x<0"
 section_number: 3.3
 pages: 13-17
 source_pdf: 1172-2.pdf
 source_sha256: 390665341d5b7522
-doc_brief: "$L^{2}$-torsion of 3-manifolds KLLn98O/* ( El5~9)6HBg3X) 9bBt8wI'( El5~9)6HBg3X) ?9F#9'G7\dagger( El5~Bg3X) 2000 G/7 7n 20 F| 1 =x>O 2 1.1 $O$8$a$K. . . . . . . . . . . . . . . . . . . . . . . . . . ."
+doc_brief: "L^2-torsion of 3-manifolds — 3 sections: L\'u$\mathrm{c}\mathrm{k}$$N8x<0; Bh$-$6a;w$\rho_{1}$$K$D$$$F; BhFs6a;w$\rho_{2}$$K$D$$$F"
 ---
 $3$3$G$O$S^{1}$>e$N6-3&IU$-6JLLB+$KOC$r8B$C$?>l9g$K$\rho(W_{\varphi})$$NL\"uck$NM?
 $($?8x<0$,%b%N%I%m%_!<$N8@MU$G$I$&=q$1$k$+$KIU$$$F=R$Y$^$9!#$3$l$OA0

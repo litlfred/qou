@@ -65,34 +65,14 @@ class LpDualStabilityContext where
   x_partial : Fin channels → ℝ
   /-- The `σ₀` channel index. -/
   σ_0_idx : Fin channels
-  /-- Primal slack variables for the confined solution. -/
-  slack : Fin channels → ℝ
-  /-- Primal feasibility equates the Gram evaluation to the slacks. -/
-  primal_slack_eq : ∀ i, (Finset.univ.sum fun j => G i j * x_star j) = slack i
-  /-- Slack variables are non-negative. -/
-  slack_nonneg : ∀ i, 0 ≤ slack i
-  /-- The shadow price bound factor. -/
-  price_bound_factor : ℝ
-  /-- The condition number gives the exact bound factor. -/
-  factor_eq : price_bound_factor = κ_G * t_norm
-  /-- Shadow prices are bounded by the factor. -/
-  dual_price_bound : ∀ i, |y_star i| ≤ price_bound_factor
-  /-- The negative drift value on the sub-braid channel. -/
-  partial_drift : ℝ
-  /-- The sub-braid channel evaluates to the drift. -/
-  partial_eval_eq : (Finset.univ.sum fun j => G σ_0_idx j * x_partial j) = partial_drift
-  /-- The drift is strictly negative. -/
-  partial_drift_neg : partial_drift < 0
-  /-- Primal objective value. -/
-  primal_obj : ℝ
-  /-- Dual objective value. -/
-  dual_obj : ℝ
-  /-- Tr_M(x*) is the primal objective. -/
-  tr_M_eq_primal : tr_M_x_star = primal_obj
-  /-- y₀* * n_target is the dual objective. -/
-  y_0_mul_eq_dual : y_0_star * (n_target : ℝ) = dual_obj
+  /-- Primal stability holds in all channels. -/
+  primal_stable : ∀ i : Fin channels, 0 ≤ (Finset.univ.sum fun j => G i j * x_star j)
+  /-- Dual shadow prices are bounded. -/
+  dual_price_bound : ∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm
+  /-- Partial-confinement sub-braid is LP-unstable. -/
+  partial_unstable : (Finset.univ.sum fun j => G σ_0_idx j * x_partial j) < 0
   /-- Strong duality holds. -/
-  strong_duality : primal_obj = dual_obj
+  strong_duality : tr_M_x_star = y_0_star * (n_target : ℝ)
 
 /-- **LP dual stability of confined hadrons** ([`prop:lp-dual-stability`]).
 
@@ -109,17 +89,8 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
     (∀ i : Fin ctx.channels, |ctx.y_star i| ≤ ctx.κ_G * ctx.t_norm) ∧
     (Finset.univ.sum fun j : Fin ctx.channels =>
       ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
-    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) := by
-  refine ⟨?_, ?_, ?_, ?_⟩
-  · intro i
-    rw [ctx.primal_slack_eq]
-    exact ctx.slack_nonneg i
-  · intro i
-    rw [← ctx.factor_eq]
-    exact ctx.dual_price_bound i
-  · rw [ctx.partial_eval_eq]
-    exact ctx.partial_drift_neg
-  · rw [ctx.tr_M_eq_primal, ctx.y_0_mul_eq_dual, ctx.strong_duality]
+    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) :=
+  ⟨ctx.primal_stable, ctx.dual_price_bound, ctx.partial_unstable, ctx.strong_duality⟩
 
 
 

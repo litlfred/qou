@@ -1088,6 +1088,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.101Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1107,6 +1123,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.140Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-em-dash": [
@@ -1126,6 +1158,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.180Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-triples": [
@@ -1145,6 +1193,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.218Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-closing-aphorism": [
@@ -1164,6 +1228,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.257Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-meta-commentary": [
@@ -1183,6 +1263,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.296Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1202,6 +1298,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.337Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-performed-warmth": [
@@ -1221,6 +1333,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.377Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-superlative": [
@@ -1240,6 +1368,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.417Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ],
     "trap-nonspeakable": [
@@ -1259,8 +1403,24 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "54a8e166955c",
+          "ts": "0c7447d2780e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.457Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:unit-root-f-crystal. Checked against the resolved Lean: Fred2005.UnitRootFCrystal carries frobenius_injective plus frobenius_surjective, which is exactly the .md's 'acts invertibly (bijectively)' - this block's definition and formalisation agree. No constructions from the ten categories.",
+        "notes": "Minor consistency note only: 'Dieudonne--Manin' is written without the accent on Dieudonne; per the corpus unicode note accented Latin letters are safe in prose."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.652Z"
+  "updated_at": "2026-08-22T04:07:16.457Z"
 }

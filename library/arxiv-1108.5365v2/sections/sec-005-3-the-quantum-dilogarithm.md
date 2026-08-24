@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5365v2
-doc_title: "Representation of the Quantum Plane, its Quantum"
+doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)"
 section_id: sec-005-3-the-quantum-dilogarithm
 section_title: "The quantum dilogarithm"
 section_number: 3
 pages: 16-19
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
-doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
 ---
 We recall the deﬁnition of the quantum dilogarithm given in [14] (see als o [2]), an
 important special function that will be used throughout the paper .

@@ -1,13 +1,13 @@
 ---
 doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
-doc_title: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025"
+doc_title: "On the Garoufalidis-Kashaev state-integral invariant"
 section_id: sec-018-gaussian-group
 section_title: "Gaussian Group"
 section_number: null
 pages: 19-20
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec"
+doc_brief: "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 A Gaussian Group developed in previous works [2, 13] and denominated in [7].
 Definition 4. Let G b

@@ -1,13 +1,13 @@
 ---
 doc_id: disssubmission
-doc_title: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVER"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-001-introduction
 section_title: "Introduction"
 section_number: null
 pages: 9-12
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
-doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 121 sections: Acknowledgements; Introduction; Introduction"
 ---
 The geometry of a smooth complex projective curveC with Jacobian
 varietyJac(C) is governed, after the choice of a base point on the curve, by

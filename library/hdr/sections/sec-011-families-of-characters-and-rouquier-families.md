@@ -1,13 +1,13 @@
 ---
 doc_id: hdr
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Hecke algebras, generalisations and representation theory"
 section_id: sec-011-families-of-characters-and-rouquier-families
 section_title: "Families of characters and Rouquier families"
 section_number: null
 pages: 29-30
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
+doc_brief: "Hecke algebras, generalisations and representation theory — 27 sections: Algebras of Finite Type; Blocks; Symmetrising forms and Schur eleme"
 ---
 Let ϕm :vC,j↦→qmC,j be a cyclotomic specialisation and let Hϕm(W ) be the corresponding cyclotomic
 Hecke algebra associated with W . How can we deﬁne families of characters for Hϕm(W )? We cannot

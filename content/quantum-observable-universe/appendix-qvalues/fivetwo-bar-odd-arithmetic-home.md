@@ -1,8 +1,8 @@
 The bar involution $q \mapsto q^{-1}$ acts on the three embeddings of the $5_2$
 trace field by exchanging the complex-conjugate pair $\xi_1 \leftrightarrow
 \bar{\xi_1}$ and fixing the real embedding $\xi_3$. That single observation
-fixes where a bar-odd datum can live, and it is worth stating separately from
-the identity it follows from.
+fixes where a bar-odd datum can live, and it is stated separately from the
+identity it follows from.
 
 ## The even and odd channels are geometrically distinguishable
 
@@ -19,7 +19,7 @@ Galois trace over the conjugate pair sees; the odd combination is purely
 imaginary and lies on the $\sqrt{-23}$ axis of $K \otimes \mathbb{C}$, since
 $\sqrt{-23}$ generates the quadratic resolvent that $A_3$ fixes.
 
-So the two channels are not merely bookkeeping. **The bar-even channel is the
+**The bar-even channel is the
 one a symmetric pairing can reach; the bar-odd channel is confined to a single
 line, and that line is determined by the discriminant of the trace field.**
 
@@ -28,7 +28,7 @@ line, and that line is determined by the discriminant of the trace field.**
 For an amphichiral knot the mirror is the knot itself, so the Jones polynomial
 satisfies $J_{K^{*}}(q) = J_K(q^{-1}) = J_K(q)$ and the bar-odd part vanishes
 identically. The figure-eight $4_1$ is amphichiral; its bar-odd channel is
-empty for a structural reason, not for want of looking.
+empty for a structural reason.
 
 $5_2$ is chiral. Its bar-odd channel is not forced to vanish, which is why it is
 the knot the odd-channel question has to be asked on. The trace-field degree
@@ -57,8 +57,8 @@ layer, not the geometric one, and it cannot be a subfield of a cubic. The
 identification was retracted; the line is $\sqrt{-23}$, and it was already
 visible in the corpus's own $\sigma$-pair data before the retraction.
 
-The useful form of the lesson is a question to ask of any such claim: *which
-layer of the knot is this field attached to?* Abelian invariants — the
+The lesson generalises to a question to ask of any such claim: *which layer of
+the knot is this field attached to?* Abelian invariants — the
 determinant, the Alexander polynomial, the branched cover — carry one field;
 the geometric $\mathrm{SL}_2(\mathbb{C})$ representation carries another. They
 coincide for no general reason.

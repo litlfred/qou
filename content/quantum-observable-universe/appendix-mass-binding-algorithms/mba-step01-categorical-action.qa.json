@@ -885,13 +885,193 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.006Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.044Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.082Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.122Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.161Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.200Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.238Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.277Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.316Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "967bcceea469",
+          "ts": "c5fd84515010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:10.361Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:categorical-action. No constructions from the ten categories: the three correctness conditions are three distinct upstream results, and the Notes sentence 'The categorical action is fibre-independent ... independent of the fibre functor tau' is substantive contrast, not manufactured negation. VERIFIED the strand arithmetic: id^{i-1} (x) c_{V,V} (x) id^{n-i-1} has (i-1) + 2 + (n-i-1) = n tensor factors, correct.",
+        "notes": "Checked and clear: 'Archimedean specialisation enters at Step 9 (the nucleon mass ratio) via Markov trace evaluation at q_0' is a complete sentence, not the dangling-banner sweep-damage pattern. NOT A TRAP, reported separately: step 2 of the pseudocode asserts 'c_{V,V}^{-1} = c_{V,V}^* (left-rigid dual)'. These are not equal and are not even the same type - the inverse braiding maps V(x)V -> V(x)V while the left dual maps (V(x)V)^* -> (V(x)V)^*; identifying them needs a self-duality the block does not assume, and in a general braided rigid category the inverse braiding and the dual of the braiding differ (they are related through the twist in the ribbon case)."
+      }
     ]
   },
   "source_hashes": {
     "md": "967bcceea469",
     "ts": "c5fd84515010"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T04:26:10.361Z",
   "$schema": "block-qa/v1",
   "label": "alg:categorical-action",
   "kind": "algorithm",

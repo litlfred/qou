@@ -2145,6 +2145,23 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.429Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "Opening asserted by denying: 'The number of calibration inputs ... is not ad hoc: it equals the number of irreducible representations of H_3(R,q)'. The positive claim follows the colon and the whole block establishes the rigidity.",
+        "notes": "FIXED: dropped 'is not ad hoc:' - the sentence now reads 'The number of calibration inputs ... equals the number of irreducible representations of H_3(R, q), which is the number of partitions of 3.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2164,6 +2181,21 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.481Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (314w, prop). Both tables recomputed: 1^2+2^2+1^2 = 6 = dim H_3 is correct, the sigma_i eigenvalue column (+q / mixed / -q^-1) is correct, and the on-shell projection table is internally consistent (4-1-1-1 = 1 for M_2, 1-0-0-0 = 1 for each M_1, total 6 -> 3)."
       }
     ],
     "trap-em-dash": [
@@ -2183,6 +2215,21 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.545Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (314w, prop). Both tables recomputed: 1^2+2^2+1^2 = 6 = dim H_3 is correct, the sigma_i eigenvalue column (+q / mixed / -q^-1) is correct, and the on-shell projection table is internally consistent (4-1-1-1 = 1 for M_2, 1-0-0-0 = 1 for each M_1, total 6 -> 3)."
       }
     ],
     "trap-triples": [
@@ -2202,6 +2249,22 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.606Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'Three irreps, three surviving parameters, three calibration inputs.'",
+        "notes": "Substantive: the three-ness is the proposition, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2221,6 +2284,21 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.661Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (314w, prop). Both tables recomputed: 1^2+2^2+1^2 = 6 = dim H_3 is correct, the sigma_i eigenvalue column (+q / mixed / -q^-1) is correct, and the on-shell projection table is internally consistent (4-1-1-1 = 1 for M_2, 1-0-0-0 = 1 for each M_1, total 6 -> 3)."
       }
     ],
     "trap-meta-commentary": [
@@ -2240,6 +2318,21 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.733Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (314w, prop). Both tables recomputed: 1^2+2^2+1^2 = 6 = dim H_3 is correct, the sigma_i eigenvalue column (+q / mixed / -q^-1) is correct, and the on-shell projection table is internally consistent (4-1-1-1 = 1 for M_2, 1-0-0-0 = 1 for each M_1, total 6 -> 3)."
       }
     ],
     "trap-thesis-restatement": [
@@ -2259,6 +2352,23 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.791Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "Standalone line 'Three irreps, three surviving parameters, three calibration inputs.' restates the block's opening sentence and the table immediately above it.",
+        "notes": "STRUCTURAL judgement, not fixed: it is one line but it is the block's rhetorical summary and removing it changes the section's shape. Proposed: delete; the on-shell table already ends in 'Total 6 ... 3'."
       }
     ],
     "trap-performed-warmth": [
@@ -2278,6 +2388,21 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.870Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (314w, prop). Both tables recomputed: 1^2+2^2+1^2 = 6 = dim H_3 is correct, the sigma_i eigenvalue column (+q / mixed / -q^-1) is correct, and the on-shell projection table is internally consistent (4-1-1-1 = 1 for M_2, 1-0-0-0 = 1 for each M_1, total 6 -> 3)."
       }
     ],
     "trap-superlative": [
@@ -2297,6 +2422,21 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.925Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (314w, prop). Both tables recomputed: 1^2+2^2+1^2 = 6 = dim H_3 is correct, the sigma_i eigenvalue column (+q / mixed / -q^-1) is correct, and the on-shell projection table is internally consistent (4-1-1-1 = 1 for M_2, 1-0-0-0 = 1 for each M_1, total 6 -> 3)."
       }
     ],
     "trap-nonspeakable": [
@@ -2316,6 +2456,22 @@
         "reviewed_at": "2026-08-15T10:31:00.440Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "712fc906c0a0",
+          "ts": "51ed23d9b785"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:40.985Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Prose is speakable.",
+        "notes": "CROSS-BLOCK FLAG for the report: this block's 'Physical sector' column assigns (3) symmetric -> Shape/deformation and (1,1,1) alternating -> Interaction/hadronic, agreeing with rem:three-parameters-wedderburn-context but CONTRADICTING rem:three-calibration-inputs-context, which assigns alt -> CAL-2 -> q_0 and sym -> CAL-3 -> m_pi. Two blocks against one; the calibration-inputs-context table is the outlier."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2339,5 +2495,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:31:40.985Z"
 }

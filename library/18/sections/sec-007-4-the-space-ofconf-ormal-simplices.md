@@ -1,13 +1,13 @@
 ---
 doc_id: 18
-doc_title: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE"
+doc_title: "Combinatorial scalar curvature and rigidity of ball packings"
 section_id: sec-007-4-the-space-ofconf-ormal-simplices
 section_title: "The space ofconf ormal simplices"
 section_number: 4
 pages: 5-7
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
-doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
+doc_brief: "Combinatorial scalar curvature and rigidity of ball packings — 19 sections: Introduction; These; Conformal simplices"
 ---
 In this section we will describe the space of Euclidean conformal sim-
 plices C

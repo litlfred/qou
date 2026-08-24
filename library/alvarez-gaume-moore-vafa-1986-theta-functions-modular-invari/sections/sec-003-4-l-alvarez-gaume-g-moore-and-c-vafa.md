@@ -1,13 +1,13 @@
 ---
 doc_id: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari
-doc_title: "Communications in"
+doc_title: "Theta Functions, Modular Invariance, and Strings"
 section_id: sec-003-4-l-alvarez-gaume-g-moore-and-c-vafa
 section_title: "L. Alvarez-Gaume, G. Moore, and C. Vafa"
 section_number: 4
 pages: 4-6
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
-doc_brief: "Commun. Math. Phys. 106, 1-40 (1986) Mathematical Physics© Springer-Verlag 1986 — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some"
+doc_brief: "Theta Functions, Modular Invariance, and Strings — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string"
 ---
 The four spin structures (A, A), (P, A), (A, P) and (P, P) correspond respectively to
 the twistings {θ,φ) = (O,O)9 φθ), (0,i) and &£). (Even though we have used the

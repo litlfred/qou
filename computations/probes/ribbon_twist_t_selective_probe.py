@@ -92,6 +92,7 @@ import sys
 
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
+from _precision import set_compute_dps  # noqa: E402
 
 E0_STR = "4.1859813632944758969"
 NATURE_T1 = -0.07      # 1S0 virtual state, MeV (Machleidt CD-Bonn a<0 channels)
@@ -99,7 +100,7 @@ NATURE_T0 = +2.2245662  # deuteron, MeV
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(str(Q50))
     h = q - 1 / q
     z = q ** 3 / (q ** 2 + 1)

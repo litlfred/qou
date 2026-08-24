@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1112.5179v1
-doc_title: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA "
+doc_title: "3-Manifolds and 3d Indices"
 section_id: sec-012-46-tentacles-and-vacua
 section_title: "Tentacles and vacua"
 section_number: 4.6
 pages: 37-42
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-doc_brief: "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK — We"
+doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
 ---
 Some interesting physical consequences of the diﬀerence equations (4.35) result from the fact
 that they control the behavior of the index at large charges (m,e ), in a fairly simple manner.

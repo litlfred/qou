@@ -136,7 +136,178 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.956Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Read in full; no assert-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.001Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No setup-then-reframe; both paragraphs are declarative."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.073Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.157Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "'maps / identifies / extracts' and then 'defines / proves / isolates / tabulates' enumerate real downstream blocks (jet-prefix filtration, convergence, chirality grading, E_infty table); substantive roadmap, not reflex triples."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.209Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Closer states which downstream computations consume the E_infty classes."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.261Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "'This section maps ...' is roadmap prose, not narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.316Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Final sentence adds consumer information rather than restating."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.473Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.516Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Two intensifiers in the closing sentence ('extract their inputs directly from these verified E_infty classes'), but neither is a maximum-strength claim; 'verified' is a substantive status word given the section proves convergence.",
+        "notes": "Watch item: same intensifier habit flagged as minor in the sibling intro intro-plancherel-alpha-ribbon.md ('rely strictly on'). Kept as pass here because 'directly'/'verified' carry content."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "79c7e521de44",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:24.552Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "'the chirality-graded normal-form ring' and 'the confinement-NF structure' are dense but speakable; abbreviation NF is defined by context (normal form)."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:57.007351Z"
+  "updated_at": "2026-08-21T16:33:24.552Z"
 }

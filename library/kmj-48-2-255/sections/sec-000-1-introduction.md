@@ -1,13 +1,13 @@
 ---
 doc_id: kmj-48-2-255
-doc_title: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata"
+doc_title: "A formula for the colored Jones polynomial of 2-bridge knots"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
-doc_brief: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata — We derive a formula for the colored Jones polynomial of 2-bridge knots."
+doc_brief: "A formula for the colored Jones polynomial of 2-bridge knots — We derive a formula for the colored Jones polynomial of 2-bridge knots."
 ---
 For a positive integer n, the n-colored Jones polynomial is a Laurent polyno-
 mial invariant in q of a knot colored with n-dimensional irreducible representation

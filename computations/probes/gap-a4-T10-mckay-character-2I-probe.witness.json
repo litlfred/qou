@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T12:55:20.801683+00:00",
-  "commitSha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:35.380734+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "integer_spin_dim_sum_squares",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "gap-a4-T10-mckay-character-2I-probe",
   "scriptFile": "gap_a4_T10_mckay_character_2I_probe.py",
-  "scriptHash": "fcb0f71639bc",
-  "scriptCommitSha": "4a31d4ede99743f90b21f40a1cef7be86b1c7f6a",
+  "scriptHash": "c4f92be55f2c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,12 +46,21 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap_a4_T10_mckay_character_2I_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap_a4_T10_mckay_character_2I_probe.py"
   },
   "description": "GAP-A-4 T10 — McKay-character / spin-lift candidate functor via 2I (binary icosahedral, double cover of I ≅ A_5). The dim-5 irrep H is integer-spin → χ_5^{2I} = χ_5^{A_5} ∘ π, so the spin-lift adds NO new structure at dim-5. REFUTED as the 6th candidate.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
     "discipline": "EXPLORATORY",

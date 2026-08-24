@@ -1,13 +1,13 @@
 ---
 doc_id: angled-survey
-doc_title: "Contemporary Mathematics From angled triangulations to hyperbolic structures"
+doc_title: "From angled triangulations to hyperbolic structures"
 section_id: sec-002-11-where-to-ﬁnd-proofs-proofs-of-theorem-11-are
 section_title: "Where to ﬁnd proofs. Proofs of Theorem 1.1 are readily available in"
 section_number: 1.1
 pages: 2-3
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
-doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
+doc_brief: "From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifoldM with"
 ---
 theliterature. Aniceaccount appears inLackenby[ 13, Corollary4.6], andaslightly
 more general result appears in Futer and Gu´eritaud [5, Theorem 1.1]. Here is a

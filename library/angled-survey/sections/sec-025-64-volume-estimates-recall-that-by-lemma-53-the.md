@@ -1,13 +1,13 @@
 ---
 doc_id: angled-survey
-doc_title: "Contemporary Mathematics From angled triangulations to hyperbolic structures"
+doc_title: "From angled triangulations to hyperbolic structures"
 section_id: sec-025-64-volume-estimates-recall-that-by-lemma-53-the
 section_title: "Volume estimates. Recall that, by Lemma 5.3, the volume functional"
 section_number: 6.4
 pages: 21-22
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
-doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
+doc_brief: "From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifoldM with"
 ---
 V is concave down onA(τ). As a result, any critical point ofV must actually be
 the global maximum of the function over the compact closure

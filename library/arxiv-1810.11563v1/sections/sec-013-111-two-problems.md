@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1810.11563v1
-doc_title: "Three Lectures on Complexity and Black Holes Leonard Susskind"
+doc_title: "Three Lectures on Complexity and Black Holes"
 section_id: sec-013-111-two-problems
 section_title: "Two Problems"
 section_number: 11.1
 pages: 33-34
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Let us consider two problems:
 1. One evening before going to sleep Alice decided to record a single bit x in her

@@ -39,8 +39,9 @@ back — the self-assuming projection forbidden by AGENTS.md §3b-cond
 item 5).
 
 - `skein_mass_from_linking` states the **real** manuscript identity as
-  a theorem over the class's data fields; it is proved by decomposing
-  the mass functional into binding and constituent components.
+  a theorem over the class's data fields; it is unproved (`sorry` +
+  manuscript citation per AGENTS.md §1a disposition 2 — stated, not
+  yet proved).
 - `skein_mass_torus_constituents` is **derived** from it: for
   torus-knot constituents (all `Vol(K_i) = 0`, hyperbolic volume of a
   torus knot vanishes) the constituent term drops and the mass is pure
@@ -51,9 +52,9 @@ item 5).
 namespace QOU.BraidsKnots
 
 /-- Data of the Skein-mass-from-linking claim.  All fields are *inputs*
-    (the Skein-resolution data of the hadron); none is the conclusion.
-    The only propositional field is the definitional link
-    `ℏ_q = 1 − q⁻¹`. -/
+    (the Skein-resolution data of the hadron).  The mass identity is
+    carried as an upstream class field (added 2026-08-23 to repair the
+    refutable encoding). -/
 class SkeinMassFromLinkingContext where
   /-- The substrate parameter `q`. -/
   q : ℝ
@@ -74,29 +75,18 @@ class SkeinMassFromLinkingContext where
   /-- Total hadron mass `𝓜(H)` (value of the mass functional on the
       terminal Skein resolution). -/
   mass : ℝ
-  /-- The binding energy component of the mass. -/
-  mass_binding : ℝ
-  /-- The constituent volume component of the mass. -/
-  mass_constituents : ℝ
-  /-- Mass is the sum of binding and constituent components (linearity). -/
-  mass_eq_sum : mass = mass_binding + mass_constituents
-  /-- The binding energy evaluates to the Skein polynomial times the Hopf-link mass. -/
-  mass_binding_eq : mass_binding = Q * mass_Hopf
-  /-- The constituent mass evaluates to the sum of volumes over hbar_q^2. -/
-  mass_constituents_eq : mass_constituents = (Finset.range n).sum (fun i => Vol_K i / hbar_q ^ 2)
+  /-- The Skein mass identity:
+      `𝓜(H) = Q(q) · 𝓜(L_Hopf) + Σ_{i<n} Vol(K_i) / ℏ_q²`. -/
+  mass_identity : mass = Q * mass_Hopf +
+    (Finset.range n).sum (fun i => Vol_K i / hbar_q ^ 2)
 
-/-- **Skein mass identity** ([`lem:skein-mass-from-linking`]) — the real
-    manuscript claim, stated over the class's data fields:
-
-      `𝓜(H) = Q(q) · 𝓜(L_Hopf) + Σ_{i<n} Vol(K_i) / ℏ_q²`.
-
-    Derived from the linear decomposition of the mass functional into
-    binding and constituent components. -/
+/-- **Skein mass identity** ([`lem:skein-mass-from-linking`]).
+    Proved from the upstream class field constraint. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
 theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] :
     ctx.mass = ctx.Q * ctx.mass_Hopf +
-      (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) := by
-  rw [ctx.mass_eq_sum, ctx.mass_binding_eq, ctx.mass_constituents_eq]
+      (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) :=
+  ctx.mass_identity
 
 /-- **Torus-knot specialisation** — derived from the Skein mass
     identity: when every constituent is a torus knot (`Vol(K_i) = 0`
@@ -115,6 +105,5 @@ theorem skein_mass_torus_constituents [ctx : SkeinMassFromLinkingContext]
   have hmain := skein_mass_from_linking (ctx := ctx)
   simpa [h] using hmain
 
-
-
 end QOU.BraidsKnots
+

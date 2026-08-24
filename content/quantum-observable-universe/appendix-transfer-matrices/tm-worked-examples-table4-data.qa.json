@@ -893,9 +893,189 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.445Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.485Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.525Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.566Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.605Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.645Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.685Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.726Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.767Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e653fbb30b15",
+          "ts": "3a0a7d52ca4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:07.806Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: one-sentence caption + 2 mixed-crossing rows; consistent.",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
   "label": "tbl:tm-worked-examples-table4-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:07.806Z"
 }

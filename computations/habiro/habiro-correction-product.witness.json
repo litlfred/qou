@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:00:01.669370+00:00",
-  "commitSha": "8013e77237e09ab3d980ed3fef1c74676b2e9944",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:08:34.664344+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "residual_under_10ppm",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 12,
   "computation": "habiro-correction-product",
   "scriptFile": "habiro_correction_product_verify.py",
-  "scriptHash": "6850d9e1774a",
-  "scriptCommitSha": "8fe05b474f1638b4af282b34ccfd0d734db2a2cc",
+  "scriptHash": "f67c0bc21f60",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_correction_product_verify.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_correction_product_verify.py"
   },
   "description": "Habiro correction product: S ≈ (1+ℏ²)(1−ℏ²/p(n)) where p(9)=30. Closes from 319 ppm to 7.8 ppm (41× improvement). c₂ = 29/30, c₄ = −1/30. The 1/p(n) factor suggests block-averaging between Habiro (cyclotomic) and Wenzl (seminormal) bases.",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
@@ -47,7 +57,7 @@
     "correction_formula": "(1 + ℏ²)(1 − ℏ²/p(n))",
     "c2": "29/30",
     "c4": "-1/30",
-    "residual_ppm": 7.818138439114336,
-    "improvement_from_319": "41×"
+    "residual_ppm": 7.503739715549857,
+    "improvement_from_319": "43×"
   }
 }

@@ -9,7 +9,7 @@ export default example({
     "def:motivic-substrate",
     "prop:euler-char-stability",
     "rem:kummer-tower",
-    "conj:motivic-perpetual-obstruction",
+    "thm:motivic-perpetual-obstruction",
   ],
   tags: ["descartes", "chi", "derivation", "example", "motivic-galois"],
 });

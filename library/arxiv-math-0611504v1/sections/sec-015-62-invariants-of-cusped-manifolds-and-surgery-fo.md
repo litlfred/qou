@@ -7,7 +7,7 @@ section_number: 6.2
 pages: 29-40
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
-doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+doc_brief: "Quantum hyperbolic geometry — 19 sections: Introduction; Universal QHG; Building blocks"
 duplicate_of: "agt-v7-n2-p13-s"
 ---
 manifold triangulations T used in [5] (see Deﬁnition 6.2 and Deﬁnition 6.3 in that paper) to deﬁne

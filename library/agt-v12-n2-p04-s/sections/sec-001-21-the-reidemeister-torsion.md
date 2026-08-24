@@ -1,13 +1,13 @@
 ---
 doc_id: agt-v12-n2-p04-s
-doc_title: "The twisted Alexander polynomial for ﬁnite abelian covers over three manifolds with boundary JÉRÔME DUBOIS YOSHIKAZU YAMAGUCHI We provide the twisted Alexander polynomials of ﬁnite"
+doc_title: "The twisted Alexander polynomial for finite abelian covers over three manifolds"
 section_id: sec-001-21-the-reidemeister-torsion
 section_title: "The Reidemeister torsion"
 section_number: 2.1
 pages: 2-3
 source_pdf: agt-v12-n2-p04-s.pdf
 source_sha256: bcbb460bc75f5612
-doc_brief: "The twisted Alexander polynomial for finite abelian covers over three manifolds with boundary JÉRÔME DUBOIS YOSHIKAZU YAMAGUCHI We provide the twisted Alexander polynomials of finite abelian covers ov"
+doc_brief: "The twisted Alexander polynomial for finite abelian covers over three manifolds — 5 sections: Introduction; The Reidemeister torsion; Preliminaries"
 ---
 covering. We are mainly intested in link exteriors in homology three–spheres and their
 abelian covers. Our main theorem (see Theorem 4.1) is stated for an abelian cover

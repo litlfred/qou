@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1208.1663v2
-doc_title: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers"
+doc_title: "The 3D index of an ideal triangulation and angle structures"
 section_id: sec-009-44-proof-of-triality-part-c-of-theorem-32
 section_title: "Proof of triality: part (c) of Theorem 3.2"
 section_number: 4.4
 pages: 12-13
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
-doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
+doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 Theorem 3.2. Equation (3.2) concerns the following Z/3-action on V .
 Deﬁnition 4.2. Consider the action f↦→Sf on a function f : Z2−→ Z((q1/2)) given by:

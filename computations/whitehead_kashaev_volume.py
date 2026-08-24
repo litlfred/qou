@@ -41,6 +41,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 # Precision must be raised HERE, not in main(): the 25-digit constant below is
 # built at import time, and at mpmath's default 15 dps it would be frozen at
@@ -69,7 +71,12 @@ def kashaev_4_1(N: int) -> mp.mpf:
     return total
 
 
-VOL_4_1 = mp.mpf("2.029883212819307250011597804990447526446605015756")
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)  # Vol(4_1) EXACT = 2*Cl_2(pi/3) = 6*Lambda(pi/3).
+# The literal that was here printed 49 digits and was correct to 20 --
+#   was    2.02988321281930725001 1597804990447526446605015756
+#   exact  2.02988321281930725004 2405108549040571883378615060599584
+# so 29 digits were fabricated. dps is raised above, so the closed form
+# is exact here and cannot be mis-transcribed at all (bean qou-ckbv).
 
 
 def volume_from_kashaev(kashaev_fn, Ns):
@@ -96,7 +103,7 @@ def volume_from_kashaev(kashaev_fn, Ns):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     print("\n  WHITEHEAD link — colored Jones / Kashaev reconstruction")
     print(f"  Vol(Whitehead) target = 4·G = {float(VOL_WHITEHEAD):.10f}  (regular ideal octahedron)\n")
 

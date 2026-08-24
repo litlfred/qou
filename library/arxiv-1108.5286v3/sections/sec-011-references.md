@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5286v3
-doc_title: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen"
+doc_title: "Hochschild homology of affine Hecke algebras"
 section_id: sec-011-references
 section_title: "References"
 section_number: null
 pages: 38-39
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
-doc_brief: "Hochschild homology of affine Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not"
+doc_brief: "Hochschild homology of affine Hecke algebras — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 [ABP] A.-M. Aubert, P.F. Baum, R.J. Plymen, “The Hecke algeb ra of a reductive
 p-adic group: a view from noncommutative geometry”, pp. 1–34 in: Noncom-

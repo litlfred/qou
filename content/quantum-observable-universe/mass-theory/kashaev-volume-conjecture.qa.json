@@ -1526,6 +1526,21 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.187Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the conjecture block (kind conjecture, tier:famous) - statement, Lean axiomatisation, rationale, motivic perspective. Category absent."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1545,6 +1560,21 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.241Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the conjecture block (kind conjecture, tier:famous) - statement, Lean axiomatisation, rationale, motivic perspective. Category absent."
       }
     ],
     "trap-em-dash": [
@@ -1564,6 +1594,21 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 470 words)"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.307Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "One matched pair in the motivic paragraph ('- a class in the quantum Bloch group ... -') and one appositive after 'at the level of pi_0'. No density."
       }
     ],
     "trap-triples": [
@@ -1583,6 +1628,21 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 470 words)"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.355Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "'Three reasons:' followed by Locality / Compositionality / No global axiom pollution - three genuinely distinct engineering arguments, counted correctly."
       }
     ],
     "trap-closing-aphorism": [
@@ -1602,6 +1662,21 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.402Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the conjecture block (kind conjecture, tier:famous) - statement, Lean axiomatisation, rationale, motivic perspective. Category absent."
       }
     ],
     "trap-meta-commentary": [
@@ -1621,6 +1696,21 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.467Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the conjecture block (kind conjecture, tier:famous) - statement, Lean axiomatisation, rationale, motivic perspective. Category absent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1640,6 +1730,21 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.515Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the conjecture block (kind conjecture, tier:famous) - statement, Lean axiomatisation, rationale, motivic perspective. Category absent."
       }
     ],
     "trap-performed-warmth": [
@@ -1659,6 +1764,21 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.586Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the conjecture block (kind conjecture, tier:famous) - statement, Lean axiomatisation, rationale, motivic perspective. Category absent."
       }
     ],
     "trap-superlative": [
@@ -1678,6 +1798,22 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.655Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Notably well hedged for this chapter: 'It is open in general', 'no claim of proof is made by introducing the class', 'Any instance of VolumeConjecture is conjecture-bearing: the kvc_holds field plays the role of sorry'. This is the AGENTS.md anti-laundering discipline applied correctly, and it is what makes the sibling rem:kashaev-as-archimedean-realization's 'theorem confirms' wording a contradiction rather than a slip.",
+        "notes": "RECOMPUTED, all three authorNotes limits correct: 2.Cl_2(pi/3) = 2.02988321282 = Vol(4_1); Cl_2(pi/2) = Catalan G, so 8.Cl_2(pi/2) = 8G = 7.32772475342 = Vol(Borromean) = 2.V_oct; and 4G = 3.66386237671 = V_oct = Vol(B_3)/2, matching 'one regular ideal octahedron'. Right names on right numbers throughout."
       }
     ],
     "trap-nonspeakable": [
@@ -1697,6 +1833,22 @@
         "reviewed_at": "2026-08-15T10:31:00.566Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "53c2c0d94c3d",
+          "ts": "c79f1fa135c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:32.708Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Prose reads aloud.",
+        "notes": "SEPARATE (non-trap) findings. (1) RENDER RISK: the motivic paragraph writes 'the corresponding Phi$_q$-piece' with a literal Unicode capital Phi in PROSE (outside math) plus a base-less subscript $_q$. Per the AGENTS.md render-QA note, inline and fenced code are transliterated but plain prose is not, and Greek capitals are not among utf8.def's declared text-mode characters; the same block writes $\\Phi_q$ correctly in math elsewhere. FIX: $\\Phi_q$-piece. (2) SCOPE MISMATCH: the statement quantifies over 'every hyperbolic knot K in S^3', but two of the three in-repo proved instances in authorNotes are LINKS (Borromean rings, Whitehead 2-belt chain), and the body's 'proved only for specific families' list (figure-eight, torus, pretzel) does not mention them. (3) SECTION 4d: prose '> **Superseded.**' banner should be an authorNotes entry of kind 'deprecated'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1720,5 +1872,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:24:32.708Z"
 }

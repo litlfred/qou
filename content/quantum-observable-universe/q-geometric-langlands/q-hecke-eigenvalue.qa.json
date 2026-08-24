@@ -2111,6 +2111,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.022Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2130,6 +2146,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.062Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-em-dash": [
@@ -2149,6 +2181,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 59 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.101Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-triples": [
@@ -2168,6 +2216,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 59 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.139Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-closing-aphorism": [
@@ -2187,6 +2251,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.177Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-meta-commentary": [
@@ -2206,6 +2286,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.217Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-thesis-restatement": [
@@ -2225,6 +2321,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.256Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-performed-warmth": [
@@ -2244,6 +2356,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.294Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-superlative": [
@@ -2263,6 +2391,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.332Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "trap-nonspeakable": [
@@ -2282,6 +2426,22 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1689dd083e2a",
+          "ts": "c1b988d081c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:51.370Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proposition + display + rigidity sentence); all ten judged. The display is circular - the object being determined, L_q, appears inside the right-hand side as V_lambda^(q)(L_q)_x - reported as ANOMALY 22."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2305,5 +2465,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:51.370Z"
 }

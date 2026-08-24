@@ -100,6 +100,7 @@ del _Path, _bridge
 import sys
 
 import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
 
 ALPHA = "4.1859813632944758969"
 WELL_BOUND = "5.0"
@@ -108,7 +109,7 @@ NAMES = {(1, 1): "2H", (1, 3): "4H", (3, 1): "4Li", (1, 4): "5H",
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     import mass_binding_dashboard as M
     L = M._bond_type_L()
     ame = M._ame_table()

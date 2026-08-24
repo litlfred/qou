@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2305.14884v2
-doc_title: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
+doc_title: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-003-22-neumannzagier-data
 section_title: "Neumann–Zagier data"
 section_number: 2.2
 pages: 6-8
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
-doc_brief: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further"
+doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)"
 ---
 following [11]. We start with a 3-manifold M with torus boundary component (all manifolds
 and their triangulations will be oriented throughout the paper) equ ipped with a concrete

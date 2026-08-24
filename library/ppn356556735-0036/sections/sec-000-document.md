@@ -1,13 +1,13 @@
 ---
 doc_id: ppn356556735-0036
-doc_title: "Titel: Inventiones Mathematicae Verlag: Springer Jahr: 1976 Kollektion: Mathematica Digitalisiert: Niedersächsische Staats- und Universitätsbibliothek Göttingen Werk Id: PPN3565567"
+doc_title: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups"
 section_id: sec-000-document
 section_title: "Document"
 section_number: null
 pages: 1-38
 source_pdf: PPN356556735_0036.pdf
 source_sha256: a41a1773c81cc857
-doc_brief: "Cc U 9X NIEDERSACHSISCHE STAATS- UND ~ L UNIVERSITATSBIBLIOTHEK GOTTINGEN Titel: Inventiones Mathematicae Verlag: Springer Jahr: 1976 Kollektion: Mathematica Digitalisiert: Niedersachsische Staats- un"
+doc_brief: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 1 sections: Document"
 ---
 Werk
 Titel: Inventiones Mathematicae

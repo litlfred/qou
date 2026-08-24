@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-12T01:34:50.156046+00:00",
-  "commitSha": "2715fcd523e91c950d5a11434ac3b9d159a35794",
+  "computedAt": "2026-08-23T09:07:49.111188+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "manybody_residual_decouples_from_nucleon_count",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "the Li many-body residual is roughly constant (8.84, 7.68, 8.13 MeV, CV 5.8% < 10%) while the nucleon 3-clique count grows +43% (>30%) — decoupled ⇒ the many-body term is not a nucleon-level count but the α-cluster structure (GAP-4), so the nucleon graph→link promotion is the wrong level."
+      "source": "the Li many-body residual is roughly constant (8.45, 7.32, 7.79 MeV, CV 5.9% < 10%) while the nucleon 3-clique count grows +43% (>30%) — decoupled ⇒ the many-body term is not a nucleon-level count but the α-cluster structure (GAP-4), so the nucleon graph→link promotion is the wrong level."
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "gap2b-irreducible-demand",
   "scriptFile": "gap2b_irreducible_demand.py",
-  "scriptHash": "9cd8afb12bcb",
-  "scriptCommitSha": "4958f1d3f097f98390881fff300be81fcf9dc7a3",
+  "scriptHash": "dd92dc6da948",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gap2b_irreducible_demand.py"
+    ],
+    "reproduce": "python3 -u computations/gap2b_irreducible_demand.py"
   },
   "description": "GAP-2b diagnostic (qou-ooqh→GAP-4 bridge): with e₂,e₃ pinned on D,T and the max-contact 2-body backbone (GAP-1), the many-body residual across ⁵Li/⁶Li/⁷Li is roughly CONSTANT (~8.2 MeV, CV~6%) while the nucleon 3-clique count grows +43% — they DECOUPLE, and the demanded_M₃ (~4.3–4.9) matches no nucleon deltahedral invariant. So a universal-e₃ × nucleon count cannot supply the residual; the near-constant residual is the α-cluster signature (⁵Li=α+p, ⁶Li=α+d, ⁷Li=α+t share a ~constant α-core many-body binding). The many-body term is at the α-cluster level (GAP-4 / #3551 Brink deltahedra), NOT the nucleon-level μ̄-irreducible count — this prunes the nucleon-link-promotion route. Diagnostic (inverts residual, à la Part 6), not a fit; scope-(a); no wiring.",
   "data": {
@@ -59,50 +71,50 @@
       "4He": {
         "A": 4,
         "cluster": "α (core)",
-        "B_strong": 29.20278035750331,
+        "B_strong": 29.06559623749647,
         "two_body": 13.3473972,
-        "residual": 15.855383157503312,
-        "demanded_M3": 8.76909695444721,
+        "residual": 15.718199037496472,
+        "demanded_M3": 8.693224877626337,
         "three_clique": 4,
         "faces": 4
       },
       "5Li": {
         "A": 5,
         "cluster": "α + p",
-        "B_strong": 28.8569436493902,
+        "B_strong": 28.474892281646557,
         "two_body": 20.0210958,
-        "residual": 8.835847849390198,
-        "demanded_M3": 4.886820185696944,
+        "residual": 8.453796481646558,
+        "demanded_M3": 4.675519994964076,
         "three_clique": 7,
         "faces": 6
       },
       "6Li": {
         "A": 6,
         "cluster": "α + d",
-        "B_strong": 34.37130878065915,
+        "B_strong": 34.01178467872911,
         "two_body": 26.6947944,
-        "residual": 7.67651438065915,
-        "demanded_M3": 4.245630534910919,
+        "residual": 7.316990278729107,
+        "demanded_M3": 4.046789442521857,
         "three_clique": 8,
         "faces": 8
       },
       "7Li": {
         "A": 7,
         "cluster": "α + t",
-        "B_strong": 41.50333235008772,
+        "B_strong": 41.161815281873196,
         "two_body": 33.368493,
-        "residual": 8.134839350087718,
-        "demanded_M3": 4.4991151750257945,
+        "residual": 7.793322281873198,
+        "demanded_M3": 4.310233187563104,
         "three_clique": 10,
         "faces": 10
       }
     },
     "li_residual_MeV": [
-      8.835847849390198,
-      7.67651438065915,
-      8.134839350087718
+      8.453796481646558,
+      7.316990278729107,
+      7.793322281873198
     ],
-    "li_residual_cv": 0.05802767642777618,
+    "li_residual_cv": 0.059343337333954874,
     "li_three_clique_growth": 0.4285714285714286
   }
 }

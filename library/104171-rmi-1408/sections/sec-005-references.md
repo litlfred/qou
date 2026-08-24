@@ -1,13 +1,13 @@
 ---
 doc_id: 104171-rmi-1408
-doc_title: "DOI 10.4171/RMI/1408 © 2023 Real Sociedad Matemática Española"
+doc_title: "From octonions to composition superalgebras via tensor categories"
 section_id: sec-005-references
 section_title: "References"
 section_number: null
 pages: 23-24
 source_pdf: 10.4171-rmi-1408.pdf
 source_sha256: eda199771108dff8
-doc_brief: "DOI 10.4171/RMI/1408 © 2023 Real Sociedad Matemática Española — The nontrivial unital composition superalgebras, of dimension 3 and6, which exist only in characteristic 3, are obtained from the split"
+doc_brief: "From octonions to composition superalgebras via tensor categories — The nontrivial unital composition superalgebras, of dimension 3 and6, which exist only in characteristic 3, are obtained from the"
 ---
 [1] Barton, C. H. and Sudbery, A.: Magic squares and matrix models of Lie algebras. Adv. Math.
 180 (2003), no. 2, 596–647.

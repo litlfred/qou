@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:35.820Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): scanned the whole text for assertion-by-denial (not-X-but-Y, 'rather than', bolded denials, negation-first openers), not only the scanner's candidates; none present.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:35.859Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for setup-then-reframe constructions in which a second clause carries the claim; the block states its claims directly.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1301,22 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 222 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:35.897Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): spaced em-dash count 0; uses are ranges or true appositives, not substitutes for sentence structure.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1288,6 +1336,22 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 222 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:35.935Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): every enumeration checked for reflex-of-three padding; those present enumerate distinct named objects tied to the block's content.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1371,23 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:35.973Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "major",
+        "evidence": "Block-final quotable line \"The genus strictly dictates the particle content.\" placed after \"No other torus knot fits on the Bring surface.\", which already states it.",
+        "notes": "FIXED: closing line deleted; the preceding sentence carries the claim. The embeddability list it summarises was independently verified (see notes on trap-superlative)."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1407,22 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:36.010Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for narrated emphasis ('the key point', 'we emphasize', 'note the framing', 'the takeaway'); none present.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1442,22 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:36.047Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): block-final sentence compared against the body; it adds content rather than restating what the text already established.",
+        "notes": "The restating closer (\"The genus strictly dictates the particle content.\") was removed under trap-closing-aphorism; nothing else in the block restates already-established content."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1477,22 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:36.085Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): institutional register throughout; no personal or affective language.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1512,23 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:36.125Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "The stability boundary precisely traces the zero locus, \"The lattice $\\mathcal{L}(q)$ at $q = q_0$ reproduces the experimental nuclear chart\", \"These correspond exactly to the quarks, leptons, and force carriers.\" The embeddability arithmetic is CORRECT -- recomputed, genus $(m-1)(n-1)/2 \\le 4$ admits exactly T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5} and excludes T_{2,11}, T_{3,7}, T_{4,5} -- but six knots cannot be \"exactly\" the Standard Model's 6 quarks + 6 leptons + 4 gauge bosons without a stated multiplicity map, and the sibling shell-construction-rules.md reports a +61% error on 60Co, which is not \"reproduces the nuclear chart\".",
+        "notes": "proposed: keep the verified six-knot enumeration verbatim; qualify the correspondence and the chart claim. Structural; not edited."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1548,22 @@
         "reviewed_at": "2026-08-15T10:31:01.112Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8b6fbc3db433",
+          "ts": "222cf3824652"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:36.163Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): read aloud for noun-chain stalls; sentence length and verb placement are conventional for the register.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1586,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:01:36.163Z"
 }

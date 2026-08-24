@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-21T15:59:47Z
+updated_at: 2026-08-23T13:58:35Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -867,3 +867,290 @@ jonesHopf_of_skein: over any CommRing, the cleared Jones axioms (V(unknot)=1, s�
 jonesHopf_at_one: hence V(Hopf)=−2 at s=1 (q=1).
 jonesHopfClassicalLimit_eq_jonesHopfValue_one: the ladder's c₃ constant = jonesHopfValue 1 = −2 — the wired constant is now the classical-point value of the skein-derived Hopf polynomial, no longer a bare def.
 This addresses the c₃-input provability gap flagged in dWeights_at_one: c₃'s value −2 is derived from the Jones skein axioms (the polynomial's DEFINITION applied to the Hopf link), conditional-class style. Still NOT derived: that −2 is the right coupling for the ladder's N3 rung (the c₃ near-match, 3.47%) — that remains the fitted step. What is now proved: −2 IS J_Hopf(1), from the axioms.
+
+
+── c₂ invariant STATED and SETTLED 2026-08-22 (owner: "4 y") ──
+Executes this bean's own FORMALIZE-FIRST NEXT verbatim: *"state the invariant a
+forced D c₂ must satisfy … and check if exact weights + α_D−h²/4 determine it.
+Do NOT run the extractor on z_D."* No extractor run; no number fitted.
+
+ANSWER: the PHASE LEG DOES NOT ENTER, and the WEIGHT LEG DETERMINES IT WHOLLY.
+`Q_beta_categorical_ofPhase_tail_common` already localises every z-dependence to
+the N=1 phase, so α_D−h²/4 is irrelevant to N2_factor. The weights then force
+the coupling, via a quantum-integer identity:
+
+    y_(2,1)^D = 1/[2]_q²        stdWeightD_eq_jones          (already proved)
+    b²        = 1 − y_(2,1)^D   hoefsmitB_sq_eq_one_sub…     (already proved)
+    [2]_q² − [3]_q = 1          NEW
+    ⇒ b²      = [3]_q/[2]_q²    NEW
+
+So under D **the N=2 rung has no free parameter**: b is not an independent
+Hoefsmit input but a function of the forced D weights. Under C the same
+statement is FALSE — b² ≠ 1 − y_(2,1)^C, the C weights are genuinely three-row
+(y_(1³)^C ≠ 0, half-integer powers of q) — so there the coupling is separate
+data. That is a second positive structural reason the tails are D-framed,
+independent of the "b is z-free" argument already recorded above.
+
+LEAN (sorry-free, lean-direct EXIT=0, axioms [propext, Classical.choice,
+Quot.sound] on all three) — QOU/BraidKnot/LadderConventionLocalisation.lean:
+  bracketTwo_sq_sub_bracketThree_eq_one
+  hoefsmitB_sq_eq_bracketThree_div_bracketTwo_sq
+  N2_factor_eq_bracketRatio      (N2 = 1 − ([3]_q/[2]_q²)·ℏ_q⁴)
+
+PROBE: computations/qbeta/qbeta_d_frame_c2_invariant_probe.py, 6/6 exact
+symbolic ℚ(q), no float. Includes the C-side negative (assertions 4–5).
+
+SCOPE — settles c₂ ONLY, closes nothing numerically. c₃/c₄/c₅ values stay
+fitted near-matches; the 41.94×C residual is UNTOUCHED. What is removed is the
+possibility that a D-frame c₂ could be *chosen*. The bean's standing fence —
+any c_k absorbing the residual is a fit until one lands with c₂=−1's standing —
+is unaffected, and this does not supply such a rung.
+
+NON-OVERLAP: sibling PR #5415 works the c₃ f-map (routes A/B refuted, route C
+= analytic Φ_b open). Different rung; no duplication.
+
+── f-map 3-route attack: c₃ NOT forceable from the D trace (2026-08-21) ──
+Dispatched 3 routes; all trace-weight routes fail, C (amplitude) untouched:
+• Route A (bar-odd crossing): REFUTED scope-(b) — bar-odd part of D two-row trace of σ^k vanishes at q=1 (parity), target −2 is bar-even.
+• Route B (Z3 carrier G·D): REFUTED scope-(b) SAME parity — every bar-even-functional × bar-odd-carrier is bar-odd → 0 at q=1.
+• Redirect (bar-even channel): REFUTED scope-(a) genericity — −2 at q=1 hit by 4/4 natural bar-even combos (pins nothing); no bar-even object = full V(Hopf)(q)=−(s+s⁵) (which isn't bar-even).
+UNIFIED INSIGHT: c₃=−2=J_Hopf(1) is a bar-EVEN q=1 SHADOW; no bar-odd construction reaches it, bar-even is generic. D-trace/weights cannot force c₃ in any parity.
+DELIVERABLES: FMapC3ParityExclusion.lean (barOdd_at_one, barOdd_ne_hopf_value_at_one — sorry-free scope-b invariant); fmap_c3_parity_genericity_exclusion.py (19/19); audit 2026-08-21-fmap-c3-parity-genericity-exclusion.md.
+OPEN: only route C (analytic Φ_b/Lawrence-Rozansky amplitude leg) — structurally different (not a parity object), the corpus's real wall; ingredients gathered (Φ_b s_n=B_2n/(2n)!, 4₁ κ-tower) but c_k-reduction not completed. That is where future f-map work goes.
+
+── Bridge lemma 2026-08-22 (branch n24484): phase = counit-trace gap, FORMALIZED ──
+phaseTwice_eq_counit_sub_trace (LadderPhaseMirrorCovariance.lean, lean-direct
+EXIT=0): phaseTwice z h = evalMap h 1 - evalMap h z = eps(Delta) - tr_M(Delta),
+so 2*alpha IS the counit-minus-trace gap. The 'real result' (alpha measures the
+counit->trace transport generator) is now a single named cross-file theorem
+bridging CrossingWeightAffine (evalMap, counit at w=1 / trace at w=z) to the
+ladder phase — previously only prose + two disconnected Lean pieces (evalMap_affine
++ phaseTwice). LOCATES the unjustified step (the cosine QBetaCosResummation) as
+the transport a D re-derivation must supply. SCOPE: locates, closes nothing; the
+41.94xC c_k residual stays anti-fit-fenced. HONEST WALL on gap 3: both structural
+legs forced+formalized, c2 settled, c3 proven un-forceable (f-map), residual
+closure forbidden as fitting. No legitimate derivation move remains that isn't
+already done or a forbidden fit.
+
+
+## 2026-08-22 — the N=3 rung is frame-invariant, and that REMOVES its evidence (PR #5448)
+
+Formalize-first step for N=3, per this bean's own fence. No extractor run, no c_k proposed.
+
+**Constraint.** `decayLadder_zC_not_jones` already proves C != D for s > 1 (the Jones
+pin z*[2]_q = q^2 IS z_D). The complementary half was never recorded: s = 1 IS a root
+of that locus, so **C and D define the same Markov parameter at q = 1**, and by the
+factorisation (s-1)(s^6+s^5+2s^4+s^3+s^2+s+1) at no other positive point.
+
+**Prunes:** c_2 = -1 (ring identity, z-free) and c_3 = J_Hopf(q=1) = -2 (evaluated at
+the one coincidence point) are UNMOVED by the ruling. The extraction, c_4, c_5 are all
+at q_0 != 1 and still need re-deriving.
+
+**This is a negative.** c_3 = -2 surviving is not evidence for it: its only support was
+the 3.47% C-frame near-match, which does not transfer (under D the same value sits
+~4.7e4% from re-extraction). The ruling does not refute the closed form, it removes its
+support. Scope-(a). -974 stays a sensitivity measurement.
+
+LEAN (sorry-free, lean-direct EXIT=0, axioms [propext, Classical.choice, Quot.sound] on
+all six) QOU/QBeta/MarkovZClassicalCoincidence.lean: coincidenceLocus_factor (generic
+CommRing), zCsub_one, zDsub_one, zCsub_eq_zDsub_one, coincidenceLocus_cofactor_pos,
+zCsub_eq_zDsub_iff (SHARPER than the existing s>1 result — also rules out 0<s<1).
+
+PROBE: computations/qbeta/qbeta_zcd_classical_coincidence_probe.py, 7/7 exact ℚ, no
+float. The locus is DERIVED from the numerator of z_C - z_D, not asserted (my first
+draft asserted it, with a comment misstating z_C(s^2) as s/(s^4+1); it is s/(s^2+1)).
+
+STILL OPEN: the extraction path, c_4, c_5.
+
+
+## 2026-08-22 (2) — CORRECTION to my own entry above, and the real S1 residual
+
+Correcting the entry I wrote an hour ago. Found while corpus-grepping c_4/c_5
+before working them.
+
+**tail_common is the primary result, not my q=1 coincidence.**
+QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common (already in corpus,
+sorry-free) proves z reaches the ladder ONLY via the N=1 eigenphase, so the
+whole N=2..5 tail is phase-blind. markovZ' is hardcoded to z_C, so alpha is the
+C-frame phase and is the sole entry point.
+
+**My c_4/c_5 claim was WRONG.** I wrote that they 'must be re-derived, being
+evaluated at q_0 != 1'. They must not — they are in the phase-blind tail. The
+error: reasoning about where a coefficient is EVALUATED instead of whether z
+enters its rung at all.
+
+**What my result does cover (narrower, still needed).** tail_common is about the
+WRITTEN FORM; it says nothing about the PROVENANCE of the constants in it.
+c_3 = J_Hopf(q=1) is a Markov trace, and a Markov trace DOES depend on z — so a
+z-free written form does not establish that -2 survives. The q=1 coincidence
+does. Complementary; neither subsumes the other.
+
+**The -974 is NOT mine and is already known.** qbeta_ladder_required_phase_probe.py
+already records that it is the N=1 phase residual magnified by 1/u^3 (a fixed
+magnifier common to both frames), and warns it 'overstates what it measures'. I
+reconstructed it independently before checking — holding the tail fixed and
+pushing cos(alpha_D - u/2)/cos(alpha_C - u/2) into the N=3 rung gives -974.4319
+vs the recorded -974.43, 1.9e-6 relative — and record that as a cross-check of
+theirs, not as a finding.
+
+**THE REAL S1 RESIDUAL: the tail is fine; the PHASE is the job.**
+alpha = (z-1)h/2 is ASSERTED in both frames and derived in neither (a literal at
+probe_q_beta_operator_valued_N3.py:70). There is no C-frame derivation to port
+to D. Deriving alpha is what tranche S1 actually needs — not a tail re-derivation.
+
+PR #5448 body + probe docstring + Lean header all corrected (commit 16847c7f5b).
+Probe now 8/8 (new assertion 7: markovZ' = z_C exactly).
+
+
+## 2026-08-23 (PR #5536) — branch 1 of the trichotomy is CLOSED, in every convention
+
+Picking up from the 2026-08-22 entry above, which named the real S1 residual:
+*"the tail is fine; the PHASE is the job"*, and from `EigenphaseCarrierVacuity.lean`,
+which reduced "where can a derivation of `α` live" to a trichotomy:
+
+1. `M` in the braid image — called excluded there, **by transcendence of
+   `2cos((z−1)h/2)` over `ℚ(q,z)`**. That was a docstring assertion, unproved,
+   and scoped to convention C.
+2. `M` arbitrary — circular (`rotationOfPhase` satisfies it for any `α`).
+3. `M` a holonomy of an independently-defined connection (KZ / Kohno–Drinfeld).
+
+**Branch 1 is now PROVED, and the proof is convention-independent.**
+`QOU/QBeta/BraidImageEigenphaseExclusion.lean` (sorry-free, lean-direct EXIT 0,
+axioms `[propext, Classical.choice, Quot.sound]` on all seven declarations):
+
+  `no_laurent_of_surjective_nonpos` — if `α` attains every non-positive real on
+      `[1,∞)`, then `2cos(α ·)` is no Laurent polynomial `P(s)/s^N` there.
+      `cos` hits `+1` at infinitely many points ⇒ `P = C 2 * X^N`; and `−1` at
+      infinitely many ⇒ `P = C (−2) * X^N`; compare `coeff N`.
+  `alphaC_le`   — `α_C(s) ≤ −(s−1)/4` for `s ≥ 1`  (unbounded BELOW)
+  `alphaD_ge`   — `α_D(s) ≥ s−3`      for `s ≥ 3`  (unbounded ABOVE)
+  `no_braid_character_C` / `_D` — branch 1 closed in both frames; D via `cos`
+      evenness applied to `−α_D`.
+
+**Why it is elementary rather than a transcendence argument.** A braid word's
+character is a Laurent polynomial and `|2cos α| ≤ 2` always; a Laurent
+polynomial bounded on `(0,∞)` is constant. That kills any braid-image
+realisation whose phase is non-constant — and **it never reads `z`'s formula**.
+So the exclusion is not a fact about C: re-picking `z` cannot repair the
+D-frame ladder inside the braid picture. Scope-(b), citing a proved invariant.
+
+Probe `computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py`,
+12/12 exact (sympy ℚ(s) + `Fraction`; one 60-dps mpmath readout; no float64):
+
+  det ρ(σ_i) = −1 identically in q; tr ρ(w) ∈ ℤ[q,q⁻¹] over all 1364 words of
+  length ≤ 5; `1/2 − z_C = (s−1)²/(2(s²+1))`; `α_C(10) = −9009/200 < −4π`;
+  `α_D(10) = 9899000001/2000200 > 4π`.
+
+**Concrete, not merely asymptotic.** The canonical single-wrap candidate
+`ρ(σ₁σ₂)` has `det = 1` and `tr = −1` **identically in q** — eigenphase `2π/3`
+at every substrate value — against `2cos(α_C(q₀)) = 1.99726`,
+`2cos(α_D(q₀)) = 1.99836`. A q-independent phase cannot be a ladder rung.
+
+**Objection I raised against myself, and closed.** A *normalised* character is a
+rational function, and a bounded rational function need not be constant
+(`1/(1+q²)`) — an apparent escape. It is not one: `det M = 1` pins the
+normalisation. For `M = c·ρ(w)`, `det M = c²·(−1)^{e(w)}`, so `det M = 1` forces
+`e(w)` even and `c = ±1` (assertion 11: `−c² = 1` has no real solution). No
+q-dependent normalisation survives.
+
+**Two limits, stated so this is not over-read.** (i) It excludes a FUNCTIONAL
+identification on the substrate branch, not a numerical coincidence at `q₀`.
+(ii) The Laurent shape of `tr ρ(w)` is imported from Geck–Pfeiffer as the shape
+of the hypothesis, checked exactly over 1364 words but not proved in Lean.
+
+### STILL OPEN — and this is the honest state of S1
+
+**No D-frame ladder is stated, and none is derivable from what is now known.**
+`α` remains derived in neither convention. Branch 2 is circular; branch 1 is
+closed; **branch 3 (KZ / Kohno–Drinfeld holonomy) is untouched and is the only
+remaining place a derivation of `α` can live.** Nothing here proposes a `c_k`;
+`−974` stays a sensitivity measurement and is wired nowhere.
+
+What branch 3 would have to deliver, stated concretely so the next agent can
+start cold: a connection defined **without reference to `α`**, whose monodromy
+reproduces the Hecke braiding on `V_(2,1)`, and whose holonomy angle along a
+specified path evaluates to `(z−1)h/2` — with `z` the D parameter. It escapes
+branch 1 precisely because a holonomy is transcendental, and escapes branch 2
+because the connection is prior to the phase. **Do not search for a corrective
+term that lands `α_D` near the required window; that is a fit** (the required
+window is ±1.09e-5 rad and `z_D` misses by 1.19e-2 rad — see the #5210 entry).
+
+
+### Correction to my own entry above, same day — the closure is NARROWER than I first wrote
+
+Devil's-advocate pass on my own result. The entry above says branch 1 is
+"closed"; that is true **for the case branch 1 actually states**, and I should
+have named the boundary the first time.
+
+`EigenphaseCarrierVacuity`'s branch 1 is a **2 × 2** matrix on `V_(2,1)` with
+`trace = 2cos α` and `det = 1` — a *character*. That is exactly what
+`no_braid_character_C` / `_D` exclude, so the closure is real.
+
+**But if `α` were one eigenphase among several of a LARGER braid-image matrix,
+the argument does not extend.** `2cos α` is then a sum of two eigenvalues — an
+**algebraic** function of `q`, root of a polynomial with Laurent coefficients,
+not a Laurent polynomial itself. And boundedness does not kill algebraic: `q/(q+1)`
+is bounded on `(0,∞)` and non-constant. That sub-case still needs the
+transcendence argument the docstring asserted.
+
+**Net effect on the corpus, stated precisely:** one unproved assertion becomes
+*(proved half: the character case, elementary, every convention)* + *(still
+assumed half: the eigenvalue-pair case, still needing transcendence)*, with the
+boundary named. That is strictly better bookkeeping than before, and it is less
+than "branch 1 is closed" unqualified. Recorded in the Lean header (§"Three
+limits"), the probe docstring, and registry §9g.
+
+
+---
+
+## 2026-08-23 — branch 1 of the trichotomy is now closed IN FULL
+
+Branch `claude/b3nk-decay-convention-c-excluded-2026-08-23` (PR #5544).
+
+The 2026-08-15 pass closed branch 1 only for the **character** case and named
+the boundary honestly: the **eigenvalue-pair** sub-case was left open, "still
+needing the transcendence argument" (§9g "Three limits" (i)).
+
+**It does not need one.** Boundedness was the wrong invariant to push. The
+hypothesis that pass already proved — `alpha` attains EVERY non-positive real
+on [1,inf) (`alphaC_surjective_nonpos` / `alphaD_neg_surjective_nonpos`) — is
+far stronger than boundedness: each level set `{s : 2cos alpha(s) = c}` for
+`c` in [-2,2] is INFINITE, and infinitely many solutions kill a polynomial
+relation of ANY degree, Laurent or algebraic.
+
+`QOU.QBeta.BraidImageEigenphase.coeffs_zero_of_surjective_nonpos`
+(BraidImageEigenphaseAlgebraic.lean, sorry-free, axioms [propext,
+Classical.choice, Quot.sound]): if `sum_{j<=d} p_j(s)*(2cos alpha s)^j = 0` on
+[1,inf), then EVERY `p_j = 0`. Three applications of "a polynomial with
+infinitely many roots is zero" — freeze Y at c, freeze X at x, read off
+coefficients.
+
+Covers the eigenvalue-pair case because a sum of two eigenvalues of a matrix
+over QQ(s) is algebraic over QQ(s) (pairwise-sum resolvent; coefficients are
+symmetric functions, so they stay in the base field) — verified exactly at 3x3
+and 4x4.
+
+**Subsumption machine-checked, not asserted:** `no_laurent_of_algebraic`
+re-derives the predecessor `no_laurent_of_surjective_nonpos` as the `d = 1`
+case (`p_0 = -P`, `p_1 = X^N`).
+
+Probe `computations/qbeta/qbeta_eigenphase_algebraic_exclusion_probe.py`, 4/4,
+sympy-exact over QQ(s) + mpmath 60 dps, no float64. A1 confirms the
+strengthening was NECESSARY: the cited counterexample q/(q+1) really is
+bounded, non-constant and algebraic, so the Laurent argument genuinely does
+not extend.
+
+## What this does NOT do — the bean stays OPEN
+
+- Does **not** derive `alpha`, in either convention.
+- Does **not** state a D-frame ladder. The re-derivation this bean is actually
+  about is untouched.
+- Branch (3) — a holonomy of an independently-defined KZ / Kohno-Drinfeld
+  connection — is untouched, and with branch (1) now closed in full and branch
+  (2) circular, it is the **ONLY** place a derivation of `alpha` can live.
+  That is the next front.
+- `c_3 ~ -974` remains a sensitivity measurement, wired nowhere.
+
+Scope-(b): structural exclusion citing a proved invariant. The argument never
+reads `z`'s formula, so it holds for every Markov parameter with unbounded
+phase — C and D alike.

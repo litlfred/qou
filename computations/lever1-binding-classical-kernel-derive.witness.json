@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T12:04:57.596637+00:00",
-  "commitSha": "ad645f313de23c8ddca7e42f9ce77f36bef70722",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:10:19.293673+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "classical_kernel_derived_variable_coeff",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 47,
+  "durationMs": 56,
   "computation": "lever1-binding-classical-kernel-derive",
   "scriptFile": "lever1_binding_classical_kernel_derive.py",
-  "scriptHash": "f2d1ec8db5de",
-  "scriptCommitSha": "13a415531f1e98794c595019719dd29e49516e59",
+  "scriptHash": "ad016a181cc1",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lever1_binding_classical_kernel_derive.py"
+    ],
+    "reproduce": "python3 -u computations/lever1_binding_classical_kernel_derive.py"
   },
   "description": "DERIVES the exact classical (q=1) binding kernel (lever-1/z2bn). q→1: S(n)=Σ_{λ⊢n}f^λ=I(n) (RSK/Burnside=Identity I, telephone/A000085). a_D^(n)=I(n)/n then satisfies the EXACT variable-coefficient kernel a_D(n)=((n−1)/n)a_D(n−1)+((n−1)(n−2)/n)a_D(n−2) (from the proved telephone recurrence; Lean-proved sorry-free in BindingClassicalKernel.aDClassical_variable_coeff) — super-exponential, the fixed-τ depth-2 being its n≤4 shadow. So τ is NOT a fit (exact q-rational of derived anchors); the fixed-τ MODEL is n≤4-effective. q-deformation: S(n)=S(n−1)+[n−1]_q S(n−2)+D(n), c_3=[2]_q exact, Habiro tail D(n) growing (q→1⇒D→0). Closes the classical-kernel gap modulo Identity I (keystone P1–P5). Scope-(a), no wiring.",
   "data": {

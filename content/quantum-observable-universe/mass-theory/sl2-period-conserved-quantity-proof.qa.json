@@ -1201,6 +1201,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.374Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "'it lies on no fixed conic and obeys no det = 1 recurrence' names two specific excluded structures; substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1220,6 +1235,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.420Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Substitute, expand, collect, induct, then the fork reading; a conventional proof shape."
       }
     ],
     "trap-em-dash": [
@@ -1239,6 +1269,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 178 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.462Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "One dash, appending the gloss 'geometric growth, bounded ratio' to the limit statement."
       }
     ],
     "trap-triples": [
@@ -1258,6 +1303,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 178 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.504Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1277,6 +1337,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.547Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Ends on the forward pointer to the q-difference operator and a QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1296,6 +1371,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.589Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "The Lean-tactic sentence reports what discharges the goal; that is provenance, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1315,6 +1405,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.635Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "The Fork reading restates the parent's fork in the proof's own variables, which is where the quantitative content (a_{n+1}/a_n -> e^theta versus -> infinity) actually lands."
       }
     ],
     "trap-performed-warmth": [
@@ -1334,6 +1439,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.681Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1353,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.725Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No unqualified maxima."
       }
     ],
     "trap-nonspeakable": [
@@ -1372,6 +1507,22 @@
         "reviewed_at": "2026-08-15T10:31:00.754Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.766Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Short steps around a displayed computation.",
+        "notes": "VERIFIED LINE BY LINE. The expansion is right term by term: (tau a_{n+1} - a_n)^2 - tau(tau a_{n+1} - a_n)a_{n+1} + a_{n+1}^2 = (tau^2 a_{n+1}^2 - 2 tau a_{n+1}a_n + a_n^2) - (tau^2 a_{n+1}^2 - tau a_{n+1}a_n) + a_{n+1}^2 = a_{n+1}^2 - tau a_{n+1}a_n + a_n^2 = H_n, and sympy confirms H_{n+1} - H_n simplifies to 0. Sp(2) = SL_2, the companion matrix [[0,1],[-1,tau]] with det 1, and the hyperbolic roots e^{+-theta} at tau = 2 cosh theta all check. The fork reading is correctly scoped to a constant-tau det = 1 recurrence. ONE COSMETIC ITEM: the Lean declaration names QOU.Mass.sl2Invariant_succ and QOU.Mass.sl2Invariant_eq_zeroth are hyperlinked to the CONTENT label #prop:sl2-period-conserved-quantity rather than to the Lean sibling, so the link text and the link target name different objects."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1394,5 +1545,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:56:40.766Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: 1-s20-0040938387900097-main
-doc_title: "STATE MODELS AND THE JONES POLYNOMIAL (f&riced in recisrdfirm I Srpremher 1986) $1. INTRODIJ’CTION IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. "
+doc_title: "State models and the Jones polynomial"
 section_id: sec-000-references
 section_title: "References"
 section_number: null
 pages: 13-13
 source_pdf: 1-s2.0-0040938387900097-main.pdf
 source_sha256: dae76f3434834382
-doc_brief: "STATE MODELS AND THE JONES POLYNOMIAL (f&riced in recisrdfirm I Srpremher 1986) $1. INTRODIJ’CTION IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state — 1"
+doc_brief: "State models and the Jones polynomial — 1 sections: References"
 ---
 I. R. J. BAXTER: Exacrly solced models in statistical mechanics. Academic Press, London, 1982. 
 2. J. S. BIR\I.~s: Jones braid-plat formulae, and a new surgery triple, to appear. 

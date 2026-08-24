@@ -7,7 +7,7 @@ section_number: 6
 pages: 28-29
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
-doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+doc_brief: "Quantum hyperbolic geometry — 19 sections: Introduction; Universal QHG; Building blocks"
 duplicate_of: "agt-v7-n2-p13-s"
 ---
 Assume that W is a closed oriented 3-manifold, and that L is a link in W with a framed part LF and

@@ -1771,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.354Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (PSLQ independence of the antisymmetric depth-3 generator); the quoted 0.955723... recomputed and confirmed consistent with the sibling orbit-sum values. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1790,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.387Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (PSLQ independence of the antisymmetric depth-3 generator); the quoted 0.955723... recomputed and confirmed consistent with the sibling orbit-sum values. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1809,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.421Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (PSLQ independence of the antisymmetric depth-3 generator); the quoted 0.955723... recomputed and confirmed consistent with the sibling orbit-sum values. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1828,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.454Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (PSLQ independence of the antisymmetric depth-3 generator); the quoted 0.955723... recomputed and confirmed consistent with the sibling orbit-sum values. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1847,6 +1907,23 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.486Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'The depth-3 surface for $\\mathbb{Q}(\\zeta_5)$ reduces cleanly to this single, certified real number.' is a placed closing flourish -- 'cleanly' and 'certified' both do rhetorical rather than mathematical work, and a PSLQ non-detection certifies nothing beyond its coefficient-norm bound.",
+        "notes": "proposed: delete, or state plainly: 'Subject to that bound, $X$ is the only depth-3 generator over $\\mathbb{Q}(\\zeta_5)$ not reducible to $\\zeta(3)$ and Tate periods.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1866,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.519Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (PSLQ independence of the antisymmetric depth-3 generator); the quoted 0.955723... recomputed and confirmed consistent with the sibling orbit-sum values. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1885,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.552Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (PSLQ independence of the antisymmetric depth-3 generator); the quoted 0.955723... recomputed and confirmed consistent with the sibling orbit-sum values. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1904,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.598Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (PSLQ independence of the antisymmetric depth-3 generator); the quoted 0.955723... recomputed and confirmed consistent with the sibling orbit-sum values. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1923,6 +2045,23 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.677Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'the negative PSLQ result provides the strongest unconditional canonical evidence that $X$ constitutes a genuinely independent depth-3 period' -- 'strongest' is unsupported (no comparison class is given) and 'canonical' is a token substitution for 'numerical'.",
+        "notes": "proposed: 'the negative PSLQ result is unconditional numerical evidence that $X$ is an independent depth-3 period, within the stated coefficient-norm bound'. Reported separately: the italic statement says PSLQ 'certif[ies] that the difference admits no Q-linear relation', which asserts non-existence -- PSLQ can only report that none was found up to norm 10^8."
       }
     ],
     "trap-nonspeakable": [
@@ -1942,6 +2081,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e0896f629fef",
+          "ts": "b68a6d6ec899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:49.719Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (PSLQ independence of the antisymmetric depth-3 generator); the quoted 0.955723... recomputed and confirmed consistent with the sibling orbit-sum values. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1965,5 +2119,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:49.719Z"
 }

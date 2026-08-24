@@ -34,8 +34,10 @@ import os
 import subprocess
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 CODATA_ALPHA_INV = mp.mpf("137.035999084")
 SIGMA_ALPHA_INV = mp.mpf("0.000000021")          # CODATA 2018 σ on 1/α

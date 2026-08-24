@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.499Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'The trace is *not* multiplicative in beta, but it is a sum of sign-flip-invariant per-eigenline contributions' and 'the words differ in *interface type*, not just generator signs' are both the argument itself."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.534Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 356 w: read in full (crystal-limit sign-blindness -> per-eigenline invariance -> character sum -> Plancherel weight), plus a conditional corollary and an explicit caveat."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "5 stylistic spaced dashes in 261 words (1.92/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.566Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Three spaced dashes, all parenthetical or scope-marking ('Caveat - this corollary is *not* a statement about physical 3H vs 3He'). No density problem in 356 w."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 261 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.601Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 356 w: read in full (crystal-limit sign-blindness -> per-eigenline invariance -> character sum -> Plancherel weight), plus a conditional corollary and an explicit caveat."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.635Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 356 w: read in full (crystal-limit sign-blindness -> per-eigenline invariance -> character sum -> Plancherel weight), plus a conditional corollary and an explicit caveat."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.671Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'Note that mu^lambda_T is *not* the character chi^lambda - it is the eigenvalue product on the line through T' is plain mathematical 'note that' plus load-bearing disambiguation of two objects that would otherwise be confused. Passes per the skill's explicit carve-outs."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1563,22 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.708Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Block ends on a limitation ('The legacy disjoint-product witness ... artificially erases this isospin asymmetry'), i.e. a scope narrowing, not a restatement.",
+        "notes": "Two token-substitution sites and a 'fifty decimal digits' precision over-claim reported to the coordinator; both are rigor findings, not trap constructions."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.739Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 356 w: read in full (crystal-limit sign-blindness -> per-eigenline invariance -> character sum -> Plancherel weight), plus a conditional corollary and an explicit caveat."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.776Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 356 w: read in full (crystal-limit sign-blindness -> per-eigenline invariance -> character sum -> Plancherel weight), plus a conditional corollary and an explicit caveat."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7721379d1f8f",
+          "ts": "4b05ba4b4a5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.809Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 356 w: read in full (crystal-limit sign-blindness -> per-eigenline invariance -> character sum -> Plancherel weight), plus a conditional corollary and an explicit caveat."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1703,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:56:38.809Z"
 }

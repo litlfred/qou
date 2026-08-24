@@ -1771,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.969Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1790,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.014Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1809,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 85 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.061Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No structural dashes."
       }
     ],
     "trap-triples": [
@@ -1828,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 85 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.139Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "The Archimedean-specialisation sentence lists three readouts, but they are the three objects the R->R realisation actually touches."
       }
     ],
     "trap-closing-aphorism": [
@@ -1847,6 +1907,21 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.216Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No maxim."
       }
     ],
     "trap-meta-commentary": [
@@ -1866,6 +1941,23 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.268Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "severity": "major",
+        "evidence": "The block-final clause narrates the document's own bookkeeping instead of stating a fact: \"...the archimedean (R-valued) readouts of the generic Markov-trace mass data; **the $R\\to\\mathbb{R}$ realisation is acknowledged here**.\" \"Is acknowledged here\" announces that an acknowledgement is being made; the acknowledgement is the sentence itself.",
+        "notes": "NOT fixed. The same sentence needs an author decision on a second defect (it names a \"categorical mass-squared\" that appears nowhere else in the block — the proposition is about the mass, not its square), so a punctuation-level trim would leave the block in a worse half-corrected state. Proposed fix: \"**Archimedean specialisation.** The categorical mass, the hyperbolic volume $\\mathrm{vol}$, $\\hbar$, and the descended trace are the archimedean ($\\mathbb{R}$-valued) readouts of the generic Markov-trace mass data.\" Also: the sibling prop:hecke-markov-transition ends with a near-identical \"Archimedean specialisation\" paragraph whose \"What follows...\" has no referent — the two read as sweep-inserted boilerplate and should be checked as a class."
       }
     ],
     "trap-thesis-restatement": [
@@ -1885,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.304Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No closing restatement of the proposition."
       }
     ],
     "trap-performed-warmth": [
@@ -1904,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.342Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1923,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.390Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1942,6 +2079,23 @@
         "reviewed_at": "2026-08-15T10:31:00.776Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6329abb9bfbb",
+          "ts": "04850df14bd8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.457Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "severity": "minor",
+        "evidence": "\"The categorical mass-squared, the hyperbolic volume $\\mathrm{vol} : \\mathbb{R}$ and $\\hbar : \\mathbb{R}$, and the descended trace are the archimedean ($\\mathbb{R}$-valued) readouts of the generic Markov-trace mass data\" is a three-item subject list carrying Lean-style TYPE ASCRIPTIONS (\"vol : R\", \"hbar : R\") into narrative prose; it parses on the page and stalls aloud, and a reader cannot say \"vol colon R\" in running text.",
+        "notes": "NOT fixed (bundled with the meta-commentary fix above). Proposed fix as given under trap-meta-commentary: drop the ascriptions and let the \"(R-valued)\" gloss carry the typing."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1965,5 +2119,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:19:05.457Z"
 }

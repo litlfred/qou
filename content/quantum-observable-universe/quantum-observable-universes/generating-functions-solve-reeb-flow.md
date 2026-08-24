@@ -4,4 +4,4 @@ The functions $\exp_q$, $\mathrm{Li}_2^q$, and the categorical Fourier transform
 2. The categorical Fourier transform diagonalises the $q$-heat equation $\partial_t u = -\Delta_q u$ across Peter–Weyl isotypic components.
 3. $\mathrm{Li}_2^q$ evaluates the volumetric expansion of the Reeb-heat flow. Under the archimedean realisation $\tau_\infty$, it produces the Bloch–Wigner dilogarithm.
 
-These functions are not combinatorial conveniences; they are the unique algebraic objects in the Habiro completion satisfying the categorical evolution equations.
+These three functions are the unique algebraic objects in the Habiro completion satisfying the categorical evolution equations.

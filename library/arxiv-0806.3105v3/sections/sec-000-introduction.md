@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0806.3105v3
-doc_title: "KNOTS AND PREONS Robert J. Finkelstein"
+doc_title: "Knots and preons"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 2-3
 source_pdf: 0806.3105v3.pdf
 source_sha256: a37b4f2e96365d30
-doc_brief: "KNOTS AND PREONS Robert J. Finkelstein — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that"
+doc_brief: "Knots and preons — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with"
 ---
 One proposal for going beyond the standard theory of elementar y particles depends on the
 use of the quantum groups. A particular form of this proposal, whic h exploits the fact

@@ -61,7 +61,7 @@ The categorical face sets $G$ as the universal-residue prefactor of the deep-tow
 
 **Empirical anchor.**
 
-Newton's constant in SI units ($G_{\mathrm{Newton}} \approx 6.674 \times 10^{-11}\, \mathrm{m^3\, kg^{-1}\, s^{-2}}$) establishes the Planck length, mass, and time triple via $\ell_P = \sqrt{\hbar G / c^3}$, $m_P = \sqrt{\hbar c / G}$, and $t_P = \sqrt{\hbar G / c^5}$. In QOU units, the conversion $(\hbar_q / c_q)^2 = (q-1)^4/q^2$ absorbs these quantities. The SI value of $G$ functions strictly as the human-scale rescaling that maps $\ell_P, m_P, t_P$ onto metres, kilograms, and seconds. The empirical $G_{\mathrm{Newton}}$ therefore enters as a unit-system datum, not as a fit parameter on $q$. The lepton-mass cross-check ([substrate consistency window](#prop:substrate-consistency-window)) fixes the substrate value $q_0 = 1.109978595554181\ldots$ (50 dps), independent of gravity.
+Newton's constant in SI units ($G_{\mathrm{Newton}} \approx 6.674 \times 10^{-11}\, \mathrm{m^3\, kg^{-1}\, s^{-2}}$) establishes the Planck length, mass, and time triple via $\ell_P = \sqrt{\hbar G / c^3}$, $m_P = \sqrt{\hbar c / G}$, and $t_P = \sqrt{\hbar G / c^5}$. In QOU units, the conversion $(\hbar_q / c_q)^2 = (q-1)^4/q^2$ absorbs these quantities. The SI value of $G$ functions strictly as the human-scale rescaling that maps $\ell_P, m_P, t_P$ onto metres, kilograms, and seconds. The empirical $G_{\mathrm{Newton}}$ therefore enters as a unit-system datum, not as a fit parameter on $q$. The lepton-mass cross-check ([substrate consistency window](#prop:substrate-consistency-window)) fixes the substrate value $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps), independent of gravity.
 
 **Summary.**
 

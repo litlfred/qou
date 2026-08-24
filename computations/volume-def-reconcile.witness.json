@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:29:01.571778+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T07:52:34.698683+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "volume-def-reconcile",
   "scriptFile": "volume_def_reconcile.py",
-  "scriptHash": "7d6377a5e502",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "d17d42f2c102",
+  "scriptCommitSha": "7768c9d262ae5510c126e523f063aabfe3474f17",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,52 +19,62 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/volume_def_reconcile.py"
+    ],
+    "reproduce": "python3 -u computations/volume_def_reconcile.py"
   },
   "description": "Reconciliation of the two Borromean-volume definitions (8G vs ln|Vol_q|). Determines they are the SAME post-τ volume Vol(K) linked by the Kashaev Volume Conjecture; the keystone audit's 5090× was a cross-τ category comparison. No fit.",
   "schema": "volume-def-reconcile/1",
   "compute_dps": 70,
-  "q0": "1.1099785955573347199",
-  "hbar_q": "0.099081726438258959082",
+  "q0": "1.1099785827513808076",
+  "hbar_q": "0.099081716044258507839",
   "definition_A_production": {
     "name": "classical hyperbolic Vol(𝓑₃) = 8·G",
     "value": "7.3277247534177521204",
     "chain_stage": "POST-τ (archimedean ℝ). topological-mass-formula Step 1: Re tr(τ̂_desc·Hol)=Vol(K), CS/volume corr.",
-    "provenance": "_li_2_q_util.vol_density_borromean vol_b3=8*mp.catalan; Adams 1985 SnapPy table."
+    "provenance": "_li_2_q_util.per_knot_density_borromean vol_b3=8*mp.catalan; Adams 1985 SnapPy table."
   },
   "definition_B_vol_through_tau": {
     "name": "Vol(K)=τ_arch(Vol_q)=ln|Vol_q|, Vol_q=∏V̂_i ∈ ℤ[q^½]",
     "chain_stage": "Vol_q is PRE-τ algebraic; τ_arch=ln|·| is the archimedean EXIT. The result ln|Vol_q| is POST-τ ℝ.",
     "kvc_bridge": "kashaev-volume-conjecture.md: Vol_hyp = 2π·lim log|J_N|/N at roots of unity = regulator of a Bloch-group class. prop:vol-through-tau asserts this EQUALS the classical Vol(K)=8G.",
-    "normalized_trM_at_q0": "0.998562163197",
-    "ln_normalized_trM_at_q0_WRONGSTAGE": "-0.00143887148184",
+    "normalized_trM_at_q0": "0.998562163837",
+    "ln_normalized_trM_at_q0_WRONGSTAGE": "-0.00143887084155",
     "note": "The keystone audit's −0.00144 = ln|trM_norm(q₀)| logs the PRE-τ algebraic number at q₀ — a category error, not the τ_arch/Kashaev regulator."
   },
   "exact_functional_relation": {
-    "exp_ln_trM_norm": "0.998562163197",
-    "trM_norm": "0.998562163197",
+    "exp_ln_trM_norm": "0.998562163837",
+    "trM_norm": "0.998562163837",
     "ln_8G": "1.99166506572",
-    "ratio_8G_over_abs_ln_trM_norm": "5092.6889",
+    "ratio_8G_over_abs_ln_trM_norm": "5092.6911",
     "is_log_or_exp_relation": "NO. exp(ln_trM_norm)=trM_norm≈1 (round-trips to the trace, not 8G); ln(8G)≈1.99 (not ≈ln_trM_norm). 8G is NEITHER log NOR exp of ln_trM_norm. The '5090×' = 8G / |ln(trM_norm(q₀))| is the ratio of a POST-τ volume to ln of a PRE-τ algebraic number at q₀ — a cross-functor (category) comparison, not one functional map."
   },
   "the_5090x_explained": {
-    "ratio_8G_over_abs_ln_trM_norm": "5092.6889",
+    "ratio_8G_over_abs_ln_trM_norm": "5092.6911",
     "interpretation": "8G / |ln(trM_norm(q₀))| = 7.328 / 0.00144 ≈ 5090. NOT a log↔exp relation (see exact_functional_relation). It is the magnitude of a post-τ volume over ln of a pre-τ number — cross-functor compare."
   },
   "raw_m_p_readings_no_fit": {
     "production_8G_over_hbar2_times_linking_weight": {
-      "m_avg_MeV": "966.0496246",
-      "err_vs_codata_pct": "2.88959",
+      "m_avg_MeV": "966.0498245",
+      "err_vs_codata_pct": "2.88961",
       "stage": "POST-τ classical Vol (8G) × H₄ linking_weight (Def A, production)"
     },
     "8G_over_hbar2_bare_lw1": {
-      "m_avg_MeV": "381.4187386",
+      "m_avg_MeV": "381.4188187",
       "err_vs_codata_pct": "-59.3768",
       "stage": "POST-τ classical Vol (8G) alone, linking_weight=1"
     },
     "lnTrMnorm_over_hbar2_WRONGSTAGE": {
-      "m_avg_MeV": "-0.07489535485",
+      "m_avg_MeV": "-0.07489533724",
       "err_vs_codata_pct": "-100.008",
       "stage": "ln of PRE-τ normalized trace at q₀ — CATEGORY ERROR (the keystone audit's −0.00144 reading; gives negative mass)"
     }
@@ -73,6 +83,6 @@
   "verdict": "(a) SAME OBJECT ACROSS τ — the '5090×' is a CROSS-FUNCTOR CATEGORY ERROR, not a numerical contradiction. Definition A (8G) is the POST-τ archimedean volume Vol(K)=Re tr(τ̂_desc·Hol) [topological-mass-formula Step 1, Chern–Simons/volume correspondence]. Definition B (ln|Vol_q|) is τ_arch applied to the PRE-τ algebraic generator Vol_q=∏V̂_i; prop:vol-through-tau + kashaev-volume-conjecture assert these are EQUAL by the Kashaev Volume Conjecture (the regulator of a Bloch-group class landing in ℝ as the hyperbolic volume). So ln|Vol_q| SHOULD equal 8G — they are the same Vol(K). The keystone audit's −0.00144 took ln of the q₀-evaluated NORMALIZED trace (≈0.9986), i.e. the PRE-τ algebraic number specialized at q₀ — NOT the τ_arch regulator/Kashaev-limit (an N→∞ asymptotic at roots of unity). Logging a pre-τ number is the category error. PRODUCTION USES THE CORRECT STAGE: the post-τ classical Vol(K)=8G is exactly what the KVC says ln|Vol_q| evaluates to. No volume-definition bug.",
   "residual_open": "Not the volume DEFINITION (reconciled here). The genuine open items per keystone §5: (i) the KVC itself (axiomatized as VolumeConjecture class — proved only for 4₁, some torus/pretzel); (ii) the per-crossing V̂_i factorization compute for atomic braids; (iii) the H₄ linking_weight 2.53 vs CODATA-λ 2.46 residual (+2.89%) = the separate λ_scale-absorbed item, NOT a volume-definition inconsistency.",
   "discipline": "No fit, no fabrication. m_p readings are raw at each stage; we report whichever follows, not the one nearest CODATA.",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

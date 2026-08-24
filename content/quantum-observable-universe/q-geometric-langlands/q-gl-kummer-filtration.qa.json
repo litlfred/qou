@@ -1806,6 +1806,22 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.917Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + display + 4 numbered items); all ten judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1825,6 +1841,22 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.957Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + display + 4 numbered items); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1844,6 +1876,22 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 128 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.996Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + 4 numbered items); all ten judged."
       }
     ],
     "trap-triples": [
@@ -1863,6 +1911,22 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 128 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.035Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + 4 numbered items); all ten judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1882,6 +1946,23 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.074Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Block-final slogan: 'The correspondence is intrinsically a non-torsion phenomenon.' - a quotable one-liner restating the sentence immediately before it.",
+        "notes": "fix applied: sentence deleted; item 4's preceding sentence ('L_q is well-defined as a G_m-family on G_m^nt = G_m \\ mu_inf') carries the content unchanged."
       }
     ],
     "trap-meta-commentary": [
@@ -1901,6 +1982,22 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.114Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + display + 4 numbered items); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1920,6 +2017,23 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.153Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Same sentence: item 4's first sentence already states the non-torsion domain precisely; the second restates it in slogan form and adds nothing.",
+        "notes": "fix applied - sentence deleted."
       }
     ],
     "trap-performed-warmth": [
@@ -1939,6 +2053,22 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.192Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + 4 numbered items); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -1958,6 +2088,22 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.232Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + 4 numbered items); all ten judged."
       }
     ],
     "trap-nonspeakable": [
@@ -1977,6 +2123,22 @@
         "reviewed_at": "2026-08-15T10:31:00.907Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9d44a775c4cf",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.268Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + 4 numbered items); all ten judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2000,5 +2162,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:48.268Z"
 }

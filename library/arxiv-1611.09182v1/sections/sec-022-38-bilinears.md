@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-022-38-bilinears
 section_title: "Bilinears"
 section_number: 3.8
 pages: 25-26
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Bilinears and other scalars can now be built by combining the various ideal representations,
 whose SL(2, C) factors, L, ﬁt together like lock and key. Noting that ~L = L−1, let us

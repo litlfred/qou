@@ -1,13 +1,13 @@
 ---
 doc_id: 0310279v5
-doc_title: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO"
+doc_title: "Stabilization in the braid groups I: MTWS"
 section_id: sec-012-3-introducing-braid-foliations
 section_title: "Introducing braid foliations"
 section_number: 3
 pages: 26-26
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
-doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
+doc_brief: "Stabilization in the braid groups I: MTWS — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 Theorem 2 is about the relationship between two closed braid diagrams which represent
 the same link. However, the method we use to prove it will not be in the setting of link

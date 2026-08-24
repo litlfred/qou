@@ -64,7 +64,7 @@ that is where the LP is well-posed.
 > the LP is degenerate rather than well-posed. Its rank is the surviving
 > $\sum \dim^2 = C_n$:
 >
-> | $n$ | $d = n!$ (as tabled) | $\operatorname{rank} G = C_n$ | corank |
+> | $n$ | $d = n!$ (as tabled) | $\mathrm{rank} G = C_n$ | corank |
 > |:---:|:---:|:---:|:---:|
 > | $2$ | $2$   | $2$  | $0$ |
 > | $3$ | $6$   | $5$  | $1$ |
@@ -74,7 +74,7 @@ that is where the LP is well-posed.
 > So the pentaquark row is a $42$-dimensional program, not a $120$-dimensional
 > one, and the tetraquark row is $14$, not $24$. The optimal vertex $x^*$ and the
 > active set $\mathcal{A}$ are well defined on the quotient; on $H_n$ the LP has
-> a $\operatorname{corank} G$-dimensional space of optima differing by radical
+> a $\mathrm{corank} G$-dimensional space of optima differing by radical
 > directions the trace cannot see. Proved in
 > [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)
 > (`gram_det_eq_zero_of_radical_combination`, `RankAccounting`).

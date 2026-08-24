@@ -1,13 +1,13 @@
 ---
 doc_id: 0310279v5
-doc_title: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO"
+doc_title: "Stabilization in the braid groups I: MTWS"
 section_id: sec-018-41-tile-types-in-pa
 section_title: "Tile types in PA"
 section_number: 4.1
 pages: 39-46
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
-doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
+doc_brief: "Stabilization in the braid groups I: MTWS — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 Our work begins with the two closed braid representatives X+ and X− ofX . Our
 basic construction in Section 2 gave us the immersed annulusCA =A+∪A− and the

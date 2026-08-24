@@ -2632,6 +2632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.500Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read. \"Evaluation at q_0 is a downstream specialization and is not used in the derivation\" is a factual scope statement (temporal/scope false-positive class), not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2651,6 +2666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.536Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "No setup-then-reframe construction."
       }
     ],
     "trap-em-dash": [
@@ -2670,6 +2700,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 140 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.572Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2689,6 +2734,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 140 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.606Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "The crossing set {sigma_i, sigma_i^-1, sigma_i - h/2} and the three-bullet symbol glossary are substantive enumerations of the actual objects."
       }
     ],
     "trap-closing-aphorism": [
@@ -2708,6 +2768,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.640Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Final sentence is a scope statement about substrate-vs-archimedean placement, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -2727,6 +2802,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.676Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2746,6 +2836,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.709Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "\"This form is independent of n\" is a substantive claim carried forward into the ring-minimality sentence, not a closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2765,6 +2870,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.743Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2784,6 +2904,21 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.777Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "\"universal closed form\" is bounded by the explicit quantifier \"for typed braids of any n\" and is the title's technical term."
       }
     ],
     "trap-nonspeakable": [
@@ -2803,6 +2938,22 @@
         "reviewed_at": "2026-08-15T10:31:00.673Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.812Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "The minimal-ring sentence is long but parses aloud; no noun-chain stall.",
+        "notes": "Separate (non-trap) findings reported: (1) the opening banner \"Proposition (conditional on conj:borromean-quark)\" contradicts the block's own closing sentence (\"The identity is algebraic and sits on the substrate side of the wall\") and its Lean ref QOU.BraidKnot.hecke_1d_irrep_closed_form_character, which carries only [CommRing R] [Invertible (2:R)] and NO [BorromeanQuark] binder; (2) uses[] omits conj:borromean-quark, violating AGENTS.md 3b-cond item 4. Proposed fix: drop the conditional banner (the derivation is unconditional Hecke-quadratic-relation algebra), or, if conditionality is intended, add the conjecture to uses[] and retarget lean.ref at the ConditionalAudit namespace."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2826,5 +2977,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:08:34.812Z"
 }

@@ -895,7 +895,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.903Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.941Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.981Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:49.022Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:49.061Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:49.099Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:49.138Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:49.178Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:49.219Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "the Note column grades a $-0.6\\%$ residual 'excellent' and $+10.3\\%$ 'fair'; against the L2 target (sigma_pred <= sigma_exp/100, i.e. sub-ppb here) every row is many orders of magnitude outside, so the adjectives inflate",
+        "notes": "proposed: replace the Note column with the residual in units of the quoted experimental uncertainty, or drop it"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4c834cfab86c",
+          "ts": "e05c485188df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:49.258Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:03:49.258Z"
 }

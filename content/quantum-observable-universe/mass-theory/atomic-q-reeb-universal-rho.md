@@ -36,6 +36,6 @@ This constitutes a **1.67% genuine prediction** of the mirror asymmetry directly
 
 ### The absolute scale derivation
 
-Deriving the absolute scale $\rho \approx 18.5$ MeV/rad—or equivalently, the per-block coefficient $\rho_\lambda$—remains the central underdetermined problem of the $\Delta_\lambda$ determination. Crucially, **there are no empirical fits**; the absolute scale must be derived fundamentally from the substrate.
+Deriving the absolute scale $\rho \approx 18.5$ MeV/rad, or equivalently the per-block coefficient $\rho_\lambda$, remains the central underdetermined problem of the $\Delta_\lambda$ determination. Crucially, **there are no empirical fits**; the absolute scale must be derived fundamentally from the substrate.
 
 Isolating the symmetric strong (cosh) channel by removing the antisymmetric inter-nucleon (sinh) term pulls the Deuteron's phase sum up toward this $A=3$ universal scale, identifying the sinh channel as the carrier of the doubly-magic/anomaly deviations. A unified derivation of $\rho$ from the substrate remains an open foundational gate.

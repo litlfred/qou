@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0903.0853v3
-doc_title: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS"
+doc_title: "Local analytic classification of q-difference equations"
 section_id: sec-070-30-chapter-3-the-affine-space-of-isoformal-analy
 section_title: "CHAPTER 3. THE AFFINE SPACE OF ISOFORMAL ANALYTIC CLASSES"
 section_number: 30
 pages: 36-37
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
-doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symm"
+doc_brief: "Local analytic classification of q-difference equations — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symmetric square of the q-Eule"
 ---
 More generally, for all m∈ N∗, the operator L : z−mC{z}→ z−mC{z} is
 conjugate to zmLz−m =∑ qimbiσi : C{z}→ C{z}, which also has index d.

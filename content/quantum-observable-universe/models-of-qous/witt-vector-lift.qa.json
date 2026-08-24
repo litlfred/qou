@@ -1859,6 +1859,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.278Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1878,6 +1893,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.332Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-em-dash": [
@@ -1897,6 +1927,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.391Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-triples": [
@@ -1916,6 +1961,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.443Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-closing-aphorism": [
@@ -1935,6 +1995,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.486Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-meta-commentary": [
@@ -1954,6 +2029,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.529Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-thesis-restatement": [
@@ -1973,6 +2063,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.569Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-performed-warmth": [
@@ -1992,6 +2097,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.611Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-superlative": [
@@ -2011,6 +2131,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.654Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "trap-nonspeakable": [
@@ -2030,6 +2165,21 @@
         "reviewed_at": "2026-08-15T10:31:01.092Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8c72a97e836c",
+          "ts": "49c3a5849ca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.696Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (definition, ~0.6kB). W(F_p) = Z_p is correct. All ten categories clean. The uncited 'in the sense of Fresse' attribution is reported once as an anomaly against the proof block where it does the most work."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2053,5 +2203,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:29:45.696Z"
 }

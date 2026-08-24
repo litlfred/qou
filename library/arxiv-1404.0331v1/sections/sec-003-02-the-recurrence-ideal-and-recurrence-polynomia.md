@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1404.0331v1
-doc_title: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS ANH T. TRAN"
+doc_title: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS"
 section_id: sec-003-02-the-recurrence-ideal-and-recurrence-polynomia
 section_title: "The recurrence ideal and recurrence polynomial"
 section_number: 0.2
 pages: 1-2
 source_pdf: 1404.0331v1.pdf
 source_sha256: 53d7ce3afaf405e1
-doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS ANH T. TRAN — The AJ conjecture, formulated by Garoufalidis, relates the A-poly nomial and the colored Jones polynomial of a knot in the 3-sphere."
+doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS — The AJ conjecture, formulated by Garoufalidis, relates the A-poly nomial and the colored Jones polynomial of a knot in the 3-sphere."
 ---
 f : Z → R := C[t± 1] and deﬁne the linear operators L, M acting on such functions by
 (Lf )(n) := f (n + 1), (M f)(n) := t2nf (n).

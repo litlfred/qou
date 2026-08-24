@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.1338v1
-doc_title: "Modern Theory of Nuclear Forces E. Epelbaum∗"
+doc_title: "Modern theory of nuclear forces"
 section_id: sec-013-2-nn-ns-un-217
 section_title: "( ¯NN )( ¯NS ·uN ), (2.17)"
 section_number: 2
 pages: 16-16
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
-doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
+doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 where ˆχ+ ≡ χ+ − ⟨χ+⟩/2 and D, ci are the LECs. The
 1π-exchange loop diagram again only lead to renormal-

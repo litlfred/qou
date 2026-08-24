@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0103325v4
-doc_title: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine"
+doc_title: "Quantum algebras in phenomenological description of particle properties"
 section_id: sec-006-4-mass-sum-rules-for-decuplet-baryons
 section_title: "Mass sum rules for decuplet baryons:"
 section_number: 4
 pages: 3-3
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
-doc_brief: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine — 28 sections: Introduction; V ector meso"
+doc_brief: "Quantum algebras in phenomenological description of particle properties — 28 sections: Introduction; V ector mesons: q-deformation vs m; Octet baryon mass sum rules: best"
 ---
 the q-analog matches empirical masses
 In the case of SU (3)-decuplet baryons 3

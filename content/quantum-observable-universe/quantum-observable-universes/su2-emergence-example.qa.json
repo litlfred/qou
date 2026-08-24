@@ -1264,6 +1264,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.052Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1283,6 +1298,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.092Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-em-dash": [
@@ -1302,6 +1332,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.135Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-triples": [
@@ -1321,6 +1366,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.177Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1340,6 +1400,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.219Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-meta-commentary": [
@@ -1359,6 +1434,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.258Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1378,6 +1468,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.298Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-performed-warmth": [
@@ -1397,6 +1502,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.338Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-superlative": [
@@ -1416,6 +1536,23 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.381Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "'recovering the gauge group entirely from the categorical axioms' - 'entirely' is unqualified inflation on a chain that assumes rank-2 V as an input.",
+        "notes": "fix applied: 'recovering the gauge group entirely from the categorical axioms.' -> 'recovering the gauge group from the categorical axioms.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1435,6 +1572,21 @@
         "reviewed_at": "2026-08-15T10:30:59.827Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.422Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1458,5 +1610,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:01:32.422Z"
 }

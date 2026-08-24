@@ -2148,6 +2148,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:52.821Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Pure formal statement (hypotheses, three displayed constraints, dual, strong duality). No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2167,6 +2182,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:52.892Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No prose pivot; the block is statement + displays."
       }
     ],
     "trap-em-dash": [
@@ -2186,6 +2216,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 144 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:52.958Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2205,6 +2250,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 144 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.056Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list; the constraint set is three constraints because the LP has three, each displayed and named (net, Frobenius positivity, boundedness)."
       }
     ],
     "trap-closing-aphorism": [
@@ -2224,6 +2284,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.114Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the displayed strong-duality equation."
       }
     ],
     "trap-meta-commentary": [
@@ -2243,6 +2318,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.176Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2262,6 +2352,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.231Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2281,6 +2386,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.303Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2300,6 +2420,21 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.388Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflated claims."
       }
     ],
     "trap-nonspeakable": [
@@ -2319,6 +2454,22 @@
         "reviewed_at": "2026-08-15T10:31:00.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2693a221d1df",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.443Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The one long sentence is a standard 'Let ..., let ..., and let ...' hypothesis list, which is the genre's normal form.",
+        "notes": "RIGOR (verified, no defect found — recorded so the next reader need not redo it). The LP-dual algebra checks out. Primal: min t.x over x in R^d free, with 1.x = n_target (multiplier y_0 free), Gx >= 0 (y >= 0), x_i >= -M (s_i >= 0). Because x is free the dual constraint is the equality y_0 + sum_i G_{ij} y_i + (boundedness multiplier) = t_j; the block's '<= t_j' with '- s_j' is the equivalent slack form, and G symmetric makes G_{ji} = G_{ij}, so the index order as written is harmless. Driving s -> 0 for large M gives exactly the effective dual and dual objective n_target * y_0*, which is the field AGENTS.md's LP/SDP rule requires as dual_obj. d = n! is the correct dimension of H_n(q) as stated (the separate question of whether G has full rank there is raised, correctly, in the sibling proof block)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2342,5 +2493,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:45:53.443Z"
 }

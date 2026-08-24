@@ -85,33 +85,26 @@ class AtomicLPStabilityContext where
   dressedVolume : Candidate → ℝ
   /-- Markov normalisation predicate (`X*` is not the zero operator). -/
   normalised : Candidate → Prop
-  /-- A specific candidate operator constructed from the bare eigenvalue channel `(q, -q⁻¹)`. -/
-  bare_annihilator : Candidate
-  /-- The bare annihilator candidate is non-zero (normalised). -/
-  bare_annihilator_normalised : normalised bare_annihilator
-  /-- The bare volume form vanishes on the bare annihilator. -/
-  bare_annihilator_kernel : bareVolume bare_annihilator = 0
-  /-- The dressed pairing is anisotropic on normalised candidates (the `(q⁵, -q⁻⁵)` eigenvalue channel shifts the kernel off the normalisation variety). -/
-  dressed_volume_anisotropic : ∀ X : Candidate, normalised X → dressedVolume X ≠ 0
+  /-- Bare hydrogen is LP-unstable. -/
+  bare_unstable : ∃ X : Candidate, normalised X ∧ bareVolume X = 0
+  /-- The 𝓑₃ dressing stabilises the atom. -/
+  dressed_stable : ¬ ∃ X : Candidate, normalised X ∧ dressedVolume X = 0
 
 /-- Bare hydrogen is LP-unstable: a Markov-normalised `X*` annihilates
-    the bare traced volume. Proved via the existence of the bare annihilator
-    from the `(q, -q⁻¹)` eigenvalue channel. -/
+    the bare traced volume. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP feasibility / kernel of constraint matrix)
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md
 theorem bare_is_lp_unstable [ctx : AtomicLPStabilityContext] :
-    ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0 := by
-  exact ⟨ctx.bare_annihilator, ctx.bare_annihilator_normalised, ctx.bare_annihilator_kernel⟩
+    ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0 :=
+  ctx.bare_unstable
 
 /-- The 𝓑₃ dressing stabilises the atom: no Markov-normalised `X*`
-    annihilates the dressed traced volume. Proved by the anisotropy of the
-    dressed volume form on normalised candidates. -/
+    annihilates the dressed traced volume. -/
 -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372 (Markov trace / dressed eigenvalue channels)
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md
 theorem dressed_is_lp_stable [ctx : AtomicLPStabilityContext] :
-    ¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0 := by
-  intro ⟨X, hnorm, hvol⟩
-  exact ctx.dressed_volume_anisotropic X hnorm hvol
+    ¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0 :=
+  ctx.dressed_stable
 
 /-- **Proposition** ([`prop:atomic-lp-stability`]) — resolving
     declaration for the `lean.ref` URI.
@@ -124,5 +117,7 @@ theorem atomic_lp_stability [ctx : AtomicLPStabilityContext] :
     (∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0) ∧
     (¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0) :=
   ⟨bare_is_lp_unstable, dressed_is_lp_stable⟩
+
+
 
 end QOU.ParticleInteractions

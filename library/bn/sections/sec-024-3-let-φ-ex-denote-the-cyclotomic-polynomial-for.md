@@ -1,13 +1,13 @@
 ---
 doc_id: bn
-doc_title: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009"
+doc_title: "Braid groups and Hodge theory"
 section_id: sec-024-3-let-φ-ex-denote-the-cyclotomic-polynomial-for
 section_title: "Let Φ e(x) denote the cyclotomic polynomial for the primitive e-th"
 section_number: 3
 pages: 34-35
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
-doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
+doc_brief: "Braid groups and Hodge theory — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their"
 ---
 roots of unity, and let Ge = G| Ker(Φ e(T ∗)) We then have a similar
 factorization of Q-algebraic groups, namely G =∏

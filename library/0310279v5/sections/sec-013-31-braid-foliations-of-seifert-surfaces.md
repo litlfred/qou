@@ -1,13 +1,13 @@
 ---
 doc_id: 0310279v5
-doc_title: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO"
+doc_title: "Stabilization in the braid groups I: MTWS"
 section_id: sec-013-31-braid-foliations-of-seifert-surfaces
 section_title: "Braid foliations of Seifert surfaces"
 section_number: 3.1
 pages: 26-30
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
-doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
+doc_brief: "Stabilization in the braid groups I: MTWS — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 We are given X∈B (X ) with b(X) = n and with braid structure (A, H) in R3. To make
 this review as simple as possible, we assume that X is a knot. Choose a Seifert surface

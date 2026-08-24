@@ -1195,6 +1195,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.348Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1231,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.390Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1267,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.432Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1303,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.473Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "Every enumeration carries an explicit stated count that matches its item count (four components / three locality statements / two propositions); no reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1339,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.515Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1375,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.558Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1411,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.602Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1447,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.643Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1483,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.684Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1519,23 @@
         "reviewed_at": "2026-08-15T10:31:01.376Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.726Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1558,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:47:56.726Z"
 }

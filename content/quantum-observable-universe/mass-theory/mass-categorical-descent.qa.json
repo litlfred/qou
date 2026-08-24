@@ -2136,6 +2136,21 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:36.478Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. No assert-by-denial; the descended/transient split is a genuine decomposition, stated positively."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2155,6 +2170,21 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:36.545Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -2174,6 +2204,21 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:36.613Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -2193,6 +2238,21 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:36.705Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'volume, pairing, and Wigner terms' are three named liquid-drop terms; the transient list has four items."
       }
     ],
     "trap-closing-aphorism": [
@@ -2212,6 +2272,23 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:36.756Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "The block ends on a scope-broadening one-liner that generalises beyond anything the block derived: 'The descent decomposition [universally] structures both the mass endomorphism and the electromagnetic coupling.' Nothing above concerns the electromagnetic coupling, so the closer imports a second domain purely for the sake of a wide final line.",
+        "notes": "Superlative half fixed inline (see trap-superlative). The remaining structural issue is the electromagnetic-coupling claim itself: proposed either to drop the clause, or to keep it and add a uses[] edge / cross-reference to the block where the EM-coupling descent is actually established."
       }
     ],
     "trap-meta-commentary": [
@@ -2231,6 +2308,21 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:36.819Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -2250,6 +2342,21 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:36.876Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closer over-generalises rather than restates; recorded under trap-closing-aphorism."
       }
     ],
     "trap-performed-warmth": [
@@ -2269,6 +2376,21 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:36.939Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2288,6 +2410,22 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:37.006Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "FIX APPLIED. Unqualified universal quantifier removed from the final sentence.",
+        "notes": "fix applied: 'The descent decomposition universally structures both the mass endomorphism and the electromagnetic coupling.' -> 'The descent decomposition structures both the mass endomorphism and the electromagnetic coupling.' Nothing in the block quantifies over a class of decompositions, so 'universally' was unearned. Math delimiters re-checked ($$ balanced)."
       }
     ],
     "trap-nonspeakable": [
@@ -2307,6 +2445,21 @@
         "reviewed_at": "2026-08-15T10:31:00.764Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ee282c20716b",
+          "ts": "85f8412342dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:37.072Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable; 'Schur-Weyl magnetic quantum number' is a defined compound."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2330,5 +2483,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:35:37.072Z"
 }

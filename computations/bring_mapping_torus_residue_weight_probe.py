@@ -107,8 +107,10 @@ from pathlib import Path
 
 from mpmath import (mp, mpf, mpc, pi, polylog, re, log, zeta, sqrt, acosh,
                     fabs, nstr, pslq)
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 

@@ -1,14 +1,14 @@
 {
   "probe": "qbeta_5two_route27_branch_by_argument",
   "bean": "qou-trns",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": "QOU/QBeta/FiveTwoBranchByArgument.lean",
   "gates": [
     {
       "gate": "G1",
       "claim": "sum_j arg(1 - x y_j) = phi EXACTLY along the whole arc, endpoint included. Since the sum is congruent to phi mod 2 pi automatically (from the proved Vieta product), this says the branch integer k is 0 -- which is what hcont is used to establish",
       "n_points": 401,
-      "worst": "6.887662212e-41",
+      "worst": "7.244543263e-71",
       "pass": true
     },
     {
@@ -37,7 +37,7 @@
     {
       "gate": "G5",
       "claim": "a structural simplification: on the OPEN arc the two log-sums are complex CONJUGATES, because the roots are closed under conjugation (real cubic on |x| = 1) and 1/x = conj x. Hence k_2 = -k_1 -- there is only ONE branch integer, not two. It holds to 1e-40 on [0,pi) and also at the endpoint here, though the argument for it breaks there since 1 - x y_1 sits on the cut",
-      "max_on_open_arc": "1.082967923e-40",
+      "max_on_open_arc": "7.737175597e-71",
       "at_endpoint": "0.0",
       "pass": true
     },

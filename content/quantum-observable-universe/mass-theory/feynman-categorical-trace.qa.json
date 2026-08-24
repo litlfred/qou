@@ -2084,6 +2084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.014Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2103,6 +2118,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.050Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -2122,6 +2152,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.088Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -2141,6 +2186,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.123Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -2160,6 +2220,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.159Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -2179,6 +2254,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.201Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -2198,6 +2288,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.236Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -2217,6 +2322,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.270Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -2236,6 +2356,21 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.304Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:feynman-categorical-trace (setup sentence, proposition with two displays, Markov-property and weight clauses). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -2255,6 +2390,22 @@
         "reviewed_at": "2026-08-15T10:31:00.766Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "26838cc6ea50",
+          "ts": "382a4d016b29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:46.341Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Statement prose is standard mathematical setup; each clause has one main verb and reads aloud.",
+        "notes": "RIGOR (reported, not fixed - math-adjacent): (1) MISSING ABSOLUTE VALUE in the second display. The prose immediately above it says 'Its ABSOLUTE VALUE equals the categorical mass at a single brane level', and the proof sibling writes m(rho)|_{single level} = |tr_M(rho(beta))|; but the display here reads m(rho)|_{single level} = tr_M(rho(beta)) = |<psi_f|psi_i>|, with bars on the third term and none on the second. Proposed: |tr_M(rho(beta))| in the middle term. (2) VERIFIED CORRECT: partitions of n with at most two parts number floor(n/2)+1, matching 'a finite sum over floor(n/2)+1 terms'; the Markov property is written in the SS7a generator sigma_n; and w_lambda = dim_q(V_lambda).dim(S_lambda)/dim_q(V^{(x)n}) sums to 1 identically."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2278,5 +2429,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:53:46.341Z"
 }

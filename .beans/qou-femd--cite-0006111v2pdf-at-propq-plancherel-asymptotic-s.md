@@ -3,8 +3,9 @@
 title: Cite 0006111v2.pdf at prop:q-plancherel-asymptotic-skeleton
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:32Z
-updated_at: 2026-08-08T16:12:32Z
+updated_at: 2026-08-21T17:04:54Z
 ---
 
 Clauses (1)/(2) of the block cite kerov1981 + biane1998 + feray2010; the concentration result they actually lean on is this paper's Thm 1/Thm 2.
@@ -19,3 +20,10 @@ Source: `library/arxiv-math-0006111v2/0006111v2.pdf` — no `references.ts` entr
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0006111v2/  ->  [biane2000]
+  Approximate factorization and concentration for characters of symmetric groups
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [biane2000] as the citation key when you do it.

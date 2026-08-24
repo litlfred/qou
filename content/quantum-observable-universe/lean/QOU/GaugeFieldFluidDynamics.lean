@@ -629,7 +629,16 @@ structure NSSingularityDescartes (C : Type*) where
     The angular part is fixed by SU_q(2) matrix coefficients;
     only the 5 radial functions R_j(r) are free.
 
-    LaTeX: `\label{prop:leray-profile}` -/
+    This is the *data* the proposition is stated over, not the
+    proposition. The LaTeX label for `prop:leray-profile` was carried
+    here — written out in full, it would register this docstring as a
+    second owner, so it is named indirectly — and has been moved to
+    `QOU.FluidDynamics.leray_profile`
+    (`QOU/FluidDynamics/leray_profile.lean`) — the declaration
+    `fluid-dynamics/leray-profile.ts` actually references, and whose own
+    docstring already named the block in prose. Bean `qou-szd6`: the
+    label sat on a superseded carrier while the block pointed elsewhere,
+    so nothing connected the block to its real formalisation. -/
 structure TruncatedLerayProfile where
   /-- Number of active spins (j = 0, 1/2, 1, 3/2, 2). -/
   num_spins : ℕ := 5

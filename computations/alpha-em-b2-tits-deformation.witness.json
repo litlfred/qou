@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T00:21:32.689498+00:00",
-  "commitSha": "ac41614653db40f53b4e20c70de0aa699c0d36b1",
+  "computedAt": "2026-08-23T08:53:41.435237+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "star_isometry_and_selfadjoint",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 21,
   "computation": "alpha-em-b2-tits-deformation",
   "scriptFile": "alpha_em_b2_tits_deformation_probe.py",
-  "scriptHash": "0e1cfe25a692",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "df27683cf3e9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_b2_tits_deformation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_b2_tits_deformation_probe.py"
   },
   "description": "α_EM B2 canonical Tits *-iso: explicit seminormal→Young deformation T(q)=diag(√(g_i(1)/g_i(q))) for (4,1). Verified: (i) exact *-isometry to the q=1 seminormal Gram + self-adjoint conjugate + T→Id at q=1 ⇒ a valid *-compatible Tits conjugator (φ a *-algebra iso on the block); (ii) NOT a generator-intertwiner (eig gap ≈ |q₀−1|, σᵢ↦non-generator) — confirms the algebra-iso picture. Residual to |c|: the pure-S₅ alignment to the Braden–Northover period basis (S₅ action not in corpus). No instance; 1/(8π) phase-4.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
@@ -48,8 +55,8 @@
     "q_ref": "1.000001"
   },
   "data": {
-    "star_isometry_residual": "2.58079e-41",
-    "selfadjoint_residual": "4.18397e-41",
+    "star_isometry_residual": "1.41567e-71",
+    "selfadjoint_residual": "8.15011e-71",
     "T_to_identity_at_q1": "3.17581e-9",
     "generator_eig_gap": "0.0990807",
     "T_diag": [
@@ -70,7 +77,7 @@
       "0.484368247892",
       "0.645824330522"
     ],
-    "verdict": "Explicit seminormal→Young Tits deformation for (4,1). T(q₀)=diag(√(g_i(1)/g_i(q₀))) is (i) a valid *-COMPATIBLE Tits conjugator — exact *-isometry Tᵀ·G(q₀)·T=G(1) (resid 2.58e-41), conjugate self-adjoint w.r.t. G(1) (resid 4.18e-41), and →Id as q→1 (|T−Id|=3.18e-9 at the q-step); so φ=ρ_S⁻¹∘conj(T)∘ρ_H is a *-algebra iso H₅(q₀)→ℂ[S₅] on the block. (ii) It is NOT a generator-intertwiner: T·ρ_H^{q₀}·T⁻¹ keeps the Hecke eigenvalues (gap 0.0991 ≈ |q₀−1| vs Young ±1), so σᵢ maps to a NON-generator element of ℂ[S₅] — confirming the algebra-iso picture and the intertwiner_trace_eq obstruction (#4199). UPSHOT: the deformation half (Hecke→q=1 seminormal) is explicitly constructed and *-isometric; the residual to |c| is the pure-S₅ alignment U of the q=1 seminormal SYT basis to the Braden–Northover period basis (M_S), whose S₅ action is NOT in the corpus. No instance; 1/(8π) phase-4; nothing wired."
+    "verdict": "Explicit seminormal→Young Tits deformation for (4,1). T(q₀)=diag(√(g_i(1)/g_i(q₀))) is (i) a valid *-COMPATIBLE Tits conjugator — exact *-isometry Tᵀ·G(q₀)·T=G(1) (resid 1.42e-71), conjugate self-adjoint w.r.t. G(1) (resid 8.15e-71), and →Id as q→1 (|T−Id|=3.18e-9 at the q-step); so φ=ρ_S⁻¹∘conj(T)∘ρ_H is a *-algebra iso H₅(q₀)→ℂ[S₅] on the block. (ii) It is NOT a generator-intertwiner: T·ρ_H^{q₀}·T⁻¹ keeps the Hecke eigenvalues (gap 0.0991 ≈ |q₀−1| vs Young ±1), so σᵢ maps to a NON-generator element of ℂ[S₅] — confirming the algebra-iso picture and the intertwiner_trace_eq obstruction (#4199). UPSHOT: the deformation half (Hecke→q=1 seminormal) is explicitly constructed and *-isometric; the residual to |c| is the pure-S₅ alignment U of the q=1 seminormal SYT basis to the Braden–Northover period basis (M_S), whose S₅ action is NOT in the corpus. No instance; 1/(8π) phase-4; nothing wired."
   },
   "caveats": [
     "T(q) closes the DEFORMATION half (Hecke→q=1 seminormal), a valid *-compatible Tits conjugator. The geometric-realization half — the pure-S₅ intertwiner U from the q=1 seminormal SYT basis to the Braden–Northover period basis (M_S) — needs the S₅ action in that basis, which is NOT in the corpus. |c| stays gated on U."

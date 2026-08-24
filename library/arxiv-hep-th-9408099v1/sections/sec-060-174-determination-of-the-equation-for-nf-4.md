@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "E. Witten Institute for Advanced Study"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-060-174-determination-of-the-equation-for-nf-4
 section_title: "Determination Of The Equation For Nf = 4"
 section_number: 17.4

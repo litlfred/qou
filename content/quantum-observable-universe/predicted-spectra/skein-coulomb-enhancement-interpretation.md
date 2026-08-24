@@ -1,13 +1,13 @@
 The leading-order half-life formula ([hadron half-life](#prop:hadron-half-life)) evaluates the Skein polynomial on the nucleus alone. It treats the emitted electron as a free particle. However, the electron trefoil $T_{2,3}$ ([electron knot](#def:electron-knot)) traverses the Coulomb field of $Z$ protons as it exits the nucleus. Each electron-proton crossing carries a Skein weight. We evaluate the Skein polynomial on the full outgoing link $T_{2,3} \cup \mathcal{N}(Z, N)$. This naturally generates the Coulomb enhancement.
 
-**This is not an ad hoc correction.** We evaluate precisely the same Skein polynomial on the complete outgoing link rather than truncating at the weak vertex.
+We evaluate precisely the same Skein polynomial on the complete outgoing link rather than truncating at the weak vertex.
 
 **Magnitude.**
 We average the integrated Coulomb enhancement over the electron energy spectrum. This yields a large, $Z$-dependent factor.
 
 See [Table: Skein-Coulomb enhancement factors](#tbl:skein-coulomb-enhancement-table1-data).
 
-These are **not** small perturbative corrections. They change decay rates by factors of 1.4 to 5. The leading-order predictions ([verification](#ex:hadron-half-life-verification)) inherently include $F_q$ through the nucleus-specific matrix element. The $\sim 10$--$17\%$ residual in the verification table stems entirely from discrete nuclear structure effects. Shell closures, pairing, and deformation modify the Gamow--Teller strength $\sigma_{\mathrm{GT}}$ at the individual-nucleus level.
+These enhancements change decay rates by factors of 1.4 to 5. The leading-order predictions ([verification](#ex:hadron-half-life-verification)) inherently include $F_q$ through the nucleus-specific matrix element. The $\sim 10$--$17\%$ residual in the verification table stems entirely from discrete nuclear structure effects. Shell closures, pairing, and deformation modify the Gamow--Teller strength $\sigma_{\mathrm{GT}}$ at the individual-nucleus level.
 
 **Transition classes.**
 The nuclear matrix element $|\mathcal{M}_q|^2$ varies by six orders of magnitude across the verification set. Measured $\log ft$ values (NNDC/ENSDF) classify the transitions.

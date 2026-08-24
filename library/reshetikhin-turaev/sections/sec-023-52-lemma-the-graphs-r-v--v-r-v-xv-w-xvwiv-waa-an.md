@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-023-52-lemma-the-graphs-r-v--v-r-v-xv-w-xvwiv-waa-an
 section_title: "Lemma. The graphs {r-~v, ~-~v, r '~v, Xv, w, Xv.wIV, W~A(A)} and"
 section_number: 5.2
 pages: 13-13
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 {F(f tl, tl')ltl, t l' ~ N(A), f ~ HomA(V(q), V(~'))} generate HCDR(A). 
 This lemma follows from the obvious fact that each graph (considered up to 

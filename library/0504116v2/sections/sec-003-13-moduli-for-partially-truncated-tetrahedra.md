@@ -1,6 +1,6 @@
 ---
 doc_id: 0504116v2
-doc_title: "On deformations of hyperbolic 3–manifolds with geodesic boundary ROBERTO FRIGERIO Let M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty geodesic boundary an"
+doc_title: "On deformations of hyperbolic 3-manifolds with geodesic boundary"
 section_id: sec-003-13-moduli-for-partially-truncated-tetrahedra
 section_title: "Moduli for partially truncated tetrahedra"
 section_number: 1.3

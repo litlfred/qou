@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0401084v3
-doc_title: "THE COLORED JONES POL YNOMIALS OF THE"
+doc_title: "Some limits of the colored Jones polynomials of the figure-eight knot"
 section_id: sec-005-references
 section_title: "References"
 section_number: null
 pages: 16-17
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
+doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
 ---
 [1] S. Gukov, Three-dimensional quantum gravity, Chern-Simons theory, and the A-polynomial ,
 Comm. Math. Phys. 255 (2005), no. 3, 577–627.

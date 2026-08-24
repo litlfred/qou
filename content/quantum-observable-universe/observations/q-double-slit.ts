@@ -21,7 +21,7 @@ export default simulator({
     name: "default",
     title: "Default: moderate q-deformation",
     params: {
-      q: 1.1097,
+      q: 1.1099785827513808,
       D: 0.5,
       d: 100,
       w: 50,

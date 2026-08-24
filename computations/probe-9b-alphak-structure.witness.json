@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T17:01:57.220553+00:00",
-  "commitSha": "1d3cf627866bfc2c7363f4b9445396e7a611e7f4",
+  "computedAt": "2026-08-23T07:51:03.294291+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "symbolic_tr_T121_eq_z_plus_h_z2",
@@ -30,25 +30,25 @@
     },
     {
       "name": "numeric_z_series_depth_le2",
-      "computed": 2.0375277927360103e-71,
+      "computed": 0.1260658347330721,
       "expected": 0.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-40,
       "source": "tr_M(T_w) = z^{ℓ(w)} at 50 dps for all depth ≤ 2 basis words"
     },
     {
       "name": "numeric_tr_T121_closed_form",
-      "computed": 5.4334074472960274e-71,
+      "computed": 0.13972306403998852,
       "expected": 0.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-40,
       "source": "tr_M(T_Δ) = z + h·z² at 50 dps (Wenzl-bridge y × seminormal χ)"
     },
     {
       "name": "alpha3_value_not_derived_near_match_10pc",
-      "computed": 0.10438806981200371,
+      "computed": 0.12808874411435378,
       "expected": 0.104,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.01,
       "source": "collapsed depth-3/depth-1 weight 1+q^{1/2}−q^{-1/2} deviates from the assigned α_3 = 1 by ≈10.4% at q₀ (exact only at q→1) — the BREAK is derived, the VALUE 1 is a near-match"
     },
@@ -69,12 +69,12 @@
       "source": "every N_k reading gives an A-dependent tail sum; the α_{k≥4} plateau is A-independent, so the shape mismatch is structural (still scope-(a): other weightings untested)"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 17,
   "computation": "probe-9b-alphak-structure",
   "scriptFile": "probe_9b_alphak_structure.py",
-  "scriptHash": "6b2e7dfd70bc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ade7fe590b72",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -84,8 +84,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_9b_alphak_structure.py"
+    ],
+    "reproduce": "python3 -u computations/probe_9b_alphak_structure.py"
   },
   "description": "PROBE 2 (bean nf8d) on the step-9b depth-stratified α_k assignment rule. (2a) α_3 centrality: exact character computation on H_3 — χ^{(2,1)}(Δ)=0 (Δ=σ1σ2σ1 Garside; Δ² central + det ρ_{(2,1)}(Δ)=−1 force tracelessness), so the Markov-marker series z^k breaks at k=3 STRUCTURALLY: tr_M(T_Δ) = z+h·z² = z(1+q^{1/2}−q^{-1/2}) ≠ z³ (derived, exact); the depth-3/depth-1 relative weight 1+q^{1/2}−q^{-1/2} ≈ 1.1044 near-matches the assigned α_3/α_1 = 1 at 10.4% (exact as q→1); Δ itself is NOT central (off-diag ≠ 0). (2b) plateau resummation Σ_{k≥4} z^k N_k vs m_e·8G under 4 layer-count readings × 4 atoms: no IDENTITY; the sum is strongly atom-dependent, refuting (scope-(a)) the universal-plateau-as-geometric-resummation shape. No fit constants.",
   "auditOnly": "docs/audits/2026-07-02-9b-probes-alphak-perlambda-tower.md",
@@ -103,30 +113,30 @@
       "delta_squared_scalar_on_21": true,
       "delta_not_scalar_on_21": true,
       "rel_weight_depth3_over_depth1": "sqrt(q) + 1 - 1/sqrt(q)",
-      "rel_weight_identity_ok": true,
+      "rel_weight_identity_ok": false,
       "y_solved": {
-        "y3": "(q**(17/2) + 3*q**(15/2) + 6*q**(13/2) + 10*q**(11/2) + 11*q**(9/2) + 9*q**(7/2) + 6*q**(5/2) + 2*q**(3/2) + q**9 + 2*q**8 + 3*q**7 + 5*q**6 + 7*q**5 + 9*q**4 + 9*q**3 + 7*q**2 + 4*q + 1)/(q**12 + 4*q**11 + 9*q**10 + 16*q**9 + 23*q**8 + 28*q**7 + 30*q**6 + 28*q**5 + 23*q**4 + 16*q**3 + 9*q**2 + 4*q + 1)",
-        "y21": "(q**(21/2) + 3*q**(19/2) + 4*q**(17/2) + 4*q**(15/2) + 2*q**(13/2) - 2*q**(11/2) - 4*q**(9/2) - 4*q**(7/2) - 3*q**(5/2) - q**(3/2) + q**10 + 3*q**9 + 6*q**8 + 9*q**7 + 10*q**6 + 9*q**5 + 6*q**4 + 3*q**3 + q**2)/(q**12 + 4*q**11 + 9*q**10 + 16*q**9 + 23*q**8 + 28*q**7 + 30*q**6 + 28*q**5 + 23*q**4 + 16*q**3 + 9*q**2 + 4*q + 1)",
-        "y111": "(-2*q**(15/2) - 4*q**(13/2) - 3*q**(11/2) - 2*q**(9/2) - q**(7/2) + q**9 + 3*q**8 + 3*q**7 + 2*q**6 + q**5 + q**4 + q**3)/(q**9 + 3*q**8 + 5*q**7 + 7*q**6 + 8*q**5 + 8*q**4 + 7*q**3 + 5*q**2 + 3*q + 1)"
+        "y3": "(q**4 + 1)/(q**4 + 2*q**2 + 1)",
+        "y21": "q**2/(q**4 + 2*q**2 + 1)",
+        "y111": "0"
       }
     },
     "part_2a_numeric": {
       "trM_by_word": {
         "e": "1.0",
-        "T1": "0.499320334033561271768966386276",
-        "T2": "0.499320334033561271768966386276",
-        "T12": "0.249320795979387206859416492623",
-        "T21": "0.249320795979387206859416492623",
-        "T121": "0.551443419921209679134093895626"
+        "T1": "0.612688037146465251595829863946",
+        "T2": "0.612688037146465251595829863946",
+        "T12": "0.375386630862388383999372303379",
+        "T21": "0.375386630862388383999372303379",
+        "T121": "0.691166478358444526147719530979"
       },
-      "max_dev_z_series_depth_le2": "2.0375e-71",
-      "dev_tr_T121_vs_z_plus_hz2": "5.4334e-71",
-      "dev_chi21_T121_vs_zero": "2.2639e-71",
+      "max_dev_z_series_depth_le2": "0.12607",
+      "dev_tr_T121_vs_z_plus_hz2": "0.13972",
+      "dev_chi21_T121_vs_zero": "2.7167e-71",
       "alpha3_candidates": {
-        "series_z3": "0.12449094312994100024",
-        "tr_M_T121": "0.55144341992120967913",
-        "rel_depth3_over_depth1": "1.1043880698120037126",
-        "rel_dev_from_assigned_1": "0.1043880698",
+        "series_z3": "0.12449094324223497257",
+        "tr_M_T121": "0.69116647835844452615",
+        "rel_depth3_over_depth1": "1.1280887441143537856",
+        "rel_dev_from_assigned_1": "0.1280887441",
         "classical_limit_q_to_1": "1 (exact: 1 + q^{1/2} − q^{-1/2} → 1)"
       }
     },
@@ -162,25 +172,25 @@
         },
         "D(H_6)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "8.0908444050801809492",
+            "sum_k_ge4_zk_Nk": "8.0908444179431465602",
             "rel_dev_vs_me8G": "1.16075",
             "rel_dev_vs_8G": "0.104141",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "0.093199040341176735566",
+            "sum_k_ge4_zk_Nk": "0.09319904046259965824",
             "rel_dev_vs_me8G": "0.97511",
             "rel_dev_vs_8G": "0.987281",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "0.34184247757235761562",
+            "sum_k_ge4_zk_Nk": "0.34184247799282407848",
             "rel_dev_vs_me8G": "0.908707",
             "rel_dev_vs_8G": "0.953349",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "1.5850596637282620159",
+            "sum_k_ge4_zk_Nk": "1.5850596656439461797",
             "rel_dev_vs_me8G": "0.576692",
             "rel_dev_vs_8G": "0.78369",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
@@ -188,25 +198,25 @@
         },
         "T/3He(H_9)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "119.35101059140183734",
+            "sum_k_ge4_zk_Nk": "119.35101084917647806",
             "rel_dev_vs_me8G": "30.874",
             "rel_dev_vs_8G": "15.2876",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "0.44651726591276356544",
+            "sum_k_ge4_zk_Nk": "0.44651726650805417831",
             "rel_dev_vs_me8G": "0.880753",
             "rel_dev_vs_8G": "0.939065",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "43.644922217535214755",
+            "sum_k_ge4_zk_Nk": "43.644922272550523825",
             "rel_dev_vs_me8G": "10.6559",
             "rel_dev_vs_8G": "4.95614",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "5696.1452301661008146",
+            "sum_k_ge4_zk_Nk": "5696.1452371850666898",
             "rel_dev_vs_me8G": "1520.22",
             "rel_dev_vs_8G": "776.342",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
@@ -214,25 +224,25 @@
         },
         "4He(H_12)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "1111.5637316692867488",
+            "sum_k_ge4_zk_Nk": "1111.5637348726903104",
             "rel_dev_vs_me8G": "295.856",
             "rel_dev_vs_8G": "150.693",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "1.3135844823754925537",
+            "sum_k_ge4_zk_Nk": "1.313584484180630116",
             "rel_dev_vs_me8G": "0.649193",
             "rel_dev_vs_8G": "0.820738",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "3690.2045224996368366",
+            "sum_k_ge4_zk_Nk": "3690.2045273015382469",
             "rel_dev_vs_me8G": "984.511",
             "rel_dev_vs_8G": "502.595",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "14976715.014315736374",
+            "sum_k_ge4_zk_Nk": "14976715.033334229468",
             "rel_dev_vs_me8G": "3.9997e+6",
             "rel_dev_vs_8G": "2.04384e+6",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
@@ -241,26 +251,26 @@
       },
       "atom_independence": {
         "cox": {
-          "min": "8.09084440508",
-          "max": "1111.56373167",
+          "min": "8.09084441794",
+          "max": "1111.56373487",
           "max_over_min": "137.38538",
           "atom_independent": false
         },
         "parts": {
-          "min": "0.0931990403412",
-          "max": "1.31358448238",
+          "min": "0.0931990404626",
+          "max": "1.31358448418",
           "max_over_min": "14.094399",
           "atom_independent": false
         },
         "dim": {
-          "min": "0.341842477572",
-          "max": "3690.2045225",
+          "min": "0.341842477993",
+          "max": "3690.2045273",
           "max_over_min": "10795.044",
           "atom_independent": false
         },
         "dimsq": {
-          "min": "1.58505966373",
-          "max": "14976715.0143",
+          "min": "1.58505966564",
+          "max": "14976715.0333",
           "max_over_min": "9448675.9",
           "atom_independent": false
         }

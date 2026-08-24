@@ -83,6 +83,7 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 import QOU.QBeta.ZBarParity
+import QOU.QBeta.CrossingWeightAffine
 
 namespace QOU.QBeta
 
@@ -264,5 +265,26 @@ theorem zD_bar_mean_eq_loop_mean (q : F) (hq : q ≠ 0) (hd : q ^ 2 + 1 ≠ 0) :
     zD q + zD q⁻¹ = loopMeanTwice (zD q) (q - q⁻¹) := by
   unfold loopMeanTwice
   linear_combination zD_bar_eq_negative_loop q hq hd
+
+/-- **The ladder's doubled phase IS the counit-minus-trace gap.** With the Q_β
+    evaluation map `E(w) = h²/2 − h·w` of `CrossingWeightAffine` (`w = 1` the
+    Frobenius counit `ε`, `w = z` the Markov trace `tr_M`):
+
+      `2·α = phaseTwice z h = E(1) − E(z) = ε(Δ) − tr_M(Δ)`.
+
+    So the ladder eigenphase `α = (z−1)h/2` is not an arbitrary
+    parameterisation: it is exactly **half the counit-minus-trace gap**, i.e. the
+    infinitesimal generator of the counit→trace transport. This *locates* the one
+    unjustified step of the Q_β ladder — the exponentiation of this gap into
+    `cos(α − u/2)`, axiomatised as `QOU.Interactions.QBetaCosResummation` — as
+    the target a convention-D re-derivation must actually supply (the transport),
+    rather than a new phase *formula*. The identity holds for **any** `z`, so it
+    is convention-blind; it *locates*, it closes nothing numerical — the c_k rung
+    values remain anti-fit-fenced (bean `qou-cds1`). One `ring` line over
+    `CrossingWeightAffine.evalMap_affine`. -/
+theorem phaseTwice_eq_counit_sub_trace (z h : F) :
+    phaseTwice z h
+      = CrossingWeightAffine.evalMap h 1 - CrossingWeightAffine.evalMap h z := by
+  rw [CrossingWeightAffine.evalMap_affine h 1 z]; unfold phaseTwice; ring
 
 end QOU.QBeta

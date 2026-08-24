@@ -1,13 +1,13 @@
 ---
 doc_id: 0110001v3
-doc_title: "Published: 19 June 2003 A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin"
+doc_title: "A geometric interpretation of Milnor's triple linking numbers"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 0110001v3.pdf
 source_sha256: f30f603ac1c555e0
-doc_brief: "A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the"
+doc_brief: "A geometric interpretation of Milnor's triple linking numbers — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the"
 ---
 Milnor’s higher order linking numbers (or mu-bar invariants) ¯µi of an oriented
 link L = L1 ∪ · · · ∪Lℓ in the 3-sphere are a measure of how deep the longitudes

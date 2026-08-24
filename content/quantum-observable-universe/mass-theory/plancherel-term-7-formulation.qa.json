@@ -2394,6 +2394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:33.901Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Proposition: definition of Phi_k, the universal-residue display, and one closing paragraph. The low-strata/deep-strata contrast is the mathematical content (which strata still carry a distinguished knot ideal), not assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2413,6 +2428,21 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:33.974Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -2432,6 +2462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:34.032Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -2451,6 +2496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:34.096Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No rhetorical triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -2470,6 +2530,22 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:34.166Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final sentence is a substantive claim about what survives at k >= 4, though phrased as a summarising flourish; see trap-nonspeakable."
       }
     ],
     "trap-meta-commentary": [
@@ -2489,6 +2565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:34.224Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2508,6 +2599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:34.292Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closing paragraph adds stratum-by-stratum interpretation rather than restating the display."
       }
     ],
     "trap-performed-warmth": [
@@ -2527,6 +2633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:34.348Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2546,6 +2667,22 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:34.420Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'dependent solely on the block weight topology' - 'solely' is a definite claim about the k >= 4 residue's dependence, not inflation; 'specific knot identities evaporate' is metaphor rather than superlative."
       }
     ],
     "trap-nonspeakable": [
@@ -2565,6 +2702,23 @@
         "reviewed_at": "2026-08-15T10:31:00.801Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1823ccd13259",
+          "ts": "1760c659a756"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:34.481Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Closing sentence stalls aloud on a four-noun premodifier chain plus a bare participial tail: 'The surviving residue isolates the universal Frobenius co-Casimir tail, dependent solely on the block weight topology.'",
+        "notes": "PROPOSED (not applied - the sentence carries the proposition's k >= 4 universality claim, so rewording is math-adjacent): 'What survives is the universal Frobenius co-Casimir tail, which depends only on the block weights.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2588,5 +2742,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:01:34.481Z"
 }

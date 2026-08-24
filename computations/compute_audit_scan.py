@@ -341,7 +341,24 @@ def main() -> int:
             "are NOT covered by this scanner."
         )
     )
-    w.save()
+    # q0 anchor: `independent`, declared rather than inherited.
+    #
+    # Without this the builder stamps whatever the manifest/env resolves to,
+    # and the committed witness carried `q0Anchor: muon` with the full
+    # 50-digit muon pin -- a FALSE claim that this producer computed at that
+    # anchor. It did not; see the reason string. Declaring `independent` is
+    # the honest fix. A manifest entry would be the WRONG fix: it would
+    # promote a false claim into a declared one.
+    w.save({"q0Anchor": "independent",
+            "q0AnchorReason": (
+                'Reads no substrate value. This is a STATIC SOURCE SCANNER: its'
+                'only mention of q0 is advice text inside a string literal'
+                "('numerical evalf at q0'), and an AST check finds zero q0"
+                'identifiers used as code. Proved empirically: under'
+                'QOU_Q0_ANCHOR=muon vs =proton the emitted witness is byte-'
+                'identical except for the q0Anchor/q0Value pair itself. Bean'
+                'qou-o922 class (ii).'
+            )})
     return 0
 
 

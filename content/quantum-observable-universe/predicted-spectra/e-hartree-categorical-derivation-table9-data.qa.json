@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.077Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.117Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.158Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.203Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.243Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.282Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.321Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.359Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.399Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4bf1034bf537",
+          "ts": "7c59bdb8cc84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.439Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/weight/interpretation table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block. Weights agree with table7's w chi / f column to the printed precision (+0.018, -0.136, 0.000, +0.111, -0.010 vs +0.0181, -0.1363, 0.0000, +0.1106, -0.0097). The interpretation cell 'impossible: 2 simultaneous 2-strand ops' is a stated reason for the vanishing entry, not narrated emphasis."
+      }
     ]
   },
   "source_hashes": {
     "md": "4bf1034bf537",
     "ts": "7c59bdb8cc84"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:05.439Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0605314v1
-doc_title: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO"
+doc_title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres"
 section_id: sec-027-42-universalsl2-invariant-of-bottom-tangles-for
 section_title: "Universalsl2 invariant of bottom tangles. For each ribbon Hopf algebra"
 section_number: 4.2
 pages: 15-16
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
-doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
+doc_brief: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring"
 ---
 H, there is a “universal invariant” of links and tangles from w hich one can recover
 the operator invariants, such as the colored Jones polynomi als. Such universal

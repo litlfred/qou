@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.485Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.521Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.556Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.593Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.627Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.662Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.697Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.732Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.767Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6af316be5518",
+          "ts": "101c2f1670a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.803Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 rows); read in full. No trap construction of this category present. NUMERIC defect reported separately: the n=5, N=7 closed form is written 16806/16807 = (7^5-1)/7^5, but the other three rows all follow (N^{n-1}-1)/N^{n-1} (24/25, 624/625, 48/49) and the row's own stated decimal -1.03650 recomputes from 2400/2401 (-1.03649588), not from 16806/16807 (-1.03686606). The decimal is right and the fraction carries n where n-1 belongs."
+      }
     ]
   },
   "source_hashes": {
     "md": "6af316be5518",
     "ts": "101c2f1670a2"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:11:35.803Z"
 }

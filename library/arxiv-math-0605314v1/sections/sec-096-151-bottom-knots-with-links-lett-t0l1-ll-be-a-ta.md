@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0605314v1
-doc_title: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO"
+doc_title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres"
 section_id: sec-096-151-bottom-knots-with-links-lett-t0l1-ll-be-a-ta
 section_title: "Bottom knots with links. LetT =T0∪L1∪···∪ Ll be a tangle in a cube"
 section_number: 15.1
 pages: 57-58
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
-doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
+doc_brief: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring"
 ---
 consisting of a bottom knot T0 and an algebraically-split, 0-framed link L1∪···∪ Ll,
 where lk(T0,L i) = 0 for i = 1,... ,l . For x1,... ,x l∈P , we deﬁne JT (x1,... ,x l)

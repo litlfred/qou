@@ -1231,6 +1231,23 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.245Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "'No endomorphism is invisible to integration.' is a double-negative gloss placed right after 'the trace is faithful'. Judged substantive rather than manufactured: faithfulness IS a vanishing statement (trivial kernel), so the negation is intrinsic to the mathematics, and the gloss states it in words for a reader who does not unpack Hom(1, Ad(A)) = 0. Falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "If the author wants it tightened, the positive form is 'Every nonzero endomorphism has nonzero trace.', which is also more precise than 'invisible to integration'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1267,22 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.284Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Axiom -> gloss -> consequence of relaxing -> classification of the obstruction; each sentence advances, none reframes the previous."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1302,21 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 52 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.326Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1336,21 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 52 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.370Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1370,21 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.481Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on the cohomological classification of kappa, i.e. content."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.597Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.710Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Closing sentence introduces kappa, new relative to the opening."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1472,21 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.749Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1506,21 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.792Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:31:00.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9350450d5e78",
+          "ts": "f0df764a10fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.832Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Four short declaratives.",
+        "notes": "NOTATION FINDING to report (not edited): the obstruction is written kappa in H^2(S, \\\\mathcal{B}). \\\\mathcal{B} is used in this same chapter for Bring's curve (def:brings-coordinate-ring) and \\\\mathcal{B}_K for braid words per the notation register, so as written the coefficient object does not typecheck and collides. Name the coefficient sheaf explicitly, or cite the block that defines this \\\\mathcal{B}."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:57:45.832Z"
 }

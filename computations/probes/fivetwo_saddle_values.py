@@ -81,6 +81,14 @@ auditOnly; comparison to published mathematics; no fit.
 from __future__ import annotations
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 __all__ = ["saddle_roots", "V_GGM", "V_GGMW", "saddle_values",
            "GGM_TO_GGMW_SHIFT", "volume"]
@@ -161,7 +169,7 @@ def _self_check():
     literal that is `1.08e-4` away; the claim was prose, so nothing caught
     it. These gates exist so the next such slip fails loudly.
     """
-    mp.mp.dps = 40
+    set_compute_dps()
     y1, y2, y3 = saddle_roots()
     ok = True
 

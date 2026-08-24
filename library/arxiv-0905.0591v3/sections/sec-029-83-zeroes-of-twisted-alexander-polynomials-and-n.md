@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0905.0591v3
-doc_title: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS"
+doc_title: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS"
 section_id: sec-029-83-zeroes-of-twisted-alexander-polynomials-and-n
 section_title: "Zeroes of twisted Alexander polynomials and non–abelian representations"
 section_number: 8.3
 pages: 27-28
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
-doc_brief: "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 Let N be a 3–manifold with one boundary component and b1(N ) = 1. Put diﬀerently, let
 N be the complement of a knot in a rational homology sphere. Let α : π1(N ) → C∗ =

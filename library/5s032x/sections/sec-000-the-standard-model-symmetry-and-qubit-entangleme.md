@@ -1,13 +1,13 @@
 ---
 doc_id: 5s032x
-doc_title: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗"
+doc_title: "The standard model symmetry and qubit entanglement"
 section_id: sec-000-the-standard-model-symmetry-and-qubit-entangleme
 section_title: "The Standard Model Symmetry and Qubit Entanglement"
 section_number: null
 pages: 1-1
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
-doc_brief: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description."
+doc_brief: "The standard model symmetry and qubit entanglement — quantum description."
 ---
 Jochen Szangolies∗
 Research at the intersection of quantum gravity and quantum information theory has seen sig-

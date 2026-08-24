@@ -9,7 +9,7 @@ idle-backlog policy caps witness refreshes at 3 per pass and tells the agent to
 worked case `canonical-ordering-dof`, which drifted on +21 lines that are *all*
 comment).
 
-At the current backlog — 764 self-stale of ~3000 — "diff it first" is advice no
+At the current backlog — 628 self-stale of ~3000 — "diff it first" is advice no
 one can act on witness-by-witness. This script does it for the whole set at
 once, so an idle pass can spend its budget on the drifts that can actually move
 a number.
@@ -72,21 +72,36 @@ sufficient; the deep walk is kept because that is a fact about today's corpus,
 not a property of the method, and it costs little (module paths and git lookups
 are memoised).
 
-**The gate over-flags, and I would rather say so than let it look sharper than
-it is.** 5 of the 6 hits are `substrate/witness_base.py` or
-`substrate/_precision.py` — imported by nearly every producer. Checked one:
-`casimir-d6-qcorrection-structure` is flagged because `witness_base.py` gained
-15 lines whose only non-comment content is exporting `_EPHEMERAL_META_FIELDS`.
-That is serialization plumbing and **cannot move a number**. `_precision.py` is
-a genuine maybe — it sets `mp.dps`, so a change there really can shift digits —
-but `witness_base` drift is provenance-only.
+**The gate DID over-flag, and the fix is measured rather than guessed.** All 8
+flagged witnesses were re-run and diffed on their mathematical fields:
 
-Note this does not create work in either direction, which is the point: a
-refresh driven by infra-only drift would change nothing *but* provenance, and
-"provenance-only refresh" is precisely what this whole script exists to say is
-not worth the budget. So `cosmetic = 0` should be read as **conservative** — a
-few of the 6 are arguably refreshable — and the practical conclusion is
-unchanged.
+    drift confined to witness_base / _precision : 0 moved, 5 unchanged
+    drift touching anything else                : 2 moved, 0 unchanged
+    (1 crashed before writing and is undecided -- see below)
+
+Perfect separation on the 7 decidable cases, so infra-only drift gets its own
+bucket, `cosmetic_import_infra_only`, instead of sitting in the do-not-refresh
+pile. Those are still not worth refreshing -- a provenance-only change is
+exactly what this script exists to skip -- but they are not evidence a payload
+can move, and lumping them together overstated the hazard.
+
+Two honesty notes. **n = 7 is small**: perfect separation at that size is
+suggestive, not settled. And the members differ in weight -- `witness_base` is
+5/5 and pure serialization; `_precision` is 2/2 and could matter in principle,
+since it sets `mp.dps`.
+
+An earlier version of this passage argued infra drift "cannot move a number" and
+declined to automate on it. Declining was right then -- the belief was untested,
+and the last untested belief in this file produced a retraction. It is automated
+now because it was tested. That is the only difference, and it is the whole
+difference.
+
+**The crashed case is a real corpus defect, not a flake.**
+`casimir_d6_qcorrection_structure.py` requests the ideal/muon anchor, and
+`q_parameter` refuses because `q-pinning-50-digit.witness.json` no longer holds
+a muon value -- commit `9a9c6b31c` ("regenerated at the proton pin") flipped it.
+The guard is behaving correctly; the producer is simply unrunnable on current
+main. Tracked separately -- do not "fix" it by relaxing the guard.
 
 **Gate order matters when reading the counts.** The import-cone check runs
 first, so a witness that would *also* fail the environment or bare-producer gate
@@ -97,13 +112,13 @@ observation is independently true and still worth knowing —
 keys and re-emit 7 and 9, deleting the `scriptHash` this audit reads — it is
 simply not the *first* reason those two must not be refreshed.
 
-**The measured result on this corpus is `cosmetic = 0`.** Of ~764 self-stale
+**The measured result on this corpus is `cosmetic = 0`.** Of ~628 self-stale
 witnesses, not one is safe to refresh by the naive "re-run the producer" advice.
 That is the finding, not a limitation of the script: the idle-pass witness
 budget has nothing to spend itself on here, and an agent that spends it anyway
 is doing damage rather than maintenance.
 
-**It is not a snapshot.** Re-measured six times across 1833 commits of main
+**It is not a snapshot.** Re-measured nine times across ~2900 commits of main
 (2026-08-11 and twice on 2026-08-19, corpus 2898 -> 2985 witnesses), `cosmetic`
 came back 0 every time, and the class shape barely moved:
 
@@ -112,6 +127,7 @@ came back 0 every time, and the class shape barely moved:
     2026-08-19   substantive 256   rewritten 338   unresolvable 103   cosmetic 0
     2026-08-19   substantive 268   rewritten 366   unresolvable 111   cosmetic 0
     2026-08-19   substantive 267   rewritten 376   unresolvable 113   cosmetic 0
+    2026-08-23   substantive 160   rewritten 348   unresolvable 113   cosmetic 0
 
 So this is structural, not a bad week. Meanwhile main spent 45 `chore(witness)`
 commits over those same 8 days, 13 of them titled "refresh provenance sha after
@@ -124,8 +140,19 @@ Three honest residual classes, reported separately rather than folded in:
     rebase-merge (AGENTS.md rule 8) rewrites every branch commit sha, so a
     witness produced on a feature branch records a sha the merge destroyed.
     AGENTS.md says this of `scriptCommitSha`; it is equally true of `commitSha`.
-    At 366 of 751 this is **48.7 % of the backlog**, and the §4 remedy
-    (`git diff <witness.commitSha> -- <producer>`) is simply unrunnable on it.
+    At 376 of 765 this is **49 % of the backlog**, and the §4 remedy
+    (`git diff <witness.commitSha> -- <producer>`) is unrunnable on it.
+
+    **CORRECTION (2026-08-19): that cause is confirmed for only 46 of 376.** I
+    asserted rebase-merge as *the* explanation before checking the alternative.
+    This clone is **shallow** (`.git/shallow`, boundary 2026-08-07), so a sha
+    can be absent simply because the history was never fetched. Split on the
+    boundary date: 46 were computed after it (sha was in the fetched window, so
+    genuinely rewritten) and **330 before it — cause UNDETERMINED**. Entries now
+    carry `rewritten_cause`. The 330 are not thereby recoverable; what changed
+    is that I no longer claim to know. A direct `git fetch origin <sha>` cannot
+    settle it either — GitHub refuses arbitrary-sha fetches whether or not the
+    object exists.
 
     Worth being precise about what is and is not broken here: `commitSha` is
     **already** not an enforcement key — `witness_dependency_drift.py` keys
@@ -254,6 +281,22 @@ def env_gap(w: dict) -> dict[str, str]:
     return gaps
 
 
+# Modules whose drift was MEASURED not to move a payload. Empirical, not a
+# guess: all 8 import-cone-flagged witnesses were re-run and their mathematical
+# fields diffed (2026-08-19).
+#
+#     drift confined to this set  : 0 moved, 5 unchanged
+#     drift touching anything else: 2 moved, 0 unchanged
+#     (a 9th case crashed before writing and is undecided)
+#
+# Perfect separation, but on n=7 decidable cases, so this LABELS a bucket rather
+# than dropping it. The two members do not carry equal weight: `witness_base` is
+# 5/5 and is pure serialization/provenance; `_precision` is only 2/2 and could
+# matter in principle since it sets `mp.dps` -- a producer pinning its own
+# precision is immune, one relying on the default may not be. Re-measure before
+# leaning on the `_precision` half.
+_INFRA_MODULES = {"witness_base.py", "_precision.py"}
+
 _MODULE_PATH_CACHE: dict[str, str | None] = {}
 _CHANGED_CACHE: dict[tuple[str, str], bool] = {}
 
@@ -352,6 +395,23 @@ def find_producer(script_file: str) -> Path | None:
     return hits[0] if len(hits) == 1 else None
 
 
+def shallow_boundary_date() -> str | None:
+    """ISO date of this clone's shallow boundary, or None if the clone is full.
+
+    Load-bearing for reading `rewritten` honestly. A missing `commitSha` has two
+    possible causes and they are NOT interchangeable: rebase-merge destroyed it,
+    or this clone never fetched that far back. Only the first is unfixable.
+    """
+    sh = ROOT / ".git" / "shallow"
+    if not sh.is_file():
+        return None
+    line = sh.read_text().split()
+    if not line:
+        return None
+    out = _git("log", "-1", "--format=%cI", line[0])
+    return (out or "").strip() or None
+
+
 def approx_anchor(computed_at: str | None, producer_rel: str) -> str | None:
     """Nearest `origin/main` commit at-or-before `computed_at` carrying the producer.
 
@@ -376,10 +436,13 @@ def approx_anchor(computed_at: str | None, producer_rel: str) -> str | None:
     return sha
 
 
+_SHALLOW_BOUNDARY = shallow_boundary_date()
+
+
 def triage() -> dict:
     classes: dict[str, list] = {
         "cosmetic": [], "cosmetic_env_differs": [],
-        "cosmetic_import_cone_drift": [],
+        "cosmetic_import_cone_drift": [], "cosmetic_import_infra_only": [],
         "cosmetic_strips_provenance": [], "substantive": [],
         "rewritten": [], "unresolvable": [], "unparseable": [],
     }
@@ -421,7 +484,16 @@ def triage() -> dict:
         # They call for completely different follow-ups and conflating them
         # hides the dominant cause.
         if _git("cat-file", "-e", f"{sha}^{{commit}}") is None:
-            entry["reason"] = f"commit {sha[:9]} not in the repository"
+            bd = _SHALLOW_BOUNDARY
+            ts = w.get("computedAt")
+            if bd and ts and ts < bd:
+                entry["reason"] = (
+                    f"commit {sha[:9]} not in THIS clone; witness predates the "
+                    f"shallow boundary {bd[:10]} — cause undetermined")
+                entry["rewritten_cause"] = "ambiguous (shallow clone)"
+            else:
+                entry["reason"] = f"commit {sha[:9]} not in the repository"
+                entry["rewritten_cause"] = "confirmed (sha was in the fetched window)"
             # Try the heuristic timestamp anchor so this half of the backlog is
             # at least triageable. Advisory only -- see approx_anchor's caveat.
             anchor = approx_anchor(w.get("computedAt"), rel_p)
@@ -479,7 +551,13 @@ def triage() -> dict:
         drifted = local_import_drift(producer, src_text, sha)
         if drifted:
             entry["import_drift"] = drifted
-            classes["cosmetic_import_cone_drift"].append(entry)
+            infra_only = all(
+                any(d.split("/")[-1].startswith(m) for m in _INFRA_MODULES)
+                for d in drifted
+            )
+            entry["drift_kind"] = "infra-only" if infra_only else "numeric-bearing"
+            classes["cosmetic_import_infra_only" if infra_only
+                    else "cosmetic_import_cone_drift"].append(entry)
             continue
 
         if not any(k in src_text for k in ("WitnessBuilder", "scriptHash", "commitSha")):
@@ -501,6 +579,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", choices=["cosmetic", "cosmetic_env_differs",
                                        "cosmetic_import_cone_drift",
+                                       "cosmetic_import_infra_only",
                                        "cosmetic_strips_provenance",
                                        "substantive", "rewritten",
                                        "unresolvable", "unparseable"])
@@ -519,7 +598,8 @@ def main() -> int:
         ("substantive", "code changed — a re-run CAN move the payload"),
         ("cosmetic", "source cosmetic AND environment matches — safe to refresh"),
         ("cosmetic_env_differs", "source cosmetic BUT environment differs — DO NOT refresh"),
-        ("cosmetic_import_cone_drift", "source cosmetic BUT an imported module changed — DO NOT refresh"),
+        ("cosmetic_import_cone_drift", "a NUMERIC-bearing import changed — measured 2/2 moved"),
+        ("cosmetic_import_infra_only", "only witness_base/_precision changed — measured 0/5 moved"),
         ("cosmetic_strips_provenance", "source cosmetic BUT a re-run deletes provenance"),
         ("rewritten", "commitSha not in the repo — undecidable, see below"),
         ("unresolvable", "no commitSha, or producer moved since"),

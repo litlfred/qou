@@ -1204,6 +1204,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.332Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No assert-by-denying constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1223,6 +1238,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.374Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Generators, generation, mass — a linear three-part proof."
       }
     ],
     "trap-em-dash": [
@@ -1242,6 +1272,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 137 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.417Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1261,6 +1306,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 137 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.460Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "The fermion dictionary lists four entries, not a padded three."
       }
     ],
     "trap-closing-aphorism": [
@@ -1280,6 +1340,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.504Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Closes on the torus-knot specialisation and a QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1299,6 +1374,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.548Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1318,6 +1408,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.590Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "The Generation paragraph restates the proposition's second clause before proving it, which is standard proof bookkeeping."
       }
     ],
     "trap-performed-warmth": [
@@ -1337,6 +1442,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.633Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1356,6 +1476,23 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.676Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "'By the geometrization of knot complements, these are PRECISELY the torus knots (and the unknot).' The exactness claim is false.",
+        "notes": "Thurston's trichotomy is torus / SATELLITE / hyperbolic, and the vanishing-simplicial-volume class is the graph-manifold class: torus knots, the unknot, AND their connected sums and iterated cables. The granny knot 3_1 # 3_1 has zero volume and is not a torus knot (torus knots are prime); nor are cables of torus knots. PROPOSED: 'these are the knots whose complements are graph manifolds — the torus knots, the unknot, and their connected sums and iterated cables'. SECOND ITEM: the fermion dictionary 'the unknot (neutrino), trefoil 3_1 (electron), cinquefoil 5_1 (tau), and the torus(p,2) family' SKIPS THE MUON, the framework's own CAL-2 proxy. That may be deliberate, since the muon is tied to the hyperbolic figure-eight 4_1 (Vol = 2.0299, not zero) and so is not a zero-volume fundamental — but then the list should say so rather than leave a gap between the electron and the tau. THIRD ITEM: the closing paragraph duplicates verbatim the corollary already given in skein-mass-from-linking-proof.md."
       }
     ],
     "trap-nonspeakable": [
@@ -1375,6 +1512,22 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0617869bd8db",
+          "ts": "8ee216cf12e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.720Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Short paragraphs with displayed formulas.",
+        "notes": "SS7a VIOLATION, not fixable inline because it is math: the block writes the Skein relation as 'q L_+ - q^{-1} L_- = (q - q^{-1}) L_0'. AGENTS.md 7a fixes the repo convention as L_+ - L_- = (q - q^{-1}) L_0, derived there from the Hecke relation sigma^2 = (q - q^{-1}) sigma + 1 by multiplying through by sigma^{-1} to get sigma - sigma^{-1} = q - q^{-1}, then sending sigma to L_+, sigma^{-1} to L_-, and 1 to L_0. The block's extra q and q^{-1} prefactors are the HOMFLY normalisation (a L_+ - a^{-1} L_- = z L_0), a different relation. reidemeister-mass-invariance.md in this same batch writes the CORRECT form, so the two blocks disagree. PROPOSED: L_+ - L_- = (q - q^{-1}) L_0."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1397,5 +1550,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:53:04.720Z"
 }

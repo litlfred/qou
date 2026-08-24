@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.138Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.212Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.265Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.345Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.398Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.485Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.564Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.649Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.734Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.473Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "449630bcfd1a",
+          "ts": "a6fa8105c542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:25.852Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-vs-lp (statement + one para). All ten categories judged; the block has no trap construction. THREE mathematical defects reported, each checked against the primal it cites (mass-theory/confinement-sdp.md gives min_{Phi >= 0} <T, Phi>): (i) 'the LP provides a lower bound on the SDP' is backwards - restricting Phi to the diagonal shrinks the feasible set of a MINIMISATION, so the LP optimum is >= the SDP optimum, an UPPER bound (the .ts tag 'lp-relaxation' has the same inversion: this is a restriction, not a relaxation); (ii) 'the rank-1 restriction Phi = diag(x)' misnames it - diag(x) has rank equal to its number of nonzero entries, so the restriction is diagonal, not rank-1; (iii) 'For most baryonic and light-nuclear configurations, the Wedderburn decomposition has 1-dimensional blocks' fails for the baryon case itself - H_3(q) has blocks of dimension 1, 2, 1, and the 2-dimensional (2,1) block is the physically load-bearing one (it is where the isospin singlet draws its entire weight under convention D, per prop:branching-identity-isospin-weights).",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:14:25.852Z"
 }

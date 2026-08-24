@@ -183,17 +183,23 @@ theorem e₄_eq_mul_23 (h : R) :
 
 /-! ## The 72 generator identities
 
-`tr(b_g · b_j) = tr(b_j · b_g)` for each word `j` and generator `g`. -/
+`tr(b_g · b_j) = tr(b_j · b_g)` for each word `j` and generator `g`.
+
+**Diagonal entries are absent by design** (removed 2026-08-21; vacuity
+ledger, `proof-no-trivial-true` / `reflexive-tautology`).  At `j = g` the
+cyclicity instance degenerates to `tr(b_g · b_g) = tr(b_g · b_g)` — the two
+sides are *syntactically* identical, so `trM4_cyc_1_1`, `trM4_cyc_2_2` and
+`trM4_cyc_6_6` were `X = X := rfl`, asserting nothing falsifiable while
+reading, from their names, like three more entries of a proved table.  The
+`traceCentral_e₄_*` case splits that consumed them now discharge those
+branches with `rfl` inline, where the triviality is visible at the point of
+use.  The table's real content is the off-diagonal cases. -/
 
 theorem trM4_cyc_0_1 (z h : R) :
     trM4 z h (mulNF₄ h (e₄ (1 : Fin 24)) (e₄ (0 : Fin 24)))
       = trM4 z h (mulNF₄ h (e₄ (0 : Fin 24)) (e₄ (1 : Fin 24))) := by
   rw [mulNF₄_e_right, mulNF₄_e_right, wordAction_e₄_0_1, wordAction_gen₀,
     mulσ₀_e₄_0]
-
-theorem trM4_cyc_1_1 (z h : R) :
-    trM4 z h (mulNF₄ h (e₄ (1 : Fin 24)) (e₄ (1 : Fin 24)))
-      = trM4 z h (mulNF₄ h (e₄ (1 : Fin 24)) (e₄ (1 : Fin 24))) := rfl
 
 theorem trM4_cyc_2_1 (z h : R) :
     trM4 z h (mulNF₄ h (e₄ (1 : Fin 24)) (e₄ (2 : Fin 24)))
@@ -369,10 +375,6 @@ theorem trM4_cyc_1_2 (z h : R) :
   rw [mulNF₄_e_right, mulNF₄_e_right, wordAction_e₄_1_2, wordAction_gen₁,
     mulσ₁_e₄_1]
   simp [trM4_e₄', TRM4]
-
-theorem trM4_cyc_2_2 (z h : R) :
-    trM4 z h (mulNF₄ h (e₄ (2 : Fin 24)) (e₄ (2 : Fin 24)))
-      = trM4 z h (mulNF₄ h (e₄ (2 : Fin 24)) (e₄ (2 : Fin 24))) := rfl
 
 theorem trM4_cyc_3_2 (z h : R) :
     trM4 z h (mulNF₄ h (e₄ (2 : Fin 24)) (e₄ (3 : Fin 24)))
@@ -569,10 +571,6 @@ theorem trM4_cyc_5_6 (z h : R) :
     mulσ₂_e₄_5]
   simp [trM4_e₄', TRM4]
 
-theorem trM4_cyc_6_6 (z h : R) :
-    trM4 z h (mulNF₄ h (e₄ (6 : Fin 24)) (e₄ (6 : Fin 24)))
-      = trM4 z h (mulNF₄ h (e₄ (6 : Fin 24)) (e₄ (6 : Fin 24))) := rfl
-
 theorem trM4_cyc_7_6 (z h : R) :
     trM4 z h (mulNF₄ h (e₄ (6 : Fin 24)) (e₄ (7 : Fin 24)))
       = trM4 z h (mulNF₄ h (e₄ (7 : Fin 24)) (e₄ (6 : Fin 24))) := by
@@ -757,7 +755,7 @@ theorem traceCentral_e₄_1 (z h : R) : TraceCentral z h (e₄ (1 : Fin 24)) := 
   refine traceCentral_of_basis z h _ fun j => ?_
   fin_cases j
   · exact trM4_cyc_0_1 z h
-  · exact trM4_cyc_1_1 z h
+  · rfl  -- diagonal j = 1: LHS ≡ RHS, no content (see note above)
   · exact trM4_cyc_2_1 z h
   · exact trM4_cyc_3_1 z h
   · exact trM4_cyc_4_1 z h
@@ -786,7 +784,7 @@ theorem traceCentral_e₄_2 (z h : R) : TraceCentral z h (e₄ (2 : Fin 24)) := 
   fin_cases j
   · exact trM4_cyc_0_2 z h
   · exact trM4_cyc_1_2 z h
-  · exact trM4_cyc_2_2 z h
+  · rfl  -- diagonal j = 2: LHS ≡ RHS, no content (see note above)
   · exact trM4_cyc_3_2 z h
   · exact trM4_cyc_4_2 z h
   · exact trM4_cyc_5_2 z h
@@ -818,7 +816,7 @@ theorem traceCentral_e₄_6 (z h : R) : TraceCentral z h (e₄ (6 : Fin 24)) := 
   · exact trM4_cyc_3_6 z h
   · exact trM4_cyc_4_6 z h
   · exact trM4_cyc_5_6 z h
-  · exact trM4_cyc_6_6 z h
+  · rfl  -- diagonal j = 6: LHS ≡ RHS, no content (see note above)
   · exact trM4_cyc_7_6 z h
   · exact trM4_cyc_8_6 z h
   · exact trM4_cyc_9_6 z h

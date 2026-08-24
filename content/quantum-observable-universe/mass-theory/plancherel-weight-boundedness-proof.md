@@ -35,7 +35,7 @@ $\mathfrak{m}_{q,\mathcal{K}}(\mathcal{T}) = \sum_k \alpha_k
 absolutely convergent for any bounded $|\alpha_k|$, with no
 super-exponential divergence at large $n$.*
 
-**Plancherel distribution at $q_0 = 1.109978595554181\ldots$ (50 dps) (small $n$).**
+**Plancherel distribution at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) (small $n$).**
 
 See [Table](#tbl:plancherel-weight-boundedness-table-data).
 

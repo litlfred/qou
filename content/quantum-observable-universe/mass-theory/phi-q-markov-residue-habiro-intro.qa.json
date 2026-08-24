@@ -1190,6 +1190,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.236Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1224,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.401Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Roadmap prose; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1258,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.454Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1292,23 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.526Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "One tricolon: 'interprets the residue as braid holonomy around singular fibres, explicitly splits the graded trace from the residue sum, and applies this split to the 6-term binding density.' It enumerates three real downstream blocks, so it is substantive; noted only because the sibling section-intro sec:nuclear-binding-beta-stability-intro in this same batch carries the identical three-verb-participial shape twice over, which makes it look like a template rather than a choice.",
+        "notes": "No fix proposed for this block alone; if the chapter's section preambles are normalised, they should be normalised together."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1328,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.609Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on what the closing blocks secure — roadmap bookkeeping."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1362,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.710Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This sub-section bridges ...' is standard preamble signposting."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1396,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.782Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Nothing established yet to restate."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.999Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:33.078Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'exact pair equality', 'uniform ... bound', 'full pole structure' are technical qualifiers rather than inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1498,23 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "dc30d75f79f5",
+          "ts": "27b74e3f959d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:33.147Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Every sentence but the first ends in a trailing participial or gerund clause hung off an abstract subject: 'taking the V-hat-pair commutation trace as established alongside the pentagon material'; 'explicitly splits ... and applies this split to ...'; 'securing the substrate-flow inputs for the binding density evaluation'. Four of five sentences take an inanimate abstraction as agent ('This sub-section bridges', 'The sequence connects', 'It interprets', 'The closing blocks detail'), and the noun stacks ('the substrate-level Habiro evaluation', 'the Habiro residue expansion', 'the substrate-flow inputs for the binding density evaluation') run three and four nouns deep. It parses on the page and stalls aloud.",
+        "notes": "Proposed (structural): convert the trailing participials to finite clauses and split the two 30-plus-word sentences. Note also 'substrate-flow', which appears here and in the chapter outro but is defined in neither."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1537,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:00:33.147Z"
 }

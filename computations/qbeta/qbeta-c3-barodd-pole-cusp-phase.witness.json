@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T23:05:08.306457+00:00",
-  "commitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:44:54.854031+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "cusp_barEven_eq_one",
-      "computed": 2.566880151958614e-41,
+      "computed": 3.733752135369857e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-20,
@@ -14,7 +14,7 @@
     },
     {
       "name": "cusp_barOdd_sq_eq_neg3",
-      "computed": 9.39632416291369e-41,
+      "computed": 3.1369792523132786e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-20,
@@ -22,7 +22,7 @@
     },
     {
       "name": "gluing_newton_vol_and_extremal",
-      "computed": 4.1282603944519646e-18,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-09,
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 27,
   "computation": "qbeta-c3-barodd-pole-cusp-phase",
   "scriptFile": "qbeta_c3_barodd_pole_cusp_phase_probe.py",
-  "scriptHash": "9deeea4189ff",
-  "scriptCommitSha": "f49924aee122fc53d3977e9334189e7028fcf5f0",
+  "scriptHash": "a102cfba849b",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,16 +44,26 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_barodd_pole_cusp_phase_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_barodd_pole_cusp_phase_probe.py"
   },
   "description": "Explicit-coordinate analysis of the pole->cusp map's phase phi(q0) for the c3 bar-odd S, tied to 𝔙=Vol+i·CS (categorical trace, binding-qbeta-complex-volume). Coords: pole x=q^{-k}; cusp ω=e^{iπ/3} (barEven=1, barOdd²=−3, PROVED QOU.QBeta.CuspShapeBarParity); deformation u=2logm; ED z=√q−1/√q. Magnitude + base phase tractable/exact; phase FUNCTION phi(q0) near-singular (Φ_q-pole-seeded Newton, conj:algebraic-geometric-dilog-equivalence). Scope-(a); C14; m(q0) NOT fitted; no c_k wired.",
   "contentBlock": "conj:algebraic-geometric-dilog-equivalence",
   "data": {
     "cusp_shape_coord": {
       "omega": "(0.5 + 0.86602540378443864676j)",
-      "barEven": "(1.0 - 1.1479437019748901445e-41j)",
-      "barOdd_sq": "(-3.0 - 1.9882968160492150748e-41j)",
+      "barEven": "(1.0 - 9.0556790788267123675e-72j)",
+      "barOdd_sq": "(-3.0 - 3.1369792523132787949e-71j)",
       "lean": "QOU.QBeta.CuspShapeBarParity (barEven=1, barOdd²=−3, PROVED)"
     },
     "ed_coord_magnitude": {

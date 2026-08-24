@@ -1,13 +1,13 @@
 ---
 doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
-doc_title: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025"
+doc_title: "On the Garoufalidis-Kashaev state-integral invariant"
 section_id: sec-034-triangulations-and-state-variables
 section_title: "Triangulations and State Variables"
 section_number: null
 pages: 40-41
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec"
+doc_brief: "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 Let X be a finite ∆–complex obtained by gluing the faces of a finite collection
 of oriented tetrahedra in pairs; see Hatcher [9] for background on ∆–complexes. We

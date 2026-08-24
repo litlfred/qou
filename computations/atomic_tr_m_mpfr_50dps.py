@@ -88,6 +88,34 @@ def q0_for(anchor: str) -> str:
     pin the contents carry.
     """
     if anchor == "ideal":
+        # SYMMETRIC GUARD. The check below covers only the proton direction.
+        # The reverse -- an `ideal` run while `q_parameter` resolved PROTON --
+        # was unguarded, and it does not fail: it returns the muon string from
+        # the witness, so the trace is evaluated at muon while everything in
+        # this producer's cone that reads the MODULE CONSTANT rather than this
+        # returned `q_str` computes at proton. One quantity, two layers.
+        #
+        # Measured, and the measurement is why this exists: moving this
+        # script's stem from `ideal_muon` to `physical_proton` in
+        # `q0_anchor_manifest.json` -- a ONE-LINE manifest change, no code
+        # touched -- moved tr_M from 1.145759781719936507366644 to
+        # 1.145759828319992770436796 (~40.7 ppb) and degraded this producer's
+        # own `abs_diff_vs_bridge` from 5.67e-10 to 4.60e-08. Moving the entry
+        # back restored both exactly. Bisected to `3bcbbf401c`; bean qou-ibbr.
+        #
+        # The 80x gap between the pin's own effect (5.7e-10, both legs moving
+        # together) and this (4.6e-8, one leg only) is the straddle signature.
+        # Do not read a small pin delta as evidence a straddle is excluded.
+        from q_parameter import Q_50_DIGIT_STR as _resolved
+        if not str(_resolved).startswith("1.10997859555"):
+            raise SystemExit(
+                "--anchor ideal, but q_parameter resolved to the PROTON pin "
+                f"({str(_resolved)[:24]}…). This producer's ideal leg needs "
+                "its stem under `ideal_muon` in q0_anchor_manifest.json; "
+                "under `physical_proton` the returned q is muon while its "
+                "cone computes at proton — a layer straddle inside one "
+                "quantity, which AGENTS.md §q₀ rule 4 forbids regardless of "
+                "size. Refusing rather than writing a straddled witness.")
         return json.load(open(Q0))["derived_50_digit"]["q"]
     if anchor != "proton":
         raise SystemExit(f"unknown anchor {anchor!r}: expected 'ideal' or 'proton'")
@@ -347,12 +375,29 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
                 diff = abs(tr_sym_mpf - tr_at_q0_mpf)
                 print(f"    [sympy] tr_M(q_0) = {tr_sym_mpf}  ({dt_sym:.2f}s)")
                 print(f"    |bridge - sympy|   = {diff}")
+                # `abs_diff_vs_bridge` USED TO BE RECORDED WITHOUT A THRESHOLD.
+                # It was computed, printed, stored as a field, and compared to
+                # nothing — so `recomputed-low-isotope-mass-table.md`'s claim
+                # that three production paths "agree to machine epsilon" rested
+                # on a check that could not fail. Worse, this path sits behind
+                # `also_symbolic` and had never been enabled: the committed
+                # witness carries no `abs_diff_vs_bridge` for any of the five
+                # atoms. Had it run before the `_D_HECKE_TOL` fix it would have
+                # reported 8.14e-05 on the deuteron and still passed. Bean
+                # `qou-4e5k`.
+                sym_tol = mpf("1e-40")
+                sym_ok = diff < sym_tol
                 symbolic_check = {
                     "nf_terms": stats["n_terms_nf"],
                     "elapsed_sec": f"{dt_sym:.4f}",
                     "tr_M_at_q0_50dps": fmt(tr_sym_mpf),
                     "abs_diff_vs_bridge": fmt(diff),
+                    "tolerance": fmt(sym_tol),
+                    "passed": bool(sym_ok),
                 }
+                if not sym_ok:
+                    print(f"    [sympy] MISMATCH: |bridge - sympy| = {diff} "
+                          f"exceeds {sym_tol}")
             except Exception as exc:
                 print(f"    [sympy] FAILED ({type(exc).__name__}: {exc})")
                 symbolic_check = {"error": f"{type(exc).__name__}: {exc}"}

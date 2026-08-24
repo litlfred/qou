@@ -1,13 +1,13 @@
 ---
 doc_id: cspaper
-doc_title: "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds Walter D. Neumann 1. Introduction In this paper we prove some results on combinatorics of "
+doc_title: "Combinatorics of triangulations and the Chern-Simons invariant for hyperbolic 3-manifolds"
 section_id: sec-017-references
 section_title: "References"
 section_number: null
 pages: 29-29
 source_pdf: cspaper.pdf
 source_sha256: 1910c380cf79bf42
-doc_brief: "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds Walter D. Neumann 1. Introduction In this paper we prove some results on combinatorics of triangulations of 3"
+doc_brief: "Combinatorics of triangulations and the Chern-Simons invariant for hyperbolic 3-manifolds — 18 sections: Introduction; Q2n:; Denote Sol0 = fc 2 Z2n : U c = dg"
 ---
 [CS] M. Culler and P. B. Shalen, Varieties of group representations and splittings of 3-manifolds,
 Ann. of Math. 117 (1983), 109–146

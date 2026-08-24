@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2604.16077v1
-doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
+doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
 section_id: sec-055-432-along-0s
 section_title: "Along [0,s −"
 section_number: 4.3.2
 pages: 38-39
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
-doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI) of"
 ---
 N ]. The Clausen function is positive and increasing on [0 ,π/ 3], so to get an
 upper bound it is enough to discuss the asymptotical behavio ur of the constant integral

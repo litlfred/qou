@@ -1359,6 +1359,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.351Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose preamble, one paragraph); all ten judged. Mathematical content checked: the Jones polynomial does not distinguish mutants and the Kinoshita-Terasaka / Conway pair is the standard example - correct as stated."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,23 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.391Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Textbook setup-then-reframe: sentence 1 establishes the Jones blindness, sentence 2 pivots on it - 'That blindness is what makes the pair a sharp falsifiability test...' - with the second clause carrying the whole claim.",
+        "notes": "fix applied: 'That blindness is what makes the pair a sharp falsifiability test for the substrate construction' -> 'The pair is therefore a sharp falsifiability test for the substrate construction'"
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1430,23 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 103 words)"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.435Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'track more refined data than the closure trace alone - they either separate the mutants or they do not.' The dash appends the operative disjunction as an afterthought.",
+        "notes": "fix applied jointly with the pivot fix: the dash became a colon."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1466,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 103 words)"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.479Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose preamble, one paragraph); all ten judged. Mathematical content checked: the Jones polynomial does not distinguish mutants and the Kinoshita-Terasaka / Conway pair is the standard example - correct as stated."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1501,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.519Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose preamble, one paragraph); all ten judged. Mathematical content checked: the Jones polynomial does not distinguish mutants and the Kinoshita-Terasaka / Conway pair is the standard example - correct as stated."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1536,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.560Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose preamble, one paragraph); all ten judged. Mathematical content checked: the Jones polynomial does not distinguish mutants and the Kinoshita-Terasaka / Conway pair is the standard example - correct as stated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1571,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.600Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose preamble, one paragraph); all ten judged. Mathematical content checked: the Jones polynomial does not distinguish mutants and the Kinoshita-Terasaka / Conway pair is the standard example - correct as stated."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1606,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.641Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose preamble, one paragraph); all ten judged. Mathematical content checked: the Jones polynomial does not distinguish mutants and the Kinoshita-Terasaka / Conway pair is the standard example - correct as stated."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1641,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.684Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose preamble, one paragraph); all ten judged. Mathematical content checked: the Jones polynomial does not distinguish mutants and the Kinoshita-Terasaka / Conway pair is the standard example - correct as stated."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1676,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "53804cd90b1c",
+          "ts": "aa7f49f712f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.726Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose preamble, one paragraph); all ten judged. Mathematical content checked: the Jones polynomial does not distinguish mutants and the Kinoshita-Terasaka / Conway pair is the standard example - correct as stated."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1714,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:42.726Z"
 }

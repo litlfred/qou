@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:19:14.039466+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-23T08:58:55.914544+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "trM_log10_quadratic_fit_excellent",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 38,
   "computation": "delta-lambda-feed-analysis",
   "scriptFile": "delta_lambda_feed_analysis.py",
-  "scriptHash": "263ae3991b7e",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "fc121f0859da",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,21 +38,30 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_feed_analysis.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_feed_analysis.py"
   },
   "description": "Δ_λ feed analysis (EXPLORATORY): characterizes why a per-partition constant Δ_λ cannot close B = m_e Σ_λ y_λ χ_λ Δ_λ. log10|tr_M(a)| is quadratic in A (crossings T≈A²/2) → χ_λ blow up while B is linear, so the required Δ_λ(K) must decay ~10^(−cA²). Refutation + structural characterization, not a closure ansatz.",
   "data": {
     "n_nuclei": 3554,
     "trM_log10_vs_A": {
       "quadratic_fit_aA2_bA_c": [
-        0.012408678558706712,
-        -0.18611226891552868,
-        1.2940269927756753
+        0.012407756464550624,
+        -0.18575146792415922,
+        1.2060494436101852
       ],
       "R2_quadratic": 0.999932,
-      "R2_linear_only": 0.930111,
-      "R2_vs_crossing_count_T": 0.999,
-      "trM_log10_max": 1024.928
+      "R2_linear_only": 0.930123,
+      "R2_vs_crossing_count_T": 0.999001,
+      "trM_log10_max": 1024.8726
     },
     "binding_vs_A": {
       "linear_fit_mA_c": [
@@ -64,20 +73,20 @@
         0.018,
         8.7945555
       ],
-      "corr_BperA_vs_log10TrM": -0.2884,
+      "corr_BperA_vs_log10TrM": -0.2883,
       "log10_B_max": 3.3196098402158487
     },
     "required_Delta_alt": {
       "is_constant": false,
       "log10_range": [
-        -444.1231793493803,
-        14.89043494249627
+        -392.82988631478264,
+        66.18372797709391
       ],
       "orders_of_magnitude_spread": 459.0,
       "quadratic_in_A_fit_aA2_bA_c": [
-        -0.006757745137750286,
-        0.5089012191437239,
-        -7.573657479041408
+        -0.006757745137750285,
+        0.5089012191437235,
+        43.71963555555618
       ],
       "R2_quadratic": 0.941749,
       "interpretation": "required Δ_alt(K) spans ~459 orders of magnitude and is quadratic in A (R²=0.9417) — a constant Δ_λ is refuted; Δ_λ must be a per-nucleus ~10^(−cA²) normalization (inverse crossing-count / hyperbolic-volume scale)."
@@ -92,8 +101,8 @@
         "B_MeV": 28.295662,
         "log10_chi_sym": 0.3002,
         "log10_chi_alt": -0.2436,
-        "log10_absTrM": 0.175,
-        "log10_required_Delta_alt": 3.63
+        "log10_absTrM": 0.1999,
+        "log10_required_Delta_alt": 54.923
       },
       {
         "ZN": [
@@ -104,8 +113,8 @@
         "B_MeV": 92.161735,
         "log10_chi_sym": 0.9573,
         "log10_chi_alt": -0.6741,
-        "log10_absTrM": 0.6994,
-        "log10_required_Delta_alt": 4.573
+        "log10_absTrM": 0.7534,
+        "log10_required_Delta_alt": 55.867
       },
       {
         "ZN": [
@@ -116,8 +125,8 @@
         "B_MeV": 127.619315,
         "log10_chi_sym": 1.3141,
         "log10_chi_alt": -0.861,
-        "log10_absTrM": 1.2619,
-        "log10_required_Delta_alt": 4.902
+        "log10_absTrM": 1.278,
+        "log10_required_Delta_alt": 56.195
       },
       {
         "ZN": [
@@ -128,8 +137,8 @@
         "B_MeV": 342.052184,
         "log10_chi_sym": 3.8516,
         "log10_chi_alt": -1.5862,
-        "log10_absTrM": 15.2329,
-        "log10_required_Delta_alt": 6.055
+        "log10_absTrM": 15.1775,
+        "log10_required_Delta_alt": 57.348
       },
       {
         "ZN": [
@@ -140,8 +149,8 @@
         "B_MeV": 492.259953,
         "log10_chi_sym": 0.8361,
         "log10_chi_alt": 3.3738,
-        "log10_absTrM": 30.7028,
-        "log10_required_Delta_alt": 1.253
+        "log10_absTrM": 30.6475,
+        "log10_required_Delta_alt": 52.546
       },
       {
         "ZN": [
@@ -152,12 +161,12 @@
         "B_MeV": 1636.430224,
         "log10_chi_sym": -167.8583,
         "log10_chi_alt": 218.5846,
-        "log10_absTrM": 499.8076,
-        "log10_required_Delta_alt": -213.436
+        "log10_absTrM": 499.7522,
+        "log10_required_Delta_alt": -162.143
       }
     ],
     "findings": [
-      "log10|tr_M(a)| = 0.0124 A² -0.186 A +1.29, R²=0.99993 — quadratic in A because the atom crossing count is T = 11A + A(A−1)/2 + Z. The linear-only fit is markedly worse (R²=0.93011).",
+      "log10|tr_M(a)| = 0.0124 A² -0.186 A +1.21, R²=0.99993 — quadratic in A because the atom crossing count is T = 11A + A(A−1)/2 + Z. The linear-only fit is markedly worse (R²=0.93012).",
       "Binding is linear in A (R²=0.9915, B/A ∈ 0.02–8.79 MeV); log10 B ≤ 3.32 while log10|tr_M| reaches 1025. The χ_λ(a)/B scale mismatch is ~10^1000.",
       "The Δ_λ gate is therefore a SCALE gate: the required Δ_alt(K) is NOT constant (spans ~459 orders of magnitude, itself quadratic in A) — it must absorb the exponential crossing growth. This explains the six failed constant/structural ansätze and points to Δ_λ as a per-nucleus inverse-volume/packing factor (rho_F · V_hyp direction), not a Wedderburn-block constant."
     ]

@@ -10,7 +10,7 @@
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY",
+  "title": "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS",
   "authors_raw": null,
   "abstract": "These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025. The goal is to develop enough understanding of hyperbolic 3-manifolds to understand the background statements and some consequences of the Tameness Theorem, the Ending Lamination Theorem and the Density Theorem. The notes contain much more material than we will be able to cover in the actual mini-course. I left the four lane highway took a blacktop seven miles Down by the old country school I went to as a child Two miles down a gravel road I could see the proud old home A tribute to a way of life that’s almost come and gone. The roots of my raising run deep I come back for the strength that I need And hope comes no matter how far down I sink The roots of my raising run deep. —————–Tommy Collins1 0. Background material This section consists of background material on hyperbolic space and Teichm¨uller space. We will not cover this material in the lectures, but we include the material for any participants who are not familiar with this material or would like a reminder. 0.1. The hyperbolic plane Recall that the upper half-plane model for the hyperbolic plane is given by H2 ={z∈ C| Im(z)> 0} with Riemannian metric ds2 hyp = 1 y2 dxdy. Prosaically, if ⃗ v∈ T(x,y)H2, then its hyperbolic length ||⃗ v||hyp = |⃗ v| y where|⃗ v| is the Eucliden length of ⃗ v One may easily check that the y-axis L is a geodesic in this metric, since if p : H2→ L is Euclidean perpendicular projection, then ||Dp(⃗ v)||hyp≤||⃗ v||hyp with equality if and only if ⃗ vis vertical. Moreover, segments ofL are the only geodesic joining points onL. One may check that M¨obius transformations with real co-efficients act as orientation-preserving isometries of H2, by Date: May 16, 2025. 1The most famous version of this song is sung by Merle Haggard 1",
   "docinfo": {
@@ -20,7 +20,7 @@
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20250516084902+02'00'"
   },
-  "title_prev": "IHP LECTURES ON HYPERBOLIC3-MANIFOLDS RICHARD D. CANARY",
+  "title_prev": "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY",
   "title_lines": [
    "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS",
    "RICHARD D. CANARY"

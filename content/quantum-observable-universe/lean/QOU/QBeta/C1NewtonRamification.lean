@@ -37,7 +37,7 @@ obstructions are indexed by **residues mod `d`**, giving `d` obstructions in
 §7c: `ℚ[X]` — pure algebra over a domain; no ordering, nothing archimedean.
 Sorry-free. No fit; nothing wired; no Stokes multiplier computed.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§3.3 p. 39)
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3 p. 39)
 -- Ref: [manuscript] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
 -/
 import Mathlib.Algebra.Polynomial.Degree.Lemmas

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1012.5432v4
-doc_title: ""
+doc_title: "Towards topological quantum computation? Knotting and fusing flux tubes"
 section_id: sec-003-1-three-dimensions
 section_title: "Three Dimensions"
 section_number: 1
 pages: 13-14
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
-doc_brief: "quant-ph Towards Topological Quantum Computation? - — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
+doc_brief: "Towards topological quantum computation? Knotting and fusing flux tubes — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 Consider a physical system consisting of n identical point particles. (Note that for these
 particles to be truly indistinguishable, the system has to be quantum mechanical.) In three

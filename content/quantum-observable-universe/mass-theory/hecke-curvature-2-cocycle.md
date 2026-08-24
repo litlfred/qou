@@ -10,4 +10,4 @@ $$
   \end{cases}
 $$
 
-*It extends to general elements via the Leibniz rule. It explicitly measures the failure of commutativity and normal-form flatness at each generator pair.*
+*It extends to general elements via the Leibniz rule. It measures the failure of commutativity and normal-form flatness at each generator pair.*

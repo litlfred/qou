@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2604.16077v1
-doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
+doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
 section_id: sec-022-18-st-ephane-baseilhac-1-f-athi-ben-aribi2
 section_title: "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2"
 section_number: 18
 pages: 18-18
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
-doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI) of"
 ---
 The system (35) may be rewritten in a very convenient form by ﬁ xing the point w ∈G(T,b ),
 and working solely with edge colors. To see this, assume at ﬁr st that w =whyp, so we have

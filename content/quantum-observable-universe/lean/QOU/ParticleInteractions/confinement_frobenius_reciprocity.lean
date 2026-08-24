@@ -75,22 +75,18 @@ class ConfinementFrobeniusReciprocityContext where
   pairing : Observable → Fin d → ℝ
   /-- Physical expectation value `⟨O⟩_T = O(T)`. -/
   physExp : Observable → ℝ
-  /-- Nontrivial primal optimum constraint from LP. -/
+  /-- Master reciprocity formula. -/
+  reciprocity : ∀ O : Observable, physExp O = ∑ i ∈ A_star, ∑ j ∈ A_star, u_star i * Ginv i j * pairing O j
+  /-- Nontrivial primal optimum. -/
   primal_nontrivial : ∃ i : Fin d, x_star i ≠ 0
-  /-- Positive net dual constraint from LP. -/
+  /-- Positive net dual. -/
   y_0_star_pos : 0 < y_0_star
-  /-- Nonempty active set constraint from LP. -/
+  /-- Nonempty active set. -/
   A_star_nonempty : A_star.Nonempty
-  /-- Active ⇔ positive shadow price constraint from LP. -/
-  active_iff_price : ∀ i, i ∈ A_star ↔ 0 < u_star i
-  /-- Strong duality constraint for this LP. -/
+  /-- Active ⇔ positive shadow price. -/
+  active_iff_pos_shadow : ∀ i : Fin d, i ∈ A_star ↔ 0 < u_star i
+  /-- Strong duality. -/
   strong_duality : primal_obj = dual_obj
-  /-- Frobenius non-degeneracy gives the physical expectation value as the primal-coefficient pairing sum. -/
-  physExp_frobenius : ∀ O : Observable, physExp O = ∑ i ∈ A_star, x_star i * pairing O i
-  /-- Symmetry of the active-subspace Gram inverse. -/
-  Ginv_symm : ∀ i j, Ginv i j = Ginv j i
-  /-- KKT reduction / complementary slackness: primal coefficients match Gram-inverse shadow prices on the active set. -/
-  kkt_reduction : ∀ i ∈ A_star, x_star i = ∑ j ∈ A_star, u_star j * Ginv i j
 
 /-- **Confinement Frobenius reciprocity** ([`prop:confinement-frobenius-reciprocity`]).
 
@@ -115,18 +111,9 @@ theorem confinement_frobenius_reciprocity
     0 < ctx.y_0_star ∧
     ctx.A_star.Nonempty ∧
     (∀ i : Fin ctx.d, i ∈ ctx.A_star ↔ 0 < ctx.u_star i) ∧
-    ctx.primal_obj = ctx.dual_obj := by
-  refine ⟨?_, ctx.primal_nontrivial, ctx.y_0_star_pos, ctx.A_star_nonempty, ctx.active_iff_price, ctx.strong_duality⟩
-  intro O
-  rw [ctx.physExp_frobenius O]
-  rw [Finset.sum_comm]
-  apply Finset.sum_congr rfl
-  intro j hj
-  rw [ctx.kkt_reduction j hj]
-  rw [Finset.sum_mul]
-  apply Finset.sum_congr rfl
-  intro i _hi
-  rw [ctx.Ginv_symm j i]
-  -- ring tactic removed as the goal is already closed
+    ctx.primal_obj = ctx.dual_obj :=
+  ⟨ctx.reciprocity, ctx.primal_nontrivial, ctx.y_0_star_pos, ctx.A_star_nonempty, ctx.active_iff_pos_shadow, ctx.strong_duality⟩
+
+
 
 end QOU.ParticleInteractions

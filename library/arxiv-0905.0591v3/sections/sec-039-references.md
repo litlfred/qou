@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0905.0591v3
-doc_title: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS"
+doc_title: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS"
 section_id: sec-039-references
 section_title: "References"
 section_number: null
 pages: 36-42
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
-doc_brief: "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 [Ag08] I. Agol, Criteria for virtual ﬁbering , Journal of Topology 1: 269-284 (2008)
 [Al28] J.W. Alexander, Topological invariants of knots and links , Trans. Amer. Math. Soc. 30 (1928),

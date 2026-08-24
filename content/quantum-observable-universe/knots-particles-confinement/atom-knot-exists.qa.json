@@ -1461,6 +1461,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Existence of the atom-knot for any (Z, N)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'warn' verdict is grounded on 'atom-knot-exists.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-hidden-dof": [
@@ -1526,6 +1541,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'atom-knot-exists.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1635,7 +1665,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:1 — content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'"
+        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'atom-knot-exists.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1659,6 +1704,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean for 'Existence of the atom-knot for any (Z, N)' fails compilation with error: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'atom-knot-exists.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1914,6 +1974,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.424Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-negation-contrast construction present"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1933,6 +2008,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.461Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-rhetorical-pivot construction present"
       }
     ],
     "trap-em-dash": [
@@ -1952,6 +2042,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 22 words)"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.497Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-em-dash construction present"
       }
     ],
     "trap-triples": [
@@ -1971,6 +2076,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 22 words)"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.534Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-triples construction present"
       }
     ],
     "trap-closing-aphorism": [
@@ -1990,6 +2110,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.572Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-closing-aphorism construction present"
       }
     ],
     "trap-meta-commentary": [
@@ -2009,6 +2144,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.611Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-meta-commentary construction present"
       }
     ],
     "trap-thesis-restatement": [
@@ -2028,6 +2178,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.649Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-thesis-restatement construction present"
       }
     ],
     "trap-performed-warmth": [
@@ -2047,6 +2212,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.685Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-performed-warmth construction present"
       }
     ],
     "trap-superlative": [
@@ -2066,6 +2246,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.722Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-superlative construction present"
       }
     ],
     "trap-nonspeakable": [
@@ -2085,6 +2280,21 @@
         "reviewed_at": "2026-08-15T10:30:59.035Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "06d8697237b3",
+          "ts": "080bf3a55a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:43.759Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-nonspeakable construction present"
       }
     ],
     "wall-base-ring-minimal": [

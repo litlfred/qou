@@ -1542,6 +1542,21 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.174Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~6.9kB). Verified the base-order certificate by hand: rows (1/4,-1,55/16), (1/2,0,-1/16), (1,0,0) have determinant exactly 1/16, and Gaussian elimination without pivoting gives pivots 1/4, 2, 1/8 whose product is 1/16 - both the determinant and the stated LU pivots are correct. 4_1 as the unique arithmetic hyperbolic knot with trace field Q(sqrt(-3)) and 5_2 with a cubic trace field are both right; the volume-conjecture limit 2pi/n log|J(e^{2pi i/n})| is the standard form. All five named Lean declarations exist in lean/QOU/Archimedean/JetOrderIndependence.lean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1561,6 +1576,21 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.213Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~6.9kB). Verified the base-order certificate by hand: rows (1/4,-1,55/16), (1/2,0,-1/16), (1,0,0) have determinant exactly 1/16, and Gaussian elimination without pivoting gives pivots 1/4, 2, 1/8 whose product is 1/16 - both the determinant and the stated LU pivots are correct. 4_1 as the unique arithmetic hyperbolic knot with trace field Q(sqrt(-3)) and 5_2 with a cubic trace field are both right; the volume-conjecture limit 2pi/n log|J(e^{2pi i/n})| is the standard form. All five named Lean declarations exist in lean/QOU/Archimedean/JetOrderIndependence.lean."
       }
     ],
     "trap-em-dash": [
@@ -1580,6 +1610,21 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 837 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.251Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~6.9kB). Verified the base-order certificate by hand: rows (1/4,-1,55/16), (1/2,0,-1/16), (1,0,0) have determinant exactly 1/16, and Gaussian elimination without pivoting gives pivots 1/4, 2, 1/8 whose product is 1/16 - both the determinant and the stated LU pivots are correct. 4_1 as the unique arithmetic hyperbolic knot with trace field Q(sqrt(-3)) and 5_2 with a cubic trace field are both right; the volume-conjecture limit 2pi/n log|J(e^{2pi i/n})| is the standard form. All five named Lean declarations exist in lean/QOU/Archimedean/JetOrderIndependence.lean."
       }
     ],
     "trap-triples": [
@@ -1599,6 +1644,21 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 837 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.290Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~6.9kB). Verified the base-order certificate by hand: rows (1/4,-1,55/16), (1/2,0,-1/16), (1,0,0) have determinant exactly 1/16, and Gaussian elimination without pivoting gives pivots 1/4, 2, 1/8 whose product is 1/16 - both the determinant and the stated LU pivots are correct. 4_1 as the unique arithmetic hyperbolic knot with trace field Q(sqrt(-3)) and 5_2 with a cubic trace field are both right; the volume-conjecture limit 2pi/n log|J(e^{2pi i/n})| is the standard form. All five named Lean declarations exist in lean/QOU/Archimedean/JetOrderIndependence.lean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1618,6 +1678,23 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.329Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "Final line 'This converts an external dead end into an internal, incremental research target structured natively on the framework's filtration.' is a quotable closer; the paragraph already opened with 'The reduction secures a strategic advantage' and then stated the same content plainly.",
+        "notes": "proposed: end the block on 'the (I2) and (I3) physical inputs remain unproved' and delete the final sentence."
       }
     ],
     "trap-meta-commentary": [
@@ -1637,6 +1714,21 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.374Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~6.9kB). Verified the base-order certificate by hand: rows (1/4,-1,55/16), (1/2,0,-1/16), (1,0,0) have determinant exactly 1/16, and Gaussian elimination without pivoting gives pivots 1/4, 2, 1/8 whose product is 1/16 - both the determinant and the stated LU pivots are correct. 4_1 as the unique arithmetic hyperbolic knot with trace field Q(sqrt(-3)) and 5_2 with a cubic trace field are both right; the volume-conjecture limit 2pi/n log|J(e^{2pi i/n})| is the standard form. All five named Lean declarations exist in lean/QOU/Archimedean/JetOrderIndependence.lean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1656,6 +1748,23 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.413Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "The last paragraph restates the block's own opening ('This statement supplies a computationally viable target', 'This reduction replaces that machinery with three framework-native tools and one remaining gap') in five sentences that add no new content.",
+        "notes": "proposed: cut the paragraph to its one new fact - which of (I1)/(I2)/(I3) is proved and which is not."
       }
     ],
     "trap-performed-warmth": [
@@ -1675,6 +1784,21 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.451Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~6.9kB). Verified the base-order certificate by hand: rows (1/4,-1,55/16), (1/2,0,-1/16), (1,0,0) have determinant exactly 1/16, and Gaussian elimination without pivoting gives pivots 1/4, 2, 1/8 whose product is 1/16 - both the determinant and the stated LU pivots are correct. 4_1 as the unique arithmetic hyperbolic knot with trace field Q(sqrt(-3)) and 5_2 with a cubic trace field are both right; the volume-conjecture limit 2pi/n log|J(e^{2pi i/n})| is the standard form. All five named Lean declarations exist in lean/QOU/Archimedean/JetOrderIndependence.lean."
       }
     ],
     "trap-superlative": [
@@ -1694,6 +1818,21 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.490Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~6.9kB). Verified the base-order certificate by hand: rows (1/4,-1,55/16), (1/2,0,-1/16), (1,0,0) have determinant exactly 1/16, and Gaussian elimination without pivoting gives pivots 1/4, 2, 1/8 whose product is 1/16 - both the determinant and the stated LU pivots are correct. 4_1 as the unique arithmetic hyperbolic knot with trace field Q(sqrt(-3)) and 5_2 with a cubic trace field are both right; the volume-conjecture limit 2pi/n log|J(e^{2pi i/n})| is the standard form. All five named Lean declarations exist in lean/QOU/Archimedean/JetOrderIndependence.lean."
       }
     ],
     "trap-nonspeakable": [
@@ -1713,6 +1852,23 @@
         "reviewed_at": "2026-08-15T10:31:01.240Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e2542001c03b",
+          "ts": "207706ecbcc0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.529Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "Tool 2 is a ~20-sentence wall of nominalizations, several of which stall aloud: 'The column-extension linkage discharging the principle's hypotheses for the order-N Jacobian is supplied as a structural input.', 'Per-order independence reduces to this structural linkage.', 'This constitutes a finite determinant test on real data.'",
+        "notes": "proposed: subordinate the certificate chain into 3-4 sentences and name the agent of 'is supplied as a structural input' (it is an assumption, and saying so also fixes the epistemic problem reported as an anomaly)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1736,5 +1892,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:32.529Z"
 }

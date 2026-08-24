@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-048-813-some-notes-on-symmetry-breaking
 section_title: "Some notes on symmetry breaking"
 section_number: 8.1.3
 pages: 70-71
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 The adjoint Higgs ﬁeld is responsible for breaking SU (5) symmetry down to SU (3)×
 SU (2)×U(1)/Z6, [64]. In the process, the fermionic 5∗ and 10 break into (SU (3)c, SU(2)L, U(1)Y )

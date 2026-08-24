@@ -1,0 +1,170 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (49 lines, correction banner + 4 sections). Ten categories judged in context; the many \"X, not Y\" forms are the block's substantive re-scoping of the c_3 identification, not manufactured contrast."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (49 lines, correction banner + 4 sections). Ten categories judged in context; the many \"X, not Y\" forms are the block's substantive re-scoping of the c_3 identification, not manufactured contrast."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (49 lines, correction banner + 4 sections). Ten categories judged in context; the many \"X, not Y\" forms are the block's substantive re-scoping of the c_3 identification, not manufactured contrast."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (49 lines, correction banner + 4 sections). Ten categories judged in context; the many \"X, not Y\" forms are the block's substantive re-scoping of the c_3 identification, not manufactured contrast."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (49 lines, correction banner + 4 sections). Ten categories judged in context; the many \"X, not Y\" forms are the block's substantive re-scoping of the c_3 identification, not manufactured contrast."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (49 lines, correction banner + 4 sections). Ten categories judged in context; the many \"X, not Y\" forms are the block's substantive re-scoping of the c_3 identification, not manufactured contrast."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (49 lines, correction banner + 4 sections). Ten categories judged in context; the many \"X, not Y\" forms are the block's substantive re-scoping of the c_3 identification, not manufactured contrast."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (49 lines, correction banner + 4 sections). Ten categories judged in context; the many \"X, not Y\" forms are the block's substantive re-scoping of the c_3 identification, not manufactured contrast."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "The top banner (L9-20) and the body section \"The asymptotic bound (scope-limited)\" (L43-47) state the same correction twice: anchor-blind -Vol(4_1), muon +0.479% / proton -1.907%, swing 2.43%, 6.9x worse than the ladder near-match. The second occurrence adds nothing the first did not.",
+        "notes": "proposed: migrate the L9-20 banner to authorNotes (kind:\"note\", date 2026-07-11) per AGENTS.md 4d and keep only the body section. Not applied: the block has no .ts sibling to hold authorNotes (it is an orphan .md)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "66ec284f7743"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "L22: a single 45-word noun-chain (\"The third topological mass gap observable c_3 was initially measured via empirical extrapolation of the N=3 operator-valued calculations across the Q_beta manifold, resulting in a near-match physical measurement of:\") that parses on the page and stalls aloud.",
+        "notes": "proposed: split into two sentences; give the extraction its producer name rather than \"empirical extrapolation of ... calculations\"."
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T06:38:29.732Z"
+}

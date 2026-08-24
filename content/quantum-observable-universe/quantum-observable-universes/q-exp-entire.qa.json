@@ -20,6 +20,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.894Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is proposition + inline ratio-test proof for entirety of exp_q; no negation-contrast construction present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -39,6 +55,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.931Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is proposition + inline ratio-test proof for entirety of exp_q; sentences assert directly.",
+        "notes": "No fix needed."
       }
     ],
     "trap-em-dash": [
@@ -58,6 +90,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.967Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 0 in the block. Block is proposition + inline ratio-test proof for entirety of exp_q; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
       }
     ],
     "trap-triples": [
@@ -77,6 +125,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:04.002Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is proposition + inline ratio-test proof for entirety of exp_q; no three-item enumeration present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -96,6 +160,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:04.037Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is proposition + inline ratio-test proof for entirety of exp_q; the closer is mathematical content.",
+        "notes": "No fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -115,6 +195,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:04.074Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is proposition + inline ratio-test proof for entirety of exp_q; none present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -134,6 +230,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:04.110Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is proposition + inline ratio-test proof for entirety of exp_q; it does not.",
+        "notes": "No fix needed."
       }
     ],
     "trap-performed-warmth": [
@@ -153,6 +265,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:04.147Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is proposition + inline ratio-test proof for entirety of exp_q; register is institutional throughout.",
+        "notes": "No fix needed."
       }
     ],
     "trap-superlative": [
@@ -172,6 +300,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:04.183Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for unqualified maximum-strength claims. Block is proposition + inline ratio-test proof for entirety of exp_q; no superlative inflation.",
+        "notes": "Pass. 'converges for every $x$' and 'entire' are exact statements, and the ratio-test argument beside them is correct: dropping the positive tail of the balanced expansion does give [n+1]_q >= q^n for q > 1, so the ratio |x|/[n+1]_q <= |x| q^{-n} -> 0."
       }
     ],
     "trap-nonspeakable": [
@@ -191,6 +335,22 @@
         "reviewed_at": "2026-08-15T10:31:00.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:04.219Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is proposition + inline ratio-test proof for entirety of exp_q; sentences are speakable.",
+        "notes": "No fix needed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -214,7 +374,7 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T04:41:04.219Z",
   "paths": {
     "ts": "content/quantum-observable-universe/quantum-observable-universes/q-exp-entire.ts",
     "md": "content/quantum-observable-universe/quantum-observable-universes/q-exp-entire.md",

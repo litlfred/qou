@@ -1359,6 +1359,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not a coincidence but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.490Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The one assert-by-denial construction was found in the closing sentence and removed; the remaining contrasts are substantive.",
+        "notes": "fix applied: 'The sign agreement at $k = 5, 6$ is therefore not a coincidence but the **leading manifestation of the long-element character extraction** in the $c_k$ chain.' -> 'The sign agreement at $k = 5, 6$ is therefore the **leading manifestation of the long-element character extraction** in the $c_k$ chain.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.585Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.524Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 109-line proof (4 steps + open magnitude-closure section), all character values and binomial coefficients recomputed. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1429,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 471 words (1.27/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.558Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Four dashes are Step-header separators ('**Step 1 --- character values at $w_0$.**'), i.e. structural labels; the two in prose set off genuine appositives."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.585Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 471 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.592Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 109-line proof (4 steps + open magnitude-closure section), all character values and binomial coefficients recomputed. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.585Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.626Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 109-line proof (4 steps + open magnitude-closure section), all character values and binomial coefficients recomputed. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:00.585Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.661Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 109-line proof (4 steps + open magnitude-closure section), all character values and binomial coefficients recomputed. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.585Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.695Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 109-line proof (4 steps + open magnitude-closure section), all character values and binomial coefficients recomputed. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.585Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.731Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 109-line proof (4 steps + open magnitude-closure section), all character values and binomial coefficients recomputed. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.585Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.768Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 109-line proof (4 steps + open magnitude-closure section), all character values and binomial coefficients recomputed. claims are qualified; no maximum-strength inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1667,23 @@
         "reviewed_at": "2026-08-15T10:31:00.585Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c48191c50efd",
+          "ts": "c14b0effd922"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.801Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'The empirical $c_k$ ... selects the same signed combination (canonical structural verification at $k = 5, 6$ above; ...)' -- the parenthetical does not parse: 'canonical structural verification' is a token substitution for what was almost certainly 'numerical verification', and the referenced verification is not 'above' in this proof.",
+        "notes": "proposed: 'numerical verification at $k = 5, 6$ (witness: computations/option-e-phase1-h3-cross-check.witness.json)'. Not applied: restoring the intended word plus its missing reference is more than a punctuation fix."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1553,5 +1706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:44.801Z"
 }

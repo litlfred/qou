@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T11:15:40.849700+00:00",
-  "commitSha": "4ce1621e44f6dcfad7f1a1e4d72be4a466c69807",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:55:21.016630+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "derived_qhyperbolic_weight_closes_or_refutes_A3plus",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "binding-qhyperbolic-weight-probe",
   "scriptFile": "binding_qhyperbolic_weight_probe.py",
-  "scriptHash": "f31b92620570",
-  "scriptCommitSha": "4ce1621e44f6dcfad7f1a1e4d72be4a466c69807",
+  "scriptHash": "5fea45ca3f27",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_qhyperbolic_weight_probe.py"
+    ],
+    "reproduce": "python3 -u computations/binding_qhyperbolic_weight_probe.py"
   },
   "description": "EXPLORATORY: DERIVED non-compact / q-hyperbolic binding weights (C_λ at √q₀ half-monodromy, √C amplitude, Casimir/q-dim) vs the compact C_λ that refuted. Seeks the AME A-growth 12.72 zero-fit; asserts refutation if none closes to 5%. Full p(3A) sum; no τ/AME fit; no production touch.",
   "parameters": {

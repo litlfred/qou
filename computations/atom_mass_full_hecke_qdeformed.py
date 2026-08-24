@@ -38,8 +38,10 @@ import mpmath as mp  # noqa: E402
 
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # Block convenience rational (exact); substrate q₀ ≈ 1.10998 gives the same
 # weights to printed precision.

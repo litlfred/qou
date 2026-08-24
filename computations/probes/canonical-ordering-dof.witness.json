@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:27:29.260659+00:00",
-  "commitSha": "86c58229a346314c979196d92743e032c6e1c5fa",
+  "computedAt": "2026-08-23T12:19:34.128734+00:00",
+  "commitSha": "935c11c33670a4a5165e199eb7d2554375fe5f59",
   "assertions": [
     {
       "name": "closed_form_ratio_hardcodes_canonical_ordering",
@@ -120,9 +120,9 @@
     },
     {
       "name": "closed_form_matches_full_trace",
-      "computed": 0,
+      "computed": 1,
       "expected": 1,
-      "passed": false
+      "passed": true
     },
     {
       "name": "production_and_corpus_rule_disagree_for_A_ge_4",
@@ -137,12 +137,12 @@
       "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 6,
+  "allPassed": true,
+  "durationMs": 9,
   "computation": "canonical-ordering-dof",
   "scriptFile": "canonical_ordering_dof_probe.py",
-  "scriptHash": "894cafe018ee",
-  "scriptCommitSha": "736b82c5693c8c589b94f76c6282ccc5b43c5d3f",
+  "scriptHash": "e27e4aa5996e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -151,7 +151,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/canonical_ordering_dof_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/canonical_ordering_dof_probe.py"
   },
   "description": "Is the canonical cross-species nucleon ordering p...pn...n derivable, or a free degree of freedom? Q1: it is LIVE IN PRODUCTION -- the A>=3 binding chain (mass_table_comprehensive -> binding_canonical -> closed_form_tau_M -> closed_form_ratio) iterates a hardcoded ['p']*Z + ['n']*N, so every mixed-species A>=3 row of mass-table-comprehensive.witness.json inherits the choice. Q2: the interface product factorises as P(o)/P(canonical) = (f_pn/f_pp)^(b_p-1) * (f_pn/f_nn)^(b_n-1) over the p-/n-BLOCK counts; at the substrate anchor f_pn/f_pp < 1 < f_pn/f_nn, so the canonical arrangement is a SADDLE -- no extremal principle can select it (candidate 1 REFUTED). The trace IS a function of the interface multiset, but the multiset is not determined by (Z, N), so candidate 2 re-coordinatises the DOF without removing it. What survives is candidate 3: a genuine undeclared degree of freedom. free_parameters = 0; no AME quantity selects anything; nothing is wired; no ordering is recommended.",
   "auditOnly": true,
@@ -160,7 +172,7 @@
     "q0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR; owner directive 2026-08-07) -- the same pin the production chain uses; layer-pure, no muon cache read",
     "free_parameters": 0,
     "conventions_covered": "strict_averaged, bring_color_weighted",
-    "dps": 50
+    "dps": 70
   },
   "data": {
     "production_trace": {
@@ -184,8 +196,8 @@
     "factorisation": {
       "n_orderings_checked": 3140,
       "block_count_identity": true,
-      "worst_rel_multiset_form": "5.34553e-51",
-      "worst_rel_block_form": "1.06911e-50"
+      "worst_rel_multiset_form": "3.62227e-71",
+      "worst_rel_block_form": "5.43341e-71"
     },
     "candidate1_extremum": {
       "verdict": "REFUTED -- canonical is a saddle, not an extremum",
@@ -220,7 +232,7 @@
               "canonical": "pppnnn",
               "argmin": "pnnnpp",
               "min_over_canonical": "0.829390908488",
-              "argmax": "npnppn",
+              "argmax": "nppnpn",
               "max_over_canonical": "1.31460295438",
               "canonical_is_min": false,
               "canonical_is_max": false,
@@ -232,9 +244,9 @@
               "N": 4,
               "n_orderings": 70,
               "canonical": "ppppnnnn",
-              "argmin": "ppnnnnpp",
+              "argmin": "pnnnnppp",
               "min_over_canonical": "0.829390908488",
-              "argmax": "npnppnpn",
+              "argmax": "npnpnppn",
               "max_over_canonical": "1.37268706462",
               "canonical_is_min": false,
               "canonical_is_max": false,
@@ -248,7 +260,7 @@
               "canonical": "ppppppnnnnnn",
               "argmin": "pnnnnnnppppp",
               "min_over_canonical": "0.829390908488",
-              "argmax": "npnppnpnpnpn",
+              "argmax": "npnpnpnppnpn",
               "max_over_canonical": "1.49666780153",
               "canonical_is_min": false,
               "canonical_is_max": false,
@@ -260,7 +272,7 @@
               "N": 4,
               "n_orderings": 35,
               "canonical": "pppnnnn",
-              "argmin": "ppnnnnp",
+              "argmin": "pnnnnpp",
               "min_over_canonical": "0.829390908488",
               "argmax": "npnpnpn",
               "max_over_canonical": "1.37268706462",
@@ -274,9 +286,9 @@
               "N": 8,
               "n_orderings": 12870,
               "canonical": "ppppppppnnnnnnnn",
-              "argmin": "ppnnnnnnnnpppppp",
+              "argmin": "pnnnnnnnnppppppp",
               "min_over_canonical": "0.829390908488",
-              "argmax": "npnppnpnpnpnpnpn",
+              "argmax": "npnpnpnpnpnpnppn",
               "max_over_canonical": "1.63184644619",
               "canonical_is_min": false,
               "canonical_is_max": false,
@@ -312,7 +324,7 @@
               "N": 3,
               "n_orderings": 20,
               "canonical": "pppnnn",
-              "argmin": "pnnnpp",
+              "argmin": "ppnnnp",
               "min_over_canonical": "0.829508262874",
               "argmax": "nppnpn",
               "max_over_canonical": "1.31516106124",
@@ -340,7 +352,7 @@
               "N": 6,
               "n_orderings": 924,
               "canonical": "ppppppnnnnnn",
-              "argmin": "pppppnnnnnnp",
+              "argmin": "pnnnnnnppppp",
               "min_over_canonical": "0.829508262874",
               "argmax": "nppnpnpnpnpn",
               "max_over_canonical": "1.49857481513",
@@ -368,9 +380,9 @@
               "N": 8,
               "n_orderings": 12870,
               "canonical": "ppppppppnnnnnnnn",
-              "argmin": "pnnnnnnnnppppppp",
+              "argmin": "pppnnnnnnnnppppp",
               "min_over_canonical": "0.829508262874",
-              "argmax": "npnpnpnpnpnpnppn",
+              "argmax": "nppnpnpnpnpnpnpn",
               "max_over_canonical": "1.63485066411",
               "canonical_is_min": false,
               "canonical_is_max": false,
@@ -460,7 +472,7 @@
           "Z": 1,
           "N": 2,
           "in_production_table": true,
-          "B_pred_MeV_production": "8.473201",
+          "B_pred_MeV_production": "5.514921",
           "B_AME_MeV": "8.481821",
           "n_reachable_multisets": 2,
           "ratio_min": "1.0",
@@ -505,7 +517,7 @@
           "Z": 3,
           "N": 3,
           "in_production_table": true,
-          "B_pred_MeV_production": "18.131442",
+          "B_pred_MeV_production": "11.60812",
           "B_AME_MeV": "31.994",
           "n_reachable_multisets": 7,
           "ratio_min": "0.8293909085",
@@ -520,7 +532,7 @@
           "Z": 3,
           "N": 4,
           "in_production_table": true,
-          "B_pred_MeV_production": "23.062339",
+          "B_pred_MeV_production": "15.051504",
           "B_AME_MeV": "39.2445",
           "n_reachable_multisets": 8,
           "ratio_min": "0.8293909085",
@@ -535,7 +547,7 @@
           "Z": 4,
           "N": 5,
           "in_production_table": true,
-          "B_pred_MeV_production": "30.356908",
+          "B_pred_MeV_production": "19.819795",
           "B_AME_MeV": "58.165",
           "n_reachable_multisets": 11,
           "ratio_min": "0.8293909085",
@@ -550,7 +562,7 @@
           "Z": 6,
           "N": 6,
           "in_production_table": true,
-          "B_pred_MeV_production": "40.015149",
+          "B_pred_MeV_production": "25.912994",
           "B_AME_MeV": "92.162",
           "n_reachable_multisets": 16,
           "ratio_min": "0.8293909085",
@@ -565,7 +577,7 @@
           "Z": 8,
           "N": 8,
           "in_production_table": true,
-          "B_pred_MeV_production": "54.604288",
+          "B_pred_MeV_production": "35.449577",
           "B_AME_MeV": "127.619",
           "n_reachable_multisets": 22,
           "ratio_min": "0.8293909085",
@@ -580,7 +592,7 @@
           "Z": 20,
           "N": 20,
           "in_production_table": true,
-          "B_pred_MeV_production": "142.139118",
+          "B_pred_MeV_production": "92.669075",
           "B_AME_MeV": "342.052",
           "n_reachable_multisets": 58,
           "ratio_min": "0.8293909085",
@@ -595,7 +607,7 @@
           "Z": 26,
           "N": 30,
           "in_production_table": true,
-          "B_pred_MeV_production": "205.630123",
+          "B_pred_MeV_production": "135.052359",
           "B_AME_MeV": "492.254",
           "n_reachable_multisets": 77,
           "ratio_min": "0.8293909085",
@@ -614,36 +626,36 @@
     },
     "crosscheck_full_trace": [
       {
-        "source": "wenzl_bridge_strict",
+        "source": "wenzl_bridge_y_cache",
         "convention": "strict_averaged",
         "ratio": "T_npn_over_pnn",
-        "measured": "1.360125891092944",
+        "measured": "1.258976624909173",
         "closed_form": "1.258976624909173",
-        "rel_diff": "0.0803424"
+        "rel_diff": "4.92315e-17"
       },
       {
-        "source": "wenzl_bridge_strict",
+        "source": "wenzl_bridge_y_cache",
         "convention": "strict_averaged",
         "ratio": "He3_pnp_over_ppn",
-        "measured": "0.7906551265706377",
+        "measured": "0.8293909084880151",
         "closed_form": "0.8293909084880152",
-        "rel_diff": "0.0467039"
+        "rel_diff": "4.92315e-17"
       },
       {
-        "source": "pr4850_y_lambda_chi",
-        "convention": "bring_color_weighted",
+        "source": "wenzl_bridge_y_closed_form",
+        "convention": "strict_averaged",
         "ratio": "T_npn_over_pnn",
-        "measured": "1.360373590136357",
-        "closed_form": "1.25915476338",
-        "rel_diff": "0.0803863"
+        "measured": "1.258976624909173",
+        "closed_form": "1.258976624909173",
+        "rel_diff": "4.92315e-17"
       },
       {
-        "source": "pr4850_y_lambda_chi",
-        "convention": "bring_color_weighted",
+        "source": "wenzl_bridge_y_closed_form",
+        "convention": "strict_averaged",
         "ratio": "He3_pnp_over_ppn",
-        "measured": "0.7907991311016426",
-        "closed_form": "0.8295082628735002",
-        "rel_diff": "0.0466652"
+        "measured": "0.8293909084880151",
+        "closed_form": "0.8293909084880152",
+        "rel_diff": "4.92315e-17"
       }
     ],
     "two_live_conventions": {

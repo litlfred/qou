@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T11:52:51.476985+00:00",
-  "commitSha": "549a7a0ae26415bd31650db872dac246c7fdb871",
+  "computedAt": "2026-08-23T07:51:26.310584+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "pp_sign_positive_from_convention",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "b4-1four-complete-graph-writhe-signs",
   "scriptFile": "b4_1four_complete_graph_writhe_signs.py",
   "scriptHash": "e82388c70cc3",
-  "scriptCommitSha": "549a7a0ae26415bd31650db872dac246c7fdb871",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,16 +40,25 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/b4_1four_complete_graph_writhe_signs.py"
+    ],
+    "reproduce": "python3 -u computations/probes/b4_1four_complete_graph_writhe_signs.py"
   },
   "description": "[1⁴] complete-graph exchange matrix from read-off writhe signs: pp=+1, nn=−1 (derived from atom_braid_word_3A); pn sign open, enumerated over {−1,0,+1} at bond-factor magnitude z. −ln det(I+G) in MeV vs b₄=9.243. No fit; the pn sign needs the [1⁴] framing (open). audit-only.",
   "tier": "structural (enumeration of 3 discrete pn signs; derived pp/nn signs; no tuning)",
   "result": {
     "shell": "⁴He [1⁴] complete graph, 6 pairs (1 pp, 1 nn, 4 pn)",
     "constants": {
-      "q0": "1.10997859556",
-      "z_bond_factor": "0.499320334",
-      "E0_MeV": "4.1859808",
+      "q0": "1.10997858275",
+      "z_bond_factor": "0.4993203342",
+      "E0_MeV": "4.1859814",
       "b4_target_MeV": "9.243"
     },
     "derived_signs": {
@@ -70,7 +79,7 @@
         "w_pn": 0,
         "det_I_plus_G": "0.56351927",
         "neg_log_det": "0.57355375",
-        "MeV": "2.400885",
+        "MeV": "2.4008853",
         "ratio_to_b4": "0.259752",
         "status": "0.260× of b₄ (=2.401 MeV)"
       },

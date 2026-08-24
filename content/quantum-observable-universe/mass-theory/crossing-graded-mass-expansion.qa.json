@@ -1831,6 +1831,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.053Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 173 w: read in full (graded expansion, locality corollary, classical limit, Archimedean banner). Table row coefficients c, binom(c,2) checked consistent with the (1+xi)^c collapse."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1850,6 +1865,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.092Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 173 w: read in full (graded expansion, locality corollary, classical limit, Archimedean banner). Table row coefficients c, binom(c,2) checked consistent with the (1+xi)^c collapse."
       }
     ],
     "trap-em-dash": [
@@ -1869,6 +1899,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 147 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.128Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "One unspaced pair, a true parenthetical naming the hypothesis: 'factorize independently-the locality hypothesis-the graded sum collapses'."
       }
     ],
     "trap-triples": [
@@ -1888,6 +1933,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 147 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.166Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 173 w: read in full (graded expansion, locality corollary, classical limit, Archimedean banner). Table row coefficients c, binom(c,2) checked consistent with the (1+xi)^c collapse."
       }
     ],
     "trap-closing-aphorism": [
@@ -1907,6 +1967,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.203Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 173 w: read in full (graded expansion, locality corollary, classical limit, Archimedean banner). Table row coefficients c, binom(c,2) checked consistent with the (1+xi)^c collapse."
       }
     ],
     "trap-meta-commentary": [
@@ -1926,6 +2001,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.240Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 173 w: read in full (graded expansion, locality corollary, classical limit, Archimedean banner). Table row coefficients c, binom(c,2) checked consistent with the (1+xi)^c collapse."
       }
     ],
     "trap-thesis-restatement": [
@@ -1945,6 +2035,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.277Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 173 w: read in full (graded expansion, locality corollary, classical limit, Archimedean banner). Table row coefficients c, binom(c,2) checked consistent with the (1+xi)^c collapse."
       }
     ],
     "trap-performed-warmth": [
@@ -1964,6 +2069,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.314Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 173 w: read in full (graded expansion, locality corollary, classical limit, Archimedean banner). Table row coefficients c, binom(c,2) checked consistent with the (1+xi)^c collapse."
       }
     ],
     "trap-superlative": [
@@ -1983,6 +2103,23 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.351Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Two consecutive de-hedged declaratives assert a corollary of an explicitly hypothetical ('If ... - the locality hypothesis -') collapse as unconditional fact: 'Each added crossing multiplies the mass. Geometric knots grow exponentially heavier.'",
+        "notes": "Proposed: 'Under the locality hypothesis each added crossing multiplies the mass by (1 + xi(q)), so mass grows exponentially in crossing number.' Not applied: restoring the conditional changes the assertion's scope, which is the author's call."
       }
     ],
     "trap-nonspeakable": [
@@ -2002,6 +2139,21 @@
         "reviewed_at": "2026-08-15T10:31:00.795Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5f262901dd60",
+          "ts": "654d1b2e4626"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.387Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'the semiclassical limit of the quantum dilogarithm operator acting at each Hecke generator, ordered by the quantum Planck constant' is noun-heavy but reads aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2025,5 +2177,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:56:37.387Z"
 }

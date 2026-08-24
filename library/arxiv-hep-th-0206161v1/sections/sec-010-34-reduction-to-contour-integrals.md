@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0206161v1
-doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1"
+doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING"
 section_id: sec-010-34-reduction-to-contour-integrals
 section_title: "Reduction to contour integrals"
 section_number: 3.4
 pages: 16-19
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
-doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 26 sections: Introduction; (1 .3); (α±"
 ---
 After the manipulations as in [7][6] we end up with the follow ing integral[28]:
 Zk(a,ǫ 1,ǫ 2) = 1

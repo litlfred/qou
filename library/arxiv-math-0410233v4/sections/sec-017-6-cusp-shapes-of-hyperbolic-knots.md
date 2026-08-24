@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0410233v4
-doc_title: "CUSP SHAPES UNDER CONE DEFORMA TION JESSICA S. PURCELL"
+doc_title: "Cusp shapes under cone deformation"
 section_id: sec-017-6-cusp-shapes-of-hyperbolic-knots
 section_title: "Cusp shapes of hyperbolic knots"
 section_number: 6
 pages: 31-31
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
-doc_brief: "CUSP SHAPES UNDER CONE DEFORMATION JESSICA S. PURCELL — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
 ---
 We will now apply the results of the previous sections to dete rmine bounds
 on the shapes of cusps of knot complements. In particular, le t K be a

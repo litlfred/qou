@@ -1,13 +1,13 @@
 ---
 doc_id: 4geo-dedi-rev
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the quantum Teichmüller invariants of fibred cusped 3-manifolds"
 section_id: sec-012-4-proofs
 section_title: "Proofs"
 section_number: 4
 pages: 18-19
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
-doc_brief: "HAL Id: hal-01812027 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: ST ´EPHANE B"
+doc_brief: "On the quantum Teichmüller invariants of fibred cusped 3-manifolds — 27 sections: ST ´EPHANE BASEILHAC1, RICCARDO BE; ST ´EPHANE BASEILHAC1, RICCARDO BE; ST ´EPHANE BASEILHAC1, RICCARDO BE"
 ---
 We are ready to prove our main Theorems 1.1, 1.2, and Corollary 1.4. Let us reformulate them by
 using the background material recalled in the previous sections.

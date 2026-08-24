@@ -63,8 +63,10 @@ for p in (str(HERE / "substrate"), str(HERE)):
         sys.path.insert(0, p)
 
 import mpmath as mp  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # Muon-canonical q_0 (computations layer; …/q-pinning-50-digit.witness.json).
 Q0_STR = "1.10997859555733471989976322048322502665620840878015368660798114614493"

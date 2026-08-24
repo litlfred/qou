@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:06.969Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.008Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.042Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.079Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.115Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.153Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.189Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.225Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.261Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a60299f6ceeb",
+          "ts": "9713f0396460"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.299Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
+      }
     ]
   },
   "source_hashes": {
     "md": "a60299f6ceeb",
     "ts": "9713f0396460"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:08:07.299Z"
 }

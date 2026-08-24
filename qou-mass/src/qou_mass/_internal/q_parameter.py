@@ -46,11 +46,19 @@ from pathlib import Path
 try:
     import qou_substrate.constants as _qs_constants  # noqa: F401
 except ImportError:
-    _QOU_SUBSTRATE_PYTHON = (
-        Path(__file__).resolve().parent.parent.parent.parent  # was: ...parent.parent.parent (pre-Phase-6 — substrate moved into substrate/, added one more .parent to reach repo root)
-        / "tools" / "qou-substrate" / "python"
-    )
-    if _QOU_SUBSTRATE_PYTHON.is_dir() and str(_QOU_SUBSTRATE_PYTHON) not in sys.path:
+    # SEARCH upward rather than counting `.parent`s. A fixed count cannot be
+    # right for both layouts this shim lives in: 3 up in computations/substrate/,
+    # 5 up once the vendor sync flattens it into qou-mass/.../_internal/. The
+    # hardcoded 4 was wrong in BOTH, so the fallback never fired anywhere; it
+    # only stayed invisible because `import _path_bridge` normally puts the
+    # substrate on sys.path first — and the vendor sync STRIPS that import.
+    _QOU_SUBSTRATE_PYTHON = None
+    for _anc in Path(__file__).resolve().parents:
+        _cand = _anc / "tools" / "qou-substrate" / "python"
+        if _cand.is_dir():
+            _QOU_SUBSTRATE_PYTHON = _cand
+            break
+    if _QOU_SUBSTRATE_PYTHON is not None and str(_QOU_SUBSTRATE_PYTHON) not in sys.path:
         sys.path.insert(0, str(_QOU_SUBSTRATE_PYTHON))
 
 from qou_substrate.constants import *  # noqa: F401,F403,E402

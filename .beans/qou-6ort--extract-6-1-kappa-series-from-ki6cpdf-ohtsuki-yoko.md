@@ -1,11 +1,11 @@
 ---
 # qou-6ort
 title: Extract 6_1 kappa-series from ki6c.pdf (Ohtsuki-Yokota 6-crossing) — Ohtsuki-tower third-knot leg
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T11:35:54Z
-updated_at: 2026-08-19T21:17:04Z
+updated_at: 2026-08-21T15:39:08Z
 ---
 
 
@@ -267,3 +267,71 @@ trace field is the quartic and the right basis is not obvious — a separate ste
 
 NEXT: (a) more rungs / higher N for PSLQ-grade precision; (b) the Borel/Stokes
 step that turns these into DT constants and tests R1's {5} vs the {5,10} guess.
+
+## Note from a passing agent (2026-08-21) — the witness declares `independent` with no reason
+
+Not claiming this bean; flagging one field so it gets fixed at the
+producer rather than by someone patching the witness behind you.
+
+`qbeta-ohtsuki-sixone-kappa-series.witness.json` (landed `ae1d692cc6`)
+carries `q0Anchor: "independent"` with no `q0AnchorReason`, so
+`q0_anchor_consistency_audit` scores it `Q0_INDEPENDENT_NO_REASON`. The
+audit requires the reason because otherwise a reader has to re-derive the
+producer's import cone to check the claim.
+
+The fix is one line, `qbeta_ohtsuki_sixone_kappa_series.py:406`:
+
+```python
+    wb.save({"q0Anchor": "independent"})
+    # ->
+    wb.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": "…why no substrate pin is read…",
+    })
+```
+
+Deliberately **no** `q0Value` — the audit reads a value alongside
+`independent` as a contradiction, since it would mean something did
+supply a pin.
+
+The token itself looks right from here (a kappa-series extracted from
+ki6c, symbolic in q, no substrate anchor) — it is the justification
+that is missing, not the classification. I did not patch the witness,
+because your next producer run would overwrite it.
+
+Context: PR #5312 drained this class 2 -> 0 earlier today; this one
+landed after. Count is back to 1.
+
+### Second defect in the same producer — an import-time `mpf` literal
+
+Surfaced by `scripts/precision-gates.sh` during an unrelated merge-prep
+run. `mpf_import_time_dps_audit` reports:
+
+```
+NEW files (not baselined) : 1
+  literal=1   computations/qbeta/qbeta_ohtsuki_sixone_kappa_series.py
+  L166: mpf('3.163963228883143983991757529167384812325703962')  [literal]
+```
+
+The string spelling is right — `mpf('...')` is the correct way to keep a
+constant out of float64 — but the **evaluation point** is wrong. This is
+at module scope, so it runs at IMPORT time, before `set_compute_dps()`.
+mpmath parses it at whatever `mp.dps` is then (default 15), so those 46
+digits are truncated on the way in. The literal *looks* precise and the
+value is not.
+
+Fix: move the construction inside the function that uses it (after the
+dps is set), or wrap it so it is built lazily. Do not add the file to
+`raw-float64-baseline.json` — AGENTS.md is explicit that baselines drain
+and never grow.
+
+Counts, for whoever fixes it:
+
+```
+files_with_findings  14 -> 15
+literal_findings      0 -> 1
+new_not_baselined     0 -> 1
+```
+
+Not fixed here for the same reason as the anchor field above: this is
+your in-progress bean and your next producer run owns both.

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:24:59.114584+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T17:52:34.017355+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "second_moment_exact_identities",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 58197,
+  "durationMs": 47579,
   "computation": "rep-tightness",
   "scriptFile": "rep_tightness_probe.py",
-  "scriptHash": "17380abbc8fe",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "49b9d33e06b7",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,7 +64,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/rep_tightness_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/rep_tightness_probe.py"
   },
   "description": "REP attack 2 — tightness of the balanced q-Borel kernel family (bean qou-ry7x, epic qou-q04o; audit-only, scope-(a), NO FIT, nothing wired). The explicit positive kernels with exactly the balanced moments (atomic Jackson ⊛ theta; a.c. Jackson ⊛ log-normal, σ² = ln(q)/2, μ̂ = −ln(q)/4; Attack B §3) form a q-indexed family whose SECOND moment is the exact monotone quantity N^bal_q(3) = q^{−1/2}(1+q) = 2 + (√q−1)²/√q — uniformly bounded on q ∈ (1, q₀] by C₂ = N^bal_{q₀}(3). Markov's inequality then yields uniform tail control K_q((R,∞)) ≤ C₂/R²: the family is TIGHT, verified here at 60 dps (tails of both variants vs the Markov bound at every sampled q; one compact window per ε catching 1−ε of every member). Consequence (carried in Lean, QOU/Archimedean/BalancedKernelTightness.lean): tight + [Prokhorov selection, Mathlib-gap class] ⇒ subsequential weak limits exist; + [moment passage, Mathlib-gap class] + the Lean-PROVED factorial determinacy pin (Carleman divergence + [CarlemanDeterminacyStieltjes]) ⇒ EVERY subsequential limit is the Schwinger measure e^{−s}ds — archimedean (REP) for the constructed family without fibre uniqueness (which fails: the fibre problem is indeterminate at q ≠ 1, Attack B §3.1). NOT closed: the identification of the substrate's own kernel with a member of this family (REP-1).",
   "auditOnly": "docs/audits/2026-08-01-rep-tightness-archimedean.md",
@@ -262,11 +269,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

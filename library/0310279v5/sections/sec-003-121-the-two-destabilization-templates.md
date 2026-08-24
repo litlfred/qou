@@ -1,13 +1,13 @@
 ---
 doc_id: 0310279v5
-doc_title: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO"
+doc_title: "Stabilization in the braid groups I: MTWS"
 section_id: sec-003-121-the-two-destabilization-templates
 section_title: "The two destabilization templates"
 section_number: 1.2.1
 pages: 7-9
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
-doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
+doc_brief: "Stabilization in the braid groups I: MTWS — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 Our two destabilization templates were deﬁned in Figure 1. We distinguish the cases of
 positive and negative destabilization because the strands which join the ﬁxed blocks are

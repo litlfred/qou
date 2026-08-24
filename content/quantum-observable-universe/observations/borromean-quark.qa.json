@@ -1287,7 +1287,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/borromean-quark.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/borromean-quark.lean:1 — content/quantum-observable-universe/observations/borromean-quark.lean:35:16: error(lean.unknownIdentifier): Unknown constant `Finset.univ.sum`"
+        "evidence": "content/quantum-observable-universe/observations/borromean-quark.lean:1 \u2014 content/quantum-observable-universe/observations/borromean-quark.lean:35:16: error(lean.unknownIdentifier): Unknown constant `Finset.univ.sum`"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'borromean-quark.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1677,7 +1692,7 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "2 negation-contrast construction(s): \", not from constituents.\"; \", not from the constituent unknots.\" — state the positive claim directly"
+        "evidence": "2 negation-contrast construction(s): \", not from constituents.\"; \", not from the constituent unknots.\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {

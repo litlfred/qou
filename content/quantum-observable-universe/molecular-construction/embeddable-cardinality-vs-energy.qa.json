@@ -1426,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.497Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.540Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.585Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1483,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.629Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.675Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: final prose sentence is: \"A lateral weight $w_\\perp \\in [0.3, 0.7]$ brackets it (witness embeddable-knot-operator).\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1601,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.716Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1636,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.757Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: final sentence checked against the body: \"A lateral weight $w_\\perp \\in [0.3, 0.7]$ brackets it (witness embeddable-knot-operator).\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1671,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.802Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1706,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.845Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'changes only the energy, never the channel count' is a proved-in-context separation, not inflation.",
+        "notes": "CARRIED FINDING (stale upstream witness): the 1.42x figure reproduces from embeddable-knot-operator.witness.json (triple_bond_energy_vs_w_perp['1.00'] = 13.8694; 13.8694/9.7538 = 1.4219), which implies b_sigma = 4.6231 eV. But embeddable_knot_operator.py:112 reads b_sigma from co-bond-order-active-set.witness.json['data']['sigma_channel_eV'] (comment: '# +4.62 eV'), and that upstream value is now 0.8645364577143441. The embeddable witness records the upstream sha256 0ddce3f8... / 2026-06-09; the file on disk is 07fc2fa5... / 2026-08-21 - drift confirmed by hash, not inferred. Re-running the producer today gives E(w=1) = 2.594 eV = 0.266x D_0(N2), so 'overbinds ... 1.42x' becomes an underbind and NO w_perp in (0,1] can bracket D_0(N2). Regenerate embeddable-knot-operator or reconcile the two sigma-channel definitions before this sentence is safe."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1741,22 @@
         "reviewed_at": "2026-08-15T10:31:01.619Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4ce757edb5ba",
+          "ts": "045e747f4adf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:20.896Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (cardinality-vs-energy separation; opened embeddable-knot-operator.witness.json and recomputed the 1.42x figure and the w_perp bracket). Judged on the whole text: read aloud end to end (4 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1779,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:20.896Z"
 }

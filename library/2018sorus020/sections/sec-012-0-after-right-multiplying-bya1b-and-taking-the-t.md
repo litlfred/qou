@@ -1,13 +1,13 @@
 ---
 doc_id: 2018sorus020
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Reidemeister torsion on character varieties"
 section_id: sec-012-0-after-right-multiplying-bya1b-and-taking-the-t
 section_title: "After right-multiplying byA−1B and taking the trace, one obtains Tr(AB)−"
 section_number: 0
 pages: 19-21
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
+doc_brief: "Reidemeister torsion on character varieties — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ"
 ---
 Tr(A) Tr(B) + Tr(A−1) Tr(B) = 0, and the result follows.
 Theorem 1.1.8([Pro87]). The algebra given byB[Γ] =k[Yγ,γ∈ Γ]/(Ye−2,YγYδ−

@@ -1242,6 +1242,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.192Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1261,6 +1277,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.230Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-em-dash": [
@@ -1280,6 +1312,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 40 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.272Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-triples": [
@@ -1299,6 +1347,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 40 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.310Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1318,6 +1382,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.348Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-meta-commentary": [
@@ -1337,6 +1417,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.385Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1356,6 +1452,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.422Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-performed-warmth": [
@@ -1375,6 +1487,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.459Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-superlative": [
@@ -1394,6 +1522,22 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.496Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ],
     "trap-nonspeakable": [
@@ -1413,8 +1557,24 @@
         "reviewed_at": "2026-08-15T10:31:01.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c2015aacee26",
+          "ts": "9b5bac0cf721"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.534Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:witt-vector-lift-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: 'then wraps it in the Witt vector functor' describes a step the formalisation does not perform - the Lean proof packages G into the WittVectorLift record and closes with rfl; no Witt vector functor appears anywhere in Fred2005/FormalGroups.lean."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.651Z"
+  "updated_at": "2026-08-22T04:07:42.534Z"
 }

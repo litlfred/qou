@@ -70,6 +70,25 @@ fi
 
 die() { echo "setup-folio-assistant: ERROR: $*" >&2; exit 1; }
 info() { echo "setup-folio-assistant: $*" >&2; }
+warn() { echo "setup-folio-assistant: WARNING: $*" >&2; }
+
+# Report when the clone's checkout is NOT at $REF. $REF may be a branch name or
+# a pinned SHA (.folio-assistant-pin), so resolve origin/$REF first and fall
+# back to $REF itself — comparing against "origin/<sha>" silently yields nothing.
+report_off_ref() {
+  _tgt="$REF"
+  if git -C "$CLONE_DIR" rev-parse --verify --quiet "refs/remotes/origin/$REF" >/dev/null 2>&1; then
+    _tgt="origin/$REF"
+  fi
+  _want="$(git -C "$CLONE_DIR" rev-parse --verify --quiet "$_tgt^{commit}" 2>/dev/null)" || return 0
+  _have="$(git -C "$CLONE_DIR" rev-parse HEAD 2>/dev/null)" || return 0
+  [ "$_want" = "$_have" ] && return 0
+  _behind="$(git -C "$CLONE_DIR" rev-list --count "HEAD..$_want" 2>/dev/null || echo '?')"
+  warn "platform clone is NOT at $_tgt ($_behind commit(s) behind); it is at $(git -C "$CLONE_DIR" rev-parse --short HEAD)"
+  warn "  every pipeline run below uses that code, not the pinned code."
+  warn "  usually the clone is dirty because qa-sweep rewrites its script-sidecars; to fix:"
+  warn "    git -C \"$CLONE_DIR\" checkout -- content/pipeline/script-sidecars/ && $0"
+}
 
 # --- locate the qou repo root --------------------------------------------
 ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" \
@@ -127,8 +146,23 @@ if git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&
     if git -C "$CLONE_DIR" show-ref --verify --quiet "refs/remotes/origin/$REF"; then
       git -C "$CLONE_DIR" merge --ff-only --quiet "origin/$REF" 2>/dev/null || true
     fi
+    report_off_ref
   else
+    # A dirty clone is NOT the rare case. `qa-sweep` rewrites
+    # content/pipeline/script-sidecars/*.script.json (last_run_at, deps_hash) on
+    # every run, so ANY pipeline use leaves the clone dirty and this branch is
+    # taken from then on. Left as a bare info line, the clone silently freezes on
+    # whatever commit it happened to be on while every later run keeps serving
+    # that stale pipeline — the more the pipeline is used, the more permanently
+    # stale it becomes.
+    #
+    # Measured 2026-08-23: the clone sat 236 commits behind origin/main, which
+    # silently invalidated a session's QA measurements (an enumeration gap that
+    # had already been fixed upstream in b48cff7 still reproduced locally, and a
+    # "sweep degrades detangler verdicts" finding turned out to be an artifact of
+    # the stale code). Report the distance instead of hiding it.
     info "clone has local changes — leaving its checkout untouched"
+    report_off_ref
   fi
 else
   info "ref '$REF' not found locally or on origin — leaving clone on its current branch"

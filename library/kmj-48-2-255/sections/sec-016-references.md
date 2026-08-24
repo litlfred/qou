@@ -1,13 +1,13 @@
 ---
 doc_id: kmj-48-2-255
-doc_title: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata"
+doc_title: "A formula for the colored Jones polynomial of 2-bridge knots"
 section_id: sec-016-references
 section_title: "References"
 section_number: null
 pages: 26-26
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
-doc_brief: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata — We derive a formula for the colored Jones polynomial of 2-bridge knots."
+doc_brief: "A formula for the colored Jones polynomial of 2-bridge knots — We derive a formula for the colored Jones polynomial of 2-bridge knots."
 ---
 [1] G. Burde and H. Zieschang, Knots, Walter de Gruyter & Co.,Berlin, 1985.
 [2] K. Habiro, On the quantum sl2 invariants of knots and integral homology spheres ,

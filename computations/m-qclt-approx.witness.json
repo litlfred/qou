@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T00:17:03.588314+00:00",
-  "commitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
+  "computedAt": "2026-08-23T09:15:25.442952+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "err_full_production_uniform_across_isotopes",
@@ -13,8 +13,8 @@
     },
     {
       "name": "err_full_production_equals_nucleon_gap",
-      "computed": "0.00815865",
-      "expected": "1.3507e-7",
+      "computed": "0.00815851",
+      "expected": "-2.85173e-10",
       "passed": true,
       "tolerance": 0.1,
       "source": "m_qCLT_approx − CODATA mass = the m_p gap (binding cancels)"
@@ -50,11 +50,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 40,
   "computation": "m-qclt-approx",
   "scriptFile": "m_qclt_approx.py",
-  "scriptHash": "538c0ca90ba7",
-  "scriptCommitSha": "ebfb8ba57f11dd290dbcb82ff0e818860064c214",
+  "scriptHash": "01645074a802",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,9 +64,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/m_qclt_approx.py"
+    ],
+    "reproduce": "python3 -u computations/m_qclt_approx.py"
   },
   "description": "Leading-order JSJ-additive heavy-isotope mass channel (channel 2 of q-clt-jsj-mass-scaling). m_qCLT_approx(Z,N) = Z·m_p + N·m_n − B(Z,N). The additive structure is exact (volume additive under torus gluing); the absolute residual is the nucleon-mass gap, reported in BOTH regimes — production (+2.89%, proved-only linking weight) and spectral-corrected (~-819 ppm; EXPLORATORY, derived θ/(8ℏ²), not wired per production-vs-exploratory discipline). The channel ALSO carries a self-contained DERIVED binding — the factorized q-CLT B = E₀·(A−1)·(Σ n_type·L_type)/C(A,2), E₀=m_e/(q₀(q₀−1)) derived, L_type the 2-nucleon sub-braid log-traces (recorded canonical) — which resolves the T/³He isospin split (L_nn>L_pp) with NO fit. Caveats: chain-vs-allpairs bond count is a modeling choice (not derived); A≥4 undershoots; absolute mass still carries the nucleon gap. NOT an 'exact asymptotic limit': the leading-term error is the binding fraction (plateaus, does not vanish for heavy A).",
   "parameters": {
@@ -93,7 +102,7 @@
         "m_qCLT_approx_production_MeV": "1875.588691396992",
         "m_qCLT_approx_spectral_MeV": "1821.356076769476",
         "m_qclt_approx_fac_MeV": "1873.947818775438",
-        "m_ref_codata_MeV": "1875.61294248",
+        "m_ref_codata_MeV": "1875.61294517",
         "B_pred_MeV": "2.24882079486",
         "B_qCLT_fac_chain_MeV": "3.88969341642",
         "B_qCLT_fac_allpairs_MeV": "3.88969341642",
@@ -102,10 +111,10 @@
         "n_pn": 1,
         "n_nn": 0,
         "binding_fraction_pct": "0.118605",
-        "err_full_production_pct": "-0.00129297",
+        "err_full_production_pct": "-0.00129311",
         "err_full_spectral_pct": "-2.89275",
         "err_full_spectral_ppm": "-28927.5",
-        "err_full_fac_pct": "-0.0887776"
+        "err_full_fac_pct": "-0.0887777"
       },
       {
         "label": "T",
@@ -116,7 +125,7 @@
         "m_qCLT_approx_production_MeV": "2808.934336569856",
         "m_qCLT_approx_spectral_MeV": "2727.566738665404",
         "m_qclt_approx_fac_MeV": "2808.764699164627",
-        "m_ref_codata_MeV": "2808.921133",
+        "m_ref_codata_MeV": "2808.92113711",
         "B_pred_MeV": "8.46859838653",
         "B_qCLT_fac_chain_MeV": "8.63823579176",
         "B_qCLT_fac_allpairs_MeV": "12.9573536876",
@@ -125,10 +134,10 @@
         "n_pn": 2,
         "n_nn": 1,
         "binding_fraction_pct": "0.301959",
-        "err_full_production_pct": "0.000470058",
+        "err_full_production_pct": "0.000469912",
         "err_full_spectral_pct": "-2.89629",
         "err_full_spectral_ppm": "-28962.9",
-        "err_full_fac_pct": "-0.00556918"
+        "err_full_fac_pct": "-0.00556932"
       },
       {
         "label": "3He",
@@ -139,7 +148,7 @@
         "m_qCLT_approx_production_MeV": "2808.62068230941",
         "m_qCLT_approx_spectral_MeV": "2727.290436331313",
         "m_qclt_approx_fac_MeV": "2808.985214824837",
-        "m_ref_codata_MeV": "2808.39155552",
+        "m_ref_codata_MeV": "2808.39155948",
         "B_pred_MeV": "7.48891930977",
         "B_qCLT_fac_chain_MeV": "7.12438679434",
         "B_qCLT_fac_allpairs_MeV": "10.6865801915",
@@ -148,15 +157,15 @@
         "n_pn": 2,
         "n_nn": 0,
         "binding_fraction_pct": "0.274821",
-        "err_full_production_pct": "0.00815865",
+        "err_full_production_pct": "0.00815851",
         "err_full_spectral_pct": "-2.88781",
         "err_full_spectral_ppm": "-28878.1",
-        "err_full_fac_pct": "0.0211388"
+        "err_full_fac_pct": "0.0211386"
       }
     ],
-    "nucleon_gap_production_pct": "1.3507e-7",
+    "nucleon_gap_production_pct": "-2.85173e-10",
     "nucleon_gap_spectral_pct": "-2.88804",
-    "spectral_reduction_factor": "0.00281693",
+    "spectral_reduction_factor": "0.00281688",
     "err_full_production_cross_isotope_spread_pct": "0.00945162",
     "factorized_qclt": {
       "form": "B = E₀·(A−1)·(Σ_type n_type·L_type)/C(A,2); E₀ = m_e/(q₀(q₀−1)) derived (q₀,m_e only, no fit); L_type = 2-nucleon sub-braid log-trace per bond type.",

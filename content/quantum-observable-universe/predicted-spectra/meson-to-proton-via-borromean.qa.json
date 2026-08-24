@@ -1400,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.690Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.730Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 452 words)"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.770Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1457,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 452 words)"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.812Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.852Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1575,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.893Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1610,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.934Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1645,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.974Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1680,23 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:26.054Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "'This produces the only stable hadronic states, the proton and neutron.' The maximum-strength 'the only' is asserted without qualification and is false as written: the free neutron is not stable, it beta-decays with a mean life of about 880 s. The block contradicts itself three paragraphs later, where the entire E_0 derivation is built on the decay n -> p + e^- + nubar_e. The proton is the only stable hadron; the neutron is stable only when bound.",
+        "notes": "flagged, not fixed — correcting it is a physics edit, not a punctuation one. Proposed: 'This produces the only stable hadronic states: the proton, and the neutron when bound.' FIVE FURTHER FINDINGS, none fixed inline. (1) DEAD/DEPRECATED WITNESS CITATIONS: of the three witnesses the block cites, meson-nucleon-nf.witness.json and beta-decay-energy-scale.witness.json exist ONLY under computations/_deprecated/; only confinement-operator-selection.witness.json is live. (2) That live witness carries z = 0.4993203340335982, which is exactly z_C = sqrt(q)/(q+1) = 0.499320334034, not z_D = q^3/(q^2+1) = 0.612688050546 — and it is used as the Markov parameter building the 6x6 Gram (G_{01} = 0.49932...), so this is a genuine convention-C dependence, not the harmless positivity-inequality use. Convention D was made canonical and C excised by the 2026-08-15 owner ruling. (3) The same witness has y0_star, y_star, dual_obj, duality_gap all null with the status string 'STUB — re-run script through lp_dual_solver.py to populate', so it does not satisfy the AGENTS.md LP/SDP first-class-dual requirement it is subject to. It also records gram_det = -0.1892052530713217, i.e. NONZERO, while its sibling block prf:knot-operator-selection asserts 'on H_n itself det G = 0 exactly'. Those two statements are consistent only if one is convention-C and the other convention-D — which is exactly the split I measure — so the chapter is carrying both conventions at once. (4) DISPLAYED ARITHMETIC DOES NOT REPRODUCE: 'E_0 = 0.782/0.1883 approx 4.155 MeV' — the printed division gives 4.1529, not 4.155. The RESULT is right (the witness has E0_MeV = 4.154925) because it was computed from Q = 0.7823334 and |Delta net| = 0.18829062; it is the rounded display that fails to reproduce it. Proposed: quote 0.78233/0.18829. (5) CIRCULARITY, stated as a verification: 'The six terms sum exactly to Q_beta.' E_0 is DEFINED as Q_beta/|Delta net| and Delta net is by the block's own linearity clause the sum of the six coefficient differences, so sum_i Delta_i E_0 = Q_beta identically. That is the definition unfolded, not a check, and it should not be presented as one. Related: 'Untyped composition yields net approx 1.506. The CODATA proton net is approx 0.999. Typed crossings close this gap.' — CODATA measures masses, not 'nets'; 0.999 is a target, and the typed-crossing shift h_A is introduced to reach it, landing on 0.9991. That is the shape of a fit and should be labelled per the production-vs-exploratory discipline. Two lesser notes: the bold banner '**Full derivation.**' is followed by three summary sentences that derive nothing (the dangling-banner pattern); and the block says 'CODATA 2022' while its witness carries CODATA-2018 masses (m_p = 938.27208816 against the 2022 value 938.27208943). The witness's own auditOnly pointer, docs/audits/categorical-vs-fitted-q-decay-ba.md, does not exist."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1716,22 @@
         "reviewed_at": "2026-08-15T10:31:01.242Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:26.013Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon — correct; charged-pion lifetime 26 ns — correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 — correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV — correct; the +-0.6 eV precision claim — correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 — correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1754,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:17:26.054Z"
 }

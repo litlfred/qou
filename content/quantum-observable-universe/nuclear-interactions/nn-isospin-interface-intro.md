@@ -4,8 +4,8 @@ unbound; the antisymmetric $pn$ state, the deuteron, carries $T = 0$ and binds a
 $2.224566\ \mathrm{MeV}$. Any account of nuclear binding in this framework has to
 reproduce that pattern before it reproduces a number.
 
-Two mechanisms are in play, and this section keeps them apart because they are not
-the same object.
+Two mechanisms are in play, and this section keeps them apart because they are distinct
+objects.
 
 The **isospin** mechanism *selects*. It assigns each channel the Wedderburn weight of
 its isospin block, $\mu_+$ for the triplet and $\mu_-$ for the singlet, and the

@@ -91,7 +91,8 @@ theorem QuantumObservableUniverse.exists_instance
   -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2));
   -- the constructive witness Rep(U_q(g)) with Haar Frobenius form is the
   -- content of prop:quantum-observable-universe-exists. Pending the full
-  -- Lean construction of the Drinfeld–Jimbo representation category.
+  -- Lean construction of the Drinfeld–Jimbo representation category. This requires
+  -- massive infrastructure that cannot be added as a simple class field and is left as an honest sorry.
   sorry
 
 end QOU

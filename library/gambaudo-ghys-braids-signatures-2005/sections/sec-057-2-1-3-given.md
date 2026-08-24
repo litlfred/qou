@@ -1,13 +1,13 @@
 ---
 doc_id: gambaudo-ghys-braids-signatures-2005
-doc_title: "Bull. Soc. math. France 133 (4), 2005, p. 541–579"
+doc_title: "Braids and signatures"
 section_id: sec-057-2-1-3-given
 section_title: "(1 +√ −3). Given"
 section_number: 2
 pages: 29-34
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
-doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
+doc_brief: "Braids and signatures — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 a hyperbolic elementγ in SL(2, Z), it preserves a unique embedded line 𝓁 γ in the
 tree. This line consists of a succession of geodesic arcs in P oincar´ e’s disc and if

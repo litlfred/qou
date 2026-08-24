@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T15:24:12.463693+00:00",
-  "commitSha": "d9fc6c74ba5508301b9de2ce02fe4ca15eb8abf4",
+  "computedAt": "2026-08-23T09:26:16.368901+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "block21_bar_even_target_knots",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 50,
   "computation": "qbeta-5two-categorical-markov-volume",
   "scriptFile": "qbeta_5two_categorical_markov_volume_probe.py",
-  "scriptHash": "e8d94135a1c1",
-  "scriptCommitSha": "d3b3c3d8b9c4230597712b3aa072057a92e35d86",
+  "scriptHash": "a0fb8988e287",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,7 +64,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_categorical_markov_volume_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_categorical_markov_volume_probe.py"
   },
   "description": "Categorical Markov-trace complex volume 𝔙_q(5₂) by Wedderburn block (A5 brick, bean qou-3yxn) — the 'later brick' the reeb-trace probe flagged, now built and GATED. Gates-first finding: the RAW NF Markov trace bar-decomposed under q↦q⁻¹ is framing-contaminated (amphichiral 4₁ gives bar-odd≠0, WRONG); the correct object is tr_M=Σ_λ W_λ χ_λ with the bar-odd in the (3)/(1,1,1) conjugate pair and the self-conjugate (2,1) block bar-even. Also caught: τ(σ₁σ₂σ₁)=h·z²+z, not z³. FINDINGS (q-exact): (1) χ_(2,1) bar-even for 4₁ and 5₂ (Vol channel). (2) AMPHICHIRAL CONTROL PASSES: bar-odd (CS) datum = 0 for 4₁ (e=0), ½(q⁴−q⁻⁴)≠0 for 5₂ (e=2) — matches the reeb-trace writhe result; the gate the raw route fails. (3) the 5₂ bar-odd is anchor-smooth (d ln|odd|/dq O(10⁰)) — odd ingredient, not the 3.84e6 swing value (proved measurement-limited); a fifth anchor-smoothness confirmation. SCOPE: fibre-level; does NOT cross the G3 argument→S resurgent-monodromy wall (open, not laundered); no c_k wired; no fit; no tier change; full Ocneanu weights W_λ messy, not required for the bar-odd channel.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
@@ -83,7 +90,7 @@
     },
     "finding3_anchor_shape": {
       "odd_proton": "0.429585716421",
-      "odd_muon": "0.429585766635",
+      "odd_muon": "0.429585766983",
       "dln_odd_dq": "9.1300071",
       "anchor_smooth": true,
       "verdict": "anchor-smooth O(10^0); odd ingredient not swing value (measurement-limited)"
@@ -94,7 +101,7 @@
       "W_1_1_1": "0",
       "held_out_gate_ok": true,
       "binding_channel_5_2_proton": "-0.280195642273",
-      "binding_channel_5_2_muon": "-0.280195649005",
+      "binding_channel_5_2_muon": "-0.280195649052",
       "verdict": "Ocneanu block weights W_λ determined (t=√q) and VALIDATED against held-out τ (σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z); binding/Vol channel = bar-even W_(2,1)·χ_(2,1). Framing-INVARIANT full 𝔙_q still needs the writhe/Jones normalization (G3-adjacent)."
     },
     "finding5_framing_invariant_jones": {
@@ -104,7 +111,7 @@
       "amphichiral_control_4_1_zero": true,
       "chiral_5_2_nonzero": true,
       "odd_proton": "0.0209909269357",
-      "odd_muon": "0.0209909340185",
+      "odd_muon": "0.0209909340675",
       "dln_odd_dq": "26.355227",
       "anchor_smooth": true,
       "verdict": "framing-INVARIANT 𝔙_q = 0-framing knot invariant J_K(q); bar-odd (CS) = (q-1)^3(q+1)(q^2+1)(q^2-q+1)(q^2+q+1)^2/(2q^6) for 5₂ (triple zero at q=1, cyclotomic Φ₃/Φ₆), 0 for amphichiral 4₁ (control); anchor-smooth; still fibre-level (does NOT cross G3)"

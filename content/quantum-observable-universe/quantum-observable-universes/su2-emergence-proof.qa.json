@@ -1365,6 +1365,21 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.463Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1384,6 +1399,21 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.503Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-em-dash": [
@@ -1403,6 +1433,21 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.542Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-triples": [
@@ -1422,6 +1467,21 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.582Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1441,6 +1501,21 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.622Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-meta-commentary": [
@@ -1460,6 +1535,21 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.665Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1479,6 +1569,23 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.705Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "Block-final sentence restated the two lemmas already displayed as $G = SL(2) \\cap U(2) = SU(2)$, adding 'locking the gauge group exclusively to SU(2)'.",
+        "notes": "fix applied: 'The volume constraint provides the special-linear condition ($\\det = 1$), while the positive-definite dagger structure provides the compactness (unitarity), locking the gauge group exclusively to $\\mathrm{SU}(2)$.' -> 'The volume constraint provides the special-linear condition ($\\det = 1$); the positive-definite dagger structure provides the compactness (unitarity).'"
       }
     ],
     "trap-performed-warmth": [
@@ -1498,6 +1605,21 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.745Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "trap-superlative": [
@@ -1517,6 +1639,23 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.784Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "'locking the gauge group exclusively to SU(2)' - maximum-strength verb plus 'exclusively' on a conclusion already proved by set intersection one line above.",
+        "notes": "fix applied: clause removed with the restatement (see trap-thesis-restatement entry)."
       }
     ],
     "trap-nonspeakable": [
@@ -1536,6 +1675,21 @@
         "reviewed_at": "2026-08-15T10:30:59.933Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "629507fc68f5",
+          "ts": "c36212ff3397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:32.826Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1558,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:01:32.826Z"
 }

@@ -91,7 +91,11 @@ def hook_lengths(lam):
 
 # ── DEPRECATED 2026-08-08: B_gate / B_vol / E_gate / c_λ ─────────────────────
 #
-# Removed from the dashboard. They have no basis in the derivation chain.
+# Deprecated: they have no basis in the derivation chain. NOTE (2026-08-22):
+# they were NEVER actually removed from the code below — the columns are still
+# computed and printed. Until that cleanup lands they are RETAINED FOR THE RECORD
+# but flagged NON-DERIVED in the legend (see the B_vol / B_gate rows). Do not read
+# them as derived. Red-team: docs/audits/2026-08-22-avol-binding-redteam.md.
 #
 # The chain is
 #     q0 -> categorical action -> Yekutieli non-abelian Stokes -> H_n(q)
@@ -546,12 +550,14 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   Entanglement is a property of EVERY knot/particle, not one selected partition
     #   (the single-partition E_gate is ⁴He-local and breaks for A≳24). Summing the
     #   per-knot occupancy surprisal over all A nucleon knots gives a_V·A with the
-    #   coefficient DERIVED parameter-free: a_V = E₀·ln(1/W_free), W_free = the free
+    #   coefficient DEPRECATED 2026-08-08 (postdiction near-match, NOT derived — no
+    #   basis in the derivation chain; see banner + avol red-team):
+    #   a_V = E₀·ln(1/W_free), W_free = the free
     #   nucleon's (1,1,1) Plancherel weight. a_V ≈ 7.584 MeV/nucleon ≈ empirical net
     #   B/A. Valid for ALL A (no W_λ≥1 breakdown); tracks ¹²C/¹⁶O to ~1–5%. The
     #   residual (light over-binding, magic dips) is the surface/Coulomb/shell
     #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
-    a_V = alpha * math.log(1.0 / W_lambda_float(q0, (1, 1, 1)))   # parameter-free volume coeff
+    a_V = alpha * math.log(1.0 / W_lambda_float(q0, (1, 1, 1)))   # DEPRECATED postdiction coeff (not derived — see banner)
     B_vol = A * a_V
     # ---- E_C: the EM-sector Coulomb energy (bean 754x). Standard uniform-sphere
     #   E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3); the strong B-forms above carry NO EM
@@ -776,7 +782,7 @@ def _print_legend() -> None:
 | `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization, already bond-type (p↔n) resolved (no separate `_fac` needed) |
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
 | `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. Parameter-free (E₀ × Plancherel weight, no fit). DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, the parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
-| `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon DERIVED parameter-free** (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
+| `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon — DEPRECATED 2026-08-08 postdiction near-match, NOT derived** (no basis in the derivation chain; the surprisal form was chosen because it lands near 8 and `W_free` is unnormalised so `ln(1/W)` is not a probability — red-team `docs/audits/2026-08-22-avol-binding-redteam.md`) (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
 | `E_C` | EM-sector **Coulomb energy** `E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3)` MeV (standard uniform-sphere; r₀=1.2 fm, α_EM·ℏc=1.43996 MeV·fm — not fit). The strong B-forms carry NO EM term; E_C is the repulsion that REDUCES net binding for proton-rich nuclei. Reported additively, **not** subtracted from the B-columns (they are calibrated against Coulomb-inclusive AME, so a global subtraction would double-count). E_C is cleanly separable only in the mirror-pair DIFFERENCE, where the strong core cancels: CS-core + E_C reproduces the ³H/³He, ⁷Li/⁷Be, ¹³C/¹³N splits to ~20–40% vs the production σ/σ⁻¹ bond's ~200–350% (bean 754x). Module: `coulomb_energy.py`; probe: `probes/coulomb_mirror_killswitch_probe.py`. |
 | `err sym` / `err qCLT_fac` / `err gate` / `err vol` | B_AME / B_model for the production + occupancy + volume forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
 

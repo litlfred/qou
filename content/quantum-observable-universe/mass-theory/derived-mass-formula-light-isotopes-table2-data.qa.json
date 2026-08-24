@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:58.894Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:58.930Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:59.000Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:59.062Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:59.096Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:59.130Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:59.167Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:59.212Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:59.265Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d7b510aa9c06",
+          "ts": "0316ae970a05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:59.301Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 6 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the AME column matches AME2020 for all six (D 2.22, T 8.48, 3He 7.72, 4He 28.30, 6Li 31.99, 7Li 39.24), the percentage column recomputes as (B_pred-B_AME)/B_AME on every row (+41.4, -37.6, -31.6, -75.9, -70.7, -42.5), and the two tables are mutually consistent: M_pred = Z*938.78 + N*939.57 - B_pred reproduces table 1 to the last digit."
+      }
     ]
   },
   "source_hashes": {
     "md": "d7b510aa9c06",
     "ts": "0316ae970a05"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:11:59.301Z"
 }

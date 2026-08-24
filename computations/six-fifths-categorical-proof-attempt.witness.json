@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-02T15:05:04.981481+00:00",
-  "commitSha": "ae0e464220f6ad38147cc071ec38018384cb5a90",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:58:15.196344+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "six-fifths-categorical-proof-attempt",
   "scriptFile": "six_fifths_categorical_proof_attempt.py",
-  "scriptHash": "f6cf873ed6ff",
-  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "scriptHash": "1a453fce9324",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,16 +19,26 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/six_fifths_categorical_proof_attempt.py"
+    ],
+    "reproduce": "python3 -u computations/six_fifths_categorical_proof_attempt.py"
   },
   "description": "Categorical proof ATTEMPT for the 171/143 = 6/5 hypothesis. Systematically tests structural-cardinality ratios from the framework (partitions, |S_n|, dim sums, q-deformed [n]_q ratios, half-symmetric H_4) for matches with 171/143. Identifies machine-precision matches if any; otherwise documents the hypothesis as suggestive rather than proved.",
   "compute": "six_fifths_categorical_proof_attempt",
   "parameters": {
     "precision": "mpfr",
     "dps": 50,
-    "Q_0": "1.1099785955573347198997632204832250266562084087802",
-    "H_0": "0.20906032199559367898186263646596735026162330164756",
+    "Q_0": "1.1099785827513808075916690956107688798744991218736",
+    "H_0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "target_171_over_143": 1.1958041958041958,
     "hypothesis_6_over_5": 1.2
   },
@@ -165,49 +175,49 @@
     },
     {
       "label": "[2]_q / [3]_q × 3/2",
-      "value": 0.9910106585220394,
+      "value": 0.9910106604917595,
       "category": "q_deformed"
     },
     {
       "label": "[3]_q / [2]_q × 2/3",
-      "value": 1.009070882740421,
+      "value": 1.0090708807348046,
       "category": "q_deformed"
     },
     {
       "label": "[6]_q / [5]_q × 5/6",
-      "value": 1.019723282999789,
+      "value": 1.0197232786889645,
       "category": "q_deformed"
     },
     {
       "label": "[6]_q / [5]_q",
-      "value": 1.223667939599747,
+      "value": 1.2236679344267574,
       "category": "q_deformed"
     },
     {
       "label": "[4]_q / [3]_q × 3/4",
-      "value": 1.0126673225782872,
+      "value": 1.012667319784462,
       "category": "q_deformed"
     },
     {
       "label": "(1 + h_0²)·6/5",
-      "value": 1.2524474618794816,
+      "value": 1.2524474502390264,
       "category": "q_deformed"
     },
     {
       "label": "(1 - h_0²)·6/5",
-      "value": 1.1475525381205185,
+      "value": 1.1475525497609735,
       "category": "q_deformed"
     },
     {
       "label": "6/5 × (1 - h_0²/some)",
-      "value": 1.1952320489200472,
+      "value": 1.1952320499782703,
       "category": "q_deformed"
     }
   ],
   "best_matches": [
     {
       "label": "6/5 × (1 - h_0²/some)",
-      "value": 1.1952320489200472,
+      "value": 1.1952320499782703,
       "category": "q_deformed"
     },
     {
@@ -267,7 +277,7 @@
     },
     {
       "label": "[6]_q / [5]_q",
-      "value": 1.223667939599747,
+      "value": 1.2236679344267574,
       "category": "q_deformed"
     },
     {
@@ -277,7 +287,7 @@
     },
     {
       "label": "(1 - h_0²)·6/5",
-      "value": 1.1475525381205185,
+      "value": 1.1475525497609735,
       "category": "q_deformed"
     }
   ],
@@ -325,7 +335,7 @@
     },
     {
       "label": "6/5 × (1 - h_0²/some)",
-      "value": 1.1952320489200472,
+      "value": 1.1952320499782703,
       "category": "q_deformed"
     }
   ],
@@ -344,6 +354,6 @@
     "structural-cardinality",
     "open-question"
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

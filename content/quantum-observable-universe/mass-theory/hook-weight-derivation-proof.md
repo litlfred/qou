@@ -44,7 +44,7 @@ $|\beta_4| \cdot \alpha \approx 0.083 \times 3.74 \approx
 0.31$ MeV per unit $\Phi_4$.
 
 Adding this fourth channel improves the mass formula accuracy
-from $0.074\%$ to $0.072\%$ mean (with dramatic per-atom
+from $0.074\%$ to $0.072\%$ mean (per-atom
 improvements: Be $0.192\% \to 0.108\%$, C $0.081\% \to 0.002\%$).
 The hook trace vanishes at magic numbers
 ([shell-transition knot](#conj:shell-transition-knot)),

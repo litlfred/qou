@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-005-4-canonical-basis-elements-corresponding-to-span
 section_title: "Canonical basis elements corresponding to spanning vecto rs"
 section_number: 4
 pages: 8-9
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 Recall that for i, i′ ∈ χ n, the map T i′
 i is deﬁned by T i′

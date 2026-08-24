@@ -1,6 +1,6 @@
 ---
 doc_id: 1-s20-s009731651830061x-main
-doc_title: "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Consta"
+doc_title: "Constant term formulas for refined enumerations of Gog and Magog trapezoids"
 section_id: sec-007-22-reﬁned-enumeration-with-respect-to-the-top-en
 section_title: "Reﬁned enumeration with respect to the top entry"
 section_number: 2.2

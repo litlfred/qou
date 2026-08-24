@@ -48,8 +48,9 @@ import _path_bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 # Published anchor data (falsification doc, PR-merged 2026-06-04).
 Q_PROTON = mp.mpf("1.10997858275138080759166909561")

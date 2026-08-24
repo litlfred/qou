@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1810.11563v1
-doc_title: "Three Lectures on Complexity and Black Holes Leonard Susskind"
+doc_title: "Three Lectures on Complexity and Black Holes"
 section_id: sec-035-201-the-auxiliary-system
 section_title: "The Auxiliary System"
 section_number: 20.1
 pages: 69-70
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Instead of using operator complexity I’m going to work with state complexity for the rest
 of this lecture. State complexity is the number of gates that it takes to go from a simple

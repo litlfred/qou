@@ -1426,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.904Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.945Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 92 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.986Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1483,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 92 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:16.027Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:16.069Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: final prose sentence is: \"The observed $CO_2$ structure is linear with $D_0 \\approx 16.56 \\;\\mathrm{eV}$ (total of both C=O bonds, each $\\approx :val[d0_co2_double_ev]{preci...\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1601,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:16.109Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1636,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:16.150Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: final sentence checked against the body: \"The observed $CO_2$ structure is linear with $D_0 \\approx 16.56 \\;\\mathrm{eV}$ (total of both C=O bonds, each $\\approx :val[d0_co2_double_ev]{preci...\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1671,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:16.197Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1706,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:16.240Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Comparative geometry claims, each with its reason.",
+        "notes": "Numeric verified: 16.56 = 2 x 8.28 and d0_co2_double_ev = 8.28 in the cited witness. Minor witnessed-values item: 16.56 is hardcoded in the same sentence that :val-references its own half."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1741,22 @@
         "reviewed_at": "2026-08-15T10:31:01.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a95ce9de2b55",
+          "ts": "42986aa92d77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:16.282Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (linear vs adjacent-oxygen ordering; D_0 16.56 eV = 2 x 8.28 recomputed against molecular-experimental-refs.witness.json). Judged on the whole text: read aloud end to end (5 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1779,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:16.282Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Bonn, November 2018"
+doc_title: "Few-body systems in lattice effective field theory"
 section_id: sec-026-conclusion-and-outlook
 section_title: "Conclusion and Outlook"
 section_number: null
 pages: 53-55
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-Body Systems in Lattice Effective Field Theory Dissertation Erlangung des Doktorgrades (Dr. rer. nat.) Mathematisch-Naturwissenschaftlichen Fakultät Rheinischen Friedrich-Wilhelms-Universität Bonn"
+doc_brief: "Few-body systems in lattice effective field theory — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
 ---
 5
 6

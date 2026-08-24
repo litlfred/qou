@@ -34,8 +34,10 @@ import pyhecke_native as nat  # noqa: E402
 from chi_at_q0_via_matrix_m_mpfr import _split_atom_braid  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 55
+set_compute_dps()
 DPS = 50
 K_SPLIT = 3
 

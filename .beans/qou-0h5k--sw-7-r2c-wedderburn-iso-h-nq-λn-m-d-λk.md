@@ -1,11 +1,11 @@
 ---
 # qou-0h5k
 title: 'SW-7 (=R2c): Wedderburn iso H_n(q) ≅ ⊕_{λ⊢n} M_{d_λ}(K)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-19T13:42:33Z
+updated_at: 2026-08-23T16:35:07Z
 parent: qou-59vq
 blocked_by:
     - qou-j377
@@ -76,3 +76,134 @@ The missing half is the lower bound, and it has exactly two routes:
 
 So SW-7-general is downstream of one of those two landing, not independently
 attackable right now.
+
+
+## TAKEOVER 2026-08-23T13:35Z (owner-authorised, > 4h staleness rule)
+
+Last commit anywhere in the SchurWeyl area: `ace79127c` at 2026-08-22 19:24 UTC
+— **18.2 hours** before takeover, against the owner's 4-hour threshold. No open
+PR and no branch updated today carries SW-7 scope. Continuing from `main`
+(`9f11db11d`); no sibling branch touched.
+
+## Why SW-7 is NOW assemblable — both blockers cleared while I was away
+
+- **SW-3 landed**: `QOU.Mathlib.rskBurnsideHolds n` for EVERY n (e877f7755 /
+  1b5f4751c), not just n <= 12. `Sum d_lambda^2 = n!` is available.
+- **SW-5 landed**: `seminormalRep_range_eq_top` (each block SURJECTIVE) and
+  `seminormalRep_not_matRepEquiv_of_ne` (pairwise inequivalent, UNCONDITIONAL).
+
+## The route — and note it is NOT the classical file's route
+
+`SpechtWedderburnGeneral` (q=1, sorry-free) goes **injectivity + equal finrank**.
+That does not transfer: on the q-side we have `finrank H_n(q) <= n!`
+(`HeckeCoset.finrank_le_factorial`) but NOT the lower bound — that is the open
+GS-basis item `qou-auq3`. Injective + `dim source <= dim target` proves nothing.
+
+**Go through SURJECTIVITY instead**, which is what the q-side actually has:
+
+1. Product map Phi = (+)_lambda rho_lambda : H_n(q) -> Prod_lambda M_{d_lambda}(R).
+2. Each block surjective (SW-5) + blocks separated by central scalars (SW-5's
+   inequivalence machinery) => **Phi surjective**. THIS IS THE MISSING STEP.
+3. Surjective + `finrank H_n <= n!` + `finrank target = Sum d_lambda^2 = n!`
+   => bijective.
+4. **Corollary worth naming: `finrank H_n(q) = n!`** — the Iwahori-Hecke basis
+   theorem's LOWER bound, obtained without the GS route. If this lands it
+   partially obviates `qou-auq3`'s motivation (not its content).
+
+## Step 2's crux, and why it needs no Jacobson density
+
+Mathlib has no density / bicommutant, and none is needed. Let A = range Phi.
+- The central elements give A a family of block-scalar tuples that SEPARATE the
+  partitions. Lagrange interpolation over a finite index set (the same argument
+  as `DiagonalSeparation.single_self_mem_of_separating`, which I proved for the
+  single-block case) puts every **block idempotent** `Pi.single lambda 1` in A.
+- Then for any target x, `x = sum_lambda (Pi.single lambda 1) * a_lambda` where
+  `a_lambda` is any preimage of `x_lambda` in block lambda. Each summand is in A.
+So A = top, elementarily.
+
+Implementation order: (i) the abstract Pi-algebra lemma (no Hecke content, so it
+checks on its own terms); (ii) instantiate with the seminormal blocks; (iii) the
+finrank count; (iv) `HeckeWedderburnData` instance
+(`QSchurWeyl.lean:62`, the n=3 case is `HeckeWedderburnData3`).
+
+
+## Step 2 LANDED — the product map is SURJECTIVE (the step that needed an argument)
+
+`HeckeProductSurjective.lean`, sorry-free, axiom-clean:
+- `heckeProduct` — Phi = (+)_{lam |- n+1} rho_lam, indexed by `Partition (n+1)`.
+- `heckeProduct_jmPowSum` — the central Murphy power sums land on SCALAR TUPLES,
+  block lam seeing `sum_{c in lam} (q^{2c})^m`. This is what feeds
+  `PiBlockSeparation` its separating family.
+- `contentPowSum_separates` — those scalars separate the partitions.
+- `heckeProduct_range_eq_top` / `heckeProduct_surjective`.
+
+**No density theorem anywhere.** Mathlib has no Jacobson density and no
+bicommutant; the textbook proof wants one. `eq_top_of_separating_of_blockSurj`
+replaces it with finite Lagrange interpolation, and block simplicity is never
+used.
+
+## A generalisation landed in the sibling's file, not a copy
+
+`contentCount_eq_of_matRepEquiv` used `MatRepEquiv` only to obtain the power-sum
+equality. I loosened it to `contentCount_eq_of_contentPowSum_eq` (raw scalar
+hypothesis) and made the original a two-line corollary, then added
+`youngDiagram_eq_of_contentPowSum_eq`. Rather than duplicate ~40 lines of their
+proof body into my file. The distinction that made this necessary:
+`seminormalRep_not_matRepEquiv_of_ne` answers *'are these two blocks
+isomorphic'*; a PRODUCT-map argument instead needs *'do the block scalars
+separate the index set'*, which is a different statement.
+
+## Remaining for SW-7
+
+1. `finrank (prod_lam Matrix (SYT lam)) = sum_lam d_lam^2 = (n+1)!` — SW-3 is
+   available for every n now (`QOU.Mathlib.rskBurnsideHolds`); the work is
+   plumbing the SYT-indexed matrix finrank to `dLambda` and the sum identity.
+2. Surjective + `finrank_le_factorial` + (1) => BIJECTIVE. Note the direction:
+   surjectivity forces `dim source >= dim target`, and `<=` is already on main,
+   so this gives `finrank H_{n+1}(q) = (n+1)!` as a COROLLARY — the
+   Iwahori-Hecke basis theorem's lower bound, without the GS route (`qou-auq3`).
+3. `HeckeWedderburnData` instance (`QSchurWeyl.lean:62`); the n=3 case is
+   `HeckeWedderburnData3`. Also wants the Markov weights, which
+   `HeckeMarkov3` has only at n=3.
+
+
+## SW-7 CLOSED 2026-08-23 — `heckeWedderburn`, sorry-free and axiom-clean
+
+    H_{n+1}(q)  ~=a[R]  prod_{lam |- n+1} M_{#SYT lam}(R)
+
+for every n and every real q with q != 0, q^2 != 1. `HeckeWedderburnGeneral.lean`:
+`finiteDimensional_hecke`, `finrank_blocks`, `sum_dLambda_sq`,
+`finrank_blocks_eq_factorial`, `finrank_hecke_eq_factorial`,
+`heckeProduct_bijective`, `heckeWedderburn`. All
+[propext, Classical.choice, Quot.sound] — checked on the TOP theorem, so the RSK
+input is transitively clean too.
+
+## COROLLARY WORTH ITS OWN NAME: `finrank_hecke_eq_factorial`
+
+`Module.finrank R (Hecke R q q^-1 n) = (n+1)!` — the Iwahori-Hecke basis
+theorem, BOTH bounds. The upper one is `HeckeCoset.finrank_le_factorial`. The
+lower one is not proved by hand at all: it is FORCED by the surjection onto a
+space of dimension (n+1)!.
+
+**Consequence for `qou-auq3`** (the Grobner-Shirshov basis, actively owned by a
+sibling): the GS route is no longer on the critical path for
+`dim H_n(q) = n!`. It remains valuable for its own reasons — normal forms, a
+concrete basis, the rewriting engine — but if it was being pursued *in order to*
+get the dimension, that motivation is discharged. Flagging rather than assuming;
+the owner should decide what that changes.
+
+## Why the direction of the count mattered
+
+The q=1 file goes injective + equal finrank. Unavailable here: the corpus has
+`dim H <= (n+1)!` but not the lower bound, and injective with
+`dim source <= dim target` gives nothing. Running through SURJECTIVITY inverts
+the dependency — a surjection forces `dim target <= dim source`, the corpus
+supplies the other side, and SW-3 (now unconditional at every n) pins the target
+at (n+1)!. The two inequalities close.
+
+## Remaining, and NOT part of this bean
+
+`HeckeWedderburnData` (`QSchurWeyl.lean:62`) additionally wants the MARKOV
+WEIGHTS `w_lam` and `markov_eq : tr_M = sum_lam w_lam chi_lam`. Only
+`HeckeMarkov3` has those, at n=3. That is SW-8's general form, not SW-7's
+statement — filed as a distinct item rather than folded in here.
