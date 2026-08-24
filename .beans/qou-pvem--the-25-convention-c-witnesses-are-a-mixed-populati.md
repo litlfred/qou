@@ -8,6 +8,13 @@ created_at: 2026-08-15T00:00:00Z
 updated_at: 2026-08-23T00:00:00Z
 ---
 
+<!-- FILENAME HAZARD: this file is named for a DIFFERENT bean. The
+     "25 convention-C witnesses are a mixed population" body was written first on
+     branch claude/conv-c-shared-root-2026-08-16 (PR #5168) under this id and
+     filename; commit 0ab493a49a then overwrote it with the DEAD_TOL bean below,
+     reusing both. Only the DEAD_TOL bean reached main. The mixed-population bean
+     is recovered at `qou-a6yh`; nothing here relates to it. -->
+
 <!-- front-matter added 2026-08-23. This file had none, so it carried no id, no
      status and no title, and was invisible to the tracker despite being an open,
      measured, actionable item. Body preserved verbatim below. Re-verified today:
