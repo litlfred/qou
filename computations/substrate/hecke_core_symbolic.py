@@ -58,9 +58,11 @@ Limits / what's still open:
     non-polynomial — it lives in ``ℚ(q, π²)``.  We therefore offer
     a symbolic helper ``alpha_em_inv_sym()`` returning an
     expression in (q, π).
-  * ``z = 1/(q^{1/2} + q^{-1/2})`` introduces ``√q``.  We carry
-    it as ``sympy.Rational(1) / (sqrt(q) + 1/sqrt(q))`` so the full
-    expression lives in ``ℤ[q^{±1/2}]`` after rationalisation.
+  * ``z = q³/(q²+1)`` (**convention D**) is a rational function of q,
+    so nothing here leaves ``ℚ(q)`` on account of z.  Under the excised
+    convention C, ``z = 1/(q^{1/2} + q^{-1/2})`` introduced ``√q`` and the
+    expression lived in ``ℤ[q^{±1/2}]`` after rationalisation; that branch
+    is gone.
   * Fractions in ``hm`` arise from ``-h/2`` for mixed
     quark/inter-nucleon crossings.  Sympy handles ``Rational(1, 2)``
     natively, so coefficients land in ``ℚ[q^{±1}]``.
@@ -100,9 +102,23 @@ q_inv = 1 / q
 # h = q - q⁻¹  (symbolic)
 h = q - q_inv
 
-# z = 1 / (√q + 1/√q) — irrational in q; sympy carries sqrt(q) cleanly
-sqrt_q = sp.sqrt(q)
-z = sp.Rational(1) / (sqrt_q + 1 / sqrt_q)
+# z = q³/(q²+1) — **convention D** (owner ruling 2026-08-15, reaffirmed
+# 2026-08-23).  Was convention C, z = 1/(√q + 1/√q) = √q/(q+1), excised.
+#
+# This module is the symbolic mirror of pyhecke.gram / hecke_core, and
+# `pyhecke/gram.py` has carried convention D since 2026-08-15 — its own banner
+# records that the change moves z by +22.70% and is NOT value-preserving.  The
+# mirror was left on C, so its `TR_M_SYM` Markov-trace weights disagreed with
+# the module they mirror by +22.70% at length 1, +50.6% at length 2 and +84.7%
+# at length 3.  That is a frame straddle, not a convention preference.
+#
+# Under D, z is rational in q, so the ℚ[q^{±1/2}] half-power branch that C
+# forced does not arise here at all.  The module-level `sqrt_q = sp.sqrt(q)`
+# is DELETED rather than kept: z was its only consumer in this file, it is not
+# part of the public surface listed in the module docstring, and no importer
+# reads it.  Leaving it would advertise a half-power branch that no longer
+# exists.
+z = q ** 3 / (q ** 2 + 1)
 
 # [2]_q, [n]_q
 two_q = q + q_inv
@@ -156,7 +172,8 @@ def hm_sym(nf: Sequence[sp.Expr], c: sp.Expr, d: sp.Expr, gen: int) -> list[sp.E
     """Multiply NF element by (c·σ_gen + d·I) symbolically.
 
     Mirrors ``pyhecke.gram.hm`` line-for-line, but every coefficient
-    stays in ``ℚ[q^{±1}]`` (or ``ℚ[q^{±1/2}]`` once z gets involved).
+    stays in ``ℚ[q^{±1}]``.  (The tables below use only ``h``, ``c`` and
+    ``d`` — z does not enter this function in either convention.)
     Returns a 6-element list of sympy expressions.
     """
     r = [sp.Integer(0)] * 6
@@ -287,8 +304,10 @@ def _vertex_channels_sym(chain: Iterable[tuple[sp.Expr, sp.Expr]]):
     """Return (λ_sym, V_std, λ_alt) symbolically for a crossing chain.
 
     Mirrors ``hecke_core._vertex_channels`` — but nothing is f64.
-    The transfer matrix runs in ``ℚ(q)`` (or the field of fractions
-    of ``ℤ[q^{±1/2}]`` when z appears).
+    The transfer matrix runs in ``ℚ(q)`` — including where z appears,
+    since convention D's ``z = q³/(q²+1)`` is rational in q.  Under the
+    excised convention C this dropped to the field of fractions of
+    ``ℤ[q^{±1/2}]``.
     """
     a = sp.Integer(0)
     b = sp.Integer(1)
