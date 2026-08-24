@@ -4471,6 +4471,37 @@ j₁ = j₂`, by `descWord_index_ge` in both directions).
 | shape bridge, arbitrary `oc` → constructed | done, §4av |
 | empty left context | done, §4aw |
 | **BS × BS cell of `overlap_resolves`** | **done, modulo `j₁ ≥ 1`** |
-| deep diagonal `j₁ = j₂ = 0` | **open** — `jm = j₁ − 1` is a hypothesis, not a construction |
+| deep diagonal `j₁ = j₂ = 0` **with `i₁ ≥ 1`** | **open** — see §4ax; the gap is narrower than this table first said |
 | the other rule-kind pairs | open |
 | every `InclusionComposition` | open |
+
+
+## The gap, measured rather than assumed (2026-08-24, §4ax)
+
+`jm` was a **parameter** of `bsbs_overlap_resolves`, so passing it was required
+even in the branches that never mention it. Reading which branches actually use
+it: only `a ≥ 2` under `j₂ ≤ j₁`. The `a = 1` branch and the entire `a > b`
+regime do not.
+
+So `jm` is now **derived inside the proof** and the parameter is replaced by
+
+    hcov : 1 ≤ j₁ ∨ 1 ≤ j₂ ∨ i₁ = 0
+
+whose negation is exactly `j₁ = 0 ∧ j₂ = 0 ∧ i₁ ≥ 1`. Each disjunct discharges
+the `a ≥ 2` branch: the first directly; the second because `j₂ ≤ j₁` holds
+there; the third **vacuously**, since that branch also carries `j₁ + 1 ≤ i₁`.
+
+**The open set is smaller than this bean has been saying.** It is not "all of
+`j₁ = 0`", nor even all of `j₁ = j₂ = 0`:
+
+| case | status |
+|---|---|
+| `j₁ ≥ 1` | covered (as before) |
+| `j₁ = 0`, `j₂ ≥ 1` | covered — this is the `a > b` regime, `sPoly_gt_resolves`, which never needed `jm` |
+| `j₁ = j₂ = 0`, `i₁ = 0` | covered — `a = 1`, `sPoly_le_resolves₁`, which never needed `jm` |
+| **`j₁ = j₂ = 0`, `i₁ ≥ 1`** | **open** |
+
+Two of those three newly-covered rows were reachable by chains already in the
+file; only the parameter's position was stopping them. Nothing new was proved
+about the reductions here — the correction is to what the hypothesis *claimed*
+was open.

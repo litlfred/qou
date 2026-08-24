@@ -15012,19 +15012,31 @@ The case analysis is on the two depths, and it is the only new content:
 | `j₂ ≤ j₁`, `j₁ + 2 = i₁` | `sPoly_le_resolves₃` |
 | `j₂ ≤ j₁`, `j₁ + 3 ≤ i₁` | `sPoly_le_resolves` |
 
-`jm` is a hypothesis rather than a construction because it does not always
-exist: it is `j₁ − 1`, and the `a ≥ 2` branches need it. So this covers every
-overlap with `j₁ ≥ 1`, and `j₁ = 0` — which forces `j₂ = 0`, the deep diagonal
-— is **not** covered. That is a real gap, not a stylistic one, and it is stated
-here rather than hidden behind a `Fin` construction that would not typecheck.
+`jm` is `j₁ − 1`, and it does not always exist. Only the `a ≥ 2` branches need
+it — the `a = 1` branch and the whole `a > b` regime never mention it — so it is
+**derived inside the proof**, from `hcov`, rather than taken as a parameter. As a
+parameter it blocked `j₁ = 0` outright, including the cases whose reduction
+chains already exist.
+
+`hcov : 1 ≤ j₁ ∨ 1 ≤ j₂ ∨ i₁ = 0` is exactly the complement of the gap: its
+negation is `j₁ = 0 ∧ j₂ = 0 ∧ i₁ ≥ 1`. Each disjunct discharges the `a ≥ 2`
+branch differently — the first directly; the second because `j₂ ≤ j₁` holds
+there, so `1 ≤ j₂` gives `1 ≤ j₁`; the third **vacuously**, since that branch
+also carries `j₁ + 1 ≤ i₁`, which `i₁ = 0` contradicts.
+
+So what remains open is the deep diagonal `j₁ = j₂ = 0` **with `i₁ ≥ 1`** — not
+all of `j₁ = 0`, as this section previously said. `j₁ = 0` with `j₂ ≥ 1` is the
+`a > b` regime and was always covered; `j₁ = j₂ = i₁ = 0` is the `a = 1` branch
+and was too. That is a real gap, not a stylistic one, and the hypothesis is now
+stated so that its negation names the gap exactly.
 
 `hq` is needed only by the `a = 1` branch, where the first term carries
 coefficient `h` and a `SingleStepReduction` needs it nonzero to transport. -/
 theorem bsbs_overlap_resolves (hn : 0 < n) (hp : HeckeParams)
-    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
-    (hjm : jm.val + 1 = j₁.val)
     (hj₁ : j₁.val ≤ i₁.val) (hj₂ : j₂.val ≤ i₁.val)
+    (hcov : 1 ≤ j₁.val ∨ 1 ≤ j₂.val ∨ i₁.val = 0)
     (hq : hp.q - hp.q⁻¹ ≠ 0) :
     ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (oc i i₁ j₁ j₂ h₁ hj₁ hj₂).spoly nf ∧ nf.isZero := by
@@ -15036,6 +15048,12 @@ theorem bsbs_overlap_resolves (hn : 0 < n) (hp : HeckeParams)
     · -- a = 1
       exact sPoly_le_resolves₁ (i₂ := i₂) hn hp h₁ h₂ hle
         (Fin.ext (by omega)) hq
+    -- Every remaining `a ≤ b` branch needs `j₁ − 1`, and only here does it:
+    -- `hcov` is exactly what makes it exist. Under the third disjunct
+    -- (`i₁ = 0`) this branch is vacuous, since it also has `j₁ + 1 ≤ i₁`.
+    obtain ⟨jm, hjm⟩ : ∃ jm : Fin n, jm.val + 1 = j₁.val := by
+      have hj1pos : 1 ≤ j₁.val := by rcases hcov with h | h | h <;> omega
+      exact ⟨⟨j₁.val - 1, by omega⟩, by show j₁.val - 1 + 1 = j₁.val; omega⟩
     rcases Nat.lt_or_ge (i₁.val) (j₁.val + 2) with hd2 | hd2
     · -- a = 2
       exact sPoly_le_resolves₂ hn hp h₁ h₂ hjm hle (Fin.ext (by omega))
@@ -15279,7 +15297,7 @@ begins with its top, so a one-letter overlap *forces* `i₂ = i` and hence
 
 `bsbs_resolves_of_oc` is the three together — the §4as result restated in the
 criterion's own form, for a composition the file did not build. It inherits
-every scope limit of §4as, `j₁ ≥ 1` included, and adds one of its own: the left
+every scope limit of §4as, the deep diagonal included, and adds one of its own: the left
 context must be non-empty, which is what §4au needs and what
 `overlap_resolves` does not require. The degenerate `left = []` compositions are
 not covered here. -/
@@ -15367,10 +15385,10 @@ means the two rules need not be assumed to share a top — a one-letter overlap
 forces it. -/
 theorem bsbs_resolves_of_oc (hn : 0 < n) (hp : HeckeParams)
     {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
-    {i i₁ i₂ j₁ i' j₂ ip jm : Fin n}
+    {i i₁ i₂ j₁ i' j₂ ip : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
-    (hjm : jm.val + 1 = j₁.val)
     (hj₁ : j₁.val ≤ i₁.val) (hip : ip.val + 1 = i'.val) (hj₂ : j₂.val ≤ ip.val)
+    (hcov : 1 ≤ j₁.val ∨ 1 ≤ j₂.val ∨ i₁.val = 0)
     (hq : hp.q - hp.q⁻¹ ≠ 0)
     (hr₁ : oc.rule₁ = bokutShiaoRelation i₁ i j₁)
     (hr₂ : oc.rule₂ = bokutShiaoRelation ip i' j₂)
@@ -15383,7 +15401,7 @@ theorem bsbs_resolves_of_oc (hn : 0 < n) (hp : HeckeParams)
   rw [hii, hii'] at hr₂
   have hj₂' : j₂.val ≤ i₁.val := by rw [← hii']; exact hj₂
   rw [bsbs_oc_eq hn hp h₁ hj₁ hj₂' hr₁ hr₂ hleft]
-  exact CornerCriterion.bsbs_overlap_resolves hn hp h₁ h₂ hjm hj₁ hj₂' hq
+  exact CornerCriterion.bsbs_overlap_resolves hn hp h₁ h₂ hj₁ hj₂' hcov hq
 
 /-! ## §4aw  The empty left context, and the cell closed
 
@@ -15406,8 +15424,10 @@ self-composition, which was already discharged. `bsbs_resolves` is the two
 branches together — the Bokut–Shiao × Bokut–Shiao cell of `overlap_resolves`,
 with no hypothesis on either context.
 
-What it still inherits from §4as is `j₁ ≥ 1`: `jm = j₁ − 1` is a hypothesis, not
-a construction, so the deep diagonal `j₁ = j₂ = 0` remains open. And this is one
+What it still inherits from §4as is the deep diagonal: `hcov` fails exactly when
+`j₁ = j₂ = 0` and `i₁ ≥ 1`, because the `a ≥ 2` reduction chains are built on
+`j₁ − 1`. Everything else is covered, `j₁ = 0` with `j₂ ≥ 1` and
+`j₁ = j₂ = i₁ = 0` included. And this is one
 cell — the criterion quantifies over every rule-kind pair and every
 `InclusionComposition`. -/
 
@@ -15490,10 +15510,10 @@ theorem bsbs_resolves_of_nil_left (hn : 0 < n) (hp : HeckeParams)
 
 theorem bsbs_resolves (hn : 0 < n) (hp : HeckeParams)
     {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
-    {i i₁ i₂ j₁ i' ip j₂ jm : Fin n}
+    {i i₁ i₂ j₁ i' ip j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
-    (hjm : jm.val + 1 = j₁.val)
     (hj₁ : j₁.val ≤ i₁.val) (hip : ip.val + 1 = i'.val) (hj₂ : j₂.val ≤ ip.val)
+    (hcov : 1 ≤ j₁.val ∨ 1 ≤ j₂.val ∨ i₁.val = 0)
     (hq : hp.q - hp.q⁻¹ ≠ 0)
     (hr₁ : oc.rule₁ = bokutShiaoRelation i₁ i j₁)
     (hr₂ : oc.rule₂ = bokutShiaoRelation ip i' j₂) :
@@ -15501,6 +15521,6 @@ theorem bsbs_resolves (hn : 0 < n) (hp : HeckeParams)
       oc.spoly nf ∧ nf.isZero := by
   by_cases hl : oc.left = []
   · exact bsbs_resolves_of_nil_left hn hp h₁ hj₁ hip hj₂ hr₁ hr₂ hl
-  · exact bsbs_resolves_of_oc hn hp h₁ h₂ hjm hj₁ hip hj₂ hq hr₁ hr₂ hl
+  · exact bsbs_resolves_of_oc hn hp h₁ h₂ hj₁ hip hj₂ hcov hq hr₁ hr₂ hl
 
 end UGB.GrobnerShirshov.Hecke
