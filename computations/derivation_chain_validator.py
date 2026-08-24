@@ -289,11 +289,19 @@ def validate_chain(chain_path: Path) -> ChainResult:
         if recomputed is not None:
             rel = abs(recomputed - target_value) / abs(target_value)
             if rel > target_tolerance:
+                # mp.nstr, not an .2e format spec: `rel` and
+                # `target_tolerance` are mpf, and mpf.__format__ rejects
+                # `.2e` with a TypeError.  This is the FAILURE branch, so
+                # the crash fired only when the validator had a real
+                # discrepancy to report -- it ran clean for as long as the
+                # chain agreed and died the moment it disagreed, discarding
+                # the finding it had just made.
                 structural_issues.append(
                     f"c_q algebra re-eval at q_0={mp.nstr(q_eval, 20)} "
                     f"[{pin}] gives {mp.nstr(recomputed, 20)} "
-                    f"vs target {target_value} (rel_diff {rel:.2e}, "
-                    f"target_tolerance {target_tolerance:.2e})"
+                    f"vs target {target_value} "
+                    f"(rel_diff {mp.nstr(rel, 3)}, "
+                    f"target_tolerance {mp.nstr(target_tolerance, 3)})"
                 )
 
     return ChainResult(

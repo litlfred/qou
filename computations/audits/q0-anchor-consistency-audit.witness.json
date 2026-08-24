@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:52:53.592950+00:00",
-  "commitSha": "29ad606b294f950da1f97b80c678b52b24f0df06",
+  "computedAt": "2026-08-24T09:06:27.497871+00:00",
+  "commitSha": "98cdb66539b26f9249a8eed677670dd11f850877",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -45,9 +45,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 707,
+      "Q0_OK": 704,
       "Q0_AMBIGUOUS": 16,
-      "Q0_INDEPENDENT": 46,
+      "Q0_INDEPENDENT": 47,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -199,10 +199,6 @@
         },
         {
           "witness": "alpha-star-vs-binding-gap.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "three-term-wedderburn.witness.json",
           "detail": ""
         },
         {
@@ -2279,6 +2275,10 @@
         },
         {
           "witness": "habiro-h9-spectral-decomposition.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-interpolate-cross-validation.witness.json",
           "detail": ""
         },
         {
@@ -7628,6 +7628,10 @@
           "detail": ""
         },
         {
+          "witness": "three-term-wedderburn.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "alpha-basis-knot-couplings.witness.json",
           "detail": ""
         },
@@ -8516,18 +8520,6 @@
           "detail": ""
         },
         {
-          "witness": "d-frame-cyclotomic-exponent.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "d-frame-neutron-cyclotomic-rule.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "d-frame-prefactor-localisation.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "defect-info-a-trend-probe.witness.json",
           "detail": ""
         },
@@ -8897,10 +8889,6 @@
         },
         {
           "witness": "habiro-exact-qbeta.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-interpolate-cross-validation.witness.json",
           "detail": ""
         },
         {
@@ -10807,6 +10795,10 @@
         },
         {
           "witness": "habiro-witness-convention-adjudication.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-a1-tail-schedule.witness.json",
           "detail": ""
         },
         {

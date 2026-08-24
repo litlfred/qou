@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 291,
-      "proton-pin": 1302,
+      "proton-pin": 1301,
       "unknown": 25,
-      "canonical": 200
+      "canonical": 197
     },
     "stale_total": 291,
     "new_stale": 0,
@@ -5088,27 +5088,6 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
-        "file": "computations/d-frame-cyclotomic-exponent.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
-        "file": "computations/d-frame-neutron-cyclotomic-rule.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
-        "file": "computations/d-frame-prefactor-localisation.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
         "file": "computations/defect-info-a-trend-probe.witness.json",
         "field": "constants.q_0",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -6546,16 +6525,9 @@
       {
         "file": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955573347",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.792806032488518e-08
-      },
-      {
-        "file": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
-        "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/habiro/habiro-to-precision-ladder-verification.witness.json",
@@ -8471,9 +8443,9 @@
       {
         "file": "computations/parabolic-cylinder-channel-mixing-probe.witness.json",
         "field": "constants.q_0",
-        "value": "1.1099785955573347",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.792806032488518e-08
+        "value": "1.1099785827513808076",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889980326
       },
       {
         "file": "computations/parabolic-cylinder-channel-mixing-probe.witness.json",

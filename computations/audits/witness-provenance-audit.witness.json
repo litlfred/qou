@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:18:42.606558+00:00",
-  "commitSha": "7c37c6ee79f6e68faf8eedb93d6f42a1b83ed299",
+  "computedAt": "2026-08-24T09:11:17.275252+00:00",
+  "commitSha": "98cdb66539b26f9249a8eed677670dd11f850877",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2727,
-      "prov_ok": 2350,
+      "total_scanned": 2725,
+      "prov_ok": 2348,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 237,
       "prov_exempt_acknowledged": 2,
       "prov_missing": 60,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.977997799779977997799779977997799779977997799779977997799780"
+      "completeness_ratio": "0.977981651376146788990825688073394495412844036697247706422018"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2110,18 +2110,6 @@
           "missing_fields": []
         },
         {
-          "witness": "d-frame-cyclotomic-exponent.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "d-frame-neutron-cyclotomic-rule.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "d-frame-prefactor-localisation.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "d-from-scratch.witness.json",
           "missing_fields": []
         },
@@ -3563,6 +3551,10 @@
         },
         {
           "witness": "phi0-normalization-disproof.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "hecke-a1-tail-schedule.witness.json",
           "missing_fields": []
         },
         {
