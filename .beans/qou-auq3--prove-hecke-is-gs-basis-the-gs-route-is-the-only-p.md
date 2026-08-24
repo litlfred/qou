@@ -4402,3 +4402,41 @@ where the right context is non-empty too. So the theorem also covers
    two `lm_decomp`s determine `left` and `right` outright.
 4. **The other cells**, and every `ic`.
 5. The deep diagonal `j₁ = j₂ = 0`, still open from §4as.
+
+## The shape bridge (2026-08-24, §4av) — the criterion's own form, reached
+
+`bsbs_resolves_of_oc`: the §4as result for an **arbitrary** `OverlapComposition`
+whose two rules are Bokut–Shiao, rather than for the `CornerGeneral.oc` this file
+builds. That is `overlap_resolves`'s own shape, for this cell of the table.
+
+Three pieces:
+
+- **`bsbs_oc_eq`** — the bridge. With the overlap known to be one letter (§4au),
+  the two `lm_decomp`s determine everything: `lm₁ = descWord i j₁ ++ [σᵢ]` splits
+  against `left ++ [x]` with matching tails, so `left = descWord i j₁` and
+  `x = σᵢ`; then `lm₂ = [σᵢ] ++ right` against `σᵢ :: (descWord i₁ j₂ ++ [σᵢ])`
+  gives `right`. Structure equality follows, the three `Prop` fields being
+  proof-irrelevant.
+- **`bsbs_top_eq`** — the two rules need **not** be assumed to share a top. The
+  overlap is `σᵢ` from `rule₁`'s side and `σ_{i₂}` from `rule₂`'s (a Bokut–Shiao
+  word begins with its top), so a one-letter overlap *forces* `i₂ = i`, hence
+  `i₂' = i₁`.
+- **`bsbs_resolves_of_oc`** — the two together, feeding
+  `CornerCriterion.bsbs_overlap_resolves`.
+
+**§4au was the enabling step, not decoration.** Without the single-letter fact
+the two decompositions constrain `left`/`right` only up to a splitting, and the
+bridge is a case analysis over splittings rather than an equation.
+
+### Scope, unchanged and added
+
+Inherits every §4as limit, `j₁ ≥ 1` included. **Adds one**: `oc.left ≠ []`, which
+is what §4au needs and what `overlap_resolves` does *not* require — so the
+degenerate `left = []` compositions are still uncovered here. `spoly_isZero_of_self`
+handles those only when the two rules coincide.
+
+### Remaining
+
+1. `left = []` for this cell.
+2. The other cells of the rule-kind table, and every `InclusionComposition`.
+3. The deep diagonal `j₁ = j₂ = 0`, still open from §4as.
