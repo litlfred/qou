@@ -3757,3 +3757,82 @@ I do not know which, and the arc's own history says guessing here is how correct
 happened: 14 read one display without the derivation, 17 read a label without the theorem. The
 answer is in §13 (doc pp. 93–95), which is the next thing to read — **before** any change to
 `RothLemmaUniform`'s `E`.
+
+### Correction nineteen — the uniform-`E` question, answered by §12, and my flag was aimed wrong
+
+The previous entry flagged that `RothLemmaUniform`'s single `E` might not be suppliable from
+`Γ`, and said §13 would settle it. §12 (doc p. 93) settles it, and the answer is sharper than
+the question: **the induction never uses an `E` at all.** At the point of invocation Mahler
+writes
+
+    J(U; ρ₁,…,ρ_{m−1}; κ₁,…,κ_{m−1}) ≤ Θ_{m−1}(b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1})
+    J(V; ρ_m; κ_m)                    ≤ Θ₁(b; ρ_m; H_m)
+    Φ_m = Θ_{m−1}(b;ρ;H) + Θ₁(b;ρ_m;H_m),   J(W;r;κ) ≤ n·Φ_m   (since ρ_h = n·r_h)
+
+Both bounds are **the definition of `Θ`** — `U ∈ R(b;ρ)`, `κ ∈ Q(H)`, nothing else. The `Γ`
+clauses enter *separately*: §11's descent proves `Γ_{m−1}` for the descended system, and that is
+what lets the induction hypothesis bound `Θ_{m−1}`.
+
+So `RothLemmaUniform` fuses two things the source keeps apart — set membership and `Γ` — into
+one `∀`-statement sharing an `E`. The flagged arithmetic was right (clause 2 propagates clause 4
+with an exponent that varies with `h`, so a single `E ≤ ε·min_h d_h` does not follow), but the
+conclusion to draw is not "fix `E`": it is that the `E`-encoded schema is the wrong object.
+**`RothLemmaTheta` — `Γ` as hypothesis, `IsRothTheta` for the sup, `RothBound` as conclusion,
+no `E` — was already the right shape**, and `isRothTheta_le_of_gamma_one` (proved earlier this
+session) is its `m = 1` case. The arc built the correct formulation without knowing it was the
+correct one.
+
+⚠ Worth naming: holding the question open one turn was the right call. Answering it from the
+arithmetic alone would have produced a "fix" to `E` — plausible, self-consistent, and aimed at
+the wrong object. That is correction fourteen's shape exactly.
+
+### ⚠⚠ Correction twenty — `RothLemmaTheta` was FALSE at `m = 1`
+
+`RothGammaFull` encodes `Γ_M`'s case **(ii)**, which requires `M ≥ 2`. At `M = 1` the source uses
+case **(i)**: `M = 1, K₁ ≥ 2, b ≤ K₁^{s₁t}`. Nothing in case (ii) forces `K₁ ≥ 2` when `m = 1` —
+clause 3a reads `q·((1−1)·1·3) ≤ F·p`, i.e. `0 ≤ 0`, so `F = 0` is admissible and clause 3b says
+only `1 ≤ K₁`.
+
+Counterexample, every clause checked by hand:
+
+    σ = Unit,  m = 1,  p = 1,  q = 2  (t = 1/2),  F = 0,  a = 1,  r ≡ 1,  H ≡ 1
+    growth       vacuous (one variable, no consecutive pair)
+    height       1 ≤ 1
+    floorExp     2·((1−1)·1·3) = 0 ≤ 0·1 = 0
+    floor        2⁰ = 1 ≤ 1
+    heightBound  1^(1·2) = 1 ≤ 1^(1·1) = 1
+    Θ = 1        attained at A = x − 1, κ = 1 (height max(1,1) = 1, so κ ∈ Q(1)),
+                 whose translate is x, support {1}, idxWeight 1/1 = 1
+    conclusion   RothBound 1 (1/2) 1  asks  1 ≤ 1/2.          FALSE
+
+A second, independent failure: `q = 0` makes `t = p/0 = 0` in `ℚ` while `heightBound` degenerates
+to `1 ≤ K₁^{r₁p}`, so `Θ ≤ 0` is demanded — false at `a = 100`, `H = 2`, `A = 2x − 1`, `κ = 1/2`,
+where `Θ ≥ 1`. §14's Theorem 1 opens with `0 < t ≤ 1`; `RothLemmaMahler` carried it and
+`RothLemmaTheta` did not.
+
+**Fixed** by adding to `RothGammaFull` the two clauses §11 actually carries —
+`two_le : ∀ j, 2 ≤ Kh j` (§11's derived list "K₁ ≥ 2, K₂ ≥ 2, …, K_M ≥ 2"; a *consequence* at
+`m ≥ 2`, where `(m−1)m(2m+1) ≥ 10` forces `F ≥ 1`, and case (i)'s *statement* at `m = 1`) and
+`degPos : ∀ j, d j ≠ 0` (§11's "positive integers") — and by carrying `0 < t ≤ 1` on
+`RothLemmaTheta`. `rothGammaFull_descend` drops its separate `hq2` hypothesis in exchange.
+
+This is the **fifth** time in this arc that a missing clause in a hypothesis object made a
+statement stronger than the source's. The list is now long enough to be a rule rather than an
+anecdote: `Γ`'s clauses 2–3, `Γ`'s clause 4, `InRothFracSet`'s `≤` for `=`, `RothLemmaUniform`'s
+fused `Kh`, and this. **Every one was found by re-reading the source, none by any mechanical
+check** — a missing hypothesis type-checks perfectly.
+
+### `RothLemmaTheta` is now proved at `m = 1`
+
+`rothLemmaTheta_one`. `RothGammaFull.heightBound` at `m = 1` is `a^{1·q} ≤ K₁^{r₁p}`, which is
+case (i) cleared of its exponent; `two_le` supplies case (i)'s `K₁ ≥ 2`; `isRothTheta_le_of_gamma_one`
+gives `Θ ≤ t`; `rothBound_one` packages it. First instance of `RothLemmaTheta` proved, and the
+starting value `c₁ = 1` that `rothConstant_chain` needs.
+
+⚠ Also caught: the module's summary paragraph still read "Both are `def`s, and neither is
+proved" after `rothLemmaTheta_one` landed. Correction seventeen's failure mode, twice in one
+session. Fixed, and flagged in place.
+
+⚠ `RothLemma4` has the same shape and has **not** been checked against correction twenty. Its
+conclusion `Θ ≤ t + 2w` is weaker so the counterexample does not transfer directly, and none has
+been sought. Recorded as unchecked rather than asserted either way.
