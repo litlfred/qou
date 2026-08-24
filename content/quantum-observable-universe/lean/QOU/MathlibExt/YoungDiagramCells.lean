@@ -41,8 +41,14 @@ The rest cost no errors — each sits in its own namespace — but the copies
 those is reachable from the others without a `rfl` bridge nobody wrote.
 
 This module is the single home. `TwoFiltrationBridge` is migrated onto it;
-the remaining eight are the drain half of `qou-cdup`. Each is definitionally
-equal to the corresponding declaration here, so every bridge is `rfl`.
+the rest are the drain half of `qou-cdup`.
+
+**The counts in the table above are understated, and "every bridge is `rfl`" is
+false.** Re-measured 2026-08-24: **ten** reachable `content` copies, four of
+them never recorded anywhere (one of which an earlier note claimed does not
+exist); and the `hookLength` bridge is conditional, not `rfl`, because it is
+`ℕ`-valued with truncated subtraction. The measured list, the bridges, and the
+`axialDistance` escalation are in `QOU.MathlibExt.YoungDiagramCellsBridges`.
 
 **Namespace note.** This lives under `QOU.MathlibExt` — the corpus's established
 home for Mathlib extensions — rather than the more obvious `QOU.YoungDiagram`.
