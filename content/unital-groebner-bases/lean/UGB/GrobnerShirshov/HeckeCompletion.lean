@@ -16679,4 +16679,109 @@ theorem braid_bs_resolves (hn : 0 < n) (hp : HeckeParams)
       exact BraidBokutShiao.bokutShiao_resolves (hp := hp) (i'' := i'') (i' := i')
         (i := i) (j₂ := j₂) hn hi hi''.1 hi''.2
 
+/-! ## §4bi  The four-way cell, crossed
+
+§4bf mapped this cell and stopped there. This crosses it. The map held — four
+rows, on `j₀` against `j` — and row 4 needed what §4bf said it would.
+
+| `j₀` vs `j` | chain |
+|---|---|
+| `j₀ + 1 = j` | `BokutShiaoFarComm.oc_reduces_to_zero` (§4o) |
+| `j₀ + 1 < j` | `CyclicFarCommLow.bokutShiao_resolves` |
+| `j₀ = j` | `BokutShiaoFarCommSame.oc_reduces_to_zero` |
+| `j < j₀` | `CyclicFarCommInner.oc_reduces_to_zero` |
+
+**One side condition the map missed.** `BokutShiaoFarCommSame.oc_reduces_to_zero`
+also wants a `jp` with `j + 1 = jp ≤ i − 1`, which §4bf did not record. It is
+vacuous here — that row has `j₀ = j`, and `farCommRelation i j` exists only for
+`j + 1 < i`, so `j < i − 1` already — but it still has to be *supplied*. Reading
+a chain's hypotheses is not the same as reading its docstring, and §4bf had only
+done the latter.
+
+**Row 4 is the one that is not a bridge application.** `CyclicFarCommInner`
+asks for four structural facts about how `descWord i j` breaks at `σ_{j₀}`, and
+they are built rather than read off: `descWord_split` cuts the run at `j₀`,
+`descWord_last` peels `σ_{j₀}` off the upper piece to expose `A`, and
+`descWord_nodup` is what makes every letter of `A` **strictly** above `j₀` —
+membership alone gives only `≥`, and the chain needs `>`. All three come from
+§4bb, which was written for the antichain and is reused here unchanged. -/
+
+/-- **Bokut–Shiao against far commutation, for an arbitrary composition.** -/
+theorem bs_farComm_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i j j₀ : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) (hj₀ : j₀.val + 1 < i.val)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation i' i j)
+    (hr₂ : oc.rule₂ = farCommRelation i j₀)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact bokutShiaoRelation_mem hn hp hi hj
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact farCommRelation_mem hn hp (by omega)
+  have hdne : descWord i j ≠ [] := by
+    obtain ⟨u, hu⟩ := descWord_head (i := i) (j := j) (by omega)
+    rw [hu]; simp
+  rcases lt_trichotomy j₀.val j.val with hlt | heq | hgt
+  · rcases Nat.eq_or_lt_of_le (Nat.succ_le_of_lt hlt) with he | hl2
+    · -- `j₀ + 1 = j` — §4o's own family
+      have hbr : oc = BokutShiaoFarComm.oc (i' := i') (i := i) (j := j) (j₀ := j₀)
+          hi hj he :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hr₂ hl
+          (by simpa [BokutShiaoFarComm.oc] using hdne)
+      rw [hbr]
+      exact BokutShiaoFarComm.oc_reduces_to_zero hn hp hi hj he
+    · -- `j₀ + 1 < j`
+      have hbr : oc = CyclicFarCommLow.oc (bokutShiaoRelation i' i j) i j₀
+          (descWord i' j)
+          (by rw [bokutShiaoRelation_lm hi hj, bsWord₁, descWord_cons hi hj])
+          (by omega) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hr₂ hl
+          (by simp [CyclicFarCommLow.oc])
+      rw [hbr]
+      exact CyclicFarCommLow.bokutShiao_resolves hp hn hi hj (by omega)
+  · -- `j₀ = j`
+    have hjj : j₀ = j := Fin.ext heq
+    have hjp : j.val + 1 < n := by omega
+    have hbr : oc = BokutShiaoFarCommSame.oc (i' := i') (i := i) (j := j) hi hj :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ (by rw [hr₂, hjj]; rfl) hl
+        (by simpa [BokutShiaoFarCommSame.oc] using hdne)
+    rw [hbr]
+    exact BokutShiaoFarCommSame.oc_reduces_to_zero hp hn hi hj
+      (jp := ⟨j.val + 1, hjp⟩) (by simp) (by simp; omega)
+  · -- `j < j₀` — the far-commutation partner lands inside the descending run
+    have hj₀i' : j₀.val + 1 ≤ i'.val := by omega
+    have hlt' : j₀.val - 1 < n := by omega
+    obtain ⟨j₀', hj₀'⟩ : ∃ j₀' : Fin n, j₀'.val + 1 = j₀.val ∧ j.val ≤ j₀'.val :=
+      ⟨⟨j₀.val - 1, hlt'⟩, by simp; omega, by simp; omega⟩
+    -- Split the run at `σ_{j₀}` and peel its bottom letter off the upper piece.
+    have hsp : descWord i' j = descWord i' j₀ ++ descWord j₀' j :=
+      descWord_split hj₀'.1 hj₀'.2 (by omega)
+    obtain ⟨A, hA⟩ := descWord_last (i := i') (j := j₀) (by omega)
+    have hsplit' : descWord i' j = A ++ ((⟨j₀⟩ : HeckeGen n) :: descWord j₀' j) := by
+      rw [hsp, hA]; simp
+    have hsplit : descWord i j
+        = ((⟨i⟩ : HeckeGen n) :: A) ++ ((⟨j₀⟩ : HeckeGen n) :: descWord j₀' j) := by
+      rw [descWord_cons hi hj, hsplit']; rfl
+    have hfarA : ∀ y ∈ A, j₀'.val + 1 < y.index.val := by
+      intro y hy
+      have hmem : y ∈ descWord i' j₀ := by rw [hA]; simp [hy]
+      have hge := descWord_index_ge hmem
+      have hne : y ≠ (⟨j₀⟩ : HeckeGen n) := by
+        intro hcon
+        have hnd : (descWord i' j₀).Nodup := descWord_nodup i' j₀
+        rw [hA] at hnd
+        exact (List.disjoint_of_nodup_append hnd) (hcon ▸ hy) (by simp)
+      have : y.index ≠ j₀ := fun hcon => hne (by cases y; simp_all)
+      have : y.index.val ≠ j₀.val := fun hcon => this (Fin.ext hcon)
+      omega
+    have hbr : oc = CyclicFarCommLow.oc (bokutShiaoRelation i' i j) i j₀
+        (A ++ ((⟨j₀⟩ : HeckeGen n) :: descWord j₀' j))
+        (by rw [bokutShiaoRelation_lm hi hj, bsWord₁, hsplit]; rfl)
+        (by omega) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hr₂ hl (by simp [CyclicFarCommLow.oc])
+    rw [hbr]
+    exact CyclicFarCommInner.oc_reduces_to_zero hp hn hi hj₀'.1 hj₀i' hj₀'.2
+      hsplit hsplit' rfl hfarA
+
 end UGB.GrobnerShirshov.Hecke

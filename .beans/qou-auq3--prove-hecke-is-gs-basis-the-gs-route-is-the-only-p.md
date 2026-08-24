@@ -4878,3 +4878,42 @@ worst case found.
 | braid word × braid word | §4bg |
 | `BS × braid word`, both directions | §4bh |
 | `BS × FC` | **mapped only** (§4bf) |
+
+## The four-way cell, crossed (2026-08-24, §4bi)
+
+§4bf mapped `BS × FC` and stopped. §4bi crosses it. **The map held** — four rows
+on `j₀` against `j` — and row 4 needed exactly what §4bf said it would.
+
+**One side condition the map missed.** `BokutShiaoFarCommSame.oc_reduces_to_zero`
+also wants a `jp` with `j + 1 = jp ≤ i − 1`. It is *vacuous* here (that row has
+`j₀ = j`, and `farCommRelation i j` exists only for `j + 1 < i`), but it still
+has to be **supplied**. §4bf had read the chains' *docstrings*; reading their
+*hypotheses* is a different act, and only the second finds this.
+
+**Row 4 is the one that is not a bridge application**, as predicted.
+`CyclicFarCommInner` asks for four structural facts about how `descWord i j`
+breaks at `σ_{j₀}`, built rather than read off:
+
+- `descWord_split` cuts the run at `j₀`;
+- `descWord_last` peels `σ_{j₀}` off the upper piece to expose `A`;
+- **`descWord_nodup` is what makes every letter of `A` strictly above `j₀`** —
+  membership alone gives `≥`, and the chain needs `>`.
+
+All three come from §4bb, written for the antichain and reused here unchanged.
+That is the second time §4bb's `descWord` infrastructure has paid for itself
+outside its original purpose.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS ×` braid word, both directions | §4bh |
+| `BS × FC` | §4bi |
+
+Remaining: `FC × ?` and `YB × ?` combinations not covered above, the standing
+`oc.left ≠ []` assumption everywhere, and the deep diagonal
+`j₁ = j₂ = 0 ∧ i₁ ≥ 1`.
