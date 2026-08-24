@@ -144,3 +144,63 @@ At `q = u^2`: `z_C = u/(1+u^2)`, `z_D = u^6/(1+u^4)`. D is C under `u -> u^2`
 then times `u^4`. The monomial moves only the u-exponent; the squaring maps
 `Phi_4 -> Phi_8`, which is why the two laws' cyclotomic BASES correspond while
 their EXPONENTS do not.
+
+
+## 2026-08-24 (later) — Q2 ANSWERED, and my own hypothesis above is REFUTED
+
+Producer: `computations/markov/d_frame_cyclotomic_exponent_probe.py`
+(4 configurations, 4/4 assertions).
+
+    atom      Z N A | m=deg_z  3A-1 | naive actual cancelled  2N
+    proton    1 0 1 |       2     2 |     2      2         0   0
+    D         1 1 2 |       5     5 |     5      3         2   2
+    T         1 2 3 |       8     8 |     8      4         4   4
+    3He       2 1 3 |       8     8 |     8      6         2   2
+
+1. **The z-count really is `3A - 1`, in both frames.** Substituting a FREE
+   SYMBOL for `hecke_symbolic.z_markov` makes `tr_M_atomic` polynomial in it;
+   the degree is the z-count and is convention-independent by construction.
+   **The C derivation's counting is correct.**
+2. Substituting `z_D = q^3/(q^2+1)` gives `(q^2+1)^m` naively -- but exactly
+   **2N** factors **CANCEL against the numerator**, leaving
+   `m - 2N = 3A-1-2N = 3Z+N-1`.
+3. Proton (N=0) is the zero-cancellation control.
+
+**So the caution recorded above was right, and its stated reason was wrong.**
+The section above offered cyclotomic aliasing as the "likely cause" -- each
+frame's exponent mixing the z-count with extra sources of its own cyclotomic
+(`[2]_q` -> Phi_8, `[2]_sqrt(q)` -> Phi_4). Flagged as a hypothesis; now
+**refuted**. The mechanism is cancellation in the numerator, two per neutron.
+`3Z+N` is not a strand count, not a peel count -- it is `3A-1` reduced by 2N,
+rewritten.
+
+**How the first attempt failed, because the failure mode is reusable.** The
+free-symbol route is sound only if putting `z_D` back reproduces the unpatched
+function EXACTLY. My first attempt bound `sp.Symbol("q")` while
+`hecke_symbolic` uses `sp.Symbol('q', positive=True)` -- different objects. The
+round-trip then built a two-q expression: deuteron denominator
+`192*q**25*(q**2+1)**5` against the true `192*q**23*(q**2+1)**3`, and
+cancellation reported as ZERO. **Its z-count was nonetheless correct**, which
+is worse than wrong -- a coincidence that would have been recorded as
+evidence. The producer now asserts `round_trip_reproduces_unpatched` FIRST and
+reports no degree unless it holds.
+
+(The Q1 localisation work is unaffected: it never patched anything, reads only
+`factor_list(...)[0]` -- the integer content -- and never compares symbols, and
+its numbers match a second independently-written extraction.)
+
+Corroboration of this bean's verdict survives and is sharper: the D law cannot
+be got by substituting `z_D` into the C derivation, because that derivation
+stops at `z^(n-1)` and never sees that 2N of those factors cancel once `z` is
+concrete.
+
+## Both sub-questions now have answers of different strength
+
+* **Q1 (prefactor 6)** — LOCALISED to the single inter-nucleon interface
+  crossing, not derived. Deriving 12 from `delta(q) = (q-1)^2(1-q^-4)/3`
+  remains open.
+* **Q2 (cyclotomic exponent)** — ANSWERED: `3A-1` minus 2 per neutron, by
+  cancellation. What remains is *why the numerator carries `(q^2+1)^2` per
+  neutron*, which is a statement about the colour-weighted neutron factor --
+  plausibly the same object as Q1's, since both are neutron/interface-side and
+  both involve `delta(q)`. That connection is a CONJECTURE, not measured.
