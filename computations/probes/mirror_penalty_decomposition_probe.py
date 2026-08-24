@@ -80,9 +80,13 @@ from q_parameter import Q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 RESIDUAL = "computations/delta-lambda-canonical-residual.witness.json"
+# The recorded penalties are quoted to 3 decimals in the source producer's own
+# table. Kept as STRINGS: mp.mpf("-0.951") is not exactly -0.951, so serialising
+# str(mpf) would claim 50 digits for a 3-digit input — fake precision, and the
+# raw-float64 ratchet is right to reject it. Parsed to mpf only for comparison.
 PAIRS = (
-    (3, (2, 1), (1, 2), "3He / T", mp.mpf("-0.951")),
-    (7, (4, 3), (3, 4), "7Be / 7Li", mp.mpf("-1.770")),
+    (3, (2, 1), (1, 2), "3He / T", "-0.951"),
+    (7, (4, 3), (3, 4), "7Be / 7Li", "-1.770"),
 )
 
 
@@ -104,6 +108,7 @@ def main() -> int:
         mod_asym = lg(a["B_pred_canonical_MeV"]) - lg(b["B_pred_canonical_MeV"])
         penalty = exp_asym - mod_asym
         dev_diff = mp.mpf(str(a["deviation_from_law"])) - mp.mpf(str(b["deviation_from_law"]))
+        recorded_mpf = mp.mpf(recorded)
         out.append({
             "A": A, "pair": name,
             "proton_rich": a["atom"], "mirror": b["atom"],
@@ -111,7 +116,7 @@ def main() -> int:
             "model_asymmetry_logq": str(mod_asym),
             "penalty_logq": str(penalty),
             "penalty_from_witness_deviations": str(dev_diff),
-            "recorded_penalty": str(recorded),
+            "recorded_penalty": recorded,   # verbatim, at its true 3-decimal precision
             "experimental_mirror_energy_MeV": str(
                 mp.mpf(str(a["B_AME_MeV"])) - mp.mpf(str(b["B_AME_MeV"]))),
             "dominated_by": "experiment" if abs(exp_asym) > abs(mod_asym) else "model",

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath(exact at the production floor)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T17:15:24.808402+00:00",
-  "commitSha": "aa17903e09f5bdc2ebb26d7bb68582d923030787",
+  "computedAt": "2026-08-24T17:21:01.708009+00:00",
+  "commitSha": "0d785ade17e4e207cdd882466fba7378af4b338a",
   "assertions": [
     {
       "name": "residual_witness_is_a_single_run",
@@ -49,8 +49,8 @@
   "durationMs": 0,
   "computation": "mirror-penalty-decomposition",
   "scriptFile": "mirror_penalty_decomposition_probe.py",
-  "scriptHash": "fe7c0a199d38",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b4aa7b5dc62d",
+  "scriptCommitSha": "0d785ade17e4e207cdd882466fba7378af4b338a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -92,7 +92,7 @@
       "model_asymmetry_logq": "0.04704672492024951099043802240063853071183538070828269329343170444760214",
       "penalty_logq": "-0.9514072306083570251155019554181858352850161611189510778406939152316656",
       "penalty_from_witness_deviations": "-0.951",
-      "recorded_penalty": "-0.95099999999999995647925743469386361539363861083984375",
+      "recorded_penalty": "-0.951",
       "experimental_mirror_energy_MeV": "-0.7637548799999999999999999999999999999999999999999999999999999999999999",
       "dominated_by": "experiment",
       "dominant_share_pct": "95.05503811546959886182351051247053126022826969523664000059196359655818",
@@ -108,7 +108,7 @@
       "model_asymmetry_logq": "1.358987658817349688532867383872409810174691414325383076059930154441535",
       "penalty_logq": "-1.76917016423031496800352402322976292410313270140168762672283451063354",
       "penalty_from_witness_deviations": "-1.77",
-      "recorded_penalty": "-1.770000000000000017763568394002504646778106689453125",
+      "recorded_penalty": "-1.770",
       "experimental_mirror_energy_MeV": "-1.644181",
       "dominated_by": "model",
       "dominant_share_pct": "76.81497723021929157421476606542525588516609020275027758259352436638658",
