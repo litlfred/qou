@@ -133,3 +133,42 @@ Do not regenerate any of these witnesses in an agent container. Several touch
 q0/anchor machinery, and an environment-stamped regeneration writes a container
 fingerprint into the corpus — see the reverted witnesses in #5333. Fix the
 producer, and let the witness be regenerated where the environment is right.
+
+## 2026-08-24 — DEFINITIVE: 8 broken, not 14. Four were the harness.
+
+The census reported 14 crashes. Re-tested properly, **8 are real**. The count
+corrected downward four times, and each correction was a different defect in my
+own runner — that taxonomy is worth more than the number:
+
+| artifact | producer | why the census was wrong |
+|---|---|---|
+| missing `PYTHONPATH` | `h6_deuteron_free_word_chi_lambda_probe` | needs `computations/` importable; exits 0 with it |
+| required CLI args | `per_irrep_pole_atom` | declares positionals; a bare run is operator error |
+| sweep order-dependence | `lepton_tower_probe_1_cinquefoil_muon` | exits 0 **in isolation**; a sweep that already set PYTHONPATH still called it broken |
+| wrong cwd convention | `lever1_habiro_element_fit` | uses REPO-ROOT-relative paths; exits 0 from root, fails from its own dir |
+
+**A producer-runner is only trustworthy if it does all four:** sets
+`PYTHONPATH` to `computations/` and `computations/substrate/`; skips producers
+declaring required positionals; cleans the tree **before** each run as well as
+after; and tries **both** `cwd=<producer dir>` and `cwd=<repo root>` before
+calling anything broken.
+
+Fixed this session (PR #5615, both now exit 0 either way):
+
+    per_knot_density_borromean_q_locality_probe.py   mpf f-string x5, numerics unchanged
+    pentagon_rt_torus_knot_higgs_probe.py            mpf f-string + _fmt_deep serializer
+
+## The 8 genuinely broken
+
+    alpha_em_b2_bring_period_matrix_probe.py    its own environment guard fires
+    hadron_knot_table.py                        dtype float64 vs object
+    su4_1111_markov_trace_probe.py              scipy.sparse rejects dtype object
+    low_isotope_mass_table.py                   exit 2, NO stderr
+    qbeta_braid_nf_sdp_offset_probe.py          exit 2, NO stderr
+    rho_k_h3a_refinement.py                     import fails even with PYTHONPATH
+    qbeta_habiro_element_probe.py               NoneType not subscriptable
+    qbeta_habiro_phase5q_dn_refactorize.py      AmDifferenceInvalid: D - n
+
+The two `exit 2, no stderr` cases are the worst to inherit: nothing to grep for.
+The last two may be **correct refusals** rather than bugs — check the invariant
+each is asserting before "fixing" either.
