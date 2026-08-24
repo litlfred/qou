@@ -25,6 +25,7 @@ signature.
 | `sum_schurPrincipal_addCellOrSelf` | **`∑_a s_{μ+□ at a} = [r]_Q · s_μ`** — general-`r` branching |
 | `sum_wenzlWeight_addCellOrSelf` | the same for the **normalised** weight: `∑_a w_{μ+□ at a} = w_μ` |
 | `wenzlWeight_addCell_beyond_eq_zero` | the addable cell the `range r` sum omits has weight `0` |
+| `betaR_ne_succ_of_addable` | no other β is `β_i + 1` when row `i` admits a box |
 
 The last is not a genericity fact at all — it is the shape bound that keeps `μ + □` inside the
 `≤ r`-row hypothesis — but it belongs with the others because it is the remaining side condition.
@@ -115,6 +116,40 @@ theorem colLen_zero_addCell_le {μ : YoungDiagram} {s : ℕ × ℕ} (hs : IsAdda
   · have hfst : max (μ.colLen 0) (s.1 + 1) = s.1 := congrArg Prod.fst heq
     omega
   · have := mem_iff_lt_colLen.mp hmemμ
+    omega
+
+/-- **An addable row leaves a gap of two below it.**
+
+If row `i` admits a box then `μ_i < μ_{i−1}`, so `β_{i−1} ≥ β_i + 2` — the row-length inequality and
+the shift each contribute one.  Hence **no** other β equals `β_i + 1`: rows above are at least
+`β_i + 2`, rows below are strictly less than `β_i`.
+
+`betaR_lt` alone does not give this.  It says the β are strictly decreasing, which allows
+`β_{i−1} = β_i + 1`; ruling that out is exactly what addability buys, and it is what discharges the
+`hne` hypothesis of `QOU.Mathlib.sum_prod_qratio_weighted` — the hypothesis whose failure would make
+a summand `0/0`. -/
+theorem betaR_ne_succ_of_addable {r : ℕ} {μ : YoungDiagram} {i b : ℕ}
+    (hs : IsAddableCell μ (i, μ.rowLen i)) (hi : i < r) (hb : b < r) (hbi : b ≠ i) :
+    betaR r μ b ≠ betaR r μ i + 1 := by
+  rcases lt_or_gt_of_ne hbi with hlt | hgt
+  · have hipos : 0 < i := by
+      by_contra hz
+      have : i = 0 := by omega
+      omega
+    have hrow : μ.rowLen i < μ.rowLen (i - 1) := by
+      rcases (isAddableCell_rowEnd_iff μ i).mp hs with h | h
+      · omega
+      · exact h
+    have hgap : betaR r μ i + 2 ≤ betaR r μ (i - 1) := by
+      unfold betaR
+      omega
+    have hmono : betaR r μ (i - 1) ≤ betaR r μ b := by
+      rcases Nat.lt_or_ge b (i - 1) with hlt2 | hge2
+      · exact le_of_lt (betaR_lt (μ := μ) hlt2 (by omega))
+      · have hbe : b = i - 1 := by omega
+        rw [hbe]
+    omega
+  · have := betaR_lt (μ := μ) hgt hb
     omega
 
 /-! ## General-`r` branching for `schurPrincipal` -/
