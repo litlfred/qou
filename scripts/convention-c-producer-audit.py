@@ -121,6 +121,39 @@ def _is_unit_numerator(node: ast.AST) -> bool:
     return False
 
 
+#: Single-argument numeric casts that wrap a value without changing which
+#: convention produced it. Blind spelling #14, found 2026-08-22: a convention-C
+#: expression inside `float(+( ... ))` is an `ast.Call`, so every shape matcher
+#: below bailed at its first isinstance check and the site scanned clean.
+#: Measured: `computations/probes/markov_reduction_h3_to_h4_verify.py:60` binds
+#: z = 0.4993203342 (= z_C) and this audit reported 0 sites for that file, while
+#: the probe's conclusion is cited in `QOU/Machinery/MarkovTraceOnHecke.lean`
+#: as the evidence for keystone ingredient 2.
+_NUMERIC_CASTS = {"float", "complex", "mpf", "mpmath.mpf", "mp.mpf", "Decimal"}
+
+
+def unwrap_casts(node: ast.AST) -> ast.AST:
+    """Strip numeric-cast calls and unary +/- to expose the arithmetic shape.
+
+    `float(+(1/(sqrt(q) + 1/sqrt(q))))` and `1/(sqrt(q) + 1/sqrt(q))` are the
+    same convention; only the second was matchable before. Unary `-` is
+    stripped too: `-z_C` is still C-derived and still worth flagging.
+
+    Deliberately conservative -- only SINGLE-argument calls to a known cast
+    name are unwrapped, so `Fraction(a, b)` and `round(x, n)` are untouched.
+    """
+    while True:
+        if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
+            node = node.operand
+            continue
+        if (isinstance(node, ast.Call) and len(node.args) == 1
+                and not node.keywords
+                and ast.unparse(node.func) in _NUMERIC_CASTS):
+            node = node.args[0]
+            continue
+        return node
+
+
 def is_c_form(node: ast.AST) -> bool:
     """Does this expression have the shape ``1 / (<sqrt-ish> + <anything>)``?
 
@@ -133,6 +166,7 @@ def is_c_form(node: ast.AST) -> bool:
     ``q**3/(q**2+1)``, and a stray cube is a strong signal this is not the
     half-argument form.
     """
+    node = unwrap_casts(node)
     if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
         return False
     if not _is_unit_numerator(node.left):
@@ -796,6 +830,25 @@ def selftest() -> int:
         "1 / (q + 1 / q)",                # 1/[2]_q — the TL loop reciprocal, not z
         "2 / (a + b)",                    # not a reciprocal of the right shape
         "1 / (q ** 3 + q ** 0.5)",        # cube present -> rejected
+    ]
+    # Blind spelling #14 (2026-08-22): the C expression inside a numeric cast.
+    # Every matcher bailed at its first isinstance check, so the site scanned
+    # clean while binding z = 0.4993203342 = z_C. Found live at
+    # computations/probes/markov_reduction_h3_to_h4_verify.py:60, whose
+    # conclusion MarkovTraceOnHecke.lean cites as keystone evidence.
+    should_match += [
+        "float(+(1.0 / (mp.sqrt(Q) + 1.0 / mp.sqrt(Q))))",   # the live spelling
+        "float(1 / (sqrt(q) + 1 / sqrt(q)))",
+        "complex(1 / (q ** 0.5 + q ** -0.5))",
+        "-(1 / (mp.sqrt(q) + 1 / mp.sqrt(q)))",              # -z_C is still C
+        "mp.mpf(1 / (sqrt(q) + 1 / sqrt(q)))",
+    ]
+    should_not += [
+        # The unwrap must stay conservative: multi-arg and unknown calls are
+        # NOT casts, and D inside a cast is still D.
+        "float(q ** 3 / (q ** 2 + 1))",   # convention D, cast -> still D
+        "Fraction(1, q + 1 / q)",         # 2-arg, not a cast
+        "round(1 / (sqrt(q) + 1 / sqrt(q)), 6)",  # 2-arg -> not unwrapped
     ]
     bad = 0
     for src in should_match:

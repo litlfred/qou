@@ -1,3 +1,4 @@
+import QOU.AlgebraicSubstrate.LocalQZetaFunction
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
@@ -13,7 +14,7 @@ bound into Re(ρᵢ) = 1/2 for all fundamental Reeb modes.
 For real q > 0 and complex ρ:
 
   (↑q)^ρ  = exp(ρ · log(↑q))          [cpow definition, ↑q ≠ 0]
-  |exp(z)| = exp(Re(z))                [Complex.abs_exp]
+  |exp(z)| = exp(Re(z))                [Complex.norm_exp]
   (log ↑q).re = Real.log |↑q| = log q  [log_re + abs_ofReal + abs_of_pos]
   (log ↑q).im = arg(↑q) = 0            [log_im + arg_ofReal_of_nonneg]
 
@@ -44,16 +45,16 @@ namespace QOU.AlgebraicSubstrate
     `Re(ρ · log(↑q)) = Re(ρ) · log(q)` and
     `exp(Re(ρ) · log(q)) = q^{Re(ρ)}` by definition of `rpow`. -/
 theorem abs_cpow_ofReal_eq_rpow_re (q : ℝ) (hq : 0 < q) (ρ : ℂ) :
-    Complex.abs ((q : ℂ) ^ ρ) = Real.rpow q ρ.re := by
+    ‖(q : ℂ) ^ ρ‖ = Real.rpow q ρ.re := by
   have hq_ne : (q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr (ne_of_gt hq)
   -- Step 1: unfold cpow to exp(ρ * log(↑q))
   rw [Complex.cpow_def_of_ne_zero hq_ne]
   -- Step 2: |exp(z)| = exp(Re(z))
-  rw [Complex.abs_exp]
+  rw [Complex.norm_exp]
   -- Step 3: Re(ρ * log(↑q)) = Re(ρ) * log(q)
   -- because (log ↑q).re = log|↑q| = log q, and (log ↑q).im = arg(↑q) = 0
   rw [Complex.mul_re, Complex.log_re, Complex.log_im,
-      Complex.abs_ofReal, abs_of_pos hq,
+      Complex.norm_real, Real.norm_eq_abs, abs_of_pos hq,
       Complex.arg_ofReal_of_nonneg (le_of_lt hq),
       mul_zero, sub_zero]
   -- Step 4: exp(Re(ρ) * log q) = q^{Re(ρ)}
@@ -61,7 +62,7 @@ theorem abs_cpow_ofReal_eq_rpow_re (q : ℝ) (hq : 0 < q) (ρ : ℂ) :
 
 /-- Backward-compatible alias for q > 1. -/
 theorem abs_rpow_eq_rpow_re (q : ℝ) (hq : q > 1) (ρ : ℂ) :
-    Complex.abs ((q : ℂ) ^ ρ) = Real.rpow q ρ.re :=
+    ‖(q : ℂ) ^ ρ‖ = Real.rpow q ρ.re :=
   abs_cpow_ofReal_eq_rpow_re q (by linarith) ρ
 
 /-- **Spectral half-line**: all fundamental Reeb modes lie on the
@@ -79,7 +80,7 @@ theorem spectral_half_line
     (hq : Z.q > 1)
     (ρ : Fin 8 → ℂ)
     (spectral_coord : ∀ i, Z.eigenvalues i = (Z.q : ℂ) ^ (ρ i))
-    (hw : ∀ i, Complex.abs (Z.eigenvalues i) = Real.rpow Z.q (1 / 2)) :
+    (hw : ∀ i, ‖Z.eigenvalues i‖ = Real.rpow Z.q (1 / 2)) :
     ∀ i, (ρ i).re = 1 / 2 := by
   intro i
   have h1 := hw i
