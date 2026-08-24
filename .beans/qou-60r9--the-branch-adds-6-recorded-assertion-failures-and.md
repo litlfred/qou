@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T22:19:32Z
-updated_at: 2026-08-23T23:52:00Z
+updated_at: 2026-08-24T00:14:34Z
 ---
 
 `witness_failed_assertion_audit.py` is registered **advisory** in
@@ -395,3 +395,46 @@ regenerated after the ruling.** Anything remaining on this list that touches
 `y_lambda_at`, `gram.TR_M`, or a `habiro-coefficients-atomic` descendant
 should be checked against it BEFORE being treated as a defect. `gram.TR_M`
 has ~70 live importers.
+
+
+---
+
+## `mass-from-q-symbolic` ×2 — DIAGNOSED, promoted to **qou-h6z1**
+
+Logged earlier as "suspected anchor". Measured, and it is neither a stale pass
+nor a defect: **the assertions demand agreement 460x tighter than the
+experimental uncertainty of their own reference.**
+
+    MASS_RATIO_MU_E = 206.7682827 +/- 4.6e-06        (CODATA 2022)
+    implied by the muon pin = 206.768282989315059
+    discrepancy = 2.89e-7  ==  0.06 sigma
+
+The pin is not wrong — it agrees with CODATA to a small fraction of the error
+bar. What fails is a self-consistency test at tolerance **1e-08**, and a second
+at **1e-15**, on a quantity derived from a constant known only to 4.6e-06.
+Those could pass only while the pin was numerically identical to the
+then-current CODATA value, which it was, because the pin was derived from it.
+The 2026-08-19 CODATA correction turned an exact identity into an approximate
+one that is still comfortably inside experimental error.
+
+Also surfaced: `mass-from-q-symbolic` has **no entry in
+`q0_anchor_manifest.json`** (645 entries: 513 proton, 110 muon, 22 ambiguous),
+so the anchor is decided by stem-fallthrough to proton — while the producer's
+entire subject is the CAL-2 ideal=muon ratio. Running it under
+`QOU_Q0_ANCHOR=muon` moves q0 to the muon pin as expected but still fails both
+tolerances, so **the anchor and the tolerance are independent problems** and
+fixing the anchor alone does not clear this.
+
+Decision recorded in qou-h6z1: re-derive the pin (exact again, moves a
+substrate anchor by 7.69e-11 relative across ~110 consumers) versus propagate
+the tolerance from `MASS_RATIO_MU_E_ERR` (honest, but only if DERIVED and said
+so in `source`). The witness has been restored to HEAD pending that.
+
+This adds a category to the tally that was not previously represented:
+
+    tolerance asserted beyond input uncertainty   2
+
+It is worth separating from "frozen expected value", which it superficially
+resembles. A frozen literal is a copy that rotted; this is a tolerance that was
+never supportable by the measurement behind it, and it only looked supportable
+because two numbers happened to be the same one.
