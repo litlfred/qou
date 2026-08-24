@@ -8,11 +8,30 @@ specialisation
 
     s_λ  =  Q^{n(λ)} · ∏_{x ∈ λ} (1 − Q^r·Q^{c(x)}) / (1 − Q^{h(x)}),      Q = q².
 
-The corpus records `y_λ` only qualitatively, as *"sign-indefinite for n ≥ 4"*
-(`docs/audits/2026-05-19-weight-factor-audit.md` §W3).  This file upgrades that to a
-**combinatorial rule**, because `Mu3SlotExclusion.door_mechanism_dichotomy` makes the μ₃ door
-depend on exactly this sign: one of its two mechanisms is "negative weight on supermodular
-geometry", and without a rule for `sign(y_λ)` that mechanism has no budget.
+**Convention scope (added 2026-08-24).**  The premise below — that the corpus records `y_λ`
+only qualitatively as *"sign-indefinite for n ≥ 4"*
+(`docs/audits/2026-05-19-weight-factor-audit.md` §W3) — is a **convention-C** statement, and C
+was excised on 2026-08-09.  Under the production convention D there is nothing indefinite to
+resolve: `y_λ ≥ 0` on the two-row stratum and `y_λ = 0` identically for `ℓ(λ) ≥ 3`
+(`QOU.QBeta.TemperleyLiebTower`, sorry-free), measured zero-negative over `n = 4 … 12` at `q₀`.
+The content block `mass-theory/y-lambda-sign-pattern` withdrew the indefiniteness claim on
+2026-08-09; this file was not updated with it.
+
+The motivating clause below is affected the same way: `Mu3SlotExclusion.door_mechanism_dichotomy`
+does make the μ₃ door depend on `sign(y_λ)`, but under D its "negative weight on supermodular
+geometry" branch is **vacuous**, so that mechanism has no budget for the reason opposite to the
+one stated — not because the sign rule is unknown, but because the sign is known and never
+negative.
+
+**What survives, and why this file is kept.**  The combinatorial rule derived here is a
+statement about the Wenzl principal specialisation itself, not about which convention selects
+`z`, so the derivation stands as-is and remains the sharp form of the qualitative claim. Read it
+as characterising `sign(s_λ)` in general; do not read the motivation as a live μ₃-door opening.
+
+This file upgrades the qualitative record to a **combinatorial rule**, because
+`Mu3SlotExclusion.door_mechanism_dichotomy` makes the μ₃ door depend on exactly this sign: one of
+its two mechanisms is "negative weight on supermodular geometry", and without a rule for
+`sign(y_λ)` that mechanism has no budget.
 
 ## The derivation
 

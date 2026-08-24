@@ -4878,3 +4878,86 @@ worst case found.
 | braid word × braid word | §4bg |
 | `BS × braid word`, both directions | §4bh |
 | `BS × FC` | **mapped only** (§4bf) |
+
+## The four-way cell, crossed (2026-08-24, §4bi)
+
+§4bf mapped `BS × FC` and stopped. §4bi crosses it. **The map held** — four rows
+on `j₀` against `j` — and row 4 needed exactly what §4bf said it would.
+
+**One side condition the map missed.** `BokutShiaoFarCommSame.oc_reduces_to_zero`
+also wants a `jp` with `j + 1 = jp ≤ i − 1`. It is *vacuous* here (that row has
+`j₀ = j`, and `farCommRelation i j` exists only for `j + 1 < i`), but it still
+has to be **supplied**. §4bf had read the chains' *docstrings*; reading their
+*hypotheses* is a different act, and only the second finds this.
+
+**Row 4 is the one that is not a bridge application**, as predicted.
+`CyclicFarCommInner` asks for four structural facts about how `descWord i j`
+breaks at `σ_{j₀}`, built rather than read off:
+
+- `descWord_split` cuts the run at `j₀`;
+- `descWord_last` peels `σ_{j₀}` off the upper piece to expose `A`;
+- **`descWord_nodup` is what makes every letter of `A` strictly above `j₀`** —
+  membership alone gives `≥`, and the chain needs `>`.
+
+All three come from §4bb, written for the antichain and reused here unchanged.
+That is the second time §4bb's `descWord` infrastructure has paid for itself
+outside its original purpose.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS ×` braid word, both directions | §4bh |
+| `BS × FC` | §4bi |
+
+Remaining: `FC × ?` and `YB × ?` combinations not covered above, the standing
+`oc.left ≠ []` assumption everywhere, and the deep diagonal
+`j₁ = j₂ = 0 ∧ i₁ ≥ 1`.
+
+## The `FC × ?` row — and a gap that was a chain, not a bridge (2026-08-24, §4bj)
+
+Reading `FarCommCyclic`'s **hypotheses** rather than its docstrings (the §4bi
+lesson) turned up something the earlier cells did not have: a **missing
+instantiation**. The namespace exposes a generic `oc_reduces_to_zero` and two
+uses of it — `bokutShiao_resolves`, `yangBaxter_resolves`. There is no third,
+and `FC × FC` needs one.
+
+`farComm_farComm_resolves` supplies it, and the fit is exact:
+`farCommRelation m d = ofTerms [([σ_m, σ_d], 1), ([σ_d, σ_m], −1)]` **is** the
+family's normal form `ofTerms [(σ_m :: u'', c), (q :: t, −c)]` at `u'' = [σ_d]`,
+`c = 1`, `q = σ_d`, `t = [σ_m]` — so `hrel` is `fun _ => rfl`, exactly as for
+`farComm_quad_resolves`. The two blanket far-commutation conditions follow from
+`d < m` and `m + 1 < x` by `omega`.
+
+**This is the first cell whose gap was a chain rather than a bridge**, and the
+two are worth separating. `oc_ext_of_left_ne_nil` (§4bd) still did all the
+bridging. What a bridge cannot do is notice that a family has an uninstantiated
+member — only reading the family against the cells it is supposed to cover does
+that.
+
+`farComm_left_resolves` closes the row. Its quadratic branch defers to §4bd's
+column rather than repeating it: `quad_right_resolves` already carries its own
+bridge, so no second one is built.
+
+### Measured for the next tranche: `YB × FC` splits two ways
+
+`CyclicFarCommLow.yangBaxter_resolves` requires `j₀ + 1 < i'`, **stricter** than
+the far-commutation rule's own `j₀ + 1 < i = i' + 1`. The endpoint `j₀ + 1 = i'`
+is `YangBaxterFarComm.oc` (§4p). Together they are exactly the rule's condition.
+Recorded now so the next pass does not re-derive it.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS ×` braid word, both directions | §4bh |
+| `BS × FC` | §4bi |
+| `FC × ?` (whole row) | §4bj |
