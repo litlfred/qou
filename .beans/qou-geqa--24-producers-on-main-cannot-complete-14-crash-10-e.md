@@ -172,3 +172,51 @@ Fixed this session (PR #5615, both now exit 0 either way):
 The two `exit 2, no stderr` cases are the worst to inherit: nothing to grep for.
 The last two may be **correct refusals** rather than bugs — check the invariant
 each is asserting before "fixing" either.
+
+## 2026-08-24, second correction — 4 broken, not 8, and not 14
+
+Two more of the "8" turned out to be guards, and two more had already succeeded.
+**A non-zero exit is not a defect.** The classifier has to look for a traceback.
+
+**Deliberate refusals — working correctly:**
+
+    low_isotope_mass_table.py            refuses: precision below committed target_dps
+                                         (names its own --allow-precision-downgrade flag)
+    qbeta_braid_nf_sdp_offset_probe.py   refuses: mp.lu_solve would NOT raise, returns
+                                         ~1e50 entries at ~1e-3 residual; running on
+                                         "would publish laundered numbers"
+
+Both print their reason to **stdout**. My harness captured stderr only, so it saw
+"(no stderr)" and filed them as mysterious crashes. They are the anti-laundering
+discipline functioning exactly as designed.
+
+**Succeeded, then exited non-zero:**
+
+    alpha_em_b2_bring_period_matrix_probe.py   writes its witness, then flags an
+                                               environment check
+    rho_k_h3a_refinement.py                    writes rho-k-h3a-refinement.witness.json
+                                               (11275 B, closure error 0.0 MeV), then
+                                               exits 2 on DeprecationWarnings
+
+**The 4 genuinely broken — all carry tracebacks:**
+
+    hadron_knot_table.py                     TypeError: dtype float64 vs object
+    su4_1111_markov_trace_probe.py           ValueError: scipy.sparse rejects dtype object
+    qbeta_habiro_element_probe.py            TypeError: NoneType not subscriptable
+    qbeta_habiro_phase5q_dn_refactorize.py   AmDifferenceInvalid: D - n
+
+The last two may still be correct refusals raised as exceptions rather than clean
+exits — check the invariant each asserts before "fixing" either.
+
+## The full unwind: 14 -> 4
+
+    4  harness artifacts   PYTHONPATH x2, sweep order-dependence, cwd convention
+    4  non-zero by design  2 guards + 2 that wrote their witness first
+    2  real, now fixed     mpf-formatting (PR #5615)
+    4  real, outstanding   tracebacks, listed above
+
+Six requirements for a trustworthy producer-runner, each bought by one of the
+above: set PYTHONPATH; skip scripts with required positionals; clean the tree
+BEFORE each run as well as after; try both cwd=<producer dir> and cwd=<repo
+root>; capture stdout as well as stderr; and check for a traceback rather than
+trusting the exit code.

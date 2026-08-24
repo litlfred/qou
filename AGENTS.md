@@ -388,10 +388,38 @@ user's last message, not the most recently mentioned file.
       tree your own sweep writes to. That single change turned both known false
       positives back to IDENTICAL while leaving the known true positive intact.
 
-      **16 % of producers cannot complete at all** — 14 crash, 10 exceed 240 s.
-      They are excluded from the rate, and they are their own backlog: a
-      producer that cannot run is a stronger defect than one whose numbers
-      drifted.
+      **CORRECTED 2026-08-24: 4 producers are genuinely broken, not 14.** This
+      text said "16 % cannot complete at all — 14 crash". That figure was my
+      harness, not the corpus, and it took five separate defects to unwind:
+
+      - **2 needed `computations/` on `PYTHONPATH`**; one exits 0 with it.
+      - **1 passed only in isolation** — a sweep that already set `PYTHONPATH`
+        still misclassified it, so the runner carried order-dependence.
+      - **1 uses REPO-ROOT-relative paths**; the sweep ran everything with
+        `cwd=<producer dir>`, so any root-relative producer looked broken.
+      - **4 exit non-zero BY DESIGN**, and this is the one worth internalising:
+        a non-zero exit is not a defect. `low_isotope_mass_table` refuses when
+        precision would fall below the committed `target_dps`;
+        `qbeta_braid_nf_sdp_offset_probe` refuses because `mp.lu_solve` would
+        *not* raise and running on "would publish laundered numbers". Both are
+        guards working correctly, and both explain themselves on **stdout** —
+        which a stderr-only harness never sees. Two more
+        (`alpha_em_b2_bring_period_matrix_probe`, `rho_k_h3a_refinement`)
+        **write their witness successfully** and only then exit non-zero, on an
+        environment check and on DeprecationWarnings respectively.
+      - **2 were real and are fixed** (mpf-formatting, PR #5615).
+
+      So a producer-runner must: set `PYTHONPATH`; skip scripts declaring
+      required positionals; clean the tree **before** each run as well as after;
+      try **both** `cwd=<producer dir>` and `cwd=<repo root>`; capture
+      **stdout as well as stderr**; and check for a **traceback** rather than
+      trusting the exit code. Without all six its verdicts are about itself.
+
+      The 4 real defects carry tracebacks: `hadron_knot_table`,
+      `su4_1111_markov_trace_probe`, `qbeta_habiro_element_probe`,
+      `qbeta_habiro_phase5q_dn_refactorize`. The 10 timeouts are a 240 s budget
+      artifact and may simply be long-compute; re-run with a real budget before
+      calling any of them broken.
 
       Two lessons in the measurement itself, both worth more than the number:
       **mask volatile keys or you measure your own harness** — `timestamp`,
