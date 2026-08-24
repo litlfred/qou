@@ -460,6 +460,101 @@ theorem exists_isRothTheta {σ : Type*} [Finite σ] (a : ℤ) (r H : σ → ℕ)
   exists_isRothTheta_of_finite a r H (finite_rothPolySet a r) (finite_rothFracSet H)
     (exists_inRothPolySet a r ha) (exists_inRothFracSet H hH)
 
+/-! ### §10 — the base case in `Θ` form
+
+`index_le_of_abs_coeff_le` bounds the index of **one** polynomial at **one** point.  `Θ₁` is a
+supremum over `R(a;r) × Q(H)`, and §9's *attainment* clause is exactly what turns the one into
+the other: the supremum is realised at some pair, so a bound holding at every pair holds at the
+realising one, and therefore at `Θ₁`.
+
+⚠ Attainment is doing real work here, not bookkeeping.  A supremum that is merely a least upper
+bound would need the pointwise bound *plus* a limiting argument; because `R(a;r)` and `Q(H)` are
+finite (`finite_rothPolySet`, `finite_rothFracSet`), it is a maximum and one instantiation
+suffices.  That is why §9 had to come before §10.
+
+⚠ **`InRothPolySet`'s degree clause is not used.**  §10's estimate consumes only the height
+bound `|coeff n A| ≤ a`; the degrees `r` enter through `idxWeight` as *weights*, not as a
+constraint on `A`.  Worth recording because it is the one place in this arc where a clause of
+the ambient definition turns out to be genuinely inert — everywhere else, a hypothesis that
+looked droppable was load-bearing. -/
+
+section BaseCaseTheta
+
+open Polynomial
+
+/-- `pUnitAlgEquiv` commutes with coefficient maps — the naturality the `Θ` form needs to move
+between `MvPolynomial Unit ℤ` and `ℤ[X]` without leaving the ring. -/
+theorem map_pUnitAlgEquiv {R S : Type*} [CommRing R] [CommRing S] (f : R →+* S)
+    (A : MvPolynomial Unit R) :
+    (pUnitAlgEquiv R A).map f = pUnitAlgEquiv S (MvPolynomial.map f A) := by
+  ext n
+  rw [Polynomial.coeff_map, coeff_pUnitAlgEquiv, coeff_pUnitAlgEquiv, MvPolynomial.coeff_map]
+
+/-- **§10 in `Θ` form: `a ≤ H^e` and `H ≥ 2` give `Θ₁ ≤ e/r`.**
+
+Mahler states this as `Θ₁(a; r; H) ≤ log a / (r log H)`; `e` is a root-free stand-in for
+`log a / log H`, kept exponential because the recursion amplifies any rounding
+(`two_sqrt_expands`).
+
+⚠ `2 ≤ H` is necessary, not cosmetic: at `H = 1` the right-hand side of Mahler's form is
+infinite and the estimate is empty. -/
+theorem isRothTheta_le_of_pow_le {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ}
+    (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hH : 2 ≤ H ()) (e : ℕ)
+    (hae : a ≤ (H () : ℤ) ^ e) :
+    Θ ≤ (e : ℚ) / (r () : ℚ) := by
+  obtain ⟨-, A, κ, hA, hκ, heq⟩ := hΘ
+  obtain ⟨hA0, -, hAc⟩ := hA
+  -- the point, in lowest terms — Lean's `ℚ` supplies both facts by construction
+  have hq0 : (0 : ℤ) < ((κ ()).den : ℤ) := by exact_mod_cast (κ ()).pos
+  have hco : IsCoprime ((κ ()).num) (((κ ()).den : ℤ)) := by
+    rw [Int.isCoprime_iff_gcd_eq_one]
+    simpa [Int.gcd] using (κ ()).reduced
+  have hheight : max |((κ ()).num)| |(((κ ()).den : ℤ))| = ((H () : ℤ)) := by
+    rw [Int.abs_eq_natAbs, Int.abs_eq_natAbs, Int.natAbs_natCast, ← Nat.cast_max, hκ ()]
+  -- the polynomial, carried to one variable
+  set P : ℤ[X] := pUnitAlgEquiv ℤ A with hPdef
+  have hPne : P ≠ 0 := fun h =>
+    hA0 ((pUnitAlgEquiv ℤ).injective ((hPdef ▸ h).trans (map_zero _).symm))
+  have hPc : ∀ n, |P.coeff n| ≤ a := by
+    intro n
+    rw [hPdef, coeff_pUnitAlgEquiv]
+    exact hAc _
+  have hmap : ((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ)) : MvPolynomial Unit ℚ)
+      = MvPolynomial.map (algebraMap ℤ ℚ) A := by
+    rw [hPdef, map_pUnitAlgEquiv, AlgEquiv.symm_apply_apply]
+  have hκeq : (fun _ : Unit => (((κ ()).num : ℚ) / ((((κ ()).den : ℤ)) : ℚ))) = κ := by
+    funext u
+    cases u
+    push_cast
+    exact Rat.num_div_den _
+  have hreq : (fun _ : Unit => r ()) = r := by
+    funext u
+    cases u
+    rfl
+  have hbound := index_le_of_abs_coeff_le hq0 hco hr hPne e (a := a)
+    (by rw [hheight]; exact_mod_cast hH) hPc (by rw [hheight]; exact hae)
+  rw [hmap, hκeq, hreq, heq] at hbound
+  exact_mod_cast hbound
+
+/-- **Validation — the hypotheses are jointly satisfiable, and non-degenerately.**
+
+`isRothTheta_degenerate` satisfies `IsRothTheta` with `r ≡ 0` and `H ≡ 1`, which fails *both*
+of this theorem's side conditions, so satisfiability of `IsRothTheta` alone would not rule out
+vacuity.  `exists_isRothTheta` supplies an instance at `a = 2`, `r = 1`, `H = 2`, where both
+hold, and the theorem then gives `Θ₁ ≤ 1`.
+
+⚠ **Not proved here:** the value is in fact *exactly* `1`, so the bound is attained rather than
+slack — `A = 2x − 1` lies in `R(2; 1)`, `κ = 1/2` lies in `Q(2)`, and `translate (1/2) A = 2x`
+has index `1`.  That witness is a computation in `MvPolynomial`'s support, and it is recorded
+rather than formalised.  Stated as a remark precisely so it is not read later as a theorem. -/
+example : ∃ Θ : ℚ, IsRothTheta (2 : ℤ) (fun _ : Unit => 1) (fun _ : Unit => 2) Θ ∧ Θ ≤ 1 := by
+  obtain ⟨Θ, hΘ⟩ := exists_isRothTheta (2 : ℤ) (fun _ : Unit => 1) (fun _ : Unit => 2)
+    (by norm_num) (fun _ => by norm_num)
+  refine ⟨Θ, hΘ, ?_⟩
+  simpa using isRothTheta_le_of_pow_le hΘ one_ne_zero (by norm_num) 1 (by norm_num)
+
+end BaseCaseTheta
+
 /-- `R(a; r)` only grows with `a`. -/
 theorem InRothPolySet.mono {σ : Type*} {a a' : ℤ} {r : σ → ℕ} {A : MvPolynomial σ ℤ}
     (haa : a ≤ a') (h : InRothPolySet a r A) : InRothPolySet a' r A :=
