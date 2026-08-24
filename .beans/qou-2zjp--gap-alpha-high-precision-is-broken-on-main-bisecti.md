@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:53:43Z
-updated_at: 2026-08-24T17:58:35Z
+updated_at: 2026-08-24T18:41:56Z
 ---
 
 ## What happens
@@ -146,3 +146,50 @@ consumes the very parameter that moved 0.4993 -> 0.6127 (+22.70 %).
 Note `hadron_knot_table` appears here AND in the qou-1c4y keep-on-muon /
 timeout set -- it is slow (>240 s per leg) and z-dependent, so whoever re-runs
 it for one reason should record both.
+
+
+## Candidates converted to measurement, 2026-08-24
+
+The nine were listed as candidates on the reasoning that importing a
+z-dependent symbol proves a dependency, not that the number moved. Re-ran seven
+(alpha_high_precision already measured; hadron_knot_table is >240 s per leg and
+deferred), comparing each witness against HEAD with ephemeral meta masked. Tree
+restored after every run.
+
+    toffoli-lp-stability                    MOVED
+    brane_tower_two_avenues_probe           MOVED
+    h2o_bond_angle_magnitude_vsepr          MOVED
+    qbeta_c3_barodd_binding_sdp_dual_probe  MOVED
+    qbeta_decay_sdp_solver                  UNCHANGED  <- false positive
+    paper_six_term_isotope_sweep            TIMEOUT >420 s
+    wedderburn_pair_volumes                 rc=1, broken (see below)
+
+**4 of 6 runnable moved; 1 was a false positive.** That is the caution paying
+off: `qbeta_decay_sdp_solver` imports a z-dependent symbol AND its witness
+predates the C->D commit, yet re-running reproduces it exactly. The import is
+real; the dependence of the recorded numbers on z is not. A bulk regeneration
+keyed on the import test alone would have rewritten it for nothing.
+
+**What MOVED does and does not establish.** It establishes that the committed
+payload no longer matches what the current code produces. It does NOT attribute
+the movement to convention C->D. That attribution was earned for alpha* by
+isolating it -- measured at both anchors, producer source byte-identical since
+its witness, and a direct `z as Z_MARKOV` import. The other four have not had
+that isolation done: they are confirmed STALE, not yet confirmed C-frame.
+
+## A second producer broken on main
+
+`wedderburn_pair_volumes` exits 1 before writing anything:
+
+    File "computations/wedderburn_pair_volumes.py", line 228
+      print(f"    ({p['i']}, {p['j']}): sym={p['sym']:.4f}  std={p['std']:.4f}  "
+    TypeError: unsupported format string passed to mpf.__format__
+
+An `mpf` reached an f-string `:.4f`. Unrelated to the anchor and to C->D: it is
+the NO-FLOAT64 migration meeting a display path -- the value correctly became
+`mpf` and the formatter was never updated. `mp.nstr(x, 5)` is the fix, per the
+AGENTS.md rule that `float(x)` is permitted only inside an f-string for display
+and `mp.nstr` is preferred.
+
+Two producers are now known broken on `main` and surfaced by this work
+(`alpha_high_precision`, `wedderburn_pair_volumes`); neither was caused by it.
