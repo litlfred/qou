@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T17:42:10Z
+updated_at: 2026-08-24T17:49:23Z
 ---
 
 ## Landed — PR #5645
@@ -922,3 +922,34 @@ counting cumulatively across turns instead of measuring), and it said "no
 existing file is modified except to make three reindexing lemmas public" —
 those lemmas are in one of my own new files, so **no existing file is modified
 at all**.
+
+
+## The seminormal entry, translated
+
+Commit `87be9cc09`. `QOU/SchurWeyl/SeminormalNodeForm.lean`:
+
+    seminormalParam_node_form :
+      Q^d * xb = Q * xa  ->  seminormalParam q d = (q - 1/q) * (Q xa)/(Q xa - xb)
+
+That is step 2 of the four translation steps. The weight in
+`sum_prod_qratio_weighted` **is** `seminormalParam`, once the axial distance is
+written in node coordinates. `seminormalParam_one'` supplies the `a = b`
+constant `(q - 1/q) Q/(Q-1) = q`.
+
+Base ring is `R` only because `seminormalParam` is; nothing archimedean is
+used — the proof is a `field_simp` and the statement holds over any field.
+
+### Left, and it is now only two steps
+
+1. **Content-to-beta at level r**: for an addable cell in row `a` and a
+   removable corner in row `b` of the same diagram,
+   `axialDistance = beta_a - beta_b + 1`, hence `Q^d * x_b = Q * x_a` with
+   `x_i = Q^{beta_i}` — the hypothesis `seminormalParam_node_form` takes.
+   Uses `rowLen_of_isAddableCell` (#5645) for the addable cell's column and
+   the corner's own coordinates.
+2. **Assemble and feed `markov_of_corner_identity`**: `hne` is discharged by
+   addability (`beta_b = beta_a + 1` is impossible for an addable row `a`,
+   since addable gives `beta_{a-1} >= beta_a + 2`), and the sum is over
+   addable cells, which `sum_addable_eq_sum_range` already re-indexes.
+
+No arithmetic remains — `sum_prod_qratio_weighted` is the whole of it.
