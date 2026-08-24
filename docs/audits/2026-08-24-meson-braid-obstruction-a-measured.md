@@ -248,6 +248,43 @@ the dictionary's count against the maximum hyperbolic volume attainable at that
 *word length* is the right comparison, so that assumption is discharged. **`ρ` is
 now the only open gate on B2.**
 
+## ✅ B2 SETTLED: **both** ρ readings exclude the D meson — exhaustively
+
+I claimed `tr_M ≲ 1` from six hand-picked braids and leaned the per-block verdict
+on it. **That was wrong**: over all hyperbolic 3-braid words of length 8, `tr_M`
+ranges over `[−0.055099, 1.438364]` — it exceeds 1 and goes negative. Generalising
+from six samples, again.
+
+Computing the product exhaustively — the quantity that actually matters — makes
+the result **stronger**, and removes the dependence on the ρ ruling:
+
+| word length | hyperbolic words (exhaustive) | `tr_M` range | **max `Vol·tr_M`** | attained at |
+|---|---|---|---|---|
+| 6 | 168 | `[0.052755, 1.162424]` | **7.317189** | `[1,-2,1,-2,1,-2]` (Vol 7.32772, tr_M 0.998562) |
+| 8 | 2972 | `[−0.055099, 1.438364]` | **11.529406** | `[1,1,-2,-2,1,1,-2,-2]` (Vol 10.14942, tr_M 1.135967) |
+
+Note the product's maximiser is **not** the volume's maximiser — at length 8 the
+max-volume word (`Vol 12.351`) has `tr_M 0.216`, giving only `2.667`. Maximising
+`Vol` and maximising `Vol·tr_M` are different problems, which is why the product
+had to be computed directly rather than bounded from the two factors.
+
+### The verdict is robust to the ρ ambiguity
+
+| ρ reading | constraint at the D⁰'s dictionary length 8 | exhaustive max at L = 8 | verdict |
+|---|---|---|---|
+| **ρ_global = 2.5328** (constant) | `Vol ≥ 35.826849/2.5328 = 14.145` | `Vol` max **12.351** | **excluded, 1.15×** |
+| **ρ_per-block = tr_M(K)** (braid-dependent) | `Vol·tr_M ≥ 35.826849` | `Vol·tr_M` max **11.529** | **excluded, 3.11×** |
+
+**Both readings exclude the D meson at its own dictionary word length.** So B2 no
+longer waits on the ρ ruling — the ruling changes the *margin* (1.15× vs 3.11×),
+not the *verdict*. The light mesons remain comfortable: π needs 2.681 against a
+length-6 maximum of 7.317; K needs 9.484 against a length-8 maximum of 11.529
+(tight, at 82 % of the ceiling).
+
+This is now an exhaustive scope-(a) exclusion over the exact quantity the mass law
+uses, at the length the corpus itself assigns — not an extrapolation from a
+sampled maximum, and not conditional on an unresolved density convention.
+
 ## Route 2 re-derivation under convention D: blocked, and not by me
 
 Route 2 (the D-meson Frobenius–Gram operator-selection) is the one C-frame blocker
