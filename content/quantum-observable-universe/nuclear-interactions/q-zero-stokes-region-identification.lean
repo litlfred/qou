@@ -158,16 +158,30 @@ class QZeroStokesIdentification (K : KnotComplement) (R : Type*)
 
 /-- **Conditional theorem**: under all the structural hypotheses above
     (Mostow-Prasad rigidity, Reid's trace field, and the q_0 identification),
-    the substrate is well-defined as an element of the universal base R.
+    the substrate is *well-defined* in the sense the word actually carries:
+    it does not depend on which identification is chosen.  Two instances
+    that agree on the invariant map agree on `q_0`, because both are pinned
+    to `traceInvariant ρ_DF` by `identification_witness`.
 
-    This is FULLY VERIFIED BY LEAN — no sorrys at the conditional-result
-    level. The conjectural content is contained in the class hypotheses. -/
+    So the conjectural content sits entirely in whether an instance exists
+    — exhibiting `traceInvariant` and proving the identity, which is the
+    OPEN WORK — and none of it in ambiguity about `q_0` once one does.
+
+    The previous statement was `∃ q : R, q = inst.q_0`, proved
+    `⟨inst.q_0, rfl⟩`.  That holds for any field of any structure and would
+    have been just as provable had `identification_witness` been dropped
+    from the class, so it tested none of the hypotheses it was stated
+    under — the docstring's "FULLY VERIFIED BY LEAN" was true and
+    uninformative at the same time.  Existence of an element is
+    `q_0_exists_in_universal_base` below, which at least says `R` is
+    inhabited. -/
 theorem q_0_well_defined
     (K : KnotComplement) (R : Type*) [CommRing R]
-    [UniversalBase R] [MostowPrasadDistinguished K] [ReidTraceField K]
-    [inst : QZeroStokesIdentification K R] :
-    ∃ q : R, q = inst.q_0 := by
-  exact ⟨inst.q_0, rfl⟩
+    [UniversalBase R] [MPD : MostowPrasadDistinguished K] [ReidTraceField K]
+    (inst₁ inst₂ : QZeroStokesIdentification K R)
+    (hinv : inst₁.traceInvariant = inst₂.traceInvariant) :
+    inst₁.q_0 = inst₂.q_0 := by
+  rw [inst₁.identification_witness, inst₂.identification_witness, hinv]
 
 /-- **Conditional corollary**: the substrate parameter exists in any
     sufficient base ring. Demonstrates the Z[q, q⁻¹]-universal framing

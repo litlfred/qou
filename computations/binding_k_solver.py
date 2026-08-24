@@ -376,7 +376,12 @@ def operator_selection_lp_for_K(per_lambda: list) -> dict:
     K = len(per_lambda)
     t = -np.array([r["y_times_chi_abs"] for r in per_lambda])
     G = np.eye(K)
-    res = solve_operator_selection_lp(t, G, n_target=1.0)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t, G, n_target=1.0, backend="clarabel")
     return {
         **res.to_dict(),
         "channel_lambdas": [r["lambda"] for r in per_lambda],

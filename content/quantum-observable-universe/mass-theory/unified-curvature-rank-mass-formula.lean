@@ -48,12 +48,13 @@ noncomputable def unified_curvature_rank_mass
     (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) : ℝ :=
   (List.range n).foldl (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0
 
-/-- **Theorem (well-defined).** For any prefactor sequence and finite
-    block list, the unified mass formula evaluates to a finite real. -/
-theorem unified_mass_finite
-    (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) :
-    ∃ x : ℝ, unified_curvature_rank_mass alphas blocks n = x :=
-  ⟨unified_curvature_rank_mass alphas blocks n, rfl⟩
+/-! `unified_mass_finite` (`∃ x : ℝ, unified_curvature_rank_mass … = x`)
+    stood here until 2026-08-21. `unified_curvature_rank_mass` is a total
+    `ℝ`-valued function, so the statement held for every definition of it and
+    said nothing about finiteness — the same shape as `phi_k_finite` and
+    `plancherel_term_7_finite` in `plancherel-term-7-formulation.lean`, removed
+    in the same pass. What the formula actually satisfies is stated by
+    `term_6_plus_term_7_eq_high_strata` below. -/
 
 /-- **Theorem (Term 6 + Term 7 = sum over depths ≥ 3).**
     With prefactor sequence `alphas` defined by paper's Term-6 and

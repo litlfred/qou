@@ -633,7 +633,12 @@ def solve_atom_b3(
     t = np.array([c["cost"] for c in top])
     G = np.eye(K)
     n_target = 1.0
-    lp_res = solve_operator_selection_lp(t, G, n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    lp_res = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     winner_idx = int(np.argmin(t))
     winner = top[winner_idx]
 

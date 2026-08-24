@@ -71,13 +71,18 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_MP  # noqa: E402
 import sympy as sp  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0 = mpf("1.1099785955541805")           # substrate q₀ (s013 / mckay convention)
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+Q0 = Q_MP           # substrate q₀ (s013 / mckay convention)
 P3 = 5                                     # order of the coloured exceptional fibre
 
 

@@ -4,7 +4,7 @@ export default theorem({
   label: "thm:topological-charge-quantization",
   title: "Quantization of topological charge",
   lean: { ref: "qou:QOU.AlgebraicSubstrate.topological_charge_quantization",
-    validation: "not_checked",
+    validation: "stub",
   },
   uses: [
     "def:unit-particle-state",

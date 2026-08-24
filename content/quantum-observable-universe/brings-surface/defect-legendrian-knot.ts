@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:defect-legendrian-knot",
   title: "The unit defect as a Legendrian knot",
   lean: { ref: "qou:QOU.AlgebraicSubstrate.defect_legendrian_knot",
-    validation: "not_checked",
+    validation: "stub",
   },
   uses: [
     "def:unit-particle-state",

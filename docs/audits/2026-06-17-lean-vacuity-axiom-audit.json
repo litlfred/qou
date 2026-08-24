@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-24T15:11:27.201Z",
+  "generated": "2026-08-24T15:16:16.509Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3115,
-  "files_flagged": 153,
-  "total_defects": 134,
-  "total_exempt": 58,
+  "files_flagged": 155,
+  "total_defects": 135,
+  "total_exempt": 59,
   "total_promoted_from_exempt": 66,
   "categories": {
-    "proof-no-self-assuming-projection": 112,
+    "proof-no-self-assuming-projection": 113,
     "proof-docstring-sorry-mismatch": 12,
     "proof-claims-unencoded": 6,
     "proof-no-decide-masking": 1,
@@ -80,7 +80,7 @@
       {
         "name": "BigBangHeatDeath",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-        "line": 437
+        "line": 442
       },
       {
         "name": "BlochWignerInjective",
@@ -420,7 +420,7 @@
       {
         "name": "HahnSubstrate",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-        "line": 530
+        "line": 535
       },
       {
         "name": "HasAlphaShiftTorus",
@@ -815,7 +815,7 @@
       {
         "name": "QbetaHabiroTaylorBridgeClass",
         "file": "content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean",
-        "line": 168
+        "line": 182
       },
       {
         "name": "QBirchSwinnertonDyer",
@@ -1187,7 +1187,7 @@
       {
         "name": "JonesBirthday",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-        "line": 492,
+        "line": 497,
         "dependsOn": [
           "SurrealField"
         ]
@@ -1434,6 +1434,19 @@
         "decl": "kappa_commutes_bar",
         "severity": "critical",
         "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean": [
+      {
+        "line": 370,
+        "category": "proof-no-trivial-true",
+        "pattern": "trivial-existential",
+        "snippet": "theorem qou_standardPart_image_exists (SQ : QOU_Surreal K) :",
+        "decl": "qou_standardPart_image_exists",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "vacuous-by-design: the triviality IS the content — this records that the conjunct was provable for every `SQ`.",
+        "detail": "concludes `∃ Q, … = Q` and proves it `⟨QOU_StandardPart K SQ, rfl⟩` — the witness IS the expression, so the statement holds for every value of `QOU_StandardPart K SQ` and says nothing about it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/BranchingConvergence.lean": [
@@ -1722,6 +1735,17 @@
         "decl": "identityB_general",
         "severity": "critical",
         "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean": [
+      {
+        "line": 102,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "binder-echo",
+        "snippet": "theorem structurallyValidBinding_necessary {w : List Int} {n_0 : ℕ}",
+        "decl": "structurallyValidBinding_necessary",
+        "severity": "critical",
+        "detail": "binds `(h_invalid : ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧ (∀ g ∈ w, 3 ≤ Int.natAbs g ∧ Int.natAbs g < n_0)))` and concludes the same proposition, returning it verbatim — the statement stays true if every definition it mentions is swapped"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean": [
@@ -2128,7 +2152,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean": [
       {
-        "line": 110,
+        "line": 109,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem adjoint_vanishing_propagation",

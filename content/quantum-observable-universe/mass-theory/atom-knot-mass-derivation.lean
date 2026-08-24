@@ -377,7 +377,8 @@ theorem mass_identity_calcium40 : MassIdentity calcium40_cert := by
 
     * `gb_spectral_collapse_at_E2_discharged R`
     * `wedderburn_iso_n2_to_n6 R q`
-    * `archimedean_eval_well_defined p`
+    * `archimedean_eval_well_defined f hC hX p` (uniqueness of the
+      substrate evaluation; was an existential until 2026-08-21)
     * `yekutieli_finite_slice_discharged G z`
     * `markov_axiom_h{1_to_2, 2_to_3}_discharged q z`
     * `complete_upstream_discharge R q q_ℝ z G z_G` (aggregate

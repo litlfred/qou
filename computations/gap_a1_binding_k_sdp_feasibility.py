@@ -130,7 +130,12 @@ def main() -> int:
     # selected channel is the dominant block. G = I (diagonal PSD lift).
     t = -np.array([r["abs_y_chi"] for r in per_lambda])
     G = np.eye(len(per_lambda))
-    sdp = solve_psd_operator_selection_sdp(t, G, n_target=1.0)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    sdp = solve_psd_operator_selection_sdp(t, G, n_target=1.0, backend="clarabel")
     sdp_d = sdp.to_dict()
     # The diagonal-lift SDP delegates to the operator-selection LP, so the
     # LP-style dual variables live in Z_star = [y0_star, *y_star] and the

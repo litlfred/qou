@@ -147,4 +147,31 @@ def witness_path(name: str, prefer_dir: "Path | None" = None) -> Path:
         candidate = d / name
         if candidate.exists():
             return candidate
+
+    # LAST RESORT: `_deprecated/`.
+    #
+    # `_WITNESS_DIRS` skips `_`-prefixed directories on purpose, so a witness
+    # moved to `_deprecated/` becomes invisible here and every live reader dies
+    # on `FileNotFoundError`. That is not hypothetical:
+    # `beta-decay-energy-scale.witness.json` was deprecated while NINE live
+    # scripts still read it, and `derived_masses.py` / `q_beta_predicted.py`
+    # have been failing outright with "Run the beta-decay-energy-scale compute
+    # first" while `derive_e_0_lp_dual_h3.py` could not run at all — its
+    # witness sat frozen for three months carrying a maximally-violated duality
+    # certificate because nothing could refresh it.
+    #
+    # `_deprecated/README.md` requires that NOTHING live consume a witness
+    # before it moves, and documents the same failure once already
+    # (`hecke_core_legacy.py`, moved back out because nine importers depended
+    # on it). So this is a policy violation upstream, not a resolution rule —
+    # but a resolver that turns it into a crash helps nobody, and a live
+    # directory always wins because it is searched first.
+    #
+    # Deliberately NOT a general un-deprecation: it fires only when no live
+    # copy exists, which is precisely the broken-dependency case. Bean
+    # `qou/ftuv`.
+    deprecated = _HERE / "_deprecated" / name
+    if deprecated.exists():
+        return deprecated
+
     return (prefer_dir if prefer_dir is not None else _HERE) / name

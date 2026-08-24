@@ -57,6 +57,11 @@ def _compare(t, G, n_target):
         solve_psd_operator_selection_sdp,
     )
 
+    # The one place `backend="scipy"` survives the 2026-08-23 sweep, and the
+    # only one where it is load-bearing: this function exists to compare the
+    # two backends against each other, so pinning both is the whole point.
+    # Do not "fix" this to clarabel — that deletes the comparison rather than
+    # improving its precision. Bean `qou/ftuv`.
     sp = solve_operator_selection_lp(t, G, n_target, backend="scipy")
     cl = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     # SDP backend: the current PSD lift is diagonal (M(x)=diag(Gx)), so the
