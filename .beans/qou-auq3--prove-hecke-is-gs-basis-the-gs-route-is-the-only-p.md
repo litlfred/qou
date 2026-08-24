@@ -4963,7 +4963,7 @@ Recorded now so the next pass does not re-derive it.
 | `BS × FC` | §4bi |
 | `FC × ?` (whole row) | §4bj |
 
-## §4bk — `YB × FC`, and the `? × FC` row closed (PR pending)
+## §4bk — `YB × FC`, and the `? × FC` row closed (merged)
 
 The one cell §4bj measured but did not cross. Because that measurement was
 *recorded* rather than left implicit, this pass spent nothing re-deriving it:
@@ -5012,7 +5012,7 @@ in which `lm` lemma they rewrite with — the identification of `i` is uniform.
 | `FC × ?` (whole row) | §4bj |
 | `YB × FC`, and `? × FC` (whole row) | §4bk |
 
-## §4bl–§4bn — `IsGrobnerShirshovBasis`, modulo one self-overlap (PR pending)
+## §4bl–§4bn — `IsGrobnerShirshovBasis`, modulo one self-overlap (merged)
 
 The bean's stated goal, reached with a single explicit hypothesis left standing.
 
@@ -5071,7 +5071,7 @@ completion is incomplete and needs a further rule. This statement is where that
 would surface — it is a reduction of the problem to one composition, not a
 closure of it.
 
-## The deep self-overlap RESOLVES — measured, with the target (PR pending)
+## The deep self-overlap RESOLVES — measured, with the target (merged)
 
 Before trying to prove `hdeep`, the cheap decisive check (AGENTS.md
 formalize-first §caveat: run the probe when it is cheap and decisive).
@@ -5161,7 +5161,7 @@ Not started. Recorded so it is not re-derived.
 - **`i = 1` needs its own case** (three splits, `H²`, four terms), as does
   `i = 2` (its YB/FC/BS counts do not follow the `i ≥ 3` pattern).
 
-### The chain's shape — and why the obvious induction does NOT fit (PR pending)
+### The chain's shape — and why the obvious induction does NOT fit (merged)
 
 Two findings, one positive and one negative. The negative one is the useful one.
 
@@ -5201,7 +5201,7 @@ The cascade sweeps a descending run downward one index at a time, which is the
 same motion `descWord_split_aux` already formalises — so the induction variable
 is the gap, not `i`.
 
-### Designing the chain: three plans ruled out, two waypoints found (PR pending)
+### Designing the chain: three plans ruled out, two waypoints found (merged)
 
 The reframing that made this tractable: the normal form **factors**,
 
@@ -5260,7 +5260,7 @@ A descent phase — for `k = 1, 2, …` a `BS(-k)@(2k+1)` followed by an `FC` sw
 final `FC` sweep. Doubly nested, and each loop is a descending sweep, so both
 levels are gap inductions of the `descWord_split_aux` kind.
 
-## §4bo — side B's half of `hdeep`, PROVED in full generality (PR pending)
+## §4bo — side B's half of `hdeep`, PROVED in full generality (merged)
 
 Not a measurement this time. Lean, general in `i`, sorry-free.
 
@@ -5320,7 +5320,7 @@ Remaining for `hdeep`, now fully scoped:
 2. B's post-split chain, one lemma in `j` — `(i²−i+4)/2` steps;
 3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
 
-## §4bp — side A, swept, and a correction to my own figure (PR pending)
+## §4bp — side A, swept, and a correction to my own figure (merged)
 
 Side A opens with **three fixed steps** onto a doubled descending run, after
 which §4bo's sweep applies unchanged:
@@ -5360,7 +5360,7 @@ assuming it would have cost the tranche.
 2. side B's tail — `(i²−i+4)/2` per branch, one lemma in `j`;
 3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
 
-## §4bq — the far-commutation carry, side A's tail inner loop (PR pending)
+## §4bq — the far-commutation carry, side A's tail inner loop (merged)
 
 Side A's tail is **pure far commutation**, and its shape was measured, not
 guessed. Grouped by top index the rules are `(2,0)`, `(3,1) (3,0)`,
@@ -5422,7 +5422,7 @@ This is consistent with the earlier negative — B's branches do *not* reduce on
 A's. Same rule sequence applied to different words is not the same thing as one
 word reducing to the other, and both facts hold.
 
-## §4br — the unshuffle, and SIDE A OF `hdeep` COMPLETE (PR pending)
+## §4br — the unshuffle, and SIDE A OF `hdeep` COMPLETE (merged)
 
 **The unshuffle.** `pairList m z` — the interleaved pairs, i.e. `pairSweep`
 without its trailing `σ_zσ_z` — separates into two descending runs:
@@ -5469,7 +5469,7 @@ literals.
 2. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term),
    which joins the two halves into the S-polynomial statement.
 
-## §4bs — SIDE B COMPLETE. Both halves of `hdeep` land on one element (PR pending)
+## §4bs — SIDE B COMPLETE. Both halves of `hdeep` land on one element (merged)
 
 `bside_to_split` runs §4bo's route to the split word, rewrites it through
 `pairSweep_eq` into pairs-plus-`σ₀σ₀`, unshuffles with §4br's
@@ -5552,7 +5552,7 @@ where the closures are 2058 and 2055 words and still wholly disjoint. That is al
 independent confirmation of the measured closure-disjointness, and it is the
 invariant the joining should thread — not length.
 
-## §4bt — `CtxAvoids`: the context abstraction the joining needs (PR pending)
+## §4bt — `CtxAvoids`: the context abstraction the joining needs (merged)
 
 The joining needs every chain to run with the *other* side's term sitting
 alongside, which means `monicStep`'s side condition stops being vacuous at every
@@ -5598,7 +5598,7 @@ quicker), then the joining itself: build the canonical composition, compute its
 S-polynomial, and run the two chains against each other, discharging `CtxAvoids`
 at top level from the head-letter separation.
 
-### §4bu — the A side generalised (PR pending)
+### §4bu — the A side generalised (merged)
 
 `aside_head'`, `aside_to_sweptWord'`, `aside_to_normalWord'`, `aside_resolves'`
 — side A now runs inside an arbitrary S-polynomial. The four originals are
