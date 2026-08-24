@@ -54,4 +54,142 @@ theorem sum_eval_div_prod_eq_coeff {s : Finset ι} {v : ι → F} (hv : Set.InjO
   rw [Polynomial.coeff_C_mul, coeff_lagrangeBasis hv hi, Finset.prod_inv_distrib,
     ← div_eq_mul_inv]
 
+/-! ## The `q`-ratio node sum -/
+
+theorem sub_one_mul_geom_sum (Q : F) (n : ℕ) :
+    (Q - 1) * ∑ k ∈ Finset.range n, Q ^ k = Q ^ n - 1 := by
+  induction n with
+  | zero => simp
+  | succ m ih => rw [Finset.sum_range_succ, mul_add, ih]; ring
+
+/-- **The `q`-ratio node sum.**
+
+For pairwise distinct nonzero nodes `v i`, `i ∈ s`,
+
+`∑_{i ∈ s} ∏_{j ≠ i} (Q·v i − v j)/(v i − v j) = 1 + Q + ⋯ + Q^{|s|−1}`.
+
+This is the algebraic heart of Pieri's rule at a principal specialisation.  Writing the level-`r`
+principal specialisation of `s_μ` as a Vandermonde ratio in `x_i = Q^{μ_i + r − i}`, the ratio
+`s_{μ+□ in row i}/s_μ` is exactly the `i`-th summand, and the identity says those ratios sum to
+`[r]_Q` — which is the branching identity.  It also explains for free why the non-addable rows may
+be summed over harmlessly: if adding a box to row `i` would break the partition, then
+`Q·v i = v_{i−1}` and that summand is zero.
+
+**Two hypotheses are artefacts of the proof, not of the statement.**  The identity is a polynomial
+identity and holds at `Q = 1` and at `v i = 0` too; `hQ1` and `hv0` are needed because the argument
+divides by `Q − 1` and by `v i`.  Both hold in the intended application, where `v i` is a power of
+`Q` and `Q` is not a root of unity.
+
+Proof: apply `sum_eval_div_prod_eq_coeff` twice — to `divX f` and to `divX g`, where
+`f = ∏_j (X − v j)` and `g = ∏_j (Q·X − v j)`.  The first pins the node sum of
+`1/(v i · ∏_{j≠i}(v i − v j))` (the residue at `0`); the second produces the wanted sum plus that
+same correction, and the top coefficients `1` and `Q^{|s|}` do the rest. -/
+theorem sum_prod_qratio {s : Finset ι} {v : ι → F} (hv : Set.InjOn v s)
+    (hv0 : ∀ i ∈ s, v i ≠ 0) {Q : F} (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) :
+    ∑ i ∈ s, ∏ j ∈ s.erase i, (Q * v i - v j) / (v i - v j)
+      = ∑ k ∈ Finset.range s.card, Q ^ k := by
+  rcases s.eq_empty_or_nonempty with rfl | hs
+  · simp
+  have hcard : 1 ≤ s.card := Finset.card_pos.mpr hs
+  set f : F[X] := ∏ j ∈ s, (X - C (v j)) with hf
+  set g : F[X] := ∏ j ∈ s, (C Q * X - C (v j)) with hg
+  -- shape of `f`
+  have hfm : f.Monic := monic_prod_of_monic _ _ fun j _ => monic_X_sub_C _
+  have hfdeg : f.natDegree = s.card := by
+    rw [hf, natDegree_prod_of_monic _ _ fun j _ => monic_X_sub_C _]
+    simp
+  have hfne : f ≠ 0 := hfm.ne_zero
+  have hfeval : ∀ i ∈ s, eval (v i) f = 0 := by
+    intro i hi
+    rw [hf, eval_prod]
+    exact Finset.prod_eq_zero hi (by simp)
+  -- shape of `g`
+  have hgfac : ∀ j : ι, (C Q * X - C (v j) : F[X]) = C Q * X + C (-(v j)) := by
+    intro j; rw [map_neg]; ring
+  have hgfacne : ∀ j : ι, (C Q * X - C (v j) : F[X]) ≠ 0 := by
+    intro j h
+    have hd := natDegree_linear (a := Q) (b := -(v j)) hQ0
+    rw [← hgfac j, h] at hd
+    simp at hd
+  have hgdeg : g.natDegree = s.card := by
+    have h1 : ∀ j ∈ s, (C Q * X - C (v j) : F[X]).natDegree = 1 := by
+      intro j _; rw [hgfac j]; exact natDegree_linear hQ0
+    rw [hg, natDegree_prod _ _ fun j _ => hgfacne j, Finset.sum_congr rfl h1]
+    simp
+  have hglead : g.leadingCoeff = Q ^ s.card := by
+    have h2 : ∀ j ∈ s, (C Q * X - C (v j) : F[X]).leadingCoeff = Q := by
+      intro j _; rw [hgfac j]; exact leadingCoeff_linear hQ0
+    rw [hg, leadingCoeff_prod, Finset.prod_congr rfl h2]
+    simp
+  have hgne : g ≠ 0 := by
+    intro h
+    rw [h, leadingCoeff_zero] at hglead
+    exact pow_ne_zero _ hQ0 hglead.symm
+  have hgeval : ∀ i ∈ s, eval (v i) g
+      = (Q - 1) * v i * ∏ j ∈ s.erase i, (Q * v i - v j) := by
+    intro i hi
+    rw [hg, eval_prod, ← Finset.mul_prod_erase s _ hi]
+    simp only [eval_sub, eval_mul, eval_C, eval_X]
+    ring
+  -- the two constant terms agree
+  have hc : g.coeff 0 = f.coeff 0 := by
+    rw [coeff_zero_eq_eval_zero, coeff_zero_eq_eval_zero, hf, hg, eval_prod, eval_prod]
+    simp
+  have hcne : f.coeff 0 ≠ 0 := by
+    rw [coeff_zero_eq_eval_zero, hf, eval_prod]
+    simp only [eval_sub, eval_X, eval_C, zero_sub]
+    exact Finset.prod_ne_zero_iff.mpr fun j hj => neg_ne_zero.mpr (hv0 j hj)
+  -- `divX` bookkeeping
+  have hevalDivX : ∀ (p : F[X]) (x : F), x * eval x (divX p) + p.coeff 0 = eval x p := by
+    intro p x
+    have h : eval x (X * divX p) + eval x (C (p.coeff 0)) = eval x p := by
+      rw [← eval_add, X_mul_divX_add p]
+    rw [eval_mul, eval_X, eval_C] at h
+    exact h
+  have hdivfdeg : (divX f).degree < (s.card : WithBot ℕ) := by
+    rw [← hfdeg, ← degree_eq_natDegree hfne]
+    exact degree_divX_lt hfne
+  have hdivgdeg : (divX g).degree < (s.card : WithBot ℕ) := by
+    rw [← hgdeg, ← degree_eq_natDegree hgne]
+    exact degree_divX_lt hgne
+  have hcoefff : (divX f).coeff (s.card - 1) = 1 := by
+    rw [coeff_divX, Nat.sub_add_cancel hcard, ← hfdeg, coeff_natDegree]
+    exact hfm
+  have hcoeffg : (divX g).coeff (s.card - 1) = Q ^ s.card := by
+    rw [coeff_divX, Nat.sub_add_cancel hcard, ← hgdeg, coeff_natDegree, hglead, hgdeg]
+  -- the two node values
+  have hAf : ∀ i ∈ s, eval (v i) (divX f) = -(f.coeff 0) / v i := by
+    intro i hi
+    have hvi : v i ≠ 0 := hv0 i hi
+    have h : v i * eval (v i) (divX f) + f.coeff 0 = 0 := by
+      rw [hevalDivX f (v i)]; exact hfeval i hi
+    field_simp
+    linear_combination h
+  have hAg : ∀ i ∈ s, eval (v i) (divX g)
+      = (Q - 1) * (∏ j ∈ s.erase i, (Q * v i - v j)) + -(f.coeff 0) / v i := by
+    intro i hi
+    have hvi : v i ≠ 0 := hv0 i hi
+    have h : v i * eval (v i) (divX g) + f.coeff 0
+        = (Q - 1) * v i * ∏ j ∈ s.erase i, (Q * v i - v j) := by
+      rw [← hc, hevalDivX g (v i)]; exact hgeval i hi
+    field_simp
+    linear_combination h
+  -- assemble
+  have hA := sum_eval_div_prod_eq_coeff hv hdivfdeg
+  rw [hcoefff] at hA
+  have hB := sum_eval_div_prod_eq_coeff hv hdivgdeg
+  rw [hcoeffg] at hB
+  have hBsplit : ∑ i ∈ s, eval (v i) (divX g) / (∏ j ∈ s.erase i, (v i - v j))
+      = (Q - 1) * (∑ i ∈ s, ∏ j ∈ s.erase i, (Q * v i - v j) / (v i - v j))
+        + ∑ i ∈ s, eval (v i) (divX f) / (∏ j ∈ s.erase i, (v i - v j)) := by
+    rw [Finset.mul_sum, ← Finset.sum_add_distrib]
+    refine Finset.sum_congr rfl fun i hi => ?_
+    rw [hAg i hi, hAf i hi, Finset.prod_div_distrib, add_div]
+    ring
+  rw [hBsplit, hA] at hB
+  have hQ1' : Q - 1 ≠ 0 := sub_ne_zero.mpr hQ1
+  refine mul_left_cancel₀ hQ1' ?_
+  rw [sub_one_mul_geom_sum]
+  linear_combination hB
+
 end QOU.Mathlib
