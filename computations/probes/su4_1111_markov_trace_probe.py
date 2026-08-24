@@ -239,13 +239,33 @@ def _chi(lam, word, n_gens):
     the shortcut AGENTS.md §"PROBES ARE NOT EXEMPT" was made STRICT to stop,
     and "note it as a limitation and ship" is named there as the wrong move.
 
-    RETRACTED, and it is worth knowing why. This note used to add that "the
-    float64 character agrees to 15 digits against the 50-dps reference, so the
-    word is well conditioned there". BOTH SIDES of that comparison were running
-    at dps = 15, so the agreement was the FLOOR OF THE ARITHMETIC ON BOTH SIDES
-    and said nothing about the mathematics -- precisely the invalid form
-    AGENTS.md names. There is currently NO evidence here about conditioning,
-    in either direction. Do not cite that claim.
+    RETRACTED, THEN RE-MEASURED, and the pair is the lesson. This note used to
+    say "the float64 character agrees to 15 digits against the 50-dps
+    reference, so the word is well conditioned there". BOTH SIDES of that
+    comparison were at dps = 15, so the agreement was the FLOOR OF THE
+    ARITHMETIC ON BOTH SIDES -- the invalid form AGENTS.md names.
+
+    Redone against a reference that is actually exact (the sparse route below,
+    dps = 70, cross-validated against dense mpmath to 7e-71):
+
+        shape          dim    float64 relative error   digits
+        (6,6)          132          2.779e-16            15
+        (9,1,1,1)      165          4.073e-16            15
+        (3,3,3,3)      462          5.715e-17            16
+        (8,3,1)        891          2.999e-15            14
+
+    So float64 holds 14-16 digits across a 6.7x range of dim, degrading mildly.
+    Extrapolating that trend to dim = 4158 suggests ~13, but it was NOT
+    measured there.
+
+    The point worth keeping: the retracted claim was APPROXIMATELY RIGHT and
+    entirely UNSUPPORTED. Being close to the truth is not the same as having
+    evidence for it, and the fix is to get the evidence rather than to keep the
+    guess. Note also what this does and does not license -- it says the
+    CHARACTER PRODUCT is well conditioned; it says nothing about the probe's
+    verdict, which also depends on the y_lambda weights and the ratios built
+    from them, and AGENTS.md's rule is about carriage through the whole
+    analysis, not one number.
 
     THE REAL FIX IS MEASURED AND WORKS. Neither cast nor dense-mpmath: the
     seminormal `sigma_i` carry at most 2 nonzeros per row, so the trace can be
@@ -254,10 +274,10 @@ def _chi(lam, word, n_gens):
     `dim^2 * len(word) * nnz_per_row`. Validated at dim=132, dps=70, against
     the dense routine:
 
-        dense   20.472734309881024467   81.2 s
-        sparse  20.472734309881024467    1.0 s     (80.8x)
-        relative difference  7.1e-71   -- exact agreement at the working
-                                          precision, NOT a float64 floor
+        dense   20.472734309881024467   ~80 s
+        sparse  20.472734309881024467    ~1 s      (80-85x over two runs)
+        relative difference  7.077e-71  -- exact agreement at the working
+                                           precision, NOT a float64 floor
 
         extrapolated, all ten irreps:  ~36 min (nnz/row = 1, as at dim=132)
                                        ~73 min (nnz/row = 2, the 2x2 blocks
