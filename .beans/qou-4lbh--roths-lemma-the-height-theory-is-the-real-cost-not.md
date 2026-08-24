@@ -3486,3 +3486,45 @@ approximation met a constant that had no room.**
 The chain naming `s` is therefore not a stylistic choice but the thing that makes the induction
 go through, and `rothBound_pow_iff` — landed several turns ago as a convenience — turns out to
 be the load-bearing conversion.
+
+### ⚠⚠ Correction sixteen — `InRothFracSet` used `≤` where §9 says `=`, and that made the statement false
+
+§9 defines `Q(H₁,…,H_m)` as the systems `κₕ = Pₕ/Qₕ` **of heights** `Hₕ = max(|Pₕ|,|Qₕ|)` — an
+**equality**. My definition, landed three turns ago, used `≤`.
+
+**That is not a weakening, it is a falsification.** `Θ_m` is a supremum over `Q(H)`; enlarging
+the set enlarges the sup, and §10's bound then fails outright. Concretely at `H = 100`, `a = 2`,
+`r = 1`: with `≤`, the point `κ = 1/1` has height `1 ≤ 100` and `A = x − 1` has index `1`,
+against `log a/(r log H) = log 2/log 100 ≈ 0.15`. With the equality, `κ` must have height `100`,
+so `A` would need `|lead| ≥ 100 > a` and the index is `0`.
+
+Same failure mode as `Γ_m`'s missing clauses — a weakened hypothesis makes the statement
+*stronger*, and a statement stronger than the source's is one the source will not prove. The
+arc has now made this exact mistake three times (Γ's clauses 2–3, Γ's clause 4, and this), which
+is enough to name it: **when transcribing a definition, check whether each bound is `≤` or `=`,
+because the two differ only in a character and invert which direction the statement is safe in.**
+
+Knock-on: `exists_inRothFracSet`'s witness can no longer be `κ ≡ 0` (height `1`); it is now
+`κₕ = Hₕ`, an integer of height exactly `Hₕ`. `finite_rothFracSet` still holds, as a subset of
+the `≤` version.
+
+### ⚠ What §10 actually needs, and the half this arc lacks
+
+§10's proof, read verbatim:
+
+> `A(x) = (Qx − P)^j·B(x)` with `B` integral, hence the **lowest** and the **highest** non-zero
+> coefficients of `A` are divisible by `P^j` and `Q^j` respectively. It follows that
+> `H^j ≤ |A| ≤ a`.
+
+This arc has only the `Q^j` half — `pow_le_abs_leadingCoeff_of_le_index` gives `q^k ≤ |lead|`,
+the highest coefficient, divisible by the *denominator*. The `P^j | lowest` half is missing, and
+without it one can only conclude `Q^j ≤ a`, never `H^j ≤ a`.
+
+**That is precisely why this arc's base case is stated with `a ≤ q^E` rather than `a ≤ H^E`**,
+and it is the concrete form of this bean's original headline: *the height theory is the real
+cost, not the Wronskians*. Three months of Wronskian machinery, and the remaining gap is one
+divisibility statement about a lowest coefficient.
+
+⚠ The missing half should come by symmetry: reversing a polynomial swaps lowest and highest
+coefficients and sends `κ ↦ 1/κ`, i.e. `P ↔ Q`. Recorded in `RothBaseCase` so the next attempt
+starts from the reversal rather than from scratch. Not attempted here.

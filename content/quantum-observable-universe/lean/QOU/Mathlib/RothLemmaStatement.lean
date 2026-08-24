@@ -208,12 +208,23 @@ undischarged obligation; it no longer is. -/
 def InRothPolySet {σ : Type*} (a : ℤ) (r : σ → ℕ) (A : MvPolynomial σ ℤ) : Prop :=
   A ≠ 0 ∧ (∀ h, degreeOf h A ≤ r h) ∧ ∀ n, |coeff n A| ≤ a
 
-/-- `Q(H₁,…,H_m)` — systems of rationals of height `≤ Hₕ`.
+/-- `Q(H₁,…,H_m)` — systems of rationals **of height exactly** `Hₕ`.
 
-⚠ Mahler requires `(Pₕ, Qₕ) = 1`; Lean's `ℚ` is always in lowest terms, so that clause is
+⚠⚠ **Correction sixteen: this was `≤`, and that made `RothLemmaTheta` false.**  §9 says
+"systems … **of heights** `Hₕ = max(|Pₕ|,|Qₕ|)`" — an equality.  With `≤` the set is larger,
+so `Θ_m` is a supremum over more, and §10's bound fails outright: at `H = 100`, `a = 2`,
+`r = 1`, the point `κ = 1/1` has height `1 ≤ 100` and `A = x − 1` has index `1`, against
+`log a/(r log H) = log 2 / log 100 ≈ 0.15`.  With the equality, `κ` must have height `100`, so
+`A` would need `|lead| ≥ 100 > a` and the index is `0`.
+
+The failure mode is the arc's familiar one — a *weakened hypothesis* makes the statement
+stronger, and a statement stronger than the source's is one the source will not prove.  Same
+shape as `Γ_m`'s missing clauses, in a definition landed three turns ago.
+
+⚠ Mahler also requires `(Pₕ, Qₕ) = 1`; Lean's `ℚ` is always in lowest terms, so that clause is
 carried by the type rather than stated. -/
 def InRothFracSet {σ : Type*} (H : σ → ℕ) (κ : σ → ℚ) : Prop :=
-  ∀ h, (κ h).num.natAbs ≤ H h ∧ (κ h).den ≤ H h
+  ∀ h, max (κ h).num.natAbs (κ h).den = H h
 
 /-- **`Θ_m` characterised** — the least upper bound of `J(A; r; κ)` over `R(a;r) × Q(H)`, and
 attained.  §9's finiteness is what makes the second clause available. -/
@@ -278,11 +289,10 @@ theorem isRothTheta_degenerate {σ : Type*} :
   constructor
   · intro A κ hA hκ
     rw [hidx κ _ (hmap A hA.1)]
-  · refine ⟨1, fun _ => 0, ⟨one_ne_zero, fun h => ?_, fun n => ?_⟩, fun h => ⟨?_, ?_⟩,
+  · refine ⟨1, fun _ => 0, ⟨one_ne_zero, fun h => ?_, fun n => ?_⟩, fun h => ?_,
       hidx _ _ (hmap 1 one_ne_zero)⟩
     · rw [hdeg1 h]
     · rw [coeff_one]; split_ifs <;> norm_num
-    · norm_num
     · norm_num
 
 /-! ### §9's finiteness, and the existence of `Θ_m`
@@ -364,12 +374,13 @@ theorem finite_setOf_rat_height_le (n : ℕ) :
 /-- **`Q(H₁,…,H_m)` is finite** — it is exactly the `Set.pi` of the bounded-height sets. -/
 theorem finite_rothFracSet {σ : Type*} [Finite σ] (H : σ → ℕ) :
     {κ : σ → ℚ | InRothFracSet H κ}.Finite := by
-  have hset : {κ : σ → ℚ | InRothFracSet H κ}
-      = Set.pi Set.univ (fun h : σ => {q : ℚ | q.num.natAbs ≤ H h ∧ q.den ≤ H h}) := by
-    ext κ
-    simp [InRothFracSet, Set.mem_pi]
-  rw [hset]
-  exact Set.Finite.pi fun h => finite_setOf_rat_height_le (H h)
+  refine Set.Finite.subset
+    (Set.Finite.pi fun h : σ => finite_setOf_rat_height_le (H h)) ?_
+  intro κ hκ h _
+  have := hκ h
+  constructor
+  · exact le_trans (le_max_left _ _) (le_of_eq this)
+  · exact le_trans (le_max_right _ _) (le_of_eq this)
 
 /-- `R(a; r)` is non-empty as soon as `1 ≤ a`: the constant polynomial `1` works.
 
@@ -386,14 +397,19 @@ theorem exists_inRothPolySet {σ : Type*} (a : ℤ) (r : σ → ℕ) (ha : 1 ≤
     · simpa using ha
     · simpa using le_trans zero_le_one ha
 
-/-- `Q(H)` is non-empty as soon as every `H h` is at least `1`: take `κ ≡ 0`.
+/-- `Q(H)` is non-empty as soon as every `H h` is at least `1`: take `κ h = Hₕ`, an integer,
+whose numerator is `Hₕ` and whose denominator is `1`.
 
-⚠ Also necessary — every rational has `den ≥ 1`. -/
+⚠ `1 ≤ Hₕ` is necessary — every rational has `den ≥ 1`, so its height is at least `1`.
+⚠ With correction sixteen the witness can no longer be `κ ≡ 0`: that has height `1`, which is
+the required height only when `Hₕ = 1`. -/
 theorem exists_inRothFracSet {σ : Type*} (H : σ → ℕ) (hH : ∀ h, 1 ≤ H h) :
     ∃ κ : σ → ℚ, InRothFracSet H κ := by
-  refine ⟨fun _ => 0, fun h => ⟨?_, ?_⟩⟩
-  · simp
-  · simpa using hH h
+  refine ⟨fun h => ((H h : ℤ) : ℚ), fun h => ?_⟩
+  have hn : (((H h : ℤ) : ℚ)).num = (H h : ℤ) := by simp
+  have hd : (((H h : ℤ) : ℚ)).den = 1 := by simp
+  rw [hn, hd, Int.natAbs_natCast]
+  exact max_eq_left (hH h)
 
 /-- **`Θ_m` exists** once both sets are finite and non-empty.
 

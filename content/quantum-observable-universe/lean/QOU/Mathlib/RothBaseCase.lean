@@ -168,6 +168,30 @@ theorem exists_index_eq_div_and_pow_le {p q : ℤ} (hq0 : 0 < q) (hco : IsCoprim
     rw [hieq, hsingle, idxWeight_single]
   exact ⟨n₀, hidx, pow_le_abs_leadingCoeff_of_le_index hq0 hco hd hP n₀ (le_of_eq hidx.symm)⟩
 
+/-! ### ⚠ What §10 needs that this module does not have
+
+§10's estimate is `Θ₁(a; r; H) ≤ log a / (r log H)` for `H ≥ 2`, where `H = max(|P|, |Q|)` is
+the **height** of the point `κ = P/Q`.  Its proof:
+
+> `A(x) = (Qx − P)^j·B(x)` with `B` integral, hence the **lowest** and the **highest** non-zero
+> coefficients of `A` are divisible by `P^j` and `Q^j` respectively.  It follows that
+> `H^j ≤ |A| ≤ a`.
+
+⚠ **This module proves only the `Q^j` half.**  `pow_le_abs_leadingCoeff_of_le_index` gives
+`q^k ≤ |lead|` — the *highest* coefficient, divisible by the *denominator*.  The other half —
+`P^j` divides the lowest non-zero coefficient — is not here, and without it the argument can
+only conclude `Q^j ≤ a`, not `H^j ≤ a`.
+
+That gap is exactly why the arc's base case is stated with `a ≤ q^E` (denominator) rather than
+`a ≤ H^E` (height), and it is the concrete form of this bean's original headline: *the height
+theory is the real cost, not the Wronskians*.
+
+The missing half should come cheaply by symmetry: reversing a polynomial (`x ↦ x^{deg}·A(1/x)`)
+swaps lowest and highest coefficients and sends `κ ↦ 1/κ`, i.e. `P ↔ Q`.  So
+`pow_le_abs_leadingCoeff_of_le_index` applied to the reversal at the reciprocal point should
+give `|P|^j ≤ |lowest coefficient of A|`.  ⚠ Not attempted — recorded so the next attempt
+starts from the reversal rather than from scratch. -/
+
 /-- **The base case with a *power* bound, and no rounding anywhere.**
 
 `|lead|^Q ≤ q^S` gives `index ≤ S/(Q·d)` directly.  ⚠ This is the shape `RothGammaFull`'s
