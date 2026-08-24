@@ -1,5 +1,8 @@
 import QOU.PhiQPiece
 import QOU.Kashaev
+-- `rho_pos` closes its side goals with `linarith`, which neither import above
+-- brings in: without this the tactic is unknown and the lemma is unproved.
+import Mathlib.Tactic.Linarith
 
 
 /-!
@@ -69,7 +72,7 @@ class TowerSummandRealization (q : ℝ) where
 class PerPieceBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] where
   bridge_per_piece :
     ∀ (β : Braid) (S : Finset (Fin (β.n - 1))),
-      TowerSummandRealization.realisation β S =
+      TowerSummandRealization.realisation (q := q) β S =
         rho q * pieceVolume q β S
 
 /-- **Master conditional bridge theorem.**
@@ -89,7 +92,7 @@ class PerPieceBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] 
 theorem bridge {q : ℝ} [VolumeConjecture q] [TowerSummandRealization q]
     [inst : PerPieceBridge q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
-    TowerSummandRealization.realisation β S =
+    TowerSummandRealization.realisation (q := q) β S =
       rho q * pieceVolume q β S :=
   inst.bridge_per_piece β S
 
@@ -106,12 +109,28 @@ theorem bridge_nonneg {q : ℝ} (hq : 1 < q)
     0 ≤ rho q * pieceVolume q β S :=
   mul_nonneg (le_of_lt (rho_pos hq)) (pieceVolume_nonneg q β S)
 
-/-- **Skeleton `TowerSummandRealization` instance.**  Defines the
+/-- **Skeleton `TowerSummandRealization` witness.**  Defines the
     archimedean realisation as constant zero.  Trivially non-negative;
-    encodes none of the actual realisation infrastructure but provides
-    the typeclass-instance discharge for the §3b-cond hypothesis. -/
+    encodes none of the actual realisation infrastructure.
+
+    **Demoted from `instance` to `def`, 2026-08-24.**  The class docstring
+    above says it is "populated by any concrete instance of the realisation
+    functor" — but as a global `instance` this zero skeleton *preempted* that:
+    typeclass resolution satisfied every `[TowerSummandRealization q]` binder
+    in this file from it, so `bridge` and `bridge_nonneg` read as claims about
+    an arbitrary realisation while the only realisation in scope was `0`.
+    Under that resolution `PerPieceBridgeAxiom.bridge_per_piece` reads
+    `0 = rho q * pieceVolume q β S`, i.e. it asserts `pieceVolume ≡ 0` for
+    `q > 1` — the block comment below already noticed this and recorded it as
+    expected.
+
+    This is the `triv_hecke` / `triv_wedderburn` shape demoted in PR #5581 for
+    the same reason. As a `def` the degenerate model stays available to anyone
+    who wants to name it (`letI := skeletonRealisation q`), which is the honest
+    use — witnessing that the class is inhabited, so the conditional theorems
+    are not vacuously true — without standing in for the real realisation. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
-instance skeletonRealisation (q : ℝ) : TowerSummandRealization q where
+def skeletonRealisation (q : ℝ) : TowerSummandRealization q where
   realisation := fun _ _ => 0
   realisation_nonneg := fun _ _ => le_refl 0
 
@@ -125,7 +144,7 @@ instance skeletonRealisation (q : ℝ) : TowerSummandRealization q where
 class PerPieceBridgeAxiom (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] : Prop where
   /-- The missing input for the bridge per piece. -/
   bridge_per_piece : ∀ (β : Braid) (S : Finset (Fin (β.n - 1))),
-    TowerSummandRealization.realisation β S = rho q * pieceVolume q β S
+    TowerSummandRealization.realisation (q := q) β S = rho q * pieceVolume q β S
 
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
