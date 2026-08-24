@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T20:47:48.798780+00:00",
-  "commitSha": "f0cb92b66b834cdc13d155e4d66da41f1d23965d",
+  "computedAt": "2026-08-24T13:33:43.679436+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "canonical_ratio_undershoots_both_hbar",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "qbeta-c3-magnitude-exp-bridge-windings",
   "scriptFile": "qbeta_c3_magnitude_exp_bridge_windings_probe.py",
   "scriptHash": "2544458b8e84",
-  "scriptCommitSha": "3d18503f770ec4b599a9dfccb9b2e9cdba4d197a",
+  "scriptCommitSha": "7f78acabad4c7a6781b4ed561ffecd94e889241b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,20 +32,29 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_magnitude_exp_bridge_windings_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_magnitude_exp_bridge_windings_probe.py"
   },
   "description": "DTD3 (bean qou-dtd3): tests the bar-even/cosh exponential bridge |δf|~e^{−Re𝔙/ℏ_q} with Re𝔙₄₁(u_{m,ℓ})=Vol(4₁)−(3/8)(ln q₀)²(2m+ℓ)ℓ as the c₃ magnitude route, at CANONICAL cusp windings (meridian (1,0) N=0, longitude (0,1) N=1, ΔN=1), no tuning. Both ℏ conventions predict |S_p/S_m|≈1.04, undershooting the target 4.075 by ~3.9×; the target needs ΔN≈34–36, ≥30× the FORCED distinguished-pair value (ΔN=1), so matching requires deliberately-selected extreme (non-distinguished) windings (dense-fit resource; the pair-difference reachability of ΔN is convention-dependent — recorded as data, not the negative). MISS (scope-(a)): the canonical-winding even-channel exponential bridge does NOT reproduce the c₃ magnitude; magnitude stays open, sign remains lattice-arithmetic [W]. No fit; nothing wired; no instance fabricated.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "data": {
     "magnitude_bridge_readout": {
-      "target_ratio_Sp_over_Sm": "4.075127003",
+      "target_ratio_Sp_over_Sm": "3.936920509",
       "canonical_delta_N": 1,
       "pred_ratio_hbar_sub": "1.042065266",
       "pred_ratio_hbar_log": "1.039903348",
-      "delta_N_needed_hbar_sub": "34.095773",
-      "delta_N_needed_hbar_log": "35.90549",
+      "delta_N_needed_hbar_sub": "33.258413",
+      "delta_N_needed_hbar_log": "35.023684",
       "canonical_cross_form_max_abs_N": 27,
       "needed_delta_N_is_canonical_pair_difference_hbar_sub": false,
       "needed_delta_N_is_canonical_pair_difference_hbar_log": true,

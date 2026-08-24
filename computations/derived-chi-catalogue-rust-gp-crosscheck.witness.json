@@ -9,7 +9,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "Whether chi_lambda_via_rust_gp (Rust chi_q_via_gp, one FFI call/word) reassembled to a symbolic Laurent poly equals the pure-Python Hoefsmit matrix product chi_lambda_via_matrix_product EXACTLY (sp.cancel(py-rust)==0) on the 23-crossing production deuteron braid and an A=3 n=9 word, for every partition with dim V_λ ≤ 9. This is the port equivalence gate: the optimisation moves the character compute to Rust with zero change to the answer."
+      "source": "Whether chi_lambda_via_rust_gp (Rust chi_q_via_gp, one FFI call/word) reassembled to a symbolic Laurent poly equals the pure-Python Hoefsmit matrix product chi_lambda_via_matrix_product EXACTLY (sp.cancel(py-rust)==0) on the 23-crossing production deuteron braid and an A=3 n=9 word, for every partition with dim V_\u03bb \u2264 9. This is the port equivalence gate: the optimisation moves the character compute to Rust with zero change to the answer."
     },
     {
       "name": "rust_gp_agrees_at_q0_to_40_digits",
@@ -38,7 +38,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Equivalence gate for the Rust-GP port of the derived-chi catalogue: pure-Python Hoefsmit matrix product (chi_lambda_via_matrix_product) vs the Rust Geck–Pfeiffer engine (chi_lambda_via_rust_gp -> pyhecke_native.chi_q_via_gp) on the LONG production braid words (deuteron atom_braid_word_3A(1,1), 23 crossings; an A=3 n=9 word). Both paths are exact-integer, so the two characters agree symbolically (delta = 0) and at q0 to 40+ digits (exactly). Covers the words the main script's Tests 5-7 delegate to Rust and no longer check pure-Python.",
+  "description": "Equivalence gate for the Rust-GP port of the derived-chi catalogue: pure-Python Hoefsmit matrix product (chi_lambda_via_matrix_product) vs the Rust Geck\u2013Pfeiffer engine (chi_lambda_via_rust_gp -> pyhecke_native.chi_q_via_gp) on the LONG production braid words (deuteron atom_braid_word_3A(1,1), 23 crossings; an A=3 n=9 word). Both paths are exact-integer, so the two characters agree symbolically (delta = 0) and at q0 to 40+ digits (exactly). Covers the words the main script's Tests 5-7 delegate to Rust and no longer check pure-Python.",
   "data": {
     "crosscheck_dps": 40,
     "max_dim_pure_python": 9,
@@ -261,5 +261,8 @@
         "pass": true
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_str). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

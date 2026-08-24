@@ -67,5 +67,8 @@
     "all_deltas_pass": false,
     "interpretation": "FAIL \u2014 PerKnotDensity's linking weight does NOT track \u03bb_p_codata locally; slope dominated by \u210f_q\u00b2 prefactor as in all prior bare-polynomial probes. Production Family A linking weight (5/2 + 3h\u00b2/4) is not structurally q-local with respect to the CODATA target near q_0. Closure requires refinement of PerKnotDensity at higher h\u00b2 orders (S_4\u2193S_3 bijection + S_5\u2194SO(3) fiber action \u2014 see docs/audits/2026-05-24-family-a-gap-audit.md).",
     "max_abs_slope_ppm_per_q": "15688021.9130624367681434492555865599769383500975258702691811"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.Q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,6 +1,6 @@
 {
   "computation": "he4-binding-k-stage2",
-  "description": "A=4 binding-K stage 2 (per-block PSD + operator-selection LP with duals) at H12(q0) on the certified convention: K = T·cp^{-1} by factor concatenation (inverse factors linear in sigma via the Hecke quadratic). Leg A exact seminormal-mpfr characters all 77 blocks; leg B f64 diagnostic spectra all 77 blocks with per-block exact-trace cross-check.",
+  "description": "A=4 binding-K stage 2 (per-block PSD + operator-selection LP with duals) at H12(q0) on the certified convention: K = T\u00b7cp^{-1} by factor concatenation (inverse factors linear in sigma via the Hecke quadratic). Leg A exact seminormal-mpfr characters all 77 blocks; leg B f64 diagnostic spectra all 77 blocks with per-block exact-trace cross-check.",
   "audit_only": true,
   "computedAt": "2026-07-18T19:19:18.490734+00:00",
   "engine": "pyhecke_native seminormal-mpfr 50dps (leg A exact); numpy f64 diagnostic (leg B spectra, per A<=3 binding_k_solver precision class). GP path NOT used for results (kernel bug, see gp_kernel_bug).",
@@ -14,8 +14,8 @@
     "cp": "canonical nucleon words p(0)p(3)n(6)n(9), offsets {0,3,6,9}",
     "n_factors": 91,
     "inverse_dictionary": {
-      "sigma_inv": "σ⁻¹ = σ − h",
-      "averaged_inv": "(σ−h/2)⁻¹ = (2/[2]_q²)(σ+σ⁻¹)"
+      "sigma_inv": "\u03c3\u207b\u00b9 = \u03c3 \u2212 h",
+      "averaged_inv": "(\u03c3\u2212h/2)\u207b\u00b9 = (2/[2]_q\u00b2)(\u03c3+\u03c3\u207b\u00b9)"
     }
   },
   "gp_kernel_bug": {
@@ -1651,11 +1651,11 @@
     ]
   },
   "elapsed_sec": 1076.8,
-  "verdict": "A=4 STAGE 2 executed on the certified convention: K(⁴He) = T·cp⁻¹ evaluated per Wedderburn block at H₁₂(q₀), ALL 77 blocks (no dim cutoff). Leg A (exact seminormal-mpfr χ + LP duals): dominant channel λ*(K) = (9, 3), tr_M(K) = 0.0572284369457, duality gap 4.582025393048516e-14. Leg B (f64 diagnostic spectra, the A≤3 solver's precision class): min symmetrized eigenvalue -1.048e+01, α_gap 1.048e+01, PSD-within-tol False; worst exact-vs-f64 trace cross-check 8.1e-15. PSD-feasibility is the A≤3 'binding stability' certificate at A=4; the LP duals mark the receptive Wedderburn channels. Scope-(a); no AME input; no fit; nothing wired.",
-  "scope": "(a) — stage-2 evaluation of the canonical K; PSD verdict is f64-diagnostic (near-zero blocks flagged, none silently trusted); exact leg cross-checks every block trace",
+  "verdict": "A=4 STAGE 2 executed on the certified convention: K(\u2074He) = T\u00b7cp\u207b\u00b9 evaluated per Wedderburn block at H\u2081\u2082(q\u2080), ALL 77 blocks (no dim cutoff). Leg A (exact seminormal-mpfr \u03c7 + LP duals): dominant channel \u03bb*(K) = (9, 3), tr_M(K) = 0.0572284369457, duality gap 4.582025393048516e-14. Leg B (f64 diagnostic spectra, the A\u22643 solver's precision class): min symmetrized eigenvalue -1.048e+01, \u03b1_gap 1.048e+01, PSD-within-tol False; worst exact-vs-f64 trace cross-check 8.1e-15. PSD-feasibility is the A\u22643 'binding stability' certificate at A=4; the LP duals mark the receptive Wedderburn channels. Scope-(a); no AME input; no fit; nothing wired.",
+  "scope": "(a) \u2014 stage-2 evaluation of the canonical K; PSD verdict is f64-diagnostic (near-zero blocks flagged, none silently trusted); exact leg cross-checks every block trace",
   "assertions": [
     {
-      "label": "exact/f64 trace cross-check ≤ 1e-8 on every block",
+      "label": "exact/f64 trace cross-check \u2264 1e-8 on every block",
       "passed": true
     },
     {
@@ -1676,5 +1676,8 @@
   "scriptCommitSha": "unknown",
   "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
   "durationMs": 0,
-  "scriptFile": "he4_binding_k_stage2_probe.py"
+  "scriptFile": "he4_binding_k_stage2_probe.py",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): gp_kernel_bug.expected_exact, gp_kernel_bug.seminormal_mpfr_chi_trivial_rep, q_pin.value). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

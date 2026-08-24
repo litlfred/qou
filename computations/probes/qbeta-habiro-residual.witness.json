@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
-      "source": "single-wrap closed form recomputed at canonical q₀"
+      "source": "single-wrap closed form recomputed at canonical q\u2080"
     },
     {
       "name": "sigma_theory_dominates_sigma_CAL",
@@ -18,7 +18,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 602433.1526396247,
-      "source": "σ_CAL << σ_theory (residual is framework's, not propagated)"
+      "source": "\u03c3_CAL << \u03c3_theory (residual is framework's, not propagated)"
     }
   ],
   "allPassed": true,
@@ -49,7 +49,7 @@
     ],
     "reproduce": "python3 -u computations/probes/qbeta_habiro_residual_probe.py"
   },
-  "description": "σ_theory vs σ_CAL decomposition of the production Q_β residual at the canonical (proton-pinned) q₀. Recomputed LIVE — settles the q0-repin staleness question: the ~1248 ppb is the genuine Q_N2 truncation residual, NOT a stale-witness artifact. Anti-flip-flop per ck-dk-canonical-registry.md §8: proposes NO new c_k wiring.",
+  "description": "\u03c3_theory vs \u03c3_CAL decomposition of the production Q_\u03b2 residual at the canonical (proton-pinned) q\u2080. Recomputed LIVE \u2014 settles the q0-repin staleness question: the ~1248 ppb is the genuine Q_N2 truncation residual, NOT a stale-witness artifact. Anti-flip-flop per ck-dk-canonical-registry.md \u00a78: proposes NO new c_k wiring.",
   "contentBlock": "rem:beta-decay-energy-scale",
   "data": {
     "q0_anchor": "m_p/m_e (proton; owner ruling 2026-08-21)",
@@ -68,7 +68,7 @@
     "anchor_stability_q0_worstcase_shift_ppb": 29.862683449899446,
     "c3_cross_anchor_swing_pct": 2.98,
     "c3_dcdq": 4600000.0,
-    "verdict": "The 1248 ppb is σ_theory (formula truncation), NOT σ_CAL (σ_CAL ≈ 0.29 ppb, m_e-dominated; q₀ contributes 0.007 ppb). It is theory-improvable IN PRINCIPLE, but the ONLY known route below it is the fitted/near-match c_3 ladder, which FAILS the cross-anchor test (2.98 % swing) and is registry-REFUTED as a real-q derivation. No PROVED higher-order Habiro term exists. Closing 1248 → 7.8 ppb (the L2 100× target, itself BELOW the 779.7 ppb σ_exp floor) is Subgoal-2 / owner-gated q₀ work. NOT improvable by derivation today.",
+    "verdict": "The 1248 ppb is \u03c3_theory (formula truncation), NOT \u03c3_CAL (\u03c3_CAL \u2248 0.29 ppb, m_e-dominated; q\u2080 contributes 0.007 ppb). It is theory-improvable IN PRINCIPLE, but the ONLY known route below it is the fitted/near-match c_3 ladder, which FAILS the cross-anchor test (2.98 % swing) and is registry-REFUTED as a real-q derivation. No PROVED higher-order Habiro term exists. Closing 1248 \u2192 7.8 ppb (the L2 100\u00d7 target, itself BELOW the 779.7 ppb \u03c3_exp floor) is Subgoal-2 / owner-gated q\u2080 work. NOT improvable by derivation today.",
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
@@ -87,5 +87,8 @@
         "computedAt": "2026-08-21T16:24:01.734853+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

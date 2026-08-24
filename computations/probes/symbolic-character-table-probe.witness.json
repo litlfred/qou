@@ -10,8 +10,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over {(2,1), (3,1,1), (3,2,1), (4,1,1,1)} of |χ_λ(σ_1)/h − c_λ|, c_λ ∈ {1, 3, 8, 10}",
-      "source": "Hoefsmit-seminormal single-generator character; claim that c_λ = χ_λ(σ)/h ∈ ℤ for self-conjugate λ."
+      "unit": "max over {(2,1), (3,1,1), (3,2,1), (4,1,1,1)} of |\u03c7_\u03bb(\u03c3_1)/h \u2212 c_\u03bb|, c_\u03bb \u2208 {1, 3, 8, 10}",
+      "source": "Hoefsmit-seminormal single-generator character; claim that c_\u03bb = \u03c7_\u03bb(\u03c3)/h \u2208 \u2124 for self-conjugate \u03bb."
     },
     {
       "name": "pair_character_311_adjacent_equals_h_squared",
@@ -19,7 +19,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|χ_(3,1,1)(σ_1 σ_2) − h²|",
+      "unit": "|\u03c7_(3,1,1)(\u03c3_1 \u03c3_2) \u2212 h\u00b2|",
       "source": "prop:symbolic-character-table pair-character row."
     },
     {
@@ -28,7 +28,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|χ_(3,1,1)(σ_1 σ_3) − (h² − 2)|",
+      "unit": "|\u03c7_(3,1,1)(\u03c3_1 \u03c3_3) \u2212 (h\u00b2 \u2212 2)|",
       "source": "prop:symbolic-character-table pair-character row."
     },
     {
@@ -37,7 +37,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|χ_(3,1,1)(σ_1 σ_2 σ_3) − (−h)|",
+      "unit": "|\u03c7_(3,1,1)(\u03c3_1 \u03c3_2 \u03c3_3) \u2212 (\u2212h)|",
       "source": "prop:symbolic-character-table Coxeter-triple row."
     }
   ],
@@ -47,7 +47,7 @@
   "scriptFile": "symbolic_character_table_probe.py",
   "scriptHash": "6e119485822b",
   "scriptCommitSha": "unknown",
-  "description": "I1 probe for prop:symbolic-character-table.  Verifies the single-generator character ratios χ_λ(σ)/h for self-conjugate λ ∈ {(2,1), (3,1,1), (3,2,1), (4,1,1,1)} are integers {1, 3, 8, 10} respectively, and the three pair-character identities for λ = (3,1,1) in H_5: χ(σ_i σ_{i+1}) = h², χ(σ_i σ_j) = h² − 2 for |i−j| ≥ 2, χ(σ_i σ_{i+1} σ_{i+2}) = −h.  LHS computed via canonical Hoefsmit-seminormal (mpmath, 50 dps); RHS from the proposition's symbolic closed forms with h = q − q⁻¹.",
+  "description": "I1 probe for prop:symbolic-character-table.  Verifies the single-generator character ratios \u03c7_\u03bb(\u03c3)/h for self-conjugate \u03bb \u2208 {(2,1), (3,1,1), (3,2,1), (4,1,1,1)} are integers {1, 3, 8, 10} respectively, and the three pair-character identities for \u03bb = (3,1,1) in H_5: \u03c7(\u03c3_i \u03c3_{i+1}) = h\u00b2, \u03c7(\u03c3_i \u03c3_j) = h\u00b2 \u2212 2 for |i\u2212j| \u2265 2, \u03c7(\u03c3_i \u03c3_{i+1} \u03c3_{i+2}) = \u2212h.  LHS computed via canonical Hoefsmit-seminormal (mpmath, 50 dps); RHS from the proposition's symbolic closed forms with h = q \u2212 q\u207b\u00b9.",
   "contentBlock": "prop:symbolic-character-table",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",

@@ -2,7 +2,7 @@
   "schema": "witness/v1",
   "producer": "computations/deltalambda/s5so3_geometric_wlambda_borromean_lift_probe.py",
   "computation": "s5so3-geometric-wlambda-borromean-lift",
-  "description": "GENUINE geometric (Beasley-Witten / WRT(S3/2I)) keystone W_lambda = d_q^2/D^2 re-weight of the A=3 Borromean H9 cluster (distinct angle on Route 1 vs sibling d_q^2/[n]_q!). D^2 = Sum_lambda d_q^2 is the genuine Plancherel normaliser (WLambdaMTCLocalizationObligation.lean: 'NOT [n]_q!'); Sum_lambda d_q^2/D^2 = 1 exactly (C1), whereas the sibling's d_q^2/[n]_q! sums to 1.1109 (not a probability measure). Forward-evaluated on the IDENTICAL #4364 cabled-Borromean word (Delta_A*Delta_B^-1)^3, same E0, same |chi_lambda|; only the weight system changes. Result: c3(genuine) = 14.0664 MeV = 29.88x mu3; r_geom = 47.3684 = r_raw/S (52.6226/1.11092), vs needed r* = 1.58541. The correct normaliser (D^2 not [n]_q!) shifts the number 11% but not the verdict. VERDICT: WALL(scope-a) — genuine geometric W_λ (d_q²/D²) ≠ target order (overshoots); A=3 magnitude source open (0-fit). 0 free params; W_geom + y_lambda fixed by q0 + hook-lengths; mu3 target only, never inverted; nothing wired. Declined fit-trap: rescaling y_lambda to Sum=1 (c~31.5) lands r~1.585 but is a mu3-inverted free parameter = a FIT, declined.",
+  "description": "GENUINE geometric (Beasley-Witten / WRT(S3/2I)) keystone W_lambda = d_q^2/D^2 re-weight of the A=3 Borromean H9 cluster (distinct angle on Route 1 vs sibling d_q^2/[n]_q!). D^2 = Sum_lambda d_q^2 is the genuine Plancherel normaliser (WLambdaMTCLocalizationObligation.lean: 'NOT [n]_q!'); Sum_lambda d_q^2/D^2 = 1 exactly (C1), whereas the sibling's d_q^2/[n]_q! sums to 1.1109 (not a probability measure). Forward-evaluated on the IDENTICAL #4364 cabled-Borromean word (Delta_A*Delta_B^-1)^3, same E0, same |chi_lambda|; only the weight system changes. Result: c3(genuine) = 14.0664 MeV = 29.88x mu3; r_geom = 47.3684 = r_raw/S (52.6226/1.11092), vs needed r* = 1.58541. The correct normaliser (D^2 not [n]_q!) shifts the number 11% but not the verdict. VERDICT: WALL(scope-a) \u2014 genuine geometric W_\u03bb (d_q\u00b2/D\u00b2) \u2260 target order (overshoots); A=3 magnitude source open (0-fit). 0 free params; W_geom + y_lambda fixed by q0 + hook-lengths; mu3 target only, never inverted; nothing wired. Declined fit-trap: rescaling y_lambda to Sum=1 (c~31.5) lands r~1.585 but is a mu3-inverted free parameter = a FIT, declined.",
   "timestamp": "2026-07-27T00:39:42.834502+00:00",
   "parameters": {
     "free_parameters": 0,
@@ -56,15 +56,18 @@
       "reason": "both-Sigma=1 ratio r_geom*Sum_y = 1.506 is a 5% miss AND a normalization convention rho_F does not make (rho_F uses raw y_lambda); exact closure needs a mu3-inverted rescale = a FIT. Neither is a derivation."
     },
     "verdict": {
-      "classification": "WALL(scope-a) — genuine geometric W_λ (d_q²/D²) ≠ target order (overshoots); A=3 magnitude source open (0-fit)",
+      "classification": "WALL(scope-a) \u2014 genuine geometric W_\u03bb (d_q\u00b2/D\u00b2) \u2260 target order (overshoots); A=3 magnitude source open (0-fit)",
       "is_fit": false,
       "wired": false,
       "free_param_count": 0,
       "mu3_inverted": false,
-      "corrects_sibling": "r_raw=52.62 used d_q^2/[n]_q! (Sum=1.111, not a measure); genuine d_q^2/D^2 (Sum=1) gives r_geom=47.37 — verdict unchanged (WALL)",
+      "corrects_sibling": "r_raw=52.62 used d_q^2/[n]_q! (Sum=1.111, not a measure); genuine d_q^2/D^2 (Sum=1) gives r_geom=47.37 \u2014 verdict unchanged (WALL)",
       "no_other_geometric_wlambda": "self-duality S^4=1 (2026-07-17) + framing-collapse (2026-07-12) => d_q^2/D^2 IS the geometric measure; route converges on this wall",
       "anti_fit": "W_geom + y_lambda derived from q0 + hook-lengths; only the weight system changed (level/word/E0/characters identical to #4364); mu3 never inverted; nothing wired."
     }
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "uncommitted",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

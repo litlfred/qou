@@ -111,7 +111,7 @@ def vhat_seminormal_markov(chain):
 
 def _std_sigma_matrix():
     """The dim-2 standard-rep seminormal matrix σ_0 of H_3 (partition (2,1))."""
-    sigmas, dim, _ = _cached_seminormal((2, 1))
+    sigmas, dim, _ = _cached_seminormal((2, 1), q0)  # this producer's OWN q — see qou-wee5
     assert dim == 2, dim
     s = sigmas[0]
     return np.asarray(s.toarray() if hasattr(s, "toarray") else s)

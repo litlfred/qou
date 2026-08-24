@@ -159,16 +159,16 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Compound-shift NF decomposition for atoms A=2..6 at 50-dps mpmath precision (no floats in emitted values). Composes the closed-form atomic shift (shift(Z,N) = 18Z + 21N + 1, prop:per-nucleon-shift-additive-linearity, PR #539 / w3-w4) with the interface α(I) contributions per canonical pppnnn ordering. NF coefficients at q_0 are computed in mpmath (port of hecke_core.build_atom_nf with mp.mpf arithmetic). LP active-set discovery uses scipy linprog as a discrete oracle, but every numerical field (y_0, y_*, x_*, primal_obj, dual_obj, duality_gap) is recomputed in mpmath via a high-precision linear-system solve restricted to the active basis. Also verifies the α_EM⁻¹ = q · [9]_q · [10]_q chain at 50 dps.",
+  "description": "Compound-shift NF decomposition for atoms A=2..6 at 50-dps mpmath precision (no floats in emitted values). Composes the closed-form atomic shift (shift(Z,N) = 18Z + 21N + 1, prop:per-nucleon-shift-additive-linearity, PR #539 / w3-w4) with the interface \u03b1(I) contributions per canonical pppnnn ordering. NF coefficients at q_0 are computed in mpmath (port of hecke_core.build_atom_nf with mp.mpf arithmetic). LP active-set discovery uses scipy linprog as a discrete oracle, but every numerical field (y_0, y_*, x_*, primal_obj, dual_obj, duality_gap) is recomputed in mpmath via a high-precision linear-system solve restricted to the active basis. Also verifies the \u03b1_EM\u207b\u00b9 = q \u00b7 [9]_q \u00b7 [10]_q chain at 50 dps.",
   "auditOnly": "docs/audits/2026-05-16-compound-shift-nf-impl.md",
   "data": {
     "nf_basis_names": [
-      "γ",
-      "σ₀",
-      "σ₁",
-      "L₊",
-      "L₋",
-      "e⁻"
+      "\u03b3",
+      "\u03c3\u2080",
+      "\u03c3\u2081",
+      "L\u208a",
+      "L\u208b",
+      "e\u207b"
     ],
     "dps": 50,
     "per_nucleon_shift_p_h3": 19,
@@ -495,7 +495,10 @@
   },
   "caveats": [
     "Per-nucleon NF shifts (shift_p_h3=19, shift_n_h3=15) are the H_3-context standalone values; the per-NEW-nucleon embedded values in the (18, 21) decomposition come from prop:per-nucleon-shift-additive-linearity (already proven and verified at A=2..6).",
-    "LP active-set is a DISCRETE invariant (the cardinality of {i : y_i^* > 0}) — robust to ~1e-9 float jitter. Scipy linprog (f64) is used as the discrete oracle; every numerical value in the witness is recomputed in mpmath at the requested dps precision via a high-precision linear solve restricted to the active basis.",
-    "The shift_NF symbolic-q computation (build_atom_nf_sym in hecke_core_symbolic) is intractably slow at A≥2 due to expression fan-out across ~25 hm_sym ops × 6 NF entries without intermediate canonicalization. A principled fix routes the shift through the crystal-bases pole-order reading (prop:crystal-pole-order), where the q → 0 Kashiwara crystal collapses fan-out to monomial actions. Pending follow-up; for this witness the shift is read from the closed form 18Z + 21N + 1."
-  ]
+    "LP active-set is a DISCRETE invariant (the cardinality of {i : y_i^* > 0}) \u2014 robust to ~1e-9 float jitter. Scipy linprog (f64) is used as the discrete oracle; every numerical value in the witness is recomputed in mpmath at the requested dps precision via a high-precision linear solve restricted to the active basis.",
+    "The shift_NF symbolic-q computation (build_atom_nf_sym in hecke_core_symbolic) is intractably slow at A\u22652 due to expression fan-out across ~25 hm_sym ops \u00d7 6 NF entries without intermediate canonicalization. A principled fix routes the shift through the crystal-bases pole-order reading (prop:crystal-pole-order), where the q \u2192 0 Kashiwara crystal collapses fan-out to monomial actions. Pending follow-up; for this witness the shift is read from the closed form 18Z + 21N + 1."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.alpha_em_chain.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

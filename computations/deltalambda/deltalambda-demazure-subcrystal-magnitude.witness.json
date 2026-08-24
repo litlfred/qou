@@ -9,35 +9,35 @@
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "each truncated coset factor [t_k+1]_q ≤ [k]_q (a Bruhat-prefix sub-sum of the positive-power coinvariant Poincaré [A]_q!) — a graded dimension, NOT −ln det and NOT the per-partition Demazure-fibre reweight y_λ·D_w/D_{w0}"
+      "source": "each truncated coset factor [t_k+1]_q \u2264 [k]_q (a Bruhat-prefix sub-sum of the positive-power coinvariant Poincar\u00e9 [A]_q!) \u2014 a graded dimension, NOT \u2212ln det and NOT the per-partition Demazure-fibre reweight y_\u03bb\u00b7D_w/D_{w0}"
     },
     {
       "name": "A3_target_above_entire_demazure_family",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "max over ALL A=3 truncations = ρ_grad(3) = [3]_{q0}=3.34203 < 3.8128 = ρ_strong(3).  A Bruhat sub-sum is ≤ the full sum, so NO Demazure sub-crystal reaches A=3 — damping is monotone the WRONG way (A=3 needs amplification: ρ_strong(3) > 3 = 3!/2!, the classical ceiling)"
+      "source": "max over ALL A=3 truncations = \u03c1_grad(3) = [3]_{q0}=3.34203 < 3.8128 = \u03c1_strong(3).  A Bruhat sub-sum is \u2264 the full sum, so NO Demazure sub-crystal reaches A=3 \u2014 damping is monotone the WRONG way (A=3 needs amplification: \u03c1_strong(3) > 3 = 3!/2!, the classical ceiling)"
     },
     {
       "name": "A4_target_bracketed_by_consecutive_truncations",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "drop-top ρ_dem(4)=[3]·[3]=11.1692 (-14.3%) < 13.0316=ρ_strong(4) < full [3]·[4]=15.7396 (+20.8%): the target sits between keeping 3 vs 4 reps of the A=3→A=4 coset — a two-sided structural bracket"
+      "source": "drop-top \u03c1_dem(4)=[3]\u00b7[3]=11.1692 (-14.3%) < 13.0316=\u03c1_strong(4) < full [3]\u00b7[4]=15.7396 (+20.8%): the target sits between keeping 3 vs 4 reps of the A=3\u2192A=4 coset \u2014 a two-sided structural bracket"
     },
     {
       "name": "demazure_lower_bracket_tightens_pr4012",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "lower bracket rises from det cap C(4,2)=6 (#4012, log-det) to the Demazure drop-top 11.1692 — a genuine narrowing of the A=4 magnitude window by a non-determinant, non-fitted object"
+      "source": "lower bracket rises from det cap C(4,2)=6 (#4012, log-det) to the Demazure drop-top 11.1692 \u2014 a genuine narrowing of the A=4 magnitude window by a non-determinant, non-fitted object"
     },
     {
       "name": "no_parameter_free_member_lands_both",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "scanned all 12 truncations: 0 land BOTH within 5% (A=3 impossible — whole family ≤ 3.34 < 3.81); a truncation that hit the data would be the forbidden 7th fit and is NOT wired"
+      "source": "scanned all 12 truncations: 0 land BOTH within 5% (A=3 impossible \u2014 whole family \u2264 3.34 < 3.81); a truncation that hit the data would be the forbidden 7th fit and is NOT wired"
     },
     {
       "name": "lands_both_targets_parameter_free",
@@ -75,7 +75,7 @@
     ],
     "reproduce": "python3 -u computations/deltalambda/deltalambda_demazure_subcrystal_magnitude_probe.py"
   },
-  "description": "Damped graded dimension (Demazure sub-crystal) as the Δ_λ binding-magnitude interpolator between #4012's capped log-det and full coinvariant graded dim. A Bruhat-prefix sub-sum of [A]_q! (NON-determinant; distinct from the prior per-partition Demazure-fibre reweight). BRACKETS A=4 (tightens {6,15.74} to {11.17,15.74}) but structurally CANNOT land A=3 (whole family ≤ 3.34 < 3.81: pure damping is monotone the wrong way). Scope-(a) honest negative + A=4 tightening; no fit; nothing wired.",
+  "description": "Damped graded dimension (Demazure sub-crystal) as the \u0394_\u03bb binding-magnitude interpolator between #4012's capped log-det and full coinvariant graded dim. A Bruhat-prefix sub-sum of [A]_q! (NON-determinant; distinct from the prior per-partition Demazure-fibre reweight). BRACKETS A=4 (tightens {6,15.74} to {11.17,15.74}) but structurally CANNOT land A=3 (whole family \u2264 3.34 < 3.81: pure damping is monotone the wrong way). Scope-(a) honest negative + A=4 tightening; no fit; nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",
   "parameters": {
     "q0": "1.10997859555733471",
@@ -136,12 +136,15 @@
       "classical_ceiling_3!/2!": 3,
       "note": "whole Demazure family <= full graded dim, which already undershoots; damping monotone the WRONG way for A=3"
     },
-    "verdict": "SCOPE-(a) HONEST NEGATIVE (does not land) + genuine A=4 TIGHTENING. The Demazure sub-crystal graded dimension ρ_dem(A)=W^dem_A/W^dem_2 (a Bruhat-prefix sub-sum of the coinvariant Poincaré [A]_q!, the DAMPED version of #4012's full graded dim; NON-determinant, and distinct from the prior per-partition Demazure-FIBRE reweight) is MONOTONE ≤ the full graded dim. It BRACKETS the A=4 target: drop-top [3]·[3]=11.17 < 13.03 < 15.74=full, tightening #4012's window {det cap 6, full 15.74} to {11.17, 15.74}. But it CANNOT land A=3: the whole family is ≤ ρ_grad(3)=[3]_{q0}=3.34 < 3.81, so damping is monotone the WRONG way for the A=3 undershoot (which needs amplification above the classical ceiling 3!/2!=3). Pure damping is thus the correct sign for A=4 but the wrong sign for A=3 — a Demazure sub-crystal alone is not the whole correction; it must compose with an A=3 amplification. NOT excluded as an ingredient (permanence). No fit; nothing wired; selecting a truncation level to hit the data is the forbidden 7th fit and is NOT done."
+    "verdict": "SCOPE-(a) HONEST NEGATIVE (does not land) + genuine A=4 TIGHTENING. The Demazure sub-crystal graded dimension \u03c1_dem(A)=W^dem_A/W^dem_2 (a Bruhat-prefix sub-sum of the coinvariant Poincar\u00e9 [A]_q!, the DAMPED version of #4012's full graded dim; NON-determinant, and distinct from the prior per-partition Demazure-FIBRE reweight) is MONOTONE \u2264 the full graded dim. It BRACKETS the A=4 target: drop-top [3]\u00b7[3]=11.17 < 13.03 < 15.74=full, tightening #4012's window {det cap 6, full 15.74} to {11.17, 15.74}. But it CANNOT land A=3: the whole family is \u2264 \u03c1_grad(3)=[3]_{q0}=3.34 < 3.81, so damping is monotone the WRONG way for the A=3 undershoot (which needs amplification above the classical ceiling 3!/2!=3). Pure damping is thus the correct sign for A=4 but the wrong sign for A=3 \u2014 a Demazure sub-crystal alone is not the whole correction; it must compose with an A=3 amplification. NOT excluded as an ingredient (permanence). No fit; nothing wired; selecting a truncation level to hit the data is the forbidden 7th fit and is NOT done."
   },
   "caveats": [
     "Scope-(a): the Demazure sub-crystal ALONE does not close the magnitude; it is not excluded as an ingredient (permanence).",
     "A=3 obstruction is a monotonicity fact (sub-sum <= full sum), proved q-independently in DemazureSubcrystalGradedDim.lean.",
-    "No fit: q₀ fixed from substrate BEFORE comparison; truncation levels are DISCRETE structural choices, enumerated exhaustively, not fitted to the data. Selecting t_k to hit the data = 7th fit, NOT done."
+    "No fit: q\u2080 fixed from substrate BEFORE comparison; truncation levels are DISCRETE structural choices, enumerated exhaustively, not fitted to the data. Selecting t_k to hit the data = 7th fit, NOT done."
   ],
-  "auditOnly": "docs/audits/2026-07-18-deltalambda-demazure-subcrystal.md"
+  "auditOnly": "docs/audits/2026-07-18-deltalambda-demazure-subcrystal.md",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

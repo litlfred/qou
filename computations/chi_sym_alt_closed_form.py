@@ -54,7 +54,7 @@ import sympy as sp
 
 from hecke_characters import partitions_of, dim_q, qfac
 from hecke_core import h as HA_VAL
-from mass_at_3A_proper import _cached_seminormal, atom_braid_word_3A
+from mass_at_3A_proper import _cached_seminormal, atom_braid_word_3A, Q0_PROTON
 from q_parameter import Q as Q0
 from witness_base import WitnessBuilder
 
@@ -91,7 +91,7 @@ def count_factor_types(word):
 
 def chi_in_shape(shape, word) -> complex:
     """Compute χ_λ(W) in the λ-irrep via the seminormal matrices."""
-    sigmas, dim, _ = _cached_seminormal(shape)
+    sigmas, dim, _ = _cached_seminormal(shape, Q0_PROTON)
     if dim == 0:
         return 0.0 + 0.0j
     q_sym = sp.Symbol('q')

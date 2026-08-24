@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over (λ ⊢ 3, T' ∈ SYT(λ)) of |e_λ · v_{T'} − 1|",
+      "unit": "max over (\u03bb \u22a2 3, T' \u2208 SYT(\u03bb)) of |e_\u03bb \u00b7 v_{T'} \u2212 1|",
       "source": "Lagrange interpolation gives the unique projector with eigenvalue 1 on the desired tableau slot."
     },
     {
@@ -19,8 +19,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over (λ ⊢ 3, μ ⊢ 3 with μ ≠ λ, T' ∈ SYT(μ)) of |e_λ · v_{T'} − 0|",
-      "source": "Cells of distinct partitions have distinct content multisets in this regime; the Lagrange product vanishes when JM eigenvalues for T' miss the cell set of λ."
+      "unit": "max over (\u03bb \u22a2 3, \u03bc \u22a2 3 with \u03bc \u2260 \u03bb, T' \u2208 SYT(\u03bc)) of |e_\u03bb \u00b7 v_{T'} \u2212 0|",
+      "source": "Cells of distinct partitions have distinct content multisets in this regime; the Lagrange product vanishes when JM eigenvalues for T' miss the cell set of \u03bb."
     },
     {
       "name": "completeness_sum_e_lambda_equals_1",
@@ -28,8 +28,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over T' ∈ ∪_μ SYT(μ) of |Σ_λ e_λ · v_{T'} − 1|",
-      "source": "Σ_λ e_λ = 1 in H_n(q) — partition into Wedderburn blocks is complete."
+      "unit": "max over T' \u2208 \u222a_\u03bc SYT(\u03bc) of |\u03a3_\u03bb e_\u03bb \u00b7 v_{T'} \u2212 1|",
+      "source": "\u03a3_\u03bb e_\u03bb = 1 in H_n(q) \u2014 partition into Wedderburn blocks is complete."
     }
   ],
   "allPassed": true,
@@ -60,7 +60,7 @@
     ],
     "reproduce": "python3 -u computations/probes/explicit_central_idempotent_probe.py"
   },
-  "description": "I1 probe for prop:explicit-central-idempotent.  Verifies the Lagrange-interpolation formula for the central primitive idempotents e_λ in H_3(q) — with a scope correction surfaced by the probe.  The proposition's literal statement has the inner product range over cells of λ only; with that scope, the off-block projection does NOT vanish (off-block residue ~3.24e+01).  The CORRECTED formula ranges the inner product over the UNION of cell contents across every μ ⊢ n (= {-2, -1, 0, 1, 2} for n = 3), and gives the actual central idempotent structure: e_λ on v_{T'} = δ_{λ,μ}, with completeness Σ_λ e_λ = 1, both to ~1e-50 numerical precision.  Surfacing the correction is a paper-level note flagged via the small-moderate-fix-rides-on-active-PR rule.",
+  "description": "I1 probe for prop:explicit-central-idempotent.  Verifies the Lagrange-interpolation formula for the central primitive idempotents e_\u03bb in H_3(q) \u2014 with a scope correction surfaced by the probe.  The proposition's literal statement has the inner product range over cells of \u03bb only; with that scope, the off-block projection does NOT vanish (off-block residue ~3.24e+01).  The CORRECTED formula ranges the inner product over the UNION of cell contents across every \u03bc \u22a2 n (= {-2, -1, 0, 1, 2} for n = 3), and gives the actual central idempotent structure: e_\u03bb on v_{T'} = \u03b4_{\u03bb,\u03bc}, with completeness \u03a3_\u03bb e_\u03bb = 1, both to ~1e-50 numerical precision.  Surfacing the correction is a paper-level note flagged via the small-moderate-fix-rides-on-active-PR rule.",
   "contentBlock": "prop:explicit-central-idempotent",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -163,13 +163,16 @@
       }
     ],
     "formula_scope_correction_note": {
-      "literal_proposition_scope": "Inner Lagrange product ranges over cells of λ only.",
+      "literal_proposition_scope": "Inner Lagrange product ranges over cells of \u03bb only.",
       "literal_off_block_residue": 32.40265891289326,
       "literal_completeness_residue": 30.532460886144154,
-      "corrected_scope": "Inner Lagrange product ranges over the UNION of distinct cell contents across all μ ⊢ n.  For n = 3 this is {-2, -1, 0, 1, 2}.",
+      "corrected_scope": "Inner Lagrange product ranges over the UNION of distinct cell contents across all \u03bc \u22a2 n.  For n = 3 this is {-2, -1, 0, 1, 2}.",
       "corrected_off_block_residue": 0.0,
       "corrected_completeness_residue": 0.0,
-      "interpretation": "The proposition's literal formula projects within the JM-eigenvalue lattice of λ but does not automatically vanish on off-block JM eigenvalues drawn from cells of distinct partitions.  The standard literature formula extends the inner product over the full distinct-content set so that the Lagrange factor (J_k - q^{2c(T'(k))}) appears literally when T' ∈ SYT(μ ≠ λ), forcing off-block vanishing.  Recommendation: update the proposition to make the inner-product scope explicit."
+      "interpretation": "The proposition's literal formula projects within the JM-eigenvalue lattice of \u03bb but does not automatically vanish on off-block JM eigenvalues drawn from cells of distinct partitions.  The standard literature formula extends the inner product over the full distinct-content set so that the Lagrange factor (J_k - q^{2c(T'(k))}) appears literally when T' \u2208 SYT(\u03bc \u2260 \u03bb), forcing off-block vanishing.  Recommendation: update the proposition to make the inner-product scope explicit."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

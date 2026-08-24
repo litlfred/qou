@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T12:43:27.896284+00:00",
-  "commitSha": "93375f81a61e9bd8ff7dae682f1e7d06e22c6933",
+  "computedAt": "2026-08-24T13:29:16.388203+00:00",
+  "commitSha": "7fbf708ba84b5f3af0504a392812d74d47e13817",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2726,
-      "prov_ok": 2346,
+      "total_scanned": 2731,
+      "prov_ok": 2351,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 224,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 75,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972487160674981658107116654438738077769625825385179750550257"
+      "completeness_ratio": "0.972537532039545953863053826437202489930428414500183083119736"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2107,6 +2107,18 @@
         },
         {
           "witness": "d-density-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-cyclotomic-exponent.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-neutron-cyclotomic-rule.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-prefactor-localisation.witness.json",
           "missing_fields": []
         },
         {
@@ -5726,6 +5738,10 @@
           "missing_fields": []
         },
         {
+          "witness": "h3-gram-degeneracy-block-identification.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "h4-categorical-drivers-probe.witness.json",
           "missing_fields": []
         },
@@ -6819,6 +6835,10 @@
         },
         {
           "witness": "six-fifths-deviation-h4-correction-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "spectrahedral-phase-collapse-frame-probe.witness.json",
           "missing_fields": []
         },
         {

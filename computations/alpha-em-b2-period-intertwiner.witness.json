@@ -9,7 +9,7 @@
       "computed": "true",
       "expected": "true",
       "passed": true,
-      "source": "ρ_period form=(1/5)M_S, U nullity=1 + intertwines, G(1)→κ·M_S, end-to-end G_Markov(q₀)→c·M_S (all <1e-20)"
+      "source": "\u03c1_period form=(1/5)M_S, U nullity=1 + intertwines, G(1)\u2192\u03ba\u00b7M_S, end-to-end G_Markov(q\u2080)\u2192c\u00b7M_S (all <1e-20)"
     }
   ],
   "allPassed": true,
@@ -40,7 +40,7 @@
     ],
     "reproduce": "python3 -u computations/alpha_em_b2_period_intertwiner_probe.py"
   },
-  "description": "α_EM B2: the pure-S₅ period alignment U to the Braden–Northover basis. ρ_period derived from M_S=5Id−𝟙 being the S₄-permutation form (h-basis). U intertwines the q=1 seminormal rep with ρ_period (nullity 1); END-TO-END (T·U⁻¹)ᵀ·G_Markov(q₀)·(T·U⁻¹) = c·M_S exactly — the τ-image of the Markov Gram lands on the Hodge Gram, closing τ(Markov)∝Hodge structurally. Reported c is in working normalisations; canonical |c| fixes both norms → 1 (#4209). No instance; 1/(8π) phase-4.",
+  "description": "\u03b1_EM B2: the pure-S\u2085 period alignment U to the Braden\u2013Northover basis. \u03c1_period derived from M_S=5Id\u2212\ud835\udfd9 being the S\u2084-permutation form (h-basis). U intertwines the q=1 seminormal rep with \u03c1_period (nullity 1); END-TO-END (T\u00b7U\u207b\u00b9)\u1d40\u00b7G_Markov(q\u2080)\u00b7(T\u00b7U\u207b\u00b9) = c\u00b7M_S exactly \u2014 the \u03c4-image of the Markov Gram lands on the Hodge Gram, closing \u03c4(Markov)\u221dHodge structurally. Reported c is in working normalisations; canonical |c| fixes both norms \u2192 1 (#4209). No instance; 1/(8\u03c0) phase-4.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "auditOnly": "docs/audits/2026-07-24-alpha-em-b2-tau-identification-attack-options.md",
   "parameters": {
@@ -56,9 +56,12 @@
     "end_to_end_c_raw": "0.715788632995",
     "end_to_end_residual": "3.44116e-70",
     "end_to_end_over_Im_tau0": "3.83439024296",
-    "verdict": "The pure-S₅ period alignment U is CONSTRUCTED and the τ-chain CLOSES end-to-end. ρ_period (h-basis: S₄ permutes h₁..h₄, (45):h₄↦−Σh) has invariant form exactly (1/5)M_S (residual 0.0). The intertwiner U (nullity 1) satisfies U·ρ_H^1=ρ_period·U (residual 4.89e-71); it transports the q=1 seminormal Gram to κ·M_S (κ=0.715789, residual 4.71e-70). END-TO-END: (T·U⁻¹)ᵀ·G_Markov(q₀)·(T·U⁻¹) = c·M_S EXACTLY (c_raw=0.715789, residual 3.44e-70) — the τ-image of the Markov Gram lands on the Hodge Gram M_S, confirming the τ-identification τ(Markov)∝Hodge structurally. The reported c_raw is in the probe's working normalisations; the canonical |c| additionally fixes the Markov-trace and principal-polarisation normalisations + the *-isometric gauge (→1, canonical_frame_c_eq_one #4209). No instance; 1/(8π) phase-4; nothing wired."
+    "verdict": "The pure-S\u2085 period alignment U is CONSTRUCTED and the \u03c4-chain CLOSES end-to-end. \u03c1_period (h-basis: S\u2084 permutes h\u2081..h\u2084, (45):h\u2084\u21a6\u2212\u03a3h) has invariant form exactly (1/5)M_S (residual 0.0). The intertwiner U (nullity 1) satisfies U\u00b7\u03c1_H^1=\u03c1_period\u00b7U (residual 4.89e-71); it transports the q=1 seminormal Gram to \u03ba\u00b7M_S (\u03ba=0.715789, residual 4.71e-70). END-TO-END: (T\u00b7U\u207b\u00b9)\u1d40\u00b7G_Markov(q\u2080)\u00b7(T\u00b7U\u207b\u00b9) = c\u00b7M_S EXACTLY (c_raw=0.715789, residual 3.44e-70) \u2014 the \u03c4-image of the Markov Gram lands on the Hodge Gram M_S, confirming the \u03c4-identification \u03c4(Markov)\u221dHodge structurally. The reported c_raw is in the probe's working normalisations; the canonical |c| additionally fixes the Markov-trace and principal-polarisation normalisations + the *-isometric gauge (\u21921, canonical_frame_c_eq_one #4209). No instance; 1/(8\u03c0) phase-4; nothing wired."
   },
   "caveats": [
-    "c_raw is in the probe's working normalisations (G_Markov g₀=1; U,T up to Schur gauge). The canonical |c| additionally fixes the Markov-trace + principal-polarisation normalisations and the *-isometric gauge (→1 by canonical_frame_c_eq_one, #4209). The STRUCTURAL result — the Markov Gram transports exactly onto M_S — is normalisation-independent and is the closure of τ(Markov)∝Hodge."
-  ]
+    "c_raw is in the probe's working normalisations (G_Markov g\u2080=1; U,T up to Schur gauge). The canonical |c| additionally fixes the Markov-trace + principal-polarisation normalisations and the *-isometric gauge (\u21921 by canonical_frame_c_eq_one, #4209). The STRUCTURAL result \u2014 the Markov Gram transports exactly onto M_S \u2014 is normalisation-independent and is the closure of \u03c4(Markov)\u221dHodge."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

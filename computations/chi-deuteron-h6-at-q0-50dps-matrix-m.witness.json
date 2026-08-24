@@ -1,6 +1,6 @@
 {
   "computation": "chi-deuteron-h6-at-q0-50dps-matrix-m",
-  "description": "Numerical χ^λ_q(β_atomic(1, 1)) = deuteron per partition λ ⊢ 6 at q_0, 50 dps, matrix-M mpfr backend. Lossless (every λ) unless max_dim is set.",
+  "description": "Numerical \u03c7^\u03bb_q(\u03b2_atomic(1, 1)) = deuteron per partition \u03bb \u22a2 6 at q_0, 50 dps, matrix-M mpfr backend. Lossless (every \u03bb) unless max_dim is set.",
   "producer": "matrix-m-chi-q-via-gp",
   "convention": "sign-only-crossings",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -152,5 +152,8 @@
       "contribution": "1.7442487303853274734450670707238973807745307382308e-75",
       "compute_time_sec": 0.0
     }
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

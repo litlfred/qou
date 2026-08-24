@@ -57,6 +57,9 @@
       "d_6": "32.5476857594",
       "d_7": "3821.3912705776"
     },
-    "finding": "The 242 ppb m_p gap = correction ratio R-1 ≈ 2.42e-7. This matches u³ ≈ 6.2e-7 at d₃ ≈ 0.39 (order-1 coefficient). The proton correction tower starts at k=3 (same order as Q_β's c₃ = J = -2). The coefficient d₃ needs categorical identification."
-  }
+    "finding": "The 242 ppb m_p gap = correction ratio R-1 \u2248 2.42e-7. This matches u\u00b3 \u2248 6.2e-7 at d\u2083 \u2248 0.39 (order-1 coefficient). The proton correction tower starts at k=3 (same order as Q_\u03b2's c\u2083 = J = -2). The coefficient d\u2083 needs categorical identification."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

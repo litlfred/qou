@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T22:56:57.111838+00:00",
-  "commitSha": "4e32d7757488de281b1d4884134a315d4d313dfd",
+  "computedAt": "2026-08-24T13:26:40.135190+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "p1_fates_anchor_identical",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1617,
+  "durationMs": 1684,
   "computation": "qbeta-c3-phib-pole-seed-sensitivity",
   "scriptFile": "qbeta_c3_phib_pole_seed_sensitivity_probe.py",
   "scriptHash": "df5023c91cdb",
-  "scriptCommitSha": "4e32d7757488de281b1d4884134a315d4d313dfd",
+  "scriptCommitSha": "4a5c8b316d5cafb28852989abec587bb2c2f8a56",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,9 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_phib_pole_seed_sensitivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_phib_pole_seed_sensitivity_probe.py"
   },
   "description": "Sensitivity of the Phi_q-pole-seeded Newton map (thurston-relaxation / conj:algebraic-geometric-dilog-equivalence) at the physical anchors: basin fate per pole seed q0^-(2k+1)+i*delta on the complete-structure 4_1 gluing polynomial, basin-boundary distances in units of the anchor-induced seed shift, and Newton-Jacobian conditioning. Locates (or excludes) the u^3-lever amplification in the seeding stage. Exploratory; no fit; no c_k wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -101,8 +110,8 @@
     "P2_boundary": {
       "n_boundaries": 3,
       "min_seed_to_boundary": "0.000297281372139",
-      "max_anchor_seed_shift": "4.05883570372e-8",
-      "amplification": 0.00013653178719254358
+      "max_anchor_seed_shift": "4.08691114754e-8",
+      "amplification": 0.0001374761936185367
     },
     "P3_jacobian": {
       "inv_abs_dg_at_geom_root": 0.28867513459481287

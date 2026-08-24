@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|p_+ + p_- − 1|",
+      "unit": "|p_+ + p_- \u2212 1|",
       "source": "prop:hecke-markov-transition (ii)."
     },
     {
@@ -19,7 +19,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|p_+/p_- − q²|",
+      "unit": "|p_+/p_- \u2212 q\u00b2|",
       "source": "prop:hecke-markov-transition (ii)."
     },
     {
@@ -28,7 +28,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|q/(q+q⁻¹) − q²/(q²+1)|",
+      "unit": "|q/(q+q\u207b\u00b9) \u2212 q\u00b2/(q\u00b2+1)|",
       "source": "prop:hecke-markov-transition (ii) closed form."
     },
     {
@@ -37,7 +37,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|q⁻¹/(q+q⁻¹) − 1/(q²+1)|",
+      "unit": "|q\u207b\u00b9/(q+q\u207b\u00b9) \u2212 1/(q\u00b2+1)|",
       "source": "prop:hecke-markov-transition (ii) closed form."
     },
     {
@@ -46,8 +46,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over {(3), (2,1), (1^3)} × {completeness, idempotency e_+, idempotency e_-, orthogonality, spectral reconstruction} of the matrix-entry residue",
-      "source": "prop:hecke-markov-transition (i) — completeness, idempotency, orthogonality, and σ = q·e_+ − q⁻¹·e_- on the three H_3 Hoefsmit-seminormal irreps."
+      "unit": "max over {(3), (2,1), (1^3)} \u00d7 {completeness, idempotency e_+, idempotency e_-, orthogonality, spectral reconstruction} of the matrix-entry residue",
+      "source": "prop:hecke-markov-transition (i) \u2014 completeness, idempotency, orthogonality, and \u03c3 = q\u00b7e_+ \u2212 q\u207b\u00b9\u00b7e_- on the three H_3 Hoefsmit-seminormal irreps."
     }
   ],
   "allPassed": true,
@@ -56,7 +56,7 @@
   "scriptFile": "hecke_markov_transition_probe.py",
   "scriptHash": "083c61bad192",
   "scriptCommitSha": "unknown",
-  "description": "I1 probe for prop:hecke-markov-transition.  Verifies (i) spectral idempotents e_± = (σ ± q^{∓1}) / (q + q⁻¹) satisfy completeness, idempotency, orthogonality, and spectral reconstruction σ = q · e_+ − q⁻¹ · e_-, in three H_3 irreps {(3), (2,1), (1^3)}; and (ii) transition probabilities p_+ = q/(q+q⁻¹), p_- = q⁻¹/(q+q⁻¹) satisfy p_+ + p_- = 1, p_+/p_- = q², with alternative forms p_+ = q²/(q²+1), p_- = 1/(q²+1).  All residues at ~1e-50 (mpmath 50 dps).",
+  "description": "I1 probe for prop:hecke-markov-transition.  Verifies (i) spectral idempotents e_\u00b1 = (\u03c3 \u00b1 q^{\u22131}) / (q + q\u207b\u00b9) satisfy completeness, idempotency, orthogonality, and spectral reconstruction \u03c3 = q \u00b7 e_+ \u2212 q\u207b\u00b9 \u00b7 e_-, in three H_3 irreps {(3), (2,1), (1^3)}; and (ii) transition probabilities p_+ = q/(q+q\u207b\u00b9), p_- = q\u207b\u00b9/(q+q\u207b\u00b9) satisfy p_+ + p_- = 1, p_+/p_- = q\u00b2, with alternative forms p_+ = q\u00b2/(q\u00b2+1), p_- = 1/(q\u00b2+1).  All residues at ~1e-50 (mpmath 50 dps).",
   "contentBlock": "prop:hecke-markov-transition",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
