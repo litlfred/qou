@@ -1,4 +1,5 @@
 import QOU.SchurWeyl.SchurPrincipalBranching
+import QOU.SchurWeyl.WenzlWeightLevelR
 
 /-!
 # QOU.SchurWeyl.BranchingGenericity — the four side conditions, from one hypothesis
@@ -22,6 +23,7 @@ signature.
 | `betaR_pow_injOn` | `i ↦ Q^{β_i}` is injective on the `r` rows |
 | `colLen_zero_addCell_le` | adding a box at row `a` keeps the row count `≤ max(colLen, a+1)` |
 | `sum_schurPrincipal_addCellOrSelf` | **`∑_a s_{μ+□ at a} = [r]_Q · s_μ`** — general-`r` branching |
+| `sum_wenzlWeight_addCellOrSelf` | the same for the **normalised** weight: `∑_a w_{μ+□ at a} = w_μ` |
 
 The last is not a genericity fact at all — it is the shape bound that keeps `μ + □` inside the
 `≤ r`-row hypothesis — but it belongs with the others because it is the remaining side condition.
@@ -158,5 +160,41 @@ theorem sum_schurPrincipal_addCellOrSelf (Q : F) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1)
       obtain ⟨hpos, heq⟩ := not_isAddableCell_rowEnd μ hadd
       rw [Finset.prod_div_distrib, qratio_prod_eq_zero_of_not_addable Q hpos hi heq,
         zero_div, zero_mul]
+
+theorem card_addCell {μ : YoungDiagram} {s : ℕ × ℕ} (hs : IsAddableCell μ s) :
+    (addCell μ s hs).cells.card = μ.cells.card + 1 := by
+  have hnot : s ∉ μ.cells := fun h => hs.1 (by simpa using h)
+  have hcells : (addCell μ s hs).cells = insert s μ.cells := by
+    ext c
+    simp only [YoungDiagram.mem_cells, mem_addCell, Finset.mem_insert]
+  rw [hcells, Finset.card_insert_of_notMem hnot]
+
+/-- **Branching for the normalised weight**: `∑_{a<r} w_{μ + □ at row a} = w_μ`.
+
+The normalisation `w_μ = s_μ / [r]_Q^{|μ|}` is chosen so that the `[r]_Q` produced by
+`sum_schurPrincipal_addCellOrSelf` is exactly absorbed by the one extra cell each summand carries.
+This is the "weights are consistent under restriction" half of "these are the Ocneanu weights" —
+`MarkovNormalisation.ocneanuWeight_addable_sum` at `r = 2`, now at every level. -/
+theorem sum_wenzlWeight_addCellOrSelf (Q : F) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1)
+    (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) {r : ℕ} {μ : YoungDiagram} (hrμ : μ.colLen 0 ≤ r)
+    (hbr : levelBracket r Q ≠ 0) :
+    (∑ a ∈ Finset.range r,
+        (if IsAddableCell μ (a, μ.rowLen a) then
+          wenzlWeight r Q (addCellOrSelf μ (a, μ.rowLen a)) else 0))
+      = wenzlWeight r Q μ := by
+  have hrw : ∀ a ∈ Finset.range r,
+      (if IsAddableCell μ (a, μ.rowLen a) then
+          wenzlWeight r Q (addCellOrSelf μ (a, μ.rowLen a)) else 0)
+        = (if IsAddableCell μ (a, μ.rowLen a) then
+            QOU.QBeta.WenzlWeight.schurPrincipal r Q (addCellOrSelf μ (a, μ.rowLen a)) else 0)
+          / levelBracket r Q ^ (μ.cells.card + 1) := by
+    intro a _
+    by_cases h : IsAddableCell μ (a, μ.rowLen a)
+    · rw [if_pos h, if_pos h, wenzlWeight, addCellOrSelf_of h, card_addCell h]
+    · rw [if_neg h, if_neg h, zero_div]
+  rw [Finset.sum_congr rfl hrw, ← Finset.sum_div,
+    sum_schurPrincipal_addCellOrSelf Q hQ0 hQ1 hgen hrμ,
+    show (∑ k ∈ Finset.range r, Q ^ k) = levelBracket r Q from rfl, wenzlWeight, pow_succ]
+  field_simp
 
 end QOU.SchurWeyl
