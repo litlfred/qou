@@ -47,6 +47,10 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402 — before any mpf is built
+import mpmath as mp  # noqa: E402
+
+set_compute_dps()
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -54,15 +58,28 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 
 
+def _mpf(x):
+    """`float` → `mpf` via `repr`; `str`/`mpf` pass straight through.
+
+    `repr` is the shortest round-tripping decimal, so a float64 becomes the
+    mpf of the digits it actually carries. `mp.mpf(<float>)` would instead
+    store the float's exact binary value and print its 50-digit dyadic tail —
+    fake precision, and what the padding audit is built to catch.
+    """
+    return mp.mpf(repr(x)) if isinstance(x, float) else mp.mpf(x)
+
+
 def _energy_scales():
-    from q_parameter import Q as q0
+    # Q_MP, not Q: `Q` is q_parameter's float64 member and `Q_MP` is the same
+    # anchor as mpf. Precision-only — float(Q_MP) == Q bit-identically.
+    from q_parameter import Q_MP as q0
     from experimental_constants import Q_NEUTRON_MEV as Qb
     try:
         from codata_constants import M_E_MEV as me
     except Exception:
-        me = 0.51099895  # noqa: P31 — except-fallback; primary path imports codata_constants.M_E_MEV
-    me, q0, Qb = float(me), float(q0), float(Qb)
-    return me, Qb, me / (q0 * (q0 - 1.0))
+        me = "0.51099895"  # noqa: P31 — except-fallback; primary path imports codata_constants.M_E_MEV
+    me, q0, Qb = _mpf(me), _mpf(q0), _mpf(Qb)
+    return me, Qb, me / (q0 * (q0 - 1))
 
 
 def main() -> int:
@@ -75,11 +92,14 @@ def main() -> int:
     rows = []
     for r in res:
         Z, N, A = r["Z"], r["N"], r["A"]
-        ta = float(r["tr_M_atom"].strip("()").split("+")[0])
-        tf = float(r["tr_M_free"].strip("()").split("+")[0])
-        B_ame = float(r["B_AME_MeV"])
-        B_lin = float(r["B_MeV"])                     # = Q_β·Δtr (baseline)
-        L = math.log(tf / ta)                          # log-ratio (extensive)
+        # tr_M_atom / tr_M_free are 50-DIGIT STRINGS in binding-canonical;
+        # float() was collapsing them to 16. B_AME_MeV / B_MeV really are
+        # float64 there, so those go through _mpf's repr path.
+        ta = _mpf(r["tr_M_atom"].strip("()").split("+")[0])
+        tf = _mpf(r["tr_M_free"].strip("()").split("+")[0])
+        B_ame = _mpf(r["B_AME_MeV"])
+        B_lin = _mpf(r["B_MeV"])                       # = Q_β·Δtr (baseline)
+        L = mp.log(tf / ta)                            # log-ratio (extensive)
         B_log = E0 * L                                 # log-ratio binding @ E_0
         chain = A - 1                                  # bonds as wired (chain)
         allpairs = A * (A - 1) // 2                    # physical bonds C(A,2)
@@ -152,7 +172,7 @@ def main() -> int:
     w.add_assertion(
         name="logratio_form_within_3x_everywhere",
         computed=max(max(log_miss), 1.0 / min(log_miss)),
-        expected=1.0, tolerance=2.0,
+        expected=mp.mpf(1), tolerance=mp.mpf(2),
         source="max over nuclei of max(miss, 1/miss) for B=E_0·log(tr_free/"
                "tr_atom); within ~3× vs the linear form's 5–40×.",
     )
