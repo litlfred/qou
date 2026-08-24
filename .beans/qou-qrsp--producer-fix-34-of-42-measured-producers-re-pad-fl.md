@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-24T12:56:32Z
+updated_at: 2026-08-24T13:32:40Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -604,3 +604,43 @@ comment states 'the full mpfr eval is ~34 min — longer than one sandbox
 session', which is exactly why the checkpoint exists. My 1800s budget was BELOW
 its stated runtime. What is true: it emits nothing for the first ~90s because
 the expensive setup precedes its first print. Re-running with no timeout.
+
+
+### Two mu3 Lean files were still convention-C — owner-approved scoping (2026-08-24)
+
+Found by following the drained witness's citation backwards.
+`Mu3SlotExclusion.lean` cites `mu3-frechet-perblock.witness.json` as evidence
+for *"the hypothesis 0 <= w is the whole content, and it FAILS on the physical
+spectrum ... 10 of the 30 weights are negative"*. Measured: ZERO convention
+scoping in that file, and none in `YLambdaSignThreshold.lean` either.
+
+**The corpus already knew.** `mass-theory/y-lambda-sign-pattern.md` was
+WITHDRAWN 2026-08-09 stating exactly the D fact, citing TemperleyLiebTower.lean.
+I nearly reported this as a discovery; the corpus-grep checklist caught it. What
+was live is narrower and real: two Lean files never got that memo, and one cites
+a witness that stayed convention-C until this branch drained it.
+
+Measured independently, n = 4..12 at q0 via schur_principal_mpmath: ZERO
+negative y_lambda at every n; blocks split positive two-row stratum / vanishing
+l(lambda) >= 3 radical.
+
+Also verified rather than trusted: TemperleyLiebTower.lean's single `sorry`
+match is inside a DOCSTRING (the phrase "instead of hiding it inside a sorry").
+The file is genuinely sorry-free and the content block's citation is accurate.
+A grep -c would have called that citation wrong.
+
+Applied (owner picked doc scoping + theorem-motivation re-scoping, "move to
+convention D"):
+  * reweight_cannot_open_door — hypothesis HOLDS under D, so the lemma DOES
+    foreclose "keep the operator, change the Wedderburn weights"
+  * door_mechanism_dichotomy — second branch (w<0, 0<d) VACUOUS under D
+  * door_needs_one_of_two_mechanisms — kept, marked not-operative under D
+  * YLambdaSignThreshold — premise scoped to C; the derived combinatorial rule
+    is about the Wenzl principal specialisation itself and stands unchanged
+
+NO THEOREM CHANGED — all generic over w,d with explicit hypotheses. lean-direct
+exit 0 / 0 errors on both edited files AND on their importer
+(YLambdaNormalizationSign).
+
+CAUTION FOR WHOEVER PICKS UP THE mu3 DOOR: this is a CLOSURE, not an opening.
+An escape route the corpus documented as available is, under canon, foreclosed.
