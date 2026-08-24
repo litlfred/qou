@@ -18719,4 +18719,63 @@ theorem heckeCompleted_isGrobnerShirshovBasis (hn : 0 < n) (hp : HeckeParams) :
     (fun _ _ _ _ hh ha he hr₁ hr₂ hl =>
       deep_selfOverlap_resolves hn hp hh ha he hr₁ hr₂ hl)
 
+
+/-! ## §4bx  What the unconditional criterion discharges
+
+`HeckeGS.lean` §7 states normal-form uniqueness and threading-cost uniqueness
+with the Gröbner–Shirshov property as an explicit hypothesis, and its own
+docstring records why: *"`NotAGSBasis.hecke_not_gs_basis_four` shows the
+hypothesis is unsatisfiable at `n = 4` for `heckeRewritingSystem` as it stands;
+it becomes usable once the Bokut–Shiao completion is added."*
+
+Unsatisfiable is the operative word — those two theorems are **vacuous** as they
+stand, because `hecke_is_gs_basis_false` refutes the very hypothesis they take.
+They are not wrong; they are unusable, and deliberately so, pending this.
+
+Against the completed system the hypothesis is now discharged, so the same two
+statements hold outright.
+
+**They are not sorry-free in the same sense the criterion is, and the difference
+is worth stating.** `heckeCompleted_isGrobnerShirshovBasis` depends on
+`[propext, Classical.choice, Quot.sound]` alone. The two below inherit two more
+through `normal_form_unique`, both pre-existing library axioms of the Diamond
+Lemma machinery and neither introduced here:
+
+* `UGB.GrobnerShirshov.local_confluence` — Bergman 1978 §3 Thm 1.2, the step
+  from "all S-polynomials resolve" to local confluence, axiomatised because the
+  three-case argument needs `AlgElement` subtraction;
+* `UGB.GrobnerShirshov.reduction_well_founded` — Bergman 1978 §2 Thm 1.1,
+  termination, axiomatised because it needs a multiset support representation
+  and Dershowitz–Manna.
+
+So what this section establishes is: *given* the Diamond Lemma, the completed
+Hecke system has unique normal forms at every `n`. The GS-basis half of that is
+now proved outright; the Diamond Lemma half is still assumed.
+-/
+
+/-- **Normal forms in the completed Hecke system are unique** — with no
+hypothesis. -/
+theorem heckeCompleted_normalForm_unique (hn : 0 < n) (hp : HeckeParams)
+    (f nf₁ nf₂ : AlgElement (HeckeGen n) ℝ)
+    (hred₁ : ReducesToNF (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) f nf₁)
+    (hred₂ : ReducesToNF (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) f nf₂) :
+    nf₁ = nf₂ :=
+  normal_form_unique (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+    (heckeCompleted_isGrobnerShirshovBasis hn hp)
+    (noQuasiZerosFree_of_generator ⟨0, hn⟩) f nf₁ nf₂ hred₁ hred₂
+
+/-- **Threading cost is well-defined** — with no hypothesis. -/
+theorem heckeCompleted_threading_cost_unique (hp : HeckeParams) (hadron : List ℤ)
+    (nf₁ nf₂ : AlgElement (HeckeGen (n + 1)) ℝ)
+    (h₁ : ReducesToNF (heckeOrder (n + 1))
+      (heckeCompletedRewritingSystem (n + 1) (Nat.succ_pos n) hp)
+      (augmentedBraidElement hp hadron) nf₁)
+    (h₂ : ReducesToNF (heckeOrder (n + 1))
+      (heckeCompletedRewritingSystem (n + 1) (Nat.succ_pos n) hp)
+      (augmentedBraidElement hp hadron) nf₂) :
+    nf₁ = nf₂ :=
+  heckeCompleted_normalForm_unique (Nat.succ_pos n) hp _ nf₁ nf₂ h₁ h₂
+
 end UGB.GrobnerShirshov.Hecke
