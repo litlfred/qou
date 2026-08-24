@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T13:11:34Z
+updated_at: 2026-08-24T13:33:51Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1274,3 +1274,39 @@ baseline→convert→diff treatment, and the CPU is currently saturated by the
 `delta_lambda_v_hat_z_transfer_phase5d_4` measurement (job bgc281s54). Running a
 second producer concurrently risks pushing that one into its 2400 s timeout and
 manufacturing a spurious abort. Queued behind it.
+
+
+## delta_lambda_v_hat_z_transfer_phase5d_4 — measured: the baseline exceeds 40 MINUTES
+
+Attempted the conversion via `scripts/convention-c-convert-one.sh` with a
+**2400 s (40 min) per-run** ceiling. Result:
+
+    baseline exit=124
+    !! baseline did NOT complete (exit 124; 124 = timeout).
+    !! Refusing to convert ... Tree untouched.
+
+**The guard worked**, and this is the case it was added for (a0a55a6150). Before
+that guard the harness would have printed "BASELINE moved: 0" — which reads as
+*stability* but actually means *the killed producer never wrote* — then
+converted and diffed against a non-baseline, producing a clean-looking
+single-cause attribution that was worth nothing. Tree verified untouched
+afterwards.
+
+So this site's cost is **> 40 min per run**, i.e. > 80 min for a measurement,
+not the ">15 min" I had recorded. Re-launched standalone with a 3 h ceiling and
+a teed log to get the true figure.
+
+## And it violates the long-compute logging discipline
+
+    grep -cE "print\(|log\(" -> 7      (all terminal output)
+    progress / elapsed / ETA lines -> 0
+
+AGENTS.md §5 requires any script expected to run > 5 min to emit periodic
+progress lines with wall elapsed + ETA. This one runs 40+ minutes in total
+silence, which is exactly why a 40-minute burn produced **zero** information
+about how far through it was — I could not tell "slow but progressing" from
+"hung". **Add progress logging before attempting this site again**; measuring it
+blind is how the budget gets spent twice.
+
+Incidentally, `/usr/bin/time` is **not installed** in this container — a first
+re-launch using it exited 127 instantly. Use bash's `SECONDS` builtin.
