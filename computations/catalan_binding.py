@@ -66,10 +66,12 @@ M_N_MEV = float(_M_N_MEV)
 ALPHA_MEV = M_E_MEV * VOL_BORROMEAN  # = 3.74447... MeV
 
 
-# This producer never raised working precision, so every mpmath value in
-# it was built at mpmath's default 15 dps and the numbers it emits are
-# HONESTLY float64 — no fake precision to detect, no constant built too
-# early, so the padding / raw-float64 / import-time gates all pass it.
+# This producer USED to run at mpmath's default 15 dps, which is why the
+# padding / raw-float64 / import-time gates all passed it: what it emitted
+# was honestly float64, with no fake precision to detect. It raises working
+# precision on the next line now. NOTE the M_E/M_P/M_N above are still cast
+# down deliberately (see their comment) and CATALAN_G is a 30-digit literal
+# a float64 cannot hold -- the downstream arithmetic here remains f64.
 # Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
 set_compute_dps()
 
@@ -130,13 +132,26 @@ if __name__ == "__main__":
     print(f"  q₀, ℏ_q²      = {q0:.4f}, {HBAR_Q_SQ:.4e}")
     print("=" * 100)
 
+    # AME binding energies from the CANONICAL accessor, not hand-typed.
+    # These were six literals, and every one of them disagreed with the
+    # vendored AME2020 table:
+    #     6Li   32.0       vs 31.9939872    -> 0.006013 MeV  (1.9e-4 rel)
+    #     D      2.22452   vs  2.2245662    -> 4.62e-5 MeV
+    #     T      8.481821  vs  8.4817962    -> 2.48e-5 MeV
+    #     4He   28.295674  vs 28.2956624    -> 1.16e-5 MeV
+    #     12C   92.161728  vs 92.1617352    -> 7.2e-6 MeV
+    #     3He    7.71804   vs  7.71804132   -> 1.32e-6 MeV
+    # `6Li = 32.0` is a rounded placeholder, off by 200x the next worst.
+    # This is the exact failure `codata_constants.ame_binding_mev`'s docstring
+    # warns about -- consumers over a TABLE of nuclides hand-typing what the
+    # accessor provides -- and worse than the mass_table_ppb.py case it cites
+    # (up to 1.6e-5). B_AME and err_pct in this witness MOVE as a result;
+    # they were wrong before.
+    from codata_constants import ame_binding_mev as _ame_b  # noqa: E402
     ATOMS = [
-        ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
-        ("4He",  2, 2, 28.295674),
-        ("6Li",  3, 3, 32.0),
-        ("12C",  6, 6, 92.161728),
+        (name, Z, N, _ame_b(Z, Z + N))
+        for (name, Z, N) in (("D", 1, 1), ("T", 1, 2), ("3He", 2, 1),
+                             ("4He", 2, 2), ("6Li", 3, 3), ("12C", 6, 6))
     ]
 
     # ── Formula 1: Wedderburn-aggregated log form ──────────
