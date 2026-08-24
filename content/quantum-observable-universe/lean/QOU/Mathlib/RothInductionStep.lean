@@ -443,6 +443,17 @@ source's first branch is not `J(W)` but **`J(W)/n`** — the combined display re
 
     J(A) < t + 2 max( J(W)/n , √(J(W)/r_m) ).
 
+⚠⚠ **Correction 14 corrects that line.**  §13's body has since been read, and the second
+branch is `√(J(W)/n)` — **both** branches over the *same* quantity `(1/n)J(W)`, not `r_m` in
+the radicand:
+
+    J(A) ≤ t + 2 max( (1/n)·J(W) , √( (1/n)·J(W) ) ).
+
+Everything correction 9 says about the `1/n` stands; only the subscript in the radicand was
+wrong.  But that one subscript is what put `rr = r_m` into `index_le_two_mul_max_of_det_bound`
+and so created its side condition `S ≤ q²·rr` — which at the source's `rr = n` is automatic.
+See `RothLemmaStatement`'s correction-14 section for what collapses as a result.
+
 Correction 8 concluded from the vacuous form that "Mahler's `max` is an artefact of his case
 split" and that the strong branch should be extracted alone.  **That was wrong.**  With the
 `1/n` restored:
@@ -608,7 +619,10 @@ What that leaves is **not** more inequalities.  It is two constructions and one 
    the generalized Wronskian's non-vanishing — `BoundedOrderWronskian`'s business — is a real
    precondition, not bookkeeping.
 3. **`S·rr ≤ r` in the recursion's regime.**  With `S = n·Φ_m`, `rr = r_m`, `r = n` this is
-   `Φ_m · r_m ≤ 1`.  Whether the parameter conditions of Roth's lemma deliver it is unchecked.
+   `Φ_m · r_m ≤ 1`.  ⚠⚠ Correction 14: `rr = r_m` is itself the error — the source's radicand
+   is `(1/n)J(W)`, so `rr = n`, and the condition reads `Φ_m ≤ Ψ_m`, i.e. `Θ₁ ≤ t`, which §13
+   proves from `Γ_m` (`RothLemmaStatement.theta_one_le_of_gamma`).  Not unchecked, and not a
+   parameter question.
 
 ⚠ Provenance, still standing for `RothRecursionArith`'s numeric constants: reconstructed from
 a partly illegible scan, and worth re-deriving against a clean copy.  §13's *structure* has
