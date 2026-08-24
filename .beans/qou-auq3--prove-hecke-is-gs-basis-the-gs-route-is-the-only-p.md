@@ -4698,3 +4698,44 @@ half's generic namespaces (`CyclicQuad`, `BraidSelfOverlap`, `BokutShiaoBraid`,
 …) are gated on overlap *shape*, and `overlap_length_one` (§4au) now supplies
 that gate — so several of the fifteen may be much cheaper than the BS × BS cell
 was.
+
+## One bridge for every family (2026-08-24, §4bd)
+
+**The remaining overlap work is bridges, not chains.** Measured against the
+`_resolves` inventory: the reduction chains for the other cells mostly already
+exist — `farComm_quad_resolves`, `yangBaxter_quad_resolves`,
+`bokutShiao_quad_resolves`, `quad_farComm_resolves`, `quad_yangBaxter_resolves`,
+`quad_bokutShiao_resolves`, the four `BraidSelfOverlap` theorems,
+`FarCommCyclic.{bokutShiao,yangBaxter}_resolves`,
+`CyclicFarCommLow.{bokutShiao,yangBaxter}_resolves`,
+`BokutShiaoBraid.{yangBaxter,bokutShiao}_resolves`,
+`BraidBokutShiao.{yangBaxter,bokutShiao}_resolves`. Each is stated for a
+*constructed* composition; what each lacks is the bridge from an arbitrary one.
+
+**`oc_ext_of_left_ne_nil` supplies every bridge at once**: two overlap
+compositions with the same two rules and non-empty left contexts are **equal**.
+§4au is what makes it true — with the overlap a single letter `x`,
+`lm₁ = left ++ [x]` fixes `left` and `x`, and `lm₂ = [x] ++ right` then fixes
+`right`. No hypothesis about which rules, no case analysis. It replaces the
+per-family bridge §4av had to write by hand.
+
+`quad_right_resolves` is the first column crossed: the obligation for an
+arbitrary composition whose **second** rule is quadratic, whatever the first is.
+Four branches, each reading `x` off `lm₁`'s last letter and handing the named
+composition to a chain that was already there.
+
+### Correction to §4bc's closing prediction
+
+§4bc guessed the generic-namespace cells "may be considerably cheaper than the
+BS × BS cell". Measured: **right, but for the wrong reason.** They are cheaper
+because their *chains already exist*, not because their shape gate is easier.
+And the saving is bigger than predicted, since the bridge turned out to be one
+lemma for all families rather than one per family.
+
+### Remaining overlap cells
+
+`quad_right_resolves` covers four of the sixteen. `CyclicQuadLeft` (quadratic
+first) is the mirror and has all three of its chains; the `FarCommCyclic` /
+`CyclicFarCommLow` / `BokutShiaoBraid` / `BraidBokutShiao` families cover more.
+All still need `oc.left ≠ []`, and the `left = []` degenerates are untouched
+outside the BS × BS cell (§4aw).

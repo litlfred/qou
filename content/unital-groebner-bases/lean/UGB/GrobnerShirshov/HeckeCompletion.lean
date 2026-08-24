@@ -16200,4 +16200,158 @@ theorem inclusion_resolves_general (hn : 0 < n) (hp : HeckeParams)
       have := DegenerateYbBs.relations_add_eq_zero hi m
       linarith
 
+/-! ## §4bd  One bridge for every family, and the first column crossed
+
+§4av built a bridge from an arbitrary `OverlapComposition` to the constructed
+`CornerGeneral.oc`, and it was written for that one family. Reading the file's
+composition namespaces afterwards: the *reduction chains* for the other cells
+mostly already exist — `farComm_quad_resolves`, `yangBaxter_quad_resolves`,
+`bokutShiao_quad_resolves`, `quad_farComm_resolves`, the four
+`BraidSelfOverlap` theorems, `FarCommCyclic.bokutShiao_resolves`, and so on.
+What is missing for each is only its bridge.
+
+`oc_ext_of_left_ne_nil` supplies all of them at once: **two overlap compositions
+with the same two rules and non-empty left contexts are equal.** §4au is what
+makes it true — with the overlap a single letter `x`, `lm₁ = left ++ [x]` fixes
+`left` and `x`, and `lm₂ = [x] ++ right` then fixes `right`, so nothing is left
+to differ. It needs no hypothesis about which rules are involved, and no case
+analysis.
+
+`quad_right_resolves` is the first column crossed with it: the criterion's
+obligation for an arbitrary composition whose *second* rule is quadratic,
+whatever the first one is. Each of the four branches reads `x` off `lm₁`'s last
+letter, names the constructed composition, and hands it to the chain that was
+already there — `quadSelfOverlap_resolves` on the diagonal and the three
+`CyclicQuad` theorems elsewhere.
+
+`oc.left ≠ []` carries over from §4au, as on the corner side. The degenerate
+`left = []` compositions are not covered here. -/
+
+/-- **An overlap composition with a non-empty left context is determined by its
+two rules.** -/
+theorem oc_ext_of_left_ne_nil (hn : 0 < n) (hp : HeckeParams)
+    {oc₁ oc₂ : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    (hm₁ : oc₁.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hm₂ : oc₁.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₁ : oc₁.rule₁ = oc₂.rule₁) (hr₂ : oc₁.rule₂ = oc₂.rule₂)
+    (hl₁ : oc₁.left ≠ []) (hl₂ : oc₂.left ≠ []) :
+    oc₁ = oc₂ := by
+  -- Both overlaps are single letters …
+  have ho₁ : oc₁.overlap.length = 1 := overlap_length_one hn hp hm₁ hm₂ hl₁
+  have ho₂ : oc₂.overlap.length = 1 :=
+    overlap_length_one hn hp (hr₁ ▸ hm₁) (hr₂ ▸ hm₂) hl₂
+  obtain ⟨x, hx⟩ : ∃ x, oc₁.overlap = [x] := by
+    rcases hoc : oc₁.overlap with _ | ⟨x, xs⟩
+    · rw [hoc] at ho₁; simp at ho₁
+    · refine ⟨x, ?_⟩
+      rw [hoc] at ho₁; simp at ho₁
+      rw [ho₁]
+  obtain ⟨y, hy⟩ : ∃ y, oc₂.overlap = [y] := by
+    rcases hoc : oc₂.overlap with _ | ⟨y, ys⟩
+    · rw [hoc] at ho₂; simp at ho₂
+    · refine ⟨y, ?_⟩
+      rw [hoc] at ho₂; simp at ho₂
+      rw [ho₂]
+  -- … so `lm₁` splits the same way for both, and likewise `lm₂`.
+  have hd₁ : oc₁.left ++ [x] = oc₂.left ++ [y] := by
+    rw [← hx, ← hy, ← oc₁.lm₁_decomp, ← oc₂.lm₁_decomp, hr₁]
+  obtain ⟨hleft, hxy'⟩ := List.append_inj' hd₁ (by simp)
+  have hxy : x = y := by simpa using hxy'
+  have hd₂ : [x] ++ oc₁.right = [y] ++ oc₂.right := by
+    rw [← hx, ← hy, ← oc₁.lm₂_decomp, ← oc₂.lm₂_decomp, hr₂]
+  have hright : oc₁.right = oc₂.right := by
+    rw [hxy] at hd₂
+    simpa using hd₂
+  have hover : oc₁.overlap = oc₂.overlap := by rw [hx, hy, hxy]
+  -- Every data field agrees; the three `Prop` fields are irrelevant.  These must
+  -- be `subst`, not `rw`: the overlap occurs in the decomposition proofs.
+  cases oc₁ with
+  | mk a₁ a₂ al ao ar ad₁ ad₂ ane =>
+    cases oc₂ with
+    | mk b₁ b₂ bl bo br bd₁ bd₂ bne =>
+      simp only at hr₁ hr₂ hleft hright hover
+      subst hr₁; subst hr₂; subst hleft; subst hright; subst hover
+      rfl
+
+/-- **The `? × quadratic` column of `overlap_resolves`, for an arbitrary
+composition.** -/
+theorem quad_right_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {x : Fin n}
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hqr : oc.rule₂ = heckeRelation x hp)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hqr]; exact heckeRelation_mem hn hp x
+  -- The overlap is the single letter `σₓ`, so `lm₁` ends in it.
+  have hone := overlap_length_one hn hp hm₁ hm₂ hl
+  obtain ⟨z, hz⟩ : ∃ z, oc.overlap = [z] := by
+    rcases hoc : oc.overlap with _ | ⟨z, zs⟩
+    · rw [hoc] at hone; simp at hone
+    · refine ⟨z, ?_⟩
+      rw [hoc] at hone; simp at hone
+      rw [hone]
+  have hzx : z = (⟨x⟩ : HeckeGen n) := by
+    have hd := oc.lm₂_decomp
+    rw [hqr, heckeRelation_lm, hz] at hd
+    exact (List.cons.inj hd).1.symm
+  have hlm₁ : oc.rule₁.lm (heckeOrder n) = oc.left ++ [(⟨x⟩ : HeckeGen n)] := by
+    rw [oc.lm₁_decomp, hz, hzx]
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm₁ with
+    ⟨i, ha⟩ | ⟨i, j, hij, ha⟩ | ⟨i, j, hij, ha⟩ | ⟨i', i, j, hb₁, hb₂, ha⟩
+  · -- quadratic × quadratic: the target is `quadSelfOverlap`
+    rw [ha, heckeRelation_lm] at hlm₁
+    have hlm₁' : [(⟨i⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n)]
+        = oc.left ++ [(⟨x⟩ : HeckeGen n)] := hlm₁
+    obtain ⟨hle, hxe⟩ := List.append_inj' hlm₁' (by simp)
+    have hxi : x = i := by simpa using hxe.symm
+    have hbr : oc = quadSelfOverlap i hp := by
+      refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl (by simp [quadSelfOverlap])
+      · rw [ha]; rfl
+      · rw [hqr]; exact congrArg (fun t => heckeRelation t hp) hxi
+    rw [hbr]
+    exact quadSelfOverlap_resolves hn i hp
+  · -- Yang–Baxter × quadratic
+    rw [ha, yangBaxterRelation_lm i j (by omega)] at hlm₁
+    have hlm₁' : [(⟨j⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] ++ [(⟨j⟩ : HeckeGen n)]
+        = oc.left ++ [(⟨x⟩ : HeckeGen n)] := hlm₁
+    obtain ⟨hle, hxe⟩ := List.append_inj' hlm₁' (by simp)
+    have hxj : x = j := by simpa using hxe.symm
+    have hbr : oc = CyclicQuad.oc hp (yangBaxterRelation i j)
+        [(⟨j⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] j
+        (yangBaxterRelation_lm i j (by omega)) := by
+      refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl (by simp [CyclicQuad.oc])
+      · rw [ha]; rfl
+      · rw [hqr]; exact congrArg (fun t => heckeRelation t hp) hxj
+    rw [hbr]
+    exact CyclicQuad.yangBaxter_quad_resolves hn hp (by omega)
+  · -- far commutation × quadratic
+    rw [ha, farCommRelation_lm i j (by omega)] at hlm₁
+    have hlm₁' : [(⟨i⟩ : HeckeGen n)] ++ [(⟨j⟩ : HeckeGen n)]
+        = oc.left ++ [(⟨x⟩ : HeckeGen n)] := hlm₁
+    obtain ⟨hle, hxe⟩ := List.append_inj' hlm₁' (by simp)
+    have hxj : x = j := by simpa using hxe.symm
+    have hbr : oc = CyclicQuad.oc hp (farCommRelation i j) [(⟨i⟩ : HeckeGen n)] j
+        (farCommRelation_lm i j (by omega)) := by
+      refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl (by simp [CyclicQuad.oc])
+      · rw [ha]; rfl
+      · rw [hqr]; exact congrArg (fun t => heckeRelation t hp) hxj
+    rw [hbr]
+    exact CyclicQuad.farComm_quad_resolves hn hp hij
+  · -- Bokut–Shiao × quadratic
+    rw [ha, bokutShiaoRelation_lm hb₁ hb₂, bsWord₁] at hlm₁
+    obtain ⟨hle, hxe⟩ := List.append_inj' hlm₁ (by simp)
+    have hxi : x = i := by simpa using hxe.symm
+    have hbr : oc = CyclicQuad.oc hp (bokutShiaoRelation i' i j) (descWord i j) i
+        (bokutShiaoRelation_lm hb₁ hb₂) := by
+      refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl ?_
+      · rw [ha]; rfl
+      · rw [hqr]; exact congrArg (fun t => heckeRelation t hp) hxi
+      · obtain ⟨u, hu⟩ := descWord_head (i := i) (j := j) (by omega)
+        show descWord i j ≠ []
+        rw [hu]; simp
+    rw [hbr]
+    exact CyclicQuad.bokutShiao_quad_resolves hn hp hb₁ hb₂
+
 end UGB.GrobnerShirshov.Hecke
