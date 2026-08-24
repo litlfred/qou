@@ -278,7 +278,24 @@ def main() -> int:
         per_lambda = []
         for p in partitions:
             k_lambda = k_fn(p["lam"])
-            delta_l = mp.mpf(abs(base_res[k_lambda]))
+            # `repr()`: base_residue_sum_at_k's own docstring says this
+            # contour integral "is computed in numpy float64 (~17 decimal
+            # digits), NOT at the script's mpmath 50-dps target", with a noise
+            # floor near 1e-16. mp.mpf(<float64>) then printed the float's
+            # EXACT dyadic expansion -- all 55 delta_lambda fields read like
+            #   0.000005004562355627323864439015554950174191617406904697418212890625
+            # for a value the docstring caps at 5.004562355627324e-06. repr()
+            # declares the precision that is actually there.
+            #
+            # NOTE this does not make `contribution` below meaningful past
+            # ~17 digits either -- y*chi*delta_l is a genuine mpf product, so
+            # it is not a dyadic and the padding audit cannot see it. Carrying
+            # significance through the product is a separate problem.
+            # float() BEFORE repr(): abs() of a numpy complex returns a
+            # numpy.float64, and NumPy 2.x reprs that as
+            # "np.float64(5.004562355627324e-06)" -- mp.mpf then chokes on the
+            # parenthesis. repr() is only safe on a Python float.
+            delta_l = mp.mpf(repr(float(abs(base_res[k_lambda]))))
             term = p["y"] * p["chi"] * delta_l
             B_D_pred += term
             per_lambda.append({
