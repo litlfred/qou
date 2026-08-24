@@ -1,0 +1,1703 @@
+{
+  "arithmetic": "decimal.Decimal end to end; source literals recovered as text via ast.get_source_segment and witnesses parsed with parse_float=Decimal, so no float64 exists on the comparison path",
+  "bean": "qou-okkz",
+  "compute": "consumer_control_arm_audit",
+  "control_arms": [
+    {
+      "census": {
+        "-0.0008425274911545449": 2,
+        "0.02358747319685989": 2,
+        "0.06947330464150198": 2,
+        "0.18786885614150228": 2,
+        "0.22752693019306408": 2,
+        "0.49932033403359827": 7
+      },
+      "common_values": [
+        "0.49932033403359827"
+      ],
+      "consumer": "computations/h4_markov_weights_closed_form.py",
+      "dual_anchor_reference": true,
+      "lines": {
+        "-0.0008425274911545449": 151,
+        "0.02358747319685989": 150,
+        "0.06947330464150198": 149,
+        "0.18786885614150228": 148,
+        "0.22752693019306408": 147,
+        "0.49932033403359827": 145
+      },
+      "name_ambiguous": true,
+      "specific_values": [
+        "-0.0008425274911545449",
+        "0.02358747319685989",
+        "0.06947330464150198",
+        "0.18786885614150228",
+        "0.22752693019306408"
+      ],
+      "verdict": "CONTROL-ARM",
+      "witness": "computations/alpha-k-jones-markov-h4.witness.json",
+      "witness_frame": "CM"
+    }
+  ],
+  "convention_C_foreign_reads": [
+    {
+      "consumer": "computations/_li_2_q_util.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/_li_2_q_util.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/aK_via_lp_dual.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/aK_via_lp_dual.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/aK_via_lp_dual_full.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/aK_via_lp_dual_full.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/aK_via_lp_dual_hecke_basis.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/aK_via_lp_dual_hecke_basis.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/alpha/alpha_em_form_comparison_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/alpha/alpha_em_form_comparison_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/alpha/alpha_k_jones_markov_h12.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/alpha/alpha_k_jones_markov_h12.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/atomic_tr_m_mpfr_50dps.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/atomic_tr_m_mpfr_50dps.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/audit_delta_S_chain.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/audit_delta_S_chain.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/audits/muon_pin_three_values_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/qbeta/qbeta-ladder-required-phase.witness.json"
+    },
+    {
+      "consumer": "computations/audits/q0_muon_population_partition.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/audits/q0_muon_population_partition.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/audits/q0_producer_pin_classifier.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/audits/q0_producer_pin_classifier.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/beta-decay-energy-scale.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/binding_block_multiplicative.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/binding-via-interface-knot.witness.json"
+    },
+    {
+      "consumer": "computations/bring_2loop_weight3_coefficient_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/bring_2loop_weight3_coefficient_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/bring_b3_closed_form_attempt.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/bring_b3_closed_form_attempt.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/bring_d3_goncharov_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/bring_d3_goncharov_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/bring_mapping_torus_residue_weight_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/bring_mapping_torus_residue_weight_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/c_k_beta_decay_witness.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/c_k_beta_decay_witness.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/chi_lambda_he4_full_partition_table.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/chi_lambda_he4_full_partition_table.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/chi_lambda_multi_block_first_measurement.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/chi_lambda_multi_block_first_measurement.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/cross_check_trM_1ppb.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/cross_check_trM_1ppb.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/cross_check_trM_cw_seminormal_leg.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/cross_check_trM_cw_seminormal_leg.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/deltalambda/he4_binding_k_stage2_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/deltalambda/he4_binding_k_stage2_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/deltalambda/he4_stage2_ranking_seminormal_xcheck.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/deltalambda/he4_stage2_ranking_seminormal_xcheck.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/derive_m_baryon_volume_form.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/derive_m_baryon_volume_form.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/derive_m_e_hecke_path_a.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/derive_m_e_hecke_path_a.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/derived_masses.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/derived_masses.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/derived_masses.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/deuteron_from_scratch_ledger.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/confinement-operator-selection.witness.json"
+    },
+    {
+      "consumer": "computations/gram_matrix_seminormal_h6.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/gram_matrix_seminormal_h6.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/gram_matrix_seminormal_n.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/gram_matrix_seminormal_n.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/h4_habiro_closure.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/h4_habiro_closure.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/h4_markov_weights_closed_form.py",
+      "dual_anchor_reference": true,
+      "transcribes": true,
+      "witness": "computations/alpha-k-jones-markov-h4.witness.json"
+    },
+    {
+      "consumer": "computations/habiro_borromean_cyclotomic_coefficients.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/habiro_borromean_cyclotomic_coefficients.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/hydrogen_qshuffle_compound.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/hydrogen_qshuffle_compound.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/hydrogen_step_by_step.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/hydrogen_step_by_step.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/lambda_scale_derivation_probes_123.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/lambda_scale_derivation_probes_123.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/low_isotope_sign_flip_diagnostic.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/low_isotope_sign_flip_diagnostic.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/m_p_borromean_verification_50dps.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/m_p_borromean_verification_50dps.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/mass_sweep_wiring_status.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/mass_sweep_wiring_status.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/nuclide_braid_pipeline.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/nuclide_braid_pipeline.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/onepb_status_dashboard.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/confinement-operator-selection.witness.json"
+    },
+    {
+      "consumer": "computations/option_e_phase1_h3_cross_check.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/option_e_phase1_h3_cross_check.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/pentagon_reduction_li2q.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/binding-via-interface-knot.witness.json"
+    },
+    {
+      "consumer": "computations/per_atom_audit_witnesses.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/per_atom_audit_witnesses.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probe_inter_knot_decoupling.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probe_inter_knot_decoupling.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/borel_propertime_moment_attack_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/borel_propertime_moment_attack_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/bwhk_st_matrix_corroboration.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/bwhk_st_matrix_corroboration.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/fvk_selection_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/fvk_selection_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/khovanov_at_q0_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/khovanov_at_q0_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel1_singularity_selection_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel1_singularity_selection_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel2_favard_jacobi_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel2_favard_jacobi_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel2id_friedrichs_selection_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel2id_friedrichs_selection_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel2id_sw_identification_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel2id_sw_identification_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel2id_u1_promotion_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel2id_u1_promotion_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel3_modular_double_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/ksel3_modular_double_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/lambda_scale_substrate_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/lambda_scale_substrate_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/lr_hecke_character_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/lr_hecke_character_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qbeta_c3_per_block_categorical_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qbeta_c3_per_block_categorical_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qbeta_habiro_integrality_kill_test.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qbeta_habiro_integrality_kill_test.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qbeta_habiro_residual_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qbeta_habiro_residual_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qbeta_operator_identification_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qbeta_operator_identification_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qborel_confluence_pos_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/qborel_confluence_pos_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/r2core_schwinger_measure_explore_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/r2core_schwinger_measure_explore_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/rep_jackson_identification_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/rep_jackson_identification_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/rep_tightness_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/rep_tightness_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/test_qbeta_habiro_anchor_guard.py",
+      "dual_anchor_reference": true,
+      "transcribes": true,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/probes/test_qbeta_habiro_anchor_guard.py",
+      "dual_anchor_reference": true,
+      "transcribes": true,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/pyhecke_jones_markov_atlas.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/pyhecke_jones_markov_atlas.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/pyhecke_n_generic.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/pyhecke_n_generic.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/q0_repin_sweep.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/q0_repin_sweep.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/q1_mass_gap_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/q1_mass_gap_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/q_beta_spectral_bridge_witness.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/q_beta_spectral_bridge_witness.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_argu_phase_branch_selection_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_argu_phase_branch_selection_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_bar_split_ord17_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_bar_split_ord17_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_barodd_d_ladder_ord17_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_barodd_d_ladder_ord17_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_c3_barodd_determined_solve_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_c3_barodd_determined_solve_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_c3even_exact_sseries_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_c4even_exact_sseries_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_c4even_ladder_reconstruction_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_ck_sseries_exact_rational.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_ck_sseries_exact_rational.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_ck_sseries_exact_rational.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_ck_sseries_operator_match_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_ck_sseries_operator_match_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_ck_sseries_operator_match_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_decay_sdp_extended_ck.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_decay_sdp_extended_ck.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_dladder_barodd_borel_pade_laplace_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_dladder_barodd_borel_pade_laplace_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_dladder_ecalle_acceleration_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_dladder_ecalle_acceleration_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_dladder_generating_function_structure_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_dladder_generating_function_structure_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_eta_singularity_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_eta_singularity_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_eta_square_fibre_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_eta_square_fibre_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_eta_square_functional_g_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_eta_square_functional_g_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_even_channel_bar_split_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_even_channel_bar_split_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_h4_nucleon_assembly.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_markov_trace_norm_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_markov_trace_norm_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_markov_trace_steps_4_5.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_markov_trace_steps_4_5.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_meridian_holonomy_anchor_swing_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_meridian_holonomy_anchor_swing_probe.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_odd_carrier_sector_decomposition.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_per_block_paper_closed_forms.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_per_block_paper_closed_forms.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_per_block_symbolic.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_per_block_symbolic.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_physics.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_physics.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_route_alpha_lift_prediction.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_silver_pole_subdominant_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_symbolic_tbeta_min_l2.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_symbolic_tbeta_min_l2.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_trm_crosscheck_convention_pin_split_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_trm_crosscheck_convention_pin_split_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_w_odd_categorical_net_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/free-neutron-decay.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_zeta4_eta_descent_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_zeta4_eta_descent_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_zeta4_faithful_odd_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta/qbeta_zeta4_faithful_odd_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta_habiro_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta_habiro_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta_habiro_sweep.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/qbeta_habiro_sweep.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/regenerate_y_lambda_mpfr.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/regenerate_y_lambda_mpfr.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/run_jones_markov_atlas_all_atoms.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/run_jones_markov_atlas_all_atoms.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/substrate/frakV_askey_wilson_recurrence_tie_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/substrate/frakV_askey_wilson_recurrence_tie_probe.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/substrate/q_parameter.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/substrate/q_parameter.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/terms_2_3_atom_per_gen_mpfr_50dps.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/terms_2_3_atom_per_gen_mpfr_50dps.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/verify_isospin_bar_anomaly.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/verify_isospin_bar_anomaly.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/yekutieli_borromean_h2_extraction.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "computations/yekutieli_borromean_h2_extraction.py",
+      "dual_anchor_reference": false,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "qou-mass/src/qou_mass/_internal/_li_2_q_util.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "qou-mass/src/qou_mass/_internal/_li_2_q_util.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "qou-mass/src/qou_mass/_internal/q_parameter.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "qou-mass/src/qou_mass/_internal/q_parameter.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "tools/qou-substrate/python/qou_substrate/witness.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "computations/q-pinning-50-digit.witness.json"
+    },
+    {
+      "consumer": "tools/qou-substrate/python/qou_substrate/witness.py",
+      "dual_anchor_reference": true,
+      "transcribes": false,
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json"
+    }
+  ],
+  "counts": {
+    "ambiguous_name_references": 281,
+    "convention_C_consumers": 122,
+    "convention_C_foreign_read_edges": 229,
+    "duplicated_witness_basenames": 165,
+    "python_files_naming_a_witness": 1854,
+    "python_files_scanned": 3758,
+    "self_written_pairs_dropped": 371,
+    "unresolvable_name_references": 379,
+    "witnesses_frame_C": 36,
+    "witnesses_frame_muon": 389,
+    "witnesses_scanned": 2938,
+    "witnesses_stale_frame": 395
+  },
+  "description": "Python consumers that transcribe values out of a convention-C or muon-pinned witness they read but do not write. Such a consumer is a deliberate control arm: it reproduces a published record at that frame, so a qou-q0zk drain that repoints its input breaks a working cross-check. The control arm is a CONSUMER, not a witness, so no witness-level classification can see it.",
+  "how_to_use": "Before draining a qou-q0zk candidate, check whether any consumer here reads it. A CONTROL-ARM edge is a stop: leave the artifact where it is. Everything else still needs the ordinary per-file verdict -- this audit narrows the drain, it does not clear it.",
+  "known_blind_spots": [
+    "a control arm that reads its reference value at run time instead of transcribing it (PR #5616 made this change to published_q0 in the known positive itself)",
+    "control arms outside Python (TypeScript, Lean, shell)",
+    "witness names resolved by basename; duplicated stems (bean qou-kcii) are flagged via name_ambiguous but not adjudicated",
+    "a stale-frame witness serialising neither fingerprint is not in the candidate set at all"
+  ],
+  "parameters": {
+    "min_significant_digits": 10,
+    "muon_q0_prefix": "1.109978595",
+    "specificity_max_witnesses": 3,
+    "z_C_prefix": "0.4993203340"
+  },
+  "shared_constant_only": [
+    {
+      "census": {
+        "1.10997859555733471": 20
+      },
+      "common_values": [
+        "1.10997859555733471"
+      ],
+      "consumer": "computations/deltalambda/deltalambda_damping_nonmonotone_wall_probe.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.10997859555733471": 52
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/deltalambda/deltalambda-jet-filtration-magnitude.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.10997859555733471": 20
+      },
+      "common_values": [
+        "1.10997859555733471"
+      ],
+      "consumer": "computations/deltalambda/deltalambda_graded_two_anchor_nogo_probe.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.10997859555733471": 51
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/deltalambda/deltalambda-jet-filtration-magnitude.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.1099785955541805": 71
+      },
+      "common_values": [
+        "1.1099785955541805"
+      ],
+      "consumer": "computations/metallic_q_jones_sign_sweep.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.1099785955541805": 60
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/metallic-q-wenzl-sign-sweep.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.1099785955541805": 71
+      },
+      "common_values": [
+        "1.1099785955541805"
+      ],
+      "consumer": "computations/metallic_q_quark_bifurcation.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.1099785955541805": 69
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/metallic-q-jones-sign-sweep.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.1099785955541805": 71
+      },
+      "common_values": [
+        "1.1099785955541805"
+      ],
+      "consumer": "computations/metallic_q_quark_bifurcation.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.1099785955541805": 69
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/metallic-q-wenzl-sign-sweep.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "0.51099895069": 148
+      },
+      "common_values": [
+        "0.51099895069"
+      ],
+      "consumer": "computations/probes/perknot_additive_sk_vs_kA_extensivity.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "0.51099895069": 70
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.10997859555733471989976322": 177
+      },
+      "common_values": [
+        "1.10997859555733471989976322"
+      ],
+      "consumer": "computations/probes/qbeta_ck_qholonomic_recurrence_test.py",
+      "dual_anchor_reference": true,
+      "lines": {
+        "1.10997859555733471989976322": 133
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.10997859555733471989976322": 177
+      },
+      "common_values": [
+        "1.10997859555733471989976322"
+      ],
+      "consumer": "computations/probes/test_qbeta_habiro_anchor_guard.py",
+      "dual_anchor_reference": true,
+      "lines": {
+        "1.10997859555733471989976322": 118
+      },
+      "name_ambiguous": true,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/q-pinning-50-digit.witness.json",
+      "witness_frame": "CM"
+    },
+    {
+      "census": {
+        "1.10997859555733471989976322": 177
+      },
+      "common_values": [
+        "1.10997859555733471989976322"
+      ],
+      "consumer": "computations/probes/test_qbeta_habiro_anchor_guard.py",
+      "dual_anchor_reference": true,
+      "lines": {
+        "1.10997859555733471989976322": 118
+      },
+      "name_ambiguous": true,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json",
+      "witness_frame": "CM"
+    },
+    {
+      "census": {
+        "1.10997859555733471989976322": 177
+      },
+      "common_values": [
+        "1.10997859555733471989976322"
+      ],
+      "consumer": "computations/qbeta/qbeta_c4even_exact_sseries_probe.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.10997859555733471989976322": 85
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.10997859555733471989976322": 177
+      },
+      "common_values": [
+        "1.10997859555733471989976322"
+      ],
+      "consumer": "computations/qbeta/qbeta_c4even_ladder_reconstruction_probe.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.10997859555733471989976322": 89
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/qbeta/qbeta-c4even-exact-sseries.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.10997859555733471989976322": 177
+      },
+      "common_values": [
+        "1.10997859555733471989976322"
+      ],
+      "consumer": "computations/qbeta/qbeta_c_k_recursion_depth_sweep.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.10997859555733471989976322": 74
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.10997859555733471989976322": 177
+      },
+      "common_values": [
+        "1.10997859555733471989976322"
+      ],
+      "consumer": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.10997859555733471989976322": 170
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
+      "witness_frame": "M"
+    },
+    {
+      "census": {
+        "1.109978582751380807591669096": 964,
+        "1.10997859555733471989976322": 177
+      },
+      "common_values": [
+        "1.109978582751380807591669096",
+        "1.10997859555733471989976322"
+      ],
+      "consumer": "computations/witness_float64_padding_audit.py",
+      "dual_anchor_reference": false,
+      "lines": {
+        "1.109978582751380807591669096": 197,
+        "1.10997859555733471989976322": 196
+      },
+      "name_ambiguous": false,
+      "specific_values": [],
+      "verdict": "SHARED-CONSTANT-ONLY",
+      "witness": "computations/q0-value-drift-audit.witness.json",
+      "witness_frame": "M"
+    }
+  ],
+  "status": "audit"
+}
