@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T18:49:51Z
-updated_at: 2026-08-24T19:03:54Z
+updated_at: 2026-08-24T19:32:43Z
 ---
 
 ## The measurement
@@ -205,3 +205,68 @@ cross-check between two routes to `tr_M`, so the regenerated peel reference and
 the seminormal leg now disagree structurally. Someone has to decide **which leg
 is right** before either is blessed. Do not simply regenerate the witness to
 make the red go away.
+
+
+---
+
+## Option 3 — hunting the O(1) term. Four hypotheses tested, four refuted.
+
+Full failure list, including the two small atoms the 90-second runs never reached:
+
+| atom | Z | N | A | s | a | i | **cw** | legB/legA |
+|---|---|---|---|---|---|---|---|---|
+| neutron | 0 | 1 | 1 | 5 | 2 | 4 | **0** | 1.070 |
+| deuteron | 1 | 1 | 2 | 11 | 4 | 7 | **1** | 1.481 |
+| helium-3 | 2 | 1 | 3 | 18 | 6 | 10 | **1** | 1.955 |
+| triton | 1 | 2 | 3 | 16 | 6 | 12 | **1** | 2.200 |
+| helium-4 | 2 | 2 | 4 | 23 | 8 | 15 | **1** | 2.910 |
+
+**1. Constant normalisation — REFUTED.** The ratio is not constant.
+
+**2. Missing q-power per strand — REFUTED.** `ratio^(1/A)` = 1.070, 1.217, 1.301,
+1.250, 1.306; `ratio^(1/3A)` = 1.023 … 1.093. Neither is constant. `q₀ = 1.110`,
+`q₀³ = 1.368` are near enough to tempt and not near enough to be true.
+
+**3. The colour-weighted p–n seam — REFUTED, and this was my leading
+hypothesis.** The **neutron classifies ZERO crossings as `cw`** — `a_cw`/`b_cw`
+and δ never enter its computation — and it is still **7 % wrong**. Worse for the
+hypothesis: **`cw` count is exactly 1 for every bound atom**, independent of Z,
+N and A. So the composition-dependence I reported last turn (triton 2.200 vs
+helium-3 1.955 at equal A) **cannot** come from seam count; there is only ever
+one seam. I named the seam because the producer's docstring flags it as
+CRITICAL — proximity again, not mechanism.
+
+**4. The `i` (σ⁻¹) count — REFUTED.** It is the only structural count that
+orders correctly (4, 7, 10, 12, 15 against 1.070, 1.481, 1.955, 2.200, 2.910),
+which is exactly why it needed testing rather than adopting: `ratio/i` runs
+0.267 → 0.183 and `ratio^(1/i)` runs 1.017 → 1.074. Monotone, not a law.
+
+## Stop fitting — the method is wrong
+
+Five points and several plausible structural counts is a numerology generator,
+not a diagnosis. Every one of the four above was a curve through the end-to-end
+ratio. **The end-to-end ratio cannot identify the defect**; only a term-by-term
+comparison of the two legs' ingredients can.
+
+## The observation that reframes it
+
+The re-pin moved leg A's neutron value by **8 significant figures**
+(`0.92323329718…` → `0.92323322991…`), while leg B differs by **7 %**. An
+un-changed leg B would therefore have been ~7 % off *before* `2c35a52e08` too,
+and the assertion would already have been red. It was green.
+
+**So leg B must have changed at that commit as well** — and `2c35a52e08` touched
+exactly one non-witness file: `q0_anchor_manifest.json`, **+17 stems**. Adding a
+stem changes what `q_parameter` resolves for producers in leg B's cone. That is
+a mechanism that would move *both* legs, and it is the first hypothesis in this
+list that is not a curve fit.
+
+**Next, and it is a measurement not an argument:** compute leg B's neutron value
+at `2c35a52e08^` and at `2c35a52e08`. If it moves, the manifest entries are the
+carrier and the fix is a scope question about those 17 stems. If it does not
+move, the bisect's "first bad" is an artifact of leg A alone and the 7 % predates
+the window entirely — which would mean this cross-check has been wrong for far
+longer than sixteen days.
+
+The neutron is the right probe: A=1, 11 crossings, **no `cw`**, runs in under a
+second.
