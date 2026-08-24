@@ -59,6 +59,28 @@ PROGRESS = HERE / "q0-migration-decompose-progress.json"
 # note in q0_repin_sweep.ANCHOR_DEFINING and AGENTS.md.
 ANCHOR_DEFINING = frozenset({"q_pinning_50_digit"})
 
+# A producer that spells the muon q0 as a LITERAL in its own source does not
+# read q_parameter for it, so QOU_Q0_ANCHOR never reaches the arithmetic. Its
+# payload comes back byte-for-byte muon and the only field that moves is
+# WitnessBuilder's .q0Value provenance stamp -- producing a witness that
+# DECLARES proton over a payload computed at muon, which is the layer straddle
+# AGENTS.md forbids and is strictly worse than the honest muon witness.
+#
+# Measured: 36 of 89 apparently-migrated producers were this, and the
+# drift/anchor decomposition scored every one of them anchor+drift, because it
+# compares whole witnesses and a provenance stamp is part of the witness.
+# Separating drift from anchor is necessary and NOT sufficient; the third
+# question is whether the anchor reached the ARITHMETIC. Migrating these needs
+# a source change (resolve q0 through q_parameter), not a re-run.
+MUON_LITERAL = "1.109978595557"
+
+
+def hardcodes_muon(script: Path) -> bool:
+    try:
+        return MUON_LITERAL in script.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        return False
+
 sys.path.insert(0, str(ROOT / "tools" / "qou-substrate" / "python"))
 sys.path.insert(0, str(HERE))
 from qou_substrate.witness import _strip_ephemeral_fields as strip  # noqa: E402
@@ -225,6 +247,16 @@ def main() -> int:
     todo = [s for s in todo if s not in done]
     if a.limit:
         todo = todo[:a.limit]
+
+    hard = [s for s in todo if hardcodes_muon(paths[s])]
+    if hard:
+        print(f"skipping {len(hard)} producer(s) that hardcode the muon q0 in "
+              f"source -- a re-run cannot migrate them, it only flips the "
+              f"provenance stamp:", flush=True)
+        for s in hard:
+            print(f"    {s}", flush=True)
+        print(flush=True)
+    todo = [s for s in todo if s not in set(hard)]
 
     if a.list:
         for s in todo:
