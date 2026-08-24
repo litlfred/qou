@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-24T09:49:16Z
+updated_at: 2026-08-24T09:56:09Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -519,3 +519,37 @@ GENERALISABLE: audit every producer with a completeness-gated reuse branch. The
 gate answers "is this cache finished?" and is read as "is this cache current?".
 Those differ exactly when a convention or anchor changes underneath it — the
 case where being wrong is most expensive. PR #5623.
+
+
+### The self-caching class: measured, and it is a NEGATIVE result
+
+Generalised the chi_via_rust_lossless incident into
+`computations/audits/self_caching_producer_audit.py`. Detects the SHAPE (an
+`if <path>.exists()` branch that reads-and-returns, on a path the module also
+WRITES) rather than the wording. The write is what separates a self-cache from
+an ordinary upstream loader — without that filter the scan reports 27 instead
+of 8, almost all of them normal consumption.
+
+MEASURED over 3114 producers: **8 self-caching branches, 5 gated on existence
+alone, and only ONE ever dangerous — the one already fixed.** Recording that
+plainly instead of dressing 5 up as findings:
+
+  scratch storage    /tmp/a5_diags_n12.pkl, .derived-chi-mn-cache.json,
+                     delta-q-decoration.cache.json, .cache/seminormal/ — none
+                     committed; a stale entry costs a recompute, reaches nobody
+  explicit opt-in    _b0vf_complete_he4_witness reuses only under
+                     B0VF_REUSE_RAW=1; default recomputes
+  key carries input  hecke_3a_weights._cache_key hashes Q0 into the filename,
+                     so a q0 change invalidates by construction
+
+Dangerous combination = COMMITTED artifact + existence/completeness gate + no
+opt-out. Exactly one qualified (chi_via_rust_lossless), now the best-gated of
+the eight.
+
+**RESIDUAL GAP worth carrying forward:** a Q0-keyed hash invalidates on a q0
+change but NOT on a convention change at the same q0. No cache in this corpus
+keys on the trace convention — which is precisely the hole the original
+incident fell through, and hashing Q0 would not have caught it. If the D
+cascade recurs for another convention, this class reopens.
+
+PR #5623, commit e6cc0c61d.
