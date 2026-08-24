@@ -132,6 +132,7 @@ CANONICAL_ANCHOR_NAMES = {
     "Q_MP", "proton", "PROTON",
 }
 
+SELF_WITNESS_NAME = "consumer-control-arm-audit.witness.json"
 KNOWN_POSITIVE_CONSUMER = "computations/h4_markov_weights_closed_form.py"
 KNOWN_POSITIVE_WITNESS = "computations/alpha-k-jones-markov-h4.witness.json"
 
@@ -203,6 +204,15 @@ def build_witness_index():
     raw_by_path: dict[Path, str] = {}
     for p in sorted(REPO.rglob("*.witness.json")):
         if any(x in p.parts for x in SKIP):
+            continue
+        # SELF-EXCLUDE THIS AUDIT'S OWN OUTPUT. It records every transcribed
+        # value verbatim, so each run adds itself to the specificity census: the
+        # known positive's weights went 2 -> 3 witnesses the first time the
+        # witness was committed. At SPECIFICITY_MAX = 3 one more such artifact
+        # tips them to `common` and the CONTROL-ARM verdict disappears with no
+        # error -- a detector that goes quiet by writing down what it found.
+        # Same hazard as SELF_OUTPUT_PREFIX in `compute-author` §5.1.
+        if p.name == SELF_WITNESS_NAME:
             continue
         try:
             raw_by_path[p] = p.read_text(encoding="utf-8", errors="replace")
@@ -490,6 +500,30 @@ def scan():
                     continue
                 specific = sorted(v for v in shared if census[v] <= SPECIFICITY_MAX)
                 common = sorted(v for v in shared if census[v] > SPECIFICITY_MAX)
+                # WHICH frame is the consumer deliberately on? The witness tag
+                # says what the ARTIFACT carries; it does not say which axis the
+                # consumer actually depends on, and a drain can get the two
+                # wrong independently. Split the evidence:
+                #   z_C_transcribed   -- the convention constant is IN THE
+                #                        CONSUMER'S SOURCE, so a convention fix
+                #                        breaks it directly.
+                #   muon_transcribed  -- likewise for the muon pin.
+                #   payload_transcribed -- values that are neither, i.e. results
+                #                        the consumer reproduces. These inherit
+                #                        whatever frame the artifact was computed
+                #                        at, and the source does not record which.
+                z_c = sorted(v for v in shared if v.startswith(Z_C_PREFIX))
+                muon = sorted(v for v in shared if v.startswith(MUON_Q0_PREFIX))
+                payload = sorted(set(shared) - set(z_c) - set(muon))
+                frame_evidence = {
+                    "witness_carries": frame[wpath],
+                    "z_C_transcribed": bool(z_c),
+                    "muon_q0_transcribed": bool(muon),
+                    "payload_transcribed": len(payload),
+                    "deliberate_on": (
+                        ("C" if z_c else "") + ("M" if muon else "")
+                    ) or "inherited-only",
+                }
                 edges.append({
                     "consumer": str(path.relative_to(REPO)),
                     "witness": str(wpath.relative_to(REPO)),
@@ -500,6 +534,7 @@ def scan():
                     "census": {v: census[v] for v in sorted(shared)},
                     "lines": {v: literals[v] for v in sorted(shared)},
                     "dual_anchor_reference": dual_anchor,
+                    "frame_evidence": frame_evidence,
                     "verdict": "CONTROL-ARM" if specific else "SHARED-CONSTANT-ONLY",
                 })
 
@@ -555,6 +590,13 @@ def _print_report(edges, stats, c_reads) -> None:
         if e["common_values"]:
             print(f"      also shares {len(e['common_values'])} shared constant(s): "
                   f"{[(v, e['census'][v]) for v in e['common_values'][:3]]}")
+        fe = e["frame_evidence"]
+        print(f"      frame the consumer is DELIBERATELY on: {fe['deliberate_on']}"
+              f"   (artifact carries {fe['witness_carries']})")
+        print(f"          z_C in consumer source     {fe['z_C_transcribed']}")
+        print(f"          muon q0 in consumer source {fe['muon_q0_transcribed']}")
+        print(f"          payload values reproduced  {fe['payload_transcribed']}"
+              f"  (frame INHERITED from the artifact, not stated in the source)")
         print(f"      dual-anchor reference (A3, name-based, not decisive): "
               f"{e['dual_anchor_reference']}")
 
@@ -635,7 +677,7 @@ def _write_witness(edges, stats, c_reads) -> Path:
             "audit narrows the drain, it does not clear it."
         ),
     }
-    out = HERE / "consumer-control-arm-audit.witness.json"
+    out = HERE / SELF_WITNESS_NAME
     out.write_text(json.dumps(doc, indent=2, sort_keys=True) + "\n")
     return out
 
