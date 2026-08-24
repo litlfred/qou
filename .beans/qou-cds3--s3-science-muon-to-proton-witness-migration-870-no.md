@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T05:10:00Z
+updated_at: 2026-08-24T09:10:00Z
 updated_at: 2026-08-24T02:55:00Z
 ---
 
@@ -1085,3 +1085,79 @@ Two of those four stale ones are already held back for *conclusion movement*
 (`xq_habiro` TIER 1→2, `qbeta_jacobi_anger` assertion flip), and
 `qbeta_singularity` is the null-sentinel consumer. So the reclassification does
 not free any of them to be committed — it corrects **why** each is where it is.
+
+---
+
+## ⚠ REGRESSION I INTRODUCED 2026-08-23 — six witnesses now declare an anchor their numbers do not use
+
+Caught while re-running `qbeta_singularity_cross_anchor_probe` on a recovered
+checkout. **My own cds3 regenerations added a false `q0Anchor` stamp to six
+committed witnesses.**
+
+```
+q0Anchor (stamp) : "muon"
+q0Value  (stamp) : 1.1099785955573347…      <- value A
+data.q_proton    : 1.1099785827513808…      <- the REAL proton pin, computed
+data.q_muon      : 1.1099785956427390…      <- value C, computed
+```
+
+Neither computed value is the stamped one. Verified `BEFORE` → `AFTER` on each:
+
+| witness | before | after |
+|---|---|---|
+| `option-e-v9-bar-symmetric-test-probe` | `q0Anchor: None` | `"muon"` / A |
+| `qbeta-c6-c10-crossanchor-falsification` | `None` | `"muon"` / A |
+| `qbeta-cosh-q-sinh-q-candidate-scan` | `None` | `"muon"` / A |
+| `qbeta-signed-vs-abs-tower-diagnostic` | `None` | `"muon"` / A |
+| `yekutieli-a2-em-gauge-coupling-h2-probe` | `None` | `"muon"` / A |
+| `yekutieli-per-cell-qlambert-decomposition-probe` | `None` | `"muon"` / A |
+
+(committed in `245a6d1d5` and `bd4067648`; `he4_rho_f_bar` is unaffected — still
+unstamped.)
+
+### Mechanism
+
+`WitnessBuilder` stamps the anchor from `q0_anchor_manifest.json`: all six
+producers are listed `ideal_muon`, so the stamp reads muon and takes value A from
+the pinning witness. But all six import `q_at` / `q_muon_at` from
+**`qou_substrate.constants`**, which the manifest auto-select never rebinds — so
+they compute at the real proton pin. Measured across the layer: of **124**
+`ideal_muon` producers, **49** import via `q_parameter` (stamp agrees with
+computation) and **11** via `qou_substrate.constants` (stamp cannot agree). Six of
+those 11 are the witnesses above.
+
+### Why this is worse than what it replaced
+
+`q0_anchor_consistency_audit.py` checks `q0Anchor` against **`q0Value`** — stamp
+against stamp — not against the payload (`_EXPECTED_PREFIX`, `:97`, `:111`). A
+`muon` stamp carrying value A **matches**, so all six now classify **`Q0_OK`**.
+Before my change they were `Q0_ANCHOR_MISSING`, which the audit documents as
+*"pre-backfill; not a failure"* — visibly unstamped.
+
+**So I moved six witnesses from "visibly unstamped" to "confidently mis-declared
+and passing a gate."** That is this campaign's own defect shape, authored by me.
+
+### How my verification missed it
+
+My payload diff excluded any key whose name contains `"q0"`, on the reasoning that
+pin fields are *expected* to change in a pin migration. The field is called
+**`q0Anchor`**. The filter that was supposed to suppress known noise suppressed
+the one field that records what the witness claims about its anchor — a blind spot
+of exactly the kind `qou-i5jy` catalogues, in the checking code I wrote to avoid it.
+
+### Not reverted, and why — but this needs an owner
+
+The **payload** fix is correct and should stand: those files previously held a
+muon value under a proton-named field, and now hold the proton pin. Reverting
+would restore a worse defect. What is wrong is the **declaration**, and it cannot
+be fixed by editing the witness — the stamp comes from the manifest, and witness
+numbers may not be hand-edited. The real repair is one of:
+
+1. remove these 11 producers from `ideal_muon` (they compute at proton — the
+   manifest entry is what is false), or
+2. switch their imports to `q_parameter` so the manifest actually governs them,
+3. and independently: make `q0_anchor_consistency_audit` compare the stamp against
+   the **computed payload**, not only against `q0Value`. As written it can only
+   ever catch a stamp that contradicts itself.
+
+(3) is the general fix and is the one that would have caught me.
