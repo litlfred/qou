@@ -4047,3 +4047,43 @@ What is left is assembly: instantiate the two lemmas at the separated family, de
 quotient, and carry it into `abs_coeff_det_sepFamily_le`'s place in the chain. No new
 mathematics — but the arc has mis-predicted "no new mathematics" four times, so that is a
 prediction, not a result.
+
+### ✅ Correction 21's repair is complete — §12's `b` is proved
+
+`exists_divided_wronskian`:
+
+    det (∂^{Dx i ⊞ Dy j} P) = C·W,   W integral,
+    |coeff n W| ≤ r! · S^r · (2^{Σ_h d_h}·B)^r
+
+With `S ≤ ∏_h (d_h+1) ≤ 2^{Σ_h d_h}` that is `r!·2^{2r·Σ_h d_h}·B^r` — **§12's
+`b = 2^{2n(r₁+…+r_m)}·n!·a^n`, exactly.** `W` *is* Mahler's `W`: the same determinant built from
+divided derivatives. Its index is the determinant's (`index_C_mul`), so nothing the index
+calculus proves is lost, and its height is smaller by the `C ≈ 2^{Θ(r² log r)}` that §12's budget
+has no room for.
+
+The last piece was `listFac_append_map` — `Fac` splits across the `x`/`y` join as an **equality**,
+because the two lists live in disjoint variables. `listFac_mul_dvd_listFac_append` gave only
+divisibility and needed no disjointness; the divisibility side of the argument was happy with
+that, the *size* side needs the equality, and the separated family supplies it. Two lemmas for
+what looked like one because the two directions genuinely need different inputs.
+
+**The full chain, all `#print axioms`-clean:**
+
+    coeff_pderiv_iterate, coeff_pderivList        exact coefficient formulas
+    listFactor_eq_factorial_mul                   ∂^l = Fac(l)·Δ^l, in one equation
+    listFac_dvd_coeff_pderivList                  Δ^l is integral
+    abs_coeff_pderivList_le'                      |coeff (∂^l g)| ≤ Fac(l)·2^{Σd}·B
+    C_dvd_det_of_dvd_entries + abs_coeff_det_le'  row×column constants survive a determinant
+    C_listFac_dvd_det_sepFamily                   C ∣ det
+    exists_divided_wronskian                      det = C·W with §12's bound on W
+
+**What this unblocks.** `hres`'s remaining input was "a uniform `B` and `E` from §12's estimate".
+The `B` is now proved. What is left for `hres` is the `E` — the arithmetic
+`b ≤ 2^{(2m+1)ρ₁}·a^n ≤ H₁^{ρ₁t/(m−1)}`, which is `height_descend_pq` plus the clause-3
+calibration this arc already has (`rothGammaFull_descend` carries exactly that shape,
+`hb : b ≤ 2^c * a^r` with `hc : c ≤ (2n+3)·(r·d₁)`).
+
+So the pieces of the induction step are: this theorem for `b`, `rothGammaFull_descend` for
+`Γ_{m−1}`, `index_rescaled_wronskian_le_theta` / `..._right_theta` for the two halves,
+`rothLemmaTheta_one` for the base, `rothBound_succ_of_lemma4` for the arithmetic. **Every one is
+proved.** What is not written is the recursion that composes them.

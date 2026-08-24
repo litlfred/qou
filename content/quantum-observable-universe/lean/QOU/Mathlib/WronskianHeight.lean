@@ -608,6 +608,119 @@ theorem abs_coeff_det_le' {ι : Type*} [Fintype ι] [DecidableEq ι] {S : ℤ}
   refine le_trans (Finset.sum_le_card_nsmul _ _ _ (fun p _ => hterm p)) ?_
   rw [Finset.card_univ, Fintype.card_perm, nsmul_eq_mul, mul_assoc]
 
+theorem listIdx_map_inl_apply_inr {τ : Type*} (l : List σ) (y : τ) :
+    (listIdx (l.map (Sum.inl : σ → σ ⊕ τ))) (Sum.inr y) = 0 := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+      rw [List.map_cons, listIdx_cons, Finsupp.add_apply, ih,
+        Finsupp.single_eq_of_ne (by simp), Nat.zero_add]
+
+theorem listIdx_map_inr_apply_inl {τ : Type*} (l : List τ) (x : σ) :
+    (listIdx (l.map (Sum.inr : τ → σ ⊕ τ))) (Sum.inl x) = 0 := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+      rw [List.map_cons, listIdx_cons, Finsupp.add_apply, ih,
+        Finsupp.single_eq_of_ne (by simp), Nat.zero_add]
+
+/-- **`Fac` splits across the `x`/`y` join** — here as an *equality*, because the two lists live
+in disjoint variables.
+
+`listFac_mul_dvd_listFac_append` gives only divisibility and needs no disjointness; the size side
+needs the equality, and the separated family supplies it. -/
+theorem listFac_append_map {τ : Type*} [DecidableEq σ] [DecidableEq τ] [DecidableEq (σ ⊕ τ)]
+    (s : Finset (σ ⊕ τ)) (l₁ : List σ) (l₂ : List τ) :
+    (∏ h ∈ s, ((listIdx ((l₁.map Sum.inl) ++ (l₂.map Sum.inr))) h).factorial)
+      = (∏ h ∈ s, ((listIdx (l₁.map (Sum.inl : σ → σ ⊕ τ))) h).factorial) *
+        (∏ h ∈ s, ((listIdx (l₂.map (Sum.inr : τ → σ ⊕ τ))) h).factorial) := by
+  rw [← Finset.prod_mul_distrib]
+  refine Finset.prod_congr rfl fun h _ => ?_
+  rw [listIdx_append, Finsupp.add_apply]
+  cases h with
+  | inl x => rw [listIdx_map_inr_apply_inl, Nat.add_zero, Nat.factorial_zero, Nat.mul_one]
+  | inr y => rw [listIdx_map_inl_apply_inr, Nat.zero_add, Nat.factorial_zero, Nat.one_mul]
+
+/-- **§12's height estimate, for the divided-derivative Wronskian.**
+
+The determinant of `∂^{Dx i ⊞ Dy j} P` is `C·W` with `W` **integral** and
+
+    |coeff n W| ≤ r! · S^r · (2^{Σ_h d_h} · B)^r
+
+With `S ≤ ∏_h (d_h + 1) ≤ 2^{Σ_h d_h}` that reads `r!·2^{2r·Σ_h d_h}·B^r` — **§12's
+`b = 2^{2n(r₁+…+r_m)}·n!·a^n`, exactly.**
+
+`W` is Mahler's `W`: the same determinant built from divided derivatives.  Its index is the
+determinant's (`index_C_mul`), so nothing the index calculus proves is lost, and its height is
+smaller by the `C` that correction twenty-one identified — `2^{Θ(r² log r)}`, which §12's budget
+has no room for. -/
+theorem exists_divided_wronskian {τ : Type*} [DecidableEq σ] [DecidableEq τ]
+    [DecidableEq (σ ⊕ τ)] {r : ℕ} (s : Finset (σ ⊕ τ)) {S B : ℤ} {d : (σ ⊕ τ) → ℕ}
+    (hB0 : 0 ≤ B) (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (P : MvPolynomial (σ ⊕ τ) ℤ)
+    (hx : ∀ i, ∀ h ∈ (Dx i).map Sum.inl, h ∈ s)
+    (hy : ∀ j, ∀ h ∈ (Dy j).map Sum.inr, h ∈ s)
+    (hS : ((P.support.card : ℕ) : ℤ) ≤ S)
+    (hd : ∀ h, degreeOf h P ≤ d h) (hB : ∀ n, |coeff n P| ≤ B) :
+    ∃ W : MvPolynomial (σ ⊕ τ) ℤ,
+      (Matrix.of fun i j => pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det
+        = C ((∏ i, ((∏ h ∈ s, ((listIdx ((Dx i).map Sum.inl)) h).factorial : ℕ) : ℤ)) *
+             (∏ j, ((∏ h ∈ s, ((listIdx ((Dy j).map Sum.inr)) h).factorial : ℕ) : ℤ))) * W ∧
+      ∀ n, |coeff n W| ≤ (r.factorial : ℤ) * S ^ r * (2 ^ (∑ h ∈ s, d h) * B) ^ r := by
+  classical
+  set ax : Fin r → ℤ :=
+    fun i => ((∏ h ∈ s, ((listIdx ((Dx i).map Sum.inl)) h).factorial : ℕ) : ℤ) with hax
+  set ay : Fin r → ℤ :=
+    fun j => ((∏ h ∈ s, ((listIdx ((Dy j).map Sum.inr)) h).factorial : ℕ) : ℤ) with hay
+  set K : ℤ := 2 ^ (∑ h ∈ s, d h) * B with hK
+  obtain ⟨W, hW⟩ := C_listFac_dvd_det_sepFamily s Dx Dy P hx hy
+  refine ⟨W, hW, ?_⟩
+  intro n
+  have hmem : ∀ i j, ∀ h ∈ (Dx i).map Sum.inl ++ (Dy j).map Sum.inr, h ∈ s := by
+    intro i j h hh
+    rcases List.mem_append.mp hh with h1 | h1
+    · exact hx i h h1
+    · exact hy j h h1
+  have hent : ∀ i j, ∀ m,
+      |coeff m (pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P)| ≤ ax i * (ay j * K) := by
+    intro i j m
+    have h := abs_coeff_pderivList_le' s hB0 _ (hmem i j) hd hB m
+    rw [listFac_append_map s (Dx i) (Dy j)] at h
+    rw [hax, hay, hK]
+    push_cast at h ⊢
+    linarith
+  have hSupp : ∀ i j,
+      (((Matrix.of fun i j => pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P) i
+        j).support.card : ℤ) ≤ S := by
+    intro i j
+    exact le_trans (by exact_mod_cast card_support_pderivList_le _ P) hS
+  have hdet := abs_coeff_det_le' (σ := σ ⊕ τ)
+    (Matrix.of fun i j => pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P)
+    ax (fun j => ay j * K) hSupp hent n
+  rw [Fintype.card_fin] at hdet
+  have hprod : (∏ j, ay j * K) = (∏ j, ay j) * K ^ r := by
+    rw [Finset.prod_mul_distrib, Finset.prod_const, Finset.card_univ, Fintype.card_fin]
+  rw [hprod] at hdet
+  have haxpos : ∀ i, (0 : ℤ) < ax i := by
+    intro i
+    have h : (0 : ℕ) < ∏ h ∈ s, ((listIdx ((Dx i).map Sum.inl)) h).factorial :=
+      Finset.prod_pos fun h _ => Nat.factorial_pos _
+    simp only [hax]
+    exact_mod_cast h
+  have haypos : ∀ j, (0 : ℤ) < ay j := by
+    intro j
+    have h : (0 : ℕ) < ∏ h ∈ s, ((listIdx ((Dy j).map Sum.inr)) h).factorial :=
+      Finset.prod_pos fun h _ => Nat.factorial_pos _
+    simp only [hay]
+    exact_mod_cast h
+  have hcpos : (0 : ℤ) < (∏ i, ax i) * ∏ j, ay j :=
+    mul_pos (Finset.prod_pos fun i _ => haxpos i) (Finset.prod_pos fun j _ => haypos j)
+  rw [hW, coeff_C_mul, abs_mul, abs_of_pos hcpos] at hdet
+  refine le_of_mul_le_mul_left ?_ hcpos
+  calc ((∏ i, ax i) * ∏ j, ay j) * |coeff n W|
+      ≤ (r.factorial : ℤ) * S ^ r * ((∏ i, ax i) * ((∏ j, ay j) * K ^ r)) := hdet
+    _ = ((∏ i, ax i) * ∏ j, ay j) * ((r.factorial : ℤ) * S ^ r * K ^ r) := by ring
+
 /-- **§7's coefficient bound in one variable, sharp.**
 
     |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B      whenever  degreeOf j g ≤ d  and  |coeff · g| ≤ B
