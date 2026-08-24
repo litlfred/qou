@@ -47,7 +47,13 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
-from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+# `build_hoefsmit_mpfr` moved: it lived in
+# `_deprecated/probes/probe_staircase_ew_k3_categorical.py`, root-level agent
+# scratch untracked wholesale by 0763606e4, so this import has raised
+# ModuleNotFoundError and THIS PRODUCER COULD NOT RUN AT ALL since. Recovered
+# from history into hecke_character_symbolic, beside the symbolic twin and the
+# standard_young_tableaux it is built on.
+from hecke_character_symbolic import build_hoefsmit_mpfr  # noqa: E402
 from mpmath import mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 

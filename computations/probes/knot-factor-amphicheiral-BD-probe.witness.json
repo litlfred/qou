@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T17:03:58.047378+00:00",
-  "commitSha": "d7246feed461040b477d5586ed1526e7c87ffbf8",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T02:44:30.350134+00:00",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "assertions": [
     {
       "name": "chi_21_values_computed",
@@ -33,23 +33,45 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 32,
   "computation": "knot-factor-amphicheiral-BD-probe",
   "scriptFile": "knot_factor_amphicheiral_BD_probe.py",
-  "scriptHash": "f6893569082f",
-  "scriptCommitSha": "6b33ef6b6750cdfbd17f92785f8ac19d667f297a",
+  "scriptHash": "29d37d964a20",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/knot_factor_amphicheiral_BD_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/knot_factor_amphicheiral_BD_probe.py"
+  },
   "description": "Resolution probe for cor:knot-factor-amphicheiral.  Tests option B (Markov-amphicheirality: is χ_(2,1)(β*) = χ_(2,1)(β)?) and option D (Gram-pairing: spectral form via tr ρ(β·β*)) for the figure-eight braid β = σ_1 σ_2⁻¹ σ_1 σ_2⁻¹ ∈ B_3.  Uses the canonical Hoefsmit (2,1) seminormal matrices via `build_hoefsmit_mpfr` (mpmath, 50 dps).  Earlier hand-rolled matrices in this probe (PR #815) failed the braid relation and gave a spurious χ = -1; PR #818 follow-up corrected to canonical Hoefsmit, χ ≈ -0.91068.",
   "contentBlock": "cor:knot-factor-amphicheiral",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
-    "chi_21_beta_at_q0": -0.9106773300269627,
-    "chi_21_beta_star_at_q0": -0.9106773300269627,
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "chi_21_beta_at_q0": -0.9106773502706678,
+    "chi_21_beta_star_at_q0": -0.9106773502706678,
     "chi_21_beta_times_beta_star_at_q0": 2.0
   },
   "data": {
     "option_B_markov_amphicheirality": {
       "test": "χ_(2,1)(β) =? χ_(2,1)(β*)  ↔  β ~_H β*",
-      "numeric_difference_at_q0": 1.3363823550460978e-51,
+      "numeric_difference_at_q0": 5.4334074472960274e-71,
       "markov_amphicheiral_at_q0": true,
       "interpretation": "If markov_amphicheiral_at_q0 is true, 4_1 IS Markov-amphicheiral.  Corollary's framework survives via option B (sum-of-positive-squares formula a_K = Σ_λ w_λ · (χ_λ(β)/χ_λ(𝟏))²; no sign flip required).  If false, 4_1 is NOT Markov-amphicheiral and the corollary's 4_1 application is structurally wrong."
     },

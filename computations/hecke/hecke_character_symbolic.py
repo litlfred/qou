@@ -208,6 +208,75 @@ def hoefsmit_matrices_symbolic(shape, q):
     return _hoefsmit_build(shape, q)
 
 
+def build_hoefsmit_mpfr(shape: tuple[int, ...], q_val) -> tuple[list, int]:
+    """Build [σ_1, σ_2, …, σ_{n-1}] for V_shape at `q_val` (mpmath).
+
+    Returns `(sigmas, dim)`; each σ_k is an `mp.matrix`. The mpmath sibling of
+    `hoefsmit_matrices_symbolic` above — same seminormal construction, numeric
+    rather than symbolic, so it stays beside the `standard_young_tableaux` it
+    is built on.
+
+    RESTORED HERE, and the reason is worth recording. This function lived in
+    `_deprecated/probes/probe_staircase_ew_k3_categorical.py`, in ROOT-LEVEL
+    agent scratch, and was untracked wholesale by `0763606e4` ("untrack the
+    five root-level agent-scratch dirs (2,344 files)"). Ten TRACKED producers
+    import it at module scope, so every one of them has raised
+    `ModuleNotFoundError` ever since and cannot run at all — their witnesses
+    can never be refreshed by any amount of draining.
+
+    That commit anticipated exactly this: "They are recoverable from history if
+    any turns out to be wanted." One did. Recovered verbatim from
+    `0763606e4^` and placed here rather than restoring the whole probe: the
+    probe was scratch, this function is library code that happened to live in
+    it, and `build_hoefsmit_mpfr` needs only `standard_young_tableaux` and
+    mpmath — both already in this module.
+    """
+    n = sum(shape)
+    syts, _cells, contents = standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], 0
+
+    h = q_val - 1 / q_val
+    sigmas: list = []
+    for k in range(1, n):  # σ_k swaps entries k and k+1
+        M = mp.zeros(dim, dim)
+        processed: set[int] = set()
+        for i in range(dim):
+            if i in processed:
+                continue
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+            a = h / (1 - q_val ** (-2 * rho))
+
+            swap_map = dict(syts[i])
+            swap_map[k], swap_map[k + 1] = ci_k1, ci_k
+            j_partner = None
+            for jj in range(dim):
+                if jj == i:
+                    continue
+                if syts[jj] == swap_map:
+                    j_partner = jj
+                    break
+
+            if j_partner is None:
+                M[i, i] = a
+                processed.add(i)
+            else:
+                a_prime = h / (1 - q_val ** (2 * rho))
+                b_sq = a * a_prime + 1
+                b = mp.sqrt(b_sq)
+                M[i, i] = a
+                M[j_partner, j_partner] = a_prime
+                M[i, j_partner] = b
+                M[j_partner, i] = b
+                processed.add(i)
+                processed.add(j_partner)
+        sigmas.append(M)
+    return sigmas, dim
+
+
 # In-memory cache for χ^λ_q(T_w) keyed by (shape, frozen braid word, q symbol).
 # Avoids recomputing the Hoefsmit-matrix-product trace when the same
 # (partition, braid_word) pair is queried twice in a single process —
