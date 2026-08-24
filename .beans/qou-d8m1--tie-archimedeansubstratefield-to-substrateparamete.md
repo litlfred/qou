@@ -1,11 +1,11 @@
 ---
 # qou-d8m1
 title: Tie ArchimedeanSubstrateField to SubstrateParameter — here eval is constructible, unlike qou-mt7r
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T06:57:02Z
-updated_at: 2026-08-24T08:34:35Z
+updated_at: 2026-08-24T08:50:37Z
 ---
 
 Follow-up left by `qou-6ome` and `qou-mt7r`.
