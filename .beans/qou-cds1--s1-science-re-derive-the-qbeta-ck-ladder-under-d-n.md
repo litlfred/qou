@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T16:53:11Z
+updated_at: 2026-08-24T13:11:34Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1228,3 +1228,49 @@ triage. Two carry extra hazards already known: `q_pinning_50_digit.py:115`
 writes into the ANCHOR-DEFINING witness (AGENTS rule 1 — never re-pin), and the
 qou-mass `_internal/` copy is GENERATED (sync via scripts/sync-qou-mass-vendor.py,
 never hand-edit).
+
+
+## z_bar de-escalated (2026-08-24): it is not a choice, and the comment is a false claim under D
+
+I had flagged `computations/convergence_safe_vhat_tower.py:198` as **needing a
+bar-symmetry decision** before conversion. That escalation was **unnecessary** —
+the site is mechanically determined. Recording the resolution so the next agent
+does not re-escalate it.
+
+Read in context, `z_bar` is not a free constant. The surrounding code builds the
+**bar image** of V̂ by evaluating `_std_vhat` with every argument mapped under
+q ↔ q⁻¹:
+
+    _std_vhat(pg0, qi, q, z_bar, qi - q)
+                   ^^^^^^  ^^^^^  ^^^^^^^
+                   q<->qi         h -> -h
+
+so `z_bar` must be **`z` evaluated at q⁻¹**, whatever `z` is. There is nothing to
+decide.
+
+Measured at the proton pin (50 dps):
+
+| | z | z(q⁻¹) | equal? |
+|---|---|---|---|
+| convention C | 0.499320334183694452 | 0.499320334183694452 | **yes** |
+| convention D | 0.612688037146465252 | 0.403627738350825936 | **no** |
+
+Under D, `z(q⁻¹) = q⁻³/(q⁻²+1) = 1/(q³+q)` — verified to 18 digits against the
+closed form — and `z(q⁻¹)/z = q⁻⁴` **exactly** (0.658781816976030318 both ways).
+
+So the conversion is:
+
+    z_bar = qi**3 / (qi**2 + 1)          # = 1/(q**3 + q)
+
+**and the trailing comment `# = z (bar-symmetric)` MUST be deleted, not
+carried.** It is true only in convention C. Left in place under D it would
+assert an equality that is false by 34 %, in a file whose whole purpose is the
+bar image — precisely the stale-comment failure mode this branch keeps finding
+(the `borromean_per_lambda_fr_probe` "mirror of" docstring; the
+`hecke_core_symbolic` `ℚ[q^{±1/2}]` notes; the `alpha_high_precision` bracket).
+
+**Not yet converted** — the producer emits a witness, so it needs the
+baseline→convert→diff treatment, and the CPU is currently saturated by the
+`delta_lambda_v_hat_z_transfer_phase5d_4` measurement (job bgc281s54). Running a
+second producer concurrently risks pushing that one into its 2400 s timeout and
+manufacturing a spurious abort. Queued behind it.
