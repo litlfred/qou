@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T16:28:44Z
+updated_at: 2026-08-24T16:40:49Z
 ---
 
 ## Landed — PR #5645
@@ -574,3 +574,58 @@ against `nPart_addCell`, and divide two instances of `schurPrincipal_mul_const`.
 `ring` does NOT close associativity/commutativity goals over a `CommMonoid` --
 it wants a semiring. Use `ac_rfl` (or `mul_right_comm`). Cost me two rounds
 across two files.
+
+
+## DONE — `hw` is proved; general-r branching reaches the corpus weight
+
+Commits `494f41953`, `f4fb1b80e`, `78e220243`.
+
+    schurPrincipal_addCell_eq :
+      s_{mu + box at row a} = (prod_{j != a} (Q x_a - x_j)/(x_a - x_j)) * s_mu
+
+with `x_i = Q^{beta_i}`. That is `hw` of
+`QOU.Mathlib.sum_eq_bracket_mul_of_qratio_scaling`, so
+`sum_a s_{mu + box at a} = [r]_Q * s_mu` for the CORPUS weight -- not a
+lookalike, and no `sorry` anywhere in the chain.
+
+Route, in three steps:
+
+1. `schurPrincipal_addCell_mul` -- the ratio CROSS-MULTIPLIED:
+   `s_nu * C * (row.col)_mu = Q^a * (row.col)_nu * (s_mu * C)`. Division-free
+   on purpose: it needs no non-vanishing hypothesis beyond the two the closed
+   form already carries, so it stays true at roots of unity where the quotient
+   is 0/0.
+2. `qratio_prod_eq_rowColProd` -- the q-ratio IS
+   `Q^a * (row.col)_nu / (row.col)_mu`. Unconditional beyond `Q != 0`: a
+   product of quotients is the quotient of the products, and the two
+   `QRatioBetaFactors` lemmas give the factorwise identity.
+3. `schurPrincipal_addCell_eq` -- divide, given `levelConst != 0` and
+   `rowColProd_mu != 0`. Both are products of `(1 - Q^k)` at nonzero `k` (the
+   betas are distinct by `betaR_lt`), so both hold under the genericity
+   `schurPrincipal_eq_zero_iff` already assumes.
+
+### Two Lean traps recorded, both cost a round
+
+* `field_simp` clears only what appears in the GOAL. `levelConst` does not, so
+  it must be cancelled from step 1 by `mul_right_cancel-0` FIRST; otherwise
+  `linear_combination` mismatches by exactly that factor.
+* `prod_pairs_split_ne`'s `hbelow` as first written (`forall i j, a < i -> ...`)
+  was FALSE at `j = a, i > a`. The proof only ever applied it with `j > i > a`,
+  so nothing depended on the wrong form -- but the statement claimed more than
+  it should, and is now `a < i -> a < j`.
+
+### What is genuinely left
+
+Nothing on the branching front. Remaining, if anyone wants the full
+general-`r` analogue of the merged convention-D chain:
+
+* **normalisation** `sum_{|mu|=n} f^mu w_mu = 1` at general `r` -- the r=2
+  proof is `MarkovNormalisation`; branching is the inductive step and is now
+  available, so this should follow the same shape.
+* **uniqueness / the Markov trace instance** at general `r` -- `markovTrace_unique`
+  is already generic in the coefficient ring; what is r-specific is the weight
+  system it is applied to.
+
+`vandPairProd` / `sum_vandPairProd_scale` stay proved and correct; the final
+route did not need them, and that is recorded in the file headers rather than
+deleted.
