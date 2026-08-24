@@ -37,14 +37,19 @@ from q_parameter import Q as q0
 def apply_T_w(v, sigmas, word):
     out = v.copy()
     for (c, d, g) in reversed(word):
-        out = c * (sigmas[g] @ out) + d * out
+        # float64-ok: cast at the numpy boundary — `atom_braid_word_3A`
+        # emits mpf, which promotes a float64 array to object dtype and
+        # makes scipy refuse the conversion. See probe_4_li6_rectangular_
+        # python.apply_T_w for the measurement.
+        out = float(c) * (sigmas[g] @ out) + float(d) * out
     return out
 
 
 def apply_T_w_T(v, sigmas_T, word):
     out = v.copy()
     for (c, d, g) in word:
-        out = c * (sigmas_T[g] @ out) + d * out
+        # float64-ok: same numpy boundary as `apply_T_w` above.
+        out = float(c) * (sigmas_T[g] @ out) + float(d) * out
     return out
 
 

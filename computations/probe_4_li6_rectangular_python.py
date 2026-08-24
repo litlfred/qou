@@ -123,7 +123,20 @@ def apply_T_w(v: np.ndarray, sigmas, word, h: float) -> np.ndarray:
     # T_w = M_1 · M_2 · ... · M_71; applied as M_1 (M_2 (... (M_71 v))).
     for (c, d, g) in reversed(word):
         # M_g = c · σ_g + d · I.
-        out = c * (sigmas[g] @ out) + d * out
+        # float64-ok: CAST AT THE numpy BOUNDARY. `atom_braid_word_3A`
+        # EMITS mpf coefficients — measured on (3,3): c is 66 int / 5
+        # mpf, d is 33 int / 38 mpf — and an mpf scalar against a
+        # float64 array promotes the result to object dtype. Here that
+        # is not merely a loss of BLAS: the caller declares
+        # `LinearOperator(..., dtype=np.float64)` and scipy refuses the
+        # conversion outright —
+        #   "no supported conversion for types: (dtype('float64'), dtype('O'))"
+        # — so `eigsh` dies and the witness records an error string.
+        # efcaf79ed made the word mpf AT SOURCE on purpose and says
+        # consumers needing f64 "cast at their own boundary"; this is
+        # such a consumer. Same fix as mass_at_3A_proper.chi_lambda_of_word
+        # (03569d001), where it was worth 57x as well as the crash.
+        out = float(c) * (sigmas[g] @ out) + float(d) * out
     return out
 
 
@@ -134,7 +147,8 @@ def apply_T_w_T(v: np.ndarray, sigmas_T, word, h: float) -> np.ndarray:
     """
     out = v.copy()
     for (c, d, g) in word:
-        out = c * (sigmas_T[g] @ out) + d * out
+        # float64-ok: same numpy boundary as `apply_T_w` above.
+        out = float(c) * (sigmas_T[g] @ out) + float(d) * out
     return out
 
 
@@ -243,6 +257,33 @@ def main() -> int:
             expected="1",
             tolerance=0,
             source=f"min_eig of ρ_(6,6,6)(T_w_⁶Li) symmetric part = {me_666:+.4f}; threshold -10.0",
+        )
+    else:
+        # THE ASSERTION MUST NOT VANISH WHEN ITS INPUT DIES.
+        #
+        # This was inside the `if` above and nowhere else, so when the (6,6,6)
+        # solve failed the check simply stopped being emitted: the witness went
+        # `assertions 1 -> 0` and read as NOTHING TO CHECK rather than THE
+        # CHECK BROKE. That is the empty-state failure in a new place — not a
+        # gutted witness, but a gate that silently ceases to exist. It was
+        # caught only because `witness_shape_guard` has an `assertions
+        # vanished` rule; no ratchet counts an assertion that was never added,
+        # and `allPassed` over an empty list is vacuously true.
+        #
+        # A missing input is a FAILED check, not an absent one. The reason is
+        # carried verbatim so the witness says which.
+        _why = "(6, 6, 6) not present in results"
+        if "[6, 6, 6]" in results:
+            _why = str(results["[6, 6, 6]"].get("error")
+                       or "min_eig_lanczos absent from the (6,6,6) result")
+        print(f"\n=== Conjecture status (A=6): UNEVALUATED — {_why} ===")
+        out.add_assertion(
+            name="li6_rectangle_min_eig_substantially_negative",
+            computed="0",
+            expected="1",
+            tolerance=0,
+            source=f"UNEVALUATED — the (6,6,6) min-eig solve did not produce a "
+                   f"value, so the conjecture could not be tested: {_why}",
         )
 
     out.add_caveat(
