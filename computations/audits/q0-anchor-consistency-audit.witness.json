@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:22:02.115208+00:00",
-  "commitSha": "7a440fe868d23182e74aaf55f108591dfbb5fd66",
+  "computedAt": "2026-08-24T09:06:27.497871+00:00",
+  "commitSha": "98cdb66539b26f9249a8eed677670dd11f850877",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -30,7 +30,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "fe19077ea17b978d"
@@ -45,14 +45,14 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 703,
+      "Q0_OK": 704,
       "Q0_AMBIGUOUS": 16,
-      "Q0_INDEPENDENT": 46,
+      "Q0_INDEPENDENT": 47,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1880,
+      "Q0_ANCHOR_MISSING": 1879,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -199,10 +199,6 @@
         },
         {
           "witness": "alpha-star-vs-binding-gap.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "three-term-wedderburn.witness.json",
           "detail": ""
         },
         {
@@ -7632,6 +7628,10 @@
           "detail": ""
         },
         {
+          "witness": "three-term-wedderburn.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "alpha-basis-knot-couplings.witness.json",
           "detail": ""
         },
@@ -10795,6 +10795,10 @@
         },
         {
           "witness": "habiro-witness-convention-adjudication.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-a1-tail-schedule.witness.json",
           "detail": ""
         },
         {
