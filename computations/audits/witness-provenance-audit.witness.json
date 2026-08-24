@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:13:10.513809+00:00",
-  "commitSha": "318472530bd2ee69c2341ea4e60780722793493b",
+  "computedAt": "2026-08-24T15:12:23.869642+00:00",
+  "commitSha": "53bcd56582cf1f33987b3b013be2801763384260",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 86,
+      "computed": 87,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -30,7 +30,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "30fd920c241a54fa"
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2731,
-      "prov_ok": 2333,
+      "total_scanned": 2733,
+      "prov_ok": 2336,
       "prov_audit_exempt": 78,
-      "prov_exempt_no_reader": 231,
+      "prov_exempt_no_reader": 229,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 86,
+      "prov_missing": 87,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.968509703405346027096301720981325521786891248626876601977298"
+      "completeness_ratio": "0.968166849615806805708013172338090010976948408342480790340285"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -5014,6 +5014,10 @@
           "missing_fields": []
         },
         {
+          "witness": "aomega-m3-adjoint-index-set.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "archimedean-knot-eigenbasis-probe.witness.json",
           "missing_fields": []
         },
@@ -5267,6 +5271,10 @@
         },
         {
           "witness": "delta-lambda-bar-involution.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "delta-lambda-closure-tl-support.witness.json",
           "missing_fields": []
         },
         {
@@ -5699,6 +5707,10 @@
         },
         {
           "witness": "gswz_program_convention_immunity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gz-third-knot-rank-grading.witness.json",
           "missing_fields": []
         },
         {
@@ -9900,6 +9912,14 @@
           ]
         },
         {
+          "witness": "rho-w-crystal-vertex-trace.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "shadow-price-c-321-q0.witness.json",
           "missing_fields": [
             "engine",
@@ -11119,12 +11139,6 @@
           ]
         },
         {
-          "witness": "aomega-m3-adjoint-index-set.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
           "witness": "aoperator_a5_crosscheck.witness.json",
           "missing_fields": [
             "scriptFile"
@@ -11902,14 +11916,6 @@
         },
         {
           "witness": "qserre-gs-basis-check.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-w-crystal-vertex-trace.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

@@ -438,7 +438,20 @@ def main() -> int:
         # Recorded so a consumer can tell which layer this witness belongs to
         # WITHOUT inferring it from the digits. Its absence is why a hardcoded
         # muon q sat here against a proton cache without anything noticing.
+        #
+        # q0Value / q0AnchorReason follow the contract main's labelling pass
+        # (4101909790) introduced. That pass transcribed this witness's pin from
+        # `q_0_50dps` and correctly labelled it "muon" — a faithful reading of the
+        # hardcoded value that was here at the time. Emitting all three from the
+        # producer means the label now tracks the pin instead of being recovered
+        # from it afterwards, so it cannot go stale when the pin changes.
         "q0Anchor": Q0_ANCHOR,
+        "q0Value": Q0_STR,
+        "q0AnchorReason": (
+            "read from the chi cache this script cross-checks against "
+            "(chi-deuteron-h6-at-q0-50dps.witness.json), so both sides of "
+            "Sum_w rho_w = chi^lambda are evaluated at one anchor by construction"
+        ),
         "m_e_MeV": M_E_MEV_STR,
         "dps": mp.dps,
         "parameter_free": True,

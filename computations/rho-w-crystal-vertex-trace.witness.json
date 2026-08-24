@@ -10,6 +10,8 @@
   "braid_word_len": 23,
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "read from the chi cache this script cross-checks against (chi-deuteron-h6-at-q0-50dps.witness.json), so both sides of Sum_w rho_w = chi^lambda are evaluated at one anchor by construction",
   "m_e_MeV": "0.51099895069",
   "dps": 70,
   "parameter_free": true,
@@ -186,6 +188,6 @@
       "signed_contribution": "0.0"
     }
   ],
-  "compute_time_sec": 0.29,
+  "compute_time_sec": 0.54,
   "design_note": "docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md"
 }

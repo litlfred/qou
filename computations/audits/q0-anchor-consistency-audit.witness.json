@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:10:53.559937+00:00",
-  "commitSha": "318472530bd2ee69c2341ea4e60780722793493b",
+  "computedAt": "2026-08-24T15:12:11.999743+00:00",
+  "commitSha": "53bcd56582cf1f33987b3b013be2801763384260",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
@@ -30,7 +30,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "30fd920c241a54fa"
@@ -45,10 +45,10 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 946,
+      "Q0_OK": 947,
       "Q0_AMBIGUOUS": 1,
       "Q0_AMBIGUOUS_NO_REASON": 15,
-      "Q0_INDEPENDENT": 47,
+      "Q0_INDEPENDENT": 48,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -9149,6 +9149,10 @@
           "detail": ""
         },
         {
+          "witness": "delta-lambda-closure-tl-support.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "delta-lambda-h6-branching.witness.json",
           "detail": ""
         },
@@ -10920,6 +10924,10 @@
         },
         {
           "witness": "gswz_epsm_v2_vacuity_confirmation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gz-third-knot-rank-grading.witness.json",
           "detail": ""
         },
         {
