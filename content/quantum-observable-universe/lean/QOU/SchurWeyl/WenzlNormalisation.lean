@@ -14,6 +14,7 @@ same argument at every level `r` for the normalised Wenzl weight, over any field
 | `sum_addable_wenzlWeight_all` | branching **with no row-count hypothesis** |
 | `sum_dim_wenzlWeight_succ` | the weighted dimension sum does not depend on `n` |
 | `sum_dim_wenzlWeight_eq_one` | **`∑_{|μ|=n} f^μ w_μ = 1`** |
+| `wenzlWeight_addCell_eq` | the **termwise** box-addition ratio for the normalised weight |
 
 **The row-count hypothesis has to go first, and that is not bookkeeping.**  The induction sums over
 *every* diagram of size `n`, including those with more than `r` rows, where
@@ -133,5 +134,28 @@ theorem sum_dim_wenzlWeight_eq_one (Q : F) (hQ0 : Q ≠ 0)
   induction n with
   | zero => exact sum_dim_wenzlWeight_zero Q r
   | succ n ih => rw [sum_dim_wenzlWeight_succ Q hQ0 hgen hbr hQ1 n]; exact ih
+
+/-- **The termwise box-addition ratio for the normalised weight.**
+
+`w_{μ+□ at row a} = (q-ratio_a / [r]_Q) · w_μ`.
+
+`sum_wenzlWeight_addCellOrSelf` sums these; the corner identity needs them one at a time, because it
+weights each by the seminormal entry before summing.  The `[r]_Q` is the one extra cell's worth of
+normalisation, exactly as in `card_addCell`. -/
+theorem wenzlWeight_addCell_eq (Q : F) (hQ0 : Q ≠ 0)
+    (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) {r : ℕ} {μ : YoungDiagram} {s : ℕ × ℕ}
+    (hs : IsAddableCell μ s) (ha : s.1 < r) (hrμ : μ.colLen 0 ≤ r)
+    (hbr : levelBracket r Q ≠ 0) :
+    wenzlWeight r Q (addCell μ s hs)
+      = (∏ j ∈ (Finset.range r).erase s.1,
+          (Q * Q ^ betaR r μ s.1 - Q ^ betaR r μ j) / (Q ^ betaR r μ s.1 - Q ^ betaR r μ j))
+        / levelBracket r Q * wenzlWeight r Q μ := by
+  have hrν : (addCell μ s hs).colLen 0 ≤ r :=
+    le_trans (colLen_zero_addCell_le hs) (by simp only [max_le_iff]; omega)
+  rw [wenzlWeight, wenzlWeight, card_addCell hs,
+    schurPrincipal_addCell_eq Q hQ0 hs ha hrμ hrν (hookProd_ne_zero hgen μ)
+      (hookProd_ne_zero hgen _) (levelConst_ne_zero hgen r) (rowColProd_ne_zero hgen ha μ),
+    pow_succ]
+  field_simp
 
 end QOU.SchurWeyl
