@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T18:57:13Z
-updated_at: 2026-08-24T18:58:31Z
+updated_at: 2026-08-24T19:56:38Z
 ---
 
 MEASURED 2026-08-24, branch claude/excise-convention-c-2026-08-24.
@@ -79,3 +79,19 @@ chi_lambda_of_word. Adjacent, not duplicate.
 Patch mass_at_3A_proper.py:746-763 once the T/3He confirmation lands. Worth
 doing before the qou-37xc baseline campaign resumes -- that campaign is itself
 paying this cost.
+
+VERIFIED at A=3 (2026-08-24). Not via the timing harness — via the producer itself.
+
+delta_lambda_v_hat_z_transfer_phase5d_4 calls per_generator_V_hat_3A at A=3 and
+was the branch's longest pole: PR #5622 lists it as '2.5h+ per measurement', and
+a run of it was killed at 2h47m. Under the patch it completes in **1 second**.
+
+The A=3 correctness check falls out for free: the committed C baseline witness
+(34b068f197) was produced by the UNPATCHED code in that 2.5h run; re-running the
+same C source under the PATCHED code reproduces it across 171 non-volatile
+fields, 42 of them V_hat values, with ZERO differing beyond 1e-12 relative.
+Worst 1.448e-13 — the same tiny-denominator artifact as A=2 (one V_hat is
+7.19e-05, so 9e-16 absolute reads large relative).
+
+Stronger than the planned harness comparison, which would have measured a
+reimplementation of the call rather than the call as producers actually make it.
