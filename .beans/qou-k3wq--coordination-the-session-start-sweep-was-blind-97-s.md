@@ -1,7 +1,7 @@
 ---
 # qou-k3wq
 title: 'Coordination: the session-start sweep was blind to sibling branches — 97 active in 24h, 31 in this campaign''s scope, and four working my exact defect shape'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-23T14:50:00Z
 updated_at: 2026-08-23T15:45:00Z
@@ -161,3 +161,53 @@ Same class as the `git log -- 'computations/**/*.witness.json'` error recorded
 earlier in this campaign: a git pathspec that silently matches differently than
 intended, producing a difference that looks like a corpus movement. **Compare
 counts only under a pathspec proven identical on both revisions.**
+
+
+## 2026-08-24 — CLAIMED (branch `claude/anchor-followups-2026-08-08`); the fix is verified live, and one framing here was backwards
+
+### The deliverable works, measured rather than asserted
+
+`scripts/session-start-coord-sweep.sh` run today emits:
+
+    **Sibling `claude/*` branches on origin:**
+    _137 updated in the last 24h, of 4891 known; showing up to 8:_
+    - origin/claude/cxon-q1-delta-derivation-2026-08-24  76 seconds ago  …
+
+Real timestamps, a real 24h window, and the section is emitted rather than
+silently omitted. Cross-checked against `git ls-remote --heads origin` — 4892
+`claude/*` heads, 5088 total. The blindness this bean exists for is gone.
+
+### "Zero siblings touch these files" is FALSIFIED, and I have hard evidence
+
+Merging `origin/main` today (**361 commits behind**) produced **14 conflicts**:
+
+    computations/audits/q0_cross_layer_fallback_scan.py       both sides changed
+    computations/qbeta/qbeta_singularity_cross_anchor_probe.py  both sides changed
+    12 witnesses, incl. computations/audits/witness-provenance-audit.witness.json
+
+Two of those are files this bean listed as untouched by siblings. Not a
+prediction any more — a merge conflict is proof.
+
+Both `.py` conflicts were **both-sides-changed on the same defect**, which is the
+strongest possible form of the collision this bean warns about:
+`qbeta_singularity_cross_anchor_probe.py` — a sibling and I independently fixed
+the same `mp.mpf(str(None))` crash, and theirs was a strict superset.
+
+### Correction: the manifest divergence was mine to *receive*, not to cause
+
+I was about to relay that my branch "diverges from main by 1321 lines on
+`q0_anchor_manifest.json`". True, and **backwards in the part that matters**:
+
+    git diff merge-base HEAD  -- computations/q0_anchor_manifest.json   -> EMPTY
+    git diff merge-base main  -- computations/q0_anchor_manifest.json   -> 1321 lines
+
+**All 1321 lines are main's. My branch had never touched the file.** A divergence
+figure without a direction is not a collision risk; it is arithmetic. Same class
+as the `108 vs 93` pathspec artifact already recorded here — a number that looks
+like corpus movement and is actually a measurement frame.
+
+### Still perishable by nature
+
+Any branch-count in this bean is a snapshot with a half-life of hours: 137 in the
+last 24h, and three of the eight most recent are on this campaign's exact
+surface. The sweep is the durable artifact; the numbers in this file are not.

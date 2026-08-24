@@ -465,3 +465,50 @@ The interim class was summed into `witnesses_unresolved` but never printed in th
 breakdown, so 35 witnesses sat **inside the total and outside every line that
 explains it** — a clean-looking breakdown over a population it never listed.
 Fixed: every class in the total is now a line in the breakdown, with examples.
+
+
+## 2026-08-24 — this answers a sibling's open question (`qou-cq2n`, retracted 88%)
+
+A sibling on `claude/sparse-mpf-character-2026-08-24` opened `qou-cq2n`
+*"RETRACTED measurement: the 88% file-only q0Anchor figure is an over-count"*.
+They retracted **715 of 817** because their detector asked whether the producer's
+**source text** contains the string `q0Anchor` — but `WitnessBuilder` writes that
+field, so every producer going through the builder emits it without the literal
+ever appearing. They name the correct method and leave it undone:
+
+> **Resolve the call graph**: does the producer reach `WitnessBuilder.save`, or
+> does it hand-build a dict and `write_text`? … That is an **AST question, not a
+> string question.** Route 2 is the cheap one and is what a real audit should do.
+
+**That machinery now exists** — `_writes` in
+`computations/audits/producer_importability_audit.py`, built for this bean's
+reverse-reference resolution. It is exactly route 2: AST taint from a witness
+name literal to a write sink (`open(p,'w'|'a')`, `p.open('w'|'a')`,
+`p.write_text`/`write_bytes`). Ran it against the builder-import question:
+
+| | n |
+|---|---|
+| producer/witness write pairs through a raw sink | 805 |
+| …producer also imports `WitnessBuilder` (mixed) | 213 |
+| …producer has **no** `WitnessBuilder` at all | **592** |
+| distinct **pure hand-builder producers** | **549** |
+| distinct **witnesses** written by a pure hand-builder | **563** |
+| total committed witnesses (ex-`_deprecated`) | 2731 |
+
+Spot-checked two by hand — `a3_magnitude_berezinian_crossterm_probe.py` and
+`alpha_em/alpha_em_b5_assembly_probe.py`: zero `WitnessBuilder`, a raw sink, and
+each names its own output. Both classifications correct.
+
+**This is a FLOOR, not the figure.** The index only sees witnesses whose filename
+appears as a **string literal** in the producer; a hand-builder that composes its
+filename from a variable stem is invisible to it. So **≥563**, and the true count
+is higher by an amount this method cannot see. Saying so is the point — the bean
+being answered was retracted precisely for reporting an unmeasured over-count as
+though it were the number.
+
+It also cannot produce a ratio like the 88%: a `WitnessBuilder` producer does not
+name its file, so it is excluded from the index **by construction**. The
+denominator is not available from this index and must not be inferred from it.
+
+Not written into `qou-cq2n` — that is a sibling's bean on a sibling's branch.
+Recorded here, cross-referenced, for them to take or leave.
