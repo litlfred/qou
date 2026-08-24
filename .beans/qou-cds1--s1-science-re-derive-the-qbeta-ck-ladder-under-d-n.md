@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T14:55:13Z
+updated_at: 2026-08-24T16:05:23Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1390,3 +1390,47 @@ swaps them by inspection.
 are unstated in the corpus but follow in one step from it. The load-bearing
 contribution of that commit remains the *defect* in
 `derived_bond_graph_binding.py` and its measurement, not the mathematics.
+
+
+## Re-audit of the "0 fields moved" verdicts — 1 frozen, 3 genuinely safe
+
+`compound_shift_nf` showed **0 fields moved** under the `hecke_core_symbolic`
+conversion and I read that as convention-INDEPENDENT. It was convention-FROZEN
+(transcribed constants, fixed in `35930672e3`). Since that inference was
+backwards once, I re-checked the other three zero-movement importers from
+`a24fdac8a1`:
+
+| importer | why it did not move | verdict |
+|---|---|---|
+| `crystal_shift_nf_atomic` | **0** z references at all | genuinely independent |
+| `canonical_ordering_dof_probe` | `z = markov_z(q)` — the canonical helper, already D | independent **of my change** |
+| `hecke_channel_binding_probe` | `from closed_form_tau_M import markov_z`, `z = markov_z(Q0)` | independent **of my change** |
+| `compound_shift_nf` | transcribed integers, cannot move | **FROZEN — was the defect** |
+
+So one in four. The other three are safe for two different reasons, and the
+distinction matters: `crystal_shift_nf_atomic` does not use z; the other two use
+it but obtain it from a **canonical helper** that is already convention D, so
+migrating `hecke_core_symbolic` correctly leaves them alone.
+
+## The structural remedy is already in the corpus, and it is better than mine
+
+`hecke_channel_binding_probe.py:61-68` carries a prior agent's rationale:
+
+> Convention D via the canonical helper. This was `mp.sqrt(Q0)/(Q0+1)` —
+> convention C, excised by the 2026-08-09 ruling. Note the witness
+> `_provenance` already CLAIMED `z=q^3/(q^2+1)`, so the file **documented D
+> while computing C**. Calling `markov_z` rather than re-spelling z inline is
+> deliberate: **every convention detector keys on how z is WRITTEN, and an
+> inline spelling is how a site goes blind** (this one was missed by two
+> independent detectors).
+
+That is the same "documents D, computes C" defect I found in
+`derived_bond_graph_binding`, hit earlier by someone else, and their fix is
+structural where mine was local: **route through `markov_z(q)` so there is no
+spelling for a detector to miss.**
+
+Worth adopting as the campaign's end state. Every detector on this branch —
+mine, the sibling's witness-layer one, the value-literal one — exists only
+because z is re-spelled at each site. A site that calls the helper needs no
+detector at all. Converting an inline spelling to `markov_z(q)` is strictly
+better than converting it to a D spelling, and costs the same edit.
