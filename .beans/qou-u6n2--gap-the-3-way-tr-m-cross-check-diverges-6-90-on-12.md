@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:04:11Z
-updated_at: 2026-08-24T23:07:22Z
+updated_at: 2026-08-24T23:22:37Z
 ---
 
 ## What is established
@@ -142,3 +142,58 @@ Wenzl-LR value is the outlier, not the reference. Ratios (5.143 D, 9.662 3He,
 
 The witness STILL records `assertions: []` / `allPassed: true` while 7 of 12
 pairs diverge at ~0.9. Unchanged by any of the above.
+
+
+## 2026-08-24 CLOSED — the Wenzl-LR divergence was documented at the source all along
+
+I recommended the Wenzl-LR path as "the most tractable open question I've
+surfaced today". **It is not open.** The answer is in
+`rho_k_full_via_wenzl_lr.py`'s own docstring, dated 2026-05-17 and found by THIS
+cross-check:
+
+> "the Wenzl LR identity chi^lambda(b1 (x) b2) = Sum c^lam_{mu,nu} chi^mu chi^nu
+>  applies to TENSOR-PRODUCT (disjoint) braids only. The canonical atomic braid
+>  `atom_canonical_crossings(Z, N)` is NOT a tensor product -- it includes
+>  inter-nucleon arc crossings. This script therefore computes
+>  |tr_M(b_p (x) b_n (x) ...)|, NOT |tr_M(b_canonical(Z, N))|. The two diverge by
+>  ~80% relative on D, T, 3He."
+
+So the cross-check has been applying a 1e-9 tolerance across a **known
+inequality of quantities** and reporting the result as a precision failure. The
+~0.9 is a SCOPE difference -- the disjoint product omits exactly the
+inter-nucleon crossings the canonical braid carries -- and `atomic_mass_via_rho_k`
+layer 4 was already disabled because of it.
+
+**One `sed -n '1,55p'` on the producer answered what two rounds of numerology on
+the ratios could not.** The corpus-grep checklist exists for this; I ran it on
+the cross-check's identifiers and not on the producer that supplies the outlying
+leg.
+
+### What changed in the code
+
+Those two pair-types are now reported **SCOPE**, carry
+`compares_same_object: false` plus a `scope_note` naming the reason, and are
+excluded from `any_diverge`.
+
+### And that unblocked the assertion defect
+
+Wiring assertions was blocked on knowing WHAT to assert. With the Wenzl-LR pairs
+identified as a different object the answer is unambiguous: assert the
+same-object comparisons, assert nothing about the scope ones. The witness now
+carries **5 assertions, all passing**, where it carried `assertions: []` and a
+vacuous `allPassed: true` while every pair diverged.
+
+    hoefsmit_vs_markov_peel : n=5  diverge=0  max |delta_rel| = 4.4e-50   ASSERTED
+    hoefsmit_vs_wenzl_lr    : n=3                                        SCOPE
+    markov_peel_vs_wenzl_lr : n=4                                        SCOPE
+
+My first version asserted `expected="< 1e-9"` -- a STRING, which the builder
+coerces numerically, so all five failed on values as small as 2.6e-50. Caught by
+reading the output rather than the exit code. Corrected to `expected="0"` with
+`tolerance="1e-9"`.
+
+### Net
+
+Every part of the original 12-of-12 finding is now accounted for: a loader bug
+(#5729), a stale witness, an anchor straddle (#5732), and a documented
+scope difference. Nothing about the tr_M compute was wrong.
