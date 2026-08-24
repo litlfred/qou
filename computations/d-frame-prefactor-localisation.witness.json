@@ -1,0 +1,136 @@
+{
+  "computation": "d-frame-prefactor-localisation",
+  "description": "Localises the uniform factor 6 in the convention-D atomic Markov prefactor (qou-cxon Q1) to the single inter-nucleon interface crossing. With include_inter off the D prefactor is exactly 2^(2A) for all six configurations (ratio 1/2 against the convention-C law 2^(2A+1)); switching the interface on multiplies by exactly 12 for every A>=2, independent of A, Z, N. A=1, which structurally has no interface, already sits at 1/2. The C law assigns that crossing a factor 2 (one averaged crossing), so 12/2 = 6 accounts for the whole discrepancy. 12 = 2^2 * 3 and the 3 is not a count: the bring_color_weighted interface carries delta(q) = (q-1)^2 (1 - q^-4) / 3, which a crossing count cannot see. This LOCALISES the 6; it does NOT derive it, and must not be cited as a derivation. Scope-(a) measurement of these six configurations only.",
+  "convention": {
+    "markov_z": "q**3/(q**2 + 1)   (convention D, canonical per the 2026-08-15 owner ruling R1)",
+    "pn_convention": "bring_color_weighted (canonical per R3)",
+    "anchor": "NONE enters the computation: tr_M_atomic is an integer-coefficient rational function of symbolic q, and every number here is the integer content of a denominator. The top-level q0Anchor/q0Value fields are the AMBIENT stamp applied by WitnessBuilder to every witness -- they record which pin this process ran under, not an input to any value below. Do not read them as an anchor for these prefactors."
+  },
+  "reference_blocks": [
+    "def:markov-trace",
+    "prop:atomic-braid-decomposition"
+  ],
+  "atoms": [
+    {
+      "atom": "proton",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "prefactor_inter_on": "4",
+      "prefactor_inter_off": "4",
+      "c_law_2_pow_2A_plus_1": "8",
+      "ratio_on_over_c": "1/2",
+      "ratio_off_over_c": "1/2",
+      "interface_factor_on_over_off": "1",
+      "off_equals_2_pow_2A": true,
+      "elapsed_sec": "0.35"
+    },
+    {
+      "atom": "neutron",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "prefactor_inter_on": "4",
+      "prefactor_inter_off": "4",
+      "c_law_2_pow_2A_plus_1": "8",
+      "ratio_on_over_c": "1/2",
+      "ratio_off_over_c": "1/2",
+      "interface_factor_on_over_off": "1",
+      "off_equals_2_pow_2A": true,
+      "elapsed_sec": "0.03"
+    },
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "prefactor_inter_on": "192",
+      "prefactor_inter_off": "16",
+      "c_law_2_pow_2A_plus_1": "32",
+      "ratio_on_over_c": "6",
+      "ratio_off_over_c": "1/2",
+      "interface_factor_on_over_off": "12",
+      "off_equals_2_pow_2A": true,
+      "elapsed_sec": "0.96"
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "prefactor_inter_on": "768",
+      "prefactor_inter_off": "64",
+      "c_law_2_pow_2A_plus_1": "128",
+      "ratio_on_over_c": "6",
+      "ratio_off_over_c": "1/2",
+      "interface_factor_on_over_off": "12",
+      "off_equals_2_pow_2A": true,
+      "elapsed_sec": "9.29"
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "prefactor_inter_on": "768",
+      "prefactor_inter_off": "64",
+      "c_law_2_pow_2A_plus_1": "128",
+      "ratio_on_over_c": "6",
+      "ratio_off_over_c": "1/2",
+      "interface_factor_on_over_off": "12",
+      "off_equals_2_pow_2A": true,
+      "elapsed_sec": "4.40"
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "prefactor_inter_on": "3072",
+      "prefactor_inter_off": "256",
+      "c_law_2_pow_2A_plus_1": "512",
+      "ratio_on_over_c": "6",
+      "ratio_off_over_c": "1/2",
+      "interface_factor_on_over_off": "12",
+      "off_equals_2_pow_2A": true,
+      "elapsed_sec": "46.23"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "inter_off_prefactor_is_two_pow_2A",
+      "passed": true,
+      "note": "the intra-nucleon half of the C crossing-count derivation transfers to convention D unchanged; only the '+1' does not"
+    },
+    {
+      "name": "inter_off_ratio_to_c_law_is_one_half",
+      "passed": true,
+      "note": "uniform across A, Z and N"
+    },
+    {
+      "name": "single_nucleon_already_at_one_half_with_inter_on",
+      "passed": true,
+      "note": "A=1 has no second nucleon, so no interface exists to switch off -- an independent check that does not rely on the include_inter flag"
+    },
+    {
+      "name": "interface_factor_is_uniformly_twelve",
+      "passed": true,
+      "note": "independent of A, Z, N -- so it is one object, not a per-nucleon or per-strand contribution"
+    },
+    {
+      "name": "uniform_six_equals_interface_twelve_over_c_two",
+      "passed": true,
+      "note": "12 / 2 = 6: the C law gives this crossing a single halving; convention D with bring_color_weighted gives it 12"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "46e0614ec19e",
+  "scriptCommitSha": "unknown",
+  "commitSha": "3e2a0b4b9c2dd493890c1398c73464a01cfe111f",
+  "engine": "sympy",
+  "computedAt": "2026-08-24T05:56:36.669410+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
