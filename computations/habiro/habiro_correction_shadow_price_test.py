@@ -219,8 +219,26 @@ def main():
     )
     w.set_audit_only("docs/audits/2026-05-28-habiro-product-correction-7ppm.md")
     # Required LP-dual fields
+    # THE SHADOW PRICES ARE THE DELIVERABLE, so they ship with their full
+    # precision, not just the f64 view. `solve_operator_selection_lp` already
+    # returns a 50-dps companion for every dual it computes; reading only
+    # `rd["y_star"]` and handing that to `add_data` threw those digits away at
+    # the last step and put 34 raw float64 fields into the witness — for
+    # quantities whose whole argument is that they are ALGEBRAIC and can be
+    # compared against a transcendental. Bean `qou/ftuv`.
+    #
+    # `backend` rides along because a clarabel answer and a scipy-HiGHS answer
+    # to this LP are not interchangeable, and a witness that does not say
+    # which one produced it cannot be re-checked.
     w.add_data("y0_star", y0_star)
     w.add_data("y_star", y_star)
+    for _k in ("y0_star_str", "y_star_str", "primal_obj_str",
+               "dual_obj_str", "duality_gap_str"):
+        _v = rd.get(_k)
+        if _v is not None:
+            w.add_data(_k, _v)
+    if rd.get("backend") is not None:
+        w.add_data("backend", rd["backend"])
     w.add_data("active_set", active)
     w.add_data("primal_obj", rd["primal_obj"])
     w.add_data("dual_obj", rd["dual_obj"])
