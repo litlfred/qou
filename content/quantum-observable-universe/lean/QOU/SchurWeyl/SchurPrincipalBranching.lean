@@ -23,6 +23,7 @@ together gives the box-addition ratio.
 | `qratio_prod_eq_rowColProd` | the `q`-ratio **is** `Q^a · (row·col)_ν/(row·col)_μ` |
 | `schurPrincipal_addCell_eq` | **`s_ν = (q-ratio) · s_μ`** — the branching hypothesis itself |
 | `qratio_prod_eq_zero_of_not_addable` | a row that cannot take a box contributes `0` |
+| `isAddableCell_rowEnd_iff` | row `a` takes a box ⟺ `a = 0` or `μ_a < μ_{a−1}` |
 
 The headline is stated **division-free** on purpose: as a cross-multiplied equation it needs no
 non-vanishing hypothesis beyond the two the closed form already carries, so it stays true at the
@@ -211,5 +212,38 @@ theorem qratio_prod_eq_zero_of_not_addable (Q : F) {r a : ℕ} {μ : YoungDiagra
     omega
   rw [hβ, ← pow_succ']
   exact sub_self _
+
+/-! ## Which rows take a box -/
+
+/-- **Row `a` takes a box exactly when `a = 0` or the row above is strictly longer.**
+
+The other two clauses of `IsAddableCell` are automatic at the end of a row: `(a, μ_a)` is never in
+`μ`, and its left neighbour is present whenever the row is nonempty. -/
+theorem isAddableCell_rowEnd_iff (μ : YoungDiagram) (a : ℕ) :
+    IsAddableCell μ (a, μ.rowLen a) ↔ (a = 0 ∨ μ.rowLen a < μ.rowLen (a - 1)) := by
+  unfold IsAddableCell
+  dsimp only
+  constructor
+  · rintro ⟨-, h1, -⟩
+    rcases h1 with h | h
+    · exact Or.inl h
+    · exact Or.inr (mem_iff_lt_rowLen.mp h)
+  · intro h
+    refine ⟨by simp [mem_iff_lt_rowLen], ?_, ?_⟩
+    · rcases h with h | h
+      · exact Or.inl h
+      · exact Or.inr (mem_iff_lt_rowLen.mpr h)
+    · rcases Nat.eq_zero_or_pos (μ.rowLen a) with h0 | h0
+      · exact Or.inl h0
+      · exact Or.inr (mem_iff_lt_rowLen.mpr (by omega))
+
+/-- The contrapositive, in the form `qratio_prod_eq_zero_of_not_addable` consumes. -/
+theorem not_isAddableCell_rowEnd (μ : YoungDiagram) {a : ℕ}
+    (h : ¬ IsAddableCell μ (a, μ.rowLen a)) :
+    0 < a ∧ μ.rowLen (a - 1) = μ.rowLen a := by
+  rw [isAddableCell_rowEnd_iff] at h
+  push_neg at h
+  have hanti := μ.rowLen_anti (a - 1) a (by omega)
+  exact ⟨Nat.pos_of_ne_zero h.1, by omega⟩
 
 end QOU.SchurWeyl
