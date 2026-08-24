@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T21:51:54.347746+00:00",
-  "commitSha": "51bbfa399406a9cfb9d6e16daee60ada52e1674e",
+  "computedAt": "2026-08-24T13:33:41.002382+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "geom_flat_S_steep_confirms_extraction_picture",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "qbeta-c3-geometric-channel-q0star",
   "scriptFile": "qbeta_c3_geometric_channel_q0star_probe.py",
   "scriptHash": "eceba5c51ae7",
-  "scriptCommitSha": "51bbfa399406a9cfb9d6e16daee60ada52e1674e",
+  "scriptCommitSha": "900411ba404975222cd9d0ea3e61b3afafef8e2a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,20 +32,29 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_geometric_channel_q0star_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_geometric_channel_q0star_probe.py"
   },
   "description": "Direction 2 (reproduce the smooth target geometrically). Honest null + direction-4 confirmation. The leading geometric channel identity geom(q)=(√3/4)(ln q₀)² is FLAT across the muon/proton gap (Δgeom~1e-9) while the ladder S sweeps ~0.049 (1/u³-amplified) — confirming the #4509 picture (smooth geometry, extraction-artifact S hypersensitivity). The identity is NOT satisfied at either canonical pin: geom≈0.00471 is ~2.05× below S(muon)=0.00968 (the boost-enhancement/spin gap) and wrong-sign vs S(proton)=−0.03946. A q₀* with S=geom exists in the gap but is IVT-trivial (steep S crosses flat geom once), recorded only as a datum (~90% proton→muon), NOT evidence. The A≈2.05 gap persists (open, qou-iyj5). No fit; nothing wired.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "data": {
     "channel_identity_readout": {
-      "geom_leading_0470": "0.00471420423",
-      "S_muon": "0.009682977798",
+      "geom_leading_0470": "0.004714204237",
+      "S_muon": "0.01002290095",
       "S_proton": "-0.0394593643",
-      "muon_S_over_geom": "2.0540005",
-      "delta_geom_across_gap": "1.04226e-9",
-      "delta_S_across_gap": "0.0491423",
+      "muon_S_over_geom": "2.1261066",
+      "delta_geom_across_gap": "1.04947e-9",
+      "delta_S_across_gap": "0.0494823",
       "geom_flat_S_steep": true,
       "identity_fails_at_both_canonical_pins": true,
       "q0star_ivt_crossing": "1.109978594259691",
