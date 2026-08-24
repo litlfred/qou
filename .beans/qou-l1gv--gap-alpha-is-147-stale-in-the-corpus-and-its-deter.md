@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:05:13Z
-updated_at: 2026-08-24T13:14:12Z
+updated_at: 2026-08-24T13:18:11Z
 ---
 
 Found while triaging the last convention-C sites (`qou-cds1`, PR #5622).
@@ -114,3 +114,68 @@ localise it.
 Recording the negative because it is the more useful half: an agent picking this
 up would otherwise spend the first hour re-pinning the producer and find the
 number unmoved.
+
+
+## CAUSE IDENTIFIED — both conventions are live inside this one producer
+
+The previous note said the cause was unidentified with the two obvious
+candidates eliminated. Found it, and it is neither: **the producer computes with
+convention C and convention D simultaneously.**
+
+    line 44   from hecke_core import (..., h as H_A_F, z as Z_MARKOV)
+    line 49   z_m = mp.mpf(str(float(Z_MARKOV)))       -> 0.6126880371464652   = z_D
+    line 88   zv  = mp.mpf(1)/(mp.sqrt(Q0)+mp.sqrt(QI)) -> 0.499320334183694452 = z_C
+
+    for reference at the proton pin:
+        z_C = sqrt(q)/(q+1) = 0.499320334183694452
+        z_D = q^3/(q^2+1)   = 0.612688037146465252
+
+Both feed the same error functional whose root is α*: `z_m` at line 126
+(`z_m**(2*span) * Phi_q(pv)`) and `zv` inside `std_za_b`.
+
+**Mechanism of the drift.** The producer has exactly ONE commit in its history
+(`f9ad94d750`) — it has not changed since α* ≈ 0.305807 was recorded. Its
+*import cone* changed: `hecke_core` / `pyhecke.gram` were migrated to convention
+D (`5046347e53` "pyhecke's mpmath path to convention D", `fcf09d2ff6` "enable
+native dispatch on convention D + flip trace_weights binding"). That flipped
+`Z_MARKOV` by +22.70 % while the locally-computed `zv` stayed C, and α* moved
++14.74 %. Nothing in this file was edited; the number changed underneath it.
+
+This is the **import-cone drift** class AGENTS.md calls "the one that actually
+bites" — a file-local `git diff` shows nothing.
+
+**So the earlier measurements re-read as:**
+
+| | z_m | zv | α* |
+|---|---|---|---|
+| as committed today | D | C | 0.350886411466 — **incoherent, a straddle** |
+| with zv converted | D | D | **0.283762164005 — the coherent convention-D value** |
+| corpus 0.305807 | C | C | the coherent convention-C value, now unreachable |
+
+So 0.350886 is not "α* in convention C" as I labelled it — it is α* in **no
+convention at all**. Correcting that: the C-vs-D framing in the table further up
+this bean overstates how meaningful the 0.350886 figure is.
+
+## A second defect in the same two lines: float64 laundering
+
+    z_m = mp.mpf(str(float(Z_MARKOV)))
+
+`Z_MARKOV` is an mpf; `float()` truncates it to binary64 and `mpf(str(...))`
+re-inflates it. Measured: **16 significant digits retained of 50.** This is the
+exact pattern AGENTS.md's NO-FLOAT64 section names, and the sibling file
+`delta_lambda_v_hat_z_transfer_phase5d_4.py` carries a comment warning against
+it verbatim ("the f64 constant carries ~16 significant digits, so mpf(str(...))
+LAUNDERS it — read the high-precision name instead"). Use `Z_MARKOV` directly.
+
+## Revised fix list (was three items, is four — and the order changes)
+
+1. **Remove the straddle**: `zv` -> `Q0**3/(Q0**2+1)`, so both z's are D.
+2. **Stop laundering**: `z_m = Z_MARKOV`, no float() round-trip.
+3. **Re-derive the bracket** from a scan; the hardcoded [0.3, 0.32] is what hid
+   a 14.74 % drift.
+4. **Proton pin** — real directive violation, but measured α*-invariant, so it
+   is provenance-only and goes last.
+
+Then re-run the closed-form / PSLQ search against the coherent α* and correct
+`docs/alpha-blend-derivation.md` §5 + line 772 and
+`docs/canonicalization-review.md` lines 21 / 136 / 155.
