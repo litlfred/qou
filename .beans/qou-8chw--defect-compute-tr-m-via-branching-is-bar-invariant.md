@@ -1,11 +1,11 @@
 ---
 # qou-8chw
 title: 'DEFECT: compute_tr_m_via_branching is BAR-INVARIANT -- returns identical values at q and 1/q, disagreeing with the transfer by 387x at 1/q0'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T17:42:01Z
-updated_at: 2026-08-24T12:16:22Z
+updated_at: 2026-08-24T12:26:29Z
 ---
 
 MEASURED 2026-08-19. computations/canonical_tr_m_via_branching.compute_tr_m_via_branching(Z, N, q_val) returns IDENTICAL values at q and 1/q:
@@ -386,3 +386,39 @@ against the combiner for λ=(4,2), (ξ,ν)=((2,1),(2,1))). Deleting it would hav
 left the same trap for anyone grepping the design doc's function name, so it
 delegates and carries the history in its docstring. p-n at n_block=3 only;
 anything else raises with a message naming the design doc.
+
+
+## The last item closes as a FALSE ALARM, not as work (same day)
+
+I wrote "the H_9 nn extract carries no `q0Value` stamp" as an open item, twice.
+**It is stamped.** It records `data.q_0 = 1.1099785827513808` next to
+`h = 0.20906029879563937`; the H_6 deuteron records the same fact as a top-level
+50-digit `q0Value`. Two spellings of one stamp — different key, different
+nesting, different precision — and I was reading "key absent" as "provenance
+absent".
+
+`_extract_anchor_q` now accepts `q0Value`, `data.q0Value` and `data.q_0`
+(`ad4...`, this branch). Verified: 1.10997858275138081 from H_6, 1.1099785827513808
+from H_9, `None` on a dict with no stamp.
+
+The other half is clean too: `sublemma_2_1_h9_tritium_verify` and
+`sublemma_2_1_h12_helium_4_framework` take **no q parameter at all** — they are
+anchor-only verification scripts, for which a frozen extract is correct.
+
+So this bean's entire remaining backlog dissolves under measurement. Worth
+recording *why*, because it is the mirror of the defect the bean is about: the
+three real freezes were invisible because they agreed at the anchor, and this
+false alarm was visible because a key name disagreed. **Both were failures to
+check the thing rather than its label** — I called a stub "not implemented"
+because it raised, and a witness "unstamped" because one key was missing. In
+both cases the fact was there under a different name.
+
+## Bean status: closable
+
+- ✅ A^λ frozen at q_0 — built at q_val (gauge measured 7.05e-51 before the swap)
+- ✅ h frozen — threaded
+- ✅ δ frozen — threaded, owner-gated default untouched
+- ✅ tr_M^atom(D) at 1/q_0 = **2.27e-15** vs the transfer: second independent method
+- ✅ stale `categorical_A_interface` stub — delegates (0.0 entrywise)
+- ✅ guard fail-closed, correctly labelled hardening
+- ✅ "unstamped H_9 extract" — false alarm, reader fixed
