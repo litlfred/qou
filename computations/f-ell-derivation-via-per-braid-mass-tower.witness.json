@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T19:34:31.135097+00:00",
-  "commitSha": "e1e6ae4333239e156b0f3c17ba6ee8c8e2be54a6",
+  "computedAt": "2026-08-24T09:02:40.881332+00:00",
+  "commitSha": "67fabf304a805a2e0b9a8245d4780bc9e40576dd",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 187,
+  "durationMs": 192,
   "computation": "f-ell-derivation-via-per-braid-mass-tower",
   "scriptFile": "f_ell_derivation_via_per_braid_mass_tower.py",
-  "scriptHash": "c20a72f337f1",
+  "scriptHash": "b8a117197243",
   "scriptCommitSha": "2a28775969f61d19175fa20006775838780ccd4e",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -43,7 +43,7 @@
   "constants": {
     "q_0": "1.10997859564273904668179512938000175270006556102901155037235",
     "h": "0.209060322150316746630800261501919885980137169225879101743756",
-    "z_markov": "0.499320334032560016888283520491754597884981667929951720562757",
+    "z_markov": "0.612688050638272415220888927646110664831964631360779672361904",
     "hbar_q_sq": "0.00981718852772242543775020243251766665605420059457020080229582",
     "cal2_target_codata": "206.768282700000000000000000000000000000000000000000022363848"
   },
@@ -58,17 +58,17 @@
     "V_0": "0.989",
     "V_1": "0.971",
     "V_01_product": "0.960319",
-    "m_muon_dimensionless": "2.77687025201165212532398242545751256352397136758694258877646",
-    "ratio_m_mu_over_m_e": "2.4845052268954127185666803734236592552599326711658897391824",
+    "m_muon_dimensionless": "2.87713814378633708678564551042841355435981307574864531169346",
+    "ratio_m_mu_over_m_e": "2.57421633277928352959848041616550284745427400790762181682455",
     "codata_ratio": "206.768282700000000000000000000000000000000000000000022363848",
-    "relative_error_percent": -98.79841086144717,
+    "relative_error_percent": -98.75502359493201,
     "caveat": "V̂_0=0.989, V̂_1=0.971 are PROTON-specific values from mass-endomorphism-tower.md line 362-363. Using them for muon is a CRUDE TEST; the framework does not publish muon-specific V̂_i."
   },
   "cross_check_proton": {
-    "ratio_m_p_over_m_e_computed": "2.4845052268954127185666803734236592552599326711658897391824",
+    "ratio_m_p_over_m_e_computed": "2.57421633277928352959848041616550284745427400790762181682455",
     "codata_m_p_over_m_e": "1836.15",
     "paper_reports": "1870 (1.8% error) per mass-endomorphism-tower.md line 384"
   },
   "verdict": "FAR — >50% from CODATA; per-braid mass tower with PROTON V̂_i values DOES NOT give muon mass. Either V̂_i are muon-specific (unpublished) or the per-braid mass tower needs different inputs for leptons.",
-  "timestamp": "2026-08-23T19:34:31+00:00"
+  "timestamp": "2026-08-24T09:02:40+00:00"
 }

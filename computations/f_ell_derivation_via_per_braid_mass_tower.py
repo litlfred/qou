@@ -70,7 +70,9 @@ def main() -> int:
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
 
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z = q0 ** 3 / (q0 ** 2 + 1)
 
     print("=== Substrate at q_0 ===")
     print(f"  q_0 = {float(q0):.15f}")
