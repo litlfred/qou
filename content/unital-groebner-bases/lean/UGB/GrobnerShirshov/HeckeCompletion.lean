@@ -17276,4 +17276,140 @@ theorem heckeCompleted_isGrobnerShirshovBasis (hn : 0 < n) (hp : HeckeParams)
   overlap_resolves := fun oc h₁ h₂ => overlap_resolves_general hn hp hdeep oc h₁ h₂
   inclusion_resolves := fun ic h₁ h₂ => inclusion_resolves_general hn hp ic h₁ h₂
 
+/-! ## §4bo  The doubled-descending-run sweep — side B's half of `hdeep`
+
+§4bn left one obligation, `hdeep`. Its two sides need different chains, and this
+is side B's, in full generality.
+
+The reframing that made it tractable is that the normal form **factors**:
+
+`NF = bsWord₂ (i−1) 0 · descWord i 1 · (1 + (q − q⁻¹)σ₀)`
+
+and `1 + (q − q⁻¹)σ₀` is exactly what `σ₀σ₀` rewrites to. So the whole
+S-polynomial is one word with a `σ₀σ₀` on the end, and the single quadratic step
+of the entire reduction is the last one. Side B's job is to reach that word.
+
+It does so by a **uniform peel**. The second copy's head `σ_m` closes the first
+copy into `bsWord₁ m z`; the Bokut–Shiao rule replaces it by
+`bsWord₂ (m−1) m z = σ_{m−1}σ_m ++ descWord (m−1) z`; and what is left is the
+same shape one level down. The bottom needs no step at all —
+`descWord z z ++ descWord z z` *is* `σ_z σ_z`. One rule, one step per level,
+`i − 1` steps in all, and the induction is on the gap, exactly as
+`descWord_split_aux` is.
+
+`pairSweep` is the target word, `σ_{m−1}σ_m σ_{m−2}σ_{m−1} ⋯ σ_zσ_{z+1} σ_z σ_z`.
+It is defined by zipping the descending run against its own tail rather than by
+recursion, so no arithmetic on `Fin n` appears in it and `pairSweep_cons` is a
+`descWord_cons` rewrite.
+
+Both statements are on a **one-term** element, which makes `monicStep`'s side
+condition on the surrounding terms vacuous. The `hdeep` application will carry
+the other spoly term alongside, and re-establishing that condition against every
+intermediate is work this section does not do.
+
+**Side A is not this.** Its route is doubly nested — a `BS` per level each
+followed by an `FC` sweep — and `(i²+i+4)/2` steps rather than `i − 1`. It is
+still to be written, and so `hdeep` is still open.
+-/
+
+/-- `σ_{m−1}σ_m σ_{m−2}σ_{m−1} ⋯ σ_{z}σ_{z+1} σ_z σ_z` — the word a doubled
+descending run sweeps to. Defined by zipping the run against its own tail so
+that no arithmetic on `Fin n` is needed. -/
+def pairSweep {n : ℕ} (m z : Fin n) : Monomial (HeckeGen n) :=
+  (List.zip (descWord m z) ((descWord m z).tail ++ [(⟨z⟩ : HeckeGen n)])).flatMap
+    (fun p => [p.2, p.1])
+
+/-- The recursion the sweep runs on: one pair peels off the front. -/
+theorem pairSweep_cons {m' m z : Fin n} (hm : m'.val + 1 = m.val)
+    (hz : z.val ≤ m'.val) :
+    pairSweep m z = [(⟨m'⟩ : HeckeGen n), ⟨m⟩] ++ pairSweep m' z := by
+  simp only [pairSweep, descWord_cons hm hz, List.tail_cons]
+  obtain ⟨t, ht⟩ := descWord_head (i := m') (j := z) hz
+  rw [ht]
+  simp
+
+/-- At the bottom the sweep is already done. -/
+theorem pairSweep_self (z : Fin n) :
+    pairSweep z z = [(⟨z⟩ : HeckeGen n), ⟨z⟩] := by
+  simp [pairSweep, descWord_self]
+
+/-- **A doubled descending run sweeps to interleaved pairs.**
+
+`descWord m z ++ descWord m z ⟶* pairSweep m z`, by exactly one Bokut–Shiao
+step per level: the second copy's head `σ_m` closes the first copy into
+`bsWord₁ m z`, the rule replaces it by `bsWord₂ (m−1) m z = σ_{m−1}σ_m ++
+descWord (m−1) z`, and what is left is the same shape one level down. The
+bottom level needs no step at all — `descWord z z ++ descWord z z` *is*
+`σ_z σ_z`.
+
+Stated on a one-term element, so `monicStep`'s side condition on the
+surrounding terms is vacuous. -/
+theorem doubleDesc_sweep (hn : 0 < n) (hp : HeckeParams) (z : Fin n) :
+    ∀ (d : ℕ) (m : Fin n), m.val = z.val + d →
+      ∀ (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms [(a ++ descWord m z ++ descWord m z ++ b, c)])
+          (AlgElement.ofTerms [(a ++ pairSweep m z ++ b, c)]) := by
+  intro d
+  induction d with
+  | zero =>
+    intro m hm a b c _
+    have hmz : m = z := Fin.ext (by omega)
+    subst hmz
+    rw [descWord_self, pairSweep_self]
+    simp only [List.cons_append, List.append_assoc, List.nil_append]
+    exact MultiStepReduction.refl _
+  | succ d ih =>
+    intro m hm a b c hc
+    have hzm : z.val ≤ m.val := by omega
+    have hlt : m.val - 1 < n := by have := m.isLt; omega
+    set m' : Fin n := ⟨m.val - 1, hlt⟩ with hm'
+    have hmm : m'.val + 1 = m.val := by simp only [hm']; omega
+    have hzm' : z.val ≤ m'.val := by simp only [hm']; omega
+    -- the second copy's head closes the first into `bsWord₁ m z`
+    have hsplit : a ++ descWord m z ++ descWord m z ++ b
+        = a ++ bsWord₁ m z ++ (descWord m' z ++ b) := by
+      rw [show descWord m z = (⟨m⟩ : HeckeGen n) :: descWord m' z from
+        descWord_cons hmm hzm']
+      simp [bsWord₁, descWord_cons hmm hzm']
+    have hafter : a ++ bsWord₂ m' m z ++ (descWord m' z ++ b)
+        = (a ++ [(⟨m'⟩ : HeckeGen n), ⟨m⟩])
+            ++ descWord m' z ++ descWord m' z ++ b := by
+      simp [bsWord₂]
+    refine MultiStepReduction.head
+      (bsStep hn hp hmm hzm' [] [] a (descWord m' z ++ b) _ _ c hc hsplit rfl (by simp))
+      ?_
+    rw [hafter]
+    have key := ih m' (by simp only [hm']; omega) (a ++ [(⟨m'⟩ : HeckeGen n), ⟨m⟩]) b c hc
+    rw [pairSweep_cons hmm hzm']
+    simpa using key
+
+/-- **Side B of the deep self-overlap reaches its split word.**
+
+`B = bsWord₂ i' i 0 ++ descWord i' 0 ++ [σᵢ]` is `σ_{i−1}σ_i` in front of a
+doubled descending run, so the sweep applies verbatim in that context and lands
+on `pairSweep i 0 ++ [σᵢ]` — the word `σ_{i−1}σ_i σ_{i−2}σ_{i−1} ⋯ σ₀σ₁ σ₀σ₀ σᵢ`
+whose single `σ₀σ₀` is where the one quadratic step of the whole reduction
+happens. `i − 1` steps, one per level.
+
+This is the `hdeep` obligation's B-half up to the split; the A-half is a
+different and doubly-nested chain, and is not this. -/
+theorem bside_to_splitWord (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    (hi : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)])
+      (AlgElement.ofTerms
+        [(pairSweep i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)]) := by
+  have hz : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have key := doubleDesc_sweep hn hp ⟨0, hn⟩ i'.val i' (by simp)
+    [(⟨i'⟩ : HeckeGen n), ⟨i⟩] [(⟨i⟩ : HeckeGen n)] c hc
+  rw [pairSweep_cons hi hz]
+  have hb : bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+      = [(⟨i'⟩ : HeckeGen n), ⟨i⟩] ++ descWord i' ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] := by
+    simp [bsWord₂]
+  rw [hb]
+  simpa using key
+
 end UGB.GrobnerShirshov.Hecke
