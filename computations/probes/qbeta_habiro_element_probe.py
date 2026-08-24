@@ -76,6 +76,10 @@ sys.path.insert(0, str(HERE.parent))
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from habiro_coefficients_atomic import (  # noqa: E402
+    AmDifferenceInvalid,
+    require_am_differenceable,
+)
 
 
 # ─── Helpers ────────────────────────────────────────────────────
@@ -97,8 +101,20 @@ def eval_poly_str(expr_str: str, u_val):
     """
     # The eval() is bounded to the witness coefficient strings, which
     # only contain integer powers of u. We multiply u_val in as mpf.
+    #
+    # BIND BOTH SPELLINGS. `to_u_polynomial` renders its strings in whatever
+    # SYMBOL its caller passed, so the habiro witnesses carry either name --
+    # habiro-coefficients-atomic.witness.json now says "u" while its own
+    # `description` field still says "check_q". Binding only one is not a
+    # silent wrong answer here but a hard crash, and an obscure one: with
+    # `__builtins__` set to None, an unresolved name makes CPython fall back
+    # to `__builtins__["u"]`, so the error reads
+    #     TypeError: 'NoneType' object is not subscriptable
+    # from `<string>, line 1` -- naming neither the variable nor the witness.
+    # Same fix, same reason as `term6_full_pole_sum.py` (bean qou-n7ue):
+    # bind both, do not rename the witness.
     return mp.mpf(eval(expr_str, {"__builtins__": None},
-                       {"check_q": u_val, "mp": mp}))
+                       {"u": u_val, "check_q": u_val, "mp": mp}))
 
 
 def habiro_sum_mp(atom_data: dict, u_val):
@@ -302,7 +318,11 @@ def subtask_C_constraints(builder, hab):
     # 1. Integer a_m ∈ ℤ[u] for proton & neutron (Habiro 2002 Thm 1.1)
     p = hab["results"]["p (proton, A=1)"]
     n = hab["results"]["n (neutron, A=1)"]
-    _qou_lnog_preflight(n["tr_M_in_q"], p["tr_M_in_q"], "n - p")
+    # The qou-lnog preflight used to sit HERE, gating all of subtask C. Only
+    # C6 differences the a_m; C1-C5 are reads of witness fields and are valid
+    # under either convention. Gating the whole subtask on C6's precondition
+    # discarded five sound constraints and killed the producer outright, so
+    # the check moved down to C6 where the differencing actually happens.
     constraints.append({
         "name": "C1: integer Habiro coefficients (Habiro 2002)",
         "claim": "a_m ∈ ℤ[u] for every m, both proton & neutron",
@@ -311,13 +331,20 @@ def subtask_C_constraints(builder, hab):
         "verified": p["all_integral"] and n["all_integral"],
     })
 
-    # 2. Common denominator D(u) = 4·u^19·(1+u²) for both
+    # 2. Do p and n share a denominator? Convention-DEPENDENT, so state it
+    # as the question and let the witness answer it. The old claim text --
+    # "D(u) = 4u^19(1+u^2) divides both" -- is the convention-C denominator
+    # and is FALSE under D, where d_p = 4u^18(u^4+1)^2 and d_n = 4u^18. It
+    # was asserted as a finding while the `shared` field beside it evaluated
+    # False, so the block contradicted itself.
+    _shared = p["denom_in_u"] == n["denom_in_u"]
     constraints.append({
         "name": "C2: shared denominator structure",
-        "claim": "D(u) = 4·u^19·(1+u²) divides both tr_M_p and tr_M_n",
+        "claim": "whether a single D(u) clears both tr_M_p and tr_M_n; "
+                 "true under convention C, false under D",
         "p_denom": p["denom_in_u"],
         "n_denom": n["denom_in_u"],
-        "shared": p["denom_in_u"] == n["denom_in_u"],
+        "shared": _shared,
     })
 
     # 3. Termination order M_max
@@ -347,28 +374,57 @@ def subtask_C_constraints(builder, hab):
         "p_signs": [c["a_m"][:3] for c in p["habiro_coefficients"][:5]],
     })
 
-    # 6. Difference a_m(neutron) - a_m(proton): the Q_β-relevant part
-    p_a = {c["m"]: c["a_m"] for c in p["habiro_coefficients"]}
-    n_a = {c["m"]: c["a_m"] for c in n["habiro_coefficients"]}
-    # Symbolic difference for m=0..4
-    u_sym = sp.Symbol('u', positive=True)
-    diff_a_m = {}
-    for m in range(5):
-        try:
-            p_expr = sp.sympify(p_a[m])
-            n_expr = sp.sympify(n_a[m])
-            d = sp.simplify(n_expr - p_expr)
-            diff_a_m[m] = str(d)
-            print(f"  a_{m}(n) - a_{m}(p) = {d}")
-        except Exception as e:
-            diff_a_m[m] = f"err: {e}"
-    constraints.append({
-        "name": "C6: neutron-proton coefficient difference",
-        "claim": "Δa_m(u) := a_m(n) - a_m(p) is the Q_β-relevant Habiro "
-                 "element. Difference at m=0 is exactly 0 (common "
-                 "leading coefficient).",
-        "diff_a_m": diff_a_m,
-    })
+    # 6. Difference a_m(neutron) - a_m(proton): the Q_β-relevant part.
+    #
+    # This is the ONLY constraint here that differences the two expansions,
+    # so it is the only one the qou-lnog precondition applies to. Under
+    # convention C the denominators are identical and the difference is the
+    # pair's; under D (canonical since the 2026-08-15 owner ruling) they
+    # differ and subtracting the a_m builds d_p*t_n - d_n*t_p, which is a
+    # polynomial but not this pair's. Report that, do not emit it.
+    try:
+        _qou_lnog_preflight(n["tr_M_in_q"], p["tr_M_in_q"], "n - p")
+    except AmDifferenceInvalid as exc:
+        print("  C6: REFUSED -- a_m-differencing is invalid for this pair.")
+        print(f"      {exc}")
+        constraints.append({
+            "name": "C6: neutron-proton coefficient difference",
+            "claim": "Δa_m(u) := a_m(n) - a_m(p) is the Q_β-relevant Habiro "
+                     "element.",
+            "status": "unverified-under-convention-D",
+            "reason": str(exc),
+            "p_denom": p["denom_in_u"],
+            "n_denom": n["denom_in_u"],
+            "required_restructure": "expand trace_diff_numerator(tr_n, tr_p, "
+                                    "sym) rather than differencing two "
+                                    "separately-cleared expansions",
+        })
+    else:
+        p_a = {c["m"]: c["a_m"] for c in p["habiro_coefficients"]}
+        n_a = {c["m"]: c["a_m"] for c in n["habiro_coefficients"]}
+        # Symbolic difference for m=0..4. Sympify against the SAME positive
+        # symbol both times: a bare sympify mints its own assumption-free
+        # `u`, which is the qou-0ndb symbol-identity defect.
+        u_sym = sp.Symbol('u', positive=True)
+        _loc = {"u": u_sym, "check_q": u_sym}
+        diff_a_m = {}
+        for m in range(5):
+            try:
+                p_expr = sp.sympify(p_a[m], locals=_loc)
+                n_expr = sp.sympify(n_a[m], locals=_loc)
+                d = sp.simplify(n_expr - p_expr)
+                diff_a_m[m] = str(d)
+                print(f"  a_{m}(n) - a_{m}(p) = {d}")
+            except Exception as e:
+                diff_a_m[m] = f"err: {e}"
+        constraints.append({
+            "name": "C6: neutron-proton coefficient difference",
+            "claim": "Δa_m(u) := a_m(n) - a_m(p) is the Q_β-relevant Habiro "
+                     "element. Difference at m=0 is exactly 0 (common "
+                     "leading coefficient).",
+            "status": "computed",
+            "diff_a_m": diff_a_m,
+        })
 
     print()
     for c in constraints:
@@ -399,7 +455,6 @@ def subtask_C_constraints(builder, hab):
 # expanding trace_diff_numerator(tr_x, tr_y, sym) instead of differencing two
 # expansions, which is a restructure this file has not had.
 def _qou_lnog_preflight(tr_x, tr_y, label):
-    from habiro_coefficients_atomic import require_am_differenceable
     require_am_differenceable(tr_x, tr_y, label=label)
 
 
@@ -444,6 +499,13 @@ def main() -> int:
 
     # ─── C. structural constraints ────────────────────────────
     C_results = subtask_C_constraints(builder, hab)
+    # Pull C2's answer back out so the summary reports what was measured
+    # rather than restating a convention-C denominator as a finding.
+    _c2 = next(c for c in C_results if c["name"].startswith("C2"))
+    _c2_shared = _c2["shared"]
+    _c2_denoms = (_c2["p_denom"], _c2["n_denom"])
+    _c6 = next(c for c in C_results if c["name"].startswith("C6"))
+    _c6_computed = _c6.get("status") == "computed"
 
     # ─── verdict + builder ────────────────────────────────────
     print("=" * 78)
@@ -459,18 +521,32 @@ def main() -> int:
     print()
     print("  Sub-task C — narrowed constraints. Q_β Habiro element is a")
     print("    rational function with:")
-    print("    • shared denominator D(u) = 4·u^19·(1+u²)")
+    if _c2_shared:
+        print("    • a single denominator D(u) clears both p and n")
+    else:
+        print("    • p and n do NOT share a denominator (convention D):")
+        print(f"        d_p = {_c2_denoms[0]}")
+        print(f"        d_n = {_c2_denoms[1]}")
+        print("      so Δa_m is NOT the pair difference -- C6 refused.")
     print("    • integer a_m polynomials in u, up to M=8")
     print("    • common a_0 = 4")
-    print("    • neutron-proton difference Δa_m is the Q_β-relevant part")
+    if _c6_computed:
+        print("    • neutron-proton difference Δa_m is the Q_β-relevant part")
+    else:
+        print("    • Δa_m: NOT COMPUTED -- see C6.")
     print()
 
     builder.add_data("verdict", {
         "subtask_A_passes": A_ok,
         "subtask_B_status": "NEGATIVE — no α_EM-parallel candidate "
                             "matches c_2 AND c_3 simultaneously",
-        "subtask_C_status": "CONSTRAINTS-NARROWED — 6 structural "
-                            "invariants documented",
+        "subtask_C_status": (
+            "CONSTRAINTS-NARROWED — 6 structural invariants documented"
+            if _c6_computed else
+            "CONSTRAINTS-NARROWED (5 of 6) — C6 refused: the pair's "
+            "denominators differ under convention D, so a_m-differencing "
+            "does not build the pair difference (qou-0ndb / qou-lnog)"
+        ),
         "overall_status": "PARTIAL — infrastructure validated (A), "
                           "naive ansätze fail (B), constraints "
                           "documented for next session (C)",

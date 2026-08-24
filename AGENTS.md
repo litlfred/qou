@@ -388,10 +388,97 @@ user's last message, not the most recently mentioned file.
       tree your own sweep writes to. That single change turned both known false
       positives back to IDENTICAL while leaving the known true positive intact.
 
-      **16 % of producers cannot complete at all** — 14 crash, 10 exceed 240 s.
-      They are excluded from the rate, and they are their own backlog: a
-      producer that cannot run is a stronger defect than one whose numbers
-      drifted.
+      **CORRECTED 2026-08-24: 2 producers are genuinely broken, not 14.** This
+      text said "16 % cannot complete at all — 14 crash". That figure was my
+      harness, not the corpus, and it took six separate defects to unwind:
+
+      - **2 needed `computations/` on `PYTHONPATH`**; one exits 0 with it.
+      - **1 passed only in isolation** — a sweep that already set `PYTHONPATH`
+        still misclassified it, so the runner carried order-dependence.
+      - **1 uses REPO-ROOT-relative paths**; the sweep ran everything with
+        `cwd=<producer dir>`, so any root-relative producer looked broken.
+      - **4 exit non-zero BY DESIGN**, and this is the one worth internalising:
+        a non-zero exit is not a defect. `low_isotope_mass_table` refuses when
+        precision would fall below the committed `target_dps`;
+        `qbeta_braid_nf_sdp_offset_probe` refuses because `mp.lu_solve` would
+        *not* raise and running on "would publish laundered numbers". Both are
+        guards working correctly, and both explain themselves on **stdout** —
+        which a stderr-only harness never sees. Two more
+        (`alpha_em_b2_bring_period_matrix_probe`, `rho_k_h3a_refinement`)
+        **write their witness successfully** and only then exit non-zero, on an
+        environment check and on DeprecationWarnings respectively.
+      - **2 were real and are fixed** (mpf-formatting, PR #5615).
+
+      - **1 raises its guard instead of exiting** — `qbeta_habiro_phase5q_dn`
+        `_refactorize` dies on `AmDifferenceInvalid`, a `ValueError` subclass
+        `habiro_coefficients_atomic` defines for exactly this: *"raised when
+        a_m-differencing would silently build the wrong object"*. The message
+        even names the correct route (`trace_diff_numerator`) and the beans
+        (`qou-0ndb` / `qou-lnog`). **A traceback is not proof of a defect
+        either** — a refusal implemented as a raised domain exception is
+        indistinguishable from a crash by shape alone. The discriminator is
+        whether the exception type is one the producer's own cone defines.
+        This one cost me a wrong entry in the list below, in the very text
+        warning that a non-zero exit is not a defect.
+      - **2 were real and are fixed** (mpf-formatting, PR #5615).
+
+      So a producer-runner must: set `PYTHONPATH`; skip scripts declaring
+      required positionals; clean the tree **before** each run as well as after;
+      try **both** `cwd=<producer dir>` and `cwd=<repo root>`; capture
+      **stdout as well as stderr**; check for a **traceback** rather than
+      trusting the exit code; and then check whether that traceback's exception
+      type is a **guard the corpus defines**. Without all seven its verdicts are
+      about itself.
+
+      **The 2 real defects**, re-verified against `main` on 2026-08-24:
+      `su4_1111_markov_trace_probe` (`scipy.sparse` rejects `dtype object` — an
+      `mpf` reaching a sparse matrix) and `qbeta_habiro_element_probe`
+      (`TypeError: 'NoneType' object is not subscriptable`).
+
+      **`hadron_knot_table` does NOT crash; it is very slow — and getting to
+      that took two wrong turns of mine, in opposite directions.**
+
+      First I wrote that it "runs, slowly" on the strength of a **timeout**
+      after three `A=1` atoms with no traceback. A timeout is not proof of
+      success; that claim had no evidence behind it, whatever its merits.
+
+      Then I retracted it, on the sibling bean `qou-q7lf`, which reports a
+      **second** scipy-sparse boundary in
+      `hecke_core_legacy.unified_iterative_correction` reached via
+      `binding_energy` at `A ≥ 2`. **That bean is stale.** Its last update is
+      2026-08-23T23:08; `da645cf0f32` ("the sparse crossing loop died on mpf
+      coefficients") and `46dcfc62a57` landed on 2026-08-24 and fix exactly
+      that site. The live code computes `exact_chain` **before** the loop,
+      routes an exact chain off scipy entirely, and accumulates over σ's
+      nonzeros in COO — `O(dim·nnz)`, the same complexity the float64 branch
+      gets from sparse BLAS — rather than coercing `c`/`d` to float, which its
+      own comment refuses by citing this file.
+
+      So: **a sibling's bean is not a primary source either.** The corpus-grep
+      discipline this document states for source-file `## Status` notes —
+      *"not authoritative: the corpus is the source of truth"* — applies to
+      beans verbatim, including beans written by other agents that look
+      authoritative because they are specific and recent. I applied that rule
+      to my own claims all session and suspended it for someone else's.
+
+      Measured on `main` 2026-08-24: the three `A=1` atoms complete, then
+      deuterium — the first bound atom — ran for a **full 50 minutes and was
+      killed by its own timeout** (`exit 124`), with **zero tracebacks**. It
+      neither crashed nor finished.
+
+      Keep the two claims separate, because this is the same signal that
+      started the whole confusion. **"Does not crash" is established by the
+      code**, above: an exact chain provably never reaches a scipy call, so
+      there is no boundary left to die at. The 50-minute run **corroborates**
+      that and is not what proves it — a timeout still could not have proved
+      it, and a crash at minute 51 would not be excluded by any run. What the
+      run *does* establish on its own is the **cost**: > 50 min for one bound
+      atom of nineteen. Budget accordingly, and do not expect the table to
+      finish.
+
+      The 10 timeouts are a 240 s budget artifact and may simply be
+      long-compute; re-run with a real budget before calling any of them
+      broken — and, per the paragraph above, before calling any of them fixed.
 
       Two lessons in the measurement itself, both worth more than the number:
       **mask volatile keys or you measure your own harness** — `timestamp`,

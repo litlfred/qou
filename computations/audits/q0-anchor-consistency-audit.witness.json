@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T12:35:06.926123+00:00",
-  "commitSha": "138e649ab1c6c472fd79b0ecee70adfcdead18c9",
+  "computedAt": "2026-08-24T12:11:16.369506+00:00",
+  "commitSha": "c679568568a3c38a9df794d34334a9c14b770945",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -30,7 +30,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "30fd920c241a54fa"
@@ -1219,6 +1219,10 @@
         },
         {
           "witness": "compound-binding-via-differences.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "compound-shift-nf.witness.json",
           "detail": ""
         },
         {
@@ -3919,10 +3923,6 @@
         },
         {
           "witness": "gap-a4-T9-klein-mckay-scaffold-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "gg-production-bond-probe.witness.json",
           "detail": ""
         },
         {
@@ -8328,10 +8328,6 @@
           "detail": ""
         },
         {
-          "witness": "compound-shift-nf.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "confined-knot-binding.witness.json",
           "detail": ""
         },
@@ -9553,6 +9549,10 @@
         },
         {
           "witness": "geom-leading-alt-q-locality-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gg-production-bond-probe.witness.json",
           "detail": ""
         },
         {

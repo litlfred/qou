@@ -251,16 +251,20 @@ def main() -> None:
     witness = run_probe()
 
     # Pretty-print key results
-    print(f"linking_weight(q_0)  = {witness['results']['linking_weight_at_q0']:.10f}")
-    print(f"λ_p_codata(q_0)      = {witness['results']['lambda_p_codata_at_q0']:.10f}")
-    print(f"gap at q_0           = {witness['results']['gap_ppm_at_q0']:.1f} ppm")
-    print(f"m_p_pred             = {witness['results']['m_p_pred_MeV']:.4f} MeV")
-    print(f"m_p_codata           = {witness['results']['m_p_codata_MeV']:.4f} MeV")
-    print(f"relative error       = {witness['results']['relative_error_pct']:+.3f}%")
+    # float() here is DISPLAY ONLY (AGENTS.md NO-FLOAT64 §1). The witness itself
+    # carries these as mpf/str; nothing downstream reads what is printed.
+    _r = witness['results']
+    print(f"linking_weight(q_0)  = {float(_r['linking_weight_at_q0']):.10f}")
+    print(f"λ_p_codata(q_0)      = {float(_r['lambda_p_codata_at_q0']):.10f}")
+    print(f"gap at q_0           = {float(_r['gap_ppm_at_q0']):.1f} ppm")
+    print(f"m_p_pred             = {float(_r['m_p_pred_MeV']):.4f} MeV")
+    print(f"m_p_codata           = {float(_r['m_p_codata_MeV']):.4f} MeV")
+    print(f"relative error       = {float(_r['relative_error_pct']):+.3f}%")
     print("---")
     for r in witness['results']['slopes_by_delta']:
         verdict = "PASS" if r['pass_q_locality'] else "FAIL"
-        print(f"δ = {r['delta']:.4f}: slope = {r['slope_ppm_per_q']:+.3e} ppm/q  [{verdict}]")
+        print(f"δ = {float(r['delta']):.4f}: "
+              f"slope = {float(r['slope_ppm_per_q']):+.3e} ppm/q  [{verdict}]")
     print("---")
     print(f"Verdict: {witness['verdict']['interpretation']}")
 

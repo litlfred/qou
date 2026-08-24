@@ -1736,29 +1736,22 @@ class WitnessBuilder:
                         continue
                     if _k not in witness and _k in existing:
                         witness[_k] = existing[_k]
-                if _forbids_value:
-                    witness.pop("q0Value", None)
 
-        # The forbidding above is a property of the NEW witness's declared
-        # anchor, NOT of whether the OLD record was stale -- but until
-        # 2026-08-24 the pop lived inside the `if not _stale:` carry-forward
-        # branch, so it was skipped in exactly the case that produces the
-        # contradiction. When the existing witness already says `independent`
-        # and the new payload carries anchor evidence, line ~1700 sets
-        # `_stale = True`, the whole branch is skipped, and a `q0Value`
-        # stamped earlier (e.g. by `stamp_staleness_metadata`) rides through
-        # next to `independent` -- which the vocabulary note at the top of
-        # this module states cannot exist, and which the anchor audit reports
-        # as Q0_FLIP.
+        # The `independent`/`comparison` ban on a bare `q0Value` is an
+        # INVARIANT OF THE EMITTED WITNESS, not a property of the carry-forward
+        # -- so it is enforced here, outside every branch above.
         #
-        # Measured before the fix: `q0_anchor_consistency_audit` reported
-        # Q0_FLIP: 3, all three qbeta producers that declare `independent`,
-        # each carrying the 50-digit MUON value. All three provably do not
-        # read q0 -- re-verified here by running one under QOU_Q0_ANCHOR=muon
-        # and =proton and diffing: `.q0Value` was the ONLY differing
-        # non-ephemeral leaf, everything else byte-identical. So the audit's
-        # message ("the producer reads q0 after all") was a false inference,
-        # while the state it flagged was genuinely invalid.
+        # It used to live inside `if not _stale:`, which meant it applied only
+        # on the path that carries a pin forward. A witness whose own `build()`
+        # already put a `q0Value` in, and whose `extra` then declared
+        # `independent`, never reached the pop at all -- and neither did one
+        # whose carried pin was judged stale, since that skips the block
+        # wholesale. Measured on `lambda_scale_substrate_probe`, whose
+        # `independent` label is proved (bean qou-o922: byte-identical output
+        # under QOU_Q0_ANCHOR=muon vs =proton): the emitted witness carried
+        # `q0Anchor: "independent"` beside the 50-digit MUON `q0Value`, which
+        # `audits/q0_anchor_consistency_audit.py` reports as Q0_FLIP -- the
+        # exact contradiction the declaration exists to avoid.
         if witness.get("q0Anchor") in ("independent", "comparison"):
             witness.pop("q0Value", None)
 

@@ -4402,3 +4402,151 @@ where the right context is non-empty too. So the theorem also covers
    two `lm_decomp`s determine `left` and `right` outright.
 4. **The other cells**, and every `ic`.
 5. The deep diagonal `j₁ = j₂ = 0`, still open from §4as.
+
+## The shape bridge (2026-08-24, §4av) — the criterion's own form, reached
+
+`bsbs_resolves_of_oc`: the §4as result for an **arbitrary** `OverlapComposition`
+whose two rules are Bokut–Shiao, rather than for the `CornerGeneral.oc` this file
+builds. That is `overlap_resolves`'s own shape, for this cell of the table.
+
+Three pieces:
+
+- **`bsbs_oc_eq`** — the bridge. With the overlap known to be one letter (§4au),
+  the two `lm_decomp`s determine everything: `lm₁ = descWord i j₁ ++ [σᵢ]` splits
+  against `left ++ [x]` with matching tails, so `left = descWord i j₁` and
+  `x = σᵢ`; then `lm₂ = [σᵢ] ++ right` against `σᵢ :: (descWord i₁ j₂ ++ [σᵢ])`
+  gives `right`. Structure equality follows, the three `Prop` fields being
+  proof-irrelevant.
+- **`bsbs_top_eq`** — the two rules need **not** be assumed to share a top. The
+  overlap is `σᵢ` from `rule₁`'s side and `σ_{i₂}` from `rule₂`'s (a Bokut–Shiao
+  word begins with its top), so a one-letter overlap *forces* `i₂ = i`, hence
+  `i₂' = i₁`.
+- **`bsbs_resolves_of_oc`** — the two together, feeding
+  `CornerCriterion.bsbs_overlap_resolves`.
+
+**§4au was the enabling step, not decoration.** Without the single-letter fact
+the two decompositions constrain `left`/`right` only up to a splitting, and the
+bridge is a case analysis over splittings rather than an equation.
+
+### Scope, unchanged and added
+
+Inherits every §4as limit, `j₁ ≥ 1` included. **Adds one**: `oc.left ≠ []`, which
+is what §4au needs and what `overlap_resolves` does *not* require — so the
+degenerate `left = []` compositions are still uncovered here. `spoly_isZero_of_self`
+handles those only when the two rules coincide.
+
+### Remaining
+
+1. `left = []` for this cell.
+2. The other cells of the rule-kind table, and every `InclusionComposition`.
+3. The deep diagonal `j₁ = j₂ = 0`, still open from §4as.
+
+## The BS × BS cell, closed (2026-08-24, §4aw)
+
+`bsbs_resolves`: the criterion's obligation for an arbitrary `OverlapComposition`
+whose two rules are Bokut–Shiao, with **no hypothesis on either context**. The
+`oc.left ≠ []` that §4av had to assume — because §4au does — is gone.
+
+**The degenerate case turned out not to be a reduction argument at all.** With no
+left context the first leading monomial *is* the overlap, so the second contains
+the first as a prefix: `bsWord₁ i' j₂ = bsWord₁ i j₁ ++ right`. Both words begin
+with their top letter, so `i' = i` and `ip = i₁`. The trailing `σᵢ` of the
+shorter word then has to land somewhere in the longer one, and it cannot land
+inside the descending run (`descWord_index_le` caps every index at `i − 1`), so
+it lands at the very end: `right = []` and the two runs coincide.
+`descWord_bot_inj` turns that into `j₁ = j₂`, so the two rules are **the same
+rule** with both contexts empty — and `spoly_isZero_of_self` had already
+discharged that.
+
+Two small helpers, both `Classical.choice`-free: `descWord_bot_mem`
+(`⟨j⟩ ∈ descWord i j`) and `descWord_bot_inj` (`descWord i j₁ = descWord i j₂ →
+j₁ = j₂`, by `descWord_index_ge` in both directions).
+
+### Where the bean now stands
+
+| step | state |
+|---|---|
+| rule-level membership inversion | done, §4at |
+| single-letter overlap, all four shapes | done, §4au |
+| shape bridge, arbitrary `oc` → constructed | done, §4av |
+| empty left context | done, §4aw |
+| **BS × BS cell of `overlap_resolves`** | **done, modulo `j₁ ≥ 1`** |
+| deep diagonal `j₁ = j₂ = 0` **with `i₁ ≥ 1`** | **open** — see §4ax; the gap is narrower than this table first said |
+| the other rule-kind pairs | open |
+| every `InclusionComposition` | open |
+
+
+## The gap, measured rather than assumed (2026-08-24, §4ax)
+
+`jm` was a **parameter** of `bsbs_overlap_resolves`, so passing it was required
+even in the branches that never mention it. Reading which branches actually use
+it: only `a ≥ 2` under `j₂ ≤ j₁`. The `a = 1` branch and the entire `a > b`
+regime do not.
+
+So `jm` is now **derived inside the proof** and the parameter is replaced by
+
+    hcov : 1 ≤ j₁ ∨ 1 ≤ j₂ ∨ i₁ = 0
+
+whose negation is exactly `j₁ = 0 ∧ j₂ = 0 ∧ i₁ ≥ 1`. Each disjunct discharges
+the `a ≥ 2` branch: the first directly; the second because `j₂ ≤ j₁` holds
+there; the third **vacuously**, since that branch also carries `j₁ + 1 ≤ i₁`.
+
+**The open set is smaller than this bean has been saying.** It is not "all of
+`j₁ = 0`", nor even all of `j₁ = j₂ = 0`:
+
+| case | status |
+|---|---|
+| `j₁ ≥ 1` | covered (as before) |
+| `j₁ = 0`, `j₂ ≥ 1` | covered — this is the `a > b` regime, `sPoly_gt_resolves`, which never needed `jm` |
+| `j₁ = j₂ = 0`, `i₁ = 0` | covered — `a = 1`, `sPoly_le_resolves₁`, which never needed `jm` |
+| **`j₁ = j₂ = 0`, `i₁ ≥ 1`** | **open** |
+
+Two of those three newly-covered rows were reachable by chains already in the
+file; only the parameter's position was stopping them. Nothing new was proved
+about the reductions here — the correction is to what the hypothesis *claimed*
+was open.
+
+
+## Corpus-grep failure, and what it changes (2026-08-24, §4ay)
+
+**§4m already carried both facts I presented as new questions**, and I did not
+cite it. Found only afterwards, while grepping the `_resolves` inventory for the
+next tranche.
+
+| §4m has | since when | what today added |
+|---|---|---|
+| `overlapTriples_four_proper_overlap_length_one` — the single-letter fact, `decide` at `n = 4`, with the reason in prose | before today | §4au proves it for **every `n`** |
+| `completedLMSet_four_infix_antichain` + `inclusion_contexts_empty` — **the inclusion half settled at `n = 4`** | before today | nothing |
+
+Two distinct errors, and they are not the same size.
+
+1. **§4au and PR #5627 framed "is any overlap multi-letter?" as an open
+   question.** It was decided at `n = 4` and the argument was written out in
+   prose three sections up. Generalising a `decide`-at-one-`n` to all `n` is
+   real content and stands — but it is a *generalisation*, not an answer to an
+   open question, and saying so was the corpus-grep discipline's job.
+2. **I listed "every `InclusionComposition`" as fully open** in the §4av and
+   §4aw prose, in three PR bodies, and in this bean's own status table. §4m
+   settles the inclusion half at `n = 4` *structurally* —
+   `inclusion_contexts_empty` needs no hypothesis about which rules are
+   involved. That is an over-claim of openness, the exact class the
+   "Before declaring open" checklist exists to prevent.
+
+**One note on §4m's prose, in its favour and against it.** Its stated reason —
+"every leading monomial is descending after its first letter" — is a sketch, not
+the statement: `σⱼσᵢσⱼ` with `j = i + 1` ascends after its first letter, and
+`σᵢσᵢ` is neither strictly low-then-high nor strictly high-then-low, which is
+precisely why the quadratic self-pairing is a legal two-letter overlap *shape*
+saved only by an empty left context. §4au's `lm_head_is_max` has no such edge
+cases. So the two are complementary, and neither supersedes the other.
+
+### The consequence for what to do next
+
+The inclusion half is settled at `n = 4` and **its general-`n` form is the
+better target than another overlap cell** — it is half of
+`IsGrobnerShirshovBasis`, and `lm_head_is_max` is most of what it needs. Sketch:
+a leading monomial's max sits only at position 0 or at the last position, so an
+infix `lm₁` of length ≥ 3 starting at `p ≥ 1` would need its two copies of its
+own max both strictly inside a strictly-decreasing run. The length-2 shapes are
+separated by their consecutive drop (0 for `σᵢσᵢ`, ≥ 2 for far-commutation,
+1 elsewhere).

@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 290,
-      "proton-pin": 1305,
+      "proton-pin": 1306,
       "unknown": 25,
-      "canonical": 239
+      "canonical": 242
     },
     "stale_total": 290,
     "new_stale": 0,
@@ -4999,13 +4999,6 @@
       {
         "file": "computations/compound-shift-nf.witness.json",
         "field": "data.alpha_em_chain.q0_50dps",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
-        "file": "computations/compound-shift-nf.witness.json",
-        "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
@@ -10135,6 +10128,20 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/probes/pentagon-rt-torus-knot-higgs-probe.witness.json",
+        "field": "parameters.Q_0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/pentagon-rt-torus-knot-higgs-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/pentagon-to-borromean-h4-probe.witness.json",
         "field": "parameters.Q_0",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -10982,6 +10989,13 @@
         "ppb_vs_canonical": 4.172458118041393e-41
       },
       {
+        "file": "computations/qbeta/qbeta-c3-rung-structure-analysis.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
+      },
+      {
         "file": "computations/qbeta/qbeta-c3-slope-filter.witness.json",
         "field": "q0Value",
         "value": "1.109978582751380807591669",
@@ -11332,6 +11346,13 @@
         "ppb_vs_canonical": 4.172458118041393e-41
       },
       {
+        "file": "computations/qbeta/qbeta-habiro-f-from-shape-collapse.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
+      },
+      {
         "file": "computations/qbeta/qbeta-habiro-taylor-investigation.witness.json",
         "field": "data.inputs.q_0_50dps",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11463,6 +11484,13 @@
         "value": "1.1099785955573347198997632204832250266562084087802",
         "class": "canonical",
         "ppb_vs_canonical": 4.172458118041393e-41
+      },
+      {
+        "file": "computations/qbeta/qbeta-rung1-div25-framing-squared-test.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/qbeta/qbeta-scaling-bridge-investigation.witness.json",
