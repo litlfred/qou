@@ -93,7 +93,13 @@ carrier whose fields mention no domain object cannot say anything about the
 domain.*
 
 It then emits a Lean file re-declaring each candidate and attempting to inhabit
-it. **8 of 23 were proved outright.** The direction matters:
+it. **The generic tactic list discharges 8 of 23.** Counting the carriers proved
+by *any* route — that list, the hand-written probe, and the corpus's own
+instance bundle — the tally is **16 vacuous, 7 undecided**, recorded per-carrier
+with its evidence in
+[`vacuous-prop-carrier-baseline.json`](vacuous-prop-carrier-baseline.json).
+
+The direction matters:
 
 - a probe that **succeeds** settles the question — the carrier is inhabited
   with no hypothesis;
