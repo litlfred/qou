@@ -237,6 +237,89 @@ assert Z_C_LITERAL.search(_VALUE_LITERAL_SELFTEST), (
 )
 
 
+# ---------------------------------------------------------------------------
+# EQUIVALENCE-FORM sites (added 2026-08-24, bean qou-u5z0).
+#
+# A convention-C dependency can survive with NO z expression, NO z literal and
+# NO witness edge, as a *derived identity*. Measured instance:
+# `computations/qbeta/toroidal_harmonics.py:52`
+#
+#     x_w = 1/(2*w) - 1          # w = z**2
+#
+# equals `cosh(eta)` exactly when `z = z_C = 1/(2 cosh(eta/2))`, and is off by
+# a factor of 3 under `z_D`. The convention lives in a comment plus arithmetic.
+# Every other detector in this campaign is structurally blind to it: the
+# expression scans key on how z is written, the value-literal scan on the
+# decimal, and the sibling's audits on witness edges. Only re-deriving the
+# mathematics finds it.
+#
+# Ten spellings of z_C were enumerated and checked (all equal
+# 0.499320334183694452 at the proton pin). Clean, so NOT scanned for here:
+# `1/sqrt([2]_q + 2)`, `1/sqrt(q + 1/q + 2)`, `1/sqrt((q+1)**2/q)`,
+# `0.5*sech(ln q/2)`, `q**0.5/(1+q)`, `(q**0.5 + q**-0.5)**-1`. Recorded so
+# they are not re-swept.
+
+# z_C = 1/(2 cosh(eta/2)) with eta = ln q. The HALF-argument is the
+# discriminator: bare `cosh(` is ~873 hits corpus-wide and `1/(2 cosh eta)`
+# WITHOUT the half is the toroidal-harmonic normaliser, a different quantity.
+HYPERBOLIC_Z = re.compile(
+    r"(1\s*/\s*\(\s*2\s*[\*\s]\s*(mp\.|np\.|math\.|sp\.)?cosh)|"
+    r"(0?\.5\s*/\s*(mp\.|np\.|math\.|sp\.)?cosh)|"
+    r"(/\s*\(\s*2\s*\*\s*(mp\.|np\.|math\.|sp\.)?cosh)")
+
+# `two_q_half = sqrt(q) + 1/sqrt(q)` is [2]_{q^(1/2)}, a legitimate Hecke
+# natural form -- but its RECIPROCAL is exactly z_C. Two files define it and
+# neither inverts it today; this watches for the edit that would.
+TWO_Q_HALF_RECIP = re.compile(r"/\s*two_?q_?half\b|\btwo_?q_?half\s*\*\*\s*-\s*1")
+
+_HYP_POS = ["z = 1/(2*cosh(log(q)/2))", "z = 0.5/mp.cosh(mp.log(q)/2)"]
+_HYP_NEG = ["two_cosh_u = 2 * mp.cosh(mp.mpf(u))"]
+for _t in _HYP_POS:
+    assert HYPERBOLIC_Z.search(_t), f"HYPERBOLIC_Z lost its positive selftest: {_t}"
+for _t in _HYP_NEG:
+    assert not HYPERBOLIC_Z.search(_t), (
+        f"HYPERBOLIC_Z widened onto the harmonic normaliser: {_t}")
+assert TWO_Q_HALF_RECIP.search("z = 1 / two_q_half"), "TWO_Q_HALF_RECIP selftest lost"
+assert not TWO_Q_HALF_RECIP.search("form_2 = -two_q_half * h_tilde ** 2 / 2"), (
+    "TWO_Q_HALF_RECIP now matches MULTIPLICATION, which is the legitimate use")
+assert HYPERBOLIC_Z.search("# Then z = 1 / (2 cosh(eta/2))."), (
+    "HYPERBOLIC_Z no longer finds toroidal_harmonics.py:49, the case it was "
+    "written for -- refusing to report an equivalence-form surface it cannot see")
+
+
+def equivalence_form_sites() -> list[tuple[str, int, str, str]]:
+    """Convention C reachable only through an equivalent form.
+
+    Never auto-migratable: these are identities, and substituting z_D into one
+    does not repair it -- the surrounding derivation has to be redone.
+
+    KNOWN LIMITATION, measured on the motivating case. This finds
+    `toroidal_harmonics.py` at line **49**, which is the *comment*
+    `# Then z = 1 / (2 cosh(eta/2))`, NOT line 52 where the identity actually
+    lives (`x_w = 1/(2*w) - 1`, no `cosh` in it at all). That is enough to
+    route a reader to the file, and it is NOT enough to claim coverage: an
+    undocumented instance of the same defect -- the identity with no comment
+    explaining it -- remains invisible to this and to every other detector in
+    the campaign. Do not report a clean equivalence-form surface on the
+    strength of this scan.
+    """
+    out = []
+    for path in sorted(REPO.glob("computations/**/*.py")):
+        rel = str(path.relative_to(REPO))
+        if "_deprecated" in rel or "_internal" in rel:
+            continue
+        try:
+            lines = path.read_text(errors="ignore").splitlines()
+        except Exception:
+            continue
+        for i, ln in enumerate(lines, 1):
+            if HYPERBOLIC_Z.search(ln):
+                out.append((rel, i, ln.strip()[:95], "hyperbolic"))
+            elif TWO_Q_HALF_RECIP.search(ln):
+                out.append((rel, i, ln.strip()[:95], "1/[2]_sqrt(q)"))
+    return out
+
+
 def value_literal_sites() -> list[tuple[str, int, str]]:
     """Files carrying the convention-C z as a decimal literal.
 
@@ -327,6 +410,17 @@ def main() -> int:
     for rel, ln, txt, _ in binds:
         print(f"    {rel}:{ln}  {txt}")
     print(f"  mentions ({len(ment)}) — prose/comments citing the value; not sites.")
+
+    eq = equivalence_form_sites()
+    print(f"\n{'=' * 74}")
+    print(f"EQUIVALENCE-FORM SITES — C via an identity, no z and no literal  ({len(eq)})")
+    print("=" * 74)
+    print("  Not in the counts below either. NEVER auto-migratable: substituting")
+    print("  z_D into an identity does not repair it, the derivation must be redone.")
+    print("  Most hyperbolic hits are the harmonic normaliser 1/(2 cosh eta) with NO")
+    print("  half-argument — a different quantity. Check for eta/2 before acting.")
+    for rel, ln, txt, kind in eq:
+        print(f"  [{kind}] {rel}:{ln}  {txt}")
 
     print(f"\n{'=' * 74}\nSUMMARY")
     for k in order:
