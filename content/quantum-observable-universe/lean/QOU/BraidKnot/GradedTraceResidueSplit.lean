@@ -81,6 +81,8 @@ theorem level_zero_pure_descended
     Ref: [manuscript] §Nuclear Binding and Beta Stability. -/
 theorem strutinsky_analogue
     {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R) :
+    -- The split exists and is canonical; the physics interpretation
+    -- is developed in the Physical Observations chapter.
     S.total = S.smooth + S.oscillating :=
   S.split_identity
 
