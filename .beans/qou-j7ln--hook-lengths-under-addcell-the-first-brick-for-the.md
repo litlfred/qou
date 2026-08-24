@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T17:21:24Z
+updated_at: 2026-08-24T17:42:10Z
 ---
 
 ## Landed — PR #5645
@@ -868,3 +868,57 @@ addable, when `nu_b < nu_{b-1}`). There the `j = b` factor is absent from the
 product, no cancellation happens, and the term is `f(x_b)` over
 `(Q-1) x_b * prod_{j != b}(x_b - x_j)` — off by `1/((Q-1) x_b)` from the
 uniform shape. Resolve that before writing Lean.
+
+
+## The corner identity's arithmetic is PROVED — and my "open detail" was wrong
+
+Commit `05d25aede`.
+
+    sum_prod_qratio_weighted :
+      sum_i (prod_{j!=i} (Q v_i - v_j)/(v_i - v_j)) * (Q v_i / (Q v_i - v_b))
+        = Q^{|s|} / (Q - 1)
+
+**Retraction.** The previous note said *"Open detail: `a = b` is possible ...
+the term is off by `1/((Q-1) x_b)` from the uniform shape. Resolve that before
+writing Lean."* **There is no such case.** That came from choosing
+`f(t) = (q-1/q) Q t prod_{j != b}(Q t - x_j)`, which includes the `j = i`
+factor — and the q-ratio's numerator `prod_{j != i}` does not have it. With
+the right polynomial,
+
+    h(t) = prod_{j != b} (Q t - v_j),   degree |s| - 1
+
+every term, `i = b` included, is `Q/(Q-1) * h(v_i)/prod_{j!=i}(v_i - v_j)`, and
+`sum_eval_div_prod_eq_coeff` finishes it in one step — no `divX` subtraction
+either, since the degree is already below `|s|`.
+
+Checked symbolically before writing the Lean, both halves: the sum equals
+`q Q^{r-1}` in 6 cases, and the **termwise** identity holds for EVERY row
+including `i = b`.
+
+**`hne : Q v_i != v_b` for `i != b` is load-bearing.** Without it a term is
+`0/0` — that equation makes the ratio's numerator vanish AND the weight's
+denominator vanish. In the application `s` indexes rows that ADMIT a box,
+where `beta_b = beta_i + 1` is impossible precisely because row `i` admits
+one. So addability discharges it, and the degenerate case is exactly what the
+corner identity excludes by summing over addable cells only.
+
+### Left for the general-r Markov property
+
+Only the translation, no more arithmetic:
+
+1. `c(s_a) - c(corner) = beta_a - beta_b + 1` (content to beta at level r);
+2. `seminormalParam q d = (q - 1/q) Q x_a / (Q x_a - x_b)` under that
+   substitution, and `(q - 1/q) Q/(Q-1) = q`;
+3. the addable-row sum discharges `hne`;
+4. feed `markov_of_corner_identity`.
+
+## PR bookkeeping (check-in, 17:31Z)
+
+#5662 open/draft, no reviews, zero check runs as expected, **merges cleanly**
+onto `main` at 173 commits ahead — all 17 Lean files are new, no filename
+collisions, no conflicting hunks. Two factual errors in my own PR body found
+and fixed: it claimed **21** new files against an actual **17** (I had been
+counting cumulatively across turns instead of measuring), and it said "no
+existing file is modified except to make three reindexing lemmas public" —
+those lemmas are in one of my own new files, so **no existing file is modified
+at all**.
