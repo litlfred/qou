@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:34:53Z
-updated_at: 2026-08-24T14:21:51Z
+updated_at: 2026-08-24T14:28:34Z
 ---
 
 ## What it is
@@ -179,3 +179,52 @@ canonical, net +1 witness) and rewrote `pyhecke_native_build` to this
 container's hash. Per AGENTS.md — check whether the movement is yours or
 main's *before* claiming it — those three derived audits were reverted rather
 than committed on a guess.
+
+
+---
+
+## 🛑 Correction to my own "what is left": the 5 unstamped are NOT a notable class
+
+Last turn I called the five `unstamped` rows "the highest-value remainder,
+precisely because no audit can currently reach them." **Measured, that does not
+hold.** Two facts I should have checked before asserting it:
+
+1. **Unstamped is the corpus NORM, not an anomaly.** The committed
+   `q0-anchor-consistency-audit` reports `Q0_ANCHOR_MISSING = 1839` of **2589**
+   audited witnesses — **71 %** — against `Q0_OK = 750` and `Q0_FLIP = 0`. And
+   AGENTS.md states plainly that `Q0_ANCHOR_MISSING` "is not a failure."
+   Five witnesses in the majority state is not a finding.
+
+2. **The conjunction shows NO enrichment.** Of the 9 inheritors that have a
+   witness, 5 are unstamped — **56 %**, against the 71 % baseline. Expected
+   under independence: 6.4. **Enrichment factor 0.78×.** If anything they are
+   marginally *less* likely to be unstamped, and at n=9 the honest reading is
+   "indistinguishable from the base rate". The conjunction of inheritance and
+   unstamped-ness is not evidence of a special class.
+
+Scope, per the refuted/ruled-out discipline: this is **scope (a)** — *these
+five, as a group, are not distinguishable from the corpus baseline*. It is
+**not** the structural claim that an unstamped inherited pin can never matter.
+No invariant forbids it; the population is simply too small and too ordinary to
+carry the weight I put on it.
+
+## What the regeneration test did establish
+
+Re-running two of the five does **not** add a stamp (`stamp=None` after), so
+they are structurally unstamped rather than stale — and the fresh witnesses
+carry **no q0-classed value at all** (`body=[]`). So the inherited pin reaches
+the arithmetic and is recorded **nowhere** in the artifact: not as a stamp, not
+as a constant. That is a real property, and it is genuinely worse than a wrong
+stamp — a wrong stamp is at least falsifiable. It is also, on the numbers
+above, the ordinary condition of most of this corpus, so it is a **corpus-wide
+observation, not a defect these five have.**
+
+Sub-mechanisms differ, and only one is a bypass: `mu3_target_frame_robustness`
+writes raw `json.dump` (never stamped); the other four **use `WitnessBuilder`
+and are still unstamped**, which was the opposite of my hypothesis.
+
+## Standing conclusion for this bean
+
+The defensible result is the one already landed: **one live MISLABEL, found,
+fixed, and its detector hardened through three wrong upstreams and one wrong
+oracle.** The residue is ordinary. I am not building further on it.
