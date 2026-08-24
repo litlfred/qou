@@ -5596,3 +5596,26 @@ The A-side and B-side assemblies (non-recursive, so the same treatment should be
 quicker), then the joining itself: build the canonical composition, compute its
 S-polynomial, and run the two chains against each other, discharging `CtxAvoids`
 at top level from the head-letter separation.
+
+### §4bu — the A side generalised (PR pending)
+
+`aside_head'`, `aside_to_sweptWord'`, `aside_to_normalWord'`, `aside_resolves'`
+— side A now runs inside an arbitrary S-polynomial. The four originals are
+corollaries at empty context, so again no duplication.
+
+**The A side needed a different hypothesis shape from the recursive chains, and
+`CtxAvoids` supplied it without a new definition.** Its three opening steps sit
+in three *different* contexts, so a single `CtxAvoids L a b` does not cover
+them. But `CtxAvoids L [σ_x] []` unfolds to *"no surrounding word begins with
+`σ_x`"* — a head condition — and every word in the A chain begins with `σ_i` or
+`σ_{i−2}`. So two head hypotheses cover the whole side, and `CtxAvoids.narrow`
+(`b = []` to any `b`) plus a one-line `hCi'' w hw (…)` re-association discharges
+each step.
+
+That is the head-letter invariant §4bs measured, entering exactly where it
+belongs — at the *boundary* of a side, not threaded through its interior.
+
+**One trap worth recording:** a step lemma's `hne` is about the word *as the
+goal currently has it*, not as the accompanying `e`-equation rewrites it. Stating
+it in the rewritten form type-errors; state it on the goal's word and `rw [e]`
+inside the proof.
