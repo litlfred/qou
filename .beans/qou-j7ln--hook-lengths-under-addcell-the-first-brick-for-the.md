@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T17:53:55Z
+updated_at: 2026-08-24T18:10:34Z
 ---
 
 ## Landed — PR #5645
@@ -992,3 +992,31 @@ where an addable-row hypothesis has to be threaded rather than assumed.
 
 Then `markov_of_corner_identity` consumes it, and the Markov property holds at
 every level.
+
+
+## Scope: general integer r is ON the Wenzl lattice — arbitrary z is not
+
+A stale check-in for the (now merged) PR #5645 resurfaced this bean's earlier
+scoping note, and the two directions are easy to conflate, so stating it
+plainly:
+
+> *"do NOT try to finish the arbitrary-z corner identity ... r is the NUMBER OF
+> VARIABLES in a principal specialisation, hence inherently a positive integer;
+> the parameter relation pins `Q^r = z/(1-Q+z)`, so a Wenzl level exists only
+> when that is an integer power of Q. Generic z is off that lattice — no r, no
+> schurPrincipal, no Pieri, no telescoping."*
+
+**That note stands, and none of this session's work contradicts it.** Everything
+proved here is at an integer level `r`, i.e. ON the lattice, where
+`schurPrincipal r Q` exists by definition. The note's obstruction is about `z`
+values for which no integer `r` exists at all; this work says nothing about
+those and does not claim to.
+
+Concretely: `wenzlMarkovParam_eq` fixes `z_W = Q^r/[r]_Q` for the integer `r`,
+and the measured corner-identity constant `z = Q^r(1-Q)/((1-Q^r) q)` is that
+same lattice value shifted by the Hecke normalisation `1/q`. An arbitrary `z`
+is not of that form for any `r`, and nothing here reaches it.
+
+So: the r=2 -> general-r generalisation is complete for vanishing, branching
+and normalisation; the arbitrary-z direction remains exactly as the earlier
+note left it, needing a genuinely different identity.
