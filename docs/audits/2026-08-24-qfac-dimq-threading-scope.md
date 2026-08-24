@@ -41,6 +41,43 @@ Producer sites, by the manifest bucket of the producer's own stem:
 | `physical_proton` | 28 | proton |
 | `ideal_muon` | **1** | **muon** |
 
+## CORRECTION 2026-08-24 (same day): there is a SECOND route, and this document missed it
+
+Everything below was measured by matching the **names** `qfac` / `dim_q`. That
+is the appearance-vs-role error this corpus keeps paying for, and it is in this
+document too.
+
+**41 of the 133 sites, in 29 files, call a LOCALLY-DEFINED `qfac`/`dim_q`, not
+the anchor-bearing one.** They never touch `hecke_characters`. So the
+library-level surface is **92 sites in 38 files**, not 133 in 67.
+
+But the correction does **not** simply shrink the number, and this is the part
+that matters. Classifying those 29 local definitions by whether they are
+actually anchor-free:
+
+| local definition | files | in scope? |
+|---|---|---|
+| symbolic (sympy `Symbol("q")`) | 4 | **no** — anchor-free by construction |
+| takes an explicit `q` | 0 | — |
+| **reads the shim itself** | **16** | **YES — still anchored, by a different route** |
+| unclassified, needs triage | 8 | unknown |
+
+So there are **~16 independent local re-implementations that each close over
+`q_parameter`'s shim on their own.** Threading the library fixes **none** of
+them. The migration is not one surface with 133 sites; it is **two surfaces** —
+a library route (92 sites, fixed by Tranche B) and a copy-paste route (~16
+files, fixed only by rewriting each).
+
+Corroborating, from the corpus grep that found this: `docs/audits/scripts/`
+already holds three hand-rolled q-explicit variants —
+`qfact(q, n)`, `qfact(n, q)` and `q_int(k, q)` — **two different argument
+orders**. Prior agents hit this exact problem and each solved it locally. That
+is the copy-paste route being created in real time.
+
+**Read the tranche plan below with that in mind:** Tranche B and C address the
+library route only. A fourth tranche — consolidating the ~16 local
+re-implementations onto the library — is neither scoped nor sized here.
+
 ## Why 133 is the wrong unit
 
 The anchor is a property of the **running process**, not of the file holding the
