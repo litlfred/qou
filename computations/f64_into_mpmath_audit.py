@@ -104,6 +104,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -431,6 +432,41 @@ def wrapper_default_f64_calls(tree: ast.AST) -> list:
         if fn and not any(k.arg == "precision" for k in n.keywords):
             hits.append((getattr(n, "lineno", 0), f"{fn}(precision=?)"))
     return hits
+
+
+_MPFR_CALL = re.compile(r"\b\w+_mpfr\s*\(")
+
+
+def native_entry_disposition(src: str) -> str:
+    """Split an F64_ENGINE_ENTRY module into deliberate / harmless / actionable.
+
+    Encodes the triage rule directly: the f64 entry is ~10-30x faster and is
+    frequently the RIGHT call, so what makes a site actionable is not the call
+    but whether the module then SERIALISES above what f64 carries (~15-16
+    significant digits, measured).
+
+    Two hand-verified cases the raw count would have mis-sold, both of which
+    this proxy classifies correctly:
+
+    * `chi_4he_binding_lossless.py` calls the f64 entry ON PURPOSE, as a
+      same-convention cross-check floor for its MPFR result. Its own comment
+      says so. -> deliberate.
+    * `atomic_chirality_residue.py` does `float(mp.log(abs(chi)))` three lines
+      after the call; the whole downstream is f64, so MPFR would buy nothing.
+      -> harmless.
+
+    A proxy, not a verdict: confirm per site before editing.
+    """
+    if _MPFR_CALL.search(src):
+        return "deliberate"
+    if re.search(r"\bfmt\s*\(", src):
+        return "actionable"
+    for m in re.finditer(r"nstr\s*\([^,]+,\s*([A-Za-z_0-9]+)", src):
+        tok = m.group(1)
+        # A non-literal is a `dps` variable, which is >= 18 everywhere here.
+        if not tok.isdigit() or int(tok) >= 18:
+            return "actionable"
+    return "harmless"
 
 
 def native_f64_entry_calls(tree: ast.AST) -> list:
@@ -824,11 +860,28 @@ def main() -> int:
           "takes q as a\n"
           "      DECIMAL STRING to avoid the lossy conversion at the "
           "boundary.")
-    for _, path, r in native[:40]:
-        fns = ", ".join(sorted({f for _, f in r["native"]})[:3])
-        print(f"  {path}  ({len(r['native'])}x: {fns})")
-    if len(native) > 40:
-        print(f"  … and {len(native) - 40} more")
+    # The count alone over-sells the class. Split it by the triage rule, over
+    # ALL rows carrying a native site, so the actionable number is reproducible
+    # rather than living in someone's scratch file.
+    split: dict[str, list] = {"deliberate": [], "harmless": [], "actionable": []}
+    for _, path, r in rows:
+        if not r.get("native"):
+            continue
+        try:
+            src = (ROOT / path).read_text(encoding="utf-8")
+        except OSError:
+            continue
+        split[native_entry_disposition(src)].append((path, len(r["native"])))
+    for k, why in (("deliberate", "also calls an _mpfr entry — a cross-check"),
+                   ("harmless", "never serialises above 17 digits"),
+                   ("actionable", "serialises wide from an f64 value")):
+        v = split[k]
+        print(f"      {k:11s} {len(v):3d} file(s) {sum(n for _, n in v):3d} "
+              f"site(s)  — {why}")
+    print("      ACTIONABLE candidates (a proxy, not a verdict — confirm "
+          "per site):")
+    for path, n in sorted(split["actionable"]):
+        print(f"        {n}x  {path}")
 
     # Counted over ALL rows: a file whose headline tier is F64_CAST can still
     # carry display casts, and those must not land in the defect count.
