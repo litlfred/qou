@@ -15,11 +15,22 @@ every partition with >= 3 rows, so those blocks enter the sum multiplied by
 EXACTLY zero. At n = 6 that is 7 of 11 partitions contributing nothing; only
 (6), (5,1), (4,2), (3,3) survive.
 
-That makes this a scope-(b) STRUCTURAL EXCLUSION in the AGENTS.md sense, with a
-named exact invariant rather than a numerical observation: no per-block weight
-placed on a >= 3-row partition can change this sum's value, because it is
-multiplied by zero before anything else happens. It bounds where a seventh
-ansatz could act without proposing one.
+WHY, AND IT IS NOT DEEP — IT IS N = 2.  `y_lambda_su_n(n, q, N)` vanishes
+exactly when `len(lambda) > N`, the standard vanishing of the Schur function
+`s_lambda(x_1..x_N)` in N variables. Verified here at N = 2, 3, 4, 6: the
+number of surviving partitions of 6 goes 4 -> 7 -> 9 -> 11 and the longest
+surviving column is always exactly N. The producer calls it with **N = 2**.
+
+So "supported on the Temperley-Lieb quotient" is not a discovered constraint on
+Delta_lambda — TL_n IS the SU(2) quotient, and the support restriction is what
+choosing N = 2 MEANS. The exclusion below is exact, but it is exact GIVEN N = 2
+and is contingent on that modelling choice rather than intrinsic to the closure.
+Stated the other way round: it is a scope-(b) exclusion whose invariant is
+SU(N) Schur vanishing, and the invariant carries N with it.
+
+This does NOT say N should be something else. Choosing N to close the gap would
+be a seventh fitted ansatz and is exactly what the AGENTS.md rule forbids. What
+it says is that the support question is settled and is not where the answer is.
 
 Scope, stated precisely: this excludes contributions THROUGH THIS FORMULA. A
 different formula — one not of the form `sum_lambda y_lambda (...)` — is
@@ -34,8 +45,19 @@ cancellation, with the single largest term (5,1) at 177 % of the total. So the
 alternating terms nearly cancelling and leaving a residue about 6x too small.
 Any reweighting of the four survivors is fighting that cancellation.
 
-THIS IS THE SAME PHENOMENON AS THE GRAM RADICAL, seen from the weights instead
-of from the pairing. `QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero`
+AND THE GRAM SINGULARITY IS THE SAME FACT.  Convention D's Markov weight is
+the SU(2) parameter, exactly:
+
+    z_D = q^3/(q^2 + 1) = q^N/[N]_q  at  N = 2      ([2]_q = (q^2+1)/q)
+
+So every one of these is the single statement N = 2: z_D being a root of the
+H_3 Gram determinant; the radical there being the q-antisymmetriser (the (1^3)
+block, the unique partition of 3 with more than 2 rows); y_lambda = 0 for
+len(lambda) > 2 (qou-8iru); the corank identity sum_(>=3 rows) dim^2 =
+n! - Catalan(n), Catalan counting the <= 2-row part; TL_n as the quotient
+(PR #5592); and this closure's support. Six observations, one cause.
+
+Seen from the weights instead of from the pairing: `QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero`
 proves the convention-D H_3 Gram is singular with the q-antisymmetriser — the
 (1^3) block, the unique >= 3-row partition of 3 — spanning its radical. The
 identity `sum_{lambda >= 3 rows} (dim V_lambda)^2 = n! - Catalan(n)`, verified
@@ -62,8 +84,14 @@ for _p in (str(COMP), str(COMP / "substrate")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
+import sympy as _sp  # noqa: E402
+
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+# Imported at module scope deliberately: this module calls set_compute_dps() on
+# import, so importing it mid-function resets mp.dps after the sums were parsed
+# and turns an exact equality check into a false failure. Cost one run.
+from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 
 SOURCE = "computations/rho-w-crystal-vertex-trace.witness.json"
 
@@ -119,7 +147,27 @@ def main() -> int:
             "sum_dim_sq_ge3rows": lhs, "n_factorial_minus_catalan": rhs, "equal": lhs == rhs,
         })
 
+    # WHY the >=3-row blocks vanish: SU(N) Schur vanishing, with N carried explicitly.
+    n_strands = int(w.get("n_strands") or 6)
+    q_here = mpf(str(w.get("q_0_50dps")))
+    n_sweep = []
+    for N in (2, 3, 4, n_strands):
+        ys = y_lambda_su_n(n_strands, q_here, N)
+        nz = [l for l, v in ys.items() if v != 0]
+        n_sweep.append({"N": N, "nonzero": len(nz), "of": len(ys),
+                        "longest_surviving_column": max(len(l) for l in nz),
+                        "vanishes_above_N_rows": all(len(l) <= N for l in nz)})
+
+    _q = _sp.Symbol("q", positive=True)
+    _qint = lambda m: (_q ** m - _q ** -m) / (_q - _q ** -1)  # noqa: E731
+    zd_is_sun = _sp.simplify(_q ** 3 / (_q ** 2 + 1) - _q ** 2 / _qint(2)) == 0
+
     checks = [
+        ("y_vanishing_is_SU_N_schur_vanishing",
+         all(r["vanishes_above_N_rows"] for r in n_sweep), True,
+         "y_lambda = 0 iff len(lambda) > N, at N = 2,3,4,n — so the support is N=2, not Delta"),
+        ("zD_is_the_SU2_markov_parameter", bool(zd_is_sun), True,
+         "z_D = q^3/(q^2+1) = q^N/[N]_q at N=2 — the Gram singularity is the same fact"),
         ("y_lambda_vanishes_on_every_ge3row_block",
          all(y == 0 for _l, y, _t in ge3), True,
          f"{len(ge3)} of {len(terms)} partitions, each contributing exactly 0"),
@@ -160,6 +208,8 @@ def main() -> int:
             for lam, y, t in terms
         ],
         "dimension_identity": dim_rows,
+        "su_N_row_cutoff_sweep": n_sweep,
+        "zD_equals_qN_over_bracketN_at_N2": bool(zd_is_sun),
         "assertions": [
             {"name": n, "value": bool(g), "expected": bool(e),
              "passed": bool(g) is e, "note": note}
@@ -171,11 +221,17 @@ def main() -> int:
         "context": {
             "bean": "qou-zf9n",
             "scope": (
-                "(b) structural exclusion, with the exact invariant named: y_lambda = 0 "
-                "on >= 3-row blocks. It excludes contributions THROUGH THIS FORMULA "
-                "(sum_lambda y_lambda ...), not from the framework — a separate additive "
-                "super-pairwise term is untouched by it, and this is evidence FOR that "
-                "expectation rather than against it."
+                "(b) structural exclusion whose invariant is SU(N) Schur vanishing "
+                "(y_lambda = 0 iff len(lambda) > N), verified at N = 2,3,4,6. Exact, but "
+                "CONTINGENT ON N = 2 rather than intrinsic to the closure — TL_n is the "
+                "SU(2) quotient, so the support restriction is what N = 2 means. It also "
+                "excludes only contributions THROUGH THIS FORMULA; a separate additive "
+                "super-pairwise term is untouched, which is the AGENTS.md expectation."
+            ),
+            "root_cause": (
+                "z_D = q^3/(q^2+1) = q^N/[N]_q at N = 2, verified symbolically. The Gram "
+                "singularity, the radical's identity, y_lambda = 0 above 2 rows, the "
+                "n! - Catalan(n) corank, the TL_n quotient and this support are one fact."
             ),
             "same_phenomenon_as": [
                 "QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero "

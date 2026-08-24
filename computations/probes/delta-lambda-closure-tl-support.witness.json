@@ -1,9 +1,25 @@
 {
   "engine": "python+mpmath(exact combinatorics)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:46:23.388570+00:00",
-  "commitSha": "66ce1243ab993380ddb5376ef447163740653f90",
+  "computedAt": "2026-08-24T14:56:24.147611+00:00",
+  "commitSha": "1ab17d35c7850e13c798ab0e5076244f0cb9a003",
   "assertions": [
+    {
+      "name": "y_vanishing_is_SU_N_schur_vanishing",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "y_lambda = 0 iff len(lambda) > N, at N = 2,3,4,n — so the support is N=2, not Delta"
+    },
+    {
+      "name": "zD_is_the_SU2_markov_parameter",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "z_D = q^3/(q^2+1) = q^N/[N]_q at N=2 — the Gram singularity is the same fact"
+    },
     {
       "name": "y_lambda_vanishes_on_every_ge3row_block",
       "computed": "1",
@@ -49,8 +65,8 @@
   "durationMs": 0,
   "computation": "delta-lambda-closure-tl-support",
   "scriptFile": "delta_lambda_closure_tl_support_probe.py",
-  "scriptHash": "d9cc94eae2e8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "996d9e6d7a9c",
+  "scriptCommitSha": "1ab17d35c7850e13c798ab0e5076244f0cb9a003",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -241,11 +257,43 @@
       "equal": true
     }
   ],
+  "su_N_row_cutoff_sweep": [
+    {
+      "N": 2,
+      "nonzero": 4,
+      "of": 11,
+      "longest_surviving_column": 2,
+      "vanishes_above_N_rows": true
+    },
+    {
+      "N": 3,
+      "nonzero": 7,
+      "of": 11,
+      "longest_surviving_column": 3,
+      "vanishes_above_N_rows": true
+    },
+    {
+      "N": 4,
+      "nonzero": 9,
+      "of": 11,
+      "longest_surviving_column": 4,
+      "vanishes_above_N_rows": true
+    },
+    {
+      "N": 6,
+      "nonzero": 11,
+      "of": 11,
+      "longest_surviving_column": 6,
+      "vanishes_above_N_rows": true
+    }
+  ],
+  "zD_equals_qN_over_bracketN_at_N2": true,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "context": {
     "bean": "qou-zf9n",
-    "scope": "(b) structural exclusion, with the exact invariant named: y_lambda = 0 on >= 3-row blocks. It excludes contributions THROUGH THIS FORMULA (sum_lambda y_lambda ...), not from the framework — a separate additive super-pairwise term is untouched by it, and this is evidence FOR that expectation rather than against it.",
+    "scope": "(b) structural exclusion whose invariant is SU(N) Schur vanishing (y_lambda = 0 iff len(lambda) > N), verified at N = 2,3,4,6. Exact, but CONTINGENT ON N = 2 rather than intrinsic to the closure — TL_n is the SU(2) quotient, so the support restriction is what N = 2 means. It also excludes only contributions THROUGH THIS FORMULA; a separate additive super-pairwise term is untouched, which is the AGENTS.md expectation.",
+    "root_cause": "z_D = q^3/(q^2+1) = q^N/[N]_q at N = 2, verified symbolically. The Gram singularity, the radical's identity, y_lambda = 0 above 2 rows, the n! - Catalan(n) corank, the TL_n quotient and this support are one fact.",
     "same_phenomenon_as": [
       "QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero (radical = q-antisymmetriser = the (1^3) block)",
       "the TL_n quotient rank result of PR #5592",

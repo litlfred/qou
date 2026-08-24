@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-24T14:49:40Z
+updated_at: 2026-08-24T14:59:25Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -376,3 +376,48 @@ n = 3,4,5,6 and matches PR #5592's TL_n rank. Four faces of one fact:
 Gram radical / y_lambda = 0 / TL quotient / closure support.
 
 Probe: `computations/probes/delta_lambda_closure_tl_support_probe.py`, 5/5.
+
+
+## CORRECTION + root cause: all of it is N = 2
+
+I framed the TL support as a discovered structural constraint on Delta_lambda.
+It is exact, but I had the CAUSE wrong, and the cause weakens the claim.
+
+`y_lambda_su_n(n, q, N)` vanishes exactly when `len(lambda) > N` — the ordinary
+vanishing of the Schur function `s_lambda(x_1..x_N)` in N variables. Measured at
+N = 2,3,4,6 on partitions of 6: surviving partitions go 4 -> 7 -> 9 -> 11, and
+the longest surviving column is always exactly N. The producer calls it with
+**N = 2**.
+
+So "supported on the Temperley-Lieb quotient" is not a fact about Delta_lambda.
+**TL_n IS the SU(2) quotient**, and the support restriction is what choosing
+N = 2 means. The exclusion holds, but it is contingent on that modelling choice,
+not intrinsic — a materially weaker statement than the one I made.
+
+**And the Gram singularity is the same fact.** Verified symbolically:
+
+    z_D = q^3/(q^2+1) = q^N/[N]_q  at N = 2      ([2]_q = (q^2+1)/q)
+
+Convention D's Markov weight IS the SU(2) parameter. So these six, which I had
+been treating as related-but-distinct, are one statement:
+
+  1. z_D is a root of the H_3 Gram determinant                  (PR #5618)
+  2. the radical there is the q-antisymmetriser = the (1^3) block
+  3. y_lambda = 0 for len(lambda) > 2                           (qou-8iru)
+  4. corank = sum_(>=3 rows) dim^2 = n! - Catalan(n)
+  5. TL_n is the quotient                                       (PR #5592)
+  6. the Delta_lambda closure is supported on <= 2 rows
+
+All six = **N = 2**.
+
+**This does NOT license tuning N.** Choosing N to close the 83.5% gap would be a
+seventh fitted ansatz and is exactly what the standing rule forbids. What it
+settles is that the SUPPORT question is answered and is not where the closure
+lives — which is a negative result, and the useful kind.
+
+Also measured: the cancellation is NOT a forced identity. The ratio moves
+1.7x -> 26x over q in [1.02, 2], so no q-independent relation forces the
+near-cancellation at q_0; the 3.435x is a property of the anchor, not the
+algebra. Scope (a).
+
+Probe updated: `delta_lambda_closure_tl_support_probe.py`, 7/7.
