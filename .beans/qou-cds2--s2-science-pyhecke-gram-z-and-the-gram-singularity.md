@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T00:22:01Z
+updated_at: 2026-08-24T00:26:41Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -606,3 +606,29 @@ does not reach it. Worth one check against `gram.py` before quoting this.
 
 Hypotheses on my side: `q ≠ 0`, `q² ≠ 1`, `q² + 1 ≠ 0`, `q²` not a root of unity. The proton pin
 satisfies all four.
+
+
+### The conditional on that inference is now DISCHARGED — measured, not assumed
+
+I flagged one way the uniqueness inference could fail to reach your form: if `G` were built from
+something that drops one of the four axioms (a non-normalised functional, say). Checked it rather
+than leaving it as a to-do:
+
+    _TR_M_FRAC = [1, z, z, z², z², 344379115289871/498227041000000]
+    _Z_FRAC    = 1367631/2232100        # = q³/(q²+1) at q = 111/100 — convention D
+    tr_m_mp()[0] = 1.0                   # 50 dps, at the real q₀
+
+- **Normalisation holds exactly**: `tr(1) = 1` in the exact-rational path *and* at 50 dps.
+- **Markov holds at the visible levels**: `tr(σ₀) = tr(σ₁) = z`, and `tr(σ₀σ₁) = z²` exactly
+  (`1870414552161/4982270410000 = (1367631/2232100)²`), which is `tr(ι(σ₀)·σ₁) = z·tr₂(σ₀)`.
+
+So the form behind `G` is a normalised Markov trace at `z_D`, and the inference applies: **the
+singularity is a property of *the* Markov trace at that parameter, not of a weight choice.**
+Re-choosing weights is not an escape route, and the radical quotient is the way.
+
+Also noticed while looking, and reported to the AGENTS.md-currency branch (#5599) rather than
+edited here: AGENTS.md lines 1545–1548 still name `pyhecke/gram.py:634` (`z_mp`) as *"the only
+return-form C site left in the tree … registered and R10-waived"*. It is at line 645 and its
+docstring says **convention D, MIGRATED 2026-08-16 (bean `qou-cds2`)** — this bean. The AGENTS.md
+paragraph is stamped the same day, which is presumably how they crossed. The surrounding posture
+("treat the remaining C surface as UNMEASURED") is unaffected, and I did not re-run the detector.
