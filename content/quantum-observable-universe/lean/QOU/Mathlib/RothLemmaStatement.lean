@@ -392,6 +392,51 @@ theorem rothBound_step_witness : RothBound 2 ((1 / 4 : ℚ) ^ (2 ^ 1)) (5 / 8) :
     le_rfl (by norm_num) (by norm_num) (by norm_num)
     (by norm_num [rothConstant_one]) (by norm_num) (by norm_num)
 
+/-- **§13's conclusion feeds §14's step** — the junction, with every linking hypothesis named.
+
+`RothInductionStep.index_le_two_mul_max_of_det_bound` ends at `θ ≤ t + 2·max(S/r, q)`.  That is
+`rothBound_step`'s `θ ≤ Ψ + u` with `u = 2·max(S/r, q)`, provided `t ≤ Ψ` — which holds because
+§14's `Ψ = Θ_{m−1} + t` and `Θ_{m−1} ≥ 0` — and provided both branches of the max are bounded
+by `√Ψ`, which is what `A² ≤ Ψ` and `q² ≤ Ψ` say without naming a root.
+
+`A` is `S/r` at the call site; it is left abstract because nothing here needs it to be a
+quotient. -/
+theorem rothBound_of_max_form {m : ℕ} (hm : 1 ≤ m) {s t θ A q Ψ : ℚ}
+    (hs0 : 0 ≤ s) (hs1 : s ≤ 1) (hθ0 : 0 ≤ θ)
+    (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2)
+    (htΨ : t ≤ Ψ) (hA : A ^ 2 ≤ Ψ) (hq : q ^ 2 ≤ Ψ)
+    (hθ : θ ≤ t + 2 * max A q) :
+    RothBound (m + 1) (s ^ (2 ^ m)) θ := by
+  have hmax : (max A q) ^ 2 ≤ Ψ := by
+    rcases max_choice A q with h | h <;> rw [h] <;> assumption
+  exact rothBound_step hm hs0 hs1 hθ0 hΨ (u := 2 * max A q) (by nlinarith) (by linarith)
+
+/-- ⚠ **The junction squeezes `q` from both sides**, and that is the whole numeric content.
+
+§13 needs `S ≤ q²·rr` — a **lower** bound on `q²`, since `q` is its rational stand-in for
+`√(S/rr)`.  `rothBound_of_max_form` needs `q² ≤ Ψ` — an **upper** bound.  Together they force
+
+    S ≤ Ψ·rr,
+
+and that single inequality is what the §13 → §14 junction reduces to.  The bean for this arc
+had said the assembly "terminates in a numeric condition"; this is that condition, isolated to
+one place rather than diffused through the recursion.
+
+⚠ It is necessary, not sufficient: a rational `q` with `S/rr ≤ q² ≤ Ψ` exists whenever
+`S/rr < Ψ` (rational squares are dense), but at equality it exists only if `Ψ` is a rational
+square.  The strict form is what a caller should establish; that density argument is not
+proved here. -/
+theorem le_mul_of_max_form_squeeze {S rr q Ψ : ℚ} (hrr : 0 ≤ rr)
+    (hSq : S ≤ q ^ 2 * rr) (hqΨ : q ^ 2 ≤ Ψ) : S ≤ Ψ * rr := by
+  nlinarith
+
+/-- **Non-vacuity of the junction.**  `m = 1`, `s = 1/4`, `Ψ = 1/8`, `t = 1/16`, `A = q = 1/4`,
+`θ = 1/16 + 1/2 = 9/16`; the conclusion is `RothBound 2 (1/16) (9/16)`, a real bound. -/
+theorem rothBound_of_max_form_witness : RothBound 2 ((1 / 4 : ℚ) ^ (2 ^ 1)) (9 / 16) :=
+  rothBound_of_max_form (m := 1) (s := 1 / 4) (t := 1 / 16) (A := 1 / 4) (q := 1 / 4)
+    (Ψ := 1 / 8) le_rfl (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num [rothConstant_one]) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+
 
 /-- **Roth's lemma, uniform-parameter form** — the statement *schema*.
 

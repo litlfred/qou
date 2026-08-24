@@ -2791,3 +2791,25 @@ arithmetic half of exactly that step.
 Verification: `RothLemmaStatement`, `RothInductionHypothesis`, `RothInductionStep` and
 `RothOperatorFamily` each rebuilt with its `.olean` deleted — exit 0, no errors, no linter
 output. All fourteen new and re-signed declarations `#print axioms`-clean.
+
+### The §13 → §14 junction, and the numeric condition isolated
+
+`rothBound_of_max_form` bridges the arc's §13 output — `index_le_two_mul_max_of_det_bound`,
+which ends at `θ ≤ t + 2·max(S/r, q)` — to `rothBound_step`. Every linking hypothesis is now
+named: `t ≤ Ψ` (from `Ψ = Θ_{m−1} + t` and `Θ_{m−1} ≥ 0`), and `A² ≤ Ψ`, `q² ≤ Ψ` for the two
+branches of the max, stated squared so no root appears.
+
+⚠ **The junction squeezes `q` from both sides, and that is the whole numeric content.** §13
+needs `S ≤ q²·rr` — a **lower** bound, since `q` is its rational stand-in for `√(S/rr)`. The
+step needs `q² ≤ Ψ` — an **upper** bound. Together (`le_mul_of_max_form_squeeze`) they force
+
+    S ≤ Ψ·rr
+
+and that single inequality is what the whole junction reduces to. The previous entry said the
+assembly "terminates in a numeric condition the arc has consistently refused to assert"; this
+is that condition, isolated to one named place rather than diffused through the recursion, and
+now it can be asserted because §14 has been read.
+
+⚠ Necessary, not sufficient. A rational `q` with `S/rr ≤ q² ≤ Ψ` exists whenever
+`S/rr < Ψ` — rational squares are dense — but at equality only if `Ψ` is a rational square. The
+strict form is what a caller should establish; that density argument is **not** proved.
