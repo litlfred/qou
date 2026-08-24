@@ -11,6 +11,7 @@ Two facts about Lagrange interpolation that Mathlib states only implicitly.
 | `sum_eval_div_prod_eq_coeff` | for `deg f < |s|`, `∑_i f(v i) / ∏_{j≠i}(v i − v j) = f.coeff (|s| − 1)` |
 | `sum_prod_qratio` | `∑_i ∏_{j≠i} (Q·v i − v j)/(v i − v j) = 1 + Q + ⋯ + Q^{|s|−1}` |
 | `sum_eq_bracket_mul_of_qratio_scaling` | the same, packaged as the branching identity |
+| `sum_prod_qratio_weighted` | the same sum weighted by `Q·v_i/(Q·v_i − v_b)`, which sums to `Q^{|s|}/(Q−1)` |
 
 The second is the algebraic form of "the sum of the residues of `f/∏(X − v j)` over its poles reads
 off the top coefficient of `f`".  It is the workhorse: with a well-chosen `f` it turns a sum of
@@ -213,5 +214,105 @@ theorem sum_eq_bracket_mul_of_qratio_scaling {s : Finset ι} {v : ι → F} (hv 
     (hw : ∀ i ∈ s, w i = (∏ j ∈ s.erase i, (Q * v i - v j) / (v i - v j)) * W) :
     ∑ i ∈ s, w i = (∑ k ∈ Finset.range s.card, Q ^ k) * W := by
   rw [Finset.sum_congr rfl hw, ← Finset.sum_mul, sum_prod_qratio hv hv0 hQ0 hQ1]
+
+/-! ## The weighted node sum
+
+The Markov property needs the `q`-ratio sum **weighted** by one more factor — the seminormal
+(Hoefsmit) entry, which in node coordinates is `Q·v_i/(Q·v_i − v_b)` for a distinguished node `b`.
+Remarkably the weighted sum is no harder: the extra factor cancels the `j = b` term of the ratio's
+numerator, and what is left is `sum_eval_div_prod_eq_coeff` applied to a **degree `|s|−1`**
+polynomial — no `divX` subtraction, and, unlike the branching case, no separate treatment of `i = b`.
+-/
+
+/-- **The weighted `q`-ratio node sum.**
+
+`∑_{i ∈ s} (∏_{j≠i} (Q·v_i − v_j)/(v_i − v_j)) · Q·v_i/(Q·v_i − v_b) = Q^{|s|}/(Q − 1)`.
+
+The weight is exactly what the seminormal entry contributes to the Markov condition, and the whole
+sum collapses to the top coefficient of `∏_{j ≠ b}(Q·t − v_j)`, which is `Q^{|s|−1}`.
+
+**`i = b` needs no special case.**  For `i ≠ b` the weight's denominator cancels the `j = b` factor
+of the numerator; at `i = b` that factor is absent but the weight is the constant `Q/(Q−1)`, and the
+two land on the same expression.  I first thought this case broke the uniform shape — it does not,
+and the appearance that it did came from including the `j = i` factor, which the ratio's numerator
+does not have.
+
+**`hne` is not decoration.**  Without it a term can be `0/0`: `Q·v_i = v_b` makes the ratio's
+numerator vanish *and* the weight's denominator vanish, and the two sides then disagree.  In the
+intended application `s` indexes the rows that admit a box, where `β_b = β_i + 1` is impossible
+precisely because row `i` admits one — so the hypothesis is discharged by addability, and the
+degenerate case is the one the corner identity excludes by summing over addable cells only. -/
+theorem sum_prod_qratio_weighted {s : Finset ι} {v : ι → F} (hv : Set.InjOn v s)
+    (hv0 : ∀ i ∈ s, v i ≠ 0) {Q : F} (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) {b : ι} (hb : b ∈ s)
+    (hne : ∀ i ∈ s, i ≠ b → Q * v i - v b ≠ 0) :
+    (∑ i ∈ s, (∏ j ∈ s.erase i, (Q * v i - v j) / (v i - v j)) * (Q * v i / (Q * v i - v b)))
+      = Q ^ s.card / (Q - 1) := by
+  classical
+  have hQ1' : Q - 1 ≠ 0 := sub_ne_zero.mpr hQ1
+  have hcard : 1 ≤ s.card := Finset.card_pos.mpr ⟨b, hb⟩
+  -- the interpolated polynomial, of degree `|s| − 1`
+  set h : F[X] := ∏ j ∈ s.erase b, (C Q * X - C (v j)) with hh
+  have hfac : ∀ j : ι, (C Q * X - C (v j) : F[X]) = C Q * X + C (-(v j)) := by
+    intro j; rw [map_neg]; ring
+  have hfacne : ∀ j : ι, (C Q * X - C (v j) : F[X]) ≠ 0 := by
+    intro j hzero
+    have hd := natDegree_linear (a := Q) (b := -(v j)) hQ0
+    rw [← hfac j, hzero] at hd
+    simp at hd
+  have hdeg : h.natDegree = s.card - 1 := by
+    have h1 : ∀ j ∈ s.erase b, (C Q * X - C (v j) : F[X]).natDegree = 1 := by
+      intro j _; rw [hfac j]; exact natDegree_linear hQ0
+    rw [hh, natDegree_prod _ _ fun j _ => hfacne j, Finset.sum_congr rfl h1]
+    simp [Finset.card_erase_of_mem hb]
+  have hlead : h.leadingCoeff = Q ^ (s.card - 1) := by
+    have h2 : ∀ j ∈ s.erase b, (C Q * X - C (v j) : F[X]).leadingCoeff = Q := by
+      intro j _; rw [hfac j]; exact leadingCoeff_linear hQ0
+    rw [hh, leadingCoeff_prod, Finset.prod_congr rfl h2]
+    simp [Finset.card_erase_of_mem hb]
+  have hne0 : h ≠ 0 := fun hz => by
+    rw [hz, leadingCoeff_zero] at hlead
+    exact pow_ne_zero _ hQ0 hlead.symm
+  have hdegree : h.degree < (s.card : WithBot ℕ) := by
+    rw [degree_eq_natDegree hne0, hdeg]
+    exact_mod_cast Nat.sub_lt (Finset.card_pos.mpr ⟨b, hb⟩) one_pos
+  -- termwise: every summand is `Q/(Q−1)` times a residue term
+  have hterm : ∀ i ∈ s,
+      (∏ j ∈ s.erase i, (Q * v i - v j) / (v i - v j)) * (Q * v i / (Q * v i - v b))
+        = Q / (Q - 1) * (eval (v i) h / ∏ j ∈ s.erase i, (v i - v j)) := by
+    intro i hi
+    have hvi : v i ≠ 0 := hv0 i hi
+    have hev : eval (v i) h = ∏ j ∈ s.erase b, (Q * v i - v j) := by
+      rw [hh, eval_prod]
+      exact Finset.prod_congr rfl fun j _ => by simp
+    rw [Finset.prod_div_distrib, hev]
+    by_cases hib : i = b
+    · subst hib
+      have hself : Q * v i - v i = (Q - 1) * v i := by ring
+      rw [hself]
+      field_simp
+    · -- peel the `j = b` factor out of both products
+      have hbe : b ∈ s.erase i := Finset.mem_erase.mpr ⟨fun hc => hib hc.symm, hb⟩
+      have hie : i ∈ s.erase b := Finset.mem_erase.mpr ⟨hib, hi⟩
+      have hnum : (∏ j ∈ s.erase i, (Q * v i - v j))
+          = (Q * v i - v b) * ∏ j ∈ (s.erase i).erase b, (Q * v i - v j) :=
+        (Finset.mul_prod_erase _ _ hbe).symm
+      have hnum' : (∏ j ∈ s.erase b, (Q * v i - v j))
+          = (Q * v i - v i) * ∏ j ∈ (s.erase b).erase i, (Q * v i - v j) :=
+        (Finset.mul_prod_erase _ _ hie).symm
+      have hswap : (s.erase i).erase b = (s.erase b).erase i := Finset.erase_right_comm
+      rw [hnum, hnum', hswap]
+      have hdne : (∏ j ∈ s.erase i, (v i - v j)) ≠ 0 :=
+        Finset.prod_ne_zero_iff.mpr fun j hj => sub_ne_zero.mpr fun hc =>
+          Finset.ne_of_mem_erase hj (hv (Finset.mem_of_mem_erase hj) hi hc.symm)
+      have hself : Q * v i - v i = (Q - 1) * v i := by ring
+      have hnb : Q * v i - v b ≠ 0 := hne i hi hib
+      rw [hself]
+      field_simp
+  rw [Finset.sum_congr rfl hterm, ← Finset.mul_sum,
+    sum_eval_div_prod_eq_coeff hv hdegree, ← hdeg, coeff_natDegree, hlead]
+  field_simp
+  rw [← pow_succ']
+  congr 1
+  omega
 
 end QOU.Mathlib
