@@ -1522,3 +1522,76 @@ The campaign has been reading the drift as one-directional. It is not.
 All three are the same shape this campaign keeps cataloguing: **the detector
 keyed on how something is SPELLED rather than on what it DOES.** Worth recording
 that the shape is not something other agents do — I wrote all three today.
+
+
+## 2026-08-24 (2) — draining `undetermined`, and a 31-item false finding I caught
+
+The previous entry left 58 `physical_proton` stems whose compute layer the audit
+could not determine. `undetermined` is the one bucket that is not an answer, so
+I went after it. Clustering the 58 by local import: **49 `witness_base`, 36
+`_path_bridge`, 35 `_precision`, 15 `_li_2_q_util`, 14 `_gap_a4_qsafe`** — two of
+those carry q0, and neither was visible to `_computes`, which had no transitive
+step at all. (`_classify` had one; I fixed that function this morning and did not
+notice its sibling.)
+
+### The false finding, in full, because the correction is the useful part
+
+Adding transitive resolution took `physical_proton` contradictions **4 → 18 →
+31**. The 31 looked like the campaign's biggest result: a mirror-direction defect
+seven times larger than the four already known.
+
+**It was wrong.** Hand-checking `binding_block_multiplicative` broke it: the
+audit said *computes muon*, and the witness said `q0Value: 1.1099785827…` —
+proton. Reading `_li_2_q_util.load_q_50dps` explains it:
+
+> ``anchor``  ``"proton"`` (default) takes the experimental pin from
+> ``q_parameter.Q_MP``; ``"muon"`` reads the ideal/CAL-2 pin from
+> ``q-pinning-50-digit.witness.json``.
+>
+> The default was ``None`` -> the muon witness **until 2026-08-22**. … Measured
+> at the time: 28 live no-arg call sites in 26 files, of which **nine were
+> declared physical_proton** … and **zero** were declared ``ideal_muon``.
+
+My rule was *"the body mentions the pinning witness, therefore muon"*. The body
+mentions it because that is the **non-default** branch. A bare `load_q_50dps()`
+returns **proton**, so I had inverted the answer for all 13 importers — and the
+population I thought I had found is one that beans `qou-dkm2` / `qou-v90i`
+**already drained two days ago**.
+
+Third instance of the same error in this one file, all mine, all today: read a
+thing's spelling instead of its behaviour. **A helper FUNCTION's layer lives at
+its call site, not in its body.** Constants are different — a name bound to a
+literal carries its value — so `_gap_a4_qsafe.Q_0_50DPS` remains sound. The rule
+now: attribute from Assign-bound names only; for functions, take a layer only
+from an explicit `anchor=` argument at the call site, and otherwise leave the
+stem undetermined rather than guess a default.
+
+### Where it settles
+
+| layer | declared | direct | via helper | cannot bind | contradicts | agrees | comparison | undet. | unres. |
+|---|---|---|---|---|---|---|---|---|---|
+| `ideal_muon` | 152 | 50 | 13 | 89 | **6** | 75 | 6 | 2 | 0 |
+| `physical_proton` | 514 | 387 | 10 | 109 | **18** | 26 | 21 | 44 | 8 |
+| `ambiguous` | 17 | 7 | 0 | 10 | — | — | 4 | 6 | 0 |
+
+**The `ideal_muon` six have been byte-identical across five revisions** of the
+resolution logic, including the two that were wrong. A finding that survives its
+detector being wrong twice in both directions is worth more than one that
+appeared once.
+
+The 18 decompose exactly: **4** original (hardcoded literal / direct qpin read) +
+**14** importing `_gap_a4_qsafe.Q_0_50DPS`, the constant found this morning to
+hold the muon pin under a "proton-mass-anchored" label. One mislabelled line in
+one shared helper puts 14 stems in conflict with their own declaration.
+
+### Verified end to end, one case
+
+`gap_a4_T10_mckay_character_2I_probe`: declared `physical_proton` ✓, imports
+`Q_0_50DPS` ✓, witness `q0Anchor: muon` and `q0Value` = pin A ✓, payload
+`q_0_50dps` = pin A ✓.
+
+**Here the MANIFEST is the false record, not the witness** — producer, payload
+and stamp all agree on muon, and only the declaration says proton. The audit's
+output said the declaration "mislabels the witness", which is the other case;
+corrected to state that which side is wrong is not the audit's call and the
+producer must be read.

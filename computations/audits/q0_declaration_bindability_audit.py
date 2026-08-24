@@ -118,7 +118,7 @@ def _route(src: str, mods: "set[str]") -> str:
     return "no q0 route found"
 
 
-def _computes(src: str, mods: "set[str]") -> str:
+def _computes(src: str, mods: "set[str]", idx=None) -> str:
     """What LAYER does an unbindable producer actually compute at?
 
     This split is the whole difference between a defect and a correct fix, and
@@ -147,18 +147,9 @@ def _computes(src: str, mods: "set[str]") -> str:
         if has_p:
             return "proton"
         return "unknown"
-    if "q-pinning-50-digit.witness.json" in src:
-        return "muon"          # that witness IS the muon anchor-defining file
-    layers = set()
-    for m in _Q0_LIT.finditer(src):
-        try:
-            v = mpf(m.group(0))
-        except Exception:  # noqa: BLE001
-            continue
-        if abs((v - PIN_MUON) / PIN_MUON * mpf(10) ** 9) < _PIN_TOL_PPB:
-            layers.add("muon")
-        elif abs((v - PIN_PROTON) / PIN_PROTON * mpf(10) ** 9) < _PIN_TOL_PPB:
-            layers.add("proton")
+    layers = _layer_of_source(src)
+    if not layers and idx is not None:
+        layers = _helper_layer(src, idx) | _call_site_layer(src)
     if layers == {"muon"}:
         return "muon"
     if layers == {"proton"}:
@@ -168,12 +159,126 @@ def _computes(src: str, mods: "set[str]") -> str:
     return "unknown"
 
 
+def _layer_of_source(text: str) -> "set[str]":
+    """Which pin layers does this snippet of source evidence carry?"""
+    out = set()
+    if "q-pinning-50-digit.witness.json" in text:
+        out.add("muon")          # that witness IS the muon anchor-defining file
+    for m in _Q0_LIT.finditer(text):
+        try:
+            v = mpf(m.group(0))
+        except Exception:  # noqa: BLE001
+            continue
+        if abs((v - PIN_MUON) / PIN_MUON * mpf(10) ** 9) < _PIN_TOL_PPB:
+            out.add("muon")
+        elif abs((v - PIN_PROTON) / PIN_PROTON * mpf(10) ** 9) < _PIN_TOL_PPB:
+            out.add("proton")
+    return out
+
+
+def _helper_layer(src: str, idx) -> "set[str]":
+    """q0 layers reaching this producer through a SHARED HELPER.
+
+    Keyed on the imported NAME, never on the module. `_gap_a4_qsafe` exports a
+    muon pin as `Q_0_50DPS` and also exports `q_number`, `dim_q_partition`,
+    `classical_dim_partition`, which carry no q0 at all; `_li_2_q_util` exports
+    `load_q_50dps` (which reads the muon anchor-defining witness) alongside
+    `li_2_q` and density helpers. Attributing a layer to every importer of the
+    module would credit q0 to producers that only wanted a q-integer — the
+    "spelled, not done" error this audit has already made twice.
+
+    So: resolve the module to a unique local file, find each imported name's own
+    top-level binding, and read the evidence from THAT binding's subtree only.
+    """
+    layers: "set[str]" = set()
+    try:
+        tree = ast.parse(src)
+    except Exception:  # noqa: BLE001
+        return layers
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.ImportFrom) or not n.module:
+            continue
+        if n.module in _UNGOVERNED or _is_qparam(n.module):
+            continue                      # handled by the callers, above
+        cands = idx.get(n.module.split(".")[-1], [])
+        if not cands:
+            continue
+        wanted = {a.name for a in n.names}
+        # A stem matching several files is only a problem if they DISAGREE.
+        # `_li_2_q_util` exists twice — under `computations/` and under
+        # `qou-mass/src/qou_mass/_internal/` — and both resolve `load_q_50dps`
+        # to the same muon anchor-defining witness. Refusing to answer there
+        # would leave 13 stems "undetermined" over an ambiguity that changes
+        # nothing. So: resolve every candidate, and accept the answer only when
+        # they all agree.
+        per_cand = []
+        for c in cands:
+            got: "set[str]" = set()
+            try:
+                hsrc = c.read_text(encoding="utf-8", errors="ignore")
+                htree = ast.parse(hsrc)
+            except Exception:  # noqa: BLE001
+                continue
+            hlines = hsrc.splitlines()
+            for node in htree.body:       # top level only: that is the binding
+                if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    # A FUNCTION's body must NOT be read for a layer. This cost
+                    # a 31-item false finding: `_li_2_q_util.load_q_50dps`
+                    # MENTIONS `q-pinning-50-digit.witness.json`, but only reads
+                    # it when the caller passes `anchor="muon"` — the default has
+                    # been `"proton"` since 2026-08-22 (beans qou-dkm2/qou-v90i,
+                    # which drained exactly this population). Attributing muon to
+                    # every importer inverted the answer for all of them.
+                    #
+                    # A helper FUNCTION's layer lives at the CALL SITE, not in
+                    # its body, and is resolved there. Constants are different:
+                    # an imported name bound to a literal carries its value.
+                    continue
+                if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+                    continue
+                tgts = (node.targets if isinstance(node, ast.Assign)
+                        else [node.target])
+                bound = {t.id for t in tgts if isinstance(t, ast.Name)}
+                if not (bound & wanted):
+                    continue
+                seg = "\n".join(
+                    hlines[node.lineno - 1: (node.end_lineno or node.lineno)])
+                got |= _layer_of_source(seg)
+            if got:
+                per_cand.append(frozenset(got))
+        if per_cand and len(set(per_cand)) == 1:
+            layers |= set(per_cand[0])
+    return layers
+
+
+def _call_site_layer(src: str) -> "set[str]":
+    """Layers named EXPLICITLY at a helper call site, e.g. `anchor="muon"`.
+
+    Only an explicit argument counts. A bare `load_q_50dps()` takes that
+    helper's own default, which this audit does not model and must not guess —
+    guessing it is what produced the 31-item false finding.
+    """
+    out: "set[str]" = set()
+    try:
+        tree = ast.parse(src)
+    except Exception:  # noqa: BLE001
+        return out
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Call):
+            continue
+        for kw in n.keywords:
+            if kw.arg == "anchor" and isinstance(kw.value, ast.Constant) \
+                    and kw.value.value in ("muon", "proton"):
+                out.add(kw.value.value)
+    return out
+
+
 #: What each manifest layer CLAIMS a producer computes at.
 _LAYER_CLAIM = {"ideal_muon": "muon", "physical_proton": "proton"}
 
 
 def _unbindable(f, src: str, mods: "set[str]", route: str,
-                expect: str | None) -> "tuple[str, str]":
+                expect: str | None, idx=None) -> "tuple[str, str]":
     """Every unbindable exit goes through here, so the compute-layer split is
     applied uniformly. An earlier revision split only ONE of the three exits,
     and the two that bypassed it raised a KeyError rather than silently
@@ -185,7 +290,7 @@ def _unbindable(f, src: str, mods: "set[str]", route: str,
     A detector whose labels invert on a different input is worse than no
     detector, because it reads as evidence.
     """
-    comp = _computes(src, mods)
+    comp = _computes(src, mods, idx)
     if comp == "both":
         verdict = "unbindable_comparison"
     elif comp == "unknown" or expect is None:
@@ -220,10 +325,11 @@ def _classify(stem: str, idx, expect: str | None) -> "tuple[str, str]":
     # Never resolve a dotted import by its last component alone.
     for m in mods:
         if m in _UNGOVERNED:
-            return _unbindable(f, src, mods, _UNGOVERNED[m], expect)
+            return _unbindable(f, src, mods, _UNGOVERNED[m], expect, idx)
     if "q-pinning-50-digit.witness.json" in src:
         return _unbindable(f, src, mods,
-                           "reads q-pinning-50-digit.witness.json directly", expect)
+                           "reads q-pinning-50-digit.witness.json directly",
+                           expect, idx)
 
     # one transitive level: a LOCAL helper that itself reaches q_parameter
     for m in mods:
@@ -242,7 +348,7 @@ def _classify(stem: str, idx, expect: str | None) -> "tuple[str, str]":
             continue
         if any(_is_qparam(x) for x in _imports(htree)):
             return "via_helper", f"{f.relative_to(REPO)}  <- {base}"
-    return _unbindable(f, src, mods, _route(src, mods), expect)
+    return _unbindable(f, src, mods, _route(src, mods), expect, idx)
 
 
 def main() -> int:
@@ -292,9 +398,13 @@ def main() -> int:
           "   <- unexamined, not clean")
 
     if buckets["unbindable_stamp_FALSE"]:
-        print(f"\n  DECLARED {args.layer!r} (claims {expect}), COMPUTES THE OTHER"
-              " LAYER, and the declaration cannot")
-        print("  bind — so it cannot fix the compute and only mislabels the witness:")
+        print(f"\n  DECLARED {args.layer!r} (claims {expect}) but COMPUTES THE"
+              " OTHER LAYER, and the")
+        print("  declaration cannot bind, so it cannot correct that. WHICH SIDE IS")
+        print("  WRONG IS NOT THIS AUDIT'S CALL: gap_a4_T10 is declared proton and")
+        print("  its producer, payload and stamp all say muon — there the MANIFEST")
+        print("  is the false record. Elsewhere the compute is right and the stamp")
+        print("  inherits the bad declaration. Read the producer before ruling:")
         for x in buckets["unbindable_stamp_FALSE"][:args.show]:
             print(f"    {x}")
     if buckets["unbindable_comparison"]:
