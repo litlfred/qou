@@ -1,7 +1,11 @@
 # Scoping the `qfac` / `dim_q` threading migration
 
 **Bean:** `qou-wee5` (closed) → this is its sized follow-on · **Date:** 2026-08-24
-· **Measured against** `main` @ `b134176d93`
+· **Measured against** `main` @ `b134176d93`, and **re-verified unchanged** at
+`80f16eb754` — 135 commits later, every figure below identical (191 / 47 / 144 /
+11 / 133 / 67 / 114 / 19, and the 12 → 1 direct + 11 indirect split). The one
+figure that did move is the `ideal_muon` population, 120 → 118, which this
+document never asserted.
 
 `qou-wee5` closed by threading an explicit `q` through **two** call sites in
 `per_generator_V_hat_general`, which took the anchor-flip straddle gate from
