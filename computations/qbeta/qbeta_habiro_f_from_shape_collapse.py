@@ -103,8 +103,9 @@ import mpmath as mp  # noqa: E402
 mp.mp.dps = 80
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+Q0_MP_PIN = Q_50_DIGIT_STR
 S_TARGET = "0.186893691885"  # per audit doc (12 digits)
 
 

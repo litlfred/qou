@@ -67,7 +67,7 @@ HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
 # Canonical 50-dps q₀
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 # CODATA-2022 / AME-2020 nucleon + light-atom masses (MeV), routed
 # through the canonical registry (I9 — no hardcoded literals). See
@@ -81,6 +81,7 @@ from codata_constants import (  # noqa: E402
     M_HE3_MEV_VALIDATION as M_HE3_MEV,
     M_HE4_MEV_VALIDATION as M_HE4_MEV,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Per-knot hyperbolic volumes.  p/n: Borromean 8·G; D/T: Phase-4 JSJ
 # Z=1 value 12.776; ³He/⁴He: Phase-4 JSJ Z=2 value 12.554.
