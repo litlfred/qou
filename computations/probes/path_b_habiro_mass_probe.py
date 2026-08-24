@@ -100,13 +100,24 @@ Q0 = Q_MP
 M_E_MEV = _M_E_MEV_MP
 G_CATALAN = mp.catalan
 
-# AME 2020 atomic masses (MeV)
+# AME 2020 atomic masses (MeV) — from the CANONICAL accessor, not hand-typed.
+# These were four literals and every one disagreed with the vendored table:
+#     p     938.78308711  vs  938.78307479441   1.23e-5 MeV
+#     D    1876.12393     vs 1876.1239303537   -3.54e-7 MeV
+#     T    2809.43215     vs 2809.4321220785    2.79e-5 MeV
+#     3He  2809.41347     vs 2809.4135300617   -6.01e-5 MeV
+# It matters far more here than the raw size suggests: these feed
+#     B(D) = (M_p + M_n + M_e) - M_AME_D
+# which produces ~2.22 MeV out of ~1876 MeV numbers. A 6e-5 MeV mass error is
+# a ~3e-5 RELATIVE error in the binding — the cancellation amplifies it ~840x.
+# See bean qou-n55l. The neutron keeps the registry constant it already used.
+from codata_constants import _ame_atomic_mev as _ame_m  # noqa: E402
 AME_ATOMIC = {
-    "p": ("p (proton, A=1)", 938.78308711),  # H-1 atomic
-    "n": ("n (neutron, A=1)", float(M_N_MEV)),
-    "D": ("D (deuteron, A=2)", 1876.12393),
-    "T": ("T (tritium, A=3)", 2809.43215),
-    "3He": ("3He (helium-3, A=3)", 2809.41347),
+    "p": ("p (proton, A=1)", _ame_m(1, 1)),  # H-1 atomic
+    "n": ("n (neutron, A=1)", M_N_MEV),
+    "D": ("D (deuteron, A=2)", _ame_m(1, 2)),
+    "T": ("T (tritium, A=3)", _ame_m(1, 3)),
+    "3He": ("3He (helium-3, A=3)", _ame_m(2, 3)),
 }
 
 
@@ -172,9 +183,13 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf,
         contribution = a_m_val * pochhammer
         numerator += contribution
         breakdown.append({
-            "m": m, "a_m_at_u0": float(a_m_val),
-            "u_u_m": float(pochhammer),
-            "contribution": float(contribution),
+            # No float(): the review comment six lines up rejected a
+            # `complex(...)` cast for dropping precision "from mp.mp.dps to
+            # ~15 digits (float64)" — and then the record site did exactly
+            # that anyway.
+            "m": m, "a_m_at_u0": a_m_val,
+            "u_u_m": pochhammer,
+            "contribution": contribution,
         })
 
     # Divide by denom(u) at u_val
@@ -252,8 +267,8 @@ def main() -> int:
             "atom": label,
             "Z": entry["Z"], "N": entry["N"], "A": entry["Z"] + entry["N"],
             "M_AME_MeV": M_AME,
-            "tr_M_via_habiro_sum": float(tr_M_habiro_sum),
-            "tr_M_in_witness": float(tr_M_in_witness),
+            "tr_M_via_habiro_sum": tr_M_habiro_sum,
+            "tr_M_in_witness": tr_M_in_witness,
             "habiro_breakdown": breakdown,
         })
 
@@ -262,9 +277,12 @@ def main() -> int:
     #    binding = α_M · |tr_M(T_w; q_0)|  (single-prefactor)
     # Calibrate α_M from D binding
     print("\n  Calibrate α_M from deuteron binding:")
-    M_p = float(M_P_MEV)
-    M_n = float(M_N_MEV)
-    M_e = float(M_E_MEV)
+    # No float(): these are registry mpf constants, and they are subtracted
+    # against a ~1876 MeV atomic mass to leave ~2.22 MeV. Downcasting the
+    # inputs of a catastrophic cancellation is the worst place to do it.
+    M_p = M_P_MEV
+    M_n = M_N_MEV
+    M_e = M_E_MEV
     M_atomic_p = M_p + M_e  # atomic H-1 mass
     M_atomic_D = M_p + M_n + M_e  # atomic D mass (free constituent)
 
