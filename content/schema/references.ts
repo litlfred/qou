@@ -14398,6 +14398,370 @@ export const references: Reference[] = [
       "omitted rather than guessed. Registered by the dangling-citation drain, bean " +
       "qou-ghy5.",
   }),
+
+  // ── Chiral perturbation theory — thirteen-document library tranche (2026-08-24) ──
+  // All thirteen were ingested together under library/; metadata below was read
+  // off page 1 of each PDF, not taken from the extracted `metadata.title`, which
+  // for several of them picks up an affiliation line or a journal masthead.
+  // Report numbers and venue lines are quoted from page 1 in each `note`.
+
+  ref({
+    id: "gasser-leutwyler-1985",
+    library: {
+      docId: "np-b250-1985-465",
+      dir: "library/np-b250-1985-465",
+      pdf: "library/np-b250-1985-465/NP_B250_1985_465.pdf",
+      stage: "candidates",
+      pages: 52,
+      sections: 22,
+    },
+    type: "article",
+    title: "Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark",
+    author: [
+      { family: "Gasser", given: "J." },
+      { family: "Leutwyler", given: "H." },
+    ],
+    "container-title": "Nuclear Physics B",
+    volume: "250",
+    page: "465-516",
+    issued: { "date-parts": [[1985]] },
+    DOI: "10.1016/0550-3213(85)90492-4",
+    note:
+      "PDF library/np-b250-1985-465/ — " +
+      "The SU(3) companion to Gasser-Leutwyler 1984; the primary source for the " +
+      "O(p^4) chiral expansion of the pseudoscalar octet masses and decay " +
+      "constants. Page 1 masthead: 'Nuclear Physics B250 (1985) 465-516, " +
+      "North-Holland Publishing Company'; received 3 July 1984, revised 27 " +
+      "September 1984. Leading-order eigenvalues at eq. (5.18), p. 478; the " +
+      "Goldstone statement at p. 470. CAUTION: this is a scanned journal PDF " +
+      "with a moderate-quality text layer — subscripts and Greek are mangled " +
+      "throughout the extracted sections (e.g. 'M~' for M_eta, 'rn~' for m_s), " +
+      "so quote from the PDF page, not from library/np-b250-1985-465/sections/. " +
+      "Registered from library intake; DOI supplied by the author, title/authors/" +
+      "volume/pages verified against the page-1 masthead.",
+  }),
+
+  ref({
+    id: "prades-1993",
+    library: {
+      docId: "arxiv-hep-ph-9302246v1",
+      dir: "library/arxiv-hep-ph-9302246v1",
+      pdf: "library/arxiv-hep-ph-9302246v1/9302246v1.pdf",
+      stage: "candidates",
+      pages: 44,
+      sections: 34,
+      arxiv: "hep-ph/9302246v1",
+    },
+    type: "article",
+    title: "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu-Jona-Lasinio Model of QCD",
+    author: [{ family: "Prades", given: "Joaquim" }],
+    issued: { "date-parts": [[1993]] },
+    URL: "https://arxiv.org/abs/hep-ph/9302246",
+    note:
+      "PDF library/arxiv-hep-ph-9302246v1/ — " +
+      "arXiv:hep-ph/9302246v1, stamped 11 Feb 1993; report number CPT-93/P.2871, " +
+      "dated January 1993 on page 1. Computes the couplings of the massive " +
+      "spin-1 chiral Lagrangian to O(p^3) in the extended NJL model. Registered " +
+      "from library intake; metadata read off page 1 of the PDF.",
+  }),
+
+  ref({
+    id: "tanabashi-1993",
+    library: {
+      docId: "arxiv-hep-ph-9306237v1",
+      dir: "library/arxiv-hep-ph-9306237v1",
+      pdf: "library/arxiv-hep-ph-9306237v1/9306237v1.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 23,
+      arxiv: "hep-ph/9306237v1",
+    },
+    type: "article",
+    title: "Chiral Perturbation to One Loop Including the rho Meson",
+    author: [{ family: "Tanabashi", given: "Masaharu" }],
+    issued: { "date-parts": [[1993]] },
+    URL: "https://arxiv.org/abs/hep-ph/9306237",
+    note:
+      "PDF library/arxiv-hep-ph-9306237v1/ — " +
+      "arXiv:hep-ph/9306237v1, stamped 7 Jun 1993; report numbers KEK-TH-349 and " +
+      "KEK preprint 92-169, dated April 1993 on page 1. One-loop ChPT with the " +
+      "rho as a hidden-local-symmetry gauge boson; the abstract states matching " +
+      "conditions 'to the conventional chiral perturbation of Gasser and " +
+      "Leutwyler in the chiral limit in a renormalization scale independent " +
+      "manner'. Registered from library intake; metadata read off page 1.",
+  }),
+
+  ref({
+    id: "herrero-ruizmorales-1993",
+    library: {
+      docId: "arxiv-hep-ph-9308276v1",
+      dir: "library/arxiv-hep-ph-9308276v1",
+      pdf: "library/arxiv-hep-ph-9308276v1/9308276v1.pdf",
+      stage: "candidates",
+      pages: 24,
+      sections: 29,
+      arxiv: "hep-ph/9308276v1",
+    },
+    type: "article",
+    title: "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
+    author: [
+      { family: "Herrero", given: "Maria J." },
+      { family: "Ruiz Morales", given: "Ester" },
+    ],
+    issued: { "date-parts": [[1993]] },
+    URL: "https://arxiv.org/abs/hep-ph/9308276",
+    note:
+      "PDF library/arxiv-hep-ph-9308276v1/ — " +
+      "arXiv:hep-ph/9308276v1, stamped 14 Aug 1993. ELECTROWEAK, not QCD: the " +
+      "chiral Lagrangian here is the SU(2)_L x U(1)_Y one, and the 'chiral " +
+      "parameters' are non-decoupling effects of a heavy Higgs, not quark-mass " +
+      "expansions. It shares only the effective-Lagrangian machinery with the " +
+      "rest of this tranche. Registered from library intake; metadata read off " +
+      "page 1.",
+  }),
+
+  ref({
+    id: "pich-1995",
+    library: {
+      docId: "arxiv-hep-ph-9502366v1",
+      dir: "library/arxiv-hep-ph-9502366v1",
+      pdf: "library/arxiv-hep-ph-9502366v1/9502366v1.pdf",
+      stage: "candidates",
+      pages: 57,
+      sections: 67,
+      arxiv: "hep-ph/9502366v1",
+    },
+    type: "article",
+    title: "Chiral Perturbation Theory",
+    author: [{ family: "Pich", given: "Antonio" }],
+    "container-title": "Reports on Progress in Physics",
+    issued: { "date-parts": [[1995]] },
+    URL: "https://arxiv.org/abs/hep-ph/9502366",
+    note:
+      "PDF library/arxiv-hep-ph-9502366v1/ — " +
+      "arXiv:hep-ph/9502366v1, stamped 22 Feb 1995; report numbers FTUV/95-4 and " +
+      "IFIC/95-4; page 1 states 'To be published in Reports on Progress in " +
+      "Physics, February 1995'. The most usable review in this tranche for the " +
+      "chiral-limit question: the tree-level pseudoscalar masses are eq. (3.25), " +
+      "the Gell-Mann-Oakes-Renner relation eq. (3.27) and the current-algebra " +
+      "mass ratios eq. (3.28), all on PDF pp. 9-10; the O(p^4) corrections and " +
+      "the Gell-Mann-Okubo deviation are section 5.4, PDF p. 19, attributed " +
+      "there to Gasser and Leutwyler 1985 (= [gasser-leutwyler-1985] in this " +
+      "bibliography). Volume/pages of the published version not verified — " +
+      "omitted rather than guessed. Registered from library intake.",
+  }),
+
+  ref({
+    id: "borasoy-meissner-1995",
+    library: {
+      docId: "arxiv-hep-ph-9511320v1",
+      dir: "library/arxiv-hep-ph-9511320v1",
+      pdf: "library/arxiv-hep-ph-9511320v1/9511320v1.pdf",
+      stage: "candidates",
+      pages: 26,
+      sections: 40,
+      arxiv: "hep-ph/9511320v1",
+    },
+    type: "article",
+    title: "Chiral Lagrangians for Baryons Coupled to Massive Spin-1 Fields",
+    author: [
+      { family: "Borasoy", given: "B." },
+      { family: "Meissner", given: "Ulf-G." },
+    ],
+    issued: { "date-parts": [[1995]] },
+    URL: "https://arxiv.org/abs/hep-ph/9511320",
+    note:
+      "PDF library/arxiv-hep-ph-9511320v1/ — " +
+      "arXiv:hep-ph/9511320v1, stamped 15 Nov 1995; report number TK 95 31. " +
+      "Vector-versus-tensor field formulations for spin-1 fields coupled to " +
+      "baryons, the origin of the Weinberg term in pion-nucleon scattering. " +
+      "Author name is spelled 'Meissner' here; the PDF prints the umlaut form. " +
+      "Registered from library intake; metadata read off page 1.",
+  }),
+
+  ref({
+    id: "portoles-2007-largeNC",
+    library: {
+      docId: "arxiv-hep-ph-0702179v1",
+      dir: "library/arxiv-hep-ph-0702179v1",
+      pdf: "library/arxiv-hep-ph-0702179v1/0702179v1.pdf",
+      stage: "candidates",
+      pages: 8,
+      sections: 4,
+      arxiv: "hep-ph/0702179v1",
+    },
+    type: "paper-conference",
+    title: "Large-N_C estimate of the chiral low-energy constants",
+    author: [{ family: "Portoles", given: "J." }],
+    issued: { "date-parts": [[2007]] },
+    URL: "https://arxiv.org/abs/hep-ph/0702179",
+    note:
+      "PDF library/arxiv-hep-ph-0702179v1/ — " +
+      "arXiv:hep-ph/0702179v1, stamped 18 Feb 2007. Page 1: 'IFIC/07-10 report. " +
+      "Talk given at the Final Euridice Meeting, 24th-27th August 2006, " +
+      "Kazimierz (Poland).' Distinct from [portoles-2007-status] despite a " +
+      "reused introduction — library-find-duplicates scores the pair at 0.361 " +
+      "and it is a false positive. Registered from library intake.",
+  }),
+
+  ref({
+    id: "ecker-2007",
+    library: {
+      docId: "arxiv-hep-ph-0702263v1",
+      dir: "library/arxiv-hep-ph-0702263v1",
+      pdf: "library/arxiv-hep-ph-0702263v1/0702263v1.pdf",
+      stage: "candidates",
+      pages: 12,
+      sections: 6,
+      arxiv: "hep-ph/0702263v1",
+    },
+    type: "paper-conference",
+    title: "Chiral Low-Energy Constants",
+    author: [{ family: "Ecker", given: "Gerhard" }],
+    issued: { "date-parts": [[2007]] },
+    URL: "https://arxiv.org/abs/hep-ph/0702263",
+    note:
+      "PDF library/arxiv-hep-ph-0702263v1/ — " +
+      "arXiv:hep-ph/0702263v1, stamped 26 Feb 2007; report number UWThPh-2007-2. " +
+      "Page 1: 'Presented at The Final Euridice Meeting, Kazimierz, Poland, Aug. " +
+      "2006.' Reviews the determination of the mesonic chiral Lagrangian's " +
+      "coupling constants across the Eurodaphne/Euridice networks. Registered " +
+      "from library intake.",
+  }),
+
+  ref({
+    id: "mateu-2007",
+    library: {
+      docId: "arxiv-0709.3157v1",
+      dir: "library/arxiv-0709.3157v1",
+      pdf: "library/arxiv-0709.3157v1/0709.3157v1.pdf",
+      stage: "candidates",
+      pages: 7,
+      sections: 7,
+      arxiv: "0709.3157v1",
+    },
+    type: "paper-conference",
+    title: "Chiral Lagrangians with tensor sources",
+    author: [{ family: "Mateu", given: "V." }],
+    issued: { "date-parts": [[2007]] },
+    URL: "https://arxiv.org/abs/0709.3157",
+    note:
+      "PDF library/arxiv-0709.3157v1/ — " +
+      "arXiv:0709.3157v1 [hep-ph], stamped 20 Sep 2007. Page 1: 'Talk given at " +
+      "the 4th International Worshop on Quantum ChromoDynamics, Theory and " +
+      "experiment, June 16-20, 2007. Martina Franca - Valle d'Itria - Italy. " +
+      "IFIC-07-54, FTUV-07-0920.' (The misspelling 'Worshop' is the PDF's.) " +
+      "Adds the tensor quark bilinear as an external source; ~100 new operators " +
+      "at O(p^6) and the question of whether that set is a basis. Registered " +
+      "from library intake.",
+  }),
+
+  ref({
+    id: "portoles-2007-status",
+    library: {
+      docId: "arxiv-0710.4405v1",
+      dir: "library/arxiv-0710.4405v1",
+      pdf: "library/arxiv-0710.4405v1/0710.4405v1.pdf",
+      stage: "candidates",
+      pages: 8,
+      sections: 4,
+      arxiv: "0710.4405v1",
+    },
+    type: "paper-conference",
+    title: "Chiral Low-Energy Constants: Status and Prospects",
+    author: [{ family: "Portoles", given: "J." }],
+    issued: { "date-parts": [[2007]] },
+    URL: "https://arxiv.org/abs/0710.4405",
+    note:
+      "PDF library/arxiv-0710.4405v1/ — " +
+      "arXiv:0710.4405v1 [hep-ph], stamped 24 Oct 2007. Page 1: 'IFIC/07-63. " +
+      "Talk given at the 31st International Conference of Theoretical Physics: " +
+      "Matter To The Deepest: Recent Development in Physics of Fundamental " +
+      "Interactions, 5-11 Sep 2007, Ustron, Katowice (Poland).' Distinct from " +
+      "[portoles-2007-largeNC]; see the note there. Registered from library " +
+      "intake.",
+  }),
+
+  ref({
+    id: "scherer-2009",
+    library: {
+      docId: "arxiv-0908.3425v1",
+      dir: "library/arxiv-0908.3425v1",
+      pdf: "library/arxiv-0908.3425v1/0908.3425v1.pdf",
+      stage: "candidates",
+      pages: 85,
+      sections: 47,
+      arxiv: "0908.3425v1",
+    },
+    type: "article",
+    title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
+    author: [{ family: "Scherer", given: "S." }],
+    issued: { "date-parts": [[2009]] },
+    URL: "https://arxiv.org/abs/0908.3425",
+    note:
+      "PDF library/arxiv-0908.3425v1/ — " +
+      "arXiv:0908.3425v1 [hep-ph], stamped 24 Aug 2009; dated 10 April 2009 on " +
+      "page 1. An 85-page pedagogical review, and the cleanest extracted text in " +
+      "this tranche. For the chiral-limit question: the lowest-order Goldstone " +
+      "masses are eqs. (105)-(107) on p. 26, named there as 'the Gell-Mann, " +
+      "Oakes, and Renner relations' with B_0 = -<qq>_0/(3 F_0^2) at eq. (103); " +
+      "the O(q^4) masses with their chiral logarithms are eqs. (162)-(164), " +
+      "pp. 44-45. Registered from library intake.",
+  }),
+
+  ref({
+    id: "bijnens-2013",
+    library: {
+      docId: "arxiv-1301.6953v1",
+      dir: "library/arxiv-1301.6953v1",
+      pdf: "library/arxiv-1301.6953v1/1301.6953v1.pdf",
+      stage: "candidates",
+      pages: 13,
+      sections: 12,
+      arxiv: "1301.6953v1",
+    },
+    type: "paper-conference",
+    title: "Chiral Perturbation Theory and Mesons",
+    author: [{ family: "Bijnens", given: "Johan" }],
+    issued: { "date-parts": [[2013]] },
+    URL: "https://arxiv.org/abs/1301.6953",
+    note:
+      "PDF library/arxiv-1301.6953v1/ — " +
+      "arXiv:1301.6953v1 [hep-ph], stamped 29 Jan 2013; report number LU TP " +
+      "13-03. Page 1: 'To be published in the proceedings of: The 7th " +
+      "International Workshop on Chiral Dynamics, August 6-10, 2012, Jefferson " +
+      "Lab, Newport News, Virginia, USA.' Carries the two-flavour NLO pion mass " +
+      "with its chiral logarithm at eq. (2.4), p. 4. Registered from library " +
+      "intake.",
+  }),
+
+  ref({
+    id: "aleksejevs-barkanova-2013",
+    library: {
+      docId: "arxiv-1309.3313v1",
+      dir: "library/arxiv-1309.3313v1",
+      pdf: "library/arxiv-1309.3313v1/1309.3313v1.pdf",
+      stage: "candidates",
+      pages: 9,
+      sections: 1,
+      arxiv: "1309.3313v1",
+    },
+    type: "paper-conference",
+    title: "Hadron Structure in Chiral Perturbation Theory",
+    author: [
+      { family: "Aleksejevs", given: "A." },
+      { family: "Barkanova", given: "S." },
+    ],
+    issued: { "date-parts": [[2013]] },
+    URL: "https://arxiv.org/abs/1309.3313",
+    note:
+      "PDF library/arxiv-1309.3313v1/ — " +
+      "arXiv:1309.3313v1 [hep-ph], stamped 12 Sep 2013. Meson and baryon form " +
+      "factors and electric/magnetic polarizabilities of the SU(3) octet from " +
+      "semi-automatised relativistic ChPT. The PDF has no outline and its text " +
+      "extracts as a single section. Registered from library intake; metadata " +
+      "read off page 1.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
