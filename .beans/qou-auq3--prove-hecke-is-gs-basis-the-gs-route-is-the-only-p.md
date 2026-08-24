@@ -4505,3 +4505,48 @@ Two of those three newly-covered rows were reachable by chains already in the
 file; only the parameter's position was stopping them. Nothing new was proved
 about the reductions here — the correction is to what the hypothesis *claimed*
 was open.
+
+
+## Corpus-grep failure, and what it changes (2026-08-24, §4ay)
+
+**§4m already carried both facts I presented as new questions**, and I did not
+cite it. Found only afterwards, while grepping the `_resolves` inventory for the
+next tranche.
+
+| §4m has | since when | what today added |
+|---|---|---|
+| `overlapTriples_four_proper_overlap_length_one` — the single-letter fact, `decide` at `n = 4`, with the reason in prose | before today | §4au proves it for **every `n`** |
+| `completedLMSet_four_infix_antichain` + `inclusion_contexts_empty` — **the inclusion half settled at `n = 4`** | before today | nothing |
+
+Two distinct errors, and they are not the same size.
+
+1. **§4au and PR #5627 framed "is any overlap multi-letter?" as an open
+   question.** It was decided at `n = 4` and the argument was written out in
+   prose three sections up. Generalising a `decide`-at-one-`n` to all `n` is
+   real content and stands — but it is a *generalisation*, not an answer to an
+   open question, and saying so was the corpus-grep discipline's job.
+2. **I listed "every `InclusionComposition`" as fully open** in the §4av and
+   §4aw prose, in three PR bodies, and in this bean's own status table. §4m
+   settles the inclusion half at `n = 4` *structurally* —
+   `inclusion_contexts_empty` needs no hypothesis about which rules are
+   involved. That is an over-claim of openness, the exact class the
+   "Before declaring open" checklist exists to prevent.
+
+**One note on §4m's prose, in its favour and against it.** Its stated reason —
+"every leading monomial is descending after its first letter" — is a sketch, not
+the statement: `σⱼσᵢσⱼ` with `j = i + 1` ascends after its first letter, and
+`σᵢσᵢ` is neither strictly low-then-high nor strictly high-then-low, which is
+precisely why the quadratic self-pairing is a legal two-letter overlap *shape*
+saved only by an empty left context. §4au's `lm_head_is_max` has no such edge
+cases. So the two are complementary, and neither supersedes the other.
+
+### The consequence for what to do next
+
+The inclusion half is settled at `n = 4` and **its general-`n` form is the
+better target than another overlap cell** — it is half of
+`IsGrobnerShirshovBasis`, and `lm_head_is_max` is most of what it needs. Sketch:
+a leading monomial's max sits only at position 0 or at the last position, so an
+infix `lm₁` of length ≥ 3 starting at `p ≥ 1` would need its two copies of its
+own max both strictly inside a strictly-decreasing run. The length-2 shapes are
+separated by their consecutive drop (0 for `σᵢσᵢ`, ≥ 2 for far-commutation,
+1 elsewhere).

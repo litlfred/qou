@@ -15085,10 +15085,25 @@ rather than by the kinds of its two rules — `CyclicQuad` wants
 `BokutShiaoBraid` wants `rule₂` on it — and every single one of them fixes
 `overlap` to **one letter**. `IsGrobnerShirshovBasis.overlap_resolves`, by
 contrast, quantifies over every `OverlapComposition`. So the gap between that
-machinery and the criterion is exactly the multi-letter overlaps, and the
-question worth answering before writing any more chains is whether any exist.
+machinery and the criterion is exactly the multi-letter overlaps.
 
-Measured first, in
+**§4m already answered this at `n = 4`**, and this section was first written as
+though it had not — the correction is recorded here rather than quietly fixed.
+`overlapTriples_four_proper_overlap_length_one` decides it by kernel evaluation,
+and §4m's prose gives the reason in outline ("a suffix of length ≥ 2 ends
+low-then-high while every prefix of length ≥ 2 starts high-then-low"). What is
+new here is only that the fact holds for **every `n`**, by proof rather than by
+`decide` at one `n`; the invariant below is a machine-checked form of §4m's
+sketch. Read the two together, not as rivals.
+
+(The outline is a sketch and not literally the statement: `σⱼσᵢσⱼ` with
+`j = i + 1` is *not* descending after its first letter, and `σᵢσᵢ` is neither
+strictly low-then-high nor strictly high-then-low — which is exactly why the
+quadratic self-pairing is a legal two-letter overlap shape, saved only by having
+an empty left context. The invariant used below, "the head is the maximum", has
+no such edge cases.)
+
+Measured at more than one `n` first, in
 [`hecke_overlap_length_probe.py`](../../../../../../computations/hecke_overlap_length_probe.py):
 at `n = 2 … 8` there are 1351 compositions with both contexts non-empty and the
 overlap-length histogram is `len1` only — zero exceptions. (The same probe
@@ -15300,7 +15315,11 @@ criterion's own form, for a composition the file did not build. It inherits
 every scope limit of §4as, the deep diagonal included, and adds one of its own: the left
 context must be non-empty, which is what §4au needs and what
 `overlap_resolves` does not require. The degenerate `left = []` compositions are
-not covered here. -/
+not covered here.
+
+All of this is the *overlap* half. The inclusion half is settled at `n = 4` by
+§4m's `inclusion_contexts_empty` and is not part of what these sections leave
+open. -/
 
 theorem bsbs_oc_eq (hn : 0 < n) (hp : HeckeParams)
     {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
@@ -15428,8 +15447,10 @@ What it still inherits from §4as is the deep diagonal: `hcov` fails exactly whe
 `j₁ = j₂ = 0` and `i₁ ≥ 1`, because the `a ≥ 2` reduction chains are built on
 `j₁ − 1`. Everything else is covered, `j₁ = 0` with `j₂ ≥ 1` and
 `j₁ = j₂ = i₁ = 0` included. And this is one
-cell — the criterion quantifies over every rule-kind pair and every
-`InclusionComposition`. -/
+cell — the criterion quantifies over every rule-kind pair. Its *inclusion* half
+is a different matter: §4m settles it at `n = 4` structurally
+(`inclusion_contexts_empty`, with no hypothesis about which rules are involved),
+so what is open there is the general-`n` form, not the half itself. -/
 
 theorem descWord_bot_mem {n : ℕ} {i j : Fin n} (hj : j.val ≤ i.val) :
     (⟨j⟩ : HeckeGen n) ∈ descWord i j := by
