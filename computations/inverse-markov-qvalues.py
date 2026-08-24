@@ -54,6 +54,21 @@ from experimental_constants import (
     Q_TRITIUM_MEV as _Q_TRITIUM_MEV, Q_NEUTRON_MEV as _Q_NEUTRON_MEV,
 )
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+#
+# THIS CALL USED TO SIT ~96 LINES LOWER, just above `decays`. Everything it
+# names as "the constants below" was in fact ABOVE it, so the five constants
+# here were built at mpmath's default 15 dps -- ~53 bits, i.e. binary64 -- and
+# then printed to 50+ digits once dps rose afterwards. That is not precision,
+# it is the float64's binary tail: the witness carried
+#     Q_exp = 0.01861000000000000154098955817971727810800075531005859375
+# for a quantity whose source is `0.01861  # +/- 0.00001 MeV`. Only the
+# `mp.mpf("...")` literals inside `decays` were ever actually protected.
+set_compute_dps()
+
 M_E_MEV = mp.mpf(repr(_M_E_MEV))
 M_P_MEV = mp.mpf(repr(_M_P_MEV))
 M_N_MEV = mp.mpf(repr(_M_N_MEV))
@@ -148,12 +163,6 @@ def find_gs_quark(Z, N):
 # ══════════════════════════════════════════════════════════════
 #  Q-VALUE COMPUTATIONS
 # ══════════════════════════════════════════════════════════════
-
-# Precision must be raised BEFORE the module-scope constants below: at
-# import time mp.dps is still mpmath's default 15 (~binary64), and a
-# literal rounded there cannot be recovered by raising dps afterwards.
-# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
-set_compute_dps()
 
 decays = [
     (0, 1, 1, 0, Q_NEUTRON_MEV,  'n→p'),

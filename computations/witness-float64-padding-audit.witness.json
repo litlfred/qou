@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 12,
-    "distinct_values": 10,
-    "files": 5,
-    "live_files": 0,
-    "new_not_baselined": 0,
+    "occurrences": 83,
+    "distinct_values": 20,
+    "files": 9,
+    "live_files": 4,
+    "new_not_baselined": 71,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -80,6 +80,432 @@
         "field": "m_e_mev_50dps",
         "value": "0.51099894999999995182093925905064679682254791259766",
         "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[0].delta_lambda",
+        "value": "0.000005004562355627323864439015554950174191617406904697418212890625",
+        "real_value": "5.004562355627324e-06"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[1].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[2].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[3].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[4].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[5].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[6].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[7].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[8].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[9].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_rows.per_lambda[10].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[0].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[1].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[2].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[3].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[4].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[5].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[6].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[7].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[8].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[9].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_first_row.per_lambda[10].delta_lambda",
+        "value": "0.000005004562355627323864439015554950174191617406904697418212890625",
+        "real_value": "5.004562355627324e-06"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[0].delta_lambda",
+        "value": "0.000005004562355627323864439015554950174191617406904697418212890625",
+        "real_value": "5.004562355627324e-06"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[1].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[2].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[3].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[4].delta_lambda",
+        "value": "0.000005004562355627323864439015554950174191617406904697418212890625",
+        "real_value": "5.004562355627324e-06"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[5].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[6].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[7].delta_lambda",
+        "value": "0.000005004562355627323864439015554950174191617406904697418212890625",
+        "real_value": "5.004562355627324e-06"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[8].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[9].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_distinct_rows.per_lambda[10].delta_lambda",
+        "value": "0.000005004562355627323864439015554950174191617406904697418212890625",
+        "real_value": "5.004562355627324e-06"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[0].delta_lambda",
+        "value": "0.000005004562355627323864439015554950174191617406904697418212890625",
+        "real_value": "5.004562355627324e-06"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[1].delta_lambda",
+        "value": "0.00001341016285032514256743592373499751602139440365135669708251953125",
+        "real_value": "1.3410162850325143e-05"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[2].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[3].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[4].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[5].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[6].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[7].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[8].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[9].delta_lambda",
+        "value": "0.9027303260721335487204441960784606635570526123046875",
+        "real_value": "0.9027303260721335"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_sign.per_lambda[10].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[0].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[1].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[2].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[3].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[4].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[5].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[6].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[7].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[8].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[9].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/delta-lambda-categorical-verification.witness.json",
+        "field": "data.verification_per_mapping.by_hook.per_lambda[10].delta_lambda",
+        "value": "0.2602940093404508825614129818859510123729705810546875",
+        "real_value": "0.2602940093404509"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.\u03b3",
+        "value": "0.11244337087767290739304115732011268846690654754639",
+        "real_value": "0.11244337087767291"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.\u03c3\u2080",
+        "value": "0.045614806238223573608969729775708401575684547424316",
+        "real_value": "0.045614806238223574"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.\u03c3\u2081",
+        "value": "0.045614806238223573608969729775708401575684547424316",
+        "real_value": "0.045614806238223574"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.L\u208a",
+        "value": "0.027947646098913536683028269180795177817344665527344",
+        "real_value": "0.027947646098913537"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.L\u208b",
+        "value": "0.027947646098913536683028269180795177817344665527344",
+        "real_value": "0.027947646098913537"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.e\u207b",
+        "value": "0.051457549482297221254967212189512792974710464477539",
+        "real_value": "0.05145754948229722"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.max_per_channel_delta",
+        "value": "0.11244337087767290739304115732011268846690654754639",
+        "real_value": "0.11244337087767291"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[0]",
+        "value": "0.074450296843839289251398838587192585691809654235840",
+        "real_value": "0.07445029684383929"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[1]",
+        "value": "0.045614806238223573608969729775708401575684547424316",
+        "real_value": "0.045614806238223574"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[2]",
+        "value": "0.045614806238223573608969729775708401575684547424316",
+        "real_value": "0.045614806238223574"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[3]",
+        "value": "0.027947646098913536683028269180795177817344665527344",
+        "real_value": "0.027947646098913537"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[4]",
+        "value": "0.027947646098913536683028269180795177817344665527344",
+        "real_value": "0.027947646098913537"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[5]",
+        "value": "0.051457549482297221254967212189512792974710464477539",
+        "real_value": "0.05145754948229722"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-steps-4-5.witness.json",
+        "field": "assertions[1].computed",
+        "value": "0.18689366772151219664443999590730527415871620178223",
+        "real_value": "0.1868936677215122"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-steps-4-5.witness.json",
+        "field": "assertions[1].expected",
+        "value": "0.18689366772151219664443999590730527415871620178223",
+        "real_value": "0.1868936677215122"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-steps-4-5.witness.json",
+        "field": "data.step_4_pointer.S_at_q0",
+        "value": "0.18689366772151219664443999590730527415871620178223",
+        "real_value": "0.1868936677215122"
       }
     ]
   }
