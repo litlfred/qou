@@ -16784,4 +16784,120 @@ theorem bs_farComm_resolves (hn : 0 < n) (hp : HeckeParams)
     exact CyclicFarCommInner.oc_reduces_to_zero hp hn hi hj₀'.1 hj₀i' hj₀'.2
       hsplit hsplit' rfl hfarA
 
+/-! ## §4bj  The `FC × ?` row, and the instantiation §4q never made
+
+Reading `FarCommCyclic`'s hypotheses rather than its docstrings — the §4bi
+lesson — turns up something the earlier cells did not have: a **missing
+instantiation**, not a missing bridge. The namespace exposes a generic
+`oc_reduces_to_zero` and two uses of it, `bokutShiao_resolves` and
+`yangBaxter_resolves`. There is no third, and `FC × FC` needs one.
+
+`farComm_farComm_resolves` supplies it, and the fit is exact:
+`farCommRelation m d` is `ofTerms [([σ_m, σ_d], 1), ([σ_d, σ_m], −1)]`, which is
+the family's normal form `ofTerms [(σ_m :: u'', c), (q :: t, −c)]` at
+`u'' = [σ_d]`, `c = 1`, `q = σ_d`, `t = [σ_m]` — so `hrel` is `fun _ => rfl`, as
+it is for `farComm_quad_resolves`. The two blanket far-commutation conditions
+follow from `d < m` and `m + 1 < x` by `omega`.
+
+This is the first cell whose gap was a chain rather than a bridge, and it is
+worth separating the two: `oc_ext_of_left_ne_nil` (§4bd) still did all the
+bridging here. What it cannot do is notice that a family has an uninstantiated
+member.
+
+`farComm_left_resolves` then closes the row. The quadratic branch defers to
+§4bd's column rather than repeating it — `quad_right_resolves` already carries
+its own bridge, so no second one is built. -/
+
+/-- **Far commutation against far commutation** — the member §4q never
+instantiated. -/
+theorem farComm_farComm_resolves (hp : HeckeParams) {x m d : Fin n} (hn : 0 < n)
+    (hmx : m.val + 1 < x.val) (hdm : d.val + 1 < m.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (FarCommCyclic.oc (farCommRelation m d) x m [(⟨d⟩ : HeckeGen n)]
+        (farCommRelation_lm m d (by omega)) hmx).spoly nf ∧ nf.isZero :=
+  FarCommCyclic.oc_reduces_to_zero hp (farCommRelation m d) x m
+    (q := (⟨d⟩ : HeckeGen n)) (t := [(⟨m⟩ : HeckeGen n)])
+    (u'' := [(⟨d⟩ : HeckeGen n)]) (c := 1) hn
+    (fun _ => rfl) (farCommRelation_lm m d (by omega))
+    (farCommRelation_lc m d (by omega)) one_ne_zero hmx
+    (by
+      intro hcon
+      have := congrArg HeckeGen.rank hcon
+      simp only [HeckeGen.rank] at this
+      omega)
+    (by
+      intro y hy
+      simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+      rcases hy with rfl | rfl
+      · show d.val + 1 < x.val
+        omega
+      · show m.val + 1 < x.val
+        omega)
+    (by
+      intro y hy
+      simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+      subst hy
+      show d.val + 1 < x.val
+      omega)
+    (farCommRelation_mem hn hp (by omega))
+
+/-- **The `FC × ?` row of `overlap_resolves`, for an arbitrary composition.** -/
+theorem farComm_left_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {x m : Fin n}
+    (hmx : m.val + 1 < x.val)
+    (hr₁ : oc.rule₁ = farCommRelation x m)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact farCommRelation_mem hn hp (by omega)
+  have hone := overlap_length_one hn hp hm₁ hm₂ hl
+  obtain ⟨z, hz⟩ : ∃ z, oc.overlap = [z] := by
+    rcases hoc : oc.overlap with _ | ⟨z, zs⟩
+    · rw [hoc] at hone; simp at hone
+    · refine ⟨z, ?_⟩
+      rw [hoc] at hone; simp at hone
+      rw [hone]
+  -- `lm₁ = σₓσ_m`, so the overlap letter is `σ_m` and `lm₂` begins with it.
+  have hd₁ : [(⟨x⟩ : HeckeGen n)] ++ [(⟨m⟩ : HeckeGen n)] = oc.left ++ [z] := by
+    rw [← hz, ← oc.lm₁_decomp, hr₁, farCommRelation_lm x m (by omega)]; rfl
+  obtain ⟨-, hze⟩ := List.append_inj' hd₁ (by simp)
+  have hzm : z = (⟨m⟩ : HeckeGen n) := by simpa using hze.symm
+  have hlm₂ : oc.rule₂.lm (heckeOrder n) = (⟨m⟩ : HeckeGen n) :: oc.right := by
+    rw [oc.lm₂_decomp, hz, hzm]; rfl
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm₂ with
+    ⟨c, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c', c, d, hc₁, hc₂, hc⟩
+  · -- `FC × quadratic` — already the `? × quadratic` column
+    exact quad_right_resolves hn hp hm₁ hc hl
+  · -- `FC × Yang–Baxter`
+    rw [hc, yangBaxterRelation_lm c d (by omega)] at hlm₂
+    have hdm : d = m := congrArg HeckeGen.index (List.cons.inj hlm₂).1
+    have hbr : oc = FarCommCyclic.oc (yangBaxterRelation c d) x m
+        [(⟨c⟩ : HeckeGen n), (⟨m⟩ : HeckeGen n)]
+        (by rw [yangBaxterRelation_lm c d (by omega), hdm]) hmx :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hc hl (by simp [FarCommCyclic.oc])
+    rw [hbr]
+    subst hdm
+    exact FarCommCyclic.yangBaxter_resolves hp hn (by omega) hmx
+  · -- `FC × far commutation` — the instantiation above
+    rw [hc, farCommRelation_lm c d (by omega)] at hlm₂
+    have hcm : c = m := congrArg HeckeGen.index (List.cons.inj hlm₂).1
+    have hbr : oc = FarCommCyclic.oc (farCommRelation c d) x m [(⟨d⟩ : HeckeGen n)]
+        (by rw [farCommRelation_lm c d (by omega), hcm]) hmx :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hc hl (by simp [FarCommCyclic.oc])
+    rw [hbr]
+    subst hcm
+    exact farComm_farComm_resolves hp hn hmx (by omega)
+  · -- `FC × Bokut–Shiao`
+    rw [hc, bokutShiaoRelation_lm hc₁ hc₂, bsWord₁_cons hc₁ hc₂] at hlm₂
+    have hcm : c = m := congrArg HeckeGen.index (List.cons.inj hlm₂).1
+    have hbr : oc = FarCommCyclic.oc (bokutShiaoRelation c' c d) x m
+        (descWord c' d ++ [(⟨m⟩ : HeckeGen n)])
+        (by rw [bokutShiaoRelation_lm hc₁ hc₂, bsWord₁_cons hc₁ hc₂, hcm]) hmx :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hc hl (by simp [FarCommCyclic.oc])
+    rw [hbr]
+    subst hcm
+    exact FarCommCyclic.bokutShiao_resolves hp hn hc₁ hc₂ hmx
+
 end UGB.GrobnerShirshov.Hecke
