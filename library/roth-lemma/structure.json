@@ -1,0 +1,110 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "roth-lemma",
+  "source": {
+    "file": "roth_lemma.pdf",
+    "sha256": "c2f2b49f25f359198ca2d549af9a94117bc0de4f8398c85b2352004c5d967c4b",
+    "bytes": 1237016,
+    "pages": 21,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": null,
+    "doi": null,
+    "title": "ROTH’S LEMMA",
+    "authors_raw": null,
+    "title_lines": [
+      "Chapter 5",
+      "ROTH'S LEMMA",
+      "1. Introduction",
+      "Roth bases the proof of his theorem on a general property of polynomials",
+      "which is to be proved in this chapter. This property is roughly as follows"
+    ],
+    "abstract": null,
+    "docinfo": {
+      "CreationDate": "D:20070206100542-05'00'",
+      "Author": "Kurt Mahler"
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page": 1,
+      "source": "inferred",
+      "number": "1"
+    },
+    {
+      "level": 1,
+      "title": "For a detailed study of the generalised Wronskian see, in particular, A. Ostrow-",
+      "page": 5,
+      "source": "inferred",
+      "number": "1"
+    },
+    {
+      "level": 1,
+      "title": "Put w(A) a e\"J<A) if A ^0, andW(O) = 0. The properties of J(A) just stated show",
+      "page": 12,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "The upper bound a m(a; Hi,..., Hm; riM.., rm)",
+      "page": 13,
+      "source": "inferred",
+      "number": "9"
+    }
+  ],
+  "toc_source": "inferred",
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 5,
+      "n_chars": 7663,
+      "n_words": 1374
+    },
+    {
+      "id": "sec-001-1-for-a-detailed-study-of-the-generalised-wronsk",
+      "number": "1",
+      "title": "For a detailed study of the generalised Wronskian see, in particular, A. Ostrow-",
+      "level": 1,
+      "page_start": 5,
+      "page_end": 12,
+      "n_chars": 8286,
+      "n_words": 1473
+    },
+    {
+      "id": "sec-002-2-put-wa-a-eja-if-a-0-andwo-0-the-properties-of",
+      "number": "2",
+      "title": "Put w(A) a e\"J<A) if A ^0, andW(O) = 0. The properties of J(A) just stated show",
+      "level": 1,
+      "page_start": 12,
+      "page_end": 13,
+      "n_chars": 84,
+      "n_words": 14
+    },
+    {
+      "id": "sec-003-9-the-upper-bound-a-ma-hi-hm-rim-rm",
+      "number": "9",
+      "title": "The upper bound a m(a; Hi,..., Hm; riM.., rm)",
+      "level": 1,
+      "page_start": 13,
+      "page_end": 21,
+      "n_chars": 9133,
+      "n_words": 1669
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 4,
+    "sections": 4,
+    "chars_total": 25166
+  }
+}

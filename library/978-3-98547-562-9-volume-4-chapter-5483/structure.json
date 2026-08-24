@@ -1,0 +1,187 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "978-3-98547-562-9-volume-4-chapter-5483",
+  "source": {
+    "file": "978-3-98547-562-9-volume-4-chapter-5483.pdf",
+    "sha256": "5e39a312cf8ed9d9f71c4da0a01433e992e59529b7507be85ef127c457b45683",
+    "bytes": 645269,
+    "pages": 22,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": null,
+    "doi": "10.4171/ICM2022/13",
+    "title": "Floer cohomology, singularities, and birational geometry",
+    "authors_raw": "Mark McLean",
+    "title_lines": [
+      "Floer cohomology",
+      "singularities, and",
+      "birational geometry",
+      "Mark McLean"
+    ],
+    "abstract": "We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity theory and birational geometry. We will also state conjectures and open problems related to these results. We start out with a purely dynamical interpretation of the minimal discrepancy of an isolated singularity and explain how Floer theory fits into this story. Using similar ideas, we show how one can prove part of the cohomological McKay correspondence by computing a Floer cohomology group in two different ways. Finally, we illustrate how Hamiltonian Floer cohomology can be used to prove that birational Calabi–Y au manifolds have the same small quantum cohomology algebras, and we speculate how this might extend to orbifolds. Mathematics Subject Classification 2020 Primary 53D40; Secondary 53D42, 14E16, 14N35, 14J17, 14E05, 14E18 © 2022 International Mathematical Union Proc. Int. Cong. Math. 2022, Vol. 4, pp. 2616–2637 DOI 10.4171/ICM2022/13 Published by EMS Press and licensed under a CC BY 4.0 license",
+    "docinfo": {
+      "Author": "Mark McLean",
+      "CreationDate": "D:20231209234016+02'00'",
+      "Creator": "LaTeX with hyperref",
+      "Producer": "LuaTeX-1.10.0",
+      "Title": "Floer cohomology, singularities, and birational geometry"
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page": 2,
+      "source": "outline",
+      "number": "1"
+    },
+    {
+      "level": 1,
+      "title": "Minimal discrepancy of isolated singularities",
+      "page": 3,
+      "source": "outline",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "Cohomological McKay correspondence",
+      "page": 8,
+      "source": "outline",
+      "number": "3"
+    },
+    {
+      "level": 1,
+      "title": "Quantum cohomology of birational Calabi–Yau manifolds",
+      "page": 12,
+      "source": "outline",
+      "number": "4"
+    },
+    {
+      "level": 2,
+      "title": "Example",
+      "page": 14,
+      "source": "outline",
+      "number": "4.1"
+    },
+    {
+      "level": 2,
+      "title": "Symplectic cohomology of compact subsets",
+      "page": 14,
+      "source": "outline",
+      "number": "4.2"
+    },
+    {
+      "level": 2,
+      "title": "Idea of proof",
+      "page": 16,
+      "source": "outline",
+      "number": "4.3"
+    },
+    {
+      "level": 2,
+      "title": "Further directions",
+      "page": 17,
+      "source": "outline",
+      "number": "4.4"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "page": 18,
+      "source": "outline",
+      "number": null
+    }
+  ],
+  "toc_source": "outline",
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "page_start": 2,
+      "page_end": 3,
+      "n_chars": 3044,
+      "n_words": 521
+    },
+    {
+      "id": "sec-001-2-minimal-discrepancy-of-isolated-singularities",
+      "number": "2",
+      "title": "Minimal discrepancy of isolated singularities",
+      "level": 1,
+      "page_start": 3,
+      "page_end": 8,
+      "n_chars": 13966,
+      "n_words": 2681
+    },
+    {
+      "id": "sec-002-3-cohomological-mckay-correspondence",
+      "number": "3",
+      "title": "Cohomological McKay correspondence",
+      "level": 1,
+      "page_start": 8,
+      "page_end": 14,
+      "n_chars": 15303,
+      "n_words": 2796
+    },
+    {
+      "id": "sec-003-41-example",
+      "number": "4.1",
+      "title": "Example",
+      "level": 2,
+      "page_start": 14,
+      "page_end": 14,
+      "n_chars": 1627,
+      "n_words": 355
+    },
+    {
+      "id": "sec-004-42-symplectic-cohomology-of-compact-subsets",
+      "number": "4.2",
+      "title": "Symplectic cohomology of compact subsets",
+      "level": 2,
+      "page_start": 14,
+      "page_end": 16,
+      "n_chars": 2932,
+      "n_words": 545
+    },
+    {
+      "id": "sec-005-43-idea-of-proof",
+      "number": "4.3",
+      "title": "Idea of proof",
+      "level": 2,
+      "page_start": 16,
+      "page_end": 17,
+      "n_chars": 2390,
+      "n_words": 446
+    },
+    {
+      "id": "sec-006-44-further-directions",
+      "number": "4.4",
+      "title": "Further directions",
+      "level": 2,
+      "page_start": 17,
+      "page_end": 18,
+      "n_chars": 3342,
+      "n_words": 575
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "page_start": 18,
+      "page_end": 22,
+      "n_chars": 10046,
+      "n_words": 1609
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 9,
+    "sections": 8,
+    "chars_total": 52650
+  }
+}

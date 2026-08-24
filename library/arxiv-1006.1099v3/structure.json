@@ -1,0 +1,633 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "arxiv-1006.1099v3",
+  "source": {
+    "file": "1006.1099v3.pdf",
+    "sha256": "76c1c4173cdee9d815286487ea60a59bec6b901dc67941a4df9483f3e66d3808",
+    "bytes": 974336,
+    "pages": 70,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": {
+      "id": "1006.1099",
+      "version": "3",
+      "primary_class": "math.SG",
+      "stamp_date": "13 Oct 2011"
+    },
+    "doi": null,
+    "title": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+    "authors_raw": "IVAN SMITH",
+    "title_lines": [
+      "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+      "IV AN SMITH"
+    ],
+    "abstract": "There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces. W e investigate symplectic aspects of this relationship, with a view to applications in low-dimen sional topology.",
+    "docinfo": {
+      "Producer": "GPL Ghostscript 10.01.2",
+      "CreationDate": "D:20241126173709-05'00'",
+      "Creator": "LaTeX with hyperref package",
+      "Title": "",
+      "Author": ""
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page": 2,
+      "source": "outline",
+      "number": "1"
+    },
+    {
+      "level": 2,
+      "title": "Two contexts",
+      "page": 2,
+      "source": "outline",
+      "number": "1.1"
+    },
+    {
+      "level": 2,
+      "title": "The theorem",
+      "page": 2,
+      "source": "outline",
+      "number": "1.2"
+    },
+    {
+      "level": 2,
+      "title": "Entropy",
+      "page": 3,
+      "source": "outline",
+      "number": "1.3"
+    },
+    {
+      "level": 2,
+      "title": "Representation varieties",
+      "page": 3,
+      "source": "outline",
+      "number": "1.4"
+    },
+    {
+      "level": 2,
+      "title": "Instanton Floer homology",
+      "page": 4,
+      "source": "outline",
+      "number": "1.5"
+    },
+    {
+      "level": 2,
+      "title": "Witten's conjecture",
+      "page": 5,
+      "source": "outline",
+      "number": "1.6"
+    },
+    {
+      "level": 2,
+      "title": "Homological Mirror Symmetry",
+      "page": 6,
+      "source": "outline",
+      "number": "1.7"
+    },
+    {
+      "level": 2,
+      "title": "Another birational motivation",
+      "page": 7,
+      "source": "outline",
+      "number": "1.8"
+    },
+    {
+      "level": 2,
+      "title": "Outline of proof",
+      "page": 7,
+      "source": "outline",
+      "number": "1.9"
+    },
+    {
+      "level": 1,
+      "title": "The representation variety",
+      "page": 9,
+      "source": "outline",
+      "number": "2"
+    },
+    {
+      "level": 2,
+      "title": "Topology",
+      "page": 9,
+      "source": "outline",
+      "number": "2.1"
+    },
+    {
+      "level": 2,
+      "title": "Monodromy and degenerations",
+      "page": 10,
+      "source": "outline",
+      "number": "2.2"
+    },
+    {
+      "level": 2,
+      "title": "Fibred 3-manifolds",
+      "page": 12,
+      "source": "outline",
+      "number": "2.3"
+    },
+    {
+      "level": 2,
+      "title": "Faithfulness",
+      "page": 13,
+      "source": "outline",
+      "number": "2.4"
+    },
+    {
+      "level": 2,
+      "title": "A fixed point theorem",
+      "page": 15,
+      "source": "outline",
+      "number": "2.5"
+    },
+    {
+      "level": 1,
+      "title": "The Fukaya category",
+      "page": 17,
+      "source": "outline",
+      "number": "3"
+    },
+    {
+      "level": 2,
+      "title": "Floer and quantum cohomology",
+      "page": 17,
+      "source": "outline",
+      "number": "3.1"
+    },
+    {
+      "level": 2,
+      "title": "Higher order products",
+      "page": 19,
+      "source": "outline",
+      "number": "3.2"
+    },
+    {
+      "level": 2,
+      "title": "Twisting and generation",
+      "page": 21,
+      "source": "outline",
+      "number": "3.3"
+    },
+    {
+      "level": 2,
+      "title": "Functors from quilts",
+      "page": 23,
+      "source": "outline",
+      "number": "3.4"
+    },
+    {
+      "level": 2,
+      "title": "Grading and deformations",
+      "page": 26,
+      "source": "outline",
+      "number": "3.5"
+    },
+    {
+      "level": 2,
+      "title": "Formality",
+      "page": 26,
+      "source": "outline",
+      "number": "3.6"
+    },
+    {
+      "level": 2,
+      "title": "The Fukaya category of a curve",
+      "page": 29,
+      "source": "outline",
+      "number": "3.7"
+    },
+    {
+      "level": 1,
+      "title": "From the base locus to the relative quadric",
+      "page": 30,
+      "source": "outline",
+      "number": "4"
+    },
+    {
+      "level": 2,
+      "title": "The Fukaya category of a quadric",
+      "page": 30,
+      "source": "outline",
+      "number": "4.1"
+    },
+    {
+      "level": 2,
+      "title": "Hyperelliptic curves and quadrics",
+      "page": 33,
+      "source": "outline",
+      "number": "4.2"
+    },
+    {
+      "level": 2,
+      "title": "Idempotents for functors",
+      "page": 36,
+      "source": "outline",
+      "number": "4.3"
+    },
+    {
+      "level": 2,
+      "title": "An illustrative example",
+      "page": 37,
+      "source": "outline",
+      "number": "4.4"
+    },
+    {
+      "level": 2,
+      "title": "Idempotents and blow-ups",
+      "page": 41,
+      "source": "outline",
+      "number": "4.5"
+    },
+    {
+      "level": 2,
+      "title": "Spinning",
+      "page": 49,
+      "source": "outline",
+      "number": "4.6"
+    },
+    {
+      "level": 1,
+      "title": "From the curve to the relative quadric",
+      "page": 52,
+      "source": "outline",
+      "number": "5"
+    },
+    {
+      "level": 2,
+      "title": "Matching Spheres",
+      "page": 52,
+      "source": "outline",
+      "number": "5.1"
+    },
+    {
+      "level": 2,
+      "title": "Thimbles",
+      "page": 54,
+      "source": "outline",
+      "number": "5.2"
+    },
+    {
+      "level": 2,
+      "title": "Exterior Algebra",
+      "page": 56,
+      "source": "outline",
+      "number": "5.3"
+    },
+    {
+      "level": 2,
+      "title": "The cubic term",
+      "page": 59,
+      "source": "outline",
+      "number": "5.4"
+    },
+    {
+      "level": 2,
+      "title": "Finite determinacy",
+      "page": 62,
+      "source": "outline",
+      "number": "5.5"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "page": 67,
+      "source": "outline",
+      "number": null
+    }
+  ],
+  "toc_source": "outline",
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-001-11-two-contexts",
+      "number": "1.1",
+      "title": "Two contexts",
+      "level": 2,
+      "page_start": 1,
+      "page_end": 1,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-002-12-the-theorem",
+      "number": "1.2",
+      "title": "The theorem",
+      "level": 2,
+      "page_start": 1,
+      "page_end": 3,
+      "n_chars": 5293,
+      "n_words": 893
+    },
+    {
+      "id": "sec-003-13-entropy",
+      "number": "1.3",
+      "title": "Entropy",
+      "level": 2,
+      "page_start": 3,
+      "page_end": 3,
+      "n_chars": 1201,
+      "n_words": 194
+    },
+    {
+      "id": "sec-004-14-representation-varieties",
+      "number": "1.4",
+      "title": "Representation varieties",
+      "level": 2,
+      "page_start": 3,
+      "page_end": 4,
+      "n_chars": 3648,
+      "n_words": 636
+    },
+    {
+      "id": "sec-005-15-instanton-floer-homology",
+      "number": "1.5",
+      "title": "Instanton Floer homology",
+      "level": 2,
+      "page_start": 4,
+      "page_end": 6,
+      "n_chars": 5456,
+      "n_words": 922
+    },
+    {
+      "id": "sec-006-17-homological-mirror-symmetry",
+      "number": "1.7",
+      "title": "Homological Mirror Symmetry",
+      "level": 2,
+      "page_start": 6,
+      "page_end": 7,
+      "n_chars": 4442,
+      "n_words": 765
+    },
+    {
+      "id": "sec-007-18-another-birational-motivation",
+      "number": "1.8",
+      "title": "Another birational motivation",
+      "level": 2,
+      "page_start": 7,
+      "page_end": 7,
+      "n_chars": 1543,
+      "n_words": 277
+    },
+    {
+      "id": "sec-008-19-outline-of-proof",
+      "number": "1.9",
+      "title": "Outline of proof",
+      "level": 2,
+      "page_start": 7,
+      "page_end": 9,
+      "n_chars": 4944,
+      "n_words": 762
+    },
+    {
+      "id": "sec-009-2-the-representation-variety",
+      "number": "2",
+      "title": "The representation variety",
+      "level": 1,
+      "page_start": 9,
+      "page_end": 10,
+      "n_chars": 5658,
+      "n_words": 1017
+    },
+    {
+      "id": "sec-010-22-monodromy-and-degenerations",
+      "number": "2.2",
+      "title": "Monodromy and degenerations",
+      "level": 2,
+      "page_start": 10,
+      "page_end": 12,
+      "n_chars": 4996,
+      "n_words": 901
+    },
+    {
+      "id": "sec-011-23-fibred-3-manifolds",
+      "number": "2.3",
+      "title": "Fibred 3-manifolds",
+      "level": 2,
+      "page_start": 12,
+      "page_end": 13,
+      "n_chars": 4053,
+      "n_words": 685
+    },
+    {
+      "id": "sec-012-24-faithfulness",
+      "number": "2.4",
+      "title": "Faithfulness",
+      "level": 2,
+      "page_start": 13,
+      "page_end": 16,
+      "n_chars": 12359,
+      "n_words": 2215
+    },
+    {
+      "id": "sec-013-3-the-fukaya-category",
+      "number": "3",
+      "title": "The Fukaya category",
+      "level": 1,
+      "page_start": 16,
+      "page_end": 17,
+      "n_chars": 1459,
+      "n_words": 266
+    },
+    {
+      "id": "sec-014-31-floer-and-quantum-cohomology",
+      "number": "3.1",
+      "title": "Floer and quantum cohomology",
+      "level": 2,
+      "page_start": 17,
+      "page_end": 19,
+      "n_chars": 7414,
+      "n_words": 1323
+    },
+    {
+      "id": "sec-015-32-higher-order-products",
+      "number": "3.2",
+      "title": "Higher order products",
+      "level": 2,
+      "page_start": 19,
+      "page_end": 21,
+      "n_chars": 6061,
+      "n_words": 1004
+    },
+    {
+      "id": "sec-016-33-twisting-and-generation",
+      "number": "3.3",
+      "title": "Twisting and generation",
+      "level": 2,
+      "page_start": 21,
+      "page_end": 26,
+      "n_chars": 15756,
+      "n_words": 2738
+    },
+    {
+      "id": "sec-017-35-grading-and-deformations",
+      "number": "3.5",
+      "title": "Grading and deformations",
+      "level": 2,
+      "page_start": 26,
+      "page_end": 26,
+      "n_chars": 3134,
+      "n_words": 560
+    },
+    {
+      "id": "sec-018-36-formality",
+      "number": "3.6",
+      "title": "Formality",
+      "level": 2,
+      "page_start": 26,
+      "page_end": 30,
+      "n_chars": 12192,
+      "n_words": 2181
+    },
+    {
+      "id": "sec-019-4-from-the-base-locus-to-the-relative-quadric",
+      "number": "4",
+      "title": "From the base locus to the relative quadric",
+      "level": 1,
+      "page_start": 30,
+      "page_end": 33,
+      "n_chars": 9168,
+      "n_words": 1642
+    },
+    {
+      "id": "sec-020-42-hyperelliptic-curves-and-quadrics",
+      "number": "4.2",
+      "title": "Hyperelliptic curves and quadrics",
+      "level": 2,
+      "page_start": 33,
+      "page_end": 36,
+      "n_chars": 8942,
+      "n_words": 1619
+    },
+    {
+      "id": "sec-021-43-idempotents-for-functors",
+      "number": "4.3",
+      "title": "Idempotents for functors",
+      "level": 2,
+      "page_start": 36,
+      "page_end": 37,
+      "n_chars": 3298,
+      "n_words": 609
+    },
+    {
+      "id": "sec-022-44-an-illustrative-example",
+      "number": "4.4",
+      "title": "An illustrative example",
+      "level": 2,
+      "page_start": 37,
+      "page_end": 41,
+      "n_chars": 12136,
+      "n_words": 2199
+    },
+    {
+      "id": "sec-023-45-idempotents-and-blow-ups",
+      "number": "4.5",
+      "title": "Idempotents and blow-ups",
+      "level": 2,
+      "page_start": 41,
+      "page_end": 49,
+      "n_chars": 26409,
+      "n_words": 4907
+    },
+    {
+      "id": "sec-024-46-spinning",
+      "number": "4.6",
+      "title": "Spinning",
+      "level": 2,
+      "page_start": 49,
+      "page_end": 52,
+      "n_chars": 11795,
+      "n_words": 2168
+    },
+    {
+      "id": "sec-025-5-from-the-curve-to-the-relative-quadric",
+      "number": "5",
+      "title": "From the curve to the relative quadric",
+      "level": 1,
+      "page_start": 52,
+      "page_end": 52,
+      "n_chars": 181,
+      "n_words": 37
+    },
+    {
+      "id": "sec-026-51-matching-spheres",
+      "number": "5.1",
+      "title": "Matching Spheres",
+      "level": 2,
+      "page_start": 52,
+      "page_end": 54,
+      "n_chars": 6629,
+      "n_words": 1166
+    },
+    {
+      "id": "sec-027-52-thimbles",
+      "number": "5.2",
+      "title": "Thimbles",
+      "level": 2,
+      "page_start": 54,
+      "page_end": 56,
+      "n_chars": 7966,
+      "n_words": 1318
+    },
+    {
+      "id": "sec-028-53-exterior-algebra",
+      "number": "5.3",
+      "title": "Exterior Algebra",
+      "level": 2,
+      "page_start": 56,
+      "page_end": 59,
+      "n_chars": 9641,
+      "n_words": 1651
+    },
+    {
+      "id": "sec-029-54-the-cubic-term",
+      "number": "5.4",
+      "title": "The cubic term",
+      "level": 2,
+      "page_start": 59,
+      "page_end": 62,
+      "n_chars": 9069,
+      "n_words": 1585
+    },
+    {
+      "id": "sec-030-55-finite-determinacy",
+      "number": "5.5",
+      "title": "Finite determinacy",
+      "level": 2,
+      "page_start": 62,
+      "page_end": 67,
+      "n_chars": 17485,
+      "n_words": 3144
+    },
+    {
+      "id": "sec-031-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "page_start": 67,
+      "page_end": 70,
+      "n_chars": 12478,
+      "n_words": 1833
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 38,
+    "sections": 32,
+    "chars_total": 234806
+  }
+}

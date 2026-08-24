@@ -1,0 +1,183 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "arxiv-2301.08311v4",
+  "source": {
+    "file": "2301.08311v4.pdf",
+    "sha256": "385139c69e18f5b0d43734b1f36250471139baebdadbbb5a216270e2afe31735",
+    "bytes": 1066183,
+    "pages": 73,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": {
+      "id": "2301.08311",
+      "version": "4",
+      "primary_class": "math.SG",
+      "stamp_date": "17 Sep 2024"
+    },
+    "doi": null,
+    "title": "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+    "authors_raw": "SOHAM CHANDA",
+    "title_lines": [
+      "FLOER COHOMOLOGY AND HIGHER MUTATIONS",
+      "SOHAM CHANDA"
+    ],
+    "abstract": "We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians. In two-dimensional Lagrangians, local higher mutation is the same as performing a Lagrangian anti-surgery in the sense of [Hau20] followed by a Lagrangian surgery. We prove that up to a change of local systems, the Lagrangian intersection Floer cohomology of a pair of Lagrangians is invariant under local mutation. This result generalizes the wall-crossing formula in [PT20]. For two-dimensional Lagrangians, this result agrees with the invariance result in [PW19].",
+    "docinfo": {
+      "Author": "",
+      "CreationDate": "D:20240919001155Z",
+      "Creator": "LaTeX with hyperref",
+      "Producer": "pdfTeX-1.40.25",
+      "Title": ""
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page": 1,
+      "source": "outline",
+      "number": "1"
+    },
+    {
+      "level": 1,
+      "title": "Local Mutation",
+      "page": 7,
+      "source": "outline",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "SFT Compactness",
+      "page": 14,
+      "source": "outline",
+      "number": "3"
+    },
+    {
+      "level": 1,
+      "title": "Constructing Moduli Space of Broken Maps",
+      "page": 30,
+      "source": "outline",
+      "number": "4"
+    },
+    {
+      "level": 1,
+      "title": "Regularity",
+      "page": 44,
+      "source": "outline",
+      "number": "5"
+    },
+    {
+      "level": 1,
+      "title": "Classifying Rigid Broken Maps",
+      "page": 54,
+      "source": "outline",
+      "number": "6"
+    },
+    {
+      "level": 1,
+      "title": "Floer Cohomology and Mutations",
+      "page": 65,
+      "source": "outline",
+      "number": "7"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "page": 72,
+      "source": "outline",
+      "number": null
+    }
+  ],
+  "toc_source": "outline",
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 6,
+      "n_chars": 15716,
+      "n_words": 2559
+    },
+    {
+      "id": "sec-001-2-local-mutation",
+      "number": "2",
+      "title": "Local Mutation",
+      "level": 1,
+      "page_start": 6,
+      "page_end": 14,
+      "n_chars": 21584,
+      "n_words": 3892
+    },
+    {
+      "id": "sec-002-3-sft-compactness",
+      "number": "3",
+      "title": "SFT Compactness",
+      "level": 1,
+      "page_start": 14,
+      "page_end": 30,
+      "n_chars": 41810,
+      "n_words": 7675
+    },
+    {
+      "id": "sec-003-4-constructing-moduli-space-of-broken-maps",
+      "number": "4",
+      "title": "Constructing Moduli Space of Broken Maps",
+      "level": 1,
+      "page_start": 30,
+      "page_end": 43,
+      "n_chars": 41674,
+      "n_words": 7410
+    },
+    {
+      "id": "sec-004-5-regularity",
+      "number": "5",
+      "title": "Regularity",
+      "level": 1,
+      "page_start": 43,
+      "page_end": 54,
+      "n_chars": 36878,
+      "n_words": 6440
+    },
+    {
+      "id": "sec-005-6-classifying-rigid-broken-maps",
+      "number": "6",
+      "title": "Classifying Rigid Broken Maps",
+      "level": 1,
+      "page_start": 54,
+      "page_end": 65,
+      "n_chars": 30453,
+      "n_words": 5606
+    },
+    {
+      "id": "sec-006-7-floer-cohomology-and-mutations",
+      "number": "7",
+      "title": "Floer Cohomology and Mutations",
+      "level": 1,
+      "page_start": 65,
+      "page_end": 72,
+      "n_chars": 21172,
+      "n_words": 3672
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "page_start": 72,
+      "page_end": 73,
+      "n_chars": 7426,
+      "n_words": 1034
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 8,
+    "sections": 8,
+    "chars_total": 216713
+  }
+}

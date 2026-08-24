@@ -1,0 +1,819 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "arxiv-math-0105186v2",
+  "source": {
+    "file": "0105186v2.pdf",
+    "sha256": "e1552ceb6c82c27c0b733b7cdffaacfd383464c5b432dc12609073141f5b878a",
+    "bytes": 727562,
+    "pages": 71,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": {
+      "id": "math/0105186",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "20 Jul 2002"
+    },
+    "doi": null,
+    "title": "A long exact sequence for symplectic Floer cohomology",
+    "authors_raw": "Paul Seidel",
+    "title_lines": [
+      "Along exact sequence for",
+      "symplectic Floer cohomology",
+      "Paul Seidel"
+    ],
+    "abstract": null,
+    "docinfo": {
+      "Producer": "GPL Ghostscript 10.01.2",
+      "CreationDate": "D:20241126163333-05'00'",
+      "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+      "Title": "arXiv:math/0105186v2  [math.SG]  20 Jul 2002"
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page": 1,
+      "source": "inferred",
+      "number": null
+    },
+    {
+      "level": 1,
+      "title": "Dehn twists, and all that",
+      "page": 4,
+      "source": "inferred",
+      "number": "1"
+    },
+    {
+      "level": 2,
+      "title": "Exact symplectic geometry and ﬁbrations",
+      "page": 4,
+      "source": "inferred",
+      "number": "1.1"
+    },
+    {
+      "level": 2,
+      "title": "The local model",
+      "page": 10,
+      "source": "inferred",
+      "number": "1.2"
+    },
+    {
+      "level": 1,
+      "title": "(||g′||t−1",
+      "page": 17,
+      "source": "inferred",
+      "number": "16"
+    },
+    {
+      "level": 2,
+      "title": "Vanishing cycles",
+      "page": 17,
+      "source": "inferred",
+      "number": "1.3"
+    },
+    {
+      "level": 2,
+      "title": "These can be chosen such that in a neighbourhood of Ec(a), Ω µ = Ω and",
+      "page": 20,
+      "source": "inferred",
+      "number": "1.6"
+    },
+    {
+      "level": 1,
+      "title": "Pseudo-holomorphic sections",
+      "page": 22,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 2,
+      "title": "A simple invariant",
+      "page": 22,
+      "source": "inferred",
+      "number": "2.1"
+    },
+    {
+      "level": 1,
+      "title": "(Du +J◦Du◦j), and the zero set Muniv = ( ¯∂univ)−1(0)",
+      "page": 24,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "(L ˜XJ)◦Du◦j where ˜X is any section of TEv, deﬁned on a neigh-",
+      "page": 24,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "(∇XJ)◦Du◦j, (2.5)",
+      "page": 24,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 2,
+      "title": "Moreover, Lemma 2.5 says that for suitably chosen Jk, the evaluation maps",
+      "page": 28,
+      "source": "inferred",
+      "number": "2.4"
+    },
+    {
+      "level": 2,
+      "title": "Horizontality",
+      "page": 29,
+      "source": "inferred",
+      "number": "2.2"
+    },
+    {
+      "level": 1,
+      "title": "If ∇u has nonnegative curvature, the converse also holds, since t he second",
+      "page": 31,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 2,
+      "title": "A vanishing theorem",
+      "page": 32,
+      "source": "inferred",
+      "number": "2.3"
+    },
+    {
+      "level": 1,
+      "title": "(r′−sk)im(d¯z∧dz) +",
+      "page": 36,
+      "source": "inferred",
+      "number": "4"
+    },
+    {
+      "level": 1,
+      "title": "(r′−sk) + 0 = π(1 + r′",
+      "page": 36,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 2,
+      "title": "Relative invariants",
+      "page": 38,
+      "source": "inferred",
+      "number": "2.4"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q ) :",
+      "page": 39,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J ) :",
+      "page": 42,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J )(⊗",
+      "page": 42,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J ) is a chain map. The",
+      "page": 42,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J 0) and CΦ rel",
+      "page": 43,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J 1). The same",
+      "page": 43,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q ) remains invariant under de-",
+      "page": 43,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(Ek,πk,Qk,Jk). We require that the Jek∈ Jreg (M,L 0,L 1) on",
+      "page": 45,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J ) = CΦ rel",
+      "page": 45,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E1,π 1,Q 1,J 1)◦CΦ rel",
+      "page": 45,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E2,π 2,Q 2,J 2), (2.30)",
+      "page": 45,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 2,
+      "title": "Horizontality and relative invariants",
+      "page": 45,
+      "source": "inferred",
+      "number": "2.5"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J ) = φ+(CΦ rel",
+      "page": 48,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J )−φ),",
+      "page": 48,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "Wrapping it up",
+      "page": 51,
+      "source": "inferred",
+      "number": "3"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "page": 51,
+      "source": "inferred",
+      "number": "3.1"
+    },
+    {
+      "level": 2,
+      "title": "The ﬁrst map",
+      "page": 55,
+      "source": "inferred",
+      "number": "3.2"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J ) = φ + (CΦ rel",
+      "page": 57,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J (4)) : C′→C for the relative invariant on the cochain",
+      "page": 60,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 2,
+      "title": "The second map",
+      "page": 60,
+      "source": "inferred",
+      "number": "3.3"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J (6)) : C−→C′′",
+      "page": 63,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 2,
+      "title": "The homotopy",
+      "page": 64,
+      "source": "inferred",
+      "number": "3.4"
+    },
+    {
+      "level": 1,
+      "title": "(Ebc,πbc,Qbc,J ) : C′−→C′′",
+      "page": 65,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J ) : C′−→C′′",
+      "page": 67,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(E,π,Q,J )",
+      "page": 68,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "(Ebc,πbc,Qbc,J ) will be homotopic to zero by a chain homotopy",
+      "page": 68,
+      "source": "inferred",
+      "number": "0"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "page": 68,
+      "source": "inferred",
+      "number": null
+    }
+  ],
+  "toc_source": "inferred",
+  "sections": [
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 4,
+      "n_chars": 7359,
+      "n_words": 1239
+    },
+    {
+      "id": "sec-001-1-dehn-twists-and-all-that",
+      "number": "1",
+      "title": "Dehn twists, and all that",
+      "level": 1,
+      "page_start": 4,
+      "page_end": 4,
+      "n_chars": 675,
+      "n_words": 121
+    },
+    {
+      "id": "sec-002-11-exact-symplectic-geometry-and-ﬁbrations",
+      "number": "1.1",
+      "title": "Exact symplectic geometry and ﬁbrations",
+      "level": 2,
+      "page_start": 4,
+      "page_end": 10,
+      "n_chars": 15798,
+      "n_words": 3035
+    },
+    {
+      "id": "sec-003-12-the-local-model",
+      "number": "1.2",
+      "title": "The local model",
+      "level": 2,
+      "page_start": 10,
+      "page_end": 17,
+      "n_chars": 18342,
+      "n_words": 3499
+    },
+    {
+      "id": "sec-004-16-gt1",
+      "number": "16",
+      "title": "(||g′||t−1",
+      "level": 1,
+      "page_start": 17,
+      "page_end": 17,
+      "n_chars": 107,
+      "n_words": 24
+    },
+    {
+      "id": "sec-005-13-vanishing-cycles",
+      "number": "1.3",
+      "title": "Vanishing cycles",
+      "level": 2,
+      "page_start": 17,
+      "page_end": 20,
+      "n_chars": 8168,
+      "n_words": 1553
+    },
+    {
+      "id": "sec-006-16-these-can-be-chosen-such-that-in-a-neighbourh",
+      "number": "1.6",
+      "title": "These can be chosen such that in a neighbourhood of Ec(a), Ω µ = Ω and",
+      "level": 2,
+      "page_start": 20,
+      "page_end": 22,
+      "n_chars": 358,
+      "n_words": 78
+    },
+    {
+      "id": "sec-007-2-pseudo-holomorphic-sections",
+      "number": "2",
+      "title": "Pseudo-holomorphic sections",
+      "level": 1,
+      "page_start": 22,
+      "page_end": 22,
+      "n_chars": 1000,
+      "n_words": 164
+    },
+    {
+      "id": "sec-008-21-a-simple-invariant",
+      "number": "2.1",
+      "title": "A simple invariant",
+      "level": 2,
+      "page_start": 22,
+      "page_end": 24,
+      "n_chars": 5017,
+      "n_words": 960
+    },
+    {
+      "id": "sec-009-2-du-jduj-and-the-zero-set-muniv-univ10",
+      "number": "2",
+      "title": "(Du +J◦Du◦j), and the zero set Muniv = ( ¯∂univ)−1(0)",
+      "level": 1,
+      "page_start": 24,
+      "page_end": 24,
+      "n_chars": 239,
+      "n_words": 55
+    },
+    {
+      "id": "sec-010-2-l-xjduj-where-x-is-any-section-of-tev-deﬁned-o",
+      "number": "2",
+      "title": "(L ˜XJ)◦Du◦j where ˜X is any section of TEv, deﬁned on a neigh-",
+      "level": 1,
+      "page_start": 24,
+      "page_end": 24,
+      "n_chars": 236,
+      "n_words": 42
+    },
+    {
+      "id": "sec-011-2-xjduj-25",
+      "number": "2",
+      "title": "(∇XJ)◦Du◦j, (2.5)",
+      "level": 1,
+      "page_start": 24,
+      "page_end": 28,
+      "n_chars": 9601,
+      "n_words": 1845
+    },
+    {
+      "id": "sec-012-24-moreover-lemma-25-says-that-for-suitably-chos",
+      "number": "2.4",
+      "title": "Moreover, Lemma 2.5 says that for suitably chosen Jk, the evaluation maps",
+      "level": 2,
+      "page_start": 28,
+      "page_end": 29,
+      "n_chars": 1064,
+      "n_words": 191
+    },
+    {
+      "id": "sec-013-22-horizontality",
+      "number": "2.2",
+      "title": "Horizontality",
+      "level": 2,
+      "page_start": 29,
+      "page_end": 31,
+      "n_chars": 7272,
+      "n_words": 1378
+    },
+    {
+      "id": "sec-014-0-if-u-has-nonnegative-curvature-the-converse-al",
+      "number": "0",
+      "title": "If ∇u has nonnegative curvature, the converse also holds, since t he second",
+      "level": 1,
+      "page_start": 31,
+      "page_end": 32,
+      "n_chars": 889,
+      "n_words": 174
+    },
+    {
+      "id": "sec-015-23-a-vanishing-theorem",
+      "number": "2.3",
+      "title": "A vanishing theorem",
+      "level": 2,
+      "page_start": 32,
+      "page_end": 36,
+      "n_chars": 7138,
+      "n_words": 1347
+    },
+    {
+      "id": "sec-016-4-rskimdzdz",
+      "number": "4",
+      "title": "(r′−sk)im(d¯z∧dz) +",
+      "level": 1,
+      "page_start": 36,
+      "page_end": 36,
+      "n_chars": 31,
+      "n_words": 11
+    },
+    {
+      "id": "sec-017-2-rsk-0-π1-r",
+      "number": "2",
+      "title": "(r′−sk) + 0 = π(1 + r′",
+      "level": 1,
+      "page_start": 36,
+      "page_end": 38,
+      "n_chars": 5514,
+      "n_words": 1006
+    },
+    {
+      "id": "sec-018-24-relative-invariants",
+      "number": "2.4",
+      "title": "Relative invariants",
+      "level": 2,
+      "page_start": 38,
+      "page_end": 39,
+      "n_chars": 1954,
+      "n_words": 365
+    },
+    {
+      "id": "sec-019-0-eπq",
+      "number": "0",
+      "title": "(E,π,Q ) :",
+      "level": 1,
+      "page_start": 39,
+      "page_end": 42,
+      "n_chars": 8895,
+      "n_words": 1686
+    },
+    {
+      "id": "sec-020-0-eπqj",
+      "number": "0",
+      "title": "(E,π,Q,J ) :",
+      "level": 1,
+      "page_start": 42,
+      "page_end": 42,
+      "n_chars": 120,
+      "n_words": 25
+    },
+    {
+      "id": "sec-021-0-eπqj",
+      "number": "0",
+      "title": "(E,π,Q,J )(⊗",
+      "level": 1,
+      "page_start": 42,
+      "page_end": 42,
+      "n_chars": 430,
+      "n_words": 91
+    },
+    {
+      "id": "sec-022-0-eπqj-is-a-chain-map-the",
+      "number": "0",
+      "title": "(E,π,Q,J ) is a chain map. The",
+      "level": 1,
+      "page_start": 42,
+      "page_end": 43,
+      "n_chars": 1067,
+      "n_words": 204
+    },
+    {
+      "id": "sec-023-0-eπqj-0-and-cφ-rel",
+      "number": "0",
+      "title": "(E,π,Q,J 0) and CΦ rel",
+      "level": 1,
+      "page_start": 43,
+      "page_end": 43,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-024-0-eπqj-1-the-same",
+      "number": "0",
+      "title": "(E,π,Q,J 1). The same",
+      "level": 1,
+      "page_start": 43,
+      "page_end": 43,
+      "n_chars": 39,
+      "n_words": 9
+    },
+    {
+      "id": "sec-025-0-eπq-remains-invariant-under-de",
+      "number": "0",
+      "title": "(E,π,Q ) remains invariant under de-",
+      "level": 1,
+      "page_start": 43,
+      "page_end": 45,
+      "n_chars": 5701,
+      "n_words": 1060
+    },
+    {
+      "id": "sec-026-0-ekπkqkjk-we-require-that-the-jek-jreg-ml-0l-1",
+      "number": "0",
+      "title": "(Ek,πk,Qk,Jk). We require that the Jek∈ Jreg (M,L 0,L 1) on",
+      "level": 1,
+      "page_start": 45,
+      "page_end": 45,
+      "n_chars": 719,
+      "n_words": 142
+    },
+    {
+      "id": "sec-027-0-eπqj-cφ-rel",
+      "number": "0",
+      "title": "(E,π,Q,J ) = CΦ rel",
+      "level": 1,
+      "page_start": 45,
+      "page_end": 45,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-028-0-e1π-1q-1j-1cφ-rel",
+      "number": "0",
+      "title": "(E1,π 1,Q 1,J 1)◦CΦ rel",
+      "level": 1,
+      "page_start": 45,
+      "page_end": 45,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-029-0-e2π-2q-2j-2-230",
+      "number": "0",
+      "title": "(E2,π 2,Q 2,J 2), (2.30)",
+      "level": 1,
+      "page_start": 45,
+      "page_end": 45,
+      "n_chars": 178,
+      "n_words": 29
+    },
+    {
+      "id": "sec-030-25-horizontality-and-relative-invariants",
+      "number": "2.5",
+      "title": "Horizontality and relative invariants",
+      "level": 2,
+      "page_start": 45,
+      "page_end": 48,
+      "n_chars": 8143,
+      "n_words": 1555
+    },
+    {
+      "id": "sec-031-0-eπqj-φcφ-rel",
+      "number": "0",
+      "title": "(E,π,Q,J ) = φ+(CΦ rel",
+      "level": 1,
+      "page_start": 48,
+      "page_end": 48,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-032-0-eπqj-φ",
+      "number": "0",
+      "title": "(E,π,Q,J )−φ),",
+      "level": 1,
+      "page_start": 48,
+      "page_end": 51,
+      "n_chars": 3442,
+      "n_words": 688
+    },
+    {
+      "id": "sec-033-3-wrapping-it-up",
+      "number": "3",
+      "title": "Wrapping it up",
+      "level": 1,
+      "page_start": 51,
+      "page_end": 51,
+      "n_chars": 725,
+      "n_words": 124
+    },
+    {
+      "id": "sec-034-31-preliminaries",
+      "number": "3.1",
+      "title": "Preliminaries",
+      "level": 2,
+      "page_start": 51,
+      "page_end": 55,
+      "n_chars": 8666,
+      "n_words": 1532
+    },
+    {
+      "id": "sec-035-32-the-ﬁrst-map",
+      "number": "3.2",
+      "title": "The ﬁrst map",
+      "level": 2,
+      "page_start": 55,
+      "page_end": 57,
+      "n_chars": 5144,
+      "n_words": 961
+    },
+    {
+      "id": "sec-036-0-eπqj-φ-cφ-rel",
+      "number": "0",
+      "title": "(E,π,Q,J ) = φ + (CΦ rel",
+      "level": 1,
+      "page_start": 57,
+      "page_end": 60,
+      "n_chars": 6043,
+      "n_words": 1135
+    },
+    {
+      "id": "sec-037-0-eπqj-4-cc-for-the-relative-invariant-on-the-co",
+      "number": "0",
+      "title": "(E,π,Q,J (4)) : C′→C for the relative invariant on the cochain",
+      "level": 1,
+      "page_start": 60,
+      "page_end": 60,
+      "n_chars": 1057,
+      "n_words": 195
+    },
+    {
+      "id": "sec-038-33-the-second-map",
+      "number": "3.3",
+      "title": "The second map",
+      "level": 2,
+      "page_start": 60,
+      "page_end": 63,
+      "n_chars": 6415,
+      "n_words": 1206
+    },
+    {
+      "id": "sec-039-0-eπqj-6-cc",
+      "number": "0",
+      "title": "(E,π,Q,J (6)) : C−→C′′",
+      "level": 1,
+      "page_start": 63,
+      "page_end": 64,
+      "n_chars": 380,
+      "n_words": 79
+    },
+    {
+      "id": "sec-040-34-the-homotopy",
+      "number": "3.4",
+      "title": "The homotopy",
+      "level": 2,
+      "page_start": 64,
+      "page_end": 65,
+      "n_chars": 2048,
+      "n_words": 369
+    },
+    {
+      "id": "sec-041-0-ebcπbcqbcj-cc",
+      "number": "0",
+      "title": "(Ebc,πbc,Qbc,J ) : C′−→C′′",
+      "level": 1,
+      "page_start": 65,
+      "page_end": 67,
+      "n_chars": 4803,
+      "n_words": 871
+    },
+    {
+      "id": "sec-042-0-eπqj-cc",
+      "number": "0",
+      "title": "(E,π,Q,J ) : C′−→C′′",
+      "level": 1,
+      "page_start": 67,
+      "page_end": 68,
+      "n_chars": 3103,
+      "n_words": 569
+    },
+    {
+      "id": "sec-043-0-ebcπbcqbcj-will-be-homotopic-to-zero-by-a-chai",
+      "number": "0",
+      "title": "(Ebc,πbc,Qbc,J ) will be homotopic to zero by a chain homotopy",
+      "level": 1,
+      "page_start": 68,
+      "page_end": 68,
+      "n_chars": 233,
+      "n_words": 45
+    },
+    {
+      "id": "sec-044-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "page_start": 68,
+      "page_end": 71,
+      "n_chars": 4332,
+      "n_words": 668
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 46,
+    "sections": 45,
+    "chars_total": 162445
+  }
+}

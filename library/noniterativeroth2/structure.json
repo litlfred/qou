@@ -1,0 +1,157 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "noniterativeroth2",
+  "source": {
+    "file": "noniterativeroth2.pdf",
+    "sha256": "83bbcdf45da069e5275d2e268fb5915d0adc361a35c167dac98bb919a2fbe4d6",
+    "bytes": 87825,
+    "pages": 5,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": null,
+    "doi": null,
+    "title": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS",
+    "authors_raw": "ERNIE CROOT AND OLOF SISASK",
+    "title_lines": [
+      "A PROOF OF ROTH’S THEOREM ON ARITHMETIC",
+      "PROGRESSIONS"
+    ],
+    "abstract": "We present a proof of Roth’s theorem that follows a slightly di erent structure to the usual proofs, in that there is not much iteration. Although our proof works using a type of density increment argument (which is typical of most proofs of Roth’s theorem), we do not pass to a progression related to the large Fourier coe\u000ecients of our set (as most other proofs of Roth do). Furthermore, in our proof, the density increment is achieved through an application of a quantitative version of Varnavides’s theorem, which is perhaps unexpected.",
+    "docinfo": {
+      "Producer": "GNU Ghostscript 7.07"
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page": 1,
+      "source": "inferred",
+      "number": "1"
+    },
+    {
+      "level": 1,
+      "title": "ERNIE CROOT AND OLOF SISASK",
+      "page": 2,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "Notation",
+      "page": 2,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.1",
+      "page": 2,
+      "source": "inferred",
+      "number": "3"
+    },
+    {
+      "level": 1,
+      "title": "ERNIE CROOT AND OLOF SISASK",
+      "page": 4,
+      "source": "inferred",
+      "number": "4"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "page": 4,
+      "source": "inferred",
+      "number": "4"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "page": 5,
+      "source": "inferred",
+      "number": null
+    }
+  ],
+  "toc_source": "inferred",
+  "sections": [
+    {
+      "id": "sec-000-2-ernie-croot-and-olof-sisask",
+      "number": "2",
+      "title": "ERNIE CROOT AND OLOF SISASK",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "n_chars": 550,
+      "n_words": 92
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 2,
+      "n_chars": 2066,
+      "n_words": 371
+    },
+    {
+      "id": "sec-002-2-notation",
+      "number": "2",
+      "title": "Notation",
+      "level": 1,
+      "page_start": 2,
+      "page_end": 2,
+      "n_chars": 789,
+      "n_words": 154
+    },
+    {
+      "id": "sec-003-3-proof-of-theorem-11",
+      "number": "3",
+      "title": "Proof of Theorem 1.1",
+      "level": 1,
+      "page_start": 2,
+      "page_end": 4,
+      "n_chars": 2204,
+      "n_words": 452
+    },
+    {
+      "id": "sec-004-4-ernie-croot-and-olof-sisask",
+      "number": "4",
+      "title": "ERNIE CROOT AND OLOF SISASK",
+      "level": 1,
+      "page_start": 4,
+      "page_end": 4,
+      "n_chars": 1004,
+      "n_words": 213
+    },
+    {
+      "id": "sec-005-4-acknowledgements",
+      "number": "4",
+      "title": "Acknowledgements",
+      "level": 1,
+      "page_start": 4,
+      "page_end": 5,
+      "n_chars": 295,
+      "n_words": 58
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "page_start": 5,
+      "page_end": 5,
+      "n_chars": 955,
+      "n_words": 137
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 7,
+    "sections": 7,
+    "chars_total": 7863
+  }
+}

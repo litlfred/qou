@@ -1,0 +1,216 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "arxiv-2111.12409v4",
+  "source": {
+    "file": "2111.12409v4.pdf",
+    "sha256": "3f0b94ee06fe79bf50355d5643695b1bbdd7d50ef3cda3001c1f54d5e8136033",
+    "bytes": 326888,
+    "pages": 21,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": {
+      "id": "2111.12409",
+      "version": "4",
+      "primary_class": "math.NT",
+      "stamp_date": "13 May 2023"
+    },
+    "doi": null,
+    "title": "On the generalisation of Roth’s theorem",
+    "authors_raw": "Paolo Dolce, Francesco Zucconi",
+    "title_lines": [
+      "On the generalisation of Roth’s theorem",
+      "Paolo Dolce Francesco Zucconi",
+      "0 Introduction 1",
+      "0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1"
+    ],
+    "abstract": "We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmi c absolute values. We illustrate how tightening such assumptions makes our inequalities strong er. As special cases we recover Corvaja’s results [Cor97] for ﬁelds admitting a product formula, and Vojta’s ones [ Voj21] for arithmetic function ﬁelds. 0 Introduction 0.1 History The celebrated Roth’s theorem proved in [ Rot55] asserts that the irrationality measure of a real algebraic number is 2. An equivalent, but more detailed stat ement is the following: Theorem 0.1 (Roth). Let α be a real algebraic number and let ε > 0 be a real number. Then there exists a real constant C(α, ε) > 0 such that for every pair of coprime integers (p, q) with q > C (α, ε), it holds that: ⏐⏐⏐⏐α − p q ⏐⏐⏐⏐ > q −2−ε The above statement can be naturally generalised in diﬀeren t directions by considering a number ﬁeld K instead of Q and the simultaneous approximation of the elements α1, . . . , αn algebraic over K by an element of K with respect to diﬀerent valuations (see [ Lan83, Chapter 7]). Actually, the statement proved in [ Lan83, Chapter 7] holds for ﬁelds that are more general than number ﬁelds. At the moment we don’t have an eﬀective version of Roth’s theorem (i.e. a bound for the constant C(α, ε), see [ Cor95]), but we have a quantitative version (i.e. bounds, in terms of α and ε, on the number of good approximants see [ BvdP88], [ BvdP90], [ Eve97]). Let k be a ﬁeld of characteristic 0 and let Vk be a set in bijection with a family of absolute values of k. The bijection is denoted by v ↦→ | · |v, for any v ∈ V k and we don’t put any restriction on the cardinality of Vk, therefore we recall that a sum over an uncountable set is deﬁ ned to be the supremum of the sums over all ﬁnite subsets. The couple ( k, Vk) satisﬁes the product formula if for any element a ∈ k× the series ∑ v∈Vk log |a|v converges absolutely and moreover ∑ v∈",
+    "docinfo": {
+      "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+      "CreationDate": "D:20230515211512-04'00'",
+      "Creator": "LaTeX with hyperref",
+      "Title": "",
+      "Author": ""
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page": 1,
+      "source": "outline",
+      "number": "0"
+    },
+    {
+      "level": 2,
+      "title": "History",
+      "page": 1,
+      "source": "outline",
+      "number": "0.1"
+    },
+    {
+      "level": 2,
+      "title": "Results in this paper",
+      "page": 2,
+      "source": "outline",
+      "number": "0.2"
+    },
+    {
+      "level": 1,
+      "title": "Adelic curves",
+      "page": 4,
+      "source": "outline",
+      "number": "1"
+    },
+    {
+      "level": 1,
+      "title": "The interpolating polynomial",
+      "page": 7,
+      "source": "outline",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "Integral estimates",
+      "page": 8,
+      "source": "outline",
+      "number": "3"
+    },
+    {
+      "level": 1,
+      "title": "Roth's theorem for adelic curves (A)",
+      "page": 13,
+      "source": "outline",
+      "number": "4"
+    },
+    {
+      "level": 1,
+      "title": "Roth's theorem for adelic curves (B)",
+      "page": 17,
+      "source": "outline",
+      "number": "5"
+    },
+    {
+      "level": 1,
+      "title": "Appendices",
+      "page": 19,
+      "source": "outline",
+      "number": null
+    },
+    {
+      "level": 1,
+      "title": "A Construction of the interpolating polynomial",
+      "page": 19,
+      "source": "outline",
+      "number": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "page": 20,
+      "source": "outline",
+      "number": null
+    }
+  ],
+  "toc_source": "outline",
+  "sections": [
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-001-01-history",
+      "number": "0.1",
+      "title": "History",
+      "level": 2,
+      "page_start": 1,
+      "page_end": 1,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-002-02-results-in-this-paper",
+      "number": "0.2",
+      "title": "Results in this paper",
+      "level": 2,
+      "page_start": 1,
+      "page_end": 3,
+      "n_chars": 6299,
+      "n_words": 1268
+    },
+    {
+      "id": "sec-003-1-adelic-curves",
+      "number": "1",
+      "title": "Adelic curves",
+      "level": 1,
+      "page_start": 3,
+      "page_end": 7,
+      "n_chars": 16650,
+      "n_words": 3413
+    },
+    {
+      "id": "sec-004-2-the-interpolating-polynomial",
+      "number": "2",
+      "title": "The interpolating polynomial",
+      "level": 1,
+      "page_start": 7,
+      "page_end": 8,
+      "n_chars": 3060,
+      "n_words": 814
+    },
+    {
+      "id": "sec-005-3-integral-estimates",
+      "number": "3",
+      "title": "Integral estimates",
+      "level": 1,
+      "page_start": 8,
+      "page_end": 19,
+      "n_chars": 26283,
+      "n_words": 6386
+    },
+    {
+      "id": "sec-006-appendices",
+      "number": null,
+      "title": "Appendices",
+      "level": 1,
+      "page_start": 19,
+      "page_end": 19,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-007-a-construction-of-the-interpolating-polynomial",
+      "number": null,
+      "title": "A Construction of the interpolating polynomial",
+      "level": 1,
+      "page_start": 19,
+      "page_end": 20,
+      "n_chars": 3046,
+      "n_words": 719
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "page_start": 20,
+      "page_end": 21,
+      "n_chars": 2178,
+      "n_words": 332
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 11,
+    "sections": 9,
+    "chars_total": 57516
+  }
+}

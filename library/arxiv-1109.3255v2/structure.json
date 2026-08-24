@@ -1,0 +1,503 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "arxiv-1109.3255v2",
+  "source": {
+    "file": "1109.3255v2.pdf",
+    "sha256": "dd4579be8e9b7e25fe307fdb275431bdd517fb52c104263daef8f91450b8fb35",
+    "bytes": 1719884,
+    "pages": 72,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": {
+      "id": "1109.3255",
+      "version": "2",
+      "primary_class": "math.SG",
+      "stamp_date": "13 Feb 2014"
+    },
+    "doi": null,
+    "title": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE",
+    "authors_raw": "JAMES PASCALEFF",
+    "title_lines": [
+      "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE"
+    ],
+    "abstract": "We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as anticanonical divisor. These objects correspond under mirror sy mmetry to the powers of the twisting sheaf O(1), and hence their Floer cohomology groups form an algebra isomorphic to the homogeneous coordinate ring. An inter esting feature is the presence of a singular torus ﬁbration on the mirror, of which t he Lagrangians are sections. This gives rise to a distinguished basis of the Floer coho mology and the homogeneous coordinate ring parametrized by fractional inte gral points in the singular aﬃne structure on the base of the torus ﬁbration. The alg ebra structure on the Floer cohomology is computed using the symplectic techniques of Lefschetz ﬁbrations and the TQFT counting sections of such ﬁbrations. We als o show that our results agree with the tropical analog proposed by Abouzaid–G ross–Siebert. Extensions to a restricted class of singular aﬃne manifolds and to mir rors of the complements of components of the anticanonical divisor are discus sed.",
+    "docinfo": {
+      "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+      "CreationDate": "D:20140213205314-05'00'",
+      "Creator": "LaTeX with hyperref package",
+      "Title": "",
+      "Author": ""
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page": 2,
+      "source": "outline",
+      "number": "1"
+    },
+    {
+      "level": 2,
+      "title": "Summary of results",
+      "page": 2,
+      "source": "outline",
+      "number": "1.1"
+    },
+    {
+      "level": 2,
+      "title": "Context and related work",
+      "page": 5,
+      "source": "outline",
+      "number": "1.2"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "page": 10,
+      "source": "outline",
+      "number": "1.3"
+    },
+    {
+      "level": 1,
+      "title": "The fiber of W and its tropicalization",
+      "page": 11,
+      "source": "outline",
+      "number": "2"
+    },
+    {
+      "level": 2,
+      "title": "Torus fibrations on CP2 D and its mirror",
+      "page": 11,
+      "source": "outline",
+      "number": "2.1"
+    },
+    {
+      "level": 2,
+      "title": "The topology of the map W",
+      "page": 16,
+      "source": "outline",
+      "number": "2.2"
+    },
+    {
+      "level": 2,
+      "title": "Tropicalization in a singular affine structure",
+      "page": 17,
+      "source": "outline",
+      "number": "2.3"
+    },
+    {
+      "level": 1,
+      "title": "Symplectic constructions",
+      "page": 19,
+      "source": "outline",
+      "number": "3"
+    },
+    {
+      "level": 2,
+      "title": "Symplectic monodromy associated to a Hessian metric",
+      "page": 20,
+      "source": "outline",
+      "number": "3.1"
+    },
+    {
+      "level": 2,
+      "title": "Focus-focus singularities and Lefschetz singularities",
+      "page": 22,
+      "source": "outline",
+      "number": "3.2"
+    },
+    {
+      "level": 2,
+      "title": "Lagrangians fibered over paths",
+      "page": 25,
+      "source": "outline",
+      "number": "3.3"
+    },
+    {
+      "level": 1,
+      "title": "A degeneration of holomorphic triangles",
+      "page": 32,
+      "source": "outline",
+      "number": "4"
+    },
+    {
+      "level": 2,
+      "title": "Triangles as sections",
+      "page": 32,
+      "source": "outline",
+      "number": "4.1"
+    },
+    {
+      "level": 2,
+      "title": "Extending the fiber",
+      "page": 37,
+      "source": "outline",
+      "number": "4.2"
+    },
+    {
+      "level": 2,
+      "title": "Degenerating the fibration",
+      "page": 38,
+      "source": "outline",
+      "number": "4.3"
+    },
+    {
+      "level": 2,
+      "title": "Horizontal sections over a disk with one critical value",
+      "page": 40,
+      "source": "outline",
+      "number": "4.4"
+    },
+    {
+      "level": 2,
+      "title": "Polygons with fixed conformal structure",
+      "page": 44,
+      "source": "outline",
+      "number": "4.5"
+    },
+    {
+      "level": 2,
+      "title": "Signs",
+      "page": 52,
+      "source": "outline",
+      "number": "4.6"
+    },
+    {
+      "level": 1,
+      "title": "A tropical count of triangles",
+      "page": 54,
+      "source": "outline",
+      "number": "5"
+    },
+    {
+      "level": 2,
+      "title": "Tropical polygons",
+      "page": 54,
+      "source": "outline",
+      "number": "5.1"
+    },
+    {
+      "level": 2,
+      "title": "Tropical triangles for (CP2, D)",
+      "page": 58,
+      "source": "outline",
+      "number": "5.2"
+    },
+    {
+      "level": 1,
+      "title": "Parallel monodromy–invariant directions",
+      "page": 60,
+      "source": "outline",
+      "number": "6"
+    },
+    {
+      "level": 2,
+      "title": "Symplectic forms",
+      "page": 60,
+      "source": "outline",
+      "number": "6.1"
+    },
+    {
+      "level": 2,
+      "title": "Lagrangian submanifolds",
+      "page": 61,
+      "source": "outline",
+      "number": "6.2"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic and tropical triangles",
+      "page": 62,
+      "source": "outline",
+      "number": "6.3"
+    },
+    {
+      "level": 1,
+      "title": "Mirrors to divisor complements",
+      "page": 63,
+      "source": "outline",
+      "number": "7"
+    },
+    {
+      "level": 2,
+      "title": "Algebraic motivation",
+      "page": 64,
+      "source": "outline",
+      "number": "7.1"
+    },
+    {
+      "level": 2,
+      "title": "Wrapping",
+      "page": 64,
+      "source": "outline",
+      "number": "7.2"
+    },
+    {
+      "level": 2,
+      "title": "Continuation maps and products",
+      "page": 68,
+      "source": "outline",
+      "number": "7.3"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "page": 70,
+      "source": "outline",
+      "number": null
+    }
+  ],
+  "toc_source": "outline",
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "n_chars": 0,
+      "n_words": 0
+    },
+    {
+      "id": "sec-001-11-summary-of-results",
+      "number": "1.1",
+      "title": "Summary of results",
+      "level": 2,
+      "page_start": 1,
+      "page_end": 5,
+      "n_chars": 9661,
+      "n_words": 1714
+    },
+    {
+      "id": "sec-002-12-context-and-related-work",
+      "number": "1.2",
+      "title": "Context and related work",
+      "level": 2,
+      "page_start": 5,
+      "page_end": 10,
+      "n_chars": 18971,
+      "n_words": 3407
+    },
+    {
+      "id": "sec-003-13-acknowledgments",
+      "number": "1.3",
+      "title": "Acknowledgments",
+      "level": 2,
+      "page_start": 10,
+      "page_end": 11,
+      "n_chars": 723,
+      "n_words": 122
+    },
+    {
+      "id": "sec-004-2-the-fiber-of-w-and-its-tropicalization",
+      "number": "2",
+      "title": "The fiber of W and its tropicalization",
+      "level": 1,
+      "page_start": 11,
+      "page_end": 16,
+      "n_chars": 11372,
+      "n_words": 2350
+    },
+    {
+      "id": "sec-005-22-the-topology-of-the-map-w",
+      "number": "2.2",
+      "title": "The topology of the map W",
+      "level": 2,
+      "page_start": 16,
+      "page_end": 19,
+      "n_chars": 8907,
+      "n_words": 1674
+    },
+    {
+      "id": "sec-006-3-symplectic-constructions",
+      "number": "3",
+      "title": "Symplectic constructions",
+      "level": 1,
+      "page_start": 19,
+      "page_end": 20,
+      "n_chars": 1426,
+      "n_words": 255
+    },
+    {
+      "id": "sec-007-31-symplectic-monodromy-associated-to-a-hessian",
+      "number": "3.1",
+      "title": "Symplectic monodromy associated to a Hessian metric",
+      "level": 2,
+      "page_start": 20,
+      "page_end": 22,
+      "n_chars": 5941,
+      "n_words": 1160
+    },
+    {
+      "id": "sec-008-32-focus-focus-singularities-and-lefschetz-singu",
+      "number": "3.2",
+      "title": "Focus-focus singularities and Lefschetz singularities",
+      "level": 2,
+      "page_start": 22,
+      "page_end": 32,
+      "n_chars": 27856,
+      "n_words": 5110
+    },
+    {
+      "id": "sec-009-4-a-degeneration-of-holomorphic-triangles",
+      "number": "4",
+      "title": "A degeneration of holomorphic triangles",
+      "level": 1,
+      "page_start": 32,
+      "page_end": 32,
+      "n_chars": 498,
+      "n_words": 85
+    },
+    {
+      "id": "sec-010-41-triangles-as-sections",
+      "number": "4.1",
+      "title": "Triangles as sections",
+      "level": 2,
+      "page_start": 32,
+      "page_end": 40,
+      "n_chars": 21017,
+      "n_words": 3918
+    },
+    {
+      "id": "sec-011-44-horizontal-sections-over-a-disk-with-one-crit",
+      "number": "4.4",
+      "title": "Horizontal sections over a disk with one critical value",
+      "level": 2,
+      "page_start": 40,
+      "page_end": 52,
+      "n_chars": 34078,
+      "n_words": 6643
+    },
+    {
+      "id": "sec-012-46-signs",
+      "number": "4.6",
+      "title": "Signs",
+      "level": 2,
+      "page_start": 52,
+      "page_end": 54,
+      "n_chars": 4995,
+      "n_words": 893
+    },
+    {
+      "id": "sec-013-5-a-tropical-count-of-triangles",
+      "number": "5",
+      "title": "A tropical count of triangles",
+      "level": 1,
+      "page_start": 54,
+      "page_end": 54,
+      "n_chars": 1218,
+      "n_words": 197
+    },
+    {
+      "id": "sec-014-51-tropical-polygons",
+      "number": "5.1",
+      "title": "Tropical polygons",
+      "level": 2,
+      "page_start": 54,
+      "page_end": 60,
+      "n_chars": 15906,
+      "n_words": 3073
+    },
+    {
+      "id": "sec-015-6-parallel-monodromyinvariant-directions",
+      "number": "6",
+      "title": "Parallel monodromy–invariant directions",
+      "level": 1,
+      "page_start": 60,
+      "page_end": 60,
+      "n_chars": 969,
+      "n_words": 163
+    },
+    {
+      "id": "sec-016-61-symplectic-forms",
+      "number": "6.1",
+      "title": "Symplectic forms",
+      "level": 2,
+      "page_start": 60,
+      "page_end": 61,
+      "n_chars": 1470,
+      "n_words": 263
+    },
+    {
+      "id": "sec-017-62-lagrangian-submanifolds",
+      "number": "6.2",
+      "title": "Lagrangian submanifolds",
+      "level": 2,
+      "page_start": 61,
+      "page_end": 62,
+      "n_chars": 4144,
+      "n_words": 754
+    },
+    {
+      "id": "sec-018-63-holomorphic-and-tropical-triangles",
+      "number": "6.3",
+      "title": "Holomorphic and tropical triangles",
+      "level": 2,
+      "page_start": 62,
+      "page_end": 63,
+      "n_chars": 1765,
+      "n_words": 326
+    },
+    {
+      "id": "sec-019-7-mirrors-to-divisor-complements",
+      "number": "7",
+      "title": "Mirrors to divisor complements",
+      "level": 1,
+      "page_start": 63,
+      "page_end": 64,
+      "n_chars": 2337,
+      "n_words": 419
+    },
+    {
+      "id": "sec-020-71-algebraic-motivation",
+      "number": "7.1",
+      "title": "Algebraic motivation",
+      "level": 2,
+      "page_start": 64,
+      "page_end": 64,
+      "n_chars": 2113,
+      "n_words": 436
+    },
+    {
+      "id": "sec-021-72-wrapping",
+      "number": "7.2",
+      "title": "Wrapping",
+      "level": 2,
+      "page_start": 64,
+      "page_end": 68,
+      "n_chars": 9958,
+      "n_words": 1881
+    },
+    {
+      "id": "sec-022-73-continuation-maps-and-products",
+      "number": "7.3",
+      "title": "Continuation maps and products",
+      "level": 2,
+      "page_start": 68,
+      "page_end": 70,
+      "n_chars": 7231,
+      "n_words": 1341
+    },
+    {
+      "id": "sec-023-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "page_start": 70,
+      "page_end": 72,
+      "n_chars": 7490,
+      "n_words": 1146
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 31,
+    "sections": 24,
+    "chars_total": 200046
+  }
+}

@@ -1,11 +1,11 @@
 ---
 # qou-qad3
 title: Five uploads/ PDFs are un-ingested — library/ registration backlog is no longer zero
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-24T14:07:59Z
-updated_at: 2026-08-24T14:07:59Z
+updated_at: 2026-08-24T17:30:12Z
 ---
 
 `qou-9ep0` recorded the library backlog as **drained to zero**: "every library
@@ -63,3 +63,15 @@ import pypdf   # 6.16.2, works
 pypdf uses cryptography only for encrypted PDFs, so the stub is safe for these
 five. Worth putting in `pdf-structure.py` behind a try/except, or the ingestion
 step is blocked in every fresh container.
+
+Ingestion half done on branch claude/mt7r-archimedean-eval-2026-08-24 (2026-08-24).
+
+All **nine** flat PDFs are now ingested, not five — four more arrived in aa17903e09f (Smith 1006.1099v3, Pascaleff 1109.3255v2, Chanda 2301.08311v4, McLean ICM-2022 ch.5483) while this bean was open. `ls uploads/*.pdf` is now empty.
+
+Each has library/<doc-id>/ with all five artefacts (PDF moved by git mv so history survives, structure.json, sections/, candidates.json, summary.json); INDEX.md regenerated; summarize-library.py --check exits 0. 460 formalisation candidates extracted across the nine.
+
+**Your Seidel identification is confirmed** — and it was nearly lost. pdf-structure.py extracted its title as "Along exact sequence for symplectic Floer cohomology Paul Seidel": the space in "A long" was eaten and the byline ran into the title, so the paper the LES arc most wants would not have been found by searching INDEX.md for "long exact sequence". 8 of the 9 titles were wrong the same way — one predicate, folio-assistant bean gx86 has the taxonomy. All nine corrected as data against page 1; a pdf-structure.py re-run reverts them until gx86 is fixed.
+
+**Still open, and it is the half this bean names:** none of the nine has a references.ts entry yet, so the library↔bib join is still broken for them. Ingestion makes them greppable and citable; it does not register them as sources.
+
+Assessment of the four Floer papers for the qou-fngs arc is in docs/curved-dq-and-the-floer-cluster.md — the cluster is method, not content, and acting on it produced QOU.DqTwist.dq_sq_eq_curvature the same day.

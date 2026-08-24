@@ -1,0 +1,149 @@
+{
+  "_schema": "pdf-structure/v1",
+  "doc_id": "arxiv-2605.19310v1",
+  "source": {
+    "file": "2605.19310v1.pdf",
+    "sha256": "047d492babc63d2f5412bcb8a996ad1ac6091f976bbd7d31f8b76d2599811d99",
+    "bytes": 293981,
+    "pages": 10,
+    "text_source": "embedded"
+  },
+  "metadata": {
+    "arxiv": {
+      "id": "2605.19310",
+      "version": "1",
+      "primary_class": "math.CO",
+      "stamp_date": "19 May 2026"
+    },
+    "doi": null,
+    "title": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM",
+    "authors_raw": "MARK LEWKO",
+    "title_lines": [
+      "A FOURIER-FREE DENSITY-INCREMENT PROOF OF",
+      "ROTH’S THEOREM",
+      "MARK LEWKO"
+    ],
+    "abstract": "We give an elementary, Fourier-free proof of Roth’s theorem. The proof follows Roth’s original density-increment strategy, but replaces the usual Fourier-analytic step with a direct combinatorial argument involving averages over sub-progressions. 1.Introduction In 1953, Roth proved that every subset of the integers of positive upper density contains a nontrivial three-term arithmetic progression. This can be stated in the following finite form. Theorem 1(Roth [ 8]).For every α> 0, if N is sufficiently large, then every set A⊂{ 0, 1,...,N− 1} with|A|≥αN contains a three-term arithmetic progressionx, x+r, x+ 2rwithr̸= 0. Roth’s theorem is a foundational result in density Ramsey theory; its extension to longer arithmetic progressions is a celebrated theorem of Sze- mer´ edi [9]. Proofs of Roth’s theorem have been given using quite different methods: Roth’s original proof is Fourier analytic [ 8]; Furstenberg proved Szemer´ edi’s theorem in full using ergodic-theoretic methods [2]; and graph- theoretic proofs of Roth’s theorem follow from the triangle removal lemma of Ruzsa and Szemer´ edi [7]. More combinatorial proofs have also been given using Szemer´ edi’s cube lemma [4] as well as using ideas related to the more general Hales–Jewett theorem [1]. There is also a rich history of quantitative improvements, which we do not attempt to summarize here; see [ 5, 6] for recent surveys. Roth’s original proof uses a density-increment argument. Starting with a set A⊂ [N] with no nontrivial three-term progressions, one proves that A has increased density on a long subprogression. Passing to that progression and rescaling, one repeats the argument. If the original interval is sufficiently long, the density would eventually have to exceed 1, providing a contradiction. The purpose of this note is to give a proof with the same density-increment structure, but without using Fourier analysis. Instead of detecting a large Fourier coefficient, we estimate certain averages over subprogr",
+    "docinfo": {
+      "Author": "Mark Lewko",
+      "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "Producer": "pikepdf 8.15.1",
+      "Title": "A Fourier-Free Density-Increment Proof of Roth's Theorem"
+    },
+    "title_corrected": "Corrected by agent 2026-08-24 against page 1: the heuristic split title from byline on punctuation only (folio-assistant bean gx86), so single-author bylines ran into the title. A pdf-structure.py re-run will revert this until that is fixed."
+  },
+  "toc": [
+    {
+      "level": 1,
+      "title": "MARK LEWKO",
+      "page": 2,
+      "source": "inferred",
+      "number": "2"
+    },
+    {
+      "level": 1,
+      "title": "MARK LEWKO",
+      "page": 4,
+      "source": "inferred",
+      "number": "4"
+    },
+    {
+      "level": 1,
+      "title": "MARK LEWKO",
+      "page": 6,
+      "source": "inferred",
+      "number": "6"
+    },
+    {
+      "level": 1,
+      "title": "MARK LEWKO",
+      "page": 8,
+      "source": "inferred",
+      "number": "8"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "page": 9,
+      "source": "inferred",
+      "number": null
+    },
+    {
+      "level": 1,
+      "title": "MARK LEWKO",
+      "page": 10,
+      "source": "inferred",
+      "number": "10"
+    }
+  ],
+  "toc_source": "inferred",
+  "sections": [
+    {
+      "id": "sec-000-2-mark-lewko",
+      "number": "2",
+      "title": "MARK LEWKO",
+      "level": 1,
+      "page_start": 1,
+      "page_end": 4,
+      "n_chars": 5122,
+      "n_words": 862
+    },
+    {
+      "id": "sec-001-4-mark-lewko",
+      "number": "4",
+      "title": "MARK LEWKO",
+      "level": 1,
+      "page_start": 4,
+      "page_end": 6,
+      "n_chars": 3122,
+      "n_words": 570
+    },
+    {
+      "id": "sec-002-6-mark-lewko",
+      "number": "6",
+      "title": "MARK LEWKO",
+      "level": 1,
+      "page_start": 6,
+      "page_end": 8,
+      "n_chars": 3606,
+      "n_words": 637
+    },
+    {
+      "id": "sec-003-8-mark-lewko",
+      "number": "8",
+      "title": "MARK LEWKO",
+      "level": 1,
+      "page_start": 8,
+      "page_end": 9,
+      "n_chars": 3274,
+      "n_words": 544
+    },
+    {
+      "id": "sec-004-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "page_start": 9,
+      "page_end": 10,
+      "n_chars": 1035,
+      "n_words": 157
+    },
+    {
+      "id": "sec-005-10-mark-lewko",
+      "number": "10",
+      "title": "MARK LEWKO",
+      "level": 1,
+      "page_start": 10,
+      "page_end": 10,
+      "n_chars": 119,
+      "n_words": 16
+    }
+  ],
+  "diagnostics": {
+    "pages_without_text": 0,
+    "likely_scanned": false,
+    "toc_entries": 6,
+    "sections": 6,
+    "chars_total": 16278
+  }
+}

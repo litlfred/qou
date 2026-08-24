@@ -1,0 +1,52 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2605.19310v1",
+ "source_sha256": "047d492babc63d2f",
+ "brief": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM — We give an elementary, Fourier-free proof of Roth’s theorem.",
+ "extended": "**A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM**\n\n*MARK LEWKO*\n\n10 pp, 6 sections.\n\n**Abstract.** We give an elementary, Fourier-free proof of Roth’s theorem. The proof follows Roth’s original density-increment strategy, but replaces the usual Fourier-analytic step with a direct combinatorial argument involving averages over sub-progressions. 1.Introduction In 1953, Roth proved that every subset of the integers of positive upper density contains a nontrivial three-term arithmetic progression. This can be stated in the following finite form. Theorem 1(Roth [ 8]).For every α> 0, if N is sufficiently large, then every set A⊂{ 0, 1,...,N− 1} with|A|≥αN contains a three-term arithmetic progressionx, x+r, x+ 2rwithr̸= 0. Roth’s theorem is a foundational result in density Ramsey theory; its extension to longer arithmetic progressions is a celebrated theorem of Sze- mer´ edi [9].\n\n**Outline.** 2 MARK LEWKO; 4 MARK LEWKO; 6 MARK LEWKO; 8 MARK LEWKO; References; 10 MARK LEWKO\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: For every α> 0, if N is sufficiently large, then every\n- Proposition 9: Let A⊂ [N]have density α, and\n- Proposition 9: , then rescaling the progression it gives back to an interval, pro-\n- Corollary 10: There is an absolute constantC >0such that\n- Lemma 3: Let g1,g 2,g 3 :Z m →R be bounded in absolute value by an\n- Lemma 7: Assume E(f)≥βm 3, with0 <",
+ "tokens": {
+  "brief": 29,
+  "extended": 351
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-mark-lewko",
+   "title": "MARK LEWKO",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-4-mark-lewko",
+   "title": "MARK LEWKO",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-6-mark-lewko",
+   "title": "MARK LEWKO",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-003-8-mark-lewko",
+   "title": "MARK LEWKO",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-005-10-mark-lewko",
+   "title": "MARK LEWKO",
+   "pages": "10-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
