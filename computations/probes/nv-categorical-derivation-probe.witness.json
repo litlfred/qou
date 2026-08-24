@@ -1,83 +1,83 @@
 {
   "computation": "nv-categorical-derivation-probe",
-  "computedAt": "2026-08-24T07:10:55.830964+00:00",
+  "computedAt": "2026-08-24T07:33:42.531152+00:00",
   "description": "Probe for closed-form N_v ≈ factor · q_0^(90 + δ) with factor a small categorical constant and δ a clean q-rational correction.  Best fit is 120·q^(90 + h²) at -0.13% (5× better than the bare 120·q^90 at -0.58% from docs/audits/n-v-derivation-candidates.md).  Neither factor=120 nor L=90 nor δ=h² have categorical derivations; the closure is suggestive numerology pending paper-side work.",
   "N_v_target": "1445519.447193341144468823",
   "q_0": "1.1099785827513808075916690956107688798744991218736",
   "pass1_factor_search": [
     {
       "factor_name": "3! = |S_3|",
-      "factor_value": 6.0,
+      "factor_value": 6,
       "L_exact": "118.76686097989",
       "L_floor": 118,
       "L_frac": "0.766860979891"
     },
     {
       "factor_name": "4! = |S_4|",
-      "factor_value": 24.0,
+      "factor_value": 24,
       "L_exact": "105.48063526787",
       "L_floor": 105,
       "L_frac": "0.480635267871"
     },
     {
       "factor_name": "5! = |S_5|",
-      "factor_value": 120.0,
+      "factor_value": 120,
       "L_exact": "90.055804889994",
       "L_floor": 90,
       "L_frac": "0.0558048899937"
     },
     {
       "factor_name": "6! = |S_6|",
-      "factor_value": 720.0,
+      "factor_value": 720,
       "L_exact": "72.883607269149",
       "L_floor": 72,
       "L_frac": "0.883607269149"
     },
     {
       "factor_name": "|A_5| = 60",
-      "factor_value": 60.0,
+      "factor_value": 60,
       "L_exact": "96.698917746004",
       "L_floor": 96,
       "L_frac": "0.698917746004"
     },
     {
       "factor_name": "|PSL(2,7)| = 168",
-      "factor_value": 168.0,
+      "factor_value": 168,
       "L_exact": "86.831059693767",
       "L_floor": 86,
       "L_frac": "0.831059693767"
     },
     {
       "factor_name": "Mathieu M_11 = 7920",
-      "factor_value": 7920.0,
+      "factor_value": 7920,
       "L_exact": "49.902212608892",
       "L_floor": 49,
       "L_frac": "0.902212608892"
     },
     {
       "factor_name": "[5]_q! ≈ 192.0",
-      "factor_value": 131.31308484471597,
+      "factor_value": "131.31308484472",
       "L_exact": "89.192357816059",
       "L_floor": 89,
       "L_frac": "0.192357816059"
     },
     {
       "factor_name": "|S_4|·5 = 120",
-      "factor_value": 120.0,
+      "factor_value": 120,
       "L_exact": "90.055804889994",
       "L_floor": 90,
       "L_frac": "0.0558048899937"
     },
     {
       "factor_name": "|GL(2,F_3)|=48",
-      "factor_value": 48.0,
+      "factor_value": 48,
       "L_exact": "98.837522411861",
       "L_floor": 98,
       "L_frac": "0.837522411861"
     },
     {
       "factor_name": "|S_5|·[2]_q = 241.4",
-      "factor_value": 241.3076240048547,
+      "factor_value": "241.30762400485",
       "L_exact": "83.3606160629",
       "L_floor": 83,
       "L_frac": "0.3606160629"

@@ -1,6 +1,6 @@
 {
   "computation": "beta-ew-delta-I-numerical-spectrum",
-  "computedAt": "2026-08-24T07:06:43.323672+00:00",
+  "computedAt": "2026-08-23T21:00:14.095784+00:00",
   "description": "Numerical-at-q_0 spectrum extraction of β_EW(Δ_I^minimal) across all 11 partitions of 6, using PR #546's _hoefsmit_build directly at q = q_0 = Rational specialization. Avoids the symbolic-q combinatorial blowup that timed out on partitions with f_λ ≥ 5.  Tests Weinberg-angle candidate readings using the full Δ_I-coupled spectrum + invariants.",
   "reference_blocks": [
     "def:ew-interface-knot",

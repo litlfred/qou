@@ -1,9 +1,9 @@
 {
   "description": "Wenzl y_\u03bb positive-block count N(q,n) sweep across the first three metallic-ladder intervals plus bar-mirrors. Tests the owner's piecewise-on-q conjecture: if N(q,n) jumps at \u03c6 / \u03b4_silver / \u03b4_bronze and is constant within each interval, the metallic-piecewise structure is empirically confirmed at the Wenzl-weight level (necessary condition for SDP feasibility).",
-  "computed_at": "2026-08-24T10:48:52.054149+00:00",
+  "computed_at": "2026-08-23T22:56:07.264091+00:00",
   "precision_dps": 70,
   "anchors": {
-    "q_0_substrate": "1.10997858275138080759166909561",
+    "q_0_substrate": "1.1099785955541805",
     "golden_phi": "1.61803398874989484820458683437",
     "silver_delta_2": "2.41421356237309504880168872421",
     "bronze_delta_3": "3.30277563773199464655961063374"
@@ -16,8 +16,8 @@
   "sweep": {
     "interval_q0_to_phi": [
       {
-        "q": "1.11497858275138080759166909561",
-        "q_minus_qinv": "0.218100368703227079722908659354",
+        "q": "1.1149785955541805",
+        "q_minus_qinv": "0.218100391804477494619087092316",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -38,8 +38,8 @@
         }
       },
       {
-        "q": "1.1602563469330639021928434355",
-        "q_minus_qinv": "0.298377846855623012676150293863",
+        "q": "1.16025635857197271347314425767",
+        "q_minus_qinv": "0.298377867140315313693832034386",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -60,8 +60,8 @@
         }
       },
       {
-        "q": "1.20553411111474699679401777538",
-        "q_minus_qinv": "0.376026268258845869816117344363",
+        "q": "1.20553412158976492694628851534",
+        "q_minus_qinv": "0.376026285941548237517922195487",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -82,8 +82,8 @@
         }
       },
       {
-        "q": "1.25081187529643009139519211527",
-        "q_minus_qinv": "0.451331138224750265808993237701",
+        "q": "1.25081188460755714041943277301",
+        "q_minus_qinv": "0.451331153487265215546645089982",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -104,8 +104,8 @@
         }
       },
       {
-        "q": "1.29608963947811318599636645516",
-        "q_minus_qinv": "0.524538066546272922049121091985",
+        "q": "1.29608964762534935389257703068",
+        "q_minus_qinv": "0.524538079543492184791058884989",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -126,8 +126,8 @@
         }
       },
       {
-        "q": "1.34136740365979628059754079504",
-        "q_minus_qinv": "0.595859500849877871860167517863",
+        "q": "1.34136741064314156736572128835",
+        "q_minus_qinv": "0.59585951171444098010494254782",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -148,8 +148,8 @@
         }
       },
       {
-        "q": "1.38664516784147937519871513493",
-        "q_minus_qinv": "0.66548014077356005679696372008",
+        "q": "1.38664517366093378083886554602",
+        "q_minus_qinv": "0.665480149619590455835560184736",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -170,8 +170,8 @@
         }
       },
       {
-        "q": "1.43192293202316246979988947482",
-        "q_minus_qinv": "0.733561324958806704341019388457",
+        "q": "1.43192293667872599431200980369",
+        "q_minus_qinv": "0.733561331884930146211284863033",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -192,8 +192,8 @@
         }
       },
       {
-        "q": "1.47720069620484556440106381471",
-        "q_minus_qinv": "0.800244611246889012841157912734",
+        "q": "1.47720069969651820778515406136",
+        "q_minus_qinv": "0.800244616338688871914830760515",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -214,8 +214,8 @@
         }
       },
       {
-        "q": "1.52247846038652865900223815459",
-        "q_minus_qinv": "0.865654718035442260270394687966",
+        "q": "1.52247846271431042125829831903",
+        "q_minus_qinv": "0.865654721367469643010174511819",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -236,8 +236,8 @@
         }
       },
       {
-        "q": "1.56775622456821175360341249448",
-        "q_minus_qinv": "0.929901955945921335904706403078",
+        "q": "1.5677562257321026347314425767",
+        "q_minus_qinv": "0.929901957583350611939377075027",
         "hecke_scalar_integer_part": 0,
         "per_strand": {
           "n_3": {
@@ -1324,11 +1324,11 @@
     "If Wenzl jumps confirm the conjecture: regenerate the chi-* character witnesses at counterfactual q and rerun nucleus_real_sdp.py for the same sweep \u2014 true SDP-feasibility test, not just Wenzl-positivity.",
     "Connect to \u0394_\u03bb option-e v1-v7 regression: do the failing v8 fits gain a piecewise discontinuity at q = \u03c6 that the unitary v1-v7 ansatze cannot capture?"
   ],
-  "scriptHash": "c08fc8cd4dee",
+  "scriptHash": "307504a78e11",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
+  "commitSha": "539b429d89ac81504860d89609dc7c3a25d8bd0d",
   "engine": "mpmath",
-  "computedAt": "2026-08-24T10:48:53.462642+00:00",
+  "computedAt": "2026-08-23T22:56:07.342317+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",

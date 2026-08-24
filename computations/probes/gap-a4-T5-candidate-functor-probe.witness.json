@@ -10,7 +10,7 @@
       "expected": 4.0,
       "passed": true,
       "tolerance": 1e-10,
-      "source": "Young's branching Res^{S_5}_{S_3}((3,2)+(2,2,1)) = V_{(3)} ⊕ 4·V_{(2,1)} ⊕ V_{(1,1,1)} — the (2,1) multiplicity is 4 by direct Pieri-like rule application."
+      "source": "Young's branching Res^{S_5}_{S_3}((3,2)+(2,2,1)) = V_{(3)} \u2295 4\u00b7V_{(2,1)} \u2295 V_{(1,1,1)} \u2014 the (2,1) multiplicity is 4 by direct Pieri-like rule application."
     }
   ],
   "allPassed": true,
@@ -41,7 +41,7 @@
     ],
     "reproduce": "python3 -u computations/probes/gap_a4_T5_candidate_functor_probe.py"
   },
-  "description": "GAP-A-4 T5 — candidate-functor probe for s5-so3-fiber-action h⁴ gap. Tests 3 candidate functors from 5-strand (3,2)+(2,2,1) H-icosahedral component → 3-strand (2,1)/std h⁴ = −3/4. Expected outcome per the 2026-06-01 audit: all candidates FAIL by uncontrolled factors, confirming the missing-functor gap.",
+  "description": "GAP-A-4 T5 \u2014 candidate-functor probe for s5-so3-fiber-action h\u2074 gap. Tests 3 candidate functors from 5-strand (3,2)+(2,2,1) H-icosahedral component \u2192 3-strand (2,1)/std h\u2074 = \u22123/4. Expected outcome per the 2026-06-01 audit: all candidates FAIL by uncontrolled factors, confirming the missing-functor gap.",
   "auditOnly": "docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md",
   "parameters": {
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
@@ -50,7 +50,7 @@
     "discipline": "EXPLORATORY",
     "production_wired": false,
     "F1_youngs_branching": {
-      "candidate": "F1 Young's branching S_5 → S_3",
+      "candidate": "F1 Young's branching S_5 \u2192 S_3",
       "decomposition": {
         "(2, 1)": 4,
         "(3,)": 1,
@@ -59,14 +59,14 @@
       "m_standard_irrep": 4,
       "borromean_h4_ref": "-0.75",
       "candidate_normalisations_matching": [],
-      "verdict": "no candidate normalisation hits −3/4 cleanly"
+      "verdict": "no candidate normalisation hits \u22123/4 cleanly"
     },
     "F2_dimq_ratio": {
-      "candidate": "F2 dim_q ratio 2·[5]_q/[3]_q",
+      "candidate": "F2 dim_q ratio 2\u00b7[5]_q/[3]_q",
       "h4_coefficient": "-0.07407407407407407407407407407407407407407407407407407407407407407407407",
       "borromean_h4_ref": "-3/4",
       "ratio": "0.09876543209876543209876543209876543209876543209876543209876543209876543",
-      "verdict": "off by uncontrolled factor 8/81 ≈ 0.099"
+      "verdict": "off by uncontrolled factor 8/81 \u2248 0.099"
     },
     "F3_wenzl_ratio": {
       "candidate": "F3 Wenzl-weight ratio at q=1",
@@ -75,8 +75,11 @@
       "y_(2,1)_at_1": "0.6666666666666666666666666666666666666666666666666666666666666666666667",
       "summed_ratio": "0.625",
       "ratio_vs_3_4": "0.8333333333333333333333333333333333333333333333333333333333333333333333",
-      "verdict": "5/8 ≠ −3/4 in sign or magnitude — Wenzl-ratio transfer fails to hit the Borromean coefficient"
+      "verdict": "5/8 \u2260 \u22123/4 in sign or magnitude \u2014 Wenzl-ratio transfer fails to hit the Borromean coefficient"
     },
-    "synthesis_verdict": "All three candidate functors FAIL to recover the Borromean h⁴ = −3/4 from the 5-strand (3,2)+(2,2,1) H-icosahedral component: (F1) Young's branching gives m_{(2,1)} = 4 with no natural normalisation hitting −3/4; (F2) the dim_q-ratio transfer 2·[5]_q/[3]_q has h⁴ coefficient −2/27, off by uncontrolled factor 8/81; (F3) the Wenzl-weight ratio y_{(3,2)}+y_{(2,2,1)} / y_{(2,1)} = 5/8 at q=1, off in both sign and magnitude. This CONFIRMS the 2026-06-01 audit's finding that no canonical categorical functor links the 5-strand A_5 fiber action to the 3-strand H_3 Borromean Markov trace. The open object remains the categorical map identified by `conj:inter-nucleon-channel-color-tube` (K1) — the SO(3)/I level-ℓ functor on 5-strand color×nucleon space to a Wedderburn coefficient of H_3(q)."
-  }
+    "synthesis_verdict": "All three candidate functors FAIL to recover the Borromean h\u2074 = \u22123/4 from the 5-strand (3,2)+(2,2,1) H-icosahedral component: (F1) Young's branching gives m_{(2,1)} = 4 with no natural normalisation hitting \u22123/4; (F2) the dim_q-ratio transfer 2\u00b7[5]_q/[3]_q has h\u2074 coefficient \u22122/27, off by uncontrolled factor 8/81; (F3) the Wenzl-weight ratio y_{(3,2)}+y_{(2,2,1)} / y_{(2,1)} = 5/8 at q=1, off in both sign and magnitude. This CONFIRMS the 2026-06-01 audit's finding that no canonical categorical functor links the 5-strand A_5 fiber action to the 3-strand H_3 Borromean Markov trace. The open object remains the categorical map identified by `conj:inter-nucleon-channel-color-tube` (K1) \u2014 the SO(3)/I level-\u2113 functor on 5-strand color\u00d7nucleon space to a Wedderburn coefficient of H_3(q)."
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

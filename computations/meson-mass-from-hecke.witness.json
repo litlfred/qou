@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-24T10:55:47.449781+00:00",
+  "computedAt": "2026-08-23T22:56:06.184723+00:00",
   "computation": "meson-mass-from-hecke",
   "scriptFile": "meson_mass_from_hecke.py",
   "description": "Systematic probe of pion and kaon mass predictions following the same generic structure as the leptonic (CAL-2: m_\u03bc/m_e = Vol(4_1)/\u210f_q\u00b2) and hadronic (Q_\u03b2 = m_e\u00b7|q\u00b2-2q-1|\u00b7(q+1)/(2q\u00b3)) derivation instances. Tests 10+ candidate formulas for absolute m_\u03c0 and ratio m_K/m_\u03c0.",
@@ -118,7 +118,7 @@
   "allPassed": true,
   "scriptHash": "c307a7c4891a",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "commitSha": "539b429d89ac81504860d89609dc7c3a25d8bd0d",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

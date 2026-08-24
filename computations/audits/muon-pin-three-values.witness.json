@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
-  "computedAt": "2026-08-21T23:02:09.431477+00:00",
-  "commitSha": "a58efc986b261c9328bc8f8664f88bec9dea376b",
+  "engineVersion": "1.3.0",
+  "computedAt": "2026-08-23T20:52:19.978417+00:00",
+  "commitSha": "51453478504f0afd0957f3a4410bf273438ce1f9",
   "assertions": [
     {
       "name": "1_three_distinct_values",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "muon-pin-three-values",
   "scriptFile": "muon_pin_three_values_probe.py",
   "scriptHash": "ba5f7a9c836a",
-  "scriptCommitSha": "e607eee0477f652b3ff182c042bf130b503a309a",
+  "scriptCommitSha": "27ac264f8de7a499860f71c707295f8c8e7838b6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -78,9 +78,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/muon_pin_three_values_probe.py"
+    ],
+    "reproduce": "python3 -u computations/audits/muon_pin_three_values_probe.py"
   },
   "description": "Three distinct values are all called 'the muon q0' and differ at the 13th significant digit: the frozen canonical pin, the value left inside four probe witnesses by a code change that was reverted without regenerating them, and today's live q_muon_at() derivation, which has drifted again since. All three sit inside the 11.5 ppb muon-proton gap, so this is a muon-vs-muon discrepancy the anchor vocabulary cannot currently express.",
   "computation_method": "Reads A from qou_substrate.witness._q0_value_for_anchor('muon') (the committed q-pinning witness), C from qou_substrate.constants.q_muon_at(60) (the live derivation), and B from the committed muon leg of qbeta-h-frame-rungs. All separations are exact-decimal mpmath at dps=80; no float64.",

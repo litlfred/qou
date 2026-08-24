@@ -1,6 +1,6 @@
 {
   "computation": "nv-pslq-tr-pure-basis",
-  "computedAt": "2026-08-24T07:10:12.782546+00:00",
+  "computedAt": "2026-08-23T21:09:22.423929+00:00",
   "description": "Re-run of constrained PSLQ for N_v using bar-self-dual cell-content trace tr_pure(σ_1^4 σ_3^6 σ_5^8) as the structural input, replacing the demoted Plancherel-weighted N_sym from the prior basis. Tests three ansatz shapes B1/B2/B3 against CODATA-G_F precision.",
   "reference_blocks": [
     "conj:hoefsmit-ew-cell-content",

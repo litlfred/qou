@@ -69,7 +69,11 @@ The substantive content of `lem:feynman-markov-identification`: the
 Jones–Markov trace decomposes as the Markov-weighted sum of
 Specht-module partial traces. This requires massive infrastructure
 (the Wenzl-bridge decomposition) that cannot be added as a simple class
-field, so the body is `sorry` with the manuscript citation. -/
+field, so the body is `sorry` with the manuscript citation.
+
+**Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) only
+proves the classical Burnside identity for symmetric groups, not the Wenzl-bridge branching
+of the Jones-Markov trace. This remains an open gap. -/
 -- Ref: [manuscript] lem:feynman-markov-identification (Wenzl-bridge branching of tr_M)
 theorem markovTrace_branching [ctx : MarkovIdentificationContext] :
     ctx.markovTrace

@@ -54,7 +54,7 @@ for _p in (str(_HERE),
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
 from q_parameter import Q as q0
-from mass_at_3A_proper import _cached_seminormal
+from mass_at_3A_proper import _cached_seminormal, Q0_PROTON
 
 THETA0 = 109.4712
 THETA_OBS = 104.5
@@ -89,7 +89,7 @@ def main() -> None:
     block_ratios = {}
     for shape, name in [((3,), "sym V(3)"), ((2, 1), "std V(2,1)"),
                         ((1, 1, 1), "alt V(1,1,1)")]:
-        sig, dim, _ = _cached_seminormal(shape)
+        sig, dim, _ = _cached_seminormal(shape, Q0_PROTON)
         s0, s1 = sig[0], sig[1]
         bond, lone = s0, s0 @ s1 @ s0
         tb, tl = complex(np.trace(bond)), complex(np.trace(lone))

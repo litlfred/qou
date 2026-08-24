@@ -145,7 +145,17 @@ ACTIVE_TOL = 1e-9
 # zero (g_A would then be undefined).  Same scale as ACTIVE_TOL — a
 # pairing of magnitude ≤ 1e-15 is in float-roundoff territory.
 ZERO_PAIRING_TOL = 1e-15
-active_set = [int(i) for i, y in enumerate(y_star) if abs(y) > ACTIVE_TOL]
+# `y > tol`, NOT `abs(y) > tol`. A shadow price is non-negative for an
+# inequality constraint; y > 0 means TIGHT. Taking the absolute value
+# admitted NEGATIVE y as active, contradicting the comment three lines
+# up and AGENTS.md's LP-dual contract ("indices i with y_star[i] > 0").
+# Measured: y_star[1] = y_star[2] = -2.61e-08 -- solver noise, 26x above
+# ACTIVE_TOL and NEGATIVE -- grew active_set [0] -> [0,1,2]. That put 8
+# more float64 fields in the witness and tripped the raw-float64 ratchet,
+# which is why this surfaced as a precision red rather than as what it is.
+# The two sibling LP producers already use the correct form:
+# derive_e_0_lp_dual_h3.py:164 and gap_a1_binding_k_sdp_feasibility.py:151.
+active_set = [int(i) for i, y in enumerate(y_star) if y > ACTIVE_TOL]
 if not active_set:
     # Degenerate LP: fall back to the entire basis (all u* effectively 0
     # but we still need a non-empty subspace for the master formula).

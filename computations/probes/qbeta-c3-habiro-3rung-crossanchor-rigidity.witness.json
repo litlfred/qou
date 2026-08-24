@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T07:11:00.191075+00:00",
-  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
+  "computedAt": "2026-08-23T21:11:59.959605+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "c3_habiro_3rung_tracks_empirical_across_anchors",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 11,
   "computation": "qbeta-c3-habiro-3rung-crossanchor-rigidity",
   "scriptFile": "qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py",
   "scriptHash": "dfaf6bb02ed5",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -55,5 +56,8 @@
     "mismatch_factor_empirical_over_formula": 4626667.720708608,
     "tracks_across_anchors": false,
     "interpretation": "The real-q 3-rung [3]_q/25 c_3 closure swings +6.23e-07% across the two anchors while empirical c_3 swings -2.88% (ratio -2.16e-07). The formula is RIGID; it reproduces empirical c_3 only at the proton anchor (miss -2.97% at muon). This CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre element — consistent with the known impossibility of a real-q c_3=f(q) matching multiple anchors (AGENTS.md). The genuine Habiro element, if it exists, is complex-analytic / root-of-unity. Falsification test; no fit, no production change."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_muon, data.q_proton). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

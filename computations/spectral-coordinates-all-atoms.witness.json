@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:30:30.011277+00:00",
-  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
+  "computedAt": "2026-08-23T21:17:43.979877+00:00",
+  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
   "assertions": [
     {
       "name": "proton_converges",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 59,
+  "durationMs": 52,
   "computation": "spectral-coordinates-all-atoms",
   "scriptFile": "spectral_coordinates_all_atoms.py",
   "scriptHash": "51dfd095ac82",
@@ -31,7 +31,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

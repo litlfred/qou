@@ -23,7 +23,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Reference table + precision schedule for the Σ_all closed-form evaluator (sigma_all_evaluator.py). Replaces raw 4^A configuration-sum routes in the β-decay / binding-energy pipeline with a constant-time, cancellation-free evaluator. Closed form verified for A=1..6 in sigma_all_symbolic_decay.py and documented in docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769.",
+  "description": "Reference table + precision schedule for the \u03a3_all closed-form evaluator (sigma_all_evaluator.py). Replaces raw 4^A configuration-sum routes in the \u03b2-decay / binding-energy pipeline with a constant-time, cancellation-free evaluator. Closed form verified for A=1..6 in sigma_all_symbolic_decay.py and documented in docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769.",
   "auditOnly": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md",
   "q_parameter": {
     "q_at_q0": "1.10997858275138080759166909561",
@@ -32,10 +32,10 @@
     "dps_used": 60
   },
   "closed_form": {
-    "formula": "Σ_all(A) = (-1)^{A-1} · 3^{floor(A/2)} / 2^{a(A)} · (q-1)^A · (q+1)^A · (q^2+1)^{2 floor(A/2)} · (3 q^4 + 4 q^2 + 3) / q^{d(A)}",
+    "formula": "\u03a3_all(A) = (-1)^{A-1} \u00b7 3^{floor(A/2)} / 2^{a(A)} \u00b7 (q-1)^A \u00b7 (q+1)^A \u00b7 (q^2+1)^{2 floor(A/2)} \u00b7 (3 q^4 + 4 q^2 + 3) / q^{d(A)}",
     "a_exponent_rule": "a(A) = (3A+1)/2 if A odd, (3A+2)/2 if A even",
     "d_exponent_rule": "d(A) = 2A+1 if A odd, 2A+2 if A even",
-    "two_step_ratio": "Σ_all(A+2) / Σ_all(A) = 3 (q^4-1)^2 / (8 q^4)",
+    "two_step_ratio": "\u03a3_all(A+2) / \u03a3_all(A) = 3 (q^4-1)^2 / (8 q^4)",
     "two_step_ratio_at_q0": "0.0662756500478910958344052189937"
   },
   "decay_rate": {
@@ -163,7 +163,7 @@
       "max_A_safe_for_raw_sum": 339
     }
   ],
-  "closed_form_precision_claim": "The closed-form evaluator has zero catastrophic cancellation (the (q-1)^A · (q+1)^A factors are extracted symbolically). Working precision = output precision, in O(log A) multiplications. Valid for any A ≥ 1 at any mpmath dps. Constant compute time per requested digit.",
+  "closed_form_precision_claim": "The closed-form evaluator has zero catastrophic cancellation (the (q-1)^A \u00b7 (q+1)^A factors are extracted symbolically). Working precision = output precision, in O(log A) multiplications. Valid for any A \u2265 1 at any mpmath dps. Constant compute time per requested digit.",
   "pipeline_callers_updated": [
     {
       "file": "computations/full-derivation-verified.py",
@@ -174,14 +174,14 @@
     },
     {
       "file": "computations/full-derivation-verified.py",
-      "case": "A=3 tritium ³H→³He",
+      "case": "A=3 tritium \u00b3H\u2192\u00b3He",
       "before": "for config in cartesian(ch_names, repeat=3): total_3h += me_d - me_p",
       "after": "total_3h = float(sigma_all_closed(3, mp.mpf(q0)))",
       "approx_line": 277
     },
     {
       "file": "computations/full-derivation-verified.py",
-      "case": "A=6 ⁶He→⁶Li (Σ_all only; Σ_FP still enumerates)",
+      "case": "A=6 \u2076He\u2192\u2076Li (\u03a3_all only; \u03a3_FP still enumerates)",
       "before": "for config in cartesian(ch_names, repeat=6): total_6he_all += dme",
       "after": "total_6he_all = float(sigma_all_closed(6, mp.mpf(q0)))",
       "approx_line": 297
@@ -190,7 +190,7 @@
   "pipeline_callers_intentionally_unwired": [
     {
       "file": "computations/frob_filter_cancellation_test.py",
-      "reason": "Test driver for the cancellation diagnostic itself — intentionally exercises the raw config-sum path so the f64 precision-budget crossover can be measured. Wiring this to the closed form would defeat the test."
+      "reason": "Test driver for the cancellation diagnostic itself \u2014 intentionally exercises the raw config-sum path so the f64 precision-budget crossover can be measured. Wiring this to the closed form would defeat the test."
     },
     {
       "file": "computations/sigma_all_symbolic_decay.py",
@@ -203,5 +203,8 @@
   },
   "evaluator_module": "computations/sigma_all_evaluator.py",
   "audit_doc_reference": "docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769 (closed form + precision schedule)",
-  "memo_doc_reference": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md (this wiring task)"
+  "memo_doc_reference": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md (this wiring task)",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q_parameter.q_at_q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

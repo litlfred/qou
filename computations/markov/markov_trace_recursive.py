@@ -121,6 +121,31 @@ def tr_m_basis_element(perm: tuple, n: int | None = None) -> sp.Expr:
     # In that case the basis-element expansion of `rotated` via
     # HeckeElement will produce a sum of T_{w'} with ℓ(w') ≤ ℓ(rotated)
     # = ℓ(w) - 1, so recursion strictly decreases length.
+    #
+    # MEASURED 2026-08-23: THAT CASE NEVER ARISES, and the distinction
+    # matters for CORRECTNESS, not just termination. The Markov axiom
+    # `tr(α·σ_{n-2}) = z·tr(α)` needs `α ∈ H_{n-1}`; below, `z_sym`
+    # multiplies the trace of `rotated`, so if `rotated` still used
+    # σ_{n-2} the axiom would be applied outside its hypothesis. Two
+    # agents independently read this code and could not see the
+    # argument (PR #5592 declined to depend on this module for exactly
+    # this reason).
+    #
+    # It is safe because `reduced_word`'s canonical form uses the TOP
+    # generator AT MOST ONCE. Verified exhaustively — every element of
+    # S_3..S_7 (6, 24, 120, 720, 5040), max occurrence count 1, zero
+    # elements with two. So `rotated` is always free of σ_{n-2} and
+    # `α ∈ H_{n-1}` genuinely holds.
+    #
+    # The reason is the coset decomposition: S_n = ⊔_k S_{n-1}·d_k with
+    # d_k = σ_{n-2}σ_{n-3}···σ_k and ℓ(w) = ℓ(u) + ℓ(d_k), so a reduced
+    # word is a σ_{n-2}-free `u` followed by a `d_k` using it once.
+    #
+    # CAVEAT, because this is a property of the CANONICAL FORM and not
+    # of reduced words in general: braid moves change the count
+    # (`σ_1σ_2σ_1` has one σ_2, `σ_2σ_1σ_2` has two). A different
+    # canonical form would break the argument silently. If `reduced_word`
+    # is ever changed, re-run the exhaustive check before trusting this.
     E = HeckeElement.identity(n)
     for i in rotated:
         E = E.right_mul_T(i + 1)  # jet-tracker is 1-indexed

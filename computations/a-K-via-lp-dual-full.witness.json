@@ -122,7 +122,7 @@
     ],
     "reproduce": "python3 -u computations/aK_via_lp_dual_full.py"
   },
-  "description": "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_λ^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. Emits witness with all required LP-dual fields per AGENTS.md §LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
+  "description": "Item B (B.1a-rev.4) \u2014 full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/\u00b3He/\u2074He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_\u03bb^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h\u00b2, (1-h\u00b2)\u00b2) at A=2,3,4. Emits witness with all required LP-dual fields per AGENTS.md \u00a7LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
     "q0_50dps": "1.1099785955573347199",
@@ -4523,6 +4523,9 @@
     ]
   },
   "caveats": [
-    "B.1a-rev.4 PROBE-ONLY: the LP basis used here is the Wedderburn-block projector basis {π_λ : λ ⊢ n}, giving a block-DIAGONAL Frobenius Gram G_λλ' = w_λ · δ_λλ'. This is too coarse for the operator-selection LP — the duals come out DEGENERATE (y0^* = 0 for A ≥ 2; chirality dual sum diverges in the limit). The full operator-selection LP per `prop:mass-coefficient-shadow-price` requires the full Hecke algebra basis {b_i : i = 1..[n]_q!} with non-diagonal Gram G_ij = tr_M(b_i b_j). That setup is an open R&D item (per Item B audit §7c B.1a-rev.4); the present script wires the SDP-attribution path and surfaces the block-diagonal LP's degeneracy as an empirical finding."
-  ]
+    "B.1a-rev.4 PROBE-ONLY: the LP basis used here is the Wedderburn-block projector basis {\u03c0_\u03bb : \u03bb \u22a2 n}, giving a block-DIAGONAL Frobenius Gram G_\u03bb\u03bb' = w_\u03bb \u00b7 \u03b4_\u03bb\u03bb'. This is too coarse for the operator-selection LP \u2014 the duals come out DEGENERATE (y0^* = 0 for A \u2265 2; chirality dual sum diverges in the limit). The full operator-selection LP per `prop:mass-coefficient-shadow-price` requires the full Hecke algebra basis {b_i : i = 1..[n]_q!} with non-diagonal Gram G_ij = tr_M(b_i b_j). That setup is an open R&D item (per Item B audit \u00a77c B.1a-rev.4); the present script wires the SDP-attribution path and surfaces the block-diagonal LP's degeneracy as an empirical finding."
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347199",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

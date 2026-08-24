@@ -1908,5 +1908,8 @@
     "The VALUE is gauge-dependent: it varies with the germ observer pair (the corpus pins 'two independent observations' but not which two for n > 3), with lambda, and -- fatally for a many-body observable -- with the nucleon ORDERING. #4798's O(100x) gauge problem is LIVE at A >= 3.",
     "GAUGE CAVEAT ON THE GERM ITSELF: dq = q (d_q rho) rho^-1 transforms like a CONNECTION, not a tensor, under a q-DEPENDENT change of basis (dq -> B dq B^-1 + (1 - Ad(sigma))(q (d_q B) B^-1)). The seminormal basis is q-dependent, so F_q is basis-dependent; #4848 used the reduced-Burau basis and this probe the corpus seminormal basis. The additivity VERDICT is robust across both; the VALUE is not.",
     "Arithmetic: float64 in the sweep (visible cast from the exact mpf word), with an independent mpmath 40-dps re-run of R_3 at dim 11 as the control. The verdict is a 0-vs-O(1e3) question, not a 1-ppQ question. Every numeric field is written as a decimal STRING at binary64's own round-trip width (repr) -- not widened, which would read as precision the numpy sweep never had, and not narrowed, which would stop the witness reproducing."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

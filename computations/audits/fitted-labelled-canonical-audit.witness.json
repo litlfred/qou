@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:54:34.675865+00:00",
-  "commitSha": "436c2cd36d31135b2e3c9a9a22c4f3f03ac90336",
+  "computedAt": "2026-08-23T21:27:37.903027+00:00",
+  "commitSha": "38e9c6e0a4b4b5ec89b69716ea87e5a0fe31e071",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "d6e7ef2b0adc",
-  "scriptCommitSha": "fc536436dd02a83baa03f7ef28b405daff5c97c6",
+  "scriptCommitSha": "53d6e54d3249a3d0c4d164e3fd01b12bceae16ca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,9 +29,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -44,7 +45,7 @@
   "data": {
     "total_issues": 10,
     "flagged_script_count": 7,
-    "scripts_scanned": 3072,
+    "scripts_scanned": 3068,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",

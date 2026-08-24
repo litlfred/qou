@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-24T08:37:10.592409+00:00",
-  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
+  "computedAt": "2026-08-23T21:23:32.463496+00:00",
+  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
   "assertions": [
     {
       "name": "Phase-1 over-determined λ subset reaches consistency",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 139247,
+  "durationMs": 46481,
   "computation": "sublemma-2-1-A-operator-extract-h12-nn",
   "scriptFile": "sublemma_2_1_A_operator_extract_h12_nn_streamed.py",
   "scriptHash": "b3beadb042ae",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

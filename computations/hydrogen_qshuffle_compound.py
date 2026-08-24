@@ -92,7 +92,9 @@ def main() -> int:
     q_str = _load(Q_WITNESS_PATH)["derived_50_digit"]["q"]
     q = mpf(q_str)
     q_inv = mpf(1) / q
-    z_mark = mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z_mark = q ** 3 / (q ** 2 + 1)
 
     per_gen = _load(PER_GEN_PATH)
     # Tolerate both data.results (modern) and top-level results (legacy)

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-06-28T16:52:56.809907+00:00",
-  "commitSha": "39fe77c0cc6fb7eb5768f406fca0b4a06531f5a8",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T08:45:59.538280+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "L1b_He3_matches_PR1874_value",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 117,
+  "durationMs": 141,
   "computation": "gap-a4-He3-residual-probe",
   "scriptFile": "gap_a4_He3_residual_probe.py",
   "scriptHash": "bb5621701f52",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptCommitSha": "2af340cde8fe8c31061b1f64ed1cf49d1ee281bb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap_a4_He3_residual_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap_a4_He3_residual_probe.py"
   },
   "description": "GAP-A-4 §4 direction 3 probe: investigate the L1b ³He -18.15 % NEAR-MATCH (the only sub-25 % row in PR #1874's 6×3 grid).  Tests ~15 closed-form substrate quantities against the residual_ratio λ_emp/L1b = 1.2218 to see if a clean structural factor explains the gap.  No fitting; each candidate is a fixed closed-form expression at q₀.",
   "auditOnly": "docs/audits/2026-06-05-gap-a4-L1-retrospective.md",
@@ -48,8 +57,8 @@
     "candidates": [
       {
         "label": "tr_M(³He)",
-        "value_at_q0": "0.35084932189758304560735416549257556629776374225022",
-        "relative_error": "-0.71283281159243711430193246761876869067750300264409",
+        "value_at_q0": "0.68394799920112866402830210266217375619820292068776",
+        "relative_error": "-0.44019437493768401163451681570756414492554409939488",
         "verdict": "REFUTED"
       },
       {
@@ -144,8 +153,8 @@
       },
       {
         "label": "m_n / m_p",
-        "value_at_q0": "1.001378419305359804022159541589661434483228675649",
-        "relative_error": "-0.18038027364957335550991587767408035639144265469303",
+        "value_at_q0": "1.0013784194633623804094146686526361038107853971998",
+        "relative_error": "-0.18038027352024958946449029721268863748007835810276",
         "verdict": "NEAR-MATCH (<25%)"
       },
       {
@@ -160,5 +169,7 @@
       "relative_error": "0.0069795281131963799544404908723428061932473562071528"
     },
     "synthesis_verdict": "The ³He L1b residual 1.221760 is within 5 % of 'sqrt([3]_q/[2]_q)' but not exact (rel_err +0.70%).  **Filed as NUMEROLOGY**: a non-exact near-match is by definition suggestive but not derivative.  The 'fix as numerology unless derivable' discipline requires (a) cross-isotope closure under a derived per-(Z, N) exponent rule and (b) categorical identification of the factor before this can be promoted to a structural lead.  Until both, this is a coincidence and direction 3 doesn't close productively at the single-atom layer."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -33,18 +33,24 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import numpy as np
+from mpmath import mp
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from char_fast import chi_lambda_fast  # noqa: E402
+from char_fast import chi_lambda_fast_mp  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 from sublemma_2_1_deuteron_branching import (  # noqa: E402
     LR_TABLE_3_3_TO_6 as LR_TABLE,
     lr_coef,
     partitions_of,
 )
-from q_parameter import Q as Q0  # noqa: E402
+# q_parameter.Q is a Python FLOAT; Q_MP is the mpf. chi_lambda_fast_mp's
+# contract is "q_val MUST be an mpmath.mpf" — seeding it with Q makes the
+# result READ as 50-digit while carrying 53 bits, which fmt() then pads.
+from q_parameter import Q_MP as Q0  # noqa: E402
 
 
 # ── Test braid words for β_p- and β_n-position ────────────────
@@ -108,6 +114,27 @@ def build_lr_pair_index(lam: tuple, parts_3: list) -> list:
     return pairs
 
 
+_RESID_FLOOR = mp.mpf('1e-40')   # was 1e-12, a float64 artifact
+
+
+def _serialize(o):
+    """mpf -> output-precision string, recursively; exactly-integral -> int.
+
+    Applied ONCE, at the witness boundary, so every in-script consumer still
+    sees real mpf. alpha_shift's imaginary part is exactly zero on every
+    solved lambda; the old float() wrote it as -0.0, putting a raw f64 in the
+    witness for a value that is exactly 0.
+    """
+    if isinstance(o, mp.mpf):
+        n = mp.floor(o)
+        return int(n) if o == n else fmt(o)
+    if isinstance(o, dict):
+        return {k: _serialize(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_serialize(v) for v in o]
+    return o
+
+
 def solve_alpha_shift_for_lambda(
     lam: tuple,
     test_pairs: list,
@@ -131,26 +158,39 @@ def solve_alpha_shift_for_lambda(
                 "skip": f"K={K} < N={N}: not enough equations"}
 
     # Build system matrix: M[k, p] = c^λ_{μν} · χ^μ(β_1) · χ^ν(β_2)
-    M = np.zeros((K, N), dtype=complex)
-    rhs = np.zeros(K, dtype=complex)
+    M = mp.zeros(K, N)
+    rhs = mp.zeros(K, 1)
     for k, (idx_1, idx_2) in enumerate(test_pairs):
         for p, (mu, nu, c) in enumerate(pairs):
             M[k, p] = c * chi_table_p[(idx_1, mu)] * chi_table_n[(idx_2, nu)]
         rhs[k] = chi_table_lam_with_I[(idx_1, idx_2, lam)]
 
-    # Solve in least-squares sense
-    sol, residuals, rank, sv = np.linalg.lstsq(M, rhs, rcond=None)
+    # Solve in least-squares sense. mp.qr_solve is mpmath's overdetermined
+    # solver — the direct analogue of np.linalg.lstsq, at full working
+    # precision rather than float64.
+    sol, _resid = mp.qr_solve(M, rhs)
+
+    # Rank from the singular values: np.linalg.lstsq handed this back, mpmath
+    # does not, so take it from the spectrum with an explicit tolerance.
+    sv = mp.svd(M, compute_uv=False)
+    sv_max = max(sv) if len(sv) else mp.mpf(0)
+    rank_tol = max(K, N) * sv_max * mp.mpf('1e-40')
+    rank = sum(1 for x in sv if x > rank_tol)
 
     # Predicted RHS using fitted α_shift
-    pred = M @ sol
-    rel_residuals = np.abs(pred - rhs) / np.maximum(np.abs(rhs), 1e-12)
-    max_rel = float(np.max(rel_residuals))
+    pred = M * sol
+    max_rel = mp.mpf(0)
+    for k in range(K):
+        denom = max(abs(rhs[k]), _RESID_FLOOR)
+        r = abs(pred[k] - rhs[k]) / denom
+        if r > max_rel:
+            max_rel = r
 
     return {
         "lambda": list(lam),
         "support": [(list(mu), list(nu), int(c)) for mu, nu, c in pairs],
         "alpha_shift": {f"{list(mu)}|{list(nu)}": {
-            "value_re": float(sol[p].real), "value_im": float(sol[p].imag),
+            "value_re": sol[p].real, "value_im": sol[p].imag,
             "c_lr": int(c),
         } for p, (mu, nu, c) in enumerate(pairs)},
         "rank": int(rank),
@@ -158,7 +198,7 @@ def solve_alpha_shift_for_lambda(
         "n_unknowns": N,
         "max_relative_residual": max_rel,
         "system_well_posed": rank >= N,
-        "consistent_within_1e6": max_rel < 1e-6,
+        "consistent_within_1e6": max_rel < mp.mpf('1e-6'),
     }
 
 
@@ -171,13 +211,13 @@ def main() -> int:
     print("=" * 96)
 
     # Pre-compute χ^μ(β) for all test words and all μ ⊢ 3
-    print(f"\n  Pre-computing characters at q_0 = {float(Q0):.6f}...")
+    print(f"\n  Pre-computing characters at q_0 = {mp.nstr(Q0, 7)}...")
     chi_p_tab = {}    # chi_p_tab[(test_idx, μ)] = χ^μ(test_word)
     chi_n_tab = {}    # same on n side
     chi_lam_tab = {}  # chi_lam_tab[(test_idx_1, test_idx_2, λ)] = χ^λ(β_1 · I · β_2)
     for i, w in enumerate(TEST_WORDS_H3):
         for mu in parts_3:
-            chi_p_tab[(i, mu)] = chi_lambda_fast(mu, w, q_val=float(Q0))
+            chi_p_tab[(i, mu)] = chi_lambda_fast_mp(mu, w, Q0)
             chi_n_tab[(i, mu)] = chi_p_tab[(i, mu)]   # same map; placeholder
     # Compute χ^λ(β_p_test_i · I · β_n_test_j) for each pair (i, j)
     test_pairs = [(i, j) for i in range(len(TEST_WORDS_H3))
@@ -187,7 +227,7 @@ def main() -> int:
         for j, w2 in enumerate(TEST_WORDS_H3):
             comb = with_interface(w1, w2)
             for lam in parts_6:
-                chi_lam_tab[(i, j, lam)] = chi_lambda_fast(lam, comb, q_val=float(Q0))
+                chi_lam_tab[(i, j, lam)] = chi_lambda_fast_mp(lam, comb, Q0)
 
     # Solve per λ
     print(f"\n  Per-λ α_shift extraction:")
@@ -216,12 +256,12 @@ def main() -> int:
         max_rel = result["max_relative_residual"]
         if max_c >= 2:
             status = "MATRIX-VALUED (formula needs refinement)"
-        elif max_rel < 1e-6:
+        elif max_rel < mp.mpf('1e-6'):
             status = "✓ scalar α_shift consistent"
             overall_consistent.append(lam)
         else:
-            status = f"✗ rel res {max_rel:.2e} (formula inadequate)"
-        print(f"  {str(lam):<14} {N_unk:>4} {max_c:<8}  {rank:>5}  {max_rel:>12.2e}  {status}")
+            status = f"✗ rel res {mp.nstr(max_rel, 3)} (formula inadequate)"
+        print(f"  {str(lam):<14} {N_unk:>4} {max_c:<8}  {rank:>5}  {mp.nstr(max_rel, 3):>12}  {status}")
 
     print(f"\n  Summary:")
     print(f"    {len(overall_consistent)} of {len(parts_6)} λ have a consistent SCALAR α_shift")
@@ -237,7 +277,8 @@ def main() -> int:
             mu_str, nu_str = key.split("|")
             v_re = info["value_re"]
             v_im = info["value_im"]
-            v_str = f"{v_re:+.4f}{('+'+str(v_im)+'i') if abs(v_im) > 1e-10 else ''}"
+            v_str = (mp.nstr(v_re, 5)
+                     + (f"+{mp.nstr(v_im, 5)}i" if abs(v_im) > mp.mpf('1e-10') else ""))
             print(f"  {str(lam):<14} (({mu_str}), ({nu_str})){' '*(24-len(mu_str)-len(nu_str)-6)} {v_str:<28} {info['c_lr']:>4}")
 
     print(f"\n  Matrix-valued (c^λ ≥ 2) cases requiring formula refinement:")
@@ -267,7 +308,7 @@ def main() -> int:
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": float(Q0),
+            "q_0": fmt(Q0),
             "interface": "I = σ_2 - h/2 (atomic-braid pn averaged crossing)",
             "n_test_pairs": len(test_pairs),
             "n_lambda": len(parts_6),
@@ -282,7 +323,7 @@ def main() -> int:
         "n_matrix_valued": len(multiplicity_geq_2),
     }
     out = HERE / "sublemma-2-1-alpha-shift-extract.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out.write_text(json.dumps(_serialize(witness), indent=2))
     print(f"\n  Witness: {out}")
     return 0
 

@@ -74,7 +74,7 @@
       "within_1ppQ": true
     }
   ],
-  "scope": "(a) — independent third method for the L1 color-weighted atomic trace; no AME input; no fit; nothing wired.",
+  "scope": "(a) \u2014 independent third method for the L1 color-weighted atomic trace; no AME input; no fit; nothing wired.",
   "assertions": [
     {
       "label": "all 6 atoms agree with peel at 1ppQ (rel < 1e-15)",
@@ -90,5 +90,8 @@
   "scriptCommitSha": "unknown",
   "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
   "durationMs": 0,
-  "scriptFile": "cross_check_trM_cw_seminormal_leg.py"
+  "scriptFile": "cross_check_trM_cw_seminormal_leg.py",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q_pin.value). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -9,7 +9,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
+from _precision import set_compute_dps, fmt  # noqa: E402 — raise dps before any mpmath value
 del _sys, _Path, _bridge
 
 # polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
@@ -203,6 +203,31 @@ def scaling_function(shape, Z, N, A):
         return T * (T + 1) / A_mpf
 
 
+def _exact(x):
+    """Collapse an exactly-integral mpf to a Python int, leave the rest alone.
+
+    S_lambda is A (a nucleon count) in the short-range branch and T(T+1)/A in
+    the long-range one.  The first is exactly an integer; the old float64 cast
+    wrote it as 2.0 / 4.0 and put a raw f64 into the witness for no gain.
+    """
+    if isinstance(x, int):
+        return x
+    n = mp.floor(x)
+    return int(n) if x == n else x
+
+
+def _serialize(o):
+    """mpf -> output-precision string, recursively. Applied ONCE, at the
+    witness boundary, so every in-script consumer still sees real mpf."""
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, dict):
+        return {k: _serialize(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_serialize(v) for v in o]
+    return o
+
+
 def shadow_price_total(Z, N, q=Q0, partition_filter=None):
     """B = Σ_λ C_λ(q) · S_λ(Z, N, A)."""
     A = Z + N
@@ -221,17 +246,21 @@ def shadow_price_total(Z, N, q=Q0, partition_filter=None):
         contrib = c_lambda * S
         total += contrib
         if abs(contrib) > mp.mpf('1e-12'):
-            contributions.append({
+            # Sort on the mpf, serialize after — reading the serialized value
+            # back for the sort key was what forced the float64 cast here.
+            contributions.append((abs(contrib), {
                 "shape": list(shape),
                 "height": len(shape),
                 "content_sum": content_sum(shape),
                 "self_conjugate": is_self_conjugate(shape),
-                "C_lambda": float(c_lambda),
-                "S_lambda": float(S),
-                "contribution": float(contrib),
-            })
-    contributions.sort(key=lambda r: abs(r["contribution"]), reverse=True)
-    return float(total), contributions
+                "C_lambda": c_lambda,
+                # S_lambda is a nucleon count or a T(T+1)/A ratio — exact when
+                # integral, so it must not be flattened to float64.
+                "S_lambda": _exact(S),
+                "contribution": contrib,
+            }))
+    contributions.sort(key=lambda t: t[0], reverse=True)
+    return total, [r for _, r in contributions]
 
 
 def isospin_mirror_test(label_a, Z_a, N_a, label_b, Z_b, N_b):
@@ -246,9 +275,9 @@ def isospin_mirror_test(label_a, Z_a, N_a, label_b, Z_b, N_b):
     dt_b = time.time() - t0
     diff = tot_a - tot_b
     rel = abs(diff) / max(abs(tot_a), abs(tot_b), 1e-30)
-    print(f"  {label_a}: B_shadow = {tot_a:+.6e}  ({dt_a:.2f}s)")
-    print(f"  {label_b}: B_shadow = {tot_b:+.6e}  ({dt_b:.2f}s)")
-    print(f"  diff      = {diff:+.6e}  ({100 * rel:.4f}% relative)")
+    print(f"  {label_a}: B_shadow = {mp.nstr(tot_a, 7)}  ({dt_a:.2f}s)")
+    print(f"  {label_b}: B_shadow = {mp.nstr(tot_b, 7)}  ({dt_b:.2f}s)")
+    print(f"  diff      = {mp.nstr(diff, 7)}  ({mp.nstr(100 * rel, 5)}% relative)")
     return tot_a, tot_b, diff, rel
 
 
@@ -278,9 +307,9 @@ if __name__ == "__main__":
         try:
             tot, contribs = shadow_price_total(Z, N)
             dt = time.time() - t0
-            print(f"  {label}: B_shadow = {tot:+.6e}  "
+            print(f"  {label}: B_shadow = {mp.nstr(tot, 7)}  "
                   f"(top contrib partition = {contribs[0]['shape']} → "
-                  f"{contribs[0]['contribution']:+.3e}, "
+                  f"{contribs[0]['contribution']}, "
                   f"{len(contribs)} non-trivial λ, {dt:.2f}s)")
             results[label] = {
                 "Z": Z, "N": N,
@@ -302,12 +331,12 @@ if __name__ == "__main__":
         tot_3He = He3["B_shadow"]
         diff = tot_T - tot_3He
         rel = abs(diff) / max(abs(tot_T), abs(tot_3He), 1e-30) * 100
-        print(f"  T:   B_shadow = {tot_T:+.6e}")
-        print(f"  ³He: B_shadow = {tot_3He:+.6e}")
-        print(f"  diff = {diff:+.6e}  ({rel:.4f}% relative)")
+        print(f"  T:   B_shadow = {mp.nstr(tot_T, 7)}")
+        print(f"  ³He: B_shadow = {mp.nstr(tot_3He, 7)}")
+        print(f"  diff = {mp.nstr(diff, 7)}  ({mp.nstr(rel, 5)}% relative)")
         print()
         # Decompose the difference per content class
-        c_diff = {0: 0.0, 1: 0.0, -1: 0.0, 2: 0.0, -2: 0.0}
+        c_diff = {c: mp.mpf(0) for c in (0, 1, -1, 2, -2)}
         for r in T["top_5_contributions"]:
             c = r["content_sum"]
             if c in c_diff: c_diff[c] += r["contribution"]
@@ -316,11 +345,11 @@ if __name__ == "__main__":
             if c in c_diff: c_diff[c] -= r["contribution"]
         print(f"  Per-content-class T − ³He breakdown:")
         for c in sorted(c_diff):
-            if abs(c_diff[c]) > 1e-12:
-                print(f"    c = {c:+d}: {c_diff[c]:+.4e}")
+            if abs(c_diff[c]) > mp.mpf('1e-12'):
+                print(f"    c = {c:+d}: {mp.nstr(c_diff[c], 5)}")
         print()
         print(f"  CODATA T − ³He    = +0.019 MeV")
-        print(f"  Shadow-price diff = {diff:+.4e} (Hecke units, "
+        print(f"  Shadow-price diff = {mp.nstr(diff, 5)} (Hecke units, "
               f"unscaled by m_e and E_0 calibration)")
 
     witness = {
@@ -349,7 +378,7 @@ if __name__ == "__main__":
                 "(coarse — exact via Hoefsmit available in pyhecke)."
             ),
         },
-        "results": results,
+        "results": _serialize(results),
     }
     out = Path(__file__).parent / "paper-six-term-shadow-price-sweep.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))

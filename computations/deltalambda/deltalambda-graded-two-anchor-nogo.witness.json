@@ -1,79 +1,82 @@
 {
- "engine": "mpmath",
- "engineVersion": "mpmath 1.3.0",
- "computedAt": "2026-08-24T10:52:02.612101+00:00",
- "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
- "scriptFile": "computations/deltalambda/deltalambda_graded_two_anchor_nogo_probe.py",
- "scriptHash": "f7f5da7d8ed4",
- "assertions": [
-  {
-   "name": "step_lock_q4_ge_4_all_q_ge_1",
-   "computed": "True",
-   "expected": "True",
-   "passed": true,
-   "source": "[4]_q - 4 = (q-1)(q^2+2q+3) ≥ 0 on q≥1 (exact, 40dps); the A=3→A=4 graded step is q-locked ≥ 4 for every admissible substrate q — no q≥1 flattens it"
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T20:43:49.936694+00:00",
+  "commitSha": "7adbb33eaa4f092ac5c4d8ad585a6e577e172b46",
+  "scriptFile": "computations/deltalambda/deltalambda_graded_two_anchor_nogo_probe.py",
+  "scriptHash": "f7f5da7d8ed4",
+  "assertions": [
+    {
+      "name": "step_lock_q4_ge_4_all_q_ge_1",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "[4]_q - 4 = (q-1)(q^2+2q+3) \u2265 0 on q\u22651 (exact, 40dps); the A=3\u2192A=4 graded step is q-locked \u2265 4 for every admissible substrate q \u2014 no q\u22651 flattens it"
+    },
+    {
+      "name": "graded_step_exceeds_data_step_all_q_ge_1",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "data step \u03c1_strong(4)/\u03c1_strong(3)=3.41785564415 < 4 \u2264 [4]_q for all q\u22651 ([4]_q0=4.70958296244); the graded step overshoots the data step at every q\u22651"
+    },
+    {
+      "name": "single_knob_moves_both_anchors_up",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "q \u21a6 [3]_q and q \u21a6 [3]_q\u00b7[4]_q are BOTH strictly increasing on [1,\u221e) (dense sweep) \u2014 the single knob q cannot push the (under-shot) A=3 ratio up while pushing the (over-shot) A=4 ratio down: one knob cannot do both"
+    },
+    {
+      "name": "two_anchor_nogo_reach3_forces_overshoot4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "\u2200 q\u22651: [3]_q \u2265 \u03c1_strong(3)=3.8128 \u21d2 [3]_q\u00b7[4]_q \u2265 \u03c1_strong(3)\u00b74 = 15.2512 > 13.0316 = \u03c1_strong(4). First q reaching A=3: q=1.26; there \u03c1_grad(4)=22.5006724576 (overshoot). No single-knob graded dim lands both anchors."
+    },
+    {
+      "name": "bound_product_exceeds_rho4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "\u03c1_strong(3)\u00b74 = 15.2512 > 13.0316 = \u03c1_strong(4): the no-go margin is 2.2196 MeV-ratio, strictly positive"
+    },
+    {
+      "name": "su4_row_restriction_vacuous_for_A_le_4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "every partition of A\u22644 has \u22644 parts \u21d2 the SU(4) row-restriction \u2113(\u03bb)\u22644 removes NO partition for the light nuclei; it cannot supply the A=3\u2192A=4 damping (scope-(b) elimination of the SU(4)-locality damping candidate)"
+    }
+  ],
+  "allPassed": true,
+  "description": "\u0394_\u03bb magnitude graded-dimension TWO-ANCHOR NO-GO (W5, formalize-first): the single-knob q-scaled coinvariant graded dimension [A]_q! cannot land both light-nucleus anchors \u2014 step-locked \u22654, monotone in q, reaching A=3 forces A=4 overshoot. Companion to Lean JetFiltrationTwoAnchorNoGo. scope-(b) invariants (S)/(M) AME-independent; (N) uses targets as bounds only.",
+  "parameters": {
+    "q0": "1.10997859555733471",
+    "rho_strong3": "3.8128",
+    "rho_strong4": "13.0316"
   },
-  {
-   "name": "graded_step_exceeds_data_step_all_q_ge_1",
-   "computed": "True",
-   "expected": "True",
-   "passed": true,
-   "source": "data step ρ_strong(4)/ρ_strong(3)=3.41785564415 < 4 ≤ [4]_q for all q≥1 ([4]_q0=4.70958296244); the graded step overshoots the data step at every q≥1"
+  "data": {
+    "q0": "1.10997859555733471",
+    "qbr3_q0": "3.34203107815",
+    "qbr4_q0": "4.70958296244",
+    "rho_grad3_q0": "3.34203107815",
+    "rho_grad4_q0": "15.7395726256",
+    "rho_strong3": "3.8128",
+    "rho_strong4": "13.0316",
+    "data_step_T4_over_T3": "3.4178556",
+    "graded_step_q4_q0": "4.709583",
+    "nogo_bound_rho3_times_4": "15.2512"
   },
-  {
-   "name": "single_knob_moves_both_anchors_up",
-   "computed": "True",
-   "expected": "True",
-   "passed": true,
-   "source": "q ↦ [3]_q and q ↦ [3]_q·[4]_q are BOTH strictly increasing on [1,∞) (dense sweep) — the single knob q cannot push the (under-shot) A=3 ratio up while pushing the (over-shot) A=4 ratio down: one knob cannot do both"
+  "precisionMetadata": {
+    "dps": 60
   },
-  {
-   "name": "two_anchor_nogo_reach3_forces_overshoot4",
-   "computed": "True",
-   "expected": "True",
-   "passed": true,
-   "source": "∀ q≥1: [3]_q ≥ ρ_strong(3)=3.8128 ⇒ [3]_q·[4]_q ≥ ρ_strong(3)·4 = 15.2512 > 13.0316 = ρ_strong(4). First q reaching A=3: q=1.26; there ρ_grad(4)=22.5006724576 (overshoot). No single-knob graded dim lands both anchors."
-  },
-  {
-   "name": "bound_product_exceeds_rho4",
-   "computed": "True",
-   "expected": "True",
-   "passed": true,
-   "source": "ρ_strong(3)·4 = 15.2512 > 13.0316 = ρ_strong(4): the no-go margin is 2.2196 MeV-ratio, strictly positive"
-  },
-  {
-   "name": "su4_row_restriction_vacuous_for_A_le_4",
-   "computed": "True",
-   "expected": "True",
-   "passed": true,
-   "source": "every partition of A≤4 has ≤4 parts ⇒ the SU(4) row-restriction ℓ(λ)≤4 removes NO partition for the light nuclei; it cannot supply the A=3→A=4 damping (scope-(b) elimination of the SU(4)-locality damping candidate)"
-  }
- ],
- "allPassed": true,
- "description": "Δ_λ magnitude graded-dimension TWO-ANCHOR NO-GO (W5, formalize-first): the single-knob q-scaled coinvariant graded dimension [A]_q! cannot land both light-nucleus anchors — step-locked ≥4, monotone in q, reaching A=3 forces A=4 overshoot. Companion to Lean JetFiltrationTwoAnchorNoGo. scope-(b) invariants (S)/(M) AME-independent; (N) uses targets as bounds only.",
- "parameters": {
-  "q0": "1.10997859555733471",
-  "rho_strong3": "3.8128",
-  "rho_strong4": "13.0316"
- },
- "data": {
-  "q0": "1.10997859555733471",
-  "qbr3_q0": "3.34203107815",
-  "qbr4_q0": "4.70958296244",
-  "rho_grad3_q0": "3.34203107815",
-  "rho_grad4_q0": "15.7395726256",
-  "rho_strong3": "3.8128",
-  "rho_strong4": "13.0316",
-  "data_step_T4_over_T3": "3.4178556",
-  "graded_step_q4_q0": "4.709583",
-  "nogo_bound_rho3_times_4": "15.2512"
- },
- "precisionMetadata": {
-  "dps": 60
- },
- "caveats": [
-  "ρ_strong(3), ρ_strong(4) are DERIVED-ELSEWHERE comparison targets (jet-filtration witness / #3986/#3990); consumed as bounds, never inverted. No fit; nothing wired.",
-  "Invariants (S) step-lock and (M) monotonicity are q-independent / AME-independent (scope-(b), proved sorry-free in the companion Lean). (N) is a comparison no-go."
- ],
- "auditOnly": "docs/audits/2026-07-25-deltalambda-perpair-bond-scalar.md"
+  "caveats": [
+    "\u03c1_strong(3), \u03c1_strong(4) are DERIVED-ELSEWHERE comparison targets (jet-filtration witness / #3986/#3990); consumed as bounds, never inverted. No fit; nothing wired.",
+    "Invariants (S) step-lock and (M) monotonicity are q-independent / AME-independent (scope-(b), proved sorry-free in the companion Lean). (N) is a comparison no-go."
+  ],
+  "auditOnly": "docs/audits/2026-07-25-deltalambda-perpair-bond-scalar.md",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0, parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -75,7 +75,7 @@
     ],
     "reproduce": "python3 -u computations/probes/nastokes_germ_root_vector_gauge_probe.py"
   },
-  "description": "Bean qou-prjo. Resolves the gauge under-determination reported by PR #4798 for the transverse NA-Stokes surface-curvature pairing on the deuteron (σ₁³/trefoil) Seifert surface. Two corpus conventions — the germ (def:germ-commutator-q-curvature: δq is a germ-level increment of q, i.e. the logarithmic q-derivative) and the transport (Yekutieli path-ordering + Seifert bands↔letters) — fix both gauges. The q-derivative germs are q-independent constants (H−2E, −H); their commutator F_q = −4E is a pure root vector of the ρ(σ₁) torus with Ad(σ₁)F_q = −q²F_q, so every transported curvature is a scalar multiple of one element and the pairing vanishes for EVERY intersection form and EVERY handle-exponent assignment (checked exhaustively over 49 pairs). Determined c₂ = 0, not the g₂ ≈ 1.0087 that would close the deuteron. scope-(b) structural exclusion restricted to single-generator (2,L)-torus channels; A ≥ 3 multi-generator remains scope-(a) open. Lean (sorry-free): QOU/MassTheory/GermRootVectorGaugeFixing.lean. 0 free parameters; g₂ used only for the post-hoc comparison, never inverted.",
+  "description": "Bean qou-prjo. Resolves the gauge under-determination reported by PR #4798 for the transverse NA-Stokes surface-curvature pairing on the deuteron (\u03c3\u2081\u00b3/trefoil) Seifert surface. Two corpus conventions \u2014 the germ (def:germ-commutator-q-curvature: \u03b4q is a germ-level increment of q, i.e. the logarithmic q-derivative) and the transport (Yekutieli path-ordering + Seifert bands\u2194letters) \u2014 fix both gauges. The q-derivative germs are q-independent constants (H\u22122E, \u2212H); their commutator F_q = \u22124E is a pure root vector of the \u03c1(\u03c3\u2081) torus with Ad(\u03c3\u2081)F_q = \u2212q\u00b2F_q, so every transported curvature is a scalar multiple of one element and the pairing vanishes for EVERY intersection form and EVERY handle-exponent assignment (checked exhaustively over 49 pairs). Determined c\u2082 = 0, not the g\u2082 \u2248 1.0087 that would close the deuteron. scope-(b) structural exclusion restricted to single-generator (2,L)-torus channels; A \u2265 3 multi-generator remains scope-(a) open. Lean (sorry-free): QOU/MassTheory/GermRootVectorGaugeFixing.lean. 0 free parameters; g\u2082 used only for the post-hoc comparison, never inverted.",
   "auditOnly": true,
   "parameters": {
     "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
@@ -104,8 +104,11 @@
     }
   },
   "caveats": [
-    "scope-(b) STRUCTURAL EXCLUSION restricted to single-generator (2,L)-torus channels. Cited invariant: the Ad(rho(sigma_1))-eigenvector property of the germ q-curvature. Multi-generator words (A >= 3) are NOT excluded — there the transports involve both generators and the eigenvector property fails; that case remains scope-(a) open.",
+    "scope-(b) STRUCTURAL EXCLUSION restricted to single-generator (2,L)-torus channels. Cited invariant: the Ad(rho(sigma_1))-eigenvector property of the germ q-curvature. Multi-generator words (A >= 3) are NOT excluded \u2014 there the transports involve both generators and the eigenvector property fails; that case remains scope-(a) open.",
     "'sorry-free != derived' seam: the step d_q sigma_i = ds_i is entrywise differentiation done by hand (sympy checks it here; Lean takes ds_i as supplied data). Everything downstream of it is machine-checked.",
     "Every symbolic result is q-INDEPENDENT, so the q0 pin does not affect the conclusion; the experimental proton anchor is recorded for layer purity."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

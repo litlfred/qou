@@ -231,5 +231,8 @@
   "caveats": [
     "U(1)_framing -> hypercharge is NOT derived. q^{w.c} is a real framing FACTOR (Im(q0)=0 at observable level). A framing factor EXISTING is not a hypercharge assignment: writhe w is an integer braid invariant, Y is a continuous charge, and NO canonical map writhe->Y is supplied. The per-crossing coupling c is SET to 1 (not fitted); choosing c to make (f_pp - f_nn) reproduce m_n-m_p would be exactly the fit the discipline review catches. The PDG m_n-m_p is reported ONLY as a falsification reference. The framing U(1) is LIVE on the linked channel (writhe +-2 != 0), unlike the writhe-0 Borromean baryon -- so the channel DOES carry a nontrivial U(1), but its identification with hypercharge remains UNDEFINED.",
     "Provenance discipline: the braid word sigma_1^{+-2} is the Hopf link T(2,+-2), DERIVED as the minimal non-Brunnian 2-component link of the fermion-boson-knot-link.md boson/link sector, with the +-sign fixed by matter/antimatter chirality. It is NOT chosen to make tr_M or the framing factor hit m_n-m_p, B_AME, hypercharge, or any h^k. The s5-so3 audit's production writhe pp=+1/nn=-1 is the LINKING NUMBER of this Hopf link (lk = +-1); the full-diagram writhe is +-2. Both reported raw."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

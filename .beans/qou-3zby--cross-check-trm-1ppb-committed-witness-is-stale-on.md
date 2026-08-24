@@ -226,3 +226,26 @@ colour-weighted exact methods. That is a **convention** failure, not a
 precision one, and closing it needs peel and chi on one convention
 (`qou-cds2`, blocked on the Gram singularity under D). No amount of work on
 this bean's other legs will make the gate green.
+
+---
+
+**Independently corroborated on PR #5519** (/prepare-merge, 2026-08-23,
+base 6e16716558). Same inherited exit 1, reached from a different branch
+and a different container: `cross_check_trM_1ppb.py --strict` reports
+6 atoms compared, 0 certified at 1 ppQ, 6 divergent. `origin/main`'s
+committed copy already records `allPassed: false`, and the regenerated
+assertions are byte-identical to it -- only computedAt / commitSha /
+durationMs moved. So the gate is red on main, not on either branch, and
+the numbers have not drifted further since qou-3zby was opened.
+
+**Second, separable point for whoever drains this** -- prepare-merge
+§1·a runs this producer with `--strict` and then stages the witness.
+That flag is recorded: `invocation.argv` gains `"--strict"` and
+`invocation.reproduce` becomes
+`python3 -u computations/cross_check_trM_1ppb.py --strict`, which is not
+how the committed copy was produced. Following the loop verbatim
+therefore commits a provenance change nobody intended, on a witness
+whose substantive fields did not move. I reverted it here rather than
+commit it. `precision-gates.sh` already treats `invocation` as ephemeral
+and auto-reverts on that basis, so the two disagree about whether the
+field is worth committing; worth reconciling when this bean is worked.

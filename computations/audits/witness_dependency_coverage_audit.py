@@ -96,15 +96,35 @@ def scan_witnesses(root: Path) -> dict:
         except (json.JSONDecodeError, UnicodeDecodeError):
             continue
 
-        # Check for upstream_witness_hashes in any of the common locations
+        # Check for upstream_witness_hashes in any of the common locations.
+        #
+        # `data.upstream_witness_hashes` was MISSING from this list until
+        # 2026-08-23, and it is where `qou_substrate.witness.record_upstream`
+        # actually writes -- i.e. the canonical location, and the one the
+        # 122 producers using that helper populate. Measured over 3045
+        # witnesses: 235 carry `data.upstream_witness_hashes`, 2 carry the
+        # top-level key. So this audit reported coverage of 2 (0.1%) against
+        # a true 235 (7.7%) -- under-reporting by two orders of magnitude,
+        # and reporting near-total absence of a mechanism that is in fact
+        # adopted by hundreds of producers.
+        #
+        # Found while asking why nothing flagged borromean-per-lambda-fr-probe
+        # as stale after its y_lambda input moved convention C -> D.
         has_upstream = False
-        for key in ("upstream_witness_hashes", "derivation_inputs"):
-            if key in data:
-                val = data[key]
-                if key == "derivation_inputs" and isinstance(val, dict):
-                    has_upstream = "upstream_witness_hashes" in val
-                elif isinstance(val, list) and len(val) > 0:
-                    has_upstream = True
+        for getter in (
+            lambda d: d.get("upstream_witness_hashes"),
+            lambda d: (d.get("data") or {}).get("upstream_witness_hashes")
+            if isinstance(d.get("data"), dict) else None,
+            lambda d: (d.get("derivation_inputs") or {}).get(
+                "upstream_witness_hashes")
+            if isinstance(d.get("derivation_inputs"), dict) else None,
+        ):
+            try:
+                val = getter(data)
+            except Exception:
+                val = None
+            if val:
+                has_upstream = True
                 break
 
         if has_upstream:

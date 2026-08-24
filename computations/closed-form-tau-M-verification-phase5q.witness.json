@@ -1,50 +1,29 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:30:02.072258+00:00",
-  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
+  "computedAt": "2026-05-20T19:27:07.342245+00:00",
+  "commitSha": "18ad1576e2b3499e1485f5c5c5f677e2bfed7a0b",
   "assertions": [
     {
       "name": "closed_form_tau_M_matches_empirical",
-      "computed": 3.565752305786425e-50,
+      "computed": 1.0856285069348198e-49,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-12,
       "unit": "dimensionless",
-      "source": "Phase 5q: max relative error between empirical tr_M(𝓑_K) and the closed-form prediction across 4 atoms at q_0.  Identity holds at mpfr-50-dps precision if max rel.err < 1e-12."
+      "source": "Phase 5q: max relative error between empirical tr_M(\ud835\udcd1_K) and the closed-form prediction across 4 atoms at q_0.  Identity holds at mpfr-50-dps precision if max rel.err < 1e-12."
     }
   ],
   "allPassed": true,
-  "durationMs": 604441,
+  "durationMs": 1646524,
   "computation": "closed-form-tau-M-verification-phase5q",
   "scriptFile": "closed_form_tau_M_verification_phase5q.py",
-  "scriptHash": "b492312ff2aa",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
-  "precisionMetadata": {
-    "compute_dps": 70,
-    "output_dps": 60,
-    "guard_digits": 10,
-    "truncation_bound": "1e-60"
-  },
-  "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
-  },
-  "invocation": {
-    "argv": [
-      "computations/closed_form_tau_M_verification_phase5q.py"
-    ],
-    "reproduce": "python3 -u computations/closed_form_tau_M_verification_phase5q.py"
-  },
-  "description": "Phase 5q: empirical verification of the combined Phase 5c.1 (interface-knot Markov-axiom factor) + Phase 5l (constit-side disjoint-product) closed form for tr_M(𝓑_K) across D, T, ³He, ⁴He at q_0.  Compares the full y_λ · χ_λ pipeline at H_{3A} (expensive) against tr_M^3(𝓑_p)^Z · tr_M^3(𝓑_n)^N · ∏_i f_i(q) (closed form, evaluated through `closed_form_tau_M.py`).  Verification unblocks the migration of 4 production tr_M scripts (cheat-sheet §5 action #4).",
+  "scriptHash": "880897369499",
+  "scriptCommitSha": "18ad1576e2b3499e1485f5c5c5f677e2bfed7a0b",
+  "description": "Phase 5q: empirical verification of the combined Phase 5c.1 (interface-knot Markov-axiom factor) + Phase 5l (constit-side disjoint-product) closed form for tr_M(\ud835\udcd1_K) across D, T, \u00b3He, \u2074He at q_0.  Compares the full y_\u03bb \u00b7 \u03c7_\u03bb pipeline at H_{3A} (expensive) against tr_M^3(\ud835\udcd1_p)^Z \u00b7 tr_M^3(\ud835\udcd1_n)^N \u00b7 \u220f_i f_i(q) (closed form, evaluated through `closed_form_tau_M.py`).  Verification unblocks the migration of 4 production tr_M scripts (cheat-sheet \u00a75 action #4).",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
   "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
     "atoms": [
       "D",
       "T",
@@ -53,96 +32,91 @@
     ]
   },
   "data": {
-    "tau_M_proton_H3": 1.3215929842373446,
-    "tau_M_neutron_H3": 1.257557904696312,
+    "tau_M_proton_H3": 1.220362889086693,
+    "tau_M_neutron_H3": 1.194862425772554,
     "per_atom_results": [
       {
         "atom": "D",
         "Z": 1,
         "N": 1,
-        "tau_M_empirical": 1.018275082693848,
-        "tau_M_empirical_str": "1.01827508269384793779655141041",
-        "tau_M_closed_form": 1.018275082693848,
-        "tau_M_closed_form_str": "1.01827508269384793779655141041",
-        "rel_err": 7.874389019776641e-51,
-        "interface_ratio": 0.6126880371464652,
+        "tau_M_empirical": 0.7280918153466761,
+        "tau_M_empirical_str": "0.7280918153466761555460727563",
+        "tau_M_closed_form": 0.7280918153466761,
+        "tau_M_closed_form_str": "0.7280918153466761555460727563",
+        "rel_err": 4.955738112378626e-50,
+        "interface_ratio": 0.49932033403359827,
         "interface_census": {
           "positive": 1,
           "negative": 0,
           "averaged": 0,
           "total": 1
         },
-        "wall_seconds_empirical": 0.0050046443939208984,
-        "wall_seconds_closed": 3.7670135498046875e-05,
-        "speedup_factor": 132.85443037974684
+        "wall_seconds_empirical": 0.004050493240356445,
+        "wall_seconds_closed": 3.600120544433594e-05,
+        "speedup_factor": 112.50993377483444
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
-        "tau_M_empirical": 0.516861415389026,
-        "tau_M_empirical_str": "0.516861415389025916941873679779",
-        "tau_M_closed_form": 0.516861415389026,
-        "tau_M_closed_form_str": "0.516861415389025916941873679779",
-        "rel_err": 1.809900334363652e-50,
-        "interface_ratio": 0.2472978867480346,
+        "tau_M_empirical": 0.25251737283574177,
+        "tau_M_empirical_str": "0.25251737283574177211823914057",
+        "tau_M_closed_form": 0.25251737283574177,
+        "tau_M_closed_form_str": "0.25251737283574177211823914057",
+        "rel_err": 7.4091349678406025e-50,
+        "interface_ratio": 0.14493272617026592,
         "interface_census": {
           "positive": 1,
           "negative": 1,
           "averaged": 0,
           "total": 2
         },
-        "wall_seconds_empirical": 0.3730628490447998,
-        "wall_seconds_closed": 5.435943603515625e-05,
-        "speedup_factor": 6862.890350877193
+        "wall_seconds_empirical": 0.9504492282867432,
+        "wall_seconds_closed": 6.771087646484375e-05,
+        "speedup_factor": 14036.87676056338
       },
       {
         "atom": "3He",
         "Z": 2,
         "N": 1,
-        "tau_M_empirical": 0.8245219883418096,
-        "tau_M_empirical_str": "0.824521988341809551824928035484",
-        "tau_M_closed_form": 0.8245219883418096,
-        "tau_M_closed_form_str": "0.824521988341809551824928035484",
-        "rel_err": 3.565752305786425e-50,
-        "interface_ratio": 0.3753866308623884,
+        "tau_M_empirical": 0.44366420781209503,
+        "tau_M_empirical_str": "0.443664207812095038274595411452",
+        "tau_M_closed_form": 0.44366420781209503,
+        "tau_M_closed_form_str": "0.443664207812095038274595411452",
+        "rel_err": 9.940089134979116e-50,
+        "interface_ratio": 0.24932079597942414,
         "interface_census": {
           "positive": 2,
           "negative": 0,
           "averaged": 0,
           "total": 2
         },
-        "wall_seconds_empirical": 0.42046380043029785,
-        "wall_seconds_closed": 7.724761962890625e-05,
-        "speedup_factor": 5443.064814814815
+        "wall_seconds_empirical": 0.9334051609039307,
+        "wall_seconds_closed": 5.2928924560546875e-05,
+        "speedup_factor": 17635.067567567567
       },
       {
         "atom": "4He",
         "Z": 2,
         "N": 2,
-        "tau_M_empirical": 0.4185152019887448,
-        "tau_M_empirical_str": "0.41851520198874482655145607144",
-        "tau_M_closed_form": 0.4185152019887448,
-        "tau_M_closed_form_str": "0.41851520198874482655145607144",
-        "rel_err": 1.5965756425283176e-50,
-        "interface_ratio": 0.15151645682212217,
+        "tau_M_empirical": 0.1538719675410952,
+        "tau_M_empirical_str": "0.153871967541095181777587076812",
+        "tau_M_closed_form": 0.1538719675410952,
+        "tau_M_closed_form_str": "0.153871967541095181777587076812",
+        "rel_err": 1.0856285069348198e-49,
+        "interface_ratio": 0.0723678572437372,
         "interface_census": {
           "positive": 2,
           "negative": 1,
           "averaged": 0,
           "total": 3
         },
-        "wall_seconds_empirical": 603.6195321083069,
-        "wall_seconds_closed": 0.00010538101196289062,
-        "speedup_factor": 5727972.438914027
+        "wall_seconds_empirical": 1644.6194307804108,
+        "wall_seconds_closed": 7.2479248046875e-05,
+        "speedup_factor": 22690900.845394738
       }
     ],
     "verdict": "closed-form-verified-50dps",
-    "max_rel_err": 3.565752305786425e-50,
-    "lean_uniqueness_ref": {
-      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
-      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
-    }
+    "max_rel_err": 1.0856285069348198e-49
   }
 }

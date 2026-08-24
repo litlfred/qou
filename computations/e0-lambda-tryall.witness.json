@@ -237,5 +237,8 @@
   },
   "any_pass": false,
   "compute_time_sec": 0.07,
-  "design_note": "docs/audits/2026-06-01-e0-lambda-tryall-results.md"
+  "design_note": "docs/audits/2026-06-01-e0-lambda-tryall-results.md",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

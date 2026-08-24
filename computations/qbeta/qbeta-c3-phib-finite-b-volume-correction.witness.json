@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T10:50:53.732225+00:00",
-  "commitSha": "b45f3c522ae7d8d58a26e13f7828a99e46d2c36c",
+  "computedAt": "2026-08-24T13:26:30.079664+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "twopib2_equals_i_t",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "qbeta-c3-phib-finite-b-volume-correction",
   "scriptFile": "qbeta_c3_phib_finite_b_volume_correction_probe.py",
   "scriptHash": "252bb05e1915",
-  "scriptCommitSha": "b45f3c522ae7d8d58a26e13f7828a99e46d2c36c",
+  "scriptCommitSha": "76622e96380966b2844a97a5935a1a468b8ebbf3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_phib_finite_b_volume_correction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_phib_finite_b_volume_correction_probe.py"
   },
   "description": "Independent Φ_b state-integral pursuit of the c₃ bar-odd S / ε(q₀) decay projection. The figure-eight 𝔙_b(u)=𝔙_0+(2πb²)κ₁+… finite-b (Ohtsuki) expansion, with the Faddeev substrate b-map b=√(ln q₀/2π)e^{iπ/4} giving 2πb²=i·t (imaginary) to machine precision at both anchors. So the even-channel κ₁=11√3π/108 (fresh main #3571/#3606, ℚ(√3)) enters Im 𝔙 = S via the bar-odd factor i·t (bar-parity consistent). Leading Im 𝔙_b ≈ t·κ₁ ≈ 0.0578 — the right order for |S|∈{0.0097,0.0395}: DERIVES the S scale from the state integral + κ₁, no fit. Leading term anchor-blind (t~1e-8 apart), consistent with the merged 1/u³-ladder finding. OPEN: exact S sign-flip = the bar-odd ℚ(√−3) channel + κ₁(u) at u=2 log q₀ (the state-integral saddle u(q₀)). Coordinates with #3596 (Φ_b infra). Scope-(a); C14; no c_k wired; no fit.",
   "contentBlock": "conj:im-q-physical-role",
@@ -60,12 +69,12 @@
       },
       {
         "anchor": "muon",
-        "t_ln_q0": "0.10434073185379584233",
-        "twopib2": "(1.2961728119376371266e-72 + 0.10434073185379584233j)",
+        "t_ln_q0": "0.10434073193357978749",
+        "twopib2": "(1.2961728124331951829e-72 + 0.10434073193357978749j)",
         "twopib2_is_i_t": true,
-        "im_V_leading": "0.057827352336156303313",
+        "im_V_leading": "0.057827352380373879954",
         "S_target": "0.00968298",
-        "im_V_over_S": "5.972061528"
+        "im_V_over_S": "5.972061533"
       }
     ],
     "bar_parity": {

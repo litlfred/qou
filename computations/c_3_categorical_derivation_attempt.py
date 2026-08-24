@@ -1,9 +1,26 @@
 #!/usr/bin/env python3
-# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
-# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
-# probe's historical / cross-anchor / pinned comparison value. The CURRENT
-# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
-# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
+# ANCHOR NOTE — CORRECTED 2026-08-23. The 2026-06-22 version of this note
+# had the two anchors INVERTED, and every one of its three claims was wrong:
+#
+#   it said                                    | truth (measured)
+#   -------------------------------------------|--------------------------------
+#   1.10997858275… is the RETIRED proton anchor | it IS the CURRENT proton pin:
+#                                               | q_at() = 1.10997858275138…
+#   the current proton q0 is 1.1099785955573347 | that is the MUON value, and
+#                                               | q_at() does not return it
+#   q_muon_at() ≈ 1.10997859555418              | that is the SUPERSEDED muon
+#                                               | value; q_muon_at() returns
+#                                               | 1.10997859564274…
+#
+# An agent trusting it would have believed the live proton pin was retired and
+# that proton ≈ the muon value — the two-layer discipline read backwards.
+#
+# What is actually true: the `1.10997858275…` occurrences below ARE the current
+# proton pin, and the `1.1099785955541805` in the body is the SUPERSEDED muon
+# value, kept deliberately as this probe's cross-anchor comparison. The probe is
+# preserved as-is by design and must NOT be migrated — the superseded value is
+# its subject, not a stale input. (The body's own two bullet values were right
+# all along; only this header was inverted.)
 """c_3_categorical_derivation_attempt.py — hard structural attempt to
 promote the Q_β precision-ladder coefficient c_3 from "q₀-dependent
 near-match" to "Taylor-exact / proved".

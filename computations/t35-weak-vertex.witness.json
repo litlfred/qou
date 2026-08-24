@@ -1,6 +1,6 @@
 {
   "computation": "t35-weak-vertex",
-  "timestamp": "2026-08-24T10:52:45.285777+00:00",
+  "timestamp": "2026-08-24T07:34:12.346201+00:00",
   "description": "T_{3,5} weak vertex form factor W(q) = tr_Markov((\u03c3\u2081\u03c3\u2082)\u2075) in H\u2083(q). The torus knot T_{3,5} with 10 crossings mediates the weak force. Beta decay inserts T_{3,5} at the converting quark; the 10 crossings partition into electron (3) + neutrino (0) + re-reduction (7).",
   "parameters": {
     "q": 1.1099785827513808,
@@ -53,7 +53,7 @@
     "neutrino_K01": 0,
     "re_reduction": 7,
     "trefoil_markov_trace": 0.7302040316296949,
-    "unknot_markov_trace": 1.0
+    "unknot_markov_trace": 1
   },
   "halflife_correction": {
     "rate_ratio": 4168.60990410531,
@@ -72,9 +72,9 @@
     },
     {
       "name": "\u00b9\u2074C",
-      "old_corr": 6690.0,
+      "old_corr": 6690,
       "t35_pred": 1.6048515341796763,
-      "observed": 5730.0,
+      "observed": 5730,
       "unit": "yr",
       "old_ratio": 1.1675392670157068,
       "new_ratio": 0.0002800788017765578

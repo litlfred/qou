@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-23T23:11:17Z
-updated_at: 2026-08-23T23:12:07Z
+updated_at: 2026-08-24T12:45:00Z
 ---
 
 ## The question this started as, and why it dissolved
@@ -93,3 +93,25 @@ file-level comment rather than an audit.
    what it actually holds, or an explicit `preserved` anchor value that the
    triage can skip. Until then it will keep appearing in the `qou-bdkx`
    contradiction list, which is where it correctly surfaced.
+
+
+## RESOLVED — all three mechanisms landed (PR #5638, 2026-08-24)
+
+Owner chose all three. They are not redundant; each survives a different failure.
+
+1. **Audit doc** `docs/audits/2026-08-24-h4-form-ab-frozen-record.md` — numbers
+   in prose, in a directory no harness writes to. Also records what nothing in
+   the file said: the documented 0.003/0.0008 ppb closure is NOT reproducible
+   (committed 4753.80, fresh 207.11).
+2. **`"preserved": true` enforced in `WitnessBuilder.save()`** — at the single
+   point every producer's output passes through, so it protects any witness that
+   opts in. A blocked run RAISES. Escape: QOU_ALLOW_OVERWRITE_PRESERVED=1, and an
+   overwrite must re-declare the freeze.
+3. **`--force` on the producer** — the discoverable local half.
+
+Verified: blocked run raises; --force overwrites AND re-declares; unrelated
+producer unaffected (exit 0); witness diff is exactly ONE line.
+
+**Left unfixed deliberately:** the header inversion (attributes the frozen MUON
+literal to `q_at()`). Offered as a fourth item, not selected — recorded in the
+audit doc rather than silently changed.

@@ -1,62 +1,41 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:26:57.845484+00:00",
-  "commitSha": "ccf852dc082082ddd3a51727eb79c195a3f46c43",
+  "computedAt": "2026-05-19T17:57:51.553884+00:00",
+  "commitSha": "c4b9049cf0e3a4a15df32c6f58347683e7fff6b2",
   "assertions": [
     {
       "name": "hecke_quadratic_all_irreps_n_2_to_6",
-      "computed": 3.622271631530685e-71,
+      "computed": 5.345529420184391e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over partitions λ ⊢ n (2 ≤ n ≤ 6) and generators σ_i of |σ_i² − (q−q⁻¹) σ_i − 𝟙|_∞",
+      "unit": "max over partitions \u03bb \u22a2 n (2 \u2264 n \u2264 6) and generators \u03c3_i of |\u03c3_i\u00b2 \u2212 (q\u2212q\u207b\u00b9) \u03c3_i \u2212 \ud835\udfd9|_\u221e",
       "source": "Hoefsmit-seminormal axial-distance formula; the Hecke quadratic is the defining relation per rem:hecke-algebra-from-braiding."
     },
     {
       "name": "braid_relation_all_irreps_n_3_to_6",
-      "computed": 1.8111358157653425e-71,
+      "computed": 2.6727647100921956e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over partitions λ ⊢ n (3 ≤ n ≤ 6) and adjacent pairs (i, i+1) of |σ_i σ_{i+1} σ_i − σ_{i+1} σ_i σ_{i+1}|_∞",
-      "source": "Hoefsmit's construction is a faithful representation of the braid group on |SYT(λ)|-dimensional space; the braid relation is preserved by construction."
+      "unit": "max over partitions \u03bb \u22a2 n (3 \u2264 n \u2264 6) and adjacent pairs (i, i+1) of |\u03c3_i \u03c3_{i+1} \u03c3_i \u2212 \u03c3_{i+1} \u03c3_i \u03c3_{i+1}|_\u221e",
+      "source": "Hoefsmit's construction is a faithful representation of the braid group on |SYT(\u03bb)|-dimensional space; the braid relation is preserved by construction."
     }
   ],
   "allPassed": true,
-  "durationMs": 231,
+  "durationMs": 218,
   "computation": "hoefsmit-seminormal-form-probe",
   "scriptFile": "hoefsmit_seminormal_form_probe.py",
-  "scriptHash": "01767e1af373",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "precisionMetadata": {
-    "compute_dps": 70,
-    "output_dps": 60,
-    "guard_digits": 10,
-    "truncation_bound": "1e-60"
-  },
-  "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
-  },
-  "invocation": {
-    "argv": [
-      "computations/probes/hoefsmit_seminormal_form_probe.py"
-    ],
-    "reproduce": "python3 -u computations/probes/hoefsmit_seminormal_form_probe.py"
-  },
-  "description": "I1 probe for prop:hoefsmit-seminormal-form.  Verifies that for every partition λ ⊢ n with 2 ≤ n ≤ 6, the canonical Hoefsmit-seminormal matrices satisfy both (i) the Hecke quadratic σ² = (q−q⁻¹)σ + 𝟙 on every generator and (ii) the braid relation σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1} on every adjacent pair.  Also confirms dim ρ_λ = |SYT(λ)| (Hoefsmit's seminormal dimension).  This is the foundational gate for the entire H_n probe cluster of PR #818 — a failure here would invalidate downstream character checks.",
+  "scriptHash": "428a4f56b219",
+  "scriptCommitSha": "unknown",
+  "description": "I1 probe for prop:hoefsmit-seminormal-form.  Verifies that for every partition \u03bb \u22a2 n with 2 \u2264 n \u2264 6, the canonical Hoefsmit-seminormal matrices satisfy both (i) the Hecke quadratic \u03c3\u00b2 = (q\u2212q\u207b\u00b9)\u03c3 + \ud835\udfd9 on every generator and (ii) the braid relation \u03c3_i \u03c3_{i+1} \u03c3_i = \u03c3_{i+1} \u03c3_i \u03c3_{i+1} on every adjacent pair.  Also confirms dim \u03c1_\u03bb = |SYT(\u03bb)| (Hoefsmit's seminormal dimension).  This is the foundational gate for the entire H_n probe cluster of PR #818 \u2014 a failure here would invalidate downstream character checks.",
   "contentBlock": "prop:hoefsmit-seminormal-form",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
     "total_irreps_tested": 28,
-    "max_hecke_quadratic_residue": 3.622271631530685e-71,
-    "max_braid_relation_residue": 1.8111358157653425e-71
+    "max_hecke_quadratic_residue": 5.345529420184391e-51,
+    "max_braid_relation_residue": 2.6727647100921956e-51
   },
   "data": {
     "per_irrep_results": [
@@ -66,7 +45,7 @@
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 0.0,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
         "braid_relation_max_residue": 0.0
       },
       {
@@ -75,7 +54,7 @@
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
+        "hecke_quadratic_max_residue": 0.0,
         "braid_relation_max_residue": 0.0
       },
       {
@@ -84,7 +63,7 @@
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 0.0,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
         "braid_relation_max_residue": 0.0
       },
       {
@@ -93,8 +72,8 @@
         "dim_hoefsmit": 2,
         "dim_syt_count": 2,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.0045735325691467e-51
       },
       {
         "n": 3,
@@ -102,7 +81,7 @@
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
+        "hecke_quadratic_max_residue": 0.0,
         "braid_relation_max_residue": 0.0
       },
       {
@@ -111,7 +90,7 @@
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 0.0,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
         "braid_relation_max_residue": 0.0
       },
       {
@@ -120,8 +99,8 @@
         "dim_hoefsmit": 3,
         "dim_syt_count": 3,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 4,
@@ -129,8 +108,8 @@
         "dim_hoefsmit": 2,
         "dim_syt_count": 2,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.0045735325691467e-51
       },
       {
         "n": 4,
@@ -138,8 +117,8 @@
         "dim_hoefsmit": 3,
         "dim_syt_count": 3,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 4,
@@ -147,7 +126,7 @@
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
+        "hecke_quadratic_max_residue": 0.0,
         "braid_relation_max_residue": 0.0
       },
       {
@@ -156,7 +135,7 @@
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 0.0,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
         "braid_relation_max_residue": 0.0
       },
       {
@@ -165,8 +144,8 @@
         "dim_hoefsmit": 4,
         "dim_syt_count": 4,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 5,
@@ -174,8 +153,8 @@
         "dim_hoefsmit": 5,
         "dim_syt_count": 5,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 5,
@@ -183,8 +162,8 @@
         "dim_hoefsmit": 6,
         "dim_syt_count": 6,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 5,
@@ -192,8 +171,8 @@
         "dim_hoefsmit": 5,
         "dim_syt_count": 5,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 5,
@@ -201,21 +180,12 @@
         "dim_hoefsmit": 4,
         "dim_syt_count": 4,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 5,
         "shape": "(1, 1, 1, 1, 1)",
-        "dim_hoefsmit": 1,
-        "dim_syt_count": 1,
-        "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 0.0
-      },
-      {
-        "n": 6,
-        "shape": "(6,)",
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
@@ -224,12 +194,21 @@
       },
       {
         "n": 6,
+        "shape": "(6,)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 6,
         "shape": "(5, 1)",
         "dim_hoefsmit": 5,
         "dim_syt_count": 5,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -237,8 +216,8 @@
         "dim_hoefsmit": 9,
         "dim_syt_count": 9,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -246,8 +225,8 @@
         "dim_hoefsmit": 10,
         "dim_syt_count": 10,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -255,8 +234,8 @@
         "dim_hoefsmit": 5,
         "dim_syt_count": 5,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -264,8 +243,8 @@
         "dim_hoefsmit": 16,
         "dim_syt_count": 16,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -273,8 +252,8 @@
         "dim_hoefsmit": 10,
         "dim_syt_count": 10,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -282,8 +261,8 @@
         "dim_hoefsmit": 5,
         "dim_syt_count": 5,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -291,8 +270,8 @@
         "dim_hoefsmit": 9,
         "dim_syt_count": 9,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -300,8 +279,8 @@
         "dim_hoefsmit": 5,
         "dim_syt_count": 5,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
-        "braid_relation_max_residue": 1.8111358157653425e-71
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
       },
       {
         "n": 6,
@@ -309,7 +288,7 @@
         "dim_hoefsmit": 1,
         "dim_syt_count": 1,
         "dim_matches_syt": true,
-        "hecke_quadratic_max_residue": 3.622271631530685e-71,
+        "hecke_quadratic_max_residue": 0.0,
         "braid_relation_max_residue": 0.0
       }
     ]

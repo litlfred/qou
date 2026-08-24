@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T10:49:20.692084+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-23T21:09:51.142669+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "route1_sigma345_refuted_and_constancy_exclusion_established",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "keystone-route1-sigma345-constancy-s013",
   "scriptFile": "keystone_route1_sigma345_constancy_s013.py",
-  "scriptHash": "89ce79e0247f",
-  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "scriptHash": "23553f27be21",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -48,7 +49,7 @@
       5
     ],
     "P": 60,
-    "q0": 1.1099785827513808,
+    "q0": 1.1099785955541805,
     "chi111_matches_printed_table": true,
     "all_weights_pm1": true,
     "sum_n_chi": {
@@ -101,9 +102,9 @@
     ],
     "dq_ratios_sorted": [
       1.0,
-      4.109682411207941,
-      5.220441275326898,
-      6.220441275326898
+      4.109682435637709,
+      5.220441324664574,
+      6.220441324664574
     ],
     "classical_ratios": [
       1.0,
@@ -114,19 +115,19 @@
     "value_screen_refuted": true,
     "classical_screen_refuted": true,
     "flat_channels_at_inv_q0": {
-      "(1, 1, 3)": -2.431430087430047,
-      "(1, 1, 4)": -2.342013410154226,
-      "(1, 2, 1)": -2.3161582184901226,
-      "(1, 2, 2)": -2.506085466981786
+      "(1, 1, 3)": -2.4314300595989358,
+      "(1, 1, 4)": -2.342013404709526,
+      "(1, 2, 1)": -2.3161581844478984,
+      "(1, 2, 2)": -2.506085411285196
     },
     "channel_ratios_sorted": [
       1.0,
-      1.0111629643681932,
-      1.0497685641765306,
-      1.0820009820466732
+      1.0111629768792285,
+      1.049768567589659,
+      1.0820009739026397
     ],
     "channel_screen_refuted": true,
-    "dq41_at_q0": 4.109682411207941,
+    "dq41_at_q0": 4.109682435637709,
     "dq41_at_1p05": 4.023843550912429,
     "dq_ratios_nonconstant_in_q": true
   }

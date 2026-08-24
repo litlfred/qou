@@ -1,78 +1,81 @@
 {
- "schema": "witness/v1",
- "engine": "mpmath",
- "scriptFile": "c3_w2_c1_parity_artifact.py",
- "commitSha": "unknown",
- "description": "Bean qou-64jx. Identifies the 3.7e-4 branch splitting reported by c3_w2_c1_qborel_singularity.py. That estimator, 1/(c[901]/c[900]), is a single-point ratio, and the ratio 1/(c_{m+1}/c_m) is EXACTLY 2-periodic in m; its stability check compared m=400 against m=900, both even, so it reported 1e-10 convergence while sampling one phase of a 2-cycle. The parity-free estimator (geometric mean of the phases, equivalently the two-step ratio) gives xi_s = 2.3651035824525764564 for ALL branches, agreeing to 3.1e-25 against the 3.7e-4 even-only spread. The radius is one number; the 3.7e-4 is not a second singularity.",
- "computation": {
-  "script": "computations/qbeta/c3_w2_c1_parity_artifact.py",
-  "scriptCommitSha": "unknown",
-  "scriptHash": "f97b2473a68c"
- },
- "results": {
-  "dps": 400,
-  "n_terms": 1300,
-  "q": "1.1099785827513808075916690956",
-  "recurrence": "[m+2]_q b_{m+2} = b_{m+1} + b_m",
-  "qborel_level": "1/2",
-  "estimator_in_step2": "xi = 1/(c[901]/c[900])  -- single point, even m",
-  "ratio_is_period_2_in_m": true,
-  "parity_cycle_by_branch": {
-   "b^(1) (1,0)": {
-    "even": "2.36571876588619",
-    "odd": "2.364488558991764"
-   },
-   "b^(2) (0,1)": {
-    "even": "2.36485280484881",
-    "odd": "2.365354386649714"
-   },
-   "mix   (1,1)": {
-    "even": "2.365150766588016",
-    "odd": "2.365056399258448"
-   }
+  "schema": "witness/v1",
+  "engine": "mpmath",
+  "scriptFile": "c3_w2_c1_parity_artifact.py",
+  "commitSha": "unknown",
+  "description": "Bean qou-64jx. Identifies the 3.7e-4 branch splitting reported by c3_w2_c1_qborel_singularity.py. That estimator, 1/(c[901]/c[900]), is a single-point ratio, and the ratio 1/(c_{m+1}/c_m) is EXACTLY 2-periodic in m; its stability check compared m=400 against m=900, both even, so it reported 1e-10 convergence while sampling one phase of a 2-cycle. The parity-free estimator (geometric mean of the phases, equivalently the two-step ratio) gives xi_s = 2.3651035824525764564 for ALL branches, agreeing to 3.1e-25 against the 3.7e-4 even-only spread. The radius is one number; the 3.7e-4 is not a second singularity.",
+  "computation": {
+    "script": "computations/qbeta/c3_w2_c1_parity_artifact.py",
+    "scriptCommitSha": "unknown",
+    "scriptHash": "f97b2473a68c"
   },
-  "xi_s_parity_free": "2.3651035824525764564",
-  "xi_s_by_branch_parity_free": {
-   "b^(1) (1,0)": "2.3651035824525764564",
-   "b^(2) (0,1)": "2.3651035824525764564",
-   "mix   (1,1)": "2.3651035824525764564"
+  "results": {
+    "dps": 400,
+    "n_terms": 1300,
+    "q": "1.1099785827513808075916690956",
+    "recurrence": "[m+2]_q b_{m+2} = b_{m+1} + b_m",
+    "qborel_level": "1/2",
+    "estimator_in_step2": "xi = 1/(c[901]/c[900])  -- single point, even m",
+    "ratio_is_period_2_in_m": true,
+    "parity_cycle_by_branch": {
+      "b^(1) (1,0)": {
+        "even": "2.36571876588619",
+        "odd": "2.364488558991764"
+      },
+      "b^(2) (0,1)": {
+        "even": "2.36485280484881",
+        "odd": "2.365354386649714"
+      },
+      "mix   (1,1)": {
+        "even": "2.365150766588016",
+        "odd": "2.365056399258448"
+      }
+    },
+    "xi_s_parity_free": "2.3651035824525764564",
+    "xi_s_by_branch_parity_free": {
+      "b^(1) (1,0)": "2.3651035824525764564",
+      "b^(2) (0,1)": "2.3651035824525764564",
+      "mix   (1,1)": "2.3651035824525764564"
+    },
+    "spread_even_only": "0.00036617968",
+    "spread_parity_free": "3.1414601e-25",
+    "log_q_xi_s": "8.250104239513764",
+    "gevrey_fit_B_plus_quarter": "8.25010423951",
+    "two_cycle_amplitude_by_branch": {
+      "b^(1) (1,0)": "0.000260074633423",
+      "b^(2) (0,1)": "-0.000106038019777",
+      "mix   (1,1)": "1.99499358648e-5"
+    },
+    "two_cycle_amplitude_vs_m": {
+      "200": "0.000259974486573",
+      "400": "0.000260074630477",
+      "600": "0.000260074633423",
+      "800": "0.000260074633423",
+      "1000": "0.000260074633423",
+      "1200": "0.000260074633423"
+    },
+    "amplitude_is_stable_not_transient": true
   },
-  "spread_even_only": "0.00036617968",
-  "spread_parity_free": "3.1414601e-25",
-  "log_q_xi_s": "8.250104239513764",
-  "gevrey_fit_B_plus_quarter": "8.25010423951",
-  "two_cycle_amplitude_by_branch": {
-   "b^(1) (1,0)": "0.000260074633423",
-   "b^(2) (0,1)": "-0.000106038019777",
-   "mix   (1,1)": "1.99499358648e-5"
-  },
-  "two_cycle_amplitude_vs_m": {
-   "200": "0.000259974486573",
-   "400": "0.000260074630477",
-   "600": "0.000260074633423",
-   "800": "0.000260074633423",
-   "1000": "0.000260074633423",
-   "1200": "0.000260074633423"
-  },
-  "amplitude_is_stable_not_transient": true
- },
- "checks": [
-  {
-   "name": "parity_free_estimators_agree",
-   "detail": "geometric mean of phases == two-step ratio to 1e-100",
-   "passed": true
-  },
-  {
-   "name": "parity_free_radius_branch_independent",
-   "detail": "spread 3.141e-25 across three branches",
-   "passed": true
-  },
-  {
-   "name": "matches_independent_gevrey_fit",
-   "detail": "log_q(xi_s) == B + 1/4 from the q-Gevrey quadratic fit",
-   "passed": true
-  }
- ],
- "verdict": "REFUTES step 2's interpretation, scope-(b) for the stated claim: the branch-dependence does NOT evidence two singularities at different radii. The parity-free radius is branch-independent to 3.1e-25 and matches the independent q-Gevrey fit. The 3.7e-4 was single-parity sampling of a 2-cycle. What survives is the 2-cycle itself, whose amplitude is stable (12 digits, m=600..1200) and branch-dependent; a pair of singularities at +/- xi would produce it, but that antipodal structure is what step 3 already classified as two-step decoupling of the recurrence rather than Stokes sectors (PR #4656). Consequence: the three estimators in which the 3.7e-4 appeared are NOT independent -- they are the same two-step decoupling sampled at parity -- so the scale was never independent evidence for two sectors, and identifying it does not advance the multipliers. Nothing wired to production.",
- "durationMs": 3678
+  "checks": [
+    {
+      "name": "parity_free_estimators_agree",
+      "detail": "geometric mean of phases == two-step ratio to 1e-100",
+      "passed": true
+    },
+    {
+      "name": "parity_free_radius_branch_independent",
+      "detail": "spread 3.141e-25 across three branches",
+      "passed": true
+    },
+    {
+      "name": "matches_independent_gevrey_fit",
+      "detail": "log_q(xi_s) == B + 1/4 from the q-Gevrey quadratic fit",
+      "passed": true
+    }
+  ],
+  "verdict": "REFUTES step 2's interpretation, scope-(b) for the stated claim: the branch-dependence does NOT evidence two singularities at different radii. The parity-free radius is branch-independent to 3.1e-25 and matches the independent q-Gevrey fit. The 3.7e-4 was single-parity sampling of a 2-cycle. What survives is the 2-cycle itself, whose amplitude is stable (12 digits, m=600..1200) and branch-dependent; a pair of singularities at +/- xi would produce it, but that antipodal structure is what step 3 already classified as two-step decoupling of the recurrence rather than Stokes sectors (PR #4656). Consequence: the three estimators in which the 3.7e-4 appeared are NOT independent -- they are the same two-step decoupling sampled at parity -- so the scale was never independent evidence for two sectors, and identifying it does not advance the multipliers. Nothing wired to production.",
+  "durationMs": 3678,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

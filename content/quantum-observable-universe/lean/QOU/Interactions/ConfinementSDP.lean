@@ -101,6 +101,8 @@ Wedderburn blocks).
 --      (strong duality for convex problems)
 class HasConfinementSDPStrongDuality (n : ℕ) [HasConfinementSDPData n]
     (h : slaterStrict n) : Prop where
+  /-- Strong duality.
+      (Needs abstract LP/SDP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
   strong_duality : primalOpt n = nTarget n * y0Star n
 
 /-- **Default instance from a `Fact` witness on the strong-duality

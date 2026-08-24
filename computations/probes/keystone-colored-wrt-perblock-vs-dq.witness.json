@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T10:48:55.488625+00:00",
-  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
+  "computedAt": "2026-08-23T22:56:10.974383+00:00",
+  "commitSha": "539b429d89ac81504860d89609dc7c3a25d8bd0d",
   "assertions": [
     {
       "name": "dq_conjugation_symmetric",
@@ -30,10 +30,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "keystone-colored-wrt-perblock-vs-dq",
   "scriptFile": "keystone_colored_wrt_perblock_vs_dq.py",
-  "scriptHash": "3f3b42e4eee4",
+  "scriptHash": "2de520c15595",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -48,7 +48,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -58,7 +59,7 @@
   },
   "description": "Keystone vector 2 (colored WRT / Lawrence-Rozansky): does the FULL-Hecke lambda-colored WRT(S^3/2I)=Sigma(2,3,5) per-block weight W^{WRT}_lambda reproduce the Hecke q-hook-length dimension d_q(lambda) for ALL blocks lambda|-n, n=3,4,5, incl. >=3-row (electron (3,1,1), muon (3,2)), with ZERO free parameters? The parameter-free colored weight factorizes as W^{WRT}_lambda = d_q(lambda)*theta_lambda^f (RT/Lawrence-Rozansky/Beasley-Witten): S_{0lambda} = d_q(lambda) on the full-Hecke side, theta_lambda = q^{2c(lambda)} the ribbon twist (c=content sum), f the NONZERO fibre framing forced by Sigma(2,3,5) (orbifold e=-1/30; = -1 surgery on the left trefoil). VERDICT: PARTIAL/FAIL. Proportionality holds ONLY at f=0 (content-free tautology, valid for any manifold, no Sigma(2,3,5) data); for the actual nonzero framing the twist dressing is content-dependent and conjugation-ANTISYMMETRIC (theta_{lambda'}=theta_lambda^{-1}) while d_q is conjugation-SYMMETRIC (d_q(lambda)=d_q(lambda') exactly), so W_lambda/W_{lambda'}=theta_lambda^{2f}!=1 breaks proportionality normalization-independently, for EVERY nonzero framing. (b)-excludes the narrow 'fibre-colored WRT weight = d_q as-is' hypothesis (cites the two proved twist/hook invariants + nonzero framing); the broad geometric W_lambda programme stays (a)-open. Prunes the colored-WRT line. No fit; nothing wired.",
   "data": {
-    "q0": 1.1099785827513808,
+    "q0": 1.1099785955541805,
     "seifert": [
       2,
       3,
@@ -77,9 +78,9 @@
             "rows": 1,
             "d_q": 1.0,
             "content_sum": 3,
-            "theta_lambda": 1.870198026749108,
-            "W_wrt_f": 0.5347027350564907,
-            "ratio_W_over_dq": 0.5347027350564907,
+            "theta_lambda": 1.8701981561773968,
+            "W_wrt_f": 0.5347026980520376,
+            "ratio_W_over_dq": 0.5347026980520376,
             "conj": [
               1,
               1,
@@ -92,10 +93,10 @@
               1
             ],
             "rows": 2,
-            "d_q": 2.0108968667071223,
+            "d_q": 2.010896869118482,
             "content_sum": 0,
             "theta_lambda": 1.0,
-            "W_wrt_f": 2.0108968667071223,
+            "W_wrt_f": 2.010896869118482,
             "ratio_W_over_dq": 1.0,
             "conj": [
               2,
@@ -111,15 +112,15 @@
             "rows": 3,
             "d_q": 1.0,
             "content_sum": -3,
-            "theta_lambda": 0.5347027350564907,
-            "W_wrt_f": 1.870198026749108,
-            "ratio_W_over_dq": 1.870198026749108,
+            "theta_lambda": 0.5347026980520376,
+            "W_wrt_f": 1.8701981561773968,
+            "ratio_W_over_dq": 1.8701981561773968,
             "conj": [
               3
             ]
           }
         ],
-        "ratio_spread_multiplicative": 3.4976406592562572,
+        "ratio_spread_multiplicative": 3.4976411433693344,
         "proportional_to_dq": false,
         "dq_conjugation_symmetric": true,
         "conj_pairs_total": 2,
@@ -143,9 +144,9 @@
             "rows": 1,
             "d_q": 1.0,
             "content_sum": 6,
-            "theta_lambda": 3.4976406592562572,
-            "W_wrt_f": 0.2859070148768917,
-            "ratio_W_over_dq": 0.2859070148768917,
+            "theta_lambda": 3.4976411433693344,
+            "W_wrt_f": 0.2859069753041285,
+            "ratio_W_over_dq": 0.2859069753041285,
             "conj": [
               1,
               1,
@@ -159,11 +160,11 @@
               1
             ],
             "rows": 2,
-            "d_q": 3.043706208532522,
+            "d_q": 3.043706218230512,
             "content_sum": 2,
-            "theta_lambda": 1.517953249818346,
-            "W_wrt_f": 2.0051383063982793,
-            "ratio_W_over_dq": 0.6587818169760303,
+            "theta_lambda": 1.517953319852316,
+            "W_wrt_f": 2.005138220275864,
+            "ratio_W_over_dq": 0.6587817865817451,
             "conj": [
               2,
               1,
@@ -176,10 +177,10 @@
               2
             ],
             "rows": 2,
-            "d_q": 2.043706208532522,
+            "d_q": 2.043706218230512,
             "content_sum": 0,
             "theta_lambda": 1.0,
-            "W_wrt_f": 2.043706208532522,
+            "W_wrt_f": 2.043706218230512,
             "ratio_W_over_dq": 1.0,
             "conj": [
               2,
@@ -193,11 +194,11 @@
               1
             ],
             "rows": 3,
-            "d_q": 3.043706208532522,
+            "d_q": 3.043706218230512,
             "content_sum": -2,
-            "theta_lambda": 0.6587818169760303,
-            "W_wrt_f": 4.620203730734218,
-            "ratio_W_over_dq": 1.517953249818346,
+            "theta_lambda": 0.6587817865817451,
+            "W_wrt_f": 4.620203958618144,
+            "ratio_W_over_dq": 1.517953319852316,
             "conj": [
               3,
               1
@@ -213,15 +214,15 @@
             "rows": 4,
             "d_q": 1.0,
             "content_sum": -6,
-            "theta_lambda": 0.2859070148768917,
-            "W_wrt_f": 3.4976406592562572,
-            "ratio_W_over_dq": 3.4976406592562572,
+            "theta_lambda": 0.2859069753041285,
+            "W_wrt_f": 3.4976411433693344,
+            "ratio_W_over_dq": 3.4976411433693344,
             "conj": [
               4
             ]
           }
         ],
-        "ratio_spread_multiplicative": 12.233490181282546,
+        "ratio_spread_multiplicative": 12.233493567789944,
         "proportional_to_dq": false,
         "dq_conjugation_symmetric": true,
         "conj_pairs_total": 3,
@@ -251,9 +252,9 @@
             "rows": 1,
             "d_q": 1.0,
             "content_sum": 10,
-            "theta_lambda": 8.059200889583742,
-            "W_wrt_f": 0.12408178102278947,
-            "ratio_W_over_dq": 0.12408178102278947,
+            "theta_lambda": 8.059202748724948,
+            "W_wrt_f": 0.12408175239892194,
+            "ratio_W_over_dq": 0.12408175239892194,
             "conj": [
               1,
               1,
@@ -268,11 +269,11 @@
               1
             ],
             "rows": 2,
-            "d_q": 4.109682411207941,
+            "d_q": 4.109682435637709,
             "content_sum": 5,
-            "theta_lambda": 2.8388731725076664,
-            "W_wrt_f": 1.4476456542712435,
-            "ratio_W_over_dq": 0.3522524393425679,
+            "theta_lambda": 2.8388734999511596,
+            "W_wrt_f": 1.4476454959012484,
+            "ratio_W_over_dq": 0.35225239871280073,
             "conj": [
               2,
               1,
@@ -286,11 +287,11 @@
               2
             ],
             "rows": 2,
-            "d_q": 5.220441275326898,
+            "d_q": 5.220441324664574,
             "content_sum": 2,
-            "theta_lambda": 1.517953249818346,
-            "W_wrt_f": 3.439131788776519,
-            "ratio_W_over_dq": 0.6587818169760303,
+            "theta_lambda": 1.517953319852316,
+            "W_wrt_f": 3.4391316626076995,
+            "ratio_W_over_dq": 0.6587817865817451,
             "conj": [
               2,
               2,
@@ -304,10 +305,10 @@
               1
             ],
             "rows": 3,
-            "d_q": 6.220441275326898,
+            "d_q": 6.220441324664574,
             "content_sum": 0,
             "theta_lambda": 1.0,
-            "W_wrt_f": 6.220441275326898,
+            "W_wrt_f": 6.220441324664574,
             "ratio_W_over_dq": 1.0,
             "conj": [
               3,
@@ -322,11 +323,11 @@
               1
             ],
             "rows": 3,
-            "d_q": 5.220441275326898,
+            "d_q": 5.220441324664574,
             "content_sum": -2,
-            "theta_lambda": 0.6587818169760303,
-            "W_wrt_f": 7.924385799368296,
-            "ratio_W_over_dq": 1.517953249818346,
+            "theta_lambda": 0.6587817865817451,
+            "W_wrt_f": 7.924386239868812,
+            "ratio_W_over_dq": 1.517953319852316,
             "conj": [
               3,
               2
@@ -340,11 +341,11 @@
               1
             ],
             "rows": 4,
-            "d_q": 4.109682411207941,
+            "d_q": 4.109682435637709,
             "content_sum": -5,
-            "theta_lambda": 0.3522524393425679,
-            "W_wrt_f": 11.666867144704844,
-            "ratio_W_over_dq": 2.8388731725076664,
+            "theta_lambda": 0.35225239871280073,
+            "W_wrt_f": 11.66686855974663,
+            "ratio_W_over_dq": 2.8388734999511596,
             "conj": [
               4,
               1
@@ -361,15 +362,15 @@
             "rows": 5,
             "d_q": 1.0,
             "content_sum": -10,
-            "theta_lambda": 0.12408178102278947,
-            "W_wrt_f": 8.059200889583742,
-            "ratio_W_over_dq": 8.059200889583742,
+            "theta_lambda": 0.12408175239892194,
+            "W_wrt_f": 8.059202748724948,
+            "ratio_W_over_dq": 8.059202748724948,
             "conj": [
               5
             ]
           }
         ],
-        "ratio_spread_multiplicative": 64.95071897866738,
+        "ratio_spread_multiplicative": 64.95074894505575,
         "proportional_to_dq": false,
         "dq_conjugation_symmetric": true,
         "conj_pairs_total": 4,
@@ -409,19 +410,19 @@
         "proportional_to_dq": true
       },
       "1": {
-        "ratio_spread": 64.95071897866738,
+        "ratio_spread": 64.95074894505575,
         "proportional_to_dq": false
       },
       "-1": {
-        "ratio_spread": 64.95071897866738,
+        "ratio_spread": 64.95074894505575,
         "proportional_to_dq": false
       },
       "2": {
-        "ratio_spread": 4218.595895845824,
+        "ratio_spread": 4218.59978852366,
         "proportional_to_dq": false
       },
       "-2": {
-        "ratio_spread": 4218.595895845824,
+        "ratio_spread": 4218.59978852366,
         "proportional_to_dq": false
       }
     },

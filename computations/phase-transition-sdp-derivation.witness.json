@@ -45,5 +45,8 @@
     "tier": "open",
     "y0_star_provenance": "closed form W_(1,1)(q) = (q^3+q^2-q^{3/2})/(q^3+q^2+q+1); docs/audits/2026-06-01-inter-nucleon-linked-channel.md. NOT an SDP solve, and NOT y_(1,1) (= 0.2473 at q0, a different weight family).",
     "finding": "Substituting the antisymmetric channel weight for h2 makes the over-prediction worse, not better: ~30-45x observed rather than 6-10x. A derived topological factor for dS_vap is required. No fit applied. Status remains OPEN."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357873607281",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

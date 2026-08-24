@@ -9,7 +9,7 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "the q-inflation factor of the ℓ¹ ceiling is stable (<1e-3) between the proton and muon anchors"
+      "source": "the q-inflation factor of the \u2113\u00b9 ceiling is stable (<1e-3) between the proton and muon anchors"
     }
   ],
   "allPassed": true,
@@ -40,7 +40,7 @@
     ],
     "reproduce": "python3 -u computations/probes/binding_qgaussian_ell1_ceiling_measurement.py"
   },
-  "description": "z2bn binding q-Gaussian ℓ¹-ceiling measurement. Holds canonical {y_λ, χ^λ} fixed and replaces the classical Wedderburn dim_λ by the symmetric quantum dimension dim_q(λ)=[n]_q!/∏[h_c]_q at the substrate anchor q_0 (the BindingQGaussianHabiro magnitude). Measures whether the q-deformed ℓ¹ ceiling ‖c_q‖₁/|target| breaches the 0.36–0.59 classical ceiling that the sign-only prune (delta-lambda-l1-ceiling-sign-prune) proved insufficient. Reports per-isotope q-inflation factor + signed net at both proton and muon anchors. Measurement, not a fit (anti-flip-flop). Pure q-combinatorics on canonical y_λ+χ^λ witnesses — env-skew-immune.",
+  "description": "z2bn binding q-Gaussian \u2113\u00b9-ceiling measurement. Holds canonical {y_\u03bb, \u03c7^\u03bb} fixed and replaces the classical Wedderburn dim_\u03bb by the symmetric quantum dimension dim_q(\u03bb)=[n]_q!/\u220f[h_c]_q at the substrate anchor q_0 (the BindingQGaussianHabiro magnitude). Measures whether the q-deformed \u2113\u00b9 ceiling \u2016c_q\u2016\u2081/|target| breaches the 0.36\u20130.59 classical ceiling that the sign-only prune (delta-lambda-l1-ceiling-sign-prune) proved insufficient. Reports per-isotope q-inflation factor + signed net at both proton and muon anchors. Measurement, not a fit (anti-flip-flop). Pure q-combinatorics on canonical y_\u03bb+\u03c7^\u03bb witnesses \u2014 env-skew-immune.",
   "data": {
     "m_e_MeV": "0.51099895069",
     "proton_anchor": {
@@ -179,5 +179,8 @@
     },
     "max_q_inflation_proton": "1.813657368607817",
     "inflation_anchor_drift": "0.0000002321145627001302843563266998175692083264817002874219585030462649940182"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.proton_anchor.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -62,5 +62,8 @@
   },
   "lean": "QOU/MassTheory/HabiroMagnitudeA3.lean",
   "verdict": "no DERIVED Habiro element supplies r*; REFUTE(scope-b) infinite-completion divergence at q0>1 + WALL(scope-a) finite-Laurent bracket; nothing wired, no fit",
-  "allPassed": true
+  "allPassed": true,
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

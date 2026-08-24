@@ -9,7 +9,7 @@
       "computed": false,
       "expected": false,
       "passed": true,
-      "source": "Six literal Kashiwara/crystal-derived single-formula c_3 candidates (Demazure char, SYT maj-index, J_Hopf Kauffman, symmetric+Hopf-center, [2]_q·b, J_Hopf(1)·b²). If any matches the empirical c_3 within 10 ppm, this is a residue-A categorical-ID candidate; otherwise the search narrows to COMPOSITE operator structures."
+      "source": "Six literal Kashiwara/crystal-derived single-formula c_3 candidates (Demazure char, SYT maj-index, J_Hopf Kauffman, symmetric+Hopf-center, [2]_q\u00b7b, J_Hopf(1)\u00b7b\u00b2). If any matches the empirical c_3 within 10 ppm, this is a residue-A categorical-ID candidate; otherwise the search narrows to COMPOSITE operator structures."
     }
   ],
   "allPassed": true,
@@ -36,20 +36,20 @@
     "target_c_3": "-2.06934257711516783787971951725",
     "q_substrate": "1.10997858275138080759166909561",
     "candidates_tested": [
-      "1. Demazure (2,1) char = -2·[3]_q",
-      "2. SYT(2,1) major-index sum -(q + q²)",
+      "1. Demazure (2,1) char = -2\u00b7[3]_q",
+      "2. SYT(2,1) major-index sum -(q + q\u00b2)",
       "3. J_Hopf(q) Kauffman norm at substrate",
-      "4. -(q² + 1 + q⁻²) symmetric+Hopf-center",
-      "5. -(q + q⁻¹)·b_q quantum-2·Hoefsmit",
-      "6. -J_Hopf(q=1)·b² = 2·b² sign-test"
+      "4. -(q\u00b2 + 1 + q\u207b\u00b2) symmetric+Hopf-center",
+      "5. -(q + q\u207b\u00b9)\u00b7b_q quantum-2\u00b7Hoefsmit",
+      "6. -J_Hopf(q=1)\u00b7b\u00b2 = 2\u00b7b\u00b2 sign-test"
     ],
     "per_candidate_results": {
-      "1. Demazure (2,1) char = -2·[3]_q": {
+      "1. Demazure (2,1) char = -2\u00b7[3]_q": {
         "computed": "-6.08741241706504397880403867135",
         "err_ppm": 1941713.2206071906,
         "passed": false
       },
-      "2. SYT(2,1) major-index sum -(q + q²)": {
+      "2. SYT(2,1) major-index sum -(q + q\u00b2)": {
         "computed": "-2.34203103691814473886147360915",
         "err_ppm": 131775.4067492908,
         "passed": false
@@ -59,25 +59,28 @@
         "err_ppm": 959367.733539843,
         "passed": false
       },
-      "4. -(q² + 1 + q⁻²) symmetric+Hopf-center": {
+      "4. -(q\u00b2 + 1 + q\u207b\u00b2) symmetric+Hopf-center": {
         "computed": "-3.04370620853252198940201933568",
         "err_ppm": 470856.61030359525,
         "passed": false
       },
-      "5. -(q + q⁻¹)·b_q quantum-2·Hoefsmit": {
+      "5. -(q + q\u207b\u00b9)\u00b7b_q quantum-2\u00b7Hoefsmit": {
         "computed": "-1.74462208186544572046289004885",
         "err_ppm": 156919.6414556013,
         "passed": false
       },
-      "6. -J_Hopf(q=1)·b² = 2·b² sign-test": {
+      "6. -J_Hopf(q=1)\u00b7b\u00b2 = 2\u00b7b\u00b2 sign-test": {
         "computed": "1.50540422650393080318755870324",
         "err_ppm": 1727479.4628749131,
         "passed": false
       }
     },
-    "best_candidate_name": "2. SYT(2,1) major-index sum -(q + q²)",
+    "best_candidate_name": "2. SYT(2,1) major-index sum -(q + q\u00b2)",
     "best_candidate_err_ppm": 131775.4067492908,
     "any_candidate_passes_10_ppm": false,
-    "interpretation": "Chain 4 (Option-E) first-test: 6 Kashiwara/crystal-derived single-formula c_3 candidates tested at proton-pinned q₀ against c_3 = -2.069. Best: '2. SYT(2,1) major-index sum -(q + q²)' at 131775.41 ppm. NEGATIVE — no literal Kashiwara single-formula matches. Combined with Chain 1 NEGATIVE and the 15-candidate c_3 re-run NEGATIVE, the residue A lives in a composite operator structure, not a single-formula crystal object."
-  }
+    "interpretation": "Chain 4 (Option-E) first-test: 6 Kashiwara/crystal-derived single-formula c_3 candidates tested at proton-pinned q\u2080 against c_3 = -2.069. Best: '2. SYT(2,1) major-index sum -(q + q\u00b2)' at 131775.41 ppm. NEGATIVE \u2014 no literal Kashiwara single-formula matches. Combined with Chain 1 NEGATIVE and the 15-candidate c_3 re-run NEGATIVE, the residue A lives in a composite operator structure, not a single-formula crystal object."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_substrate). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -368,7 +368,43 @@ def main() -> int:
             ["git", "rev-parse", "HEAD"], cwd=str(HERE)).decode().strip()
     except Exception:
         sha = "unknown"
+    # Self-describing provenance.  This block hand-rolls its witness rather than
+    # going through `WitnessBuilder`, and it previously emitted `commitSha` but
+    # NOT `scriptFile` / `scriptHash` / `q0Anchor` / `q0Value`.  The committed
+    # artifact carries the latter two anyway — they were backfilled downstream —
+    # which meant **re-running this producer would DELETE the exact fields the
+    # q₀ anchor-consistency audit keys on**, silently dropping the witness out
+    # of that audit's scope instead of updating it.  See AGENTS.md §"Bare
+    # producers": fix the producer to emit provenance before re-running it.
+    try:
+        _here = Path(__file__).resolve()
+        _script_rel = _here.relative_to(HERE.parent).as_posix()
+    except Exception:
+        _script_rel = Path(__file__).name
+    try:
+        from qou_substrate.witness import file_content_hash as _fch
+        _script_hash = _fch(str(Path(__file__).resolve()))
+    except Exception:
+        import hashlib as _hl
+        _script_hash = _hl.sha256(
+            Path(__file__).resolve().read_text(encoding="utf-8").encode("utf-8")
+        ).hexdigest()[:12]
+
+    # DERIVE the anchor label from the q₀ this run actually used — never assert
+    # it.  `q` comes from `aoa.q0_mp(DPS)`, whose pin depends on this producer's
+    # manifest classification, so a hardcoded "muon" would be a claim the source
+    # cannot support and would silently become a lie if the classification ever
+    # changed.  Deriving it keeps `q0Anchor` and `q0Value` consistent by
+    # construction.  Prefixes match `q0_anchor_consistency_audit._EXPECTED_PREFIX`.
+    _PINS = {"muon": "1.109978595", "proton": "1.109978582"}
+    _q0_anchor = next((a for a, pre in _PINS.items() if q_str.startswith(pre)),
+                      "unrecognised")
+
     witness = {
+        "scriptFile": _script_rel,
+        "scriptHash": _script_hash,
+        "q0Anchor": _q0_anchor,
+        "q0Value": q_str,
         "engine": "numpy/scipy float64 (combiner + diag ρ_ξ); mpmath 50 dps "
                   "(ν-alignment + fine-Bratteli transfer reference)",
         "engineVersion": f"numpy {np.__version__}, scipy {scipy.__version__}, "

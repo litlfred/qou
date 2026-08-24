@@ -1,55 +1,58 @@
 {
- "schema": "witness/v1",
- "engine": "mpmath",
- "scriptFile": "c3_w2_c1_connection_invariant.py",
- "commitSha": "8854e59729982457f80dea1a8f786f3aefd87727",
- "description": "Bean qou-wgnx. Identifies the BASIS-INVARIANT C1 connection datum chi = P00 P11/(P01 P10), the cross-ratio of the connection matrix. 0-side rebasing scales P's ROWS by elliptic functions and inf-side rescaling scales its COLUMNS, and the cross-ratio is invariant under both. On the real axis chi = exp(2i(arg c+ - arg c-)) with |chi| = 1 exactly. This also settles the [-1] artifact pole: it CANNOT be removed by renormalising the character (any multiplier-t character is theta_p(cz)/theta_p(cz/t), so varying c only MOVES the pole to [-1/c], and the rebasing ratio drags in a further pole at [-t]) \u2014 but it does not need to be, because [-1] is common to a ROW of P and therefore cancels between numerator and denominator of chi. Verified: P entries diverge to 1e73 at the artifact pole while |chi| stays exactly 1, and chi is numerically identical across c in {1, 1.7, 0.43, 2.9}. ALSO RECORDED: Mathlib at HEAD has the additive two-variable Jacobi theta but NO Jacobi triple product and no theta zero-locus results, so the converse of the Lean zero-locus lemma cannot be closed by reuse. Stokes multipliers remain OPEN.",
- "computation": {
-  "script": "computations/qbeta/c3_w2_c1_connection_invariant.py",
-  "scriptCommitSha": "8854e59729982457f80dea1a8f786f3aefd87727",
-  "scriptHash": "f2294262c221"
- },
- "results": {
-  "q": "1.1099785827513808075916690956",
-  "invariant": "chi(z) = P00 P11 / (P01 P10)",
-  "real_axis_form": "chi = exp(2i (arg c+ - arg c-)), |chi| = 1",
-  "artifact_pole_removable": false,
-  "artifact_pole_reason": "any multiplier-t character is theta_p(cz)/theta_p(cz/t); varying c moves the numerator zeros to -c^-1 p^Z but cannot delete them",
-  "mathlib_has_jacobi_triple_product": false,
-  "mathlib_theta_zero_locus_results": false,
-  "abs_chi_max_dev_from_one": "0.0",
-  "chi_vs_phase_formula_max_dev": "6.12311e-121",
-  "chi_ellipticity_best": "4.80288e-26",
-  "chi_at_artifact_pole_max_dev": "0.0",
-  "chi_invariance_under_c_max_dev": "2.24988e-109"
- },
- "checks": [
-  {
-   "name": "abs_chi_is_one_on_real_axis",
-   "detail": "|chi| = 1 exactly where P has the conjugate structure",
-   "passed": true
+  "schema": "witness/v1",
+  "engine": "mpmath",
+  "scriptFile": "c3_w2_c1_connection_invariant.py",
+  "commitSha": "8854e59729982457f80dea1a8f786f3aefd87727",
+  "description": "Bean qou-wgnx. Identifies the BASIS-INVARIANT C1 connection datum chi = P00 P11/(P01 P10), the cross-ratio of the connection matrix. 0-side rebasing scales P's ROWS by elliptic functions and inf-side rescaling scales its COLUMNS, and the cross-ratio is invariant under both. On the real axis chi = exp(2i(arg c+ - arg c-)) with |chi| = 1 exactly. This also settles the [-1] artifact pole: it CANNOT be removed by renormalising the character (any multiplier-t character is theta_p(cz)/theta_p(cz/t), so varying c only MOVES the pole to [-1/c], and the rebasing ratio drags in a further pole at [-t]) \u2014 but it does not need to be, because [-1] is common to a ROW of P and therefore cancels between numerator and denominator of chi. Verified: P entries diverge to 1e73 at the artifact pole while |chi| stays exactly 1, and chi is numerically identical across c in {1, 1.7, 0.43, 2.9}. ALSO RECORDED: Mathlib at HEAD has the additive two-variable Jacobi theta but NO Jacobi triple product and no theta zero-locus results, so the converse of the Lean zero-locus lemma cannot be closed by reuse. Stokes multipliers remain OPEN.",
+  "computation": {
+    "script": "computations/qbeta/c3_w2_c1_connection_invariant.py",
+    "scriptCommitSha": "8854e59729982457f80dea1a8f786f3aefd87727",
+    "scriptHash": "f2294262c221"
   },
-  {
-   "name": "chi_equals_phase_difference_formula",
-   "detail": "chi = exp(2i(arg c+ - arg c-))",
-   "passed": true
+  "results": {
+    "q": "1.1099785827513808075916690956",
+    "invariant": "chi(z) = P00 P11 / (P01 P10)",
+    "real_axis_form": "chi = exp(2i (arg c+ - arg c-)), |chi| = 1",
+    "artifact_pole_removable": false,
+    "artifact_pole_reason": "any multiplier-t character is theta_p(cz)/theta_p(cz/t); varying c moves the numerator zeros to -c^-1 p^Z but cannot delete them",
+    "mathlib_has_jacobi_triple_product": false,
+    "mathlib_theta_zero_locus_results": false,
+    "abs_chi_max_dev_from_one": "0.0",
+    "chi_vs_phase_formula_max_dev": "6.12311e-121",
+    "chi_ellipticity_best": "4.80288e-26",
+    "chi_at_artifact_pole_max_dev": "0.0",
+    "chi_invariance_under_c_max_dev": "2.24988e-109"
   },
-  {
-   "name": "chi_is_elliptic",
-   "detail": "chi(pz) = chi(z)",
-   "passed": true
-  },
-  {
-   "name": "artifact_pole_cancels_in_chi",
-   "detail": "|chi| = 1 at [-1] while P entries diverge",
-   "passed": true
-  },
-  {
-   "name": "chi_invariant_under_zero_side_rebasing",
-   "detail": "chi identical across several character parameters c",
-   "passed": true
-  }
- ],
- "verdict": "The basis-invariant connection datum is the CROSS-RATIO chi = P00 P11/(P01 P10), invariant under both 0-side rebasing (which scales P's rows by elliptic functions) and inf-side rescaling (which scales its columns). On the real axis it is a pure phase, chi = exp(2i(arg c+ - arg c-)), |chi| = 1 exactly. The [-1] pole is NOT removable by renormalising the 0-side character \u2014 that only relocates it to [-1/c] and adds one at [-t] \u2014 but it is invisible to chi, cancelling between numerator and denominator; confirmed by chi being identical for every c tested while P itself diverges at that point. Separately recorded: Mathlib has no Jacobi triple product and no theta zero-locus results, so the converse of the Lean lemma is not cheap. STOKES MULTIPLIERS REMAIN OPEN \u2014 chi is the invariant they must be functions of, not the multipliers themselves. Nothing wired to production.",
- "durationMs": 3283
+  "checks": [
+    {
+      "name": "abs_chi_is_one_on_real_axis",
+      "detail": "|chi| = 1 exactly where P has the conjugate structure",
+      "passed": true
+    },
+    {
+      "name": "chi_equals_phase_difference_formula",
+      "detail": "chi = exp(2i(arg c+ - arg c-))",
+      "passed": true
+    },
+    {
+      "name": "chi_is_elliptic",
+      "detail": "chi(pz) = chi(z)",
+      "passed": true
+    },
+    {
+      "name": "artifact_pole_cancels_in_chi",
+      "detail": "|chi| = 1 at [-1] while P entries diverge",
+      "passed": true
+    },
+    {
+      "name": "chi_invariant_under_zero_side_rebasing",
+      "detail": "chi identical across several character parameters c",
+      "passed": true
+    }
+  ],
+  "verdict": "The basis-invariant connection datum is the CROSS-RATIO chi = P00 P11/(P01 P10), invariant under both 0-side rebasing (which scales P's rows by elliptic functions) and inf-side rescaling (which scales its columns). On the real axis it is a pure phase, chi = exp(2i(arg c+ - arg c-)), |chi| = 1 exactly. The [-1] pole is NOT removable by renormalising the 0-side character \u2014 that only relocates it to [-1/c] and adds one at [-t] \u2014 but it is invisible to chi, cancelling between numerator and denominator; confirmed by chi being identical for every c tested while P itself diverges at that point. Separately recorded: Mathlib has no Jacobi triple product and no theta zero-locus results, so the converse of the Lean lemma is not cheap. STOKES MULTIPLIERS REMAIN OPEN \u2014 chi is the invariant they must be functions of, not the multipliers themselves. Nothing wired to production.",
+  "durationMs": 3283,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,79 +1,82 @@
 {
- "schema": "witness/v1",
- "engine": "mpmath",
- "engineVersion": "mpmath 1.3.0",
- "scriptFile": "c1_chi_magnitude_vs_r_star.py",
- "commitSha": "unknown",
- "q0_pin": "experimental/proton (m_p/m_e); q_parameter.Q; owner directive 2026-08-07",
- "description": "Bean qou-wgnx/qou-wiub. THE DECISIVE A=3 magnitude check: evaluate the closed-form C1 connection cross-ratio chi(P) (E-carrier of the A=3 anti-self-adjoint lift, BirkhoffAmplitudeE.lean E=chi(P)) at the DERIVED substrate parameters (proton q0, alpha=t2/T, theta nome p=sqrt(q0), all fixed by C1's operator L1, NO tuning) and compare its MAGNITUDE to the A=3 lift r* = mu3/c3 ~ 1.585. RESULT: chi(P) on the real axis is a PURE UNIT-MODULUS PHASE, |chi|=1 EXACTLY (dev < 1e-30; matches exp(2i(arg c+ - arg c-)) to 1e-121), and is a z-dependent elliptic function (arg chi = -0.488/-1.921/+1.310/+3.052 at z=0.30/0.45/0.60/0.75) -- not a single number. r* is a real magnitude > 1; a unit phase cannot equal it. So chi(P)|q0 does NOT numerically supply r*: SCOPE-(a) NEGATIVE for the direct identity chi(P)=r*. This does NOT refute the gauge-invariance argument E=chi(P) (BirkhoffAmplitudeWellPosed); it shows the computed VALUE of that cross-ratio is a phase, so the magnitude r* is not chi(P) itself but at most a real functional of it fed through the affine lift factor_sa - slope*E (A3AntiSelfAdjointLift). Consistent with the whole A=3 magnitude program: every trace/cross-ratio object gives modulus 1 (option-e.md: 'r* ~ 1.585 != 1 is NOT supplied'). NOT tuned; NOTHING wired to production.",
- "computation": {
-  "script": "computations/qbeta/c1_chi_magnitude_vs_r_star.py",
-  "scriptCommitSha": "unknown",
-  "scriptHash": "f09c8eb07c4c"
- },
- "results": {
-  "q0": "1.1099785827513808075916690956",
-  "q0_layer": "experimental/proton",
-  "abs_alpha": "1.08139896431546135937998913636",
-  "q_three_quarter": "1.08139896431546135937998913636",
-  "r_star": "1.585",
-  "r_star_definition": "mu3/c3, the A=3 many-body magnitude lift (real, >1)",
-  "chi_is_unit_modulus_phase": true,
-  "chi_is_single_number": false,
-  "max_abs_chi_dev_from_one": "0.0",
-  "max_closedform_vs_direct_dev": "1.13281e-5",
-  "per_z": [
-   {
-    "z": "0.30",
-    "abs_chi": "1.0",
-    "arg_chi": "-0.488321251740382553486306677161",
-    "abs_chi_dev_from_1": "0.0",
-    "closedform_vs_direct_dev": "1.13281e-5",
-    "gap_abs_chi_to_r_star": "0.585"
-   },
-   {
-    "z": "0.45",
-    "abs_chi": "1.0",
-    "arg_chi": "-1.9212291777815220646263496661",
-    "abs_chi_dev_from_1": "0.0",
-    "closedform_vs_direct_dev": "4.66319e-13",
-    "gap_abs_chi_to_r_star": "0.585"
-   },
-   {
-    "z": "0.60",
-    "abs_chi": "1.0",
-    "arg_chi": "1.3100992646797234493699847564",
-    "abs_chi_dev_from_1": "0.0",
-    "closedform_vs_direct_dev": "1.42015e-19",
-    "gap_abs_chi_to_r_star": "0.585"
-   },
-   {
-    "z": "0.75",
-    "abs_chi": "1.0",
-    "arg_chi": "3.0518568647188072818329172383",
-    "abs_chi_dev_from_1": "0.0",
-    "closedform_vs_direct_dev": "5.42317e-26",
-    "gap_abs_chi_to_r_star": "0.585"
-   }
-  ]
- },
- "checks": [
-  {
-   "name": "abs_chi_is_one_on_real_axis",
-   "detail": "|chi(P)| = 1 exactly at the proton q0 (unit-modulus phase)",
-   "passed": true
+  "schema": "witness/v1",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "c1_chi_magnitude_vs_r_star.py",
+  "commitSha": "unknown",
+  "q0_pin": "experimental/proton (m_p/m_e); q_parameter.Q; owner directive 2026-08-07",
+  "description": "Bean qou-wgnx/qou-wiub. THE DECISIVE A=3 magnitude check: evaluate the closed-form C1 connection cross-ratio chi(P) (E-carrier of the A=3 anti-self-adjoint lift, BirkhoffAmplitudeE.lean E=chi(P)) at the DERIVED substrate parameters (proton q0, alpha=t2/T, theta nome p=sqrt(q0), all fixed by C1's operator L1, NO tuning) and compare its MAGNITUDE to the A=3 lift r* = mu3/c3 ~ 1.585. RESULT: chi(P) on the real axis is a PURE UNIT-MODULUS PHASE, |chi|=1 EXACTLY (dev < 1e-30; matches exp(2i(arg c+ - arg c-)) to 1e-121), and is a z-dependent elliptic function (arg chi = -0.488/-1.921/+1.310/+3.052 at z=0.30/0.45/0.60/0.75) -- not a single number. r* is a real magnitude > 1; a unit phase cannot equal it. So chi(P)|q0 does NOT numerically supply r*: SCOPE-(a) NEGATIVE for the direct identity chi(P)=r*. This does NOT refute the gauge-invariance argument E=chi(P) (BirkhoffAmplitudeWellPosed); it shows the computed VALUE of that cross-ratio is a phase, so the magnitude r* is not chi(P) itself but at most a real functional of it fed through the affine lift factor_sa - slope*E (A3AntiSelfAdjointLift). Consistent with the whole A=3 magnitude program: every trace/cross-ratio object gives modulus 1 (option-e.md: 'r* ~ 1.585 != 1 is NOT supplied'). NOT tuned; NOTHING wired to production.",
+  "computation": {
+    "script": "computations/qbeta/c1_chi_magnitude_vs_r_star.py",
+    "scriptCommitSha": "unknown",
+    "scriptHash": "f09c8eb07c4c"
   },
-  {
-   "name": "closed_form_matches_direct_connection_matrix",
-   "detail": "closed form chi = th(z/a)th(-z/conj a)/[th(-z/a)th(z/conj a)] equals the direct P cross-ratio (up to convention inverse)",
-   "passed": false
+  "results": {
+    "q0": "1.1099785827513808075916690956",
+    "q0_layer": "experimental/proton",
+    "abs_alpha": "1.08139896431546135937998913636",
+    "q_three_quarter": "1.08139896431546135937998913636",
+    "r_star": "1.585",
+    "r_star_definition": "mu3/c3, the A=3 many-body magnitude lift (real, >1)",
+    "chi_is_unit_modulus_phase": true,
+    "chi_is_single_number": false,
+    "max_abs_chi_dev_from_one": "0.0",
+    "max_closedform_vs_direct_dev": "1.13281e-5",
+    "per_z": [
+      {
+        "z": "0.30",
+        "abs_chi": "1.0",
+        "arg_chi": "-0.488321251740382553486306677161",
+        "abs_chi_dev_from_1": "0.0",
+        "closedform_vs_direct_dev": "1.13281e-5",
+        "gap_abs_chi_to_r_star": "0.585"
+      },
+      {
+        "z": "0.45",
+        "abs_chi": "1.0",
+        "arg_chi": "-1.9212291777815220646263496661",
+        "abs_chi_dev_from_1": "0.0",
+        "closedform_vs_direct_dev": "4.66319e-13",
+        "gap_abs_chi_to_r_star": "0.585"
+      },
+      {
+        "z": "0.60",
+        "abs_chi": "1.0",
+        "arg_chi": "1.3100992646797234493699847564",
+        "abs_chi_dev_from_1": "0.0",
+        "closedform_vs_direct_dev": "1.42015e-19",
+        "gap_abs_chi_to_r_star": "0.585"
+      },
+      {
+        "z": "0.75",
+        "abs_chi": "1.0",
+        "arg_chi": "3.0518568647188072818329172383",
+        "abs_chi_dev_from_1": "0.0",
+        "closedform_vs_direct_dev": "5.42317e-26",
+        "gap_abs_chi_to_r_star": "0.585"
+      }
+    ]
   },
-  {
-   "name": "chi_magnitude_does_not_equal_r_star",
-   "detail": "||chi| - r*| ~ 0.585 (|chi|=1, r*~1.585): a unit phase is not the real lift magnitude -- scope-(a) negative",
-   "passed": true
-  }
- ],
- "verdict": "SCOPE-(a) NEGATIVE. chi(P)|q0 (proton pin) is a pure unit-modulus phase, |chi|=1 exactly, a z-dependent elliptic function -- NOT the real magnitude r* = mu3/c3 ~ 1.585. The closed form (C1ConnectionPoles.lean) and the direct connection matrix agree. The A=3 magnitude is therefore NOT closed by the naive identity chi(P)=r*: a unit phase cannot equal a real magnitude > 1. This SHARPENS rather than refutes the E=chi(P) well-posedness argument: what remains genuinely open is the bridge from the (now-computed) unit-phase cross-ratio to the real anti-self-adjoint amplitude E that the affine lift factor_sa - (B D^-1/A) E needs, and whether that yields r*. The cross-ratio's numeric value is NO LONGER open (it is a phase); the phase->real-amplitude->lift chain is. Not tuned; nothing wired.",
- "durationMs": 2370
+  "checks": [
+    {
+      "name": "abs_chi_is_one_on_real_axis",
+      "detail": "|chi(P)| = 1 exactly at the proton q0 (unit-modulus phase)",
+      "passed": true
+    },
+    {
+      "name": "closed_form_matches_direct_connection_matrix",
+      "detail": "closed form chi = th(z/a)th(-z/conj a)/[th(-z/a)th(z/conj a)] equals the direct P cross-ratio (up to convention inverse)",
+      "passed": false
+    },
+    {
+      "name": "chi_magnitude_does_not_equal_r_star",
+      "detail": "||chi| - r*| ~ 0.585 (|chi|=1, r*~1.585): a unit phase is not the real lift magnitude -- scope-(a) negative",
+      "passed": true
+    }
+  ],
+  "verdict": "SCOPE-(a) NEGATIVE. chi(P)|q0 (proton pin) is a pure unit-modulus phase, |chi|=1 exactly, a z-dependent elliptic function -- NOT the real magnitude r* = mu3/c3 ~ 1.585. The closed form (C1ConnectionPoles.lean) and the direct connection matrix agree. The A=3 magnitude is therefore NOT closed by the naive identity chi(P)=r*: a unit phase cannot equal a real magnitude > 1. This SHARPENS rather than refutes the E=chi(P) well-posedness argument: what remains genuinely open is the bridge from the (now-computed) unit-phase cross-ratio to the real anti-self-adjoint amplitude E that the affine lift factor_sa - (B D^-1/A) E needs, and whether that yields r*. The cross-ratio's numeric value is NO LONGER open (it is a phase); the phase->real-amplitude->lift chain is. Not tuned; nothing wired.",
+  "durationMs": 2370,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

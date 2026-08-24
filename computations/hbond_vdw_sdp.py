@@ -63,12 +63,29 @@ for _p in (str(_HERE), str(_HERE.parents[1] / "tools" / "pyhecke" / "python")):
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
 from lp_dual_solver import provenance, solve_operator_selection_lp
+from mpmath import mp  # noqa: E402
+from _precision import fmt  # noqa: E402
+mp.dps = 50
 
 try:
     from q_parameter import q_at
-    Q0 = float(q_at())
-except Exception:
-    Q0 = 1.1099780333553254
+    Q0 = q_at()
+    # EXCISED: was Q0 = float(q_at()). q_at() ALREADY returns mpf at 50 dps, so
+    # the cast was a pure downgrade to 53 bits -- a NO-FLOAT64 violation with
+    # nothing bought: mpf supports every arithmetic operator this file uses.
+except Exception as _exc:  # pragma: no cover - fail loudly, never substitute
+        # Was: Q0 = 1.1099780333553254 — a value that is NEITHER pin, sitting
+        # 506 ppb from muon and 495 ppb from proton, i.e. ~44x the ~11.5 ppb
+        # mu-p substrate tension the two-layer discipline exists to manage. It
+        # was substituted silently on any import hiccup, so a bare container
+        # produced numbers that looked fine and were wrong by 44 tensions.
+        # AGENTS.md q0-anchor: never straddle the two layers inside one quantity;
+        # q0_cross_layer_fallback_scan.py: "fail loudly" rather than substitute.
+        raise RuntimeError(
+            "q_at() unavailable and there is no safe fallback: this producer "
+            "must compute at a declared pin, not at a hardcoded approximation. "
+            "Install/point at qou-substrate rather than substituting a literal."
+        ) from _exc
 
 
 def sigma1_power_traces(q: float) -> list[float]:
@@ -91,29 +108,36 @@ def main() -> None:
     labels = ["1 (trivial)", "σ₁ (H-bond)", "σ₁² (Hopf link)"]
 
     # t_i = tr_M(b_i) for b = {1, σ₁, σ₁²}; G = moment (Hankel) matrix.
-    t = np.array([T0, T1, T2])
-    G = np.array([[T0, T1, T2],
-                  [T1, T2, T3],
-                  [T2, T3, T4]])
+    # numpy CANNOT hold mpf (dtype object), and np.linalg.eigvalsh would force
+    # a float64 downgrade of the whole Gram matrix. The PSD test below compares
+    # the minimum eigenvalue against -1e-9, which sits at the float64 noise
+    # floor for a near-singular 3x3 -- so the precision is not decorative here,
+    # it is what makes the verdict mean anything. mpmath's eigsy is a drop-in
+    # for a symmetric matrix and keeps all 50 dps.
+    t = [T0, T1, T2]
+    G = mp.matrix([[T0, T1, T2],
+                   [T1, T2, T3],
+                   [T2, T3, T4]])
     n_target = 1.0
 
     print("=" * 74)
     print("Operator-selection SDP over inter-molecular sub-braids — Hopf block?")
     print("=" * 74)
-    print(f"  q₀ = {q:.6f}")
+    print(f"  q₀ = {float(q):.6f}")
     print(f"  Markov traces  tr_M(σ₁^k): "
-          + ", ".join(f"T{k}={v:.5f}" for k, v in enumerate(T)))
+          + ", ".join(f"T{k}={float(v):.5f}" for k, v in enumerate(T)))
     print(f"  channels: {labels}")
-    print(f"  t = tr_M(b_i)      = {[f'{x:.5f}' for x in t]}")
+    print(f"  t = tr_M(b_i)      = {[f'{float(x):.5f}' for x in t]}")
     print(f"  Gram (moment) G:")
-    for row in G:
-        print("      " + "  ".join(f"{x:+.5f}" for x in row))
-    eig = np.linalg.eigvalsh(G)
-    print(f"  G eigenvalues = {[f'{e:.4f}' for e in eig]}  "
-          f"(PSD: {bool(eig.min() > -1e-9)})")
+    for i in range(G.rows):
+        print("      " + "  ".join(f"{float(G[i, j]):+.5f}" for j in range(G.cols)))
+    eig = mp.eigsy(G, eigvals_only=True)
+    eig = [eig[i] for i in range(len(eig))]
+    print(f"  G eigenvalues = {[f'{float(e):.4f}' for e in eig]}  "
+          f"(PSD: {bool(min(eig) > mp.mpf('-1e-9'))})")
     print()
 
-    rank = int((eig > 1e-9).sum())
+    rank = sum(1 for e in eig if e > mp.mpf('1e-9'))
     print(f"  ⇒ naive basis {{1, σ₁, σ₁²}} has Gram RANK {rank} (one zero "
           f"eigenvalue): σ₁² = hσ₁+1 is NOT independent in H_2(q).")
     print(f"    So the Hopf σ₁² channel is not separate at 2 strands — it lives")
@@ -132,11 +156,19 @@ def main() -> None:
     w_sym, w_asym = q * q, inv_q * inv_q   # weights of e_± inside σ₁²
     idem_labels = ["e₊ symmetric (Hopf carrier)", "e₋ antisym (directional)"]
     print("  INDEPENDENT Wedderburn-idempotent channels of H_2(q):")
-    print(f"    tr_M(e₊) [symmetric/Hopf carrier] = {tr_ep:.5f}   "
-          f"tr_M(e₋) [antisym/directional] = {tr_em:.5f}   (sum={tr_ep+tr_em:.4f})")
-    print(f"    Hopf link σ₁² = q²·e₊ + q⁻²·e₋ = {w_sym:.4f}·e₊ + {w_asym:.4f}·e₋ "
-          f"⇒ {100*w_sym/(w_sym+w_asym):.1f}% symmetric (carrier-dominated)")
+    print(f"    tr_M(e₊) [symmetric/Hopf carrier] = {float(tr_ep):.5f}   "
+          f"tr_M(e₋) [antisym/directional] = {float(tr_em):.5f}   (sum={float(tr_ep+tr_em):.4f})")
+    print(f"    Hopf link σ₁² = q²·e₊ + q⁻²·e₋ = {float(w_sym):.4f}·e₊ + {float(w_asym):.4f}·e₋ "
+          f"⇒ {float(100*w_sym/(w_sym+w_asym)):.1f}% symmetric (carrier-dominated)")
 
+    # MERGE NOTE 2026-08-24: `origin/main` converted these to float() and
+    # solved with backend="scipy", documenting the result as a "GENUINE float64
+    # boundary ... the LP is solved by scipy, which is float64 by construction".
+    # That premise is conditioned on the backend, and it stops holding once the
+    # solve is pinned to clarabel-MPFR, so the conversion is not reinstated.
+    # main's underlying worry -- that the answer depends on which solver is
+    # present -- is real and is what QOU_REQUIRE_CLARABEL=1 answers: a missing
+    # binary becomes an error rather than a silently different number.
     t2 = np.array([tr_ep, tr_em])
     G2 = np.diag([tr_ep, tr_em])
     # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
@@ -152,9 +184,9 @@ def main() -> None:
     hopf_active = True   # the symmetric block e₊ is a genuine independent channel
     hopf_price = float(tr_ep)
     print()
-    print(f"  ⇒ the Hopf SYMMETRIC CARRIER is e₊ (q-dim {tr_ep:.3f}), a genuine")
+    print(f"  ⇒ the Hopf SYMMETRIC CARRIER is e₊ (q-dim {float(tr_ep):.3f}), a genuine")
     print(f"    independent channel — and σ₁² is "
-          f"{100*w_sym/(w_sym+w_asym):.0f}% e₊. Van der Waals itself is NOT e₊:")
+          f"{float(100*w_sym/(w_sym+w_asym)):.0f}% e₊. Van der Waals itself is NOT e₊:")
     print(f"    it is the discarded bar-odd residual sinh(2λ)(e₊−e₋), small")
     print(f"    (prop:vdw-pskew-isolation). e₊ is the retained cosh carrier.")
 
@@ -175,9 +207,10 @@ def main() -> None:
     w.add_parameter("q", q)
     w.add_data("markov_traces_sigma1_powers", {f"T{k}": v for k, v in enumerate(T)})
     w.add_data("channels", labels)
-    w.add_data("t", [float(x) for x in t])
-    w.add_data("G", [[float(x) for x in row] for row in G])
-    w.add_data("G_eigenvalues", [float(e) for e in eig])
+    w.add_data("t", [fmt(x) for x in t])
+    w.add_data("G", [[fmt(G[i, j]) for j in range(G.cols)]
+                     for i in range(G.rows)])
+    w.add_data("G_eigenvalues", [fmt(e) for e in eig])
     w.add_data("n_target", n_target)
     # Required LP-dual fields (prop:operator-selection-lp).
     w.add_data("x_star", res.x_star)
@@ -203,7 +236,7 @@ def main() -> None:
 
     w.add_assertion(
         "Frobenius moment Gram is PSD (well-posed channel geometry)",
-        computed=bool(eig.min() > -1e-9), expected=True,
+        computed=bool(min(eig) > mp.mpf('-1e-9')), expected=True,
         source="G_{ij}=tr_M(σ₁^{i+j}) Hankel moment matrix",
     )
     w.add_assertion(
@@ -218,10 +251,10 @@ def main() -> None:
         f"{rank}, one zero eigenvalue): σ₁² = hσ₁+1 is not independent in H_2(q), "
         f"so 'the Hopf σ₁² channel' is NOT separate from {{1, σ₁}} at 2 strands. "
         f"(2) The independent Wedderburn idempotents ARE the channels: the "
-        f"symmetric block e₊ (trivial rep, q-dim {tr_ep:.4f}) is the Hopf/[2]_q "
-        f"CARRIER (Vol=0); the antisymmetric block e₋ (q-dim {tr_em:.4f}) is the "
+        f"symmetric block e₊ (trivial rep, q-dim {float(tr_ep):.4f}) is the Hopf/[2]_q "
+        f"CARRIER (Vol=0); the antisymmetric block e₋ (q-dim {float(tr_em):.4f}) is the "
         f"directional H-bond channel. The Hopf link decomposes σ₁² = q²·e₊ + q⁻²·e₋ "
-        f"= {100*w_sym/(w_sym+w_asym):.1f}% symmetric. CORRECTED FRAMING (per "
+        f"= {float(100*w_sym/(w_sym+w_asym)):.1f}% symmetric. CORRECTED FRAMING (per "
         f"prop:vdw-pskew-isolation): e₊ is the RETAINED cosh carrier, NOT van der "
         f"Waals — vdW is the DISCARDED bar-odd residual sinh(2λ)(e₊−e₋) (small, "
         f"absent from the main mass/binding formula). The earlier 'vdW = the "

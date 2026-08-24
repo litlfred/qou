@@ -1,7 +1,7 @@
 {
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "commitSha": "ee11633e9a5688115cc3327b62a835a38c5c1230",
   "compute": "pentagon_to_borromean_h4_probe",
-  "computedAt": "2026-08-23T09:26:05.902957+00:00",
+  "computedAt": "2026-08-23T21:25:00.125611+00:00",
   "description": "Tests whether the post-\u03c4 Pentagon archimedean refinement (Rogers log\u00b2 correction h\u00b2 \u2192 h\u2074 residual) at a natural Borromean (u, v) specialization gives the empirical h\u2074 = \u22123/4 coefficient of the Borromean Markov-trace closed form. Multiple specializations tested; matches indicate candidates for the categorical Pentagon \u2192 h\u2074 derivation.",
   "durationMs": 0,
   "engine": "mpmath",
@@ -19,7 +19,7 @@
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "pentagon_to_borromean_h4_probe.py",
-  "scriptHash": "39f4852bb651",
+  "scriptHash": "34b55c5f9768",
   "specializations": [
     {
       "absolute_difference": 0.7607093848856132,
@@ -108,47 +108,47 @@
       "v": 0.3333333333333333
     },
     {
-      "absolute_difference": 0.7606343191818759,
-      "alpha": 0.33303112270237406,
-      "beta": 0.33303112270237406,
-      "c4_residual": 0.010634319181875804,
+      "absolute_difference": 0.7850620210690219,
+      "alpha": 0.3799172704415743,
+      "beta": 0.3799172704415743,
+      "c4_residual": 0.035062021069021884,
       "converges": true,
       "h_expansion": {
-        "c2": -0.020823658250680305,
-        "c4": 0.010634319181875804,
-        "c6": -0.009648836634356272,
-        "classical_log_term": 0.1640346349929583,
+        "c2": -0.046209955816415044,
+        "c4": 0.035062021069021884,
+        "c6": -0.05534785645756632,
+        "classical_log_term": 0.22839068010038832,
         "samples": [
           [
             0.01,
-            -2.0822594943322544e-06
+            -4.620645047702538e-06
           ],
           [
             0.02,
-            -8.32776242990819e-06
+            -1.847837598042968e-05
           ],
           [
             0.03,
-            -1.8732685656894667e-05
+            -4.1560600300278855e-05
           ],
           [
             0.04,
-            -3.329066886747729e-05
+            -7.38463972576093e-05
           ],
           [
             0.05,
-            -5.1992831894580904e-05
+            -0.00011530661671625112
           ]
         ]
       },
       "matches_borromean_target_within_1pct": false,
-      "max_arg_abs": 0.4993203341836944,
+      "max_arg_abs": 0.6126880371464652,
       "name": "markov_z_diagonal",
-      "relative_difference_pct": 101.41790922425011,
+      "relative_difference_pct": 104.67493614253625,
       "target_h4_borromean": -0.75,
-      "u": 0.4993203341836944,
-      "uv": 0.24932079612931632,
-      "v": 0.4993203341836944
+      "u": 0.6126880371464652,
+      "uv": 0.3753866308623884,
+      "v": 0.6126880371464652
     },
     {
       "absolute_difference": 0.7500020886101174,
@@ -366,46 +366,46 @@
       "v": 0.2
     },
     {
-      "absolute_difference": 0.7507020113143901,
-      "alpha": 0.4881500281999253,
-      "beta": 0.022371021604859563,
-      "c4_residual": 0.0007020113143901181,
+      "absolute_difference": 0.7521488206659722,
+      "alpha": 0.6020311185427105,
+      "beta": 0.01739371092242682,
+      "c4_residual": 0.0021488206659722444,
       "converges": true,
       "h_expansion": {
-        "c2": -0.0012060641817299954,
-        "c4": 0.0007020113143901181,
-        "c6": -0.0007843180453017255,
-        "classical_log_term": 0.015152531742759608,
+        "c2": -0.0022274403150902267,
+        "c4": 0.0021488206659722444,
+        "c6": -0.004573224751478016,
+        "classical_log_term": 0.01616725833339793,
         "samples": [
           [
             0.01,
-            -1.2059939913069006e-07
+            -2.2272255121907722e-07
           ],
           [
             0.02,
-            -4.823134014024632e-07
+            -8.906326111942645e-07
           ],
           [
             0.03,
-            -1.084889705733455e-06
+            -2.0029590677501616e-06
           ],
           [
             0.04,
-            -1.927908754559614e-06
+            -3.5584222573792216e-06
           ],
           [
             0.05,
-            -3.01078513854833e-06
+            -5.555242114836642e-06
           ]
         ]
       },
       "matches_borromean_target_within_1pct": false,
-      "max_arg_abs": 0.4993203341836944,
+      "max_arg_abs": 0.6126880371464652,
       "name": "asymmetric_z_h2",
-      "relative_difference_pct": 100.09360150858535,
+      "relative_difference_pct": 100.28650942212963,
       "target_h4_borromean": -0.75,
-      "u": 0.4993203341836944,
-      "uv": 0.021823398650361116,
+      "u": 0.6126880371464652,
+      "uv": 0.02677827111690499,
       "v": 0.04370620853252199
     }
   ],

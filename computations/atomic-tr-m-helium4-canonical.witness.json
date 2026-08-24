@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:54:32.545854+00:00",
-  "commitSha": "436c2cd36d31135b2e3c9a9a22c4f3f03ac90336",
+  "computedAt": "2026-08-23T21:00:11.815426+00:00",
+  "commitSha": "bb66ca86c3061b4004739e7ba5855f7183fb0f21",
   "assertions": [
     {
       "name": "abs_tau_4he_positive",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 440,
+  "durationMs": 260,
   "computation": "atomic-tr-m-helium4-canonical",
   "scriptFile": "atomic_tr_m_helium4_canonical.py",
   "scriptHash": "e62cc6ada70a",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -62,9 +63,9 @@
       "total": 3
     },
     "wall_seconds": {
-      "h3_baseline": 0.4348251639994487,
-      "closed_form_4he": 8.49839998409152e-05,
-      "total": 0.4349101479992896
+      "h3_baseline": 0.25675681099983194,
+      "closed_form_4he": 7.729799926892156e-05,
+      "total": 0.25683410899910086
     },
     "supersedes": {
       "witness": "atomic-tr-m-helium4.witness.json",

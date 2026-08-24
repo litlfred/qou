@@ -66,7 +66,7 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpc, mpf
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -75,6 +75,27 @@ Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 # CAL-1 from the registry, not re-typed: the literal here was
 # "0.510998950", CODATA truncated to 9 s.f. (canonical 0.51099895069).
 from codata_constants import M_E_MEV  # noqa: E402
+
+
+def _fmt_deep(obj):
+    """Serialize every mpf in a nested structure with `_precision.fmt`.
+
+    Mirrors the same helper in `per_knot_density_borromean_q_locality_probe`.
+    The witness dict carries `mpf` all the way through -- so comparisons and
+    `abs()` keep full precision -- and conversion happens at the write boundary
+    only, at OUTPUT_DPS. Do NOT `float()` at construction: that puts raw
+    binary64 into the witness, and stringifying the float instead would be
+    laundering (AGENTS.md NO-FLOAT64).
+    """
+    if isinstance(obj, dict):
+        return {k: _fmt_deep(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_fmt_deep(v) for v in obj]
+    if isinstance(obj, mpf):
+        return fmt(obj)
+    if isinstance(obj, mpc):
+        return {"re": fmt(obj.real), "im": fmt(obj.imag)}
+    return obj
 M_HIGGS_GEV = mpf("125.10")
 M_HIGGS_MEV = M_HIGGS_GEV * 1000
 M_H_OVER_M_E = M_HIGGS_MEV / M_E_MEV  # ≈ 244811
@@ -113,11 +134,14 @@ def evaluate_at(q, N: int, n: int, q_label: str) -> dict:
         magnitude = abs(j)
         return {
             "q_label": q_label,
-            "q_real": float(q.real) if hasattr(q, 'real') else float(q),
-            "q_imag": float(q.imag) if hasattr(q, 'imag') else 0.0,
-            "J_N_real": float(j.real),
-            "J_N_imag": float(j.imag),
-            "J_N_magnitude": float(magnitude),
+            # Carried as mpf, serialized by `_fmt_deep` at the write boundary.
+            # These were `float()` at construction, which is where 389 raw
+            # float64 fields entered a witness that had never been committed.
+            "q_real": q.real if hasattr(q, 'real') else q,
+            "q_imag": q.imag if hasattr(q, 'imag') else mpf(0),
+            "J_N_real": j.real,
+            "J_N_imag": j.imag,
+            "J_N_magnitude": magnitude,
             # Keep substrate precision via mp.mpf (numeric, not string —
             # downstream needs val>0 / format / division per Copilot #2050).
             "log_J_N_magnitude": (mp.log(magnitude) if magnitude > 0 else None),
@@ -133,22 +157,27 @@ def mass_scale_candidates(j_value: mpc, N: int) -> dict:
         return {"applicable": False}
     log_mag = mp.log(mag) if mag > 0 else mpf(0)
     candidates = {
-        "|J_N| · m_e (MeV)": float(mag * M_E_MEV),
-        "log|J_N| · m_e (MeV)": float(log_mag * M_E_MEV) if log_mag > 0 else 0,
+        "|J_N| · m_e (MeV)": mag * M_E_MEV,
+        "log|J_N| · m_e (MeV)": log_mag * M_E_MEV if log_mag > 0 else mpf(0),
         "exp(|J_N|) · m_e (MeV)": (
             # mp.mpf preserves substrate precision AND remains numeric
             # for downstream val>0 / format / division (per Copilot
             # #2050 review — mp.nstr broke numeric ops).
             mp.exp(mag) * M_E_MEV if mag < 50 else None  # avoid overflow
         ),
-        "|J_N|² · m_e (MeV)": float(mag ** 2 * M_E_MEV),
-        "(|J_N|·N) · m_e (MeV)": float(mag * N * M_E_MEV),
-        "(|J_N|·N²) · m_e (MeV)": float(mag * N ** 2 * M_E_MEV),
+        "|J_N|² · m_e (MeV)": mag ** 2 * M_E_MEV,
+        "(|J_N|·N) · m_e (MeV)": mag * N * M_E_MEV,
+        "(|J_N|·N²) · m_e (MeV)": mag * N ** 2 * M_E_MEV,
     }
     ratios = {}
     for label, val in candidates.items():
         if val is not None and val > 0:
-            ratios[label + " / m_H"] = float(mpf(str(val)) / M_HIGGS_MEV)
+            # Was `float(mpf(str(val)) / M_HIGGS_MEV)`, with `val` itself
+            # already a float. Round-tripping a float through str() back to
+            # mpf recovers no precision -- it only makes the division LOOK
+            # exact, which is the laundering AGENTS.md names. `val` is mpf
+            # now, so the division is exact and stays exact.
+            ratios[label + " / m_H"] = val / M_HIGGS_MEV
     return {"candidates_MeV": candidates, "ratios_to_higgs": ratios}
 
 
@@ -203,11 +232,11 @@ def main() -> None:
 
         print(f"\nN = {N} (color dim):")
         if "J_N_magnitude" in eval_q0:
-            print(f"  at q_0:        |J_{N}(T(2,{n_torus}))| = {eval_q0['J_N_magnitude']:.4f}")
+            print(f"  at q_0:        |J_{N}(T(2,{n_torus}))| = {mp.nstr(eval_q0['J_N_magnitude'], 6)}")
         if "J_N_magnitude" in eval_root_N:
-            print(f"  at exp(2πi/{N}):  |J_{N}(T(2,{n_torus}))| = {eval_root_N['J_N_magnitude']:.4f}")
+            print(f"  at exp(2πi/{N}):  |J_{N}(T(2,{n_torus}))| = {mp.nstr(eval_root_N['J_N_magnitude'], 6)}")
         if "J_N_magnitude" in eval_root_Np2:
-            print(f"  at exp(2πi/{N+2}):  |J_{N}(T(2,{n_torus}))| = {eval_root_Np2['J_N_magnitude']:.4f}")
+            print(f"  at exp(2πi/{N+2}):  |J_{N}(T(2,{n_torus}))| = {mp.nstr(eval_root_Np2['J_N_magnitude'], 6)}")
 
     # Find any candidate close to m_H / m_e ≈ 244811
     print("\n" + "=" * 75)
@@ -226,11 +255,24 @@ def main() -> None:
             for cand_label, val in mass_dict.items():
                 if val is None or val <= 0:
                     continue
-                ratio = val / float(M_HIGGS_MEV)
+                # Was `val / float(M_HIGGS_MEV)` -- arithmetic, not display,
+                # and the single line AGENTS.md names when it says a probe's
+                # float64 corrupts ANALYSIS rather than a stored number. Both
+                # operands are mpf now, so the ratio that drives the verdict
+                # below is exact.
+                ratio = val / M_HIGGS_MEV
                 # interested in ratios within 5 orders of magnitude
                 if 0.01 < ratio < 100:
-                    print(f"{N:<4} {q_label:<20} {cand_label:<35} {val:>14.4f} {ratio:>13.6f}")
-                    if best_ratio is None or abs(mp.log(mpf(str(ratio)))) < abs(mp.log(mpf(str(best_ratio)))):
+                    # float() here is DISPLAY ONLY (AGENTS.md NO-FLOAT64 §1).
+                    # The comment this replaces claimed val and ratio "stay mpf
+                    # everywhere" -- which was not true when it was written:
+                    # val arrived as float() and ratio was float/float. It is
+                    # true now.
+                    print(f"{N:<4} {q_label:<20} {cand_label:<35} "
+                          f"{mp.nstr(val, 8):>14} {mp.nstr(ratio, 7):>13}")
+                    # mpf(str(x)) round-trips dropped: x is already mpf, so the
+                    # round-trip recovered nothing and only looked exact.
+                    if best_ratio is None or abs(mp.log(ratio)) < abs(mp.log(best_ratio)):
                         best_ratio = ratio
                         best_info = {"N": N, "q_label": q_label, "candidate": cand_label, "value_MeV": val, "ratio_m_H": ratio}
 
@@ -240,8 +282,8 @@ def main() -> None:
     if best_info:
         print(f"Best candidate: N={best_info['N']}, q={best_info['q_label']}")
         print(f"  formula: {best_info['candidate']}")
-        print(f"  value:   {best_info['value_MeV']:.4f} MeV")
-        print(f"  ratio to m_H: {best_info['ratio_m_H']:.6f}")
+        print(f"  value:   {mp.nstr(best_info['value_MeV'], 8)} MeV")
+        print(f"  ratio to m_H: {mp.nstr(best_info['ratio_m_H'], 7)}")
         if 0.5 < best_info['ratio_m_H'] < 2.0:
             print(f"  → WITHIN 2× of Higgs mass! Investigate this combination further.")
         elif 0.1 < best_info['ratio_m_H'] < 10:
@@ -261,6 +303,21 @@ def main() -> None:
             "exp(2πi/(N+2)). Mass-scale candidates: |J_N|·m_e, log|J_N|·m_e, "
             "etc. Compares to actual m_H/m_e ≈ 244811."
         ),
+        # AGENTS.md §4 migration posture: "Any new witness must record its q0
+        # so a later reader can tell which layer it belongs to without
+        # inferring it from a call site." This producer hand-builds its dict
+        # rather than using WitnessBuilder, so nothing stamped the anchor for
+        # it -- and because it had never successfully written a witness, the
+        # omission had never been observable. The q0-anchor-consistency audit
+        # counted Q0_ANCHOR_MISSING 1880 -> 1881 the moment it first did.
+        #
+        # Q_50_DIGIT_STR is 1.1099785827513808... = the PROTON (experimental /
+        # Physical-Observations) pin, which is the standing default for all
+        # compute per the 2026-08-07 owner directive. NOT the muon pin, which
+        # is 1.1099785955573347...; the two agree to 8 digits, so they are
+        # distinguishable only past the 9th and must never be inferred by eye.
+        "q0Anchor": "proton",
+        "q0Value": str(Q_0),
         "parameters": {
             "precision": "mpfr",
             "dps": 50,
@@ -268,8 +325,8 @@ def main() -> None:
             "torus_link": "T(2, 8) = Higgs per electroweak-higgs-torus-link-triplet.md",
             "n_torus": n_torus,
             "N_color_range": N_values,
-            "m_higgs_target_MeV": float(M_HIGGS_MEV),
-            "m_higgs_over_m_e": float(M_H_OVER_M_E),
+            "m_higgs_target_MeV": M_HIGGS_MEV,
+            "m_higgs_over_m_e": M_H_OVER_M_E,
         },
         "results": results,
         "best_candidate": best_info,
@@ -299,7 +356,8 @@ def main() -> None:
         ),
     }
     out_path = Path(__file__).parent / "pentagon-rt-torus-knot-higgs-probe.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    out_path.write_text(
+        json.dumps(_fmt_deep(witness), indent=2, sort_keys=True) + "\n")
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 
 
