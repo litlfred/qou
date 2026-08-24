@@ -85,5 +85,49 @@ export default remark({
         "min-cr and min-|tr_M| disagree. The 2-versus-4 split feeding " +
         "CAL-2 rests on the retired producer alone.",
     },
+    {
+      kind: "status",
+      date: "2026-08-24",
+      body:
+        "**(1) above is settled, and it goes the way the caveat feared** " +
+        "(bean `qou-jqjx`, closed). Rebuilt on the retired script's own typed " +
+        "nucleon so only the convention varies, and reproduced the corpus's " +
+        "numbers exactly on the retired weight (`-0.005936` / `-0.132224` " +
+        "against the quoted `-0.006` / `-0.132`). On live convention D — " +
+        "`z = q^3/(q^2+1)` and `tr_M(e-) = h*z^2 + z`, which `pyhecke.gram` " +
+        "exports and `computations/universal-ilp.py` consumes through " +
+        "`hecke_core` — the same elements are `+0.544370` and `+0.408267`, " +
+        "and every intermediate step of both typed builds is positive as " +
+        "well. There is no instability at any point, so the gluon is not " +
+        "required. The proton and neutron blocks now carry the withdrawal.",
+    },
+    {
+      kind: "note",
+      date: "2026-08-24",
+      body:
+        "Two details worth keeping. First, the retired script prints " +
+        "`Gram matrix: corrected (tr_M(e-) = z^3 ...)` — it calls the bug the " +
+        "correction, which is why the defect survived being looked at. " +
+        "Second, convention D's Gram is singular (`lambda_min ~ 3e-16`, " +
+        "radical `(-1/q)^len(w)`), and `gram.py`'s header warns that fixing " +
+        "the trace alone drops a singular Gram into a path with nothing to " +
+        "handle it. That warning is about inverting `G` and does not reach " +
+        "this verdict: `G(x - c*v) = G x` exactly when `G v = 0`, so " +
+        "Frobenius positivity is already well defined on the quotient. " +
+        "Measured, projecting the radical out moves `min(G x)` by 5.6e-17 " +
+        "against margins of +0.339 and +0.218.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-08-24",
+      body:
+        "This makes (2) sharper rather than moot. With bare feasible for " +
+        "both nucleons the minimum-crossing objective returns 0 gluon " +
+        "crossings each, and the `|tr_M|` tiebreak returns a single `sigma_0` " +
+        "each — 1:1. So the two objectives no longer disagree about which " +
+        "nucleon needs more; they agree there is no asymmetry. `qou-v5fp`'s " +
+        "question (which objective the corpus means) still needs an answer, " +
+        "but it can no longer rescue the 2-versus-4 split either way.",
+    },
   ],
 });

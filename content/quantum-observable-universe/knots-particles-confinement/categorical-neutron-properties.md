@@ -6,11 +6,17 @@ As in the [proton](#def:categorical-proton) construction, we find $\mathrm{net}(
 **Step 2: Typed crossings + Hopf gluon stabilisation.**
 The two down quarks induce stronger $-h_{\mathrm{A}}$ shifts than the single down quark of the proton. The crossing pairs appear in [Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data).
 
-The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ remains LP unstable. The $\sigma_0$ channel violates Frobenius positivity following the second quark crossing. A single Hopf link $L_- = \sigma_1\sigma_0$ restores structural stability. 
+*(Withdrawn 2026-08-24 — the two struck paragraphs below.)*
 
-The integer LP dual selects $L_+ \to L_-$ (two Hopf links, 4 gluon crossings) as the minimum-action stabiliser. The neutron requires more gluon crossings than the proton (4 versus 2) because the $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability ($\mathrm{tr}_M = -0.132$ versus $-0.006$). This yields a total of 13 crossings (6 from $\mathcal{B}_3$, 3 from quarks, 4 from gluons).
+~~The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ remains LP unstable. The $\sigma_0$ channel violates Frobenius positivity following the second quark crossing. A single Hopf link $L_- = \sigma_1\sigma_0$ restores structural stability.~~
 
-The enumeration behind this selection is the proton's, over the same feasible set: every non-trivial braid word inside the crossing cap, the trefoil word $e^-$ included. Here too $e^-$ is admissible and simply loses the minimisation. The 4-versus-2 asymmetry is what carries the mass split into $\mathfrak{Q}_\beta$, and it follows from the $|\mathrm{tr}_M|$ tiebreak rather than from the minimum-crossing objective; the [gluon ledger](#rem:gluon-stabiliser-ledger) records both points and what remains open in the second.
+~~The integer LP dual selects $L_+ \to L_-$ (two Hopf links, 4 gluon crossings) as the minimum-action stabiliser. The neutron requires more gluon crossings than the proton (4 versus 2) because the $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability ($\mathrm{tr}_M = -0.132$ versus $-0.006$). This yields a total of 13 crossings (6 from $\mathcal{B}_3$, 3 from quarks, 4 from gluons).~~
+
+Both rest on $\mathrm{tr}_M(e^-) = z^3$, retired on 2026-05-19 in favour of the Markov-recursion value $h z^2 + z$. Under the live convention the bare element is $+0.408$, not $-0.132$, and the $\sigma_0$ channel is positive at *every* step of the typed build — so there is no instability, deeper or otherwise. The quoted $L_+ \to L_-$ falls to rank 26 of 41 at $|\mathrm{tr}_M| = 0.690$, losing to the bare element itself.
+
+**The 4-versus-2 asymmetry does not survive, and it was load-bearing.** Under the $|\mathrm{tr}_M|$ tiebreak the optimum is a single $\sigma_0$ at one crossing for the neutron and one for the proton — a ratio of $1{:}1$; under the minimum-crossing objective that [the ILP algorithm](#def:universal-ilp-algorithm) actually states it is $0{:}0$, since bare is feasible for both. So $m_n - m_p$ loses the mechanism this paragraph gave it. Nothing is offered in its place: the derivation needs re-deriving rather than patching. The [gluon ledger](#rem:gluon-stabiliser-ledger) carries the full measurement.
+
+What survives is the *scope* of the enumeration: the proton's feasible set, every non-trivial braid word inside the crossing cap, the trefoil word $e^-$ included, admissible and simply losing the minimisation.
 
 **Step 3: Neutron NF (with Hopf gluon).**
 At $q_0 \approx 1.1100$:
