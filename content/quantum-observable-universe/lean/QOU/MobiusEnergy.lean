@@ -91,7 +91,7 @@ structure ClassicalMobiusEnergy where
     LaTeX: `\label{prop:mobius-energy}` -/
 structure CategoricalMobiusEnergy (M : Type*) where
   /-- The substrate parameter governing the q-deformation. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- A chosen base point for evaluating the substrate field. -/
   basepoint : M
   /-- The q-parameter value at the base point. -/

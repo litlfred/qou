@@ -16,7 +16,7 @@ split-me defect — correctly, and it caught a first attempt that kept both here
 
 Two things live on this side, and only two:
 
-* `sp : SubstrateParameter M` — irreducibly archimedean.  Its `field : M → ℝ`
+* `sp : ArchimedeanSubstrateField M` — irreducibly archimedean.  Its `field : M → ℝ`
   comes with `field_pos`, `field_ge_one` and `not_root_of_unity`: order
   conditions and a root-of-unity condition, none of which a generic ring can
   state.
@@ -54,7 +54,7 @@ namespace QOU.Torsion
 structure ArchimedeanMassIdentity (M : Type*) extends MassIdentity ℝ M where
   /-- The substrate parameter `q : M → ℝ`.  Archimedean by construction: its
       `field` is ordered and bounded below by `1`. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The integrand is non-negative on the cycle.  An **order** condition, and
       the reason this structure cannot live in the generic core. -/
   integrand_nonneg : ∀ (p : M), p ∈ vortexCycle →

@@ -16,14 +16,14 @@ one file away: a generic core, then a separate archimedean realisation.
 
 This file is the **pre-wall half**.  Nothing here is ordered, normed, or fed to
 a real-analytic function.  The observable-side content —
-`SubstrateParameter` and the integrand's non-negativity — lives in
+`ArchimedeanSubstrateField` and the integrand's non-negativity — lives in
 `QOU/Torsion/ArchimedeanMassIdentity.lean`, in its **own module**: a real-field
 type coexisting with generic-`R` markers in one file is precisely what
 `check-wall-side` flags, and it caught a first attempt that kept both here.
 
 **What moved, and why each move was free:**
 
-* `sp : SubstrateParameter M` — irreducibly archimedean, and **inert**:
+* `sp : ArchimedeanSubstrateField M` — irreducibly archimedean, and **inert**:
   nothing in the tree ever read `MassIdentity.sp` (grep-verified; the `.sp`
   hits are `Symplectic.sp`, `cr.sp` and `eigenvalue.sp` on unrelated
   structures).  The deeper of the two anchors came out at zero cost.

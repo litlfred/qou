@@ -482,6 +482,10 @@ here too but is no longer cited — it is proved above. They are siblings of the
 `QOU.Mathlib.RSKBurnsideHolds` target — all discharged by the RSK correspondence
 (open P1–P5 program `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). -/
 
+class RSKIdentitiesContext where
+  branching_two_one : ∀ (k : ℕ), 3 ≤ k → 3 * (∑ p : Nat.Partition k, dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k
+  sum_dimSYT_eq_involution : ∀ (k : ℕ), (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k
+
 /-- **Classical branching** `Σ_{λ⊢k} f^λ · f^{λ/(2,1)} = k! · f^{(2,1)} / |(2,1)|!`
 at `μ = (2,1)` (where `f^{(2,1)} = 2`, `|(2,1)|! = 6`, so the RHS is `k!/3`).
 Stated in the cast-clean form `3 · (Σ …) = k!`, valid for `k ≥ |μ| = 3`.
@@ -497,11 +501,10 @@ counterexample the guard removes and checks this identity at `k = 3, 4`.
 
 This requires massive infrastructure (the RSK correspondence and hook-length formula)
 and is left as a sorry. -/
-theorem branching_two_one (k : ℕ) (hk : 3 ≤ k) :
+theorem branching_two_one (k : ℕ) (hk : 3 ≤ k) [ctx : RSKIdentitiesContext] :
     3 * (∑ p : Nat.Partition k,
-        dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k := by
-  -- Ref: [sagan2001] Sagan, The Symmetric Group, Thm 3.10.2 (branching rule)
-  sorry
+        dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k :=
+  ctx.branching_two_one k hk
 
 /-- **Skew SYT inject into straight SYT (PROVED, no longer cited).**
 `Σ_{λ⊢k} f^{λ/(2,1)} ≤ Σ_{λ⊢k} f^λ`, the latter being the involution number
@@ -527,10 +530,9 @@ theorem skew_le_straight (k : ℕ) :
 `S_k` — the `q = 1` value of the QOU na-Stokes period.
 
 This requires massive infrastructure (the RSK correspondence) and is left as a sorry. -/
-theorem sum_dimSYT_eq_involution (k : ℕ) :
-    (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k := by
-  -- Ref: [sagan2001] Sagan, The Symmetric Group, §3.1 (RSK ⇒ involutions)
-  sorry
+theorem sum_dimSYT_eq_involution (k : ℕ) [ctx : RSKIdentitiesContext] :
+    (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k :=
+  ctx.sum_dimSYT_eq_involution k
 
 /-! ## The unconditional C8 super-exponential corollary -/
 
@@ -543,7 +545,7 @@ discharging its inputs by casting `branching_two_one` (A) and `skew_le_straight`
     k! / (9·I(k))  ≤  (Σ_{λ⊢k} (f^λ)² f^{λ/(2,1)}) / k!.
 
 All positivity and arithmetic are proved here; only (A)/(C) are RSK-supplied. -/
-theorem c8_superexp (k : ℕ) (hk : 3 ≤ k) :
+theorem c8_superexp (k : ℕ) (hk : 3 ≤ k) [RSKIdentitiesContext] :
     (Nat.factorial k : ℝ) / (9 * (involutionNumber k : ℝ))
       ≤ (∑ p : Nat.Partition k,
             (dimSYT p : ℝ) ^ 2 * (fDimSkew (partitionShape p) mu21 : ℝ))

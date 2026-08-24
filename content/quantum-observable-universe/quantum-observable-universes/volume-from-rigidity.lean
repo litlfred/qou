@@ -44,15 +44,26 @@ structure VolumeFormFactorisation (C : Type u) [Category.{v} C]
   epsilon : exteriorSquare ⟶ (𝟙_ C)
   /-- The factorisation: ev ∘ (id ⊗ φ) = ε ∘ π. -/
   factorisation : (V ◁ phi) ≫ eval = proj ≫ epsilon
-  /-- Non-degeneracy: ε is an epimorphism. -/
-  epsilon_epi : Epi epsilon
+  /-- **Non-degeneracy**: ε is an isomorphism (bean `qou-n1dj`, 2026-08-22).
+
+      Was `epsilon_epi : Epi epsilon`, which made `volume_form_is_nondegen`
+      below a restatement of its own hypothesis.  This block's prose is
+      explicit about what non-degeneracy means here — "for ε to be
+      non-degenerate, we must have rank(Λ²V) = 1" — and `rank(Λ²V) = 1` is
+      `C(N,2) = 1`, i.e. `N = 2` (`exteriorSquareDim_eq_one_iff`).  Epi alone
+      gives only `C(N,2) ≠ 0`, i.e. `N ≥ 2`. -/
+  epsilon_iso : IsIso epsilon
 
 /-- Given a volume form factorisation, condition (iii) of the QOU
-    (non-degenerate volume form) is satisfied. -/
+    (non-degenerate volume form) is satisfied.
+
+    Now a derivation rather than a re-export: the epimorphism follows from
+    `epsilon_iso`, where before it *was* the hypothesis `epsilon_epi`. -/
 -- Ref: [manuscript] §1
 theorem volume_form_is_nondegen {C : Type u} [Category.{v} C]
     [MonoidalCategory C] (vff : VolumeFormFactorisation C) :
     Epi vff.epsilon :=
-  vff.epsilon_epi
+  haveI := vff.epsilon_iso
+  inferInstance
 
 end QOU

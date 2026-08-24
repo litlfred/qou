@@ -1,7 +1,7 @@
-import { remark } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default remark({
-  label: "rem:qou-motivic-galois-instance",
+export default conjecture({
+  label: "conj:qou-motivic-galois-instance",
   title:
     "QOU $\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\to \\mathrm{Frob}_p$",
   tags: [
@@ -10,33 +10,11 @@ export default remark({
     "habiro",
     "qou-substrate",
     "instance",
-    "axiom",
   ],
-  interprets: "def:motivic-galois-character",
   uses: [
     "def:motivic-galois-character",
   ],
   cites: ["habiro2002", "yekutieli2010", "tate1967"],
-  authorNotes: [
-    {
-      kind: "status",
-      date: "2026-08-12",
-      body:
-        "**Lean status (2026-08-12):** the co-located `.lean` file (which contained a bare `axiom` laundering the perpetual obstruction into the `MotivicGaloisCharacter` class) has been deleted. The formalization now lives in `lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean` (Route A: prime-ideal-collapse proof, $C = a_0(-1) + 2 a_1(-1)$, sorry-free).",
-    },
-    {
-      kind: "note",
-      date: "2026-08-22",
-      body:
-        "**Block kind (2026-08-22):** demoted from `definition` to `remark`. A `definition` requires a Lean sibling, and the one this block had was the axiom-laundering instance deleted above — so the block asserted a formalized instance the corpus no longer carries. It is not retargeted at the theorems in `MotivicPerpetualObstructionFromTrace.lean`, because those conclude `¬IsUnit (4 : ℤ)` and `¬IsUnit (−32 : ℤ)`: statements about two integers, whose types mention neither the prime `p` nor the exception set `S`, and whose proof terms discard both binders. Pointing a definition at them would record it as formalized by something that says nothing about it. Tracked as bean `qou-lrnd`; the construction itself is unaffected and stays witnessed by `computations/probes/habiro_frobenius_probe.py`.",
-    },
-    {
-      kind: "note",
-      date: "2026-08-22",
-      body:
-        "**Follow-up (2026-08-22):** that same file now also carries `habiro_frobenius_not_unit` and its proton/deuteron instances, whose conclusion is `¬ IsUnit (frob p)` — the Frobenius itself, with `p` in the statement rather than as decoration. They are sorry-free and take the mod-`𝔭` collapse `reduce p (frob p) = C` as an explicit hypothesis, because that identity is derived symbolically in the probe and not in Lean. The block stays a `remark`: a conditional theorem is not an instance, and supplying the hypothesis is exactly the open step.",
-    },
-  ],
   computation: {
     engine: "python",
     script: "computations/probes/habiro_frobenius_probe.py",
@@ -44,4 +22,65 @@ export default remark({
       "computations/probes/habiro-frobenius-probe.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-23",
+      body:
+        "Reclassified `definition()` → `conjecture()`, `def:` → `conj:` (bean " +
+        "`qou-s0ip`, option 2). This block was the single `✗` error in " +
+        "`run-validate` on `main` for at least a day: the `lean-file-exists` " +
+        "constraint applies to `definition` and nothing else, and this block " +
+        "had no co-located `.lean`, no module at its `lean.ref`, and no " +
+        "declaration carrying its label. The other ~33 unformalised refs are " +
+        "advisory only because their builders are not `definition`.",
+    },
+    {
+      kind: "note",
+      date: "2026-08-23",
+      body:
+        "Why `conjecture` and not a Lean stub. `MotivicGaloisCharacter` has " +
+        "one field, `frobenius_at : Nat.Primes → Mhat` — pure data, no " +
+        "propositional obligation — so an instance is writable with no proof " +
+        "burden, and that is exactly why writing one would be wrong: " +
+        "supplying `frobenius_at` means inventing the Habiro → Frob_p map in " +
+        "Lean. The class's own docstring records that its propositional field " +
+        "was removed on 2026-08-12 because encoding it as a class field " +
+        "forced every instance to either prove it or launder an axiom; " +
+        "fabricating the data field now is the same laundering (bean " +
+        "`qou-ffwk`).",
+    },
+    {
+      kind: "note",
+      date: "2026-08-23",
+      body:
+        "Dropped `lean: { ref: \"qou:QOU.LiftingDescent.QOUInstance." +
+        "qouMotivicGaloisChar\", validation: \"not_checked\" }`. Neither the " +
+        "module `QOU.LiftingDescent.QOUInstance` nor the declaration " +
+        "`qouMotivicGaloisChar` exists anywhere in the Lake tree, so the ref " +
+        "resolved by none of the three resolver candidates. Recorded here " +
+        "rather than carried as a pointer to nothing.",
+    },
+    {
+      kind: "note",
+      date: "2026-08-23",
+      body:
+        "Dropped the `axiom` tag. It described the co-located `.lean` that " +
+        "carried a bare `axiom` laundering the perpetual obstruction into " +
+        "`MotivicGaloisCharacter`; that file was deleted on 2026-08-12, so " +
+        "the tag pointed at an artefact that no longer exists.",
+    },
+    {
+      kind: "note",
+      date: "2026-08-23",
+      body:
+        "What would promote this back to `definition()`: a Lean instance " +
+        "whose `frobenius_at` is the Habiro evaluation `f(u)|_{u = ζ_{2p}}` " +
+        "landing in `Mhat`, i.e. the cross-prime coherence the prose asserts " +
+        "made formal. The numeric side already exists — " +
+        "`habiro_frobenius_probe.py` is a verified computation with a " +
+        "witness — so what is missing is the lift, not the data (bean " +
+        "`qou-s0ip` option 1).",
+    },
+  ],
 });
