@@ -285,7 +285,63 @@ This is now an exhaustive scope-(a) exclusion over the exact quantity the mass l
 uses, at the length the corpus itself assigns — not an extrapolation from a
 sampled maximum, and not conditional on an unresolved density convention.
 
-## Route 2 re-derivation under convention D: blocked, and not by me
+## Route 2 RE-DERIVED under convention D — and my "blocked" verdict was wrong twice
+
+**Correction 1: the LP never needed `G⁻¹`.** I wrote that Route 2 was blocked
+because "the LP requires `G⁻¹`" and under D that inverse does not exist. Reading
+`prop:operator-selection-lp`, `G` enters **only** as the constraint
+`Σⱼ Gᵢⱼ xⱼ ≥ 0` — a matrix-vector product. No inverse anywhere in the program.
+
+**Correction 2: the convention-D replacement exists and is owner-approved.**
+`G_PINV` is a genuine Moore–Penrose pseudo-inverse of the singular `G`, verified
+here: `rank(G) = 5` of 6, `‖GPG − G‖ = 6.7e-16`, `‖PGP − P‖ = 5.6e-16`, both
+`GP` and `PG` symmetric to `<6e-16`. Every remaining `G_INV` reference in the tree
+is a comment or a test asserting its absence — no consumer calls it.
+
+### What actually goes wrong, and the fix
+
+Run naively on the full 6-dimensional space the LP **is** degenerate, but through
+**LP degeneracy, not a missing inverse**: `Gv = 0` for the radical direction `v`,
+so the positivity constraints are blind to `v`, and `t·v = −4.4e-16` — the
+objective is blind too. The feasible polyhedron is unbounded in a direction
+nothing sees, and the artificial `M_bound = 1e6` is the only thing stopping it:
+
+| | full 6-dim | quotient (`v·x = 0`) |
+|---|---|---|
+| `‖x*‖` | ~5×10⁵ (at `M_bound`) | **3.130144** |
+| active set | `[0]` (degenerate) | **`[0, 1, 4, 5]`** |
+| `min(Gx)` | — | `0.00` (positivity tight) |
+
+Quotienting by the radical — the repair the corpus itself prescribes — gives a
+finite, non-degenerate optimum. **Route 2 is re-derivable under convention D.**
+
+### The result, and what it does and does not fix
+
+The program is **homogeneous** (linear objective, homogeneous `Gx ≥ 0`, only
+`Σx = n_target` inhomogeneous), so `x*(n) = n · x*(1)` exactly — verified at
+`n = 1, 2, 3`. The selected direction is
+
+    x*(1) = [−0.61738763, −0.68528704, 1.85198003,
+             −0.76065394,  2.05565817, −0.84430958]
+
+**So the LP does select a canonical, parameter-free direction in `H₃(q)`.** That
+is a real answer to "what fixes the operator".
+
+Two things it does **not** do, both stated because they bound what has been shown:
+
+1. **`primal_obj = 0` and `y₀* = 0` at every target.** The minimum-action operator
+   is trace-free, `tr_M(Φ*) = 0`, and the net constraint's shadow price vanishes.
+   The dual certificate is therefore **trivial** — the "demand pricing" reading of
+   the dual carries no information here, and `n_target` is a pure scale rather
+   than a selector.
+2. **It selects an ALGEBRA ELEMENT, not a braid.** `Φ* ∈ H₃(q)` is a real linear
+   combination of NF basis elements with negative, irrational coefficients. A
+   braid word maps *into* `H₃(q)`, but the image of the braid monoid is a
+   **proper subset**: not every algebra element is the image of a braid. So the
+   LP does not close B3 — going from `Φ*` to a braid word is an inverse problem
+   that is not generally solvable, and that gap is precisely Obstruction A.
+
+## Route 2 (superseded blocker note, retained)
 
 Route 2 (the D-meson Frobenius–Gram operator-selection) is the one C-frame blocker
 identified above. It **cannot be re-derived by swapping `z`**: bean `qou-cds2`
