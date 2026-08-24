@@ -86,10 +86,23 @@ theorem master_upstream_complete (R : Type u) [CommRing R]
 
 /-- **Sanity inventory** — confirms the 8 upstream files
     contribute interlocking content.  This theorem is a
-    documentation handle: every named class / instance below
-    is in scope and consumable. -/
+    documentation handle: every named class below is in scope
+    and consumable.
+
+    **`Nonempty` here means "inhabited", and for the spectral
+    sequence that is all it means** (bean `qou-fngs`).  The witness
+    is `canonicalTrivial R` — the `PUnit`-valued model whose
+    differentials are the constant map, so its collapse holds by
+    `rfl`.  It is named explicitly rather than found by
+    `inferInstance`, because it *was* an instance until 2026-08-24,
+    and resolution silently supplying it is what made
+    `[GBFiltrationCollapsesAtE2 R]` free for every `R`.
+
+    Read this line as "the API is inhabited", never as "the GB
+    filtration collapses" — see
+    `SpectralSequence.collapse_is_definitional`. -/
 theorem inventory_check (R : Type u) [CommRing R] (q : R) :
-    -- Spectral sequence
+    -- Spectral sequence — inhabited by the trivial model only
     Nonempty (GBFiltrationCollapsesAtE2 R) ∧
     -- Hecke algebra
     Nonempty (IwahoriHeckeAlgebra R 2 q) ∧
@@ -97,7 +110,7 @@ theorem inventory_check (R : Type u) [CommRing R] (q : R) :
     -- Permutation enumeration (concrete sigma)
     coxeterLength sigma1_in_S3 = 1 ∧
     coxeterLength sigma2_in_S4 = 1 :=
-  ⟨⟨inferInstance⟩, ⟨inferInstance⟩, ⟨inferInstance⟩,
+  ⟨⟨canonicalTrivial R⟩, ⟨inferInstance⟩, ⟨inferInstance⟩,
    coxeterLength_sigma1_in_S3, coxeterLength_sigma2_in_S4⟩
 
 end QOU.Mathlib.Summary

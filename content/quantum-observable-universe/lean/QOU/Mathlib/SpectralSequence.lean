@@ -119,12 +119,52 @@ class GBFiltrationCollapsesAtE2 (R : Type u) where
   /-- It collapses at `E_2`. -/
   collapses : CollapsesAtE2 ss
 
-/-- Canonical instance: the trivial spectral sequence vacuously
-    discharges the §3b-cond hypothesis.  Genuine instances (when
-    the `R`-module GB filtration is formalised) override this. -/
-instance canonical (R : Type u) : GBFiltrationCollapsesAtE2 R where
+/-- The trivial spectral sequence discharges the §3b-cond hypothesis —
+    **and that is exactly why this is a `def` and not an `instance`.**
+
+    It was an `instance` until 2026-08-24 (bean `qou-fngs`), which meant
+    typeclass resolution supplied it for *every* `R`. Any downstream theorem
+    taking `[GBFiltrationCollapsesAtE2 R]` was therefore unconditional, and the
+    substrate axiom `S-GB-spectral-collapse` asserted nothing. Same
+    self-assuming shape that `hasDqSquaredNonvanishing_of_fact` and
+    `hasCategoricalIrreducibility_of_subsingleton` were deleted for.
+
+    As a `def` it remains available — `canonicalTrivial R` is still the model to
+    reach for when only the *shape* is wanted — but it must now be supplied by
+    hand, so a reader of a downstream theorem can see whether the hypothesis was
+    discharged by a real filtration or by `PUnit`. -/
+def canonicalTrivial (R : Type u) : GBFiltrationCollapsesAtE2 R where
   ss := trivial R
   collapses := trivial_collapses_at_E2 R
+
+/-! ### What inhabiting these classes does and does not show
+
+    In the manner of
+    `QOU/Archimedean/TauFunctorTargetSpec.lean`'s
+    `interface_alone_is_trivially_inhabitable`: the classes above are
+    inhabitable, cheaply, and a reader should be able to check how cheaply.
+
+    **Every spectral sequence constructed in this file has
+    `differential _ _ := default` — the constant map.** So `CollapsesAt` holds
+    of them by `rfl`, definitionally, for every page. Collapse is built into
+    the models rather than proved of anything.
+
+    That is not a defect of the models — an abstract API needs witnesses — but
+    it does bound what they establish. `collapse_is_definitional` below records
+    it so no downstream reader mistakes "the API has a collapsing instance" for
+    "the GB filtration collapses".
+
+    The open obligation is unchanged and is the whole content of
+    `S-GB-spectral-collapse`: exhibit the spectral sequence of the *actual*
+    Gröbner filtration on `H_n(q)`, with differentials that are what the
+    filtration makes them, and show `d_r = 0` for `r ≥ 2`. Nothing here does
+    that, and nothing here is evidence about it. -/
+
+/-- **The trivial model collapses definitionally, not substantively.**
+    Its differential is the constant map, so `d_r = 0` is `rfl` at every page —
+    there is no filtration behind it and no computation performed. -/
+theorem collapse_is_definitional (R : Type u) (r₀ : ℕ) :
+    CollapsesAt (trivial R) r₀ := fun _ _ _ => rfl
 
 /-! ### Convergence + E_∞ page
 
@@ -168,7 +208,7 @@ def trivialTarget : ℤ → ℤ → Type u := fun _ _ => PUnit
 
 /-- The trivial spectral sequence converges to `trivialTarget`
     at any `r₀`, with the `Equiv.refl` isomorphism on each cell. -/
-instance trivial_converges (R : Type u) :
+def trivial_converges (R : Type u) :
     SpectralSequenceConvergesTo R (trivial R) 2
       (trivial_collapses_at_E2 R) trivialTarget where
   cell_iso _ _ := Equiv.refl PUnit
@@ -233,7 +273,7 @@ class GBSpectralConvergesToWedderburn (R : Type u) (n : ℕ) where
     structurally an instance over the trivial Wedderburn target.
     Genuine instances arrive at small `n` (n = 2, 3, 4) once the
     explicit cohort data is wired. -/
-instance gb_trivial_converges (R : Type u) (n : ℕ) :
+def gb_trivial_converges (R : Type u) (n : ℕ) :
     GBSpectralConvergesToWedderburn R n where
   ss := trivial R
   collapses := trivial_collapses_at_E2 R
@@ -339,14 +379,14 @@ theorem wedderburnSS_n2_collapses_at_E2 (R : Type u) [Inhabited R] :
     spectral sequence converges to `wedderburnTarget_n2`, with the
     `Equiv.refl` cell-by-cell isomorphism (since both sides are
     literally `Fin (blockDim_n2 p q) → R`). -/
-instance wedderburnSS_n2_converges (R : Type u) [Inhabited R] :
+def wedderburnSS_n2_converges (R : Type u) [Inhabited R] :
     SpectralSequenceConvergesTo R (wedderburnSS_n2 R) 2
       (wedderburnSS_n2_collapses_at_E2 R) (wedderburnTarget_n2 R) where
   cell_iso _ _ := Equiv.refl _
 
 /-- **Full Wedderburn-convergence class instance** at `n=2`: bundles
     the spectral sequence, collapse, blockDim, and convergence. -/
-instance gb_wedderburn_n2_converges (R : Type u) [Inhabited R] :
+def gb_wedderburn_n2_converges (R : Type u) [Inhabited R] :
     GBSpectralConvergesToWedderburn R 2 where
   ss := wedderburnSS_n2 R
   collapses := wedderburnSS_n2_collapses_at_E2 R
@@ -383,7 +423,7 @@ theorem wedderburnSS_generic_collapses_at_E2 (R : Type u) [Inhabited R]
   wedderburnSS_generic_collapses R blockDim 2
 
 /-- The generic-n Wedderburn SS converges to its target. -/
-instance wedderburnSS_generic_converges (R : Type u) [Inhabited R]
+def wedderburnSS_generic_converges (R : Type u) [Inhabited R]
     (blockDim : ℤ → ℤ → ℕ) :
     SpectralSequenceConvergesTo R (wedderburnSS_generic R blockDim) 2
       (wedderburnSS_generic_collapses_at_E2 R blockDim)
@@ -391,7 +431,7 @@ instance wedderburnSS_generic_converges (R : Type u) [Inhabited R]
   cell_iso _ _ := Equiv.refl _
 
 /-- **GB Wedderburn convergence at any `n`** via the generic SS. -/
-instance gb_wedderburn_generic_converges (R : Type u) [Inhabited R] (n : ℕ)
+def gb_wedderburn_generic_converges (R : Type u) [Inhabited R] (n : ℕ)
     (blockDim : ℤ → ℤ → ℕ) :
     GBSpectralConvergesToWedderburn R n where
   ss := wedderburnSS_generic R blockDim

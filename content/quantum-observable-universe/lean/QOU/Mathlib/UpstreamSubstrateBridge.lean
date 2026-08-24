@@ -40,19 +40,32 @@ open QOU.Mathlib.RSKBridge
 open QOU.Mathlib.ArchimedeanRealization
 open QOU.Mathlib.NonAbelianStokes
 
-/-! ### Bridge 1: GB spectral sequence collapse at E_2
+/-! ### Bridge 1: a collapsing spectral sequence exists — NOT the GB one
 
-    The QOU substrate axiom asserts the GB-filtration spectral
-    sequence collapses at the E_2 page.  Upstream class:
-    `GBFiltrationCollapsesAtE2 R`.  Downstream usage: take the
-    canonical instance and read off the collapse property. -/
+    The QOU substrate axiom `S-GB-spectral-collapse` asserts that the
+    **Gröbner-filtration** spectral sequence collapses at `E_2`. This bridge
+    does **not** establish that, and until 2026-08-24 it was named as though it
+    did (bean `qou-fngs`).
 
-/-- **Substrate-discharger**: at any ground ring `R`, the
-    canonical `GBFiltrationCollapsesAtE2 R` instance discharges
-    the QOU substrate-level collapse-at-`E_2` claim. -/
-theorem gb_spectral_collapse_at_E2_discharged (R : Type u) :
+    What it establishes is that *some* spectral sequence over `R` collapses —
+    witnessed by `canonicalTrivial R`, whose cells are `PUnit` and whose
+    differentials are the constant map, so collapse holds by `rfl`. See
+    `SpectralSequence.collapse_is_definitional`.
+
+    That is worth having as an API sanity check and is worth nothing as
+    evidence about the Gröbner filtration. -/
+
+/-- **The API is inhabited**: some spectral sequence over `R` collapses at
+    `E_2`, witnessed by the trivial model.
+
+    Was `gb_spectral_collapse_at_E2_discharged`, which read as though the
+    substrate axiom had been discharged. Nothing here mentions the Gröbner
+    filtration, and the witness performs no computation: the statement is
+    `∃ S, CollapsesAtE2 S`, which the constant-zero differential satisfies
+    definitionally. Renamed so the name matches the content. -/
+theorem exists_collapsing_spectralSequence (R : Type u) :
     ∃ (S : SpectralSequence R), CollapsesAtE2 S :=
-  ⟨(canonical R).ss, (canonical R).collapses⟩
+  ⟨(canonicalTrivial R).ss, (canonicalTrivial R).collapses⟩
 
 /-! ### Bridge 2: RSK cardinality for n = 2..8
 
@@ -175,7 +188,7 @@ theorem upstream_discharge_complete (R : Type u) [CommRing R]
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
     (∃ W2 : WedderburnIsomorphism R 2 q, True) ∧
     (∃ W3 : WedderburnIsomorphism R 3 q, True) :=
-  ⟨gb_spectral_collapse_at_E2_discharged R,
+  ⟨exists_collapsing_spectralSequence R,
    ⟨wedderburn_n2 R q, trivial⟩,
    ⟨wedderburn_n3 R q, trivial⟩⟩
 
@@ -270,7 +283,7 @@ theorem complete_upstream_discharge (R : Type u) [CommRing R]
     (∀ (Y : YekutieliFiniteSliceMultTrace G z_G) (n : ℕ),
       Y.trace n = z_G ^ n) ∧
     (q_zero > 1) :=
-  ⟨gb_spectral_collapse_at_E2_discharged R,
+  ⟨exists_collapsing_spectralSequence R,
    ⟨wedderburn_n2 R q, trivial⟩,
    ⟨wedderburn_n3 R q, trivial⟩,
    markov_axiom_h1_to_h2_discharged q_ℝ z,
@@ -352,7 +365,7 @@ theorem extended_upstream_discharge (R : Type u) [CommRing R]
     (∀ (Y : YekutieliFiniteSliceMultTrace G z_G) (n : ℕ),
       Y.trace n = z_G ^ n) ∧
     (q_zero > 1) := by
-  refine ⟨gb_spectral_collapse_at_E2_discharged R,
+  refine ⟨exists_collapsing_spectralSequence R,
           rsk_cardinality_discharged_n2_to_n8,
           yekutieli_finite_slice_discharged G z_G,
           substrate_q0_in_regime⟩
