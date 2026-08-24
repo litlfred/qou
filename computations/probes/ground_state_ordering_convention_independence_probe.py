@@ -173,4 +173,16 @@ for name, expr in (("C", hU_C), ("D", hU_D)):
     root = sp.nsolve(expr, q, sp.Rational(6, 5))
     print(f"    hU window, convention {name}:  1 < q < {sp.N(root, 12)}")
 
+# `hU` is SUFFICIENT, not necessary: it is what turns the gap identity into an
+# inequality between absolute values, and the conclusion outlives it.  The two
+# windows below are the true reach of |sorted| < |prescribed| -- and they are
+# why the audit's "1 < q <~ 1.22" for convention C is correct and must NOT be
+# "corrected" to the hU window 1.13699..., which is a different quantity.
+absgap = sp.Abs(prescribedV0 * prescribedV1) - sp.Abs(sortedV0 * sortedV1)
+print()
+for name, zx, guess in (("C", zC, sp.Rational(123, 100)), ("D", zD, sp.Rational(8, 5))):
+    f = sp.lambdify(q, absgap.subs(z, zx), "mpmath")
+    root = mp.findroot(f, mp.mpf(guess))
+    print(f"    conclusion window, convention {name}:  1 < q < {mp.nstr(root, 12)}")
+
 raise SystemExit(0 if n_ok == len(results) else 1)
