@@ -54,6 +54,7 @@ z = q0**3 / (q0**2 + 1)
 # convention (hyperbolic-volume heuristic) is removed — it was
 # not derivable from the mass-identity prescription.
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 E_0_BETA_DECAY_Q_MEV = Q_NEUTRON_MEV  # CODATA: 0.78233341 ± 6.1e-7 MeV
 
 
@@ -637,7 +638,7 @@ def dim_q(shape, q=None):
     module-level q; pass `q` explicitly to pin the anchor (bean qou-wee5)."""
     n = sum(shape)
     if q is None:
-        return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
+        return qfac(n, Q0_PROTON) / math.prod(q_int(hk) for hk in young_hooks(shape))
     return qfac(n, q) / math.prod(_q_int_at(hk, q) for hk in young_hooks(shape))
 
 
