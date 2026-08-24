@@ -75,7 +75,12 @@ from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import str_at_true_precision  # noqa: E402
 import mass_at_3A_proper as m3  # noqa: E402
-from hecke_characters import build_seminormal_matrices  # noqa: E402
+from hecke_characters import build_seminormal_matrices  # noqa: E402, F401
+from hoefsmit_mpmath import (  # noqa: E402
+    BlockCacheMP,
+    chi_lambda_of_word_sparse_mp,
+    seminormal_matrices_mp,
+)
 # Path bridge: keeps flat-namespace imports working from this cluster
 # subdirectory. The bridge module puts every other cluster subdir on
 # sys.path so cross-cluster bare-name imports resolve. Idempotent.
@@ -86,6 +91,12 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
+
+# One cache for every partition: BlockCacheMP memoises the Hoefsmit block
+# values, which depend only on q, so rebuilding it per irrep would recompute
+# the same square roots ten times. Bound at module scope for the same reason
+# `set_compute_dps()` is -- both must be in force before any mpf arithmetic.
+_BLOCK_CACHE_MP = BlockCacheMP(mp.mpf(Q_50_DIGIT_STR))
 
 # AME2020 total nuclear binding (MeV) — same anchors as PROBE 2.
 AME = {"D": mp.mpf("2.224566"), "4He": mp.mpf("28.295673"), "6Li": mp.mpf("31.994564")}
@@ -209,13 +220,13 @@ class ExactCharacterInfeasible(RuntimeError):
 
 
 def _chi(lam, word, n_gens):
-    """χ_λ(β_K) at full precision -- or an explicit refusal.
+    """χ_λ(β_K) in exact mpmath arithmetic.
 
-    THIS PROBE CANNOT CURRENTLY RUN, AND THE REASON IS NOT A BUG TO PATCH
-    AROUND. `atom_braid_word_3A` carries exact `mpf` offsets by default
+    THIS PROBE USED TO REFUSE HERE, AND THE REFUSAL IS NOW LIFTED.
+    `atom_braid_word_3A` carries exact `mpf` offsets by default
     (`allow_float64=False`), and `mass_at_3A_proper.chi_lambda_of_word`
     multiplies them into `scipy.sparse` matrices, which reject `dtype
-    object` -- so the two halves are precision-incompatible. Measured on
+    object` -- so those two halves are precision-incompatible. Measured on
     the A=4 word: 25 of its 47 crossings carry an `mpf` coefficient.
 
     The exact route EXISTS -- `hoefsmit_mpmath.chi_lambda_of_word_mp`, dense
@@ -267,40 +278,45 @@ def _chi(lam, word, n_gens):
     from them, and AGENTS.md's rule is about carriage through the whole
     analysis, not one number.
 
-    THE REAL FIX IS MEASURED AND WORKS. Neither cast nor dense-mpmath: the
+    THE FIX IS BUILT (bean `qou-fmoi`), and this function now routes to it:
+    `hoefsmit_mpmath.chi_lambda_of_word_sparse_mp`. Neither cast nor dense-mpmath: the
     seminormal `sigma_i` carry at most 2 nonzeros per row, so the trace can be
     taken by propagating ONE ROW AT A TIME through the 47 factors, never
     materialising the product. Cost falls from `dim^3 * len(word)` to
     `dim^2 * len(word) * nnz_per_row`. Validated at dim=132, dps=70, against
     the dense routine:
 
-        dense   20.472734309881024467   ~80 s
-        sparse  20.472734309881024467    ~1 s      (80-85x over two runs)
+        dense   20.472734309881028753   ~80 s
+        sparse  20.472734309881028753    ~1 s      (80-85x over two runs)
         relative difference  7.077e-71  -- exact agreement at the working
                                            precision, NOT a float64 floor
+
+    THE VALUE ABOVE IS AT THE CANONICAL 50-DIGIT q. An earlier version of this
+    note quoted 20.472734309881024467, which came from `mpf(str(q_parameter.Q))`
+    -- and `q_parameter.Q` is a Python FLOAT, so that pins the substrate to 16
+    digits. The dense-vs-sparse agreement was unaffected (same q on both sides),
+    but the character itself was a float64-q character, differing from the
+    probe's at ~1e-16 for a reason having nothing to do with either routine.
 
         extrapolated, all ten irreps:  ~36 min (nnz/row = 1, as at dim=132)
                                        ~73 min (nnz/row = 2, the 2x2 blocks
                                                 that larger irreps carry)
 
     So the A=4 [1^4] object is roughly an hour of exact compute, not 1135
-    hours. Implementing that properly -- placement, tests, review -- is bean
-    `qou-fmoi`, not a line in a crash fix.
+    hours. Cross-checked against the dense routine by
+    `computations/hoefsmit_sparse_character_test.py`.
+
+    NOTE the matrices come from `seminormal_matrices_mp`, NOT from
+    `hecke_characters.build_seminormal_matrices` -- the latter is the float64
+    builder whose `BlockCache` uses `math.sqrt` against a 1e-15 degeneracy
+    threshold, so feeding its output to an exact character routine would carry
+    float64 blocks through an exact product and advertise a precision the
+    numbers do not have.
     """
-    sig, dim, _ = build_seminormal_matrices(tuple(lam))
+    sig, dim, _ = seminormal_matrices_mp(tuple(lam), cache=_BLOCK_CACHE_MP)
     if dim == 0:
         return mp.mpf(0)
-    if any(isinstance(c, mp.mpf) or isinstance(d, mp.mpf) for c, d, _g in word):
-        raise ExactCharacterInfeasible(
-            f"chi_lambda for {tuple(lam)} (dim={dim}): the braid word carries "
-            f"exact mpf offsets, which scipy.sparse cannot hold (dtype "
-            f"object), and the dense mpmath route costs ~705 h at dim=4158. "
-            f"The trace-only sparse route is measured at ~1 h for all ten "
-            f"irreps (bean qou-fmoi) but is not built yet. Refusing "
-            f"rather than casting to float64 (AGENTS.md: probes are not "
-            f"exempt)."
-        )
-    return mp.mpf(m3.chi_lambda_of_word(sig, dim, word, n_gens))
+    return chi_lambda_of_word_sparse_mp(sig, dim, word, n_gens)
 
 
 def atom_traces(Z, N, q, *, projected_only=True, verbose=False):
