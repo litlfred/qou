@@ -1724,6 +1724,23 @@ export const references: Reference[] = [
     issued: { "date-parts": [[1962]] },
     DOI: "10.1103/PhysRev.125.1067",
   }),
+
+  ref({
+    id: "gellmannoakesrenner1968",
+    type: "article-journal",
+    title: "Behavior of Current Divergences under SU(3) x SU(3)",
+    author: [
+      { family: "Gell-Mann", given: "Murray" },
+      { family: "Oakes", given: "R. J." },
+      { family: "Renner", given: "B." },
+    ],
+    "container-title": "Physical Review",
+    volume: "175",
+    issue: "5",
+    page: "2195-2199",
+    issued: { "date-parts": [[1968]] },
+    DOI: "10.1103/PhysRev.175.2195",
+  }),
   ref({
     id: "colemanglashow1961",
     type: "article-journal",
