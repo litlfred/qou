@@ -199,13 +199,27 @@ def emit(rows: list[dict]) -> str:
             f"theorem probe{i} : {safe} := by\n"
             f"  constructor <;>\n"
             f"    first\n"
-            f"      | norm_num\n"
-            f"      | (intros; norm_num)\n"
+            # EVERY alternative ends in `done`. Without it the probe silently
+            # under-reports: `first` advances to the next alternative only when
+            # the previous one FAILS, and a tactic that makes progress without
+            # closing the goal has not failed. Measured -- `norm_num` rewrites
+            # `∃ q : ℝ, q > 0` to `∃ q, 0 < q`, `first` commits to that, and the
+            # goal is left open. That one behaviour put 14 provable carriers in
+            # the "undecided" column, and widening the alternative list changed
+            # nothing at all until `done` was added.
+            f"      | (norm_num; done)\n"
+            f"      | (intros; norm_num; done)\n"
             f"      | (intros; exact ⟨0, by norm_num⟩)\n"
-            f"      | (intros; refine ⟨0, ?_, ?_⟩ <;> norm_num)\n"
-            f"      | (intros; refine ⟨0, ?_⟩ <;> norm_num)\n"
-            f"      | (intros; simp)\n"
-            f"      | trivial"
+            f"      | (intros; exact ⟨1, by norm_num⟩)\n"
+            f"      | (intros; refine ⟨0, ?_⟩ <;> norm_num; done)\n"
+            f"      | (intros; refine ⟨1, ?_⟩ <;> norm_num; done)\n"
+            f"      | (intros; refine ⟨0, ?_, ?_⟩ <;> norm_num; done)\n"
+            f"      | (intros; refine ⟨1, ?_, ?_⟩ <;> norm_num; done)\n"
+            f"      | (intros; exact ⟨fun _ => 0, fun _ => rfl⟩)\n"
+            f"      | (intros; exact ⟨fun _ => 1, fun _ => rfl⟩)\n"
+            f"      | (intro e h; exact ⟨e, h, le_refl e⟩)\n"
+            f"      | (intros; simp; done)\n"
+            f"      | (trivial; done)"
         )
         parts.append("")
     return "\n".join(parts)
