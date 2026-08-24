@@ -243,6 +243,23 @@ theorem IsRothTheta.nonneg {σ : Type*} {a : ℤ} {r H : σ → ℕ} {Θ : ℚ}
   rw [heq] at hle
   exact_mod_cast hle
 
+/-- `R(a; r)` only grows with `a`. -/
+theorem InRothPolySet.mono {σ : Type*} {a a' : ℤ} {r : σ → ℕ} {A : MvPolynomial σ ℤ}
+    (haa : a ≤ a') (h : InRothPolySet a r A) : InRothPolySet a' r A :=
+  ⟨h.1, h.2.1, fun n => le_trans (h.2.2 n) haa⟩
+
+/-- **`Θ_m` is non-decreasing in `a`** — §9's second property.
+
+`Θ_m` is *attained* at some `A ∈ R(a;r)`, and `R(a;r) ⊆ R(a';r)`, so the larger problem's upper
+bound applies to that very `A`.  ⚠ Attainment is doing the work: without it one would have to
+compare two suprema, and the inclusion alone would not suffice to transfer a witness. -/
+theorem IsRothTheta.mono_height {σ : Type*} {a a' : ℤ} {r H : σ → ℕ} {Θ Θ' : ℚ}
+    (haa : a ≤ a') (h : IsRothTheta a r H Θ) (h' : IsRothTheta a' r H Θ') : Θ ≤ Θ' := by
+  obtain ⟨-, A, κ, hA, hκ, heq⟩ := h
+  have hle := h'.1 A κ (hA.mono haa) hκ
+  rw [heq] at hle
+  exact_mod_cast hle
+
 /-- **The pointwise half of `Θ_m ≤ m`** — every exponent dominated by the degree vector has
 weight at most the number of variables.
 
