@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T19:24:22Z
-updated_at: 2026-08-24T19:25:19Z
+updated_at: 2026-08-24T19:30:39Z
 ---
 
 ## Measured, not asserted: the corpus's meson braid closes to T(2,5) with Vol = 0
@@ -72,3 +72,45 @@ inaccessible. This changes the candidate space before a single volume is compare
 is `5₂` at 5.47 % — the distance to the nearest point of a dense set, not a
 result; selecting on it would be the per-state fit the J/ψ attack already recorded
 as worthless.
+
+
+## The heavy end IS bounded — and at the dictionary's own length, D⁰ is excluded
+
+I recorded the heavy end as "not yet bounded". It bounds, and the answer is a hard
+no at the crossing count the corpus itself assigns.
+
+    meson  dict crossings   max Vol @ that length   Vol·ρ needed   verdict
+    π      3+3 = 6          7.32772                 2.681          reachable
+    K      3+5 = 8          12.35091 (EXHAUSTIVE)   9.484          reachable
+    η/φ    5+5 = 10         >= 14.334               10.525         reachable
+    D⁰     5+3 = 8          12.35091 (EXHAUSTIVE)   35.827         SHORT by 2.9x
+    J/ψ    5+5 = 10         >= 14.334               59.497         SHORT by >=4.2x
+
+**Length 8 is EXHAUSTIVE, not sampled** — all `4·3⁷ = 8748` words on
+`{σ₀^±1, σ₁^±1}` with no adjacent cancellation; max hyperbolic volume over all of
+them is `12.35091`, attained at `[1,-2,1,-2,1,-2,1,-2]`. Length 9 likewise
+(`4·3⁸ = 26244`).
+
+**So no 3-braid word of the D meson's own dictionary length can carry its mass,
+whichever word is chosen.** Scope-(a): of *this length at this density*, not of
+the hyperbolic mechanism.
+
+Max hyperbolic Vol by word length (4–9 exhaustive; 10–18 sampled, 6000 seeded
+random words each ⇒ those are **lower bounds**, not maxima):
+
+    len   4     5     6     7     8      9      11     14     18
+    Vol   2.030 3.664 7.328 8.997 12.351 13.948 ≥17.30 ≥19.17 ≥25.77
+
+Growth ≈1.5–1.7 per letter at the top, so on that trend D⁰ needs `L ≈ 24` and
+J/ψ `L ≈ 40` — 3–4× their dictionary lengths.
+
+### Two assumptions this rests on — both are author questions, not conclusions
+
+1. **`ρ = 1`.** The per-block density is not 1 in general; a large `ρ` relaxes the
+   requirement proportionally and could dissolve the exclusion outright.
+2. **Dictionary crossings = braid WORD LENGTH**, rather than the closure's minimal
+   crossing number. The corpus's own `𝔐` has word length 6 and closure crossing
+   number 5, so the two genuinely differ.
+
+Either could dissolve it. That is why they go to the author rather than into a
+verdict — and it is the difference between a prune and an over-claim.
