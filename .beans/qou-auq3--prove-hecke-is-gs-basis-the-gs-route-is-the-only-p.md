@@ -4230,3 +4230,175 @@ is what this arc has repeatedly paid for:
 
 So both small cases need their own tail argument. Neither is a rewrite of this
 one, and the obstruction in each is a specific index bound rather than effort.
+
+## The corner meets the criterion (2026-08-24, §4as)
+
+`CornerCriterion.bsbs_overlap_resolves`: every Bokut–Shiao × Bokut–Shiao
+overlap at top `i − 1` satisfies the criterion's obligation,
+`∃ nf, ReducesToNF … oc.spoly nf ∧ nf.isZero` — for every pair of depths with
+`j₁ ≥ 1`.
+
+**Correction to this bean's own open list.** It carried "`OverlapComposition` +
+`spoly` joining the two" as remaining work. That was **wrong, and the corpus
+already said so**: `CornerGeneral.oc` and `oc_spoly_coeff` have been in the file
+throughout, and the latter's docstring records the same correction in as many
+words — *"both were in the corpus, generic in both depths, the whole time"*. I
+repeated the stale item from this list instead of grepping, which is exactly
+what the corpus-grep discipline exists to prevent. The item is struck.
+
+What was genuinely missing was narrower: `CornerGeneral.resolves` existed but
+only for `a > b` with `b ≥ 2` (its `hed`/`hj₁`/`hj₂` pin that regime). The five
+`sPoly_*_resolves` theorems now cover every regime, so what remained was the
+**case analysis** — which theorem applies at which depth, and the `Fin n`
+witnesses each needs.
+
+Three pieces do the joining and all three were already present:
+`oc_spoly_coeff` (regime-independent — it relates neither depth to the other),
+`reducesToZero_congr` (carries the obligation across that `CoeffEq`), and
+`isNormalForm_of_isZero`. `resolves_of_T0` packages them; the case split is the
+only new content.
+
+| depth | theorem |
+|---|---|
+| `j₁ < j₂` | `sPoly_gt_resolves` |
+| `j₂ ≤ j₁`, `j₁ = i₁` | `sPoly_le_resolves₁` |
+| `j₂ ≤ j₁`, `j₁ + 1 = i₁` | `sPoly_le_resolves₂` |
+| `j₂ ≤ j₁`, `j₁ + 2 = i₁` | `sPoly_le_resolves₃` |
+| `j₂ ≤ j₁`, `j₁ + 3 ≤ i₁` | `sPoly_le_resolves` |
+
+### The gap, stated rather than hidden
+
+`jm` is a **hypothesis**, not a construction, because it is `j₁ − 1` and does
+not always exist. The `a ≥ 2` branches need it. So `j₁ = 0` is **not covered**,
+and since `j₂ ≤ j₁` forces `j₂ = 0` there, the uncovered set is exactly the
+deep diagonal `j₁ = j₂ = 0`.
+
+It is not degenerate and there is no shortcut: `OverlapComposition.spoly_isZero_of_self`
+needs `left = []`, and this `oc`'s `left` is `descWord i j₁`, which is non-empty
+whenever `j₁ ≤ i₁ < i`. So that case needs a chain of its own, or a
+generalisation of one of the `a ≥ 2` tails that does not reference `jm`.
+
+`hq : q − q⁻¹ ≠ 0` is needed only by the `a = 1` branch, where the first term
+carries coefficient `h` and a `SingleStepReduction` needs it nonzero to
+transport.
+
+### Still open, after this
+
+- the deep diagonal `j₁ = j₂ = 0` above;
+- this is **one** composition family. `IsGrobnerShirshovBasis` quantifies over
+  *every* `oc` and every `ic` in the system. The other families
+  (`ybBs`, `bsYb`, `quadSelf`, the far-commutation pairs) have their own
+  `_resolves` lemmas in the file; assembling all of them into the structure
+  itself is a separate tranche and is **not** claimed here.
+
+## Rule-level membership inversion (2026-08-24, §4at)
+
+`mem_heckeRewritingSystem_rules` (3 families) and
+`mem_heckeCompletedRewritingSystem_rules` (4) invert `r ∈ rules` to the **rule**:
+`r = bokutShiaoRelation i' i j`, with that family's side condition.
+
+**Correction to my own measurement, made in this session.** I told the user that
+nothing in the corpus inverts membership — that only the constructive `_mem`
+direction existed. Wrong. `heckeRewritingSystem_lm_cases` (§4b) and
+`heckeCompletedRewritingSystem_lm_cases` (§4i) are both inversions and have been
+there throughout; I grepped `mem_rules|rules_mem|classify`, missed, and drew a
+conclusion from the miss rather than reading the section headers that say so.
+
+The accurate claim is narrower, and it is the reason this section exists. Both
+existing inversions stop at the **leading monomial**. `OverlapComposition.spoly`
+is computed from `rule.relation` and `rule.lc`, so lm-level cannot reach it — and
+in the completed system the lm does not even determine the rule, because §4j's
+`bokutShiao_lm_eq_yangBaxter_lm` puts `bokutShiaoRelation i' i i'` and
+`yangBaxterRelation i' i` on one word. The criterion's `overlap_resolves`
+quantifies over `oc` with both rules in `rules`, so it is exactly a statement
+that needs the rule-level form.
+
+Both `lm_cases` are re-proved through the new lemmas (the completed one: 15 proof
+lines → 7) with their statements unchanged, so the lm-level classification is now
+a corollary rather than a parallel proof of the same `flatMap`/`filterMap`
+destructuring. Every existing consumer — `_lm_ne_nil`, §4e's irreducibility
+machinery — is untouched.
+
+### What this does NOT do
+
+It does not discharge `overlap_resolves`. Two pieces still stand between:
+
+1. **The shape bridge.** `bsbs_overlap_resolves` is stated for the *constructed*
+   `CornerGeneral.oc i i₁ j₁ j₂ …`; the criterion quantifies over an *arbitrary*
+   `oc`. Going from one to the other means recovering `left` / `overlap` /
+   `right` from `lm₁_decomp : bsWord₁ i₁ j₁ = left ++ overlap` and
+   `lm₂_decomp : bsWord₁ i₂ j₂ = overlap ++ right` — i.e. enumerating which
+   splittings of two Bokut–Shiao words are possible. §4k *counts* these (58
+   shapes at `n = 4`, 45 with both contexts non-empty) but does not carry them in
+   general.
+2. **The other fifteen rule-kind pairs**, plus every `ic`. Rule-level inversion
+   turns `overlap_resolves` into a 4×4 case split; only the BS×BS cell has its
+   corner closed, and only for `j₁ ≥ 1`.
+
+Verified lean-direct: HeckeGS exit 0 (4 s), HeckeCompletion exit 0 (100 s), 0
+errors and 0 warnings on both. `#print axioms` on both new declarations, both
+re-proved `lm_cases`, `_lm_ne_nil` and `bsbs_overlap_resolves`: propext,
+Classical.choice, Quot.sound only. PR #5626.
+
+## The overlap of a proper composition is one letter (2026-08-24, §4au)
+
+**The inventory that reframed the remaining work.** Reading the ~20 composition
+namespaces in `HeckeCompletion.lean`, they are indexed by the **shape** of the
+composition, not by the kinds of the two rules — and several take a *generic*
+rule in one or both slots, so they already cover whole rows and columns of the
+rule-kind table:
+
+| namespace | rule₁ | rule₂ | `overlap` | gated on |
+|---|---|---|---|---|
+| `CyclicQuad` | `r` | `heckeRelation x` | `[σₓ]` | `r.lm = u' ++ [σₓ]` |
+| `CyclicQuadLeft` | `heckeRelation x` | `r` | `[σₓ]` | `r.lm = σₓ :: u''` |
+| `BraidSelfOverlap` | `r₁` | `r₂` | `[σᵢ]` | both on `wHi i' i` |
+| `FarCommCyclic` | `farCommRelation x m` | `r` | `[σ_m]` | `r.lm = σ_m :: u''` |
+| `CyclicFarCommLow` | `r` | `farCommRelation i j₀` | `[σᵢ]` | `r.lm = (σᵢ :: D') ++ [σᵢ]` |
+| `BokutShiaoBraid` | BS | `r₂` | `[σᵢ]` | `r₂.lm = wHi i' i` |
+| `BraidBokutShiao` | `r₁` | BS | `[σᵢ]` | `r₁.lm = wHi i' i` |
+| `BokutShiaoFarComm`, `CornerGeneral` + 5 corner namespaces | | | `[σᵢ]` | |
+
+**Every one fixes `overlap` to one letter.** So the gap between this machinery
+and the criterion's `∀ oc` is exactly the multi-letter overlaps — a much
+narrower thing than "the other fifteen rule-kind pairs", which is how §4at
+framed it.
+
+**Measured** ([`hecke_overlap_length_probe.py`](../computations/hecke_overlap_length_probe.py),
+PR #5627): at `n = 2 … 8`, **1351** compositions with both contexts non-empty,
+overlap-length histogram `len1` only, zero exceptions. The same probe reproduces
+§4k's shape counts independently — 16 rules → 13 distinct lms → 58 shapes = 45
+proper + 13 degenerate at `n = 4`.
+
+**Proved** (PR #5629): the invariant is that every rule's leading monomial begins
+with its largest letter (`lm_head_is_max`, off the *leading-monomial* inversion —
+the one §4at said `spoly` cannot use, which is the right tool here because this
+claim is about leading monomials). Then `overlap_length_one_of_bs_left`: the
+overlap's head is `lm₂`'s head so it dominates the overlap; the overlap is a
+suffix of `lm₁` so once longer than one letter its head is strictly inside the
+descending run, capped at `i − 1` by `descWord_index_le`; and the trailing `σᵢ`
+is in the overlap either way.
+
+### ~~Not proved~~ — closed the same day
+
+The three remaining `rule₁` shapes are now proved too: `overlap_length_one`
+covers all four. Quadratic and far-commutation are a pure length bound (lm of
+length 2, so one letter of left context leaves exactly one); Yang–Baxter has one
+escape — a two-letter overlap `[σᵢ, σⱼ]` — which puts `σⱼ` behind `σᵢ` at the
+head of `lm₂`, forbidden by `lm_head_is_max` since `j = i + 1`.
+
+**The Lean is stronger than the probe here.** `overlap_length_one` assumes
+`oc.left ≠ []` **alone**; the probe measured only the *proper* compositions,
+where the right context is non-empty too. So the theorem also covers
+`left ≠ [], right = []`, which the enumeration never looked at.
+
+### The remaining chain to `overlap_resolves`, as it now stands
+
+1. **Rule-level inversion** — done, §4at.
+2. **Single-letter overlap** — measured for all four shapes, proved for BS.
+3. **The shape bridge** — from an arbitrary `oc` to the constructed
+   `CornerGeneral.oc`, i.e. recovering `left`/`right` once `overlap` is known to
+   be `[σᵢ]`. Step 2 is what makes this tractable: with a one-letter overlap the
+   two `lm_decomp`s determine `left` and `right` outright.
+4. **The other cells**, and every `ic`.
+5. The deep diagonal `j₁ = j₂ = 0`, still open from §4as.

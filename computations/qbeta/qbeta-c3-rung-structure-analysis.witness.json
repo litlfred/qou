@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T15:52:25.608483+00:00",
-  "commitSha": "ba5b1110482f77d0dda78b8a9a9b27576720a091",
+  "computedAt": "2026-08-24T08:47:18.427679+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "rung_decomposition_equals_closure",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 270,
+  "durationMs": 256,
   "computation": "qbeta-c3-rung-structure-analysis",
   "scriptFile": "qbeta_c3_rung_structure_analysis.py",
   "scriptHash": "049f11902ebe",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptCommitSha": "b3440cbcebfad9716b80219a51ed9c37f5e5186f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -30,9 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -73,5 +74,6 @@
     ]
   },
   "q0Anchor": "independent",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
   "q0AnchorReason": "Reads no substrate value. PROVED by running this producer underQOU_Q0_ANCHOR=muon and =proton and diffing the emitted witness:the only non-ephemeral leaves that differ are q0Anchor andq0Value THEMSELVES -- every substantive field is byte-identical,so the pin changes the label and nothing else. Its previous`muon` label was therefore a false claim that this producercomputed at that anchor. `independent` is the honestdisposition; a q0_anchor_manifest entry would be the WRONG fix,promoting a false claim into a declared one. Bean qou-o922,class (ii)."
 }

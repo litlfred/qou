@@ -132,10 +132,10 @@ def main() -> int:
     print()
     print(f"{'test':<25} {'q':<10} {'h':<15} {'ℏ_q':<15} {'factor_res':<12} {'log_res':<12}")
     for r in results:
-        print(f"  {r['label']:<23} {r['q']:<10.6f} "
-              f"{r['h']:<15.10f} {r['hbar_q']:<15.10f} "
-              f"{r['factorisation_residue']:<12.2e} "
-              f"{r['log_form_residue']:<12.2e}")
+        print(f"  {r['label']:<23} {float(r['q']):<10.6f} "
+              f"{float(r['h']):<15.10f} {float(r['hbar_q']):<15.10f} "
+              f"{float(r['factorisation_residue']):<12.2e} "
+              f"{float(r['log_form_residue']):<12.2e}")
     return 0
 
 
