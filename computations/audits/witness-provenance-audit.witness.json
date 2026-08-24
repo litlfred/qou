@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:28:44.125431+00:00",
-  "commitSha": "122b020d8470de168790caa653459a4f44d32fdf",
+  "computedAt": "2026-08-24T06:47:58.432953+00:00",
+  "commitSha": "bc3d27513263f8bd5a7464721845e08c0684a274",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 76,
+      "computed": 74,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2725,
-      "prov_ok": 2346,
+      "total_scanned": 2726,
+      "prov_ok": 2349,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 222,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 76,
+      "prov_missing": 74,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972110091743119266055045871559633027522935779816513761467890"
+      "completeness_ratio": "0.972853998532648569332355099046221570066030814380044020542920"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2107,6 +2107,18 @@
         },
         {
           "witness": "d-density-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-cyclotomic-exponent.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-neutron-cyclotomic-rule.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-prefactor-localisation.witness.json",
           "missing_fields": []
         },
         {
@@ -9627,18 +9639,6 @@
         },
         {
           "witness": "codata-2022-validation-masses.witness.json",
-          "missing_fields": [
-            "scriptFile"
-          ]
-        },
-        {
-          "witness": "d-frame-cyclotomic-exponent.witness.json",
-          "missing_fields": [
-            "scriptFile"
-          ]
-        },
-        {
-          "witness": "d-frame-prefactor-localisation.witness.json",
           "missing_fields": [
             "scriptFile"
           ]

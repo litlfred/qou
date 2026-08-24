@@ -189,6 +189,51 @@ Incidental, and it explains the `m` column: with the interface off `m = 2A`
 closure of `3A` strands). The difference `A − 1` is the linking that fuses A
 closures into one.
 
+## Q2's residue closed: the rule is co-location on one generator
+
+Producer:
+[`d_frame_neutron_cyclotomic_rule_probe.py`](../../computations/markov/d_frame_neutron_cyclotomic_rule_probe.py)
+— 12 configurations, 5/5 assertions.
+
+**Cancellation fires iff some generator carries ≥ 2 averaged crossings.**
+
+| `g0avg` | `g1avg` | cancelled |
+|---|---|---|
+| 1 | 1 | 0 — **proton (uud)** |
+| 2 | 0 | 2 — **neutron (udd)** |
+| 1 | 0 | 0 |
+| 0 | 0 | 0 |
+| 0 | 2 | 2 |
+| 3 | 0 | 2 |
+| 2 | 1 | 2 |
+
+Not `gen0`-specific — two averaged on `gen1` behaves identically. And it
+**saturates**: three on one generator still cancels 2, not 3.
+
+**Composition does not determine it**, which is the crux. Two count-matched
+controls, in opposite directions:
+
+- a proton word with one `zero → full` has **exactly the neutron's
+  composition** (5 zero, 2 avg, 4 full) and still cancels **0**;
+- a neutron word with one `full → zero` has **exactly the proton's
+  composition** (6 zero, 2 avg, 3 full) and still cancels **2**.
+
+**Physical content.** The neutron (udd) puts both averaged ud-couplings on one
+generator; the proton (uud) spreads its two across both. **Both nucleons have
+exactly two** — the p/n asymmetry is where they sit, not how many.
+
+**Interpretation, flagged as such.** Two averaged crossings on the same
+generator multiply to a quadratic in it, which the Hecke relation
+`σ² = hσ + 1` collapses; two on different generators never meet under that
+relation. That reading is *not proved here* — the falsifiable content is the
+`max(g0avg, g1avg) ≥ 2` criterion and its saturation.
+
+**Two wrong turns, recorded because the correction was itself the error.** I
+first said "same averaged count, different placement" — right instinct, but I
+had not checked the other counts. I then corrected that to "not placement; the
+neutron trades one identity for one full crossing", which the count-matched
+controls refute. Placement was right all along, sharpened to *co-location*.
+
 ## An exact relation worth recording
 
 $$
