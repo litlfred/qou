@@ -5420,3 +5420,50 @@ a parameter.
 This is consistent with the earlier negative — B's branches do *not* reduce onto
 A's. Same rule sequence applied to different words is not the same thing as one
 word reducing to the other, and both facts hold.
+
+## §4br — the unshuffle, and SIDE A OF `hdeep` COMPLETE (PR pending)
+
+**The unshuffle.** `pairList m z` — the interleaved pairs, i.e. `pairSweep`
+without its trailing `σ_zσ_z` — separates into two descending runs:
+
+```
+pairList m z  ⟶*  descWord (m−1) z ++ (descWord m z).dropLast
+```
+
+one `gen_past_descWord` per level. The IH separates the pairs below; then the
+top pair's upper letter `σ_m` is carried across the lower run it now fronts.
+Base case `m = z+1`: a single pair is already the target, no step.
+
+Writing the upper run as `(descWord m z).dropLast` is what keeps `z + 1` from
+ever having to be named as a `Fin n`. Same trick as `pairSweep`'s zip: **let a
+list operation stand in for Fin arithmetic.** Third time it has paid off.
+
+**Side A closes end to end.** §4bp head → unshuffle → one last carry (`σ_i`
+leaves the leading block, turning `σ_{i−2}σ_{i−1} ++ descWord (i−2) 0` into
+`bsWord₂ (i−2) (i−1) 0` and `σ_i ++ (descWord (i−1) 0).dropLast` into
+`(descWord i 0).dropLast`) → **one word ending in `σ₀σ₀`** → the single quadratic
+step → `NF + (q−q⁻¹)·(NF·σ₀)`.
+
+That is exactly the two-term normal form the probe measured, and every step
+before the last is monomial — exactly as the rule census said. `aside_resolves`
+is side A of `hdeep`, in full, general in `i`, sorry-free.
+
+### Two parse traps worth recording
+
+Both cost a compile cycle and neither is about the mathematics:
+
+- **`;` inside `by simpa using e`** ends the *outer* tactic block, so
+  `simpa using f (by simp; omega)` does not parse as intended.
+- **`[` inside `by simpa using e`** is read as `simpa`'s simp-argument list, so
+  a list-literal argument breaks the term.
+
+Both fixed the same way: bind the term with `have` first, then `simpa using` the
+name. Worth doing by default in this file, where every step lemma takes list
+literals.
+
+### Remaining for `hdeep`
+
+1. side B's tail — the same carry sequence shifted by one, plus two Bokut–Shiao
+   steps, the first with `j` as a parameter;
+2. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term),
+   which joins the two halves into the S-polynomial statement.
