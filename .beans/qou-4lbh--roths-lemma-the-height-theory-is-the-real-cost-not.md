@@ -3582,3 +3582,48 @@ consume).
 naturality lemma (`pUnitAlgEquiv` commutes with coefficient maps) and `IsCoprime (num) (den)`
 from `Rat.reduced`. Mechanical, but it is the base case *in Θ form*, which is what §13/§14's
 recursion actually consumes.
+
+### ⚠⚠ Correction eighteen — `K_h` is the HEIGHT `H_h`, not the denominator
+
+Read from the page scan of §11 (doc p. 91), immediately after the abstract definition of `Γ_M`
+on `b, s₁,…,s_M, K₁,…,K_M`:
+
+> By way of application, let `m ≥ 2`; let the ordered system of numbers `a, r₁,…,r_m, H₁,…,H_m`
+> have the property `Γ_m`
+
+So `b = a`, `s_h = r_h`, **`K_h = H_h`**. §13's descent settles it beyond argument: the new
+system is `b, ρ₁,…,ρ_{m−1}, H₁,…,H_{m−1}` — *the same heights, truncated* — and its clauses are
+printed as `ρ_h log H_h ≥ ρ₁ log H₁` and `H₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`, in `H` throughout.
+
+This arc called the field `qd`, the definition `rothDenomFloor`, and the clauses "the first
+*denominator*". Renamed to `Kh` / `rothHeightFloor`, with the correction recorded at the
+definition. The structures themselves were already right — `RothGamma` is abstract in the
+parameter and `rothGamma_descend` truncates it, which is exactly §13's descent — so nothing
+proved was false. **What was false was an inference drawn from the name.**
+
+**The inference, and why it mattered.** The record above says clause (i) is "the `m = 1`
+specialisation whose `K₁ ≥ 2` comes from the standing `2 ≤ qⱼ`". Read with `K = H` that is a
+different statement, and the consequence is sharp:
+
+    clause (i) supplies   a ≤ H₁^{r₁t}
+    the q-form of §10 gives   Θ₁ ≤ log a/(r log q)  ≤  t·log H/log q   ≥  t
+
+so the `q`-form **cannot** close the base case — it lands on the wrong side of `t` by exactly
+the factor `log H/log q ≥ 1`. Only the `H`-form does:
+
+    a ≤ H₁^{r₁t}  and  Θ₁ ≤ log a/(r log H)   ⟹   Θ₁ ≤ t.
+
+So the `P^j` half proved earlier this session was never optional and never a symmetry
+nicety — **it is precisely the hypothesis `Γ₁` hands over.** The bean's own earlier note that
+"that gap is exactly why this arc's base case is stated with `a ≤ q^E` rather than `a ≤ H^E`"
+was right about the symptom and had not connected it to `Γ`.
+
+**The arc was internally inconsistent and did not notice.** Two docstrings in
+`RothLemmaStatement.lean` (around §13's `ρ_m log H_m ≥ ρ₁ log H₁` discussion) already wrote the
+clause in `H`, while the structure they describe was named for `q`. Nothing checks prose against
+prose. Corrections 17 and 18 are the same failure at one remove: **17 was a label read back as a
+theorem, 18 was a name read back as an identification.**
+
+Method note: 18 came from reading the page scan for a question the Lean could not raise —
+"what does `K_h` denote?" is invisible to `lake build`, because the structure is abstract in it
+and every theorem about it is true either way.
