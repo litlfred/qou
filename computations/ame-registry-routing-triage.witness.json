@@ -18,42 +18,6 @@
     "2809.43212207852": "M_T_ATOMIC_MEV_VALIDATION"
   },
   "safe_routes": {
-    "binding_law_surprisal_vs_entropy_ambiguity_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_binding_frame_independent_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_g2_frame_artifact_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_naive_z_physical_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_r_is_binding_residual_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "light_series_open_loop_decomposition.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
     "registry_witness_pin_validator.py": [
       [
         "2.2245662",
@@ -2674,8 +2638,8 @@
     ]
   },
   "counts": {
-    "safe_routes": 15,
-    "safe_files": 10,
+    "safe_routes": 9,
+    "safe_files": 4,
     "unsafe_near_matches": 446,
     "unsafe_files": 171
   },
@@ -2684,10 +2648,10 @@
   "sibling": "claude/fvxq-atomic-mass-registry-2026-06-21",
   "scriptFile": "ame_registry_routing_triage.py",
   "scriptHash": "5f6eb4d8fd75",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
-  "commitSha": "8687aa502568e470e5fb5672ec822dfe393d4090",
+  "scriptCommitSha": "42c35a02f3d43378f468c3d3bc8a4302b136df88",
+  "commitSha": "42c35a02f3d43378f468c3d3bc8a4302b136df88",
   "engine": "python",
-  "computedAt": "2026-08-24T19:30:40.250196+00:00",
+  "computedAt": "2026-08-24T19:32:53.459290+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

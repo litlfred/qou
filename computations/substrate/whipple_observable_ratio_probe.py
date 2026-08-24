@@ -25,6 +25,14 @@ import mpmath as mp
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
+# Byte-exact routes (beans qou-n55l / fvxq): each literal equalled the registry
+# value exactly. Used as isotope-identification keys, not as physics inputs.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION as _B_D,
+    AME_B_TRITIUM_MEV_VALIDATION as _B_T,
+    AME_B_HE3_MEV_VALIDATION as _B_HE3,
+    AME_B_HE4_MEV_VALIDATION as _B_HE4)
+
 HALF = mp.mpf(1) / 2
 
 
@@ -68,13 +76,17 @@ try:
     rows = list(walk(beo))
     # first row is the deuteron (A=2, B_AME ~ 2.22)
     for ev, od, ame in rows:
-        if abs(ame - 2.2245662) < 1e-3:
+        if abs(ame - _B_D) < 1e-3:
             observed["2"] = {"B_even": ev, "B_odd": od, "B_AME": ame}
             break
     # all labelled isotopes, for the factor-2 generalization falsification below
+    # Registry constants, not literals. These are IDENTIFICATION keys matched
+    # with a 1e-2 tolerance (1e-3 above) -- three orders looser than any AME
+    # correction -- so routing is value-preserving here twice over: the literals
+    # were byte-exact AND the match is fuzzy.
     _labels = {
-        2.2245662: ("2H", 2), 8.4817962: ("3H", 3),
-        7.71804132: ("3He", 3), 28.2956624: ("4He", 4),
+        _B_D: ("2H", 2), _B_T: ("3H", 3),
+        _B_HE3: ("3He", 3), _B_HE4: ("4He", 4),
     }
     for ev, od, ame in rows:
         for key, (iso, A) in _labels.items():

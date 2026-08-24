@@ -94,9 +94,14 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
 from _precision import set_compute_dps  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal equalled the registry
+# value exactly, so this is value-preserving. AME as a measurement reference,
+# which is what a `_VALIDATION` constant is for.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 E0_STR = "4.1859813632944758969"
 NATURE_T1 = -0.07      # 1S0 virtual state, MeV (Machleidt CD-Bonn a<0 channels)
-NATURE_T0 = +2.2245662  # deuteron, MeV
+NATURE_T0 = +AME_B_DEUTERON_MEV_VALIDATION  # deuteron, MeV
 
 
 def main() -> int:
