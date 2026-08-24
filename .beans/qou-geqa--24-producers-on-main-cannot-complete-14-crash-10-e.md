@@ -351,9 +351,17 @@ routes an exact chain off scipy entirely, and accumulates over σ's nonzeros in
 COO — `O(dim·nnz)`, the same complexity the float64 branch gets from sparse
 BLAS. Its own comment refuses to coerce `c`/`d` to float, citing AGENTS.md.
 
-Measured here: three `A=1` atoms complete, then deuterium runs **> 43 minutes
-without crashing**, on the exact object-dtype path. Slow, not broken. That is
-precisely the "honest cost" the sibling's commit message names.
+Measured here: three `A=1` atoms complete, then deuterium ran a **full 50
+minutes and was killed by its own timeout** (`exit 124`), with **zero
+tracebacks** in the log. It neither crashed nor finished.
+
+**Keep those two claims apart — this is the very signal that started the
+confusion.** "Does not crash" is established **by the code**: an exact chain
+provably never reaches a scipy call, so no boundary is left to die at. The
+50-minute run *corroborates* it and is not what proves it — a timeout could not
+have proved it, and no finite run excludes a crash at minute 51. What the run
+does establish on its own is the **cost**: > 50 min for one bound atom of
+nineteen. That is the "honest cost" the sibling's commit message names.
 
 ### So both of my positions were wrong, and differently
 

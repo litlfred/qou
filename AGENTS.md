@@ -461,11 +461,20 @@ user's last message, not the most recently mentioned file.
       authoritative because they are specific and recent. I applied that rule
       to my own claims all session and suspended it for someone else's.
 
-      Measured on `main` 2026-08-24: the three `A=1` atoms complete, and
-      deuterium — the first bound atom — then runs **> 43 minutes without
-      crashing**, because it is on the exact object-dtype path. That is the
-      "honest cost" `qou-n7ue` records, not a defect. Budget accordingly, and
-      do not expect the 19-atom table to finish.
+      Measured on `main` 2026-08-24: the three `A=1` atoms complete, then
+      deuterium — the first bound atom — ran for a **full 50 minutes and was
+      killed by its own timeout** (`exit 124`), with **zero tracebacks**. It
+      neither crashed nor finished.
+
+      Keep the two claims separate, because this is the same signal that
+      started the whole confusion. **"Does not crash" is established by the
+      code**, above: an exact chain provably never reaches a scipy call, so
+      there is no boundary left to die at. The 50-minute run **corroborates**
+      that and is not what proves it — a timeout still could not have proved
+      it, and a crash at minute 51 would not be excluded by any run. What the
+      run *does* establish on its own is the **cost**: > 50 min for one bound
+      atom of nineteen. Budget accordingly, and do not expect the table to
+      finish.
 
       The 10 timeouts are a 240 s budget artifact and may simply be
       long-compute; re-run with a real budget before calling any of them
