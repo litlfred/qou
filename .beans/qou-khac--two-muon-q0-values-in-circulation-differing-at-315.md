@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T21:19:10Z
-updated_at: 2026-08-22T12:11:22Z
+updated_at: 2026-08-24T00:00:00Z
 ---
 
 
@@ -370,3 +370,60 @@ The sibling probe reaches the same wall and calls it an owner/registry question.
 `computations/substrate/q_parameter.py` — if that lands it rules for C and this
 item should be executed against it, not against A. **Converting literals before
 that ruling would do the work twice.**
+
+
+## UNBLOCKED, 2026-08-24 — the ruling this bean waits on already exists, and it is C
+
+This bean's final line says it is *"Blocked on a ruling this bean cannot make:
+is a 'muon-anchored' quantity A (the frozen pin) or C (the live derivation)?"*
+
+**That ruling was made on 2026-08-23 and rules for C.** It is recorded in
+`.beans/qou-bred--a-vs-c-muon-pin-bc-is-settled-in-corpus-codata-edi.md:186-192`:
+
+> ## RULED, 2026-08-23 — owner: "adopt C per recommendation"
+> - 2026-08-22, on #5500: *"2022 CODATA better than 2018. A --> CODATA 2022."*
+> - 2026-08-23, this session: *"adopt C per recommendation"*
+
+khac's `updated_at` was 2026-08-22T12:11:22Z — **one day before the ruling**.
+Nothing was withheld from it; it simply has not been told. Verified by reading
+`qou-bred` directly, not relayed from a report.
+
+### What this does and does not unblock
+
+The bean's own exit condition was written against the *branch* landing, not the
+ruling being made:
+
+> `origin/claude/muon-anchor-codata-2022-2026-08-22` ... if that lands it rules
+> for C and this item should be executed against it, not against A.
+
+Checked 2026-08-24: that branch is **still not on main** (`git merge-base
+--is-ancestor` -> NO; one commit not cherry-equivalent). So:
+
+- **The A-vs-C question is CLOSED.** Do not re-open it, do not re-derive it, and
+  do not treat khac as blocked on it any longer.
+- **Execution of the muon anchor re-point is owned elsewhere** — PR #5500 /
+  `claude/muon-anchor-codata-2022-2026-08-22`, per `qou-bred`'s "the execution is
+  ALREADY IN FLIGHT — do not duplicate it". Not this bean's work, not mine.
+
+### What is actually left in khac, restated under the ruling
+
+Two hand-typed 17-digit truncations of A:
+
+| file | line | state |
+|---|---|---|
+| `probes/baldfn_theta_limit_probe.py` | 677 | hand-typed, 17 digits |
+| `probes/qbeta_5two_higher_cable_qstar_probe.py` | 58 | hand-typed, 17 digits |
+
+The ruling makes the *target* unambiguous — these should import, not hardcode,
+because an import is what lets them follow C when #5500 lands. But the
+conversion is **not value-neutral**: 17 digits -> 50 moves whatever they feed,
+so each conversion carries a witness regeneration. That is the remaining work,
+and it is small.
+
+**Recommended sequencing:** convert after #5500 lands, so the import resolves to
+C once instead of resolving to A and moving again. Converting before is *safe*
+(the import self-corrects, which is the point of importing) but doubles the
+regeneration.
+
+The 215-file literal-A population remains `qou-0hnz`'s and remains sibling-owned.
+Do not drain it from here.
