@@ -24,7 +24,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.06"
+      "elapsed_sec": "0.04"
     },
     {
       "variant": "neutron (real word)",
@@ -38,7 +38,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.03"
+      "elapsed_sec": "0.02"
     },
     {
       "variant": "proton + gen1 avg->full",
@@ -52,7 +52,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.09"
+      "elapsed_sec": "0.10"
     },
     {
       "variant": "proton + one gen0 zero->full",
@@ -66,7 +66,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.08"
+      "elapsed_sec": "0.09"
     },
     {
       "variant": "neutron - one gen1 full->zero",
@@ -80,7 +80,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.04"
+      "elapsed_sec": "0.05"
     },
     {
       "variant": "proton, avg moved gen1->gen0",
@@ -94,7 +94,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.02"
+      "elapsed_sec": "0.03"
     },
     {
       "variant": "2 avg on gen1",
@@ -108,7 +108,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.11"
+      "elapsed_sec": "0.13"
     },
     {
       "variant": "2 avg on gen0",
@@ -150,7 +150,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.12"
+      "elapsed_sec": "0.13"
     },
     {
       "variant": "3 avg on gen0",
@@ -164,7 +164,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.12"
+      "elapsed_sec": "0.13"
     },
     {
       "variant": "2 avg gen0 + 1 gen1",
@@ -178,7 +178,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.08"
+      "elapsed_sec": "0.07"
     }
   ],
   "assertions": [
@@ -211,9 +211,9 @@
   "allPassed": true,
   "scriptHash": "48a866713339",
   "scriptCommitSha": "29ad606b294f950da1f97b80c678b52b24f0df06",
-  "commitSha": "1396fc08e7ae9ae426f86202950a9a0e3900c182",
+  "commitSha": "d1e8859edd940d5e43054ba6cebc14a446bc3e78",
   "engine": "sympy",
-  "computedAt": "2026-08-24T12:31:26.855892+00:00",
+  "computedAt": "2026-08-24T13:04:38.462887+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
