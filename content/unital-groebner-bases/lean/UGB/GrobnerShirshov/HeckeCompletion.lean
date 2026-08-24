@@ -13641,6 +13641,253 @@ theorem sPoly_le_resolves₂ (hn : 0 < n) (hp : HeckeParams)
   · exact ⟨_, hpre.trans hrun, hzero⟩
   · exact ⟨_, hpre, fun m => (hstop m).trans (hzero m)⟩
 
+/-! ### The `a = 1` tail
+
+The last case, and the one that shares least. `TCancel₁_coeffEq` leaves **four**
+terms — `h, 1, −h, −1` — never a two-term pair, so nothing stated on a pair can
+consume it; and one of the four carries a quadratic redex `σᵢσᵢ` from the start,
+the only tail in this arc that does.
+
+`hecke_a1_tail_schedule.py` measures it, 10/10 over `b = 1..7`: `2m + 2` steps
+for `m = |descWord i₂ j₂|` — transport the first term's `σᵢ` right past the run,
+transport the fourth's, then one `quadStep` on each word carrying `σᵢσᵢ`.
+
+**The ending is not a sign-pair.** Every other tail here lands on `(W, c),
+(W, −c)` and finishes with `ofTerms_cancel_pair`. The two quadratic steps emit
+four words: three land on words already carried with the opposite coefficient,
+and exactly one is *fresh* — `[σᵢ₋₁] ++ D`, created by the first quadratic step
+and cancelled by the second's. So this finishes on an explicit six-entry list
+whose entries annihilate in three pairs.
+
+**It needs `q − q⁻¹ ≠ 0`, which `a ≥ 2` did not.** The first term carries
+coefficient `h`, and a `SingleStepReduction` requires a nonzero coefficient to
+transport it; in the `a ≥ 2` tails the transported terms carry `±1`. -/
+
+/-- The four words `TCancel₁_coeffEq` leaves. -/
+def tailPair₁ (i i₁ i₂ j₂ : Fin n) (h : ℝ) : List (Monomial (HeckeGen n) × ℝ) :=
+  [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ descWord i₂ j₂, h),
+   ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) ::
+      ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), (1 : ℝ)),
+   ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -h),
+   ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+      (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+
+set_option linter.unusedSimpArgs false in
+/-- **The `a = 1` tail** — `tailPair₁` straight to zero.
+
+Two separation arguments are needed, not one. The first and fourth terms both
+open `σᵢ₋₁`, so a head does not tell them apart from the transports'
+intermediates; **length** does, and that is what `hlen` is for. The second and
+third terms open `σᵢ` and are separated by a head throughout. -/
+theorem tailFromCancel₁ (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hq : hp.q - hp.q⁻¹ ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (tailPair₁ i i₁ i₂ j₂ (hp.q - hp.q⁻¹)))
+      (AlgElement.ofTerms
+        [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]),
+            hp.q - hp.q⁻¹),
+         ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+            hp.q - hp.q⁻¹),
+         ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, (1 : ℝ)),
+         ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+            -(hp.q - hp.q⁻¹)),
+         ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]),
+            -(hp.q - hp.q⁻¹)),
+         ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, -1)]) := by
+  have hne1i : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- every letter of the run is at least two below `σᵢ`
+  have hrun : ∀ y ∈ descWord i₂ j₂, y.index.val + 1 < i.val := fun y hy => by
+    have := descWord_index_le hy; omega
+  -- the length of a transport intermediate, for any split of the run
+  have hlen : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord i₂ j₂ →
+      ∀ B : Monomial (HeckeGen n),
+      ([(⟨i₁⟩ : HeckeGen n)] ++ (u ++ ((⟨i⟩ : HeckeGen n) :: (v ++ B)))).length
+        = (descWord i₂ j₂).length + B.length + 2 := by
+    intro u v huv B
+    have hl := congrArg List.length huv
+    simp only [List.length_append] at hl
+    simp only [List.length_append, List.length_cons, List.length_nil,
+      List.length_singleton]
+    omega
+  -- ============ step 1: the first term's σᵢ, rightwards past the run =========
+  have t1 := farComm_transport_right_sources hn hp i (hp.q - hp.q⁻¹) hq []
+    [([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) ::
+        ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), (1 : ℝ)),
+     ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+        -(hp.q - hp.q⁻¹)),
+     ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), (-1 : ℝ))]
+    (descWord i₂ j₂) [(⟨i₁⟩ : HeckeGen n)] []
+    hrun
+    (fun u v huv _ r hr => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      rcases hr with rfl | rfl | rfl
+      · -- opens σᵢ, the intermediate opens σᵢ₋₁
+        simp only [List.cons_append, List.nil_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm
+      · simp only [List.cons_append, List.nil_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm
+      · -- both open σᵢ₋₁; LENGTH separates them
+        intro hcon
+        have := congrArg List.length hcon
+        rw [hlen u v huv []] at this
+        simp only [List.length_append, List.length_cons, List.length_nil,
+          List.length_singleton] at this
+        omega)
+  -- ============ step 2: the fourth term's σᵢ, same transport ================
+  have t2 := farComm_transport_right_sources hn hp i (-1 : ℝ) (by norm_num)
+    [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]),
+        hp.q - hp.q⁻¹),
+     ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) ::
+        ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), (1 : ℝ)),
+     ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+        -(hp.q - hp.q⁻¹))] []
+    (descWord i₂ j₂) [(⟨i₁⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)]
+    hrun
+    (fun u v huv _ r hr => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      rcases hr with rfl | rfl | rfl
+      · -- the already-transported first term: same head, LENGTH separates
+        intro hcon
+        have := congrArg List.length hcon
+        rw [hlen u v huv [(⟨i⟩ : HeckeGen n)]] at this
+        simp only [List.length_append, List.length_cons, List.length_nil,
+          List.length_singleton] at this
+        omega
+      · simp only [List.cons_append, List.nil_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm
+      · simp only [List.cons_append, List.nil_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm)
+  -- ============ step 3: the quadratic step on the transported fourth =========
+  have q1 := quadStep hn hp i
+    [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]),
+        hp.q - hp.q⁻¹),
+     ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) ::
+        ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), (1 : ℝ)),
+     ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+        -(hp.q - hp.q⁻¹))] []
+    ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂) []
+    ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++
+      [(⟨i⟩ : HeckeGen n), ⟨i⟩])) (-1 : ℝ) (by norm_num)
+    (by simp only [List.append_assoc, List.append_nil, List.cons_append,
+      List.nil_append])
+    (fun w hw => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      rcases hw with rfl | rfl | rfl
+      · -- same head; LENGTH separates (one σᵢ against two)
+        intro hcon
+        have := congrArg List.length hcon
+        simp only [List.length_append, List.length_cons, List.length_nil,
+          List.length_singleton] at this
+        omega
+      · simp only [List.cons_append, List.nil_append, List.singleton_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm
+      · simp only [List.cons_append, List.nil_append, List.singleton_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm)
+  -- ============ step 4: the quadratic step the second term carried all along ==
+  have q2 := quadStep hn hp i
+    [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]),
+        hp.q - hp.q⁻¹)]
+    [((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+        -(hp.q - hp.q⁻¹)),
+     ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]),
+        -1 * (hp.q - hp.q⁻¹)),
+     ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, (-1 : ℝ))]
+    [] ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂)
+    ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) ::
+      ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))) (1 : ℝ) one_ne_zero
+    (by simp only [List.nil_append, List.cons_append, List.singleton_append])
+    (fun w hw => by
+      simp only [List.cons_append, List.nil_append, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hw
+      rcases hw with rfl | rfl | rfl | rfl
+      · simp only [List.cons_append, List.nil_append, List.singleton_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1
+      · -- both open σᵢ; the SECOND letter separates them
+        simp only [List.cons_append, List.nil_append, List.singleton_append]
+        intro hcon
+        exact hne1i (List.cons.inj (List.cons.inj hcon).2).1
+      · simp only [List.cons_append, List.nil_append, List.singleton_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1
+      · simp only [List.cons_append, List.nil_append, List.singleton_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1)
+  rw [tailPair₁]
+  simp only [List.cons_append, List.nil_append, List.append_assoc,
+    List.append_nil, List.singleton_append, neg_one_mul, one_mul]
+    at t1 t2 q1 q2 ⊢
+  exact (((t1.trans t2).step q1).step q2)
+
+/-- **The `a = 1` S-polynomial resolves.** The six entries the tail lands on
+annihilate in three pairs — two split, one adjacent — so the element is zero.
+
+The join is the one #5586 built: `prefixChain₁` to `TCancel₁`,
+`TCancel₁_coeffEq` to drop the cancelling pair it already carries, then the
+tail, absorbed through `MultiStepReduction.congr_source`. -/
+theorem sPoly_le_resolves₁ (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁i₁ : j₁ = i₁) (hq : hp.q - hp.q⁻¹ ≠ 0) :
+    ∃ E : AlgElement (HeckeGen n) ℝ,
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (T0 i i₁ j₁ j₂) E
+      ∧ AlgElement.CoeffEq E
+          (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ))) := by
+  have hj₁v : j₁.val = i₁.val := congrArg Fin.val hj₁i₁
+  have hpre := prefixChain₁ hn hp h₁ h₂ hj₂ hj₁i₁
+  have htail := tailFromCancel₁ (j₂ := j₂) hn hp h₁ h₂ hq
+  have hce : AlgElement.CoeffEq
+      (TCancel₁ i i₁ i₂ j₂ (hp.q - hp.q⁻¹))
+      (AlgElement.ofTerms (tailPair₁ i i₁ i₂ j₂ (hp.q - hp.q⁻¹))) := by
+    rw [tailPair₁]
+    exact TCancel₁_coeffEq i i₁ i₂ j₂ (hp.q - hp.q⁻¹)
+  -- the six entries cancel in three pairs: two split, one adjacent
+  have hzero : AlgElement.CoeffEq
+      (AlgElement.ofTerms
+        [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]),
+            hp.q - hp.q⁻¹),
+         ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+            hp.q - hp.q⁻¹),
+         ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, (1 : ℝ)),
+         ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+            -(hp.q - hp.q⁻¹)),
+         ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]),
+            -(hp.q - hp.q⁻¹)),
+         ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, -1)])
+      (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ))) := by
+    have c1 := ofTerms_cancel_split
+      ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+      (hp.q - hp.q⁻¹) ([] : List (Monomial (HeckeGen n) × ℝ))
+      [((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+          hp.q - hp.q⁻¹),
+       ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, (1 : ℝ)),
+       ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂),
+          -(hp.q - hp.q⁻¹))]
+      [([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, (-1 : ℝ))]
+    have c2 := ofTerms_cancel_split
+      ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))
+      (hp.q - hp.q⁻¹) ([] : List (Monomial (HeckeGen n) × ℝ))
+      [([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, (1 : ℝ))]
+      [([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂, (-1 : ℝ))]
+    have c3 := ofTerms_cancel_pair
+      ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂) (1 : ℝ) [] []
+    simp only [List.nil_append, List.cons_append, List.append_nil] at c1 c2 c3
+    exact fun m => ((c1 m).trans (c2 m)).trans (c3 m)
+  rcases htail.congr_source hce with hrun | hstop
+  · exact ⟨_, hpre.trans hrun, hzero⟩
+  · exact ⟨_, hpre, fun m => (hstop m).trans (hzero m)⟩
+
 end CornerLe
 
 /-! ## §4ao  The other corner: `a > b`
