@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T16:02:43Z
+updated_at: 2026-08-24T16:10:31Z
 ---
 
 ## Landed — PR #5645
@@ -446,3 +446,39 @@ Then:
    `Q^{nPart}` change** (`nPart nu - nPart mu = a`). Worth re-deriving in Lean
    rather than trusting this paper computation.
 5. Discharge `hw` in `sum_eq_bracket_mul_of_qratio_scaling`.
+
+
+## Step 4 de-risked: the full ratio identity checked symbolically
+
+Commit `e7e20cc78` adds `rowLen_addCell` (the `beta -> beta + e_a` step) and
+`getD_rowLens` (`mu.rowLens.getD i 0 = mu.rowLen i` for **every** `i`, which is
+what lets the List-indexed hook side and the range-r-indexed content side be
+compared with no side condition).
+
+I flagged step 4 -- the monomial bookkeeping -- as "worth re-deriving rather
+than trusting the paper computation". Checked it symbolically instead of
+building Lean on it, and it holds:
+
+    schurPrincipal r Q (mu + box at row a) / schurPrincipal r Q mu
+      = prod_{j != a} (Q*x_a - x_j)/(x_a - x_j),   x_i = Q^{beta_i}
+
+**10 / 10 legal cases**, exact sympy, `r = 3,4,5`, including `mu = []`,
+one-row, and adding to an empty padded row:
+
+    r=3 [2,1] a=0,1,2 | r=4 [3,1] a=0,1 | r=4 [2,2,1] a=0,2
+    r=5 [3,2,1] a=1   | r=5 [1] a=0     | r=3 [] a=0
+
+So every monomial -- `Q^{nPart}`, the `prod_{i<j} x_i` from converting
+`prod(1-Q^{beta_i-beta_j})` to `vandPairProd`, the `(-1)^{C(r,2)}` -- cancels
+exactly as the paper derivation said. Step 4 is bookkeeping, not a hidden
+obstruction.
+
+**The 11th case is a test artifact, not a failure.** `r=4, mu=[4,4], a=1` is an
+ILLEGAL box (`mu_0 = mu_1`), and my harness evaluated `schur` on `[4,5]`, which
+is not a partition, so its LHS is meaningless. Checked the RHS separately:
+`beta = [7,6,1,0]`, so `Q*x_1 = Q^7 = x_0` and the q-ratio numerator is
+**exactly 0** -- which is `vandPairProd_update_eq_zero`. In Lean `addCell`
+requires `IsAddableCell`, so the case cannot arise at all.
+
+Script: `ratio_check.py` / `illegal_check.py` in the session scratchpad
+(throwaway, exact symbolic in `Q`, no floats).
