@@ -3862,3 +3862,66 @@ stack the induction cannot produce. Kept until the recursion confirms nothing ne
 
 So the chain is now: two proved halves, a proved descent, a proved base case, and a proved
 step-arithmetic, with (1) the one genuinely unformalised link.
+
+### ⚠⚠ Correction twenty-one — the Wronskian is built from the wrong derivative
+
+**Read from §7 (doc pp. 85–86), verbatim.** Mahler bounds the auxiliary polynomial by a
+*majorant*: `A ≪ a(1+x₁)^{r₁}…(1+x_m)^{r_m}`, differentiates it, and gets
+
+    A_{j₁…j_m} ≪ a·binom(r₁,j₁)…binom(r_m,j_m)·(1+x₁)^{r₁−j₁}…(1+x_m)^{r_m−j_m}
+    binom(r,j) ≤ Σ_j binom(r,j) = 2^r,   so   A_{j₁…j_m} ≪ 2^{r₁+…+r_m}·a·∏(1+x_h)^{r_h}
+    Δ_{μν}A   ≪ 2^{r₁+…+r_m}·a·∏(1+x_h)^{r_h}
+    W = Σ± Δ_{μ₁1}A…Δ_{μ_n n}A  (n! terms),  so  W ≪ n!·{2^{Σr_h}·a·∏(1+x_h)^{r_h}}^n
+
+**The binomial with no `j!` is the tell.** For an *ordinary* derivative the coefficient of
+`x^{i−j}` in `∂^j x^i` is `i!/(i−j)! = j!·binom(i,j)`; Mahler's factor is `binom(r_h,j_h)` alone.
+So `A_{j₁…j_m}` — and hence `Δ_{μν}` — is the **divided (Hasse) derivative** `(1/j!)∂^j`, not
+`∂^j`.
+
+**This arc uses ordinary partials.** `mvWronskianMatrix D f i j = pderivList (D i) (f j)`, and
+`pderivList` is a fold of `MvPolynomial.pderiv`. The module note defending that choice
+(`MvGenWronskian.lean`) argues *characteristic*: ordinary partials are fine over number fields,
+and the converse of the dependence criterion needs characteristic zero. **That is true and it is
+about the wrong obligation.** The choice is free for the dependence argument and free for the
+index (`index_C_mul` — scaling does not move the index). It is *not* free for the **height**,
+which is the one place it bites.
+
+**Size of the gap (my derivation, not read from the page).** For the operator-family
+determinant the entry `(i,j)` is `∂^{Dx i ⊞ Dy j}P`, whose ratio to Mahler's `Δ_{μν}P` is
+`(∏_h (Dx i).count h !)·(∏_k (Dy j).count k !)` — a product of a **row** factor and a **column**
+factor. So
+
+    det(arc) = (∏_i (Dx i)!)·(∏_j (Dy j)!)·det(Mahler)
+
+— a single scalar, so the two Wronskians differ by an integer constant and the index is
+unaffected. The height is not. With bounded order (`|Dx i| ≤ i`, `|Dy j| ≤ j`) the constant is up
+to `(∏_{i<n} i!)²`, i.e. `2^{Θ(n² log n)}`.
+
+**And §12's budget has no slack.** §12 spends exactly `2^{(2m+1)ρ₁}`: `2^{2n·Σr_h} ≤ 2^{2mρ₁}`
+plus `n! ≤ 2^{ρ₁}`. Clause 3 is calibrated to that with **equality** at the floor —
+`H₁ = 2^{(1/t)(m−1)m(2m+1)}` makes `H₁^{ρ₁t/(m(m−1))} = 2^{(2m+1)ρ₁}` exactly. An extra
+`2^{Θ(n² log n)}` against a budget of `(2m+1)·n·r₁` fails once `n log₂ n` outgrows
+`2(2m+1)r₁`; since `n ≤ r_m+1` and `r_m` shrinks with `t`, that needs `r₁` large, but `r₁` is
+unbounded — Roth's lemma is *applied* at large degrees. So the ordinary-partial Wronskian
+breaks §12's height estimate.
+
+**This is why `abs_coeff_det_sepFamily_le` does not fit §12.** Its bound is
+`n!·(S·(d^{2n}·B))^n`, carrying `d^{2n²}`; §12's is `2^{2n·Σr_h}·n!·a^n`. The `d^{2n²}` is not a
+loose estimate to be sharpened — it is the factorials, and they are really there.
+
+**The fix, and it is available.** Define the multivariate divided derivative on monomials,
+
+    hasseList l (monomial i c) = (∏_h binom(i_h, l_h)) • monomial (i − l) c,   l_h = l.count h
+
+prove `pderivList l = (∏_h (l.count h)!) • hasseList l`, and take the height bound on the
+divided version: `binom(i_h,l_h) ≤ 2^{i_h} ≤ 2^{d_h}` gives `|coeff| ≤ 2^{Σ_h d_h}·B`, hence
+`n!·(S·2^{Σd}·B)^n ≤ n!·2^{2nΣd}·B^n` using `S ≤ ∏(d_h+1) ≤ 2^{Σd_h}` — **§12's `b` exactly.**
+
+⚠ Mathlib has `Polynomial.hasseDeriv` (univariate) and no multivariate analogue. This arc's own
+inventory table lists "Hasse derivative, `MvPolynomial.pderiv` | **present**", which conflates
+the two — `pderiv` is present, Hasse is not.
+
+⚠ Note the shape: correction 21 is *not* another missing hypothesis. It is the first time this
+arc has found a **construction** that is the wrong object rather than a **statement** that is too
+strong. It was invisible for the same reason the others were — every theorem about
+`mvGenWronskian` is true; none of them is about the height budget.
