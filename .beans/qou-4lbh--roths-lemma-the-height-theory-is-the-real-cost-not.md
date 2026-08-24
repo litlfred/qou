@@ -3285,3 +3285,18 @@ time the answer was no. The `√2` in `le_two_mul_max_of_sum_le` cost `2^{m+1}�
 rounded `j` interval collapsed to empty; and now `1/d` amplifies to ≈ 4. **A square root in the
 recursion means slack does not shrink — it grows.** That is the general fact, and it should be
 the default expectation rather than a per-case discovery.
+
+### The base case with a power bound — the one route the amplification result leaves open
+
+`index_le_of_pow_abs_leadingCoeff_le`: `|lead|^Q ≤ q^S` gives `index ≤ S/(Q·d)` **directly**, no
+ceiling anywhere. That is the shape `RothGammaFull`'s clause 4 produces (`b^{Mq} ≤ K₁^{s₁p}`),
+and going through `index_le_of_abs_leadingCoeff_le` instead would need `e : ℕ` with `S ≤ Q·e`,
+whose rounding costs `1/d` — which `two_sqrt_expands` shows is fatal at any size.
+
+The proof is the unpowered contradiction raised to the `Q`-th power:
+`q^{n₀Q} = (q^{n₀})^Q ≤ |lead|^Q ≤ q^S` against `S < n₀Q`. The exponent only enters at the end,
+which is why the generalisation was cheap once the shared half was factored out.
+
+`exists_index_eq_div_and_pow_le` is that shared half — the one-variable index is `n₀/d` for a
+natural `n₀`, with `q^{n₀} ≤ |lead|`. Both base-case theorems now derive from it rather than
+repeating the `translate`-invertibility and infimum-attainment argument.

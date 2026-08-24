@@ -123,6 +123,89 @@ theorem pow_le_abs_leadingCoeff_of_le_index {p q : ℤ} (hq : 0 < q) (hco : IsCo
 
 /-! ### The base case -/
 
+/-- **The one-variable index is `n₀/d` for a natural `n₀`, and `q^{n₀}` divides into the leading
+coefficient.**
+
+The shared half of the base case: `translate` is invertible so the support is non-empty, the
+infimum over a `Unit`-indexed `Finsupp` is attained at a single exponent, and
+`pow_le_abs_leadingCoeff_of_le_index` at that exponent gives the lower bound.
+
+Extracted so that a bound on `|lead|` and a bound on a **power** of `|lead|` can both be turned
+into index bounds without duplicating it. -/
+theorem exists_index_eq_div_and_pow_le {p q : ℤ} (hq0 : 0 < q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) :
+    ∃ n₀ : ℕ,
+      index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+          (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+        = (((n₀ : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ)
+      ∧ q ^ n₀ ≤ |P.leadingCoeff| := by
+  classical
+  set Q : MvPolynomial Unit ℚ := (pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ)) with hQdef
+  set α : ℚ := (p : ℚ) / (q : ℚ) with hαdef
+  have hPQ : P.map (algebraMap ℤ ℚ) ≠ 0 :=
+    Polynomial.map_ne_zero_iff (algebraMap ℤ ℚ).injective_int |>.mpr hP
+  have hQ0 : Q ≠ 0 := fun h =>
+    hPQ ((pUnitAlgEquiv ℚ).symm.injective (h.trans (map_zero _).symm))
+  have htr : translate (fun _ : Unit => α) Q ≠ 0 := by
+    intro h0
+    apply hQ0
+    have hpt := pUnitAlgEquiv_translate α Q
+    rw [h0, map_zero] at hpt
+    have h2 := congrArg (taylor (-α)) hpt.symm
+    rw [taylor_taylor, neg_add_cancel, taylor_zero, map_zero] at h2
+    have h3 := congrArg (pUnitAlgEquiv ℚ).symm h2
+    rwa [AlgEquiv.symm_apply_apply, map_zero] at h3
+  obtain ⟨i₀, hi₀, hieq⟩ := Finset.exists_mem_eq_inf _ (support_nonempty.mpr htr)
+    (fun i => (idxWeight (fun _ : Unit => d) i : WithTop ℚ))
+  set n₀ : ℕ := i₀ () with hn₀
+  have hsingle : i₀ = Finsupp.single () n₀ := by
+    refine Finsupp.ext fun u => ?_
+    cases u
+    rw [Finsupp.single_eq_same]
+  have hidx : index (fun _ : Unit => d) (fun _ : Unit => α) Q
+      = (((n₀ : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ) := by
+    unfold index
+    rw [hieq, hsingle, idxWeight_single]
+  exact ⟨n₀, hidx, pow_le_abs_leadingCoeff_of_le_index hq0 hco hd hP n₀ (le_of_eq hidx.symm)⟩
+
+/-- **The base case with a *power* bound, and no rounding anywhere.**
+
+`|lead|^Q ≤ q^S` gives `index ≤ S/(Q·d)` directly.  ⚠ This is the shape `RothGammaFull`'s
+clause 4 produces (`b^{Mq} ≤ K₁^{s₁p}`), and taking it directly is the *only* route that keeps
+the recursion sound: going through `index_le_of_abs_leadingCoeff_le` requires an `e : ℕ` with
+`S ≤ Q·e`, whose rounding costs `1/d` — and `RothLemmaStatement.two_sqrt_expands` shows any
+positive perturbation is amplified to `≈ 4` by the recursion, however small.
+
+The proof is the same contradiction as the unpowered version, raised to the `Q`-th power:
+`q^{n₀Q} = (q^{n₀})^Q ≤ |lead|^Q ≤ q^S` against `S < n₀Q`. -/
+theorem index_le_of_pow_abs_leadingCoeff_le {p q : ℤ} (hq : 2 ≤ q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) {Qe S : ℕ} (hQe : Qe ≠ 0)
+    (hB : |P.leadingCoeff| ^ Qe ≤ q ^ S) :
+    index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+        (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+      ≤ (((S : ℚ) / ((Qe : ℚ) * (d : ℚ)) : ℚ) : WithTop ℚ) := by
+  have hq0 : (0 : ℤ) < q := by omega
+  obtain ⟨n₀, hidx, hpow⟩ := exists_index_eq_div_and_pow_le hq0 hco hd hP
+  rw [hidx, WithTop.coe_le_coe]
+  by_contra hcon
+  push_neg at hcon
+  have hdQ : (0 : ℚ) < (d : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd
+  have hQQ : (0 : ℚ) < (Qe : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hQe
+  have hSn : S < n₀ * Qe := by
+    have h1 : (S : ℚ) < (n₀ : ℚ) * (Qe : ℚ) := by
+      rw [div_lt_div_iff₀ (by positivity) hdQ] at hcon
+      nlinarith
+    exact_mod_cast h1
+  have habs : (0 : ℤ) ≤ |P.leadingCoeff| := abs_nonneg _
+  have hchain : q ^ (S + 1) ≤ q ^ S := by
+    calc q ^ (S + 1) ≤ q ^ (n₀ * Qe) := pow_le_pow_right₀ (by omega) (by omega)
+      _ = (q ^ n₀) ^ Qe := by rw [← pow_mul]
+      _ ≤ |P.leadingCoeff| ^ Qe := pow_le_pow_left₀ (by positivity) hpow _
+      _ ≤ q ^ S := hB
+  have hqe : (0 : ℤ) < q ^ S := pow_pos hq0 S
+  rw [pow_succ] at hchain
+  nlinarith
+
 /-- **The `m = 1` case of Roth's lemma.**
 
     `|lead P| ≤ q^e`,  `q ≥ 2`,  `gcd(p,q) = 1`,  `P ≠ 0`,  `d ≠ 0`
