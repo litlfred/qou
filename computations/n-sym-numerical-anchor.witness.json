@@ -1,146 +1,167 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T00:09:08.452834+00:00",
-  "commitSha": "0bf80848d4f0be0afbe05720b5d03621bd602453",
+  "computedAt": "2026-08-24T07:09:55.836534+00:00",
+  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "n-sym-numerical-anchor",
   "scriptFile": "n_sym_numerical_anchor.py",
-  "scriptHash": "d279deb69637",
-  "scriptCommitSha": "4a7af5993a77e88d836e6195e1782344e0e95a29",
+  "scriptHash": "3aefa653eacf",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/n_sym_numerical_anchor.py"
+    ],
+    "reproduce": "python3 -u computations/n_sym_numerical_anchor.py"
+  },
   "description": "Numerical anchor for conj:n-sym-symmetric-channel-normalization. Computes N_sym(q_0) = N_v / ∏_{k=2,3,4} [2k]_q²/[2]_q ≈ 213.11 and tests 25+ q-arithmetic ansatze plus PSLQ. No clean closed form found; candidate (a) Gram determinant naive = [4]_q[6]_q[8]_q evaluated for comparison.",
   "q_0_dps": 200,
-  "q_0": "1.1099785955541805169583001889887986763787613849839",
-  "N_v": "1445519.449145220729668372",
-  "prod_factor": "6782.915821733141012608994",
-  "N_sym_target": "213.1118072427836670785458",
+  "q_0": "1.1099785827513808075916690956107688798744991218736",
+  "N_v": "1445519.447193341144468823",
+  "prod_factor": "6782.915252266050263433575",
+  "N_sym_target": "213.1118248470551121265069",
   "ansatz_tests": [
     {
       "ansatz": "[7]_q · [8]_q · [3]_q",
-      "value_at_q0": "207.623216282864384079260703526",
-      "rel_err_pct": 2.57545137030653
+      "value_at_q0": "207.623206746285921343717701573",
+      "rel_err_pct": 2.575463893056254
     },
     {
       "ansatz": "[8]_q · [7]_q · [3]_q",
-      "value_at_q0": "207.623216282864384079260703526",
-      "rel_err_pct": 2.57545137030653
+      "value_at_q0": "207.623206746285921343717701573",
+      "rel_err_pct": 2.575463893056254
     },
     {
       "ansatz": "[8]_q · [7]_q · 3",
-      "value_at_q0": "204.641842605527293680297251842",
-      "rel_err_pct": 3.9744229786419685
+      "value_at_q0": "204.6418338579284743996722551",
+      "rel_err_pct": 3.974435015609919
     },
     {
       "ansatz": "[6]_q² · [7]_q · [8]_q / [10]_q",
-      "value_at_q0": "234.032829807005331788719984587",
-      "rel_err_pct": 9.81692325493152
+      "value_at_q0": "234.032822078263147915888261305",
+      "rel_err_pct": 9.816910556803922
     },
     {
       "ansatz": "45 · [5]_q",
-      "value_at_q0": "234.91985960990579896487153835",
-      "rel_err_pct": 10.23315068708404
+      "value_at_q0": "234.919857389710421023219496385",
+      "rel_err_pct": 10.233140539388828
     },
     {
       "ansatz": "binom(10,2) · [5]_q",
-      "value_at_q0": "234.91985960990579896487153835",
-      "rel_err_pct": 10.23315068708404
+      "value_at_q0": "234.919857389710421023219496385",
+      "rel_err_pct": 10.233140539388828
     },
     {
       "ansatz": "[6]_q · [7]_q · 5",
-      "value_at_q0": "243.556733999904321176527753649",
-      "rel_err_pct": 14.28589394037508
+      "value_at_q0": "243.556726140789760473977242433",
+      "rel_err_pct": 14.28588081190904
     },
     {
       "ansatz": "[9]_q · [10]_q · 2",
-      "value_at_q0": "246.533077669392797960019772677",
-      "rel_err_pct": 15.682505281621758
+      "value_at_q0": "246.533061051375276090925143751",
+      "rel_err_pct": 15.682487927784264
     },
     {
       "ansatz": "binom(8,2) · [6]_q",
-      "value_at_q0": "178.866427027316573548068787541",
-      "rel_err_pct": 16.06920829893469
+      "value_at_q0": "178.866424580912658376171145002",
+      "rel_err_pct": 16.069216380048125
     },
     {
       "ansatz": "[10]_q² / [2]_q² · 8",
-      "value_at_q0": "279.889361016378032428082525698",
-      "rel_err_pct": 31.334516204219163
+      "value_at_q0": "279.889340933138923894126987485",
+      "rel_err_pct": 31.334495931423945
     },
     {
       "ansatz": "[10]_q² · 2",
-      "value_at_q0": "282.947587389623128838262251798",
-      "rel_err_pct": 32.76954996082424
+      "value_at_q0": "282.947566408352402030814004176",
+      "rel_err_pct": 32.769529148097064
     },
     {
       "ansatz": "[5]_q!",
-      "value_at_q0": "131.313087442180046914782910278",
-      "rel_err_pct": 38.383006957195924
+      "value_at_q0": "131.313084844715976925905521153",
+      "rel_err_pct": 38.383013265943354
     },
     {
       "ansatz": "C_3 · [5]_q · [4]_q",
-      "value_at_q0": "107.271780091256260998773012923",
-      "rel_err_pct": 49.66408408847621
+      "value_at_q0": "107.271778439774533080974812528",
+      "rel_err_pct": 49.66408902145118
     },
     {
       "ansatz": "[5]_q! · 5 / [2]_q",
-      "value_at_q0": "326.5037841044127252078687287",
-      "rel_err_pct": 53.20774026023314
+      "value_at_q0": "326.503778037466881320305783757",
+      "rel_err_pct": 53.20772475754936
     },
     {
       "ansatz": "[3]_q^4 · [4]_q",
-      "value_at_q0": "352.711151272448826326021685941",
-      "rel_err_pct": 65.50521335996612
+      "value_at_q0": "352.711144680483107398461399696",
+      "rel_err_pct": 65.50519659508095
     },
     {
       "ansatz": "3 · [5]_q · [7]_q · [3]_q",
-      "value_at_q0": "363.488388529983552502271546948",
-      "rel_err_pct": 70.5622946155612
+      "value_at_q0": "363.488377178987907297938356614",
+      "rel_err_pct": 70.56227519981783
     },
     {
       "ansatz": "5! · [3]_q",
-      "value_at_q0": "365.244746187661444029477373374",
-      "rel_err_pct": 71.3864430662742
+      "value_at_q0": "365.244745023902638728242320281",
+      "rel_err_pct": 71.38642836268208
     },
     {
       "ansatz": "[3]_q!",
-      "value_at_q0": "6.12057930475619079011642143901",
-      "rel_err_pct": 97.12799615190563
+      "value_at_q0": "6.12057927791506346151306076719",
+      "rel_err_pct": 97.12799640174465
     },
     {
       "ansatz": "6! · [3]_q / 5",
-      "value_at_q0": "438.293695425193732835372848049",
-      "rel_err_pct": 105.66373167952905
+      "value_at_q0": "438.293694028683166473890784338",
+      "rel_err_pct": 105.6637140352185
     },
     {
       "ansatz": "C_4 · [6]_q · [5]_q",
-      "value_at_q0": "466.880843624251885448476183165",
-      "rel_err_pct": 119.07788670402788
+      "value_at_q0": "466.880832826171069617393183893",
+      "rel_err_pct": 119.07786354006376
     },
     {
       "ansatz": "[6]_q!",
-      "value_at_q0": "838.839384739583489045638992695",
-      "rel_err_pct": 293.61469249047815
+      "value_at_q0": "838.839356673727688754389372193",
+      "rel_err_pct": 293.6146468060799
     },
     {
       "ansatz": "[2]_q · [3]_q · [4]_q · [5]_q · [6]_q",
-      "value_at_q0": "838.839384739583489045638992695",
-      "rel_err_pct": 293.61469249047815
+      "value_at_q0": "838.839356673727688754389372193",
+      "rel_err_pct": 293.6146468060799
     },
     {
       "ansatz": "12 · [5]_q · [7]_q² / [3]_q",
-      "value_at_q0": "1196.75267595305208369896998271",
-      "rel_err_pct": 461.560943730196
+      "value_at_q0": "1196.75262395857983180473106552",
+      "rel_err_pct": 461.56087294426686
     },
     {
       "ansatz": "[10]_q · [9]_q²",
-      "value_at_q0": "1277.4749819896923130317610868",
-      "rel_err_pct": 499.4388572447104
+      "value_at_q0": "1277.47485713255351789746802405",
+      "rel_err_pct": 499.43874913997115
     },
     {
       "ansatz": "32 · [7]_q · [3]_q²",
-      "value_at_q0": "2260.55344033072570276707325119",
-      "rel_err_pct": 960.7358970755816
+      "value_at_q0": "2260.55338389979159870645984969",
+      "rel_err_pct": 960.7357829731563
     }
   ],
   "pslq_runs": [
@@ -172,11 +193,11 @@
         "log(7)": -1
       },
       "has_log_N_sym_coeff": false,
-      "residual_str": "1.6684257e-7"
+      "residual_str": "1.4151071e-7"
     }
   ],
-  "candidate_a_gram_det_naive": "234.851268665554756535464",
-  "candidate_a_rel_err_pct": 10.20096526045824,
+  "candidate_a_gram_det_naive": "234.851258384525934283447",
+  "candidate_a_rel_err_pct": 10.200951332978663,
   "closes_audit_flag_partially": "NV-1 (closure path identified)",
   "next_step": "Discharge candidate (a) Gram determinant by computing the EW Wedderburn-block Gram matrix categorically, OR discharge candidate (b) Higgs-eaten Goldstone phase space via U2/U4 conjectures from PR #511."
 }

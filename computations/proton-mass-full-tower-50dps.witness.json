@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T07:40:56.733316+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T07:09:45.100781+00:00",
+  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
   "assertions": [
     {
       "name": "m_p_within_1_percent",
-      "computed": "0.98711715903783686289006193471625621624132895068395",
+      "computed": "0.98658853412894220074835156345721897815672717454928",
       "expected": "0",
       "passed": false,
       "tolerance": 0.01
     },
     {
       "name": "m_p_within_2_percent",
-      "computed": "0.98711715903783686289006193471625621624132895068395",
+      "computed": "0.98658853412894220074835156345721897815672717454928",
       "expected": "0",
       "passed": false,
       "tolerance": 0.02
     }
   ],
   "allPassed": false,
-  "durationMs": 24,
+  "durationMs": 35,
   "computation": "proton-mass-full-tower-50dps",
   "scriptFile": "derive_m_p_hecke_full_tower_50dps.py",
   "scriptHash": "f597b2ee422e",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,10 +36,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -50,7 +49,7 @@
   "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
-    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "M_E_MEV_CAL1": "0.51099895069"
   },
   "data": {
@@ -62,17 +61,17 @@
         "Z": 1,
         "N": 0,
         "knot_type": "none",
-        "T1_descended_50dps": "0.96039549118815049651215986149723955840572223004978",
-        "T2_single_Li2q_50dps": "3.0197861226956949690177184962514434358616584923289",
-        "T3_pair_Li2q_50dps": "0.36127482011669798762944100795990428397488191514679",
+        "T1_descended_50dps": "1.0228960804927440240638015880872927077350342504914",
+        "T2_single_Li2q_50dps": "3.3998646086819300768884772881775926668887782471401",
+        "T3_pair_Li2q_50dps": "0.41468974261920913620152002108027395722238411125451",
         "T4_Frobenius_50dps": "1.636287114593083917134660394638053126521738160248",
-        "T5_chirality_BW_50dps_cat_units": "4.1887308561594223214016865798174551308989203243785",
+        "T5_chirality_BW_50dps_cat_units": "4.1887308561594205768837158432987722251106659563856",
         "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
         "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
-        "m_hecke_50dps": "12.087610107363198228665160131670025800022384321816",
+        "m_hecke_50dps": "12.583604105156536268141668926787914947838063925184",
         "wedderburn_vols_full_50dps": [
-          "0.9890073159292597737327090873425711234998226354167",
-          "0.97107015865274369644467729606208246103317407697938"
+          "1.0802152945037791169129056536610818247775645179075",
+          "0.9469372315845926374785838549537102785108736803297"
         ]
       },
       "neutron": {
@@ -82,17 +81,17 @@
         "Z": 0,
         "N": 1,
         "knot_type": "none",
-        "T1_descended_50dps": "0.83329025047951637547090882116805412808114314357792",
-        "T2_single_Li2q_50dps": "2.677338941109513668366937987436955897064255484275",
-        "T3_pair_Li2q_50dps": "0.2836164128719695006316692095267800756926598689668",
+        "T1_descended_50dps": "0.88754462480873000654589248148541719655885504899516",
+        "T2_single_Li2q_50dps": "2.7937714468666756432323525618316925197482281576629",
+        "T3_pair_Li2q_50dps": "0.31366843571451701475016071865300056549901967032731",
         "T4_Frobenius_50dps": "1.6362871145930839171346603946380531265217381602479",
-        "T5_chirality_BW_50dps_cat_units": "4.0020362578956189901527841422126845706272788993274",
+        "T5_chirality_BW_50dps_cat_units": "4.0020362578956172456348134056940016648387024584836",
         "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
         "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
-        "m_hecke_50dps": "11.353704679559850988726454346488458062346538756059",
+        "m_hecke_50dps": "11.554443582488772364267373353808095337526006695381",
         "wedderburn_vols_full_50dps": [
-          "0.8542103128258389606769442997911669155688329382913",
-          "0.97550947110774594315687948247161058517697160610811"
+          "0.94109159813579496661154834038607516271846538200467",
+          "0.94310120987889386006300020747078886502360500125127"
         ]
       },
       "electron": {
@@ -100,17 +99,17 @@
       }
     },
     "ratios": {
-      "m_p_over_m_e_50dps": "23.654862874065284959118044195352212182098139176545",
-      "m_n_over_m_e_50dps": "22.218645780444334377242582643645502673207336162914"
+      "m_p_over_m_e_50dps": "24.625498913774562584986174126478057930585187999076",
+      "m_n_over_m_e_50dps": "22.611482013587013779367518947043838865159620931552"
     },
     "predictions_MeV": {
-      "m_p_pred_50dps": "12.087610107363198228665160131670025800022384321816",
-      "m_n_pred_50dps": "11.353704679559850988726454346488458062346538756059"
+      "m_p_pred_50dps": "12.583604105156536268141668926787914947838063925184",
+      "m_n_pred_50dps": "11.554443582488772364267373353808095337526006695381"
     },
     "comparisons": {
       "m_p_codata_MeV": "938.27208943",
-      "rel_diff_p": "0.98711715903783686289006193471625621624132895068395",
-      "rel_diff_p_ppm": "987117.15903783686289006193471625621624132895068395"
+      "rel_diff_p": "0.98658853412894220074835156345721897815672717454928",
+      "rel_diff_p_ppm": "986588.53412894220074835156345721897815672717454928"
     },
     "lean_uniqueness_ref": {
       "nucleus": "proton",
@@ -121,11 +120,11 @@
     "upstream_witness_hashes": [
       {
         "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
-        "sha256": "8fdf23e355a0e66c3004895e4dc0c38a51a0f15f722033088b279d809cbafee4",
-        "size_bytes": 10078,
-        "commitSha": "83b19a2f85c270e19890905437a29b4540fd7834",
-        "scriptCommitSha": "17f878e6857f795273cff6fd102ec2ac2a968c7b",
-        "computedAt": "2026-05-17T22:58:19.126946+00:00"
+        "sha256": "c449dfac5cf6ef3732bb9272d524dda157f0efba8bfecf3e799bc8cb5069886b",
+        "size_bytes": 10581,
+        "commitSha": "d1b0e1f679bf4f14abc74c7115bcd930ee7cebba",
+        "scriptCommitSha": "ff92e214435373f69f93b57a6f186937b0ae1795",
+        "computedAt": "2026-08-23T07:58:23.921215+00:00"
       }
     ]
   }

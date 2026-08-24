@@ -1,29 +1,35 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:25:17.796156+00:00",
-  "commitSha": "e84339ede4c9f1d6bc379bf45076b25440771725",
-  "assertions": [
-    {
-      "name": "li6_rectangle_min_eig_substantially_negative",
-      "computed": "1",
-      "expected": "1",
-      "passed": true,
-      "tolerance": 0,
-      "source": "min_eig of ρ_(6,6,6)(T_w_⁶Li) symmetric part = -95.7199; threshold -10.0"
-    }
-  ],
+  "computedAt": "2026-08-24T07:10:43.171043+00:00",
+  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 29883,
+  "durationMs": 26737,
   "computation": "probe-4-li6-rectangular-python-targeted",
   "scriptFile": "probe_4_li6_rectangular_python.py",
-  "scriptHash": "34d94c2b8cdb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ffd9596ddbfc",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_4_li6_rectangular_python.py"
+    ],
+    "reproduce": "python3 -u computations/probe_4_li6_rectangular_python.py"
   },
   "description": "Targeted Lanczos eigval computation of the symmetric part of ρ_λ(T_w_⁶Li) for λ = (6,6,6) and (3,3,3,3,3,3) — the predicted dominant pair under the rectangular-form conjecture at A=6. Bypasses the d_λ=87,516 dense-matrix infeasibility of the full Rust solver by using a LinearOperator wrapper that applies the 71-crossing braid chain on-the-fly via sparse mat-vec.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
@@ -32,56 +38,23 @@
     "A": 6,
     "n_0": 18,
     "braid_length": 71,
-    "q_0": 1.1099785955541805,
-    "h": 0.20906032198987945
+    "q_0": 1.1099785827513808,
+    "h": 0.20906029879563937
   },
   "data": {
     "rectangular_pair_eigvals": {
       "[6, 6, 6]": {
-        "shape": [
-          6,
-          6,
-          6
-        ],
-        "dim": 87516,
-        "min_eig_lanczos": -95.71991947064697,
-        "max_eig_lanczos": 105.98002836139364,
-        "top_eigs_LA": [
-          105.98002836139364,
-          95.04231172324212
-        ],
-        "bot_eigs_SA": [
-          -95.71991947064697,
-          -86.21695634629621
-        ],
-        "build_time_s": 7.911550045013428,
-        "max_eig_time_s": 3.3907809257507324,
-        "min_eig_time_s": 4.0398476123809814
+        "error": "no supported conversion for types: (dtype('float64'), dtype('O'))"
       },
       "[3, 3, 3, 3, 3, 3]": {
-        "shape": [
-          3,
-          3,
-          3,
-          3,
-          3,
-          3
-        ],
-        "dim": 87516,
-        "min_eig_lanczos": -96.51993019552548,
-        "max_eig_lanczos": 120.08863828331096,
-        "top_eigs_LA": [
-          120.08863828331096,
-          105.13389581593461
-        ],
-        "bot_eigs_SA": [
-          -96.51993019552548,
-          -95.97520761366273
-        ],
-        "build_time_s": 7.450665473937988,
-        "max_eig_time_s": 2.52962589263916,
-        "min_eig_time_s": 4.505873203277588
+        "error": "no supported conversion for types: (dtype('float64'), dtype('O'))"
       }
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "⁶Li",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },
   "caveats": [

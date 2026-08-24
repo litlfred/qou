@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:43:43.577497+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "computedAt": "2026-08-24T06:53:57.167159+00:00",
+  "commitSha": "436c2cd36d31135b2e3c9a9a22c4f3f03ac90336",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 1,
   "computation": "alpha-em-pslq-uniqueness",
   "scriptFile": "alpha_em_pslq_uniqueness.py",
   "scriptHash": "7a35e4e588a5",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,19 +17,26 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_pslq_uniqueness.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_pslq_uniqueness.py"
   },
   "description": "PSLQ uniqueness test for the hecke-engine-knot-tracker α_EM formula at 1000+ digit precision.  Tests whether 1/α = 45·[3]_q·(1 + ℏ_q^4·[5]_q + 8q·(ℏ_q^4·[5]_q)²) is the UNIQUE integer relation in the q-arithmetic + transcendental basis at extreme precision, or whether spurious relations exist with comparable coefficient norms.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
-  "timestamp_utc": "2026-07-07T13:43:43.479327+00:00",
+  "timestamp_utc": "2026-08-24T06:53:56.669944+00:00",
   "precision_dps": 1500,
-  "q_0_extended_50dp": "1.1099785955541805752815940796095093779932822799587",
-  "one_over_alpha_value_50dp": "137.03599999817522076201684190212135441251466445012",
+  "q_0_extended_50dp": "1.109978595642739046681795129380001752700065561029",
+  "one_over_alpha_value_50dp": "137.03600000140176895739592918172381022783659037876",
   "basis_size": 52,
   "basis_labels": [
     "1/alpha",
@@ -89,27 +96,27 @@
     {
       "tol_dps": 50,
       "relation": null,
-      "walltime_s": 16.88379716873169
+      "walltime_s": 29.07582712173462
     },
     {
       "tol_dps": 100,
       "relation": null,
-      "walltime_s": 16.61291003227234
+      "walltime_s": 23.043538808822632
     },
     {
       "tol_dps": 200,
       "relation": null,
-      "walltime_s": 16.643189907073975
+      "walltime_s": 21.937378406524658
     },
     {
       "tol_dps": 500,
       "relation": null,
-      "walltime_s": 16.93545699119568
+      "walltime_s": 23.498574256896973
     },
     {
       "tol_dps": 1000,
       "relation": null,
-      "walltime_s": 16.753289937973022
+      "walltime_s": 22.687997817993164
     }
   ]
 }

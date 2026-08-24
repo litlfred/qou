@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T19:58:22.980313+00:00",
-  "commitSha": "6c45a23d96831379e5324b4181f8d1fa9fd33591",
+  "computedAt": "2026-08-24T07:10:58.482564+00:00",
+  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
   "assertions": [
     {
       "name": "rel_gap_matches_registry",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 5,
   "computation": "probe-trace-convention-production-impact",
   "scriptFile": "probe_trace_convention_production_impact.py",
   "scriptHash": "852b16f3c171",
-  "scriptCommitSha": "3b0ef503f8a6e8a06f84303e24ecf71a1b616bd7",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,8 +35,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_trace_convention_production_impact.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_trace_convention_production_impact.py"
   },
   "description": "Impact of switching the Borromean pipeline from trace convention D (TL/Jones, production) to C (canonical Jones-Markov / Wenzl z-trace): muon-anchor m_p shift, proton-anchor q0 re-pin + m_mu/Q_beta prediction shifts, binding-tower noise floor. Decision package input; no production wiring changed.",
   "data": {

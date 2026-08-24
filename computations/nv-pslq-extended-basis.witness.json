@@ -1,26 +1,25 @@
 {
   "computation": "nv-pslq-extended-basis",
   "description": "PSLQ on the EXTENDED basis for N_v that adds the Plancherel-weighted Hecke factors [2k]_q^2/[2]_q (k=2,3,4) and the conjectured product [4]_q[6]_q[8]_q/[2]_q^3 from conj:weak-spectral-completeness.  log-basis form: integer coefficients encode multiplicative product structure.",
-  "auditOnly": "docs/audits/2026-05-02-4-parallel-followup-synthesis.md",
-  "timestamp_utc": "2026-05-02T23:39:51.201557+00:00",
+  "timestamp_utc": "2026-08-24T07:10:04.769959+00:00",
   "precision_dps": 1100,
   "inputs": {
-    "q_50dp": "1.1099785955541805752815940796095093779932822799587",
-    "hbar_q_50dp": "0.099081726435698885820014342688412528468474023957772",
+    "q_50dp": "1.1099785827513808075916690956107688798744991218736",
+    "hbar_q_50dp": "0.099081716044258507839177117518906063985258373389446",
     "G_F_MeV_minus2": "1.1663788e-11",
     "G_F_relative_err": "5.14413e-7",
     "m_e_MeV": "0.51099895000",
-    "N_v_25dp": "1445519.449145220729668372",
-    "log_N_v_25dp": "14.18397929530839471400941",
+    "N_v_25dp": "1445519.447193341144468823",
+    "log_N_v_25dp": "14.18397929395809839826522",
     "N_v_codata_dps_floor": 6
   },
   "conjectured_product_structure": {
     "form_struct": "[4]_q [6]_q [8]_q / [2]_q^3",
-    "form_struct_value_25dp": "28.88175082159128737492685",
+    "form_struct_value_25dp": "28.88174966114198328561785",
     "form_conj": "prod_{k=2,3,4} [2k]_q^2 / [2]_q",
-    "form_conj_value_25dp": "6782.915821733143606822772",
-    "N_sym_required_struct": "50049.57829857689588644662",
-    "N_sym_required_conj": "213.1118072427835855711821",
+    "form_conj_value_25dp": "6782.915252266050263433575",
+    "N_sym_required_struct": "50049.58024195357423440539",
+    "N_sym_required_conj": "213.1118248470551121265069",
     "interpretation": "If the conjectured product structure is exact, the categorical normalization N_sym(q) must equal N_v/P.  Authoring N_sym from first principles and matching one of these values discharges conj:weak-spectral-completeness."
   },
   "basis_labels": [
@@ -47,22 +46,22 @@
     {
       "tol_dps": 100,
       "relation": null,
-      "walltime_s": 0.8923244476318359
+      "walltime_s": 1.346949815750122
     },
     {
       "tol_dps": 50,
       "relation": null,
-      "walltime_s": 0.8831033706665039
+      "walltime_s": 1.4289186000823975
     },
     {
       "tol_dps": 12,
       "relation": null,
-      "walltime_s": 0.8838567733764648
+      "walltime_s": 1.357818603515625
     },
     {
       "tol_dps": 7,
       "kind": "BASIS_COINCIDENCE",
-      "note": "log(N_v) coefficient is zero — relation lives entirely in the q-basis and does NOT pin N_v",
+      "note": "log(N_v) coefficient is zero \u2014 relation lives entirely in the q-basis and does NOT pin N_v",
       "log_N_v_coef": 0,
       "relation": [
         [
@@ -111,8 +110,8 @@
         ]
       ],
       "max_abs_coef": 6,
-      "residual": "7.65131983321e-7",
-      "walltime_s": 0.5715577602386475
+      "residual": "7.36004209951e-7",
+      "walltime_s": 0.7588369846343994
     }
   ],
   "summary": {
@@ -120,9 +119,6 @@
     "n_basis_coincidences": 1,
     "n_deep_genuine_relations": 0,
     "conclusion": "INCONCLUSIVE",
-    "verdict": "Extended basis does NOT close NV-1: no log(N_v) relation at any tested tolerance.  Consistent with the conjectured form iff N_sym(q) is transcendental in the basis — N_sym must be authored explicitly before PSLQ can verify."
-  },
-  "engine": "python",
-  "scriptFile": "nv_pslq_extended_basis.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+    "verdict": "Extended basis does NOT close NV-1: no log(N_v) relation at any tested tolerance.  Consistent with the conjectured form iff N_sym(q) is transcendental in the basis \u2014 N_sym must be authored explicitly before PSLQ can verify."
+  }
 }

@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-09T03:10:15.271234+00:00",
-  "commitSha": "c66d42797839f5d21093deae0547be396515ce45",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-08-24T07:09:40.032479+00:00",
+  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
   "assertions": [
     {
       "name": "all_h3_partitions_covered",
@@ -22,11 +22,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 8,
   "computation": "crystal-transport-h3-verification",
   "scriptFile": "crystal_transport_h3_verification.py",
-  "scriptHash": "fea67871981e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3890817e8740",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/crystal_transport_h3_verification.py"
+    ],
+    "reproduce": "python3 -u computations/crystal_transport_h3_verification.py"
+  },
   "description": "L2 advance: tests the flat-transport claim of rem:ontological-agnosticism on H_3. Compares crystal-limit χ_λ(σ_1) at q→0 (combinatorial sign-balance) against the simple [n]_q lift to q_0, and against the Hoefsmit-matrix χ_λ at q_0. Mismatches quantify connection curvature; matches validate flat transport at the leading order.",
   "auditOnly": "docs/audits/2026-05-08-compute-infrastructure-audit.md",
   "data": {
@@ -34,16 +55,16 @@
     "conditional_on": [
       "conj:crystal-graph-realization"
     ],
-    "q_0": 1.1099785955541805,
+    "q_0": 1.1099785827513808,
     "rows": [
       {
         "lambda": [
           3
         ],
         "chi_crystal_at_q_zero": 1,
-        "flat_transport_lift": 1.1099785955541805,
-        "hoefsmit_chi_at_q_0": 1.109978595554181,
-        "delta": 4.440892098500626e-16,
+        "flat_transport_lift": 1.1099785827513808,
+        "hoefsmit_chi_at_q_0": 1.109978582751381,
+        "delta": 2.220446049250313e-16,
         "flat_within_1e_10": true
       },
       {
@@ -53,8 +74,8 @@
         ],
         "chi_crystal_at_q_zero": 0,
         "flat_transport_lift": 0.0,
-        "hoefsmit_chi_at_q_0": 0.20906032198987978,
-        "delta": 0.20906032198987978,
+        "hoefsmit_chi_at_q_0": 0.20906029879563925,
+        "delta": 0.20906029879563925,
         "flat_within_1e_10": false
       },
       {
@@ -64,9 +85,9 @@
           1
         ],
         "chi_crystal_at_q_zero": -1,
-        "flat_transport_lift": -0.9009182735643011,
-        "hoefsmit_chi_at_q_0": -0.9009182735643012,
-        "delta": 1.1102230246251565e-16,
+        "flat_transport_lift": -0.9009182839557415,
+        "hoefsmit_chi_at_q_0": -0.9009182839557418,
+        "delta": 3.3306690738754696e-16,
         "flat_within_1e_10": true
       }
     ],

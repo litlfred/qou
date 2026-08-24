@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T19:58:22.692094+00:00",
-  "commitSha": "6c45a23d96831379e5324b4181f8d1fa9fd33591",
+  "computedAt": "2026-08-24T07:10:57.409868+00:00",
+  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
   "assertions": [
     {
       "name": "fpin_consistency_with_amplification",
@@ -17,7 +17,7 @@
   "computation": "probe-mup-dressing-attribution",
   "scriptFile": "probe_mup_dressing_attribution.py",
   "scriptHash": "ba394698973c",
-  "scriptCommitSha": "1174e5e797e37fea17de5f6576abeee4f126e388",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,8 +26,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_mup_dressing_attribution.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_mup_dressing_attribution.py"
   },
   "description": "Attribution test for the mu-p dressing under hypothesis H_mu (dressing multiplies the muon identity): the system decouples, q0 is pinned by the pure Hecke factor F_Bor from the mass ratio (the F-pin), and delta* is measured exactly. Reports where the F-pin lands relative to the muon/proton pins, the F_Bor sensitivity, delta* vs the ORD-17 kernel sharpener candidates, and the Kashaev-subleading naturality check. No fit; no wiring.",
   "data": {
@@ -55,11 +65,11 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-bar-split-ord17.witness.json",
-        "sha256": "32649c28e3f5dbb41e376670d779d67653ffd57935290ea46d34142522a7e0ef",
-        "size_bytes": 1769,
-        "commitSha": "46c886077e9d67295e0580709f64fd9046a16e9b",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-07-03T14:09:41.643638+00:00"
+        "sha256": "c72ea90c0a377f57df724a399186e3d524f917b631f0482aadad6a573e2bb30c",
+        "size_bytes": 2704,
+        "commitSha": "544ef706b8f0983009862b4390b4bf56723b7e47",
+        "scriptCommitSha": "be74ea07abc0b4dd3ef9eca855e24f767d5f373f",
+        "computedAt": "2026-07-12T22:48:04.961689+00:00"
       }
     ]
   }

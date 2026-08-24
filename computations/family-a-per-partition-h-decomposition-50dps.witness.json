@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:37:00.172979+00:00",
-  "commitSha": "48dc079144ebfc08444e415aa30e666b8b523745",
+  "computedAt": "2026-08-24T07:09:48.705851+00:00",
+  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
   "assertions": [
     {
       "name": "family_a_per_partition_sum_matches_closed_form",
@@ -14,21 +14,36 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "family-a-per-partition-h-decomposition-50dps",
   "scriptFile": "family_a_per_partition_h_decomposition_50dps.py",
-  "scriptHash": "1318643e53a3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "97ac76ede17f",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
   },
-  "description": "Per-partition decomposition of `linking_weight_family_a = (1/4)·Σ_{λ⊢4} dim_q V_λ` at H_4. Identifies the categorical channels (5 Wedderburn blocks) and shows h⁰ and h² contributions per channel at mp.mpf 50 dps. Addresses the prerequisite to PR #1276's 'partition-channel assignment' open question (which partitions carry Bring color-tube vs Faddeev h⁴).",
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/family_a_per_partition_h_decomposition_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/family_a_per_partition_h_decomposition_50dps.py"
+  },
+  "description": "Per-partition decomposition of `linking_weight_family_a = (1/4)·Σ_{λ⊢4} dim_q V_λ` at H_4. Identifies the categorical channels (5 Wedderburn blocks) and shows h⁰ and h² contributions per channel at mp.mpf 50 dps. Addresses the prerequisite to PR #1276's 'partition-channel assignment' open question (which partitions carry Bring color-tube vs compact-q-dilog h⁴).",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "partitions_4": [
       [
         4
@@ -57,16 +72,16 @@
   "data": {
     "dim_q_V_lambda_at_q0": {
       "(4,)": "1.0",
-      "(3, 1)": "3.04370621823051207775828",
-      "(2, 2)": "2.04370621823051207775828",
-      "(2, 1, 1)": "3.04370621823051207775828",
+      "(3, 1)": "3.043706208532521989402019",
+      "(2, 2)": "2.043706208532521989402019",
+      "(2, 1, 1)": "3.043706208532521989402019",
       "(1, 1, 1, 1)": "1.0"
     },
     "per_partition_contribution_at_q0": {
       "(4,)": "0.25",
-      "(3, 1)": "0.76092655455762801943957",
-      "(2, 2)": "0.51092655455762801943957",
-      "(2, 1, 1)": "0.76092655455762801943957",
+      "(3, 1)": "0.7609265521331304973505048",
+      "(2, 2)": "0.5109265521331304973505048",
+      "(2, 1, 1)": "0.7609265521331304973505048",
       "(1, 1, 1, 1)": "0.25"
     },
     "per_partition_h_coefficients": {
@@ -114,7 +129,7 @@
       "h0_each_active_contrib": "1/4",
       "h2_each_active_contrib_family_a": "1/4",
       "h2_each_active_contrib_reading_a_uniform": "-0.305321864726",
-      "interpretation": "Family A: h² is 3 × (1/4) = 3/4 across (3,1), (2,2), (2,1,1). Reading-A: h² becomes -G ≈ -0.916; under uniform redistribution, each active partition's h² coefficient becomes (1/4 + (-G - 3/4)/3) ≈ -0.305. PR #1276's Bring color-tube + Faddeev h⁴ rational expression does not naturally fit this Wedderburn-block decomposition — addresses why my h-expansion fit gave wildly varying coefficients."
+      "interpretation": "Family A: h² is 3 × (1/4) = 3/4 across (3,1), (2,2), (2,1,1). Reading-A: h² becomes -G ≈ -0.916; under uniform redistribution, each active partition's h² coefficient becomes (1/4 + (-G - 3/4)/3) ≈ -0.305. PR #1276's Bring color-tube + compact-q-dilog h⁴ rational expression does not naturally fit this Wedderburn-block decomposition — addresses why my h-expansion fit gave wildly varying coefficients."
     }
   }
 }

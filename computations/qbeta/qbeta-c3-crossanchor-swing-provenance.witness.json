@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-17T01:37:28.083976+00:00",
-  "commitSha": "6fb0cfe112aeb8bb771bff2721f5b172b59d23d5",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T07:11:11.718114+00:00",
+  "commitSha": "86adf38f1dda0499ae70b8c8a7e5a735e034fd06",
   "assertions": [
     {
       "name": "published_2_98_pct_does_not_reproduce_from_current_anchors",
@@ -10,7 +10,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "current swing is 2.37478 % (proton-normalised) or 2.45712 % (candidate-normalised); neither is 2.98 %."
+      "source": "current swing is 2.39121 % (proton-normalised) or 2.47411 % (candidate-normalised); neither is 2.98 %."
     },
     {
       "name": "published_figures_reproduce_from_the_SUPERSEDED_muon_value",
@@ -26,7 +26,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "|-2.00973976098 - -2.00981718851| = 7.74275e-5. They agree to four decimals and the corpus writes both as '-2.0097'/'-2.0098'. Identifying them by eye is a live hazard — an earlier pass of this investigation did so and had to retract."
+      "source": "|-2.00973976098 - -2.00981718853| = 7.74275e-5. They agree to four decimals and the corpus writes both as '-2.0097'/'-2.0098'. Identifying them by eye is a live hazard — an earlier pass of this investigation did so and had to retract."
     }
   ],
   "allPassed": true,
@@ -34,7 +34,7 @@
   "computation": "qbeta-c3-crossanchor-swing-provenance",
   "scriptFile": "qbeta_c3_crossanchor_swing_provenance_probe.py",
   "scriptHash": "8fee9e98353e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "07487a54c6504f4806f5472108257cb141efba09",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,10 +45,16 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py"
   },
   "description": "Resolves the provenance of the c_3 'cross-anchor swing 2.98 %' cited across ~6 audit docs and in the qbeta-ck-truncation-canonical authorNote. It does not reproduce from the current anchor pair: the figure was computed against a superseded muon-anchor c_3 = -2.0097 (pre-#1422), whereas today's muon extraction is -2.02020024. The current swing is 2.3748 % proton-normalised (2.4571 % normalised by the candidate -2). The corpus's 2.88 % and 2.98 % are the SAME stale gap under the two normalisations — the same trap as c_2/c-tilde_2 and as the 3.47 %/3.35 % pair. Also records a coincidence guard: the stale muon extraction (-2.00973976) and the candidate model J_Hopf - hbar_q^2 (-2.00981718) agree to four decimals while being different objects, which misled an earlier pass of this same investigation. VERDICT UNCHANGED: c_3 remains a q_0-dependent NEAR-MATCH refuted as a real-q fibre element; this is a scope-(a) correction to the evidence, not to the finding. No tier moves.",
   "data": {
@@ -59,15 +65,15 @@
         "c3": "-2.06934257711516783787971951724962858902203099810343886691284"
       },
       "muon": {
-        "q": "1.10997859555418057528159407960950937799328227995868622546675",
-        "c3": "-2.02020023502125517138232674988576251890206061330068660325496"
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "c3": "-2.01986031187400546349321995587646029747377592135260349078716"
       }
     },
     "superseded_muon_c3": "-2.00973976097900000000000000000000000000000000000000000000000",
     "swing_current": {
-      "absolute": "0.0491423420939126664973927673638660701199703848027522636578830",
-      "pct_normalised_by_c3_proton": "2.37478040791201887338392649445474876671967307083609896498583",
-      "pct_normalised_by_candidate_2": "2.45711710469563332486963836819330350599851924013761318289415"
+      "absolute": "0.0494822652411623743864995613731682915482550767508353761256743",
+      "pct_normalised_by_c3_proton": "2.39120703301551374532742740502525118660268175256994217859027",
+      "pct_normalised_by_candidate_2": "2.47411326205811871932497806865841457741275383754176880628371"
     },
     "swing_stale_as_published": {
       "absolute": "0.0596028161361678378797195172496285890220309981034388669128384",
@@ -76,8 +82,8 @@
     },
     "coincidence_guard": {
       "stale_muon_extraction": "-2.00973976097900000000000000000000000000000000000000000000000",
-      "candidate_model_J_minus_hbar_sq": "-2.00981718851347867143648141194144868230048309012200192997702",
-      "abs_difference": "0.0000774275344786714364814119414486823004830901220019299770215639"
+      "candidate_model_J_minus_hbar_sq": "-2.00981718852772242543775020243251766665605420059457020186411",
+      "abs_difference": "0.0000774275487224254377502024325176666560542005945702018641129731"
     },
     "verdict_unchanged": true
   }
