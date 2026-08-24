@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T19:59:35Z
-updated_at: 2026-08-23T20:00:27Z
+updated_at: 2026-08-24T12:46:10Z
 ---
 
 ## Standing on qou-khac, not replacing it
@@ -112,3 +112,29 @@ Two reasons not to reland it as an *import* either:
 The muon pin has one named source; the `.py` copies import it; the witness
 population is either migrated or explicitly labelled as recording a superseded
 pin; the two baseline lines are gone because the values are right.
+
+
+## The home EXISTS now — the migration does not (PR #5639, 2026-08-24)
+
+Owner picked both 'frozen constant' and 'consumers call q_muon_at()'. Reconciled:
+the frozen string is the one named home; consumers reach a muon q through named
+substrate API rather than hand-typing — the constant when a value must stay
+reproducible, `q_muon_at()` when the caller wants today's CODATA-implied pin.
+
+**Landed:** `Q_MUON_50_DIGIT_STR` + `q_muon_frozen_at(dps)` in
+`qou_substrate.constants`. Frozen value matches the AGENTS.md literal EXACTLY
+(rel 0.0). Also present on the no-mpmath path, where the string survives intact
+(unlike Q_50_DIGIT_STR, which degrades to f64 there).
+
+**Deliberately NOT landed:** `q_muon_at()` semantics unchanged (flipping it moves
+every muon producer by 7.694e-11), and the 336 files untouched. Both sequence
+behind PR #5500 (muon anchor -> CODATA 2022, audit red, 53 witnesses) and behind
+qou-1c4y.
+
+Close condition is unchanged and now partly met: the pin HAS one named source.
+Remaining: the .py copies import it; the 222 .json migrated or labelled; the two
+q0-drift-baseline lines removed rather than re-baselined.
+
+**Side finding:** `sync-qou-mass-vendor.py --check` exits 1 on clean `main` —
+3 drifted entries. Verified by stashing. Fifth instance of 'the checker exists,
+is blocking, and main fails it anyway'.
