@@ -16354,4 +16354,107 @@ theorem quad_right_resolves (hn : 0 < n) (hp : HeckeParams)
     rw [hbr]
     exact CyclicQuad.bokutShiao_quad_resolves hn hp hb₁ hb₂
 
+/-! ## §4be  The mirror column, and the one place two chains are needed
+
+`quad_left_resolves` is §4bd's column reflected: the criterion's obligation for an
+arbitrary composition whose **first** rule is quadratic. Same shape — the overlap
+letter is read off `lm₁`, the constructed composition is named, and
+`oc_ext_of_left_ne_nil` does the rest.
+
+One branch is not a mirror image, and the file's own docstring is what flags it.
+`CyclicQuadLeft.quad_bokutShiao_resolves` covers Bokut–Shiao **at `j = i − 1`
+only**: `bsWord₂ i' i j` puts its extra letter on the left, so for `j < i − 1`
+the second word is not of the form its chain needs. The rest is `QuadBokutShiao`,
+a whole namespace written for exactly that gap — *"this covers precisely what §4q
+leaves open"*. So this branch splits on `Nat.eq_or_lt_of_le` and calls a different
+chain on each side. Nothing about the composition changes across the split; only
+which reduction reaches zero does.
+
+That is worth noticing before crossing the remaining columns: an existing
+`_resolves` may cover less of its cell than its name suggests, and the boundary
+is in the docstring rather than the statement. -/
+
+theorem quad_left_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {x : Fin n}
+    (hql : oc.rule₁ = heckeRelation x hp)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hql]; exact heckeRelation_mem hn hp x
+  have hone := overlap_length_one hn hp hm₁ hm₂ hl
+  obtain ⟨z, hz⟩ : ∃ z, oc.overlap = [z] := by
+    rcases hoc : oc.overlap with _ | ⟨z, zs⟩
+    · rw [hoc] at hone; simp at hone
+    · refine ⟨z, ?_⟩
+      rw [hoc] at hone; simp at hone
+      rw [hone]
+  -- `lm₁ = σₓσₓ` with a non-empty left context forces both halves to be `σₓ`.
+  have hd₁ : [(⟨x⟩ : HeckeGen n)] ++ [(⟨x⟩ : HeckeGen n)] = oc.left ++ [z] := by
+    rw [← hz, ← oc.lm₁_decomp, hql, heckeRelation_lm]; rfl
+  obtain ⟨hle, hze⟩ := List.append_inj' hd₁ (by simp)
+  have hzx : z = (⟨x⟩ : HeckeGen n) := by simpa using hze.symm
+  have hlm₂ : oc.rule₂.lm (heckeOrder n) = (⟨x⟩ : HeckeGen n) :: oc.right := by
+    rw [oc.lm₂_decomp, hz, hzx]; rfl
+  have hlne : oc.left ≠ [] := hl
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm₂ with
+    ⟨c, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c', c, d, hc₁, hc₂, hc⟩
+  · -- quadratic × quadratic
+    rw [hc, heckeRelation_lm] at hlm₂
+    have hcx : c = x := congrArg HeckeGen.index (List.cons.inj hlm₂).1
+    have hbr : oc = quadSelfOverlap x hp := by
+      refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl (by simp [quadSelfOverlap])
+      · rw [hql]; rfl
+      · rw [hc, hcx]; rfl
+    rw [hbr]; exact quadSelfOverlap_resolves hn x hp
+  · -- quadratic × Yang–Baxter
+    rw [hc, yangBaxterRelation_lm c d (by omega)] at hlm₂
+    have hxd : x = d := (congrArg HeckeGen.index (List.cons.inj hlm₂).1).symm
+    have hbr : oc = CyclicQuadLeft.oc hp (yangBaxterRelation c d)
+        [(⟨c⟩ : HeckeGen n), (⟨d⟩ : HeckeGen n)] d
+        (yangBaxterRelation_lm c d (by omega)) := by
+      refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl (by simp [CyclicQuadLeft.oc])
+      · rw [hql]; exact congrArg (fun t => heckeRelation t hp) hxd
+      · rw [hc]; rfl
+    rw [hbr]; exact CyclicQuadLeft.quad_yangBaxter_resolves hn hp (by omega)
+  · -- quadratic × far commutation
+    rw [hc, farCommRelation_lm c d (by omega)] at hlm₂
+    have hxc : x = c := (congrArg HeckeGen.index (List.cons.inj hlm₂).1).symm
+    have hbr : oc = CyclicQuadLeft.oc hp (farCommRelation c d) [(⟨d⟩ : HeckeGen n)] c
+        (farCommRelation_lm c d (by omega)) := by
+      refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl (by simp [CyclicQuadLeft.oc])
+      · rw [hql]; exact congrArg (fun t => heckeRelation t hp) hxc
+      · rw [hc]; rfl
+    rw [hbr]; exact CyclicQuadLeft.quad_farComm_resolves hn hp hcd
+  · -- quadratic × Bokut–Shiao: two chains, split on whether `d` is `c − 1`
+    have hxc : x = c := by
+      have := hlm₂
+      rw [hc, bokutShiaoRelation_lm hc₁ hc₂, bsWord₁_cons hc₁ hc₂] at this
+      exact (congrArg HeckeGen.index (List.cons.inj this).1).symm
+    rcases Nat.eq_or_lt_of_le hc₂ with heq | hlt
+    · -- `d = c − 1`: §4q's own chain reaches it
+      have hdc : d = c' := Fin.ext heq
+      have hbr : oc = CyclicQuadLeft.oc hp (bokutShiaoRelation c' c c')
+          [(⟨c'⟩ : HeckeGen n), (⟨c⟩ : HeckeGen n)] c
+          (by rw [bokutShiaoRelation_lm hc₁ (le_refl _), bsWord₁_at_pred hc₁]) := by
+        refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl
+          (by simp [CyclicQuadLeft.oc])
+        · rw [hql]; exact congrArg (fun t => heckeRelation t hp) hxc
+        · rw [hc, hdc]; rfl
+      rw [hbr]; exact CyclicQuadLeft.quad_bokutShiao_resolves hn hp hc₁
+    · -- `d < c − 1`: the `QuadBokutShiao` chain, which exists for exactly this
+      have hlt' : c'.val - 1 < n := by omega
+      obtain ⟨c'', hc''⟩ : ∃ c'' : Fin n, c''.val + 1 = c'.val ∧ d.val ≤ c''.val := by
+        exact ⟨⟨c'.val - 1, hlt'⟩, by simp; omega, by simp; omega⟩
+      have hbr : oc = CyclicQuadLeft.oc hp (bokutShiaoRelation c' c d)
+          ((⟨c'⟩ : HeckeGen n) :: (descWord c'' d ++ [(⟨c⟩ : HeckeGen n)])) c
+          (QuadBokutShiao.bs_lm hc₁ (by omega) (descWord_cons hc''.1 hc''.2)) := by
+        refine oc_ext_of_left_ne_nil hn hp hm₁ hm₂ ?_ ?_ hl
+          (by simp [CyclicQuadLeft.oc])
+        · rw [hql]; exact congrArg (fun t => heckeRelation t hp) hxc
+        · rw [hc]; rfl
+      rw [hbr]
+      exact QuadBokutShiao.resolves hp hn hc₁ hc''.1 hc''.2
+
 end UGB.GrobnerShirshov.Hecke
