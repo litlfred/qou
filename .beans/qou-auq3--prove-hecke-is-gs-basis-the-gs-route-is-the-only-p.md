@@ -4739,3 +4739,33 @@ first) is the mirror and has all three of its chains; the `FarCommCyclic` /
 `CyclicFarCommLow` / `BokutShiaoBraid` / `BraidBokutShiao` families cover more.
 All still need `oc.left ≠ []`, and the `left = []` degenerates are untouched
 outside the BS × BS cell (§4aw).
+
+## The mirror column, and a trap worth recording (2026-08-24, §4be)
+
+`quad_left_resolves` — §4bd's column reflected: an arbitrary composition whose
+**first** rule is quadratic. Same shape, `oc_ext_of_left_ne_nil` again.
+
+**One branch is not a mirror image, and I nearly wrote it as one.**
+`CyclicQuadLeft.quad_bokutShiao_resolves` covers Bokut–Shiao **at `j = i − 1`
+only** — `bsWord₂ i' i j` puts its extra letter on the left, so for `j < i − 1`
+the second word is not the shape its chain needs. The rest is `QuadBokutShiao`,
+a namespace written for exactly that gap (*"this covers precisely what §4q
+leaves open"*). The branch splits on `Nat.eq_or_lt_of_le` and calls a different
+chain on each side; the composition is unchanged across the split, only the
+reduction differs.
+
+**The general lesson for the remaining columns:** an existing `_resolves` may
+cover **less of its cell than its name suggests**, and the boundary lives in the
+docstring rather than the statement. §4bd's "the chains already exist" is true
+but needs reading per chain, not per name. Only the file's own prose caught this
+one.
+
+### Overlap cells crossed so far
+
+| cell | by |
+|---|---|
+| BS × BS | §4aw (modulo the deep diagonal) |
+| ? × quadratic | §4bd `quad_right_resolves` |
+| quadratic × ? | §4be `quad_left_resolves` |
+
+All still assume `oc.left ≠ []`.
