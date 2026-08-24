@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T18:49:51Z
-updated_at: 2026-08-24T18:59:21Z
+updated_at: 2026-08-24T19:03:54Z
 ---
 
 ## The measurement
@@ -138,3 +138,70 @@ plausibility and both were wrong.
 
 **Next step is a bisect over the cone, not more reasoning.** The 2-second A=3
 case makes it affordable: ~5 steps over 18 `gram.py` commits.
+
+
+---
+
+## BISECTED — and my third hypothesis was wrong too
+
+`git bisect run` over 4445 revisions between the last good witness regeneration
+and HEAD, using the 2-second A=3 case as the test:
+
+> **first bad commit: `2c35a52e08` — *"tnjb: finish the remaining 16 — the
+> 'environment limit' was solvable"*** (2026-08-08)
+
+**It is a pure witness-regeneration commit.** 19 files, all `*.witness.json`
+plus `q0_anchor_manifest.json` and the migration script itself. **No producer
+source changed** — which is why all three of my source-level suspects missed.
+
+## The mechanism, verified end to end
+
+The producer's own docstring, line 30:
+
+> *reference is loaded from `markov/markov-peel-atomic-tr-m.witness.json`*
+
+read at line 76. And `computations/markov/markov-peel-atomic-tr-m.witness.json`
+is **one of the 19 files `2c35a52e08` rewrote** (80 lines changed).
+
+So: **the tnjb migration regenerated the reference the cross-check compares
+against, and the cross-check was never re-run to match.** It has been failing
+since 2026-08-08 — sixteen days.
+
+## This is NOT a bad commit — it is a missed downstream
+
+`2c35a52e08` did the right thing: `tnjb`'s scope is witnesses whose recorded q₀
+their producer can no longer reproduce, and regenerating those is a correction.
+What was missed is that one of them is a **reference input to a cross-check**,
+so regenerating it silently moved the goalposts for a consumer that nobody
+re-ran. Blame the dependency edge, not the commit.
+
+## Three hypotheses, three refutations, one bisect
+
+| # | hypothesis | how it died |
+|---|---|---|
+| 1 | mpmath 1.4.1 vs the sweep's 1.3.0 | downgraded and re-ran — byte-identical |
+| 2 | `34b2a75d43`, the `mp.dps` → `set_compute_dps()` change to this very file | ran the pre-commit file — identical |
+| 3 | the C → D Markov-convention migration in `gram.py` | bisect landed elsewhere entirely |
+
+All three were named on **plausibility and proximity**; none survived contact
+with a measurement. The bisect cost roughly ten minutes and answered what an
+hour of reading the diff could not. **When a cheap decisive test exists, run it
+before naming a suspect at all.**
+
+## Why it stayed hidden for 16 days
+
+The producer needs **996 s**; the sweep's per-producer budget is **300 s**, so
+its verdict was `TIMEOUT` — which reads as "too slow to measure" and is in fact
+"a live pass → fail regression nobody has looked at". That is the concrete cost
+of the budget, and it is the strongest argument in `qou-uz7q` for raising it —
+stronger than any of the timing evidence there.
+
+## Fix
+
+Re-run `cross_check_trM_cw_seminormal_leg` and commit the regenerated witness —
+**if** the new numbers are the correct ones. That question is open and is not
+mine to settle here: `|Δ|/ref` of 1.20, 0.955 and 1.91 are enormous for a
+cross-check between two routes to `tr_M`, so the regenerated peel reference and
+the seminormal leg now disagree structurally. Someone has to decide **which leg
+is right** before either is blessed. Do not simply regenerate the witness to
+make the red go away.
