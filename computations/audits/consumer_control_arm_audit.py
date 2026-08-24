@@ -108,6 +108,24 @@ SPECIFICITY_MAX = 3
 WRITE_METHODS = {"write_text", "write_bytes", "dump", "save", "emit",
                  "write_json", "write"}
 
+# Witness-emitting facade calls. These take the witness STEM ("b-over-a"), never
+# the filename, so a detector keyed on ".witness.json" strings cannot see the
+# write at all -- it is the taxonomy's own failure mode, one layer down.
+# Measured: `b_over_a_evaluator.py` emits via
+# `WitnessBuilder.wrap_legacy("b-over-a", ...).save()` and additionally carries a
+# DEAD `out = HERE / "b-over-a.witness.json"` assignment, so the only live
+# evidence of the write is the stem. It was reported as a foreign transcriber of
+# its own output until this was added. 235 `wrap_legacy` call sites in tree.
+#
+# `witness_path` is deliberately NOT in this set. It looks like a witness facade
+# and is the most common one in the tree (324 sites), but `_path_bridge.witness_path`
+# RESOLVES a path and is overwhelmingly used for READS --
+# `json.load(open(witness_path("q-pinning-50-digit.witness.json", HERE)))`.
+# Including it suppressed 300+ pairs and would have made this audit blind to the
+# exact class it exists to find: a consumer reading a stale-frame artifact.
+WITNESS_BUILDER_CALLS = {"wrap_legacy", "write_witness", "emit_witness",
+                         "build_witness", "WitnessBuilder"}
+
 # A3 only. Name-based by nature; reported, never decisive.
 CANONICAL_ANCHOR_NAMES = {
     "Q_50_DIGIT_STR", "q_at", "q_parameter", "qou_substrate", "constants",
@@ -272,25 +290,43 @@ def source_literals(tree: ast.AST, src: str) -> dict[str, int]:
     return out
 
 
-def _witness_name_strings(tree: ast.AST) -> set[str]:
+def _basename_of(value: str, by_base) -> str | None:
+    """The witness basename `value` names, whether spelled as a filename or a stem.
+
+    Both spellings are live in this tree: `"alpha-k-jones-markov-h4.witness.json"`
+    and the bare stem `"b-over-a"` handed to a WitnessBuilder facade. A stem is
+    only accepted when `<stem>.witness.json` is an actual basename in the corpus,
+    so this cannot promote arbitrary strings.
+    """
+    if not value or len(value) > 200:
+        return None
+    if value.startswith(("-", ".", "*")):
+        return None
+    if value.endswith(".witness.json"):
+        return value.split("/")[-1]
+    cand = value.split("/")[-1] + ".witness.json"
+    return cand if cand in by_base else None
+
+
+def _witness_name_strings(tree: ast.AST, by_base) -> set[str]:
     out: set[str] = set()
     for node in ast.walk(tree):
-        if isinstance(node, ast.Constant) and isinstance(node.value, str) \
-                and node.value.endswith(".witness.json") \
-                and not node.value.startswith(("-", ".", "*")):
-            out.add(node.value)
+        if isinstance(node, ast.Constant) and isinstance(node.value, str):
+            base = _basename_of(node.value, by_base)
+            if base:
+                out.add(node.value)
     return out
 
 
-def _bindings(tree: ast.AST) -> dict[str, set[str]]:
-    """variable name -> witness-name strings assigned into it (one hop)."""
+def _bindings(tree: ast.AST, by_base) -> dict[str, set[str]]:
+    """variable name -> witness names assigned into it (one hop, either spelling)."""
     inv: dict[str, set[str]] = defaultdict(set)
     for node in ast.walk(tree):
         if not isinstance(node, ast.Assign):
             continue
         names = {c.value for c in ast.walk(node.value)
                  if isinstance(c, ast.Constant) and isinstance(c.value, str)
-                 and c.value.endswith(".witness.json")}
+                 and _basename_of(c.value, by_base)}
         if not names:
             continue
         for t in node.targets:
@@ -299,7 +335,7 @@ def _bindings(tree: ast.AST) -> dict[str, set[str]]:
     return inv
 
 
-def written_witness_names(tree: ast.AST) -> set[str]:
+def written_witness_names(tree: ast.AST, by_base) -> set[str]:
     """Witness-name strings this module WRITES.
 
     Two call shapes, and the second is the one a receiver-only check misses:
@@ -308,14 +344,14 @@ def written_witness_names(tree: ast.AST) -> set[str]:
     `open` is the only evidence. Measured: without the `open` shape, two
     self-writing probes were reported as foreign transcribers.
     """
-    inv = _bindings(tree)
+    inv = _bindings(tree, by_base)
 
     def names_reachable(node: ast.AST) -> set[str]:
         found: set[str] = set()
         for c in ast.walk(node):
-            if isinstance(c, ast.Constant) and isinstance(c.value, str) \
-                    and c.value.endswith(".witness.json"):
-                found.add(c.value)
+            if isinstance(c, ast.Constant) and isinstance(c.value, str):
+                if _basename_of(c.value, by_base):
+                    found.add(c.value)
             elif isinstance(c, ast.Name):
                 found |= inv.get(c.id, set())
         return found
@@ -336,6 +372,11 @@ def written_witness_names(tree: ast.AST) -> set[str]:
                     mode = str(kw.value.value)
             if any(ch in mode for ch in "wax") and node.args:
                 out |= names_reachable(node.args[0])
+        elif name in WITNESS_BUILDER_CALLS:
+            # The stem is a positional argument to the facade; the path is built
+            # inside the library and never appears in this module.
+            for arg in list(node.args) + [k.value for k in node.keywords]:
+                out |= names_reachable(arg)
         elif name in WRITE_METHODS:
             if isinstance(fn, ast.Attribute):
                 out |= names_reachable(fn.value)
@@ -393,12 +434,12 @@ def scan():
         except Exception:  # noqa: BLE001
             continue
 
-        names = _witness_name_strings(tree)
+        names = _witness_name_strings(tree, by_base)
         if not names:
             continue
         stats["python_files_naming_a_witness"] += 1
 
-        written_names = written_witness_names(tree)
+        written_names = written_witness_names(tree, by_base)
         # Resolve WRITES to PATHS first. A module can spell one artifact two ways
         # -- "b-over-a.witness.json" at the write site and
         # "computations/b-over-a.witness.json" in its header -- and excluding by
@@ -407,14 +448,16 @@ def scan():
         # foreign transcriber of its own output.
         written_paths: set[Path] = set()
         for nm in written_names:
-            written_paths.update(by_base.get(nm.split("/")[-1], []))
+            b = _basename_of(nm, by_base)
+            if b:
+                written_paths.update(by_base.get(b, []))
 
         literals = source_literals(tree, src)
         dual_anchor = references_canonical_anchor(tree)
 
         for nm in sorted(names):
-            base = nm.split("/")[-1]
-            resolved = by_base.get(base, [])
+            base = _basename_of(nm, by_base)
+            resolved = by_base.get(base, []) if base else []
             if not resolved:
                 stats["unresolvable_name_references"] += 1
                 continue
