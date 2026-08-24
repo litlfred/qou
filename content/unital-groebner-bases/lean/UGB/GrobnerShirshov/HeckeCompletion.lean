@@ -17790,4 +17790,220 @@ theorem aside_resolves (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
   simp only [List.append_nil, List.nil_append] at hq
   exact MultiStepReduction.step (MultiStepReduction.refl _) hq
 
+/-! ## §4bs  Side B, complete — and both halves of `hdeep` land on one element
+
+§4br closed side A. This closes side B, on **exactly the element side A reaches**.
+
+`bside_to_split` runs §4bo's route to the split word, rewrites it through
+`pairSweep_eq` into pairs-plus-`σ₀σ₀`, unshuffles the pairs with §4br's
+`pairList_unshuffle`, and fires the one quadratic step. So both sides use the
+same unshuffle; only the *context* it runs in differs, which is what the earlier
+measurement meant by "the same carry sequence shifted by one".
+
+`bside_branch` is the tail, and it is **one lemma parameterised by `j`**: the
+trailing `σ_i` closes `descWord i j` into `bsWord₁ i j`, and after that rule
+fires, the `σ_{i'}` its `bsWord₂` puts down closes `descWord i' 0` into
+`bsWord₁ i' 0` for a second. `j = 0` on the `H`-branch and `j = 1` on the
+`1`-branch — that single index is the whole difference between them, and it is
+the extra `σ₀` the split leaves behind. Predicted from the measurement in §4bq
+and confirmed here.
+
+**The two-term bookkeeping, handled by length.** After the split there are two
+terms, so `monicStep`'s side condition is no longer vacuous. Rather than compare
+words, `bside_branch` takes a single hypothesis — every surrounding term has a
+length other than this word's — and discharges both of its steps from it, since
+Bokut–Shiao is monic and all three words of the chain have the same length. The
+two branch words differ in length by exactly one (that same `σ₀`), so each
+serves as the other's witness. `descWord_length` is what makes this arithmetic;
+it is proved on the gap like everything else about `descWord`.
+
+**Both targets are the same element**, via `[σ_i] ++ descWord i' 0 = descWord i 0`
+and `(descWord i 0).dropLast ++ [σ₀] = descWord i 0`. What is left of `hdeep` is
+the joining: running the two chains inside the S-polynomial's two terms, where
+each side's chain carries the *other* side's term as context.
+-/
+
+/-- **The length of a descending run.** `|descWord i j| = i − j + 1`. Proved on
+the gap, like everything else about `descWord`. -/
+theorem descWord_length : ∀ (d : ℕ) {i j : Fin n}, i.val = j.val + d →
+    (descWord i j).length = i.val - j.val + 1 := by
+  intro d
+  induction d with
+  | zero =>
+    intro i j hij
+    have hji : i = j := Fin.ext (by omega)
+    rw [hji, descWord_self]
+    simp
+  | succ d ih =>
+    intro i j hij
+    have hlt : i.val - 1 < n := by have := i.isLt; omega
+    have hval : (⟨i.val - 1, hlt⟩ : Fin n).val = i.val - 1 := rfl
+    have hz : j.val ≤ (⟨i.val - 1, hlt⟩ : Fin n).val := by rw [hval]; omega
+    have hmm : (⟨i.val - 1, hlt⟩ : Fin n).val + 1 = i.val := by rw [hval]; omega
+    have hgap : (⟨i.val - 1, hlt⟩ : Fin n).val = j.val + d := by rw [hval]; omega
+    rw [descWord_cons hmm hz, List.length_cons, ih hgap, hval]
+    omega
+
+/-- Side B, up to and including the split. -/
+theorem bside_to_split (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)])
+      (AlgElement.ofTerms
+        [(descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n)],
+          c * (hp.q - hp.q⁻¹)),
+         (descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨i⟩ : HeckeGen n)], c)]) := by
+  refine MultiStepReduction.trans (bside_to_splitWord hn hp h₁ c hc) ?_
+  rw [pairSweep_eq ⟨0, hn⟩ i.val i (by simp)]
+  have hgap : i'.val = (⟨0, hn⟩ : Fin n).val + i'.val := by simp
+  have stepU := pairList_unshuffle hn hp ⟨0, hn⟩ i'.val i' i hgap h₁ []
+    [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩, (⟨i⟩ : HeckeGen n)] c hc
+  refine MultiStepReduction.trans (by simpa using stepU) ?_
+  have hq := quadStep hn hp ⟨0, hn⟩ [] []
+    (descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast)
+    [(⟨i⟩ : HeckeGen n)]
+    (descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]
+      ++ [(⟨i⟩ : HeckeGen n)]) c hc (by simp) (by simp)
+  simp only [List.nil_append, List.append_assoc, List.cons_append] at hq ⊢
+  exact MultiStepReduction.step (MultiStepReduction.refl _) hq
+
+/-- Convenience form of `descWord_length`. -/
+theorem descWord_length' {i j : Fin n} (hj : j.val ≤ i.val) :
+    (descWord i j).length = i.val - j.val + 1 :=
+  descWord_length (i.val - j.val) (by omega)
+
+/-- **One branch of side B's tail: two Bokut–Shiao steps.**
+
+`descWord i' 0 · descWord i j · σ_i ⟶* bsWord₂ i'' i' 0 · σ_i · descWord i' j`,
+for either `j` — `j = 0` on the `H`-branch and `j = 1` on the `1`-branch, which
+is the only way the two differ. The trailing `σ_i` closes `descWord i j` into
+`bsWord₁ i j`; after that rule fires, `descWord i' 0` is closed by the
+`σ_{i'}` its `bsWord₂` put down, and the second rule fires on that.
+
+The surrounding terms are arbitrary, subject only to a **length** condition:
+every one of them must have a length other than this word's. All three words in
+the chain have the same length — Bokut–Shiao is monic and length-preserving —
+so that single hypothesis discharges both steps' side conditions. -/
+theorem bside_branch (hn : 0 < n) (hp : HeckeParams) {i'' i' i j : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val)
+    (hj : j.val ≤ i'.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hlen : ∀ w ∈ (L₁ ++ L₂).map Prod.fst,
+      w.length ≠ i'.val + 1 + (i.val - j.val + 1) + 1) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (descWord i' ⟨0, hn⟩ ++ descWord i j
+        ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++ (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+        ++ descWord i' j, c) :: L₂)) := by
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
+  have hji : j.val ≤ i.val := by omega
+  have hL' : (descWord i' ⟨0, hn⟩).length = i'.val + 1 := by
+    rw [descWord_length' hz']; simp
+  have hLij : (descWord i j).length = i.val - j.val + 1 := descWord_length' hji
+  have hLi'j : (descWord i' j).length = i'.val - j.val + 1 := descWord_length' hj
+  have hL'' : (descWord i'' ⟨0, hn⟩).length = i''.val + 1 := by
+    rw [descWord_length' hz'']; simp
+  -- the three words of the chain, all of the same length
+  have hlen0 : (descWord i' ⟨0, hn⟩ ++ descWord i j ++ [(⟨i⟩ : HeckeGen n)]).length
+      = i'.val + 1 + (i.val - j.val + 1) + 1 := by
+    simp [hL', hLij]
+    omega
+  have hlen1 : (descWord i' ⟨0, hn⟩ ++ bsWord₂ i' i j).length
+      = i'.val + 1 + (i.val - j.val + 1) + 1 := by
+    simp [bsWord₂, hL', hLi'j]
+    omega
+  have hne0 : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ descWord i' ⟨0, hn⟩ ++ descWord i j ++ [(⟨i⟩ : HeckeGen n)] := by
+    intro q hq hcon
+    exact hlen q hq (by rw [hcon, hlen0])
+  have hne1 : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ descWord i' ⟨0, hn⟩ ++ bsWord₂ i' i j := by
+    intro q hq hcon
+    exact hlen q hq (by rw [hcon, hlen1])
+  have e0 : descWord i' ⟨0, hn⟩ ++ descWord i j ++ [(⟨i⟩ : HeckeGen n)]
+      = descWord i' ⟨0, hn⟩ ++ bsWord₁ i j ++ [] := by simp [bsWord₁]
+  refine MultiStepReduction.head
+    (bsStep hn hp h₁ hj L₁ L₂ (descWord i' ⟨0, hn⟩) [] _ _ c hc e0 rfl hne0) ?_
+  have e1 : descWord i' ⟨0, hn⟩ ++ bsWord₂ i' i j ++ []
+      = [] ++ bsWord₁ i' ⟨0, hn⟩ ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' j) := by
+    simp [bsWord₁, bsWord₂]
+  refine MultiStepReduction.head
+    (bsStep hn hp h₂ hz'' L₁ L₂ [] ([(⟨i⟩ : HeckeGen n)] ++ descWord i' j)
+      _ _ c hc e1 rfl (by simpa using hne1)) ?_
+  simp only [List.nil_append, List.append_assoc]
+  exact MultiStepReduction.refl _
+
+/-- **Side B of the deep self-overlap resolves, in full** — and on exactly the
+element side A reaches. The split's `H`-branch runs `bside_branch` at `j = 0`
+and its `1`-branch at `j = 1`; that one index is the only difference between
+them, and it is the extra `σ₀` the split leaves behind. -/
+theorem bside_resolves (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)])
+      (AlgElement.ofTerms
+        [(bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩,
+          c * (hp.q - hp.q⁻¹)),
+         (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+            ++ (descWord i' ⟨0, hn⟩).dropLast, c)]) := by
+  have hnn : (1 : ℕ) < n := by have := i'.isLt; omega
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
+  have honei' : (⟨1, hnn⟩ : Fin n).val ≤ i'.val := by simp; omega
+  have honei : (⟨1, hnn⟩ : Fin n).val ≤ i.val := by simp; omega
+  have hcH : c * (hp.q - hp.q⁻¹) ≠ 0 := mul_ne_zero hc hp.h_ne_zero
+  have hsnocI : descWord i ⟨0, hn⟩
+      = descWord i ⟨1, hnn⟩ ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] :=
+    descWord_snoc (by simp) honei
+  have hsnocI' : descWord i' ⟨0, hn⟩
+      = descWord i' ⟨1, hnn⟩ ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] :=
+    descWord_snoc (by simp) honei'
+  have hdropI : (descWord i ⟨0, hn⟩).dropLast = descWord i ⟨1, hnn⟩ := by
+    rw [hsnocI]; simp
+  have hdropI' : (descWord i' ⟨0, hn⟩).dropLast = descWord i' ⟨1, hnn⟩ := by
+    rw [hsnocI']; simp
+  have hL' : (descWord i' ⟨0, hn⟩).length = i'.val + 1 := by
+    rw [descWord_length' hz']; simp
+  have hLone : (descWord i ⟨1, hnn⟩).length = i.val - 1 + 1 :=
+    descWord_length' honei
+  have hL'' : (descWord i'' ⟨0, hn⟩).length = i''.val + 1 := by
+    rw [descWord_length' hz'']; simp
+  refine MultiStepReduction.trans (bside_to_split hn hp h₁ c hc) ?_
+  have eH : descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n)]
+      = descWord i' ⟨0, hn⟩ ++ descWord i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)] := by
+    rw [hdropI, hsnocI]; simp
+  have eO : descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨i⟩ : HeckeGen n)]
+      = descWord i' ⟨0, hn⟩ ++ descWord i ⟨1, hnn⟩ ++ [(⟨i⟩ : HeckeGen n)] := by
+    rw [hdropI]
+  rw [eH, eO, hdropI']
+  have hlenO : ∀ w ∈ ([] ++ [(descWord i' ⟨0, hn⟩ ++ descWord i ⟨1, hnn⟩
+        ++ [(⟨i⟩ : HeckeGen n)], c)]).map Prod.fst,
+      w.length ≠ i'.val + 1 + (i.val - (⟨0, hn⟩ : Fin n).val + 1) + 1 := by
+    intro w hw
+    simp only [List.nil_append, List.map_cons, List.map_nil,
+      List.mem_singleton] at hw
+    rw [hw]
+    simp only [List.length_append, List.length_singleton, hL', hLone]
+    omega
+  refine MultiStepReduction.trans
+    (bside_branch hn hp h₂ h₁ hz' [] _ (c * (hp.q - hp.q⁻¹)) hcH hlenO) ?_
+  have hlenH : ∀ w ∈ ([(bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+        ++ descWord i' ⟨0, hn⟩, c * (hp.q - hp.q⁻¹))] ++ []).map Prod.fst,
+      w.length ≠ i'.val + 1 + (i.val - (⟨1, hnn⟩ : Fin n).val + 1) + 1 := by
+    intro w hw
+    simp only [List.append_nil, List.map_cons, List.map_nil,
+      List.mem_singleton] at hw
+    rw [hw]
+    simp only [bsWord₂, List.length_append, List.length_cons, hL', hL'']
+    omega
+  exact bside_branch hn hp h₂ h₁ honei' _ [] c hc hlenH
+
 end UGB.GrobnerShirshov.Hecke

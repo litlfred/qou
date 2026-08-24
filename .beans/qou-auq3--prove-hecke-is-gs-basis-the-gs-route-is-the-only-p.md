@@ -5467,3 +5467,83 @@ literals.
    steps, the first with `j` as a parameter;
 2. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term),
    which joins the two halves into the S-polynomial statement.
+
+## §4bs — SIDE B COMPLETE. Both halves of `hdeep` land on one element (PR pending)
+
+`bside_to_split` runs §4bo's route to the split word, rewrites it through
+`pairSweep_eq` into pairs-plus-`σ₀σ₀`, unshuffles with §4br's
+`pairList_unshuffle`, and fires the one quadratic step. **Both sides use the
+same unshuffle**; only the context differs — which is what §4bq's measurement
+meant by "the same carry sequence shifted by one".
+
+`bside_branch` is the tail, **one lemma parameterised by `j`**: the trailing
+`σ_i` closes `descWord i j` into `bsWord₁ i j`; after that fires, the `σ_{i'}`
+its `bsWord₂` puts down closes `descWord i' 0` into `bsWord₁ i' 0` for a second.
+`j = 0` on the `H`-branch, `j = 1` on the `1`-branch. **Predicted in §4bq from
+the measurement, confirmed here in Lean.**
+
+### The two-term bookkeeping, handled by length
+
+After the split `monicStep`'s side condition stops being vacuous. Rather than
+compare words, `bside_branch` takes **one** hypothesis — every surrounding term
+has a length other than this word's — and discharges both its steps from it,
+because Bokut–Shiao is monic and all three words of its chain have the same
+length. The two branch words differ in length by exactly one (that same `σ₀`),
+so **each is the other's witness**. `descWord_length` makes this arithmetic;
+proved on the gap like everything else about `descWord`.
+
+That is the first time the bookkeeping has actually bitten, and length turned
+out to be the cheap invariant. Worth reusing for the joining.
+
+### Both targets are the same element
+
+Via `[σ_i] ++ descWord i' 0 = descWord i 0` and
+`(descWord i 0).dropLast ++ [σ₀] = descWord i 0`.
+
+### An idea that looked good and is wrong
+
+Before writing the tail I checked whether B could reach A's *pre-split* word,
+which would have avoided the bookkeeping entirely. **It cannot**: far
+commutation sorts smaller-index-first, so `σ_z σ_i` is already reduced and
+`σ_i` cannot move left past the `σ₀σ₀`. I had the rewrite direction backwards.
+This is consistent with — and independently confirms — the measured disjointness
+of the two monomial closures.
+
+### Remaining for `hdeep`: the joining, and that is all
+
+Run the two chains inside the S-polynomial's two terms, each carrying the other
+side's term as context. Both chains exist; both land on the same element; the
+coefficients are `+1` and `−1`, so the difference is zero.
+
+### Measured for the joining: length does NOT separate the two sides — the first letter does
+
+Worth knowing before the joining is attempted, because the obvious move fails.
+
+**Length fails.** `A = descWord i 0 ++ bsWord₂ i' i 0` and
+`B = bsWord₂ i' i 0 ++ descWord i' 0 ++ [σ_i]` both have length `2i+3`, and both
+chains are monic until their quadratic step. So the length invariant that
+discharged §4bs's *within-side* bookkeeping cannot separate side A's
+intermediates from side B's term.
+
+**The first letter does.** A's word begins `σ_i`; after its second step (far
+commutation pulling `σ_{i−2}` out) every later A-intermediate begins `σ_{i−2}`,
+because the sweep and the tail all run in a context whose head is that letter.
+B's word begins `σ_{i−1}`, and *every* B-intermediate does too — `bside_to_split`
+runs its sweep in the context `[σ_{i−1}, σ_i]`, which is never touched. Since
+`i`, `i−1`, `i−2` are pairwise distinct, the head letter separates the two sides
+throughout.
+
+**Measured, not just reasoned** — I wrote the paragraph above from the chain
+structure and then checked it, because reasoning-without-measuring has misfired
+four times in this bean. Head letters of *every* monomially-reachable word:
+
+| `i` | A heads | B heads |
+|---|---|---|
+| 3 | `{1, 3}` | `{2}` |
+| 4 | `{2, 4}` | `{3}` |
+| 5 | `{3, 5}` | `{4}` |
+| 6 | `{4, 6}` | `{5}` |
+
+Exactly `{i−2, i}` against `{i−1}`, disjoint throughout. That is also an
+independent confirmation of the measured closure-disjointness, and it is the
+invariant the joining should thread — not length.
