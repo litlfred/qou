@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-24T22:14:33Z
+updated_at: 2026-08-24T23:33:11Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -57,3 +57,60 @@ proof route in Lean and the spectral half does not exist yet.
 Lit is available and is NOT the blocker: `library/hecke-alg`, plus
 `arxiv-math-0411647v2` and `arxiv-2607.03827v1`. The mathematics is standard; the gap
 is formalization effort.
+
+
+## 2026-08-24 second pass — the adjacent case is REDUCED, not closed
+
+New file `HeckeJucysMurphyCommutation.lean`, sorry-free, lean-direct exit 0, axioms
+clean on all five theorems.
+
+### Proved, general in i (not instances)
+
+    sigma_mul_jm_succ    sigma_i . L_{i+1} = h.L_{i+1} + L_i . sigma_i
+    jm_succ_mul_sigma    L_{i+1} . sigma_i = h.L_{i+1} + sigma_i . L_i
+    sigma_comm_add       sigma_i commutes with (L_i + L_{i+1})          <-- classical
+    sigma_mul_jm_prod    sigma_i (L_i L_{i+1}) = (L_{i+1} L_i) sigma_i
+    jmRaw_comm_sigma_far sigma_j L_i = L_i sigma_j  for j > i           <-- general far case
+
+The two exchange relations are each ONE application of the Hecke relation, and they
+carry the SAME h.L_{i+1} term — which is why it cancels in the SUM. That is the whole
+content of `sigma_comm_add`, the classical "sigma_i commutes with symmetric functions
+of the adjacent JM pair".
+
+### Why the adjacent case did NOT fall, recorded so the next attempt does not redo it
+
+Set u := L_i.sigma_i and v := sigma_i.L_i. The exchange relations give
+
+    u = (sigma_i - h) L_{i+1}          v = L_{i+1} (sigma_i - h)
+
+and then L_i L_{i+1} = u^2 while L_{i+1} L_i = v^2. So the goal becomes
+
+    (sigma_i - h) w  =  w (sigma_i - h),   w := L_{i+1} (sigma_i - h) L_{i+1}
+
+i.e. it reduces to ANOTHER commutation of the same shape, not to anything proved.
+**The sum is reachable from these relations; the product is not.** Anyone attacking
+this again should start from the hook-word form of L_i and the braid relation, not
+from the exchange relations — they are exhausted.
+
+`sigma_mul_jm_prod` has an ORDER SWAP on the right and is NOT commutation. It becomes
+commutation exactly when L_i, L_{i+1} commute, i.e. it is equivalent to the open
+problem, not progress past it. Do not cite it as though sigma_i commutes with the
+product.
+
+### A wrong statement the compiler caught
+
+I first stated far-commutation as `i <= j`. That is FALSE: `jmRaw H i` is a word in
+sigma_0..sigma_{i-1}, so at j = i the generator is ADJACENT to the outermost letter
+and `far` does not apply. The correct hypothesis is `i < j` strictly, and the excluded
+boundary j = i is precisely the open adjacent case. Worth recording because the wrong
+version looks more general and would have been quoted as covering the adjacent case.
+
+### Status of the general-lambda derivation — UNCHANGED
+
+Still conditional. Two things remain, and neither is closed by this file:
+
+1. adjacent commutativity (above), hence general `prod L_i = Delta^2` (still n=2,3 only);
+2. the SPECTRAL half — that L_i acts on the seminormal basis by q^{2.content}.
+
+(2) is the larger and is what actually discharges `JucysMurphySpectrum`. Nothing in
+this pass touches it.
