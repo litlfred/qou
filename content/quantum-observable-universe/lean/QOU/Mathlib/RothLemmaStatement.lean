@@ -296,6 +296,102 @@ theorem rothBound_two_half : RothBound 2 (1 / 100 : ℚ) (1 / 2) := by
 
 theorem two_mul_lt_rothBound_two_witness : (2 : ℚ) * (1 / 100) < 1 / 2 := by norm_num
 
+/-! ### The arithmetic of §14's induction step
+
+All `ℚ`, nothing about polynomials — this is the half of the induction that `rothConstant_rec`
+was only the shadow of, and it is where the constant `2c_{m−1} + 3` is actually produced.
+
+Write `s = t^{2^{−(m−1)}}`, so §14's conclusion `Θ_m ≤ c_m·t^{2^{−(m−1)}}` reads `Θ_m ≤ c_m·s`.
+`rothBound_pow_iff` says that is **exactly** `RothBound m (s^{2^{m−1}}) θ`, so the root-free
+definition loses nothing: it is the source's inequality written in the variable the source's
+own exponent produces, and the step can be done linearly in `s`. -/
+
+/-- **`RothBound` at a perfect power is a linear bound.**
+
+With `t = s^{2^{m−1}}` — the substitution `s = t^{2^{−(m−1)}}` read backwards — `RothBound m t θ`
+says exactly `θ ≤ c_m·s`. -/
+theorem rothBound_pow_iff {m : ℕ} {s θ : ℚ} (hs : 0 ≤ s) :
+    RothBound m (s ^ (2 ^ (m - 1))) θ ↔ (0 ≤ θ ∧ θ ≤ (rothConstant m : ℚ) * s) := by
+  have hn : (2 : ℕ) ^ (m - 1) ≠ 0 := (Nat.two_pow_pos _).ne'
+  have hc : (0 : ℚ) ≤ (rothConstant m : ℚ) := Nat.cast_nonneg _
+  have hcs : (0 : ℚ) ≤ (rothConstant m : ℚ) * s := mul_nonneg hc hs
+  constructor
+  · rintro ⟨h0, h⟩
+    exact ⟨h0, le_of_pow_le_pow_left₀ hn hcs (by rw [mul_pow]; exact h)⟩
+  · rintro ⟨h0, h⟩
+    exact ⟨h0, by rw [← mul_pow]; exact pow_le_pow_left₀ h0 h _⟩
+
+/-- **§14's induction step, root-free** — and where `c_m = 2c_{m−1} + 3` comes from.
+
+The source's step is `Ψ_m = Θ_{m−1} + t`, then §13's recursive inequality
+`Θ_m ≤ Ψ_m + 2·max(Ψ_m/n, √(Ψ_m/r_m))`.  Here `u` stands for that whole `2·max(…)` term, and
+the only thing the step needs of it is `u² ≤ 4Ψ` — which both branches satisfy, since `n`,
+`r_m ≥ 1` and `Ψ ≤ 1` make `max(Ψ/n, √(Ψ/r_m)) ≤ √Ψ`.  Carrying it as `u` with a squared
+hypothesis keeps the whole step inside `ℚ`, which is also the shape `RothRecursionArith` is in.
+
+The two contributions:
+
+* `Ψ ≤ (c+1)s² ≤ (c+1)s`, using `s ≤ 1` — this is where `Θ_{m−1} ≤ c·s²` and `t ≤ s²` combine;
+* `u ≤ (c+2)s`, because `((c+2)s)² − 4(c+1)s² = c²s² ≥ 0`.
+
+Sum: `(2c+3)s`.  ⚠ Note the second bound is the *crude* one, `2√(c+1) ≤ c+2`, and it is
+**exactly tight at `c = 0`**.  So §14's constant is not slack that a sharper argument could
+shave; it is what this inequality gives.
+
+⚠ **The hypotheses are stated, not derived** — this theorem is true whatever `Ψ` and `u` mean,
+and the reading above is a reconstruction of which quantity §14's displays refer to.  It is
+corroborated rather than read: §13's `t` is a *row cost* and §11's `t` is the parameter, and
+`Ψ_m = Θ_{m−1} + t` closes to `2c+3` only if that `t` is the parameter.  Under the other
+reading — row cost, bounded by `2t` via `rothGrowth_row_cost_le` — the same computation gives
+`2c+4`, which is not §14's constant.  So the reading is forced by the answer, which is weaker
+evidence than reading it and is worth saying.
+
+⚠ **`0 ≤ u` is not a hypothesis**, though the quantity it stands for is non-negative.  The
+squared bound alone gives `u ≤ (c+2)s`: a negative `u` clears a non-negative right-hand side
+outright.  Dropped rather than carried, because this arc has twice found that a hypothesis
+nobody has to discharge is indistinguishable from a false one (corrections 9 and 10) — the
+linter flagging it unused is the same signal arriving cheaply. -/
+theorem rothConstant_step {m : ℕ} (hm : 1 ≤ m) {s Ψ u θ : ℚ}
+    (hs0 : 0 ≤ s) (hs1 : s ≤ 1)
+    (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2)
+    (hu : u ^ 2 ≤ 4 * Ψ)
+    (hθ : θ ≤ Ψ + u) :
+    θ ≤ (rothConstant (m + 1) : ℚ) * s := by
+  have hc0 : (0 : ℚ) ≤ (rothConstant m : ℚ) := Nat.cast_nonneg _
+  have hsq : s ^ 2 ≤ s := by nlinarith
+  have hΨs : Ψ ≤ ((rothConstant m : ℚ) + 1) * s := by nlinarith
+  have hus : u ≤ ((rothConstant m : ℚ) + 2) * s := by
+    refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
+    nlinarith [sq_nonneg ((rothConstant m : ℚ) * s)]
+  have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
+    rw [rothConstant_rec m hm]; push_cast; ring
+  rw [hrec]
+  linarith
+
+/-- **The induction step in `RothBound` shape** — the obligation the recursion has to meet.
+
+From the sub-problem's bound and §13's inequality, the assembled bound satisfies `RothBound` at
+the next arity.  This is the statement an `m ≥ 2` proof has to reach; everything else in the
+arc feeds `Ψ` and `u`. -/
+theorem rothBound_step {m : ℕ} (hm : 1 ≤ m) {s Ψ u θ : ℚ}
+    (hs0 : 0 ≤ s) (hs1 : s ≤ 1) (hθ0 : 0 ≤ θ)
+    (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2)
+    (hu : u ^ 2 ≤ 4 * Ψ)
+    (hθ : θ ≤ Ψ + u) :
+    RothBound (m + 1) (s ^ (2 ^ m)) θ := by
+  have h := rothConstant_step hm hs0 hs1 hΨ hu hθ
+  have hb : RothBound (m + 1) (s ^ (2 ^ ((m + 1) - 1))) θ :=
+    (rothBound_pow_iff hs0).mpr ⟨hθ0, h⟩
+  simpa using hb
+
+/-- **Non-vacuity of the step.**  `m = 1`, `s = 1/4`, `Ψ = 1/8`, `u = 1/2`, `θ = 5/8`: every
+hypothesis holds and the conclusion is a real bound.  ⚠ A finite witness tests vacuity, not
+usefulness — this arc has said so before (correction 9) and it is still true here. -/
+theorem rothBound_step_witness : RothBound 2 ((1 / 4 : ℚ) ^ (2 ^ 1)) (5 / 8) :=
+  rothBound_step (m := 1) (s := 1 / 4) (Ψ := 1 / 8) (u := 1 / 2) (θ := 5 / 8)
+    le_rfl (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num [rothConstant_one]) (by norm_num) (by norm_num)
+
 
 /-- **Roth's lemma, uniform-parameter form** — the statement *schema*.
 
