@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:56:56.503052+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:03.043010+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "bar_symmetric_rho_F_candidates_enumerated",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "he4-rho-f-bar-symmetric-audit-probe",
   "scriptFile": "he4_rho_f_bar_symmetric_audit_probe.py",
   "scriptHash": "de4d24957fbe",

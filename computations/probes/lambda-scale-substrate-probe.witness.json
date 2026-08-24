@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T19:57:35.534375+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:05.503725+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "probe_1_proton_within_10ppm",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "lambda-scale-substrate-probe",
   "scriptFile": "lambda_scale_substrate_probe.py",
   "scriptHash": "edb53be52c14",

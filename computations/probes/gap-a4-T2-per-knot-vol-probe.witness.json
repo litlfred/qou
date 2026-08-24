@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T19:13:43.433610+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:46:06.525140+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "proton_lambda_emp_matches_documented_value",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 298,
+  "durationMs": 274,
   "computation": "gap-a4-T2-per-knot-vol-probe",
   "scriptFile": "gap_a4_T2_per_knot_vol_probe.py",
   "scriptHash": "ead64882b9f4",

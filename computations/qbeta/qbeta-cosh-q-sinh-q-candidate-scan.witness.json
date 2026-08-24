@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:00:50.919135+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:29.260574+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "no_cosh_q_sinh_q_candidate_within_0.01_pct",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "qbeta-cosh-q-sinh-q-candidate-scan",
   "scriptFile": "qbeta_cosh_q_sinh_q_candidate_scan.py",
   "scriptHash": "b81249a584b8",

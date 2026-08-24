@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T19:13:46.033579+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:46:08.562437+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "original_lambda_A_form_reproduced",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "gap-a4-T4-schur-weyl-icosahedral-probe-perknot-rerun",
   "scriptFile": "gap_a4_T4_schur_weyl_icosahedral_probe_perknot_rerun.py",
   "scriptHash": "a2e767c6192f",

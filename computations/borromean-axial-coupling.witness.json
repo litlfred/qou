@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-23T19:12:46.916692+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:41:01.330366+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "g_A",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 22,
+  "durationMs": 21,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
   "scriptHash": "83245408ab1e",
@@ -259,11 +259,11 @@
     "upstream_witness_hashes": [
       {
         "path": "gram-matrix-dual.witness.json",
-        "sha256": "5c128b7d6e74eff7517a42ea9e344612aba3f746e1c3f9259538732cf070b768",
-        "size_bytes": 5379,
-        "commitSha": "ffe7350afc81f28f477e53b0905c7e192bb1d0a3",
-        "scriptCommitSha": "62cda418d6f031ba08693583e09b4407ba1d421b",
-        "computedAt": "2026-08-15T20:29:24.606126+00:00"
+        "sha256": "abc330747d472d5c1565e05829a4f3b68520cee21af0e111a4a820534e5c8e3f",
+        "size_bytes": 5606,
+        "commitSha": "04f32c489a876c69c9b6498dd4fa5d35f140dede",
+        "scriptCommitSha": "be59f0137635bf8e9cf97739281ab9d05209444a",
+        "computedAt": "2026-08-23T20:30:03.311813+00:00"
       }
     ]
   },

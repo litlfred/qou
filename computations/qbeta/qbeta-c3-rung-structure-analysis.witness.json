@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:00:40.551876+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:18.427679+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "rung_decomposition_equals_closure",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 258,
+  "durationMs": 256,
   "computation": "qbeta-c3-rung-structure-analysis",
   "scriptFile": "qbeta_c3_rung_structure_analysis.py",
   "scriptHash": "049f11902ebe",

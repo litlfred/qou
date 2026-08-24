@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T20:01:05.905675+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:38.799366+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "parity_gate_analytical_pass",
@@ -18,7 +18,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "qbeta-klr-composite4-preflight-run",
   "scriptFile": "qbeta_klr_composite4_preflight_run.py",
   "scriptHash": "9040eba48208",

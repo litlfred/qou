@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:00:52.626238+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:30.264054+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "direction_sanity_gate_verified",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 117,
+  "durationMs": 116,
   "computation": "qbeta-direction-sanity-gate-probe",
   "scriptFile": "qbeta_direction_sanity_gate_probe.py",
   "scriptHash": "71754152ba64",

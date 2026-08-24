@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:13:16.368992+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:45:50.447973+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "he4_rectangular_anchor_c_lambda_near_one",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 19,
   "computation": "clambda-shape-invariant-probe",
   "scriptFile": "clambda_shape_invariant_probe.py",
   "scriptHash": "e3f9f2302c80",

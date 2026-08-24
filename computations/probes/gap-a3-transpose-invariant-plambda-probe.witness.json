@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:13:33.276626+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:45:56.059057+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "all_candidates_transpose_invariant",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 57,
+  "durationMs": 51,
   "computation": "gap-a3-transpose-invariant-plambda-probe",
   "scriptFile": "gap_a3_transpose_invariant_plambda_probe.py",
   "scriptHash": "6de9cc1825f5",

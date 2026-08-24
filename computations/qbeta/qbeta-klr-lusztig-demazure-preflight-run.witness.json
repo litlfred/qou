@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T20:01:07.484677+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-06-22T13:27:39.374753+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "lusztig_dual_demazure_sign_refuted_at_u2_both_anchors",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 10,
   "computation": "qbeta-klr-lusztig-demazure-preflight-run",
   "scriptFile": "qbeta_klr_lusztig_demazure_preflight_run.py",
   "scriptHash": "f3a2a8eee30d",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,18 +32,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
-  },
-  "invocation": {
-    "argv": [
-      "computations/qbeta/qbeta_klr_lusztig_demazure_preflight_run.py"
-    ],
-    "reproduce": "python3 -u computations/qbeta/qbeta_klr_lusztig_demazure_preflight_run.py"
+    "mpmath": "1.3.0"
   },
   "description": "KLR tranche 2 — Demazure-Lusztig variant of Composite 1 preflight RUN. Fourth (last) preflight in the cont. 9 menu series after Composite 4 (magnitude), Composite 1 standard (sign), Composite 3 Type-B folded (sign). Computes the Lusztig-dual Demazure character at sl_3 / ω_1 / ℓ=2 using D_w^{dual}(q) = q^{ht}·D_w(q^{-1}), shows it is positive at q > 0 (Laurent polynomial with non-negative coefficients in the natural bar-pairing). Combined with (q;q)_2 > 0 at q > 1, [u²]F > 0 — sign-incompatible with c_2 = -1. NATURAL Lusztig variants (dual, T_i-action) all inherit this positivity. Exotic signed variants (Lusztig-Yun-Zhu, twisted) UNTESTED and require a separate scope. Honest verdict: NARROWS cont. 9 Option C to exotic-signed variants only.",
   "contentBlock": "conj:qbeta-precision-ladder",
@@ -61,11 +51,11 @@
       },
       {
         "anchor": "muon",
-        "q": "1.10997859564273904668179512938000175270006556102901155697405",
-        "sum_D_standard": "5.45200967407050528675170048046354145703438597219959057326134",
-        "sum_D_Lusztig_dual": "5.45200967407050528675170048046354145703438597219959057326134",
-        "q_pochhammer_2": "0.0255208061721081693310097057737933268517604602254823096459694",
-        "u2_coefficient_dual": "0.139139682140411999924394078029624766822551588914260044893739",
+        "q": "1.10997859555418057528159407960950937799328227995868622546675",
+        "sum_D_standard": "5.45200967369679232852501532092902005502366191981079658544928",
+        "sum_D_Lusztig_dual": "5.45200967369679232852501532092902005502366191981079658544928",
+        "q_pochhammer_2": "0.0255208061299366025028155986841074227806587940917252394200220",
+        "u2_coefficient_dual": "0.139139681900954753651220663732063215590875693737977297546599",
         "u2_sign_dual": 1,
         "dual_sign_mismatches_c2": true
       }
