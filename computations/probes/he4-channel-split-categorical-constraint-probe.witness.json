@@ -1,23 +1,23 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T00:39:57.760422+00:00",
-  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
+  "computedAt": "2026-08-24T19:03:02.353195+00:00",
+  "commitSha": "9960ed59847b7bf824e7f912fca3329ec908dd86",
   "assertions": [
     {
       "name": "rho_F_required_matches_AME_he4",
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.0,
+      "tolerance": "0.0",
       "source": "B_AME / (m_e · 4 · 8G)"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "he4-channel-split-categorical-constraint-probe",
   "scriptFile": "he4_channel_split_categorical_constraint_probe.py",
-  "scriptHash": "1e918760d8cb",
+  "scriptHash": "24090a3f1ab0",
   "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -44,13 +44,13 @@
   "description": "⁴He +5.87% channel-split categorical constraint per conj:psd-trace-orthogonality. Tests 3 hypotheses (HC1/HC2/HC3) for the structural rule pinning which ρ_F^λ deviate from 2.",
   "auditOnly": "docs/audits/2026-06-02-yekutieli-A2-qbeta-mn-he4-workplan.md",
   "data": {
-    "rho_F_postulated": 2.0,
-    "rho_F_required": 1.8891693708646624,
-    "gap_rho_F": 0.11083062913533752,
+    "rho_F_postulated": "2.0",
+    "rho_F_required": "1.889169370864662482713153983924592115958135460862527017534005472078254",
+    "gap_rho_F": "0.110830629135337517286846016075407884041864539137472982465994527921746",
     "HC1_uniform_trace_dominant": {
-      "trace_dominant_fraction": 1.0,
-      "rho_F_star": 1.8891693708646624,
-      "deviation_from_2": -0.11083062913533752
+      "trace_dominant_fraction": "0.9999999999999999999999999999999999999999999999999959313960266192191178",
+      "rho_F_star": "1.889169370864662482713153983924592115958135460862534703816014161314056",
+      "deviation_from_2": "-0.1108306291353375172868460160754078840418645391374652961839858386859439"
     },
     "HC2_top_k_localized": [
       {
@@ -61,9 +61,9 @@
             3
           ]
         ],
-        "fraction_of_tr_M": 0.29617035149076737,
-        "rho_F_star_required": 1.6257875625379994,
-        "deviation_from_2": -0.3742124374620006
+        "fraction_of_tr_M": "0.2961703514907673705660371544407830961096883293240318701305669339472833",
+        "rho_F_star_required": "1.625787562537999411965067464535941132406385824953970312462823025466426",
+        "deviation_from_2": "-0.3742124374620005880349325354640588675936141750460296875371769745335735"
       },
       {
         "k": 2,
@@ -77,9 +77,9 @@
             4
           ]
         ],
-        "fraction_of_tr_M": 0.5206885252826823,
-        "rho_F_star_required": 1.7871460119556746,
-        "deviation_from_2": -0.21285398804432545
+        "fraction_of_tr_M": "0.5206885252826823222437529544654282198093667081089388564975935826756489",
+        "rho_F_star_required": "1.787146011955674541420646694557118952832734211131634925723813438393668",
+        "deviation_from_2": "-0.2128539880443254585793533054428810471672657888683650742761865616063316"
       },
       {
         "k": 3,
@@ -97,9 +97,9 @@
             2
           ]
         ],
-        "fraction_of_tr_M": 0.6747624686023195,
-        "rho_F_star_required": 1.835748675582226,
-        "deviation_from_2": -0.16425132441777385
+        "fraction_of_tr_M": "0.6747624686023194478942100225752503970542281434972936143249889191449338",
+        "rho_F_star_required": "1.835748675582226143841124711833995723015093301104665684689231425781111",
+        "deviation_from_2": "-0.164251324417773856158875288166004276984906698895334315310768574218889"
       },
       {
         "k": 5,
@@ -125,9 +125,9 @@
             5
           ]
         ],
-        "fraction_of_tr_M": 0.9112950228541085,
-        "rho_F_star_required": 1.8783811758477247,
-        "deviation_from_2": -0.1216188241522753
+        "fraction_of_tr_M": "0.9112950228541084515094660276003841289594655747909474576757283820607102",
+        "rho_F_star_required": "1.878381175847724699064861004534437023651728394863824126914296553721205",
+        "deviation_from_2": "-0.1216188241522753009351389954655629763482716051361758730857034462787953"
       },
       {
         "k": 8,
@@ -165,9 +165,9 @@
             1
           ]
         ],
-        "fraction_of_tr_M": 1.0,
-        "rho_F_star_required": 1.8891693708646624,
-        "deviation_from_2": -0.11083062913533752
+        "fraction_of_tr_M": "0.9999999999999999999999999999999999999999999999999959313960266192191178",
+        "rho_F_star_required": "1.889169370864662482713153983924592115958135460862526566608067399752292",
+        "deviation_from_2": "-0.1108306291353375172868460160754078840418645391374734333919326002477083"
       }
     ],
     "HC3_bar_pairs": [
@@ -190,7 +190,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.29617035149076737
+        "fraction_total": "0.2961703514907673705660371544407830961096883293240318701305669339472833"
       },
       {
         "pair": [
@@ -210,7 +210,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.22451817379191494
+        "fraction_total": "0.2245181737919149516777158000246451236996783787849069863670266487283657"
       },
       {
         "pair": [
@@ -232,7 +232,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.1540739433196371
+        "fraction_total": "0.1540739433196371256504570681098221772448614353883547578273953364692849"
       },
       {
         "pair": [
@@ -255,7 +255,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.14235066935245505
+        "fraction_total": "0.142350669352455040153922724798618615095447065536046767950190081452667"
       },
       {
         "pair": [
@@ -274,7 +274,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.09418188489933396
+        "fraction_total": "0.09418188489933396346133328022651511680979036575760707540054938146310945"
       },
       {
         "pair": [
@@ -297,7 +297,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.059615082185253625
+        "fraction_total": "0.0596150821852536238292795456069862329739623687766484557224758711817365"
       },
       {
         "pair": [
@@ -315,7 +315,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.029089894960637925
+        "fraction_total": "0.02908989496063792466125442679262963806657205643240001799782236597667108"
       },
       {
         "pair": [
@@ -338,7 +338,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -360,7 +360,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -383,7 +383,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -404,7 +404,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -425,7 +425,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -447,7 +447,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -470,7 +470,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -490,7 +490,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -510,7 +510,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -531,7 +531,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -552,7 +552,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -574,7 +574,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -597,7 +597,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -616,7 +616,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -635,7 +635,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -655,7 +655,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -674,7 +674,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -694,7 +694,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -715,7 +715,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -735,7 +735,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -756,7 +756,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -774,7 +774,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -793,7 +793,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -811,7 +811,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -830,7 +830,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -850,7 +850,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -869,7 +869,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -888,7 +888,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -905,7 +905,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       },
       {
         "pair": [
@@ -923,7 +923,7 @@
           ]
         ],
         "n_cached_in_pair": 2,
-        "fraction_total": 0.0
+        "fraction_total": "0.0"
       }
     ],
     "HC3_top_8_pair_half_cached_count": 0,
