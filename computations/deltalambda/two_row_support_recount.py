@@ -81,10 +81,16 @@ def catalan(n: int) -> int:
 
 
 def main() -> int:
-    from qou_substrate.constants import Q as Q_PROTON
+    from qou_substrate.constants import Q_MP as Q_PROTON
     import schur_principal_mpmath as spm
 
-    q = mp.mpf(str(Q_PROTON))
+    # Q_MP, not mpf(str(Q)): the f64 constant carries ~16 significant digits,
+
+    # so mpf(str(...)) LAUNDERS it — the value looks 50-digit and is accurate
+
+    # to 16. Read the high-precision name instead.
+
+    q = Q_PROTON
     report = {
         "pin": {"name": "proton", "q0": mp.nstr(q, 50),
                 "source": "qou_substrate.constants.Q"},

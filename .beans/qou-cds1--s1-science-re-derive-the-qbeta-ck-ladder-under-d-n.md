@@ -1154,3 +1154,18 @@ not extend.
 Scope-(b): structural exclusion citing a proved invariant. The argument never
 reads `z`'s formula, so it holds for every Markov parameter with unbounded
 phase — C and D alike.
+
+Fibre follow-on beaned 2026-08-19, corrected 2026-08-23: the D-frame
+re-derivation stays blocked behind the imaginary channel, and the four blocking
+issues have owners -- qou-jqjc (witness surface, FIXED), qou-ztod (the two
+sorry-free zeta4 artifacts do not touch), qou-sglq (four sites assert
+bar-oddness), and qou-e58e.
+
+CORRECTION to what I first wrote here: I recorded qou-e58e as "tr_M(q0^-1) not
+computable: the bar-parity blocker is TOOLING, not mathematics". THE PREMISE WAS
+WRONG. tr_M(q0^-1) already computed; a stale docstring said otherwise and I
+believed it without checking. There was no tooling blocker to remove. Do not
+plan around that sentence.
+
+Workplan: docs/audits/2026-08-19-frakv-fibre-workplan-options.md. cds1 itself
+remains open and unclosed, and this branch does not touch it.

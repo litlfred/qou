@@ -1559,10 +1559,20 @@ Do not regress either.
 >   `main` 2026-08-16 — **7 files** returned `1/(√q + 1/√q)`, which is
 >   `√q/(q+1) = z_C` *exactly* (`0.49932…` against D's `0.61268…`).
 >
->   **Status 2026-08-16.** The detector now scans return forms, and those seven
->   are migrated, so *that* spelling is closed: the only return-form C site left
->   in the tree is `pyhecke/gram.py:634` (`z_mp`), which is registered and
->   R10-waived. **The posture does not change.** Closing one shape does not
+>   **Status 2026-08-16, corrected 2026-08-24.** The detector now scans return
+>   forms, and those seven are migrated, so *that* spelling is closed. This then
+>   named `pyhecke/gram.py:634` (`z_mp`) as **the only return-form C site left in
+>   the tree** — stale in both coordinates by the time it was written. `z_mp` is
+>   at **line 645** and is **convention D**: its docstring reads *"z = q³/(q² + 1)
+>   … MIGRATED 2026-08-16 (bean `qou-cds2`)"*, and the module's `_Z_FRAC =
+>   _Q_FRAC**3 / (_Q_FRAC**2 + 1)` is D arithmetic. The paragraph was stamped the
+>   same day as the migration, which is presumably how they crossed.
+>
+>   **Do NOT read that as "the return-form surface is clear."** The named instance
+>   is retired; the count is not. Re-run 2026-08-24, the detector still reports
+>   **1 site in `tools/pyhecke` as "C with NO registry row (unexplained)"**, and
+>   this correction did **not** identify it — so one pyhecke site remains
+>   unaccounted for. **The posture does not change.** Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
 >   catalogues **thirteen** distinct detector-blind spellings, four of which were
@@ -1582,10 +1592,21 @@ Do not regress either.
 >   cannot be stale, mislabelled, re-spelled, or inherited from a stale record
 >   and still factor correctly.
 >
->   Two live examples of why the count is not the answer: `pyhecke/atom.py:691`
->   binds a C `z_mark` consumed at `:713`, in a module no waiver covers; and a
->   *declared* site is not a fixed one — the audit's `DECLARED C in
->   evaluators.z, R10-waived` bucket stays **actionable** by design.
+>   Two examples of why the count is not the answer. The first has since
+>   **moved, and is recorded because the moving is the point**: this named
+>   `pyhecke/atom.py:691` binding a C `z_mark` consumed at `:713`. Measured
+>   2026-08-24, `z_mark` occurs **once** in that file, at **line 720**, and it is
+>   a **comment** — `#   local  z_mark = 1/(q^½ + q^-½) = 0.4993203  ← convention
+>   **C**` — so there is no binding for a waiver to cover, and an AST-verified
+>   detector cannot see it at all. Whether the binding was migrated or merely
+>   re-spelled is **not** settled here. Second, a *declared* site is not a fixed
+>   one — the audit's `DECLARED C in evaluators.z, R10-waived` bucket stays
+>   **actionable** by design.
+>
+>   Three named instances in this one section have now gone stale between being
+>   written and being read (`z_mp`, `z_mark`, and the `y_lambda_at` trap two
+>   sections down). That rate is itself the argument for the posture above:
+>   **cite the rule, re-measure the instance.**
 > - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
 >   immediately below; nothing in that directive changes. The *ideal CAL-2
 >   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin
@@ -1623,16 +1644,56 @@ Do not regress either.
 > [`computations/deltalambda/mu3_anchor_consistency_probe.py`](computations/deltalambda/mu3_anchor_consistency_probe.py)
 > and [`docs/audits/2026-08-07-mu3-door-status-consolidated.md` §4ter](docs/audits/2026-08-07-mu3-door-status-consolidated.md).
 >
-> **The specific trap that caused it (check your call sites).**
-> `wedderburn_jones_markov.y_lambda_at(n, q)` returns the cached
-> **muon-built** `y-lambda-at-q0.witness.json` whenever
-> `|q − q_parameter.Q| < 1e-12` — a gate satisfied **trivially** when the
-> caller passes `q_parameter.Q` itself. So the ideal-layer cache reaches an
-> experimental-layer caller with **no signal that a layer boundary was
-> crossed**. For experimental-anchor compute call
-> `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q)` (live closed form)
-> instead. Audit any other cached-witness accessor with the same
-> "matches the package constant ⇒ serve the cache" shape.
+> **The shape to check for (the rule; its named instance is now closed).**
+> A cached-witness accessor that serves precomputed data **when the caller's
+> `q` matches the value the cache was built at** is a straddle waiting to
+> happen: that gate is satisfied *trivially* when the caller passes the package
+> constant itself, so an ideal-layer cache reaches an experimental-layer caller
+> with **no signal that a layer boundary was crossed**. Audit any accessor with
+> that shape.
+>
+> **🛑 The instance this rule used to name — `y_lambda_at` — no longer has the
+> shape (corrected 2026-08-23, bean `qou-c1ya`/`qou-vu19`).** This paragraph
+> read *"`wedderburn_jones_markov.y_lambda_at(n, q)` returns the cached
+> muon-built `y-lambda-at-q0.witness.json` whenever `|q − q_parameter.Q| <
+> 1e-12`"* and told you to call `y_lambda_at_q0_mpmath` instead. **That
+> describes pre-2026-08-09 behaviour.** Read at the body rather than the
+> docstring — the live function is five statements:
+>
+> ```python
+> if q_val is not None:
+>     return y_lambda_su_n(n, mpf(str(q_val)), 2)   # the CALLER's q
+> return y_lambda_su_n_symbolic(n, Q_SYM, 2)        # symbolic, anchor-free
+> ```
+>
+> No `.witness.json` anywhere in it, and `y_lambda_su_n` is read-only
+> ("writes no witness, runs no producer") — the whole call cone is cache-free.
+> The gate and the cache load moved into
+> `_y_lambda_at_convention_C_HISTORICAL`, which is **dead** (convention C,
+> excised 2026-08-09). So `y_lambda_at` is **anchor-neutral**: calling it says
+> nothing about a producer's layer.
+>
+> **Do not "fix" call sites on the strength of the old wording.** Measured
+> cost of trying: promoting `y_lambda_at` to a muon *identifier* check in
+> `q0_producer_pin_classifier` — which is exactly what the old paragraph
+> invites — reclassified **56 producers** from `proton` to `BOTH`, and `BOTH`
+> shields a producer from triage as a possible deliberate comparison. It would
+> have hidden 56 clean files behind an association the code no longer has.
+> `y_lambda_at` has been removed from that classifier's `MUON_ARTIFACTS`.
+>
+> **The rule above still stands, and has been measured: zero live instances.**
+> [`computations/audits/cached_accessor_shape_audit.py`](computations/audits/cached_accessor_shape_audit.py)
+> keys on **provenance** (a name assigned from a file read, at module level or
+> via `global` in a loader) rather than on a list of constant names, and
+> requires the gate to involve a **caller argument** — without that it returns
+> 34, almost all plain memoisation. Its `--selftest` fails unless the known
+> dead positive is detected, so a future narrowing cannot report a clean tree
+> the way a name-keyed version did. Current result: **2 hits, both the dead
+> historical function and its generated `qou-mass/_internal/` mirror.**
+>
+> **The μ₃ Fréchet incident above is unaffected** — 11.54 ppb, `y_λ` from the
+> muon-built cache against `χ_λ` at the proton `q₀`, is a real measured
+> straddle and the reason the rule exists. Only the *mechanism* has changed.
 
 The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:

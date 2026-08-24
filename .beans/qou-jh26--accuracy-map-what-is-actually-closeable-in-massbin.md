@@ -82,3 +82,15 @@ data request than the mass ladder every attempt on this axis has used.
 Scope-(a): excluded is READING a monotone-in-A correlation on a plateau sample
 as evidence. NOT excluded is the Coulomb term itself -- physically expected, and
 the corpus has def:coulomb-charge (Q = 2Z + eps). Only this route is void.
+
+### Provenance of the landing (from #5280)
+
+MERGED 2026-08-18 in PR #5262 (main 69bc209d).
+1/5 corrected at every NORMATIVE site: AGENTS.md (L1/L2 table + both q0-anchor
+rules), docs/precision-goals.md (L2 table + honest-summary + dashboard list),
+docs/observable-sector-tracker.md (banner + Net line), plus a refresh block on
+the canonical shared-root audit. Producer emits scoreable_total /
+beats_100x_scoreable / calibration_inputs and its HEADLINE line leads with 1/5;
+legacy beats_100x_count retained unchanged for consumers, labelled do-not-quote.
+~15 DATED audit-doc provenance lines ('L2 unchanged (2/7)') deliberately left --
+they are accurate as of their date and rewriting them would falsify the record.

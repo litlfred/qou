@@ -39,6 +39,9 @@ _PROTON_SIG = "1.10997858275"   # physical-observations (m_p/m_e)
 
 HERE = Path(__file__).resolve().parent
 
+sys.path.insert(0, str(HERE))
+from _path_bridge import witness_path  # noqa: E402
+
 _PROVENANCE = {
     "computedAt", "commitSha", "scriptCommitSha", "scriptHash", "durationMs",
     "engineVersion", "engine", "engine_version", "generatedAt", "timestamp",
@@ -90,19 +93,35 @@ def _committed(rel_path: str) -> str:
 
 
 def _witness_for(producer: Path) -> Path | None:
-    """Best-effort: the producer's witness shares its stem with '-'/'_' swapped.
+    """The witness this producer WRITES — its stem with '-'/'_' swapped.
 
-    Prefer the top-level witness; fall back to an rglob over the whole
-    computations/ tree — some producers emit into a nested
-    `computations/computations/…` path.
+    Resolution order is the producer's OWN directory first, then the
+    `computations/` root, then each cluster subdir — i.e. exactly
+    `_path_bridge.witness_path(name, prefer_dir=producer.parent)`.
+
+    It must be the producer's directory, and that is the whole point of this
+    function. `run_one` resolves the path ONCE, reads its committed text, runs
+    the producer, then reads `fresh` back FROM THE SAME PATH. Producers emit
+    beside themselves (`Path(__file__).parent / "<name>.witness.json"`), so if
+    this resolves anywhere else, `fresh` is the untouched committed file, the
+    diff is empty, and the sweep prints PASS for a producer it never verified.
+
+    That was live, not hypothetical. The previous implementation preferred the
+    `computations/` ROOT, and 17 of the 623 manifest producers are cluster-
+    resident with a stale pre-refactor copy of their witness still sitting at
+    the root — so those 17 were silently self-certifying. Among them
+    `adjacent_vs_full_probe`, both `alpha_k_jones_markov_h{3,4}`, and eleven
+    `probes/` entries.
+
+    The old rglob fallback also had no `_deprecated` filter and resolved
+    `hecke_character_symbolic` to `computations/_deprecated/…`; `witness_path`
+    skips leading-underscore dirs, so that is closed too.
+
+    Bean `qou-kcii`.
     """
-    stem = producer.stem
-    for cand in (stem.replace("_", "-"), stem):
-        w = HERE / f"{cand}.witness.json"
+    for cand in (producer.stem.replace("_", "-"), producer.stem):
+        w = witness_path(f"{cand}.witness.json", producer.parent)
         if w.exists():
-            return w
-    for cand in (stem.replace("_", "-"), stem):
-        for w in HERE.rglob(f"{cand}.witness.json"):
             return w
     return None
 

@@ -1,15 +1,34 @@
 {
   "engine": "complex_volume_witness.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T20:41:54.860094+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
-  "assertions": [],
+  "computedAt": "2026-08-23T17:16:21.515036+00:00",
+  "commitSha": "ea8ae1b4174ce4213b2228ab5c36df8a0940a395",
+  "assertions": [
+    {
+      "name": "im_qbeta_matches_codata",
+      "computed": "0.7836458273746213",
+      "expected": "0.7823334093100222",
+      "passed": true,
+      "tolerance": "0.0015646668186200443",
+      "unit": "MeV",
+      "source": "CODATA neutron beta-decay Q-value"
+    },
+    {
+      "name": "im_channel_isotope_independent",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "unit": "MeV",
+      "source": "Im is the single n->p decay Q-value, so it cannot vary by isotope"
+    }
+  ],
   "allPassed": true,
   "durationMs": 19,
   "computation": "complex-volume-unification",
   "scriptFile": "complex_volume_witness.py",
-  "scriptHash": "a8f65c17827f",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "2ab875a6278d",
+  "scriptCommitSha": "2c3fc38be096342c717383da7a17a897c2d62392",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -92,5 +111,10 @@
       "mass_mod_bar": 0.0004144413494098392,
       "bar_vs_usual_ratio": 0.002574583317531052
     }
-  }
+  },
+  "caveats": [
+    "Re channel is NOT asserted: the log-trace binding is 22-69% from AME across 2H/3H/3He/4He (re_rel_err per isotope). Recorded, not checked.",
+    "The single-frakV descent (conj:binding-qbeta-complex-volume) is NOT tested here. Im is ASSIGNED from q_beta_substrate, not derived from a trace; that the two channels descend from one fibre object is the open conjecture. `allPassed` refers to the two assertions above and to nothing else.",
+    "Bar-norm sqrt(tr_M(q0)*tr_M(q0^-1)) is n/a for 2H and 3H because the product is NEGATIVE, not because the re-lift fails; as a real number it does not exist for those words."
+  ]
 }
