@@ -1705,7 +1705,24 @@ Do not regress either.
 >   `main` 2026-08-16 — **7 files** returned `1/(√q + 1/√q)`, which is
 >   `√q/(q+1) = z_C` *exactly* (`0.49932…` against D's `0.61268…`).
 >
->   **Status 2026-08-16, corrected 2026-08-24.** The detector now scans return
+>   **Measured surface, 2026-08-24.** The `computations/` side is no longer
+  unmeasured: `scripts/convention-c-producer-audit.py` reports **26 actionable**
+  sites after the `regime_scanner` fix — 14 live producers, 11 probes, 1 in the
+  **generated** `qou-mass/_internal/` mirror — against 14 further sites that are
+  *deliberately* C-named comparisons and are not defects. Two cautions for
+  whoever drains it. First, the mirror site
+  (`qou-mass/src/qou_mass/_internal/_li_2_q_util.py:312`) must **not** be
+  hand-edited; its source is `computations/_li_2_q_util.py`, which carries the
+  same C at lines **302 and 312** and is load-bearing (`vol_density_*`), so
+  changing it moves real numbers. Second, the detector labels `qou-mass` a
+  **"SHIPPED PACKAGE"**, which contradicts this document's own measured row
+  above — it is **not on PyPI** (404) — so do not treat that label as a reason
+  to leave the site alone. The `content/` side was measured the same day:
+  of 12 grep matches only **5** carried live unscoped C, the other 7 being
+  correct records; 4 of the 5 are migrated and the fifth is a refutation whose
+  scope under D is being established separately.
+
+  **Status 2026-08-16, corrected 2026-08-24.** The detector now scans return
 >   forms, and those seven are migrated, so *that* spelling is closed. This then
 >   named `pyhecke/gram.py:634` (`z_mp`) as **the only return-form C site left in
 >   the tree** — stale in both coordinates by the time it was written. `z_mp` is
@@ -1717,8 +1734,21 @@ Do not regress either.
 >   **Do NOT read that as "the return-form surface is clear."** The named instance
 >   is retired; the count is not. Re-run 2026-08-24, the detector still reports
 >   **1 site in `tools/pyhecke` as "C with NO registry row (unexplained)"**, and
->   this correction did **not** identify it — so one pyhecke site remains
->   unaccounted for. **The posture does not change.** Closing one shape does not
+>   this correction did **not** identify it.
+>
+>   **IDENTIFIED AND CLOSED 2026-08-24.** It is
+>   `tools/pyhecke/python/pyhecke/regime_scanner.py:94`, inside `scan_h2_molecule`'s
+>   `v_std`: `z = mp.mpf(1.0) / (mp.sqrt(q) + mp.sqrt(qi))`, which is
+>   `√q/(q+1) = z_C` — unlabelled, no comparison rationale, no registry row.
+>   Migrated to `z_D = q³/(q²+1)`; the detector now reports **26** actionable
+>   sites and no `tools/pyhecke` row. The migration is behaviour-safe rather
+>   than merely believed to be: the module has **zero importers** in the repo
+>   (the only other hit is a sibling worktree's copy of itself) and **no
+>   committed witness** references `scan_h2_molecule` or `rank_drop`, so the
+>   crossings it reports change without invalidating any recorded number.
+>
+>   **The posture below still does not change**, and the remaining 26 are the
+>   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
 >   catalogues **thirteen** distinct detector-blind spellings, four of which were
