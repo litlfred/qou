@@ -11,6 +11,7 @@ subtype**.  This file identifies the two.
 | | |
 |---|---|
 | `isAddableCell_row_le` | an addable cell sits in row `≤ colLen 0` |
+| `isCornerCell_row_lt` | a corner cell sits in row `< colLen 0` |
 | `addableRowSet μ` | the addable cells, as an explicit `Finset` indexed by row |
 | `sum_addable_eq_sum_range` | the subtype sum **is** the guarded `range (colLen 0 + 1)` sum |
 | `sum_addable_wenzlWeight` | **`∑_{s addable} w_{μ+s} = w_μ`** — branching in the exchange's own indexing |
@@ -41,6 +42,14 @@ theorem isAddableCell_row_le {μ : YoungDiagram} {s : ℕ × ℕ} (hs : IsAddabl
   · have hup : ((s.1 - 1, 0) : ℕ × ℕ) ∈ μ := μ.up_left_mem (le_refl _) (Nat.zero_le _) h
     have := mem_iff_lt_colLen.mp hup
     omega
+
+/-- **A corner cell sits strictly inside the column height.**  The corner analogue of
+`isAddableCell_row_le`: a corner is a *cell of* `ν`, so its row is occupied, hence `< colLen 0`.
+(The addable bound is `≤`, not `<`, because an addable cell may start a brand-new row.) -/
+theorem isCornerCell_row_lt {ν : YoungDiagram} {c : ℕ × ℕ} (hc : IsCornerCell ν c) :
+    c.1 < ν.colLen 0 := by
+  have hleft : ((c.1, 0) : ℕ × ℕ) ∈ ν := ν.up_left_mem (le_refl _) (Nat.zero_le _) hc.1
+  exact mem_iff_lt_colLen.mp hleft
 
 /-- The addable cells of `μ`, as an explicit `Finset`: one per row `a ≤ colLen 0` that admits a box,
 sitting at `(a, μ_a)`. -/
