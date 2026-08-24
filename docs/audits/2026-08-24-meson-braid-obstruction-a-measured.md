@@ -646,6 +646,32 @@ give:
    says they are);
 3. the mass law does not read `Vol` off the closed braid.
 
+### Control: it is POSITIVITY, not length
+
+Same sweep over words in `{σ₀, σ₀⁻¹, σ₁, σ₁⁻¹}`, which separates the two
+candidate explanations:
+
+| L | words | hyperbolic | fraction | min Vol | max Vol |
+|---|---|---|---|---|---|
+| 4 | 256 | 4 | 0.0156 | 2.0298832 | 2.0298832 |
+| 5 | 1024 | 20 | 0.0195 | 3.6638624 | 3.6638624 |
+| **6** | **4096** | **232** | **0.0566** | **2.0298832** | **7.3277248** |
+
+Mixed-sign words are already hyperbolic at **length 4** (`4₁`), and at the
+pion's own length 6 they give 232 hyperbolic closures spanning
+`2.0298832 … 7.3277248` — a range that **brackets the pion's target
+`2.681392089`** — while positive words of that same length give **0 of 64**.
+
+So **length is not the culprit; positivity is.** Route 1 above (negative
+crossings entering geometrically) is not merely one of three possibilities —
+it is demonstrably available at the required length, which the other two are
+not shown to be.
+
+**This is not a result about the pion.** Bracketing a target is not hitting it,
+and choosing the nearest enumerated volume is precisely the per-state fit this
+document exists to avoid. What is shown is that the candidate space is
+non-empty. Nothing is proposed.
+
 ### The chiral-limit reading is wrong — recorded because it is tempting
 
 A reader will notice that `m_π = 0` is also what QCD gives in the chiral limit
