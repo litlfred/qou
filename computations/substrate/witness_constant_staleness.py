@@ -281,6 +281,74 @@ def derived_output_exempt(witness, max_sig: Optional[int] = None):
     return ", ".join(sorted({p for p, _ in stale_walked}))
 
 
+
+# ── Exemption 2: the manifest DECLARES this producer muon-anchored ──────
+#
+# This gate's premise is the 2026-05-28 muon→proton re-pin: a witness still
+# carrying a muon-basin q₀ has not been regenerated. That premise predates
+# `q0_anchor_manifest.json`, which introduced a LEGITIMATE muon class --
+# `q_parameter` stem-resolves 123 producers to the muon anchor on purpose, so
+# their witnesses carry a muon q₀ because that is the anchor they were told to
+# use, not because they are stale.
+#
+# Three conditions, and condition 2 is the load-bearing one:
+#
+#   1. the witness positively declares `q0Anchor` muon/ideal;
+#   2. its producer stem is in the manifest's `ideal_muon` list. This is NOT
+#      the witness vouching for itself -- the manifest is the CONTROL INPUT
+#      `q_parameter` reads at import to pick the anchor, so agreement with it
+#      is the authoritative statement that muon is correct here. A witness
+#      claiming muon while the manifest says otherwise stays flagged, and so
+#      does the q0-anchor-consistency audit's FLIP class;
+#   3. every stale-looking value equals the CURRENT muon pin exactly. An OLD
+#      muon value -- the actual staleness this gate exists to catch -- is
+#      still caught, because it will not match.
+def manifest_muon_exempt(witness, max_sig: Optional[int] = None):
+    """Return a reason if this witness is muon by MANIFEST DECISION, else None."""
+    if isinstance(witness, str):
+        try:
+            doc = json.loads(witness)
+        except json.JSONDecodeError:
+            return None
+    else:
+        doc = witness
+    if not isinstance(doc, dict):
+        return None
+    if str(doc.get("q0Anchor") or "").lower() not in ("muon", "ideal"):
+        return None
+    stem = str(doc.get("scriptFile") or "")
+    if stem.endswith(".py"):
+        stem = stem[:-3]
+    if not stem:
+        return None
+    try:
+        manifest = json.loads(
+            (REPO_ROOT / "computations" / "q0_anchor_manifest.json")
+            .read_text(encoding="utf-8"))
+    except Exception:
+        return None  # manifest unreadable => no exemption, stay strict
+    if stem not in manifest.get("ideal_muon", []):
+        return None
+    try:
+        from qou_substrate.witness import _q0_value_for_anchor
+        muon = _q0_value_for_anchor("muon")
+    except Exception:
+        return None
+    if not muon:
+        return None
+    stale = [(pth, v) for pth, v in _basin_paths(doc)
+             if not matches_live_q0(v, max_sig=max_sig)]
+    if not stale:
+        return None
+    for _pth, v in stale:
+        # exact prefix agreement with the current muon pin, at the value's
+        # own width -- an older muon literal will diverge and stay flagged
+        if not muon.startswith(str(v).rstrip("0").rstrip(".")) and \
+           not str(v).startswith(muon[:len(str(v))]):
+            return None
+    return f"manifest ideal_muon: {stem}"
+
+
 # ── Self-test for the exemption ──────────────────────────────────────
 #
 # The exemption is the one place this gate can LOSE detection power, so its
@@ -344,6 +412,43 @@ def _selftest() -> int:
 
     print("derived-output exemption self-test:")
     passed = all(case(*c) for c in checks)
+
+    # ── manifest-muon exemption (exemption 2) ────────────────────────
+    #
+    # Same discipline as above: the only place this gate can lose detection
+    # power is an exemption, so each way it must NOT fire is pinned here.
+    # The positive case is a real producer; the three negatives are the
+    # shapes that would turn it into an escape hatch.
+    try:
+        from qou_substrate.witness import _q0_value_for_anchor
+        _muon = _q0_value_for_anchor("muon") or ""
+    except Exception:
+        _muon = ""
+    if _muon:
+        _mm = [
+            ("muon declared, stem IN manifest, CURRENT muon value",
+             {"q0Anchor": "muon",
+              "scriptFile": "lever1_binding_habiro_single_element_test.py",
+              "q0Value": _muon}, True),
+            ("muon declared but stem NOT in the manifest",
+             {"q0Anchor": "muon", "scriptFile": "not_a_real_muon_producer.py",
+              "q0Value": _muon}, False),
+            ("stem in manifest but an OLD muon value — the real staleness",
+             {"q0Anchor": "muon",
+              "scriptFile": "lever1_binding_habiro_single_element_test.py",
+              "q0Value": _SELFTEST_STALE}, False),
+            ("declares proton while carrying muon — a FLIP, never exempt",
+             {"q0Anchor": "proton",
+              "scriptFile": "lever1_binding_habiro_single_element_test.py",
+              "q0Value": _muon}, False),
+        ]
+        print("manifest-muon exemption self-test:")
+        for _name, _doc, _want in _mm:
+            _got = manifest_muon_exempt(_doc) is not None
+            _ok = _got == _want
+            passed = passed and _ok
+            print(f"  {'ok  ' if _ok else 'FAIL'}  {_name}  "
+                  f"(exempt={_got}, want={_want})")
 
     # ── the precision-aware comparator ───────────────────────────────
     #
@@ -495,6 +600,8 @@ def main() -> int:
         bad = sorted(v for v in vals if not matches_live_q0(v, max_sig=args.ndigits))
         if bad:
             why = derived_output_exempt(raw, max_sig=args.ndigits)
+            if not why:
+                why = manifest_muon_exempt(raw, max_sig=args.ndigits)
             if why:
                 derived.append((name, bad, why))
             else:
