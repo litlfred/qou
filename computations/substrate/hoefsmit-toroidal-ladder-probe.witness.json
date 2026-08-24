@@ -29,11 +29,13 @@
   "allPassed": true,
   "verdict": "TOROIDAL HALF-INTEGER DEGREE SHIFT DERIVED, NOT FITTED: matching the Hoefsmit channel-mixing amplitude sqrt(d^2-1)/d against the associated-Legendre order-ladder factor sqrt((n-mu)(n+mu+1)) identically in the axial distance d forces degree n = d - 1/2 (the toroidal nu - 1/2) and order mu = 1/2, up to the Legendre reflection mu -> -mu-1. The corpus Hoefsmit convention a_rho = h/(1-q^{-2rho}), b = sqrt(a_rho a_{-rho}+1) satisfies b^2 = [rho-1][rho+1]/[rho]^2 exactly (h = q - q^{-1}), and the forcing computation q-deforms verbatim (q^{2alpha+1} = 1). SCOPE (a): ladder-coefficient identification only — supports the toroidal channel-interpolation lead structurally; it is NOT a full eigenfunction transform, NOT wired to production, and licenses no numerical claim.",
   "scriptHash": "798acf6ff805",
-  "scriptCommitSha": "unknown",
-  "commitSha": "452252a4c67b4f2399d20c737a1bf4ddbd69382c",
+  "scriptCommitSha": "5908156190575da384923494860e63f883ca8c48",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "engine": "sympy",
-  "computedAt": "2026-07-06T22:13:04.960938+00:00",
+  "computedAt": "2026-08-24T14:08:49.298553+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "hoefsmit_toroidal_ladder_probe.py"
 }

@@ -1,15 +1,15 @@
 {
   "engine": "python+sympy(exact over Q(q,z))",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:03:14.574551+00:00",
-  "commitSha": "1eb6d2711dd6813b43a30243cc94e68ffa05153d",
+  "computedAt": "2026-08-24T14:17:33.944967+00:00",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "gram-h3-convention-frame-probe",
   "scriptFile": "gram_h3_convention_frame_probe.py",
   "scriptHash": "5db5b09d11b7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6a9c95981591372c4b0e3ce9a73fd6fa3ebed37b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,7 +21,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "30fd920c241a54fa"
@@ -79,14 +79,14 @@
   },
   "check3_red_assertion_is_the_convention_gap": {
     "assertion": "gram_h3_symbolic_matches_pyhecke",
-    "recorded_computed": "0.17218519049094100531680589703924164017169885975736",
+    "recorded_computed": "0.000000000000000227264075720741273907625482732497579844541628981500376473648620336752",
     "max_abs_C_minus_D_at_q0": "0.172185190490940929096115386080555407552846395833154213471847",
     "worst_cell": [
       3,
       5
     ],
-    "abs_diff_recorded_vs_exact": "0.0000000000000000762206905109586862326188524639242057865281530249220234120346",
-    "reproduces_recorded_value": true,
+    "abs_diff_recorded_vs_exact": "0.172185190490940701832039665339281499927363663335574368930218",
+    "reproduces_recorded_value": false,
     "why_not_to_the_last_digit": "the recorded value is (C-frame symbolic at 50 dps) minus the FLOAT64 reference the regression script reads out of gram-matrix-dual.witness.json; this probe differences two EXACT frames. The two therefore agree only to the float64 rounding of that reference entry (~1e-16), which is what the diff above is."
   },
   "check4_D_is_a_root_of_the_determinant": {
