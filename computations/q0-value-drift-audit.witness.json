@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 229,
-      "proton-pin": 1353,
+      "STALE": 228,
+      "proton-pin": 1354,
       "unknown": 25,
-      "canonical": 215
+      "canonical": 216
     },
-    "stale_total": 229,
+    "stale_total": 228,
     "new_stale": 0,
     "rows": [
       {
@@ -4743,6 +4743,13 @@
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/chi-lambda-he4-full-partition-table.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
@@ -11803,9 +11810,9 @@
       {
         "file": "computations/staircase-ew-residual-conjecture.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955541805",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416943465287684
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/structured-combiner-and-triangle.witness.json",

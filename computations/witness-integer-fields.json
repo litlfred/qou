@@ -1,0 +1,47 @@
+{
+  "$comment": [
+    "DECLARED integer-typed witness fields. Read by witness_integer_field_audit.py",
+    "and by any consumer that needs to know whether a numeric field is a count or a",
+    "measurement. Language-agnostic on purpose: Python's json distinguishes 3 from",
+    "3.0, but JavaScript's JSON.parse collapses both to `number`, so serialisation",
+    "alone cannot tell a TypeScript reader what a field means. This file can.",
+    "",
+    "A field listed here MUST be serialised as a JSON integer. A float there is a",
+    "violation even when its value is integral, because `54.0` and `54` are the same",
+    "number but not the same claim.",
+    "",
+    "DECLARED, NEVER INFERRED. Inference from values fails in BOTH directions, and",
+    "both failures are live in this corpus as of 2026-08-24:",
+    "  * `matrix_im` holds 160,704 integral values and ZERO fractional ones, so any",
+    "    is-it-always-a-whole-number rule declares it an integer field. It is not:",
+    "    it is the imaginary part of a real matrix, a REAL that is always exactly",
+    "    0.0. Encoding it as `0` would assert something false.",
+    "  * `word_cd` and `canonical_braid_word_first_6` read like braid words -- and",
+    "    83 and 7 of their entries respectively are fractional (-0.1045..., ",
+    "    -0.2090...), so they are not pure letter lists either.",
+    "Anything added here needs a reason a reader can check, not a pattern match.",
+    "",
+    "Bean `qou-xt5l`."
+  ],
+  "integer_fields": {
+    "dim_S_lambda": {
+      "reason": "Dimension of the Specht module S^lambda -- the number of standard Young tableaux of that shape. A count; fractional is not a representable state.",
+      "evidence": "Corpus 2026-08-24: 77 occurrences serialised as JSON int, 100 as float, 0 fractional. The same quantity is written both ways across witnesses, which is exactly the ambiguity this registry removes."
+    },
+    "A": {
+      "reason": "Nucleon number (mass number) of a nuclide -- a count of nucleons.",
+      "evidence": "Corpus 2026-08-24: 28,033 occurrences as JSON int, 1 as float (A = 4.0 for helium-4 in 4he-binding-full-pipeline), 0 fractional anywhere."
+    },
+    "N": {
+      "reason": "Neutron number of a nuclide -- a count of neutrons.",
+      "evidence": "Corpus 2026-08-24: 28,029 occurrences as JSON int, 1 as float (N = 2.0 for helium-4 in the same witness), 0 fractional anywhere."
+    }
+  },
+  "known_real_fields": {
+    "$comment": "Fields whose values are always integral in the corpus today but which are REAL by definition. Listed so the candidate detector does not keep re-proposing them and so a future reader does not 'fix' them.",
+    "matrix_im": "Imaginary part of a matrix entry. Always exactly 0.0 here because those matrices are real. A real that is zero, not an integer.",
+    "matrix_re": "Real part of a matrix entry.",
+    "sigma_k_at_q0_re": "Real part of sigma_k evaluated at q0.",
+    "w0_matrix_at_q0_re": "Real part of the w0 matrix at q0."
+  }
+}

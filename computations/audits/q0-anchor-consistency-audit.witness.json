@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T05:44:31.733718+00:00",
-  "commitSha": "a1b5edbfda0abadb45473f47433073c8c2513f74",
+  "computedAt": "2026-08-24T13:58:47.713878+00:00",
+  "commitSha": "3e4922262827c42d6a690cd1dbfa401af7473d25",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -44,14 +44,14 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 702,
+      "Q0_OK": 712,
       "Q0_AMBIGUOUS": 15,
       "Q0_INDEPENDENT": 46,
       "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1882,
+      "Q0_ANCHOR_MISSING": 1872,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -526,10 +526,6 @@
         },
         {
           "witness": "bring-s4-elliptic-factor-genus-verify.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "alphaem-dilog-bloch-probe.witness.json",
           "detail": ""
         },
         {
@@ -1130,10 +1126,6 @@
         },
         {
           "witness": "chi-helium-4-h12.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-lambda-he4-full-partition-table.witness.json",
           "detail": ""
         },
         {
@@ -2353,10 +2345,6 @@
           "detail": ""
         },
         {
-          "witness": "habiro-interpolation-wlambda.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "hbond-categorical-action.witness.json",
           "detail": ""
         },
@@ -3061,10 +3049,6 @@
           "detail": ""
         },
         {
-          "witness": "meson-mass-from-hecke.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "meson-sector-1ppq-crosscheck.witness.json",
           "detail": ""
         },
@@ -3290,6 +3274,10 @@
         },
         {
           "witness": "option-e-phase1-gram-h6.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "option-e-probe1-derive-1plusq-over-2.witness.json",
           "detail": ""
         },
         {
@@ -5273,10 +5261,6 @@
           "detail": ""
         },
         {
-          "witness": "xq-habiro-element-search-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "y-lambda-cyclotomic-factorization-probe.witness.json",
           "detail": ""
         },
@@ -5777,14 +5761,6 @@
           "detail": ""
         },
         {
-          "witness": "qbeta-c6-c10-crossanchor-falsification.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-chain4-demazure-fund-weights.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbeta-chain4-demazure.witness.json",
           "detail": ""
         },
@@ -5802,10 +5778,6 @@
         },
         {
           "witness": "qbeta-chain4-kashiwara-step4-n5.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json",
           "detail": ""
         },
         {
@@ -5877,19 +5849,11 @@
           "detail": ""
         },
         {
-          "witness": "qbeta-composite-crossanchor-2factor-sweep.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbeta-composite-operator-first-test.witness.json",
           "detail": ""
         },
         {
           "witness": "qbeta-composite4-wenzl-qpochhammer-first-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-cosh-avatar-crossanchor-multicoeff-probe.witness.json",
           "detail": ""
         },
         {
@@ -6374,10 +6338,6 @@
         },
         {
           "witness": "qbeta-residue-followup-residual-2x.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-residue-followup-sl6-demazure.witness.json",
           "detail": ""
         },
         {
@@ -7691,6 +7651,10 @@
           "detail": ""
         },
         {
+          "witness": "alphaem-dilog-bloch-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "ame-2020-binding-energies.witness.json",
           "detail": ""
         },
@@ -8439,6 +8403,10 @@
           "detail": ""
         },
         {
+          "witness": "chi-lambda-he4-full-partition-table.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
@@ -9011,6 +8979,10 @@
           "detail": ""
         },
         {
+          "witness": "habiro-interpolation-wlambda.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "hadron-knot-table.witness.json",
           "detail": ""
         },
@@ -9271,6 +9243,10 @@
           "detail": ""
         },
         {
+          "witness": "meson-mass-from-hecke.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "meson-per-knot-density.witness.json",
           "detail": ""
         },
@@ -9452,10 +9428,6 @@
         },
         {
           "witness": "option-e-phase1-h3-cross-check.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "option-e-probe1-derive-1plusq-over-2.witness.json",
           "detail": ""
         },
         {
@@ -9791,6 +9763,10 @@
           "detail": ""
         },
         {
+          "witness": "xq-habiro-element-search-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "proton-mu-mass-ratio-substrate-identity.witness.json",
           "detail": ""
         },
@@ -9895,7 +9871,19 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c6-c10-crossanchor-falsification.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-chain-d-bar-parity-gate.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-chain4-demazure-fund-weights.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json",
           "detail": ""
         },
         {
@@ -9915,7 +9903,15 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-composite-crossanchor-2factor-sweep.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-composite4-fibre-root-of-unity-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-cosh-avatar-crossanchor-multicoeff-probe.witness.json",
           "detail": ""
         },
         {
@@ -9988,6 +9984,10 @@
         },
         {
           "witness": "qbeta-perlambda-collapse-cancellation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-residue-followup-sl6-demazure.witness.json",
           "detail": ""
         },
         {
