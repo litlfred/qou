@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-24T17:51:39Z
+updated_at: 2026-08-24T18:19:54Z
 ---
 
 ## Refines `qou-qpj9` (meson-binding braid gate)
@@ -191,3 +191,61 @@ The two other findings from PR #5659 stand and are independent of σ:
 `𝔡` is given two incompatible knots (`T_{2,3}^σ` vs "the three-twist knot `5₂`";
 `lepton-meson-torus-knot-dictionary.lean:27` `pion: ū(3)+d(3)=6` settles it at 3
 crossings), and `𝔎_μ` is called amphichiral when the cinquefoil `5₁` is chiral.
+
+
+## Correction to my own re-scope, ~30 min later — there is NO third grade to derive
+
+My note above re-scoped this bean to "the residual `K⁰` collision — a third grade
+(charm number vs strangeness) is what a global separation needs". **That is the
+docstring of `graded_D_K0_collide`, and it is superseded twenty lines further
+down in the same file.** I quoted a claim without reading its neighbourhood —
+the fifth instance of that error class this session, and the second in this bean.
+
+`MesonOperatorSelectionT3.lean` proves:
+
+```lean
+theorem orderedContent_injective : Function.Injective orderedContent := by decide
+```
+
+with the docstring: *"…but the ordered content IS injective. Keeping the
+quark/antiquark orientation (the 'bar' — itself topological strand-orientation
+data, not a fit) separates D̄⁰ (−5,+3) from K⁰ (+3,−5). The residual collision is
+an artefact of the **symmetric-multiset** content model of #4614, not of the
+physics; the bar resolves it."*
+
+Checked by hand over all five mesons — `π (−3,−3)`, `K (−3,−5)`,
+`η/φ (+5,−5)`, `D̄⁰ (−5,+3)`, `K⁰ (+3,−5)` — all distinct. The multiset forgets
+which constituent is the antiquark; the ordered pair does not, and that ordering
+is topological (strand orientation), not fitted.
+
+## So this bean is CLOSEABLE, and the one live gap is qou-qpj9's original one
+
+The selection problem is fully solved in Lean: `T3_charm_ne_strange`,
+`graded_D_kaon_distinct`, `gradedContent_injective_on_dictionary`, and
+`orderedContent_injective` for the full five-meson set.
+
+What remains is **not** a grading. The file states it as a primary conjecture
+with **deliberately no instance** (§3b-tax):
+
+```lean
+class CanonicalHyperbolicMesonBraid (vol mass : Meson → ℚ) : Prop where
+  hyperbolic              : ∀ m, 0 < vol m
+  mass_positive           : ∀ m, 0 < mass m
+  breaks_graded_collision : mass .Dmeson ≠ mass .K0
+```
+
+and proves the gap is real rather than assumed:
+
+```lean
+theorem mass_from_graded_content_cannot_separate (f : Multiset ℤ → ℚ) :
+    (fun m => f (gradedContent m)) .Dmeson = (fun m => f (gradedContent m)) .K0
+```
+
+— **the mass datum is provably not a function of `(n,T₃)`.** The `(n,T₃)` content
+is `Vol = 0` torus-carrier data; the mass needs a genuinely hyperbolic braid at
+`H₃(q)`. That is Obstruction A of `qou-qpj9`, i.e. exactly where the whole
+investigation started, now Lean-characterised instead of merely asserted.
+
+**Recommend closing this bean** in favour of `qou-qpj9` (and whichever bean owns
+`MesonOperatorSelectionT3`). Nothing in the T₃ direction is open. Do not
+re-derive T₃, and do not chase a third flavour grade.
