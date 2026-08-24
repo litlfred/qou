@@ -1,10 +1,11 @@
 ---
 # qou-spud
 title: Three more dated banners in prose, surfaced by the 360-block hygiene re-sweep
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-24T21:07:21Z
-updated_at: 2026-08-24T21:07:21Z
+updated_at: 2026-08-24T21:18:07Z
 ---
 
 Surfaced 2026-08-24 by re-sweeping the 360 blocks whose
@@ -58,3 +59,42 @@ touches what the block claims about Lean. That is authoring, not lint. The
 sweep is committed with the three failures **recorded rather than hidden** —
 which is the point of `qou-h1p7`: a stale `pass` is worse than a visible fail.
 
+---
+
+## RESOLVED 2026-08-24 — all three, substance kept, versioning moved
+
+* **`rem:bar-involution-c5-algebraic-identities`** — the "Corrected 2026-08-09"
+  wrapper and the "escaped every search" clause are now an `authorNotes`
+  entry. The prose keeps everything a reader needs: that the second factor is
+  **not** `1/z`, both numbers that separate them (`1/z = 1.632151991505175166202`
+  under D against `q^{1/2}+q^{-1/2} = 2.0027...`), that the latter is the
+  reciprocal of the excised convention C and a Temperley-Lieb loop parameter at
+  half-argument rather than a Markov parameter of the Hecke generator, and that
+  identifying the two is what the notation register forbids.
+* **`prop:qbeta-canonical-markov-weights-explicit-instance`** — only the
+  parenthetical date tripped P4. Removed; an `authorNotes` entry records the
+  ruling and, more usefully, why the instance is **deliberately** left on
+  convention C: it exists to witness that `CanonicalMarkovWeightsH3` is
+  inhabitable, so rebuilding it on the production `z` would be a different
+  construction rather than a correction.
+* **`rem:qou-motivic-galois-instance-verification`** — the bullet is now
+  present-tense fact: `MotivicGaloisCharacter` carries one field,
+  `frobenius_at`, nothing in the Lake tree supplies it for the QOU substrate,
+  and `def:motivic-galois-character` is therefore not discharged. The design
+  reason survives too — `almost_everywhere_nontrivial` was removed because
+  encoding it as a class field forced every instance either to prove it or to
+  launder the perpetual obstruction through a bare `axiom`. No new
+  `authorNotes` needed: the block's 2026-08-23 entry already records the
+  correction verbatim.
+
+`voice-author-notes-pollution` passes on all three.
+
+## What is left on them is not mine and not live
+
+Two stale AGENT verdicts quoting prose these edits deleted —
+`trap-meta-commentary` (2026-08-15) on the first and `trap-superlative`
+(2026-08-22) on the third. Verified by grepping each verdict's own quoted
+string against the current `.md`: 0 matches. A script sweep cannot clear an
+agent verdict, so both will keep presenting as current until an agent
+re-adjudicates. Opened as `qou-4sdp` — it is now three instances, which is a
+class rather than an oddity.
