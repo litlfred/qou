@@ -78,6 +78,15 @@ CONTROLS = [
 
 PION = [1, 2, 1, 2, 2, 1]          # (s0 s1)^2 s1 s0, the corpus meson braid
 
+#: All four signed generators, for the mixed-sign control sweep.
+MIXED_GENS = (1, -1, 2, -2)
+
+#: Vol.rho the pion needs at rho = 1: (m_pi/m_e) . hbar_q^2, from the audit's
+#: target table.  Quoted only to ask whether the mixed-sign range BRACKETS it --
+#: see the warning in the verdict about why nearest-point selection is not a
+#: result.
+PION_TARGET = 2.681392089
+
 
 def closure_volume(word):
     """Volume of the closure of `word`, axis EXCLUDED.  None if degenerate."""
@@ -98,6 +107,35 @@ def closure_volume(word):
 def is_hyperbolic(word) -> bool:
     v = closure_volume(word)
     return v is not None and v > HYP_EPS
+
+
+def mixed_sign_sweep():
+    """Same sweep over words in {s0, s0^-1, s1, s1^-1}.
+
+    This is the control that separates the two candidate explanations for
+    `Vol = 0`: is it the LENGTH, or is it POSITIVITY?  If mixed-sign words of
+    the same length are hyperbolic, length is not the culprit.
+    """
+    print("\n-- control: MIXED-SIGN words, same lengths --")
+    print(f"{'L':>3} {'words':>7} {'hyperbolic':>11} {'frac':>8} "
+          f"{'min vol':>12} {'max vol':>12}  brackets pion target?")
+    out = {}
+    for L in (4, 5, 6):
+        words = list(itertools.product(MIXED_GENS, repeat=L))
+        vols = [v for v in (closure_volume(w) for w in words)
+                if v is not None and v > HYP_EPS]
+        if not vols:
+            print(f"{L:>3} {len(words):>7} {0:>11} {0.0:>8.4f} "
+                  f"{'-':>12} {'-':>12}  no")
+            out[L] = None
+            continue
+        lo, hi = min(vols), max(vols)
+        brackets = lo <= PION_TARGET <= hi
+        print(f"{L:>3} {len(words):>7} {len(vols):>11} "
+              f"{len(vols)/len(words):>8.4f} {lo:>12.7f} {hi:>12.7f}  "
+              f"{'YES' if brackets else 'no'}")
+        out[L] = (len(vols), lo, hi, brackets)
+    return out
 
 
 def main() -> int:
@@ -140,6 +178,8 @@ def main() -> int:
     print("   the audit's independently-measured figure is 208 of 2044 -- "
           f"{'MATCH' if total_hyp == 208 and total == 2044 else 'MISMATCH'}")
 
+    mixed = mixed_sign_sweep()
+
     print("\n" + "=" * 72)
     print("VERDICT")
     print("=" * 72)
@@ -159,6 +199,23 @@ def main() -> int:
     print("   dictionary lengths are not braid word lengths, or the mass law")
     print("   does not read Vol off the closed braid.")
     print()
+    m6 = mixed.get(6)
+    if m6:
+        n6, lo6, hi6, br6 = m6
+        print("   AND IT IS POSITIVITY, NOT LENGTH.  At the pion's own length 6,")
+        print("   positive words give 0 of 64 hyperbolic while mixed-sign words")
+        print(f"   give {n6} of 4096, with volumes spanning {lo6:.7f} to {hi6:.7f}")
+        print(f"   -- a range that {'DOES' if br6 else 'does not'} bracket the "
+              f"pion target {PION_TARGET}.")
+        print("   Mixed-sign words are already hyperbolic at length 4 (4_1).")
+        print("   So the first of the three routes above is not merely possible;")
+        print("   it is DEMONSTRABLY AVAILABLE at the required length.")
+        print()
+        print("   NOT A RESULT: bracketing a target is not hitting it, and")
+        print("   choosing the nearest enumerated volume is exactly the")
+        print("   per-state fit this audit exists to avoid.  What is shown is")
+        print("   that the candidate space is non-empty, nothing more.")
+        print()
     print("   WHAT IT DOES NOT SAY.  It does not identify the chiral limit.")
     print("   A future reader will notice that m_pi = 0 is also what QCD gives")
     print("   in the chiral limit (GMOR: m_pi^2 f_pi^2 = -2 m_q <q-bar q>, the")
