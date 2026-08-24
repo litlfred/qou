@@ -30,6 +30,19 @@ therefore cannot meet L1 -- not as a matter of taste about float64, but
 arithmetically. Any producer that reports more than ~14 significant digits from
 it, or claims agreement "to 1 ppQ", is reporting its own rounding.
 
+AND THE CONSUMERS PUBLISH PAST THAT CEILING. The gap alone does not tell you
+whether it matters -- a witness storing SIX significant digits is untouched by a
+14-digit kernel. Measured over the committed witnesses of the four float64-only
+producers (`--consumers` census, run at the end of this probe):
+
+    native-5-strand-baryon        n= 25  max 18 digits   68% carry > 14
+    rho-k-h3a-gg-trajectory       n=106  max 17 digits   83% carry > 14
+    tr-m-q-hecke-seminormal       n= 65  max 18 digits   93% carry > 14
+    phase3-deuteron-tritium-...          no bare floats in data
+
+So three of the four publish three to four digits of their own rounding, stored
+as data. That is what scopes the migration -- not "float64 is bad".
+
 The exact route (`hoefsmit_mpmath.chi_lambda_of_word_sparse_mp`, PR #5648)
 carries the same word at full precision; Hoefsmit seminormal matrices hold <= 2
 nonzeros per row, so it costs O(dim^2 * |word| * nnz) rather than the dense
@@ -89,6 +102,61 @@ def _two_row_partitions(n: int, max_rows: int):
     return out
 
 
+
+# ── what the consumers actually PUBLISH ─────────────────────────────────
+#
+# The gap above is only half the question. A witness that stores SIX significant
+# digits is untouched by a 14-digit kernel; one that stores EIGHTEEN is
+# publishing four digits of its own rounding, as data. That distinction is what
+# should scope the migration -- not "float64 is bad".
+_CONSUMERS = ("native_5_strand_baryon", "phase3_deuteron_tritium_h_expansion",
+              "rho_k_h3a_gg_trajectory", "tr_m_q_hecke_seminormal")
+
+
+def _sig_digits(x: float) -> int:
+    """Significant digits in the shortest round-tripping repr of ``x``."""
+    import re
+    m = re.match(r"-?0*(\d+)\.?(\d*)(?:e[-+]?\d+)?$", repr(float(x)))
+    if not m:
+        return 0
+    return len((m.group(1).lstrip("0") + m.group(2)).rstrip("0")) or 1
+
+
+def _bare_floats(obj):
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k in ("durationMs", "computedAt"):   # ephemeral, not results
+                continue
+            yield from _bare_floats(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from _bare_floats(v)
+    elif isinstance(obj, float):
+        yield obj
+
+
+def consumer_census() -> None:
+    """Per consumer: how many published floats carry more than 14 digits?"""
+    import json
+    print("\nWhat the float64-only consumers PUBLISH "
+          "(the kernel determines ~14 digits):")
+    for w in sorted(_R.rglob("*.witness.json")):
+        try:
+            body = json.loads(w.read_text())
+        except Exception:  # noqa: BLE001
+            continue
+        if Path(str(body.get("scriptFile") or "")).stem not in _CONSUMERS:
+            continue
+        vals = list(_bare_floats(body.get("data", body)))
+        if not vals:
+            print(f"   {w.name:<50} no bare floats in data")
+            continue
+        over = sum(1 for v in vals if _sig_digits(v) > 14)
+        print(f"   {w.name:<50} n={len(vals):>4}  "
+              f"max_digits={max(_sig_digits(v) for v in vals):>2}  "
+              f">14 digits: {over} ({100 * over // len(vals)}%)")
+    print("   Digits past the 14th are not determined by the computation.")
+
 def main() -> int:
     q_exact = mp.mpf(Q_50_DIGIT_STR)
     q_f64 = float(q_exact)
@@ -124,6 +192,7 @@ def main() -> int:
                   f"  -> ~{int(-mp.log10(worst[1]))} good digits\n")
     print("L1 target is <= 1e-15 (1 ppQ). Every gap above exceeds it, so a "
           "quantity\ncomputed through this kernel cannot meet L1.")
+    consumer_census()
     return 0
 
 
