@@ -201,6 +201,26 @@ def chi_lambda_of_word_sparse_mp(sigmas, dim, word, n_gens_required: int):
     the ten irreps this is ~36 min (nnz/row = 1, as at dim=132) to ~73 min
     (nnz/row = 2, which the larger irreps carry), against ~1135 h dense.
 
+    PRIOR ART, found AFTER writing this and credited here rather than quietly:
+    `computations/hoefsmit_sparse_prototype_probe.py` (bean `qou-bk0q`, landed
+    2026-08-23) established the same structural fact first -- "at most 2
+    nonzeros per row: a diagonal entry plus, where a swap partner exists, one
+    symmetric off-diagonal pair", with measured densities of 1.31 % at dim 120
+    and 0.34 % at dim 462. It also notes the pairs form a partial MATCHING, so
+    the column updates cannot alias.
+
+    The two are COMPLEMENTARY, not duplicates. That probe attacks MEMORY in
+    float64 -- eleven dense generators at dim 7700 occupy 5.22 GB, which is
+    what hangs the He-4 atom of `rho_k_co_casimir_extended` -- and vectorises
+    the step into three numpy expressions. This routine attacks PRECISION: it
+    keeps mpmath end to end, where no vectorisation is available and the win
+    has to come from not materialising the product at all. Anyone extending
+    either should read both.
+
+    I should have found it before building this; a corpus grep for "sparse" +
+    "hoefsmit" would have. Recording that rather than presenting the structural
+    observation as new.
+
     ACCUMULATION ORDER is left-to-right, matching `chi_lambda_of_word_mp` and
     `mass_at_3A_proper.chi_lambda_of_word`. That is why the two agree exactly
     rather than merely closely, and it is worth preserving: mpmath addition is
