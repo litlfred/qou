@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-08-24T13:24:08Z
+updated_at: 2026-08-24T13:26:14Z
 ---
 
 Generalises the `alpha_high_precision` finding (`qou-l1gv`) from one file to its
@@ -68,3 +68,31 @@ try here.
 Per candidate: `git log` the constant's introducing commit, check whether it
 predates `5046347e53`, then run the producer and compare. Cheap for the three
 real candidates. Do NOT mass-run all 17.
+
+
+## Candidates CONFIRMED pre-flip (dates, 2026-08-24)
+
+    D migration landed          5046347e53   2026-08-16
+    both candidate constants    f9ad94d750   2026-08-01     (15 days earlier)
+
+      1.2999219630934102  multiterm_cost_he3_l6a4_probe_algebraic.py
+      3.74446989          sweeps/paper_six_term_isotope_sweep.py
+
+So both were calibrated under convention C and have had the ground moved under
+them. That upgrades them from "suspected" to **confirmed pre-flip**; what is
+still unmeasured is how far each one now disagrees with its own compute, which
+needs the producer run.
+
+**And `f9ad94d750` is the same commit that introduced `alpha_high_precision.py`
+and wrote α* ≈ 0.305807** (`qou-l1gv`). So this is not three unrelated files —
+it is **one 2026-08-01 landing whose constants were all calibrated in convention
+C**, with the 2026-08-16 migration moving the ground under the whole set. The
+one member already measured drifted **+14.74 %**.
+
+That sharpens the queue definition considerably: the candidate set is
+*constants introduced by `f9ad94d750` in files that import `z` from a
+D-migrated module*. Worth checking whether `f9ad94d750` touched other such
+files beyond the three found by the literal scan — a constant can be
+C-calibrated without being a bare decimal literal (it may be built from an
+expression), which the literal detector cannot see. **The 8-of-17 count is a
+floor, not a total.**
