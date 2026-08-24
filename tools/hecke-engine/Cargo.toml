@@ -53,6 +53,10 @@ required-features = ["clarabel-bigrational"]
 
 # Operator-selection LP (prop:operator-selection-lp) — MPFR JSON CLI.
 # Replaces the scipy HiGHS f64 path in pyhecke.lp_dual_solver at 50 dps.
+# "50 dps" is now the achieved accuracy, not just the arithmetic width:
+# until 2026-08-23 the solver tolerance was hardcoded 1e-12, so prec_bits
+# never reached termination and the residual sat at ~3.8e-16 whatever it was
+# asked for. See operator_selection_lp.rs and bean qou/ftuv.
 [[bin]]
 name = "clarabel-operator-selection-lp"
 path = "src/bin/clarabel_operator_selection_lp.rs"

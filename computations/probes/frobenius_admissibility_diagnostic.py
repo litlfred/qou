@@ -31,7 +31,12 @@ from pathlib import Path
 import numpy as np
 
 _ROOT = Path(__file__).resolve().parents[2]
-for p in ("tools/pyhecke/python", "tools/qou-substrate/python"):
+# `computations/substrate` was missing from this list, so the module-level
+# `pyhecke` import below succeeded and anything reaching for `q_parameter`
+# then died with `No module named 'q_parameter'` -- a path gap that reads as
+# a missing dependency. Bean `qou/ti1n`.
+for p in ("tools/pyhecke/python", "tools/qou-substrate/python",
+          "computations/substrate"):
     sys.path.insert(0, str(_ROOT / p))
 
 from pyhecke import gram, atom  # noqa: E402

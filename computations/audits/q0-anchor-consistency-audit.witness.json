@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T15:12:11.999743+00:00",
-  "commitSha": "53bcd56582cf1f33987b3b013be2801763384260",
+  "computedAt": "2026-08-24T14:52:50.744948+00:00",
+  "commitSha": "1a065f5a673b2adc067fed8698fb38b7c74d034b",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 3,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
@@ -30,10 +30,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -45,15 +44,15 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 947,
+      "Q0_OK": 946,
       "Q0_AMBIGUOUS": 1,
-      "Q0_AMBIGUOUS_NO_REASON": 15,
+      "Q0_AMBIGUOUS_NO_REASON": 14,
       "Q0_INDEPENDENT": 48,
-      "Q0_INDEPENDENT_NO_REASON": 0,
+      "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1642,
+      "Q0_ANCHOR_MISSING": 1644,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -148,6 +147,10 @@
         },
         {
           "witness": "all-nuclides-wedderburn-spectral-v2.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "alpha-5-lp-dual-crystal.witness.json",
           "detail": ""
         },
         {
@@ -488,10 +491,6 @@
         },
         {
           "witness": "bring-s4-elliptic-factor-genus-verify.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "alphaem-dilog-bloch-probe.witness.json",
           "detail": ""
         },
         {
@@ -1711,6 +1710,10 @@
           "detail": ""
         },
         {
+          "witness": "deuteron-real-sdp.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "deuteron_tr_M_symbolic.witness.json",
           "detail": ""
         },
@@ -2016,6 +2019,10 @@
         },
         {
           "witness": "he-nu-sdp-selfconjugate-candidate.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "he3-pairknot-composite-lp.witness.json",
           "detail": ""
         },
         {
@@ -6653,10 +6660,6 @@
           "detail": ""
         },
         {
-          "witness": "alpha-5-lp-dual-crystal.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "alpha-em-categorical-reidentification.witness.json",
           "detail": ""
         },
@@ -6770,6 +6773,10 @@
         },
         {
           "witness": "alpha-em-tau-correspondence.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "alphaem-dilog-bloch-probe.witness.json",
           "detail": ""
         },
         {
@@ -8441,10 +8448,6 @@
           "detail": ""
         },
         {
-          "witness": "he3-pairknot-composite-lp.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "he3-tower-charge-asymmetry.witness.json",
           "detail": ""
         },
@@ -9145,11 +9148,11 @@
           "detail": ""
         },
         {
-          "witness": "d14-theta-bar-side.witness.json",
+          "witness": "confinement-b3-enumeration-recheck-probe.witness.json",
           "detail": ""
         },
         {
-          "witness": "delta-lambda-closure-tl-support.witness.json",
+          "witness": "d14-theta-bar-side.witness.json",
           "detail": ""
         },
         {
@@ -10443,10 +10446,6 @@
           "detail": "anchor=ambiguous with no q0AnchorReason — states that the pin is undetermined, but not WHAT is undetermined, so nothing records how it could ever be resolved"
         },
         {
-          "witness": "deuteron-real-sdp.witness.json",
-          "detail": "anchor=ambiguous with no q0AnchorReason — states that the pin is undetermined, but not WHAT is undetermined, so nothing records how it could ever be resolved"
-        },
-        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "detail": "anchor=ambiguous with no q0AnchorReason — states that the pin is undetermined, but not WHAT is undetermined, so nothing records how it could ever be resolved"
         },
@@ -10995,6 +10994,12 @@
         {
           "witness": "muon-pin-stored-vs-live.witness.json",
           "detail": ""
+        }
+      ],
+      "Q0_INDEPENDENT_NO_REASON": [
+        {
+          "witness": "operator-selection-lp-symbolic-qq.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
         }
       ],
       "Q0_VALUE_MISSING": [

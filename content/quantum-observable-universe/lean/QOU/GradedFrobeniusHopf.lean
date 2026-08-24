@@ -95,39 +95,6 @@ structure SymDim1
 
 /-! ## §2  Channel separation from adjoint vanishing -/
 
-/-- **Theorem (Channel separation from adjoint vanishing).**
-
-    If `Hom(𝟙, Ad(A)) = 0` (the QOU adjoint vanishing axiom), then
-    the adjoint representation `Ad(A)` has no degree-0 (symmetric) component.
-
-    Proof: The degree-0 component of any representation `V` is
-    `Hom(𝟙, V)`.  If `V = Ad(A)` and `Hom(𝟙, Ad(A)) = 0`, then
-    the degree-0 component of `Ad(A)` is trivial.
-
-    Equivalently: `Ad(A) ≅ V₂` (spin-1, dim 3) lies entirely in the
-    degree-≥1 graded piece.
-
-    This IS the categorical channel separation:
-    - **Vector coupling** (symmetric channel, degree 0) → invisible to adjoint
-    - **Axial coupling** (standard channel, degree ≥ 1) → carries all non-trivial structure
-
-    LaTeX: connects to `\label{prop:brings-is-qou}` (item 2) -/
--- Ref: [lusztig1993]
-theorem adjoint_has_no_degree_zero
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (adjointObj : C)
-    (adj_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)) :
-    -- ⚠ The conclusion is the HYPOTHESIS, verbatim: this is a `P → P`, and
-    -- the trailing claim that it shows "the degree-0 (symmetric) component of
-    -- Ad(A) is trivial" is NOT proved here.  `adjointObj` is a bare `C` with
-    -- no graded structure, so it has no `symComponent` for the statement to be
-    -- about.  `GradedFrobeniusHopf` does carry one — the real statement is
-    -- expressible, but only once the adjoint object carries the grading too.
-    -- Bean `qou-fav8`.
-    Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
-  adj_vanishing
-
 /-- **Corollary**: In `Rep(SU_q(2))`, `Ad(A) ≅ V₂` (spin-1, dimension 3),
     which has no trivial (spin-0) sub-object.
 

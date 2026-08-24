@@ -301,7 +301,12 @@ if __name__ == "__main__":
     _G = _gram_matrix()
     _b3_nf = _nf_of_word([0, 1, 0, 1, 0, 1])
     _n_target = float(_nf_net(_b3_nf))
-    _lp = solve_operator_selection_lp(_t, _G, _n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    _lp = solve_operator_selection_lp(_t, _G, _n_target, backend="clarabel")
     _lp_rec = _lp.to_dict()
     # Merge the validator-required dual fields at top level (the
     # lp_dual_witness_validator scans for them there).
