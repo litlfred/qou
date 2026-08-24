@@ -23,6 +23,14 @@ treatment:
 it as the failure mode where *"a real claim hidden behind a tautology"* was
 *"repeatedly mis-called legit"* by heuristic triage.
 
+> **"Raises no candidate" means `flagged` and the ledger, not the whole audit
+> JSON.** Verified for all five: `flagged: 0`, `ledger: 0`. But
+> `phi-q-tower-jsj-bridge.lean` *does* appear in that JSON — as
+> `conjecture_graph.primary` (`TowerSummandRealization`), a **carrier record**,
+> which is derived from the Lean rather than asserted as a defect. A grep of the
+> JSON therefore hits the file without contradicting anything here. Its line
+> number moving `50 → 53` in this branch is the three import lines added below.
+
 ## The shared shape, and why wiring a detector on it would be wrong
 
 All five carry an **axiom shim**: a `Foo` carrier holding the content, a
