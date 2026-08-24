@@ -92,8 +92,31 @@ theorem statSign_sq_eq_one
   · rw [h]; ring
   · rw [h]; ring
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R)
+/-- **The trivial model — a `def`, not an `instance`, and not "faithful".**
+
+    Its docstring said *"Faithful instance. Carries the explicit research-grade
+    conjecture as a sorry."* Neither half was true. There is no `sorry`: it sets
+    `KLBasisElt := PUnit` and `statSign _ := 1`, so `kl_compatible_with_tau` is
+    discharged by `Or.inl rfl` on `1 = 1`. Every classical limit is bosonic
+    because there is one basis element and it was declared bosonic. A `sorry`
+    would at least be visible to `#print axioms`; this was not.
+
+    As an unconditional `instance` it made `statSign_klMap_pm_one` and
+    `statSign_sq_eq_one` unconditional theorems about a one-element KL basis.
+
+    **Note on the class, not the model.** `kl_compatible_with_tau` is
+    `∀ T, statSign (klMap T) = 1 ∨ statSign (klMap T) = -1`, which is
+    `statSign_pm_one (klMap T)` in *any* instance — the field is derivable from
+    its sibling, so it carries no conjectural content even when the data are
+    real. What the manuscript conjecture asserts (that the `q → 1` limit of the
+    KLR canonical basis is the Kazhdan–Lusztig basis, that the limit functor is
+    monoidal, and that it is compatible with `τ`) is not stated by any field
+    here. Restating the class is a separate change; recording the gap is not.
+
+    Demoted the same way as `ConfinementGradingCorrespondence.canonical`
+    (bean `qou-fngs`). Nothing consumed it: the class has no users outside this
+    file. -/
+def canonical (R : Type u) [CommRing R] (q : R)
     [H : HeckeAnyonicSubstrate R q]
     [C : CrystalGraphRealization R q] :
     KazhdanLusztigClassicalLimit R q where
@@ -101,7 +124,8 @@ instance canonical (R : Type u) [CommRing R] (q : R)
   klMap _ := PUnit.unit
   statSign _ := 1
   statSign_pm_one _ := Or.inl rfl
-  -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit (§3b-cond conjectural-class instance; sorry = the conjecture)
+  -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit (§3b-cond conjectural class;
+  --      discharged here by `statSign _ := 1`, not by a `sorry` and not by the conjecture)
   kl_compatible_with_tau _ := Or.inl rfl
 
 end KazhdanLusztigClassicalLimit

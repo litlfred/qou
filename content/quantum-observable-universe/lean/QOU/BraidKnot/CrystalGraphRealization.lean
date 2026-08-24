@@ -90,8 +90,38 @@ theorem nodeOf_isHighestWeight
     IsHighestWeight (C.nodeOf T) :=
   fun i => C.crystal_realises T i
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R) :
+/-- **The trivial model — a `def`, not an `instance`, and not "faithful".**
+
+    Its docstring said *"Faithful instance. Carries the explicit research-grade
+    conjecture as a sorry."* Neither half was true. There is no `sorry`: it sets
+    `CrystalNode := PUnit` and `raising _ _ := none`, so `crystal_realises` is
+    discharged by `rfl` on `none = none`. Every node here is highest-weight
+    because there are no raising operators, not because the Brundan–Kleshchev
+    correspondence holds. A `sorry` would at least be visible to
+    `#print axioms`; this was not.
+
+    As an unconditional `instance` it was the root of the conjectural chain in
+    this directory: `KazhdanLusztigClassicalLimit`, `SymmetricCrystalPairProduction`,
+    `RootOfUnityMTCTruncation`, `CemeteryGroupEmergence` and
+    `ConfinementGradingCorrespondence` all take `[CrystalGraphRealization R q]`
+    as an upstream input, so typeclass resolution supplied the one-point crystal
+    for every `R` and `q`, and `nodeOf_highest_weight` / `nodeOf_isHighestWeight`
+    read as unconditional facts about a crystal with one node and no edges.
+
+    Demoted the same way as `ConfinementGradingCorrespondence.canonical` and
+    `SpectralSequence.canonicalTrivial` (bean `qou-fngs`). The model stays
+    available and must now be named, so a reader of a downstream theorem can see
+    whether the hypothesis was discharged by a real crystal or by `PUnit`.
+    `CrystalRMatrixSubLemma.canonical` already names it explicitly
+    (`let C := CrystalGraphRealization.canonical R q`) and is unaffected; no
+    other file consumes it, and nothing in the corpus applies this class's
+    theorems at a concrete `R`, `q`.
+
+    **Still open:** `conj:crystal-graph-realization` itself — that GS canonical
+    basis elements `T_w` correspond to indecomposable graded projective KLR
+    modules realising Kashiwara highest-weight vectors of `Cryst(𝔰𝔩_n)`.
+    Nothing in this corpus supplies a crystal with a nonempty edge set. -/
+def canonical (R : Type u) [CommRing R] (q : R) :
     CrystalGraphRealization R q where
   NormalForm := PUnit
   CrystalNode := PUnit

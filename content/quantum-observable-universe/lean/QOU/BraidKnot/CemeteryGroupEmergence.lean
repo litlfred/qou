@@ -71,12 +71,35 @@ theorem killSwitch_zero_mul
     r * E.tauImage T = 0 := by
   rw [E.monotone_under_extension T h]; ring
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R)
+/-- **The trivial model — a `def`, not an `instance`, and not "faithful".**
+
+    Its docstring said *"Faithful instance. Carries the explicit research-grade
+    conjecture as a sorry."* Neither half was true. There is no `sorry`: it sets
+    `tauImage _ := 0`, so `monotone_under_extension` is discharged by `rfl` on
+    `0 = 0` and the `inCemetery` hypothesis is never used. The observation
+    functor annihilates cemetery nodes here because it annihilates everything.
+    A `sorry` would at least be visible to `#print axioms`; this was not.
+
+    `inCemetery v := ∃ T, nodeOf T = v` is the one non-degenerate field, and it
+    is the field the conjecture does not turn on: monotonicity is vacuous
+    against a `τ` that is identically zero.
+
+    As an unconditional `instance` it made `tauImage_eq_zero_of_inCemetery` and
+    `killSwitch_zero_mul` — the kill-switch property the GS reduction engine is
+    supposed to prune with — unconditional theorems about the zero map.
+
+    Demoted the same way as `ConfinementGradingCorrespondence.canonical`
+    (bean `qou-fngs`). Nothing consumed it: the class has no users outside this
+    file.
+
+    **Still open:** `conj:cemetery-group-emergence` — that `Z_n = ker τ` is
+    monotone under crystal extension for a `τ` that is not identically zero. -/
+def canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] : CemeteryGroupEmergence R q where
   inCemetery v := ∃ T : C.NormalForm, C.nodeOf T = v
   tauImage _ := 0
-  -- Ref: [manuscript] conj:cemetery-group-emergence (§3b-cond conjectural-class instance; sorry = the conjecture)
+  -- Ref: [manuscript] conj:cemetery-group-emergence (§3b-cond conjectural class;
+  --      discharged here by `tauImage := 0`, not by a `sorry` and not by the conjecture)
   monotone_under_extension _ _ := rfl
 
 end CemeteryGroupEmergence
