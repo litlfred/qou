@@ -56,7 +56,7 @@ if str(_HERE) not in sys.path:
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
 from q_parameter import Q as q0, HA as h
-from mass_at_3A_proper import _cached_seminormal
+from mass_at_3A_proper import _cached_seminormal, Q0_PROTON
 
 UNIT_TOL = 1e-9
 LEADING_DEG = 107.19   # trace-weighted VSEPR leading angle (on main)
@@ -73,7 +73,7 @@ def _phases(M):
 def main() -> None:
     # Witness built up front so durationMs covers the compute (per review).
     w = WitnessBuilder("h2o-angle-knot-correction", engine="python")
-    sigmas, dim, _ = _cached_seminormal((2, 1))   # V_(2,1), dim 2
+    sigmas, dim, _ = _cached_seminormal((2, 1), Q0_PROTON)   # V_(2,1), dim 2
     s1, s2 = sigmas[0], sigmas[1]
     I = np.eye(dim)
     s2inv = s2 - h * I                              # σ⁻¹ = σ − h (σ²=hσ+1)

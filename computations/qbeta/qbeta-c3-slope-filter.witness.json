@@ -5,8 +5,8 @@
   "tier": "error propagation on committed values (no fit)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-15T12:08:52.153723+00:00",
-  "commitSha": "6f5e8b4b98f3691be017d914ea539a93e6e6782d",
+  "computedAt": "2026-08-24T13:34:20.896994+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_c3_slope_filter.py",
@@ -15,7 +15,7 @@
     {
       "name": "amplification_cancels_in_the_difference",
       "passed": true,
-      "detail": "1666433.8x cancellation"
+      "detail": "1654986.1x cancellation"
     },
     {
       "name": "slope_relative_sigma_below_100ppm",
@@ -40,19 +40,19 @@
   "allPassed": true,
   "result": {
     "dc3_dQbeta_proton": "2068767.7903873",
-    "dc3_dQbeta_muon": "2068766.5489532",
-    "d_swing_dQbeta": "-1.241434108586",
-    "cancellation_factor": "1666433.82527",
+    "dc3_dQbeta_muon": "2068766.540366",
+    "d_swing_dQbeta": "-1.2500212511156",
+    "cancellation_factor": "1654986.09607",
     "c3_proton": "-2.069342577115168",
-    "c3_muon": "-2.020200235021255",
-    "swing": "0.04914234209391267",
-    "dq_anchor_spread": "1.280279976769e-8",
-    "slope_dc3_dq": "3838405.894461604",
+    "c3_muon": "-2.019860311874005",
+    "swing": "0.04948226524116237",
+    "dq_anchor_spread": "1.289135823909e-8",
+    "slope_dc3_dq": "3838405.87806478",
     "sigma_c3_value": "1.26194835214",
-    "sigma_swing": "7.57274806237e-7",
+    "sigma_swing": "7.6251296318e-7",
     "relative_sigma_value_pct": "60.983056",
     "relative_sigma_slope_ppm": "15.409823",
-    "slope_sharper_by": "39574.14399"
+    "slope_sharper_by": "39574.14392"
   },
   "context": {
     "axis": "front triage option C \u2014 an observable avoiding the 1/u^3 lever",

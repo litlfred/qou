@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T19:00:15.913850+00:00",
-  "commitSha": "5eb7628b913150f39406abed6efd2bb2b51020b7",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T08:47:19.968431+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "c6_c10_closed_forms_exact_at_silver_ratio",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 11,
   "computation": "qbeta-c6-c10-crossanchor-falsification",
   "scriptFile": "qbeta_c6_c10_crossanchor_falsification.py",
   "scriptHash": "de23260f4324",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,10 +50,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

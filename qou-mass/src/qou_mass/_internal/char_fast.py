@@ -49,7 +49,7 @@ import sympy as sp
 warnings.filterwarnings("ignore", category=UserWarning)
 sys.path.insert(0, str(Path(__file__).parent))
 
-from mass_at_3A_proper import _cached_seminormal
+from mass_at_3A_proper import _cached_seminormal, Q0_PROTON
 
 Q_SYM = sp.Symbol("q")
 
@@ -195,7 +195,7 @@ if __name__ == "__main__":
           f"{'t_fast (ms)':>12}")
     t_total = time.time()
     for shape in parts:
-        _, dim, _ = _cached_seminormal(shape)
+        _, dim, _ = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         t0 = time.time()
@@ -220,7 +220,7 @@ if __name__ == "__main__":
     # Sym and alt only (small, fast)
     print(f"\n  {'partition':>14} {'dim':>5} {'χ (fast)':>14} {'t (ms)':>8}")
     for shape in [(12,), (1,) * 12]:
-        _, dim, _ = _cached_seminormal(shape)
+        _, dim, _ = _cached_seminormal(shape, Q0_PROTON)
         t0 = time.time()
         chi = chi_lambda_fast(shape, word)
         dt = (time.time() - t0) * 1000
@@ -229,7 +229,7 @@ if __name__ == "__main__":
 
     # Mid-sized: (6, 6)
     shape = (6, 6)
-    _, dim, _ = _cached_seminormal(shape)
+    _, dim, _ = _cached_seminormal(shape, Q0_PROTON)
     t0 = time.time()
     chi = chi_lambda_fast(shape, word)
     dt = (time.time() - t0) * 1000

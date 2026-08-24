@@ -170,6 +170,21 @@ def substrate_ladder_quantities(q: mpf) -> dict:
     hbar_q = (q - 1) / q
     b = mpsqrt((h ** 2 + 3) / (h ** 2 + 4))
     u = b * hbar_q ** 2
+    # DELIBERATELY convention C, exactly as `markov_parameter` above — see its
+    # docstring for the full reason. Restated HERE because this is a SECOND,
+    # independent inline spelling of the same value: a reader who arrives at
+    # this function alone sees a bare C `z` with no note, and the standing
+    # instruction is to migrate C to D. Doing that here would be WRONG.
+    # `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the C-frame ladder and
+    # the mass channel's three-row forcing mutually exclusive, so substituting
+    # z_D into this ladder is not a valid move — the ladder must be RE-DERIVED
+    # (bean `qou-cds1`), which is research, not cleanup.
+    #
+    # Not replaced by a call to `markov_parameter(q)` either, tempting as that
+    # is for keeping one documented site: the two spellings are algebraically
+    # equal but NOT bit-equal — `1/(√q + 1/√q)` against `√q/(1+q)` differ by
+    # 1.6e-61 relative at 60 dps — and this is the one ladder that must not be
+    # perturbed by a substitution, however small.
     z = 1 / (sq + 1 / sq)
     alpha = (z - 1) * h / 2
     Q_A_over_me = mpfabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)

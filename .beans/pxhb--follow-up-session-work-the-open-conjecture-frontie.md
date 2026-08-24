@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-02T17:04:06Z
-updated_at: 2026-07-02T17:25:08Z
+updated_at: 2026-08-19T14:22:31Z
 ---
 
 ## Triage 2026-08-07 — all three named children are CLOSED; residual is 2 items
@@ -75,3 +75,14 @@ proposing an `η²`-profile identification should read the 07-17 refutation firs
 single-`𝔙` assembly is *answered* (refuted scope-(a)), not open. The `Im 𝔙` Q_β
 kernel item stands as recorded, still gated on *deriving* the Habiro/SW-residue
 prolongation symbol (fitting Φ₂ remains the forbidden seventh ansatz).
+
+## Triage 2026-08-19 (fibre workplan) -- the residual is now four named options
+
+Re-triaged this axis against what the qou-cds1 arc established (observable level DEGENERATE: Im(q0)=0 => real weights => real trace => Im frakV == 0, so any live frakV is fibre-level). Options written up in docs/audits/2026-08-19-frakv-fibre-workplan-options.md and beaned:
+
+ qou-jqjc  F  witness machine-surface repair (assertions:[] + allPassed)   -- cheapest, independent
+ qou-e58e  D  q-parameterise the atom word builder => tr_M(q0^-1)          -- unblocks the rest
+ qou-ztod  A  bridge CyclicFaddeevPhi(N=4) to the zeta4 analytic model     -- both halves already sorry-free
+ qou-sglq  E  re-scope the four "Q_beta is bar-odd" corpus sites
+
+Not beaned, deliberately: NZ/A-polynomial (option C) is real but does not become concrete until qou-e58e lands; Habiro/cyclotomic (option B) routes through the GATED c_k Habiro element and is NOT recommended now. Pre-existing todos 5lcg (zeta4-residue Lean certificate + surviving cubic) and pusy (zeta4 character-parity prune, generic R) remain the Lean-side complements to qou-ztod and are NOT duplicated by it.

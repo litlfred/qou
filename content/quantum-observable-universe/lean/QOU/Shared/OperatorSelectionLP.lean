@@ -54,7 +54,8 @@ class OperatorSelectionLPContext where
   /-- LP-active set: the indices `i` with strictly positive dual
       variable, `A* = {i : y*_i > 0}`. -/
   A_star : Finset (Fin d)
-  /-- Strong-duality identity: `Σ t_i · x*_i = n_target · y_0*`. -/
+  /-- Strong-duality identity: `Σ t_i · x*_i = n_target · y_0*`.
+      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
   strong_duality :
     (Finset.univ.sum fun i : Fin d => t i * x_star i)
       = n_target * y_0_star

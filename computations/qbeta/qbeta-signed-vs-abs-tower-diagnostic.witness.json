@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:00:25.325659+00:00",
-  "commitSha": "5eb7628b913150f39406abed6efd2bb2b51020b7",
+  "computedAt": "2026-08-24T08:47:44.236599+00:00",
+  "commitSha": "971e1e83c30cd9d6d4a146fb573633973a74ce61",
   "assertions": [
     {
       "name": "phi_q_signed_differs_from_phi_q_abs_at_delta_scale",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 336,
+  "durationMs": 255,
   "computation": "qbeta-signed-vs-abs-tower-diagnostic",
   "scriptFile": "qbeta_signed_vs_abs_tower_diagnostic.py",
   "scriptHash": "421b94c797b0",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

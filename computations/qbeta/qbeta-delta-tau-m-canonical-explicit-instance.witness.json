@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T19:00:20.207048+00:00",
-  "commitSha": "5eb7628b913150f39406abed6efd2bb2b51020b7",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T13:26:14.754998+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "delta_tau_M_canonical_explicit_vanish_at_one",
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 9,
   "computation": "qbeta-delta-tau-m-canonical-explicit-instance",
   "scriptFile": "qbeta_delta_tau_M_canonical_explicit_instance.py",
   "scriptHash": "ee8bb8741555",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,10 +35,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

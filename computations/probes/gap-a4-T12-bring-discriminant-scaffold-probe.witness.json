@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
-      "source": "Brioschi discriminant Δ(x^5 + bx + c) = 256·b^5 + 3125·c^4 matches the companion-matrix product Δ = a^{2n-2}·Π_{i<j}(r_i − r_j)^2 to 50 dps."
+      "source": "Brioschi discriminant \u0394(x^5 + bx + c) = 256\u00b7b^5 + 3125\u00b7c^4 matches the companion-matrix product \u0394 = a^{2n-2}\u00b7\u03a0_{i<j}(r_i \u2212 r_j)^2 to 50 dps."
     },
     {
       "name": "delta_at_alpha_0_equals_800000",
@@ -18,7 +18,7 @@
       "expected": 800000.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "Bring form y^5 + 5y + α at α=0 has discriminant Δ = 256·5^5 = 800000, confirming the base point of the Bring family is non-degenerate."
+      "source": "Bring form y^5 + 5y + \u03b1 at \u03b1=0 has discriminant \u0394 = 256\u00b75^5 = 800000, confirming the base point of the Bring family is non-degenerate."
     }
   ],
   "allPassed": true,
@@ -49,7 +49,7 @@
     ],
     "reproduce": "python3 -u computations/probes/gap_a4_T12_bring_discriminant_scaffold_probe.py"
   },
-  "description": "GAP-A-4 T12 — Bring quintic discriminant scaffold.  Verifies the Brioschi closed-form 256·b^5 + 3125·c^4 against the numerical companion-matrix discriminant, documents the Bring form's discriminant structure (Δ = 800000 + 3125·α^4), and closes the T9 follow-up triple by pinning the classical scaffold.  No h-deformation derivation proposed.",
+  "description": "GAP-A-4 T12 \u2014 Bring quintic discriminant scaffold.  Verifies the Brioschi closed-form 256\u00b7b^5 + 3125\u00b7c^4 against the numerical companion-matrix discriminant, documents the Bring form's discriminant structure (\u0394 = 800000 + 3125\u00b7\u03b1^4), and closes the T9 follow-up triple by pinning the classical scaffold.  No h-deformation derivation proposed.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
   "parameters": {
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
@@ -67,21 +67,24 @@
       "expected_closed": "256 b^5 + 3125 c^4"
     },
     "bring_form_structure": {
-      "bring_form": "y^5 + 5y + α",
-      "discriminant_alpha": "Δ = 800000 + 3125 α^4",
+      "bring_form": "y^5 + 5y + \u03b1",
+      "discriminant_alpha": "\u0394 = 800000 + 3125 \u03b1^4",
       "delta_at_alpha_0": 800000,
-      "degenerate_locus": "α^4 + 256 = 0  (4 complex roots)"
+      "degenerate_locus": "\u03b1^4 + 256 = 0  (4 complex roots)"
     },
     "h_deformation_open_question": {
-      "open_question": "Does an icosahedral q-deformation of the Bring discriminant have h⁴ coefficient = −3/4 at the substrate q_0?",
+      "open_question": "Does an icosahedral q-deformation of the Bring discriminant have h\u2074 coefficient = \u22123/4 at the substrate q_0?",
       "scaffold_only": true,
       "h_coefficient_derivation_proposed": false,
       "prerequisites_for_pursuit": [
         "q-Klein invariants from T11 open follow-up",
         "q-analogue of the Hermite icosahedral resolvent"
       ],
-      "tractability": "Substantial — ~1000+ lines combined symbolic+numeric"
+      "tractability": "Substantial \u2014 ~1000+ lines combined symbolic+numeric"
     },
-    "synthesis_verdict": "T12 closes the T9 follow-up triple (T10 McKay-character, T11 Klein J-invariant, T12 Bring discriminant) by pinning the classical Bring quintic scaffold: (a) Brioschi-form discriminant Δ(x^5 + bx + c) = 256·b^5 + 3125·c^4 verified via companion-matrix numerical agreement at (b,c) = (2,3); (b) Bring-form Δ = 800000 + 3125·α^4 with degenerate locus α^4 + 256 = 0 (4 ramification points on the icosahedral covering). The h-deformation question stays OPEN as a scaffold per formalize-first discipline — pursuing it requires both the q-Klein invariants from T11's open follow-up AND a q-analogue of the Hermite icosahedral resolvent, each a substantial standalone project."
-  }
+    "synthesis_verdict": "T12 closes the T9 follow-up triple (T10 McKay-character, T11 Klein J-invariant, T12 Bring discriminant) by pinning the classical Bring quintic scaffold: (a) Brioschi-form discriminant \u0394(x^5 + bx + c) = 256\u00b7b^5 + 3125\u00b7c^4 verified via companion-matrix numerical agreement at (b,c) = (2,3); (b) Bring-form \u0394 = 800000 + 3125\u00b7\u03b1^4 with degenerate locus \u03b1^4 + 256 = 0 (4 ramification points on the icosahedral covering). The h-deformation question stays OPEN as a scaffold per formalize-first discipline \u2014 pursuing it requires both the q-Klein invariants from T11's open follow-up AND a q-analogue of the Hermite icosahedral resolvent, each a substantial standalone project."
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

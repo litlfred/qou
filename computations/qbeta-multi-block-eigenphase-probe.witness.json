@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:00:52.399756+00:00",
-  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
+  "computedAt": "2026-08-23T21:17:41.935994+00:00",
+  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
   "assertions": [
     {
       "name": "q0_stability_test_completed",
@@ -18,7 +18,7 @@
   "computation": "qbeta-multi-block-eigenphase-probe",
   "scriptFile": "qbeta_multi_block_eigenphase_probe.py",
   "scriptHash": "4b68821825e7",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,15 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta_multi_block_eigenphase_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta_multi_block_eigenphase_probe.py"
   },
   "description": "Q_β bridge experiment #3: multi-block eigenphase weighted by fundamental-rep quantum dimensions (informed by PR #1521's fundamental-rep lesson). Tests q₀-stability across canonical and stale q₀ pins. Discipline lock: q₀-drift > 0.01% rules the mechanism OUT (same criterion as the 6 prior bridge mechanisms).",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",

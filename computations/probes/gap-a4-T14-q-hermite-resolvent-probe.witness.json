@@ -18,7 +18,7 @@
       "expected": 803125.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "Δ_Bring(α=1) = 256·5^5 + 3125·1^4 = 800000 + 3125 = 803125. Non-zero ⇒ non-degenerate quintic ⇒ Hermite resolvent applies."
+      "source": "\u0394_Bring(\u03b1=1) = 256\u00b75^5 + 3125\u00b71^4 = 800000 + 3125 = 803125. Non-zero \u21d2 non-degenerate quintic \u21d2 Hermite resolvent applies."
     }
   ],
   "allPassed": true,
@@ -39,7 +39,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "GAP-A-4 T14 — q-Hermite icosahedral resolvent candidate.  Inherits T13's cusp divergence obstruction (Δ_modular built from E_4, E_6 which diverge at q = 1).  REFUTED at expansion-point level.  8th candidate cross-algebra functor refuted in the T4-T14 arc.",
+  "description": "GAP-A-4 T14 \u2014 q-Hermite icosahedral resolvent candidate.  Inherits T13's cusp divergence obstruction (\u0394_modular built from E_4, E_6 which diverge at q = 1).  REFUTED at expansion-point level.  8th candidate cross-algebra functor refuted in the T4-T14 arc.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
@@ -56,11 +56,14 @@
       "classical_setup_verified": true
     },
     "q_hermite_obstruction": {
-      "inheritance_chain": "q-Hermite resolvent built from Klein invariants (T11) + modular discriminant Δ(q) = (E_4^3 − E_6^2)/1728 (T13). Δ inherits T13's cusp divergence ⇒ q-Hermite inherits it too.",
+      "inheritance_chain": "q-Hermite resolvent built from Klein invariants (T11) + modular discriminant \u0394(q) = (E_4^3 \u2212 E_6^2)/1728 (T13). \u0394 inherits T13's cusp divergence \u21d2 q-Hermite inherits it too.",
       "expansion_point_obstruction": true,
-      "verdict": "q-Hermite resolvent candidate REFUTED at expansion-point level. 8th candidate cross-algebra functor refuted (after T5×3, T7, T8, T10, T13). The h⁴ obstruction stays structurally OPEN.",
-      "structural_conclusion": "All q-modular / icosahedral-algebraic routes that pull back through q = 1 as the h = 0 base point share the same cusp obstruction.  The Borromean h⁴ = −3/4 is a polynomial coefficient, NOT a transcendental q-series coefficient, so the q-modular-form direction is structurally mismatched."
+      "verdict": "q-Hermite resolvent candidate REFUTED at expansion-point level. 8th candidate cross-algebra functor refuted (after T5\u00d73, T7, T8, T10, T13). The h\u2074 obstruction stays structurally OPEN.",
+      "structural_conclusion": "All q-modular / icosahedral-algebraic routes that pull back through q = 1 as the h = 0 base point share the same cusp obstruction.  The Borromean h\u2074 = \u22123/4 is a polynomial coefficient, NOT a transcendental q-series coefficient, so the q-modular-form direction is structurally mismatched."
     },
-    "synthesis_verdict": "T14 refutes the q-Hermite icosahedral resolvent candidate cross-algebra functor at the expansion-point level.  The Hermite resolvent is built from the Klein invariants (T11) AND the modular discriminant Δ(q) = (E_4^3 − E_6^2)/1728 — which T13 showed diverges at q = 1 (the natural h = 0 base point).  Therefore the q-Hermite resolvent inherits T13's cusp obstruction.  Classical sanity verified: at α = 1, the real root of y^5 + 5y + 1 is computed to 40-digit precision and the Bring discriminant Δ = 803125 ≠ 0 confirms non-degeneracy.  8th candidate cross-algebra functor refuted (after T5×3, T7, T8, T10, T13).  STRUCTURAL CONCLUSION: all q-modular / icosahedral-algebraic routes that pull back through q = 1 as the h = 0 base point share the same cusp obstruction.  The Borromean h⁴ = −3/4 is a POLYNOMIAL coefficient — NOT a transcendental q-series coefficient — so the entire q-modular-form direction is STRUCTURALLY MISMATCHED to the h⁴ obstruction.  The remaining open directions point AWAY from q-modular forms entirely (e.g. Bring quintic discriminant locus as a non-modular algebraic variety; or a genuinely new mechanism linking the polynomial reference to a different categorical object)."
-  }
+    "synthesis_verdict": "T14 refutes the q-Hermite icosahedral resolvent candidate cross-algebra functor at the expansion-point level.  The Hermite resolvent is built from the Klein invariants (T11) AND the modular discriminant \u0394(q) = (E_4^3 \u2212 E_6^2)/1728 \u2014 which T13 showed diverges at q = 1 (the natural h = 0 base point).  Therefore the q-Hermite resolvent inherits T13's cusp obstruction.  Classical sanity verified: at \u03b1 = 1, the real root of y^5 + 5y + 1 is computed to 40-digit precision and the Bring discriminant \u0394 = 803125 \u2260 0 confirms non-degeneracy.  8th candidate cross-algebra functor refuted (after T5\u00d73, T7, T8, T10, T13).  STRUCTURAL CONCLUSION: all q-modular / icosahedral-algebraic routes that pull back through q = 1 as the h = 0 base point share the same cusp obstruction.  The Borromean h\u2074 = \u22123/4 is a POLYNOMIAL coefficient \u2014 NOT a transcendental q-series coefficient \u2014 so the entire q-modular-form direction is STRUCTURALLY MISMATCHED to the h\u2074 obstruction.  The remaining open directions point AWAY from q-modular forms entirely (e.g. Bring quintic discriminant locus as a non-modular algebraic variety; or a genuinely new mechanism linking the polynomial reference to a different categorical object)."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

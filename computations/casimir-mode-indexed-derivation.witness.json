@@ -42,7 +42,7 @@
     ],
     "reproduce": "python3 -u computations/casimir_mode_indexed_derivation.py"
   },
-  "description": "Derivation attempt under the proposed mode-indexed-vacuum axiom: ε_n = ε · [n]_q.  Derivation chain follows standard Casimir steps with [n]_q substituted for n.  At Step 4 (regularization), three candidate q-zeta values are tested.  If they AGREE within 1%, the derivation is forced and we have a real result.  If they DISAGREE by > 1%, the regularization choice is the actual open question and the prefactor is NOT derived — only fit by choosing one regularization.",
+  "description": "Derivation attempt under the proposed mode-indexed-vacuum axiom: \u03b5_n = \u03b5 \u00b7 [n]_q.  Derivation chain follows standard Casimir steps with [n]_q substituted for n.  At Step 4 (regularization), three candidate q-zeta values are tested.  If they AGREE within 1%, the derivation is forced and we have a real result.  If they DISAGREE by > 1%, the regularization choice is the actual open question and the prefactor is NOT derived \u2014 only fit by choosing one regularization.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
     "substrate_q": "1.10997858275138080759166909561076887987449912187357763605672",
@@ -62,7 +62,7 @@
         "force_rel_residue": "0.0861535227665562997252099712723338768483578951349263084566345"
       },
       {
-        "regularization": "(b) Carlitz -β_4^q/4       template-sub",
+        "regularization": "(b) Carlitz -\u03b2_4^q/4       template-sub",
         "zeta_q_neg_3_value": "0.00686153181715256145039947714794077662988668734236224154164258",
         "energy_prefactor_c_q": "0.0112867674367972641309258818334267758618820338586624743037243",
         "energy_prefactor_target": "0.0137077838904018869706034597220502099101579158433899869811297",
@@ -72,7 +72,7 @@
         "force_rel_residue": "0.176616181941692625952062742247106804413597518916531015002890"
       },
       {
-        "regularization": "(c) Cesàro at k=3.01      analytic-continuation",
+        "regularization": "(c) Ces\u00e0ro at k=3.01      analytic-continuation",
         "zeta_q_neg_3_value": "-0.0000239728942516649525251287480274909899694642061270750411513943",
         "energy_prefactor_c_q": "0.0000394338304355137002898768072457372301579352288885267553245313",
         "energy_prefactor_target": "0.0137077838904018869706034597220502099101579158433899869811297",
@@ -85,7 +85,10 @@
     "agreement_assessment": {
       "spread_relative_to_target": "0.91096972992324390597177457896436720435530640012982468660519820218405",
       "derivation_succeeded": false,
-      "verdict": "NOT DERIVED — regularizations disagree, choice = free parameter"
+      "verdict": "NOT DERIVED \u2014 regularizations disagree, choice = free parameter"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.substrate_q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

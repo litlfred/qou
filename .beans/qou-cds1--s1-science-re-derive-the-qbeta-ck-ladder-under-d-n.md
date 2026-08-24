@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T13:58:35Z
+updated_at: 2026-08-23T16:53:11Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1340,3 +1340,77 @@ not extend.
 Scope-(b): structural exclusion citing a proved invariant. The argument never
 reads `z`'s formula, so it holds for every Markov parameter with unbounded
 phase — C and D alike.
+
+Fibre follow-on beaned 2026-08-19, corrected 2026-08-23: the D-frame
+re-derivation stays blocked behind the imaginary channel, and the four blocking
+issues have owners -- qou-jqjc (witness surface, FIXED), qou-ztod (the two
+sorry-free zeta4 artifacts do not touch), qou-sglq (four sites assert
+bar-oddness), and qou-e58e.
+
+CORRECTION to what I first wrote here: I recorded qou-e58e as "tr_M(q0^-1) not
+computable: the bar-parity blocker is TOOLING, not mathematics". THE PREMISE WAS
+WRONG. tr_M(q0^-1) already computed; a stale docstring said otherwise and I
+believed it without checking. There was no tooling blocker to remove. Do not
+plan around that sentence.
+
+Workplan: docs/audits/2026-08-19-frakv-fibre-workplan-options.md. cds1 itself
+remains open and unclosed, and this branch does not touch it.
+
+
+---
+
+## 2026-08-23 (2) — owner reaffirmed "D is convention, excise C"; the AUTOMATED path is 0-for-2 here
+
+Branch `claude/excise-convention-c-2026-08-23`.
+
+Acting on the directive. Measured first, per the AGENTS note that the C surface
+is UNMEASURED rather than clear.
+
+**Current live-C surface: 32 actionable sites** (`convention-c-producer-audit.py`,
+AST-verified). Of those, `convention-c-producer-migrate.py --dry-run` was willing
+to rewrite exactly **2**, and **both rewrites are wrong**:
+
+1. **`qbeta_zcd_classical_coincidence_probe.py:213` — fails LOUDLY.** Binds
+   `markovZ_prime` (not C-named, so the per-site name guard missed it) purely to
+   assert `markovZ_prime - z_C(q) == 0`. Rewriting took the probe from
+   **8/8 exit 0** to **FAILED 1/8 exit 1**, printing the self-refuting
+   `1/(sqrt q + 1/sqrt q) = q**3/(q**2 + 1) = z_C`. Class "deliberate
+   comparison -> LEAVE IT": sweeping it destroys the instrument that measures
+   the excision.
+
+2. **`qbeta_h_frame_rungs_probe.py:73` — passes SILENTLY.** Binds the z feeding
+   the ladder phase `alpha = (z-1)*h/2` — the one substitution
+   `decayLadder_zC_threeRow_ne_zero` proves is not a migration. After the
+   rewrite the probe **still exits 0 with all 3 assertions passing**, while
+   silently moving **14 mathematical fields of its committed witness**:
+
+       h^3 rung   -sqrt(3)/64      ->  1/16 - sqrt(3)/64     (SIGN CHANGE)
+       h^6 rung   -6781/2949120    ->  -25381/2949120 - 25*sqrt(3)/12288
+
+   The h^6 move is rational -> irrational, contradicting the probe's own
+   headline finding ("h^3 is nonzero and purely irrational") while reporting
+   success.
+
+**Fixed.** Two file-level guards added to the migrate script, each justified by
+the measurement above and regression-tested:
+
+  G1  file references a deliberately C-named symbol -> comparison, needs a human
+  G2  the target feeds `(z-1)*h/2` -> ladder phase, re-derivation required
+
+Verified independent (S4): G1 does not catch the ladder file, G2 does not catch
+the comparison file. Neither alone is sufficient. Auto-migratable set for
+`computations/qbeta/` is now **0**.
+
+Evidence + regression test:
+`computations/qbeta/qbeta_convention_c_migration_safety_probe.py`, 4/4.
+
+**Still open, and this is the bean's actual work:** the decay channel's excision
+is a RE-DERIVATION of the ladder under D, not a substitution. Untouched here.
+
+**Also open, and NOT covered by this finding:** the ~30 actionable sites OUTSIDE
+the decay channel (alpha/, delta_lambda*, per_braid_tower, hydrogen_qshuffle,
+q_pinning_50_digit, tools/pyhecke, qou-mass). Each needs the same three-way
+triage. Two carry extra hazards already known: `q_pinning_50_digit.py:115`
+writes into the ANCHOR-DEFINING witness (AGENTS rule 1 — never re-pin), and the
+qou-mass `_internal/` copy is GENERATED (sync via scripts/sync-qou-mass-vendor.py,
+never hand-edit).

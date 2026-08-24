@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0.5,
       "unit": "dimensionless (refutation-confirmed boolean)",
-      "source": "Phase 5k.2 falsification probe: c(q) = (ρ - (2q-1)) / h^5 varies by spread/|mean| = 499.1% across 5 q-points. The unit-coefficient h^5 hypothesis (c ≡ 1) requires spread < 10%; observed spread = 499.1% confirms the hypothesis is FALSIFIED — exactly the expected outcome of this falsification probe.  Verdict: h5-form-not-confirmed."
+      "source": "Phase 5k.2 falsification probe: c(q) = (\u03c1 - (2q-1)) / h^5 varies by spread/|mean| = 499.1% across 5 q-points. The unit-coefficient h^5 hypothesis (c \u2261 1) requires spread < 10%; observed spread = 499.1% confirms the hypothesis is FALSIFIED \u2014 exactly the expected outcome of this falsification probe.  Verdict: h5-form-not-confirmed."
     }
   ],
   "allPassed": true,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Phase 5k.2: varying-q sweep to confirm Phase 5k.1's unit-coefficient h^5 finding. For each q in the substrate window, computes ρ_Z^constit(q) = tr_M_constit(³He, q) / tr_M_constit(D, q) using y_λ(q) Wenzl weights and χ_λ(𝓑_constit, q) Hecke characters. Tests whether c(q) := (ρ - (2q-1)) / h^5 is approximately 1 across q, which would confirm the structural identity ρ = (2q-1) + h^5 + O(h^7).",
+  "description": "Phase 5k.2: varying-q sweep to confirm Phase 5k.1's unit-coefficient h^5 finding. For each q in the substrate window, computes \u03c1_Z^constit(q) = tr_M_constit(\u00b3He, q) / tr_M_constit(D, q) using y_\u03bb(q) Wenzl weights and \u03c7_\u03bb(\ud835\udcd1_constit, q) Hecke characters. Tests whether c(q) := (\u03c1 - (2q-1)) / h^5 is approximately 1 across q, which would confirm the structural identity \u03c1 = (2q-1) + h^5 + O(h^7).",
   "auditOnly": "docs/audits/2026-05-20-constit-factor-closure-chain.md",
   "parameters": {
     "q_values": [
@@ -130,5 +130,8 @@
       "relative_spread": 4.991179265574901
     },
     "verdict": "h5-form-not-confirmed"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_values[]). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

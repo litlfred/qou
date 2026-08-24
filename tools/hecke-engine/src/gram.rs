@@ -445,6 +445,167 @@ fn invert_6x6(a: &[[f64; 6]; 6]) -> Option<[[f64; 6]; 6]> {
     Some(inv)
 }
 
+// ─── Temperley–Lieb quotient ─────────────────────────────────────────
+
+/// Indices into [`NF_BASIS`] spanning the Temperley–Lieb quotient at `n = 3`.
+///
+/// Everything except index 5, `e⁻ = σ₀σ₁σ₀`. That word is the longest element
+/// of `S₃`, whose permutation `(3,2,1)` is the unique 321 pattern there, and
+/// the TL quotient is spanned by the 321-avoiding (equivalently, fully
+/// commutative) classes — `Catalan(3) = 5` of them.
+///
+/// `pyhecke.tl.tl_basis_words(3)` lists the same five in a different order,
+/// `((), σ₁, σ₀, σ₀σ₁, σ₁σ₀)`, swapping positions 1 and 2 relative to
+/// [`NF_BASIS`]. The Gram matrix happens to be invariant under exactly that
+/// swap, so both orders give the same matrix — verified against Python's
+/// literal entries in `tl_gram_matches_python_at_q0`, not assumed. Do not
+/// carry the coincidence to `n ≥ 4`.
+pub const TL_BASIS_INDICES: [usize; 5] = [0, 1, 2, 3, 4];
+
+/// The Markov trace form restricted to the Temperley–Lieb quotient, `5×5`.
+///
+/// At `n = 3` this is exactly the principal submatrix of
+/// [`gram_matrix_markov`] on [`TL_BASIS_INDICES`] — stated plainly because
+/// that is what it is, and because it is what makes `n ≥ 4` a different job:
+/// there the quotient is not obtained by deleting one basis element.
+/// Cross-checked against `pyhecke.tl.tl_gram(3, q)` to `0.0` difference in
+/// exact `ℚ(q)` arithmetic on the Python side.
+///
+/// Unlike the full `6×6` form this one is **non-singular for every real
+/// `q > 0`**, so it has a genuine inverse — see [`gram_tl_inverse`]. That is
+/// scope-(b) structural, resting on the closed form established in
+/// `computations/qbeta/tl3_gram_nonsingular_probe.py` (PR #5572):
+///
+/// ```text
+///     det G_TL = −(q⁴+1)(q²−q+1)⁴(q²+q+1)⁴ / (q²+1)¹⁰
+/// ```
+///
+/// whose numerator has no real roots.
+pub fn gram_matrix_tl(q: f64) -> [[f64; 5]; 5] {
+    let g = gram_matrix_markov(q);
+    let mut out = [[0.0f64; 5]; 5];
+    for (a, &i) in TL_BASIS_INDICES.iter().enumerate() {
+        for (b, &j) in TL_BASIS_INDICES.iter().enumerate() {
+            out[a][b] = g[i][j];
+        }
+    }
+    out
+}
+
+/// The genuine inverse of [`gram_matrix_tl`] — not a pseudoinverse.
+///
+/// This is the difference that motivates the quotient at all.
+/// [`gram_quotient_inverse`] is a Moore–Penrose pseudoinverse of the singular
+/// `6×6` form: correct, but an identity only *on* the quotient. Concretely
+/// `G · G⁺` is the projector onto the rank-5 range, so
+/// `‖G · G⁺ − I‖_F = √(corank) = 1` — right, and not a failure, but not an
+/// identity on all of `H₃(q)`. Here `G_TL · G_TL⁻¹ = I` outright.
+///
+/// (The `1.64` figure recorded against `G_INV` in this repository belongs to
+/// the *deleted* float64 `np.linalg.inv`, a different object; do not read it
+/// as the pseudoinverse's residual.)
+///
+/// Returns `None` only if the `5×5` solve hits a zero pivot, which the
+/// determinant above forbids for real `q > 0`; a caller seeing `None` has
+/// passed a `q` outside that range.
+pub fn gram_tl_inverse(q: f64) -> Option<[[f64; 5]; 5]> {
+    invert_5x5(&gram_matrix_tl(q))
+}
+
+/// Determinant of the TL quotient form, by the same LU the inverse uses.
+pub fn det_gram_tl(q: f64) -> f64 {
+    det_5x5(&gram_matrix_tl(q))
+}
+
+/// Closed-form determinant of the TL quotient form (PR #5572).
+///
+/// `−(q⁴+1)(q²−q+1)⁴(q²+q+1)⁴ / (q²+1)¹⁰`. Every factor is strictly positive
+/// for real `q`, so this never vanishes — the structural content behind
+/// [`gram_tl_inverse`] always succeeding.
+pub fn det_gram_tl_closed_form(q: f64) -> f64 {
+    let q2 = q * q;
+    let num = (q2 * q2 + 1.0) * (q2 - q + 1.0).powi(4) * (q2 + q + 1.0).powi(4);
+    -num / (q2 + 1.0).powi(10)
+}
+
+fn det_5x5(a: &[[f64; 5]; 5]) -> f64 {
+    let mut m = *a;
+    let mut det = 1.0f64;
+    for i in 0..5 {
+        let mut best = i;
+        for r in i + 1..5 {
+            if m[r][i].abs() > m[best][i].abs() {
+                best = r;
+            }
+        }
+        if m[best][i].abs() < 1e-300 {
+            return 0.0;
+        }
+        if best != i {
+            m.swap(i, best);
+            det = -det;
+        }
+        det *= m[i][i];
+        let pivot = m[i][i];
+        for r in i + 1..5 {
+            let factor = m[r][i] / pivot;
+            if factor == 0.0 {
+                continue;
+            }
+            for j in i..5 {
+                m[r][j] -= factor * m[i][j];
+            }
+        }
+    }
+    det
+}
+
+fn invert_5x5(a: &[[f64; 5]; 5]) -> Option<[[f64; 5]; 5]> {
+    // Augmented matrix [A | I]; same Gauss–Jordan as `invert_6x6`.
+    let mut m = [[0.0f64; 10]; 5];
+    for i in 0..5 {
+        for j in 0..5 {
+            m[i][j] = a[i][j];
+        }
+        m[i][5 + i] = 1.0;
+    }
+    for i in 0..5 {
+        let mut best = i;
+        for r in i + 1..5 {
+            if m[r][i].abs() > m[best][i].abs() {
+                best = r;
+            }
+        }
+        if m[best][i].abs() < 1e-15 {
+            return None;
+        }
+        m.swap(i, best);
+        let pivot = m[i][i];
+        for j in 0..10 {
+            m[i][j] /= pivot;
+        }
+        for r in 0..5 {
+            if r == i {
+                continue;
+            }
+            let factor = m[r][i];
+            if factor == 0.0 {
+                continue;
+            }
+            for j in 0..10 {
+                m[r][j] -= factor * m[i][j];
+            }
+        }
+    }
+    let mut inv = [[0.0f64; 5]; 5];
+    for i in 0..5 {
+        for j in 0..5 {
+            inv[i][j] = m[i][5 + j];
+        }
+    }
+    Some(inv)
+}
+
 // ─── NF multiplication kernel ────────────────────────────────────────
 
 /// Multiply an NF element by `(c · σ_gen + d · 1)`.
@@ -1147,5 +1308,131 @@ mod tests {
                 assert!((p[i][j] - p[j][i]).abs() < 1e-10, "asymmetric at {},{}", i, j);
             }
         }
+    }
+
+    // ─── Temperley–Lieb quotient (qou-cds2 / qou-8iru) ───────────────
+
+    /// The five TL entries are the full form's, on the 321-avoiding words.
+    ///
+    /// Pinned against `pyhecke.tl.tl_gram_mp(3, 60)` at the proton-pinned
+    /// `q₀`, printed at 17 significant digits. This is the check that the
+    /// basis-order difference between the two implementations really is
+    /// immaterial at `n = 3`, rather than an assumption.
+    #[test]
+    fn tl_gram_matches_python_at_q0() {
+        const PY: [[f64; 5]; 5] = [
+            [
+                1.0,
+                0.61268803714646525,
+                0.61268803714646525,
+                0.37538663086238838,
+                0.37538663086238838,
+            ],
+            [
+                0.61268803714646525,
+                1.1280887441143538,
+                0.37538663086238838,
+                0.69116647835844453,
+                0.69116647835844453,
+            ],
+            [
+                0.61268803714646525,
+                0.37538663086238838,
+                1.1280887441143538,
+                0.69116647835844453,
+                0.69116647835844453,
+            ],
+            [
+                0.37538663086238838,
+                0.69116647835844453,
+                0.69116647835844453,
+                0.51988210134553457,
+                1.2725842145975,
+            ],
+            [
+                0.37538663086238838,
+                0.69116647835844453,
+                0.69116647835844453,
+                1.2725842145975,
+                0.51988210134553457,
+            ],
+        ];
+        let g = gram_matrix_tl(Q_0);
+        for i in 0..5 {
+            for j in 0..5 {
+                assert!(
+                    (g[i][j] - PY[i][j]).abs() < 1e-12,
+                    "entry ({i},{j}): rust {} vs python {}",
+                    g[i][j],
+                    PY[i][j]
+                );
+            }
+        }
+    }
+
+    /// The TL form has a genuine inverse where the full form has none.
+    #[test]
+    fn tl_gram_inverse_is_a_real_inverse() {
+        let g = gram_matrix_tl(Q_0);
+        let inv = gram_tl_inverse(Q_0).expect("TL form is non-singular for real q > 0");
+        for i in 0..5 {
+            for j in 0..5 {
+                let entry: f64 = (0..5).map(|k| g[i][k] * inv[k][j]).sum();
+                let want = if i == j { 1.0 } else { 0.0 };
+                assert!(
+                    (entry - want).abs() < 1e-10,
+                    "G·G⁻¹ ({i},{j}) = {entry}, want {want}"
+                );
+            }
+        }
+    }
+
+    /// The LU determinant agrees with PR #5572's closed form.
+    ///
+    /// Two independent routes to the same number: Gaussian elimination on the
+    /// assembled matrix, versus the factored rational expression. Checked
+    /// across a range of `q`, not only at the substrate anchor, since the
+    /// closed form is what licenses the "every real q > 0" claim.
+    #[test]
+    fn tl_determinant_matches_the_closed_form() {
+        for &q in &[1.01f64, 1.05, Q_0, 1.5, 2.0, 3.0] {
+            let lu = det_gram_tl(q);
+            let cf = det_gram_tl_closed_form(q);
+            let scale = cf.abs().max(1e-12);
+            assert!(
+                (lu - cf).abs() / scale < 1e-9,
+                "q={q}: LU {lu} vs closed form {cf}"
+            );
+        }
+    }
+
+    /// The closed form never vanishes — the structural content of the repair.
+    ///
+    /// Every factor is strictly positive for real `q`, so the determinant is
+    /// strictly negative and the inverse always exists. Contrast
+    /// `gram_is_singular_under_the_correct_trace` on the full form.
+    #[test]
+    fn tl_determinant_never_vanishes_for_real_q() {
+        for &q in &[0.1f64, 0.5, 1.0, Q_0, 2.0, 10.0, 100.0] {
+            let d = det_gram_tl_closed_form(q);
+            assert!(d < 0.0, "q={q}: det {d} is not strictly negative");
+            assert!(gram_tl_inverse(q).is_some(), "q={q}: inverse should exist");
+        }
+    }
+
+    /// The excluded word is the one the full form's radical needs.
+    ///
+    /// `gram_radical` has a nonzero `e⁻` component, so dropping index 5 is
+    /// what removes the null direction — this is *why* the five survive,
+    /// rather than a lucky choice of five.
+    #[test]
+    fn dropping_e_minus_is_what_kills_the_radical() {
+        let r = gram_radical(Q_0);
+        assert!(
+            r[5].abs() > 1e-6,
+            "radical must load the dropped basis element, got {}",
+            r[5]
+        );
+        assert!(!TL_BASIS_INDICES.contains(&5));
     }
 }

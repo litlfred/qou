@@ -32,7 +32,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "⁴He +5.87% binding gap localized to the (9,3) trace-dominant channel (per conj:psd-trace-orthogonality + PR #1673 Probe 2 reframing). Computes Δρ_F^(9,3) and reports structural pattern.",
+  "description": "\u2074He +5.87% binding gap localized to the (9,3) trace-dominant channel (per conj:psd-trace-orthogonality + PR #1673 Probe 2 reframing). Computes \u0394\u03c1_F^(9,3) and reports structural pattern.",
   "auditOnly": "docs/audits/2026-06-01-xq-habiro-he4-9-3-yekutieli-a-workplan.md",
   "data": {
     "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
@@ -127,7 +127,10 @@
     ],
     "nine_three_fraction": 0.2908905574191559,
     "delta_rho_F_9_3_if_all_localized": "0.381004552253989988371201708226290857327559632784830672675831",
-    "verdict": "Localizing the +5.87% gap to the (9,3) trace-dominant channel requires Δρ_F^(9,3) = 0.381004552253 (relative correction 19.05% of ρ_F=2). This is a NUMERICAL LOCAL CORRECTION; the PSLQ search above tries to identify it as a substrate combination. If no clean PSLQ hit: the gap likely distributes across multiple channels (scenario b/c), and the structural correction is NOT a single-block (9,3) feature. The right next probe would then be the joint top-3 trace-dominant channels ((10,2) + (9,3) + (11,1)) Δρ_F splitting analysis.",
+    "verdict": "Localizing the +5.87% gap to the (9,3) trace-dominant channel requires \u0394\u03c1_F^(9,3) = 0.381004552253 (relative correction 19.05% of \u03c1_F=2). This is a NUMERICAL LOCAL CORRECTION; the PSLQ search above tries to identify it as a substrate combination. If no clean PSLQ hit: the gap likely distributes across multiple channels (scenario b/c), and the structural correction is NOT a single-block (9,3) feature. The right next probe would then be the joint top-3 trace-dominant channels ((10,2) + (9,3) + (11,1)) \u0394\u03c1_F splitting analysis.",
     "framing_correction": "PR #1673 Probe 2 + conj:psd-trace-orthogonality together say the binding-energy gap lives in the trace-dominant family, NOT the PSD-dominant (4,4,4) block. Research direction is re-aimed to the (9,3)/(8,4)/(10,2) channels."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_proton). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

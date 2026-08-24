@@ -3,12 +3,12 @@
   "name": "never-raises-dps-audit",
   "description": "Runnable witness producers that build mpmath values and never raise working precision, so the whole computation runs at mpmath's default 15 dps. Invisible to the padding and raw-float64 scans because the numbers are honestly float64. Ratchet only; drain owner qou-j6gb.",
   "data": {
-    "producers": 10,
-    "constructions": 42,
+    "producers": 9,
+    "constructions": 27,
     "baseline_files": 46,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 36,
+    "drained_files": 37,
     "unparseable_files": 0
   }
 }

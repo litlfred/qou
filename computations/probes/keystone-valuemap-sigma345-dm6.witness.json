@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:24:47.252438+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-23T21:11:53.756030+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "S_squared_is_identity",
@@ -20,7 +20,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "keystone-valuemap-sigma345-dm6",
   "scriptFile": "keystone_valuemap_sigma345_dm6.py",
   "scriptHash": "53e487ba389a",
@@ -36,10 +36,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

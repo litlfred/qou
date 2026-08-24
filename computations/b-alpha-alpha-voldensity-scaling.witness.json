@@ -10,7 +10,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "Full proton-VolDensity route (Vol/ℏ_q²×linking_weight) applied to 7²_1 overshoots b_αα by >100× (H₄: 259×), AND the AME-implied density ρ_αα=b_emp·ℏ_q²/(m_e·Vol) equals ℏ_q² to <1% (0.9955). Scope-(a): the ℏ_q² Planck enhancement belongs to the rest-mass scale, not the α–α binding, which sits one ℏ_q² rung lower. ρ_αα=ℏ_q² restates the match, not a derivation (numerology guard). No fit."
+      "source": "Full proton-VolDensity route (Vol/\u210f_q\u00b2\u00d7linking_weight) applied to 7\u00b2_1 overshoots b_\u03b1\u03b1 by >100\u00d7 (H\u2084: 259\u00d7), AND the AME-implied density \u03c1_\u03b1\u03b1=b_emp\u00b7\u210f_q\u00b2/(m_e\u00b7Vol) equals \u210f_q\u00b2 to <1% (0.9955). Scope-(a): the \u210f_q\u00b2 Planck enhancement belongs to the rest-mass scale, not the \u03b1\u2013\u03b1 binding, which sits one \u210f_q\u00b2 rung lower. \u03c1_\u03b1\u03b1=\u210f_q\u00b2 restates the match, not a derivation (numerology guard). No fit."
     }
   ],
   "allPassed": true,
@@ -29,7 +29,7 @@
     "python": "3.11.15",
     "mpmath": "1.4.1"
   },
-  "description": "Lane 2 of bk-crossing-coordination (open item 3b, b_αα). Applies the proton VolDensity convention Vol/ℏ_q²×linking_weight to the α–α interface link 7²_1 (the one untried substrate-pure route named by the prior bare-tr_M probe). Result 1: the full VolDensity route OVERSHOOTS b_αα by 259× (H₄)/137× (H₃) — scope-(a) refutation; the ℏ_q²≈0.0098 Planck enhancement that lifts Vol(𝓑₃) to the GeV proton mass over-inflates the α–α bond. Result 2: the AME-implied α–α per-block density ρ_αα=b_emp·ℏ_q²/(m_e·Vol) equals ℏ_q² to 0.45% (ρ_αα/ℏ_q²=0.9955), so the literature m_e·Vol(7²_1) IS the VolDensity form with a density ρ_αα=ℏ_q² that cancels the denominator — the α–α binding sits one ℏ_q² rung below the rest-mass scale (proton ρ_p=linking_weight≈2.53 is O(1); ρ_p/ρ_αα≈259). OPEN (numerology guard): ρ_αα=ℏ_q² restates the match, not a derivation. No fit; no wiring; q₀ proton-anchored (no muon-cache straddle).",
+  "description": "Lane 2 of bk-crossing-coordination (open item 3b, b_\u03b1\u03b1). Applies the proton VolDensity convention Vol/\u210f_q\u00b2\u00d7linking_weight to the \u03b1\u2013\u03b1 interface link 7\u00b2_1 (the one untried substrate-pure route named by the prior bare-tr_M probe). Result 1: the full VolDensity route OVERSHOOTS b_\u03b1\u03b1 by 259\u00d7 (H\u2084)/137\u00d7 (H\u2083) \u2014 scope-(a) refutation; the \u210f_q\u00b2\u22480.0098 Planck enhancement that lifts Vol(\ud835\udcd1\u2083) to the GeV proton mass over-inflates the \u03b1\u2013\u03b1 bond. Result 2: the AME-implied \u03b1\u2013\u03b1 per-block density \u03c1_\u03b1\u03b1=b_emp\u00b7\u210f_q\u00b2/(m_e\u00b7Vol) equals \u210f_q\u00b2 to 0.45% (\u03c1_\u03b1\u03b1/\u210f_q\u00b2=0.9955), so the literature m_e\u00b7Vol(7\u00b2_1) IS the VolDensity form with a density \u03c1_\u03b1\u03b1=\u210f_q\u00b2 that cancels the denominator \u2014 the \u03b1\u2013\u03b1 binding sits one \u210f_q\u00b2 rung below the rest-mass scale (proton \u03c1_p=linking_weight\u22482.53 is O(1); \u03c1_p/\u03c1_\u03b1\u03b1\u2248259). OPEN (numerology guard): \u03c1_\u03b1\u03b1=\u210f_q\u00b2 restates the match, not a derivation. No fit; no wiring; q\u2080 proton-anchored (no muon-cache straddle).",
   "parameters": {
     "q0_anchor": "proton/experimental (q_parameter.Q_MP)",
     "q0": "1.109978582751380807591669",
@@ -47,5 +47,8 @@
     "rho_alpha_alpha": "0.009772733835366166150649268",
     "rho_alpha_alpha_over_hbar_q_sq": "0.9954719593932587526532394",
     "rho_p_over_rho_aa": "259.1679768"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

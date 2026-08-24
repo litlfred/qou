@@ -1,11 +1,11 @@
 ---
 # qou-goc9
 title: 'GAP: which nucleon NF is canonical for the Q_beta counit chain? single-wrap vs typed 6-term differ by 0.579%, 3.6x the phase'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T00:54:05Z
-updated_at: 2026-08-23T00:54:35Z
+updated_at: 2026-08-23T08:23:02Z
 ---
 
 Surfaced from `qou-pdix` (PR #5448). Probe:

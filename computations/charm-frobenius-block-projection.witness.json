@@ -227,5 +227,8 @@
   },
   "snappy_error": null,
   "verdict": "Reading (A) [PARAMETER-FREE, scale-free]: the H_3 Wedderburn-block ratio y_[2,1]\u03c7_[2,1] / y_[3]\u03c7_[3] on the Borromean baryon predicts m_charm/m_light = 0.9758, vs observed ~372 (current) \u2014 a 381x UNDERSHOOT. The block projection is O(1), not O(100): the charm/light hierarchy is NOT the Frobenius block ratio of the proton braid. Scope-(a) negative, no knob. Reading (B) needs a tuned twist count (=FIT) to move the number and is NOT canonical. m_c stays OPEN.",
-  "scope": "(a) scope-limited negative: block ratio is O(1), charm/light is O(100). No parameter-free block projection reproduces m_c."
+  "scope": "(a) scope-limited negative: block ratio is O(1), charm/light is O(100). No parameter-free block projection reproduces m_c.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

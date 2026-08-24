@@ -4,13 +4,41 @@ $$
   q^{*} \approx 1.10997859303152\ldots,
 $$
 
-the point where $c_3 = -\mathrm{Vol}(4_1)$ exactly — the pure bar-even substrate point with vanishing decay projection ($\varepsilon = \mathrm{Im}(q) = 0$ in the reading of the interpreted conjecture's candidate (iii)). It lies $\approx 80.3\%$ of the way from the proton anchor toward the muon anchor.
+the point where $c_3 = -\mathrm{Vol}(4_1)$ exactly — the pure bar-even substrate point with vanishing decay projection ($\varepsilon = \mathrm{Im}(q) = 0$ in the reading of the interpreted conjecture's candidate (iii)). It lies $\approx 80.3\%$ of the way from the proton anchor toward the muon anchor — a **convention-C-frame** placement; see the convention note below.
 
 $q^{*}$ is independent of both mass-sector pins — it uses neither $m_\mathfrak{p}$ nor $m_\mu$ — but it is **not** an independent *third determination of $q_0$*, and an earlier version of this remark claimed that it was. The claim is circular: $q^{*}$ is defined above as the root of $S(q) = c_3(q) + \mathrm{Vol}(4_1)$, so locating it presupposes $c_3^{\mathrm{even}} = -\mathrm{Vol}(4_1)$. It is a determination of $q_0$ *conditional on* that hypothesis, which is precisely the hypothesis an independent determination would have to avoid.
 
 The supporting statistics do not rescue it. At $q^{*}$ the muon ratio $m_\mu/m_e$ deviates $\approx 42.7$ ppb from CODATA, versus $\approx 1.4$ ppb at the muon pin and $\approx 211$ ppb at the proton pin; and $q^{*}$ is indeed not the statistical reconciliation of the $\mu$–$\mathfrak{p}$ tension (the precision-weighted mean sits $\approx 0.0007\%$ muon-ward, essentially at the proton pin, which is $\approx 367\times$ more precise, while $q^{*}$ sits $80.3\%$ muon-ward). Both remain true and neither is evidence, because **the $80.3\%$ is a reading of $\mathrm{Vol}(4_1)$'s own value**: every constant $V$ in the window $(-c_3(\mu), -c_3(\mathfrak{p})) = (2.0202,\, 2.0693)$ of width $0.0491$ places a zero between the anchors, and as $V$ sweeps that window the corresponding $q^{*}_V$ sweeps the entire anchor interval. $\mathrm{Vol}(4_1) = 2.0299$ sits $80.30\%$ of the way from the proton end of that window, the same figure. Choosing a different in-window constant relocates $q^{*}$ and would produce a different percentage, equally far from both pins and from their weighted mean.
 
-So the $\mu$–$\mathfrak{p}$ substrate tension is a **two-way** tension between the two mass pins, not a three-way picture.
+The $\mu$–$\mathfrak{p}$ substrate tension is therefore **two-way**, holding between the two mass pins alone.
+
+**Convention note.** The placement of $q^{*}$ *between the anchors* is
+convention-dependent, and the figure above is stated in convention C. The
+substrate ladder that produces $q^{*}$ carries a phase $\alpha = (z-1)h/2$ built
+from the Markov parameter $z$, and the canonical chain sets $z$ in its
+convention-C form — $z_C = 1/(\sqrt{q} + 1/\sqrt{q}) \approx 0.49932$, giving
+$\alpha_C \approx -0.052336$ — whereas the canonical convention gives $z_D = q^3/(q^2+1) \approx 0.61269$ and
+$\alpha_D \approx -0.040486$, a $23\%$ shift. Root-finding the same shipped chain
+with only $z$ changed:
+
+| convention | $q^{*}$ | position |
+|---|---|---|
+| C | $1.10997859340\ldots$ | inside the anchor interval |
+| D | $1.11023370740\ldots$ | outside it, by $\approx 19{,}921$ anchor-gaps |
+
+The anchor interval is only $1.281 \times 10^{-8}$ wide, and $D$ displaces
+$q^{*}$ by $2.55 \times 10^{-4}$.
+
+Two consequences. First, **the percentage figure above is C-frame** and should not be
+carried into a convention-D discussion; re-deriving $q^{*}$ under $D$ with the
+canonical producer is separate work. Second, **the skeptical conclusion of this
+remark is unaffected, and is strengthened.** Its argument is that the
+$80.3\%$ is a reading of $\mathrm{Vol}(4_1)$'s own value rather than evidence —
+under $D$ the position falls outside the anchor interval entirely. The Lean is likewise untouched: `qstarRootStrictMonoInAnchor` and
+`qstarRootUniqueInAnchor` are stated about an abstract $\Phi$ with a
+`StrictMonoOn` hypothesis and never mention $z$ or $\alpha$, and the numerical
+premise still holds under $D$ ($\Phi(q^{*}) \approx -3.606$ versus $-3.631$ under
+$C$ — nonzero, same sign), so the exclusion result is convention-independent.
 
 The residual empirical content must be stated with its error bar, because the error bar dominates it. The extractor amplifies the experimental $\mathfrak{Q}_\beta$ uncertainty by $1/u^3$, giving $\sigma(c_3) = \sigma(\mathfrak{Q}_\beta)/(Q_{N2}u^3) \approx \pm 1.262$ — about $61\%$ of $|c_3|$. Against that band, $c_3$'s proximity to $-\mathrm{Vol}(4_1)$ is $0.031\sigma$ at the proton pin and $0.008\sigma$ at the muon. These are not close agreements in the evidential sense; they are the absence of a measurement, since every candidate constant in $[0.807,\, 3.331]$ agrees at least as well. That interval is $51\times$ wider than the $0.049$ genericity window quoted above, so the window understates the ambiguity by that factor. Distinguishing $\mathrm{Vol}(4_1)$ from a generic in-band constant requires a neutron $Q$-value sharper by $\approx 32\times$ (proton) or $\approx 130\times$ (muon).
 

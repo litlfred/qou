@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T16:42:50.392351+00:00",
-  "commitSha": "5298a2fef56fff542862b1a120a9ebfd2bc033e3",
+  "computedAt": "2026-08-24T08:47:03.043010+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "bar_symmetric_rho_F_candidates_enumerated",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "he4-rho-f-bar-symmetric-audit-probe",
   "scriptFile": "he4_rho_f_bar_symmetric_audit_probe.py",
   "scriptHash": "de4d24957fbe",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -125,5 +125,7 @@
     },
     "verdict": "BAR-SYMMETRIC ρ_F CANDIDATES ALL FAIL — best is C1: 2 [production, postulated] at +5.87% vs the current production at +5.87%. None of the substrate bar-symmetric forms naturally produce ⁴He binding. CONFIRMS that ⁴He gap needs the categorical multi-nucleon interface operator (per PR #1621 research direction), NOT a substrate constant. 8th-ansatz fishing among bar-symmetric forms is unproductive.",
     "anti_pattern_guard": "This probe TESTS existing bar-symmetric substrate forms; it does NOT propose new fit candidates. Verdict is binary: a bar-symmetric ρ_F either closes the gap (worth investigating) or doesn't (confirms structural-operator direction). Fishing for sub-1% matches in a 6-parameter family would be the 8th-ansatz trap per AGENTS.md."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

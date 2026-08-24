@@ -1,6 +1,6 @@
 {
   "computation": "chi-helium-4-h12-at-q0-50dps-matrix-m",
-  "description": "Lossless per-λ χ^λ(β_atomic(2,2))=⁴He at q_0, 50 dps, ALL 77 partitions of S_12 via the canonical Rust chi_q_via_gp path (sign-only crossings; matches the matrix-M backend to the 50-dps floor, PR #2062 §8). No max_dim cap — infeasible partitions for pure-Python matrix-M computed in ms by Rust, independent of dim V_λ.",
+  "description": "Lossless per-\u03bb \u03c7^\u03bb(\u03b2_atomic(2,2))=\u2074He at q_0, 50 dps, ALL 77 partitions of S_12 via the canonical Rust chi_q_via_gp path (sign-only crossings; matches the matrix-M backend to the 50-dps floor, PR #2062 \u00a78). No max_dim cap \u2014 infeasible partitions for pure-Python matrix-M computed in ms by Rust, independent of dim V_\u03bb.",
   "producer": "rust-chi-q-via-gp-lossless",
   "convention": "sign-only-crossings",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -1033,5 +1033,8 @@
       "contribution": "1.1931951957438455644026545339653862827722433863811e-79",
       "compute_time_sec": "0.0274"
     }
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

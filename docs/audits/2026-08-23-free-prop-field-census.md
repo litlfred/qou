@@ -94,9 +94,140 @@ antecedent (`impl : P → X`); both survive `P := True`. The antecedent case is
 its own weaker defect — the *conditionality* is fake while the consequents may
 still carry content — hence `UNPINNED-FAKE-IF` as a separate bucket.
 
-### Verified, not asserted
+### Verified against the real modules — `IwahoriHeckeAlgebra` admits σ ≡ 0
 
-The triviality claim is compiled, not argued
+Strengthened 2026-08-23, after the first probe below was noted as one step
+removed from its subject. The carriers here are **imported, not restated**, so
+no transcription can flatter them
+([`2026-08-23-free-prop-real-module-probe.lean`](2026-08-23-free-prop-real-module-probe.lean),
+`lean` exit 0, 0 errors):
+
+```lean
+instance degenerate : QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra ℤ 3 (1 : ℤ) where
+  carrier := ℤ
+  …
+  sigma := fun _ => 0          -- every braid generator is 0
+  hecke_relation := True ;  hecke_holds := trivial
+  braid_relation := True ;  braid_holds := trivial
+  far_commute   := True ;  far_commute_holds := trivial
+```
+
+**This type-checks.** A structure in which every braid generator is `0` is an
+`IwahoriHeckeAlgebra` — the class does not encode the Hecke presentation, it
+names three propositions and asserts them.
+
+> **🛑 The `degenerate` instance above was UNNECESSARY, and saying "one could
+> build one" understates the finding. The library already ships one, as a
+> GLOBAL instance.** `HeckeAlgebra.lean` declares
+>
+> ```lean
+> instance triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
+>     IwahoriHeckeAlgebra R n q where
+>   carrier := PUnit
+>   …
+>   hecke_relation := True ; braid_relation := True ; far_commute := True
+> ```
+>
+> so **typeclass resolution discharges `[IwahoriHeckeAlgebra R n q]`
+> automatically, for every `R`, `n`, `q`**. Verified by synthesis, not by
+> reading ([`2026-08-23-trivial-global-instance-probe.lean`](2026-08-23-trivial-global-instance-probe.lean),
+> exit 0): `#synth IwahoriHeckeAlgebra ℤ 3 1` answers `triv_hecke ℤ 3 1`, and
+> `(inferInstance …).carrier = PUnit` closes by `rfl`.
+>
+> `WedderburnDecomposition` has the same shape — `#synth` answers
+> `triv_wedderburn ℤ 3 1`. Those are **two steps of the canonical derivation
+> chain** whose Lean hypotheses are inert.
+>
+> Its docstring is candid about why it exists — *"Discharges the §3b-cond
+> hypothesis at the audit level; genuine instances at `R = ℚ(q)` arrive when
+> Mathlib's Iwahori–Hecke library lands"* — which is precisely what §3b-tax
+> forbids: *"an unproved primary is honestly represented by a content-bearing
+> class with no instance; do not fabricate a trivial instance to 'close' it."*
+> The harm is not the placeholder but its **globality**: being an `instance`
+> rather than a `def`, it reaches every downstream `[IwahoriHeckeAlgebra …]`
+> silently.
+>
+> **Screened, not verified:** 8 further all-trivial global instances match the
+> same shape (`HasGeneratorAction_punit`, `weinbergAngleCanonical`,
+> `CrystalGraphRealization.canonical`, `hasBlochGroup_real`, …). Only the two
+> above were confirmed by synthesis; some of the rest are likely legitimate
+> (e.g. a genuine `Prop` Boolean-algebra instance). A count is not a verdict.
+>
+> **FIXED 2026-08-23**: both demoted `instance` → `def`. `#synth
+> IwahoriHeckeAlgebra ℤ 3 1` now reports *failed to synthesize*; the trivial
+> model stays reachable by name (`triv_hecke ℤ 3 1`). See the correction on
+> blast radius below.
+
+### Inhabitation is what makes a free `Prop` field harmful — and it re-ranks the queue
+
+Crossing the census against inhabitation changes which carriers matter:
+
+| free-`Prop` carriers | count |
+|---|---|
+| **no inhabitant at all** | **89** |
+| `def`-only inhabitant | 17 |
+| **inhabited by a global `instance`** | **7** |
+
+The 89 are the §3b-tax **honest open state** — nothing inhabits them, so a
+downstream `[C] → P` can never be *applied*. Weak, but inert. The harm needs an
+inhabitant, so the actionable set is the intersection: `IwahoriHeckeAlgebra`,
+`CanonicalKnotIdSDP`, `HeckeAnyonicSubstrate` (×2 — two *different* classes
+sharing the name, one parameterless in `IwahoriHecke/Tw.lean` and one
+`(R) [CommRing R] (q)` in `BraidKnot/`, so also a name collision),
+`BorromeanQuark` (whose `instance canonical` is declared **twice**, in a
+chapter sibling and in the library — the shadow-pair shape again), plus
+`WedderburnDecomposition`.
+
+**So "drain the 77" was the wrong queue**; ~5–7 carriers are.
+
+> A note against my own earlier result: inhabitation **failed** as a signal when
+> I tried it as a *legitimacy classifier* on the projection ledger (§1 above).
+> Here it is not classifying legitimacy — it is the **harm multiplier**.
+> Different question, so this does not overturn that negative.
+
+### Correction: the blast radius was 3 errors, not 1
+
+I reported "demoting both produces **exactly one** error." That was wrong, and
+the way it was wrong is worth recording: **Lean halts elaboration of a
+declaration at its first error, so each fix exposes the next.** The single
+error I measured was only the first of a chain:
+
+1. `triv_wedderburn` lost the instance it was resolving — fixed by taking
+   `[self : IwahoriHeckeAlgebra R n q]` as a hypothesis. (A `letI` in the
+   *type* does **not** work: it binds for the ascription but not for the
+   `where` fields, which elaborate against the class and need it again.)
+2. Then `block_proj _ := PUnit.unit` stopped type-checking — it only ever
+   worked because the global instance pinned the carrier to `PUnit`. Over an
+   arbitrary model the projector must land in `self.carrier`, so it becomes
+   `self.one`, which is the honest reading of "trivial projector".
+
+Final state: `lean` exit 0, 0 errors, and nothing outside this file needed
+changing — so the *scope* claim ("nothing else in the corpus depended on the
+global resolution") held; only the effort estimate was wrong.
+
+**Three of my measurements in this session were truncated-log artifacts** — a
+`lean` run killed by a 2-minute command timeout leaves a log with zero errors
+in it, which reads as success. Both the "1 error" figure and a later "the
+demotion still resolves" non-result came from that. Every Lean check here now
+writes a `COMPLETE` sentinel *after* the process exits, and is only read once
+that sentinel is present.
+
+The witness genuinely violates the intended relation, not merely an unstated
+one: at `q = 1` over `ℤ`, `q − q⁻¹ = 0`, so `σᵢ² = (q − q⁻¹)σᵢ + 1` reads
+`σᵢ² = 1`; with `σᵢ = 0` that is `0 = 1`. So this is not a vacuous
+"nothing was stated so nothing is violated" — the intended axiom is false of
+the inhabitant, and the class admits it anyway.
+
+This is AGENTS.md §7a's central algebraic object: *"The Hecke algebra generator
+is `σᵢ` … `(σᵢ − q)(σᵢ + q⁻¹) = 0`"*. **Scope, again**: that relation holds — the
+manuscript states it and the compute engine uses it. What is measured here is
+only that **this Lean class does not carry it**, so a downstream
+`[IwahoriHeckeAlgebra …] → P` reads as conditional while being unconditional
+(also compiled, in the same probe).
+
+### Also verified: the reproduction probe
+
+The original triviality claim is likewise compiled, not argued
 ([`2026-08-23-free-prop-field-triviality-probe.lean`](2026-08-23-free-prop-field-triviality-probe.lean),
 `lean` exit 0, 0 errors). Carriers reproduced verbatim from their sources:
 

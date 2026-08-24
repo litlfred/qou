@@ -11,7 +11,11 @@ bug (bean tnjb) where a value drifts to the wrong anchor.
 Verdicts:
   Q0_OK              anchor ∈ {muon,proton} and q0Value matches that anchor's pin
   Q0_FLIP            anchor and q0Value disagree  ← CI-FAILING (the flip)
-  Q0_AMBIGUOUS       anchor == "ambiguous" (producer genuinely undetermined)
+  Q0_AMBIGUOUS       anchor == "ambiguous" WITH a q0AnchorReason naming what
+                     is undetermined
+  Q0_AMBIGUOUS_NO_REASON
+                     anchor == "ambiguous" but no q0AnchorReason — records that
+                     the pin is unknown without recording what would settle it
   Q0_INDEPENDENT     anchor == "independent" WITH a q0AnchorReason saying why
   Q0_INDEPENDENT_NO_REASON
                      anchor == "independent" but no q0AnchorReason — the claim
@@ -135,6 +139,27 @@ def classify(path: Path) -> tuple[str, str]:
     if not anchor:
         return "Q0_ANCHOR_MISSING", ""
     if anchor == "ambiguous":
+        # Parity with `independent` and `comparison` (added 2026-08-23).
+        # `witness.py`'s own contract says `q0AnchorReason` "belongs with every
+        # `independent` — AND WITH `ambiguous`, where it names what is
+        # undetermined." That half was documented but never checked, and the
+        # bucket it governs is the one whose whole purpose is to be resolved
+        # later: a reader who opens an `ambiguous` witness and finds no
+        # sentence has nothing to resolve it FROM.
+        #
+        # Measured when this was added: 17 of 18 carried no reason. The single
+        # one that did — `hd-to-s-bridge-anchor-dependence` — reads
+        # "Deliberately BOTH pins: this probe compares the proton-anchored and
+        # muon-…", which is the `comparison` anchor's definition verbatim. So
+        # the only ambiguous witness that explained itself turned out to be
+        # mislabelled, and the explanation is what revealed it. That is the
+        # argument for the check in one line.
+        if not str(body.get("q0AnchorReason") or "").strip():
+            return "Q0_AMBIGUOUS_NO_REASON", (
+                "anchor=ambiguous with no q0AnchorReason — states that the pin "
+                "is undetermined, but not WHAT is undetermined, so nothing "
+                "records how it could ever be resolved"
+            )
         return "Q0_AMBIGUOUS", ""
     if anchor == "independent":
         # No q₀ was read, so there is no value to cross-check. A q0Value here
@@ -411,7 +436,7 @@ def main(argv: list[str] | None = None) -> int:
             {"witness": wp.name, "detail": detail}
         )
 
-    order = ["Q0_OK", "Q0_AMBIGUOUS", "Q0_INDEPENDENT",
+    order = ["Q0_OK", "Q0_AMBIGUOUS", "Q0_AMBIGUOUS_NO_REASON", "Q0_INDEPENDENT",
              "Q0_INDEPENDENT_NO_REASON", "Q0_COMPARISON",
              "Q0_COMPARISON_NO_REASON", "Q0_COMPARISON_NO_VALUES",
              "Q0_ANCHOR_MISSING",

@@ -1,0 +1,123 @@
+{
+  "engine": "python+sympy(exact over Q(u), Q(q))",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T06:52:15.669896+00:00",
+  "commitSha": "7aa29fce3837ce6f2a214bc23115915549044413",
+  "assertions": [
+    {
+      "name": "C_det_not_identically_zero",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "a vanishing locus means something only if det is not always 0"
+    },
+    {
+      "name": "C_supergolden_divides_numerator",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "u^3 + u - 1 divides numer(det G_C) exactly -- the block's claim"
+    },
+    {
+      "name": "C_det_zero_at_supergolden_root",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "cross-check by exact algebraic evaluation at the root itself"
+    },
+    {
+      "name": "C_supergolden_below_ne_zero_hypothesis",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "gramMatrix_det_ne_zero assumes 1 < u, so 1/psi < 1 means no clash"
+    },
+    {
+      "name": "C_has_exactly_two_positive_zeros",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "1/psi AND u = 1 (q = 1, classical limit) -- the block names only one"
+    },
+    {
+      "name": "D_det_identically_zero",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "recovers QOU...gramMatrixD_det_eq_zero from the parsed entries"
+    },
+    {
+      "name": "phase_transition_reading_survives_D",
+      "computed": "1",
+      "expected": false,
+      "passed": true,
+      "value": false,
+      "note": "EXPECTED FALSE -- under D there is no distinguished point"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "spectrahedral-phase-collapse-frame-probe",
+  "scriptFile": "spectrahedral_phase_collapse_frame_probe.py",
+  "scriptHash": "6c77bfb9bf0f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/spectrahedral_phase_collapse_frame_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/spectrahedral_phase_collapse_frame_probe.py"
+  },
+  "description": "Exact determinant of the H_3 Gram in both conventions, parsed from the committed Lean. Settles whether the supergolden 'phase collapse' is a real threshold (convention C: yes, and there is a second one at q = 1) or an artefact of a non-canonical frame (convention D: the determinant vanishes identically, so nothing is distinguished).",
+  "conventionC": {
+    "markov_weight": "z = u/(u^2 + 1),  u = sqrt(q)",
+    "det_factored": "Mul(Integer(-1), Pow(Symbol('u', positive=True), Integer(-10)), Add(Symbol('u', positive=True), Integer(-1)), Add(Symbol('u', positive=True), Integer(1)), Pow(Add(Pow(Symbol('u', positive=True), Integer(2)), Integer(1)), Integer(-12)), Pow(Add(Pow(Symbol('u', positive=True), Integer(3)), Symbol('u', positive=True), Integer(-1)), Integer(5)), Pow(Add(Pow(Symbol('u', positive=True), Integer(3)), Pow(Symbol('u', positive=True), Integer(2)), Integer(1)), Integer(5)), Add(Pow(Symbol('u', positive=True), Integer(6)), Mul(Integer(-1), Pow(Symbol('u', positive=True), Integer(5))), Pow(Symbol('u', positive=True), Integer(4)), Mul(Integer(-1), Pow(Symbol('u', positive=True), Integer(3))), Mul(Integer(2), Pow(Symbol('u', positive=True), Integer(2))), Mul(Integer(-1), Symbol('u', positive=True)), Integer(1)), Add(Pow(Symbol('u', positive=True), Integer(6)), Pow(Symbol('u', positive=True), Integer(5)), Mul(Integer(2), Pow(Symbol('u', positive=True), Integer(4))), Pow(Symbol('u', positive=True), Integer(3)), Pow(Symbol('u', positive=True), Integer(2)), Symbol('u', positive=True), Integer(1)))",
+    "det_pretty": "-(u - 1)*(u + 1)*(u**3 + u - 1)**5*(u**3 + u**2 + 1)**5*(u**6 - u**5 + u**4 - u**3 + 2*u**2 - u + 1)*(u**6 + u**5 + 2*u**4 + u**3 + u**2 + u + 1)/(u**10*(u**2 + 1)**12)",
+    "numerator_factor_multiplicities": {
+      "u - 1": 1,
+      "u + 1": 1,
+      "u**3 + u - 1": "5",
+      "u**3 + u**2 + 1": "5",
+      "u**6 - u**5 + u**4 - u**3 + 2*u**2 - u + 1": 1,
+      "u**6 + u**5 + 2*u**4 + u**3 + u**2 + u + 1": 1
+    },
+    "positive_real_zeros": [
+      "CRootOf(x**3 + x - 1, 0)",
+      "1"
+    ],
+    "positive_real_zeros_note": "u = 1/psi (supergolden, multiplicity 5) and u = 1 (q = 1, the classical limit, multiplicity 1). The factor (u^3 + u^2 + 1)^5 also has a real root, u = -psi, but it is negative and so lies outside the q > 0 regime."
+  },
+  "conventionD": {
+    "markov_weight": "z = q^3/(q^2 + 1)",
+    "det": "0",
+    "identically_zero": true
+  },
+  "context": {
+    "block": "prop:spectrahedral-phase-collapse",
+    "lean": "content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean",
+    "bean": "qou-zf9n",
+    "scope": "(a) scope-limited per AGENTS.md: this shows the supergolden threshold is a convention-C feature and does not survive D. It does NOT exclude a phase transition in the canonical frame by some other route -- only this determinant reading of one.",
+    "arithmetic": "exact over Q(u) and Q(q); no float64 anywhere"
+  }
+}

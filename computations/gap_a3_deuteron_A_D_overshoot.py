@@ -27,9 +27,31 @@ import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0 = mp.mpf("1.1099785955541805")
+# ── MUON-anchored and CONVENTION C — labelled 2026-08-23 (bean `qou-8chw`),
+# matching the label bean `qou-khac` put on the sibling
+# `gap_a3_overshoot_robustness_check.py`. Q0 and TRM_BETA_D below are the SAME
+# MATCHED PAIR as that file's: byte-identical literals, same #2635-vintage run.
+# The sibling was labelled; this one was not, which is the only difference.
+#
+# DO NOT "refresh" TRM_BETA_D to the live value. The corpus moved to convention
+# D on 2026-08-09; the live D deuteron trace is 0.5751722439177719, 48% larger.
+# Substituting it would inflate `flat = A_D * TRM_BETA_D` and hence the
+# overshoot by 48% while leaving Q0 on the muon pin — breaking the matched pair
+# and silently changing this probe's recorded conclusion. Per the 2026-08-15
+# ruling, C-frame values are CORRECT FOR C and need scoping, not correction.
+#
+# Verified by construction rather than inferred: recombining the transfer's own
+# chi with the live convention-C weights
+# (schur_principal_mpmath.y_lambda_at_q0_mpmath_convention_C_HISTORICAL)
+# reproduces 0.3883571886893111 at the muon pin and 0.3883571411977910 at the
+# proton pin -- i.e. this literal's family IS convention C, to ~7 digits. (The
+# residual ~1.8e-7 is an older C vintage, not a pin difference.)
+#
+# Re-deriving this probe under convention D is bean `qou-cds1` work, not a
+# constant swap.
+Q0 = mp.mpf("1.1099785955541805")   # muon anchor — see the label above
 VOL_D = mp.mpf("12.776")            # Vol_hyp(D), PR #787 Phase-3 (Z=1 cluster)
-TRM_BETA_D = mp.mpf("0.38835725751524")  # canonical, GAP-A-3 §4 probe (#2626)
+TRM_BETA_D = mp.mpf("0.38835725751524")  # CONVENTION C, GAP-A-3 §4 probe (#2626)
 TARGET = mp.mpf("4.353")            # |−B(D)/m_e|
 A_REL_UNC = mp.mpf("0.025")         # A(K) is ≤2.5% zero-parameter (gap-a3 scope)
 

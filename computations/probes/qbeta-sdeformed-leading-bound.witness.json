@@ -70,5 +70,8 @@
     }
   ],
   "allPassed": true,
-  "durationSeconds": 0.000599
+  "durationSeconds": 0.000599,
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

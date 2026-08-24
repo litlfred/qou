@@ -1,30 +1,37 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:28:48.556871+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-08-23T21:03:44.423078+00:00",
+  "commitSha": "173e3480f31035a9291e53516e6e7c7ba6201701",
   "assertions": [
     {
-      "name": "tr_M_q0_atomic_vs_interpolate[n (neutron, A=1)]",
-      "computed": 0.9232332971861534,
-      "expected": 0.9234134546830463,
+      "name": "tr_M_q0_atomic_vs_interpolate[D (deuteron, A=2)]",
+      "computed": "0.575172243917771819191554664608759091136194314783598082088607",
+      "expected": "0.388471363214283978934144659973044735120219086547857294601115",
       "passed": false,
-      "tolerance": 9.234134546830463e-13
+      "tolerance": "0.000000000000575172243917771819191554664608759091136194314783598082088607"
+    },
+    {
+      "name": "tr_M_q0_atomic_vs_interpolate[n (neutron, A=1)]",
+      "computed": "0.987743688115809530983023454635732598379576111080479509789779",
+      "expected": "0.923413212248394228641660710527817386843536450385891120059384",
+      "passed": false,
+      "tolerance": "0.000000000000987743688115809530983023454635732598379576111080479509789779"
     },
     {
       "name": "tr_M_q0_atomic_vs_interpolate[p (proton, A=1)]",
-      "computed": 1.065306228613167,
-      "expected": 1.065411955157403,
+      "computed": "1.14575969245730081643544039460201905800181261826819337405127",
+      "expected": "1.06541176800974618826485906217857805937406257729383251664163",
       "passed": false,
-      "tolerance": 1.065411955157403e-12
+      "tolerance": "0.00000000000114575969245730081643544039460201905800181261826819337405127"
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "habiro-interpolate-cross-validation",
   "scriptFile": "habiro_interpolate_cross_validator.py",
-  "scriptHash": "cb758d51cfff",
-  "scriptCommitSha": "aec377d2c2270a50b9b9d8f3966d31126d5ed3c9",
+  "scriptHash": "e4809598121f",
+  "scriptCommitSha": "6643b2d8053c13d4d13a973029f9db121f0a48c1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +41,22 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_interpolate_cross_validator.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_interpolate_cross_validator.py"
   },
   "description": "Verifies tr_M(q_0) agreement between the atomic-polynomial path (habiro_coefficients_atomic.py) and the Vandermonde-interpolation path (habiro_coefficients_interpolate.py).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
-    "q_0": "1.1099785955573347",
+    "q_0": "1.1099785827513808",
     "agreement_rtol_dps": 50,
     "mp_dps": 70
   },
@@ -51,28 +66,32 @@
       "def:habiro-ring"
     ],
     "atoms_only_in_atomic": [],
-    "atoms_only_in_interpolate": [
-      "D (deuteron, A=2)"
-    ],
+    "atoms_only_in_interpolate": [],
     "checks": [
       {
+        "atom": "D (deuteron, A=2)",
+        "atomic_tr_M_q0": "0.5751722439177718191915546646087590911361943147835980820886066891427779",
+        "interpolate_tr_M_q0": "0.388471363214283978934144659973044735120219086547857294601115",
+        "abs_diff": "0.1867008807034878402574100046357143560159752282357407874874916891427779",
+        "rel_diff": "0.3245999484115911259198563621679965054945718932887464220799261387761843",
+        "agree": false
+      },
+      {
         "atom": "n (neutron, A=1)",
-        "atomic_tr_M_q0": "0.9232332971861534038358274894589885417699451487051039926612817516186663",
-        "interpolate_tr_M_q0": "0.9234134546830463",
-        "abs_diff": "0.0001801574968928492661359403400820400238399465097397573387182483813336637",
-        "rel_diff": "0.0001950994930593541995540991262321445716533920423083996224256661432409639",
+        "atomic_tr_M_q0": "0.9877436881158095309830234546357325983795761110804795097897789614954366",
+        "interpolate_tr_M_q0": "0.923413212248394228641660710527817386843536450385891120059384",
+        "abs_diff": "0.06433047586741530234136274410791521153603966069458838973039496149543663",
+        "rel_diff": "0.06512871369507832942467571236106031011863463736992701691465557579547222",
         "agree": false
       },
       {
         "atom": "p (proton, A=1)",
-        "atomic_tr_M_q0": "1.065306228613166867173460263079582884212085141477917833205702810534963",
-        "interpolate_tr_M_q0": "1.065411955157403",
-        "abs_diff": "0.0001057265442361894863991674309678531688963038345821667942971894650369807",
-        "rel_diff": "0.00009923536499134697303145299550037058290455195946564873778525980561760705",
+        "atomic_tr_M_q0": "1.145759692457300816435440394602019058001812618268193374051266348707116",
+        "interpolate_tr_M_q0": "1.06541176800974618826485906217857805937406257729383251664163",
+        "abs_diff": "0.08034792444755462817058133242344099862775004097436085740963634870711608",
+        "rel_diff": "0.07012633187962227540852206422504541455738025975944709077212996307221597",
         "agree": false
       }
     ]
-  },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  }
 }

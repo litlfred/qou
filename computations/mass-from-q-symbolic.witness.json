@@ -1,183 +1,212 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-04-14T16:24:54.850068+00:00",
-  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
+  "computedAt": "2026-08-23T19:07:30.527551+00:00",
+  "commitSha": "7a12fc74b2c28978d848652181448cc9060d59a6",
   "assertions": [
     {
-      "name": "\u210f_q\u00b2 = Vol(4_1) / (m_\u03bc/m_e)",
-      "computed": 0.00981718851347867,
-      "expected": 0.00981718851347867,
+      "name": "ℏ_q² = Vol(4_1) / (m_μ/m_e)",
+      "computed": 0.009817186454275078,
+      "expected": 0.009817188527722428,
+      "passed": false,
+      "tolerance": 1e-15,
+      "source": "Definitional (q_parameter.py)"
+    },
+    {
+      "name": "q₀ = 1 / (1 - ℏ_q)",
+      "computed": 1.1099785827513808,
+      "expected": 1.1099785827513808,
       "passed": true,
       "tolerance": 1e-15,
       "source": "Definitional (q_parameter.py)"
     },
     {
-      "name": "q\u2080 = 1 / (1 - \u210f_q)",
-      "computed": 1.1099785955541805,
-      "expected": 1.1099785955541805,
-      "passed": true,
-      "tolerance": 1e-15,
-      "source": "Definitional (q_parameter.py)"
-    },
-    {
-      "name": "m_\u03bc/m_e from Vol(4_1)/\u210f_q\u00b2 (self-consistency)",
-      "computed": 206.768283,
-      "expected": 206.768283,
-      "passed": true,
+      "name": "m_μ/m_e from Vol(4_1)/ℏ_q² (self-consistency)",
+      "computed": 206.7683263706738,
+      "expected": 206.7682827,
+      "passed": false,
       "tolerance": 1e-08,
       "unit": "dimensionless",
       "source": "Topological mass formula"
     },
     {
-      "name": "P_proton(q\u2080) \u2014 Skein polynomial",
-      "computed": 0.646849116327955,
-      "expected": 0.646849116327955,
+      "name": "P_proton(q₀) — Skein polynomial",
+      "computed": 0.6468490981890975,
+      "expected": 0.6468490981890975,
       "passed": true,
-      "tolerance": 1.923852031571194e-09,
+      "tolerance": 1.3050938107994625e-12,
       "unit": "dimensionless",
-      "source": "Transfer matrix chain (sympy symbolic \u2192 numerical)"
+      "source": "Transfer matrix chain (sympy symbolic → numerical)"
     },
     {
-      "name": "P_neutron(q\u2080) \u2014 Skein polynomial",
-      "computed": 0.5047761849051493,
-      "expected": 0.5047761849051493,
+      "name": "P_neutron(q₀) — Skein polynomial",
+      "computed": 0.5047761838462848,
+      "expected": 0.5047761838462848,
       "passed": true,
-      "tolerance": 1.123058079866013e-10,
+      "tolerance": 7.618516928431518e-14,
       "unit": "dimensionless",
-      "source": "Transfer matrix chain (sympy symbolic \u2192 numerical)"
+      "source": "Transfer matrix chain (sympy symbolic → numerical)"
     },
     {
-      "name": "P_proton = \u220f V\u0302_i (product consistency)",
-      "computed": 0.646849116327955,
-      "expected": 0.646849116327955,
+      "name": "P_proton = ∏ V̂_i (product consistency)",
+      "computed": 0.6468490981890975,
+      "expected": 0.6468490981890975,
       "passed": true,
       "tolerance": 1e-12,
       "source": "Internal consistency check"
     },
     {
-      "name": "P_neutron = \u220f V\u0302_i (product consistency)",
-      "computed": 0.5047761849051493,
-      "expected": 0.5047761849051494,
+      "name": "P_neutron = ∏ V̂_i (product consistency)",
+      "computed": 0.5047761838462848,
+      "expected": 0.5047761838462848,
       "passed": true,
       "tolerance": 1e-12,
       "source": "Internal consistency check"
     },
     {
-      "name": "\ud835\udd2a(\ud835\udd05\u2083) Borromean topological mass",
-      "computed": 746.417851076767,
-      "expected": 746.417851076767,
+      "name": "𝔪(𝔅₃) Borromean topological mass",
+      "computed": 746.4180075979668,
+      "expected": 746.4180075979668,
       "passed": true,
       "tolerance": 1e-06,
       "unit": "m_e",
-      "source": "\ud835\udd2a(K) = Vol(K) / \u210f_q\u00b2"
+      "source": "𝔪(K) = Vol(K) / ℏ_q²"
     },
     {
-      "name": "\ud835\udd2a(\ud835\udd05\u2083) in MeV",
-      "computed": 381.41873816148427,
-      "expected": 381.41873816148427,
+      "name": "𝔪(𝔅₃) in MeV",
+      "computed": 381.4188186586815,
+      "expected": 381.4188186586815,
       "passed": true,
-      "tolerance": 8.486209267532217e-06,
+      "tolerance": 8.486312831226684e-06,
       "unit": "MeV",
-      "source": "\ud835\udd2a(K) = Vol(K) / \u210f_q\u00b2 \u00d7 m_e"
+      "source": "𝔪(K) = Vol(K) / ℏ_q² × m_e"
     },
     {
       "name": "P_n/P_p Skein ratio (combinatorial, not mass ratio)",
-      "computed": 0.7803615590768246,
-      "expected": 0.7803615590768246,
+      "computed": 0.7803615793226635,
+      "expected": 0.7803615793226635,
       "passed": true,
-      "tolerance": 2.327428189842011e-09,
+      "tolerance": 1.5788699793874473e-12,
       "unit": "dimensionless",
-      "source": "Transfer matrix chain with \u03c3\u207b\u00b9 = \u03c3 \u2212 HA crossing convention"
+      "source": "Transfer matrix chain with σ⁻¹ = σ − HA crossing convention"
     }
   ],
-  "allPassed": true,
-  "durationMs": 13,
+  "allPassed": false,
+  "durationMs": 35,
   "computation": "mass-from-q-symbolic",
   "scriptFile": "mass-from-q-symbolic.py",
-  "scriptHash": "43e02aded403",
-  "scriptCommitSha": "02ab7dab4316bc73e613d80ce8058c15204ea7db",
-  "description": "Symbolic hadron mass derivation from the substrate parameter q. Computes Skein polynomials P_p(q), P_n(q) via transfer matrix chain construction and topological mass formula \ud835\udd2a(K) = Vol(K)/\u210f_q\u00b2. Crossing convention: \u03c3\u207b\u00b9 = \u03c3 \u2212 (q\u2212q\u207b\u00b9), matching hecke_division.py and HeckeH3.lean. All error bounds propagated from CODATA 2022 uncertainties via q_parameter.py.",
+  "scriptHash": "587206a42432",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mass-from-q-symbolic.py"
+    ],
+    "reproduce": "python3 -u computations/mass-from-q-symbolic.py"
+  },
+  "description": "Symbolic hadron mass derivation from the substrate parameter q. Computes Skein polynomials P_p(q), P_n(q) via transfer matrix chain construction and topological mass formula 𝔪(K) = Vol(K)/ℏ_q². Crossing convention: σ⁻¹ = σ − (q−q⁻¹), matching hecke_division.py and HeckeH3.lean. All error bounds propagated from CODATA 2022 uncertainties via q_parameter.py.",
   "contentBlock": "thm:topological-mass",
   "parameters": {
-    "q\u2080": 1.1099785955541805,
-    "q\u2080_err": 1.3578965598837824e-09,
-    "\u210f_q": 0.09908172643569887,
-    "\u210f_q\u00b2": 0.00981718851347867,
-    "Vol(4_1)": 2.029883212819307,
-    "m_\u03bc/m_e": 206.768283,
-    "HA": 0.20906032198987945,
-    "E_\u00d7": 0.10453016099493972,
-    "s_skein": 0.10438806980915827,
-    "z_markov": 0.4993203340335982
+    "q₀": 1.1099785827513808,
+    "q₀_err": 9.211630166162856e-13,
+    "ℏ_q": 0.09908171604425853,
+    "ℏ_q²": 0.009817186454275078,
+    "Vol(4_1)": 2.0298832128193074,
+    "m_μ/m_e": 206.7682827,
+    "HA": 0.20906029879563937,
+    "E_×": 0.10453014939781968,
+    "s_skein": 0.10438805825918152,
+    "z_markov": "0.612688037146465"
   },
   "data": {
     "proton": {
       "ordering": [
-        "check_q",
-        "check_q",
+        "u",
+        "u",
         "d"
       ],
       "volumes": [
         {
-          "V\u0302_i": 0.6147621967716402,
-          "error": 1.4705503781353712e-09
+          "V̂_i": 0.6147621829066947,
+          "error": 9.975853476618112e-13
         },
         {
-          "V\u0302_i": 1.0521940349045793,
-          "error": 6.125095186604313e-10
+          "V̂_i": 1.0521940291295908,
+          "error": 4.155120691962111e-13
         }
       ],
-      "P(q\u2080)": 0.646849116327955,
-      "P_error": 1.923852031571194e-09
+      "P(q₀)": 0.6468490981890975,
+      "P_error": 1.3050938107994625e-12,
+      "P_polynomial": {
+        "polynomial_q": "3*q**(15/2)/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + 6*q**(13/2)/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + q**(11/2)/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) - 4*q**(9/2)/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + q**(7/2)/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + 6*q**(5/2)/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + 3*q**(3/2)/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + q**8/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + 3*q**7/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + 5*q**6/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) + 3*q**5/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) - 3*q**4/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) - 5*q**3/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) - 3*q**2/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3) - q/(4*q**6 + 12*q**5 + 12*q**4 + 4*q**3)",
+        "polynomial_q_latex": "\\frac{3 q^{\\frac{15}{2}}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{6 q^{\\frac{13}{2}}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{q^{\\frac{11}{2}}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} - \\frac{4 q^{\\frac{9}{2}}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{q^{\\frac{7}{2}}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{6 q^{\\frac{5}{2}}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{3 q^{\\frac{3}{2}}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{q^{8}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{3 q^{7}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{5 q^{6}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} + \\frac{3 q^{5}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} - \\frac{3 q^{4}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} - \\frac{5 q^{3}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} - \\frac{3 q^{2}}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}} - \\frac{q}{4 q^{6} + 12 q^{5} + 12 q^{4} + 4 q^{3}}",
+        "value_at_q0": "0.64684909818909751876752047861182552156639841633566"
+      }
     },
     "neutron": {
       "ordering": [
-        "check_q",
+        "u",
         "d",
         "d"
       ],
       "volumes": [
         {
-          "V\u0302_i": 0.5047761849051494,
-          "error": 1.1230580854171281e-10
+          "V̂_i": 0.5047761838462848,
+          "error": 7.618572439582748e-14
         },
         {
-          "V\u0302_i": 1.0,
+          "V̂_i": 1.0,
           "error": 0.0
         }
       ],
-      "P(q\u2080)": 0.5047761849051493,
-      "P_error": 1.123058079866013e-10
+      "P(q₀)": 0.5047761838462848,
+      "P_error": 7.618516928431518e-14,
+      "P_polynomial": {
+        "polynomial_q": "q**4/(4*q**(5/2) + 4*q**(3/2)) + 2*q**2/(4*q**(5/2) + 4*q**(3/2)) + 1/(4*q**(5/2) + 4*q**(3/2))",
+        "polynomial_q_latex": "\\frac{q^{4}}{4 q^{\\frac{5}{2}} + 4 q^{\\frac{3}{2}}} + \\frac{2 q^{2}}{4 q^{\\frac{5}{2}} + 4 q^{\\frac{3}{2}}} + \\frac{1}{4 q^{\\frac{5}{2}} + 4 q^{\\frac{3}{2}}}",
+        "value_at_q0": "0.50477618384628473119907083993439710388494078898444"
+      }
     },
     "topological_mass": {
-      "borromean_mass_ratio_me": 746.417851076767,
-      "borromean_mass_ratio_err": 1.6605651824557387e-05,
-      "borromean_mass_MeV": 381.41873816148427,
-      "borromean_mass_MeV_err": 8.486209267532217e-06,
-      "muon_electron_ratio": 206.768283
+      "borromean_mass_ratio_me": 746.4180075979668,
+      "borromean_mass_ratio_err": 1.6605655330484927e-05,
+      "borromean_mass_MeV": 381.4188186586815,
+      "borromean_mass_MeV_err": 8.486312831226684e-06,
+      "muon_electron_ratio": 206.7683263706738
     },
     "skein_ratio": {
-      "P_n_over_P_p": 0.7803615590768246,
-      "P_n_over_P_p_err": 2.327428189842011e-09,
-      "log_q_ratio": -2.3768084142656263,
-      "codata_m_n_over_m_p": 1.0013784193053599
+      "P_n_over_P_p": 0.7803615793226635,
+      "P_n_over_P_p_err": 1.5788699793874473e-12,
+      "log_q_ratio": -2.376808428359718,
+      "codata_m_n_over_m_p": "1.00137841946336"
     },
     "error_budget": {
-      "q_relative_error": 1.2233538244094008e-09,
-      "CODATA_mass_ratio_rel_err": 2.2247125783793445e-08,
-      "SnapPy_vol_rel_err": 4.926391792812055e-13,
-      "dominant_uncertainty": "CODATA m_\u03bc/m_e (2.2e-8 relative)",
-      "P_p_rel_err": 2.9741897809067937e-09,
-      "P_n_rel_err": 2.2248634413627158e-10,
-      "borromean_mass_rel_err": 2.2247125789666494e-08
+      "q_relative_error": 8.298926041734382e-13,
+      "CODATA_mass_ratio_rel_err": 2.2247125816071793e-08,
+      "SnapPy_vol_rel_err": 4.926391792812054e-13,
+      "dominant_uncertainty": "CODATA m_μ/m_e (2.2e-8 relative)",
+      "P_p_rel_err": 2.017617114181917e-12,
+      "P_n_rel_err": 1.5092861296228511e-13,
+      "borromean_mass_rel_err": 2.224712582152628e-08
     }
   },
   "caveats": [
-    "The Skein polynomial P(q) encodes the combinatorial crossing structure via the transfer matrix T(c,d), not the absolute mass. P_n/P_p \u2260 m_n/m_p. P(q) enters the Q-value spectral decomposition.",
-    "Crossing convention: \u03c3\u207b\u00b9 = \u03c3 \u2212 (q\u2212q\u207b\u00b9). This matches hecke_division.py and the Lean formalization HeckeH3.lean. All transfer matrices are unimodular (det = \u22121).",
-    "Parametric uncertainty from \u03b4q \u2248 1.3e-8 is negligible. Structural model uncertainties (ordering, crossing types) dominate at the 2\u201310% level for Q-values."
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+    "The Skein polynomial P(q) encodes the combinatorial crossing structure via the transfer matrix T(c,d), not the absolute mass. P_n/P_p ≠ m_n/m_p. P(q) enters the Q-value spectral decomposition.",
+    "Crossing convention: σ⁻¹ = σ − (q−q⁻¹). This matches hecke_division.py and the Lean formalization HeckeH3.lean. All transfer matrices are unimodular (det = −1).",
+    "Parametric uncertainty from δq ≈ 1.3e-8 is negligible. Structural model uncertainties (ordering, crossing types) dominate at the 2–10% level for Q-values."
+  ]
 }

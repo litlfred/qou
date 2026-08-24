@@ -1,7 +1,7 @@
 {
   "computation": "hecke-core-symbolic-migration",
-  "description": "Track A migration of computations/substrate/hecke_core.py to a symbolic-in-q variant.  The numerical fast path (hecke_core.py) substitutes q_0 at import time into [n]_q, h = q-q⁻¹, the Wedderburn weights, the Markov parameter z, and the per-generator volume formulas — losing precision for all downstream BW computations.  The new module hecke_core_symbolic.py keeps q as sympy.Symbol throughout the BW chain (NF basis, Markov trace, atom V_full, Φ₁, α_EM⁻¹) and exposes evalf_at_q0(expr, dps=50) as the SOLE q_0 substitution site, evaluated with mpmath at 50 decimal places.",
-  "approach": "Approach (b) — parallel module.  Existing hecke_core.py remains the numerical fast path (no semantic changes); callers needing symbolic precision import from hecke_core_symbolic.  This avoids breaking the ~50 downstream witness scripts that depend on hecke_core's f64 globals.",
+  "description": "Track A migration of computations/substrate/hecke_core.py to a symbolic-in-q variant.  The numerical fast path (hecke_core.py) substitutes q_0 at import time into [n]_q, h = q-q\u207b\u00b9, the Wedderburn weights, the Markov parameter z, and the per-generator volume formulas \u2014 losing precision for all downstream BW computations.  The new module hecke_core_symbolic.py keeps q as sympy.Symbol throughout the BW chain (NF basis, Markov trace, atom V_full, \u03a6\u2081, \u03b1_EM\u207b\u00b9) and exposes evalf_at_q0(expr, dps=50) as the SOLE q_0 substitution site, evaluated with mpmath at 50 decimal places.",
+  "approach": "Approach (b) \u2014 parallel module.  Existing hecke_core.py remains the numerical fast path (no semantic changes); callers needing symbolic precision import from hecke_core_symbolic.  This avoids breaking the ~50 downstream witness scripts that depend on hecke_core's f64 globals.",
   "timestamp": "2026-05-02T22:58:38.809621+00:00",
   "parameters": {
     "Z": 1,
@@ -19,12 +19,12 @@
     {
       "lines": "62",
       "site": "q2 = q0**2",
-      "issue": "Used in α_EM derivation chain."
+      "issue": "Used in \u03b1_EM derivation chain."
     },
     {
       "lines": "75-117",
       "site": "_bare_alpha_em, _bare_alpha_inv, _CS_T29, _hbar_q2, _kappa_gram, ALPHA_EM_INV_DERIVED",
-      "issue": "Full α_EM CS-correction chain in f64 from start."
+      "issue": "Full \u03b1_EM CS-correction chain in f64 from start."
     },
     {
       "lines": "172-178",
@@ -38,12 +38,12 @@
     },
     {
       "lines": "1099-1131 (_phi1_from_ordering)",
-      "site": "Φ₁ accumulator",
-      "issue": "log|V̂_i| sums in f64 → drift on 4He+ scales."
+      "site": "\u03a6\u2081 accumulator",
+      "issue": "log|V\u0302_i| sums in f64 \u2192 drift on 4He+ scales."
     },
     {
       "lines": "2738-2875 (atom_per_generator_volumes)",
-      "site": "Atom V̂_i^full transfer-matrix recurrence",
+      "site": "Atom V\u0302_i^full transfer-matrix recurrence",
       "issue": "All BW arithmetic and weights in f64."
     },
     {
@@ -58,12 +58,12 @@
     "max_v_full_abs_delta": 1.1155095220750846,
     "markov_trace_abs_delta": 2.220446049250313e-16,
     "alpha_em_inv_abs_delta": 2.842170943040401e-14,
-    "interpretation": "Symbolic path agrees with numerical path to f64 precision (< 1e-15) for every NF basis component, both per-generator V_full values, the Markov trace, and α_EM⁻¹.  The symbolic path additionally exposes the full closed-form polynomial in q, so future drift-tracking can compare the two paths at arbitrary precision."
+    "interpretation": "Symbolic path agrees with numerical path to f64 precision (< 1e-15) for every NF basis component, both per-generator V_full values, the Markov trace, and \u03b1_EM\u207b\u00b9.  The symbolic path additionally exposes the full closed-form polynomial in q, so future drift-tracking can compare the two paths at arbitrary precision."
   },
   "side_by_side_nf_basis": [
     {
       "basis_idx": 0,
-      "basis_name": "γ",
+      "basis_name": "\u03b3",
       "numerical_f64": 1.018795307300056,
       "symbolic_at_q0_50dps": "1.01879530730006",
       "abs_delta": 0.0,
@@ -72,7 +72,7 @@
     },
     {
       "basis_idx": 1,
-      "basis_name": "σ₀",
+      "basis_name": "\u03c3\u2080",
       "numerical_f64": 0.08688033924870904,
       "symbolic_at_q0_50dps": "0.086880339248709",
       "abs_delta": 1.3877787807814457e-17,
@@ -81,7 +81,7 @@
     },
     {
       "basis_idx": 2,
-      "basis_name": "σ₁",
+      "basis_name": "\u03c3\u2081",
       "numerical_f64": -0.09218806081716573,
       "symbolic_at_q0_50dps": "-0.0921880608171657",
       "abs_delta": 0.0,
@@ -90,7 +90,7 @@
     },
     {
       "basis_idx": 3,
-      "basis_name": "L₊",
+      "basis_name": "L\u208a",
       "numerical_f64": -0.06996262634924941,
       "symbolic_at_q0_50dps": "-0.0699626263492494",
       "abs_delta": 0.0,
@@ -99,7 +99,7 @@
     },
     {
       "basis_idx": 4,
-      "basis_name": "L₋",
+      "basis_name": "L\u208b",
       "numerical_f64": 0.016456549593609406,
       "symbolic_at_q0_50dps": "0.0164565495936094",
       "abs_delta": 3.469446951953614e-18,
@@ -108,7 +108,7 @@
     },
     {
       "basis_idx": 5,
-      "basis_name": "e⁻",
+      "basis_name": "e\u207b",
       "numerical_f64": 0.21829739655438457,
       "symbolic_at_q0_50dps": "0.218297396554385",
       "abs_delta": 2.7755575615628914e-17,
@@ -143,13 +143,13 @@
     "hecke_core_numerical": 137.0359444240373,
     "symbolic_eval_f64": 137.03594442403733,
     "abs_delta": 2.842170943040401e-14,
-    "note": "α_EM⁻¹ closed form in (q, π) too long to print verbatim; see hecke_core_symbolic.alpha_em_inv_sym()."
+    "note": "\u03b1_EM\u207b\u00b9 closed form in (q, \u03c0) too long to print verbatim; see hecke_core_symbolic.alpha_em_inv_sym()."
   },
   "follow_up_open_items": [
     "Migrate atom_character_raw / atom_frobenius_norm_sq to consume the symbolic atom_V_full_sym path before BW formula final substitution.",
     "Re-run all proton/neutron/atom witness scripts side-by-side and quantify per-witness drift between hecke_core (f64) and hecke_core_symbolic (50 dps).",
     "Decide whether to keep the parallel module long-term, or commit to a Track-A1 in-place refactor of hecke_core.py once all downstream callers are migrated.",
-    "α_EM⁻¹ symbolic path still carries π² literals; document whether the Gram-determinant ratio cancels π² (it does in the leading order — only the residual ratio matters).",
+    "\u03b1_EM\u207b\u00b9 symbolic path still carries \u03c0\u00b2 literals; document whether the Gram-determinant ratio cancels \u03c0\u00b2 (it does in the leading order \u2014 only the residual ratio matters).",
     "Cross-paper consideration: if UGB / Fred2005 also depend on these constants, they should switch to the symbolic API too."
   ],
   "assertions": [
@@ -188,6 +188,6 @@
   ],
   "allPassed": true,
   "engine": "python",
-  "scriptFile": "(legacy — no matching producer found; provenance pending manual triage)",
+  "scriptFile": "(legacy \u2014 no matching producer found; provenance pending manual triage)",
   "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }
