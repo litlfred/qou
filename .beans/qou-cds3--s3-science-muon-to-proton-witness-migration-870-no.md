@@ -1348,3 +1348,115 @@ defect the owner already ruled against on the CODATA-2022 branch.
 no `q0Anchor` at all. Row 1 above says that producer mentions the muon zero
 times. **A sibling's regeneration is writing muon stamps onto proton
 computations, on main, at some scale.** Not diagnosed here — flagged.
+
+
+## 2026-08-24 — the muon-stamp / proton-compute population, measured
+
+Follow-on from the merge note above. Denominator first: **2938** committed
+`*.witness.json` outside `_deprecated/`, all parsed. `q0Anchor` distribution —
+absent 1781, `proton` 933, **`muon` 156**, `independent` 49, `ambiguous` 18,
+`comparison` 1, `not-applicable` 1. Producers resolved for 155/156.
+
+| bucket | n |
+|---|---|
+| CONSISTENT | 107 |
+| **MISMATCH — proton compute, muon stamp** | **7** |
+| CROSS-ANCHOR (calls both; no single anchor is meaningful) | 15 |
+| **UNRESOLVED — not folded into any bucket above** | **27** |
+
+### A correction that changes how the whole campaign must be read
+
+**`from q_parameter import q_at` IS anchor-governed.** Confirmed by execution
+under a faked `sys.argv[0]`:
+
+    q_parameter.q_at(50), stem in ideal_muon      -> 1.1099785955573347198997…  (muon A)
+    q_parameter.q_at(50), stem not in manifest    -> 1.10997858275138…          (proton)
+    qou_substrate.constants.q_at(50)              -> 1.10997858275138…          (ALWAYS)
+
+So *"calls `q_at`"* does **not** mean *"computes proton"* — it depends entirely on
+which module the name came from. The naive reading gives 14 mismatches; removing
+three that also read the muon witness or hardcode the muon literal (comparisons
+by this bean's own clause) gives 11; removing four that import `q_at` from
+`q_parameter` under a declared stem — `cyclic-intertwiner-verify`,
+`alpha-em-coulomb-channel-probe`, `alpha-em-multicell-yekutieli-probe`,
+`qbeta-signblock-template-check`, which genuinely compute muon — gives **7**.
+
+**The table earlier in this bean is unaffected**: all 12 rows there were selected
+by `route == qou_substrate.constants`, where `q_at` is proton unconditionally.
+
+### The seven, and they are TWO bugs not one
+
+| witness | producer calls | manifest |
+|---|---|---|
+| `probes/he4-rho-f-bar-symmetric-audit-probe` | `q_at` ← `qou_substrate.constants` | `ideal_muon` |
+| `probes/option-e-v9-bar-symmetric-test-probe` | ″ | `ideal_muon` |
+| `probes/yekutieli-a2-em-gauge-coupling-h2-probe` | ″ | `ideal_muon` |
+| `probes/yekutieli-per-cell-qlambert-decomposition-probe` | ″ | `ideal_muon` |
+| `qbeta/qbeta-cosh-q-sinh-q-candidate-scan` | ″ | `ideal_muon` |
+| `qbeta/qbeta-signed-vs-abs-tower-diagnostic` | ″ | `ideal_muon` |
+| `qbeta/qbeta-signchannel-cross-atom` | `q_at`, `q_str` ← `q_parameter` | **absent** |
+
+**Six are "declared but the declaration cannot bind"** — listed `ideal_muon`, but
+importing from `qou_substrate.constants`, which the rebind never touches. The
+declaration is unenforceable by construction. **The seventh is the opposite
+shape**: declared nowhere, stamped by the payload-labelling pass `4101909790`
+because its June 2026 payload happens to record a muon `q_50dps`; its producer
+today returns proton, so the stamp is faithful to a run nobody can reproduce.
+
+All seven carry `q0Value` = pin A and contain the string "muon" **zero times**.
+
+**Verified by hand here, not relayed.** `he4-rho-f-bar-symmetric-audit-probe`
+holds, in one file:
+
+    q0Anchor      muon
+    q0Value       1.10997859555733471989976322048322   <- MUON  (what it CLAIMS)
+    data.q_proton 1.10997858275138080759166909561076   <- PROTON (what it RAN)
+
+and its producer mentions the muon zero times.
+
+### It grew on main, from zero
+
+| ref | muon-stamped | MISMATCH |
+|---|---|---|
+| merge-base `91bf8fcb4c` | 70 | **0** |
+| this branch `2b5c23112a` | 76 | — |
+| `origin/main` `b134176d93` | **156** | **7** |
+
+**Not one of the seven carried a muon stamp at the merge-base.** Introducing
+commits, all sibling regeneration work in the last 48h: `235987fa3d` (five of
+seven), `8aceb89448` (`qbeta-signed-vs-abs-tower-diagnostic`), `4101909790`
+(`qbeta-signchannel-cross-atom`). 105 of the 156 muon stamps were introduced on
+2026-08-23, 4 more on 2026-08-24.
+
+**Attribution, stated against my own interest:** this branch's earlier cds3
+commits `245a6d1d5d` / `bd4067648e` independently stamped four of the same probes
+muon *before* main did, and `2dba79b163` already self-reports six. Main's side
+carries all seven without those commits, so reverting my work would not remove
+them — but I was not merely the discoverer here, I was also an early
+contributor to the population.
+
+### Forward exposure — this is the part that keeps growing
+
+Of the **152** `ideal_muon` stems on this branch, **13 import q functions only
+from `qou_substrate`**, where the declaration can never bind: the 12 tabled
+earlier plus **`q0_anchor_consistency_audit` itself**. Six show a live MISMATCH
+today; the rest will on their next regeneration. *The audit that checks anchor
+consistency is in the exposed set.*
+
+This branch's 32 declarations include **none** of the seven.
+
+### What is measured and what is not
+
+**Measured:** the 156 denominator and full distribution (JSON parse,
+cross-checked by an independent `git grep`); all seven classifications (AST, hand
+-read source, and the recorded `q0Value`); the `q_parameter`-vs-`qou_substrate`
+rebind behaviour (executed); the 13-stem exposure set; every git count.
+
+**Weaker, and not to be quoted as measured:** the CONSISTENT bucket. 82 of 107
+rest on evidence in the producer's own file; **21 rest only on a muon route found
+in a helper up to two imports away**, and that attribution over-claims — caught on
+`clambda_shape_invariant_probe`, credited to a `q-pinning` read in `_li_2_q_util`
+when it actually reaches q0 via `mass_binding_dashboard._constants()` →
+`q_parameter.Q_50_DIGIT_STR`. Right verdict, wrong reason. CROSS-ANCHOR (15) is
+AST-only and unverified. The 27 UNRESOLVED are reported as unresolved, not split
+between the good buckets.
