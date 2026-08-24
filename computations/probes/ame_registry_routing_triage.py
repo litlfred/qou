@@ -55,7 +55,16 @@ for nm in dir(c):
         except Exception:
             pass
 
-_NUMONLY = re.compile(r'^\d{1,5}\.\d{3,}$')
+# Fraction bounded at 15 digits ON PURPOSE. A hand-typed AME literal is at
+# most ~12 significant figures (the widest registry value is
+# 938.78307479441, 11 decimals). An unbounded pattern also matched
+# witness_float64_padding_audit.py's own self-test fixture --
+#   "8.4817962000000015621026250300928950309753417968750000000000"
+# -- which is a padded-float64 EXAMPLE, not a literal anyone typed. The
+# triage then wrote it into its own witness, where the padding audit
+# correctly flagged it: a roadmap reporting the example of a bug as an
+# instance of a different bug.
+_NUMONLY = re.compile(r'^\d{1,5}\.\d{3,15}$')
 
 
 def _literals(txt: str):
