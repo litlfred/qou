@@ -90,6 +90,7 @@ from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_core import h as H_BAKED_F64  # noqa: E402 — template classifier only
 from q_parameter import Q_50_DIGIT_STR as Q_RUNTIME_STR  # noqa: E402 — drift measurement only
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -231,7 +232,7 @@ def vanishing_threshold() -> mp.mpf:
 
 
 def uniform_weights(shapes, dim_q, qfact_n) -> dict:
-    return {s: dim_q(s) ** 2 / qfact_n for s in shapes}
+    return {s: dim_q(s, Q0_PROTON) ** 2 / qfact_n for s in shapes}
 
 
 def fr_weights(shapes, chi_kstar: dict, dim_q, qfact_n,
@@ -249,12 +250,12 @@ def fr_weights(shapes, chi_kstar: dict, dim_q, qfact_n,
         if k not in depths_to_redistribute:
             continue
         s_uniform = sum(w[s] for s in stratum)
-        z_norm = sum(dim_q(s) ** 2 * mp.fabs(chi_kstar[s])
+        z_norm = sum(dim_q(s, Q0_PROTON) ** 2 * mp.fabs(chi_kstar[s])
                      for s in stratum)
         if z_norm < eps:
             continue  # uniform fallback
         for s in stratum:
-            w[s] = (dim_q(s) ** 2 * mp.fabs(chi_kstar[s])
+            w[s] = (dim_q(s, Q0_PROTON) ** 2 * mp.fabs(chi_kstar[s])
                     * s_uniform / z_norm)
     return w
 
@@ -265,7 +266,7 @@ def phi_k(chi_map: dict, k: int, weights: dict, dim_q) -> mp.mpf:
     for s, chi in chi_map.items():
         if len(s) - 1 != k:
             continue
-        magnitude = mp.fabs(chi) * dim_q(s)
+        magnitude = mp.fabs(chi) * dim_q(s, Q0_PROTON)
         if magnitude < eps:
             continue
         total += weights[s] * mp.log(magnitude)

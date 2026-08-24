@@ -122,6 +122,7 @@ from hecke_characters import (partitions_of, dim_q, qfac,
                                 standard_young_tableaux)
 from hecke_3a_weights import partitions_of_n
 from mass_at_3A_proper import atom_braid_word_3A
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 # ── Jucys–Murphy eigenvalue averages ─────────────────────────
@@ -144,10 +145,10 @@ def jm_eigenvalue_avg(n: int, k: int) -> float:
     """
     if n < 1:
         return 1.0
-    nfac = qfac(n)
+    nfac = qfac(n, Q0_PROTON)
     total = 0.0
     for shape in partitions_of(n):
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         if dq == 0:
             continue
         # Use SYT enumeration from hecke_characters
@@ -495,7 +496,7 @@ def binding_per_irrep_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     if A < 1:
         return {"status": "trivial"}
     n_strands = 3 * A
-    nfac = qfac(n_strands)
+    nfac = qfac(n_strands, Q0_PROTON)
     m_atom_total = 0.0
     m_free_total = 0.0
     for shape in partitions_of(n_strands):

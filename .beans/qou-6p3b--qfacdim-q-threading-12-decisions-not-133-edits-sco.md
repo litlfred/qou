@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:15:32Z
-updated_at: 2026-08-24T14:16:17Z
+updated_at: 2026-08-24T19:50:11Z
 ---
 
 ## Scoped 2026-08-24 — full analysis in docs/audits/2026-08-24-qfac-dimq-threading-scope.md
@@ -60,3 +60,52 @@ deliberately muon; the other 10 are unadjudicated.**
 
 Nothing straddles today — the gate is green (clean=8 / STRADDLE=0). And which of
 the 10 unadjudicated producers is deliberate is exactly what must not be guessed.
+
+
+## Tranche A adjudicated — it is 7 decisions, not 10, and now 2/2/3 (2026-08-24)
+
+### Three were already settled in AGENTS.md, not open at all
+
+§q0-anchor-convention (~line 2023) names three producers that **refuse a proton
+run by design**: `atomic_tr_m_mpfr_50dps` (dual-layer, one witness per layer),
+`he4_stage2_ranking_seminormal_xcheck` (asserts the muon prefix off the
+anchor-defining witness), `cross_check_trM_1ppb` ("L1 cross-check must run under
+the MUON q0 pin"). An independent evidence scan flagged the same three before I
+read that passage.
+
+Plus the two measured deliberate in #5634 (`vhat_per_crossing_chain`,
+`he3_tritium_cosh_asymmetry_diagnosis`). **5 of 12 settled; 7 open.**
+
+### The 7, measured under an anchor flip — RUN TWICE, identical both times
+
+| producer | verdict | disposition |
+|---|---|---|
+| `lever1_binding_habiro_single_element_test` | **clean** | MIGRATE — listing is inert |
+| `gg_production_bond_probe` | **NO-WITNESS** | MIGRATE — writes nothing, no artifact consequence |
+| `aoperator_a5_crosscheck` | **STRADDLE, 13 fields incl `/allPassed`** | **HOLD** |
+| `qbeta_hoefsmit_tbeta_matrix_build_probe` | **STRADDLE, 3 fields at `/…/dim_q`** | **HOLD** |
+| `binding_via_interface_knot` | TIMEOUT 240s | UNTESTED — needs a longer budget |
+| `block_swap_binding` | TIMEOUT 240s | UNTESTED |
+| `gram_norm_binding_probe` | TIMEOUT 240s | UNTESTED |
+
+Run 1 spanned a branch switch while Tranche C was modifying `hecke_characters`
+— the module `qbeta_hoefsmit`'s moving `dim_q` field comes from — so it was
+re-run on the committed tree. **Identical, verdict for verdict and count for
+count.** The risk was real to flag and did not materialise.
+
+### The correction this measurement forced
+
+I had recommended migrating SIX on header evidence — none of the seven mentions
+muon or cross-anchor comparison, and binding is scale-cancelling. Measurement
+says `aoperator_a5_crosscheck` flips `/allPassed`, a BOOLEAN ASSERTION, under
+the anchor. That is the `vhat_per_crossing_chain` signature exactly.
+
+**Header silence is not evidence of accidental listing.** Migrating it would
+have broken a producer's own consistency check — the same failure #5634 already
+paid for once.
+
+### Defensible action
+
+**Migrate 2, hold 2, measure 3** — not "migrate 6". Still sequenced behind
+PR #5500 (muon anchor -> CODATA 2022, audit red, 53 witnesses), which touches the
+same witnesses.

@@ -214,6 +214,56 @@ theorem card_image_snd_le_of_degreeOf {P : MvPolynomial (σ ⊕ Unit) R} {d : �
     _ ≤ (Finset.range (d + 1)).card := Finset.card_image_le
     _ = d + 1 := Finset.card_range _
 
+/-! ### Factor degrees are bounded by the polynomial's
+
+⚠ **Family-uniform data, which is what `hres` needs.**  The induction step's input quantifies
+over the families realising a separated representation, so every hypothesis it carries must be
+statable *before* the family is known.  The degree bound below is: it bounds the factors'
+degrees by `P`'s own, which does not vary.
+
+And it is **false without the independence hypothesis**.  Take `P = x₀y₀` and the length-`2`
+representation `φ = ![x₀ + x₀⁵, −x₀⁵]`, `ψ = ![y₀, y₀]`: the sum telescopes back to `P`, but
+`φ 0` has degree `5`.  What rules that out is `ψ` being dependent — and after the tenth
+correction `hres` already excludes dependent families, since a dependent family's Wronskians
+all vanish. -/
+
+/-- **The factors of a separated representation have degrees bounded by the polynomial's**,
+provided the *other* family is linearly independent.
+
+The proof is the disjointness identity again: a non-zero coefficient of `φ k` gives a non-zero
+vector `c`, independence of `ψ` makes `∑ cₗψₗ` non-zero, and any non-zero coefficient of that
+is a coefficient of `P` at a multi-index whose `σ`-part is the one we started with. -/
+theorem degreeOf_factor_le_of_indep [DecidableEq σ] {r : ℕ}
+    (φ : Fin r → MvPolynomial σ R) (ψ : Fin r → MvPolynomial τ R)
+    (hψ : LinearIndependent R ψ)
+    (P : MvPolynomial (σ ⊕ τ) R)
+    (hP : P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) R) * rename Sum.inr (ψ k))
+    (j : σ) (k : Fin r) :
+    degreeOf j (φ k) ≤ degreeOf (Sum.inl j) P := by
+  classical
+  rw [degreeOf_eq_sup j (φ k)]
+  refine Finset.sup_le fun i hi => ?_
+  have hck : coeff i (φ k) ≠ 0 := mem_support_iff.mp hi
+  have hcne : (∑ l, coeff i (φ l) • ψ l) ≠ 0 := fun hz =>
+    hck (Fintype.linearIndependent_iff.mp hψ (fun l => coeff i (φ l)) hz k)
+  obtain ⟨j', hj'⟩ : ∃ j', coeff j' (∑ l, coeff i (φ l) • ψ l) ≠ 0 := by
+    by_contra hcon
+    push_neg at hcon
+    exact hcne (by ext j'; simpa using hcon j')
+  have hsplit : coeff j' (∑ l, coeff i (φ l) • ψ l)
+      = ∑ l, coeff i (φ l) * coeff j' (ψ l) := by
+    rw [coeff_sum]
+    exact Finset.sum_congr rfl fun l _ => by rw [coeff_smul, smul_eq_mul]
+  have hPcoeff : coeff (Finsupp.sumElim i j') P ≠ 0 := by
+    rw [hP, coeff_sum,
+      Finset.sum_congr rfl (fun l (_ : l ∈ Finset.univ) =>
+        coeff_sumElim_rename_mul (φ l) (ψ l) i j'), ← hsplit]
+    exact hj'
+  have hmem : Finsupp.sumElim i j' ∈ P.support := mem_support_iff.mpr hPcoeff
+  have hle := monomial_le_degreeOf (Sum.inl j) hmem
+  exact hle
+
+
 /-! ### Minimal representations
 
 ⚠ **Field required** from here on: the reduction below divides by a non-zero coefficient of a

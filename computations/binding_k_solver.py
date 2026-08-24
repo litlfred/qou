@@ -72,6 +72,7 @@ from hecke_characters import (  # noqa: E402
 )
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 Q0 = float(Q_FLOAT)
 HERE = Path(__file__).parent
@@ -341,7 +342,7 @@ def dominant_lambda_and_rho_rules(K_eval: dict, n_0: int, observed_rho: int):
             "chi_K": chi,
             "y_wenzl": y,
             "y_times_chi_abs": abs(y * chi),
-            "dim_q": float(dim_q(lam)),
+            "dim_q": float(dim_q(lam, Q0_PROTON)),
         })
     per_lambda.sort(key=lambda r: r["y_times_chi_abs"], reverse=True)
     dominant = per_lambda[0]
