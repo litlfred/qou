@@ -220,3 +220,36 @@ above: set PYTHONPATH; skip scripts with required positionals; clean the tree
 BEFORE each run as well as after; try both cwd=<producer dir> and cwd=<repo
 root>; capture stdout as well as stderr; and check for a traceback rather than
 trusting the exit code.
+
+## 2026-08-24 — re-verified against main: 2 broken, not 4
+
+Rebased onto main (+368) and re-ran all four names on the current tree.
+
+| producer | verdict now |
+|---|---|
+| `hadron_knot_table` | **fixed on main** by the sibling `qou-n7ue` arc (`46dcfc62a57`). Runs; slow — the "honest cost" that bean records. Not mine to touch. |
+| `qbeta_habiro_phase5q_dn_refactorize` | **NOT a defect.** Raises `AmDifferenceInvalid`, a `ValueError` subclass `habiro/habiro_coefficients_atomic.py:488` defines for "when a_m-differencing would silently build the wrong object". Names the correct route and beans `qou-0ndb` / `qou-lnog`. Same class as `qbeta_braid_nf_sdp_offset_probe`'s refusal — a guard, working. |
+| `su4_1111_markov_trace_probe` | real. `ValueError: scipy.sparse does not support dtype object` — an `mpf` reaching a sparse matrix. |
+| `qbeta_habiro_element_probe` | real. `TypeError: 'NoneType' object is not subscriptable` at `main()`. |
+
+### The sixth harness defect — my own checklist misfired
+
+The five-item checklist I committed said "check for a **traceback** rather than
+trusting the exit code". That rule is what put `phase5q_dn_refactorize` on the
+broken list: **a traceback is not proof of a defect either.** A refusal
+implemented as a raised domain exception is indistinguishable from a crash by
+shape alone. The discriminator is whether the exception type is one the
+producer's own import cone defines — a seventh item, now in AGENTS.md.
+
+Worth naming plainly: this is the *fourth* consecutive downward correction to
+this count (14 → 12 → 8 → 4 → 2), and every one of them was my measurement, not
+the corpus. The rate of false "broken" verdicts from a naive runner is roughly
+6 in 7.
+
+### Overlap
+
+`qou-n7ue` is actively draining this same backlog and covered five producers
+(`hadron_knot_table`, `parabolic_cylinder_channel_mixing_probe`,
+`vhat_per_crossing_chain`, `derivation_chain_validator`,
+`habiro_interpolate_cross_validator`). Only `hadron_knot_table` overlapped mine.
+The two remaining real defects above are **not** in that arc's scope.
