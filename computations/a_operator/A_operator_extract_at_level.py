@@ -9,10 +9,18 @@
    least-squares extracts are applied, so they feed no live mass/binding value.
    They are also rank-deficient min-norm fits (suspect per
    ``docs/audits/2026-06-16-unjustified-least-squares-fitting-audit.md``). The
-   correct, non-fitted replacement is the closed-form **categorical** interface
-   operator ``A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}``
-   (``a_operator_categorical.py`` / ``a_operator_gauge_align.py``, verified exact
-   at 1e-49). Only the H_6 deuteron extract is full-rank/correct and live (A=2).
+   correct, non-fitted replacement WOULD BE the closed-form **categorical**
+   interface operator ``A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}``
+   (``a_operator_categorical.categorical_A_interface``) — but **that function is
+   a ``raise NotImplementedError`` stub with zero callers**, and its own
+   docstring calls step 4 of the construction "the crux ~500 LOC". CORRECTED
+   2026-08-24 (bean ``qou-8chw``): this paragraph previously said the
+   replacement was "verified exact at 1e-49", which over-read two things — the
+   1e-49 belongs to a *different* result (the combiner identity at λ⊢12 / A=4,
+   ``a_operator_recursive.py``), and what passes for the categorical route is
+   the **I = identity** preflight, not the ``I ≠ 1`` interface case that is
+   actually needed. An agent reading the old wording would conclude the
+   replacement exists and needs only wiring; it does not exist. Only the H_6 deuteron extract is full-rank/correct and live (A=2).
    See ``docs/audits/2026-06-16-wenzl-a3-wireup-scope-and-deflag.md``.
 
 Generalization of `sublemma_2_1_A_operator_extract_h9.py` (H_9-specific)
