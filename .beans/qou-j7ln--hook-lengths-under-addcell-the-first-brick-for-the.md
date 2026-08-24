@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T15:55:02Z
+updated_at: 2026-08-24T16:02:43Z
 ---
 
 ## Landed — PR #5645
@@ -391,3 +391,58 @@ Everything the assembly needs is now proved. Remaining:
 
 (4)'s second option is likely much less work than the first and should be
 tried first.
+
+
+## Both sides now land on the SAME object
+
+Commit `543f6a897`: `QOU/Mathlib/ContentProductRows.lean`.
+
+    prodContentF_rows : prod_{c in mu} f(r - c1 + c2)
+                          = prod_{i<r} prod_{j<rowLen i} f(r - i + j)
+
+Outer range `r`, not `colLen 0`, so it is already in the zero-padded
+convention. Row `i`'s inner product is a contiguous block, so
+`prod_block_mul_descFactF` gives
+
+    prodContentF_mul_descFactF :
+      (prod_c f(r-c1+c2)) * prod_{i<r} descFactF f (r-1-i)
+        = prod_{i<r} descFactF f (r - i + mu_i - 1)
+
+**Checked, not assumed:** `r - i + mu_i - 1` is `beta_i` at `r` rows, and the
+hook side's `l.getD i 0 + (l.drop (i+1)).length` on `l` padded to length `r`
+is `mu_i + r - i - 1` -- the same number. So both sides produce
+`prod_i descFactF f beta_i` and it cancels in a ratio, as does the
+`mu`-independent `prod_{i<r} descFactF f (r-1-i)`.
+
+`schurNumExponent` was needed and is easy to miss: `schurPrincipal`'s exponent
+is `(r : Z) + content c`, a **zpow**. On a cell of an `<= r`-row diagram it is
+the natural `r - c1 + c2`, but without that step the numerator cannot be
+reindexed at all.
+
+Also un-privated `cells_biUnion'` / `rows_disjoint` / `row_prodF` in
+`HookProductMonoidBridge` -- the content side needs the identical reindexing.
+
+## The assembly that remains
+
+Small mismatches to bridge first (each ~10 lines):
+
+* hook side indexes a **List** product over `range l.length`; content side a
+  **Finset** product over `range r`. `list_range_map_prod'` bridges them.
+* `mu.rowLens.getD i 0 = mu.rowLen i` for **all** `i`, not just `i < length`:
+  beyond the length both are 0, by `rowLen_eq_zero_of_colLen_le`.
+
+Then:
+
+1. `schurPrincipal r Q mu = Q^{nPart mu} * N / D` -- split the single product
+   into numerator and denominator. Needs `D != 0`, i.e. the genericity
+   hypothesis `schurPrincipal_eq_zero_iff` already carries.
+2. `N/D = prod_{i<j}(1 - Q^{beta_i - beta_j}) / prod_{i<r} descFactF (r-1-i)`
+   by dividing the two identities.
+3. Ratio for `nu = addCell mu s`: the `mu`-independent factor cancels; needs
+   `rowLens (addCell mu s) = rowLens mu` with entry `a` incremented.
+4. Monomials: `x_i - x_j = -Q^{beta_j}(1 - Q^{beta_i - beta_j})`, so
+   `vandPairProd r x = (-1)^{C(r,2)} Q^{sum_j j*beta_j} prod_{i<j}(1-Q^{...})`.
+   Under `beta -> beta + e_a` the monomial moves by `Q^a`, which **cancels the
+   `Q^{nPart}` change** (`nPart nu - nPart mu = a`). Worth re-deriving in Lean
+   rather than trusting this paper computation.
+5. Discharge `hw` in `sum_eq_bracket_mul_of_qratio_scaling`.
