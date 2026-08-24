@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T21:28:27Z
-updated_at: 2026-08-24T13:21:24Z
+updated_at: 2026-08-24T14:35:01Z
 ---
 
 ## Batch 2 (2026-08-23) — Instanton.lean cluster, 4 defects
@@ -223,3 +223,65 @@ successor to the free-`Prop` wiring question on `qou-tsnp`.
   `---`/`+++` **file headers** when a file is named after its declaration. Three
   files looked changed; the real hunks were docstring-only edits. **Exclude
   headers.**
+
+
+## 2026-08-24 — the detector gap is CLOSED, and it was mostly a measured negative
+
+All five files read. The natural move — wire a detector on their shared
+**axiom-shim** shape — is **wrong**, and I nearly took it.
+
+Four of the five axiom classes have **no instance anywhere in `content/`** (each
+mentioned in exactly one file), so nothing is silently discharged; the shim
+relocates an assumption rather than resolving one, which is §3b-tax's honest
+representation of an unproved primary. And `HyperbolicVolumeIndependence.lean`
+documents the shim as **the repair of a prior vacuous `{ residual := 0, rfl }`
+instance**. A detector on the shim flags the fix.
+
+**What discriminates is whether the instance is GUARDED**, not whether a shim is
+present. `phi-q-tower`'s `skeletonRealisation` is unconditional and satisfies
+every `[TowerSummandRealization q]` binder in its file; `prop-rigid-monoidal`'s
+`canonical` is guarded by its axiom class and is inert. Both fill a field with
+`0`.
+
+### The one real defect, and a larger finding under it
+
+`skeletonRealisation` demoted to `def` (the `triv_hecke` disposition, PR #5581).
+Verifying that turned up that **the file had never compiled**:
+
+    before b67ee924e84   4 errors
+    after (on main)      6 errors
+    now                  0 errors, 0 warnings, no sorry
+
+Nothing compiles it — content-block sibling under `mass-theory/`, outside the
+Lake library. The two errors the drain **added** are the point: it copied the
+pre-existing malformed `TowerSummandRealization.realisation β S` into the new
+`PerPieceBridgeAxiom`, which then failed to elaborate as a class. **The drained
+`sorry` was replaced by something that does not type-check.**
+
+`q_gl_obstruction_calc`: prose defect, fixed. Both docstrings said parts 1 and 2
+"carry honest `sorry`s"; they are `exact ctx.field` projections as of the drain.
+
+### New tool + the numbers
+
+`scripts/trivially-inhabiting-instance-census.py`, `--self-test` over four
+hand-read cases:
+
+    3112 .lean   →  37 constant data field  →  23 unguarded  →  14 actionable
+
+3 hand-read, 3 confirmed harmful (`TowerSummandRealization` fixed;
+`MassEndomorphism.trivial_int_zero`; `QIntegerMassFormula.canonical`).
+**11 unread candidates — not findings, not claimed.**
+
+### Three bugs in my own census, all mine
+
+Reported **273** first. Two independent causes: `rglob` reached
+`.lake/packages/mathlib` (11125 files vs the audit's 3112), and `rfl` closing a
+**proof** field is a real proof — the data fields make `one_smul` / `mul_assoc`
+hold definitionally. Only a constant in a **data** field is content-free; that
+restriction took 273 → 14. Third, caught by the self-test rather than by
+reading: a field whose type starts on the next line captures an *empty* type,
+which contains no Prop marker and so reads as data. Same trap as
+`free-prop-field-audit.py`.
+
+Audit: `docs/audits/2026-08-24-vacuity-detector-gap-five-files.md`.
+Commits: `4204be07ed2`, `b01388e2564`, `8e69d0ca39c`. PR #5621.
