@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Matrix.Basic
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 open BigOperators
 
@@ -19,9 +19,9 @@ theorem weak_duality
   (c : Fin n → ℝ)
   (x : Fin n → ℝ) (y : Fin m → ℝ)
   (hx_pos : ∀ i, 0 ≤ x i)
-  (hx_feas : ∀ i, b i ≤ (A *ᵥ x) i)
+  (hx_feas : ∀ i, b i ≤ (A.mulVec x) i)
   (hy_pos : ∀ j, 0 ≤ y j)
-  (hy_feas : ∀ j, (Aᵀ *ᵥ y) j ≤ c j) :
+  (hy_feas : ∀ j, (A.transpose.mulVec y) j ≤ c j) :
   dot b y ≤ dot c x :=
 sorry
 
@@ -32,12 +32,12 @@ theorem strong_duality
   (c : Fin n → ℝ)
   (x_opt : Fin n → ℝ) (y_opt : Fin m → ℝ)
   (hx_pos : ∀ i, 0 ≤ x_opt i)
-  (hx_feas : ∀ i, b i ≤ (A *ᵥ x_opt) i)
+  (hx_feas : ∀ i, b i ≤ (A.mulVec x_opt) i)
   (hy_pos : ∀ j, 0 ≤ y_opt j)
-  (hy_feas : ∀ j, (Aᵀ *ᵥ y_opt) j ≤ c j)
+  (hy_feas : ∀ j, (A.transpose.mulVec y_opt) j ≤ c j)
   -- Certificate approach: given complementary slackness
-  (hx_slack : ∀ j, x_opt j = 0 ∨ (Aᵀ *ᵥ y_opt) j = c j)
-  (hy_slack : ∀ i, y_opt i = 0 ∨ (A *ᵥ x_opt) i = b i) :
+  (hx_slack : ∀ j, x_opt j = 0 ∨ (A.transpose.mulVec y_opt) j = c j)
+  (hy_slack : ∀ i, y_opt i = 0 ∨ (A.mulVec x_opt) i = b i) :
   dot c x_opt = dot b y_opt :=
 sorry
 
