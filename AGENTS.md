@@ -435,19 +435,37 @@ user's last message, not the most recently mentioned file.
       `mpf` reaching a sparse matrix) and `qbeta_habiro_element_probe`
       (`TypeError: 'NoneType' object is not subscriptable`).
 
-      **`hadron_knot_table` is UNRESOLVED, and the way I got that wrong is the
-      third lesson here.** I wrote that it "is fixed on `main` by the sibling
-      `qou-n7ue` arc; it now runs, slowly". What I actually measured was a
-      **timeout** after three `A=1` atoms with no traceback — and I read that
-      as success. It is not. The sibling bean `qou-q7lf` reports a **second**
-      scipy-sparse boundary in `hecke_core_legacy.unified_iterative_correction`
-      (sparse *multiplication*, not construction), reached via `binding_energy`
-      — a path that only engages once there is binding to compute, i.e. at
-      `A ≥ 2`. My run timed out at deuterium, the first atom that would have
-      exercised it. **A timeout is not proof of success, exactly as a non-zero
-      exit is not proof of failure** — the same error as the other two on this
-      list, in the third direction. Budget a run past the light atoms before
-      claiming this producer completes.
+      **`hadron_knot_table` does NOT crash; it is very slow — and getting to
+      that took two wrong turns of mine, in opposite directions.**
+
+      First I wrote that it "runs, slowly" on the strength of a **timeout**
+      after three `A=1` atoms with no traceback. A timeout is not proof of
+      success; that claim had no evidence behind it, whatever its merits.
+
+      Then I retracted it, on the sibling bean `qou-q7lf`, which reports a
+      **second** scipy-sparse boundary in
+      `hecke_core_legacy.unified_iterative_correction` reached via
+      `binding_energy` at `A ≥ 2`. **That bean is stale.** Its last update is
+      2026-08-23T23:08; `da645cf0f32` ("the sparse crossing loop died on mpf
+      coefficients") and `46dcfc62a57` landed on 2026-08-24 and fix exactly
+      that site. The live code computes `exact_chain` **before** the loop,
+      routes an exact chain off scipy entirely, and accumulates over σ's
+      nonzeros in COO — `O(dim·nnz)`, the same complexity the float64 branch
+      gets from sparse BLAS — rather than coercing `c`/`d` to float, which its
+      own comment refuses by citing this file.
+
+      So: **a sibling's bean is not a primary source either.** The corpus-grep
+      discipline this document states for source-file `## Status` notes —
+      *"not authoritative: the corpus is the source of truth"* — applies to
+      beans verbatim, including beans written by other agents that look
+      authoritative because they are specific and recent. I applied that rule
+      to my own claims all session and suspended it for someone else's.
+
+      Measured on `main` 2026-08-24: the three `A=1` atoms complete, and
+      deuterium — the first bound atom — then runs **> 43 minutes without
+      crashing**, because it is on the exact object-dtype path. That is the
+      "honest cost" `qou-n7ue` records, not a defect. Budget accordingly, and
+      do not expect the 19-atom table to finish.
 
       The 10 timeouts are a 240 s budget artifact and may simply be
       long-compute; re-run with a real budget before calling any of them

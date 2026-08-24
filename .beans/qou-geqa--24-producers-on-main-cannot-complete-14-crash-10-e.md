@@ -335,3 +335,55 @@ or declaring the producer exploratory-only. A scoping decision, not a repair.
 
 Nothing else in the tally moves: the four producers this branch touches are
 unaffected, and none of them go through `hecke_core_legacy`.
+
+## 2026-08-24, later still — my RETRACTION was also wrong, in the other direction
+
+Settled from the code, not the clock. `hadron_knot_table` **does not crash at
+`A ≥ 2`**. Two commits landed on `main` on 2026-08-24:
+
+- `da645cf0f32` — *"the sparse crossing loop died on mpf coefficients"*
+- `46dcfc62a57` — *"hadron_knot_table no longer crashes — two defects, and an
+  honest cost"*
+
+Both postdate `qou-q7lf`'s last update (2026-08-23T23:08). The live
+`unified_iterative_correction` computes `exact_chain` **before** the loop,
+routes an exact chain off scipy entirely, and accumulates over σ's nonzeros in
+COO — `O(dim·nnz)`, the same complexity the float64 branch gets from sparse
+BLAS. Its own comment refuses to coerce `c`/`d` to float, citing AGENTS.md.
+
+Measured here: three `A=1` atoms complete, then deuterium runs **> 43 minutes
+without crashing**, on the exact object-dtype path. Slow, not broken. That is
+precisely the "honest cost" the sibling's commit message names.
+
+### So both of my positions were wrong, and differently
+
+| | claim | why it was wrong |
+|---|---|---|
+| first | "runs, slowly — fixed by `qou-n7ue`" | **no evidence.** Read a timeout as success. Happened to be right. |
+| retraction | "unresolved, still crashes at `A ≥ 2`" | **stale evidence.** Adopted a sibling bean that `main` had already overtaken. |
+
+### The lesson, and it is not the one I already wrote down
+
+I spent this whole census learning that a process signal is not a verdict, and
+applied it rigorously to my own claims. Then I took a sibling's bean at face
+value because it was specific, recent, and written by someone else.
+
+**A sibling's bean is not a primary source.** AGENTS.md's corpus-grep
+discipline already says this about source-file `## Status` notes — *"not
+authoritative: the corpus is the source of truth"* — and it applies to beans
+verbatim. A bean is a status note with a nicer filename. The check that would
+have caught it is one line: `git log origin/main -- <the file the bean names>`.
+
+Note the shape: this is the same error as reading a timeout as a verdict. Both
+substitute a *proxy* for the thing itself — there, a process signal for the
+computation; here, someone's write-up for the code.
+
+### Consequence for the tally
+
+`hadron_knot_table` leaves the broken list for good. It is **slow**, owned by
+`qou-n7ue`, and its 19-atom table should not be expected to finish. The tally
+returns to **0 outstanding** — reached, this time, by reading the code.
+
+    14 -> 12 -> 8 -> 4 -> 2 -> 0 -> 1 -> 0
+
+Seven corrections. Six mine.
