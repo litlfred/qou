@@ -112,6 +112,56 @@ they are `T(2,5)` and its mirror. `knot-notation-convention.md` defines
 and `K {ū, s}` collide only after `windingContent` maps each knot to a bare `ℕ`
 and discards `σ`. The discriminator survives one level up.
 
+### 🛑 RETRACTED — σ **IS** the T₃ grading, and it is already Lean-proved (2026-08-24, third pass)
+
+**The section immediately below is wrong and is retracted.** It concludes that σ
+"cannot be the T₃ grading as documented" and that the discriminating assignment
+is "undefined, not merely unprojected". Both claims are false.
+
+[`MesonOperatorSelectionT3.lean`](../../content/quantum-observable-universe/lean/QOU/ParticleInteractions/MesonOperatorSelectionT3.lean)
+already formalises precisely this grading:
+
+```lean
+def signedWrithe : Quark → ℤ
+  | .up   => 3   | .charm   => 5   | .top    => 7
+  | .down => -3  | .strange => -5  | .bottom => -7
+
+def genWinding (q : Quark) : ℕ := (signedWrithe q).natAbs
+def T3 (q : Quark) : ℚ := ((signedWrithe q).sign : ℚ) / 2
+```
+
+Since `knot-notation-convention.md` defines `T_{m,n}^σ = T_{m,-n}`, **the σ
+superscript is exactly the writhe sign flip, and `T₃` is exactly its sign.** The
+quark rows `d = T(2,3)^σ`, `s = T(2,5)^σ`, `b = T(2,7)^σ` are *correct as
+written*: they encode negative signed writhe.
+
+And it does the work this audit called blocked — Lean-proved, not conjectured:
+
+| theorem | content |
+|---|---|
+| `T3_charm_ne_strange` | charm `+½` vs strange `−½` |
+| `unsigned_D_kaon_collide` | reproduces the blocker: `{5,3} = {3,5}` |
+| `graded_D_kaon_distinct` | **signed content separates D̄⁰ from the kaon** |
+| `gradedContent_injective_on_dictionary` | injective on `{π, K, η/φ, D}` |
+
+**What survives.** The defect is not that σ is undefined — it is that
+`knot-notation-convention.md` **over-states the gloss**, calling the superscript
+"charge conjugation". For *leptons* the mirror does give the antiparticle
+(electron/positron); for *quarks* it gives the weak-isospin partner. Taken
+literally the gloss makes `d = ū`. The fix belongs in that one sentence.
+
+**Why I got it wrong**, since it is the same error a fourth time: I read the
+prose definition, found it inconsistent with the usage, and concluded the
+structure was missing — without grepping the Lean for the structure itself.
+`MesonOperatorSelectionT3.lean` sits in the same directory as the file this audit
+is about. The corpus-grep discipline exists for exactly this, and I ran it on
+"flux-tube" and "amphichiral" but not on "T₃".
+
+The `5₂` and amphichirality findings below are **unaffected** and still stand.
+
+<details>
+<summary>Retracted section, retained for the record</summary>
+
 ### ⚠️ WEAKENING MY OWN FINDING — `σ` is DOCUMENTED as charge conjugation (2026-08-24, second pass)
 
 The section above says `σ` is "overloaded" and treats which meaning applies as
@@ -151,6 +201,8 @@ This is a genuine corpus defect, not a reading difficulty: the same operation is
 defined as charge conjugation and used as the weak-isospin partner map. Which one
 the quark rows mean is an authorial call, and it is the prerequisite for
 `qou-mesont3` — not a detail downstream of it.
+
+</details>
 
 ### A second, independent defect in the same block: `𝔡` is given two incompatible knots
 

@@ -986,6 +986,24 @@
         },
         "reviewed_at": "2026-08-24T17:30:00.000Z",
         "reviewed_sha": "621d98b9ad54ad6ff98f609da8f8821ac66f6c52"
+      },
+      {
+        "field_hash": {
+          "md": "3eb69b261c68",
+          "ts": "2f204223fff4"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "SUPERSEDES my own fail entry of 2026-08-24T17:20/17:30Z on the sigma question. That entry claimed sigma CANNOT be the T3 grading because knot-notation-convention.md documents it as charge conjugation, and that the discriminating assignment is 'undefined'. THAT IS WRONG. lean/QOU/ParticleInteractions/MesonOperatorSelectionT3.lean already formalises exactly this grading: `signedWrithe : Quark -> Z` gives up=3, charm=5, top=7, down=-3, strange=-5, bottom=-7; `genWinding = |signedWrithe|`; `T3 = sign(signedWrithe)/2`. Since knot-notation-convention defines T_{m,n}^sigma = T_{m,-n}, the sigma superscript IS the writhe sign flip, and T3 is exactly its sign. So sigma IS the T3 grading, and it is Lean-proved to do the work: `T3_charm_ne_strange`, `graded_D_kaon_distinct` (the D/kaon collision the audit called a blocker), and `gradedContent_injective_on_dictionary`. || WHAT SURVIVES: the defect is NOT that sigma is undefined -- it is that knot-notation-convention.md:1 over-states the gloss, calling the superscript charge conjugation ('distinguishes a particle from its antiparticle via mirror reflection'). For LEPTONS the mirror does give the antiparticle (electron/positron); for QUARKS it gives the weak-isospin partner, not the antiquark. Taken literally the gloss makes d = u-bar (charge -1/3 = -2/3). The fix is to narrow the gloss to the mirror and let the physical reading depend on the sector, citing MesonOperatorSelectionT3. || The 5_2 and amphichirality findings in the prior entries are UNAFFECTED and still stand. This block is where the fix belongs: narrow the charge-conjugation gloss. The amphichirality error in this block is independent and unaffected.",
+        "notes": "Self-correction. The prior entry's sigma analysis was wrong; its 5_2 / amphichirality findings stand. Analysis + options: docs/audits/2026-08-02-meson-fluxtube-junction-reduction.md; PR #5659.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "agent_date": "2026-08-24"
+        },
+        "reviewed_at": "2026-08-24T17:55:00.000Z",
+        "reviewed_sha": "dba6c81963c18855f689df18be10f2c1452fea6c"
       }
     ],
     "da-empirical-fragility": [
