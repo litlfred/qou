@@ -141,3 +141,73 @@ absent laws: `d ∘ d = 0` and the page-turning isomorphism. Then
 so the honest minimal version is buildable today, and my earlier framing
 ("spectral sequences absent from Mathlib, therefore blocked") was too pessimistic
 about this particular file. Correcting that here.
+
+## The repair, built 2026-08-24
+
+Two new modules. The defect is now not just documented but replaced.
+
+### `QOU/Mathlib/PagedSpectralSequence.lean` — collapse becomes a theorem
+
+Supplies the three things the old API lacks, which are exactly what a spectral
+sequence *is*:
+
+| law | why the old API needed it |
+|---|---|
+| pages are `R`-modules | so "the differential is zero" means the zero map, not "equals a nominated element" |
+| `d ∘ d = 0` | without it `ker ⊇ im` fails and the page quotient is not well-posed |
+| `turn : E_{r+1} ≅ ker d_r ⧸ im d_r` | what makes the pages a **sequence** rather than unrelated indexed objects |
+
+`page_stabilises_of_collapse` is then a real theorem. The old API's counterpart,
+`eInfinity_eq_page_is_rfl`, is true by definition for every spectral sequence,
+collapsing or not.
+
+Worth recording: `next (prev c) = c` holds by **arithmetic on ℤ, not by `rfl`**,
+so the incoming differential lands in a syntactically different page and needs
+the `reindex` transport. Without it `incoming` does not typecheck.
+
+No trivial witness is shipped, deliberately — naming one is what let the old
+placeholder be reached for and then cited.
+
+### `QOU/Mathlib/BarGradedCollapse.lean` — collapse *proved* from a grading
+
+`QOU/QBeta/ZBarParity.lean` already had the argument at the **scalar** level:
+`z` bar-even, `κ_{(2,1)}` bar-odd, and `bar_even_ne_bar_odd_of_ne_zero`
+excluding their coincidence — the `c₃`-odd exclusion. Structurally that is a
+ℤ/2 grading, and it is the most classical reason a spectral sequence
+degenerates.
+
+The missing step was the lift from scalars to **maps between modules**:
+
+- `map_eq_zero_of_parity_mismatch` — a bar-equivariant map from a purely even
+  module to a purely odd one is the zero map;
+- `collapses_of_parity_mismatch` — hence a `PagedSS` running even → odd from
+  page `r₀` collapses at `r₀`;
+- `page_stabilises_of_parity` — chained, `E_{r+1} ≅ E_r`.
+
+**2-torsion-freeness is an explicit hypothesis, not a field assumption**, so
+this works over `R_q = ℤ[q, q⁻¹]` where the corpus actually is.
+`ZBarParity`'s field-based version needs specialisation to `ℝ` first; this
+does not.
+
+### Still assumed, and said plainly in the docstrings
+
+The parity **data**. Someone must exhibit the involution and show the pages are
+purely even / purely odd, for the Gröbner filtration specifically. Neither file
+does that. What is gone is the step where collapse *itself* was assumed.
+
+### Verification
+
+```
+lean-direct-cone      exit 0 (both modules)
+#print axioms         propext / Classical.choice / Quot.sound — no sorry
+run-validate          Valid — 26 issues, 0 errors
+mirror drift  @35     exit 0   (wall-crossers 0, regime-only 0)
+duplicate decls @57   exit 0
+self-discharging      125 unconditional, 17 trivial (new gate)
+```
+
+### One process failure worth keeping
+
+`PagedSpectralSequence.lean` was written, compiled and axiom-checked — and then
+**not committed** before the container reset, so it had to be reconstructed
+from scratch. Compiling is not landing. Commit before moving to the next file.
