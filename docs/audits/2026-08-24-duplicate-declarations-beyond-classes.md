@@ -105,6 +105,35 @@ confirmed defect here** — only a measurement and one blocked item.
    declarations at all before it starts.
 3. **The 6 duplicated `inductive`s** are the sharpest sub-population, because a
    forked *type* blocks imports that a forked abbreviation does not —
-   `LightNucleus` is the worked case. They are: `ConfMorphism`, `CrossingType`,
-   `Flavor`, `LightNucleus`, `NucleonType`, `Place`, each in exactly 2 files,
-   each a library-vs-sibling pair.
+   `LightNucleus` is the worked case.
+
+### The six, read
+
+Each is exactly **one library-vs-sibling pair in the same namespace** — the §0a
+shape, uniformly. Comparing constructor lists splits them four ways, and only
+one is a genuine fork:
+
+| type | namespace | verdict |
+|---|---|---|
+| `Flavor` | `QOU.FlavorDressing` | **identical** — both the 6-flavor list |
+| `LightNucleus` | `QOU.BraidKnot` | **identical** — `deuterium \| tritium \| helium3` |
+| `Place` | `QOU.AlgebraicSubstrate` | **identical** — `infty \| finite : Nat.Primes → Place` |
+| `NucleonType` | `QOU.Archimedean` | **cosmetic** — same constructors; the library adds `Inhabited` to its `deriving` |
+| `CrossingType` | `QOU.BraidKnot` | **rename** — `sigma \| sigma_inv \| averaged` against `Plus \| Minus \| Averaged`; the same three-way crossing notion under different constructor names |
+| `ConfMorphism` | `QOU.BraidKnot` | **genuine fork** — `unfold \| fold` against `nil \| cons`; two different category constructions, not two spellings of one |
+
+So **four of six carry no semantic question** and one is a naming choice. That
+is a better answer than "six pairs, all authorial", which is what this said
+before the declarations were read — the same error the `R_q` retraction above
+records, caught earlier this time.
+
+**Identical constructors do not make the merge free.** `LightNucleus` is the
+caution: the inductive matches exactly, and the *surrounding API* does not — the
+sibling defines `LightNucleus.numConstituents`, which the library does not. The
+pair still cannot be merged by deleting one side.
+
+**`CrossingType` is declared five times in total**, of which only this pair
+collides; the other three sit in different namespaces with three further
+constructor lists (`sameUp \| sameDown \| mixed`, `pp \| nn \| mixed`,
+`pp \| nn \| pn \| pe \| ne`). Those are not import hazards, but five notions of
+"crossing type" under one name is worth an author's eye.
