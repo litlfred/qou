@@ -1,11 +1,11 @@
 ---
 # qou-qad3
 title: Five uploads/ PDFs are un-ingested — library/ registration backlog is no longer zero
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-24T14:07:59Z
-updated_at: 2026-08-24T17:30:12Z
+updated_at: 2026-08-24T19:48:38Z
 ---
 
 `qou-9ep0` recorded the library backlog as **drained to zero**: "every library
@@ -75,3 +75,37 @@ Each has library/<doc-id>/ with all five artefacts (PDF moved by git mv so histo
 **Still open, and it is the half this bean names:** none of the nine has a references.ts entry yet, so the library↔bib join is still broken for them. Ingestion makes them greppable and citable; it does not register them as sources.
 
 Assessment of the four Floer papers for the qou-fngs arc is in docs/curved-dq-and-the-floer-cluster.md — the cluster is method, not content, and acting on it produced QOU.DqTwist.dq_sq_eq_curvature the same day.
+
+
+---
+
+## Both halves now verified done — closing 2026-08-24
+
+The body above closed the ingestion half and left the registration half open:
+*"none of the nine has a references.ts entry yet, so the library<->bib join is
+still broken for them."* Re-measured against the working tree on
+`claude/mt7r-archimedean-eval-2026-08-24`:
+
+- `ls uploads/*.pdf` -> **no such file**; the intake tree is empty.
+- All nine have a `library/<doc-id>/` directory: `arxiv-math-0105186v2`,
+  `arxiv-2111.12409v4`, `arxiv-2605.19310v1`, `noniterativeroth2`, `roth-lemma`,
+  `arxiv-1006.1099v3`, `arxiv-1109.3255v2`, `arxiv-2301.08311v4`,
+  `978-3-98547-562-9-volume-4-chapter-5483`.
+- All nine now have exactly **one** `docId:` entry each in
+  `content/schema/references.ts` (checked per doc-id, not by count). `library/`
+  is at 390 documents.
+
+So the registration half is done and the join is closed for this batch. Nothing
+about the two-different-Roth-theorems warning above is superseded — any citation
+that says only "Roth's theorem" is still ambiguous and should name which.
+
+## One thing this bean surfaced that outlives it
+
+The nine titles were corrected **as data** because `pdf-structure.py` mangled
+them. That extractor defect was fixed in folio-assistant (`folio-assistant-gx86`,
+commit 432f8b7), but **`library/*/structure.json` here has not been
+regenerated**, so the corrected titles are still hand-corrections sitting on top
+of pre-fix output. A re-run is safe for these nine and no longer reverts them —
+but it would regress five *other* documents' bylines, which is
+`folio-assistant-whwf`. Do not re-run the extractor over `library/` until that
+one is closed.

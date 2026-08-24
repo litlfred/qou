@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:36:01Z
-updated_at: 2026-08-24T14:36:55Z
+updated_at: 2026-08-24T19:49:32Z
 ---
 
 From `scripts/trivially-inhabiting-instance-census.py` (PR #5621, audit
@@ -58,3 +58,18 @@ Note `he4-channel-active-set` is in the list above and may be the same story.
 
 Two of the eleven are the **same class in two files**
 (`ShellClosureNFTermCount`), so a single verdict likely covers both.
+
+
+
+---
+
+## Cross-reference added 2026-08-24
+
+`QOU/Interactions/QIntegerMassFormula.lean:185` — third of the three
+"confirmed harmful" above — has a **second** defect this bean does not name, now
+filed as `qou-tpt6`: `fits_AME` is not discharged by the instance at all, it is
+forwarded to `IsAMEValue.fits_bound`, a field whose own docstring reads
+"Trivialized bound hypothesis to close sorry". `IsAMEValue` has **zero instances
+corpus-wide**, so `fits_AME_conditional` is unsatisfiable-as-stated rather than
+vacuously true. Fix them together — the `f_magic := fun _ => 0` verdict this
+bean owns and the laundering `qou-tpt6` owns are the same edit.

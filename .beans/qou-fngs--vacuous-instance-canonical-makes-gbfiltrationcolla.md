@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-24T14:13:08Z
-updated_at: 2026-08-24T18:46:40Z
+updated_at: 2026-08-24T19:48:54Z
 ---
 
 `QOU/Mathlib/SpectralSequence.lean:125`:
@@ -254,3 +254,44 @@ Two things follow, both narrowing the arc considerably.
 The mass formula needs the specific k*, so it needs E_2, not merely "some page". Do not conflate them; the corpus currently states only the strong form.
 
 **Formalisation target, now concrete.** Build a `PagedSS` whose pages vanish above k*, i.e. `Subsingleton (page c)` for c.r > k*. Then `LongExactSequence.map_eq_zero_of_subsingleton` / `_target` and `equivOfFlankingTermsZero` apply directly, `Collapses` follows, and `SpectralCollapseCriteria.legacyOfPaged` discharges `GBFiltrationCollapsesAtE2` from a real object rather than PUnit. This is the bounded case that `EulerCharacteristic`s docstring named as the remaining work; it is now identified as the thing the mass formula actually rests on.
+
+
+---
+
+## Status audit 2026-08-24 — the titled defect is closed, the bean is not
+
+Two things are tangled in this bean and a reader should not have to untangle
+them, so, explicitly:
+
+**1. The defect in the title is FIXED and verified.**
+`QOU/Mathlib/SpectralSequence.lean` now declares **zero instances** — checked by
+`grep -c '^instance'` on the working tree, which returns 0. `canonical` is
+`canonicalTrivial`, a `def` at line 136, and the other six demotions listed
+above are in place. `[GBFiltrationCollapsesAtE2 R]` is a real hypothesis again.
+Nothing further is owed on the title.
+
+**2. Deliberately left open, because the bean grew an arc.** The notes below the
+fix are not about that instance at all. They establish:
+
+- the binding-energy derivation `M(H) = nu_SDP * [tr_M(T_w) + tower(T_w) +
+  tr_M(C_dimq)]` is an exact finite sum **only** because the GB spectral
+  sequence collapses at E_2 — so `S-GB-spectral-collapse` is load-bearing for
+  the physics, not decorative;
+- the exposure is **localised to one term**: the two `tr_M` terms are Markov
+  traces (linear functionals, not slice sums) and survive a collapse failure;
+  `tower(T_w)` is the whole exposure;
+- the claim the manuscript actually needs is **boundedness** ("truncation at
+  k >= k* yields the identical value"), and collapse at *some* finite page follows
+  from boundedness with no Groebner input — but the mass formula needs k* to be
+  the max GB-depth, which is collapse at **E_2 specifically**. Do not conflate
+  the two; the corpus states only the strong form;
+- the concrete formalisation target: a `PagedSS` with `Subsingleton (page c)`
+  for `c.r > k*`, after which `LongExactSequence.map_eq_zero_of_subsingleton` /
+  `equivOfFlankingTermsZero` apply, `Collapses` follows, and
+  `SpectralCollapseCriteria.legacyOfPaged` discharges
+  `GBFiltrationCollapsesAtE2` from a real object rather than `PUnit`.
+
+That is a live work item with a named next step, so this bean stays
+**in-progress**. Closing it on the strength of the demotion would lose the arc.
+Whoever picks it up: consider splitting (2) into its own bean and closing this
+one, but do not close this one without doing the split first.

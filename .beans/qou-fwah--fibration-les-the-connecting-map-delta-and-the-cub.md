@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: low
 created_at: 2026-08-24T19:24:29Z
-updated_at: 2026-08-24T19:24:29Z
+updated_at: 2026-08-24T19:49:22Z
 blocking:
     - qou-jbfx
 ---
@@ -55,3 +55,27 @@ qou-jbfx item 2 already costs the SU(2) -> SU(3) -> S^5 payoff as LOW. Nothing
 here changes that. pi_3(SU(2)) = Z would additionally need SU(2) ~= S^3 as
 spaces, pi_n(S^n) = Z (no Hurewicz theorem and no degree theory for n >= 2 in
 Mathlib), and Lie-group topology to know the bundle is a fibration at all.
+
+
+---
+
+## Re-verified 2026-08-24 — no new bean minted, this one covers it
+
+A findings sweep re-derived `SerreCubePairBridge` independently as "an unproved
+named `Prop` (plain HLP against a cube => stationary relative HLP against
+`(I^n, dI^n)`; Hatcher 4.2)". Checked against `1` above: same declaration, same
+statement, same file — **already covered here**, so nothing was created. Recorded
+so the next sweep does not re-derive it a third time.
+
+State at re-check, `QOU/Mathlib/HomotopyLifting.lean:210`:
+
+- still a `def ... : Prop`, deliberately not a `sorry`ed theorem — the docstring
+  gives the reason and it is a good one: a `sorry` would leak `sorryAx` into
+  every downstream `#print axioms` and make the honest results
+  indistinguishable from the assumed one;
+- the only witness is `Prod.serreCubePairBridge_fst`, the trivial bundle, whose
+  own docstring is careful about what it is: *"Not evidence for the general
+  case; evidence that the statement is the right shape."*
+- referenced from `QOU/Mathlib/FibrationExactness.lean:56` as the named hole.
+
+Nothing has changed and nothing has silently discharged it.
