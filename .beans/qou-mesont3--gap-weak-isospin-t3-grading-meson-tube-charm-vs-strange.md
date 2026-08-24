@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-24T18:19:54Z
+updated_at: 2026-08-24T18:21:37Z
 ---
 
 ## Refines `qou-qpj9` (meson-binding braid gate)
@@ -249,3 +249,30 @@ investigation started, now Lean-characterised instead of merely asserted.
 **Recommend closing this bean** in favour of `qou-qpj9` (and whichever bean owns
 `MesonOperatorSelectionT3`). Nothing in the T₃ direction is open. Do not
 re-derive T₃, and do not chase a third flavour grade.
+
+
+### Sharpening where Obstruction A actually lives (same session, precision note)
+
+My note above says "the mass datum is **provably not a function of `(n,T₃)`**",
+citing `mass_from_graded_content_cannot_separate`. That is accurate **as stated**
+— that theorem quantifies over `f : Multiset ℤ → ℚ`, i.e. the *symmetric*
+content. It should not be read as the stronger claim that the content cannot
+carry the mass at all.
+
+The complement matters for where to look next. `orderedContent_injective` is
+proved, so **any** mass function on the five mesons factors through
+`orderedContent` — trivially, an injection admits a left inverse on its image.
+So there is no information-theoretic obstruction remaining at the content level:
+the ordered `(−κ_antiquark, +κ_quark)` datum is already enough to *distinguish*
+every meson in the set.
+
+**Therefore Obstruction A is purely geometric, not a missing grade.** What is
+absent is a *canonical, parameter-free map* from that content to a hyperbolic
+braid word at `H₃(q)` — the `(n,T₃)` content is `Vol = 0` torus-carrier data
+(`MesonFluxTubeReduction.twoStrand_winding_bijective`), and nothing yet derives
+the braid whose volume the mass law reads.
+
+The practical consequence: a future attempt must **not** be framed as "find the
+missing invariant" (there is none missing) and must not be a search for a braid
+that lands on `m_D` (that is the per-state fit the J/ψ attack already recorded as
+worthless). It has to *derive* the content → braid map, then check once.
