@@ -75,9 +75,11 @@ def level_of(z_target, q, guess=2.0):
 
 
 def main() -> int:
-    from qou_substrate.constants import Q as Q_PROTON
+    # `Q_MP`, not `Q`: `Q` is the float64 view, and `mpf(str(Q))` below
+    # would recover its 17 digits and discard the other 32.
+    from qou_substrate.constants import Q_MP as Q_PROTON
 
-    q = mp.mpf(str(Q_PROTON))
+    q = mp.mpf(Q_PROTON)
 
     # Each entry: (channel, production site, literal z as run, callable).
     # Sites confirmed by reading the files, not by trusting the registry --

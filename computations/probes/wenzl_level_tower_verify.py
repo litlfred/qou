@@ -155,9 +155,11 @@ def solve_level(z_target, q, guess=2.5):
 
 
 def main():
-    from qou_substrate.constants import Q as Q_PROTON  # noqa: E402
+    # `Q_MP`, not `Q`: `Q` is the float64 view, and `mpf(str(Q))` below
+    # would recover its 17 digits and discard the other 32.
+    from qou_substrate.constants import Q_MP as Q_PROTON  # noqa: E402
 
-    q = mp.mpf(str(Q_PROTON))
+    q = mp.mpf(Q_PROTON)
 
     sym = symbolic_leg()
 

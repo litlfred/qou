@@ -202,7 +202,13 @@ _rad_hat = _RADICAL / np.linalg.norm(_RADICAL)
 # nothing and is exact, so the witness carries the exact value rather than a
 # 16-digit shadow of it. `_rad_hat` above stays f64 -- it only ever feeds the
 # numpy overlap printout below.
-_radical_exact = [_fmt((-1 / mp.mpf(str(q0))) ** len(w)) for w in NF_BASIS]
+# `Q_MP`, not `mpf(str(q0))`. The comment above says the mpmath form "is exact,
+# so the witness carries the exact value rather than a 16-digit shadow of it" —
+# and `mpf(str(q0))` produced EXACTLY that 16-digit shadow, because `q0` is
+# imported as `q_parameter.Q`, the float64 view of the pin. The code defeated
+# its own stated purpose. `Q_MP` is the same constant at full precision.
+from q_parameter import Q_MP as _q0_exact  # noqa: E402
+_radical_exact = [_fmt((-1 / _q0_exact) ** len(w)) for w in NF_BASIS]
 
 hdr = f"  {'G⁻¹':6s}"
 for name in NF_NAMES:

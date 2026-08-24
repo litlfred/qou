@@ -81,10 +81,12 @@ def catalan(n: int) -> int:
 
 
 def main() -> int:
-    from qou_substrate.constants import Q as Q_PROTON
+    # `Q_MP`, not `Q`: `Q` is the float64 view, and `mpf(str(Q))` below
+    # would recover its 17 digits and discard the other 32.
+    from qou_substrate.constants import Q_MP as Q_PROTON
     import schur_principal_mpmath as spm
 
-    q = mp.mpf(str(Q_PROTON))
+    q = mp.mpf(Q_PROTON)
     report = {
         "pin": {"name": "proton", "q0": mp.nstr(q, 50),
                 "source": "qou_substrate.constants.Q"},

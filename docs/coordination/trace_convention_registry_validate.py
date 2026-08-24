@@ -187,9 +187,14 @@ def _verify_trM_borromean():
     sys.path.insert(0, str(REPO / "computations"))
     import mpmath as mp  # noqa: PLC0415
     from m_p_substrate_identity_50dps import trM_borromean  # noqa: PLC0415
-    from q_parameter import Q as Q0  # noqa: PLC0415
+    # `Q_MP`, not `mpf(str(Q))`. This computes convention D "straight from the
+    # production closed form" inside `workdps(50)` — and then seeded it with
+    # `mpf(str(Q0))`, the float64 view's 17 digits, so 33 of the 50 were
+    # padding. This module already imports `Q_50_DIGIT_STR` elsewhere, so the
+    # full-precision constant was always to hand.
+    from q_parameter import Q_MP as Q0  # noqa: PLC0415
     with mp.workdps(50):
-        return {"D": mp.mpf(str(trM_borromean(mp.mpf(str(Q0)))))}
+        return {"D": mp.mpf(trM_borromean(mp.mpf(Q0)))}
 
 
 def _verify_probe_writhe0():
@@ -198,10 +203,12 @@ def _verify_probe_writhe0():
         sys.path.insert(0, str(REPO / "computations" / sub))
     import sympy as sp  # noqa: PLC0415
     from hecke_character_symbolic import q_character_on_braid_word  # noqa: PLC0415
-    from q_parameter import Q as Q0  # noqa: PLC0415
+    # Same reason as above: `sp.Float(str(Q0), 50)` ASKS for 50 digits from a
+    # source that has 17, so the request was satisfied with padding.
+    from q_parameter import Q_50_DIGIT_STR as Q0  # noqa: PLC0415
 
     qs, z = sp.symbols("q", positive=True), sp.symbols("z")
-    q0 = sp.Float(str(Q0), 50)
+    q0 = sp.Float(Q0, 50)
     parts = [(3,), (2, 1), (1, 1, 1)]
     classes = [[], [(0, "sigma")], [(0, "sigma"), (1, "sigma")]]
     targets = [sp.Integer(1), z, z ** 2]
