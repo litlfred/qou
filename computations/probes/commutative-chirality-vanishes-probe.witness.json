@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:45:52.069163+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T14:41:54.453689+00:00",
+  "commitSha": "fae52f3277aa9bee8e61b78fec34f06a9601e139",
   "assertions": [
     {
       "name": "H_A_squared_decreases_monotonically",
@@ -33,7 +33,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "commutative-chirality-vanishes-probe",
   "scriptFile": "commutative_chirality_vanishes_probe.py",
   "scriptHash": "a230878f5c84",
@@ -52,7 +52,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -63,9 +63,9 @@
   "description": "I1 probe for cor:commutative-chirality-vanishes.  Verifies that H_A² = (q - q⁻¹)² → 0 as q → 1, both directly and against the leading-order asymptotic H_A² ~ 4·(q - 1)².  Even with a generous chirality-functional bound |Φ_3| ≤ 10, the product H_A² · Φ_3 vanishes in the commutative limit — confirming the corollary's two-term reduction of the Wedderburn mass formula in the classical regime.",
   "contentBlock": "cor:commutative-chirality-vanishes",
   "parameters": {
-    "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "phi_3_upper_bound": "10.0",
-    "H_A_squared_at_q_0_50dps": "0.04370621823290131021824508554360303166634175188467189098756352045257693"
+    "H_A_squared_at_q_0_50dps": "0.0437062085325219894020193356773883097682139607135222162428473446418258"
   },
   "data": {
     "limit_sequence": [
@@ -149,6 +149,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

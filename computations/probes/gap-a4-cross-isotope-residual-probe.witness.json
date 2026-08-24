@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:46:10.170076+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T14:42:47.816153+00:00",
+  "commitSha": "0baea0f7404d202791d61bdbe8ffec665866c317",
   "assertions": [
     {
       "name": "negative_control_He3_under_R5_mismatch_24pct",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 55,
+  "durationMs": 71,
   "computation": "gap-a4-cross-isotope-residual-probe",
   "scriptFile": "gap_a4_cross_isotope_residual_probe.py",
   "scriptHash": "a297db918c0b",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -402,6 +402,6 @@
     },
     "synthesis_verdict": "No tested per-(Z, N) exponent rule closes the residuals across the light series; best rule (R1 (constant)) misses by +1120.56% at the worst atom. §4 direction 3 closes NEGATIVE under the 'fix as numerology unless derivable' discipline: PR #1882's ³He +0.70 % match is confirmed as a single-atom coincidence with no cross-isotope structural backing. Productive direction shifts to §4 direction 2 (additive S(K) sub-leading) or §4 direction 4 (re-examine Vol(K) convention).  This is the cleanest possible negative closure: 18 candidates × 6 atoms × 6 exponent rules all tested with no derivation route surfacing."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

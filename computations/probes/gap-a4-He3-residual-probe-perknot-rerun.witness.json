@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:45:57.544023+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T14:42:24.220865+00:00",
+  "commitSha": "0baea0f7404d202791d61bdbe8ffec665866c317",
   "assertions": [
     {
       "name": "L1b_He3_matches_PR1874_value",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 39,
   "computation": "gap-a4-He3-residual-probe-perknot-rerun",
   "scriptFile": "gap_a4_He3_residual_probe_perknot_rerun.py",
   "scriptHash": "b7614a3974d3",
@@ -41,7 +41,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -55,9 +55,9 @@
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "residual_ratio_target": "1.2217597849675876116271330618178711228584680957325",
     "lambda_A_at_q0": "2.5327796636746759826636838141577022737497563139135",
-    "tr_M_He3": "0.4037670390921084394302163632514281120280838715121",
-    "tr_M_p": "1.1457596930251999584370288654945060349157742067613",
-    "tr_M_n": "0.98774368843813104881681732268499206354875717805305"
+    "tr_M_He3": "0.4037670368514281703686702533334025411550870705919",
+    "tr_M_p": "1.1457596924573008696890815957741193059437280619435",
+    "tr_M_n": "0.98774368811580957163402016550129498205504875906282"
   },
   "data": {
     "discipline": "EXPLORATORY",
@@ -88,43 +88,43 @@
       {
         "label": "tr_M(3He)",
         "family": "perknot_atom",
-        "value_at_q0": "0.4037670390921084394302163632514281120280838715121",
-        "relative_error": "-0.66952011020495319219589824238421583975590780127584",
+        "value_at_q0": "0.4037670368514281703686702533334025411550870705919",
+        "relative_error": "-0.6695201120389309484051433430645256789893362323915",
         "verdict": "REFUTED"
       },
       {
         "label": "tr_M(3He)/2",
         "family": "perknot_atom",
-        "value_at_q0": "0.20188351954605421971510818162571405601404193575605",
-        "relative_error": "-0.83476005510247659609794912119210791987795390063792",
+        "value_at_q0": "0.20188351842571408518433512666670127057754353529595",
+        "relative_error": "-0.83476005601946547420257167153226283949466811619575",
         "verdict": "REFUTED"
       },
       {
         "label": "sqrt(tr_M(3He)/[2]_q)",
         "family": "perknot_atom",
-        "value_at_q0": "0.44809544845552777293146737279559537198077072985722",
-        "relative_error": "-0.63323768389756304218057746182595140759708302871937",
+        "value_at_q0": "0.44809544721218875043326796914269458811738437787009",
+        "relative_error": "-0.63323768491522546469285901750331515385626037914149",
         "verdict": "REFUTED"
       },
       {
         "label": "tr_M(p)^2*tr_M(n)",
         "family": "perknot_pn_product",
-        "value_at_q0": "1.2966756139534784577888355831855561709730135548815",
-        "relative_error": "0.061317969299405535759118463070277428155318293831731",
+        "value_at_q0": "1.296675612244944017737899295230299597865508014495",
+        "relative_error": "0.06131796790098461777460446970969898627243562190332",
         "verdict": "NEAR-MATCH (<25%)"
       },
       {
         "label": "tr_M(p)^2*tr_M(n)/2",
         "family": "perknot_pn_product",
-        "value_at_q0": "0.64833780697673922889441779159277808548650677744073",
-        "relative_error": "-0.46934101535029723212044076846486128592234085308413",
+        "value_at_q0": "0.64833780612247200886894964761514979893275400724749",
+        "relative_error": "-0.46934101604950769111269776514515050686378218904834",
         "verdict": "REFUTED"
       },
       {
         "label": "sqrt(tr_M(p)^2*tr_M(n)/[2]_q)",
         "family": "perknot_pn_product",
-        "value_at_q0": "0.80300966542258055540707012570186644478749677550717",
-        "relative_error": "-0.34274341380136046044471407574935124539789018265407",
+        "value_at_q0": "0.80300966489354705822532346274529748018599952525463",
+        "relative_error": "-0.34274341423436988151989010348345107437616247671591",
         "verdict": "REFUTED"
       }
     ],
@@ -135,6 +135,6 @@
     },
     "rerun_verdict": "ROBUST (scope-limited, class (a)): the density swap does not flip the original negative. The original probe's conclusion ('no exact single-factor substrate match; best row lambda_A/2 at +3.65% filed as numerology') survives — the per-knot analogues do WORSE than the lambda_A-family best (per-knot best |rel| > baseline best |rel|), so the lambda_A/2 near-match is confirmed as lambda_A-family numerology rather than a shadow of the canonical density. NOTE (honest like-for-like observation): the bare p!=n constituent product tr_M(p)^2*tr_M(n) lands within 25% of the residual target with NO rescaler, while the lambda_A family needed the /2 or sqrt(./[2]_q) rescaling to get near — the p!=n structure is not nothing here, but it does not close the residual. Scope: constrains only these single-factor forms on these bases; not a structural exclusion of tr_M(K)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

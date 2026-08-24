@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:46:05.880372+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T14:42:39.856108+00:00",
+  "commitSha": "0baea0f7404d202791d61bdbe8ffec665866c317",
   "assertions": [
     {
       "name": "proton_chi_cache_tr_M_matches_documented",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "gap-a4-T2-per-knot-vol-probe-perknot-rerun",
   "scriptFile": "gap_a4_T2_per_knot_vol_probe_perknot_rerun.py",
   "scriptHash": "c2b0acb9fe24",
@@ -41,7 +41,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -211,6 +211,6 @@
     },
     "synthesis_verdict": "Per-knot re-run: all three Vol conventions give wide swings of m(K)/(m_e·Vol(K)/ℏ_q²·tr_M(K)) (A_phase4_jsj: 1550.44%, B_model_b_small_knot: 1222.78%, C_uniform_borromean: 2727.56%).  Scope-limited negative (a): the canonical per-knot tr_M(K) density, alone, under any of the three Vol conventions, does not collapse the light-series swing either — the original T2 negative verdict is ROBUST to the λ_A → per-knot density swap (it was not a density artifact in the swing metric), while remaining silent on multi-term closures that include tr_M(K) as a factor."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
