@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T16:15:24Z
-updated_at: 2026-08-24T17:45:02Z
+updated_at: 2026-08-24T19:28:37Z
 ---
 
 ## Not a new class — a RECURRENCE of the one `producer_upstream_edge_gap_audit`
@@ -281,3 +281,44 @@ miscounts. This one would have **stopped legitimate work** — it told the next
 agent that 19 fixes were unavailable until a rebuild that would not have
 helped. The claim came from reading the guard's message; one measurement of
 the corpus falsified it. Test the blocker before recording it.
+
+
+## The 2 RECORDED_OFF_PATH are CLOSED — at the reader, as recommended
+
+`witness_dependency_drift` now reads a third location, top-level `upstream`,
+at both sites (`check_witness` and `_upstream_edges`; the second feeds
+transitive propagation, and omitting it there would leave an edge visible to
+direct checks but invisible to staleness travelling along it).
+
+One change, zero regenerations — the trade the `RECORDED_OFF_PATH` relabel
+predicted.
+
+Blast radius measured BEFORE changing anything: exactly 2 witnesses carry a
+top-level `upstream` that went unread, one edge each, and ZERO carry both
+spellings, so no existing edge changed meaning.
+
+    declaring witnesses  244 -> 246
+    drift records        290 -> 292
+    self-stale           490 -> 490   (untouched)
+    transitive            41 ->  41   (untouched)
+
+**Both new records are real staleness.** `l2-row-independence` and
+`codata-registry-triangulation` each declare
+`per-observable-100x-status.witness.json` at sha `eea3d26d…` recorded
+2026-08-09; the file on disk is `334ebf17…`. Two weeks stale against a moved
+upstream, invisible the whole time. The fix paid for itself on the first run.
+
+Not a blocking gate — `witness_dependency_drift` runs only in
+`witness-staleness.yml`, which is `workflow_dispatch`-only and invokes it with
+`|| true`. The two added records cannot turn anything red.
+
+### Remaining on this bean
+
+1. **19 `ATTACHED_TOO_EARLY`** — move `add_upstream_records` after the
+   loaders. Each changes witness content, so 19 sequenced producer re-runs.
+   NOT blocked (the native-build blocker above is retracted).
+2. **Clear the 2 drifts just surfaced** — re-run those two producers against
+   the current `per-observable-100x-status`. Deliberately not done in the
+   reader fix; it is a witness change and belongs with (1).
+3. **The undeclared half** — 211 producers / 270 edges that declare nothing at
+   all. Much larger than everything above, and measured by the same audit.
