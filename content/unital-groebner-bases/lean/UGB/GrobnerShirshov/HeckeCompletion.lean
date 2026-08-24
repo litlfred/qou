@@ -17412,4 +17412,169 @@ theorem bside_to_splitWord (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
   rw [hb]
   simpa using key
 
+/-! ## §4bp  Side A, swept — and a correction to what §4bo's measurement said
+
+§4bo did side B. Side A opens with **three fixed steps** that land it on a
+doubled descending run, after which §4bo's sweep applies unchanged:
+
+1. the second copy of the run is preceded by `σ_{i−1}`, so the *first* copy plus
+   that letter is `bsWord₁ (i−1) 0` — the inner Bokut–Shiao rule fires;
+2. far commutation pulls the freed `σ_{i−2}` out to the front;
+3. what is left behind it is `descWord i 0 ++ [σᵢ] = bsWord₁ i 0` — the outer
+   Bokut–Shiao rule fires, and its `bsWord₂` puts a second `descWord (i−1) 0`
+   against the first.
+
+So side A reaches `σ_{i−2}σ_{i−1}σᵢ · pairSweep (i−1) 0` in `3 + (i − 1)` steps.
+
+**This corrects a figure recorded earlier.** The `(i²+i+4)/2` reported as "side
+A's BFS-minimal route" is the distance to **one particular** split word,
+`bsWord₂ (i−1) 0 · descWord i 1 · σ₀σ₀`. Side A can split far earlier than that,
+at the `σ₀σ₀` that `pairSweep` ends with, and getting there is linear. The
+quadratic figure describes a *choice of split point*, not the cost of side A.
+
+What remains for `hdeep` is one quadratic tail per side — measured
+`i(i−1)/2` per branch on A and `(i²−i+4)/2` per branch on B — plus the two-term
+bookkeeping. The two tails differ by exactly 2 at every `i` tested, which looks
+like B's branches reducing onto A's; **they do not** — checked to `i = 6`, no
+B-branch reaches its A-counterpart at all. The two tails are separate work.
+-/
+
+/-- **Side A's opening: three steps to a doubled descending run.** -/
+theorem aside_head (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ descWord i' ⟨0, hn⟩
+            ++ descWord i' ⟨0, hn⟩, c)]) := by
+  have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have hne_ii : (⟨i''⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hdi : descWord i ⟨0, hn⟩ = (⟨i⟩ : HeckeGen n) :: descWord i' ⟨0, hn⟩ :=
+    descWord_cons h₁ hz'
+  have hdi' : descWord i' ⟨0, hn⟩ = (⟨i'⟩ : HeckeGen n) :: descWord i'' ⟨0, hn⟩ :=
+    descWord_cons h₂ hz''
+  -- step 1: the inner Bokut–Shiao rule fires on `bsWord₁ i' 0`
+  have e0 : descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩
+      = [(⟨i⟩ : HeckeGen n)] ++ bsWord₁ i' ⟨0, hn⟩
+        ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) := by
+    rw [hdi]; simp [bsWord₁, bsWord₂]
+  refine MultiStepReduction.head
+    (bsStep hn hp h₂ hz'' [] [] [(⟨i⟩ : HeckeGen n)]
+      ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) _ _ c hc e0 rfl (by simp)) ?_
+  -- step 2: far commutation pulls `σ_{i−2}` to the front
+  have e1 : [(⟨i⟩ : HeckeGen n)] ++ bsWord₂ i'' i' ⟨0, hn⟩
+        ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩)
+      = [] ++ [(⟨i⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]
+        ++ ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+            ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) := by
+    simp [bsWord₂]
+  refine MultiStepReduction.head
+    (monicStep hn hp (farCommRelation i i'') (farCommRelation_mem hn hp (by omega))
+      (fun _ => rfl) (farCommRelation_lm i i'' (by omega)) (by simp [hne_ii])
+      [] [] [] ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) _ _ c hc e1 rfl (by simp)) ?_
+  -- step 3: the outer Bokut–Shiao rule fires on `bsWord₁ i 0`
+  have e2 : [] ++ [(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+        ++ ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+            ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩)
+      = [(⟨i''⟩ : HeckeGen n)] ++ bsWord₁ i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ := by
+    rw [bsWord₁, hdi, hdi']; simp
+  refine MultiStepReduction.head
+    (bsStep hn hp h₁ hz' [] [] [(⟨i''⟩ : HeckeGen n)] (descWord i' ⟨0, hn⟩)
+      _ _ c hc e2 rfl (by simp)) ?_
+  have e3 : [(⟨i''⟩ : HeckeGen n)] ++ bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
+      = [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+        ++ descWord i' ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ := by
+    simp [bsWord₂]
+  rw [e3]
+  exact MultiStepReduction.refl _
+
+/-- **Side A of the deep self-overlap, swept.** The three-step head lands on a
+doubled descending run, and §4bo's sweep takes it from there — so side A costs
+`3 + (i − 1)` steps to here, not the `(i²+i+4)/2` the greedy reduction spends
+reaching its own split word. -/
+theorem aside_to_sweptWord (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ pairSweep i' ⟨0, hn⟩, c)]) := by
+  refine MultiStepReduction.trans (aside_head hn hp h₂ h₁ c hc) ?_
+  have key := doubleDesc_sweep hn hp ⟨0, hn⟩ i'.val i' (by simp)
+    [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] [] c hc
+  simpa using key
+
+/-! ## §4bq  The far-commutation carry — side A's tail, inner loop
+
+What remains of side A after §4bp is a tail of **pure far commutation**, and its
+shape was measured rather than guessed. Grouped by top index, the rules are
+
+`(2,0)`, then `(3,1) (3,0)`, then `(4,2) (4,1) (4,0)`, … , then
+`(i, i−2) … (i, 0)`
+
+— at consecutive positions, `m − 1` steps for each `m` from `2` to `i`, which is
+the measured `i(i−1)/2`. Each group is one generator carried rightward past a
+descending run, so the inner loop is a single lemma and the outer loop is a
+second induction over `m`.
+
+`gen_past_descWord` is that inner loop: `σ_m · descWord k z ⟶* descWord k z · σ_m`
+whenever `k + 1 < m`, one step per letter, induction on the gap `k − z`.
+
+Two things about the tail are measured and worth keeping:
+
+- **The two branches of the split run the *same chain*** — not merely the same
+  shape. Compared as full rule-and-position sequences (not as labels, which hide
+  a rule's lower index and have misled this bean twice), they are identical at
+  `i = 3, 4, 5, 6`. The branches differ only by a trailing `σ₀`, which no rule in
+  the tail touches. So the tail is one lemma with the trailing context as a
+  parameter, which the step lemmas already carry as `b`.
+- **Side B's tail is NOT side A's.** Its per-branch length is `(i²−i+4)/2`,
+  exactly two more than A's `i(i−1)/2` at every `i` tested, which reads like B's
+  branches reducing onto A's in two steps. They do not: checked to `i = 6`, no
+  B-branch reaches its A-counterpart at all. Two separate tails.
+-/
+
+/-- **A far generator commutes rightward past a whole descending run.**
+
+`σ_m · descWord k z ⟶* descWord k z · σ_m` whenever `k + 1 < m`, by one
+far-commutation step per letter of the run. The induction is on the gap
+`k − z`, as `descWord_split_aux`'s is. -/
+theorem gen_past_descWord (hn : 0 < n) (hp : HeckeParams) (m : Fin n) :
+    ∀ (d : ℕ) (k z : Fin n), k.val = z.val + d → k.val + 1 < m.val →
+      ∀ (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms [(a ++ [(⟨m⟩ : HeckeGen n)] ++ descWord k z ++ b, c)])
+          (AlgElement.ofTerms [(a ++ descWord k z ++ [(⟨m⟩ : HeckeGen n)] ++ b, c)]) := by
+  intro d
+  induction d with
+  | zero =>
+    intro k z hk hkm a b c hc
+    have hkz : k = z := Fin.ext (by omega)
+    subst hkz
+    have hne : (⟨k⟩ : HeckeGen n) ≠ ⟨m⟩ := heckeGen_ne_of_val_ne (by omega)
+    rw [descWord_self]
+    refine MultiStepReduction.head
+      (monicStep hn hp (farCommRelation m k) (farCommRelation_mem hn hp (by omega))
+        (fun _ => rfl) (farCommRelation_lm m k (by omega)) (by simp [hne])
+        [] [] a b _ _ c hc (by simp) rfl (by simp)) ?_
+    simp only [List.append_assoc, List.cons_append, List.nil_append]
+    exact MultiStepReduction.refl _
+  | succ d ih =>
+    intro k z hk hkm a b c hc
+    have hlt : k.val - 1 < n := by have := k.isLt; omega
+    have hkz : z.val ≤ (⟨k.val - 1, hlt⟩ : Fin n).val := by simp; omega
+    have hkk : (⟨k.val - 1, hlt⟩ : Fin n).val + 1 = k.val := by simp; omega
+    have hne : (⟨k⟩ : HeckeGen n) ≠ ⟨m⟩ := heckeGen_ne_of_val_ne (by omega)
+    have hdk : descWord k z
+        = (⟨k⟩ : HeckeGen n) :: descWord ⟨k.val - 1, hlt⟩ z := descWord_cons hkk hkz
+    rw [hdk]
+    refine MultiStepReduction.head
+      (monicStep hn hp (farCommRelation m k) (farCommRelation_mem hn hp (by omega))
+        (fun _ => rfl) (farCommRelation_lm m k (by omega)) (by simp [hne])
+        [] [] a (descWord ⟨k.val - 1, hlt⟩ z ++ b) _ _ c hc (by simp) rfl (by simp)) ?_
+    have key := ih ⟨k.val - 1, hlt⟩ z (by simp; omega) (by simp; omega)
+      (a ++ [(⟨k⟩ : HeckeGen n)]) b c hc
+    simpa using key
+
 end UGB.GrobnerShirshov.Hecke

@@ -5318,3 +5318,105 @@ Remaining for `hdeep`, now fully scoped:
 1. side A's route to `NF₁·σ₀σ₀` — doubly nested, `(i²+i+4)/2` steps;
 2. B's post-split chain, one lemma in `j` — `(i²−i+4)/2` steps;
 3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
+
+## §4bp — side A, swept, and a correction to my own figure (PR pending)
+
+Side A opens with **three fixed steps** onto a doubled descending run, after
+which §4bo's sweep applies unchanged:
+
+1. the second copy of the run is preceded by `σ_{i−1}`, so the *first* copy plus
+   that letter is `bsWord₁ (i−1) 0` — inner Bokut–Shiao fires;
+2. far commutation pulls the freed `σ_{i−2}` to the front;
+3. what is left behind it is `descWord i 0 ++ [σᵢ] = bsWord₁ i 0` — outer
+   Bokut–Shiao fires, and its `bsWord₂` puts a second `descWord (i−1) 0` against
+   the first.
+
+`aside_to_sweptWord`: A reaches `σ_{i−2}σ_{i−1}σᵢ · pairSweep (i−1) 0` in
+`3 + (i−1)` steps. Sorry-free, general in `i`, compiled first try.
+
+### Correction: `(i²+i+4)/2` was never side A's cost
+
+I recorded it as "side A's BFS-minimal route" in the previous PR. It is the
+distance to **one particular** split word, `bsWord₂(i−1,0)·descWord(i,1)·σ₀σ₀`.
+Side A can split much earlier — at the `σ₀σ₀` that `pairSweep` ends with — and
+getting there is **linear**. The quadratic figure describes a *choice of split
+point*, not the cost of the side.
+
+### And a pattern in the numbers that is not a fact
+
+The residual tails are `i(i−1)/2` per branch on A and `(i²−i+4)/2` per branch on
+B — differing by exactly 2 at every `i` tested, which reads like B's branches
+reducing onto A's in two steps. **They do not.** Checked to `i = 6`: no B-branch
+reaches its A-counterpart at all. The two tails are separate work.
+
+That is the fourth time this session an appealing arithmetic coincidence has
+failed a structural test — and the fourth time testing it cost minutes while
+assuming it would have cost the tranche.
+
+### Remaining for `hdeep`
+
+1. side A's tail — `i(i−1)/2` per branch;
+2. side B's tail — `(i²−i+4)/2` per branch, one lemma in `j`;
+3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
+
+## §4bq — the far-commutation carry, side A's tail inner loop (PR pending)
+
+Side A's tail is **pure far commutation**, and its shape was measured, not
+guessed. Grouped by top index the rules are `(2,0)`, `(3,1) (3,0)`,
+`(4,2) (4,1) (4,0)`, …, `(i,i−2) … (i,0)` at consecutive positions — `m−1` steps
+per `m` from 2 to `i`, i.e. the measured `i(i−1)/2`. Each group is one generator
+carried rightward past a descending run.
+
+`gen_past_descWord`: `σ_m · descWord k z ⟶* descWord k z · σ_m` whenever
+`k + 1 < m`, one step per letter, induction on the gap. Sorry-free, general.
+
+So the tail's inner loop is done; what remains of it is the outer induction
+over `m` from 2 to `i`.
+
+### Two measurements about the tail, both checked properly this time
+
+- **The two branches run the SAME chain**, compared as full rule-and-position
+  sequences — not as labels. That distinction matters: labels print only a
+  rule's *top* index and have already misled this bean twice (the `YB`-vs-`BS`
+  last step in §4bo, and side B's branches, whose Bokut–Shiao steps differ in
+  their lower index). Identical at `i = 3, 4, 5, 6`. The branches differ only by
+  a trailing `σ₀` that no tail rule touches, so the tail is one lemma with the
+  trailing context as a parameter — which `monicStep` already carries as `b`.
+- **Side B's tail is not side A's.** `(i²−i+4)/2` vs `i(i−1)/2` — exactly two
+  more at every `i`, which reads like B's branches reducing onto A's in two
+  steps. They do not: checked to `i = 6`, no B-branch reaches its A-counterpart.
+
+### Remaining for `hdeep`
+
+1. side A's tail — outer induction over `m`, using `gen_past_descWord`;
+2. side B's tail — `(i²−i+4)/2` per branch, one lemma in `j`;
+3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
+
+### The carry lemma serves BOTH tails — measured at the rule level
+
+Side B's tail is the **same far-commutation carry sequence** as side A's, at
+positions shifted by exactly one, **followed by two Bokut–Shiao steps**. At
+`i = 5`:
+
+```
+A tail: (2,0)@8 (3,1)@6 (3,0)@7 (4,2)@4 (4,1)@5 (4,0)@6 (5,3)@2 (5,2)@3 (5,1)@4 (5,0)@5
+B tail: (2,0)@7 (3,1)@5 (3,0)@6 (4,2)@3 (4,1)@4 (4,0)@5 (5,3)@1 (5,2)@2 (5,1)@3 (5,0)@4
+        + bsWord₁(5,j)@5  + bsWord₁(4,0)@0
+```
+
+The shift is one because A's swept word carries three leading letters
+(`σ_{i−2}σ_{i−1}σᵢ`) and B's carries two (`σ_{i−1}σᵢ`). **That is the whole "+2"**
+— B's two extra steps are the two Bokut–Shiao ones, not a different chain.
+
+And the `j` prediction is confirmed: the first of those two BS steps is
+`bsWord₁(i,1)` on the `1`-branch and `bsWord₁(i,0)` on the `H`-branch — the only
+place the two branches differ. The second BS step is identical in both.
+
+**So `gen_past_descWord` is the shared inner loop of both sides**, which is worth
+more than either tail on its own. Remaining: the outer induction over `m`
+(shared, modulo the leading context), plus B's two Bokut–Shiao steps with `j` as
+a parameter.
+
+This is consistent with the earlier negative — B's branches do *not* reduce onto
+A's. Same rule sequence applied to different words is not the same thing as one
+word reducing to the other, and both facts hold.
