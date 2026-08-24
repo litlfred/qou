@@ -15085,10 +15085,25 @@ rather than by the kinds of its two rules — `CyclicQuad` wants
 `BokutShiaoBraid` wants `rule₂` on it — and every single one of them fixes
 `overlap` to **one letter**. `IsGrobnerShirshovBasis.overlap_resolves`, by
 contrast, quantifies over every `OverlapComposition`. So the gap between that
-machinery and the criterion is exactly the multi-letter overlaps, and the
-question worth answering before writing any more chains is whether any exist.
+machinery and the criterion is exactly the multi-letter overlaps.
 
-Measured first, in
+**§4m already answered this at `n = 4`**, and this section was first written as
+though it had not — the correction is recorded here rather than quietly fixed.
+`overlapTriples_four_proper_overlap_length_one` decides it by kernel evaluation,
+and §4m's prose gives the reason in outline ("a suffix of length ≥ 2 ends
+low-then-high while every prefix of length ≥ 2 starts high-then-low"). What is
+new here is only that the fact holds for **every `n`**, by proof rather than by
+`decide` at one `n`; the invariant below is a machine-checked form of §4m's
+sketch. Read the two together, not as rivals.
+
+(The outline is a sketch and not literally the statement: `σⱼσᵢσⱼ` with
+`j = i + 1` is *not* descending after its first letter, and `σᵢσᵢ` is neither
+strictly low-then-high nor strictly high-then-low — which is exactly why the
+quadratic self-pairing is a legal two-letter overlap shape, saved only by having
+an empty left context. The invariant used below, "the head is the maximum", has
+no such edge cases.)
+
+Measured at more than one `n` first, in
 [`hecke_overlap_length_probe.py`](../../../../../../computations/hecke_overlap_length_probe.py):
 at `n = 2 … 8` there are 1351 compositions with both contexts non-empty and the
 overlap-length histogram is `len1` only — zero exceptions. (The same probe
@@ -15300,7 +15315,11 @@ criterion's own form, for a composition the file did not build. It inherits
 every scope limit of §4as, the deep diagonal included, and adds one of its own: the left
 context must be non-empty, which is what §4au needs and what
 `overlap_resolves` does not require. The degenerate `left = []` compositions are
-not covered here. -/
+not covered here.
+
+All of this is the *overlap* half. The inclusion half is settled at `n = 4` by
+§4m's `inclusion_contexts_empty` and is not part of what these sections leave
+open. -/
 
 theorem bsbs_oc_eq (hn : 0 < n) (hp : HeckeParams)
     {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
@@ -15428,8 +15447,10 @@ What it still inherits from §4as is the deep diagonal: `hcov` fails exactly whe
 `j₁ = j₂ = 0` and `i₁ ≥ 1`, because the `a ≥ 2` reduction chains are built on
 `j₁ − 1`. Everything else is covered, `j₁ = 0` with `j₂ ≥ 1` and
 `j₁ = j₂ = i₁ = 0` included. And this is one
-cell — the criterion quantifies over every rule-kind pair and every
-`InclusionComposition`. -/
+cell — the criterion quantifies over every rule-kind pair. Its *inclusion* half
+is a different matter: §4m settles it at `n = 4` structurally
+(`inclusion_contexts_empty`, with no hypothesis about which rules are involved),
+so what is open there is the general-`n` form, not the half itself. -/
 
 theorem descWord_bot_mem {n : ℕ} {i j : Fin n} (hj : j.val ≤ i.val) :
     (⟨j⟩ : HeckeGen n) ∈ descWord i j := by
@@ -15522,5 +15543,267 @@ theorem bsbs_resolves (hn : 0 < n) (hp : HeckeParams)
   by_cases hl : oc.left = []
   · exact bsbs_resolves_of_nil_left hn hp h₁ hj₁ hip hj₂ hr₁ hr₂ hl
   · exact bsbs_resolves_of_oc hn hp h₁ h₂ hj₁ hip hj₂ hcov hq hr₁ hr₂ hl
+
+/-! ## §4az  Towards §4m's antichain for every `n`
+
+§4m settles the **inclusion** half of `IsGrobnerShirshovBasis` at `n = 4`:
+`completedLMSet_four_infix_antichain` decides that no leading monomial is a
+proper factor of another, and `inclusion_contexts_empty` turns that into "both
+contexts empty" with no hypothesis about which rules are involved. Both are
+`decide`, so both are `n = 4` only. Generalising them is the better next target
+than another overlap cell, because it is half of the criterion rather than one
+cell of the other half.
+
+This section builds the structure that generalisation needs, and closes one of
+its two directions.
+
+`lm_split` is the engine: every leading monomial is `h :: (mid ++ [l])`, and the
+four families read off uniformly through a single `List.append_inj'` — the
+interior is `[]`, `[σᵢ]`, `[]`, `descWord i' j` respectively. From it:
+
+* `lm_interior_lt_head` — the interior is **strictly** below the head. The two
+  length-two families have no interior; Yang–Baxter's is `σᵢ` below `σᵢ₊₁`;
+  Bokut–Shiao's is capped by `descWord_index_le`.
+* `lm_last_eq_head_or_far` — the last letter **is** the head, except for
+  far-commutation, where it drops by at least two *and* the interior is empty.
+  That second conjunct is what lets a consumer discharge the exception rather
+  than reason about it.
+* `lm_cons_snoc` — every leading monomial has length at least two.
+
+`lm_not_proper_suffix` is the direction that closes: **no leading monomial is a
+proper suffix of another**, for every `n`. Its proof is three of the lemmas in
+sequence and no case analysis of its own.
+
+The other direction — proper *prefix*, and the strictly-interior case — does not
+follow from these. It needs two facts about `descWord` that the file does not yet
+have: that it has no repeated letter, and that adjacent letters in it drop by
+exactly one. The first separates a Bokut–Shiao word sitting inside another's
+descending run; the second is what rules out the far-commutation word sitting
+there. Neither is stated here, so **the antichain is not generalised by this
+section** — only half of it is. -/
+
+/-- **A leading monomial, split into head, interior and last letter.**
+Every branch has the shape `mid ++ [l] = <explicit interior> ++ [<explicit
+last>]`, so one `List.append_inj'` reads off both at once. -/
+theorem lm_split (hn : 0 < n) (hp : HeckeParams)
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {h l : HeckeGen n} {mid : Monomial (HeckeGen n)}
+    (hlm : r.lm (heckeOrder n) = h :: (mid ++ [l])) :
+    (mid = [] ∧ l = h)
+      ∨ (∃ i j : Fin n, j.val = i.val + 1 ∧ h = ⟨j⟩ ∧ mid = [⟨i⟩] ∧ l = ⟨j⟩)
+      ∨ (∃ i j : Fin n, j.val + 1 < i.val ∧ h = ⟨i⟩ ∧ mid = [] ∧ l = ⟨j⟩)
+      ∨ (∃ i' i j : Fin n, i'.val + 1 = i.val ∧ j.val ≤ i'.val
+          ∧ h = ⟨i⟩ ∧ mid = descWord i' j ∧ l = ⟨i⟩) := by
+  rcases heckeCompletedRewritingSystem_lm_cases hn hp r hr with
+    ⟨i, hw⟩ | ⟨i, j, hj, hw⟩ | ⟨i, j, hj, hw⟩ | ⟨i', i, j, h₁, h₂, hw⟩
+  · rw [hlm] at hw
+    obtain ⟨rfl, hm⟩ : h = (⟨i⟩ : HeckeGen n) ∧ mid ++ [l] = [(⟨i⟩ : HeckeGen n)] := by
+      simpa using hw
+    have hm' : mid ++ [l] = [] ++ [(⟨i⟩ : HeckeGen n)] := hm
+    obtain ⟨hmid, hl⟩ := List.append_inj' hm' (by simp)
+    exact Or.inl ⟨hmid, by simpa using hl⟩
+  · rw [hlm] at hw
+    obtain ⟨rfl, hm⟩ : h = (⟨j⟩ : HeckeGen n)
+        ∧ mid ++ [l] = [(⟨i⟩ : HeckeGen n), (⟨j⟩ : HeckeGen n)] := by simpa using hw
+    have hm' : mid ++ [l] = [(⟨i⟩ : HeckeGen n)] ++ [(⟨j⟩ : HeckeGen n)] := hm
+    obtain ⟨hmid, hl⟩ := List.append_inj' hm' (by simp)
+    exact Or.inr (Or.inl ⟨i, j, hj, rfl, hmid, by simpa using hl⟩)
+  · rw [hlm] at hw
+    obtain ⟨rfl, hm⟩ : h = (⟨i⟩ : HeckeGen n) ∧ mid ++ [l] = [(⟨j⟩ : HeckeGen n)] := by
+      simpa using hw
+    have hm' : mid ++ [l] = [] ++ [(⟨j⟩ : HeckeGen n)] := hm
+    obtain ⟨hmid, hl⟩ := List.append_inj' hm' (by simp)
+    exact Or.inr (Or.inr (Or.inl
+      ⟨i, j, hj, rfl, hmid, by simpa using hl⟩))
+  · rw [hlm, bsWord₁, descWord_cons h₁ h₂] at hw
+    obtain ⟨rfl, hm⟩ : h = (⟨i⟩ : HeckeGen n)
+        ∧ mid ++ [l] = descWord i' j ++ [(⟨i⟩ : HeckeGen n)] := by simpa using hw
+    obtain ⟨hmid, hl⟩ := List.append_inj' hm (by simp)
+    exact Or.inr (Or.inr (Or.inr
+      ⟨i', i, j, h₁, h₂, rfl, hmid, by simpa using hl⟩))
+
+/-- **The interior of a leading monomial is strictly below its head.** The
+quadratic and far-commutation words have no interior at all; Yang–Baxter's is the
+single letter `σᵢ` below its head `σᵢ₊₁`; and Bokut–Shiao's is the descending run
+`descWord i' j`, capped at `i − 1` by `descWord_index_le`. -/
+theorem lm_interior_lt_head (hn : 0 < n) (hp : HeckeParams)
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {h l : HeckeGen n} {mid : Monomial (HeckeGen n)}
+    (hlm : r.lm (heckeOrder n) = h :: (mid ++ [l]))
+    {y : HeckeGen n} (hy : y ∈ mid) :
+    y.index.val < h.index.val := by
+  rcases lm_split hn hp hr hlm with
+    ⟨hmid, _⟩ | ⟨i, j, hj, rfl, hmid, _⟩ | ⟨i, j, hj, rfl, hmid, _⟩
+    | ⟨i', i, j, h₁, h₂, rfl, hmid, _⟩
+  · rw [hmid] at hy; simp at hy
+  · rw [hmid] at hy; simp at hy; subst hy
+    show i.val < j.val
+    omega
+  · rw [hmid] at hy; simp at hy
+  · rw [hmid] at hy
+    have := descWord_index_le hy
+    show y.index.val < i.val
+    omega
+
+/-- **A leading monomial's last letter either matches its head, or drops by more
+than one.** Two–one split across the four families: quadratic, Yang–Baxter and
+Bokut–Shiao all end on their own top letter; far-commutation is the exception,
+and its drop is at least two by its own side condition. -/
+theorem lm_last_eq_head_or_far (hn : 0 < n) (hp : HeckeParams)
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {h l : HeckeGen n} {mid : Monomial (HeckeGen n)}
+    (hlm : r.lm (heckeOrder n) = h :: (mid ++ [l])) :
+    l.index.val = h.index.val ∨ (l.index.val + 1 < h.index.val ∧ mid = []) := by
+  rcases lm_split hn hp hr hlm with
+    ⟨_, rfl⟩ | ⟨i, j, hj, rfl, _, rfl⟩ | ⟨i, j, hj, rfl, hmid, rfl⟩
+    | ⟨i', i, j, h₁, h₂, rfl, _, rfl⟩
+  · exact Or.inl rfl
+  · exact Or.inl rfl
+  · exact Or.inr ⟨by show j.val + 1 < i.val; omega, hmid⟩
+  · exact Or.inl rfl
+
+/-- **Every leading monomial has a head, an interior and a last letter** — i.e.
+has length at least two. Bokut–Shiao is the only family where that needs an
+argument, and `descWord_cons` supplies it. -/
+theorem lm_cons_snoc (hn : 0 < n) (hp : HeckeParams)
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    ∃ (h l : HeckeGen n) (mid : Monomial (HeckeGen n)),
+      r.lm (heckeOrder n) = h :: (mid ++ [l]) := by
+  rcases heckeCompletedRewritingSystem_lm_cases hn hp r hr with
+    ⟨i, hw⟩ | ⟨i, j, hj, hw⟩ | ⟨i, j, hj, hw⟩ | ⟨i', i, j, h₁, h₂, hw⟩
+  · exact ⟨⟨i⟩, ⟨i⟩, [], by rw [hw]; rfl⟩
+  · exact ⟨⟨j⟩, ⟨j⟩, [⟨i⟩], by rw [hw]; rfl⟩
+  · exact ⟨⟨i⟩, ⟨j⟩, [], by rw [hw]; rfl⟩
+  · exact ⟨⟨i⟩, ⟨i⟩, descWord i' j, by rw [hw, bsWord₁, descWord_cons h₁ h₂]; rfl⟩
+
+/-- **No leading monomial of the completed system is a proper suffix of
+another.** Half of §4m's `n = 4` antichain, for every `n`.
+
+If `lm₂ = left ++ lm₁` with `left` non-empty, then `lm₁`'s head lands in `lm₂`'s
+*interior*, so it is strictly below `lm₂`'s head. But `lm₁`'s last letter is
+`lm₂`'s last letter, and — unless `lm₂` is the two-letter far-commutation word,
+whose interior is empty and so cannot contain anything — that equals `lm₂`'s
+head. Since a head dominates its own word, `lm₂`'s head is at most `lm₁`'s head,
+which is strictly below it. -/
+theorem lm_not_proper_suffix (hn : 0 < n) (hp : HeckeParams)
+    {r₁ r₂ : ReductionRule (HeckeGen n) ℝ}
+    (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : r₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {left : Monomial (HeckeGen n)}
+    (hdec : r₂.lm (heckeOrder n) = left ++ r₁.lm (heckeOrder n)) :
+    left = [] := by
+  obtain ⟨h₁, l₁, mid₁, hlm₁⟩ := lm_cons_snoc hn hp hr₁
+  obtain ⟨h₂, l₂, mid₂, hlm₂⟩ := lm_cons_snoc hn hp hr₂
+  by_contra hne
+  obtain ⟨a, left', hl⟩ : ∃ a left', left = a :: left' := by
+    cases hlc : left with
+    | nil => exact absurd hlc hne
+    | cons a left' => exact ⟨a, left', rfl⟩
+  rw [hlm₁, hlm₂, hl] at hdec
+  -- Peel the two heads apart, then match the two words on their last letter.
+  have htail : mid₂ ++ [l₂] = (left' ++ (h₁ :: mid₁)) ++ [l₁] := by
+    injection hdec with _ hh
+    simpa using hh
+  obtain ⟨hmid₂, hlast⟩ := List.append_inj' htail (by simp)
+  have hl₂₁ : l₂ = l₁ := by simpa using hlast
+  -- `h₁` sits in `lm₂`'s interior …
+  have hh₁mem : h₁ ∈ mid₂ := by rw [hmid₂]; simp
+  have hlt : h₁.index.val < h₂.index.val := lm_interior_lt_head hn hp hr₂ hlm₂ hh₁mem
+  -- … and `l₁ = l₂` is `lm₂`'s last letter, which is its head unless `lm₂` is
+  -- the far-commutation word — whose interior is empty, so it has no room.
+  rcases lm_last_eq_head_or_far hn hp hr₂ hlm₂ with heq | ⟨_, hmidnil⟩
+  · have hle : l₁.index.val ≤ h₁.index.val :=
+      lm_head_is_max hn hp hr₁ hlm₁ (by simp)
+    rw [← hl₂₁] at hle
+    omega
+  · rw [hmidnil] at hh₁mem; simp at hh₁mem
+
+/-! ## §4ba  The second of the antichain's three cases
+
+`lm₂ = left ++ lm₁ ++ right` splits three ways, and §4az closed one of them.
+
+| case | status |
+|---|---|
+| `right = []` — `lm₁` a proper suffix | §4az `lm_not_proper_suffix` |
+| `left = []` — `lm₁` a proper prefix | **here** |
+| both non-empty — `lm₁` strictly interior | open |
+
+The two are not the same argument run backwards. §4az reads `lm₁`'s **head** out
+of `lm₂`'s interior; this one reads `lm₁`'s **last letter** out of it, and the
+far-commutation exception is discharged differently — there by its empty
+interior, here by looking at what `lm₂`'s interior *begins* with. In both
+Yang–Baxter and Bokut–Shiao that first interior letter is exactly one step below
+the head (`σᵢ` under `σᵢ₊₁`; `σᵢ₋₁` under `σᵢ`, by `descWord_head`), while
+far-commutation demands a drop of at least two.
+
+The third case does **not** follow from these two: there is no way to re-associate
+`left ++ lm₁ ++ right` so that either applies, because `lm₁ ++ right` is not
+itself a leading monomial. It needs the two `descWord` facts §4az names —
+no repeated letter, and adjacent letters dropping by exactly one. The first has
+been checked to prove in two lines off `List.nodup_finRange`; it is not stated
+here because nothing here would consume it. -/
+
+theorem lm_not_proper_prefix (hn : 0 < n) (hp : HeckeParams)
+    {r₁ r₂ : ReductionRule (HeckeGen n) ℝ}
+    (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : r₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {right : Monomial (HeckeGen n)}
+    (hdec : r₂.lm (heckeOrder n) = r₁.lm (heckeOrder n) ++ right) :
+    right = [] := by
+  obtain ⟨h₁, l₁, mid₁, hlm₁⟩ := lm_cons_snoc hn hp hr₁
+  obtain ⟨h₂, l₂, mid₂, hlm₂⟩ := lm_cons_snoc hn hp hr₂
+  by_contra hne
+  rw [hlm₁, hlm₂] at hdec
+  have hcons : h₂ :: (mid₂ ++ [l₂]) = h₁ :: ((mid₁ ++ [l₁]) ++ right) := hdec
+  obtain ⟨hheads, htail'⟩ := List.cons.inj hcons
+  have htail : mid₁ ++ ([l₁] ++ right) = mid₂ ++ [l₂] := by
+    simpa using htail'.symm
+  -- `right` non-empty pushes `l₁` off the end, so it lands in `lm₂`'s interior.
+  obtain ⟨a, hmid₂, ha⟩ : ∃ a, mid₂ = mid₁ ++ a ∧ [l₁] ++ right = a ++ [l₂] := by
+    rcases List.append_eq_append_iff.mp htail with ⟨a, ha, hb⟩ | ⟨c, hc, hd⟩
+    · exact ⟨a, ha, hb⟩
+    · exfalso
+      have := congrArg List.length hd
+      simp at this
+      have hr : right.length = 0 := by omega
+      exact hne (List.eq_nil_of_length_eq_zero hr)
+  obtain ⟨a', ha'⟩ : ∃ a', a = l₁ :: a' := by
+    rcases haa : a with _ | ⟨b, bs⟩
+    · exfalso
+      rw [haa] at ha; simp at ha
+      exact hne (by simpa using ha.2)
+    · refine ⟨bs, ?_⟩
+      rw [haa] at ha
+      injection ha with hh _
+      rw [hh]
+  have hl₁mem : l₁ ∈ mid₂ := by rw [hmid₂, ha']; simp
+  have hlt : l₁.index.val < h₂.index.val := lm_interior_lt_head hn hp hr₂ hlm₂ hl₁mem
+  rw [hheads] at hlt
+  -- Either `lm₁` ends on its own head — impossible, we just bounded it below it —
+  -- or `lm₁` is far-commutation, and then `lm₂`'s interior begins one step down.
+  rcases lm_last_eq_head_or_far hn hp hr₁ hlm₁ with heq | ⟨hfar, hmid₁nil⟩
+  · omega
+  · rw [hmid₁nil, List.nil_append] at hmid₂
+    rcases lm_split hn hp hr₂ hlm₂ with
+      ⟨hm, _⟩ | ⟨i, j, hj, hh, hm, _⟩ | ⟨i, j, hj, hh, hm, _⟩
+      | ⟨i', i, j, hb₁, hb₂, hh, hm, _⟩
+    · rw [hm] at hl₁mem; simp at hl₁mem
+    · rw [hm] at hl₁mem; simp at hl₁mem; subst hl₁mem
+      rw [hheads] at hh; subst hh
+      have hcontra : i.val + 1 < j.val := hfar
+      omega
+    · rw [hm] at hl₁mem; simp at hl₁mem
+    · obtain ⟨u, hu⟩ := descWord_head (i := i') (j := j) hb₂
+      rw [hm, ha', hu] at hmid₂
+      have hll : l₁ = (⟨i'⟩ : HeckeGen n) :=
+        (by simpa using hmid₂.symm : _ ∧ _).1
+      subst hll
+      rw [hheads] at hh; subst hh
+      have hcontra : i'.val + 1 < i.val := hfar
+      omega
 
 end UGB.GrobnerShirshov.Hecke

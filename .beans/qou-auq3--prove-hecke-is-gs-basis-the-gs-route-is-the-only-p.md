@@ -4505,3 +4505,122 @@ Two of those three newly-covered rows were reachable by chains already in the
 file; only the parameter's position was stopping them. Nothing new was proved
 about the reductions here — the correction is to what the hypothesis *claimed*
 was open.
+
+
+## Corpus-grep failure, and what it changes (2026-08-24, §4ay)
+
+**§4m already carried both facts I presented as new questions**, and I did not
+cite it. Found only afterwards, while grepping the `_resolves` inventory for the
+next tranche.
+
+| §4m has | since when | what today added |
+|---|---|---|
+| `overlapTriples_four_proper_overlap_length_one` — the single-letter fact, `decide` at `n = 4`, with the reason in prose | before today | §4au proves it for **every `n`** |
+| `completedLMSet_four_infix_antichain` + `inclusion_contexts_empty` — **the inclusion half settled at `n = 4`** | before today | nothing |
+
+Two distinct errors, and they are not the same size.
+
+1. **§4au and PR #5627 framed "is any overlap multi-letter?" as an open
+   question.** It was decided at `n = 4` and the argument was written out in
+   prose three sections up. Generalising a `decide`-at-one-`n` to all `n` is
+   real content and stands — but it is a *generalisation*, not an answer to an
+   open question, and saying so was the corpus-grep discipline's job.
+2. **I listed "every `InclusionComposition`" as fully open** in the §4av and
+   §4aw prose, in three PR bodies, and in this bean's own status table. §4m
+   settles the inclusion half at `n = 4` *structurally* —
+   `inclusion_contexts_empty` needs no hypothesis about which rules are
+   involved. That is an over-claim of openness, the exact class the
+   "Before declaring open" checklist exists to prevent.
+
+**One note on §4m's prose, in its favour and against it.** Its stated reason —
+"every leading monomial is descending after its first letter" — is a sketch, not
+the statement: `σⱼσᵢσⱼ` with `j = i + 1` ascends after its first letter, and
+`σᵢσᵢ` is neither strictly low-then-high nor strictly high-then-low, which is
+precisely why the quadratic self-pairing is a legal two-letter overlap *shape*
+saved only by an empty left context. §4au's `lm_head_is_max` has no such edge
+cases. So the two are complementary, and neither supersedes the other.
+
+### The consequence for what to do next
+
+The inclusion half is settled at `n = 4` and **its general-`n` form is the
+better target than another overlap cell** — it is half of
+`IsGrobnerShirshovBasis`, and `lm_head_is_max` is most of what it needs. Sketch:
+a leading monomial's max sits only at position 0 or at the last position, so an
+infix `lm₁` of length ≥ 3 starting at `p ≥ 1` would need its two copies of its
+own max both strictly inside a strictly-decreasing run. The length-2 shapes are
+separated by their consecutive drop (0 for `σᵢσᵢ`, ≥ 2 for far-commutation,
+1 elsewhere).
+
+## Half of §4m's antichain, for every n (2026-08-24, §4az)
+
+Acting on §4ay's conclusion that the **inclusion half** is the better target than
+another overlap cell — it is half of `IsGrobnerShirshovBasis`, and §4m has it
+only at `n = 4` by `decide`.
+
+`lm_split` is the engine: every leading monomial is `h :: (mid ++ [l])`, and all
+four families read off through a single `List.append_inj'` — interiors `[]`,
+`[σᵢ]`, `[]`, `descWord i' j`. Off it:
+
+- `lm_interior_lt_head` — the interior is **strictly** below the head.
+- `lm_last_eq_head_or_far` — the last letter **is** the head, except
+  far-commutation, where it drops by ≥ 2 **and the interior is empty**. The
+  second conjunct is deliberate: it lets a consumer *discharge* the exception
+  rather than reason about it.
+- `lm_cons_snoc` — every leading monomial has length ≥ 2.
+
+**`lm_not_proper_suffix`** is what closes: no leading monomial is a proper suffix
+of another, for every `n`. Three lemmas in sequence, no case analysis of its own
+— `lm₁`'s head lands in `lm₂`'s interior so is strictly below `lm₂`'s head, while
+`lm₁`'s last letter *is* `lm₂`'s last letter, which is `lm₂`'s head; and a head
+dominates its own word.
+
+### Not done, and why it does not follow
+
+The other direction — proper **prefix**, and the strictly-interior case — needs
+two facts about `descWord` the file does not have:
+
+1. **no repeated letter** — separates a Bokut–Shiao word sitting inside another's
+   descending run (equal head and last letter would be a repeat);
+2. **adjacent letters drop by exactly one** — rules out the far-commutation word
+   (drop ≥ 2) sitting in that run.
+
+(1) looks routine: `descWord` is a `filter`/`reverse`/`map` off `List.finRange`,
+so `List.nodup_finRange` plus injectivity of `⟨·⟩` should give it. (2) is the
+real work; `descWord_split` plus (1) is the likely route, since splitting at a
+letter exhibits its successor as the head of the second piece.
+
+**So the antichain is NOT generalised — half of it is.** Do not read §4az as
+closing the inclusion half.
+
+## The antichain's second case (2026-08-24, §4ba)
+
+`lm₂ = left ++ lm₁ ++ right` splits three ways:
+
+| case | status |
+|---|---|
+| `right = []` — proper suffix | §4az `lm_not_proper_suffix` |
+| `left = []` — proper prefix | §4ba `lm_not_proper_prefix` |
+| both non-empty — strictly interior | **open** |
+
+**The two are not one argument run backwards.** §4az reads `lm₁`'s *head* out of
+`lm₂`'s interior; §4ba reads `lm₁`'s *last letter* out of it, and discharges the
+far-commutation exception differently — there by its empty interior, here by what
+`lm₂`'s interior *begins* with. In both Yang–Baxter and Bokut–Shiao that first
+interior letter is exactly one step below the head (`σᵢ` under `σᵢ₊₁`; `σᵢ₋₁`
+under `σᵢ`, via `descWord_head`), while far-commutation demands a drop of ≥ 2.
+
+**The third case does not follow from the two.** There is no re-association of
+`left ++ lm₁ ++ right` making either apply, because `lm₁ ++ right` is not itself
+a leading monomial. It needs the two `descWord` facts §4az names.
+
+### `descWord_nodup` — tested, not landed
+
+§4az predicted it "looks routine". **Checked: it does prove**, in two lines —
+`List.Nodup.map` with `⟨·⟩` injective, over
+`List.nodup_reverse.mpr ((List.nodup_finRange n).filter _)`. One wrong lemma name
+on the first attempt (`List.Pairwise.reverse` flips the relation;
+`List.nodup_reverse` is the one that does not).
+
+It is **not** in the file, because nothing there would consume it yet — the
+consumer is the strictly-interior case. Recorded here so the next agent does not
+re-derive it, and so the prediction is on record as *tested* rather than assumed.
