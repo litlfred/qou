@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T16:15:24Z
-updated_at: 2026-08-24T17:16:49Z
+updated_at: 2026-08-24T17:45:02Z
 ---
 
 ## Not a new class — a RECURRENCE of the one `producer_upstream_edge_gap_audit`
@@ -234,3 +234,50 @@ with it, which degraded the `invocation` block (`reproduce` lost the flag).
 Reverted and re-run correctly. **Match the committed invocation, not just the
 environment** — the witness records how it was produced, and a weaker command
 line is a weaker record even when every number is identical.
+
+
+## RETRACTION of the blocker above — the 19 regenerations are NOT blocked
+
+The section immediately above says the 19 `ATTACHED_TOO_EARLY` regenerations
+are blocked on a `pyhecke_native_build` mismatch. **That is wrong.** The defect
+was in the guard, and it is now fixed.
+
+`pyhecke_native_build` is `sha256(<compiled .so>)[:16]` — a content hash of the
+binary, not a version. `_environment_delta` was ordering it with
+`_version_tuple`:
+
+    _version_tuple("30fd920c241a54fa") == (30,)    # leading "30" parsed
+    _version_tuple("b843d058d29dcec6") == ()       # starts with a letter
+    () < (30,)  ->  reported as a DOWNGRADE
+
+The verdict depends on whether the hash begins with a digit. On real corpus
+pairs it is a coin flip: `b9cd89fd -> 0aaae203` "upgraded",
+`0aaae203 -> e114ae83` "downgraded", `fe19077e -> 30fd920c` "upgraded".
+
+There was never a corpus constant to be downgraded from: **five distinct
+values across 811 committed witnesses**, all within 2026-08-22..24. A Rust
+release build is not byte-reproducible across containers, so this changes on
+every rebuild by design.
+
+**The guard was corrupting the thing it protects.** A false "downgraded" sends
+`save()` down the preserve path, keeping the OLD environment block — so a
+freshly computed witness silently carries the previous container's build hash,
+about half the time.
+
+Fixed with `_NON_ORDINAL_ENV_KEYS`; a *missing* key still reports `stripped`,
+and real version moves still report. Verified in both directions.
+
+**So: proceed with the 19.** No rebuild needed, no batch-run precondition. The
+"install the missing libraries before a batch run" advice in the warning was
+itself a product of the false verdict.
+
+The process note from that section still stands and is unaffected: **match the
+committed invocation** (`--strict`), not just the environment.
+
+### Why this one mattered more than the earlier corrections
+
+40 -> 21, "52" retracted, `NEVER_ATTACHED` -> `RECORDED_OFF_PATH` were all
+miscounts. This one would have **stopped legitimate work** — it told the next
+agent that 19 fixes were unavailable until a rebuild that would not have
+helped. The claim came from reading the guard's message; one measurement of
+the corpus falsified it. Test the blocker before recording it.
