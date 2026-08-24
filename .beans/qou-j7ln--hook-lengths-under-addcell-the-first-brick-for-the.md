@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T15:36:03Z
+updated_at: 2026-08-24T15:55:02Z
 ---
 
 ## Landed — PR #5645
@@ -334,3 +334,60 @@ Alternative worth weighing at (3): compute the `schurPrincipal` ratio directly
 from #5645's `hookLength_addCell_of_mem` instead of via the closed form. Same
 work in different clothes, but it stays inside `YoungDiagram` and skips the
 List bridge entirely.
+
+
+## Bricks 1 and 2 done; a trap found and closed
+
+Three more commits: `6f4f6b712` (content-side block), `300c107b4` (List <->
+YoungDiagram hook bridge), `3b08549f7` (zero-padding + the beta trap).
+
+**Brick 1 — content side.** `prod_block_mul_descFactF`: a contiguous block
+`f(b)...f(b+m-1)` is a ratio of two `descFactF`s, division-free. Row `i`'s
+numerator factors are `f(r - i + j)` for `j < mu_i`, a block at `b = r-i` of
+length `mu_i`, whose top index `b+m-1 = mu_i + r - 1 - i` **is** `beta_i` --
+which is why `prod_i descFactF f beta_i` cancels against the hook side's.
+
+**Brick 2 — the encoding bridge.** Corpus-grep again paid:
+`HookLengthFormula.hookLengthProduct_eq_prodHooks` and
+`ColLenRowLensBridge.colLen_rowLens` already existed over `N`, and again the
+proof is reindexing with all content in the ARGUMENT. So
+`prodHooksF_rowLens : prod_{c in mu.cells} f(h(c)) = prodHooksF f mu.rowLens`.
+
+**A THIRD hook notion.** A route that stopped at `YoungDiagram.hookLength`
+would still not reach `schurPrincipal`, which uses `QBeta.WenzlWeight.hook` --
+`(rowLen i - j) + (colLen j - i) - 1`. On a cell that IS
+`hookLength_eq_of_mem`'s closed form, so `wenzlHook_eq_hookLength` closes it
+and `prodHooksF_rowLens_wenzl` states the bridge in the form `schurPrincipal`
+needs.
+
+**THE BETA TRAP — read before assembling.** `betaNum l i = l[i] + (|l|-1-i)`
+measures against `|l|`, the number of NONZERO rows. The level-r principal
+specialisation measures against **`r`**: pad with `r - |l|` empty rows first.
+The two differ by the constant `r - |l|` on every row, AND the padded version
+has extra rows `beta = r-1-|l|, ..., 0` that the unpadded one lacks entirely.
+Differences between real rows survive, so the Vandermonde is unaffected up to
+the new rows -- but nothing else transfers for free, and a proof that quietly
+uses `|l|` where `r` belongs is wrong in a way **no type error catches**. I
+nearly wrote one.
+
+`prodHooksF_append_replicate_zero` closes the half that does transfer: empty
+rows contribute no cells and are counted by no column, so the hook product is
+unchanged. Pad first, then apply the beta machinery at `r`.
+
+## Left — one assembly
+
+Everything the assembly needs is now proved. Remaining:
+
+1. Pad `mu.rowLens` to length `r`; apply `prodHooksF_one_sub_pow_pair` to get
+   the hook side with a Vandermonde denominator at the `r`-row betas.
+2. Apply `prod_block_mul_descFactF` per row for the numerator; watch the
+   `prod_i descFactF beta_i` cancel.
+3. Convert `prod_{i<j}(1 - Q^{beta_i - beta_j})` to `vandPairProd r x` with
+   `x_i = Q^{beta_i}`, up to the monomial `prod_{i<j} x_i`.
+4. Track the leftover monomials against `Q^{nPart mu}`, and discharge `hw` in
+   `sum_eq_bracket_mul_of_qratio_scaling` -- or, since only the RATIO is
+   needed, take the quotient of two instances of (1)-(3) and let the
+   `mu`-independent constant cancel before any monomial bookkeeping.
+
+(4)'s second option is likely much less work than the first and should be
+tried first.
