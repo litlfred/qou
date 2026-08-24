@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T18:10:34Z
+updated_at: 2026-08-24T18:14:36Z
 ---
 
 ## Landed — PR #5645
@@ -1020,3 +1020,46 @@ is not of that form for any `r`, and nothing here reaches it.
 So: the r=2 -> general-r generalisation is complete for vanishing, branching
 and normalisation; the arbitrary-z direction remains exactly as the earlier
 note left it, needing a genuinely different identity.
+
+
+## Last brick before assembly; and the constant checked to close
+
+Commit `528ff79b5`.
+
+    wenzlWeight_addCell_eq :  w_{mu + box at row a} = (q-ratio_a / [r]_Q) * w_mu
+
+`sum_wenzlWeight_addCellOrSelf` sums these; the corner identity needs them one
+at a time, because it weights each by the seminormal entry BEFORE summing.
+
+### The assembly now closes on paper — six lemmas, one arithmetic check
+
+    LHS = sum_a w_{nu+s_a} * seminormalParam q (axial)
+        = (w_nu/[r]_Q) * sum_a qratio_a * (q - 1/q) Q x_a/(Q x_a - x_b)   [1,2,3,4]
+        = (w_nu/[r]_Q) * (q - 1/q) * Q^r/(Q-1)                            [5]
+
+and that IS `z * w_nu`, because with `[r]_Q = (1-Q^r)/(1-Q)` and
+`(q - 1/q) = (Q-1)/q`:
+
+    (1/[r]_Q)(Q-1)/q * Q^r/(Q-1) = (1-Q) Q^r / (q (1-Q^r)) = z
+
+matching the constant measured 11/11 earlier. So no residual arithmetic —
+every factor cancels as it should.
+
+  [1] wenzlWeight_addCell_eq          termwise weight ratio
+  [2] axialDistance_corner_addable    axial distance in beta coordinates
+  [3] zpow_node_dictionary            hence Q^d x_b = Q x_a
+  [4] seminormalParam_node_form       so seminormalParam is the node weight
+  [5] sum_prod_qratio_weighted        the weighted sum
+      sum_addable_eq_sum_range        the indexing
+
+### What the assembly still has to do in Lean
+
+* re-index the addable-subtype sum (`sum_addable_eq_sum_range`), with the
+  row-`r` term killed by `wenzlWeight_addCell_beyond_eq_zero` as before;
+* discharge `hne` from addability — `beta_{i-1} >= beta_i + 2` for addable `i`,
+  which `betaR_lt` does NOT give (it gives strict decrease, not a gap of 2);
+* thread `hcr : c.1 < r`, which needs the corner's row bounded — the corner
+  analogue of `isAddableCell_row_le`, not yet written.
+
+The last two are the only places where a new small lemma is needed; everything
+else is rewriting.
