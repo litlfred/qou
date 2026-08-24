@@ -500,7 +500,11 @@ index-times-dimension formula, and `Σ_λ f^{λ/μ} f^λ` by `s_μ·s_1^{k−m} 
 counterexample the guard removes and checks this identity at `k = 3, 4`.
 
 This requires massive infrastructure (the RSK correspondence and hook-length formula)
-and is left as a sorry. -/
+and is left as a sorry.
+
+**Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) only
+proves the Burnside identity `∑ (dimSYT)² = n!`. It does not yet prove this classical
+branching identity, which remains an open gap. -/
 theorem branching_two_one (k : ℕ) (hk : 3 ≤ k) [ctx : RSKIdentitiesContext] :
     3 * (∑ p : Nat.Partition k,
         dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k :=
@@ -529,7 +533,11 @@ theorem skew_le_straight (k : ℕ) :
 /-- **RSK for involutions.** `Σ_{λ⊢k} f^λ = I(k)`, the number of involutions in
 `S_k` — the `q = 1` value of the QOU na-Stokes period.
 
-This requires massive infrastructure (the RSK correspondence) and is left as a sorry. -/
+This requires massive infrastructure (the RSK correspondence) and is left as a sorry.
+
+**Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) only
+proves the standard permutation RSK identity (`∑ (dimSYT)² = n!`), not this specialization
+for involutions. This remains an open gap. -/
 theorem sum_dimSYT_eq_involution (k : ℕ) [ctx : RSKIdentitiesContext] :
     (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k :=
   ctx.sum_dimSYT_eq_involution k
