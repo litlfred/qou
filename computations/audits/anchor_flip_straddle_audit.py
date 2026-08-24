@@ -177,6 +177,114 @@ LITERAL_VERDICT_NOTE = (
 )
 
 
+# ---------------------------------------------------------------------------
+# 🛑 A q-valued NAME IS NOT A q THAT IS USED. Measured 2026-08-23 on
+# `aK_via_lp_dual_hecke_basis`, which I myself classified a STRADDLE and which
+# is not one.
+#
+# That producer reads the muon anchor-defining witness:
+#
+#     Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+#     Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+#     H = Q - mp.mpf(1) / Q
+#
+# so it plainly "has a q of its own" -- and `Q` and `H` reach exactly two
+# statements, both of them stamps:
+#
+#     w.add_parameter("q0", repr(Q))
+#     w.add_parameter("h",  repr(H))
+#
+# Every NUMBER in the witness comes from `pyhecke.gram`'s IMPORT-TIME float64
+# constants `TR_M` and `G = _build_gram()`, built from `q_parameter.Q` -- the
+# manifest pin, proton for this unlisted stem. So the anchor flip moves 39
+# fields because the MATH is anchor-sensitive, exactly as it should be. There
+# is no second layer inside any computed quantity. The defect is a MISLABEL:
+# the witness would advertise the muon pin over numbers that are entirely
+# proton -- the direction that misleads a reader who trusts the stamp.
+#
+# This is the same error as the four earlier ones this session: a detector
+# keyed on the APPEARANCE of a thing (a q-valued name bound from a q source)
+# rather than its ROLE (a q that enters the arithmetic). It is also the same
+# fix already made in `cached_accessor_shape_audit` -- the caller-argument
+# requirement, added because a bound name is not a used name -- which was not
+# carried across to here.
+#
+# `stamp_only()` below is deliberately CONSERVATIVE: propagation through an
+# assignment keeps a name q-derived, and anything else at all counts as a real
+# use. It therefore under-reports STAMP-ONLY and never launders a genuine
+# straddle into one.
+STAMP_CALLS = {"add_parameter", "add_metadata", "add_note", "set_description",
+               "set_content_block", "add_upstream_records"}
+Q_SOURCE = re.compile(
+    r"q_muon_at|Q_50_DIGIT_STR|q-pinning-50-digit|M_MU_OVER_M_E|1\.10997859555")
+
+
+def _stamp_call(node) -> bool:
+    f = getattr(node, "func", None)
+    name = getattr(f, "attr", None) or getattr(f, "id", None)
+    return name in STAMP_CALLS
+
+
+def stamp_only(prod: Path):
+    """(is_stamp_only, q_names) -- every q-derived name reaches only stamps.
+
+    NOT a straddle verdict of its own; a VETO on one. A producer whose q never
+    enters a computed quantity cannot straddle, whatever its witness moves.
+    """
+    try:
+        tree = ast.parse(prod.read_text(encoding="utf-8"))
+    except (OSError, SyntaxError):
+        return False, []
+
+    def loads(n):
+        return {x.id for x in ast.walk(n)
+                if isinstance(x, ast.Name) and isinstance(x.ctx, ast.Load)}
+
+    qnames, changed = set(), True
+    while changed:                      # seed + propagate through assignments
+        changed = False
+        for n in ast.walk(tree):
+            if not isinstance(n, ast.Assign) or len(n.targets) != 1:
+                continue
+            tgt = n.targets[0]
+            if not isinstance(tgt, ast.Name) or tgt.id in qnames:
+                continue
+            rhs = ast.unparse(n.value)
+            if Q_SOURCE.search(rhs) or (loads(n.value) & qnames):
+                qnames.add(tgt.id)
+                changed = True
+    if not qnames:
+        return False, []
+
+    # Exempt every Name NODE that sits inside a stamp call or inside a
+    # propagating assignment RHS. Node identity, not name identity: `repr(Q)`
+    # is itself a Call nested in `add_parameter(...)`, so a walk that tests
+    # each Call in isolation sees `repr` -- not a stamp -- and calls it a use.
+    exempt = set()
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Call) and _stamp_call(n):
+            exempt |= {id(x) for x in ast.walk(n)}
+        elif isinstance(n, ast.Assign) and len(n.targets) == 1 \
+                and isinstance(n.targets[0], ast.Name):
+            exempt |= {id(x) for x in ast.walk(n.value)}
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Name) and isinstance(n.ctx, ast.Load) \
+                and n.id in qnames and id(n) not in exempt:
+            return False, sorted(qnames)
+    return True, sorted(qnames)
+
+
+def _selftest() -> int:
+    """`aK_via_lp_dual_hecke_basis` is the known positive; it must be detected."""
+    ok, names = stamp_only(REPO / "computations" / "aK_via_lp_dual_hecke_basis.py")
+    print(f"  aK_via_lp_dual_hecke_basis stamp_only={ok} q_names={names}")
+    if not (ok and {"Q", "H"} <= set(names)):
+        print("  SELFTEST FAILED — the known stamp-only case is not detected.")
+        return 1
+    print("  selftest OK")
+    return 0
+
+
 def _run(prod: Path, anchor: str, timeout: int) -> int:
     env = dict(os.environ)
     env["QOU_Q0_ANCHOR"] = anchor
@@ -257,6 +365,13 @@ def audit(prod: Path, timeout: int = 900, verdict_word: str = "STRADDLE"):
                      and not any(s in k for s in STAMP_KEYS)
                      and fa.get(k) != fb.get(k)]
             if moved:
+                so, qn = stamp_only(prod)
+                if so:
+                    return ("STAMP-ONLY",
+                            f"{len(moved)} field(s) move, but its own q "
+                            f"({', '.join(qn)}) reaches only stamps — the math "
+                            f"is entirely the manifest pin, so the witness "
+                            f"MISLABELS it. Not a straddle.")
                 return (verdict_word,
                         f"{len(moved)} field(s) move, e.g. {moved[0]} [{f.name}]")
         return "clean", "anchor flip moves nothing but the stamp"
@@ -274,9 +389,13 @@ def main(argv=None) -> int:
     ap.add_argument("--sample", type=int, default=0,
                     help="audit a random sample of N (seeded, so reproducible)")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--selftest", action="store_true",
+                    help="check the stamp-only veto against its known positive")
     ap.add_argument("--timeout", type=int, default=900,
                     help="per-run seconds; an exceeded run is UNTESTED, not clean")
     args = ap.parse_args(argv)
+    if args.selftest:
+        return _selftest()
 
     targets = ([Path(p) for p in args.producers] if args.producers
                else candidates("inline") if args.candidates
