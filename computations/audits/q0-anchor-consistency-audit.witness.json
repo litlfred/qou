@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:31:30.771199+00:00",
-  "commitSha": "62531b2bb8d0efe48f5508a29dc56df2f281d1a3",
+  "computedAt": "2026-08-24T08:22:02.115208+00:00",
+  "commitSha": "7a440fe868d23182e74aaf55f108591dfbb5fd66",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -45,14 +45,14 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 704,
+      "Q0_OK": 703,
       "Q0_AMBIGUOUS": 16,
       "Q0_INDEPENDENT": 46,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1879,
+      "Q0_ANCHOR_MISSING": 1880,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -2279,6 +2279,10 @@
         },
         {
           "witness": "habiro-h9-spectral-decomposition.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-interpolate-cross-validation.witness.json",
           "detail": ""
         },
         {
@@ -8885,10 +8889,6 @@
         },
         {
           "witness": "habiro-exact-qbeta.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-interpolate-cross-validation.witness.json",
           "detail": ""
         },
         {
