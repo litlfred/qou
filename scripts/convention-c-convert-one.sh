@@ -7,14 +7,38 @@
 # diff -- whole-file because diffing tails misaligned once when a provenance
 # line shifted the window and nearly produced a false finding.
 #
-#   scripts/convention-c-convert-one.sh <producer.py> <witness.json> '<old z line>' '<new z expr>'
+#   scripts/convention-c-convert-one.sh <producer.py> <witness.json> '<old z line>' '<new z expr>' [timeout_s]
+#
+# timeout_s defaults to 900 and applies to EACH of the two runs. Sites slower
+# than that abort on the baseline guard rather than producing a bogus diff --
+# delta_lambda_v_hat_z_transfer_phase5d_4 is one such (>15 min per run).
 set -uo pipefail
-P="$1"; W="$2"; OLD="$3"; NEW="$4"
+P="$1"; W="$2"; OLD="$3"; NEW="$4"; TMO="${5:-900}"
 T=$(mktemp -d)
 
 git checkout -- "$W" "$P" 2>/dev/null
 cp "$W" "$T/committed.json"
-timeout 900 python3 -u "$P" > "$T/base.log" 2>&1; echo "baseline exit=$?"
+timeout "$TMO" python3 -u "$P" > "$T/base.log" 2>&1; BASE_RC=$?
+echo "baseline exit=$BASE_RC"
+if [ "$BASE_RC" -ne 0 ]; then
+  # ABORT. A baseline that did not complete is not a baseline.
+  #
+  # This guard exists because the harness did not have it: on
+  # delta_lambda_v_hat_z_transfer_phase5d_4 the baseline hit the internal
+  # `timeout 900` and returned 124, the harness printed "BASELINE moved: 0"
+  # -- which was NOT evidence of stability, only evidence the killed producer
+  # never wrote -- and then converted and diffed against that non-baseline.
+  # The result would have LOOKED like a clean single-cause attribution.
+  #
+  # Same defect, and the same fix, as the regen driver's restore-on-failure
+  # (#5565): a process that was killed must not contribute a measurement.
+  echo "!! baseline did NOT complete (exit $BASE_RC; 124 = timeout)."
+  echo "!! Refusing to convert: a diff against an incomplete baseline is not"
+  echo "!! attributable. Re-run with a longer timeout, or handle this site by"
+  echo "!! hand. Tree untouched."
+  git checkout -- "$W" "$P" 2>/dev/null
+  exit 3
+fi
 python3 - "$W" "$T/committed.json" <<'PY'
 import json,sys
 a=json.load(open(sys.argv[2])); b=json.load(open(sys.argv[1]))
@@ -44,7 +68,7 @@ open(p,'w').write(s.replace(old,new,1)); print("converted")
 PY
 [ $? -ne 0 ] && { echo "aborting"; exit 2; }
 
-timeout 900 python3 -u "$P" > "$T/conv.log" 2>&1; echo "converted exit=$?"
+timeout "$TMO" python3 -u "$P" > "$T/conv.log" 2>&1; echo "converted exit=$?"
 python3 - "$W" "$T/base.json" <<'PY'
 import json,sys
 a=json.load(open(sys.argv[2])); b=json.load(open(sys.argv[1]))
