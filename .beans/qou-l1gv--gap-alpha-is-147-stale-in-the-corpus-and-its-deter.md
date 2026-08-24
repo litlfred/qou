@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:05:13Z
-updated_at: 2026-08-24T13:29:48Z
+updated_at: 2026-08-24T21:59:04Z
 ---
 
 Found while triaging the last convention-C sites (`qou-cds1`, PR #5622).
@@ -210,3 +210,67 @@ explanation — `hecke_core`/`pyhecke.gram` demonstrably did move to D on
 2026-08-16, after these constants existed — but "the producer sat unchanged
 while the ground moved" is an inference I cannot support from a truncated
 history, and the fix list is unchanged either way.
+
+## PARTIALLY FIXED 2026-08-24 — and the fix list above needed two corrections
+
+DONE (neither publishes a number):
+
+  1. STRADDLE REMOVED. Both z in the error functional are now the canonical
+     convention-D value at full precision, via closed_form_tau_M.markov_z(Q0).
+     Measured before the change: z_m (line 49) = 0.6126880371464652 = z_D,
+     zv (line 88) = 0.4993203341836944524134427 = z_C — the two differ by
+     22.7044 % INSIDE ONE FUNCTIONAL. So 0.350886 was alpha* in no convention.
+
+NOT DONE, and deliberately:
+
+  2. THE BRACKET IS GATED, and my own fix-list item 3 ('re-derive the bracket
+     from a scan') would have violated the gate. alpha_high_precision.py carries
+     an in-code refusal — 're-centring it would replace a PUBLISHED alpha* and
+     needs a deliberate decision, not a silent widen' — pointing at bean
+     qou-2zjp, which is blunter: 'Do NOT just widen the bracket until it finds
+     something; that would fit a number rather than derive it.' Left at
+     [0.30, 0.32]. The producer still exits 1 and WRITES NO WITNESS, so removing
+     the straddle changed no published value and fitted nothing.
+
+  3. THE PIN IS ANOTHER SWEEP'S. It resolves through q0_anchor_manifest.json,
+     which is the qou-1c4y migration with its own constraints, and the pin is
+     measured alpha*-invariant, so it is provenance-only here.
+
+CORRECTION 1 — the laundering claim in this bean is WRONG. It says 'Z_MARKOV is
+an mpf; float() truncates it to binary64 and mpf(str(...)) re-inflates it', and
+prescribes 'use Z_MARKOV directly'. Measured: type(Z_MARKOV) is **float**, and
+Z_MARKOV == float(z_D) exactly, relative difference 6.692e-18 = f64 epsilon. So
+hecke_core.z EXPORTS a float64; the truncation is UPSTREAM and assigning
+z_m = Z_MARKOV would have recovered nothing. The mpf(str(float(...))) round-trip is a no-op
+dressed as a conversion. The fix is markov_z(Q0), not the import.
+
+CORRECTION 2 — this bean answers qou-2zjp's open question. That bean asks
+whether the bracket is stale OR an upstream constant moved. Neither: the
+functional was INCOHERENT. Recorded on both beans so the owner's decision has
+the cause attached rather than a dichotomy.
+
+FOR THE GATED DECISION, measured diagnostically without touching the producer:
+
+    coherent convention-D alpha* = 0.283762164004797872323221458653
+    vs corpus 0.305807           = -7.20874 %
+    err(0.27) = +0.35791048 %,  err(0.30) = -0.41930387 %
+
+Independently reproduces this bean's earlier 0.283762164005 to 12 digits. The
+error curve now runs all-NEGATIVE across [0.30, 0.32] (was all-positive), so the
+root sits below the window rather than above it — the sign flip is the whole
+visible effect of de-straddling.
+
+STILL OPEN, unchanged: docs/alpha-blend-derivation.md:772 records alpha* = G/3 as
+'falsified by PSLQ' against the stale 0.305807, and docs/canonicalization-review
+.md lines 21/136/155 carry that value. G/3 = 0.30532 is 0.16 % from the stale
+figure and 7.6 % from the coherent D root, so the falsification's VERDICT
+survives — it is further away, not nearer — but its reasoning targeted a number
+that is not alpha*. Correcting those docs needs the bracket decision first.
+
+
+(Repair note: the paragraph above briefly read "the truncation is UPSTREAM and
+would have recovered nothing" with the subject missing. A backticked phrase in
+the `beans update` argument was eaten by shell command substitution — the run
+printed "z_m: command not found" and substituted empty output. Restored, and
+recorded because a silently truncated sentence in a bean is exactly the kind of
+thing a later reader takes at face value.)

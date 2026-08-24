@@ -42,11 +42,23 @@ set_compute_dps()
 
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                           h as H_A_F, z as Z_MARKOV)
+from closed_form_tau_M import markov_z as _markov_z  # noqa: E402 — canonical convention-D z, full precision
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_P_MEV, M_N_MEV
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
-z_m = mp.mpf(str(float(Z_MARKOV)))
+# Convention D at FULL precision, from the canonical helper.
+#
+# Was `z_m = mp.mpf(str(float(Z_MARKOV)))`. Two separate defects, and the
+# second is not what an earlier note on bean qou-l1gv claimed:
+#   * `hecke_core.z` is a Python FLOAT, not an mpf — measured,
+#     type(Z_MARKOV) is float and it equals float(z_D) to 6.7e-18 (f64
+#     epsilon). So the truncation to 16 digits happens UPSTREAM, and
+#     `z_m = Z_MARKOV` would have recovered nothing. The mpf(str(float(...)))
+#     round-trip is a no-op dressed as a conversion.
+#   * it is z_D, so it disagreed with `zv` below (z_C) by 22.7044 % inside
+#     one error functional.
+z_m = _markov_z(Q0)
 h_f = float(H_A_F)
 hQ = Q0 - QI
 D = Q0**4 + 4*Q0**2 + 1
@@ -85,7 +97,12 @@ def sym_alt(chain):
 
 
 def std_za_b(chain):
-    zv = mp.mpf(1)/(mp.sqrt(Q0)+mp.sqrt(QI))
+    # Was z_C = 1/(sqrt q + sqrt(1/q)) = 0.4993203, while z_m above is z_D =
+    # 0.6126880 — both feeding the SAME error functional whose root is alpha*.
+    # That is why alpha* read 0.350886: not 'alpha* in convention C', but
+    # alpha* in NO convention. Convention D throughout, per the 2026-08-15
+    # owner ruling.
+    zv = _markov_z(Q0)
     a = mp.mpf(0); b = mp.mpf(1)
     for c, d in chain:
         cm, dm = mp.mpf(c), mp.mpf(d)
