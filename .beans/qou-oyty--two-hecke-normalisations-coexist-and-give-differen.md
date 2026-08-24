@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T20:25:30Z
-updated_at: 2026-08-24T20:25:30Z
+updated_at: 2026-08-24T20:46:23Z
 ---
 
 Found while computing Ext^1 for bean qou-zut2 (2026-08-24). Not a defect in either block on its own — a discrepancy BETWEEN blocks that changes a stated answer, and it is invisible unless the two are read together.
@@ -64,3 +64,44 @@ QOU/Mathlib/HeckeExtOne.lean module docstring states the caveat in full and
 proves the general R/(alpha - beta) form deliberately, so neither convention is
 baked in. Zero sorries, axiom-clean. This bean exists so the caveat is not lost
 in a file docstring.
+
+
+---
+
+## Option 3 answered 2026-08-24 — the mixed-channel argument needs B, so the answer is Z[i]
+
+Checked, as this bean asked, before writing option 2.
+
+**The block is under B.** `rem:hecke-algebra-from-braiding` is the block that
+*defines* H_n(R,q) for this corpus and it writes `(sigma - q)(sigma + q^-1) = 0`.
+`rem:phase-transition-interpretation`, the remark interpreting
+`prop:phase-transition-boundary` itself, names the channels "Gas (symmetric
+channel, eigenvalue q)" and "Solid (antisymmetric channel, eigenvalue -q^-1)".
+Convention A appears in a Lean file (`HeckeAnyonicSubstrate`), not in any
+content block attached to this claim.
+
+**So the value is Z[i], and the physics claim does change.** Z[i] is Z^2 as an
+abelian group with no distinguished generator, so "the Hopf invariant of
+pi_3(S^2) = Z generates it" cannot be repaired by naming a convention — it is
+false under B and the block is under B.
+
+**And the degeneracy locus is not reachable.** Newly proved sorry-free in
+`QOU/Mathlib/ExtensionClass.lean`: `twoQ_eq_zero_iff` (under B the eigenvalue
+gap q + q^-1 vanishes exactly on q^2 + 1 = 0) and `twoQ_ne_zero_of_ordered`
+plus `heckeSES_isSplit_of_ordered` (over an ordered field it never vanishes, so
+the sequence splits at every nonzero q). A degenerates at q = -1; B at q = ±i.
+Neither is admissible under `def:substrate-parameter`, and ±i is not real, so
+the archimedean side never reaches it.
+
+**Consequence for this bean.** Option 3 is discharged: the claim it was
+protecting is withdrawn on `prop:phase-transition-boundary` (status authorNote,
+2026-08-24, bean qou-zut2), so option 2 no longer has a live "= Z" to annotate.
+Options 1 and 2 remain open as a *general* hygiene item — the two normalisations
+still coexist undeclared, and the next block to compute something
+eigenvalue-difference-dependent will hit the same fork. Option 1 (declare one
+normalisation in the substrate and write the rescaling down) is the durable fix
+and is unaffected by the withdrawal.
+
+`HeckeExtOne.lean` keeps every theorem; its module docstring now states which
+normalisation each result belongs to, and the two normalisation-A theorems are
+labelled as such rather than as "the corpus's".

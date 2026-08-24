@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T20:05:49Z
-updated_at: 2026-08-24T20:25:50Z
+updated_at: 2026-08-24T20:46:23Z
 ---
 
 Raised while building route 2 to the topological charge (QOU/Mathlib/ExtensionClass.lean, 2026-08-24).
@@ -165,3 +165,86 @@ CAVEAT SPLIT OUT to bean qou-oyty: the answer is normalisation-dependent. The
 corpus carries two Hecke relations and the other one gives Z[i], not Z. Do not
 quote "= Z" without saying which relation is meant. qou-oyty option 3 is the one
 that could change a physics claim.
+
+
+---
+
+## CORRECTION 2026-08-24 — the "dissolves" verdict above does not hold for this block
+
+The RESOLVED note above is right about the algebra and wrong about the verdict.
+`HeckeExtOne.lean`'s computation `Ext^1(V_beta, V_alpha) = R/(alpha - beta)` is
+correct and is kept. What does not follow is "the corpus's = Z is right".
+
+**1. Normalisation.** The note's Z comes from alpha = q, beta = -1, i.e.
+convention A, `(T - q)(T + 1) = 0`, which lives in
+`QOU/BraidKnot/HeckeAnyonicSubstrate.lean`. `phase-transition-boundary` is not
+under A. The block that *defines* H_n(R,q) for this corpus,
+`rem:hecke-algebra-from-braiding`, writes `(sigma - q)(sigma + q^-1) = 0`, and
+`rem:phase-transition-interpretation` — the remark interpreting this very
+proposition — names the channels "symmetric, eigenvalue q" and "antisymmetric,
+eigenvalue -q^-1". That is convention B. Under B the ideal is
+(q + q^-1) = (q^2 + 1) and the answer is Z[i], not Z. This is exactly
+`qou-oyty` option 3, and the answer to it is: yes, the mixed-channel argument
+needs B, so the value is Z[i] and the pi_3(S^2) = Z generator claim fails —
+Z[i] is Z^2 as a group with no distinguished generator.
+
+**2. Ring.** Even granting A, the "different fibres" defence relocates the
+group off the block's own ring. The block's `.ts` note and its Lean sibling
+both pin it to R (`abbrev R_q := ℝ`), and the note itself concedes Ext^1 = 0
+there. So the sentence "the Hecke representation at the mixed-channel
+temperature forms a non-split extension" remains false at the temperature and
+ring the block is about.
+
+**3. No real degenerate q exists under B.** Newly proved in
+`QOU/Mathlib/ExtensionClass.lean`, sorry-free and axiom-clean:
+`twoQ_eq_zero_iff` (the gap q + q^-1 vanishes iff q^2 + 1 = 0) and
+`twoQ_ne_zero_of_ordered` / `heckeSES_isSplit_of_ordered` (over an ordered
+field it never vanishes, so the sequence splits at EVERY nonzero q). The
+collision point of A is q = -1; of B it is q = ±i. Neither is admissible —
+`def:substrate-parameter` forbids roots of unity — and ±i is not even real.
+
+**4. The middle term is still wrong.** `HeckeExtOne`'s M_c is free of rank two.
+The corpus's V_mixed is the irreducible S_(2,1) (`baryon-octet-decomposition`,
+`knot-eigenbasis-complete`). Nothing connects the two, and an irreducible
+module admits no such sequence.
+
+## What was done
+
+* Content: `phase-transition-boundary.md` no longer asserts the non-split
+  extension; it states the eigenprojection splitting, the semisimplicity
+  vanishing, and the Z[i] classification with its non-real support. Status
+  authorNote on the `.ts` with the evidence and the two rejected relocations.
+  `rem:phase-transition-interpretation` and
+  `rem:composite-crossing-sublimation-criteria` carried the same claim and are
+  corrected with their own status notes; the valence-shell classification and
+  the crossing-parity arithmetic are retained as empirical, without a
+  derivation. `phase-transitions-intro.md` still promises the withdrawn
+  derivation — SEE BELOW, not yet fixed at time of writing this note.
+* Lean, all sorry-free and `#print axioms`-clean (propext / Classical.choice /
+  Quot.sound only): `ExtensionClass.isSplit_of_isCompl`,
+  `isSplit_of_isSemisimpleModule`, `isSplit_of_isSemisimpleRing`,
+  `isCompl_ker_quadratic`, `heckeSES`, `heckeSES_isSplit`, `twoQ_eq_zero_iff`,
+  `twoQ_ne_zero_of_ordered`, `heckeSES_isSplit_of_ordered`.
+* `HeckeExtOne.lean` keeps every theorem; only its narrative was corrected —
+  the title, the "they are not [inconsistent]" verdict, and the two
+  normalisation-A docstrings that called A "the corpus's" relation.
+
+**Bottom line: the corpus has two routes to the topological integer, not
+three.** Residue (`thm:topological-charge-quantization`, lean.ref a stub) and
+winding (`rem:winding-parity-sign-transport`). The homological route does not
+exist at any q a QOU admits.
+
+**Falsifier, restated after the reconciliation.** Show that
+`phase-transition-boundary` is under convention A rather than B — i.e. that its
+mixed channel is built from a generator with eigenvalues q and -1 rather than q
+and -q^-1 — AND that its ground ring is R_q rather than R. Both are needed; A
+alone still leaves the group zero over R.
+
+
+**Addendum (same session):** `phase-transitions-intro.md` is now fixed too — the
+chapter intro promised "we then derive sublimation using a non-split extension
+classified by Ext^1"; it now says the channels are complementary summands and
+that Ext^1 supplies no obstruction. Four content files in total:
+`phase-transitions-intro.md`, `phase-transition-boundary.{md,ts,lean}`,
+`phase-transition-interpretation.{md,ts}`,
+`composite-crossing-sublimation-criteria.{md,ts}`.
