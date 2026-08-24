@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T08:55:10Z
-updated_at: 2026-08-24T17:02:58Z
+updated_at: 2026-08-24T17:11:01Z
 ---
 
 Surfaced by the #5519 staleness sweep. `computations/alpha/alpha_5_lp_dual_crystal.py`
@@ -175,3 +175,40 @@ I ran `alpha_5` twice while the five-producer batch was running. Both use
 whole-tree snapshot/restore, so concurrent runs can restore each other's
 intermediate state. Nothing was corrupted (`dirty=0` after each), but that was
 careless and should not be repeated — serialise tree-touching runs.
+
+
+## The qbeta pair: cost located, and the obvious fix is not available
+
+Both remaining TIMEOUTs are the exact-`s`-series probes. The running one names
+its own expensive phase before it stalls:
+
+    exact sympy series to O(s^9) (log R and u) ...
+
+so the cost is **symbolic algebra**, not a numeric loop. Upstream of that line
+sit `sp.simplify` at 62, 75 and 104 and `sp.cancel` at 76 — the class
+`local/compute-audit` exists to route ("where is `sympy.simplify`").
+
+**Stated as a candidate, not a cause.** What is observed is that the run sits in
+the series phase and that three `simplify` calls precede it. Nothing here is
+profiled, so do not record `simplify` as the hot spot without measuring it —
+that inference is the same shape as this bean's original "combinatorial,
+therefore long", which was wrong.
+
+**"Just lower the series order" does not work, and it is the first thing anyone
+will propose.** The order is not a tuning knob:
+
+| probe | `KC` | `NS = 2·KC + 2` |
+|---|---|---|
+| `qbeta_c3even_exact_sseries_probe` | 3 — *"extract through c_3 (s^6); c_4 needs s^8"* | 8 |
+| `qbeta_c4even_exact_sseries_probe` | 4 — *"extract through c_4 (s^8)"* | 10 |
+
+Both are module-level constants with no argparse, and `KC` **is the quantity
+the probe extracts**. Lowering it does not make the probe cheaper — it makes it
+answer a smaller question. Any long-compute plan has to attack the symbolic
+route (targeted `cancel`/`together`/`radsimp` instead of blanket `simplify`, or
+an exact-rational route that avoids the series), not the order.
+
+**Expectation, not a measurement:** `c4even` runs at `NS = 10` against
+`c3even`'s `NS = 8`, and exact-series cost grows steeply with order, so if
+`c3even` exceeds 30 min then `c4even` should be worse. Recorded so the eventual
+number can be checked against it rather than rationalised after the fact.
