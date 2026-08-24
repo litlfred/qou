@@ -42,6 +42,12 @@
     "matrix_im": "Imaginary part of a matrix entry. Always exactly 0.0 here because those matrices are real. A real that is zero, not an integer.",
     "matrix_re": "Real part of a matrix entry.",
     "sigma_k_at_q0_re": "Real part of sigma_k evaluated at q0.",
-    "w0_matrix_at_q0_re": "Real part of the w0 matrix at q0."
+    "w0_matrix_at_q0_re": "Real part of the w0 matrix at q0.",
+    "truncation_eps": "A truncation tolerance. It is 0 / 0.0 across the corpus only because nothing is being truncated; an eps is a real by definition. Written as an int in 3 witnesses and a float in 2, which is why the detector proposes it -- the fix is consistency toward FLOAT, not toward int."
+  },
+  "heterogeneous_fields": {
+    "$comment": "Arrays that mix integer letters with real coefficients in the SAME list, so no single type is right for them and neither integer_fields nor known_real_fields applies. Listed so the candidate detector stops proposing the sub-paths that happen to come out all-whole.",
+    "word_cd": "Braid crossing data as [c, d] pairs. Looks like a braid word by name and is not: measured 2026-08-24, `.data.braid_inventory.4He.word_cd` carries 47 ints, 70 integral floats AND 24 fractional entries such as -0.10453014939781965 (= -h/2, h = q - 1/q). Six of the seven braid_inventory sub-paths have fractional entries; the ones that do not are coincidence, not type.",
+    "word": "Same shape as word_cd under `.leptons.*`. `.leptons.muon 4_1 (sigma_1 sigma_2^-1)^2 in H_3.word` has fractional entries (-0.20906032215031675 = -h); the all-whole lepton words are the same structure with integer data."
   }
 }

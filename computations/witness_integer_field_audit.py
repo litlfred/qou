@@ -50,6 +50,7 @@ from __future__ import annotations
 
 import collections
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -59,8 +60,15 @@ REGISTRY = HERE / "witness-integer-fields.json"
 
 
 def _load() -> tuple[dict, dict]:
+    """(integer_fields, not_integer_fields).
+
+    The second is the union of `known_real_fields` and `heterogeneous_fields`:
+    both mean "do not propose this", for different reasons a reader can check.
+    """
     d = json.loads(REGISTRY.read_text(encoding="utf-8"))
-    return d.get("integer_fields", {}), d.get("known_real_fields", {})
+    not_int = dict(d.get("known_real_fields", {}))
+    not_int.update(d.get("heterogeneous_fields", {}))
+    return d.get("integer_fields", {}), not_int
 
 
 def integer_fields() -> set[str]:
@@ -81,6 +89,33 @@ def _walk(obj, path=""):
 
 def _leaf_name(path: str) -> str:
     return path.rsplit(".", 1)[-1].split("[")[0]
+
+
+_IDX = re.compile(r"\[\d+\]")
+
+
+def _shape(path: str) -> str:
+    """A path with list indices collapsed: `.rows[3].pair[0]` -> `.rows[].pair[]`.
+
+    THE CANDIDATE DETECTOR KEYS ON THIS, NOT ON THE LEAF NAME, and the
+    difference is most of the signal. Leaf names collide across unrelated
+    witnesses, and the collisions look exactly like a field written
+    inconsistently:
+
+        `(6)`  is a Casimir value at the substrate in one witness
+               (`.data.primitive_values_at_substrate.(6)`, a real)
+               and a count in another
+               (`.result...n_lambda_examples.(6)`, an int)
+        `pair` is a pairing energy term (`.term23_tower_free.pair`, real)
+               and a pair of indices (`.ratio_ladder[].pair[]`, ints)
+        `c`    is a crossing coefficient and a sweep parameter
+
+    None of those is a field written two ways; they are different quantities
+    that share a dictionary key, because these payloads are maps keyed by
+    partition labels, conjugacy classes and grid coordinates. Keyed by name,
+    9 of 15 candidates were this. Keyed by shape, they separate.
+    """
+    return _IDX.sub("[]", path)
 
 
 def _has_live_producer(d: dict) -> bool:
@@ -117,7 +152,8 @@ def scan(root: Path | None = None):
     violations: dict[str, list] = {}
     orphans: dict[str, list] = {}
     stats: dict[str, dict] = collections.defaultdict(
-        lambda: {"int": 0, "float_integral": 0, "float_fractional": 0})
+        lambda: {"int": 0, "float_integral": 0, "float_fractional": 0,
+                 "name": "", "witnesses": set()})
     declared = integer_fields()
     for p in sorted(root.rglob("*.witness.json")):
         if "_deprecated" in p.parts:
@@ -132,12 +168,16 @@ def scan(root: Path | None = None):
             if isinstance(v, bool) or not isinstance(v, (int, float)):
                 continue
             name = _leaf_name(path)
+            key = _shape(path)
+            s = stats[key]
+            s["name"] = name
+            s["witnesses"].add(rel)
             if isinstance(v, int):
-                stats[name]["int"] += 1
+                s["int"] += 1
             elif v.is_integer():
-                stats[name]["float_integral"] += 1
+                s["float_integral"] += 1
             else:
-                stats[name]["float_fractional"] += 1
+                s["float_fractional"] += 1
             if name in declared and isinstance(v, float):
                 sink.setdefault(rel, []).append((path, v))
     return violations, orphans, stats
@@ -155,11 +195,11 @@ def candidates(stats: dict, known_real: dict) -> list[tuple[str, dict]]:
     """
     out = []
     declared = integer_fields()
-    for name, s in stats.items():
-        if name in declared or name in known_real:
+    for key, s in stats.items():
+        if s["name"] in declared or s["name"] in known_real:
             continue
         if s["float_fractional"] == 0 and s["int"] > 0 and s["float_integral"] > 0:
-            out.append((name, s))
+            out.append((key, s))
     return sorted(out, key=lambda kv: -(kv[1]["float_integral"]))
 
 
@@ -185,10 +225,24 @@ def self_test() -> int:
             print(f"  FAIL [{why}] {payload} expected {want}, got {got}")
             bad += 1
     # The candidate detector must NOT nominate an always-integral real.
-    stats = {"matrix_im": {"int": 0, "float_integral": 900, "float_fractional": 0},
-             "dim_S_lambda": {"int": 5, "float_integral": 7, "float_fractional": 0},
-             "nf_net": {"int": 0, "float_integral": 9, "float_fractional": 3}}
-    names = [n for n, _ in candidates(stats, {})]
+    def _s(name, i, fi, ff):
+        return {"int": i, "float_integral": fi, "float_fractional": ff,
+                "name": name, "witnesses": {"w"}}
+    stats = {
+        ".a.matrix_im": _s("matrix_im", 0, 900, 0),
+        ".a.dim_S_lambda": _s("dim_S_lambda", 5, 7, 0),
+        ".a.nf_net": _s("nf_net", 0, 9, 3),
+        # The collision case: one leaf name, two unrelated paths. Keyed by
+        # NAME these merge into a single "written both ways" candidate; keyed
+        # by SHAPE they stay apart and neither is proposed. This is 9 of the
+        # 15 candidates the name-keyed version reported.
+        ".data.primitive_values_at_substrate.(6)": _s("(6)", 0, 1, 0),
+        ".result.n_lambda_examples.(6)": _s("(6)", 1, 0, 0),
+    }
+    names = [s["name"] for _, s in candidates(stats, {})]
+    if "(6)" in names:
+        print("  FAIL candidate detector merged two unrelated paths sharing a key")
+        bad += 1
     if "matrix_im" in names:
         print("  FAIL candidate detector nominated matrix_im (never written as int)")
         bad += 1
@@ -239,8 +293,9 @@ def main(argv: list[str]) -> int:
               f"{len(cands)}")
         print("      Proposed only. Adding one needs a reason a reader can check —")
         print("      see the registry's $comment for why value-shape is not enough.")
-        for name, s in cands[:20]:
-            print(f"      {s['float_integral']:6d} float / {s['int']:6d} int   {name}")
+        for key, s in cands[:20]:
+            print(f"      {s['float_integral']:6d} float / {s['int']:6d} int   {key}")
+            print(f"             field {s['name']!r} in {len(s['witnesses'])} witness(es)")
 
     if n_viol and "--strict" in argv:
         print("\nFix AT THE PRODUCER: emit int(...) for a declared count. Do not")
