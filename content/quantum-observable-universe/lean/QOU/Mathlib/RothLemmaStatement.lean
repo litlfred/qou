@@ -490,6 +490,51 @@ theorem map_pUnitAlgEquiv {R S : Type*} [CommRing R] [CommRing S] (f : R →+* S
   ext n
   rw [Polynomial.coeff_map, coeff_pUnitAlgEquiv, coeff_pUnitAlgEquiv, MvPolynomial.coeff_map]
 
+/-- **`IsRothTheta`'s realising pair, transported to `ℤ[X]`.**
+
+Everything §10 needs about the maximising `(A, κ)`, in the one-variable dictionary: a
+polynomial, a point in lowest terms, the height identity `max(|p|,|q|) = H`, the coefficient
+bound, and the index *equal* to `Θ`.
+
+Coprimality and `0 < q` are not hypotheses anywhere — Lean's `ℚ` carries `reduced` and a
+positive denominator by construction, which is why `InRothFracSet` needs no coprimality clause
+even though §9 states one.
+
+Extracted so that the unpowered and powered `Θ` bounds share it; they differ only in which
+index theorem they call. -/
+theorem exists_polynomial_of_isRothTheta {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ}
+    (hΘ : IsRothTheta a r H Θ) :
+    ∃ (P : ℤ[X]) (p q : ℤ), P ≠ 0 ∧ 0 < q ∧ IsCoprime p q ∧
+      max |p| |q| = ((H () : ℤ)) ∧ (∀ n, |P.coeff n| ≤ a) ∧
+      index (fun _ : Unit => r ()) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+          (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+        = ((Θ : ℚ) : WithTop ℚ) := by
+  obtain ⟨-, A, κ, hA, hκ, heq⟩ := hΘ
+  obtain ⟨hA0, -, hAc⟩ := hA
+  refine ⟨pUnitAlgEquiv ℤ A, (κ ()).num, (((κ ()).den : ℤ)), ?_, ?_, ?_, ?_, ?_, ?_⟩
+  · exact fun h => hA0 ((pUnitAlgEquiv ℤ).injective (h.trans (map_zero _).symm))
+  · exact_mod_cast (κ ()).pos
+  · rw [Int.isCoprime_iff_gcd_eq_one]
+    simpa [Int.gcd] using (κ ()).reduced
+  · rw [Int.abs_eq_natAbs, Int.abs_eq_natAbs, Int.natAbs_natCast, ← Nat.cast_max, hκ ()]
+  · intro n
+    rw [coeff_pUnitAlgEquiv]
+    exact hAc _
+  · have hmap : (((pUnitAlgEquiv ℚ).symm ((pUnitAlgEquiv ℤ A).map (algebraMap ℤ ℚ)))
+        : MvPolynomial Unit ℚ) = MvPolynomial.map (algebraMap ℤ ℚ) A := by
+      rw [map_pUnitAlgEquiv, AlgEquiv.symm_apply_apply]
+    have hκeq : (fun _ : Unit => (((κ ()).num : ℚ) / ((((κ ()).den : ℤ)) : ℚ))) = κ := by
+      funext u
+      cases u
+      push_cast
+      exact Rat.num_div_den _
+    have hreq : (fun _ : Unit => r ()) = r := by
+      funext u
+      cases u
+      rfl
+    rw [hmap, hκeq, hreq]
+    exact heq
+
 /-- **§10 in `Θ` form: `a ≤ H^e` and `H ≥ 2` give `Θ₁ ≤ e/r`.**
 
 Mahler states this as `Θ₁(a; r; H) ≤ log a / (r log H)`; `e` is a root-free stand-in for
@@ -502,39 +547,48 @@ theorem isRothTheta_le_of_pow_le {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ}
     (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hH : 2 ≤ H ()) (e : ℕ)
     (hae : a ≤ (H () : ℤ) ^ e) :
     Θ ≤ (e : ℚ) / (r () : ℚ) := by
-  obtain ⟨-, A, κ, hA, hκ, heq⟩ := hΘ
-  obtain ⟨hA0, -, hAc⟩ := hA
-  -- the point, in lowest terms — Lean's `ℚ` supplies both facts by construction
-  have hq0 : (0 : ℤ) < ((κ ()).den : ℤ) := by exact_mod_cast (κ ()).pos
-  have hco : IsCoprime ((κ ()).num) (((κ ()).den : ℤ)) := by
-    rw [Int.isCoprime_iff_gcd_eq_one]
-    simpa [Int.gcd] using (κ ()).reduced
-  have hheight : max |((κ ()).num)| |(((κ ()).den : ℤ))| = ((H () : ℤ)) := by
-    rw [Int.abs_eq_natAbs, Int.abs_eq_natAbs, Int.natAbs_natCast, ← Nat.cast_max, hκ ()]
-  -- the polynomial, carried to one variable
-  set P : ℤ[X] := pUnitAlgEquiv ℤ A with hPdef
-  have hPne : P ≠ 0 := fun h =>
-    hA0 ((pUnitAlgEquiv ℤ).injective ((hPdef ▸ h).trans (map_zero _).symm))
-  have hPc : ∀ n, |P.coeff n| ≤ a := by
-    intro n
-    rw [hPdef, coeff_pUnitAlgEquiv]
-    exact hAc _
-  have hmap : ((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ)) : MvPolynomial Unit ℚ)
-      = MvPolynomial.map (algebraMap ℤ ℚ) A := by
-    rw [hPdef, map_pUnitAlgEquiv, AlgEquiv.symm_apply_apply]
-  have hκeq : (fun _ : Unit => (((κ ()).num : ℚ) / ((((κ ()).den : ℤ)) : ℚ))) = κ := by
-    funext u
-    cases u
-    push_cast
-    exact Rat.num_div_den _
-  have hreq : (fun _ : Unit => r ()) = r := by
-    funext u
-    cases u
-    rfl
+  obtain ⟨P, p, q, hPne, hq0, hco, hheight, hPc, hidx⟩ := exists_polynomial_of_isRothTheta hΘ
   have hbound := index_le_of_abs_coeff_le hq0 hco hr hPne e (a := a)
     (by rw [hheight]; exact_mod_cast hH) hPc (by rw [hheight]; exact hae)
-  rw [hmap, hκeq, hreq, heq] at hbound
+  rw [hidx] at hbound
   exact_mod_cast hbound
+
+/-- **§10 in `Θ` form, powered: `a^Q ≤ H^S` gives `Θ₁ ≤ S/(Q·r)`.**
+
+The shape `Γ₁` delivers.  §11's clause (i) is `b ≤ K₁^{s₁t}` for rational `t = p/q`; clearing
+the exponent gives `b^q ≤ K₁^{s₁p}` with no rounding anywhere. -/
+theorem isRothTheta_le_of_pow_pow_le {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ} {Qe S : ℕ}
+    (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hQe : Qe ≠ 0) (hH : 2 ≤ H ())
+    (hae : a ^ Qe ≤ (H () : ℤ) ^ S) :
+    Θ ≤ (S : ℚ) / ((Qe : ℚ) * (r () : ℚ)) := by
+  obtain ⟨P, p, q, hPne, hq0, hco, hheight, hPc, hidx⟩ := exists_polynomial_of_isRothTheta hΘ
+  have hbound := index_le_of_pow_abs_coeff_le hq0 hco hr hPne hQe (a := a)
+    (by rw [hheight]; exact_mod_cast hH) hPc (by rw [hheight]; exact hae)
+  rw [hidx] at hbound
+  exact_mod_cast hbound
+
+/-- **`Γ₁` closes the base case: `Θ₁ ≤ t`.**
+
+§11's clause (i) is `M = 1, K₁ ≥ 2, b ≤ K₁^{s₁t}`.  With correction eighteen's reading
+(`K₁ = H₁`, `b = a`, `s₁ = r₁`) and `t = p/q`, that is `a^q ≤ H^{r·p}`, and §10 turns it into
+`Θ₁ ≤ t` exactly.
+
+⚠ **This is where §10's `P^j` half is load-bearing.**  The `Q^j` half alone gives
+`Θ₁ ≤ log a/(r log q)`, and clause (i) then only bounds that by `t·log H/log q ≥ t` — the wrong
+side of `t`, by exactly the factor the two halves differ in.  The arc carried the `q`-form for
+a long time and could not close the base case; the reason was this factor, not any missing
+recursion. -/
+theorem isRothTheta_le_of_gamma_one {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ} {p q : ℕ}
+    (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hq : q ≠ 0) (hH : 2 ≤ H ())
+    (hclause : a ^ q ≤ (H () : ℤ) ^ (r () * p)) :
+    Θ ≤ (p : ℚ) / (q : ℚ) := by
+  have h := isRothTheta_le_of_pow_pow_le hΘ hr hq hH hclause
+  have hrQ : ((r () : ℚ)) ≠ 0 := Nat.cast_ne_zero.mpr hr
+  have hqQ : ((q : ℚ)) ≠ 0 := Nat.cast_ne_zero.mpr hq
+  have heq : (((r () * p : ℕ) : ℚ)) / ((q : ℚ) * ((r () : ℚ))) = (p : ℚ) / (q : ℚ) := by
+    push_cast
+    field_simp
+  rwa [heq] at h
 
 /-- **Validation — the hypotheses are jointly satisfiable, and non-degenerately.**
 
@@ -942,6 +996,23 @@ theorem rothBound_two (t θ : ℚ) : RothBound 2 t θ ↔ (0 ≤ θ ∧ θ ^ 2 �
 theorem RothBound.mono {m : ℕ} {t θ θ' : ℚ} (h : RothBound m t θ) (h0 : 0 ≤ θ')
     (hle : θ' ≤ θ) : RothBound m t θ' :=
   ⟨h0, le_trans (pow_le_pow_left₀ h0 hle _) h.2⟩
+
+/-- **Roth's lemma at `m = 1`, in the arc's own encoding: `Γ₁ ⟹ RothBound 1 t Θ₁`.**
+
+`rothBound_one` unfolds `RothBound 1 t θ` to `0 ≤ θ ∧ θ ≤ t`, so this is `isRothTheta_le_of_gamma_one`
+paired with `IsRothTheta.nonneg`.  Its value is that it is the shape `rothBound_chain` and
+`rothConstant_chain` consume: the base case now enters the recursion as a `RothBound`, not as a
+statement about `index` that something else would have to translate.
+
+⚠ **`t` is the exact bound at `m = 1`, and that is what pins `c₁ = 1`.**  `rothConstant_rec`
+does not determine the constant — `rothConstant_chain` needs a starting value, and correction
+eleven traced `c_m = 2^{m+1} − 3` to the base case rather than to the recurrence.  This theorem
+is that starting value, now proved from `Γ₁` rather than assumed. -/
+theorem rothBound_one_of_gamma_one {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ} {p q : ℕ}
+    (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hq : q ≠ 0) (hH : 2 ≤ H ())
+    (hclause : a ^ q ≤ (H () : ℤ) ^ (r () * p)) :
+    RothBound 1 ((p : ℚ) / (q : ℚ)) Θ :=
+  (rothBound_one _ _).mpr ⟨hΘ.nonneg, isRothTheta_le_of_gamma_one hΘ hr hq hH hclause⟩
 
 /-! ### ⚠ The root bound and the linear bound are not the same shape
 
