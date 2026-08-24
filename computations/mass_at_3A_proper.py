@@ -564,9 +564,31 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
     ``sigmas`` is the list from build_seminormal_matrices.
     ``word`` is the list of (c, d, gen_idx) triples from
     atom_braid_word_3A.
+
+    **This is a float64 kernel, and the return annotation is the contract.**
+    ``build_seminormal_matrices`` fills a numpy array or a scipy sparse
+    matrix, and both branches below end in ``float(...)``, so no caller has
+    ever received more than 53 bits from here. The word coefficients are
+    therefore coerced to ``float`` on the way in, which loses nothing the
+    return type was not already discarding — and without it an ``mpf``
+    coefficient CRASHES the sparse branch outright:
+
+        c * <csr_matrix>  ->  _mul_scalar  ->  dtype object
+        ValueError: scipy.sparse does not support dtype object
+
+    The dense branch did not crash; it silently built an object-dtype array
+    and ran the whole product in Python-level mpf arithmetic, at 53-bit
+    inputs, for no gain.  So the two branches disagreed on the same input,
+    one loudly and one expensively.
+
+    If you need χ_λ at true precision, this is not the function — see
+    ``hecke_characters.chi_lambda_braid_mpf``.  Note that at A = 4 the
+    largest irrep is f^λ = 4158, i.e. ~7.2e10 mpf operations per matrix
+    multiply, so that route is not a drop-in for the A ≥ 4 producers.
     """
     if dim == 0:
         return 0.0
+    word = [(float(c), float(d), g) for (c, d, g) in word]
     try:
         from scipy import sparse as sp_sparse
         is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False

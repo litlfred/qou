@@ -103,8 +103,12 @@ def main() -> int:
     print("=" * 92)
     print(f" E₀ = {float(E0):.4f} MeV   q₀ = {float(q0):.6f}   h = {H:.6f}")
     n_neg_y = sum(1 for v in _Y9.values() if v < 0)
+    # The verdict follows the COUNT. It used to be appended unconditionally, so
+    # under convention D it read "0 with y_λ < 0 → NOT weight-non-negative",
+    # contradicting the number printed immediately before it.
+    _wnn = "IS" if n_neg_y == 0 else "is NOT"
     print(f" Wedderburn weights at n=9: {len(_Y9)} blocks, {n_neg_y} with y_λ < 0"
-          f"  → the spectrum is NOT weight-non-negative")
+          f"  → the spectrum {_wnn} weight-non-negative")
 
     expect_c3 = {"T": -1.769, "3He": -1.405}
     results, all_gates = {}, True
@@ -211,9 +215,18 @@ def main() -> int:
         print("    supermodular, so this does NOT by itself open the μ₃ door.")
     else:
         print("  * No block has submodular geometry in the damping regime.")
-    print("  * The spectrum is NOT weight-non-negative (y_λ < 0 on 10 of 30 blocks), so the")
-    print("    Lean escape-closure `reweight_cannot_open_door` (which assumes w_λ ≥ 0) does")
-    print("    NOT apply here: re-weighting is not foreclosed on this spectrum.")
+    if n_neg_y:
+        print(f"  * The spectrum is NOT weight-non-negative (y_λ < 0 on {n_neg_y} of "
+              f"{len(_Y9)} blocks), so the")
+        print("    Lean escape-closure `reweight_cannot_open_door` (which assumes w_λ ≥ 0) does")
+        print("    NOT apply here: re-weighting is not foreclosed on this spectrum.")
+    else:
+        print(f"  * The spectrum IS weight-non-negative ({n_neg_y} of {len(_Y9)} blocks "
+              f"carry y_λ < 0), so the")
+        print("    hypothesis of the Lean escape-closure `reweight_cannot_open_door` (w_λ ≥ 0)")
+        print("    is SATISFIED here and the closure applies: re-weighting IS foreclosed on")
+        print("    this spectrum. This INVERTS the conclusion this probe reported while the")
+        print("    ≥3-row weights were convention-C nonzero — flagged, not wired.")
     print("=" * 92)
 
     w = WitnessBuilder("mu3-frechet-perblock", engine="pyhecke_native",
@@ -225,13 +238,24 @@ def main() -> int:
     w.add_parameter("E0_MeV", mp.nstr(E0, 20))
     w.add_data("results", results)
     w.add_data("n_negative_y_lambda_at_9", n_neg_y)
-    w.add_caveat(
-        "y_λ is NOT sign-definite at n=9 (10 of 30 weights negative), so a block's Δ²_λ<0 "
-        "may come from submodular geometry OR from supermodular geometry carried by a "
-        "negative weight. Only the former is a Fréchet violation; the two are reported "
-        "separately. Consequently the Lean lemma reweight_cannot_open_door (hypothesis "
-        "w_λ ≥ 0) does not apply to this spectrum."
-    )
+    if n_neg_y:
+        w.add_caveat(
+            f"y_λ is NOT sign-definite at n=9 ({n_neg_y} of {len(_Y9)} weights negative), so "
+            "a block's Δ²_λ<0 may come from submodular geometry OR from supermodular "
+            "geometry carried by a negative weight. Only the former is a Fréchet violation; "
+            "the two are reported separately. Consequently the Lean lemma "
+            "reweight_cannot_open_door (hypothesis w_λ ≥ 0) does not apply to this spectrum."
+        )
+    else:
+        w.add_caveat(
+            f"y_λ IS sign-definite at n=9 ({n_neg_y} of {len(_Y9)} weights negative), so "
+            "every Δ²_λ<0 is submodular geometry and the negative-weight ambiguity above "
+            "does not arise. The hypothesis of reweight_cannot_open_door (w_λ ≥ 0) is "
+            "SATISFIED, so that lemma applies and re-weighting is foreclosed on this "
+            "spectrum. This inverts what this probe reported while the ≥3-row weights were "
+            "convention-C nonzero; it is recorded as a consequence of the convention-D "
+            "row cap, not as an independent derivation, and nothing is wired to it."
+        )
     w.add_caveat(
         "Measurement only. No Δ_λ closure, no μ₃ value fitted, nothing wired to production."
     )

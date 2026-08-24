@@ -157,13 +157,27 @@ difference is non-negative (each block Fréchet-obeying, per
 `Mu3BlockwiseExclusion.frechet_lower_bound_supermodular`), then *any* non-negative
 re-weighting `w_λ ≥ 0` of the blocks is still supermodular.
 
-**The hypothesis `0 ≤ w` is the whole content, and it FAILS on the physical spectrum.**  The
-Jones–Markov central coefficients `y_λ` are *sign-indefinite for n ≥ 4*
-(`docs/audits/2026-05-19-weight-factor-audit.md` §W3, Wenzl hook–content formula); measured at
-`n = 9, q₀`, **10 of the 30 weights are negative**
-(`computations/deltalambda/mu3-frechet-perblock.witness.json`).  So this lemma does **not**
-foreclose the escape "keep the operator, change the Wedderburn weights" for the actual trace —
-`door_needs_one_of_two_mechanisms` below is the statement that does apply there. -/
+**The hypothesis `0 ≤ w` is the whole content, and under the production convention it HOLDS —
+so this lemma DOES foreclose the escape "keep the operator, change the Wedderburn weights".**
+
+Under convention D, `y_λ = [n−2k+1]_q / [2]_q^n ≥ 0` on the two-row stratum `λ = (n−k, k)` and
+`y_λ = 0` identically for `ℓ(λ) ≥ 3` (`QOU.QBeta.TemperleyLiebTower`, sorry-free).  Measured over
+`n = 4 … 12` at `q₀`: **zero negative weights at every n** — the blocks split into a positive
+two-row stratum and a vanishing `ℓ(λ) ≥ 3` radical.  So `0 ≤ w` is satisfied on the physical
+spectrum and the sum is supermodular.
+
+**Superseded C-frame claim, kept for readers of the older audits.**  This docstring previously
+read *"the hypothesis FAILS on the physical spectrum … at `n = 9, q₀`, 10 of the 30 weights are
+negative"*, citing `docs/audits/2026-05-19-weight-factor-audit.md` §W3 and
+`computations/deltalambda/mu3-frechet-perblock.witness.json`.  Both belong to the **excised
+convention C**, where `y_λ` was genuinely sign-indefinite for `n ≥ 4`.  The content block
+`mass-theory/y-lambda-sign-pattern` withdrew that claim on 2026-08-09; this file did not follow
+until the cited witness was itself drained of convention C.  Two further cautions about the old
+figure: "10 of 30" was a hardcoded literal in the probe, never computed, and it did not match
+that witness's own payload (20 of 60).
+
+Consequence for the door: the mixed-sign machinery below is not reached under D.  See
+`door_mechanism_dichotomy`. -/
 theorem reweight_cannot_open_door (B : Finset ι) (w d₂ : ι → ℝ)
     (hw : ∀ l ∈ B, 0 ≤ w l) (hd : ∀ l ∈ B, 0 ≤ d₂ l) :
     0 ≤ ∑ l ∈ B, w l * d₂ l :=
@@ -189,7 +203,13 @@ submodular in one of exactly two structurally distinct ways:
   violation at all, just a sign-indefinite Wedderburn coefficient.
 
 Conflating these reports a bookkeeping sign as a geometric fact.  They are measured
-separately by `mu3_frechet_perblock_probe.py`. -/
+separately by `mu3_frechet_perblock_probe.py`.
+
+**Under convention D the second branch is VACUOUS.**  `w < 0` never occurs on the physical
+spectrum (see `reweight_cannot_open_door` above: zero negative `y_λ` for `n = 4 … 12`), so a
+submodular total can only come from the first mechanism — submodular geometry carried by a
+positive weight.  The dichotomy itself is a theorem about arbitrary reals and is unaffected;
+what changes is which branch the physics can occupy. -/
 theorem door_mechanism_dichotomy {w d : ℝ} (h : w * d < 0) :
     (0 < w ∧ d < 0) ∨ (w < 0 ∧ 0 < d) := by
   rcases lt_trichotomy w 0 with hw | hw | hw
@@ -199,7 +219,10 @@ theorem door_mechanism_dichotomy {w d : ℝ} (h : w * d < 0) :
 
 /-- **A submodular total needs a block realising one of the two mechanisms.**  This is the
 mixed-sign replacement for `reweight_cannot_open_door`: dropping the `0 ≤ w` hypothesis, one
-cannot conclude supermodularity, but one *can* still name where the door must come from.  It
+cannot conclude supermodularity, but one *can* still name where the door must come from.
+
+Retained as the general statement, but note it is **not** the operative one under convention D,
+where `0 ≤ w` holds and `reweight_cannot_open_door` applies directly.  It
 strictly refines `Mu3BlockwiseExclusion.submodular_needs_interfering_block`, which only asserts
 the existence of a block with negative contribution — here that block is classified. -/
 theorem door_needs_one_of_two_mechanisms (B : Finset ι) (w d : ι → ℝ)
