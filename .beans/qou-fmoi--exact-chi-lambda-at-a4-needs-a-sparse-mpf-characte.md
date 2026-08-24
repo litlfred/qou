@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T09:11:25Z
-updated_at: 2026-08-24T20:33:39Z
+updated_at: 2026-08-24T20:43:16Z
 ---
 
 
@@ -411,3 +411,33 @@ never grow" already owns these three. What the census adds is the REASON they
 should drain ahead of the other 1407: they do not merely carry raw float64, they
 publish 3-4 digits of rounding as data, and the kernel feeding them is measured
 at ~14 digits. That is a stronger argument than "raw float64 present".
+
+
+### CORRECTION — it is FOUR of four, and the "clean" one escaped through a shared blind spot
+
+The census above walked BARE FLOATS and reported `phase3_deuteron_tritium_h_expansion`
+as carrying none, i.e. clean. **It is not clean.** It stores its values as
+STRINGS -- `"12.7030229395046"`, fifteen significant digits -- which is what
+`_precision.fmt` emits. Re-measured counting string-serialized numbers too:
+
+    native-5-strand-baryon        n= 28  max 18 digits    71% carry > 14
+    rho-k-h3a-gg-trajectory       n=136  max 17 digits    82% carry > 14
+    tr-m-q-hecke-seminormal       n= 70  max 18 digits    87% carry > 14
+    phase3-deuteron-tritium-...   n=  6  max 15 digits   100% carry > 14
+
+All four publish digits their own computation does not determine.
+
+**And the corroboration I reported one entry above is WITHDRAWN.** I wrote:
+"the one consumer the census found clean is the one NOT baselined. Two methods,
+same negative, same single file." That is not two methods -- the raw-float64
+ratchet keys on the same REPRESENTATION my walker did, so both are blind to a
+string. They agreed because they share the blind spot, not because they
+independently confirmed anything.
+
+**Two detectors agreeing is not corroboration when they key on the same thing.**
+That belongs in the detector-blindness taxonomy
+(`docs/audits/2026-08-15-detector-blindness-taxonomy.md`), which already records
+that four of its thirteen blind spellings were found BY detectors written to
+catch the previous blind spot. This is a fifth, and it was caught only because I
+re-verified a negative by a different method before merging -- the negative is
+the result nobody re-checks.

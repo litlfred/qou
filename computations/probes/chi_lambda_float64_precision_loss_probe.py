@@ -30,18 +30,27 @@ therefore cannot meet L1 -- not as a matter of taste about float64, but
 arithmetically. Any producer that reports more than ~14 significant digits from
 it, or claims agreement "to 1 ppQ", is reporting its own rounding.
 
-AND THE CONSUMERS PUBLISH PAST THAT CEILING. The gap alone does not tell you
-whether it matters -- a witness storing SIX significant digits is untouched by a
-14-digit kernel. Measured over the committed witnesses of the four float64-only
-producers (`--consumers` census, run at the end of this probe):
+AND ALL FOUR CONSUMERS PUBLISH PAST THAT CEILING. The gap alone does not tell
+you whether it matters -- a witness storing SIX significant digits is untouched
+by a 14-digit kernel. Measured over the committed witnesses of the four
+float64-only producers (`consumer_census()`, run at the end of this probe):
 
-    native-5-strand-baryon        n= 25  max 18 digits   68% carry > 14
-    rho-k-h3a-gg-trajectory       n=106  max 17 digits   83% carry > 14
-    tr-m-q-hecke-seminormal       n= 65  max 18 digits   93% carry > 14
-    phase3-deuteron-tritium-...          no bare floats in data
+    native-5-strand-baryon        n= 28  max 18 digits    71% carry > 14
+    rho-k-h3a-gg-trajectory       n=136  max 17 digits    82% carry > 14
+    tr-m-q-hecke-seminormal       n= 70  max 18 digits    87% carry > 14
+    phase3-deuteron-tritium-...   n=  6  max 15 digits   100% carry > 14
 
-So three of the four publish three to four digits of their own rounding, stored
-as data. That is what scopes the migration -- not "float64 is bad".
+So all four publish digits their own computation does not determine. That is
+what scopes the migration -- not "float64 is bad".
+
+THE FOURTH ONE ALMOST ESCAPED, AND THE WAY IT DID IS THE POINT. A first pass
+here walked only BARE FLOATS and reported `phase3` as carrying none, i.e. clean.
+It is not: it stores "12.7030229395046" -- fifteen digits AS A STRING, which is
+what `_precision.fmt` emits. Worse, the raw-float64 ratchet keys on the same
+representation, so `phase3` is the one consumer absent from
+`raw-float64-baseline.json`. Two detectors "agreeing" that it is clean was a
+SHARED BLIND SPOT, not independent corroboration -- and it very nearly went into
+a PR as evidence.
 
 The exact route (`hoefsmit_mpmath.chi_lambda_of_word_sparse_mp`, PR #5648)
 carries the same word at full precision; Hoefsmit seminormal matrices hold <= 2
@@ -54,6 +63,7 @@ docstring and in the run output.
 
 Run:  python3 -u computations/probes/chi_lambda_float64_precision_loss_probe.py
 """
+import re as _re
 import sys
 from pathlib import Path
 
@@ -115,24 +125,44 @@ _CONSUMERS = ("native_5_strand_baryon", "phase3_deuteron_tritium_h_expansion",
 
 def _sig_digits(x: float) -> int:
     """Significant digits in the shortest round-tripping repr of ``x``."""
-    import re
-    m = re.match(r"-?0*(\d+)\.?(\d*)(?:e[-+]?\d+)?$", repr(float(x)))
+    m = _re.match(r"-?0*(\d+)\.?(\d*)(?:e[-+]?\d+)?$", repr(float(x)))
     if not m:
         return 0
     return len((m.group(1).lstrip("0") + m.group(2)).rstrip("0")) or 1
 
 
-def _bare_floats(obj):
+_NUMERIC_STR = _re.compile(r"^-?\d+\.\d+(?:[eE][-+]?\d+)?$")
+
+
+def _published_numbers(obj):
+    """Every published numeric value, whether stored as a float OR AS A STRING.
+
+    Counting only bare floats is a blind spot, and a consequential one: a
+    producer that serializes through `_precision.fmt` emits STRINGS, so a
+    float-only walk reports it as carrying no numbers at all and it reads as
+    clean. `phase3_deuteron_tritium_h_expansion` is exactly that case --
+    "12.7030229395046" is fifteen significant digits stored as text.
+
+    Worse, the raw-float64 ratchet keys on the same representation, so the two
+    detectors agree on such a producer BECAUSE THEY SHARE THE BLIND SPOT, not
+    because they independently confirm anything. Two detectors agreeing is not
+    corroboration when they key on the same thing.
+    """
     if isinstance(obj, dict):
         for k, v in obj.items():
             if k in ("durationMs", "computedAt"):   # ephemeral, not results
                 continue
-            yield from _bare_floats(v)
+            yield from _published_numbers(v)
     elif isinstance(obj, list):
         for v in obj:
-            yield from _bare_floats(v)
+            yield from _published_numbers(v)
     elif isinstance(obj, float):
         yield obj
+    elif isinstance(obj, str) and _NUMERIC_STR.match(obj):
+        try:
+            yield float(obj)
+        except ValueError:  # pragma: no cover
+            pass
 
 
 def consumer_census() -> None:
@@ -147,9 +177,9 @@ def consumer_census() -> None:
             continue
         if Path(str(body.get("scriptFile") or "")).stem not in _CONSUMERS:
             continue
-        vals = list(_bare_floats(body.get("data", body)))
+        vals = list(_published_numbers(body.get("data", body)))
         if not vals:
-            print(f"   {w.name:<50} no bare floats in data")
+            print(f"   {w.name:<50} no published numbers")
             continue
         over = sum(1 for v in vals if _sig_digits(v) > 14)
         print(f"   {w.name:<50} n={len(vals):>4}  "
