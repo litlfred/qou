@@ -7,7 +7,7 @@
       "STALE": 292,
       "proton-pin": 1298,
       "unknown": 25,
-      "canonical": 201
+      "canonical": 200
     },
     "stale_total": 292,
     "new_stale": 0,
@@ -5398,9 +5398,9 @@
       {
         "file": "computations/delta-lambda-z-coefficient-and-slope.witness.json",
         "field": "data.q0",
-        "value": "1.1099785827513808",
+        "value": "1.10997858275138080759166909561072001803790735898419924457009",
         "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117896827304
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/delta-lambda-z-coefficient-and-slope.witness.json",
@@ -7785,9 +7785,9 @@
       {
         "file": "computations/markov/markov-substrate-realization.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955573347",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.792806032488518e-08
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
@@ -7798,6 +7798,13 @@
       },
       {
         "file": "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/markov/markov-trace-axiomatic-proton.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -9552,6 +9559,13 @@
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/probes/gram-h3-convention-frame-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/gram-norm-binding-probe.witness.json",

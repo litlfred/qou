@@ -18,6 +18,10 @@ export default remark({
     engine: "python",
     script: "computations/hadron_knot_table.py",
     witness: "computations/hadron-knot-table.witness.json",
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (LP_stable(c14)). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
   },
 });
