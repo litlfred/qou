@@ -142,7 +142,18 @@ read off §13's body), denominators unchanged.  All three clauses come across:
 
 ⚠ Only the arity moves.  `ω` is the same `t⁻¹` throughout, which is what makes this a
 single-parameter induction — and is why `rothDenomFloor_mono` needs no hypothesis relating two
-different `ω`s. -/
+different `ω`s.
+
+⚠⚠ **This produces clauses 1–3 and *not* clause 4**, and that is where the remaining work is.
+`Γ_M`'s fourth clause is `b ≤ K₁^{(1/M)s₁t}` — a bound on the sub-system's **new height** `b`,
+which is the Wronskian's.  Nothing about `Γ_m` can supply it: `Γ_m` constrains `a`, the
+*original* height, and `b` is a different number that §13 has to estimate.
+
+That relocates what this arc had been calling "the height chain, which
+`theta_one_le_of_gamma` consumes".  It is not a lemma feeding that theorem — it is
+`Γ_{m−1}`'s own clause 4, and `theta_one_le_of_gamma` consumes it *because* the sub-system
+has `Γ_{m−1}`.  So the open item is: **produce clause 4 for the Wronskian**, which is
+`WronskianHeight`'s business and the one genuinely unbuilt piece left. -/
 theorem rothGamma_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (ω : ℚ) (hω : 0 ≤ ω)
     (d : σ → ℕ) (qd : σ → ℤ) {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ qd j)
     (hg : RothGamma o ω d qd) :

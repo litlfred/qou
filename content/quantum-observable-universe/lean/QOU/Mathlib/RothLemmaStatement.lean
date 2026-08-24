@@ -211,14 +211,37 @@ theorem rothDenomFloor_mono {m m' : ℕ} {ω : ℚ} (hω : 0 ≤ ω) (h : m' ≤
     mul_le_mul_of_nonneg_left (by exact_mod_cast hA) hω
   exact Nat.pow_le_pow_right (by norm_num) (Nat.ceil_mono hQ)
 
-/-- **Property `Γ_m`** (§11), all three clauses.
+/-- **Property `Γ_m`** (§11) — clauses 1–3 of case (ii).
 
-    1.  max(s₂/s₁, …, s_M/s_{M−1}) ≤ t      — `growth`, which is `RothGrowth` with `ω = 1/t`
-    2.  s_h·log K_h ≥ s₁·log K₁             — `height`, written multiplicatively
-    3.  K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}          — `floor`
+⚠ **`Γ_M` is a disjunction with four clauses, not a conjunction of three.**  §11 defines
+`b, s₁,…,s_M, K₁,…,K_M` to have `Γ_M` if **either**
+
+    (i)   M = 1,  K₁ ≥ 2,  b ≤ K₁^{s₁t};
+
+    (ii)  M ≥ 2  and  simultaneously
+          1.  max(s₂/s₁, …, s_M/s_{M−1}) ≤ t      — `growth`, `RothGrowth` with `ω = 1/t`
+          2.  s_h·log K_h ≥ s₁·log K₁  (h = 1..M) — `height`, written multiplicatively
+          3.  K₁ ≥ 2^{(1/t)(M−1)M(2M+1)}          — `floor`
+          4.  b ≤ K₁^{(1/M)s₁t}                   — ⚠ **not a field here**
+
+An earlier version of this docstring said "all three clauses", which is wrong twice over.
+Where the rest lives:
+
+* **clause 4** is `RothLemmaUniform`'s height condition — `∀ j, B ≤ qⱼ^E` with `E ≤ ε·dⱼ` and
+  `ε = t/m`, which is `b ≤ K₁^{(1/M)s₁t}` in uniform form.  It is carried, just not here.
+* **case (i)** is the `m = 1` specialisation.  At `m = 1` the three fields below are vacuous or
+  trivial (`rothDenomFloor 1 ω = 1`), and `RothLemmaUniform`'s standing `2 ≤ qⱼ` supplies
+  `K₁ ≥ 2`.  So the aggregate matches, but this structure alone is **not** `Γ₁`.
 
 Clause 2 is stated as `K₁^{s₁} ≤ K_h^{s_h}`, the same inequality with the logarithms cleared —
-which is **exactly** Bombieri–Gubler 6.3.4's condition `qⱼ^{dⱼ} ≥ q₁^{d₁}`.
+which is **exactly** Bombieri–Gubler 6.3.4's condition `qⱼ^{dⱼ} ≥ q₁^{d₁}`.  §11 runs it over
+`h = 1,…,M`; Theorem 1 states it for `h = 2,…,m`.  The two agree, since `h = 1` is trivial, and
+the `∀ j k, (j : ℕ) = 0 → …` encoding below covers both.
+
+⚠ `K_h ≥ 2` is a **consequence** of `Γ_M`, not a hypothesis — §11 derives it, along with
+`s₁ ≥ … ≥ s_M` and `∑ s_h ≤ M·s₁`.  `rothGamma_first_two_le` recovers the first of those here.
+`RothLemmaUniform` assumes `2 ≤ qⱼ` outright, which is therefore redundant rather than
+additional.
 
 Both indexed clauses are written `∀ j, (j : ℕ) = 0 → …` rather than through `o.symm 0`, so that
 `m = 0` needs no side condition rather than no `Fin 0` element. -/
@@ -231,6 +254,31 @@ structure RothGamma {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (ω : ℚ) (d : σ
     qd (o.symm j) ^ d (o.symm j) ≤ qd (o.symm k) ^ d (o.symm k)
   /-- Clause 3: the first denominator is at least `2^{ω(m−1)m(2m+1)}`. -/
   floor : ∀ j : Fin m, (j : ℕ) = 0 → (rothDenomFloor m ω : ℤ) ≤ qd (o.symm j)
+
+/-- **`K₁ ≥ 2` is forced by clause 3** once `m ≥ 2` and `ω > 0`.
+
+The floor's exponent `ω·(m−1)m(2m+1)` is then at least `10ω > 0`, so its ceiling is at least
+`1` and the floor is at least `2`. -/
+theorem rothDenomFloor_two_le {m : ℕ} {ω : ℚ} (hm : 2 ≤ m) (hω : 0 < ω) :
+    2 ≤ rothDenomFloor m ω := by
+  have hA : 0 < (m - 1) * m * (2 * m + 1) := by
+    have : 1 ≤ m - 1 := by omega
+    have : 1 ≤ m := by omega
+    positivity
+  have hpos : 0 < ω * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ) := by
+    have : (0 : ℚ) < (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ) := by exact_mod_cast hA
+    positivity
+  have hceil : 1 ≤ ⌈ω * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ)⌉₊ := Nat.ceil_pos.mpr hpos
+  calc (2 : ℕ) = 2 ^ 1 := by norm_num
+    _ ≤ rothDenomFloor m ω := Nat.pow_le_pow_right (by norm_num) hceil
+
+/-- **`K₁ ≥ 2` is a consequence of `Γ_m`, not a hypothesis** — §11 says so, and this is the
+first index's case.  `RothLemmaUniform`'s standing `2 ≤ qⱼ` is therefore redundant at `j = 0`
+rather than additional. -/
+theorem rothGamma_first_two_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
+    {qd : σ → ℤ} (hm : 2 ≤ m) (hω : 0 < ω) (hg : RothGamma o ω d qd)
+    (j : Fin m) (hj : (j : ℕ) = 0) : 2 ≤ qd (o.symm j) :=
+  le_trans (by exact_mod_cast rothDenomFloor_two_le hm hω) (hg.floor j hj)
 
 /-- **Rescaling the degree vector preserves `Γ_m`** — the companion to `rothGrowth_scale`.
 

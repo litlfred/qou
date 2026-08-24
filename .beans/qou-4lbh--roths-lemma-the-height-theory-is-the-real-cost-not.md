@@ -3059,3 +3059,46 @@ source's own `2/r_m ≤ 4/n` step.
 reconstruction, after `RothGrowth` (which *was* right) and correction 15's radicand. The
 pattern is not that the arc reconstructs badly — twice now the reconstruction was correct — but
 that **"confirmed" gets written where "consistent with" is what was checked.**
+
+### ⚠ `Γ_M` has four clauses and is a disjunction — and that relocates the last open item
+
+§11 read in full. `Γ_M` is defined for `b, s₁,…,s_M, K₁,…,K_M` (with `0 < t ≤ 1`, `b ≥ 1` real,
+the rest positive integers) as: **either**
+
+    (i)   M = 1,  K₁ ≥ 2,  b ≤ K₁^{s₁t};
+    (ii)  M ≥ 2  and  simultaneously
+          1.  max(s₂/s₁, …, s_M/s_{M−1}) ≤ t
+          2.  s_h·log K_h ≥ s₁·log K₁      (h = 1,…,M)
+          3.  K₁ ≥ 2^{(1/t)(M−1)M(2M+1)}
+          4.  b ≤ K₁^{(1/M)s₁t}
+
+`RothGamma`'s docstring said "`Γ_m` (§11), all three clauses". Wrong twice: there are **four**,
+and it is a **disjunction**. Corrected, with the map of where the rest lives — clause 4 is
+`RothLemmaUniform`'s height condition (`∀ j, B ≤ qⱼ^E`, `E ≤ (t/m)dⱼ`), and case (i) is the
+`m = 1` specialisation whose `K₁ ≥ 2` comes from the standing `2 ≤ qⱼ`. The aggregate matches;
+the structure alone is not `Γ₁`.
+
+⚠ **`K_h ≥ 2` is a consequence of `Γ_M`, not a hypothesis** — §11 derives it alongside
+`s₁ ≥ … ≥ s_M` and `∑ s_h ≤ M·s₁`. `rothDenomFloor_two_le` and `rothGamma_first_two_le` recover
+the first index's case: at `m ≥ 2` and `ω > 0` the floor's exponent is at least `10ω > 0`, so
+the floor is at least `2`. `RothLemmaUniform`'s `2 ≤ qⱼ` is redundant there, not additional.
+
+### ⚠ Where "the height chain" actually is
+
+The last two turns ended by naming `b ≤ H₁^{(1/(m−1))ρ₁t}` as the one genuinely unbuilt piece,
+"which `theta_one_le_of_gamma` consumes". That framing was wrong: **it is `Γ_{m−1}`'s clause
+4.** `theta_one_le_of_gamma` consumes it *because* the sub-system has `Γ_{m−1}`, not because
+some separate lemma supplies it.
+
+Which sharpens the open item rather than dissolving it. `rothGamma_descend` produces clauses
+1–3 from `Γ_m` and **cannot** produce clause 4: that clause constrains `b`, the sub-system's
+**new** height — the Wronskian's — and `Γ_m` constrains `a`, the original. They are different
+numbers. So the work is *produce clause 4 for the Wronskian*, which is `WronskianHeight`'s
+business.
+
+Recorded on `rothGamma_descend` itself, so the gap is visible where someone would try to use it
+and find three fields where four are needed.
+
+⚠ Also confirmed: §11's `(Θ₁)` estimate `Θ₁(a; r; H) ≤ log a/(r log H)` for `H ≥ 2` — the step
+`theta_one_le_of_gamma` starts from — and `1 ≤ n ≤ r_m + 1` as an explicit hypothesis on `n`,
+which is what `radicand_weaken` needs and `hrle` supplies.
