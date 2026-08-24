@@ -4,7 +4,7 @@ title: q0_value_drift_audit defines CANONICAL as the muon pin — a BLOCKING CI 
 status: todo
 type: task
 created_at: 2026-08-23T07:56:50Z
-updated_at: 2026-08-24T03:20:00Z
+updated_at: 2026-08-24T09:40:00Z
 ---
 
 
@@ -416,3 +416,96 @@ three-class return is untouched.
 2. Drain the 16 real mismatches (9 `physical_proton`, 7 `ambiguous`).
 3. The 14 `no scriptFile` witnesses overlap `qou-0uqm`'s 286-witness class and
    should be handled there, not here.
+
+---
+
+## 2026-08-24 — per-producer triage of the undeclared stems, and two reasons not to bulk-declare
+
+### The figures moved again — treat any number here as perishable
+
+| | bean | earlier today | **now** |
+|---|---|---|---|
+| canonical-classed files | 165 | 156 | **159** |
+| mismatch | 148 | 66 | **55** (54 stems) |
+| legit | 3 | 76 | **91** |
+| unresolved | 14 | 14 | **13** |
+| `ideal_muon` / `physical_proton` / `ambiguous` | 3 / 406 / 1 | 110 / 513 / 22 | **124 / 514 / 16** |
+
+Siblings are editing the manifest continuously (`qou-bdkx`; `8529ca4f1`,
+`f0ef49648`, `d3959fe96`, `b2cbd495d`). **A fixed count in this bean decays within
+hours** — which is itself the lesson from the `ideal_muon == 3` artefact.
+
+### A FOURTH route, which the mechanism note missed
+
+Beyond `q_parameter` (governed) and `qou_substrate.constants` (never governed),
+**10 of the 43 undeclared producers read
+`computations/q-pinning-50-digit.witness.json` directly** — the muon
+anchor-defining file. They are muon unconditionally; the manifest cannot change
+their compute. Plus ~24 that hardcode a muon literal or inherit one from a sibling
+witness.
+
+**So only ~11 of the 43 are genuinely manifest-governed.** For the other ~32,
+declaring them `ideal_muon` changes nothing about what they compute — it only
+makes their `q0Anchor` **stamp** truthful (`resolve_q0_anchor`,
+`tools/qou-substrate/python/qou_substrate/witness.py:283-325`, whose undeclared
+default is `proton` while their values are all muon). That is still worth doing,
+but it is a *stamp* fix, not a layer fix, and the bean should say so.
+
+Every one of the 44 witnesses carries **muon-prefix values only**; not one holds a
+proton value.
+
+### DO NOT bulk-declare — `markov_peel_atomic_witness` breaks if you do
+
+Verified in source (`computations/markov/markov_peel_atomic_witness.py:153-164`):
+
+> Load the bridge at THIS producer's own q0 layer … **This producer is NOT in
+> `q0_anchor_manifest.json`, so `Q_50_DIGIT_STR` resolves to the experimental
+> (proton) pin** — while the default bridge witness is the `ideal_muon` one.
+> Comparing across that boundary is the straddle AGENTS.md forbids, and it was not
+> subtle: `abs_diff_vs_bridge` for the deuteron read **6.73e-04**, which is also
+> what kept rejecting this witness in the regeneration wave.
+
+Its absence from the manifest is **load-bearing and documented, with a measured
+consequence**. Adding it to `ideal_muon` is a regression, not a fix. Any
+bulk-declaration pass over the 43 must exclude it.
+
+### `zhabiro_phiq_production_crosscheck` — a PRE-EXISTING instance of the regression I introduced
+
+```
+source :  Q0 = mp.mpf(str(q_at()))          (:68)
+          Q0_SRC = "qou_substrate.constants.q_at (proton pin)"   (:69)
+witness:  q0Anchor "muon"   q0Value 1.109978595557334719899763   (value A)
+```
+
+Computes proton, declares muon. That is **exactly** the defect `qou-cds3` records
+me introducing into six witnesses today — and it was already in the corpus before
+I touched anything. So the stamp/compute split is **systemic**, not something my
+regeneration invented; my six added to an existing population. Re-running this
+producer would flip its `q0Value` to the proton pin and expose the contradiction.
+
+### Seven cases that must not be forced
+
+1. `zhabiro_phiq_production_crosscheck` — computes proton, records muon (above).
+2. `markov_peel_atomic_witness` — absence is load-bearing (above).
+3. `rho_k_h3a_residual_decomposition` — self-documented **proton** compute over a
+   **muon**-stamped `tr_M` input, with a muon stamp. A declared straddle.
+4. `chirality_topology_binding_probe` — declares `q0Anchor: "independent"` (which
+   means q0 is never read) while emitting a `q0` field from a muon literal.
+5. `he_nu_sdp_psd_count_test` — source comment claims proton, the literal is the
+   muon value. The comment is false; the literal is the evidence.
+6. `saddle_offset_zero_location_probe` — its muon literal diverges from canonical
+   past ~48 digits (`…878015405145269` vs `…878015368660798114614493`). Harmless
+   at the precision it emits, wrong if precision rises.
+7. `ame_2020_binding_energies` — never reads q0 at all; its only q0-shaped value is
+   the auto-stamp. No manifest bucket is honest here; `q0Anchor: "independent"` is
+   the correct vocabulary.
+
+### Revised recommendation for this bean
+
+The earlier "declare 50, drain 16" framing was too clean. Actual shape:
+
+- **~32 stamp-only declarations** — safe, mechanical, no compute changes.
+- **~11 genuinely governed** — the real layer decisions.
+- **7 contradictions** — each needs reading, not a bucket.
+- **1 must stay undeclared** (`markov_peel_atomic_witness`).
+- **13 unresolved** (`no scriptFile`) — belong to `qou-0uqm`'s class, not here.
