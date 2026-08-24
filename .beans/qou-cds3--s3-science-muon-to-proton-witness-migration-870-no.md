@@ -1460,3 +1460,65 @@ when it actually reaches q0 via `mass_binding_dashboard._constants()` →
 `q_parameter.Q_50_DIGIT_STR`. Right verdict, wrong reason. CROSS-ANCHOR (15) is
 AST-only and unverified. The 27 UNRESOLVED are reported as unresolved, not split
 between the good buckets.
+
+
+## 2026-08-24 — DETECTOR: manifest declarations that cannot bind
+
+`computations/audits/q0_declaration_bindability_audit.py`, `--layer <name>`,
+`--strict` exits 1. Nothing else could ask this question: the manifest is data,
+so no Python check reads it; the anchor-consistency audit compares stamps to
+payloads and never asks whether a declaration was *capable* of acting; the drift
+audit reports which producers are NOT declared, which is the opposite question.
+
+A declaration is honoured by exactly one mechanism — the `sys.argv[0]` rebind
+inside `q_parameter`'s own namespace. A producer that never obtains q0 through
+`q_parameter` is unaffected by its own declaration, so declaring it changes only
+the STAMP. Whether that is a fix or a defect depends on what it already computes.
+
+| layer | declared | direct | via helper | cannot bind | contradicts | agrees | comparison | undet. | unres. |
+|---|---|---|---|---|---|---|---|---|---|
+| `ideal_muon` | 152 | 50 | 13 | 89 | **6** | 77 | 4 | 2 | 0 |
+| `physical_proton` | 514 | 387 | 10 | 109 | **4** | 26 | 21 | 58 | 8 |
+| `ambiguous` | 17 | 7 | 0 | 10 | — | — | 1 | 9 | 0 |
+
+`ambiguous` claims no single layer, so the audit **refuses to judge it** and
+reports all 10 as undetermined rather than manufacturing a verdict.
+
+### Independent confirmation of the hand-built table
+
+The six `ideal_muon` contradictions the audit finds are **exactly rows 1-6** of
+the 12-producer table earlier in this bean, and its four cross-anchor findings
+are four of that table's five — the fifth, `binding_qgaussian_ell1_ceiling_
+measurement`, imports `Q_50_DIGIT_STR` from `q_parameter` and so classifies
+`direct`, which is correct. Two methods built independently, same answer.
+
+### NEW — the mirror defect, on the proton layer
+
+Four stems declared `physical_proton` compute **muon**. Not previously known:
+
+    lever1_trB_geometric_target         hardcoded q0 literal
+    lever1_trB_quantum_integer_form     hardcoded q0 literal
+    per_atom_audit_witnesses            reads q-pinning-50-digit.witness.json
+    probe_9b_perlambda_brane_tower      reads q-pinning-50-digit.witness.json
+
+The campaign has been reading the drift as one-directional. It is not.
+
+### Three bugs I put in this detector, each caught before it shipped
+
+1. **Headline too strong.** The first version said an unbindable declaration's
+   *"only effect is to attach a muon label to a proton computation"* — which
+   would have reported the 32 `qou-fd0e` declarations, correct stamp fixes, as
+   defects. Split by what the producer actually computes.
+2. **Transitive over-reach.** `qou_substrate.constants` was reduced to the bare
+   stem `constants`, matched against an unrelated `constants.py`, and followed to
+   `q_parameter` — so a module listed two lines away as never-governed came back
+   *bindable*. It silently cleared all six real findings; the run reported **0**.
+   Fixed by testing known-ungoverned modules BEFORE the transitive step and never
+   resolving a dotted import by its last component. `via_helper` 37 → 13.
+3. **Verdicts hardcoded to the muon framing.** `--layer physical_proton` reported
+   every correctly-proton producer as a false stamp. Now relative to what the
+   declared layer claims.
+
+All three are the same shape this campaign keeps cataloguing: **the detector
+keyed on how something is SPELLED rather than on what it DOES.** Worth recording
+that the shape is not something other agents do — I wrote all three today.
