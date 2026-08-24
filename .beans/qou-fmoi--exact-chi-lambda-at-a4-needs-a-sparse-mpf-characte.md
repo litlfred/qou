@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T09:11:25Z
-updated_at: 2026-08-24T20:04:40Z
+updated_at: 2026-08-24T20:17:07Z
 ---
 
 
@@ -281,3 +281,61 @@ Migrate the five witness-writing consumers, cheapest dim first, and diff each
 witness. That measurement is what would decide whether any verdict moves; until
 it is run, the claim is "removes a float64 kernel from five witnesses", not
 "changes a result".
+
+
+## 2026-08-24 (later) — MEASURED: the float64 kernel gives ~14 digits, not 16, and TWO of my own claims above are corrected
+
+### Correction 1: it is FOUR producers, not five, and one is already exact
+
+I wrote "6 remaining consumers, 5 of which write a witness". Reading the CALL
+SITES rather than the import list:
+
+    h6_deuteron_free_word_chi_lambda_probe  ALREADY EXACT -- it computes with
+      chi_lambda_of_word_mp (lines 122-124) and calls the float64 kernel at 127
+      only as a CROSS-CHECK (`chi_b64`). Not a defect. Remove it from the list.
+
+So: **5 files use the float64 route exclusively, 4 of which write a witness** --
+`native_5_strand_baryon`, `phase3_deuteron_tritium_h_expansion`,
+`rho_k_h3a_gg_trajectory`, `tr_m_q_hecke_seminormal` (witness-writing), plus
+`canonical_brane_tower` (no witness).
+
+**An import is a proxy, not a verdict.** I inferred float64 payloads from an
+import list without reading what the call site did with the result -- the same
+shape as "a non-zero exit is not a defect" and "a source-text grep is not the
+answer", which this bean's own notes already warn about. Third time.
+
+### Correction 2: for `tr_m_q_hecke_seminormal` this is not a kernel swap
+
+That producer is float64 END TO END, not merely through the character:
+`q_val: float = Q_0_FLOAT` is its q0, and every emitted field is `float(...)`
+(`y_at_q0`, `chi_q_at_q0`, `contribution`). Migrating it means carrying q as
+`mpf` from `Q_50_DIGIT_STR`, taking y_lambda exact, and serializing via
+`_precision.fmt` -- a producer rewrite whose numbers move, not a one-line
+substitution. Budget it accordingly.
+
+### The measurement: ~14 good digits, and the loss GROWS with word length
+
+`computations/probes/chi_lambda_float64_precision_loss_probe.py` (new, committed,
+writes no witness). Proton pin, exact side at dps 70:
+
+    deuteron  A=2, |word| = 23   worst rel gap 5.36e-15   24.1x the ulp floor
+    helium-3  A=3, |word| = 35   worst rel gap 8.17e-15   36.8x the ulp floor
+
+"float64, therefore ~1e-16" was the assumption I would otherwise have shipped.
+1e-16 is the FLOOR, not a measurement -- a character is a trace of a PRODUCT over
+the whole word, so rounding accumulates with length and the (c, d) coefficients
+alternate in sign. 23 ops -> 35 ops moved the loss 24x -> 37x, so A >= 4 is worse
+again.
+
+### Why the number decides something
+
+The L1 goal is internal cross-method agreement <= 1 ppQ = 1e-15. **Every gap
+measured is larger than that.** So a quantity computed through this kernel
+cannot meet L1 -- arithmetically, not as a matter of taste about float64. Any
+producer reporting more than ~14 significant digits from it, or claiming
+agreement "to 1 ppQ", is reporting its own rounding.
+
+That is the consumer case for the engine, and it does not depend on a verdict
+flipping. Whether any of the four CONCLUSIONS changes is still unmeasured; at 14
+digits, a probe reporting 4 significant figures is unaffected and should be left
+alone.
