@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:36:01Z
-updated_at: 2026-08-24T14:36:55Z
+updated_at: 2026-08-24T15:14:01Z
 ---
 
 From `scripts/trivially-inhabiting-instance-census.py` (PR #5621, audit
