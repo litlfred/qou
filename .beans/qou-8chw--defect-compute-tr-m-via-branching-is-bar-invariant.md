@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:42:01Z
-updated_at: 2026-08-24T11:40:49Z
+updated_at: 2026-08-24T11:56:36Z
 ---
 
 MEASURED 2026-08-19. computations/canonical_tr_m_via_branching.compute_tr_m_via_branching(Z, N, q_val) returns IDENTICAL values at q and 1/q:
@@ -294,3 +294,63 @@ is pre-existing — identical on the stashed clean tree, none of the three touch
 
 The q guard survives as fallback-only, for (n_outer, interface) pairs the
 builder does not cover (e.g. the still-unstamped H_9 nn extract).
+
+
+## CLOSED — 2026-08-24, later the same day. Three freezes, not one.
+
+The 3.2e-4 residual I reported above is closed. The third frozen input was
+**δ, the flavour split** — one of the two candidates I named.
+
+`_d_pn(h)` built the p-n interface shift from `_avg_color_delta()`, a LAZILY
+CACHED MODULE GLOBAL evaluated once at q_0 and taking no q argument. So
+`gauge_aligned_A_combiner_general(..., q_str, ...)` baked a q_0-pinned constant
+into an interface it was otherwise building entirely at `q_str`.
+
+δ **sign-flips** under q -> 1/q: `+0.0013757108070270960086` at q_0,
+`-0.0016949478760214730243` at 1/q_0 — a 1.5e-3 relative move in the shift.
+
+### The full ladder, against the transfer's `-0.0014808531711619370338`
+
+| A^λ | h | δ | tr_M^atom(D) at 1/q_0 | rel |
+|---|---|---|---|---|
+| frozen | frozen | frozen | `+0.0332037` | 21x, wrong sign |
+| built | frozen | frozen | `+0.0331943` | 21x |
+| built | threaded | frozen | `-0.00148039` | 3.2e-4 |
+| built | threaded | threaded | `-0.001480853171161933678` | **2.27e-15** |
+
+### The bean's target is now genuinely met
+
+`tr_M^atom(D)` at `1/q_0` has a **second independent method** at 2.27e-15 — not
+the ~3 significant figures I recorded an hour ago, and not the miss I logged.
+The fine-Bratteli transfer's bar value is no longer single-method.
+
+### What the defect actually was, for the next reader
+
+Not one bug — a **class**. Three separate q-carrying inputs on one path were
+each pinned at the anchor by a different mechanism: a frozen JSON, a module
+float64 constant, and a lazily-cached global. Each was individually invisible at
+q_0, because each degenerates to the correct value there. The path therefore
+failed TOWARD agreement with an independent method exactly where it is normally
+tested. Finding one did not predict the others: I fixed A^λ expecting closure
+and got 21x; fixed h expecting closure and got 3.2e-4.
+
+`d_for_ctype`'s `delta=` docstring already described this straddle **precisely**,
+for q-symbolic callers. It was reached by a numeric off-anchor caller instead —
+the warning was right and the guard was simply never wired to this path.
+
+### Scope respected
+
+The owner-gated `_avg_color_delta()` default is UNTOUCHED (AGENTS.md §"q₀ anchor
+convention"; its own "Do NOT change this default"). The fix adds an optional `q`
+argument. Threading is a **provable no-op at the anchor** —
+`flavor_split_leading(q_0)` and `_avg_color_delta()` measured EXACTLY equal
+(diff 0.0 at 60 dps) — which is why all six call sites in the module could be
+threaded without re-verifying each.
+
+Verification: `verify_combiner_identity(dps=50)` 891/891, 0 failures, max
+residual 3.07e-49 vs a 1e-25 tolerance. q_0 = 8.7e-17 vs the four-method target;
+default float64-Q path 3.8e-15. Both unchanged.
+
+**Still open (separate, unchanged):** the H_9 nn A-operator extract carries no
+`q0Value` stamp, and the stale `a_operator_categorical.categorical_A_interface`
+stub should be deleted or made to delegate.
