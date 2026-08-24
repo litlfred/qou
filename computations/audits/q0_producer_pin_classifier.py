@@ -78,7 +78,31 @@ from qou_substrate.witness import q0_anchor_is_declared  # noqa: E402
 
 PROTON_MODULES = {"q_parameter", "qou_substrate.constants", "constants"}
 PROTON_NAMES = {"Q_50_DIGIT_STR", "q_at", "Q_MP", "Q_PROTON"}
-MUON_ARTIFACTS = ("q-pinning-50-digit", "y-lambda-at-q0", "y_lambda_at")
+# Artifacts whose mere NAME implies the ideal layer. `y_lambda_at` was here and
+# is REMOVED (2026-08-23): it is anchor-neutral now, so keeping it produced a
+# muon verdict for any file that merely mentions it.
+#
+# AGENTS.md still warns that `wedderburn_jones_markov.y_lambda_at(n, q)` serves
+# the cached MUON-built y-lambda-at-q0.witness.json whenever
+# |q - q_parameter.Q| < 1e-12 -- "a gate satisfied TRIVIALLY when the caller
+# passes q_parameter.Q itself". THAT IS OUT OF DATE. Read at the body rather
+# than the docstring: the live function is
+#
+#     if q_val is not None:
+#         return y_lambda_su_n(n, mpf(str(q_val)), 2)     # the CALLER's q
+#     return y_lambda_su_n_symbolic(n, Q_SYM, 2)
+#
+# The cache-serving code moved into `_y_lambda_at_convention_C_HISTORICAL`,
+# which is dead (convention C, excised 2026-08-09). So the function no longer
+# reads that witness on any path, and calling it says nothing about a producer's
+# anchor.
+#
+# Measured cost of getting this wrong in the other direction: promoting
+# y_lambda_at to an identifier check -- which is what its presence here
+# suggests -- reclassified 56 producers from `proton` to `BOTH`. `BOTH` shields
+# a producer from triage as a possible deliberate comparison, so that would have
+# hidden 56 clean files behind a muon association that no longer exists.
+MUON_ARTIFACTS = ("q-pinning-50-digit", "y-lambda-at-q0")
 MUON_ENV = ("ideal", "muon", "canonical")
 # Explicit muon ACCESSORS. A producer importing one of these is reaching for the
 # ideal layer on purpose -- typically a cross-anchor comparison probe -- so its
@@ -103,6 +127,30 @@ def strip_main_block(tree: ast.Module) -> list[ast.stmt]:
     return out
 
 
+def _docstrings(mod: ast.Module) -> set[str]:
+    """Every docstring in `mod`, so prose can be told apart from code.
+
+    A docstring that NAMES a muon artifact is not evidence that the producer
+    reads one. Measured 2026-08-23 over every .py in the live tree: of the 401
+    producers this function calls `muon`, **20 rest on a docstring mention
+    alone** -- no read, no accessor, no literal. The list is characteristic:
+    `tnjb_stale_stamp_migrate`, `chi_dual_path_xref_audit`,
+    `mpf_mixed_arithmetic_audit`, `witness_staleness_triage` are AUDIT tools
+    whose docstrings discuss the muon artifacts because that is their subject,
+    and `_precision.py` / `y_lambda_su_n.py` are library modules, not producers
+    at all. Same shape as an audit containing the muon literal because it
+    SCANS for it.
+    """
+    out: set[str] = set()
+    for n in ast.walk(mod):
+        if isinstance(n, (ast.Module, ast.FunctionDef, ast.AsyncFunctionDef,
+                          ast.ClassDef)):
+            d = ast.get_docstring(n, clean=False)
+            if d:
+                out.add(d)
+    return out
+
+
 def classify(path: Path) -> tuple[str, list[str]]:
     try:
         src = path.read_text(encoding="utf-8")
@@ -111,8 +159,15 @@ def classify(path: Path) -> tuple[str, list[str]]:
         return "unreadable", [repr(exc)[:60]]
 
     body = strip_main_block(tree)
+    module = ast.Module(body=body, type_ignores=[])
+    docs = _docstrings(module)
     proton: list[str] = []
     muon: list[str] = []
+    # Prose mentions: reported so a reader can see WHY a file looked muon, but
+    # never decisive. Kept separate rather than dropped, because "this file
+    # talks about the muon layer" is real information -- it is just not
+    # evidence about which pin the file COMPUTES at.
+    muon_prose: list[str] = []
 
     class V(ast.NodeVisitor):
         def visit_ImportFrom(self, n):  # noqa: N802
@@ -138,12 +193,14 @@ def classify(path: Path) -> tuple[str, list[str]]:
                 muon.append(f".{n.attr}")
             self.generic_visit(n)
 
+
         def visit_Constant(self, n):  # noqa: N802
             if isinstance(n.value, str):
                 s = n.value
+                is_prose = s in docs
                 for art in MUON_ARTIFACTS:
                     if art in s:
-                        muon.append(f'"{s[:48]}"')
+                        (muon_prose if is_prose else muon).append(f'"{s[:48]}"')
                 if s.strip().lower() in MUON_ENV and "ANCHOR" in src:
                     muon.append(f'env-like "{s}"')
                 if s.startswith("1.10997859555"):
@@ -152,9 +209,19 @@ def classify(path: Path) -> tuple[str, list[str]]:
 
     V().visit(ast.Module(body=body, type_ignores=[]))
 
-    # de-dup, keep order
+    # de-dup, keep order. Operative evidence first: the list is capped at 3
+    # and was ordered by SOURCE POSITION, so docstring mentions near the top of
+    # a file crowded out the real read further down -- q1_mass_gap_probe showed
+    # two docstrings before its line-177 read. The verdict was right; the
+    # report made it look unfounded.
     proton = list(dict.fromkeys(proton))
     muon = list(dict.fromkeys(muon))
+    muon_prose = [e for e in dict.fromkeys(muon_prose) if e not in muon]
+    if muon:
+        muon = muon + [f"(prose only) {e}" for e in muon_prose]
+    elif muon_prose:
+        # No operative muon evidence anywhere -- prose alone does not decide.
+        muon = []
     if proton and muon:
         return "BOTH", [f"proton: {proton[:2]}", f"muon: {muon[:2]}"]
     if proton:

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T08:09:25Z
-updated_at: 2026-08-23T08:59:50Z
+updated_at: 2026-08-23T14:50:00Z
 ---
 
 Found while answering "any other uses of C convention that need to migrate to D?"
@@ -88,3 +88,38 @@ I ran two re-run sweeps before concluding the instrument was wrong:
 
 The committed classification is therefore **static**. Both sweeps were stopped
 and the tree restored; neither produced a verdict that survived.
+
+
+---
+
+## Reconciled against a second, independent triage (2026-08-23, PR #5543)
+
+Two sessions triaged these 58 in parallel. **Each found a live-C producer the
+other missed; the union is 3, not 2.**
+
+| producer | this triage | second triage |
+|---|---|---|
+| `hecke_channel_binding_probe.py` | LIVE-C | missed (case-sensitive regex) |
+| `signed_crossing_feasibility_probe.py` | LIVE-C | missed (same) |
+| `mass-from-q-symbolic.py` | missed (`"producer": null`) | LIVE-C |
+
+**The miss here was producer resolution, not detection.** The JSON twin records
+`{"witness": "computations/mass-from-q-symbolic.witness.json", "producer": null}`
+— with no producer resolved there is no source to scan, so the file could not be
+classified live-C whatever it contains. Likely cause: the hyphenated stem
+`mass-from-q-symbolic.py` against an underscore-expecting resolver. Worth fixing
+generally — any hyphen-named producer in the corpus is invisible the same way.
+
+`mass-from-q-symbolic.py:314,424` is a **double** defect: convention C *and*
+float64 (`1.0/(Q0**0.5 + Q_INV0**0.5)`, `**0.5` not `mp.sqrt`) serialised into a
+witness parameter. Migrating the convention alone leaves the NO-FLOAT64
+violation on the same line.
+
+Also established: the claim that `q-pinning-50-digit.witness.json`'s
+`derived_50_digit.z_markov` contaminates its readers has **no instance** — zero
+reads of that key corpus-wide; every reader takes `["derived_50_digit"]["q"]`.
+The field is inert (provenance defect, not a live path). Do NOT repair by
+re-pinning: rule 1, anchor-defining file.
+
+Full reconciliation, including both blind spots and the unreconciled z_D count
+(4 here vs 3 there): docs/audits/2026-08-23-convention-c-triage-reconciliation.md
