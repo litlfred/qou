@@ -179,6 +179,40 @@ theorem abs_coeff_det_pderivList_le [DecidableEq σ] {r L : ℕ} {S d B : ℤ}
   simpa using h
 
 
+/-- **The height bound made uniform in the family.**
+
+`abs_coeff_det_pderivList_le` needs a bound `L` on the operator lists' lengths.  For the
+family the induction step actually forms — `D i j = (Dx i)⊞(Dy j)` with `Dx`, `Dy` of bounded
+order — that bound is available from `r` alone: `|Dx i| ≤ i < r` and `|Dy j| ≤ j < r`, so every
+entry's list has length at most `2r`.
+
+⚠ This is what makes `hres` assemblable.  `hres` quantifies over the families realising a
+separated representation, so its auxiliary data — the height bound `B` in particular — has to
+be chosen **before** the family is known.  A bound depending on the individual `D i j` would
+be useless there; one depending only on `r` and `P` is not. -/
+theorem abs_coeff_det_sepFamily_le {τ : Type*} [DecidableEq σ] [DecidableEq τ]
+    [DecidableEq (σ ⊕ τ)] {r : ℕ} {S d B : ℤ}
+    (hS1 : 1 ≤ S) (hd1 : 1 ≤ d) (hB0 : 0 ≤ B)
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (hDx : ∀ i, (Dx i).length ≤ (i : ℕ)) (hDy : ∀ j, (Dy j).length ≤ (j : ℕ))
+    (P : MvPolynomial (σ ⊕ τ) ℤ)
+    (hS : ((P.support.card : ℕ) : ℤ) ≤ S)
+    (hd : ∀ j, (degreeOf j P : ℤ) ≤ d)
+    (hB : ∀ n, |coeff n P| ≤ B)
+    (n : (σ ⊕ τ) →₀ ℕ) :
+    |coeff n (Matrix.of fun i j =>
+        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det|
+      ≤ (r.factorial : ℤ) * (S * (d ^ (2 * r) * B)) ^ r := by
+  refine abs_coeff_det_pderivList_le hS1 hd1 hB0
+    (fun i j => (Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P hS hd hB (fun i j => ?_) n
+  have hi := i.isLt
+  have hj := j.isLt
+  have h1 := hDx i
+  have h2 := hDy j
+  simp only [List.length_append, List.length_map]
+  omega
+
+
 /-! ### Next
 
 The height side of Roth's lemma is now closed end to end: a bound on the auxiliary

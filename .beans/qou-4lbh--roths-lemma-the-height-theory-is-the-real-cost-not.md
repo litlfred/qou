@@ -2614,3 +2614,35 @@ iterate. Then `c_m = 2^m − 3`, still unasserted since §14 is unread.
 
 Verification: twenty-three arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
 linter output. Four declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-24 — #5316 merged; follow-up restarted from main
+
+PR #5316 merged as `dd6565ba51`. Verified on the remote, not from the merge response: our
+commit is an ancestor of `origin/main` and all 23 arc modules are present there. Branch
+restarted from the merged main per the merged-PR rule — a merged PR cannot track new work.
+
+**The gate that had been withheld all along now passes.** Whole-library `lake build QOU`:
+exit 0, 5769 jobs, no errors, against the merged tree — with all 23 arc modules rebuilt **from
+source** (`.olean` deleted) inside that build and **zero linter output in any of them** (the
+733 corpus warnings are all pre-existing elsewhere). Main had moved 1256 commits; the only
+both-modified file was `QOU.lean`, which git auto-resolved, and the branch's delta on top of
+main was exactly 26 files with no `computations/`, witness, or `.py` among them — so the
+witness-drift refresh did not apply.
+
+### Follow-up: the height bound, made uniform in the family
+
+`abs_coeff_det_sepFamily_le`. `abs_coeff_det_pderivList_le` needs a bound `L` on the operator
+lists' lengths; for the family the induction step forms — `D i j = (Dx i)⊞(Dy j)` with `Dx`,
+`Dy` of bounded order — that bound comes from `r` alone, since `|Dx i| ≤ i < r` and
+`|Dy j| ≤ j < r` give every entry length at most `2r`.
+
+⚠ **This is what makes `hres` assemblable.** `hres` quantifies over the families realising a
+separated representation, so its auxiliary data — the height bound `B` above all — must be
+chosen *before* the family is known. A bound depending on the individual `D i j` is useless
+there; one depending only on `r` and `P` is not. That is the same shape as correction 10: a
+hypothesis about all families can only carry data that does not vary across them.
+
+Verification: `lake build` with `.olean` deleted — exit 0, no errors, no linter output;
+`#print axioms`-clean; downstream `RothInductionHypothesis` still builds.
