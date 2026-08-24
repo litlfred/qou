@@ -3925,3 +3925,32 @@ the two — `pderiv` is present, Hasse is not.
 arc has found a **construction** that is the wrong object rather than a **statement** that is too
 strong. It was invisible for the same reason the others were — every theorem about
 `mvGenWronskian` is true; none of them is about the height budget.
+
+### First stone of correction 21's repair
+
+`coeff_pderiv_iterate` and `abs_coeff_pderiv_iterate_le` in `WronskianHeight.lean`:
+
+    coeff n (∂ⱼ^k g) = (n_j+1)(n_j+2)⋯(n_j+k) · coeff (n + k·eⱼ) g
+                     = k! · binom(n_j+k, k) · coeff (n + k·eⱼ) g
+    ⟹  |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B        (degreeOf j g ≤ d, |coeff · g| ≤ B)
+
+via `Nat.ascFactorial_eq_factorial_mul_choose` and `Nat.choose_le_two_pow`. The `2^d` is §7's
+`2^{r_h}`; the `k!` is the **entire** discrepancy with Mahler's divided derivative, and it is now
+*visible* rather than buried inside `d^k`.
+
+Compare `abs_coeff_pderivList_le`'s `d^k·B`. Neither dominates the other for all `k` — at `k = 1`
+the crude bound `d` beats `2^d`; at `k ≈ d` the sharp one wins, `(2d/e)^d` against `d^d` — but
+only the sharp form separates the factorial, and separating it is what lets the divided
+derivative be recovered by dividing it out.
+
+⚠ **Second self-duplication of the session.** The first draft re-proved `coeff_pderiv` from
+scratch; the arc already had it in `MvGenWronskian.lean:253`, sixty lines of near-identical
+proof. (The first was `map_pUnitAlgEquiv` = `pUnitAlgEquiv_map`.) Both type-checked. The `beans`
+rule "check before you create" is stated for beans and applies verbatim to lemmas — and the
+failure mode is the same one correction 17 named: nothing mechanical objects to redundancy.
+
+**Remaining for correction 21:** lift the one-variable bound to `pderivList` (a product over the
+variables, giving `∏_h (l.count h)! · 2^{Σ_h d_h} · B`), then to the determinant, where the row
+and column factorials factor out of every permutation term uniformly and give
+`det = C · (integral polynomial)` with `C = (∏_i (Dx i)!)(∏_j (Dy j)!)`. The quotient is the
+object §12 measures, and its height bound is `n!·(S·2^{Σd}·B)^n ≤ n!·2^{2nΣd}·B^n` — §12's `b`.

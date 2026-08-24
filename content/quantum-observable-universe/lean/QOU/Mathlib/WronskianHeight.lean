@@ -39,6 +39,8 @@
 -/
 import QOU.Mathlib.MvGenWronskian
 import QOU.Mathlib.MvPolynomialHeight
+import Mathlib.Data.Nat.Choose.Bounds
+import Mathlib.Data.Nat.Factorial.BigOperators
 
 namespace MvPolynomial
 
@@ -212,6 +214,105 @@ theorem abs_coeff_det_sepFamily_le {τ : Type*} [DecidableEq σ] [DecidableEq τ
   simp only [List.length_append, List.length_map]
   omega
 
+
+/-! ### ⚠⚠ Correction twenty-one — this file bounds the wrong operator
+
+§7 (doc pp. 85–86) bounds the auxiliary polynomial by a **majorant**,
+`A ≪ a(1+x₁)^{r₁}…(1+x_m)^{r_m}`, differentiates it, and reads off
+
+    A_{j₁…j_m} ≪ a·binom(r₁,j₁)…binom(r_m,j_m)·(1+x₁)^{r₁−j₁}…(1+x_m)^{r_m−j_m}
+    binom(r,j) ≤ 2^r,   so   Δ_{μν}A ≪ 2^{r₁+…+r_m}·a·∏(1+x_h)^{r_h}
+    W ≪ n!·{2^{Σ r_h}·a·∏(1+x_h)^{r_h}}^n
+
+**The binomial with no `j!` is the tell.**  For an ordinary derivative the coefficient factor is
+`j!·binom(i,j)` (see `coeff_pderiv_iterate` below); Mahler's is `binom(r_h,j_h)` alone.  So his
+`Δ` is the **divided (Hasse) derivative**, and `mvGenWronskian` — a fold of `MvPolynomial.pderiv`
+— is not it.
+
+The two determinants differ by the scalar `(∏_i (Dx i)!)·(∏_j (Dy j)!)`, because the operator on
+entry `(i,j)` splits as a row part and a column part.  That is free for the *index*
+(`index_C_mul`) and free for the dependence criterion.  It is **not** free for the height, and
+§12 spends its budget `2^{(2m+1)ρ₁}` exactly — clause 3 is calibrated to equality at the floor —
+so there is nothing to absorb it with.
+
+That is why `abs_coeff_det_sepFamily_le`'s `d^{2n²}` does not fit §12's `2^{2nΣr_h}`: **the
+`d^{2n²}` is the factorials, not a loose estimate.**
+
+The lemma below is the first stone of the repair: the exact coefficient formula for iterated
+`pderiv`, from which the factorial separates cleanly and §7's `2^{d}` appears.
+
+⚠ It rests on `MvGenWronskian.coeff_pderiv`, which this arc already had.  A first draft of this
+section re-proved that lemma from scratch — the **second** self-duplication in this session (the
+first was `map_pUnitAlgEquiv`, already present as `pUnitAlgEquiv_map`).  The `beans` discipline's
+"check before you create" applies to lemmas too, and a duplicate type-checks.
+-/
+
+/-- **The coefficient of an iterated partial derivative**, exactly:
+
+    coeff n (∂ⱼ^k g) = (n_j + 1)(n_j + 2)⋯(n_j + k) · coeff (n + k·eⱼ) g
+
+The product is `k!·binom(n_j + k, k)`.  **The `k!` is exactly what separates `∂^k` from the
+divided derivative**, and `binom(n_j+k, k) ≤ 2^{n_j+k}` is §7's `2^r`. -/
+theorem coeff_pderiv_iterate {R : Type*} [CommRing R] [DecidableEq σ] (j : σ) (k : ℕ)
+    (g : MvPolynomial σ R) (n : σ →₀ ℕ) :
+    coeff n ((pderiv j)^[k] g)
+      = (∏ i ∈ Finset.range k, ((n j + 1 + i : ℕ) : R))
+          * coeff (n + Finsupp.single j k) g := by
+  classical
+  induction k generalizing n g with
+  | zero => simp
+  | succ k ih =>
+      rw [Function.iterate_succ_apply', coeff_pderiv, ih]
+      have hnj : (n + Finsupp.single j 1 : σ →₀ ℕ) j = n j + 1 := by simp
+      have hadd : n + Finsupp.single j 1 + Finsupp.single j k = n + Finsupp.single j (k + 1) := by
+        rw [add_assoc, ← Finsupp.single_add, Nat.add_comm 1 k]
+      rw [hnj, hadd, ← mul_assoc]
+      congr 1
+      rw [Finset.prod_range_succ']
+      push_cast
+      rw [mul_comm]
+      congr 1
+      · exact Finset.prod_congr rfl fun i _ => by ring
+      · norm_num
+
+/-- **§7's coefficient bound in one variable, sharp.**
+
+    |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B      whenever  degreeOf j g ≤ d  and  |coeff · g| ≤ B
+
+Compare `abs_coeff_pderivList_le`, which gives `d^k·B`.  The two agree in shape only when `k` is
+small: the sharp form separates `k!` — the **whole** discrepancy with Mahler's divided
+derivative — and leaves a binomial, which `Nat.choose_le_two_pow` sends to `2^d`.  That `2^d` is
+§7's `2^{r_h}`, and it is what makes §12's budget `2^{(2m+1)ρ₁}` come out.
+
+⚠ Sharp in `k`, and that is the point: at `k ≈ d` the crude bound is `d^d` where this is
+`k!·2^d ≈ (d/e)^d·2^d`. Neither dominates for all `k`, but only this one has the factorial
+*visible*, so only this one lets the divided derivative be recovered by dividing it out. -/
+theorem abs_coeff_pderiv_iterate_le [DecidableEq σ] {g : MvPolynomial σ ℤ} {d : ℕ} {B : ℤ}
+    (hB0 : 0 ≤ B) (j : σ) (hd : degreeOf j g ≤ d) (hB : ∀ n, |coeff n g| ≤ B) (k : ℕ)
+    (n : σ →₀ ℕ) :
+    |coeff n ((pderiv j)^[k] g)| ≤ (k.factorial : ℤ) * 2 ^ d * B := by
+  classical
+  rw [coeff_pderiv_iterate, abs_mul]
+  have hfac : (0 : ℤ) ≤ (k.factorial : ℤ) * 2 ^ d := by positivity
+  by_cases hz : coeff (n + Finsupp.single j k) g = 0
+  · rw [hz, abs_zero, mul_zero]
+    exact mul_nonneg hfac hB0
+  · have hmem : (n + Finsupp.single j k) ∈ g.support := mem_support_iff.mpr hz
+    have hle : n j + k ≤ d := by
+      have h1 := monomial_le_degreeOf j hmem
+      simp only [Finsupp.add_apply, Finsupp.single_eq_same] at h1
+      omega
+    have hchoose : ((n j + k).choose k) ≤ 2 ^ d :=
+      le_trans (Nat.choose_le_two_pow _ _) (Nat.pow_le_pow_right (by norm_num) hle)
+    have hprodN : (∏ i ∈ Finset.range k, (n j + 1 + i))
+        = k.factorial * ((n j + k).choose k) := by
+      rw [← Nat.ascFactorial_eq_prod_range, Nat.ascFactorial_eq_factorial_mul_choose]
+    have hPrle : |∏ i ∈ Finset.range k, ((n j + 1 + i : ℕ) : ℤ)|
+        ≤ (k.factorial : ℤ) * 2 ^ d := by
+      rw [abs_of_nonneg (Finset.prod_nonneg fun i _ => by positivity), ← Nat.cast_prod, hprodN]
+      exact_mod_cast Nat.mul_le_mul_left k.factorial hchoose
+    refine le_trans (mul_le_mul hPrle (hB _) (abs_nonneg _) hfac) (le_of_eq ?_)
+    ring
 
 /-! ### Next
 
