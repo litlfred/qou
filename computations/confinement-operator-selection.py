@@ -638,29 +638,34 @@ out_path = Path(__file__).parent / "confinement-operator-selection.witness.json"
 
 # ── GUARD: this producer is BEHIND its own committed witness ────────────
 #
-# The committed witness carries 11 keys this script cannot produce:
+# The committed witness carries 12 keys this script cannot produce. MEASURED,
+# because the distinction matters and the first version of this comment got
+# it wrong:
 #
-#     active_set  primal_obj  dual_obj  duality_gap  y0_star  y_star
-#     dual_obj_status  duality_gap_status  y0_star_status
-#     engine  scriptFile  commitSha
+#   9 are STUBS, not data -- `active_set`, `primal_obj`, `dual_obj`,
+#     `duality_gap`, `y0_star`, `y_star` are all `None`, and the three
+#     `*_status` fields read "STUB -- re-run script through lp_dual_solver.py
+#     to populate". They satisfy the LP-dual validator's field-PRESENCE check;
+#     they carry no shadow prices.
 #
-# The first nine are the LP/SDP primal-dual block that AGENTS.md makes
-# mandatory for every operator-selection compute ("the dual variables ARE
-# the binding-energy shadow prices"); the last three are WitnessBuilder
-# provenance. Nothing in this file computes or writes any of them -- grep
-# it for `y_star` and you get nothing -- so a plain overwrite here DRAINS
-# required infrastructure and reports success while doing it.
+#   3 are REAL -- `engine`, `scriptFile`, `commitSha`: WitnessBuilder
+#     provenance, and the only content actually at risk here.
 #
-# That is not hypothetical: this script was dead at import (two phantom
-# `TARGET_NET_*` constants that live inside `derived_masses`'s docstring),
-# and the first thing a revival does is run it and commit the output.
+# So an overwrite does not destroy computed duals; there are none to destroy.
+# What it does is drop `gram_inverse`'s companions below the REQUIRED_FIELDS
+# of `bound_state_observable_validator` and `audit_frobenius_pairing`, and
+# lose the provenance stamp. Both are still reasons not to clobber silently.
 #
-# So: refuse to overwrite a witness that holds keys we cannot regenerate.
-# Set QOU_ALLOW_WITNESS_DOWNGRADE=1 only if you have deliberately decided
-# the drop is correct. The real fix is to route the LP through
-# `computations/lp_dual_solver.py` (`solve_operator_selection_lp`), whose
-# `.to_dict()` carries every one of those fields; until then the committed
-# witness is the better artefact and this script should not clobber it.
+# AND NOTE WHAT THE STUB NOTE ASKS FOR IS NOT AVAILABLE. "Re-run through
+# lp_dual_solver.py" presumes an LP in this file. There is none -- the three
+# RANKING passes are sorts, not optimisations, and nothing here has a primal
+# to take a dual of. So the duals either belong to a different producer or
+# want an LP that was never written. That is an open question, not a wiring
+# task; do not "fix" it by calling the solver on a problem that is not posed.
+#
+# Refuse to overwrite a witness that holds keys we cannot regenerate. Set
+# QOU_ALLOW_WITNESS_DOWNGRADE=1 only if you have deliberately decided the
+# drop is correct.
 import os  # noqa: E402
 
 _existing = {}
@@ -676,8 +681,9 @@ if _lost and os.environ.get("QOU_ALLOW_WITNESS_DOWNGRADE") != "1":
     print(f"  the committed witness holds {len(_lost)} key(s) this producer "
           f"cannot emit:")
     print(f"    {', '.join(_lost)}")
-    print("  Set QOU_ALLOW_WITNESS_DOWNGRADE=1 to override, or wire the LP "
-          "through computations/lp_dual_solver.py so the duals are computed.")
+    print("  (9 of those are None/STUB placeholders, 3 are real provenance --"
+          " see the guard comment.)")
+    print("  Set QOU_ALLOW_WITNESS_DOWNGRADE=1 to override.")
     print("Done (witness preserved).")
 else:
     if _lost:
