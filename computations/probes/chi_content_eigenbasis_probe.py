@@ -8,10 +8,20 @@ converge). This probe answers the dual question — *is there an eigenfunction b
 in which the PROVED relations become evident?* — and the answer is the
 **content / twist eigenbasis**.
 
-The organizing eigenvalue is the **ribbon / full-twist eigenvalue**, already
-Lean-proved sorry-free (`QOU/BraidKnot/ChiralityWritheRibbon.lean`,
-`RibbonTwistEigenvalue`): the full twist Δ² ∈ Z(H_n(q)) acts on the Wedderburn
-block V_λ as the scalar
+The organizing eigenvalue is the **full-twist eigenvalue**: the full twist
+Δ² ∈ Z(H_n(q)) acts on the Wedderburn block V_λ as the scalar
+
+    θ_λ = q^{2·c(λ)}.
+
+That statement is **AXIOMATIZED, not proved**. `QOU/BraidKnot/ChiralityWritheRibbon.lean`
+exposes it as the class `RibbonTwistEigenvalue` — whose own docstring says "we
+expose this as an axiom class" — and that class has **ZERO instances**; every
+consumer takes it as a hypothesis. It is sorry-free, but that is not evidence of
+provenness: a class declaration has no `sorry` precisely because it asserts
+rather than proves. Cited to [kassel1995] Ch. XIV and [mathas1999] §3.
+
+Note also that this is the **square** of the Lean ribbon twist
+`QOU.BraidKnot.Keystone.theta = q^{c(λ)}`, since Δ² = θ². Explicitly,
 
     θ_λ = q^{2·c(λ)},   c(λ) = Σ_{cells} content   (Jucys–Murphy content sum).
 

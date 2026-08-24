@@ -104,7 +104,7 @@ def main() -> int:
               f"| {coeff:.4f} | {emp} | {match} |")
     print("\n  Reading: the ribbon first-order coeff is w·⟨κ⟩. Empirically the "
           "pn-crossing rule gives coeff +1 (D, one +crossing) and 0 (T/³He/⁴He, "
-          "writhe-balanced). A ✓ means the Lean-proved ribbon eigenvalue "
+          "writhe-balanced). A ✓ means the AXIOMATIZED full-twist eigenvalue "
           "reproduces the empirical chirality; ✗ quantifies the open gap "
           "(full-braid writhe + ⟨κ⟩ vs the pn-only empirical rule).")
     return 0
