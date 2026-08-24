@@ -161,6 +161,42 @@ theorem le_two_mul_div_of_sum_le {θ r S : ℚ} (hr : 0 < r) {n : ℕ} (hn : 0 <
   rw [le_div_iff₀ hnQ]
   linarith
 
+/-- **The sharp form: case 2 kept squared, with no `√2` lost.**
+
+`le_two_mul_max_of_sum_le` below turns case 2's `θ²·r ≤ 2S` into `θ ≤ 2q` via `S ≤ q²·r`, and
+that step costs a factor `√2`: what `θ² ≤ 2q²` gives is `θ ≤ √2·q`, not `θ ≤ 2q`.
+
+⚠ **That loss is not in the source.**  §13's display (2) reads
+`J(A) ≤ t + √((2/r_m)·J(W)) ≤ t + 2·√(J(W)/n)`, and the `2` on the right is `√4`, arriving
+through `2/r_m ≤ 4/n` — never through `√2 ≤ 2`.  This arc's module header had recorded "the
+weakening of `√2` to `2`" as *confirmed against the source*; it is the arc's own, and it is
+avoidable.
+
+Keeping the disjunction is what makes it avoidable: the two cases are exactly display (2)'s two
+branches, and a caller can carry the square through `RothLemmaStatement.radicand_weaken`
+instead of taking a root here.  The proof is the same as `le_two_mul_max_of_sum_le`'s, stopping
+one step earlier in each branch. -/
+theorem sq_le_two_mul_max_of_sum_le {θ r S : ℚ} (hr : 0 < r) (hθ : 0 ≤ θ)
+    {n : ℕ} (hn : 0 < n)
+    (hS : ∑ ν ∈ range n, max 0 (θ - (ν : ℚ) / r) ≤ S) :
+    θ ≤ 2 * S / (n : ℚ) ∨ θ ^ 2 * r ≤ 2 * S := by
+  rcases le_or_gt (((n : ℚ) - 1) / r) θ with hge | hlt
+  · exact Or.inl (le_two_mul_div_of_sum_le hr hn hge hS)
+  · refine Or.inr (sq_mul_le_two_mul_of_sum_le hr hθ ?_ hS)
+    rw [lt_div_iff₀ hr] at hlt
+    linarith
+
+/-- ⚠ **The sharpening bites.**  At `r = S = 1` the squared branch bounds `θ` by `√2` and the
+rounded one by `2q = 2`.  `θ = 3/2` lies between them: the rounded branch admits it, the
+squared branch does not.
+
+So `sq_le_two_mul_max_of_sum_le` is strictly stronger than `le_two_mul_max_of_sum_le`'s second
+case rather than a restatement of it — which is the whole point, since the factor recovered
+here is the one that separates this arc's constant from §14's. -/
+theorem sq_branch_strictly_sharper :
+    ¬((3 / 2 : ℚ) ^ 2 * 1 ≤ 2 * 1) ∧ (3 / 2 : ℚ) ≤ 2 * 1 := by
+  constructor <;> norm_num
+
 /-- **Mahler §13, combined — and it needs no side condition.**
 
     θ ≤ 2 · max (S/n, q)        for any `q` with `S ≤ q²·r`.

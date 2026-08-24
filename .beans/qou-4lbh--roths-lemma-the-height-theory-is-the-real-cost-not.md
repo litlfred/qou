@@ -3022,3 +3022,40 @@ produces it, not the formula.**
 reading. `le_two_mul_max_of_sum_le` derives the `r_m` radicand from the truncated sum, which is
 exactly display (2)'s left-hand side. That is the third independent confirmation of this arc's
 §13 machinery against the source, alongside `Φ_m = εU + εV` and `J(W) ≤ n·Φ_m`.
+
+### ⚠ The `√2 → 2` weakening is this arc's own, not the source's — and it is avoidable
+
+Rewiring §13 to the `n` normalisation turned up a claim in `RothInductionStep`'s header:
+"§13's structure has since been read directly and matches — the matrix shape, the uniform-in-row
+cost, and the weakening of `√2` to `2` are all confirmed." **The third item is false.**
+
+Display (2) reads `J(A) ≤ t + √((2/r_m)·J(W)) ≤ t + 2·√(J(W)/n)`. The `2` on the right is
+`√4`, arriving through `2/r_m ≤ 4/n` — never through `√2 ≤ 2`. Mahler does not round a square
+root up to twice itself anywhere in this step.
+
+Where the arc's `√2` actually goes in is one line of `le_two_mul_max_of_sum_le`:
+
+```
+have hsq : θ ^ 2 ≤ (2 * q) ^ 2 := by nlinarith    -- from θ²r ≤ 2S ≤ 2q²r, so θ² ≤ 2q²
+```
+
+`θ² ≤ 2q²` is `θ ≤ √2·q`; rounding to `(2q)²` discards the factor. `sq_le_two_mul_max_of_sum_le`
+keeps the disjunction with the second branch squared and loses nothing;
+`sq_branch_strictly_sharper` exhibits `θ = 3/2` at `r = S = 1`, which the rounded branch admits
+and the squared one does not.
+
+**Why it matters, quantitatively.** Carried through §14, the rounded branch gives
+`s + 2·(√2·(c+1))s`, and bounding `2√2 ≤ 3` yields `c_m = 3c_{m−1} + 4`, i.e. `c_m = 3^m − 2` —
+against §14's `2^{m+1} − 3`. Qualitatively either constant proves Roth's lemma, but the arc had
+landed `rothConstant` as *the source's* value while its own §13 could not reach it. That gap is
+now closed at the arithmetic, not papered over at the statement.
+
+`index_le_or_sq_of_det_bound` is the index-level form: the two branches kept apart, the second
+squared, **no `q` and no side condition** — since the branches are complementary by
+construction. A caller converts the squared branch with `radicand_weaken`, which is the
+source's own `2/r_m ≤ 4/n` step.
+
+⚠ Third claim of the form "confirmed against the source" that turned out to be the arc's own
+reconstruction, after `RothGrowth` (which *was* right) and correction 15's radicand. The
+pattern is not that the arc reconstructs badly — twice now the reconstruction was correct — but
+that **"confirmed" gets written where "consistent with" is what was checked.**

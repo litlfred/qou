@@ -578,6 +578,37 @@ theorem index_le_two_mul_max_of_det_bound {R : Type*} [CommRing R] [DecidableEq 
   have h := RothArith.le_two_mul_max_of_sum_le hrr (by linarith) hq0 hq hr hsum
   linarith
 
+/-- **§13's two branches, unrounded** — the shape display (2) actually has.
+
+`index_le_two_mul_max_of_det_bound` packages the two cases into `t + 2·max(S/r, q)`, and in
+doing so takes a square root of the second one, losing a factor `√2`
+(`RothArith.sq_le_two_mul_max_of_sum_le`'s docstring).  This keeps them apart and keeps the
+second squared, which is what display (2) does:
+
+    J(A) ≤ t + √((2/r_m)·J(W))  ≤  t + 2·√(J(W)/n).
+
+A caller converts the squared branch with `RothLemmaStatement.radicand_weaken` — the source's
+own step, `2/r_m ≤ 4/n` from `n ≤ r_m + 1` — instead of rounding here.
+
+⚠ No `q` and no side condition: the two branches are complementary by construction, so this
+form needs neither. -/
+theorem index_le_or_sq_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r : ℕ}
+    (d : σ → ℕ) (α : σ → R)
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (θ t rr S : ℚ)
+    (hr : 0 < r) (hrr : 0 < rr) (hθt : t ≤ θ)
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index d α P)
+    (hc : ∀ i j : Fin r,
+      ((D i j).map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ t + (j : ℚ) / rr)
+    (hS : index d α (Matrix.of fun i j => pderivList (D i j) P).det
+      ≤ ((S : ℚ) : WithTop ℚ)) :
+    θ - t ≤ 2 * S / (r : ℚ) ∨ (θ - t) ^ 2 * rr ≤ 2 * S := by
+  have hbridge := sum_max_le_index_det d α D P θ t rr hθ hc
+  have hsum : (∑ j : Fin r, max 0 (θ - t - (j : ℚ) / rr) : ℚ) ≤ S := by
+    have h := le_trans hbridge hS
+    exact_mod_cast h
+  rw [Fin.sum_univ_eq_sum_range (fun ν => max 0 (θ - t - (ν : ℚ) / rr)) r] at hsum
+  exact RothArith.sq_le_two_mul_max_of_sum_le hrr (by linarith) hr hsum
+
 /-- **Satisfiability of the `max` form**, on the same `1 × 1` instance: `θ = 1`, `t = 0`,
 `rr = 1`, `S = 1`, `q = 1`, conclusion `1 ≤ 0 + 2·max 1 1 = 2`.
 
@@ -626,8 +657,13 @@ What that leaves is **not** more inequalities.  It is two constructions and one 
 
 ⚠ Provenance, still standing for `RothRecursionArith`'s numeric constants: reconstructed from
 a partly illegible scan, and worth re-deriving against a clean copy.  §13's *structure* has
-since been read directly and matches — the matrix shape, the uniform-in-row cost, and the
-weakening of `√2` to `2` are all confirmed.
+since been read directly and matches — the matrix shape and the uniform-in-row cost are
+confirmed.
+
+⚠ **The `√2 → 2` weakening is *not* confirmed; it is this arc's own.**  Display (2) of §13
+reads `J(A) ≤ t + √((2/r_m)·J(W)) ≤ t + 2·√(J(W)/n)`, and the `2` on the right is `√4`,
+arriving through `2/r_m ≤ 4/n` — never through `√2 ≤ 2`.  `RothArith.sq_le_two_mul_max_of_sum_le`
+keeps the square and avoids the loss; `sq_branch_strictly_sharper` shows the two differ.
 
 The surrounding parameter bookkeeping has now been read too: §11 gives `ω = 1/t`, §14 gives
 `c_m = 2^{m+1} − 3` and the conclusion `Θ_m ≤ c_m·t^{2^{−(m−1)}}`.  ⚠ The `2^m − 3` this
