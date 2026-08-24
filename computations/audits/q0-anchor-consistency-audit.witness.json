@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:58:47.958371+00:00",
-  "commitSha": "899d21fd38b6116ef51ac4f96011efab487e41d4",
+  "computedAt": "2026-08-24T19:35:51.669113+00:00",
+  "commitSha": "f7fe2d41e6129880a06973a6069f765f4719ad24",
   "assertions": [
     {
       "name": "no_q0_flip",
-      "computed": 1,
+      "computed": 0,
       "expected": 0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "source": "every witness's q0Value must match its q0Anchor's canonical pin"
     }
   ],
-  "allPassed": false,
-  "durationMs": 4,
+  "allPassed": true,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -37,26 +37,25 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py",
-      "--strict"
+      "computations/audits/q0_anchor_consistency_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 795,
+      "Q0_OK": 801,
       "Q0_AMBIGUOUS": 17,
       "Q0_INDEPENDENT": 46,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1787,
+      "Q0_ANCHOR_MISSING": 1782,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
-      "Q0_FLIP": 1
+      "Q0_FLIP": 0
     },
     "match_prefix_digits": 14,
     "by_verdict": {
@@ -499,10 +498,6 @@
         },
         {
           "witness": "bring-s4-elliptic-factor-genus-verify.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "ame-registry-routing-triage.witness.json",
           "detail": ""
         },
         {
@@ -3562,23 +3557,11 @@
           "detail": ""
         },
         {
-          "witness": "charge-symmetry-bond-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "ck_membership_payoff_run.witness.json",
           "detail": ""
         },
         {
-          "witness": "clambda-shape-invariant-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "commutative-chirality-vanishes-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "coulomb-mirror-killswitch-probe.witness.json",
           "detail": ""
         },
         {
@@ -4131,10 +4114,6 @@
         },
         {
           "witness": "laplace-sum-theta-exactness.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "light-series-open-loop-decomposition.witness.json",
           "detail": ""
         },
         {
@@ -7348,6 +7327,10 @@
           "detail": ""
         },
         {
+          "witness": "ame-registry-routing-triage.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "atom-braid-active-partitions.witness.json",
           "detail": ""
         },
@@ -9392,6 +9375,18 @@
           "detail": ""
         },
         {
+          "witness": "charge-symmetry-bond-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "clambda-shape-invariant-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "coulomb-mirror-killswitch-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "d14-theta-bar-side.witness.json",
           "detail": ""
         },
@@ -9537,6 +9532,10 @@
         },
         {
           "witness": "keystone-qhankel-eq2-vacuum-row.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "light-series-open-loop-decomposition.witness.json",
           "detail": ""
         },
         {
@@ -10213,6 +10212,10 @@
         },
         {
           "witness": "whipple-rotation-involution-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "z2bn-tau-derivation-probe.witness.json",
           "detail": ""
         },
         {
@@ -10966,12 +10969,6 @@
         {
           "witness": "muon-pin-stored-vs-live.witness.json",
           "detail": ""
-        }
-      ],
-      "Q0_FLIP": [
-        {
-          "witness": "z2bn-tau-derivation-probe.witness.json",
-          "detail": "anchor=proton but q0Value=1.10997859555733… (expected 1.109978582751…)"
         }
       ]
     }
