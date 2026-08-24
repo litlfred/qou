@@ -47,8 +47,8 @@ exactly what `BoundedOrderWronskian` supplies, and it is the same hypothesis §7
 theorem index_rescaled_wronskian_le [DecidableEq σ]
     {n : ℕ} (o' : σ ≃ Fin n) (ω ε θ : ℚ) (hIH : RothLemmaUniform σ n ω ε θ)
     {r : ℕ} (hr : r ≠ 0)
-    (d₁ : σ → ℕ) (hd₁ : ∀ j, d₁ j ≠ 0) (hg : RothGrowth o' ω d₁)
-    (pn qd : σ → ℤ) (B : ℤ) (E : ℕ)
+    (d₁ : σ → ℕ) (hd₁ : ∀ j, d₁ j ≠ 0)
+    (pn qd : σ → ℤ) (B : ℤ) (E : ℕ) (hg : RothGamma o' ω d₁ qd)
     (Dx : Fin r → List σ) (Dy : Fin r → List Unit)
     (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial Unit ℚ)
     (P : MvPolynomial (σ ⊕ Unit) ℤ)
@@ -74,7 +74,7 @@ theorem index_rescaled_wronskian_le [DecidableEq σ]
     abs_coeff_integral_wronskian_factor_le hfact hV'ne hB m
   have hIHapp := hIH o' (fun j => r * d₁ j) pn qd U' B E
     (fun j => Nat.mul_ne_zero hr (hd₁ j))
-    (rothGrowth_scale hr hg) hU'ne hdegU hBU hq2 hco hBq hE
+    (rothGamma_scale hr hq2 hg) hU'ne hdegU hBU hq2 hco hBq hE
   have hmap : map (algebraMap ℤ ℚ) U' = C l * mvGenWronskian Dx φ := hU'
   rwa [hmap, index_C_mul _ _ hl] at hIHapp
 
@@ -109,14 +109,18 @@ theorem index_rescaled_wronskian_le_witness :
   refine index_rescaled_wronskian_le (σ := Unit) (n := 1) (r := 1)
     (⟨fun _ => 0, fun _ => (), fun _ => rfl, fun i => Subsingleton.elim _ _⟩ :
       Unit ≃ Fin 1) 1 1 1 (rothLemmaUniform_one 1 1 1 le_rfl)
-    one_ne_zero (fun _ => 1) (fun _ => one_ne_zero) ?_
-    (fun _ => 1) (fun _ => 2) 1 0
+    one_ne_zero (fun _ => 1) (fun _ => one_ne_zero)
+    (fun _ => 1) (fun _ => 2) 1 0 ?_
     (fun _ => []) (fun _ => []) (fun _ => 1) (fun _ => 1) 1
     ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_
-  · intro j k h
-    have := j.isLt
-    have := k.isLt
-    omega
+  · exact
+      { growth := by
+          intro j k h
+          have := j.isLt
+          have := k.isLt
+          omega
+        height := by intro j k _; exact le_rfl
+        floor := by intro j _; rw [rothDenomFloor_one]; norm_num }
   · simp
   · rw [hW]; exact one_ne_zero
   · rw [hW]; exact one_ne_zero
@@ -171,7 +175,12 @@ theorem index_rescaled_wronskian_le_right [DecidableEq σ]
     (⟨fun _ => 0, fun _ => (), fun _ => rfl, fun i => Subsingleton.elim _ _⟩ : Unit ≃ Fin 1)
     (fun j => r * d₂ j) pn qd V' B E
     (fun j => Nat.mul_ne_zero hr (hd₂ j))
-    (by intro j k h; have := j.isLt; have := k.isLt; omega)
+    { growth := by intro j k h; have := j.isLt; have := k.isLt; omega
+      height := by intro j k _; exact le_rfl
+      floor := by
+        intro j _
+        rw [rothDenomFloor_one]
+        exact le_trans (by norm_num) (hq2 ()) }
     hV'ne hdegV hBV hq2 hco hBq hE
   have hmap : map (algebraMap ℤ ℚ) V' = C l⁻¹ * mvGenWronskian Dy ψ := hV'
   rwa [hmap, index_C_mul _ _ (inv_ne_zero hl)] at hIHapp

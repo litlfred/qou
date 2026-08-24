@@ -9,9 +9,10 @@
   elaborate and so that the base case has something to be an instance *of*.  Do not cite it
   as though Roth's lemma were formalised.
 
-  ⚠ It is also **not true for every `ω`.**  The growth condition is a genuine hypothesis of
-  Roth's lemma: for `m ≥ 2` and small `ω` the statement is false.  At `m = 1` the condition is
-  vacuous, which is why `rothLemmaUniform_one` holds for *every* `ω`.
+  ⚠ It is also **not true for every `ω`.**  Property `Γ_m` is a genuine hypothesis of Roth's
+  lemma: for `m ≥ 2` and small `ω` the statement is false.  At `m = 1` its growth clause is
+  vacuous and the other two are implied by the standing `2 ≤ qⱼ`, which is why
+  `rothLemmaUniform_one` holds for *every* `ω`.
 
   `ω`, `ε` and the bound `θ` are all left as parameters, which makes `RothLemmaUniform` a
   **statement schema** rather than a theorem-shaped claim: instantiating `θ` large enough makes
@@ -41,17 +42,22 @@
   ═══ ⚠ HOW THIS DIFFERS FROM THE TEXTBOOK STATEMENT ═══
 
   This is a **uniform-parameter** variant, not verbatim Bombieri–Gubler 6.3.4.  There the
-  conditions are `qⱼ^{dⱼ} ≥ q₁^{d₁}` and `q₁^{ε d₁} ≥ H(P)`, which let the exponent vary with
-  `j`; here a single `E` serves every `j`, via `∀ j, B ≤ qⱼ^E` and `∀ j, E ≤ ε·dⱼ`.  That is a
-  *stronger* hypothesis, so the statement below is *weaker* than the textbook one.  Anyone
-  proving the general case should check whether the uniform form still suffices downstream
-  before adopting it.
+  height condition is `q₁^{ε d₁} ≥ H(P)`, which lets the exponent vary with `j`; here a single
+  `E` serves every `j`, via `∀ j, B ≤ qⱼ^E` and `∀ j, E ≤ ε·dⱼ`.  That is a *stronger*
+  hypothesis, so the statement below is *weaker* than the textbook one.  Anyone proving the
+  general case should check whether the uniform form still suffices downstream before adopting
+  it.
+
+  Bombieri–Gubler's other condition, `qⱼ^{dⱼ} ≥ q₁^{d₁}`, **is** carried: it is Mahler's `Γ_m`
+  clause 2 with the logarithms cleared, and `RothGamma.height` is both.  Two independent
+  sources agreeing on a clause is better evidence than either reading alone.
 
   Writing the statement out is also what caught the omission of `degreeOf j P ≤ d j` from an
   earlier draft — the degree bound is what makes `d` a degree vector rather than an arbitrary
   weight, and it is easy to forget because the `m = 1` proof does not use it.
 -/
 import QOU.Mathlib.RothBaseCase
+import Mathlib.Data.Rat.Floor
 
 namespace MvPolynomial
 
@@ -170,6 +176,67 @@ theorem rothGrowth_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d
   push_cast
   nlinarith
 
+
+/-! ### Property `Γ_m` — all three clauses
+
+`RothGrowth` above is only the **first** of `Γ_m`'s three clauses.  The arc carried it alone for
+a long time, which made every statement here *stronger* than the source's: dropping a
+hypothesis strengthens a theorem, and a theorem stronger than the one the source proves is one
+nothing in the source will discharge.  The other two are reinstated below. -/
+
+/-- **Mahler's denominator floor**, `Γ_m`'s third clause: `K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`.
+
+The exponent `ω·(m−1)m(2m+1)` is rational, so this rounds it **up** (`Nat.ceil`).  That makes the clause
+stronger than the source's and hence every statement carrying it weaker — the safe direction
+for a hypothesis being reinstated, since it cannot let a claim here outrun §14's. -/
+def rothDenomFloor (m : ℕ) (ω : ℚ) : ℕ :=
+  2 ^ ⌈ω * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ)⌉₊
+
+/-- At one variable the floor is `1`, so it constrains nothing beyond the standing `2 ≤ q`. -/
+theorem rothDenomFloor_one (ω : ℚ) : rothDenomFloor 1 ω = 1 := by
+  norm_num [rothDenomFloor]
+
+/-- **Property `Γ_m`** (§11), all three clauses.
+
+    1.  max(s₂/s₁, …, s_M/s_{M−1}) ≤ t      — `growth`, which is `RothGrowth` with `ω = 1/t`
+    2.  s_h·log K_h ≥ s₁·log K₁             — `height`, written multiplicatively
+    3.  K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}          — `floor`
+
+Clause 2 is stated as `K₁^{s₁} ≤ K_h^{s_h}`, the same inequality with the logarithms cleared —
+which is **exactly** Bombieri–Gubler 6.3.4's condition `qⱼ^{dⱼ} ≥ q₁^{d₁}`.
+
+Both indexed clauses are written `∀ j, (j : ℕ) = 0 → …` rather than through `o.symm 0`, so that
+`m = 0` needs no side condition rather than no `Fin 0` element. -/
+structure RothGamma {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (ω : ℚ) (d : σ → ℕ) (qd : σ → ℤ) :
+    Prop where
+  /-- Clause 1: consecutive degrees drop by at least a factor `ω = 1/t`. -/
+  growth : RothGrowth o ω d
+  /-- Clause 2: the first variable's `K^s` is the smallest.  `s_h·log K_h ≥ s₁·log K₁`. -/
+  height : ∀ j k : Fin m, (j : ℕ) = 0 →
+    qd (o.symm j) ^ d (o.symm j) ≤ qd (o.symm k) ^ d (o.symm k)
+  /-- Clause 3: the first denominator is at least `2^{ω(m−1)m(2m+1)}`. -/
+  floor : ∀ j : Fin m, (j : ℕ) = 0 → (rothDenomFloor m ω : ℤ) ≤ qd (o.symm j)
+
+/-- **Rescaling the degree vector preserves `Γ_m`** — the companion to `rothGrowth_scale`.
+
+The induction step measures its sub-problems against `r·d`, and all three clauses survive.
+Clause 2 does so because raising `K₁^{s₁} ≤ K_h^{s_h}` to the `r`-th power is monotone once the
+denominators are non-negative, which `2 ≤ qd j` supplies; clause 3 does not mention `d` at
+all. -/
+theorem rothGamma_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ} {qd : σ → ℤ}
+    {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ qd j) (hg : RothGamma o ω d qd) :
+    RothGamma o ω (fun j => r * d j) qd where
+  growth := rothGrowth_scale hr hg.growth
+  height := by
+    intro j k hj
+    have h := hg.height j k hj
+    have h0 : (0 : ℤ) ≤ qd (o.symm j) ^ d (o.symm j) :=
+      pow_nonneg (le_trans (by norm_num) (hq _)) _
+    calc qd (o.symm j) ^ (r * d (o.symm j))
+        = (qd (o.symm j) ^ d (o.symm j)) ^ r := by rw [← pow_mul, mul_comm]
+      _ ≤ (qd (o.symm k) ^ d (o.symm k)) ^ r := pow_le_pow_left₀ h0 h r
+      _ = qd (o.symm k) ^ (r * d (o.symm k)) := by rw [← pow_mul, mul_comm]
+  floor := hg.floor
 
 /-! ### ⚠ The eleventh correction: `c_m = 2^{m+1} − 3`, and the conclusion is not linear in `t`
 
@@ -455,7 +522,7 @@ its own overstates what it says. -/
 def RothLemmaUniform (σ : Type*) (m : ℕ) (ω ε θ : ℚ) : Prop :=
   ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (pn qd : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
     (∀ j, d j ≠ 0) →
-    RothGrowth o ω d →
+    RothGamma o ω d qd →
     P ≠ 0 →
     (∀ j, degreeOf j P ≤ d j) →
     (∀ n, |coeff n P| ≤ B) →
@@ -481,10 +548,9 @@ The bound is existential because it must be *uniform* in all the data — one `�
 ⚠ Still a `def`.  Nothing in this repository proves it for `m ≥ 2`; `rothLemmaMahler_one` is
 the only instance discharged.
 
-⚠ `Γ_m` has two further clauses this does not carry — `s_h log K_h ≥ s₁ log K₁` and
-`K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`.  They are hypotheses of the source's theorem, so omitting them
-makes this **stronger** than what §14 proves, and any proof attempt for `m ≥ 2` will have to
-add them back rather than discover it can do without. -/
+All three of `Γ_m`'s clauses are carried, via `RothGamma` inside the schema.  They were not,
+for most of this arc's life, which made its statements **stronger** than what §14 proves — a
+theorem stronger than the source's is one nothing in the source will discharge. -/
 def RothLemmaMahler (σ : Type*) (m : ℕ) (t : ℚ) : Prop :=
   ∃ θ : ℚ, RothBound m t θ ∧ RothLemmaUniform σ m t⁻¹ (t / (m : ℚ)) θ
 
@@ -548,7 +614,10 @@ example :
     (⟨fun _ => 0, fun _ => (), fun _ => Subsingleton.elim _ _,
       fun _ => Subsingleton.elim _ _⟩ : Unit ≃ Fin 1)
     (fun _ => 1) (fun _ => 1) (fun _ => 2) 1 1 0 (fun _ => one_ne_zero) ?_ one_ne_zero ?_ ?_ ?_ ?_ ?_ ?_
-  · intro j k hjk; omega
+  · exact
+      { growth := by intro j k hjk; omega
+        height := by intro j k _; exact le_rfl
+        floor := by intro j _; rw [rothDenomFloor_one]; norm_num }
   · intro j
     have h : degreeOf j (1 : MvPolynomial Unit ℤ) = 0 := by
       rw [← C_1]; exact degreeOf_C _ _
