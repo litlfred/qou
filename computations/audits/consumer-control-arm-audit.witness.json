@@ -17,6 +17,13 @@
       ],
       "consumer": "computations/h4_markov_weights_closed_form.py",
       "dual_anchor_reference": true,
+      "frame_evidence": {
+        "deliberate_on": "C",
+        "muon_q0_transcribed": false,
+        "payload_transcribed": 5,
+        "witness_carries": "CM",
+        "z_C_transcribed": true
+      },
       "lines": {
         "-0.0008425274911545449": 151,
         "0.02358747319685989": 150,
@@ -1452,6 +1459,13 @@
       ],
       "consumer": "computations/deltalambda/deltalambda_damping_nonmonotone_wall_probe.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471": 52
       },
@@ -1470,6 +1484,13 @@
       ],
       "consumer": "computations/deltalambda/deltalambda_graded_two_anchor_nogo_probe.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471": 51
       },
@@ -1488,6 +1509,13 @@
       ],
       "consumer": "computations/metallic_q_jones_sign_sweep.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.1099785955541805": 60
       },
@@ -1506,6 +1534,13 @@
       ],
       "consumer": "computations/metallic_q_quark_bifurcation.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.1099785955541805": 69
       },
@@ -1524,6 +1559,13 @@
       ],
       "consumer": "computations/metallic_q_quark_bifurcation.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.1099785955541805": 69
       },
@@ -1542,6 +1584,13 @@
       ],
       "consumer": "computations/probes/perknot_additive_sk_vs_kA_extensivity.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "inherited-only",
+        "muon_q0_transcribed": false,
+        "payload_transcribed": 1,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "0.51099895069": 70
       },
@@ -1560,6 +1609,13 @@
       ],
       "consumer": "computations/probes/qbeta_ck_qholonomic_recurrence_test.py",
       "dual_anchor_reference": true,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471989976322": 133
       },
@@ -1578,6 +1634,13 @@
       ],
       "consumer": "computations/probes/test_qbeta_habiro_anchor_guard.py",
       "dual_anchor_reference": true,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "CM",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471989976322": 118
       },
@@ -1596,6 +1659,13 @@
       ],
       "consumer": "computations/probes/test_qbeta_habiro_anchor_guard.py",
       "dual_anchor_reference": true,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "CM",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471989976322": 118
       },
@@ -1614,6 +1684,13 @@
       ],
       "consumer": "computations/qbeta/qbeta_c4even_exact_sseries_probe.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471989976322": 85
       },
@@ -1632,6 +1709,13 @@
       ],
       "consumer": "computations/qbeta/qbeta_c4even_ladder_reconstruction_probe.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471989976322": 89
       },
@@ -1650,6 +1734,13 @@
       ],
       "consumer": "computations/qbeta/qbeta_c_k_recursion_depth_sweep.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471989976322": 74
       },
@@ -1668,6 +1759,13 @@
       ],
       "consumer": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 0,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.10997859555733471989976322": 170
       },
@@ -1688,6 +1786,13 @@
       ],
       "consumer": "computations/witness_float64_padding_audit.py",
       "dual_anchor_reference": false,
+      "frame_evidence": {
+        "deliberate_on": "M",
+        "muon_q0_transcribed": true,
+        "payload_transcribed": 1,
+        "witness_carries": "M",
+        "z_C_transcribed": false
+      },
       "lines": {
         "1.109978582751380807591669096": 197,
         "1.10997859555733471989976322": 196
