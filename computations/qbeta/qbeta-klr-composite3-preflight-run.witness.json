@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:47:37.306727+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:14:38.245354+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "typeb_folded_crystal_sign_refuted_at_u2_both_anchors",
@@ -37,7 +37,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -51,9 +51,9 @@
     "anchors": [
       {
         "anchor": "proton",
-        "q": "1.10997859555733471989976322048322502665620840878015368660798",
-        "q_cubed": "1.36755188428420657086804465632413106596397609339967247362827",
-        "u2_coefficient_2q_cubed": "2.73510376856841314173608931264826213192795218679934494725655",
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "q_cubed": "1.36755183695138518796672402990936100071109752077276787660591",
+        "u2_coefficient_2q_cubed": "2.73510367390277037593344805981872200142219504154553575321181",
         "sign": 1,
         "c2_target": "-1.00000000000000000000000000000000000000000000000000000000000",
         "sign_mismatches_c2": true
@@ -71,6 +71,6 @@
     "verdict": "TYPEB_FOLDED_CRYSTAL_SIGN_REFUTED_AT_U2",
     "interpretation": "Same structural refutation pattern as Composite 1 standard: positivity of q-monomial sums at q > 0 is convention-robust. Folded crystals (AGENTS.md §7b) inherit positivity from the unfolded sl_n crystal — the σ-fixed subset is a SUBSET of positive basis elements, so its q-weight sum is bounded above by the full sum but still positive. The Composite-3 ansatz has NO q-Pochhammer factor to flip the sign at u², so the refutation is even cleaner than Composite 1 (which had (q;q)_2 > 0 at q > 1 happening to compound the positivity). Combined three-preflight outcome (B + C + D refuted at u^2; A is the only surviving cont. 9 menu option not requiring a separate Demazure-Lusztig preflight scope): ~22-30 sessions of Lean + pyhecke infra build avoided. CAL-3-anchored permanent acceptance is now backed by 3 corpus closures + 3 preflight refutations."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
