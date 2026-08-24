@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T08:55:10Z
-updated_at: 2026-08-24T17:21:42Z
+updated_at: 2026-08-24T18:04:24Z
 ---
 
 Surfaced by the #5519 staleness sweep. `computations/alpha/alpha_5_lp_dual_crystal.py`
@@ -258,3 +258,62 @@ Method note: the regeneration was done in the main tree with a single-file
 copy-out and `git checkout --` restore (9 s, one file touched), deliberately
 **not** a `git worktree` — the tree is 9.8 G against 13 G free, so a second
 checkout was not worth the disk.
+
+
+## Step 1 COMPLETE — all six measured
+
+| producer | sweep verdict | measured | reading |
+|---|---|---|---|
+| `alpha/alpha_5_lp_dual_crystal` | TIMEOUT at 300 s **and** 420 s | **9 s**, exit 0 | **refuted** |
+| `he3_tritium_cosh_asymmetry_diagnosis` | TIMEOUT | **1 s**, exit 0 | **refuted** |
+| `binding_via_interface_knot` | TIMEOUT | 1800 s, exit 124 | long, **UNMEASURED** |
+| `block_swap_binding` | TIMEOUT | 1800 s, exit 124 | long, **UNMEASURED** |
+| `qbeta/qbeta_c3even_exact_sseries_probe` | TIMEOUT | 1800 s, exit 124 | long, **UNMEASURED** |
+| `qbeta/qbeta_c4even_exact_sseries_probe` | TIMEOUT | 1800 s, exit 124 | long, **UNMEASURED** |
+
+`DIRTY_AFTER=0` on every run; the whole-tree snapshot/restore held.
+
+**2 of 6 refuted, 4 of 6 confirmed long — and none of the four has a runtime.**
+A 1800 s censoring bound is not a duration. Do not quote "30 minutes" for any of
+them; the honest statement is "> 1800 s, unmeasured", which is this bean's own
+standard applied to its own results.
+
+## My own prediction: UNTESTED, not confirmed
+
+I recorded the expectation that `c4even` (higher order) would be worse than
+`c3even`. **The run cannot distinguish them — both were censored at the same
+1800 s bound.** Recording it as confirmed would be reading a tie as a win. It
+stays open, and a run that separates them needs a budget above whichever is
+larger.
+
+## The slow step is not my inference — the producer says so
+
+`c4even`'s own last line before the wall:
+
+    exact sympy series to O(s^11) (log R and u) — this is the slow step ...
+
+and `c3even`'s, at O(s^9). So the symbolic-series attribution is the producer's
+self-diagnosis, not a guess from a static read. It is still **not a profile**:
+`sp.simplify` at 62/75/104 remains a candidate for *where inside* that step the
+time goes, and nothing here measures it.
+
+## What step 2 now says, per producer class
+
+- **The two fast ones need no budget at all.** Their TIMEOUT verdicts were
+  artifacts; nothing to raise.
+- **The four long ones need a long-compute plan, not a bigger number.** For the
+  qbeta pair the target is the symbolic route — and per the section above,
+  lowering `KC` is not available, because `KC` *is* what each probe extracts.
+- **`binding_via_interface_knot` has zero timing references in 362 lines.**
+  Unlike `alpha_5`, where the logging complaint was moot once it turned out to
+  finish in 9 s, here the AGENTS.md long-compute rule genuinely bites: a
+  > 30-minute producer emitting no elapsed/ETA is indistinguishable from a hang.
+
+## Harness flaw, found by using it
+
+The timing harness wrote every run to one shared `/tmp/prod_run.log`, so each
+producer overwrote the previous one's output — discarding exactly the "last line
+before the timeout" that turned out to be the most useful diagnostic in this
+whole exercise. Fixed mid-batch to a per-producer path, which is why only
+`c4even` has its own log. The measurement tool had the same defect it was
+measuring.
