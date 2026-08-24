@@ -326,6 +326,16 @@ theorem IsRothTheta.le_card {σ : Type*} [Fintype σ] {a : ℤ} {r H : σ → �
   rw [heq] at hle
   exact_mod_cast hle
 
+/-- **`Θ_m ≤ m` in the arc's arity language.**
+
+`IsRothTheta.le_card` bounds by `Fintype.card σ`; everywhere else in this arc the arity is
+carried by an ordering `o : σ ≃ Fin m`, and those agree. -/
+theorem IsRothTheta.le_arity {σ : Type*} [Fintype σ] {m : ℕ} (o : σ ≃ Fin m)
+    {a : ℤ} {r H : σ → ℕ} {Θ : ℚ} (hr : ∀ j, r j ≠ 0) (h : IsRothTheta a r H Θ) :
+    Θ ≤ (m : ℚ) := by
+  have hcard : Fintype.card σ = m := by rw [Fintype.card_congr o, Fintype.card_fin]
+  simpa [hcard] using h.le_card hr
+
 /-! ### Property `Γ_m` — all three clauses
 
 `RothGrowth` above is only the **first** of `Γ_m`'s three clauses.  The arc carried it alone for
