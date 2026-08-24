@@ -153,7 +153,7 @@
       {
         "field_hash": {
           "md": "54fdb2cdc2f1",
-          "ts": "5b4496cdb5d3",
+          "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a"
         },
@@ -162,11 +162,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "7e311e463351",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "b6cda04f9cd5b281913ebfc2128e5805eefce52a"
         },
-        "reviewed_at": "2026-08-09T13:00:01.501Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "voice-title-scholarly": [
@@ -691,7 +691,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "pass",
         "reviewer": {
@@ -701,8 +701,8 @@
           "script_hash": "316cc94d5aa5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "detangler-section-band": [
@@ -712,7 +712,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "n/a",
         "reviewer": {
@@ -722,8 +722,8 @@
           "script_hash": "696ee4c80040",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -733,7 +733,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "n/a",
         "reviewer": {
@@ -743,8 +743,8 @@
           "script_hash": "b01f61430d2a",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "detangler-archimedean-wall": [
@@ -754,7 +754,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "n/a",
         "reviewer": {
@@ -764,8 +764,8 @@
           "script_hash": "3edb7220507a",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "detangler-block-tanglement": [
@@ -775,7 +775,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "pass",
         "reviewer": {
@@ -785,8 +785,8 @@
           "script_hash": "7b9de841a5d5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
@@ -795,7 +795,7 @@
           "in_degree": 1,
           "cone_size": 44,
           "depth": 20,
-          "pagerank": 9.8e-05,
+          "pagerank": 0.000097,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -809,7 +809,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "pass",
         "reviewer": {
@@ -819,8 +819,8 @@
           "script_hash": "53f3fcf3f37b",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -835,7 +835,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "n/a",
         "reviewer": {
@@ -845,8 +845,8 @@
           "script_hash": "280aea9a61d8",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -856,7 +856,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "pass",
         "reviewer": {
@@ -866,8 +866,8 @@
           "script_hash": "8dda7ee9ac99",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "bib-cite-resolves": [
@@ -885,10 +885,10 @@
           "version": "v1",
           "script_hash": "9b284af269a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "463484fb81a8"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -906,10 +906,10 @@
           "version": "v1",
           "script_hash": "a730f195e37d",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "463484fb81a8"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -927,10 +927,10 @@
           "version": "v1",
           "script_hash": "b7cc0ee7d062",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "463484fb81a8"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -948,10 +948,10 @@
           "version": "v1",
           "script_hash": "d3202b194d13",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "463484fb81a8"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1265,7 +1265,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Explicitly archimedean appendix block (tags: substrate-evaluation, archimedean; q_0 \u2248 1.10978, MeV units). Correctly on the archimedean side; the categorical F_Bor is consumed from def:f-bor-borromean-observable upstream."
+        "notes": "Explicitly archimedean appendix block (tags: substrate-evaluation, archimedean; q_0 ≈ 1.10978, MeV units). Correctly on the archimedean side; the categorical F_Bor is consumed from def:f-bor-borromean-observable upstream."
       },
       {
         "field_hash": {
@@ -1283,7 +1283,7 @@
         "reviewed_at": "2026-07-07T14:26:55.531025Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "proton-mass-substrate-identity.lean:1 \u2014 Lean file exists",
+        "evidence": "proton-mass-substrate-identity.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1320,7 +1320,7 @@
         "reviewed_at": "2026-07-07T14:26:55.531025Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "proton-mass-substrate-identity.lean:1 \u2014 content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist",
+        "evidence": "proton-mass-substrate-identity.lean:1 — content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist",
         "severity": "minor"
       },
       {
@@ -2029,7 +2029,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:1 \u2014 content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:1 — content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
       },
       {
         "result": "pass",
@@ -2304,21 +2304,21 @@
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-uses.ts",
           "version": "v1",
-          "script_hash": "1d50b09b0497",
-          "script_commit_sha": "f8585b0e839506a0b5745665e7480610a9093204",
+          "script_hash": "a1edd8b80ecf",
+          "script_commit_sha": "26f868f1d68540d212c49e52180cec1c428e2c2a",
           "deps_hash": "a86dfebb515f"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376",
         "metrics": {
           "uses_count": 3,
           "broken_edges": 0,
-          "redundant_edges": 1
+          "redundant_edges": 0
         }
       }
     ],
@@ -2758,7 +2758,7 @@
           "ts": "a359b4062413",
           "lean": "deb56d7e4985",
           "lean_statement": "8f701e652d5a",
-          "graph": "8ca4e30e1e3c"
+          "graph": "80f1bc13b2cf"
         },
         "result": "n/a",
         "reviewer": {
@@ -2768,10 +2768,10 @@
           "script_hash": "782f89f534a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:53:11.525Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T20:30:53.098Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376"
       }
     ]
   },
-  "updated_at": "2026-08-21T20:53:11.525Z"
+  "updated_at": "2026-08-24T20:30:53.098Z"
 }

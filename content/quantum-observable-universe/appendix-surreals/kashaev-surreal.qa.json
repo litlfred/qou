@@ -1484,21 +1484,21 @@
           "lean": "408c4fcb89ce",
           "lean_statement": "87972a8270c5"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-uses.ts",
           "version": "v1",
-          "script_hash": "1d50b09b0497",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "script_hash": "a1edd8b80ecf",
+          "script_commit_sha": "26f868f1d68540d212c49e52180cec1c428e2c2a",
           "deps_hash": "a86dfebb515f"
         },
-        "reviewed_at": "2026-08-24T19:28:55.208Z",
-        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30",
+        "reviewed_at": "2026-08-24T20:32:26.840Z",
+        "reviewed_sha": "b52feb627d05fdc83ab9f20d89f11290b1717376",
         "metrics": {
           "uses_count": 4,
           "broken_edges": 0,
-          "redundant_edges": 2
+          "redundant_edges": 0
         }
       }
     ],
@@ -1957,5 +1957,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-24T19:28:55.208Z"
+  "updated_at": "2026-08-24T20:32:26.840Z"
 }
