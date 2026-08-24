@@ -201,6 +201,80 @@ def triage(recs, migrate):
     return out
 
 
+# ---------------------------------------------------------------------------
+# VALUE-LITERAL sites (added 2026-08-24, prompted by a sibling on PR #5622).
+#
+# Every detector above keys on how convention C is *spelled as an expression*
+# -- `1/(sqrt q + 1/sqrt q)`, `sqrt(q)/(q+1)`, a `q**3/(q**2+1)` return form,
+# and so on. A file that carries the C VALUE as a decimal literal is invisible
+# to all of them.
+#
+# Measured instance: `computations/h4_markov_weights_closed_form.py` holds
+#
+#     XCHECK_Z = "0.49932033403359827"
+#
+# and evaluates its closed forms at that (q0, z) to reproduce a published
+# record. It is a DELIBERATE convention-C control arm, and this triage did not
+# list it at all -- so the headline "N sites needing a human" understated the
+# surface, and any completeness claim built on that count was wrong.
+#
+# A sibling hit the same class from the other side: their intersection test for
+# control arms ran at the WITNESS layer and came back empty, which they read as
+# "no control arms here". This one is a *consumer*; no witness-level
+# classification can see it either.
+#
+# Prefix-matched, not exact: the C value differs by anchor (proton z_C =
+# 0.499320334183694..., and the literal above is from a different pin), so the
+# shared stem `0.49932` is what identifies it.
+
+Z_C_LITERAL = re.compile(r"0\.49932\d*")
+
+_VALUE_LITERAL_SELFTEST = 'XCHECK_Z = "0.49932033403359827"'
+assert Z_C_LITERAL.search(_VALUE_LITERAL_SELFTEST), (
+    "Z_C_LITERAL no longer matches its known positive "
+    "(h4_markov_weights_closed_form.py XCHECK_Z) -- refusing to report a "
+    "clean value-literal surface from a detector that cannot see it."
+)
+
+
+def value_literal_sites() -> list[tuple[str, int, str]]:
+    """Files carrying the convention-C z as a decimal literal.
+
+    Reported SEPARATELY from the expression sites and never auto-migratable:
+    a hardcoded C value is far more often a deliberate reproduction control
+    than a stale spelling, and rewriting one silently breaks a working check.
+
+    Returns (rel, line, text, kind) where kind is "binding" or "mention".
+
+    The split matters: most hits are PROSE -- a comment saying "z = 0.4993203,
+    excised by owner ruling" is documentation of the excision, not a site.
+    Only a binding actually feeds a computation. Reporting them together makes
+    a 27-item list that is ~85% noise, which is how a real site hides.
+    """
+    out = []
+    for path in sorted(REPO.glob("computations/**/*.py")):
+        rel = str(path.relative_to(REPO))
+        if "_deprecated" in rel or "_internal" in rel:
+            continue
+        try:
+            lines = path.read_text().splitlines()
+        except Exception:
+            continue
+        in_doc = False
+        for i, ln in enumerate(lines, 1):
+            if ln.count('"""') % 2 == 1:
+                in_doc = not in_doc
+            if not Z_C_LITERAL.search(ln):
+                continue
+            stripped = ln.strip()
+            prose = in_doc or stripped.startswith("#")
+            if not prose and "#" in ln:
+                # value in a trailing comment only, not in the code part
+                prose = not Z_C_LITERAL.search(ln.split("#", 1)[0])
+            out.append((rel, i, stripped[:100], "mention" if prose else "binding"))
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--json")
@@ -239,6 +313,20 @@ def main() -> int:
             print(f"  {r['path']}:{r['line']}  {r['target']}")
             for why in r["reasons"]:
                 print(f"      {why}")
+
+    vl = value_literal_sites()
+    print(f"\n{'=' * 74}")
+    print(f"VALUE-LITERAL SITES — the C value as a decimal, not an expression  ({len(vl)})")
+    print("=" * 74)
+    print("  Invisible to every expression detector above, so these are NOT in the")
+    print("  counts below. Never auto-migratable: a hardcoded C value is usually a")
+    print("  deliberate reproduction control, and rewriting one breaks a live check.")
+    binds = [r for r in vl if r[3] == "binding"]
+    ment  = [r for r in vl if r[3] == "mention"]
+    print(f"  BINDINGS ({len(binds)}) — a literal actually feeding a computation:")
+    for rel, ln, txt, _ in binds:
+        print(f"    {rel}:{ln}  {txt}")
+    print(f"  mentions ({len(ment)}) — prose/comments citing the value; not sites.")
 
     print(f"\n{'=' * 74}\nSUMMARY")
     for k in order:
