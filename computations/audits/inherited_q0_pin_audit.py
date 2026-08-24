@@ -134,8 +134,71 @@ def _key_of(node: ast.Subscript, consts: dict[str, str]) -> str | None:
 
 
 def _witness_names(tree: ast.Module, src: str) -> dict[str, str]:
-    """name -> the witness filename it was read from (best effort)."""
+    """name -> the witness filename it was read from.
+
+    🛑 SCOPE-AWARE ON PURPOSE. Three false verdicts came out of doing this with
+    a file-global {handle: filename} dict, because `f` is a conventional name
+    that a producer rebinds freely:
+
+      * last-write-wins made frakV_askey_wilson_recurrence_tie report its own
+        OUTPUT (`with open(out, "w") as f`) as its upstream -- a
+        self-perpetuating pin, the worst verdict here, from a producer merely
+        saving its result;
+      * first-write-wins then made qbeta_decay_sdp_extended_ck report an
+        earlier read's file, when the `qp` binding it actually uses comes from
+        the anchor-DEFINING pin and is exempt;
+      * and a regex over raw source (the version before either) ran past the
+        assignment it matched onto whatever witness name appeared next --
+        usually a print string.
+
+    So bind a handle only to the `json.load` that is LEXICALLY INSIDE its own
+    `with` block. Anything else reports "?" -- an honest `undetermined` costs a
+    re-read, a wrong upstream costs a retraction.
+    """
     out = {}
+
+    # name -> witness filename, from ASSIGNMENTS only (at any scope). A name
+    # bound to a path is code; a name in a docstring or a print is not.
+    path_consts = {}
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Assign) and len(n.targets) == 1 \
+                and isinstance(n.targets[0], ast.Name):
+            m = re.search(r"([A-Za-z0-9_.\-]+\.witness\.json)", ast.unparse(n.value))
+            if m:
+                path_consts.setdefault(n.targets[0].id, m.group(1))
+
+    def _file_of(expr) -> str | None:
+        text = ast.unparse(expr)
+        if re.search(r"""["'][wax]b?\+?["']""", text):
+            return None                       # a write handle is not a read
+        m = re.search(r"([A-Za-z0-9_.\-]+\.witness\.json)", text)
+        if m:
+            return m.group(1)
+        names = {x.id for x in ast.walk(expr) if isinstance(x, ast.Name)}
+        return next((path_consts[x] for x in names if x in path_consts), None)
+
+    # `with <path>.open() as f: d = json.load(f)` -- scoped to this block.
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.With):
+            continue
+        for item in n.items:
+            if not isinstance(item.optional_vars, ast.Name):
+                continue
+            fname = _file_of(item.context_expr)
+            if not fname:
+                continue
+            handle = item.optional_vars.id
+            for b in ast.walk(n):
+                if not (isinstance(b, ast.Assign) and len(b.targets) == 1
+                        and isinstance(b.targets[0], ast.Name)):
+                    continue
+                rhs = ast.unparse(b.value)
+                if WITNESS_READ.search(rhs) and any(
+                        isinstance(x, ast.Name) and x.id == handle
+                        for x in ast.walk(b.value)):
+                    out[b.targets[0].id] = fname
+
+    # `d = json.load(open(<path>))` / `json.loads(P.read_text())` -- one line.
     for n in ast.walk(tree):
         if not (isinstance(n, ast.Assign) and len(n.targets) == 1
                 and isinstance(n.targets[0], ast.Name)):
@@ -143,19 +206,7 @@ def _witness_names(tree: ast.Module, src: str) -> dict[str, str]:
         rhs = ast.unparse(n.value)
         if not WITNESS_READ.search(rhs):
             continue
-        m = re.search(r"([A-Za-z0-9_.\-]+\.witness\.json)", rhs)
-        if m:
-            out[n.targets[0].id] = m.group(1)
-            continue
-        # The path is usually a module constant: WITNESS_IN = Path(...)
-        for name in {x.id for x in ast.walk(n.value) if isinstance(x, ast.Name)}:
-            hit = re.search(rf"{re.escape(name)}\s*=.*?([A-Za-z0-9_.\-]+\.witness\.json)",
-                            src, re.S)
-            if hit:
-                out[n.targets[0].id] = hit.group(1)
-                break
-        else:
-            out[n.targets[0].id] = "?"
+        out.setdefault(n.targets[0].id, _file_of(n.value) or "?")
     return out
 
 
@@ -225,9 +276,19 @@ def scan() -> list[dict]:
     return rows
 
 
+# A value in the q0 basin that is NEITHER canonical pin. Reported separately
+# from "no q0 found", because the two mean opposite things to a reader.
+# Measured: `free-neutron-decay.witness.json` carries q0 = 1.1099785955541805,
+# which agrees with the muon pin to 11 digits and then diverges -- the third
+# stored muon value the corpus already tracks (`muon_pin_three_values_probe`,
+# `muon-pin-stored-vs-live.witness.json`). Classifying it `muon` on a loose
+# prefix would erase exactly the discrepancy those audits exist to hold.
+_BASIN = re.compile(r"^1\.10997[89]")
+
+
 def _pin_in(obj, _expr) -> str | None:
     """First q0-classed value anywhere in the upstream witness body."""
-    stack = [obj]
+    stack, basin = [obj], False
     while stack:
         o = stack.pop()
         if isinstance(o, dict):
@@ -238,7 +299,9 @@ def _pin_in(obj, _expr) -> str | None:
             c = pin_class(o)
             if c:
                 return c
-    return None
+            if _BASIN.match(str(o).strip()):
+                basin = True
+    return "neither-pin" if basin else None
 
 
 def main() -> int:
