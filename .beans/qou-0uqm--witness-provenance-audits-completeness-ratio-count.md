@@ -410,3 +410,58 @@ self-written exemption markers.
 Environment identical before and after (`python 3.11.15 / numpy 2.4.6 / scipy
 1.17.1 / mpmath 1.4.1`), no environment warning — checked before committing, as
 for every witness refresh in this campaign.
+
+
+## 2026-08-24 — the no-`scriptFile` class is mostly resolvable, and is now resolved
+
+The `PROV_OK` and producer-unlocatable disagreement set is **empty**, drained by
+the `_resolve_producer` fix. The residue was 17 `PROV_AUDIT_EXEMPT` witnesses
+with no `scriptFile`. Most of that class is not unattributable — it is
+**hand-written**: the producer does `json.dump` to a path it spells out
+literally instead of routing through `WitnessBuilder`, which is what would have
+stamped `scriptFile`. The producer's own source names the file.
+
+Implemented in `computations/audits/producer_importability_audit.py` as an
+AST-confirmed reverse reference.
+
+**The first cut of this was wrong and the error is worth recording.** Matching on
+the name alone resolved 201 witnesses — and 5 of them to a *reader*, not a
+writer. `option_e_a4_full_reconciliation.py` names
+`chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json` because it LOADS it, and
+writes something else entirely. A witness name in a producer's source proves a
+**relationship, not a direction**. Attaching a witness to its reader would make
+the audit import the wrong file and then report the witness refreshable on the
+strength of it — a false clean, which is the defect class the audit exists to
+detect. A proximity window around the literal was no better: it misjudged 42
+cases in both directions.
+
+So direction is decided by **AST taint** from the literal to a write sink, with
+three propagation rules, each observed in the corpus rather than guessed:
+
+    assignment      OUT = HERE / "x.witness.json";  OUT.write_text(...)
+    for-target      for path in TARGETS: ...        (TARGETS holds the names)
+    one call level  process(path)  ->  def process(path): path.write_text(...)
+
+The third rule is not optional: `regenerate_chi_atom_conventionD.py` holds two
+witness names in a module-level list, iterates it, and writes through a function
+parameter. Without for-target + parameter taint it reads as a non-writer, and it
+is the genuine producer of both.
+
+Sinks: `open(p,'w'|'a')`, `p.open('w'|'a')`, `p.write_text`/`write_bytes`.
+
+**Under-claiming is deliberate.** Where the write cannot be seen the witness
+stays unresolved and the candidate is NAMED in the report, rather than silently
+attached. All 3 remaining "named but not written" were checked by hand and all 3
+are genuine readers — each writes its own differently-named witness via
+`WitnessBuilder` and reads the named one.
+
+    witnesses evaluated   2437 -> 2661 of 2731   (89.5% -> 97.4%)
+    no scriptFile          280 -> 45             (never named by any producer)
+    named, writer unconfirmed   19               (13 multi-writer, 6 reader-only)
+
+### One more instance of this bean's own defect shape, in my own code
+
+The interim class was summed into `witnesses_unresolved` but never printed in the
+breakdown, so 35 witnesses sat **inside the total and outside every line that
+explains it** — a clean-looking breakdown over a population it never listed.
+Fixed: every class in the total is now a line in the breakdown, with examples.

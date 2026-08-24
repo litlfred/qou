@@ -1,7 +1,7 @@
 ---
 # qou-fd0e
 title: q0_value_drift_audit defines CANONICAL as the muon pin — a BLOCKING CI gate that cannot see 211 stale witnesses, plus a 13-file inverted ANCHOR NOTE
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-23T07:56:50Z
 updated_at: 2026-08-24T09:40:00Z
@@ -509,3 +509,56 @@ The earlier "declare 50, drain 16" framing was too clean. Actual shape:
 - **7 contradictions** — each needs reading, not a bucket.
 - **1 must stay undeclared** (`markov_peel_atomic_witness`).
 - **13 unresolved** (`no scriptFile`) — belong to `qou-0uqm`'s class, not here.
+
+
+## 2026-08-24 — APPLIED: 32 stamp-only declarations, owner-approved
+
+The triage above was against a 43-stem set that main has since moved out from
+under, so the set was **re-derived mechanically** rather than reused. Method:
+`q0_value_drift_audit.scan()` -> 288 canonical-classed q0 fields ->
+`layer_mismatches()` -> 68 rows, 67 distinct stems -> each stem resolved to
+exactly one file and AST-parsed for its q0 import route.
+
+| route | n | declaring it changes… |
+|---|---|---|
+| hardcoded muon literal | 20 | the stamp only |
+| reads `q-pinning-50-digit.witness.json` directly | 17 | the stamp only |
+| `qou_substrate.constants` | 2 | the stamp only (never governed) |
+| **imports `q_parameter`** | **9** | **what it COMPUTES — not stamp-only** |
+| no q0 route found | 19 | unknown — not declared on a guess |
+
+Precedence is deliberately conservative: **any** `q_parameter` import classes the
+stem as governed, even when it also reads the pin witness directly. The safe set
+under-claims rather than over-claims.
+
+Selected 35; **3 were already declared in another layer and left alone** —
+moving a stem between layers is a different decision from declaring an undeclared
+one (`lever1_binding_core_characterization`, `murakami_deformed_vc_q0` in
+`ambiguous`; `qbeta_c3_complex_habiro_cross_anchor_probe` in `physical_proton`).
+**32 added.** That is exactly the "~32 stamp-only" this bean predicted.
+
+    producer NOT in ideal_muon   68 -> 36
+    legitimately muon-layer     101 -> 133
+    ideal_muon                  120 -> 152
+    NEW stale 0, --strict exits 0
+
+### Two exclusions were re-caught independently, by route rather than by list
+
+- `zhabiro_phiq_production_crosscheck` — the route classifier flagged it as
+  `constants(ungoverned)` calling `q_at` (proton) while its witness records the
+  muon value. This bean had already named it by hand; the mechanical pass found
+  it without being told.
+- `qbeta_c3_habiro_3rung_crossanchor_rigidity_probe` — calls **both** `q_at` and
+  `q_muon_at`, so it is a cross-anchor comparison with no single anchor to
+  declare. Same producer whose witness `origin/main` is now stamping `muon` (see
+  the merge note in `qou-cds3`). Two independent lines of evidence reached it.
+
+`markov_peel_atomic_witness` stays undeclared — absence is load-bearing, measured
+6.73e-04 consequence.
+
+### Still open in this bean
+
+- **9 genuinely governed stems** — each is a real layer decision, not a stamp fix.
+- **19 with no q0 route found** — need reading; several are the `gap_a4_T*` family.
+- **7 contradictions** — unchanged, each needs reading rather than a bucket.
+- **15 UNRESOLVED** (no `scriptFile`) — `qou-0uqm`'s class, not this one's.
