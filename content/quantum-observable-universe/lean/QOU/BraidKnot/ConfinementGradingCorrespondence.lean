@@ -70,8 +70,26 @@ theorem klrTopDegree_le_confLevel
     F.klrTopDegree T ≤ F.confLevel T :=
   (F.filtrations_agree T).symm.le
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R)
+/-- **The trivial model — a `def`, not an `instance`, and not "faithful".**
+
+    Its docstring said *"Faithful instance. Carries the explicit research-grade
+    conjecture as a sorry."* Neither half was true. There is no `sorry`: it sets
+    `confLevel _ := 0` and `klrTopDegree _ := 0`, so `filtrations_agree` is
+    discharged by `rfl` on `0 = 0`. That is strictly worse than a `sorry`,
+    because a `sorry` is visible to `#print axioms` and this is not.
+
+    As an unconditional `instance` it was supplied by typeclass resolution for
+    every `R` and `q`, which made `confLevel_le_klrTopDegree` and
+    `klrTopDegree_le_confLevel` unconditional theorems about a filtration pair
+    that is identically zero — `conj:confinement-grading-correspondence`
+    asserted nothing.
+
+    Same shape as `SpectralSequence.canonicalTrivial` and demoted the same way
+    (bean `qou-fngs`, checker `check-self-discharging-instances.ts`). The model
+    stays available and must now be named, so a reader of a downstream theorem
+    can see whether the hypothesis was discharged by real filtrations or by
+    zero. Nothing consumed it: the class had no users outside this file. -/
+def canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] :
     ConfinementGradingCorrespondence R q where
   confLevel _ := 0
