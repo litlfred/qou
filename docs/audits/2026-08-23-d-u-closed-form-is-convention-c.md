@@ -207,6 +207,35 @@ into D produces an apparent "D is broken" signal; the formula is what broke.
 check whether the *result* was derived from `z` before concluding the output
 is wrong. Two for two so far, on independent objects.
 
+## Formalised
+
+`content/quantum-observable-universe/lean/QOU/QBeta/DFrameClosedFormExponents.lean`
+— `lean`-direct exit 0, 0 sorries, all 9 declarations clean under
+`#print axioms` (`propext` / `Classical.choice` / `Quot.sound`; two depend on
+no axioms at all). Generic `Field` per §7c: the square root is a hypothesis
+`s^2 = q`, never `Real.sqrt`, so nothing crosses the archimedean wall.
+
+| theorem | content |
+|---|---|
+| `zC_spelling_eq` | `1/(s + s⁻¹) = s/(q+1)` when `s² = q` — **the detector-blind spelling IS convention C**, the load-bearing step of this adjudication |
+| `clearedDenom_C_ne_D` | `u² + 1 ≠ u⁴ + 1` for `u ∉ {0, ±1}` — the two frames clear genuinely different denominators, so the cyclotomic base cannot survive |
+| `zD_at_usq` | `(u²)³/((u²)²+1) = u⁶/(1+u⁴)` |
+| `cycloExp_agree_iff` | `3A−1 = A+2Z−1 ↔ N = 0` — **C matches D exactly on pure-proton configurations and nowhere else**, which is precisely how C is p/n-blind |
+| `uExp_agree_iff` | `18Z+21N+1 = 12Z+20N+14 ↔ 6Z + N = 13` |
+| `uExp_agree_iff_A` | the same line as `A + 5Z = 13` |
+| `helium3_unique_uExp_agreement` | `N ≤ 2 → (6Z + N = 13 ↔ Z = 2 ∧ N = 1)` — **³He is the unique such light atom** |
+| `deuteron_uExp_differs` / `_gap` | the deuteron is off the line, by exactly the `−6` `qou-iayk` recorded |
+
+The last three turn the observation that misled `qou-iayk` into a theorem: ³He
+appearing to satisfy the C-frame law exactly while its mass-3 partner tritium
+missed by 5 is not incoherence, it is `(2,1)` being the one point with `N ≤ 2`
+on the agreement line.
+
+**What the Lean does NOT do.** It proves statements *about* the two exponent
+formulas — where they agree, and that the cleared denominators differ. It does
+**not** derive the formulas: those remain three-parameter fits over four
+exact atoms. Formalising a fit does not promote it.
+
 ## What follows
 
 1. **Re-derive the law in D.** The `(1+u²)^(3A−1)` factor becomes
