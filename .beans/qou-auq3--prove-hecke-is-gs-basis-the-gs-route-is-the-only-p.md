@@ -4440,3 +4440,37 @@ handles those only when the two rules coincide.
 1. `left = []` for this cell.
 2. The other cells of the rule-kind table, and every `InclusionComposition`.
 3. The deep diagonal `j₁ = j₂ = 0`, still open from §4as.
+
+## The BS × BS cell, closed (2026-08-24, §4aw)
+
+`bsbs_resolves`: the criterion's obligation for an arbitrary `OverlapComposition`
+whose two rules are Bokut–Shiao, with **no hypothesis on either context**. The
+`oc.left ≠ []` that §4av had to assume — because §4au does — is gone.
+
+**The degenerate case turned out not to be a reduction argument at all.** With no
+left context the first leading monomial *is* the overlap, so the second contains
+the first as a prefix: `bsWord₁ i' j₂ = bsWord₁ i j₁ ++ right`. Both words begin
+with their top letter, so `i' = i` and `ip = i₁`. The trailing `σᵢ` of the
+shorter word then has to land somewhere in the longer one, and it cannot land
+inside the descending run (`descWord_index_le` caps every index at `i − 1`), so
+it lands at the very end: `right = []` and the two runs coincide.
+`descWord_bot_inj` turns that into `j₁ = j₂`, so the two rules are **the same
+rule** with both contexts empty — and `spoly_isZero_of_self` had already
+discharged that.
+
+Two small helpers, both `Classical.choice`-free: `descWord_bot_mem`
+(`⟨j⟩ ∈ descWord i j`) and `descWord_bot_inj` (`descWord i j₁ = descWord i j₂ →
+j₁ = j₂`, by `descWord_index_ge` in both directions).
+
+### Where the bean now stands
+
+| step | state |
+|---|---|
+| rule-level membership inversion | done, §4at |
+| single-letter overlap, all four shapes | done, §4au |
+| shape bridge, arbitrary `oc` → constructed | done, §4av |
+| empty left context | done, §4aw |
+| **BS × BS cell of `overlap_resolves`** | **done, modulo `j₁ ≥ 1`** |
+| deep diagonal `j₁ = j₂ = 0` | **open** — `jm = j₁ − 1` is a hypothesis, not a construction |
+| the other rule-kind pairs | open |
+| every `InclusionComposition` | open |
