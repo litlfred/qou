@@ -1,4 +1,4 @@
-# The duplicate-declaration surface is 342 groups, not 38 — and `R_q` means two rings
+# The duplicate-declaration surface is 342 groups, not 38
 
 **Date:** 2026-08-24 · **Bean:** `qou-hjf4`
 **Tool:** [`scripts/duplicate-class-declaration-census.py`](../../scripts/duplicate-class-declaration-census.py) (`--self-test`)
@@ -43,65 +43,68 @@ Lean's environment is flat: a duplicated `def` collides on import exactly as a
 duplicated `class` does. The kinds previously skipped carry **213** of the
 same-namespace duplicates against `class`/`structure`'s 38.
 
-## `R_q` denotes two different rings, and one of them crosses the §7c wall
+## RETRACTED — `R_q` is not a defect
 
-`R_q` is declared **95 times** with **five distinct right-hand sides**:
+**This section originally claimed that `R_q` "denotes two different rings" and
+that five `abbrev R_q := ℝ` siblings "cross the §7c wall". Both claims are
+wrong. I flagged them from a count without reading the declarations.**
 
-| count | definition | library | sibling |
-|---|---|---|---|
-| 86 | `LaurentPolynomial ℤ` | 5 | 81 |
-| **5** | **`ℝ`** | 0 | **5** |
-| 2 | `RatFunc ℚ` | 1 | 1 |
-| 1 | `ℤ` | 0 | 1 |
-| 1 | `Archimedean.R_q` | 0 | 1 |
+`R_q` is declared 95 times with five distinct right-hand sides:
 
-The five `abbrev R_q := ℝ` are the serious ones. AGENTS.md §7c makes the
-substrate→archimedean wall a STRICT rule, and `ℝ` is the archimedean side
-while `LaurentPolynomial ℤ` is the substrate ring. **The same symbol names
-both, in the same paper.** In `QOU.Information` alone, `R_q` is `ℝ` in three
-files (`phase-transition-boundary`, `quantum-ideal-gas-law`,
-`quantum-pressure`) and `LaurentPolynomial ℤ` in two (`q-game-of-life`,
-`quantum-entropy`).
+| count | definition |
+|---|---|
+| 86 | `LaurentPolynomial ℤ` |
+| 5 | `ℝ` |
+| 2 | `RatFunc ℚ` |
+| 1 | `ℤ` |
+| 1 | `Archimedean.R_q` |
 
-`q_param` (71 declarations) and `q_inv_param` (68) have the same shape.
+**All nine non-Laurent declarations are deliberate, and every one states its
+reason at the declaration site.** The five `ℝ` ones read:
 
-### This does *not* contradict the resolved `QOU.R_q` — it is a different population
+> *"Ground ring: **archimedean specialisation** `R_q := ℝ` (**AGENTS.md §7c**).
+> The numerical substrate value `q₀ ≈ 1.1097` lives in `ℝ`."*
 
-`local/prepare-merge` records the `R_q` collision as fixed:
+Three cite §7c **by name**, and their files use `Real.*` constructs heavily
+(5–19 occurrences each). §7c requires exactly this: a file using `Real.sqrt`,
+ordering, or `linarith` *must* declare its types as `ℝ`, with the archimedean
+specialisation living in its own file. These are the wall being **observed**,
+not crossed. The remaining four are annotated likewise — `RatFunc ℚ` as
+*"Ground ring `R_q = ℚ(q)`"*, `ℤ` as *"an abstract carrier type … the axioms
+below only require a target type, not the Laurent-polynomial structure"*, and
+`Archimedean.R_q` as an alias.
 
-> The worst was `QOU.R_q` — `RatFunc ℚ` in one module and
-> `LaurentPolynomial ℤ` in the other … That one is resolved:
-> `QOU/GroundRingCore.lean` is the canonical minimal module, and no `R_q`,
-> `q_param` or `q_inv_param` appears in the report any more.
+So the corpus uses `R_q` for *"the ground ring at this file's layer"* and
+annotates which layer each file is on. That is a convention, documented at each
+site — not a fork.
 
-**Verified, and it is true.** Restricted to the Lake library tree, `R_q` has
-**6** declarations and **zero** same-namespace collisions; `q_param` and
-`q_inv_param` likewise. `GroundRingCore.lean` did its job.
-
-The 89 remaining `R_q` declarations are **content-block siblings**, which
-`check-duplicate-decls.ts --package qou` does not scan. So the resolved library
-population has an unresolved sibling population roughly **15× larger**, outside
-the existing checker's scope.
-
-**Import-hazard vs semantic hazard — they are not the same here.** Content-block
-siblings are not in the Lake tree and nothing imports them, so sibling-vs-sibling
-collisions are *latent*: they cannot actually fail an import today. What is not
-latent is the **notation** problem. A reader, a checker, or a `lean.ref`
-resolution that lands in one block sees `R_q = ℝ`; the next block over it is
-`LaurentPolynomial ℤ`. That is the §7c wall and the notation-register collision
-discipline, not the import graph.
+**What the retraction does not touch.** The census measurement above stands: it
+counts *names declared in more than one file*, which `R_q` is, and that count
+was never a claim about correctness. The error was mine in reading a
+name-collision count as a semantic defect without opening the files. The
+`prepare-merge` skill's own note about the resolved `QOU.R_q` — `RatFunc ℚ`
+against `LaurentPolynomial ℤ` — describes a genuine past collision *within the
+library*, which is a different thing from a per-layer convention across
+siblings.
 
 ## Disposition
 
-Nothing in `content/` changed. Three items, in order of what I would do:
+Nothing in `content/` changed, and after the retraction above there is **no
+confirmed defect here** — only a measurement and one blocked item.
 
-1. **The five `R_q := ℝ` siblings** — a §7c wall question per file: is that block
-   genuinely archimedean (in which case the symbol is wrong) or substrate (in
-   which case the definition is)? Authorial, but small and well-defined.
-2. **`R5FullWitness` cannot be deduplicated** until `LightNucleus` is, and the
+1. **`R5FullWitness` cannot be deduplicated** until `LightNucleus` is, and the
    two `LightNucleus` declarations are not identical (the sibling adds
    `numConstituents`). That is a merge of two type definitions, not a dedup.
-3. **The 257 library-vs-sibling pairs** are the §0a backlog. The one resolved
-   this session (`graded-trace-residue-split`) took a read of both files plus a
-   check that nothing unique was lost; at that rate this is a long drain, and
-   worth a decision about whether siblings should carry declarations at all.
+2. **The 257 library-vs-sibling pairs** are a *candidate* population, not a
+   defect list — and the `R_q` retraction is the reason to say so explicitly.
+   A name declared in two files may be a fork, or it may be a deliberate
+   per-layer convention annotated at each site. **Deciding which requires
+   reading both declarations**, exactly as the one resolved in
+   [#5686](https://github.com/litlfred/qou/pull/5686) did. At that rate this is
+   a long drain, and worth a decision about whether siblings should carry
+   declarations at all before it starts.
+3. **The 6 duplicated `inductive`s** are the sharpest sub-population, because a
+   forked *type* blocks imports that a forked abbreviation does not —
+   `LightNucleus` is the worked case. They are: `ConfMorphism`, `CrossingType`,
+   `Flavor`, `LightNucleus`, `NucleonType`, `Place`, each in exactly 2 files,
+   each a library-vs-sibling pair.
