@@ -93,11 +93,26 @@ carrier whose fields mention no domain object cannot say anything about the
 domain.*
 
 It then emits a Lean file re-declaring each candidate and attempting to inhabit
-it. **The generic tactic list discharges 8 of 23.** Counting the carriers proved
-by *any* route — that list, the hand-written probe, and the corpus's own
-instance bundle — the tally is **16 vacuous, 7 undecided**, recorded per-carrier
-with its evidence in
+it. **The generic tactic list discharges 12 of 23.** Counting the carriers proved
+by *any* route — that list, the hand-written probes, and the corpus's own
+instance bundle — the baseline is now **fully adjudicated: 22 proved-vacuous,
+1 uninhabitable-by-design, 0 undecided**, recorded per-carrier with its
+evidence in
 [`vacuous-prop-carrier-baseline.json`](vacuous-prop-carrier-baseline.json).
+
+> **Both figures here were lower when first written (8 of 23; 16 vacuous, 7
+> undecided), and the reason is a bug in this probe rather than anything about
+> the carriers.** `first` advances to the next alternative only when the
+> previous one FAILS, and `norm_num` rewriting `∃ q : ℝ, q > 0` to `∃ q, 0 < q`
+> makes progress without closing — so `first` committed to it and left the goal
+> open. Adding `done` to every alternative moved the generic list 8 → 12. The
+> remaining ten are reached only by hand proofs, and the baseline says so per
+> entry rather than implying the tool found them.
+>
+> The one `uninhabitable-by-design` entry is
+> `QOU.Machinery.SeparateLambdaScale_Antipattern`, whose single field is
+> `is_antipattern : False`. That is the honest opposite of a vacuous carrier —
+> it marks the purged `λ_scale` construction and can only be used, never proved.
 
 The direction matters:
 
@@ -106,12 +121,12 @@ The direction matters:
 - a probe that **fails** settles nothing. It means the tactic list found no
   witness, not that the carrier has content.
 
-**8 is a lower bound, and demonstrably so.** The generic tactic list did *not*
-discharge `QAubinLions`, `NSCounterexample`, `BlowupYekutieli` or
-`RegularityBreakdown` — yet all four are provable, as the hand-written probe
+**A probe count is a lower bound, and demonstrably so.** Even after the `done`
+fix the generic list does not discharge `QAubinLions`, `BlowupYekutieli` or
+`RegularityBreakdown` — yet all three are provable, as the hand-written probe
 committed alongside shows (`⟨0, le_refl 0, by linarith⟩`), and as this file's
-own instance bundle proves in the corpus itself. Read the "undecided" column as
-*undecided*.
+own instance bundle proves in the corpus itself. Read a probe's failures as
+*undecided*, never as content.
 
 ## What is new here, and what is not
 
