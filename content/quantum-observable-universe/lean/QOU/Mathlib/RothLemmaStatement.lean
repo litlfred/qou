@@ -618,9 +618,11 @@ Wronskians' summed index at the *unscaled* degrees by `r·(εU + εV)`, so the a
 the size of `Φ`.  Since `Θ_{m−1} ≤ c_{m−1}·t^{2^{−(m−2)}}` is for small `t` much larger than
 `t`, `d₂` must be at least `Φ/t`.
 
-⚠⚠ **Superseded by correction fourteen below** — §13's second max branch is `√(J(W)/n)`, not
-`√(J(W)/r_m)`, so this requirement does not arise at all at the source's normalisation.  Kept
-because this arc keeps its corrections visible rather than deleting them.
+⚠⚠ **Superseded** — the requirement does not arise at the source's `n` normalisation, which
+§13 reaches from the `r_m` one by a proved weakening (`radicand_weaken`).  See corrections
+fourteen and fifteen below; fourteen got the *reason* wrong and fifteen repairs it, but the
+conclusion that this requirement is an artifact stands.  Kept because this arc keeps its
+corrections visible rather than deleting them.
 
 ⚠⚠ **Correction thirteen: this is a cost of the arc's own §13 formulation, not a hypothesis of
 Roth's lemma.**  §13's packaged conclusion is Mahler's **Lemma 4**, now read:
@@ -653,17 +655,41 @@ theorem factor_bound_le_of_split_degree_eq {Φ t : ℚ} {d₂ : ℕ} (h : Φ ≤
     ((d₂ : ℚ) + 1) * Φ ≤ (Φ + t) * (d₂ : ℚ) :=
   factor_bound_le_of_split_degree (by nlinarith)
 
-/-! ### ⚠⚠ Correction fourteen: `√(J(W)/r_m)` was `√(J(W)/n)`, and the side condition evaporates
+/-! ### ⚠⚠ Corrections fourteen and fifteen: the radicand, and reading one display alone
 
-§13's body has now been read.  The display is
+**Correction fourteen, as first written, was wrong, and correction fifteen withdraws it.**
+Both are kept: what fourteen got right survives, and *how* it went wrong is the more useful
+record.
+
+**What fourteen said.**  §13's packaged display is
 
     J(A) ≤ t + 2·max( (1/n)·J(W) , √( (1/n)·J(W) ) )
 
-— **both** branches over the *same* quantity `(1/n)J(W)`.  Correction 9 transcribed the second
-as `√(J(W)/r_m)`, and that single wrong subscript is the entire origin of this arc's side
-condition: `index_le_two_mul_max_of_det_bound` carries `q` as a stand-in for `√(S/rr)` with
-`rr = D₂ ≈ r_m`, and needs `S ≤ q²·rr` to justify it.  With the source's `rr = n = r` the
-condition is **automatic** — take `q² = S/r` — and everything downstream of it collapses.
+— both branches over the same quantity.  Correction 9 had transcribed the second as
+`√(J(W)/r_m)`.  Fourteen concluded that correction 9 mis-transcribed a subscript, and that the
+arc's side condition `S ≤ q²·rr` was an artifact of that error.
+
+**⚠ Correction fifteen: correction 9 was not a mis-transcription.**  Display (2) on p. 95 reads
+
+    J(A) ≤ t + √( (2/r_m)·J(W) ) ≤ t + 2·√( (1/n)·J(W) )    if n > N,
+    because  n ≤ r_m + 1,  r_m/2 ≥ (r_m/(r_m+1))·(n/2) ≥ (1/2)·(n/2) = n/4.
+
+So **both** forms are the source's: `r_m` is the sharp intermediate — and it is what this arc's
+own arithmetic derives, independently — while `n` is the packaged weakening, reached by a
+*proved step* using `n ≤ r_m + 1`.  Correction 9 transcribed the sharp form; correction
+fourteen read the packaged one and called the other an error.
+
+**What survives.**  Fourteen's operative conclusion — that the side condition can be moved to
+the `n` normalisation and collapses there — is right, for a better reason than it gave.  It is
+not that `r_m` was wrong; it is that the source supplies the conversion and **this arc already
+has its hypothesis**: `RothOperatorFamily`'s `hrle : r ≤ d₂ + 1` is exactly `n ≤ r_m + 1`.
+What was missing is the weakening itself, landed below as `radicand_weaken`.
+
+⚠ **The methodological point, which is the part worth keeping.**  Correction fourteen was made
+from *one display*, read without the derivation above it.  Correction 9 was made from the
+derivation without the packaging below it.  Both were confident; both were partial; each was
+the other's blind spot.  Reading a display is not reading a proof — what settles a form is the
+*passage between* two displays, and neither correction looked there.
 
 Two things §13's body confirms rather than corrects, both exactly as this arc had them:
 
@@ -674,7 +700,37 @@ Two things §13's body confirms rather than corrects, both exactly as this arc h
 
 So the junction condition `S ≤ Ψ·rr`, at `rr = r` and `S = r·Φ`, is just `Φ ≤ Ψ`; and since
 `Ψ_m = Θ_{m−1} + t` while `Φ_m = Θ_{m−1} + Θ₁`, that is exactly `Θ₁ ≤ t` — which §13 proves
-from `Γ_m`.  The whole "largeness requirement on the split-off degree" was an artifact. -/
+from `Γ_m`.  The "largeness requirement on the split-off degree" was an artifact; getting to
+the `n` normalisation that shows it is what `radicand_weaken` supplies. -/
+
+/-- **Mahler's weakening of the radicand**, display (2) on p. 95: `√((2/r_m)·S) ≤ 2·√(S/n)`.
+
+This is the step that carries §13 from its sharp intermediate — radicand `(2/r_m)·S`, which is
+also what this arc's own `le_two_mul_max_of_sum_le` derives — to the packaged form with
+radicand `S/n`.  The source's chain is
+`r_m/2 ≥ (r_m/(r_m+1))·(n/2) ≥ (1/2)·(n/2) = n/4`; all it actually needs is **`n ≤ 2·r_m`**,
+which `n ≤ r_m + 1` and `r_m ≥ 1` give at once.
+
+Root-free: `v` stands for the left square root and `w` for `√(S/n)`. -/
+theorem radicand_weaken {S rm n v w : ℚ}
+    (hn : 0 < n) (hrm : 1 ≤ rm) (hnrm : n ≤ rm + 1)
+    (hv : v ^ 2 ≤ 2 / rm * S) (hw : w ^ 2 = S / n) (hw0 : 0 ≤ w) :
+    v ≤ 2 * w := by
+  have hrm0 : (0 : ℚ) < rm := lt_of_lt_of_le zero_lt_one hrm
+  have hdiv : 2 / rm ≤ 4 / n := by
+    rw [div_le_div_iff₀ hrm0 hn]
+    linarith
+  have hS : 0 ≤ S := by
+    have h : 0 ≤ S / n := by rw [← hw]; exact sq_nonneg w
+    by_contra hc
+    push_neg at hc
+    exact absurd h (not_le.mpr (div_neg_of_neg_of_pos hc hn))
+  refine le_of_pow_le_pow_left₀ two_ne_zero (by linarith) ?_
+  calc v ^ 2 ≤ 2 / rm * S := hv
+    _ ≤ 4 / n * S := mul_le_mul_of_nonneg_right hdiv hS
+    _ = 4 * (S / n) := by ring
+    _ = 4 * w ^ 2 := by rw [hw]
+    _ = (2 * w) ^ 2 := by ring
 
 /-- **`Φ ≤ Ψ` reduces to `Θ₁ ≤ t`.**  `Φ_m = Θ' + Θ₁` and `Ψ_m = Θ' + t`, so the two differ
 only in the `y`-side term. -/

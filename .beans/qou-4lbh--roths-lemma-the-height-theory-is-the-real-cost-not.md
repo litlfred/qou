@@ -2987,3 +2987,38 @@ Every other witness in this arc uses `q = 2`, and every one of them is at **arit
 `rothDenomFloor 1 ω = 1` and the clause is vacuous. So none of them tested clause 3, and none
 of them was wrong to — but it means the arc's non-vacuity evidence for `Γ` is thinner than the
 count of witnesses suggests. Worth knowing before the next one is quoted.
+
+### ⚠⚠ Correction fifteen — correction fourteen was wrong, and how it went wrong is the point
+
+**Correction fourteen said correction 9 mis-transcribed `√(J(W)/r_m)` for `√(J(W)/n)`. It did
+not.** Display (2) on p. 95 reads
+
+    J(A) ≤ t + √( (2/r_m)·J(W) ) ≤ t + 2·√( (1/n)·J(W) )    if n > N,
+    because  n ≤ r_m + 1,  r_m/2 ≥ (r_m/(r_m+1))·(n/2) ≥ (1/2)·(n/2) = n/4.
+
+**Both** forms are the source's. `r_m` is the sharp intermediate — and it is what this arc's
+own `le_two_mul_max_of_sum_le` derives, independently. `n` is the packaged weakening, reached
+by a *proved step*. Correction 9 transcribed the sharp form; correction fourteen read the
+packaged one and called the other an error.
+
+**What survives.** Fourteen's operative conclusion — the side condition moves to the `n`
+normalisation and collapses there — is right, for a better reason than it gave. Not that `r_m`
+was wrong, but that the source supplies the conversion and **this arc already has its
+hypothesis**: `RothOperatorFamily`'s `hrle : r ≤ d₂ + 1` *is* `n ≤ r_m + 1`. What was missing
+is the weakening, now landed as `radicand_weaken`. All it actually needs is `n ≤ 2·r_m`, which
+`n ≤ r_m + 1` and `r_m ≥ 1` give at once.
+
+**⚠ The methodological point.** Correction fourteen was made from **one display**, read without
+the derivation above it. Correction 9 was made from the derivation without the packaging below
+it. Both were confident; both were partial; each was precisely the other's blind spot.
+
+Reading a display is not reading a proof. What settles a form is the *passage between* two
+displays — the "because" line — and neither correction looked there. This session has now made
+the same class of error in both directions within three turns, which is enough to call it a
+habit rather than an accident: **when a transcribed formula matters, transcribe the step that
+produces it, not the formula.**
+
+⚠ It also means the arc's own arithmetic was right the whole time and was twice overruled by a
+reading. `le_two_mul_max_of_sum_le` derives the `r_m` radicand from the truncated sum, which is
+exactly display (2)'s left-hand side. That is the third independent confirmation of this arc's
+§13 machinery against the source, alongside `Φ_m = εU + εV` and `J(W) ≤ n·Φ_m`.
