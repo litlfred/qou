@@ -613,17 +613,28 @@ a long time, which made every statement here *stronger* than the source's: dropp
 hypothesis strengthens a theorem, and a theorem stronger than the one the source proves is one
 nothing in the source will discharge.  The other two are reinstated below. -/
 
-/-- **Mahler's denominator floor**, `Γ_m`'s third clause: `K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`.
+/-- **Mahler's height floor**, `Γ_m`'s third clause: `K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`.
 
-The exponent `ω·(m−1)m(2m+1)` is rational, so this rounds it **up** (`Nat.ceil`).  That makes the clause
-stronger than the source's and hence every statement carrying it weaker — the safe direction
-for a hypothesis being reinstated, since it cannot let a claim here outrun §14's. -/
-def rothDenomFloor (m : ℕ) (ω : ℚ) : ℕ :=
+⚠⚠ **Correction eighteen: `K_h` is the HEIGHT `H_h`, not the denominator.**  This definition
+was called `rothDenomFloor` and its clause "the first *denominator*".  §11 fixes the reading
+beyond argument — after defining `Γ_M` abstractly on `b, s₁,…,s_M, K₁,…,K_M` it says:
+
+> By way of application, let `m ≥ 2`; let the ordered system of numbers `a, r₁,…,r_m, H₁,…,H_m`
+> have the property `Γ_m`
+
+so `b = a`, `s_h = r_h`, and `K_h = H_h`.  §13's descent confirms it: the new system is
+`b, ρ₁,…,ρ_{m−1}, H₁,…,H_{m−1}` — the same heights, truncated — and its clauses are written
+`ρ_h log H_h ≥ ρ₁ log H₁` and `H₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`, in `H` throughout.
+
+The exponent `ω·(m−1)m(2m+1)` is rational, so this rounds it **up** (`Nat.ceil`).  That makes
+the clause stronger than the source's and hence every statement carrying it weaker — the safe
+direction for a hypothesis being reinstated, since it cannot let a claim here outrun §14's. -/
+def rothHeightFloor (m : ℕ) (ω : ℚ) : ℕ :=
   2 ^ ⌈ω * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ)⌉₊
 
-/-- At one variable the floor is `1`, so it constrains nothing beyond the standing `2 ≤ q`. -/
-theorem rothDenomFloor_one (ω : ℚ) : rothDenomFloor 1 ω = 1 := by
-  norm_num [rothDenomFloor]
+/-- At one variable the floor is `1`, so it constrains nothing beyond `Γ₁`'s own `K₁ ≥ 2`. -/
+theorem rothHeightFloor_one (ω : ℚ) : rothHeightFloor 1 ω = 1 := by
+  norm_num [rothHeightFloor]
 
 /-- **The floor is monotone in the arity.**
 
@@ -631,8 +642,8 @@ This is what lets `Γ_m` hand its floor clause down to `Γ_{m−1}`: the sub-sys
 *smaller* floor than the system supplies, because `(m−1)m(2m+1)` grows with `m`.  Without it
 the descent (`RothVariableSplit.rothGamma_descend`) would have nothing to discharge clause 3
 with. -/
-theorem rothDenomFloor_mono {m m' : ℕ} {ω : ℚ} (hω : 0 ≤ ω) (h : m' ≤ m) :
-    rothDenomFloor m' ω ≤ rothDenomFloor m ω := by
+theorem rothHeightFloor_mono {m m' : ℕ} {ω : ℚ} (hω : 0 ≤ ω) (h : m' ≤ m) :
+    rothHeightFloor m' ω ≤ rothHeightFloor m ω := by
   have hA : (m' - 1) * m' * (2 * m' + 1) ≤ (m - 1) * m * (2 * m + 1) :=
     Nat.mul_le_mul (Nat.mul_le_mul (Nat.sub_le_sub_right h 1) h) (by omega)
   have hQ : ω * (((m' - 1) * m' * (2 * m' + 1) : ℕ) : ℚ)
@@ -659,7 +670,7 @@ Where the rest lives:
 * **clause 4** is `RothLemmaUniform`'s height condition — `∀ j, B ≤ qⱼ^E` with `E ≤ ε·dⱼ` and
   `ε = t/m`, which is `b ≤ K₁^{(1/M)s₁t}` in uniform form.  It is carried, just not here.
 * **case (i)** is the `m = 1` specialisation.  At `m = 1` the three fields below are vacuous or
-  trivial (`rothDenomFloor 1 ω = 1`), and `RothLemmaUniform`'s standing `2 ≤ qⱼ` supplies
+  trivial (`rothHeightFloor 1 ω = 1`), and `RothLemmaUniform`'s standing `2 ≤ qⱼ` supplies
   `K₁ ≥ 2`.  So the aggregate matches, but this structure alone is **not** `Γ₁`.
 
 Clause 2 is stated as `K₁^{s₁} ≤ K_h^{s_h}`, the same inequality with the logarithms cleared —
@@ -674,22 +685,23 @@ additional.
 
 Both indexed clauses are written `∀ j, (j : ℕ) = 0 → …` rather than through `o.symm 0`, so that
 `m = 0` needs no side condition rather than no `Fin 0` element. -/
-structure RothGamma {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (ω : ℚ) (d : σ → ℕ) (qd : σ → ℤ) :
+structure RothGamma {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (ω : ℚ) (d : σ → ℕ) (Kh : σ → ℤ) :
     Prop where
   /-- Clause 1: consecutive degrees drop by at least a factor `ω = 1/t`. -/
   growth : RothGrowth o ω d
   /-- Clause 2: the first variable's `K^s` is the smallest.  `s_h·log K_h ≥ s₁·log K₁`. -/
   height : ∀ j k : Fin m, (j : ℕ) = 0 →
-    qd (o.symm j) ^ d (o.symm j) ≤ qd (o.symm k) ^ d (o.symm k)
-  /-- Clause 3: the first denominator is at least `2^{ω(m−1)m(2m+1)}`. -/
-  floor : ∀ j : Fin m, (j : ℕ) = 0 → (rothDenomFloor m ω : ℤ) ≤ qd (o.symm j)
+    Kh (o.symm j) ^ d (o.symm j) ≤ Kh (o.symm k) ^ d (o.symm k)
+  /-- Clause 3: the first **height** is at least `2^{ω(m−1)m(2m+1)}`.  See correction
+  eighteen at `rothHeightFloor`: `K_h` is `H_h`, not `Q_h`. -/
+  floor : ∀ j : Fin m, (j : ℕ) = 0 → (rothHeightFloor m ω : ℤ) ≤ Kh (o.symm j)
 
 /-- **`K₁ ≥ 2` is forced by clause 3** once `m ≥ 2` and `ω > 0`.
 
 The floor's exponent `ω·(m−1)m(2m+1)` is then at least `10ω > 0`, so its ceiling is at least
 `1` and the floor is at least `2`. -/
-theorem rothDenomFloor_two_le {m : ℕ} {ω : ℚ} (hm : 2 ≤ m) (hω : 0 < ω) :
-    2 ≤ rothDenomFloor m ω := by
+theorem rothHeightFloor_two_le {m : ℕ} {ω : ℚ} (hm : 2 ≤ m) (hω : 0 < ω) :
+    2 ≤ rothHeightFloor m ω := by
   have hA : 0 < (m - 1) * m * (2 * m + 1) := by
     have : 1 ≤ m - 1 := by omega
     have : 1 ≤ m := by omega
@@ -699,15 +711,15 @@ theorem rothDenomFloor_two_le {m : ℕ} {ω : ℚ} (hm : 2 ≤ m) (hω : 0 < ω)
     positivity
   have hceil : 1 ≤ ⌈ω * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ)⌉₊ := Nat.ceil_pos.mpr hpos
   calc (2 : ℕ) = 2 ^ 1 := by norm_num
-    _ ≤ rothDenomFloor m ω := Nat.pow_le_pow_right (by norm_num) hceil
+    _ ≤ rothHeightFloor m ω := Nat.pow_le_pow_right (by norm_num) hceil
 
 /-- **`K₁ ≥ 2` is a consequence of `Γ_m`, not a hypothesis** — §11 says so, and this is the
 first index's case.  `RothLemmaUniform`'s standing `2 ≤ qⱼ` is therefore redundant at `j = 0`
 rather than additional. -/
 theorem rothGamma_first_two_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
-    {qd : σ → ℤ} (hm : 2 ≤ m) (hω : 0 < ω) (hg : RothGamma o ω d qd)
-    (j : Fin m) (hj : (j : ℕ) = 0) : 2 ≤ qd (o.symm j) :=
-  le_trans (by exact_mod_cast rothDenomFloor_two_le hm hω) (hg.floor j hj)
+    {Kh : σ → ℤ} (hm : 2 ≤ m) (hω : 0 < ω) (hg : RothGamma o ω d Kh)
+    (j : Fin m) (hj : (j : ℕ) = 0) : 2 ≤ Kh (o.symm j) :=
+  le_trans (by exact_mod_cast rothHeightFloor_two_le hm hω) (hg.floor j hj)
 
 /-- **Property `Γ_M`, case (ii), in full** — all four clauses, in the `t = p/q` idiom.
 
@@ -721,19 +733,19 @@ rational exponent become `ℕ` inequalities with nothing rounded.
 
 ⚠ Still case (ii) only; `Γ₁` is case (i) and is not this. -/
 structure RothGammaFull {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (p q F : ℕ)
-    (d : σ → ℕ) (qd : σ → ℤ) (b : ℤ) : Prop where
+    (d : σ → ℕ) (Kh : σ → ℤ) (b : ℤ) : Prop where
   /-- Clause 1, with `ω = 1/t = q/p`. -/
   growth : RothGrowth o ((q : ℚ) / (p : ℚ)) d
   /-- Clause 2: the first variable's `K^s` is the smallest. -/
   height : ∀ j k : Fin m, (j : ℕ) = 0 →
-    qd (o.symm j) ^ d (o.symm j) ≤ qd (o.symm k) ^ d (o.symm k)
+    Kh (o.symm j) ^ d (o.symm j) ≤ Kh (o.symm k) ^ d (o.symm k)
   /-- Clause 3a: the floor's exponent is large enough, cleared of division. -/
   floorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p
-  /-- Clause 3b: the first denominator is at least `2^F`. -/
-  floor : ∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ qd (o.symm j)
+  /-- Clause 3b: the first **height** is at least `2^F`. -/
+  floor : ∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ Kh (o.symm j)
   /-- Clause 4, raised to `m·q` so that it is integral. -/
   heightBound : ∀ j : Fin m, (j : ℕ) = 0 →
-    b ^ (m * q) ≤ qd (o.symm j) ^ (d (o.symm j) * p)
+    b ^ (m * q) ≤ Kh (o.symm j) ^ (d (o.symm j) * p)
 
 /-- **From a `p/q` power bound to an `E : ℕ` one** — the bridge between the arc's two height
 idioms, with the rounding as an explicit hypothesis.
@@ -752,13 +764,13 @@ theorem le_pow_of_pow_le_pow {x y : ℤ} {Q S e : ℕ} (hQ : Q ≠ 0) (hy : 1 �
 /-- **`Γ_M` in full implies the three-clause form** — so `RothGammaFull` feeds everything
 `RothGamma` feeds, at `ω = q/p`.
 
-The only content is clause 3: `rothDenomFloor m (q/p)` rounds `(q/p)(m−1)m(2m+1)` **up**, while
+The only content is clause 3: `rothHeightFloor m (q/p)` rounds `(q/p)(m−1)m(2m+1)` **up**, while
 `floorExp` says `F` is already at least that value, so the ceiling is at most `F` and the
 rounded floor is at most `2^F`. -/
 theorem RothGammaFull.toRothGamma {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {p q F : ℕ}
-    {d : σ → ℕ} {qd : σ → ℤ} {b : ℤ} (hp : p ≠ 0)
-    (hg : RothGammaFull o p q F d qd b) :
-    RothGamma o ((q : ℚ) / (p : ℚ)) d qd where
+    {d : σ → ℕ} {Kh : σ → ℤ} {b : ℤ} (hp : p ≠ 0)
+    (hg : RothGammaFull o p q F d Kh b) :
+    RothGamma o ((q : ℚ) / (p : ℚ)) d Kh where
   growth := hg.growth
   height := hg.height
   floor := by
@@ -771,8 +783,8 @@ theorem RothGammaFull.toRothGamma {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {p q
       rw [Nat.ceil_le, div_mul_eq_mul_div, div_le_iff₀ hpQ]
       push_cast at hA ⊢
       linarith
-    show ((rothDenomFloor m ((q : ℚ) / (p : ℚ)) : ℕ) : ℤ) ≤ (2 : ℤ) ^ F
-    unfold rothDenomFloor
+    show ((rothHeightFloor m ((q : ℚ) / (p : ℚ)) : ℕ) : ℤ) ≤ (2 : ℤ) ^ F
+    unfold rothHeightFloor
     push_cast at hceil ⊢
     exact pow_le_pow_right₀ (by norm_num) hceil
 
@@ -802,21 +814,21 @@ not after. -/
 
 The induction step measures its sub-problems against `r·d`, and all three clauses survive.
 Clause 2 does so because raising `K₁^{s₁} ≤ K_h^{s_h}` to the `r`-th power is monotone once the
-denominators are non-negative, which `2 ≤ qd j` supplies; clause 3 does not mention `d` at
+heights are non-negative, which `2 ≤ Kh j` supplies; clause 3 does not mention `d` at
 all. -/
-theorem rothGamma_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ} {qd : σ → ℤ}
-    {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ qd j) (hg : RothGamma o ω d qd) :
-    RothGamma o ω (fun j => r * d j) qd where
+theorem rothGamma_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ} {Kh : σ → ℤ}
+    {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ Kh j) (hg : RothGamma o ω d Kh) :
+    RothGamma o ω (fun j => r * d j) Kh where
   growth := rothGrowth_scale hr hg.growth
   height := by
     intro j k hj
     have h := hg.height j k hj
-    have h0 : (0 : ℤ) ≤ qd (o.symm j) ^ d (o.symm j) :=
+    have h0 : (0 : ℤ) ≤ Kh (o.symm j) ^ d (o.symm j) :=
       pow_nonneg (le_trans (by norm_num) (hq _)) _
-    calc qd (o.symm j) ^ (r * d (o.symm j))
-        = (qd (o.symm j) ^ d (o.symm j)) ^ r := by rw [← pow_mul, mul_comm]
-      _ ≤ (qd (o.symm k) ^ d (o.symm k)) ^ r := pow_le_pow_left₀ h0 h r
-      _ = qd (o.symm k) ^ (r * d (o.symm k)) := by rw [← pow_mul, mul_comm]
+    calc Kh (o.symm j) ^ (r * d (o.symm j))
+        = (Kh (o.symm j) ^ d (o.symm j)) ^ r := by rw [← pow_mul, mul_comm]
+      _ ≤ (Kh (o.symm k) ^ d (o.symm k)) ^ r := pow_le_pow_left₀ h0 h r
+      _ = Kh (o.symm k) ^ (r * d (o.symm k)) := by rw [← pow_mul, mul_comm]
   floor := hg.floor
 
 /-! ### ⚠ The eleventh correction: `c_m = 2^{m+1} − 3`, and the conclusion is not linear in `t`
@@ -1570,7 +1582,7 @@ theorem height_descend_assemble {m : ℕ} {n r₁ ρ₁ sumR t L Λ A Fac B : �
 `B ≤ qⱼ^E` with `E : ℕ` and `E ≤ ε·dⱼ`.  Clause 4 in that idiom is `a ≤ K^E`, and §11's chain
 becomes: `b ≤ 2^c·a^n` with the `2^c` absorbed into `K^j` through clause 3's `2^F ≤ K`.
 
-Everything stays in `ℤ`.  `F` is `rothDenomFloor`'s exponent and `j` the number of powers of
+Everything stays in `ℤ`.  `F` is `rothHeightFloor`'s exponent and `j` the number of powers of
 `K` needed to swallow `2^c`; the arithmetic that says `j` is small enough is
 `height_descend_step`, in `ℚ`. -/
 theorem height_descend_exp {a b K : ℤ} {F j c n E : ℕ}
@@ -1593,7 +1605,7 @@ theorem height_descend_exp {a b K : ℤ} {F j c n E : ℕ}
 
 /-! ### ⚠ Where the two halves of the descent do not meet
 
-`rothGamma_descend` gives clauses 1–3 over `ℕ` degrees and `ℤ` denominators;
+`rothGamma_descend` gives clauses 1–3 over `ℕ` degrees and `ℤ` heights;
 `height_descend_exp` gives clause 4's multiplicative content over `ℤ`; `height_descend_step`
 gives its arithmetic over `ℚ`.  Joining them needs `j` — the number of powers of `K` that
 swallow `2^c` — to be a **natural number** lying in
@@ -1682,7 +1694,7 @@ theorem height_descend_pq_witness : (32 : ℤ) ^ (1 * 1) ≤ (1024 : ℤ) ^ (1 *
 `B = 15`: clause 3 reads `1·2·5·1 = 10 ≤ 30` and the conclusion `1·15 ≤ 30`.
 
 ⚠ `L = 30` against `Λ = 1` is not slack — at `m = 2` clause 3 demands `H₁ ≥ 2^{10}`, and
-`rothDenomFloor_two` says the same.  The witness is at the boundary of what `Γ₂` allows. -/
+`rothHeightFloor_two` says the same.  The witness is at the boundary of what `Γ₂` allows. -/
 theorem height_descend_step_witness : (((2 : ℕ) : ℚ) - 1) * 1 ≤ (1 : ℚ) * 1 * 30 :=
   height_descend_step (m := 2) le_rfl (ρ₁ := 1) (t := 1) (L := 30) (Λ := 1) (B := 1)
     (by norm_num) (by norm_num) (by norm_num)
@@ -1710,17 +1722,17 @@ makes it trivially true.  Roth's lemma is the instance in `RothLemmaMahler` belo
 `ε` and `θ` are all tied to the single parameter `t` the source uses.  Quoting this `def` on
 its own overstates what it says. -/
 def RothLemmaUniform (σ : Type*) (m : ℕ) (ω ε θ : ℚ) : Prop :=
-  ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (pn qd : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
+  ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (pn Kh : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
     (∀ j, d j ≠ 0) →
-    RothGamma o ω d qd →
+    RothGamma o ω d Kh →
     P ≠ 0 →
     (∀ j, degreeOf j P ≤ d j) →
     (∀ n, |coeff n P| ≤ B) →
-    (∀ j, 2 ≤ qd j) →
-    (∀ j, IsCoprime (pn j) (qd j)) →
-    (∀ j, B ≤ qd j ^ E) →
+    (∀ j, 2 ≤ Kh j) →
+    (∀ j, IsCoprime (pn j) (Kh j)) →
+    (∀ j, B ≤ Kh j ^ E) →
     (∀ j, (E : ℚ) ≤ ε * (d j : ℚ)) →
-    index d (fun j => ((pn j : ℚ) / (qd j : ℚ))) (map (algebraMap ℤ ℚ) P)
+    index d (fun j => ((pn j : ℚ) / (Kh j : ℚ))) (map (algebraMap ℤ ℚ) P)
       ≤ ((θ : ℚ) : WithTop ℚ)
 
 /-- **Roth's lemma as Mahler states it** (§14, Theorem 1), assembled from the schema.
@@ -1761,23 +1773,23 @@ Everything comes from `RothBaseCase.lean`; **no reindexing lemma appears**, whic
 evidence for the design choice argued in the module header. -/
 theorem rothLemmaUniform_one (ω ε θ : ℚ) (hεθ : ε ≤ θ) : RothLemmaUniform Unit 1 ω ε θ := by
   classical
-  rintro o d pn qd P B E hd - hP - hB hq hco hBq hE
+  rintro o d pn Kh P B E hd - hP - hB hq hco hBq hE
   have hd0 : d () ≠ 0 := hd ()
   have hdQ : (0 : ℚ) < (d () : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd0
   set P' : Polynomial ℤ := pUnitAlgEquiv ℤ P with hP'
   have hP'0 : P' ≠ 0 := fun h => hP ((pUnitAlgEquiv ℤ).injective (h.trans (map_zero _).symm))
-  have hlead : |P'.leadingCoeff| ≤ qd () ^ E := by
+  have hlead : |P'.leadingCoeff| ≤ Kh () ^ E := by
     have hcoe : P'.leadingCoeff = coeff (Finsupp.single () P'.natDegree) P := by
       rw [Polynomial.leadingCoeff, hP', coeff_pUnitAlgEquiv]
     rw [hcoe]
     exact le_trans (hB _) (hBq ())
-  have hmain := index_le_of_abs_leadingCoeff_le (p := pn ()) (q := qd ()) (hq ()) (hco ())
+  have hmain := index_le_of_abs_leadingCoeff_le (p := pn ()) (q := Kh ()) (hq ()) (hco ())
     hd0 hP'0 E hlead
   rw [hP', symm_map_pUnitAlgEquiv] at hmain
   have hdfun : d = fun _ : Unit => d () := by
     refine _root_.funext fun u => ?_; cases u; rfl
-  have hafun : (fun j : Unit => ((pn j : ℚ) / (qd j : ℚ)))
-      = fun _ : Unit => ((pn () : ℚ) / (qd () : ℚ)) := by
+  have hafun : (fun j : Unit => ((pn j : ℚ) / (Kh j : ℚ)))
+      = fun _ : Unit => ((pn () : ℚ) / (Kh () : ℚ)) := by
     refine _root_.funext fun u => ?_; cases u; rfl
   rw [hdfun, hafun]
   refine le_trans hmain ?_
@@ -1811,7 +1823,7 @@ example :
   · exact
       { growth := by intro j k hjk; omega
         height := by intro j k _; exact le_rfl
-        floor := by intro j _; rw [rothDenomFloor_one]; norm_num }
+        floor := by intro j _; rw [rothHeightFloor_one]; norm_num }
   · intro j
     have h : degreeOf j (1 : MvPolynomial Unit ℤ) = 0 := by
       rw [← C_1]; exact degreeOf_C _ _
