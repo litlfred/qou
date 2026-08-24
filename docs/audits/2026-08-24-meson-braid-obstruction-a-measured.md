@@ -168,6 +168,74 @@ so re-deriving it is not a free re-run.
 modulus and is convention-independent; the Markov parameter `z` is what conventions
 C and D disagree about, and it appears nowhere in the volume or mass-target chain.
 
+## 🛑 ρ is NOT a free parameter — and my "at ρ = 1" framing was misleading
+
+Everything above was normalised at `ρ = 1`, flagged as a caveat. That was too
+weak a statement: `ρ` is defined in the corpus, it is **not** 1, and there are
+**two inequivalent readings** with an open RED gate between them
+(`mass_vol_density.py`).
+
+| reading | definition | value at q₀ |
+|---|---|---|
+| **ρ_global** | `(3q² + 4 + 3q⁻²)/4 = 5/2 + 3h²/4` — the H₄ Family-A linking-weight scalar, SU(2)-**blind** | **2.53277965639939149** |
+| **ρ_per-block** | `tr_M(K, q) = Σ_λ y_λ χ^λ(β_K)` — the **knot's own Markov trace**, SU(2)-**selective** | braid-dependent, **≲ 1** (measured) |
+
+`compare_density_readings` reports the two as differing by **≈2.378×** for the
+proton and the discipline gate is **RED** — an acknowledged, untuned discrepancy
+("NO fudge is applied — the discrepancy is reported, not tuned away").
+
+**The per-block reading makes this a one-unknown problem, not a two-parameter
+fit.** If `ρ = tr_M(K)`, then the braid determines *both* factors and the
+constraint is a single equation:
+
+$$\mathrm{Vol}(K)\cdot \mathrm{tr}_M(K) = (m/m_e)\cdot \hbar_q^2$$
+
+Measured over the hyperbolic candidates (`tr_M` at H₃, proton pin):
+
+| braid | Vol | tr_M | **Vol·tr_M** |
+|---|---|---|---|
+| corpus `𝔐 = (σ₀σ₁)²σ₁σ₀` | 0 | 0.6870996474 | **0** |
+| `4₁` `[1,-2,1,-2]` | 2.029883 | 0.2801956423 | 0.56876443 |
+| `5₂` `[1,1,1,2,-1,2]` | 2.828122 | 0.4869843458 | 1.3772512 |
+| Whitehead `[1,1,-2,1,-2]` | 3.663862 | 0.6195656517 | 2.2700033 |
+| Borromean `[1,-2,1,-2,1,-2]` | 7.327725 | 0.9985621638 | 7.3171887 |
+| `[1,-2,1,-2,1,-2,1,-2]` (max-Vol at L=8) | 12.350906 | 0.2159008098 | 2.6665707 |
+
+**`tr_M ≲ 1` throughout, so `Vol·tr_M ≤ Vol`: the per-block density SUPPRESSES.**
+
+### The two readings give opposite verdicts on the D meson
+
+| reading | Vol the D⁰ needs | max Vol at L = 8 (exhaustive) | verdict |
+|---|---|---|---|
+| ρ_global = 2.5328 | 35.827/2.5328 = **14.14** | 12.351 | short by **1.15×** — nearly reachable |
+| ρ_per-block ≲ 1 | **≳ 35.8** | 12.351 | short by **≥ 2.9×** — firmly excluded |
+
+So **B2's answer is gated on the corpus's own open RED gate**, not on anything I
+can settle by measuring. Under the global scalar the D meson is marginal; under
+the paper-canonical per-block trace it is excluded.
+
+**Do NOT read the `Vol·tr_M = 2.6665707` row against the pion's `2.681392` (0.55 %)
+as a result.** It is the nearest point of an enumerated set to a target, which is
+precisely the per-state fit this document exists to avoid. It is listed because
+suppressing it would be worse, not because it is evidence.
+
+## Route 2 re-derivation under convention D: blocked, and not by me
+
+Route 2 (the D-meson Frobenius–Gram operator-selection) is the one C-frame blocker
+identified above. It **cannot be re-derived by swapping `z`**: bean `qou-cds2`
+(in-progress, high, "highest-risk item in the plan") records that under
+convention D the Markov–Gram form on the **H₃(q) NF basis** — exactly the basis
+the meson lives on — is **SINGULAR**, with one null direction (the row-cap one).
+
+Measured at the proton pin: bilinear eigenvalues `−0.752702, 0, +0.752702 ×3,
++4.230339`; `det = 3.998e-17`; `cond = 4.9e16`. **numpy raises nothing** — it
+returns entries up to `7.6e15` with `‖G·G_INV − I‖ = 1.64`, so a naive switch
+silently corrupts every consumer of `G_INV`.
+
+The LP requires `G⁻¹`. Under the canonical convention that inverse **does not
+exist at H₃**. So Route 2's re-derivation is blocked on `qou-cds2`, which is
+owned and in progress — not duplicated here.
+
 ## What this does NOT do
 
 No braid is proposed for any meson, and **no mass check was run**. The nearest enumerated volume to the pion target is `5₂` at 5.47 % — that is *not* a result, it is the distance to the nearest point of a dense set, and selecting on it would be the per-state fit the J/ψ attack already recorded as worthless. The J/ψ and D⁰ targets (59.50, 35.83) lie far above anything reachable at these braid lengths, so the candidate space is not even bounded yet at the heavy end.
