@@ -305,9 +305,13 @@ truncation gives a sum of `r` terms of which only the first `N` are positive, an
   rational arithmetic, turns a bound on that truncated sum into `(θ−t)² · rr ≤ 2S`.
 
 ⚠ **Provenance caveat.**  The constants in `RothRecursionArith` were reconstructed from a
-partly illegible scan of Mahler §13.  The *shape* — truncated sum, square-root conclusion —
-is what the source shows and what is proved here; the numeric bookkeeping should be re-derived
-against a clean copy before any downstream constant (`ω(m, ε)`, `c_m = 2^m − 3`) is trusted.
+partly illegible scan of Mahler §13, and the numeric bookkeeping should still be re-derived
+against a clean copy.  The *shape* — truncated sum, square-root conclusion — is what the
+source shows and what is proved here.
+
+The two downstream constants this used to defer are no longer open: §11 gives `ω = 1/t` and
+§14 gives `c_m = 2^{m+1} − 3` with conclusion `Θ_m ≤ c_m·t^{2^{−(m−1)}}`, both read from the
+page scans.  ⚠ The value recorded here, `2^m − 3`, was wrong.
 
 ⚠ This does **not** yet make the recursion run.  It replaces a shape that was known to be too
 weak with one that is the right shape; whether the resulting constants close the induction is
@@ -606,10 +610,14 @@ What that leaves is **not** more inequalities.  It is two constructions and one 
 3. **`S·rr ≤ r` in the recursion's regime.**  With `S = n·Φ_m`, `rr = r_m`, `r = n` this is
    `Φ_m · r_m ≤ 1`.  Whether the parameter conditions of Roth's lemma deliver it is unchecked.
 
-⚠ Provenance, still standing for `RothRecursionArith`'s constants: reconstructed from a
-partly illegible scan.  §13's *structure* has since been read directly and matches — the
-matrix shape, the uniform-in-row cost, and the weakening of `√2` to `2` are all confirmed —
-but the surrounding parameter bookkeeping (`ω(m, ε)`, `c_m = 2^m − 3`) is not, and should be
-re-derived against a clean copy before being asserted. -/
+⚠ Provenance, still standing for `RothRecursionArith`'s numeric constants: reconstructed from
+a partly illegible scan, and worth re-deriving against a clean copy.  §13's *structure* has
+since been read directly and matches — the matrix shape, the uniform-in-row cost, and the
+weakening of `√2` to `2` are all confirmed.
+
+The surrounding parameter bookkeeping has now been read too: §11 gives `ω = 1/t`, §14 gives
+`c_m = 2^{m+1} − 3` and the conclusion `Θ_m ≤ c_m·t^{2^{−(m−1)}}`.  ⚠ The `2^m − 3` this
+paragraph recorded was wrong; `RothLemmaStatement.rothConstant` carries the right value with
+its recurrence and base case checked against each other. -/
 
 end MvPolynomial

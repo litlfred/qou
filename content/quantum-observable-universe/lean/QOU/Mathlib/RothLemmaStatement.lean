@@ -10,10 +10,14 @@
   as though Roth's lemma were formalised.
 
   ⚠ It is also **not true for every `ω`.**  The growth condition is a genuine hypothesis of
-  Roth's lemma: for `m ≥ 2` and small `ω` the statement is false.  `ω` is left a parameter on
-  purpose — determining `ω(m, ε)` is part of the unfinished work, and baking in a constant I
-  have not verified would hide that.  At `m = 1` the condition is vacuous, which is why
-  `rothLemmaUniform_one` holds for *every* `ω`.
+  Roth's lemma: for `m ≥ 2` and small `ω` the statement is false.  At `m = 1` the condition is
+  vacuous, which is why `rothLemmaUniform_one` holds for *every* `ω`.
+
+  `ω`, `ε` and the bound `θ` are all left as parameters, which makes `RothLemmaUniform` a
+  **statement schema** rather than a theorem-shaped claim: instantiating `θ` large enough makes
+  it easy and uninteresting.  The content is *which* `θ` is achievable, and that is named
+  separately by `RothBound` and assembled into `RothLemmaMahler` below — `ω = 1/t`, `ε = t/m`,
+  `θ` meeting §14's bound.  Read those two together; neither alone is Roth's lemma.
 
   ═══ THE DESIGN QUESTION THIS SETTLES ═══
 
@@ -88,10 +92,12 @@ The induction step splits off the **last** variable in the ordering and its row 
 `RothGrowth` makes the degrees decrease along the ordering, so every earlier degree is at
 least `ω` times the last one, and `t ≤ 2/ω`.  Choosing `ω ≥ 2/ε` gives `t ≤ ε`.
 
-⚠ **This is the arc's own reconstruction.**  The source's parameter condition is property
-`Γ_m` (§11), which is in the illegible region and has not been read.  What is proved below is
-a fact about `RothGrowth` as this arc defines it; whether that is the source's condition is
-unchecked.  Say which when quoting it. -/
+**This was the arc's own reconstruction, and §11 has since confirmed it.**  Property `Γ_m`'s
+first clause reads `max(s₂/s₁, …, s_M/s_{M−1}) ≤ t`, i.e. `s_h ≥ s_{h+1}/t` — which is
+`RothGrowth o ω d` with `ω = 1/t`.  So the facts proved below are facts about the source's
+condition, not only about this arc's definition of it, and the caveat this paragraph used to
+carry is withdrawn.  (The reading is recorded under "the eleventh correction" below; §11 is
+garbled in the PDF's OCR layer and had to be read from the page scans.) -/
 
 /-- Under `RothGrowth` with `ω ≥ 1`, degrees are non-increasing along the ordering. -/
 theorem rothGrowth_antitone {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
@@ -135,8 +141,9 @@ theorem rothGrowth_mul_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {
 `(d_last + 1)/d_earlier ≤ 2/ω`: the `+1` costs a factor `2` because `d_last ≥ 1`, and `ω` comes
 straight from `rothGrowth_mul_le`.
 
-So `ω ≥ 2/ε` forces `t ≤ ε`.  This is the entry `RothLemmaUniform` leaves unconstrained — the
-statement quantifies over `ω` and nothing said what it had to be. -/
+So `ω ≥ 2/ε` forces `t ≤ ε`.  ⚠ The `t` here is the *row cost*, a local quantity; do not
+confuse it with §11's parameter `t`, against which `ω = 1/t` — under that identification this
+bound reads `row cost ≤ 2t`, which is the shape §13 consumes. -/
 theorem rothGrowth_row_cost_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
     (hω : 1 ≤ ω) (hg : RothGrowth o ω d) {j k : Fin m} (hjk : (j : ℕ) + 1 ≤ (k : ℕ))
     (hdk : d (o.symm k) ≠ 0) :
@@ -239,16 +246,72 @@ theorem two_pow_sub_three_rec (m : ℕ) : (2 : ℤ) ^ (m + 1) - 3 = 2 * ((2 : �
 only part of the derivation that distinguishes `2^{m+1} − 3` from `2^m − 3`. -/
 theorem two_pow_sub_three_ne_one : (2 : ℤ) ^ 1 - 3 ≠ 1 := by decide
 
+/-- `c₂ = 5`, the first value where the two closed forms disagree. -/
+theorem rothConstant_two : rothConstant 2 = 5 := by decide
 
-/-- **Roth's lemma, uniform-parameter form.**
+/-- **The bound §14 actually proves**, written without roots.
+
+Mahler's conclusion is `Θ_m ≤ c_m · t^{2^{−(m−1)}}`.  The index is `ℚ`-valued and that bound
+is irrational in general, so `RothBound m t θ` states the equivalent inequality obtained by
+raising both non-negative sides to the power `2^{m−1}`:
+
+    0 ≤ θ    and    θ^{2^{m−1}} ≤ c_m^{2^{m−1}} · t.
+
+Equivalent, not weaker: `index ≤ c_m·t^{2^{−(m−1)}}` holds iff some rational `θ` satisfies
+`RothBound m t θ` and bounds the index, by density of `ℚ`.
+
+The root-free form is also the shape the recursion is already in.  §13's branch is a *square
+root*, so the arithmetic this arc proved for it — `sq_index_le_of_det_bound`,
+`sq_mul_le_two_mul_of_sum_le` — is stated squared; raising §14's conclusion to a power is
+what makes the two meet.
+
+⚠ Only `1 ≤ m` is meaningful.  At `m = 0` the truncated `m − 1` and `rothConstant 0 = 0`
+collapse this to `θ ≤ 0`. -/
+def RothBound (m : ℕ) (t θ : ℚ) : Prop :=
+  0 ≤ θ ∧ θ ^ (2 ^ (m - 1)) ≤ (rothConstant m : ℚ) ^ (2 ^ (m - 1)) * t
+
+/-- At one variable the bound is `θ ≤ t`, which is §14's base case `Θ₁ ≤ t`. -/
+theorem rothBound_one (t θ : ℚ) : RothBound 1 t θ ↔ (0 ≤ θ ∧ θ ≤ t) := by
+  simp [RothBound, rothConstant_one]
+
+/-- At two variables the bound is `θ² ≤ 25t`, i.e. `θ ≤ 5√t`. -/
+theorem rothBound_two (t θ : ℚ) : RothBound 2 t θ ↔ (0 ≤ θ ∧ θ ^ 2 ≤ 25 * t) := by
+  norm_num [RothBound, rothConstant_two]
+
+/-- Anything smaller than an admissible bound is admissible. -/
+theorem RothBound.mono {m : ℕ} {t θ θ' : ℚ} (h : RothBound m t θ) (h0 : 0 ≤ θ')
+    (hle : θ' ≤ θ) : RothBound m t θ' :=
+  ⟨h0, le_trans (pow_le_pow_left₀ h0 hle _) h.2⟩
+
+/-! ### ⚠ The root bound and the linear bound are not the same shape
+
+At `m = 2` and `t = 1/100`, §14 admits `θ = 1/2`, while `m·t = 1/50` is twenty-five times
+smaller.  So a conclusion `index ≤ m·ε` — the shape `RothLemmaUniform` carried until now — is
+far **stronger** than what §14 proves, and no amount of work on the recursion was going to
+reach it.  That is the eleventh correction's operative consequence, exhibited rather than
+argued. -/
+
+theorem rothBound_two_half : RothBound 2 (1 / 100 : ℚ) (1 / 2) := by
+  rw [rothBound_two]; norm_num
+
+theorem two_mul_lt_rothBound_two_witness : (2 : ℚ) * (1 / 100) < 1 / 2 := by norm_num
+
+
+/-- **Roth's lemma, uniform-parameter form** — the statement *schema*.
+
+Read: an integer polynomial of degree at most `dⱼ` in `xⱼ`, of height at most `B`, cannot have
+index larger than `θ` at a rational point `(pⱼ/qⱼ)` whose denominators are large compared
+to `B`.
 
 ⚠ A `def`, not a theorem: only `m = 1` is proved (`rothLemmaUniform_one`).  ⚠ False for small
 `ω` when `m ≥ 2`.  ⚠ A uniform-`E` variant of the textbook statement.  See the module header
 for all three.
 
-Read: an integer polynomial of degree at most `dⱼ` in `xⱼ`, of height at most `B`, cannot have
-large index at a rational point `(pⱼ/qⱼ)` whose denominators are large compared to `B`. -/
-def RothLemmaUniform (σ : Type*) (m : ℕ) (ω ε : ℚ) : Prop :=
+⚠ **The bound `θ` is a parameter, so this is a schema and not a claim.**  Taking `θ` large
+makes it trivially true.  Roth's lemma is the instance in `RothLemmaMahler` below, where `ω`,
+`ε` and `θ` are all tied to the single parameter `t` the source uses.  Quoting this `def` on
+its own overstates what it says. -/
+def RothLemmaUniform (σ : Type*) (m : ℕ) (ω ε θ : ℚ) : Prop :=
   ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (pn qd : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
     (∀ j, d j ≠ 0) →
     RothGrowth o ω d →
@@ -260,7 +323,29 @@ def RothLemmaUniform (σ : Type*) (m : ℕ) (ω ε : ℚ) : Prop :=
     (∀ j, B ≤ qd j ^ E) →
     (∀ j, (E : ℚ) ≤ ε * (d j : ℚ)) →
     index d (fun j => ((pn j : ℚ) / (qd j : ℚ))) (map (algebraMap ℤ ℚ) P)
-      ≤ (((m : ℚ) * ε : ℚ) : WithTop ℚ)
+      ≤ ((θ : ℚ) : WithTop ℚ)
+
+/-- **Roth's lemma as Mahler states it** (§14, Theorem 1), assembled from the schema.
+
+The source carries one small parameter `t` and ties everything to it:
+
+* property `Γ_m`'s first clause is `RothGrowth` with `ω = 1/t` (see `RothGrowth` above);
+* its height clause `a ≤ H₁^{(1/m) r₁ t}` is, in uniform form, `ε = t/m`;
+* §14's conclusion is `Θ_m ≤ c_m·t^{2^{−(m−1)}}`, i.e. `RothBound m t θ`.
+
+The bound is existential because it must be *uniform* in all the data — one `θ` serving every
+`o, d, p, q, P, B, E` — which is what the source proves and what the `∃` outside
+`RothLemmaUniform`'s own `∀`s expresses.
+
+⚠ Still a `def`.  Nothing in this repository proves it for `m ≥ 2`; `rothLemmaMahler_one` is
+the only instance discharged.
+
+⚠ `Γ_m` has two further clauses this does not carry — `s_h log K_h ≥ s₁ log K₁` and
+`K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`.  They are hypotheses of the source's theorem, so omitting them
+makes this **stronger** than what §14 proves, and any proof attempt for `m ≥ 2` will have to
+add them back rather than discover it can do without. -/
+def RothLemmaMahler (σ : Type*) (m : ℕ) (t : ℚ) : Prop :=
+  ∃ θ : ℚ, RothBound m t θ ∧ RothLemmaUniform σ m t⁻¹ (t / (m : ℚ)) θ
 
 /-- **The `m = 1` case of Roth's lemma**, as an instance of the statement above.
 
@@ -273,7 +358,7 @@ that its absence there was an error rather than an economy.
 
 Everything comes from `RothBaseCase.lean`; **no reindexing lemma appears**, which is the
 evidence for the design choice argued in the module header. -/
-theorem rothLemmaUniform_one (ω ε : ℚ) : RothLemmaUniform Unit 1 ω ε := by
+theorem rothLemmaUniform_one (ω ε θ : ℚ) (hεθ : ε ≤ θ) : RothLemmaUniform Unit 1 ω ε θ := by
   classical
   rintro o d pn qd P B E hd - hP - hB hq hco hBq hE
   have hd0 : d () ≠ 0 := hd ()
@@ -295,10 +380,19 @@ theorem rothLemmaUniform_one (ω ε : ℚ) : RothLemmaUniform Unit 1 ω ε := by
     refine _root_.funext fun u => ?_; cases u; rfl
   rw [hdfun, hafun]
   refine le_trans hmain ?_
-  rw [WithTop.coe_le_coe, Nat.cast_one, one_mul]
+  rw [WithTop.coe_le_coe]
   have h2 := mul_le_mul_of_nonneg_right (hE ()) (le_of_lt (inv_pos.mpr hdQ))
   rw [mul_assoc, mul_inv_cancel₀ hdQ.ne', mul_one] at h2
-  rwa [div_eq_mul_inv]
+  rw [div_eq_mul_inv]
+  exact le_trans h2 hεθ
+
+/-- **§14's base case, `Θ₁ ≤ t = c₁t`**, discharged.
+
+This is the one instance of `RothLemmaMahler` this repository proves.  At one variable the
+growth condition is vacuous and `ε = t/1 = t`, so the schema's `m = 1` case supplies `θ = t`
+directly — and `rothBound_one` says that is exactly what §14 asks for. -/
+theorem rothLemmaMahler_one {t : ℚ} (ht : 0 ≤ t) : RothLemmaMahler Unit 1 t :=
+  ⟨t, (rothBound_one t t).mpr ⟨ht, le_rfl⟩, rothLemmaUniform_one _ _ _ (by simp)⟩
 
 /-! ### The hypotheses are jointly satisfiable
 
@@ -308,8 +402,8 @@ Every hypothesis holds and the conclusion is a real bound (`index ≤ 1`), not `
 example :
     index (fun _ : Unit => 1) (fun _ : Unit => ((1 : ℤ) : ℚ) / ((2 : ℤ) : ℚ))
         (map (algebraMap ℤ ℚ) (1 : MvPolynomial Unit ℤ))
-      ≤ (((1 : ℕ) : ℚ) * 1 : ℚ) := by
-  refine rothLemmaUniform_one 0 1
+      ≤ ((1 : ℚ) : WithTop ℚ) := by
+  refine rothLemmaUniform_one 0 1 1 le_rfl
     (⟨fun _ => 0, fun _ => (), fun _ => Subsingleton.elim _ _,
       fun _ => Subsingleton.elim _ _⟩ : Unit ≃ Fin 1)
     (fun _ => 1) (fun _ => 1) (fun _ => 2) 1 1 0 (fun _ => one_ne_zero) ?_ one_ne_zero ?_ ?_ ?_ ?_ ?_ ?_
@@ -329,10 +423,15 @@ example :
 ⚠ **`m ≥ 2` is entirely open.**  What exists is the machinery the induction step consumes —
 `RothInductionStep` for the separated factorisation, `WronskianHeight` / `WronskianIndex` for
 the Wronskian's height and index, `BoundedOrderWronskian` for non-vanishing, and this module's
-base case to terminate it.  What does not exist is the induction: the choice of `ω(m, ε)`, the
-construction of the separated representation, and the recursion itself.
+base case to terminate it.  What does not exist is the induction: the construction of the
+separated representation and the recursion itself.
 
-Now that the statement is written, the audit that has caught five errors in this arc can be
-run against it directly: for each hypothesis, name the theorem that supplies or consumes it. -/
+The choice of `ω(m, ε)` is no longer open — §11 pins `ω = 1/t` and `ε = t/m`, and
+`RothLemmaMahler` records that.  What replaces it as the open parameter question is `Γ_m`'s
+two omitted clauses, which the `m ≥ 2` proof will have to reinstate.
+
+The step the recursion needs, in the new shape: from `RothBound (m−1) t θ'` for the two
+sub-problems, derive `RothBound m t θ` for the assembled bound.  That is where
+`rothConstant_rec` earns its place — it is the arithmetic half of exactly that step. -/
 
 end MvPolynomial

@@ -84,9 +84,11 @@
   §13 wants a **natural** `D₁ ≤ d₁ k`, the growth condition supplies a **rational** bound
   `ω·d ≤ d₁ k`, and `⌈ω·d⌉` sits between them.
 
-  ⚠ **This is a fact about `RothGrowth` as this arc defines it.**  The source's parameter
-  condition is property `Γ_m` (§11), which is in the illegible region and has not been read.
-  If the two differ, what is proved concerns `RothLemmaUniform`, not Roth's lemma.
+  §11 has since been read from the page scans: property `Γ_m`'s first clause is exactly
+  `RothGrowth` with `ω = 1/t`, so this is a fact about the source's condition and the caveat
+  that used to stand here is withdrawn.  ⚠ `Γ_m`'s two *other* clauses are still not carried
+  anywhere in this arc, which makes its statements stronger than the source's, not weaker —
+  see `RothLemmaMahler`.
 -/
 import QOU.Mathlib.RothInductionStep
 import QOU.Mathlib.BoundedOrderWronskian
@@ -549,9 +551,11 @@ Given the growth condition, an ordering in which the split-off variable comes la
 non-zero `P`, the index is at most `2/ω` plus §13's error term.  So `ω ≥ 2/ε` makes the row
 cost at most `ε` — this is what `ω(m, ε)` has to be.
 
-⚠ **A fact about `RothGrowth` as this arc defines it.**  The source's parameter condition is
-property `Γ_m` (§11), which is in the illegible region and has not been read.  If the two
-differ, this is a theorem about `RothLemmaUniform` and not about Roth's lemma. -/
+§11 has since been read: `Γ_m`'s first clause is `RothGrowth` with `ω = 1/t`, so this is a
+theorem about the source's condition.  Under that identification `ω ≥ 2/ε` reads `ε ≥ 2t`,
+and §14's `ε = t/m` does **not** satisfy it — the row cost is bounded by `2t` and the height
+parameter is `t/m`, so the two are separate quantities and this line's "`ω(m, ε)` has to be"
+was conflating them.  What the bound gives is `row cost ≤ 2t`, which is what §13 consumes. -/
 theorem exists_index_le_of_rothGrowth {K : Type*} [Field K] [CharZero K] [DecidableEq σ]
     {m : ℕ} (o : (σ ⊕ Unit) ≃ Fin m) (ω : ℚ) (hω : 1 ≤ ω)
     (d₁ : σ → ℕ) (d₂ : Unit → ℕ)
@@ -730,11 +734,16 @@ Both live in `QOU/Mathlib/RothInductionHypothesis.lean`.
 
 What remains is the **recursion**: quantify the two halves' auxiliary data (`B`, `E`, the
 denominators) uniformly in the family — `abs_coeff_det_pderivList_le` is what makes a uniform
-`B` available — assemble `hres`, and iterate.  Then `c_m = 2^m − 3`.
+`B` available — assemble `hres`, and iterate.
 
-⚠ Provenance: §5, §6, §7 and §13 have been read directly and match.  §11 (property `Γ_m`) and
-§14 have **not**.  The `2/ω` bound is the arc's own reconstruction; `c_m = 2^m − 3` stays
-unasserted. -/
+Provenance: §5, §6, §7, §11, §13 and §14 have all now been read directly and match, §11 and
+§14 from the page scans (the PDF's OCR layer garbles exactly those two).  The `2/ω` bound was
+the arc's own reconstruction and §11 confirmed it: `Γ_m`'s first clause is `RothGrowth` with
+`ω = 1/t`.
+
+⚠ Two things that reading corrected: the constant is `c_m = 2^{m+1} − 3`, and what iterating
+produces is `Θ_m ≤ c_m·t^{2^{−(m−1)}}` — an exponent, not a linear factor.  See the eleventh
+correction in `RothLemmaStatement`. -/
 
 
 
