@@ -488,14 +488,28 @@ def compute_tr_m_via_branching(
     # I reached for it as an arbiter for tr_M^atom(1/q_0) and it could not
     # serve; nothing in the output said so.
     #
-    # Refusing is the honest disposition until A^λ can be built at arbitrary
-    # q. That is NOT a wiring job: the closed form
-    # `A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}` is `a_operator_categorical
-    # .categorical_A_interface`, which is a `raise NotImplementedError` stub
-    # with zero callers, its own docstring calling step 4 "the crux ~500 LOC".
-    # (`A_operator_extract_at_level`'s header calls that replacement "verified
-    # exact at 1e-49"; corrected there — the 1e-49 belongs to a different
-    # result and the interface case is unimplemented.)
+    # CORRECTED 2026-08-24, same day: I first justified this guard by saying
+    # A^λ CANNOT be built at arbitrary q. THAT WAS WRONG, and the correction
+    # matters because it makes this refusal INTERIM rather than permanent.
+    #
+    # `a_operator_categorical.categorical_A_interface` IS a
+    # `raise NotImplementedError` stub with zero callers — but it is a STALE
+    # stub, not the state of the art. The working construction lives at
+    # `a_operator_gauge_align.gauge_aligned_A_combiner_general(lam, n_inner,
+    # n_block, q_str, dps)`, which takes q_str and builds the exact seminormal
+    # matrices, the class-sum isotypic projectors and the interface
+    # `I_pn = σ_{n_inner-1} − (h/2)·1` all at the requested q. Verified: it
+    # returns 4 (ξ,ν) blocks for λ=(4,2) at q_0, at the bar image, and at
+    # q = 1.5. The closure-b design doc records the deuteron categorical A as
+    # DONE, exact, 891/891 PASS at 1e-25.
+    #
+    # So the RIGHT fix is to build A^λ at q_val here instead of loading the
+    # frozen JSON. That is a real wiring job, not the ~500 LOC crux I claimed:
+    # the crux (step 6, the operator-level V_ξ⊗V_ν embedding) is what
+    # `gauge_aligned_A_combiner_general` already solved.
+    #
+    # This guard stays until that wiring lands and is regression-checked at
+    # q_0, because a loud refusal beats a silent hybrid in the meantime.
     # Tolerance 1e-12, not 1e-30, and the reason matters: the DEFAULT path sets
     # `q_val = float(Q_FLOAT)`, a float64 truncation of the 50-digit q_0, so it
     # sits ~1e-16 from the extract's stamp. A 1e-30 gate refused production's
