@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-23T21:56:07Z
-updated_at: 2026-08-24T08:09:51Z
+updated_at: 2026-08-24T13:21:54Z
 ---
 
 FOUND while my own new Lean file took a §7c MIXED advisory it does not deserve.
@@ -124,3 +124,68 @@ top-level computations/*.py carry those words as a SUFFIX (*_probe.py,
 latent rather than live. Which suffixes to exclude is that guard owner's call:
 `_probe.py` is unambiguously the excluded class, `_test.py` is not -- a real
 unit test SHOULD be guarded.
+
+
+## 2026-08-24 — the suffix half is MEASURED, and the implied fix is WRONG. Do not widen the exclusion.
+
+I recorded this as "226 top-level `computations/*.py` carry probe/audit/sweep words
+as a SUFFIX and escape both rules", with the implied fix being to add the suffixes
+to `PY_EXCLUDED_NAME_PREFIXES`' mirror. **Measured, that fix is a bad trade.**
+
+### The count was low, and that makes it worse, not better
+
+226 was top-level only. Across the guard's real recursive scan surface:
+
+    currently SCANNED                : 2790
+    excluded by directory            :  829
+    excluded by name prefix          :   64
+    of the SCANNED, suffix-class     :  742   <- 26.6% of the scanned surface
+
+So widening would drop **26.6% of everything the guard looks at**.
+
+### What that 26.6% would buy: nothing. Measured.
+
+The decisive test is not "how many files escape" but "is the exclusion mechanism
+load-bearing". Ran the guard with `PY_EXCLUDED_DIR_PARTS` and
+`PY_EXCLUDED_NAME_PREFIXES` neutralised. **11 hits appear, and every single one is
+in an ALREADY-EXCLUDED location:**
+
+    computations/audit_delta_S_chain.py:26,27          <- audit_ prefix
+    computations/probes/gap_a4_T4_..._perknot_rerun.py:17    <- probes/ dir
+    computations/probes/per_knot_density_borromean_q_locality_probe.py:7,116,117
+    computations/probes/rho_k_h3a_co_casimir_perknot_rerun.py:24
+    computations/probes/vol_density_borromean_q_locality_probe.py:7,91,92
+    computations/sweeps/mass_table_bring_phi_q_h4_sweep.py:9 <- sweeps/ dir
+
+**Zero** are suffix-named files in the scanned surface. The existing exclusions ARE
+load-bearing — they suppress 11 genuine would-be false positives — but the 742
+suffix-class files cite no deprecated figure at all.
+
+Note the sharpening: several of those hits DO end in `_probe.py`
+(`..._q_locality_probe.py`). They are already excluded **by directory**, so a suffix
+rule adds nothing for them. It would only remove coverage from top-level files,
+none of which cite anything.
+
+### Verdict
+
+**Recommend NOT widening.** 26.6% coverage lost, 0 measured false positives
+prevented. The finding stands as a *consistency* observation — the repo names by
+suffix (167 `_probe`, 31 `_audit`, 12 `_sweep`) while the guard knows only prefixes
+(57 files) — but consistency of naming is not a reason to blind a guard.
+
+This is the same lesson as the §7c half of this bean, one level up: **measure the
+reclassification before shipping it.** There I nearly shipped a regex that
+mis-classified in both directions; here I nearly shipped an exclusion that costs a
+quarter of the scan surface to prevent nothing.
+
+`_test.py` (17 files) was never a candidate anyway — a real unit test SHOULD be
+guarded, as recorded above.
+
+### Not duplicated here
+
+`--strict` is off by default (`return 1 if args.strict else 0`), so the guard is
+warn-only and nothing in CI invokes it. That is **by design, not a defect**, and
+wiring it is already owned by bean `qou-8plu` ("reach strict green and wire it").
+Left alone.
+
+**This half of qou-omiu closes as measured-and-declined, not as work.**
