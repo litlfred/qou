@@ -61,7 +61,22 @@ import mpmath as _mpm
 from mpmath import mpf
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL
+# QI / HA_VAL come from the PROTON package constants, not the shim. The shim
+# rebinds its whole derived family (HA, Q_INV, HBAR_Q, LN_Q, E_CROSS, …) when
+# the entry-point stem is manifest-listed, so importing any of them here made
+# this module's `h = q − q⁻¹` a function of whoever is __main__ (bean qou-wee5).
+from qou_substrate.constants import Q_INV as QI, HA as HA_VAL  # noqa: E402
+# ANCHOR-INDEPENDENT proton q0. `q_parameter.Q` above is the SHIM's Q, which the
+# shim REBINDS to the muon value when the running process's argv stem is listed
+# in `q0_anchor_manifest.json::ideal_muon` (or QOU_Q0_ANCHOR=ideal). That makes
+# it a function of the ENTRY POINT, not of this module — which is how a probe
+# that never references the manifest moved 113 ppb when a stem was added to it
+# (bean `qou-wee5`). `qou_substrate.constants.Q` is not rebound: measured under
+# QOU_Q0_ANCHOR=ideal, the shim gives 1.1099785955573347 while this gives
+# 1.1099785827513808. Use THIS for anything that must not track its caller.
+from qou_substrate.constants import (  # noqa: E402
+    Q as Q0_PROTON, HA as HA_PROTON,
+)
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                          E_0_CALIBRATION_MEV)
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # F6
@@ -71,10 +86,16 @@ from hecke_characters import partitions_of, dim_q, qfac
 
 h = HA_VAL
 
-# Markov parameter z for the Ocneanu/Jones-Wenzl trace.
-# Standard convention: z such that tr_M(T_i) = z, tr_M(1) = 1.
-# Matches mass_endomorphism.z_mark = 1/(q^½ + q^(-½)).
-Z_MARKOV = Q0**3 / (Q0**2 + 1)
+# Markov parameter z for the Ocneanu trace: z such that tr_M(sigma_i) = z,
+# tr_M(1) = 1.  This is q^3/(q^2+1) — CONVENTION D, canonical per the owner
+# ruling of 2026-08-15.
+#
+# The comment here previously read "Matches mass_endomorphism.z_mark =
+# 1/(q^1/2 + q^-1/2)", which is convention C and is NOT what the line below
+# computes (0.4993 vs 0.6127 at the live q0, a 23% gap).  Same declared-vs-actual
+# mismatch as `computations/ocneanu_weights.py` (bean qou-pc7l); the code is
+# right and the prose was stale.  Corrected 2026-08-23.
+Z_MARKOV = Q0_PROTON**3 / (Q0_PROTON**2 + 1)
 
 
 # ── Jones–Wenzl Ocneanu weights ω_λ(q, z) ───────────────────
@@ -83,46 +104,62 @@ Z_MARKOV = Q0**3 / (Q0**2 + 1)
 # (Jones 1985 Thm 5.1; Wenzl 1988) gives the Markov-trace weights
 #     ω_λ(q, z) = z^(n−1) · Π_{x ∈ λ} (1 − z·q^{2·c(x)}) / (1 − q^{2·h(x)})
 # where c(x) = j − i is the cell content and h(x) is its hook length.
-# These satisfy Σ_λ ω_λ = 1 and Σ_λ ω_λ · χ_λ(T_i)/d_λ = z.
+# These satisfy Σ_λ d_λ ω_λ = 1 and Σ_λ ω_λ · χ_λ(σ_i) = z.
 #
 # Falls back to Plancherel w_λ = d_q²/[n]_q! for comparison audits.
 
 def jones_wenzl_weight(shape: tuple[int, ...],
-                        q: float = Q0, z: float = Z_MARKOV) -> float:
-    """Hook-content weight ω_λ(q, z) for H_n(q). **DOES NOT SUM TO 1.**
+                        q=Q0_PROTON, z=Z_MARKOV):
+    """Ocneanu/Markov weight w_lam(q, z) for the H_n(q) Markov trace.
 
-    The docstring here used to assert "Σ_λ ω_λ = 1 (normalization) — unlike the
-    Plancherel weight d_q(λ)²/[n]_q!, which does not sum to 1 at q ≠ 1". That is
-    backwards. Measured over all λ ⊢ 3A via `ocneanu_weights_3A`:
+        w_lam = prod_{(i,j) in lam} [ q^{2i}(q^2 - 1 - q z) + q^{2j+1} z ]
+                / prod_{(i,j) in lam} [ q^{2 h(i,j)} - 1 ]
 
-        A       1         2         3
-        this   -0.8230   +0.0547   -0.0009
-        plancherel  1.0000    1.0000    1.0000
+    Normalisation is  **sum_lam d_lam w_lam = 1**  (the identity's character in
+    block lam is d_lam), NOT sum_lam w_lam = 1.
 
-    `computations/ocneanu_weights.py::omega_lambda_formula_guess` carries the
-    same hook-content shape under the docstring "FAILED GUESS: ... Does NOT
-    satisfy Σ ω = 1 at q ≠ 1. Retained for reference; see
-    omega_lambda_via_inversion below for the correct approach."
+    CORRECTED 2026-08-23 (bean qou-bsec).  The previous body was
 
-    So this function is a closed-form GUESS at the Ocneanu/Jones–Wenzl weights,
-    not those weights. Selecting `weight_scheme="jones_wenzl"` buys small V̂
-    values — which looks like it fixes the Φ_q pole that
-    `normalized_plancherel` walks into — but it gets them by near-cancelling
-    weights driving the volumes toward zero, not by being right. Bean qou-2tuv.
+        z^{n-1} * prod (1 - z q^{2c}) / (1 - q^{2h})
 
-    The correct construction is the linear-system inversion in
-    `ocneanu_weights.py` (solve Σ_λ (ω_λ/d_λ)·χ_λ(T_w) = tr_M(T_w) over reduced
-    words; "works at ANY convention — no need to guess the formula"), which is
-    p(n)×p(n) and therefore has its own feasibility ceiling.
+    with a docstring claiming `sum_lam w_lam = 1`.  Both were wrong.  Measured in
+    exact rational arithmetic at the live q0 and convention-D z, the old formula
+    gave sum_lam d_lam w_lam = -1.205 (n=3), 0.377 (n=6), -0.0549 (n=9) — not 1,
+    and NEGATIVE at two of the three, so the functional it defined was not even a
+    positive trace.  It also failed to reproduce the Lean-proved n=3 weights
+    `QOU.SchurWeyl.HeckeMarkov3.markovWeight0/1/2` under any of 160 convention
+    combinations (`computations/schurweyl/ocneanu_weight_validation.py`).
+
+    The formula above was derived from the Markov defining conditions in exact
+    Q(q,z) (`computations/schurweyl/ocneanu_weight_general_n.py`) and is
+    Lean-proved against those n=3 weights, plus the n=3 and n=4 normalisations,
+    in `QOU/SchurWeyl/OcneanuWeightMarkov3.lean`.
+
+    Carried in `mpmath.mpf` end to end per AGENTS.md NO-FLOAT64; returns `mpf`.
+
+    Superseding note (merge with main, 2026-08-23).  main landed a docstring-only
+    correction on this same function, recording that the OLD body was a failed
+    guess — measured over all lam |- 3A via `ocneanu_weights_3A`, its total came
+    to -0.8230 / +0.0547 / -0.0009 at A = 1, 2, 3 against Plancherel's 1.0000 —
+    and noting that `ocneanu_weights.py::omega_lambda_formula_guess` carries the
+    same wrong hook-content shape under its own FAILED GUESS docstring.  That
+    diagnosis is right and those measurements stand.  Its prescription — use the
+    p(n) x p(n) linear inversion `omega_lambda_via_inversion` instead, because
+    the closed form has to be guessed — is what this change supersedes: the
+    formula above was DERIVED from the Markov defining conditions, not guessed,
+    and agrees with the inversion route to the limit of that path's float64
+    arithmetic (1.5e-16).  The inversion remains the general fallback and keeps
+    its own feasibility ceiling.
     """
     n = sum(shape)
     if n == 0:
-        return 1.0
+        return mpf(1)
+    qm = q if isinstance(q, mpf) else mpf(q)
+    zm = z if isinstance(z, mpf) else mpf(z)
     cells: list[tuple[int, int]] = []
     for i, r in enumerate(shape):
         for j in range(r):
             cells.append((i, j))
-    # Hooks
     rows = list(shape)
     max_col = rows[0] if rows else 0
     cols = [sum(1 for r in rows if r > j) for j in range(max_col)]
@@ -130,19 +167,17 @@ def jones_wenzl_weight(shape: tuple[int, ...],
         (rows[i] - j - 1) + (cols[j] - i - 1) + 1
         for (i, j) in cells
     ]
-    product = z ** (n - 1)
-    for k, (i, j) in enumerate(cells):
-        c = j - i
-        hk = hooks[k]
-        numer = 1.0 - z * q ** (2 * c)
-        denom = 1.0 - q ** (2 * hk)
-        if abs(denom) < 1e-15:
-            return 0.0
-        product *= numer / denom
-    return product
+    numer = mpf(1)
+    denom = mpf(1)
+    for idx, (i, j) in enumerate(cells):
+        numer *= qm ** (2 * i) * (qm ** 2 - 1 - qm * zm) + qm ** (2 * j + 1) * zm
+        denom *= qm ** (2 * hooks[idx]) - 1
+    if denom == 0:
+        return mpf(0)
+    return numer / denom
 
 
-def ocneanu_weights_3A(A: int, *, q: float = Q0, z: float = Z_MARKOV):
+def ocneanu_weights_3A(A: int, *, q: float = Q0_PROTON, z: float = Z_MARKOV):
     """Return list of (λ, ω_λ) for all λ ⊢ 3A; Jones–Wenzl normalized."""
     return [(shape, jones_wenzl_weight(shape, q=q, z=z))
              for shape in partitions_of(3 * A)]
@@ -220,7 +255,7 @@ def _q_pair():
         set_compute_dps()
         from q_parameter import Q_MP as _q_mp, HA_MP as _h_mp
         return _q_mp, _h_mp
-    return float(Q0), float(HA_VAL)
+    return float(Q0_PROTON), float(HA_PROTON)
 
 
 def _ensure_block_cache() -> BlockCache:
@@ -249,11 +284,15 @@ def _q_cache_key(q):
     return (type(q).__name__, repr(q))
 
 
-def _cached_seminormal(shape: tuple[int, ...], q=None):
+def _cached_seminormal(shape: tuple[int, ...], q):
     """Seminormal (Young orthogonal) matrices for `shape`, built AT `q`.
 
-    `q` defaults to the module-level `Q0` (float64), so every existing
-    positional caller is unchanged. Pass:
+    `q` is REQUIRED (bean `qou-wee5`, 2026-08-24). It used to default to the
+    module-level `Q0` — the shim's `Q`, which the shim rebinds to muon when the
+    entry-point stem is manifest-listed. A defaulted `q` therefore silently
+    picked an anchor from whoever happened to be `__main__`, three modules up.
+    Callers that want the experimental pin pass `Q0_PROTON`, which is not
+    rebound. Pass:
 
       * an `mpmath.mpf`   — high-precision numeric build;
       * a `sympy.Symbol`  — SYMBOLIC build, matrices are expressions in q.
@@ -273,8 +312,6 @@ def _cached_seminormal(shape: tuple[int, ...], q=None):
     distance rho, of which there are only a few per shape) and it has no
     sensible npz representation.
     """
-    if q is None:
-        q = Q0
     # P14 fix (2026-05-08, audit F8): replaced pickle (RCE on tampered cache)
     # with numpy.savez_compressed for the dense σ matrices + JSON sidecar
     # for dim and the SYT entry→cell maps. Densify any sparse matrices
@@ -364,7 +401,7 @@ def _cached_seminormal(shape: tuple[int, ...], q=None):
     # `_ensure_block_cache()` is the shared float64 cache and is correct only
     # for the default q. Any other q gets its own cache at that q, so the
     # shared one is never polluted with values from a different anchor.
-    if _q_cache_key(q) == _q_cache_key(Q0):
+    if _q_cache_key(q) == _q_cache_key(Q0_PROTON):
         cache = _ensure_block_cache()
     else:
         cache = BlockCache(q, q - 1 / q)
@@ -590,7 +627,7 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     total = 0.0
     per_partition = []
     for shape in partitions_of(n_strands):
-        sigmas, dim, _syts = _cached_seminormal(shape)
+        sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         dq = dim_q(shape)
@@ -693,7 +730,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         raise ValueError(f"unknown weight_scheme: {weight_scheme}")
 
     for (shape, w_lam) in weight_table:
-        sigmas, dim, _syts = _cached_seminormal(shape)
+        sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         try:
@@ -736,7 +773,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     return out
 
 
-def phi_q_safe(z_val: float, *, q: float = Q0, cap_frac: float = 0.98,
+def phi_q_safe(z_val: float, *, q: float = Q0_PROTON, cap_frac: float = 0.98,
                  max_k: int = 2000) -> float:
     """Saturation-safe Φ_q: clips |z| ≤ cap_frac · q before evaluation.
 
@@ -763,7 +800,7 @@ def phi_q_safe(z_val: float, *, q: float = Q0, cap_frac: float = 0.98,
     return product
 
 
-def log_phi_q(z_val: float, *, q: float = Q0,
+def log_phi_q(z_val: float, *, q: float = Q0_PROTON,
                 cap_frac: float = 0.9999, max_k: int = 2000) -> float:
     """log Φ_q(|z|) = −Σ_k log(1 − q^{−k} |z|).
 
@@ -1023,7 +1060,7 @@ if __name__ == "__main__":
 
     print("=" * 116)
     print("H_{3A} WEDDERBURN-CHARACTER BINDING — task-1 fix")
-    print(f"q₀ = {Q0}")
+    print(f"q₀ = {Q0_PROTON}")
     print(f"E_0 = {args.E0:.4f} MeV  (free-neutron β-decay Q, "
           f"hecke_core.E_0_CALIBRATION_MEV)")
     print(f"No ALPHA · Catalan anywhere.")
@@ -1108,7 +1145,7 @@ if __name__ == "__main__":
             "E_0 = 0.78233341 MeV (free-neutron β-decay Q). No Catalan."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "parameters": {"q0": Q0, "E_0_MeV": args.E0,
+        "parameters": {"q0": Q0_PROTON, "E_0_MeV": args.E0,
                         "max_A": args.max_A},
         "markov_path": results_mk,
         "tower_path": results_tw,

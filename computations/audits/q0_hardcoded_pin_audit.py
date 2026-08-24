@@ -51,7 +51,9 @@ from __future__ import annotations
 import io
 import json
 import pathlib
+import re
 import subprocess
+from decimal import Decimal, InvalidOperation
 import sys
 import time
 import tokenize
@@ -65,6 +67,52 @@ PINS = {
     "muon": "1.1099785955573347",
     "proton": "1.1099785827513808",
 }
+
+# ---------------------------------------------------------------------------
+# OFF-PIN literals (added 2026-08-23)
+#
+# This audit's population is `grep -rlE <the two pin literals>`, so a file
+# carrying ONLY a value that is neither pin was never in scope — it mentions no
+# pin literal, so it is not among the 363 files scanned. That is the same blind
+# spot three separate q₀ audits shared: each could see only the values it knew.
+#
+# Measured: seven producers fell back to `1.1099780333553254` inside an except
+# handler — 506 ppb from muon, 495 ppb from proton, roughly 44x the ~11.5 ppb
+# μ–p substrate tension the two-layer discipline exists to manage. Fixed
+# separately; this pass exists so the CLASS stays visible rather than the
+# instance.
+#
+# The test is deliberately PARAMETER-FREE: a literal is off-pin only when it is
+# farther from BOTH pins than the pins are from EACH OTHER. The μ–p separation
+# is the natural unit — a value inside it is a transcription of one pin
+# (`1.1099785828` is proton rounded at the 11th digit; `1.10997858` is proton
+# truncated at 8 decimals, 2.5 ppb), and a value well outside it is neither.
+# A lexical prefix test gets both of those wrong, which is how they were
+# getting missed.
+_MUON_EXACT = Decimal("1.10997859555733471989976322048322502665620840878015")
+_PROTON_EXACT = Decimal("1.10997858275138080759166909561076887987449912187365")
+_PIN_GAP = abs(_MUON_EXACT - _PROTON_EXACT) / _PROTON_EXACT
+_Q0_SHAPED = re.compile(r"\b1\.109[0-9]{5,}")
+# Below ~10 significant characters a literal is a coarse proxy (`1.10998`),
+# not a pin substitute; those are too noisy to be findings.
+_OFF_PIN_MIN_LEN = len("1.10997859")
+
+
+def off_pin_literals(code: str) -> list[str]:
+    """q₀-shaped literals in CODE that are neither pin, by numeric distance."""
+    out = []
+    for m in _Q0_SHAPED.finditer(code):
+        lit = m.group(0)
+        if len(lit) < _OFF_PIN_MIN_LEN:
+            continue
+        try:
+            x = Decimal(lit)
+        except (InvalidOperation, ValueError):
+            continue
+        near = min(abs(x - _MUON_EXACT), abs(x - _PROTON_EXACT)) / _PROTON_EXACT
+        if near > _PIN_GAP:
+            out.append(lit)
+    return sorted(set(out))
 
 
 def strip_comments_and_docstrings(src: str) -> str:
@@ -140,6 +188,33 @@ def main() -> int:
         ["grep", "-rlE", literals, "--include=*.py", "computations", "tools"],
         cwd=_ROOT, capture_output=True, text=True).stdout.split()
 
+    # Separate sweep: files carrying an off-pin q₀ literal, which by
+    # construction the pin-literal grep above cannot reach.
+    off_pin_files = subprocess.run(
+        ["grep", "-rlE", r"1\.109[0-9]{5,}", "--include=*.py",
+         "computations", "tools"],
+        cwd=_ROOT, capture_output=True, text=True).stdout.split()
+    off_pin = []
+    for rel in off_pin_files:
+        if "_deprecated" in rel:
+            continue
+        # An AUDIT that hunts a literal necessarily contains it. Excluding
+        # computations/audits/ keeps a detector from reporting itself — the
+        # same shape as excluding `witness.py` from the import-cone classifiers
+        # (it stamps the anchor field) or `_precision.py` from the muon scan
+        # (its docstring names the accessor). A shared tool's knowledge of a
+        # value is not evidence about that tool.
+        if rel.startswith("computations/audits/"):
+            continue
+        try:
+            code = strip_comments_and_docstrings(
+                pathlib.Path(_ROOT / rel).read_text(errors="replace"))
+        except Exception:  # noqa: BLE001
+            continue
+        lits = off_pin_literals(code)
+        if lits:
+            off_pin.append({"file": rel, "off_pin_literals": lits})
+
     contradicts, undeclared, prose_only, consistent = [], [], [], []
     for rel in files:
         path = str(_ROOT / rel)
@@ -172,6 +247,11 @@ def main() -> int:
     print(f"  UNDECLARED  (migration scope)  : {len(undeclared)}")
     print(f"  consistent / literal not reached: {len(consistent)}")
     print(f"  CONTRADICTS (defect)           : {len(contradicts)}")
+    print(f"  OFF_PIN (neither pin, in code) : {len(off_pin)}")
+    for row in off_pin[:12]:
+        print(f"    {row['file']}  ->  {row['off_pin_literals']}")
+    if len(off_pin) > 12:
+        print(f"    … and {len(off_pin) - 12} more")
     for row in contradicts:
         print(f"    declared={row['declared']:7} carries="
               f"{','.join(row['literals_in_code']):8} {row['file']}")

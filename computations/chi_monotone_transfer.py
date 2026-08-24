@@ -82,6 +82,18 @@ def _add(shape: tuple[int, ...], box: tuple[int, int]) -> tuple[int, ...]:
     return tuple(rows)
 
 
+def _is_symbolic(x) -> bool:
+    """True for a sympy-style expression carrying free symbols.
+
+    Duck-typed so `sympy` stays an optional dependency of this module: only a
+    symbolic expression has non-empty `.free_symbols`. An `mp.mpf`, a `float`
+    and an `int` all answer False, so every numeric caller keeps the existing
+    code path exactly.
+    """
+    fs = getattr(x, "free_symbols", None)
+    return bool(fs)
+
+
 # ── MPFR re-lift of the (float) atom word ──────────────────────────────────
 def word_to_mpfr(word, q: "mp.mpf"):
     """`[(d_mpf, gen0)]` from a `[(c, d_float, gen0)]` atom word.
@@ -93,10 +105,20 @@ def word_to_mpfr(word, q: "mp.mpf"):
     convention drift fails loudly (mirrors chi_cd_mpfr.to_braid_terms).
     """
     h = q - 1 / q
-    h_f = float(h)
+    symbolic = _is_symbolic(q)
+    # The float below is a TEMPLATE CLASSIFIER, not a computation (d is rebuilt
+    # from `q` at full dps just below), but it is what refused a sympy `q` and
+    # blocked every symbolic evaluation of the trace — see bean `qou-j320`. A
+    # symbolic word already carries its `d` EXACTLY at the requested `q`, so
+    # there is nothing to re-identify and nothing to re-lift: pass it through.
+    # The numeric path below is untouched.
+    h_f = None if symbolic else float(h)
     color_deltas = None  # lazy: the live color-weight δ conventions
     out = []
     for c, d, g in word:
+        if symbolic:
+            out.append((d, g))
+            continue
         cf, df = float(c), float(d)
         if abs(cf - 1.0) > _TOL:
             raise ValueError(f"unsupported crossing c={c} at gen={g} (expect c=1)")
@@ -160,8 +182,12 @@ def _alpha_beta(ds, q, qi):
     This is the key that removes the 2×2 matmul + q-power from the per-edge
     inner loop: the block diagonal becomes α·D(δ′) + β, a function of the
     content gap δ′ alone. Empty ds → identity (α=0, β=1)."""
-    e1 = mp.mpf(1)
-    e2 = mp.mpf(1)
+    # Exact Python ints, NOT mp.mpf(1): identical for every numeric q (an int
+    # is exact and mpmath promotes it losslessly), but an mpf seed would drag a
+    # sympy product into `Float` contagion — the same trap `flavor_split_leading`
+    # documents. Keeps this reduction usable over any ring. (bean `qou-j320`)
+    e1 = 1
+    e2 = 1
     for d in ds:
         e1 *= (q + d)
         e2 *= (-qi + d)
@@ -194,7 +220,7 @@ def chi_all_lambda(word, n: int, *, dps: int = 50, q=None):
         last = g
         gen_ds[g].append(d_mp)
     ab = {g: _alpha_beta(ds, q, qi) for g, ds in gen_ds.items()}
-    _ident = (mp.mpf(0), mp.mpf(1))                       # skipped gen → O_g = I
+    _ident = (0, 1)                                       # skipped gen → O_g = I
     hq = q - qi
     Dc: dict[int, "mp.mpf"] = {1: q, -1: -qi}            # D(δ′): self-diagonal
 
@@ -206,10 +232,10 @@ def chi_all_lambda(word, n: int, *, dps: int = 50, q=None):
         return v
 
     # state (s_1=(1), c_this=0): the first box (0,0) has content 0
-    amp = {((1,), 0): mp.mpf(1)}
+    amp = {((1,), 0): 1}
     for g in range(0, n - 1):                             # apply O_g, g=0..n-2
         alpha, beta = ab.get(g, _ident)
-        new = defaultdict(mp.mpf)
+        new = defaultdict(int)
         for (shape, c_this), a in amp.items():
             for (r, c) in _addable(shape):
                 c_other = c - r

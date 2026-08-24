@@ -3,51 +3,51 @@
   "question": "Does the q-deformed Wedderburn weight dim_q(lambda)^2/[n]_q! sum to 1 over partitions of n, as three corpus blocks assert?",
   "verdict": "no",
   "anchor": {
-    "q0": "1.1099785827513808",
-    "source": "literal proton pin (package unavailable)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "source": "qou_substrate.constants.Q_50_DIGIT_STR",
     "layer": "experimental (proton)"
   },
   "dps": 65,
   "rows": [
     {
       "n": 3,
-      "sum_q_deformed": "0.987440229773687730746063467849",
-      "sum_q_deformed_unbalanced_convention": "0.91496921148776103611836405733",
+      "sum_q_deformed": "0.987440229773687729117875218676",
+      "sum_q_deformed_unbalanced_convention": "0.914969211487761030677043749998",
       "sum_classical": "1",
       "deviation_from_one": "-0.0125597702263"
     },
     {
       "n": 4,
-      "sum_q_deformed": "0.982165323835610786170243893524",
-      "sum_q_deformed_unbalanced_convention": "0.882874426584878293997773324478",
+      "sum_q_deformed": "0.982165323835610783872076092738",
+      "sum_q_deformed_unbalanced_convention": "0.882874426584878286626012830157",
       "sum_classical": "1",
       "deviation_from_one": "-0.0178346761644"
     },
     {
       "n": 5,
-      "sum_q_deformed": "0.982224148283254055735910129367",
-      "sum_q_deformed_unbalanced_convention": "0.868254573820813808058514745735",
+      "sum_q_deformed": "0.982224148283254053452615576238",
+      "sum_q_deformed_unbalanced_convention": "0.868254573820813799901099473116",
       "sum_classical": "1",
       "deviation_from_one": "-0.0177758517167"
     },
     {
       "n": 6,
-      "sum_q_deformed": "0.991079523637350141861905328019",
-      "sum_q_deformed_unbalanced_convention": "0.874641716552580799740034076554",
+      "sum_q_deformed": "0.991079523637350140711333719064",
+      "sum_q_deformed_unbalanced_convention": "0.874641716552580792168835153656",
       "sum_classical": "1",
       "deviation_from_one": "-0.00892047636265"
     },
     {
       "n": 7,
-      "sum_q_deformed": "1.01242608790563517870568678418",
-      "sum_q_deformed_unbalanced_convention": "0.902133810410289419736961942157",
+      "sum_q_deformed": "1.01242608790563518029852827402",
+      "sum_q_deformed_unbalanced_convention": "0.902133810410289414146776029007",
       "sum_classical": "1",
       "deviation_from_one": "0.0124260879056"
     },
     {
       "n": 8,
-      "sum_q_deformed": "1.05056014759204467526510218829",
-      "sum_q_deformed_unbalanced_convention": "0.95636947743107217580813061077",
+      "sum_q_deformed": "1.05056014759204468186051942894",
+      "sum_q_deformed_unbalanced_convention": "0.956369477431072174201313249066",
       "sum_classical": "1",
       "deviation_from_one": "0.050560147592"
     }

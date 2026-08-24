@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:54:24Z
-updated_at: 2026-08-21T16:58:56Z
+updated_at: 2026-08-23T08:00:06Z
 ---
 
 MEASURED 2026-08-21 (found while draining the library registration backlog, bean qou-kqbk).
@@ -118,3 +118,154 @@ REMAINING 66 sites / ~46 keys, in two groups:
 
 Also filed from this work: qou-3vgs (run-validate reports Valid on a
 references.ts that does not parse — confirmed by controlled test).
+
+EGRESS 2026-08-21/22: the owner opened arxiv / Google Scholar / Semantic
+Scholar, but THIS session cannot reach them. Every request returns
+'Tunnel connection failed: 403 Forbidden' and the proxy's own status endpoint
+records 'connect_rejected' for export.arxiv.org:443, api.crossref.org:443 and
+api.semanticscholar.org:443 — a policy denial, not TLS or transport. Nine
+hosts probed (apex and subdomain), all refused. /root/.ccr/README.md says the
+policy is fixed 'for this session' and to report the blocked host rather than
+route around it. A NEW session in that environment should pick it up.
+
+READY FOR THAT SESSION: scripts/enrich-dangling-citations.py. Queries arXiv,
+Crossref and Semantic Scholar, writes docs/audits/citation-candidates.json for
+adjudication, never touches references.ts. Verified end to end against the
+live proxy — tier selection, identifier extraction, request and failure
+handling all work; only the CONNECT is refused.
+
+Tiering of the 40 remaining keys, and the confidences are NOT comparable:
+
+   6  identifier  arXiv id or DOI in the citing comment -> exact lookup.
+                  Apply with light review.
+   8  title       a work named but no id. TWO are descriptions rather than
+                  titles (murakami2013 -> 'deformed 4₁ asymptotic
+                  (theorem-grade regime)'; wielenberg1978 -> 'the Whitehead
+                  complement is a single regular'), so this tier needs real
+                  review.
+  26  search      nothing in the comment, because a cites: [] array has no
+                  room for one. Only the key remains, and the key is a
+                  CONVENTION not data: 'lusztig1989' means 'something by
+                  Lusztig around 1989', and Lusztig published a great deal in
+                  1989. Read the citing block before accepting any hit.
+
+Run: scripts/enrich-dangling-citations.py --tier identifier   (start there)
+
+
+---
+
+## 2026-08-23 — drained 40 -> 16 keys / 54 -> 17 sites (branch claude/rag-document-ingestion-options-orasrw)
+
+Measured with `scripts/check-citation-keys.py`, before and after, not estimated:
+
+| | keys | sites | references.ts entries |
+|---|---|---|---|
+| before | 40 | 54 | 739 |
+| after  | 16 | 17 | 760 |
+
+Sites fall by 37, one more than the 36 resolved: `adelic-tate-squeeze.ts`
+cited both `tate1950` and `tate1967` for the same work, so the retarget
+deduplicated it.
+
+### The blocker recorded on this bean was real but was only ONE route
+
+Egress is still closed — re-probed this session, all four hosts answer
+`connect_rejected` (gateway 403 to CONNECT):
+`export.arxiv.org`, `api.crossref.org`, `api.semanticscholar.org`, `arxiv.org`.
+So `scripts/enrich-dangling-citations.py` still cannot run, and this bean
+should NOT be re-blocked on that alone.
+
+**What actually worked needed no network at all: read the citing site.**
+Six keys carry an identifier the author wrote beside the citation —
+
+    sauzin2014         arXiv 1405.0356           (identical at all 5 sites)
+    beasleywitten2005  10.4310/jdg/1143593746    (identical at all 3 sites)
+    voisin2002         10.1017/CBO9780511615344  (identical at both sites)
+    bridgeland2007     10.4007/annals.2007.166.317
+    frenkel2020        arXiv 2007.11786
+    koroteev-zeitlin2022  arXiv 2108.01557
+
+and eight more carry a verbatim title or author string. The Annals DOI is
+the nicest case: its scheme is `annals.<year>.<volume>.<first-page>`, so
+Bridgeland's year and volume are *decoded from the author-written string*
+rather than recalled.
+
+Three keys needed no entry at all — the work was already in references.ts
+under another id, established by positive evidence and not name similarity:
+
+* `zagier2007` -> `zagier-dilogarithm` — the citing site names its local copy
+  `library/zagier-the-dilogarithm-function/…pdf`, which is byte-for-byte the
+  existing entry's `library.pdf`. Identity by the file on disk.
+* `tate1950` -> `tate1967` — the existing entry's own note already reads
+  "Tate's thesis (Princeton 1950)". The corpus had made the identification.
+* `suslin1990` -> `suslin1991` — one canonical Suslin Bloch-group paper,
+  Steklov vol 183, the usual Russian-original / English-translation offset.
+  Weakest of the three, recorded as such.
+
+The library (Route 2) turned out to be the *weakest* of the three routes here,
+not the strongest: none of the six author-cited arXiv ids is in `library/`.
+It did settle one thing decisively — see `ggmw2020` below.
+
+### 16 keys deliberately NOT resolved — each is a guess I declined to make
+
+Not a failure list; these are the ones where inventing a field would have
+been the only way to close them.
+
+* `frenkel2020`, `koroteev-zeitlin2022` — arXiv ids known (above) and written
+  at `Mathlib/QOper.lean:21-22`, but both sit in the same q-Opers/QQ-systems
+  series and I could not tell which paper is which without the listing. One
+  lookup each closes them.
+* `ggmw2020` — the citing site expands it as "Gukov-Garoufalidis-Marino-Wheeler
+  (2020), eq (161)". The corpus holds `garoufalidis-gu-marino2021` =
+  arXiv 2007.10190 "The resurgent structure of quantum knot invariants",
+  which is Garoufalidis-Gu-Marino: **GGM, three authors, and already keyed**.
+  So the site's own expansion looks garbled (Gukov vs Gu) and points at either
+  that GGM paper or a four-author GGMW sequel. Genuinely ambiguous — the eq
+  (161) cross-check would settle it in a minute with the PDF open.
+* `dimofte-gaiotto-gukov2014` — likely the journal version of the corpus's
+  `dimofte-gaiotto2011` (arXiv 1108.4389, "Gauge theories labelled by
+  three-manifolds"), whose entry lists only two authors, plausibly a PDF
+  extraction artefact. Retargeting would have asserted an arXiv-to-journal
+  identity I could not check. Left dangling on purpose.
+* `faddeev1996` (2 sites) — four Faddeev entries already exist
+  (`faddeev1994`, `faddeev1995`, `faddeev_kashaev1994`,
+  `faddeev-kashaev-volkov2000`). Picking one would be a coin flip.
+* `terashima-yamazaki2011` — distinct from the existing
+  `terashima-yamazaki2013` (arXiv 1202.4698); needs the 2011 paper's id.
+* `wielenberg1978` — two different Wielenberg 1978 papers could carry the
+  "Whitehead complement = one regular ideal octahedron" fact.
+* `murakami1996`, `murakami2013` — ten Murakami entries exist; the site's
+  descriptions ("Kauffman bracket = Hecke Markov trace"; "deformed 4_1
+  asymptotic") do not pin a year to a paper.
+* `bokut1978`, `champanerkar-kofman-mullen2008`, `feigin-hashizume2009`,
+  `frenkel-reshetikhin2002`, `kashaev-tirkkonen2014`, `lusztig1989`,
+  `macdonald1971` — no identifier at the site and several plausible works each.
+  `feigin-hashizume2009` in particular names two authors of what is probably a
+  five-author paper.
+
+### Discipline applied to the 21 entries that WERE written
+
+* `page` omitted on all 21. A page range is the field that cannot be checked
+  here and a wrong one is worse than none.
+* No DOI/URL/arXiv id written unless the corpus already contained it.
+* `costin2020` carries **no `issued`**: the citing site gives title and chapter,
+  but the key says 2020 while the book's standard edition is not 2020. Rather
+  than overwrite the author's key, the field is left out and the note says why.
+* `bethe1936` records Bacher as second author — the key names only Bethe, but
+  the work is Bethe-Bacher.
+
+### Side finding worth its own bean
+
+`bun run scripts/run-validate.ts content/quantum-observable-universe` prints:
+
+    ℹ [(bibliography)]: no reference registry configured — cites-resolve did
+      not run, so cites[] entries were NOT validated against references
+
+So the official validate does not check citation keys **at all** — it exits 0
+on a corpus with 54 dangling keys. `check-citation-keys.py` is the only gate,
+and it is not wired into anything. Wiring `--strict` in would stop this
+backlog regrowing. (Validate's other 32 issues are pre-existing and touch none
+of the files changed here.)
+
+Commits: `13617cfa5a` (21 entries), `8170180ca5` (4 retargets), on
+`claude/rag-document-ingestion-options-orasrw` / PR #5502.

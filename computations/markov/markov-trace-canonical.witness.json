@@ -5,42 +5,42 @@
   "commitSha": "ec099b34f1fb89b4649120f3de90fa8c17835b11",
   "assertions": [
     {
-      "name": "trM_𝟏",
+      "name": "trM_\ud835\udfcf",
       "computed": "1.0",
       "expected": "1.0",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_σ₀",
+      "name": "trM_\u03c3\u2080",
       "computed": "0.61268803714646525159582986394589924802630839154509",
       "expected": "0.61268803714646525159582986394589924802630839154509",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_σ₀σ₁",
+      "name": "trM_\u03c3\u2080\u03c3\u2081",
       "computed": "0.37538663086238838399937230337900991145330721988033",
       "expected": "0.37538663086238838399937230337900991145330721988033",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_σ₀σ₁σ₀",
+      "name": "trM_\u03c3\u2080\u03c3\u2081\u03c3\u2080",
       "computed": "0.69116647835844452614771953097904620661424111867814",
       "expected": "0.69116647835844452614771953097904620661424111867814",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_σ₁σ₀σ₁",
+      "name": "trM_\u03c3\u2081\u03c3\u2080\u03c3\u2081",
       "computed": "0.69116647835844452614771953097904620661424111867814",
       "expected": "0.69116647835844452614771953097904620661424111867814",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_σ₀²",
+      "name": "trM_\u03c3\u2080\u00b2",
       "computed": "1.1280887441143537855931516549992460492834828187552",
       "expected": "1.1280887441143537855931516549992460492834828187552",
       "passed": true,
@@ -74,5 +74,8 @@
     "h": "0.20906029879563931543084621312967494385975749526306",
     "figure8_trM_at_q0_convention_D": "0.280195642272695",
     "figure8_trM_symbolic": "(q**8 - q**6 + q**4 - q**2 + 1)/(q**6 + 2*q**4 + q**2)"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

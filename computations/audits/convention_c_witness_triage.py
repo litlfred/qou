@@ -59,12 +59,29 @@ Z_D = '0.6126880505'
 QUARANTINE = re.compile(
     r'HISTORICAL|convention[_ -]?C[_ -]?(?:only|historical|dead)|'
     r'DEAD FOR PRODUCTION|do not call this|C-vs-D|D-vs-C|'
-    r'excised|comparison only|retained because',
+    r'excised|comparison only|retained because|'
+    # A third class, distinct from "historical" and from "comparison": the
+    # convention is SETTLED to D but the code is deliberately not moved yet,
+    # because moving it requires a re-derivation rather than a substitution.
+    # The Q_beta c_k ladder is the live example (registry
+    # `channels.qbeta-decay: agreed-migration-pending`, bean `qou-cds1`).
+    # Without this, the detector reports it as a live-C producer and the next
+    # agent "migrates" the one thing AGENTS.md says must not be z-swapped.
+    r'agreed-migration-pending|deliberately still C|deliberately not migrated|'
+    r'must be RE-DERIVED|must be re-derived',
     re.IGNORECASE,
 )
 
 # High-recall C spellings.  Deliberately algebraic rather than name-based --
 # AGENTS.md catalogues thirteen name-based blind spots for exactly this class.
+# Matched against source with docstrings ALSO blanked -- see scan_source.
+# Kept apart from C_SPELLINGS because the two need different prose handling:
+# a docstring that SPELLS z_C algebraically is often a live claim worth
+# surfacing (one asserted C was canonical), whereas a docstring that merely
+# QUOTES the decimal is nearly always documentation -- including the audit
+# that documents this very defect class, which flagged itself.
+C_DECIMAL_LITERAL = re.compile(r'0\.49932033403')
+
 C_SPELLINGS = [
     # z_C = 1/(sqrt(q) + 1/sqrt(q)) -- the reciprocal-sum spelling.
     re.compile(r'1(?:\.0)?\s*/\s*\(\s*sq\s*\+\s*1(?:\.0)?\s*/\s*sq\s*\)'),
@@ -72,6 +89,26 @@ C_SPELLINGS = [
                r'1(?:\.0)?\s*/\s*(?:mp\.|np\.|sp\.)?sqrt\(\s*q\w*\s*\)\s*\)'),
     # the **0.5 / **(1/2) spelling of the same reciprocal sum
     re.compile(r'1(?:\.0)?\s*/\s*\(\s*\w+\s*\*\*\s*0?\.5\s*\+\s*\w+\s*\*\*\s*0?\.5\s*\)'),
+    # z_C AS A HARDCODED DECIMAL LITERAL -- no formula at all.
+    #
+    # Every other pattern here matches an EXPRESSION, so all of them are
+    # structurally blind to a typed constant: there is nothing to match.
+    # Found in probe_inter_knot_decoupling.py, which does
+    #     w.add_data("z_markov_norm", "0.499320334033598250...")
+    # and re-emits convention C on every run while passing a clean source
+    # scan. Matching the VALUE rather than the spelling is the only way to
+    # see this class -- the same "test the answer, not the source" move
+    # AGENTS.md prescribes for witnesses, applied to source text.
+    #
+    # 12 digits is deliberate: enough to be unambiguous (z_D shares no
+    # prefix), short enough to catch truncated or drifted transcriptions.
+    # z_C = 1/(sqrt(q) + sqrt(1/q)) -- the SECOND-SQRT spelling.  Missed by
+    # both independent detectors: it writes the reciprocal as sqrt of a
+    # separate Q_INV binding rather than as 1/sqrt(q), so a pattern keyed on
+    # "sqrt(x) + 1/sqrt(x)" does not match it.  Found by hand in
+    # q_pinning_50_digit.py, the ANCHOR-witness producer.
+    re.compile(r'1(?:\.0)?\s*/\s*\(\s*(?:mp\.|np\.|sp\.)?sqrt\(\s*[qQ]\w*\s*\)\s*\+\s*'
+               r'(?:mp\.|np\.|sp\.)?sqrt\(\s*[qQ]\w*(?:_?INV|_?inv)\w*\s*\)\s*\)'),
     # z_C = sqrt(q)/(q + 1) -- the closed spelling.  The sqrt argument must be
     # q itself and the denominator exactly (q + 1): sqrt(q**4 + q**2 + 1)
     # over (q**2 + 1) is a DIFFERENT quantity and matching it is a false
@@ -105,17 +142,85 @@ def find_producer(script_file: str | None) -> str | None:
     return hits[0]
 
 
+def _strip_comments(src: str) -> str:
+    """Blank out COMMENT tokens, preserving line/column structure.
+
+    A convention detector must not fire on prose.  Once a migrated site
+    documents what it used to be -- "was `1.0/(Q0**0.5 + Q_INV0**0.5)`,
+    convention C" -- a source-text scan reports the FIXED file as a live-C
+    producer, which is the most confusing possible false positive: it sends
+    the next agent to re-migrate code that is already correct.  Measured: this
+    detector did exactly that to `mass-from-q-symbolic.py` immediately after
+    the line was fixed.
+
+    Tokenising rather than regex-stripping `#` matters, because a `#` inside a
+    string literal is not a comment and blanking it would corrupt the source
+    being scanned.
+    """
+    import io
+    import tokenize
+    try:
+        toks = list(tokenize.generate_tokens(io.StringIO(src).readline))
+    except Exception:
+        return src                      # unparseable: scan it as-is
+    lines = src.split('\n')
+    for tok in toks:
+        if tok.type != tokenize.COMMENT:
+            continue
+        (srow, scol), (erow, ecol) = tok.start, tok.end
+        if srow != erow:
+            continue
+        i = srow - 1
+        if 0 <= i < len(lines):
+            lines[i] = lines[i][:scol] + ' ' * (ecol - scol) + lines[i][ecol:]
+    return '\n'.join(lines)
+
+
+def _strip_docstrings(src: str) -> str:
+    """Blank module/class/function docstrings, preserving line structure.
+
+    Only used for the decimal-literal pass. A string ARGUMENT keeps its text --
+    `w.add_data("z_markov_norm", "0.4993...")` is a live value, not prose --
+    so this deliberately blanks docstrings alone rather than all strings.
+    """
+    import ast as _ast
+    try:
+        tree = _ast.parse(src)
+    except SyntaxError:
+        return src
+    lines = src.split('\n')
+    for node in _ast.walk(tree):
+        if not isinstance(node, (_ast.Module, _ast.ClassDef,
+                                 _ast.FunctionDef, _ast.AsyncFunctionDef)):
+            continue
+        body = getattr(node, 'body', None)
+        if not body:
+            continue
+        first = body[0]
+        if not (isinstance(first, _ast.Expr)
+                and isinstance(first.value, _ast.Constant)
+                and isinstance(first.value.value, str)):
+            continue
+        for i in range(first.lineno - 1, min(first.end_lineno, len(lines))):
+            lines[i] = ' ' * len(lines[i])
+    return '\n'.join(lines)
+
+
 def scan_source(path: str) -> tuple[list[str], bool]:
     """Return (matched C spellings, whether every match looks quarantined)."""
     try:
         src = open(path, 'r', encoding='utf-8').read()
     except Exception:
         return [], False
-    lines = src.splitlines()
+    raw = src
+    src = _strip_comments(src)
+    src_nodoc = _strip_docstrings(src)
+    lines = raw.splitlines()   # quarantine markers live IN comments
     found, quarantined = [], True
-    for rx in C_SPELLINGS:
-        for m in rx.finditer(src):
-            lineno = src[:m.start()].count('\n')
+    for rx, hay in ([(r, src) for r in C_SPELLINGS]
+                    + [(C_DECIMAL_LITERAL, src_nodoc)]):
+        for m in rx.finditer(hay):
+            lineno = hay[:m.start()].count('\n')
             found.append(f'{os.path.basename(path)}:{lineno + 1}: {m.group(0).strip()}')
             # Context window: the enclosing 40 lines above, where a docstring
             # or def name marking the site historical would live.

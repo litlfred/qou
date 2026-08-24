@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T15:24:09.336285+00:00",
-  "commitSha": "31142f8fbb1199426625a557466a27e62ddd2b33",
+  "computedAt": "2026-08-23T21:17:43.979877+00:00",
+  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
   "assertions": [
     {
       "name": "proton_converges",
@@ -13,16 +13,32 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 23,
+  "durationMs": 52,
   "computation": "spectral-coordinates-all-atoms",
   "scriptFile": "spectral_coordinates_all_atoms.py",
-  "scriptHash": "d910b8d462a7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "51dfd095ac82",
+  "scriptCommitSha": "e46f710109b84bbe646d973da6d810a52df2b733",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/spectral_coordinates_all_atoms.py"
+    ],
+    "reproduce": "python3 -u computations/spectral_coordinates_all_atoms.py"
   },
   "data": {
     "atoms": {
@@ -31,15 +47,15 @@
         "N": 0,
         "crossings": 11,
         "generators": 2,
-        "max_V_hat": 1.8803878084441426,
+        "max_V_hat": 1.8803876760558125,
         "li2q_all_converge": false,
         "per_generator": {
           "0": {
-            "V_hat": 1.8803878084441426,
+            "V_hat": 1.8803876760558125,
             "converges": false
           },
           "1": {
-            "V_hat": 1.3750029012203744,
+            "V_hat": 1.3750028519925546,
             "converges": false
           }
         }
@@ -49,15 +65,15 @@
         "N": 1,
         "crossings": 11,
         "generators": 2,
-        "max_V_hat": 1.7033057988118288,
+        "max_V_hat": 1.7033056964948075,
         "li2q_all_converge": false,
         "per_generator": {
           "0": {
-            "V_hat": 1.7033057988118288,
+            "V_hat": 1.7033056964948075,
             "converges": false
           },
           "1": {
-            "V_hat": 1.5179533198523172,
+            "V_hat": 1.5179532498183457,
             "converges": false
           }
         }
@@ -67,27 +83,27 @@
         "N": 1,
         "crossings": 23,
         "generators": 5,
-        "max_V_hat": 1.8803878084441426,
+        "max_V_hat": 1.8803876760558125,
         "li2q_all_converge": false,
         "per_generator": {
           "0": {
-            "V_hat": 1.8803878084441426,
+            "V_hat": 1.8803876760558125,
             "converges": false
           },
           "1": {
-            "V_hat": 1.3750029012203744,
+            "V_hat": 1.3750028519925546,
             "converges": false
           },
           "2": {
-            "V_hat": 1.005448434559241,
+            "V_hat": 1.0055203349816546,
             "converges": true
           },
           "3": {
-            "V_hat": 1.7033057988118299,
+            "V_hat": 1.7033056964948066,
             "converges": false
           },
           "4": {
-            "V_hat": 1.5179533198523163,
+            "V_hat": 1.5179532498183461,
             "converges": false
           }
         }
@@ -97,39 +113,39 @@
         "N": 2,
         "crossings": 35,
         "generators": 8,
-        "max_V_hat": 1.8803878084441426,
+        "max_V_hat": 1.8803876760558125,
         "li2q_all_converge": false,
         "per_generator": {
           "0": {
-            "V_hat": 1.8803878084441426,
+            "V_hat": 1.8803876760558125,
             "converges": false
           },
           "1": {
-            "V_hat": 1.3750029012203744,
+            "V_hat": 1.3750028519925546,
             "converges": false
           },
           "2": {
-            "V_hat": 1.005448434559241,
+            "V_hat": 1.0055203349816546,
             "converges": true
           },
           "3": {
-            "V_hat": 1.7033057988118299,
+            "V_hat": 1.7033056964948066,
             "converges": false
           },
           "4": {
-            "V_hat": 1.5179533198523163,
+            "V_hat": 1.5179532498183461,
             "converges": false
           },
           "5": {
-            "V_hat": 1.1099785955541808,
+            "V_hat": 1.1099785827513808,
             "converges": false
           },
           "6": {
-            "V_hat": 1.7033057988118288,
+            "V_hat": 1.7033056964948075,
             "converges": false
           },
           "7": {
-            "V_hat": 1.5179533198523172,
+            "V_hat": 1.5179532498183457,
             "converges": false
           }
         }
@@ -139,39 +155,39 @@
         "N": 1,
         "crossings": 35,
         "generators": 8,
-        "max_V_hat": 1.8803878084441445,
+        "max_V_hat": 1.8803876760558125,
         "li2q_all_converge": false,
         "per_generator": {
           "0": {
-            "V_hat": 1.8803878084441426,
+            "V_hat": 1.8803876760558125,
             "converges": false
           },
           "1": {
-            "V_hat": 1.3750029012203744,
+            "V_hat": 1.3750028519925546,
             "converges": false
           },
           "2": {
-            "V_hat": 1.1099785955541805,
+            "V_hat": 1.1099785827513808,
             "converges": false
           },
           "3": {
-            "V_hat": 1.8803878084441445,
+            "V_hat": 1.8803876760558111,
             "converges": false
           },
           "4": {
-            "V_hat": 1.375002901220374,
+            "V_hat": 1.375002851992555,
             "converges": false
           },
           "5": {
-            "V_hat": 1.005448434559241,
+            "V_hat": 1.0055203349816544,
             "converges": true
           },
           "6": {
-            "V_hat": 1.7033057988118288,
+            "V_hat": 1.7033056964948075,
             "converges": false
           },
           "7": {
-            "V_hat": 1.5179533198523172,
+            "V_hat": 1.5179532498183457,
             "converges": false
           }
         }
@@ -181,58 +197,56 @@
         "N": 2,
         "crossings": 47,
         "generators": 11,
-        "max_V_hat": 1.8803878084441445,
+        "max_V_hat": 1.8803876760558125,
         "li2q_all_converge": false,
         "per_generator": {
           "0": {
-            "V_hat": 1.8803878084441426,
+            "V_hat": 1.8803876760558125,
             "converges": false
           },
           "1": {
-            "V_hat": 1.3750029012203744,
+            "V_hat": 1.3750028519925546,
             "converges": false
           },
           "2": {
-            "V_hat": 1.1099785955541805,
+            "V_hat": 1.1099785827513808,
             "converges": false
           },
           "3": {
-            "V_hat": 1.8803878084441445,
+            "V_hat": 1.8803876760558111,
             "converges": false
           },
           "4": {
-            "V_hat": 1.375002901220374,
+            "V_hat": 1.375002851992555,
             "converges": false
           },
           "5": {
-            "V_hat": 1.005448434559241,
+            "V_hat": 1.0055203349816544,
             "converges": true
           },
           "6": {
-            "V_hat": 1.7033057988118288,
+            "V_hat": 1.7033056964948075,
             "converges": false
           },
           "7": {
-            "V_hat": 1.5179533198523172,
+            "V_hat": 1.5179532498183457,
             "converges": false
           },
           "8": {
-            "V_hat": 1.1099785955541805,
+            "V_hat": 1.1099785827513808,
             "converges": false
           },
           "9": {
-            "V_hat": 1.7033057988118299,
+            "V_hat": 1.7033056964948066,
             "converges": false
           },
           "10": {
-            "V_hat": 1.5179533198523163,
+            "V_hat": 1.5179532498183461,
             "converges": false
           }
         }
       }
     },
-    "finding": "RETRACTED \u2014 Li\u2082^q CONVERGES at correct V\u0302_i^full < 1 for A\u22652 (max V\u0302 > 1 for deuteron+). The binding energy formula B = m_e \u00d7 C_knot \u00d7 |sum| uses the interface operator, NOT the Li\u2082^q blow-up expansion. C_knot = 35/6 + 2\u210f\u00b2 (0.015%) is an empirical identification; its derivation requires the interface operator's eigenvalue structure, not the Li\u2082^q convergent series.",
-    "RETRACTED": true,
-    "retraction_reason": "V\u0302 values computed here are Hoefsmit matrix-product eigenvalues (grow > 1 with crossing count), NOT the additive Wedderburn traced volumes V\u0302_i^full (bounded < 1) used in the mass-endomorphism tower. Li\u2082^q CONVERGES at the correct V\u0302_i^full values. Retracted 2026-05-27. See session discussion."
+    "finding": "Li₂^q blow-up tower DIVERGES for A≥2 (max V̂ > 1 for deuteron+). The binding energy formula B = m_e × C_knot × |sum| uses the interface operator, NOT the Li₂^q blow-up expansion. C_knot = 35/6 + 2ℏ² (0.015%) is an empirical identification; its derivation requires the interface operator's eigenvalue structure, not the Li₂^q convergent series."
   }
 }

@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
-      "source": "Σ_R Q_R(q_0) − Σ_λ dim_q(q_0) for A_4 equals dim_q of self-conjugate partition (2,2): Clifford theory splits S^{(2,2)} into ω ⊕ ω² under A_4, so Σ_R mult_R((2,2)) = 2 and the excess in the row-sum is exactly dim_q((2,2))."
+      "source": "\u03a3_R Q_R(q_0) \u2212 \u03a3_\u03bb dim_q(q_0) for A_4 equals dim_q of self-conjugate partition (2,2): Clifford theory splits S^{(2,2)} into \u03c9 \u2295 \u03c9\u00b2 under A_4, so \u03a3_R mult_R((2,2)) = 2 and the excess in the row-sum is exactly dim_q((2,2))."
     },
     {
       "name": "A5_clifford_excess_identity",
@@ -18,7 +18,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
-      "source": "Σ_R Q_R(q_0) − Σ_λ dim_q(q_0) for A_5 equals dim_q((3,1,1)) — the unique self-conjugate partition of 5, which Clifford-splits into T_1 ⊕ T_2 under A_5."
+      "source": "\u03a3_R Q_R(q_0) \u2212 \u03a3_\u03bb dim_q(q_0) for A_5 equals dim_q((3,1,1)) \u2014 the unique self-conjugate partition of 5, which Clifford-splits into T_1 \u2295 T_2 under A_5."
     }
   ],
   "allPassed": true,
@@ -49,7 +49,7 @@
     ],
     "reproduce": "python3 -u computations/probes/gap_a4_T6_q_deformed_icosahedral_probe.py"
   },
-  "description": "GAP-A-4 T6 — q-deformed icosahedral character matrix. Tabulates per-A_n-irrep dim_q sums Q_R(q) for n=4 (A_4) and n=5 (A_5), extracts h⁰/h²/h⁴ coefficients, and shows Q_H(q) = 2·[5]_q has h⁴ coefficient +2 — NOT the Borromean −3/4 (which lives on H_3 not H_5). Complements T5 by exhibiting the H-sector's OWN h⁴ structure for comparison.",
+  "description": "GAP-A-4 T6 \u2014 q-deformed icosahedral character matrix. Tabulates per-A_n-irrep dim_q sums Q_R(q) for n=4 (A_4) and n=5 (A_5), extracts h\u2070/h\u00b2/h\u2074 coefficients, and shows Q_H(q) = 2\u00b7[5]_q has h\u2074 coefficient +2 \u2014 NOT the Borromean \u22123/4 (which lives on H_3 not H_5). Complements T5 by exhibiting the H-sector's OWN h\u2074 structure for comparison.",
   "auditOnly": "docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md",
   "parameters": {
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
@@ -60,8 +60,8 @@
     "A4_per_irrep_table": {
       "irreps": [
         "A(1)",
-        "ω(1)",
-        "ω²(1)",
+        "\u03c9(1)",
+        "\u03c9\u00b2(1)",
         "T(3)"
       ],
       "dims": [
@@ -186,12 +186,15 @@
       "actual_excess": "6.22044132467672854601923694259178511624261416491834425104594493843936"
     },
     "H_sector_closed_form": {
-      "Q_H_closed_form": "2·[5]_q = 2h⁴ + 10h² + 10",
+      "Q_H_closed_form": "2\u00b7[5]_q = 2h\u2074 + 10h\u00b2 + 10",
       "h0_coeff": 10,
       "h2_coeff": 10,
       "h4_coeff": 2,
-      "comparison": "Q_H(q) h⁴ = +2 (on H_5) vs Borromean h⁴ = −3/4 (on H_3); ratio −8/3 not structurally interpretable — different group algebras, confirms T5 negative."
+      "comparison": "Q_H(q) h\u2074 = +2 (on H_5) vs Borromean h\u2074 = \u22123/4 (on H_3); ratio \u22128/3 not structurally interpretable \u2014 different group algebras, confirms T5 negative."
     },
-    "synthesis_verdict": "Q_R(q) = Σ_λ dim_q(V_λ)·mult_R(λ) defines the q-deformed icosahedral character matrix's row sums; for A_5 the H-sector Q_H(q) = 2·[5]_q has closed-form h-expansion 10 + 10h² + 2h⁴ (by algebraic identity [5]_q = h⁴+5h²+5). The structural h⁴ coefficient is +2 — DIFFERENT in sign AND magnitude from the Borromean H_3 reference h⁴ = −3/4. This complements T5: the H-sector carries its own h⁴ structure, but in a different group algebra than the Borromean trace coefficient — the ratio +2/(−3/4) = −8/3 has no clean structural meaning. The Clifford excess identity Σ_R Q_R − Σ_λ dim_q = dim_q(λ_self-conj) holds to machine precision for both A_4 (excess = dim_q((2,2))) and A_5 (excess = dim_q((3,1,1))) — this is the Wedderburn decomposition's q-deformed signature: self-conjugate partitions split into 2 conjugate A_n irreps under Res^{S_n}_{A_n}, and the excess weighting tracks this splitting at q ≠ 1. The q-deformed icosahedral matrix is a well-defined object at q_0; its H-sector's h⁴ structure is internally clean but NOT linked to the 3-strand h⁴ obstruction."
-  }
+    "synthesis_verdict": "Q_R(q) = \u03a3_\u03bb dim_q(V_\u03bb)\u00b7mult_R(\u03bb) defines the q-deformed icosahedral character matrix's row sums; for A_5 the H-sector Q_H(q) = 2\u00b7[5]_q has closed-form h-expansion 10 + 10h\u00b2 + 2h\u2074 (by algebraic identity [5]_q = h\u2074+5h\u00b2+5). The structural h\u2074 coefficient is +2 \u2014 DIFFERENT in sign AND magnitude from the Borromean H_3 reference h\u2074 = \u22123/4. This complements T5: the H-sector carries its own h\u2074 structure, but in a different group algebra than the Borromean trace coefficient \u2014 the ratio +2/(\u22123/4) = \u22128/3 has no clean structural meaning. The Clifford excess identity \u03a3_R Q_R \u2212 \u03a3_\u03bb dim_q = dim_q(\u03bb_self-conj) holds to machine precision for both A_4 (excess = dim_q((2,2))) and A_5 (excess = dim_q((3,1,1))) \u2014 this is the Wedderburn decomposition's q-deformed signature: self-conjugate partitions split into 2 conjugate A_n irreps under Res^{S_n}_{A_n}, and the excess weighting tracks this splitting at q \u2260 1. The q-deformed icosahedral matrix is a well-defined object at q_0; its H-sector's h\u2074 structure is internally clean but NOT linked to the 3-strand h\u2074 obstruction."
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

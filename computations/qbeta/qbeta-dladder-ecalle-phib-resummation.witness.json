@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T22:47:18.543594+00:00",
-  "commitSha": "afb32fe555a911730359ac5ed5e04dad56d3fd25",
+  "computedAt": "2026-08-24T13:33:30.585485+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "exact_dk_reproduced",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 31,
+  "durationMs": 49,
   "computation": "qbeta-dladder-ecalle-phib-resummation",
   "scriptFile": "qbeta_dladder_ecalle_phib_resummation.py",
   "scriptHash": "53923dda7979",
-  "scriptCommitSha": "afb32fe555a911730359ac5ed5e04dad56d3fd25",
+  "scriptCommitSha": "c83a21e9022c5f6ab178d0244167782e19a9285b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,8 +52,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_dladder_ecalle_phib_resummation.py",
+      "43"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_dladder_ecalle_phib_resummation.py 43"
   },
   "description": "Écalle acceleration ⟺ Φ_b state-integral resummation of the bar-odd Q_β D-ladder (unowned item #1 of the 1ppQ path reassessment). Reuses the exact d_k (build_d_ladder, ORD 43/k≤21), phi_b saddle vol_of_m, and the merged #3818/#3839 negatives; measures four un-pinned things. M2: the 2-adic bar-parity split gives two DISTINCT divergence classes (C_odd≈0.05, C_even≈0.11, |Δ|≈0.06) ⇒ the 'no single Gevrey index' is consistent with a genuine TWO-LEVEL (accelero-summable) structure — two critical times, not one mis-specified order (per-parity fits still short/noisy at k≤21, consistent with undecidable-at-k21). M3: (k!)^{s1}(k!)^{s2}=(k!)^{s1+s2} ⇒ composing Borel–Leroy transforms stays in the additive monoid of orders and cannot reach a new critical time ⇒ a genuine non-commutative Écalle kernel is necessary (the fixed-order negative is not repairable by iteration). M4: the forward optimal-truncation resummed D(ũ)≈−0.01667 at the meridian is ANCHOR-BLIND to ~9 digits (muon vs proton ũ differ ~2e-9), and h·D≈−0.0035 reproduces NEITHER S(muon)=+0.0097 NOR S(proton)=−0.0395. M4b magnitude tension: the substrate meridian ũ≈0.0095 puts optimal truncation at k*~1e13, so a Stokes jump exp(−ρ/ũ) is ~1e-7..1e-27 — far too small to be the O(0.01) anchor-dependent S; on the SUBSTRATE branch the swing is not a Stokes ambiguity of this ladder. M5: the Φ_b saddle deficit 0.00940 ≈ |S(muon)| — a separate anchor-blind geometric handle on the |S| scale (bridge #3654). VERDICT: acceleration setup complete + two critical times = the two parity levels; the perturbative acceleration at the substrate meridian gives only an anchor-blind floor and does NOT reproduce S; the exact remaining gap is that the anchor-dependent c₃ is either the 1/ũ³ c₃-representational amplification (#3636) or the fibre-saddle (|q|=1, ũ~O(1)) Stokes datum A_ω where the jump is unsuppressed (the G0 branch-mismatch / G3 monodromy datum) — NOT produced here. Scope-(a); no c_k wired; no fit; no tier change; L2 count unchanged (2/7).",
   "contentBlock": "conj:im-q-physical-role",
@@ -84,13 +95,13 @@
     "M4_meridian_optimal_truncation": [
       {
         "anchor": "muon",
-        "u_meridian": "0.009453950030725021792708",
+        "u_meridian": "0.00945395004522179036935",
         "Nstar": 21,
-        "delta_np": "4.9181331e-27",
+        "delta_np": "4.9181333e-27",
         "A_eff_or_lowerbound": "0.57269069",
         "Nstar_at_edge": true,
-        "D_opt_trunc": "-0.0166749175675",
-        "h_D_eq_S_pred": "-0.003486063636",
+        "D_opt_trunc": "-0.0166749175955",
+        "h_D_eq_S_pred": "-0.003486063644",
         "S_target": "0.00968298"
       },
       {
@@ -117,7 +128,7 @@
       }
     ],
     "M4_anchor_blindness": {
-      "D_opt_muon_minus_proton": "4.0345825e-9",
+      "D_opt_muon_minus_proton": "4.0624902e-9",
       "perturbative_sum_anchor_blind": true,
       "h_D_opt_muon": "-0.0034860636",
       "reading": "forward D-ladder sum is anchor-blind and reproduces NEITHER S(muon) NOR S(proton); the anchor swing is not in the perturbative accelerated ladder"
@@ -132,8 +143,8 @@
     "M5_phib_saddle_crosscheck": [
       {
         "anchor": "muon",
-        "Re_V": "2.02048069107",
-        "deficit": "0.009402521753",
+        "Re_V": "2.02048069105",
+        "deficit": "0.009402521767",
         "abs_S_target": "0.00968298"
       },
       {

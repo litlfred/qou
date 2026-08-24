@@ -19,12 +19,28 @@ from pathlib import Path
 _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 import _path_bridge  # noqa: F401
+from mpmath import mp  # noqa: E402
+mp.dps = 50
 
 try:
     from qou_substrate.constants import q_at
-    Q0 = float(q_at())
-except Exception:
-    Q0 = 1.1099780333553254
+    Q0 = q_at()
+    # EXCISED: was Q0 = float(q_at()). q_at() ALREADY returns mpf at 50 dps, so
+    # the cast was a pure downgrade to 53 bits -- a NO-FLOAT64 violation with
+    # nothing bought: mpf supports every arithmetic operator this file uses.
+except Exception as _exc:  # pragma: no cover - fail loudly, never substitute
+        # Was: Q0 = 1.1099780333553254 — a value that is NEITHER pin, sitting
+        # 506 ppb from muon and 495 ppb from proton, i.e. ~44x the ~11.5 ppb
+        # mu-p substrate tension the two-layer discipline exists to manage. It
+        # was substituted silently on any import hiccup, so a bare container
+        # produced numbers that looked fine and were wrong by 44 tensions.
+        # AGENTS.md q0-anchor: never straddle the two layers inside one quantity;
+        # q0_cross_layer_fallback_scan.py: "fail loudly" rather than substitute.
+        raise RuntimeError(
+            "q_at() unavailable and there is no safe fallback: this producer "
+            "must compute at a declared pin, not at a hardcoded approximation. "
+            "Install/point at qou-substrate rather than substituting a literal."
+        ) from _exc
 
 try:
     from qou_substrate.witness import WitnessBuilder
@@ -76,8 +92,8 @@ def main() -> None:
         w.add_data(f"{name}_T_melt_obs", t_melt_obs)
         w.add_data(f"{name}_melt_ratio", melt_ratio)
         
-        print(f"  T_boil(pred) = {t_boil_pred:.1f} K | obs = {t_boil_obs:.1f} K | gap ratio = {boil_ratio:.2f}x")
-        print(f"  T_melt(pred) = {t_melt_pred:.1f} K | obs = {t_melt_obs:.1f} K | gap ratio = {melt_ratio:.2f}x")
+        print(f"  T_boil(pred) = {float(t_boil_pred):.1f} K | obs = {float(t_boil_obs):.1f} K | gap ratio = {float(boil_ratio):.2f}x")
+        print(f"  T_melt(pred) = {float(t_melt_pred):.1f} K | obs = {float(t_melt_obs):.1f} K | gap ratio = {float(melt_ratio):.2f}x")
         print()
 
     print("CONCLUSION: The strict geometric mapping P_q V_q = n_q R T over-predicts temperatures.")

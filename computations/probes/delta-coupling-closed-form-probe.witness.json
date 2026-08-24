@@ -10,7 +10,7 @@
   "scriptFile": "delta_coupling_closed_form_probe.py",
   "scriptHash": "0cb389f4c639",
   "scriptCommitSha": "0853dbd6f7802d6aed361df73aada4ff67076ddc",
-  "description": "P3.A diagnostic probe: which closed form `f` reproduces the canonical magic-shell cross-coupling residuals Δ_coupling(Z,N) when evaluated at a natural substrate value t (q_0, q_0−1, or h(q_0))? Anchors are loaded from the canonical `magic-shell-empirical-instantiation.witness.json` (computed once); each is a Δ_cat difference where Δ_cat(𝔥) := AME(𝔥) − m_e·ρ·|τ(β_𝔥)| is the substrate-derived per-atom residual. Decompositions (⁴He → 2 ³He sub-clusters, ³He → D+p, T → D+n) follow the atomic-braid-recipe topology — combinatorial, not a modeling choice. Tests four candidates from the gap-narrowing plan: log(1/t), 1/t−1, log Φ_q^{(∞)}(t), KLR canonical-basis dim. Candidates whose multiplicative match-factor is a small rational on ≥2 anchors identify structural targets for the derivation; no fitting performed.",
+  "description": "P3.A diagnostic probe: which closed form `f` reproduces the canonical magic-shell cross-coupling residuals \u0394_coupling(Z,N) when evaluated at a natural substrate value t (q_0, q_0\u22121, or h(q_0))? Anchors are loaded from the canonical `magic-shell-empirical-instantiation.witness.json` (computed once); each is a \u0394_cat difference where \u0394_cat(\ud835\udd25) := AME(\ud835\udd25) \u2212 m_e\u00b7\u03c1\u00b7|\u03c4(\u03b2_\ud835\udd25)| is the substrate-derived per-atom residual. Decompositions (\u2074He \u2192 2 \u00b3He sub-clusters, \u00b3He \u2192 D+p, T \u2192 D+n) follow the atomic-braid-recipe topology \u2014 combinatorial, not a modeling choice. Tests four candidates from the gap-narrowing plan: log(1/t), 1/t\u22121, log \u03a6_q^{(\u221e)}(t), KLR canonical-basis dim. Candidates whose multiplicative match-factor is a small rational on \u22652 anchors identify structural targets for the derivation; no fitting performed.",
   "contentBlock": "conj:magic-shell-stabilization",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
@@ -21,9 +21,9 @@
       "(1,2)_T_eq_D_plus_n": "6.8210761779418432465724420095546899775813567294024"
     },
     "anchor_formulas": {
-      "(2,2)_doubly_magic": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
-      "(2,1)_3He_eq_D_plus_p": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
-      "(1,2)_T_eq_D_plus_n": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)"
+      "(2,2)_doubly_magic": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
+      "(2,1)_3He_eq_D_plus_p": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
+      "(1,2)_T_eq_D_plus_n": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)"
     },
     "delta_cat_per_atom_MeV": {
       "proton": "-0.54437036423917058263733689153015507974946711209669",
@@ -39,7 +39,7 @@
     "rows": [
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -52,7 +52,7 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -65,7 +65,7 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -78,7 +78,7 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -91,7 +91,7 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -104,7 +104,7 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -117,10 +117,10 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "q_0",
         "t_value": 1.1099785955541805,
         "f_at_t": -110.3500487837206,
@@ -130,10 +130,10 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "q_0_minus_1",
         "t_value": 0.10997859555418057,
         "f_at_t": -1.0273436021720448,
@@ -143,10 +143,10 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "h(q_0)",
         "t_value": 0.20906032198987945,
         "f_at_t": -2.0044353287792314,
@@ -156,7 +156,7 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -169,7 +169,7 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -182,7 +182,7 @@
       },
       {
         "anchor": "(2,2)_doubly_magic",
-        "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
         "anchor_MeV": 13.19687380754797,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -195,7 +195,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -208,7 +208,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -221,7 +221,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -234,7 +234,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -247,7 +247,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -260,7 +260,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -273,10 +273,10 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "q_0",
         "t_value": 1.1099785955541805,
         "f_at_t": -110.3500487837206,
@@ -286,10 +286,10 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "q_0_minus_1",
         "t_value": 0.10997859555418057,
         "f_at_t": -1.0273436021720448,
@@ -299,10 +299,10 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "h(q_0)",
         "t_value": 0.20906032198987945,
         "f_at_t": -2.0044353287792314,
@@ -312,7 +312,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -325,7 +325,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -338,7 +338,7 @@
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
-        "anchor_formula": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        "anchor_formula": "\u0394_cat(\u00b3He) \u2212 \u0394_cat(D) \u2212 \u0394_cat(p)",
         "anchor_MeV": 6.025194019784427,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -351,7 +351,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -364,7 +364,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -377,7 +377,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
@@ -390,7 +390,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -403,7 +403,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -416,7 +416,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
@@ -429,10 +429,10 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "q_0",
         "t_value": 1.1099785955541805,
         "f_at_t": -110.3500487837206,
@@ -442,10 +442,10 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "q_0_minus_1",
         "t_value": 0.10997859555418057,
         "f_at_t": -1.0273436021720448,
@@ -455,10 +455,10 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C3_log_phi_q_full",
-        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "candidate_human": "log \u03a6_q^{(\u221e)}(t)",
         "t_name": "h(q_0)",
         "t_value": 0.20906032198987945,
         "f_at_t": -2.0044353287792314,
@@ -468,7 +468,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -481,7 +481,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -494,7 +494,7 @@
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
-        "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
         "anchor_MeV": 6.821076177941843,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
@@ -510,7 +510,7 @@
       {
         "row": {
           "anchor": "(2,2)_doubly_magic",
-          "anchor_formula": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+          "anchor_formula": "\u0394_cat(\u2074He) \u2212 2\u00b7\u0394_cat(\u00b3He)",
           "anchor_MeV": 13.19687380754797,
           "candidate": "C1_log_inv_t",
           "candidate_human": "log(1/t)",
@@ -527,7 +527,7 @@
       {
         "row": {
           "anchor": "(1,2)_T_eq_D_plus_n",
-          "anchor_formula": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+          "anchor_formula": "\u0394_cat(T) \u2212 \u0394_cat(D) \u2212 \u0394_cat(n)",
           "anchor_MeV": 6.821076177941843,
           "candidate": "C1_log_inv_t",
           "candidate_human": "log(1/t)",

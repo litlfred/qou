@@ -353,7 +353,13 @@ def _find_non_py_producer(root: Path, name: str) -> Path | None:
     if not name.endswith(_NON_PY_PRODUCER_SUFFIXES):
         return None
     skip = {".git", "node_modules", ".lake", "_deprecated", "__pycache__"}
-    for cand in root.rglob(name):
+    # sorted: `rglob` yields in os.scandir order, so an unsorted first-match
+    # returns a filesystem-dependent answer. This one only feeds an
+    # exists/does-not-exist decision (UNCONFIRMED vs SCRIPT_MISSING), so a
+    # different pick does not change the verdict — but the returned path is
+    # reported, and a report that varies by machine is not reproducible.
+    # Bean qou-kcii.
+    for cand in sorted(root.rglob(name)):
         if not skip & set(cand.parts):
             return cand
     return None
@@ -361,7 +367,39 @@ def _find_non_py_producer(root: Path, name: str) -> Path | None:
 
 def scan(root: Path) -> list[dict]:
     comp = root / "computations"
-    scripts = {p.name: p for p in comp.rglob("*.py") if "_deprecated" not in p.parts}
+    # Index EVERY candidate per basename, not one. This was
+    #     {p.name: p for p in comp.rglob("*.py")}
+    # — a last-wins dict over an unsorted rglob, so for a duplicated basename
+    # the surviving entry was whichever copy the filesystem happened to yield
+    # last. `classify()` then read THAT source and stamped the verdict, which
+    # means the audit could grade a witness against a script that did not
+    # produce it. `witness_provenance_audit.py` is itself one of the four
+    # duplicated basenames (root + audits/, and per bean qou-2r42 those are two
+    # different audits), so the tool was exposed to this on its own witness.
+    # Bean qou-kcii.
+    by_name: dict[str, list[Path]] = {}
+    for p in sorted(comp.rglob("*.py")):
+        if "_deprecated" in p.parts:
+            continue
+        by_name.setdefault(p.name, []).append(p)
+
+    def _resolve_producer(name: str, witness: Path) -> tuple[Path | None, list[Path]]:
+        """The producer for `witness`, preferring the copy beside it.
+
+        Producers emit next to themselves, so the witness's own directory is
+        the correct tie-break — not the root, and not scandir order. Returns
+        (chosen, candidates); chosen is None only when the basename is
+        genuinely ambiguous and no copy sits beside the witness.
+        """
+        cands = by_name.get(name, [])
+        if len(cands) <= 1:
+            return (cands[0] if cands else None), cands
+        for c in cands:
+            if c.parent == witness.parent:
+                return c, cands
+        if (comp / name) in cands:
+            return comp / name, cands
+        return None, cands
     out: list[dict] = []
     for w in sorted(comp.rglob("*.witness.json")):
         if "_deprecated" in w.parts:
@@ -376,7 +414,16 @@ def scan(root: Path) -> list[dict]:
         if not sf or sf.startswith("("):
             # No claim, or a prose annotation someone already triaged by hand.
             continue
-        src_path = scripts.get(Path(sf).name)
+        src_path, _cands = _resolve_producer(Path(sf).name, w)
+        if src_path is None and len(_cands) > 1:
+            out.append({"witness": w.relative_to(root).as_posix(), "scriptFile": sf,
+                        "verdict": "AMBIGUOUS_PRODUCER",
+                        "candidates": [c.relative_to(root).as_posix()
+                                       for c in _cands],
+                        "note": "basename resolves to several scripts and none "
+                                "sits beside this witness; not graded rather "
+                                "than graded against a guess"})
+            continue
         if src_path is None:
             # A non-Python producer that EXISTS is not a missing script; this
             # tool simply cannot read it. See _find_non_py_producer.

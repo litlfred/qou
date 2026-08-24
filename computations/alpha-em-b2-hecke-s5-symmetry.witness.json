@@ -17,7 +17,7 @@
       "expected": "0",
       "passed": true,
       "tolerance": 1e-25,
-      "source": "trace ρS' = trace ρS (character match)"
+      "source": "trace \u03c1S' = trace \u03c1S (character match)"
     }
   ],
   "allPassed": true,
@@ -48,7 +48,7 @@
     ],
     "reproduce": "python3 -u computations/alpha_em_b2_hecke_s5_symmetry_probe.py"
   },
-  "description": "α_EM B2 sub-piece (ii): the corrected HeckeSideS5Symmetry premise (markovGram_transports_to_hodge, #4199) is SATISFIABLE for the actual (4,1) block — exhibits ρS' on the Hecke space leaving the Markov Gram invariant, conjugate to the geometric S₅, with matching characters (no trace obstruction, unlike the generator route). Non-vacuity guard. T is an arbitrary congruence, not the canonical Tits *-iso; |c| still τ-gated. No instance; 1/(8π) phase-4.",
+  "description": "\u03b1_EM B2 sub-piece (ii): the corrected HeckeSideS5Symmetry premise (markovGram_transports_to_hodge, #4199) is SATISFIABLE for the actual (4,1) block \u2014 exhibits \u03c1S' on the Hecke space leaving the Markov Gram invariant, conjugate to the geometric S\u2085, with matching characters (no trace obstruction, unlike the generator route). Non-vacuity guard. T is an arbitrary congruence, not the canonical Tits *-iso; |c| still \u03c4-gated. No instance; 1/(8\u03c0) phase-4.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "auditOnly": "docs/audits/2026-07-24-alpha-em-b2-tau-identification-attack-options.md",
   "parameters": {
@@ -65,9 +65,12 @@
     "character_match_residual": "3.62227e-71",
     "hecke_sigma1_trace": "2.4290174643",
     "s5_transposition_trace": "2.0",
-    "verdict": "HeckeSideS5Symmetry premise is SATISFIABLE for the actual (4,1) block: an S₅ action ρS' on the Hecke space (ρS'(s)=T·ρS(s)·T⁻¹, T the G_M↦G_std congruence) leaves the Markov Gram invariant (resid 5.89e-71), conjugates to the geometric S₅ (resid 9.06e-72), and MATCHES characters (trace ρS'=trace ρS, resid 3.62e-71) — so the intertwiner_trace_eq obstruction that KILLS the generator route (Hecke trace 2.43 ≠ 2) does NOT apply here. This confirms markovGram_transports_to_hodge (#4199) is a genuine, NON-vacuous reduction. STRICT: T is AN arbitrary congruence, not the canonical Tits *-iso (which the q-deformation pins); so |c| still needs the canonical τ. No instance registered; 1/(8π) phase-4; nothing wired."
+    "verdict": "HeckeSideS5Symmetry premise is SATISFIABLE for the actual (4,1) block: an S\u2085 action \u03c1S' on the Hecke space (\u03c1S'(s)=T\u00b7\u03c1S(s)\u00b7T\u207b\u00b9, T the G_M\u21a6G_std congruence) leaves the Markov Gram invariant (resid 5.89e-71), conjugates to the geometric S\u2085 (resid 9.06e-72), and MATCHES characters (trace \u03c1S'=trace \u03c1S, resid 3.62e-71) \u2014 so the intertwiner_trace_eq obstruction that KILLS the generator route (Hecke trace 2.43 \u2260 2) does NOT apply here. This confirms markovGram_transports_to_hodge (#4199) is a genuine, NON-vacuous reduction. STRICT: T is AN arbitrary congruence, not the canonical Tits *-iso (which the q-deformation pins); so |c| still needs the canonical \u03c4. No instance registered; 1/(8\u03c0) phase-4; nothing wired."
   },
   "caveats": [
-    "T is AN arbitrary G_M↦G_std congruence, NOT the canonical Tits *-iso (pinned by the q-deformation). This proves the structure is inhabitable (contrast: the generator-intertwiner is provably not); it does NOT pin |c|, which still needs the canonical τ."
-  ]
+    "T is AN arbitrary G_M\u21a6G_std congruence, NOT the canonical Tits *-iso (pinned by the q-deformation). This proves the structure is inhabitable (contrast: the generator-intertwiner is provably not); it does NOT pin |c|, which still needs the canonical \u03c4."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

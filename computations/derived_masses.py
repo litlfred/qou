@@ -67,8 +67,12 @@ sums between the canonical neutron and proton braids
 
 #     net(n) = +0.81083, net(p) = +0.99913  →  Δ(net) = -0.18829
 
-TARGET_NET_NEUTRON = 0.81083
-TARGET_NET_PROTON = 0.99913
+These two are exposed as `target_net_neutron()` / `target_net_proton()`
+below, read from the witness at full precision.  They were written here
+as bare `TARGET_NET_NEUTRON = 0.81083` / `TARGET_NET_PROTON = 0.99913`
+lines, which LOOK like module-level assignments but sit inside this
+docstring (lines 5-128) and so define nothing -- see those accessors for
+what that cost.
 
 ══════════════════════════════════════════════════════════════════
  OBSERVABLE vs VIRTUAL DECOMPOSITION
@@ -141,6 +145,12 @@ from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)
 _HERE = Path(__file__).resolve().parent
 _BETA_DECAY_WITNESS = _pb.witness_path("beta-decay-energy-scale.witness.json", _HERE)
 _Q_PINNING_WITNESS = _pb.witness_path("q-pinning-50-digit.witness.json", _HERE)
+_FREE_NEUTRON_WITNESS = _pb.witness_path("free-neutron-decay.witness.json", _HERE)
+
+#: dps for the net-coefficient accessors. The witness stores them as JSON
+#: floats (~17 significant digits), so 30 holds the source exactly with room
+#: to spare; the ambient default of 15 would truncate.
+_NET_COEFF_DPS = 30
 
 
 @lru_cache(maxsize=None)
@@ -167,6 +177,55 @@ def _beta_witness() -> dict:
         )
     with _BETA_DECAY_WITNESS.open() as fh:
         return json.load(fh)
+
+
+@lru_cache(maxsize=None)
+def _free_neutron_witness() -> dict:
+    """Read the free-neutron-decay witness (typed-crossing net coefficients)."""
+    if not _FREE_NEUTRON_WITNESS.exists():
+        raise FileNotFoundError(
+            f"derived_masses: free-neutron-decay witness not found at "
+            f"{_FREE_NEUTRON_WITNESS}. Run the free-neutron-decay compute first."
+        )
+    with _FREE_NEUTRON_WITNESS.open() as fh:
+        return json.load(fh)
+
+
+@lru_cache(maxsize=None)
+def target_net_proton() -> mp.mpf:
+    """GS-NF net coefficient of the canonical proton braid.
+
+    Read from `free-neutron-decay.witness.json:proton.net_coefficient`.
+
+    THIS REPLACES A NAME THAT NEVER EXISTED. `TARGET_NET_PROTON` appears at
+    column 0 of this module -- inside the 5..128 docstring, so it defined
+    nothing -- and `confinement-operator-selection.py` imported it anyway.
+    That producer has been dead at import ever since, while three consumers
+    read the witness it is supposed to emit. A line-anchored grep cannot
+    tell docstring text from code, which is what made the name look real.
+
+    Reading the witness also recovers the precision the docstring dropped:
+    it records `0.9991251252427813`, not the 5-digit `0.99913` the prose
+    quotes -- a 1.3e-6 relative difference that would have been baked into
+    a ranking key had the constant simply been promoted as written.
+    """
+    # Construct under an explicit workdps: at the ambient default (15) an
+    # `mpf` built from a 17-significant-digit source is silently truncated,
+    # which is exactly what the never-raises-dps ratchet exists to catch.
+    with mp.workdps(_NET_COEFF_DPS):
+        return mp.mpf(str(_free_neutron_witness()["proton"]["net_coefficient"]))
+
+
+@lru_cache(maxsize=None)
+def target_net_neutron() -> mp.mpf:
+    """GS-NF net coefficient of the canonical neutron braid.
+
+    Read from `free-neutron-decay.witness.json:neutron.net_coefficient`
+    (`0.8108345052316609`; the docstring above quotes it to 5 digits).
+    See `target_net_proton` for why these are functions and not constants.
+    """
+    with mp.workdps(_NET_COEFF_DPS):
+        return mp.mpf(str(_free_neutron_witness()["neutron"]["net_coefficient"]))
 
 
 # ── Energy scale (FULL chain, derived from CAL-1 + CAL-2) ───────

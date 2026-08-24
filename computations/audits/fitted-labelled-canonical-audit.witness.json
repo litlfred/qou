@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:41:54.101649+00:00",
-  "commitSha": "cb0e0646ce9f11f8d2a5c3232f28b3a6fcedf935",
+  "computedAt": "2026-08-23T21:27:37.903027+00:00",
+  "commitSha": "38e9c6e0a4b4b5ec89b69716ea87e5a0fe31e071",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 8,
+      "computed": 10,
       "expected": 0,
       "passed": false,
       "tolerance": 0
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "d6e7ef2b0adc",
-  "scriptCommitSha": "fc536436dd02a83baa03f7ef28b405daff5c97c6",
+  "scriptCommitSha": "53d6e54d3249a3d0c4d164e3fd01b12bceae16ca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -43,19 +43,19 @@
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 8,
-    "flagged_script_count": 6,
-    "scripts_scanned": 3043,
+    "total_issues": 10,
+    "flagged_script_count": 7,
+    "scripts_scanned": 3068,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",
         "issue_count": 1,
         "issues": [
           {
-            "line": 59,
+            "line": 61,
             "var": "Q0",
             "literal": "1.1099785955541805",
-            "context_snippet": "σ_1 σ_3        commuting pair, eigenvalue structure on (2,2)\n    σ_1 σ_2 σ_3    full cycle, sensitive to (3,1) vs (2,1,1)\n    Δ_4 := σ_1 σ_2 σ_1 σ_3 σ_2 σ_1   Garside half-twist on B_4\n\nFor each (β, λ) we compute the per"
+            "context_snippet": ")\n    Δ_4 := σ_1 σ_2 σ_1 σ_3 σ_2 σ_1   Garside half-twist on B_4\n\nFor each (β, λ) we compute the per-block contribution y_λ(q) · χ^λ(β)\nacross the same metallic-interval sweep as the n=3 probe.  If sign\nchanges occur at "
           }
         ]
       },
@@ -64,10 +64,10 @@
         "issue_count": 1,
         "issues": [
           {
-            "line": 61,
+            "line": 63,
             "var": "Q0",
             "literal": "1.1099785955541805",
-            "context_snippet": "ute it.\n\nEach interval is sampled at ≥10 q-values (denser than just midpoints).\nBar-mirror intervals (1/δ_n) are sampled symmetrically.  Output is a\nwitness JSON with the full sweep + a per-interval positive-block count\n"
+            "context_snippet": "symmetrically.  Output is a\nwitness JSON with the full sweep + a per-interval positive-block count\nN(q, n) per strand count n.\n\nSelf-contained: no pyhecke dependency.  Hook lengths and q-factorials\nare computed from scra"
           }
         ]
       },
@@ -94,16 +94,16 @@
         "issue_count": 2,
         "issues": [
           {
-            "line": 53,
+            "line": 61,
             "var": "Q0_PROTON",
             "literal": "1.1099785827513808075916690956107688798744991218736",
-            "context_snippet": "antum\nvolume anchor-smooth, odd-phase null), chiral 5₂ σ1 (quantum volume\nanchor-smooth), chiral 5₂ σ3 (nonzero phase, anchor-smooth) — fails the swing.\nThe swing is representational on every front, chiral included.\n\nSCO"
+            "context_snippet": "ero phase, a permanent structural contribution); its\nanchor-smoothness says the swing does not live in its anchor-dependence — it does\nnot exclude the σ3-pair from a many-term closure. NO fit; NO c_k wired; μ never\nfixed"
           },
           {
-            "line": 55,
+            "line": 63,
             "var": "Q0_MUON",
             "literal": "1.10997859555733471",
-            "context_snippet": "nchor-smooth), chiral 5₂ σ3 (nonzero phase, anchor-smooth) — fails the swing.\nThe swing is representational on every front, chiral included.\n\nSCOPE (2026-06-23 (a)/(b) discipline). This is a **scope-(a)** result: the 5₂\n"
+            "context_snippet": "the swing does not live in its anchor-dependence — it does\nnot exclude the σ3-pair from a many-term closure. NO fit; NO c_k wired; μ never\nfixed from QOU data.\n\nRun: python3 -u computations/probes/qbeta_5two_sigma3_ancho"
           }
         ]
       },
@@ -112,10 +112,10 @@
         "issue_count": 1,
         "issues": [
           {
-            "line": 58,
+            "line": 66,
             "var": "Q0",
             "literal": "1.1099785827513808075916690956107688798744991218736",
-            "context_snippet": "tower's per-rung phase stays WELL BELOW\n      the kinematic magnitude n·arctan(t/π): |arg(κ_n^K)| < arctan(t/π) for the\n      leading rungs. Both frames agree the deformed 4₁ tower carries only weak\n      odd phase — con"
+            "context_snippet": "tion + qualitative\ncross-frame consistency. 4₁ geometric facts; μ never fixed from QOU data. NO\nfit; NO c_k wired; NO tier change. The 4₁ lane stays #3923's (complete); the\nopen frontier is the 5₂-class lane (#3892/#3902"
           }
         ]
       },
@@ -128,6 +128,24 @@
             "var": "S_MUON",
             "literal": "0.00968298",
             "context_snippet": ", but the curve is not, so\n      both are reported.\n\nScope (STRICT). This derives nothing about the VALUE of A_ω and wires nothing.\nIt states, in falsifiable form, what an independent route has to reproduce. The\nmeasured"
+          }
+        ]
+      },
+      {
+        "path": "computations/qbeta/qbeta_frakv_transport_blocked_probe.py",
+        "issue_count": 2,
+        "issues": [
+          {
+            "line": 86,
+            "var": "Q0",
+            "literal": "1.10997858275138080759166909561076887987449912187357873607281",
+            "context_snippet": "pe-(a): measurement and reading of existing artifacts. Nothing derived,\nnothing wired, no search run. This does NOT refute conj:binding-qbeta-complex-\nvolume -- it says the conjecture is untested by the compute that appe"
+          },
+          {
+            "line": 88,
+            "var": "M_E",
+            "literal": "0.51099895069",
+            "context_snippet": "g wired, no search run. This does NOT refute conj:binding-qbeta-complex-\nvolume -- it says the conjecture is untested by the compute that appears to test\nit, and that the transport route cannot start from that compute.\n\""
           }
         ]
       }

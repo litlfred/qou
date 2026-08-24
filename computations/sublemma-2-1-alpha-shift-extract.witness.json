@@ -1,19 +1,18 @@
 {
-  "computedAt": "2026-05-05T16:55:16.176149+00:00",
   "computation": "sublemma-2-1-alpha-shift-extract",
-  "description": "Extracts α_shift(I; λ, μ, ν) per λ ⊢ 6 in the deuteron case (I = single inter-nucleon averaged crossing) via LR-system inversion. Runs 100 (β_1, β_2) Hecke-element test pairs to over-determine the α_shift unknowns per λ, then solves by least squares. For c^λ_{μν} = 1 cases, the scalar α_shift values are consistent with character data to ~1e-13 (machine precision). For c^λ_{μν} ≥ 2 cases (only λ = (3,2,1) for n=6), the formula is matrix-valued and requires the refined Sub-lemma 2.1 statement.",
-  "auditOnly": "docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md",
-  "parameters": {
-    "q_0": 1.1099785955541805,
-    "interface": "I = σ_2 - h/2 (atomic-braid pn averaged crossing)",
-    "n_test_pairs": 100,
-    "n_lambda": 11
-  },
+  "description": "Extracts \u03b1_shift(I; \u03bb, \u03bc, \u03bd) per \u03bb \u22a2 6 in the deuteron case (I = single inter-nucleon averaged crossing) via LR-system inversion. Runs 100 (\u03b2_1, \u03b2_2) Hecke-element test pairs to over-determine the \u03b1_shift unknowns per \u03bb, then solves by least squares. For c^\u03bb_{\u03bc\u03bd} = 1 cases, the scalar \u03b1_shift values are consistent with character data to ~1e-13 (machine precision). For c^\u03bb_{\u03bc\u03bd} \u2265 2 cases (only \u03bb = (3,2,1) for n=6), the formula is matrix-valued and requires the refined Sub-lemma 2.1 statement.",
   "reference_blocks": [
     "conj:confinement-nf-structure-forcing",
     "prop:atomic-mass-gb-nf",
     "prop:alpha-shift-torus-knot"
   ],
+  "computedAt": "2026-08-24T08:06:59.587549+00:00",
+  "parameters": {
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "interface": "I = \u03c3_2 - h/2 (atomic-braid pn averaged crossing)",
+    "n_test_pairs": 100,
+    "n_lambda": 11
+  },
   "results_per_lambda": {
     "(6,)": {
       "lambda": [
@@ -32,7 +31,7 @@
       ],
       "alpha_shift": {
         "[3]|[3]": {
-          "value_re": 1.00544843455924,
+          "value_re": "1.00544843335356114987624598904593140794462037424206635479002",
           "value_im": 0,
           "c_lr": 1
         }
@@ -40,8 +39,8 @@
       "rank": 1,
       "n_equations": 100,
       "n_unknowns": 1,
-      "max_relative_residual": 7.131015888505811e-16,
-      "system_well_posed": "True",
+      "max_relative_residual": "1.79156023940978767347265136861578569587931085459550789230614e-71",
+      "system_well_posed": true,
       "consistent_within_1e6": true
     },
     "(5, 1)": {
@@ -82,17 +81,17 @@
       ],
       "alpha_shift": {
         "[3]|[3]": {
-          "value_re": 0.26468062124819486,
+          "value_re": "0.264680623020676438400503582248286639320709367998306683854014",
           "value_im": 0,
           "c_lr": 1
         },
         "[3]|[2, 1]": {
-          "value_re": 0.661762243482624,
+          "value_re": "0.661762241960295485942004814685680803513540074201824282488532",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[3]": {
-          "value_re": 0.6791536825359586,
+          "value_re": "0.679153679456097004015767067412789515024798011247280810624245",
           "value_im": 0,
           "c_lr": 1
         }
@@ -100,8 +99,8 @@
       "rank": 3,
       "n_equations": 100,
       "n_unknowns": 3,
-      "max_relative_residual": 25.35559305438974,
-      "system_well_posed": "True",
+      "max_relative_residual": "25.3555985925578977813376467896839279238882137544488815475127",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(4, 2)": {
@@ -153,22 +152,22 @@
       ],
       "alpha_shift": {
         "[3]|[3]": {
-          "value_re": -0.03877476405690986,
+          "value_re": "-0.0387747572891531316824709011443854621397636928941505561480286",
           "value_im": 0,
           "c_lr": 1
         },
         "[3]|[2, 1]": {
-          "value_re": 0.2400883055834106,
+          "value_re": "0.240088304338553677117557651577939791737147840261576439609493",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[3]": {
-          "value_re": 0.20239711848955963,
+          "value_re": "0.202397120796752595091281965482512372068062539078301582975139",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": 0.56097550004059,
+          "value_re": "0.560975497876710018875881197974547537349027834891433712379388",
           "value_im": 0,
           "c_lr": 1
         }
@@ -176,8 +175,8 @@
       "rank": 4,
       "n_equations": 100,
       "n_unknowns": 4,
-      "max_relative_residual": 56.524420194202754,
-      "system_well_posed": "True",
+      "max_relative_residual": "56.5244438320941346826229126997479456625022109725224154305472",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(4, 1, 1)": {
@@ -243,27 +242,27 @@
       ],
       "alpha_shift": {
         "[3]|[2, 1]": {
-          "value_re": -0.023734477981847628,
+          "value_re": "-0.0237344757755792216565164863049534516888225742710710443908466",
           "value_im": 0,
           "c_lr": 1
         },
         "[3]|[1, 1, 1]": {
-          "value_re": 0.3709435484971738,
+          "value_re": "0.370943546510698419313906962798344514784049563328016180387889",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[3]": {
-          "value_re": -0.02215333544132308,
+          "value_re": "-0.0221533334813721484974062741104719574750651930841453199336322",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": 0.3387319715917254,
+          "value_re": "0.338731968311727546253671176341841240754156964489111659775448",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[3]": {
-          "value_re": 0.39327921558980444,
+          "value_re": "0.393279211087367754512997335721234832561727155606054339688033",
           "value_im": 0,
           "c_lr": 1
         }
@@ -271,8 +270,8 @@
       "rank": 5,
       "n_equations": 100,
       "n_unknowns": 5,
-      "max_relative_residual": 276.9387622699268,
-      "system_well_posed": "True",
+      "max_relative_residual": "276.938854017700248465711842682424112822531364714626341656418",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(3, 3)": {
@@ -304,12 +303,12 @@
       ],
       "alpha_shift": {
         "[3]|[3]": {
-          "value_re": -0.35701537929868044,
+          "value_re": "-0.357015377579869608791274538028801808478876457311290486902125",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": 0.3344251044102257,
+          "value_re": "0.334425103910887176758857103853011427103674773696369657106073",
           "value_im": 0,
           "c_lr": 1
         }
@@ -317,8 +316,8 @@
       "rank": 2,
       "n_equations": 100,
       "n_unknowns": 2,
-      "max_relative_residual": 38.74107089514988,
-      "system_well_posed": "True",
+      "max_relative_residual": "38.7410786968216092392836110853339821773103211744601349497498",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(3, 2, 1)": {
@@ -386,27 +385,27 @@
       ],
       "alpha_shift": {
         "[3]|[2, 1]": {
-          "value_re": -0.3317765456763609,
+          "value_re": "-0.331776541159202922486170476906201045644426813421714847387724",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[3]": {
-          "value_re": -0.3082334292170076,
+          "value_re": "-0.308233427009755183751142786698805303030815978271174207962036",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": -0.0060493548847663225,
+          "value_re": "-0.00604935422489078168360975106942344368623136225816428486765655",
           "value_im": 0,
           "c_lr": 2
         },
         "[2, 1]|[1, 1, 1]": {
-          "value_re": 0.31497259989258325,
+          "value_re": "0.314972596989909561293833594484836300326605712662872870549727",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[2, 1]": {
-          "value_re": 0.2865571046044419,
+          "value_re": "0.286557105081872919787982000248805571679217486329425692057096",
           "value_im": 0,
           "c_lr": 1
         }
@@ -414,8 +413,8 @@
       "rank": 5,
       "n_equations": 100,
       "n_unknowns": 5,
-      "max_relative_residual": 1266306470791.7156,
-      "system_well_posed": "True",
+      "max_relative_residual": "12663064561090460630624567117141534774051.6335668083107814656",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(3, 1, 1, 1)": {
@@ -486,27 +485,27 @@
       ],
       "alpha_shift": {
         "[3]|[1, 1, 1]": {
-          "value_re": -0.3580946246287471,
+          "value_re": "-0.358094623724852630398872179419122295718733731166666838325065",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": -0.324834322274163,
+          "value_re": "-0.324834320361641230961432676359240918448987958391691930345402",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[1, 1, 1]": {
-          "value_re": 0.04275281068304515,
+          "value_re": "0.0427528067998796340306737799984387825718850786622130592965030",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[3]": {
-          "value_re": -0.3757396544989331,
+          "value_re": "-0.375739652070639699476408798426818783994628371726351759052285",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[2, 1]": {
-          "value_re": 0.045840011344545406,
+          "value_re": "0.0458400067256921124699475193101348493194293971413918451849851",
           "value_im": 0,
           "c_lr": 1
         }
@@ -514,8 +513,8 @@
       "rank": 5,
       "n_equations": 100,
       "n_unknowns": 5,
-      "max_relative_residual": 113.59994134199465,
-      "system_well_posed": "True",
+      "max_relative_residual": "113.599979141345386322149860821198466165977576350315843726042",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(2, 2, 2)": {
@@ -552,12 +551,12 @@
       ],
       "alpha_shift": {
         "[2, 1]|[2, 1]": {
-          "value_re": -0.3434590186091305,
+          "value_re": "-0.343459017201454551754572920650154852722842317718603069915585",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[1, 1, 1]": {
-          "value_re": 0.37276161748747905,
+          "value_re": "0.372761614136018403378017394312267369261071428850819993862924",
           "value_im": 0,
           "c_lr": 1
         }
@@ -565,8 +564,8 @@
       "rank": 2,
       "n_equations": 100,
       "n_unknowns": 2,
-      "max_relative_residual": 33.30107659188019,
-      "system_well_posed": "True",
+      "max_relative_residual": "33.3010838534318991380342203832782841193116393244004388186153",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(2, 2, 1, 1)": {
@@ -628,22 +627,22 @@
       ],
       "alpha_shift": {
         "[2, 1]|[2, 1]": {
-          "value_re": -0.5560750529571672,
+          "value_re": "-0.556075051289244985594498980542623807903570981508589512687697",
           "value_im": 0,
           "c_lr": 1
         },
         "[2, 1]|[1, 1, 1]": {
-          "value_re": -0.24934805043834396,
+          "value_re": "-0.249348048084517026900463529973614244944812014498171705671314",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[2, 1]": {
-          "value_re": -0.2089786790771133,
+          "value_re": "-0.208978680849438089701806642493103069812583003728903628365609",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[1, 1, 1]": {
-          "value_re": -0.025296927572376865,
+          "value_re": "-0.0252969274068929537182126299150871222018492917063925531470006",
           "value_im": 0,
           "c_lr": 1
         }
@@ -651,8 +650,8 @@
       "rank": 4,
       "n_equations": 100,
       "n_unknowns": 4,
-      "max_relative_residual": 78.49617236804124,
-      "system_well_posed": "True",
+      "max_relative_residual": "78.4962034792740025651313037637598869115875289599334387290955",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(2, 1, 1, 1, 1)": {
@@ -704,17 +703,17 @@
       ],
       "alpha_shift": {
         "[2, 1]|[1, 1, 1]": {
-          "value_re": -0.6538186700964572,
+          "value_re": "-0.653818669391559674419427275679007383595384319774196168301824",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[2, 1]": {
-          "value_re": -0.6717486118878777,
+          "value_re": "-0.671748609507647148957002296846052902339322280327543437653757",
           "value_im": 0,
           "c_lr": 1
         },
         "[1, 1, 1]|[1, 1, 1]": {
-          "value_re": -0.22872055788082107,
+          "value_re": "-0.228720563343007166075104372881187146685558612600059769073507",
           "value_im": 0,
           "c_lr": 1
         }
@@ -722,8 +721,8 @@
       "rank": 3,
       "n_equations": 100,
       "n_unknowns": 3,
-      "max_relative_residual": 23.690676635914173,
-      "system_well_posed": "True",
+      "max_relative_residual": "23.6906812661474118679748928547388630114135241802867354288251",
+      "system_well_posed": true,
       "consistent_within_1e6": false
     },
     "(1, 1, 1, 1, 1, 1)": {
@@ -752,7 +751,7 @@
       ],
       "alpha_shift": {
         "[1, 1, 1]|[1, 1, 1]": {
-          "value_re": -1.0054484345592405,
+          "value_re": "-1.00544843335356114987624598904593140794462037424206635479002",
           "value_im": 0,
           "c_lr": 1
         }
@@ -760,8 +759,8 @@
       "rank": 1,
       "n_equations": 100,
       "n_unknowns": 1,
-      "max_relative_residual": 4.081322283770491e-16,
-      "system_well_posed": "True",
+      "max_relative_residual": "1.79156023940978767347265136861578569587931085459550789230614e-71",
+      "system_well_posed": true,
       "consistent_within_1e6": true
     }
   },
@@ -786,8 +785,5 @@
     ]
   ],
   "n_scalar_consistent": 2,
-  "n_matrix_valued": 1,
-  "engine": "python",
-  "scriptFile": "sublemma_2_1_alpha_shift_extract.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "n_matrix_valued": 1
 }

@@ -62,5 +62,8 @@
       "anti_fit": "W_geom + y_lambda from q0 + hook-lengths; chi/q0/word = b0vf table; targets never inverted; nothing wired."
     }
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "uncommitted",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

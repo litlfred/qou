@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:27:41.614758+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T22:25:52.570983+00:00",
+  "commitSha": "21c651020c13418672355068cd420a13cdc8cdff",
   "assertions": [
     {
       "name": "cross_anchor_u_subst_compared",
@@ -11,13 +11,21 @@
       "passed": true,
       "tolerance": 0,
       "source": "Step 2 of Q_β 1ppQ closure"
+    },
+    {
+      "name": "step1_premise_supported",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "whether rungs 8-10 -- the ones Step 1's flat asymptote was read off -- are certified resolved by the upstream extractor (qou-8ofm / qou-frch). Recorded, not gated: this probe reports the premise's status, it does not assert it."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "qbeta-singularity-cross-anchor-probe",
   "scriptFile": "qbeta_singularity_cross_anchor_probe.py",
-  "scriptHash": "f6bbc37f0b5a",
+  "scriptHash": "dfd06d55405c",
   "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -28,17 +36,91 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_singularity_cross_anchor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_singularity_cross_anchor_probe.py"
   },
   "description": "Step 2 of PR #1727 / Q_β 1ppQ closure: cross-anchor test of Step 1's SIMPLE_POLE verdict at q_muon. Tests whether u_subst (singularity location of F(u)) is fibre-level (same at both anchors) or anchor-dependent. Uses q_proton-extracted c_k evaluated at q_muon's u value (partial test; full re-extraction at q_muon is out of scope for one session).",
   "data": {
-    "q_proton": "1.10997859555733471989976322048",
-    "q_muon": "1.10997859555418057528159407961",
-    "u_proton": "0.0085172363404849214399331129023",
-    "u_muon": "0.00851723634004395810711354481101",
-    "delta_u_relative_ppb": "-0.0517730535107",
+    "q_proton": "1.10997858275138080759166909561",
+    "q_muon": "1.10997859564273904668179512938",
+    "u_proton": "0.00851723455015614218925557360331",
+    "u_muon": "0.00851723635242482310735822116751",
+    "delta_u_relative_ppb": "211.602565399",
     "fibre_level_within_1ppm": "True",
-    "verdict": "FIBRE_LEVEL_CONFIRMED — singularity at same u across anchors"
-  }
+    "step1_premise_supported": "False",
+    "last_resolved_rung": "None",
+    "n_unresolved_rungs": "9",
+    "floor_identity": {
+      "note": "In the unresolved range c_k := f/u^k identically, so |c_k*u^k| = f and c_{k+1}/c_k = 1/u hold by arithmetic. Both are the simple-pole signature PR #1727 read as evidence, so that signature does not discriminate a pole from a residual floor.",
+      "per_rung": [
+        {
+          "k": 2,
+          "floor": "0.00067437933026805034298",
+          "flat_asymptote_rel_error": "2.97059e-22",
+          "ratio_test_rel_error": "0.107506"
+        },
+        {
+          "k": 3,
+          "floor": "0.00060187970821651397174",
+          "flat_asymptote_rel_error": "5.47329e-22",
+          "ratio_test_rel_error": "0.0020519"
+        },
+        {
+          "k": 4,
+          "floor": "0.00060064471411876567468",
+          "flat_asymptote_rel_error": "4.76974e-22",
+          "ratio_test_rel_error": "9.92184e-6"
+        },
+        {
+          "k": 5,
+          "floor": "0.00060063875461961186168",
+          "flat_asymptote_rel_error": "4.95458e-21",
+          "ratio_test_rel_error": "9.34257e-8"
+        },
+        {
+          "k": 6,
+          "floor": "0.00060063869850448962018",
+          "flat_asymptote_rel_error": "5.72105e-21",
+          "ratio_test_rel_error": "1.9125e-9"
+        },
+        {
+          "k": 7,
+          "floor": "0.00060063869965320870653",
+          "flat_asymptote_rel_error": "8.8859e-22",
+          "ratio_test_rel_error": "4.32819e-11"
+        },
+        {
+          "k": 8,
+          "floor": "0.00060063869962721194176",
+          "flat_asymptote_rel_error": "3.81877e-21",
+          "ratio_test_rel_error": "1.04429e-13"
+        },
+        {
+          "k": 9,
+          "floor": "0.00060063869962727466582",
+          "flat_asymptote_rel_error": "2.22186e-21",
+          "ratio_test_rel_error": "2.36334e-15"
+        },
+        {
+          "k": 10,
+          "floor": "0.00060063869962727324631",
+          "flat_asymptote_rel_error": "4.29644e-21",
+          "ratio_test_rel_error": null
+        }
+      ]
+    },
+    "verdict": "PREMISE_WITHDRAWN — rungs 8-10 unresolved, so Step 1's simple-pole signature is the residual-floor identity; the pole TYPE and residue A are unanswered, not confirmed"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

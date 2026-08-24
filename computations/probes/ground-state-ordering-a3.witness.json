@@ -191,7 +191,7 @@
   },
   "data": {
     "part0_provenance": {
-      "helper_source": "def _ground_state_ordering(Z: int, N: int) -> list[str]:\n    \"\"\"Match hecke_core.build_atom_nf — interleaved p/n ordering.\"\"\"\n    A = Z + N\n    ordering = []\n    pc, nc = 0, 0\n    for k in range(A):\n        if (k % 2 == 0 and pc < Z) or nc >= N:\n            ordering.append(\"p\"); pc += 1\n        else:\n            ordering.append(\"n\"); nc += 1\n    return ordering\n",
+      "helper_source": "def _ground_state_ordering(Z: int, N: int) -> list[str]:\n    \"\"\"Match hecke_core.build_atom_nf \u2014 interleaved p/n ordering.\"\"\"\n    A = Z + N\n    ordering = []\n    pc, nc = 0, 0\n    for k in range(A):\n        if (k % 2 == 0 and pc < Z) or nc >= N:\n            ordering.append(\"p\"); pc += 1\n        else:\n            ordering.append(\"n\"); nc += 1\n    return ordering\n",
       "helper_search_tokens": [],
       "helper_equals_alternating_ordering": true,
       "prop_formula_inapplicable_cases": [
@@ -886,5 +886,8 @@
     "SCOPE-(a) throughout. Loose end 1 is a measured statement about ONE objective (Phi_q, the functional prop:ground-state-ordering names) at ONE anchor (experimental proton) over a finite sweep (A <= 14): the helper's output is not its argmin at 3He and at several larger (Z, N). That identifies a defect in the helper relative to the objective its own name invokes. It does NOT prove prop:ground-state-ordering -- the proposition remains stated-not-proved (`def ... : Prop` with no discharging instance), and its A > 14 extrapolation is untested here. Nothing is excluded structurally, so no scope-(b) claim is made.",
     "NO PRODUCTION CHANGE. This probe is diagnostic. The helper is NOT fixed (Part 4 measures that a fix would move atom_V_full_sym / build_atom_nf_sym and every witness downstream), the mass table is NOT regenerated, and the production A >= 3 binding convention (sorted, closed_form_tau_M.py:290) is untouched. Reconciling the two live conventions remains an owner decision.",
     "The Phi_q objective evaluated here is the PRODUCTION form -- the nucleon arrangement plus the Z-electron tail, as compute_phi1_full_sym builds it. The bare-nucleon Phi is reported alongside because the proposition's prose speaks of the nucleon ordering; at 3He the two differ (the bare-nucleon objective ties `ppn` with `pnp`, the production objective separates them in favour of `ppn`), which is itself part of the finding."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -10,7 +10,7 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "At q_exact, m_p/m_e matches CODATA to 10⁻⁴⁸"
+      "source": "At q_exact, m_p/m_e matches CODATA to 10\u207b\u2074\u2078"
     }
   ],
   "allPassed": true,
@@ -41,12 +41,15 @@
     ],
     "reproduce": "python3 -u computations/definitive_q0_shift_for_mp.py"
   },
-  "description": "The m_p 242 ppb residual is entirely a q₀ calibration shift of 11.5 ppb. All correction towers are Taylor expansions of this shift. 1 ppb m_p requires deriving q₀ to 12 ppb.",
+  "description": "The m_p 242 ppb residual is entirely a q\u2080 calibration shift of 11.5 ppb. All correction towers are Taylor expansions of this shift. 1 ppb m_p requires deriving q\u2080 to 12 ppb.",
   "contentBlock": "prop:proton-mass-substrate-identity",
   "data": {
     "q0_current": "1.109978582751380807591669",
     "q0_exact_for_mp": "1.109978582751230052440291",
     "shift_absolute": "-1.50755151377889e-13",
     "shift_ppb": "-0.0001358180723"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_current, data.q0_exact_for_mp). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

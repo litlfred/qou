@@ -125,6 +125,12 @@ MAPPING: dict[str, tuple[str, str]] = {
         "the citing comment reads \"Asterisque 355 §3.3 (Ramis-Sauloy-Zhang)\" "
         "and that entry is Asterisque vol. 355, 2013, by Ramis, Sauloy and "
         "Zhang — RSZ is the authors' initials"),
+    # Case only. AGENTS.md §1 makes the match case-sensitive, so this
+    # genuinely dangles despite differing from a live entry by one letter.
+    "CODATA2022": (
+        "codata2022",
+        "case-only difference from the existing entry; §1 requires an exact, "
+        "case-sensitive match"),
     # Same authors, same work, the key simply carries no year.
     "fulton-harris": (
         "fulton-harris1991",

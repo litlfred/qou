@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-27T14:55:46.064962+00:00",
-  "commitSha": "d434c6ad78ac5f0ba276998daad25e1cb45942da",
+  "computedAt": "2026-08-23T21:12:07.251906+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "phase_within_5pct_of_vol",
-      "computed": 0.673224817732586,
+      "computed": 0.67322537780431,
       "expected": 0,
       "passed": true,
       "tolerance": 5,
@@ -14,29 +14,45 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "q0-figure-eight-phase-derivation",
   "scriptFile": "q0_figure_eight_phase_derivation.py",
-  "scriptHash": "ee765ad71e4e",
-  "scriptCommitSha": "c583cb4aade387bec1fe528561a8ae35766bed4a",
+  "scriptHash": "6f80dca7ffdb",
+  "scriptCommitSha": "934db778ba8dcc0d76519bf9ef862abfa46d326c",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q0_figure_eight_phase_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/q0_figure_eight_phase_derivation.py"
   },
   "description": "Test whether θ(q₀) = Vol(4₁) where θ = arccos(tr(ρ_{(2,1)}(4₁;q))/2) is the spectral phase of the figure-eight on V_{(2,1)}. Result: 0.6732% miss at q₀. Derivation status: approximate.",
   "data": {
     "phase_at_q0": {
-      "tr_21": "-0.9106773300269627",
-      "theta": "2.0435488903789945",
+      "tr_21": "-0.9106773502706678",
+      "theta": "2.0435489017477964",
       "vol_41": "2.0298832128193074",
-      "miss_pct": 0.673224817732586
+      "miss_pct": 0.67322537780431
     },
     "root_finding": {
-      "q_derived": "1.1245149108842002087622405780828756557471443872875",
-      "q0_known": "1.1099785955541805752815940796095093779932822799587",
-      "diff_ppb": 13096032.111107573,
+      "q_derived": "1.124514910884200208762240578082875655747144387287486009857779733358533",
+      "q0_known": "1.1099785827513808075916690956107688798744991218736",
+      "diff_ppb": 13096043.796437223,
       "status": "approximate"
     },
     "uniqueness": {

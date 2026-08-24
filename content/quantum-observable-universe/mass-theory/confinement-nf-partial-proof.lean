@@ -105,6 +105,7 @@ this class via the appropriate Mathlib lemmas; the rest of the file
 needs no change. -/
 class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
   /-- Strong duality: for bounded + feasible LP, primal opt = dual opt.
+  (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates)
   -- Ref: [schrijver1986theory] §7.2 -/
   strong_duality_holds : lp.duality_gap = 0
   /-- Complementary slackness: at the optimum, λ has tight primal

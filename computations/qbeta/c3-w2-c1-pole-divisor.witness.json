@@ -1,53 +1,56 @@
 {
- "schema": "witness/v1",
- "engine": "mpmath",
- "scriptFile": "c3_w2_c1_pole_divisor.py",
- "commitSha": "54c41e4cd1ce4617d722c0a9eae9c8dcf14915f5",
- "description": "Bean qou-wgnx. Pins the POLE DIVISOR of the C1 connection matrix and resolves the c+ near-constancy left open by c3_w2_c1_connection_matrix.py. The divisor is SYMBOLIC: every pole sits where a theta_p vanishes, and theta_p's zero set is the single p-orbit -p^Z. So c+ has simple poles at [-1] and [-T], c- at [-1] and [+T], with T = sqrt(q-1)/q^(3/4). [-1] comes from the COMMON numerator theta_p(z) of the 0-side character and therefore sits in both columns \u2014 a normalisation artifact, not connection data; [+-T] are tied to the inf-side exponents and are intrinsic. VERIFIED by the residue theorem on C*/p^Z: an elliptic function cannot have one simple pole per fundamental domain, and the two residues of each entry cancel with a leftover falling LINEARLY in eps (the O(eps) truncation of the limit estimate), so the divisor is complete. This also explains the c+ puzzle: both of its poles lie on the NEGATIVE real ray, which is why sampling only the positive axis made it look constant, and why the deviation grows with q. The pi^2 observation from the previous script is RETIRED as unnecessary.",
- "computation": {
-  "script": "computations/qbeta/c3_w2_c1_pole_divisor.py",
-  "scriptCommitSha": "54c41e4cd1ce4617d722c0a9eae9c8dcf14915f5",
-  "scriptHash": "fa209f99deb4"
- },
- "results": {
-  "q": "1.1099785827513808075916690956",
-  "theta_zero_locus": "theta_p(w) = 0  <=>  w in -p^Z",
-  "lean_partial_proof": "QOU/QBeta/C1ConnectionPoles.lean (>= direction, sorry-free)",
-  "lean_not_proved": "converse (Jacobi triple product); that zeros are poles of P",
-  "divisor_c_plus": "simple poles at [-1] and [-T]",
-  "divisor_c_minus": "simple poles at [-1] and [+T]",
-  "artifact_pole": "[-1] \u2014 common numerator theta_p(z) of the 0-side character",
-  "pole_radii_ratio": "1.018089596",
-  "T": "0.30666775231891254188",
-  "min_pole_blowup": "3910608.6",
-  "residue_decay_factors": {
-   "c+": [
-    "9.99970560039",
-    "9.9999705563"
-   ],
-   "c-": [
-    "9.99998452421",
-    "9.99988985296"
-   ]
-  }
- },
- "checks": [
-  {
-   "name": "all_three_poles_in_one_fundamental_domain",
-   "detail": "radii ratio < p, so the residue theorem applies to them together",
-   "passed": true
+  "schema": "witness/v1",
+  "engine": "mpmath",
+  "scriptFile": "c3_w2_c1_pole_divisor.py",
+  "commitSha": "54c41e4cd1ce4617d722c0a9eae9c8dcf14915f5",
+  "description": "Bean qou-wgnx. Pins the POLE DIVISOR of the C1 connection matrix and resolves the c+ near-constancy left open by c3_w2_c1_connection_matrix.py. The divisor is SYMBOLIC: every pole sits where a theta_p vanishes, and theta_p's zero set is the single p-orbit -p^Z. So c+ has simple poles at [-1] and [-T], c- at [-1] and [+T], with T = sqrt(q-1)/q^(3/4). [-1] comes from the COMMON numerator theta_p(z) of the 0-side character and therefore sits in both columns \u2014 a normalisation artifact, not connection data; [+-T] are tied to the inf-side exponents and are intrinsic. VERIFIED by the residue theorem on C*/p^Z: an elliptic function cannot have one simple pole per fundamental domain, and the two residues of each entry cancel with a leftover falling LINEARLY in eps (the O(eps) truncation of the limit estimate), so the divisor is complete. This also explains the c+ puzzle: both of its poles lie on the NEGATIVE real ray, which is why sampling only the positive axis made it look constant, and why the deviation grows with q. The pi^2 observation from the previous script is RETIRED as unnecessary.",
+  "computation": {
+    "script": "computations/qbeta/c3_w2_c1_pole_divisor.py",
+    "scriptCommitSha": "54c41e4cd1ce4617d722c0a9eae9c8dcf14915f5",
+    "scriptHash": "fa209f99deb4"
   },
-  {
-   "name": "poles_are_genuine",
-   "detail": "|f| blows up at each candidate relative to just off it",
-   "passed": true
+  "results": {
+    "q": "1.1099785827513808075916690956",
+    "theta_zero_locus": "theta_p(w) = 0  <=>  w in -p^Z",
+    "lean_partial_proof": "QOU/QBeta/C1ConnectionPoles.lean (>= direction, sorry-free)",
+    "lean_not_proved": "converse (Jacobi triple product); that zeros are poles of P",
+    "divisor_c_plus": "simple poles at [-1] and [-T]",
+    "divisor_c_minus": "simple poles at [-1] and [+T]",
+    "artifact_pole": "[-1] \u2014 common numerator theta_p(z) of the 0-side character",
+    "pole_radii_ratio": "1.018089596",
+    "T": "0.30666775231891254188",
+    "min_pole_blowup": "3910608.6",
+    "residue_decay_factors": {
+      "c+": [
+        "9.99970560039",
+        "9.9999705563"
+      ],
+      "c-": [
+        "9.99998452421",
+        "9.99988985296"
+      ]
+    }
   },
-  {
-   "name": "residue_sum_vanishes_linearly",
-   "detail": "leftover falls ~10x per 10x smaller eps => exact sum is zero => divisor COMPLETE",
-   "passed": true
-  }
- ],
- "verdict": "The pole divisor of the C1 connection matrix is SYMBOLIC and COMPLETE: c+ has simple poles at [-1] and [-T], c- at [-1] and [+T], all of them zeros of a theta_p, whose zero set is the single orbit -p^Z. The residue theorem on C*/p^Z confirms completeness (two cancelling residues per entry; a lone simple pole would have been impossible). The [-1] pole is a normalisation artifact of the 0-side character, shared by both columns; only [+-T] carry connection data. This also RESOLVES the c+ near-constancy: both its poles lie on the negative real ray, so the positive axis \u2014 the only region previously sampled \u2014 is maximally far from them. The pi^2 observation is retired as unnecessary. STILL OPEN: the Stokes multipliers themselves, and the converse of the theta zero locus (Jacobi triple product). Nothing wired to production.",
- "durationMs": 6363
+  "checks": [
+    {
+      "name": "all_three_poles_in_one_fundamental_domain",
+      "detail": "radii ratio < p, so the residue theorem applies to them together",
+      "passed": true
+    },
+    {
+      "name": "poles_are_genuine",
+      "detail": "|f| blows up at each candidate relative to just off it",
+      "passed": true
+    },
+    {
+      "name": "residue_sum_vanishes_linearly",
+      "detail": "leftover falls ~10x per 10x smaller eps => exact sum is zero => divisor COMPLETE",
+      "passed": true
+    }
+  ],
+  "verdict": "The pole divisor of the C1 connection matrix is SYMBOLIC and COMPLETE: c+ has simple poles at [-1] and [-T], c- at [-1] and [+T], all of them zeros of a theta_p, whose zero set is the single orbit -p^Z. The residue theorem on C*/p^Z confirms completeness (two cancelling residues per entry; a lone simple pole would have been impossible). The [-1] pole is a normalisation artifact of the 0-side character, shared by both columns; only [+-T] carry connection data. This also RESOLVES the c+ near-constancy: both its poles lie on the negative real ray, so the positive axis \u2014 the only region previously sampled \u2014 is maximally far from them. The pi^2 observation is retired as unnecessary. STILL OPEN: the Stokes multipliers themselves, and the converse of the theta zero locus (Jacobi triple product). Nothing wired to production.",
+  "durationMs": 6363,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }
