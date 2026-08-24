@@ -53,6 +53,34 @@ if (!["pass", "fail", "warn", "n/a"].includes(result)) {
   console.error(`invalid --result: ${result}`);
   process.exit(2);
 }
+// A `fail`/`warn` with no evidence asserts a defect nobody can check or act
+// on. `block-qa.schema.json` already states the contract on `result` --
+// "fail = violated (evidence must cite file:line + verbatim quote)" -- but it
+// is prose: `evidence` is absent from that object's `required` list, and the
+// only consumer that reads the schema at all is
+// `qa-flag-preservation-audit.ts`. So nothing checked, and as of 2026-08-24
+// **303 of 1,442 agent fail/warn verdicts in the corpus carry an empty
+// evidence string** (bean `qou-7qjf`), six criteria at 100 %.
+//
+// This is the agent-side mirror of the rule the platform already pins for
+// script checkers: "a checker that cannot read its evidence has not verified
+// anything, and must not say pass" (`checker-missing-evidence.test.ts`).
+//
+// Non-empty is the bar, deliberately, rather than a quote-shape regex: some
+// legitimate evidence is a bare `file.lean:1` pointer, and rejecting that
+// would push authors toward inventing a quote. Whether the evidence is
+// *quotable* is measured separately and advisorily by
+// `scripts/qa-stale-agent-evidence.py`.
+if ((result === "fail" || result === "warn") && !evidence?.trim()) {
+  console.error(
+    `--result ${result} requires --evidence: state what was found and where ` +
+      `(file:line plus a verbatim quote, per block-qa.schema.json). A ` +
+      `verdict with no evidence cannot be checked, re-adjudicated, or acted ` +
+      `on, and survives every qa-sweep run because the sweep only re-runs ` +
+      `script criteria.`,
+  );
+  process.exit(2);
+}
 if (!existsSync(blockMd)) {
   console.error(`no such block .md: ${blockMd}`);
   process.exit(2);

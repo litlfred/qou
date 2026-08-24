@@ -1,11 +1,11 @@
 ---
 # qou-4sdp
 title: Agent QA verdicts go stale in the FIXED direction and no sweep can clear them
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T21:17:34Z
-updated_at: 2026-08-24T21:55:56Z
+updated_at: 2026-08-24T22:47:07Z
 ---
 
 `qou-h1p7` established that a `.qa.json` criterion holds a HISTORY of entries,
@@ -137,4 +137,3 @@ Kept as a Python script in `scripts/`, beside its closest sibling
 sidecars. It is generic — it hardcodes nothing about this folio and takes its
 root from `$QOU_ROOT` or the cwd — so it could move to the platform if a
 second folio ever needs it. Not moved speculatively.
-
