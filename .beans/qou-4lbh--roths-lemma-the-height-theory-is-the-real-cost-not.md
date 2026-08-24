@@ -3954,3 +3954,35 @@ variables, giving `∏_h (l.count h)! · 2^{Σ_h d_h} · B`), then to the determ
 and column factorials factor out of every permutation term uniformly and give
 `det = C · (integral polynomial)` with `C = (∏_i (Dx i)!)(∏_j (Dy j)!)`. The quotient is the
 object §12 measures, and its height bound is `n!·(S·2^{Σd}·B)^n ≤ n!·2^{2nΣd}·B^n` — §12's `b`.
+
+### Correction 21's repair, entry level — done
+
+`WronskianHeight.lean` now carries the whole per-entry story:
+
+    listIdx, listFactor                  the multi-index and the integer ∂^l multiplies by
+    coeff_pderivList                     coeff n (∂^l g) = listFactor l n · coeff (n + t) g
+    listFactor_eq_prod                   listFactor l n = ∏_h ∏_{i<t_h} (n_h + 1 + i)
+    listFactor_eq_factorial_mul          = (∏_h t_h!) · (∏_h binom(n_h+t_h, t_h))
+    listFac_dvd_listFactor               ∏_h t_h!  ∣  listFactor l n
+    listFactor_le                        listFactor l n ≤ (∏_h t_h!) · 2^{Σ_h d_h}
+    listFac_dvd_coeff_pderivList         ∏_h t_h!  ∣  coeff n (∂^l g)
+    abs_coeff_pderivList_le'             |coeff n (∂^l g)| ≤ (∏_h t_h!) · 2^{Σ_h d_h} · B
+
+`listFactor_eq_factorial_mul` is correction 21 in one equation: the left factor is the entire
+discrepancy with Mahler's divided derivative, the right is what §7 bounds by `2^{Σ r_h}`. The
+divisibility says `∂^l = Fac(l)·Δ^l` **coefficientwise**, i.e. that `Δ` is integral — which is
+what will let `det` be divided by `(∏_i (Dx i)!)(∏_j (Dy j)!)` and stay in `ℤ[x]`.
+
+⚠ One thing worth recording because it looked like it would be the hard part and was not: **the
+interleaving is invisible.** `listFactor` is defined by the order the list applies `∂`, but
+applying `∂ⱼ` when `n` has already been shifted by `e_h` for `h ≠ j` still sees the same `n_j`,
+so each variable's factors are consecutive regardless of interleaving. That is why a *list*
+factor equals a *multiset* one, and why `pderiv` commutativity is never needed.
+
+⚠ `listFactor_eq_prod` takes any `Finset s` containing the list's variables rather than requiring
+`Fintype σ`. Cheaper for callers and it keeps the lemmas usable at `σ ⊕ Unit`.
+
+**Next, and it is now bookkeeping rather than mathematics:** the determinant. Each permutation
+term picks one entry per row and column, so `∏_i Fac(Dx i ⊞ Dy σ(i)) = (∏_i Fac(Dx i))·(∏_j Fac(Dy j))`
+independently of `σ` — the constant factors out of the whole determinant uniformly. Divide it
+out and the height bound becomes `n!·(S·2^{Σd}·B)^n ≤ n!·2^{2nΣd}·B^n`, which is §12's `b`.

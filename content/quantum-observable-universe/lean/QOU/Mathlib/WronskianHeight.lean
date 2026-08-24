@@ -275,6 +275,190 @@ theorem coeff_pderiv_iterate {R : Type*} [CommRing R] [DecidableEq σ] (j : σ) 
       · exact Finset.prod_congr rfl fun i _ => by ring
       · norm_num
 
+/-- The multi-index a list of variables differentiates by: `listIdx [x,y,x] = 2·e_x + e_y`. -/
+noncomputable def listIdx : List σ → (σ →₀ ℕ)
+  | [] => 0
+  | j :: l => Finsupp.single j 1 + listIdx l
+
+@[simp] theorem listIdx_nil : listIdx ([] : List σ) = 0 := rfl
+
+@[simp] theorem listIdx_cons (j : σ) (l : List σ) :
+    listIdx (j :: l) = Finsupp.single j 1 + listIdx l := rfl
+
+/-- The integer `∂^l` multiplies the coefficient at `n` by.
+
+Defined by the recursion `∂ⱼ` itself performs — `coeff n (∂ⱼ f) = (nⱼ+1)·coeff (n+eⱼ) f` — so
+`coeff_pderivList` below is an immediate induction.  In closed form it is
+`∏_h (n_h + t_h)!/(n_h)!` with `t = listIdx l`, hence `Fac(l)·∏_h binom(n_h+t_h, t_h)` where
+`Fac(l) = ∏_h (t_h)!`; that factorisation is what correction twenty-one needs and is **not yet
+proved** — see the note below. -/
+noncomputable def listFactor : List σ → (σ →₀ ℕ) → ℕ
+  | [], _ => 1
+  | j :: l, n => (n j + 1) * listFactor l (n + Finsupp.single j 1)
+
+@[simp] theorem listFactor_nil (n : σ →₀ ℕ) : listFactor ([] : List σ) n = 1 := rfl
+
+@[simp] theorem listFactor_cons (j : σ) (l : List σ) (n : σ →₀ ℕ) :
+    listFactor (j :: l) n = (n j + 1) * listFactor l (n + Finsupp.single j 1) := rfl
+
+/-- **The coefficient of an iterated partial derivative along a list, exactly.**
+
+    coeff n (∂^l g) = listFactor l n · coeff (n + listIdx l) g
+
+The generalisation of `coeff_pderiv_iterate` from one variable to a list, and the handle the
+rest of correction twenty-one hangs on: both the divisibility `Fac(l) ∣ listFactor l n` and the
+bound `listFactor l n ≤ Fac(l)·2^{Σ d_h}` are statements about `listFactor` alone, with the
+polynomial gone. -/
+theorem coeff_pderivList [DecidableEq σ] {R : Type*} [CommRing R] (l : List σ)
+    (g : MvPolynomial σ R) (n : σ →₀ ℕ) :
+    coeff n (pderivList l g) = ((listFactor l n : ℕ) : R) * coeff (n + listIdx l) g := by
+  induction l generalizing n with
+  | nil => simp
+  | cons j l ih =>
+      have hcons : pderivList (j :: l) g = pderiv j (pderivList l g) := rfl
+      rw [hcons, coeff_pderiv, ih, listFactor_cons, listIdx_cons, ← add_assoc, ← mul_assoc]
+      push_cast
+      ring
+
+/-- **`listFactor` at a single variable** agrees with `coeff_pderiv_iterate`'s product.
+
+The bridge that lets the one-variable bound be reused: `∂ⱼ^k` is `∂^l` for the constant list. -/
+theorem listFactor_replicate (j : σ) (k : ℕ) (n : σ →₀ ℕ) :
+    listFactor (List.replicate k j) n = ∏ i ∈ Finset.range k, (n j + 1 + i) := by
+  induction k generalizing n with
+  | zero => simp
+  | succ k ih =>
+      rw [List.replicate_succ, listFactor_cons, ih, Finset.prod_range_succ']
+      have hnj : (n + Finsupp.single j 1 : σ →₀ ℕ) j = n j + 1 := by simp
+      rw [hnj, Nat.mul_comm]
+      congr 1
+      exact Finset.prod_congr rfl fun i _ => by omega
+
+/-- **`listFactor` in closed form**, as a product over the variables.
+
+    listFactor l n = ∏_h ∏_{i<t_h} (n_h + 1 + i),   t = listIdx l
+
+⚠ The interleaving is invisible: `∂ⱼ` applied when `n` has already been shifted by `e_h` for
+`h ≠ j` still sees the same `n_j`, so the factors for each variable are consecutive regardless
+of the order the list interleaves them.  That is why a *list* factor equals a *multiset* one.
+
+`s` is any `Finset` containing the list's variables — no `Fintype σ` needed, and the caller
+picks whatever ambient finset is convenient. -/
+theorem listFactor_eq_prod [DecidableEq σ] (s : Finset σ) (l : List σ) :
+    (∀ h ∈ l, h ∈ s) → ∀ n : σ →₀ ℕ,
+      listFactor l n = ∏ h ∈ s, ∏ i ∈ Finset.range ((listIdx l) h), (n h + 1 + i) := by
+  induction l with
+  | nil => intro _ n; simp
+  | cons j l ih =>
+      intro hs n
+      have hjs : j ∈ s := hs j (by simp)
+      have hl : ∀ h ∈ l, h ∈ s := fun h hh => hs h (List.mem_cons_of_mem _ hh)
+      rw [listFactor_cons, ih hl,
+        ← Finset.mul_prod_erase s (fun h => ∏ i ∈ Finset.range ((listIdx l) h),
+          ((n + Finsupp.single j 1 : σ →₀ ℕ) h + 1 + i)) hjs,
+        ← Finset.mul_prod_erase s (fun h => ∏ i ∈ Finset.range ((listIdx (j :: l)) h),
+          (n h + 1 + i)) hjs,
+        ← mul_assoc]
+      congr 1
+      · have hnj : (n + Finsupp.single j 1 : σ →₀ ℕ) j = n j + 1 := by simp
+        have htj : (listIdx (j :: l)) j = (listIdx l) j + 1 := by
+          simp [listIdx_cons, Finsupp.add_apply]
+          omega
+        rw [hnj, htj, Finset.prod_range_succ', Nat.mul_comm]
+        congr 1
+        exact Finset.prod_congr rfl fun i _ => by omega
+      · refine Finset.prod_congr rfl fun h hh => ?_
+        have hne : h ≠ j := (Finset.mem_erase.mp hh).1
+        have hz : (Finsupp.single j 1 : σ →₀ ℕ) h = 0 :=
+          Finsupp.single_eq_of_ne hne
+        have h1 : (n + Finsupp.single j 1 : σ →₀ ℕ) h = n h := by
+          rw [Finsupp.add_apply, hz, Nat.add_zero]
+        have h2 : (listIdx (j :: l)) h = (listIdx l) h := by
+          rw [listIdx_cons, Finsupp.add_apply, hz, Nat.zero_add]
+        rw [h1, h2]
+
+/-- **`listFactor` factors as `Fac(l)·Binom`** — the whole content of correction twenty-one, in
+one equation.
+
+    listFactor l n = (∏_h t_h!) · (∏_h binom(n_h + t_h, t_h)),    t = listIdx l
+
+The left factor is the discrepancy with Mahler's divided derivative; the right is what §7 bounds
+by `2^{Σ r_h}`.  Everything else follows. -/
+theorem listFactor_eq_factorial_mul [DecidableEq σ] (s : Finset σ) (l : List σ)
+    (hs : ∀ h ∈ l, h ∈ s) (n : σ →₀ ℕ) :
+    listFactor l n
+      = (∏ h ∈ s, ((listIdx l) h).factorial) * ∏ h ∈ s, (n h + (listIdx l) h).choose ((listIdx l) h) := by
+  rw [listFactor_eq_prod s l hs n, ← Finset.prod_mul_distrib]
+  refine Finset.prod_congr rfl fun h _ => ?_
+  rw [show (fun i => n h + 1 + i) = (fun i => (n h + 1) + i) from rfl,
+    ← Nat.ascFactorial_eq_prod_range, Nat.ascFactorial_eq_factorial_mul_choose]
+
+/-- **The factorial part divides.**  This is what makes the divided derivative *integral*, and
+hence what lets `det` be divided by `(∏_i (Dx i)!)(∏_j (Dy j)!)` and stay in `ℤ[x]`. -/
+theorem listFac_dvd_listFactor [DecidableEq σ] (s : Finset σ) (l : List σ)
+    (hs : ∀ h ∈ l, h ∈ s) (n : σ →₀ ℕ) :
+    (∏ h ∈ s, ((listIdx l) h).factorial) ∣ listFactor l n :=
+  ⟨_, listFactor_eq_factorial_mul s l hs n⟩
+
+/-- **§7's bound, for a list of variables.**
+
+    listFactor l n ≤ (∏_h t_h!) · 2^{Σ_h d_h}      whenever  n_h + t_h ≤ d_h
+
+The `2^{Σ_h d_h}` is §7's `2^{r₁+…+r_m}` exactly — its source is `binom(N,k) ≤ 2^N`, which is
+the same inequality Mahler writes as `binom(r,j) ≤ Σ_j binom(r,j) = 2^r`. -/
+theorem listFactor_le [DecidableEq σ] (s : Finset σ) (l : List σ) (hs : ∀ h ∈ l, h ∈ s)
+    (n : σ →₀ ℕ) (d : σ → ℕ) (hd : ∀ h, n h + (listIdx l) h ≤ d h) :
+    listFactor l n ≤ (∏ h ∈ s, ((listIdx l) h).factorial) * 2 ^ (∑ h ∈ s, d h) := by
+  rw [listFactor_eq_factorial_mul s l hs n]
+  refine Nat.mul_le_mul_left _ ?_
+  calc ∏ h ∈ s, (n h + (listIdx l) h).choose ((listIdx l) h)
+      ≤ ∏ h ∈ s, 2 ^ (d h) :=
+        Finset.prod_le_prod' fun h _ =>
+          le_trans (Nat.choose_le_two_pow _ _) (Nat.pow_le_pow_right (by norm_num) (hd h))
+    _ = 2 ^ (∑ h ∈ s, d h) := by rw [Finset.prod_pow_eq_pow_sum]
+
+/-- **The factorial divides every coefficient of `∂^l g`.**
+
+So `∂^l = Fac(l)·(divided derivative)` at the level of coefficients, which is precisely the
+statement that Mahler's `Δ` is integral and this arc's `∂^l` is `Fac(l)` times it. -/
+theorem listFac_dvd_coeff_pderivList [DecidableEq σ] (s : Finset σ) (g : MvPolynomial σ ℤ)
+    (l : List σ) (hs : ∀ h ∈ l, h ∈ s) (n : σ →₀ ℕ) :
+    ((∏ h ∈ s, ((listIdx l) h).factorial : ℕ) : ℤ) ∣ coeff n (pderivList l g) := by
+  rw [coeff_pderivList]
+  exact Dvd.dvd.mul_right (Int.natCast_dvd_natCast.mpr (listFac_dvd_listFactor s l hs n)) _
+
+/-- **§7's coefficient bound for `∂^l`** — the replacement for `abs_coeff_pderivList_le`.
+
+    |coeff n (∂^l g)| ≤ (∏_h t_h!) · 2^{Σ_h d_h} · B
+
+Against the old `d^{|l|}·B`, this separates the factorial and leaves §7's `2^{Σ r_h}`.  Dividing
+through by `∏_h t_h!` — legitimate by `listFac_dvd_coeff_pderivList` — gives the divided
+derivative's bound, which is the one §12's budget is calibrated for. -/
+theorem abs_coeff_pderivList_le' [DecidableEq σ] (s : Finset σ) {g : MvPolynomial σ ℤ}
+    {d : σ → ℕ} {B : ℤ} (hB0 : 0 ≤ B) (l : List σ) (hs : ∀ h ∈ l, h ∈ s)
+    (hd : ∀ h, degreeOf h g ≤ d h) (hB : ∀ n, |coeff n g| ≤ B) (n : σ →₀ ℕ) :
+    |coeff n (pderivList l g)|
+      ≤ ((∏ h ∈ s, ((listIdx l) h).factorial : ℕ) : ℤ) * 2 ^ (∑ h ∈ s, d h) * B := by
+  classical
+  rw [coeff_pderivList, abs_mul]
+  have hfac : (0 : ℤ) ≤ ((∏ h ∈ s, ((listIdx l) h).factorial : ℕ) : ℤ) * 2 ^ (∑ h ∈ s, d h) := by
+    positivity
+  by_cases hz : coeff (n + listIdx l) g = 0
+  · rw [hz, abs_zero, mul_zero]
+    exact mul_nonneg hfac hB0
+  · have hmem : (n + listIdx l) ∈ g.support := mem_support_iff.mpr hz
+    have hle : ∀ h, n h + (listIdx l) h ≤ d h := by
+      intro h
+      have h1 := monomial_le_degreeOf h hmem
+      rw [Finsupp.add_apply] at h1
+      exact le_trans h1 (hd h)
+    have hPr : |((listFactor l n : ℕ) : ℤ)|
+        ≤ ((∏ h ∈ s, ((listIdx l) h).factorial : ℕ) : ℤ) * 2 ^ (∑ h ∈ s, d h) := by
+      rw [abs_of_nonneg (by positivity)]
+      exact_mod_cast listFactor_le s l hs n d hle
+    refine le_trans (mul_le_mul hPr (hB _) (abs_nonneg _) hfac) (le_of_eq ?_)
+    ring
+
 /-- **§7's coefficient bound in one variable, sharp.**
 
     |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B      whenever  degreeOf j g ≤ d  and  |coeff · g| ≤ B
