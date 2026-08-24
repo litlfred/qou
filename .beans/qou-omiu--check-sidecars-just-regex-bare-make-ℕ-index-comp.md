@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-23T21:56:07Z
-updated_at: 2026-08-23T21:56:44Z
+updated_at: 2026-08-24T08:09:51Z
 ---
 
 FOUND while my own new Lean file took a §7c MIXED advisory it does not deserve.
@@ -73,3 +73,54 @@ sweep_), but 226 top-level computations/*.py carry those words as a SUFFIX
 the class is latent rather than live -- but it is luck, not design. Which
 suffixes to exclude is that guard's owner's call: `_probe.py` is unambiguously
 the excluded class, `_test.py` is not (a real unit test SHOULD be guarded).
+
+
+§7c HALF CLOSED 2026-08-24 -- FIXED ON MAIN BY A SIBLING, AND THEIR FIX IS
+STRICTLY BETTER THAN THE ONE I REVERTED.
+
+main's 31fc4481cd "fix(check-sidecars): §7c was flagging the files that comply
+with it" solves it at the LOGIC level rather than the regex level:
+
+    STRONG = Real.(sqrt|rpow|...)|linarith|positivity|nlinarith|LinearOrdered|CODATA|MeV
+    WEAK   = 0\s*<|<\s*1|≤|≥
+    RTYPE  = :\s*ℝ|\(ℝ\)|→\s*ℝ|ℝ\s*\)
+    hasJ = hasS OR (hasW AND hasR)
+
+i.e. a WEAK marker counts as archimedean ONLY IF the file actually uses ℝ as a
+type. That is exactly the distinction my measurement said was missing, and it is
+the right rule: `≤` on a ring element is archimedean, `≤` on a ℕ index is not,
+and the presence of ℝ is what separates them.
+
+MEASURED THEIR FIX AGAINST MINE over 2129 library Lean files:
+
+    classified archimedean, OLD logic : 1381   (over-broad; the false positives)
+    classified archimedean, MAIN's fix:  943
+    classified archimedean, MY revert  : 1119
+
+MY APPROACH WAS WRONG IN BOTH DIRECTIONS, and the numbers say so:
+
+  * 45 files main correctly KEEPS archimedean would have been DROPPED by mine
+    -- including Infra/DirichletL.lean, the exact file I spot-checked before
+    reverting. My spot check found the problem; the full count shows it was 45
+    files, not one.
+  * mine also KEPT 438 files main correctly drops -- files with `0 <` or `< 1`
+    on a ℕ and no ℝ anywhere. My regex kept those two shapes unconditionally.
+
+So reverting was right, and not merely cautious: the fix I nearly shipped was a
+regex-level approximation that both over- and under-classified. The lesson
+stands and is sharper than I first wrote it -- MEASURE THE RECLASSIFICATION,
+and prefer fixing the LOGIC over narrowing a PATTERN when the pattern's meaning
+depends on context the pattern cannot see.
+
+Verified live: my own MarkovUnusedGenerator.lean (ℕ-indexed, generic
+[CommRing R], no ℝ) now reports "[library Lean — no ℝ, generic OK]" under
+main's rule, and check-sidecars reports no §7c flags.
+
+STILL OPEN in this bean: the SECOND finding, untouched by 31fc4481cd --
+canonical_mass_status_guard excludes probe-class files by DIRECTORY (probes/,
+audits/, sweeps/) and by NAME PREFIX (probe_, audit_, sweep_), but 226
+top-level computations/*.py carry those words as a SUFFIX (*_probe.py,
+*_test.py) and escape both rules. Only 1 tripped when measured, so the class is
+latent rather than live. Which suffixes to exclude is that guard owner's call:
+`_probe.py` is unambiguously the excluded class, `_test.py` is not -- a real
+unit test SHOULD be guarded.
