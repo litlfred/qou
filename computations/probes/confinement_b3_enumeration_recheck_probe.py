@@ -83,6 +83,7 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "pyhecke" / "python"))
 from q_parameter import HA, Q as q0  # noqa: E402
 from pyhecke.gram import NF_BASIS, TR_M as CANON_TR_M, z as PG_Z  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from q0_stamp import anchor_of_value, pin_value_for_anchor  # noqa: E402
 
 NF_NAMES = ["gamma", "s0", "s1", "L+", "L-", "e-"]
 GENS = [0, 1, -1, -2]                      # s0, s1, s0^-1, s1^-1
@@ -309,20 +310,44 @@ def main() -> int:
         "confinement operator — only that this enumeration does not select "
         "it. A selection argument needs a metric not defined from the answer."
     )
-    path = w.save({
-        "q0Anchor": "proton",
+    # Read the anchor off the q0 THIS RUN computed with, never off a literal.
+    # The literal that used to sit here said "proton" -- true of the default
+    # this stem resolves to, and false of the run that actually produced the
+    # committed witness, which had QOU_Q0_ANCHOR=ideal set for the cross-check
+    # below. The witness went out labelled proton carrying the muon value, and
+    # nothing could catch it: a hardcoded label cannot disagree with itself.
+    # `q0_anchor_consistency_audit` scored it Q0_FLIP. Bean `qou/ftuv`.
+    anchor = anchor_of_value(q0)
+    stamp = {
         "q0AnchorReason": (
             "HA = q - 1/q enters |dnet| through `crossing` and `reduce_nf`, so "
-            "the values are anchor-dependent; `proton` is the q_parameter "
-            "runtime default this stem resolves to, and the same one the "
-            "deprecated producer ran under. The CONCLUSIONS are not "
-            "anchor-dependent. Measured, not assumed: re-run under "
-            "QOU_Q0_ANCHOR=ideal every count is identical (proton 382 / 195 / "
-            "187, neutron 167 / 28 / 139), B_3 stays rank 1 and the proton "
-            "mirror stays rank 12; the neutron mirror moves 111 -> 109 within "
-            "a tie cluster. Each figure refuting part (iii) survives both "
-            "anchors."),
-    })
+            "the values are anchor-dependent, and this field reports the pin "
+            "the run used rather than the one the stem defaults to. Unset, "
+            "the stem resolves to `proton` -- the q_parameter runtime default "
+            "and the same one the deprecated producer ran under. The "
+            "CONCLUSIONS are not anchor-dependent. Measured, not assumed: "
+            "re-run under QOU_Q0_ANCHOR=ideal every count is identical "
+            "(proton 382 / 195 / 187, neutron 167 / 28 / 139), B_3 stays rank "
+            "1 and the proton mirror stays rank 12; the neutron mirror moves "
+            "111 -> 109 within a tie cluster. Each figure refuting part (iii) "
+            "survives both anchors."),
+    }
+    # An unrecognised q0 stays UNSTAMPED on purpose: Q0_ANCHOR_MISSING is a
+    # tolerated, visible state; a guessed pin is a silent wrong one.
+    #
+    # `q0Value` is declared HERE, not left to the builder. `WitnessBuilder`
+    # stamps it only inside its `if "q0Anchor" not in payload` branch, so a
+    # producer that states the anchor itself gets no value -- and the
+    # preserve-forward step then fills it from the PREVIOUS witness. That is
+    # what produced the Q0_FLIP: this run resolves proton, the file on disk
+    # still held the muon value from the QOU_Q0_ANCHOR=ideal cross-check, and
+    # the two were written side by side. Declaring both closes the gap.
+    if anchor is not None:
+        stamp["q0Anchor"] = anchor
+        pin = pin_value_for_anchor(anchor)
+        if pin is not None:
+            stamp["q0Value"] = pin
+    path = w.save(stamp)
     print(f"\nWrote {Path(path).name}")
     return 0
 

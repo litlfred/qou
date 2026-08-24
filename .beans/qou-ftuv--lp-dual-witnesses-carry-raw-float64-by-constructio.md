@@ -396,6 +396,80 @@ and a missing `.lean` for `qou-motivic-galois-instance`. All five are present
 on main, and `git diff --name-only origin/main...HEAD` shows this branch
 touched none of those paths.
 
+### A Q0_FLIP this branch introduced, and the two mechanisms behind it
+
+`scripts/precision-gates.sh` came back RED on the merged tree with exactly one
+flip: `computations/probes/confinement-b3-enumeration-recheck-probe.witness.json`
+carried `q0Anchor: "proton"` next to the **muon** 50-dps value. The file is new
+on this branch, so the regression is mine. Two independent defects had to line
+up to produce it, and both are the same shape — a value nothing can contradict.
+
+**1. The producer asserted its anchor as a string literal.** It wrote
+`"q0Anchor": "proton"` because proton is what the stem resolves to by default.
+True of the default; false of the run that actually produced the committed
+witness, which had `QOU_Q0_ANCHOR=ideal` set for the cross-check quoted in its
+own `q0AnchorReason`. A hardcoded label cannot disagree with itself, so no gate
+could catch it until the value audit did. Fixed by reading the anchor off the
+q₀ the run computed with — new `anchor_of_value()` in `computations/q0_stamp.py`,
+which compares against the two pins and returns `None` (leave unstamped) for
+anything else.
+
+**2. `WitnessBuilder` stamps `q0Value` only when the producer does NOT declare
+`q0Anchor`.** The guard is `if "q0Anchor" not in payload:` — both fields are
+written inside it. So a producer that states its own anchor gets **no value at
+all** from the builder, and the preserve-forward step immediately below fills
+the gap from the *previous witness on disk*. A producer whose anchor changes
+between runs therefore ends up with a fresh, correct anchor beside the old
+anchor's value: the flip is manufactured by the very block that exists to
+prevent it. Fixed at this producer by declaring `q0Value` alongside the anchor
+(`pin_value_for_anchor()`), **not** in the shared builder — that guard is
+load-bearing for ~780 producers and re-stamping the corpus is an owner call.
+
+Proof the label now follows the run, measured both directions rather than
+argued:
+
+```
+QOU_Q0_ANCHOR=ideal  → q0Anchor: muon    q0Value: 1.10997859555733471989…
+(unset, default)     → q0Anchor: proton  q0Value: 1.10997858275138080759…
+q0_anchor_consistency_audit: Q0_FLIP 1 → 0,  Q0_OK 701 → 702
+```
+
+### `scripts/staleness-gates.sh` — one RED was mine, two are main's
+
+- **qou-mass vendor mirror** — MINE. `mass_at_3A_proper` had drifted from
+  source because this branch edited `computations/mass_at_3A_proper.py` without
+  re-running the vendor sync. `scripts/sync-qou-mass-vendor.py --apply`
+  regenerated 42 modules; exactly one file changed, which is the edit
+  propagating correctly. Gate now green.
+- **q0 constant staleness** (2 witnesses) — NOT mine.
+  `lever1-binding-core-characterization` and
+  `lever1-binding-habiro-single-element-test` are **byte-identical to
+  `origin/main`**, producers included. Part of the 307-witness q₀ migration
+  already on this bean's Next list.
+- **scriptHash + upstream drift** — NOT mine. 564 self-stale and 193 drift
+  records corpus-wide. Every edge the gate itemises names files this branch did
+  not touch; the one that looked like mine, `a-K-via-lp-dual.witness.json →
+  q-pinning-50-digit.witness.json`, involves neither file in
+  `git diff --name-only origin/main...HEAD` (this branch regenerated
+  `a-K-via-lp-dual-**full**` and `-hecke-basis`, different files).
+
+### `q0-value-drift-audit` — the movement is main's, not this branch's
+
+The gate flagged the committed copy as stale. Regenerating moved
+`canonical` 539 → 205 and `proton-pin` 891 → 1293, which looks enormous until
+the three copies are put side by side:
+
+```
+origin/main committed   canonical=201  proton-pin=1295  STALE=292
+this branch committed   canonical=539  proton-pin= 891  STALE=307
+freshly regenerated     canonical=205  proton-pin=1293  STALE=290
+```
+
+The fresh numbers sit beside **main's**. This branch's committed copy was
+generated before the 1366-commit merge, against a corpus that had not yet
+received main's re-anchoring. The delta that is genuinely this branch's is the
+small one from main: canonical +4, proton-pin −2, STALE −2.
+
 ## Next
 
 - [ ] Build `clarabel-operator-selection-lp` (`--features clarabel-mpfr`) and

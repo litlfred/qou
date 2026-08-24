@@ -107,3 +107,71 @@ def stamp_q0_anchor(payload: dict, script_path) -> dict:
     except Exception:  # noqa: BLE001 -- stamping never breaks a producer
         pass
     return payload
+
+
+def anchor_of_value(value) -> str | None:
+    """Which pin a run ACTUALLY computed with, read off the value itself.
+
+    `stamp_q0_anchor` defers to an explicit `q0Anchor` already in the payload,
+    and that is deliberate -- a comparison producer carrying both pins must
+    keep what it wrote. The cost is that a HARDCODED anchor string is checked
+    against nothing. A producer that literals `"q0Anchor": "proton"` because
+    proton is the anchor its stem resolves to by default still emits that
+    label when the run is overridden with `QOU_Q0_ANCHOR=ideal`, and the audit
+    reads the label as authoritative. The result is a Q0_FLIP manufactured by
+    a line of prose, with no check anywhere that could have caught it -- the
+    label cannot disagree with itself.
+
+    This closes that: pass the q0 the producer computed with (`q_parameter.Q`,
+    or its 50-dps string) and get back `"muon"` / `"proton"` / `None`. The
+    comparison is on the shared prefix, capped at 17 significant characters,
+    because a caller may hold an f64 while the pins are 50-dps -- the two pins
+    differ at the 11th significant digit, well inside f64's range.
+
+    `None` means the value matches neither pin. That is the honest answer for
+    an independent or derived q0, and leaving the field unstamped
+    (Q0_ANCHOR_MISSING) is a tolerated and VISIBLE state, unlike a wrong pin.
+    """
+    if value is None:
+        return None
+    recorded = repr(float(value)) if isinstance(value, float) else str(value)
+    try:
+        from qou_substrate.witness import (  # noqa: PLC0415
+            _q0_value_for_anchor,
+        )
+    except Exception:  # noqa: BLE001 -- never break a producer
+        return None
+    for anchor in ("muon", "proton"):
+        pin = _q0_value_for_anchor(anchor)
+        if pin is None:
+            continue
+        n = min(len(recorded), len(pin), 17)
+        if n >= 12 and recorded[:n] == pin[:n]:
+            return anchor
+    return None
+
+
+def pin_value_for_anchor(anchor: str | None) -> str | None:
+    """The canonical 50-digit q0 string for `"muon"` / `"proton"`, else None.
+
+    Pairs with `anchor_of_value` so a producer that declares its own
+    `q0Anchor` can declare the matching `q0Value` in the same breath. It has
+    to: `WitnessBuilder` stamps `q0Value` only inside its
+    `if "q0Anchor" not in payload` branch, so a producer that states the
+    anchor itself gets no value from the builder at all -- and the
+    preserve-forward step then fills the gap from the PREVIOUS witness on
+    disk. A producer whose anchor legitimately changes between runs therefore
+    ends up with a fresh, correct anchor sitting next to the old anchor's
+    value, which is the Q0_FLIP the pair exists to make impossible. Flagged
+    for the owner in bean `qou/ftuv`; not fixed in the shared builder here,
+    because that guard is load-bearing for ~780 producers.
+    """
+    if anchor not in ("muon", "proton"):
+        return None
+    try:
+        from qou_substrate.witness import (  # noqa: PLC0415
+            _q0_value_for_anchor,
+        )
+    except Exception:  # noqa: BLE001 -- never break a producer
+        return None
+    return _q0_value_for_anchor(anchor)

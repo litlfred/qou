@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:22:35.297190+00:00",
-  "commitSha": "5c74597d32c0dcc4568a61457424f3d62b0f6023",
+  "computedAt": "2026-08-24T05:44:31.733718+00:00",
+  "commitSha": "a1b5edbfda0abadb45473f47433073c8c2513f74",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -32,8 +32,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -46,13 +45,13 @@
   "data": {
     "counts": {
       "Q0_OK": 702,
-      "Q0_AMBIGUOUS": 16,
+      "Q0_AMBIGUOUS": 15,
       "Q0_INDEPENDENT": 46,
-      "Q0_INDEPENDENT_NO_REASON": 0,
+      "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1880,
+      "Q0_ANCHOR_MISSING": 1882,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -155,6 +154,10 @@
         },
         {
           "witness": "all-nuclides-wedderburn-spectral-v2.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "alpha-5-lp-dual-crystal.witness.json",
           "detail": ""
         },
         {
@@ -2027,6 +2030,10 @@
         },
         {
           "witness": "derived-chi-catalogue.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deuteron-real-sdp.witness.json",
           "detail": ""
         },
         {
@@ -7596,10 +7603,6 @@
           "detail": ""
         },
         {
-          "witness": "alpha-5-lp-dual-crystal.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "alpha-em-categorical-reidentification.witness.json",
           "detail": ""
         },
@@ -9592,6 +9595,10 @@
           "detail": ""
         },
         {
+          "witness": "confinement-b3-enumeration-recheck-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "d14-theta-bar-side.witness.json",
           "detail": ""
         },
@@ -10414,10 +10421,6 @@
           "detail": ""
         },
         {
-          "witness": "deuteron-real-sdp.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "detail": ""
         },
@@ -10962,6 +10965,12 @@
         {
           "witness": "muon-pin-stored-vs-live.witness.json",
           "detail": ""
+        }
+      ],
+      "Q0_INDEPENDENT_NO_REASON": [
+        {
+          "witness": "operator-selection-lp-symbolic-qq.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
         }
       ]
     }
