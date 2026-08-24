@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-19T17:46:48Z
-updated_at: 2026-08-19T20:07:25Z
+updated_at: 2026-08-24T12:40:38Z
 ---
 
 Found while running precision-gates for an unrelated probe (qou-unqc).
@@ -71,3 +71,37 @@ TWO GUARDS so it cannot recur silently:
 Guard 2 is the one that matters: the audit could not distinguish '262 witnesses
 are wrong' from 'my definition of muon is wrong', and reported the first when the
 second was true -- output that invites fixing 262 correct files.
+
+
+## Residual taken to ZERO (2026-08-24, PR #5622 commit aefc2489cd)
+
+This bean closed at **262** flips. Re-measured today on the merged tree: **3**.
+Now **0**.
+
+    Q0_FLIP           3  ->  0
+    Q0_INDEPENDENT   44  -> 47      (the same 3, correctly reclassified)
+    Q0_COMPARISON     1  ->  1      (no regression)
+    Q0_OK           746  -> 746
+
+**Root cause — a guard skipped exactly when it was needed.** `witness.py`
+already forbade a bare `q0Value` beside `q0Anchor: "independent"` /
+`"comparison"`, but the pop was nested inside the `if not _stale:`
+carry-forward branch. Forbidding is a property of the *new* declaration, not of
+whether the *old* record was stale, and the two are anticorrelated: when the
+existing witness already said `independent` and the new payload carried anchor
+evidence, `_stale` went True, the branch was skipped, and the value rode
+through. Hoisted the pop out of the branch.
+
+**A caution for anyone reading this gate's output.** The audit's message —
+*"anchor=independent but a q0Value is recorded — the producer reads q₀ after
+all"* — is a **false inference**. All three producers had a deliberate
+`independent` declaration from `qou-o922` with a stated proof, so I re-verified
+rather than trusting either side: running `qbeta_c3_rung_structure_analysis`
+under `QOU_Q0_ANCHOR=muon` vs `=proton` and diffing gives **one** differing
+non-ephemeral leaf, `.q0Value` itself, everything else byte-identical. The
+producers do not read q₀. The audit's *finding* was still correct — that state
+violates the module's own documented vocabulary — but its stated reason would
+send the next reader to fix the wrong file.
+
+Whether the 262 → 3 drop came from the anchor-migration work or elsewhere is
+**not** established here; only the last 3 are attributed.
