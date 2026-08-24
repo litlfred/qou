@@ -202,3 +202,34 @@ changed is that we now know float64 was not *silently* wrong here — which is
 useful for triaging the OTHER float64-into-sparse sites (`qou-q7lf`,
 `hecke_core_legacy`), where the same question will come up and can now be asked
 the same cheap way.
+
+## Correction: the engine has 14 candidate consumers, not zero
+
+I said on merging #5648 that "nothing currently needs it, since the case I built
+it for prunes to one cheap irrep". That was measured only against `su4`.
+
+Measured properly — producers that call `chi_lambda_of_word` **and** build their
+word with `atom_braid_word_3A`, which carries exact `mpf` offsets:
+
+    binding_rotation_phase_lead          phase3_deuteron_tritium_h_expansion
+    wedderburn_jones_markov              ocneanu_weights
+    tr_m_q_hecke_seminormal              h6_deuteron_free_word_chi_lambda_probe
+    su4_1111_markov_trace_probe          trace_convention_reconciliation
+    he3_tritium_cosh_asymmetry_diagnosis term5_v2_chirality
+    hoefsmit_mpmath                      canonical_brane_tower
+    binding_per_bond_decomposition       mass_at_3A_proper
+
+**14 producers are on the silent-coercion path** after `qou-qrsp` made
+`chi_lambda_of_word` coerce its word coefficients to `float` at the contract.
+
+### What that does and does not establish
+
+It establishes the *set*, not the *need*. `qou-qrsp` measured the coercion at
+half an ulp per coefficient, and for `su4` the verdict was unaffected — all four
+metrics agreed with the exact route to ~16 digits. Whether any of the other 13
+has a conclusion sensitive to that loss is **unmeasured**, and the su4 result is
+mild evidence they do not.
+
+The cheap check now exists for each: run the caller against
+`chi_lambda_of_word_sparse_mp` and compare. That is what settled it for `su4`,
+and it is a per-caller question rather than a corpus sweep.

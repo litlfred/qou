@@ -30,11 +30,45 @@ Run: `python3 computations/audits/q0_anchor_reproducibility_audit.py [--selftest
 from __future__ import annotations
 
 import json
+import re as _re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent          # computations/
 MANIFEST = ROOT / "q0_anchor_manifest.json"
+
+
+
+# ── can a manifest entry actually fix it? ───────────────────────────────
+#
+# "Just add manifest entries" is the obvious remediation for the
+# builder-but-undeclared bucket, and for a quarter of it that would be a LIE:
+# the producer never consults the manifest, so an entry declares a pin it does
+# not obey. Measured, per DISTINCT PRODUCER rather than per witness -- 241
+# witnesses are only 93 producers, and one of them (`canonical_isotope_witness`)
+# accounts for 120 of the witnesses, so a per-witness rate is dominated by a
+# single file. That distortion is the one AGENTS.md records costing a 39%-vs-73%
+# swing on the staleness census; counting producers is what avoids it.
+_ANCHOR_READ = _re.compile(r"q[-_]pinning[-_]50[-_]digit|q_pinning_50_digit")
+_QPARAM = _re.compile(r"from\s+q_parameter\s+import|q_parameter\.")
+_HARDCODE = _re.compile(r"1\.10997858\d|1\.10997859\d")
+
+
+def manifest_efficacy(src: str) -> str:
+    """Would a `q0_anchor_manifest.json` entry change this producer's pin?
+
+    EFFECTIVE only when the producer reads `q_parameter`, which is what
+    consults the manifest. A producer that reads the anchor-defining witness
+    directly (the `qou-aj91` class, 85 corpus-wide) or hardcodes a literal
+    resolves its q0 with the manifest out of the loop entirely.
+    """
+    if _ANCHOR_READ.search(src):
+        return "INERT: reads the anchor witness directly (qou-aj91)"
+    if _QPARAM.search(src):
+        return "EFFECTIVE: reads q_parameter"
+    if _HARDCODE.search(src):
+        return "INERT: hardcoded q0 literal"
+    return "UNKNOWN: no visible q0 source (indirect/helper)"
 
 
 def manifest_stems() -> set[str]:
@@ -117,6 +151,34 @@ def main(argv) -> int:
                 print(f"    {n}  <- {p.name if p else '?'}")
             if len(v) > 10:
                 print(f"    ... and {len(v)-10} more")
+
+    if "--by-producer" in argv:
+        # The remediation view: group the at-risk builder bucket by producer and
+        # by whether a manifest entry would even reach it.
+        from collections import Counter
+        pw, pk = Counter(), {}
+        for k, v in buckets.items():
+            if not k.startswith("AT RISK: builder"):
+                continue
+            for _n, prod in v:
+                if prod is None:
+                    continue
+                pw[prod.stem] += 1
+                pk.setdefault(prod.stem, manifest_efficacy(prod.read_text(errors="ignore")))
+        cp, cw = Counter(), Counter()
+        for stem, k in pk.items():
+            cp[k] += 1
+            cw[k] += pw[stem]
+        print(f"\n  builder-but-undeclared, BY PRODUCER: {len(pk)} producers, "
+              f"{sum(cw.values())} witnesses")
+        for k in sorted(cp, key=lambda k: -cp[k]):
+            print(f"    {cp[k]:>4} producers {cw[k]:>5} witnesses  {k}")
+        inert = sum(cp[k] for k in cp if k.startswith("INERT"))
+        if pk:
+            print(f"    => {inert} of {len(pk)} producers "
+                  f"({100*inert//len(pk)}%) cannot be fixed by a manifest entry")
+        for stem, n in pw.most_common(3):
+            print(f"       heaviest: {stem} ({n} witnesses)")
 
     if "--selftest" in argv:
         # Calibrated on answers established by hand. Without this the audit

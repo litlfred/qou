@@ -218,3 +218,34 @@ this session already made once with `qou-q7lf`.
 
 Recorded only so the next reader knows the 44 were seen and deliberately left
 to that arc.
+
+## Remediation view: 93 producers, and a quarter of them cannot be fixed that way
+
+`q0_anchor_reproducibility_audit.py --by-producer`.
+
+**The "241" is 241 witnesses but only 93 producers**, and one of them —
+`canonical_isotope_witness` — accounts for **120** of the witnesses. A
+per-witness rate here is half one file. That is the distortion AGENTS.md
+records costing a 39 %-vs-73 % swing on the staleness census; counting
+producers is what avoids it.
+
+| producers | witnesses | would a manifest entry reach it? |
+|---:|---:|---|
+| 48 | 196 | **EFFECTIVE** — reads `q_parameter` |
+| 22 | 22 | UNKNOWN — no visible q0 source (indirect/helper) |
+| 12 | 12 | **INERT** — hardcoded q0 literal |
+| 11 | 11 | **INERT** — reads the anchor witness directly (`qou-aj91`) |
+
+**23 of 93 producers (24 %) cannot be fixed by a manifest entry at all.** They
+never consult the manifest: they read the anchor-defining witness directly, or
+carry a literal. An entry for those declares a pin the producer does not obey —
+which is worse than the missing stamp it replaces, because it *looks*
+established.
+
+So the shape of the work is now concrete: 48 producers where an entry is the
+right instrument (and one of them drains 120 witnesses), 23 where it is the
+wrong one, and 22 that need reading before either.
+
+The 11 direct-anchor readers are `qou-aj91`'s class — that bean says the fix
+belongs in `WitnessBuilder`, not in the producers, and this is a second reason
+to agree.
