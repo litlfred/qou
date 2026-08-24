@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+exact-Q5",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T15:24:18.233952+00:00",
-  "commitSha": "cabed4f226191f0891b6a7e61ad590a0ed356002",
+  "computedAt": "2026-08-23T23:54:32.669920+00:00",
+  "commitSha": "5218280df85b6efebc5a4d740cbe8ef77436dc57",
   "assertions": [
     {
       "name": "corrected_modulus_identity_established",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 5,
   "computation": "lr-modulus-identification-sigma235",
   "scriptFile": "lr_modulus_identification_sigma235.py",
-  "scriptHash": "6da6d10c62fd",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "95440e605d0a",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lr_modulus_identification_sigma235.py"
+    ],
+    "reproduce": "python3 -u computations/lr_modulus_identification_sigma235.py"
   },
   "description": "The colored Lawrence-Rozansky modulus identification on Sigma(2,3,5) -- the W_lambda keystone's last open piece. VERDICT: CORRECTED EXACT IDENTITY. The color-alpha insertion on the order-5 fibre produces the Hikami odd character chi^(1,1,alpha); computed exactly, the map alpha -> chi factors through the r=5 affine-Weyl fold with the SAME kernel and signs as alpha -> [alpha]_zeta at the fibre root zeta = e^{i pi/5} (chi^(114)=+chi^(111) ~ [4]=+[1]; chi^(113)=+chi^(112) ~ [3]=+[2]; chi^(115)=0 ~ [5]=0; chi^(116)=-chi^(111) ~ [6]=-[1]). The colored Gauss sum tau_N(alpha) (alpha=1 anchors to bare Theorem 10 machine-zero) obeys the fold AT THE FLAT-CONNECTION LEVEL: the class deviations are ELEMENTARY exact identities -- tau_N(4)-tau_N(1) = 1+2cos(2pi/N) and tau_N(3)-tau_N(2) = e^{-6pi i/(5N)} (machine zero at N=7,11,13,25), tau_N(6)+tau_N(1) bounded after Cor-12 normalization, tau_N(5) has NO flat part. Flat-connection amplitudes extracted parameter-free match A_m(alpha) = (2/sqrt5)sin(alpha m pi/5), and the EXACT Q(sqrt5) algebra gives, for every affine-E8 McKay node lambda (marks 1,2,3,4,5,6,4,2,3 = 2I irrep dims) and both flat connections m: |A_m(mark)| * D_E8(zeta^m) = 2*|[mark]_{zeta^m}| with D_E8(zeta^m)^2 = 10 +- 2sqrt5 and core identity (10-2sqrt5)(10+2sqrt5)=80. So |S_0lambda^(m)| = 2*d_{zeta^m}(lambda)/D_E8 = sqrt2*d/D_MTC (D_E8^2 = 2*D_MTC^2, the 2:1 fold of the affine-E8 node set onto the r=5 alcove). Corrections to the conjectured shape: (1) zeta is the FIBRE root e^{m pi i/5} Galois-indexed by the flat connection, not the level root and not e^{2 pi i/30}; (2) global factor 2 (resp. sqrt2); (3) the identity lives at the FOLDED D=2 level -- the 4 generic-q Hecke classes collapse at the fibre root ((3,2) muon class -> [5]=0; electron [5]+1 = 1 = |[6]|, moduli consistent); the 9-independent-moduli reading at a single zeta is (b)-excluded by D(2,3,5)=2 (two irreducible SU(2) flat connections, Fintushel-Stern; machine-validated in-repo). The generic-q/archimedean separation remains the standing open continuation (#3652/#3681). No fit; nothing wired to production.",
   "data": {
@@ -71,26 +81,26 @@
     "qfold_exact": true,
     "fold_matches_qint_signs": true,
     "theorem10_residuals": {
-      "3": 2.5568623508337472e-39,
-      "5": 4.2802139649491824e-39,
-      "7": 5.62899903519033e-39
+      "3": 2.8681777786081937e-69,
+      "5": 8.789067227297671e-69,
+      "7": 1.1889389327351644e-68
     },
     "theorem10_exact": true,
     "chi_linearity": {
       "delta4_eq_1_plus_2cos": {
-        "7": 6.0016078763991e-39,
-        "11": 1.2719216217881783e-38,
-        "13": 2.882965477219391e-38,
-        "25": 3.568148812712859e-38
+        "7": 1.0981193659103798e-68,
+        "11": 3.146641430288603e-68,
+        "13": 1.4487999803879669e-68,
+        "25": 4.486993125750131e-68
       },
       "delta32_eq_exp_m6pi_over_5N": {
-        "7": 6.340110836973996e-39,
-        "11": 1.8267424021213014e-38,
-        "13": 1.9604604085584834e-38,
-        "25": 6.870182923947703e-38
+        "7": 2.000649354222963e-69,
+        "11": 7.146452823017517e-69,
+        "13": 1.2057761663221772e-68,
+        "25": 1.5808209792535522e-68
       },
       "delta6_normalized_abs": {
-        "7": 1.6912531461587612e-39,
+        "7": 7.123107106738078e-70,
         "11": 1.8192639907090367,
         "13": 1.985417748196108,
         "25": 1.5410264855515785,
@@ -241,11 +251,11 @@
       {
         "node": "5",
         "mark": 5,
-        "absA_m1": 3.697619447397311e-43,
-        "dq_over_D_m1": 1.8488097236986555e-43,
+        "absA_m1": 7.3018151079741e-72,
+        "dq_over_D_m1": 3.65090755398705e-72,
         "ratio_m1": 2.0,
-        "absA_m2": 7.395238894794622e-43,
-        "dq_over_D_m2": 3.697619447397311e-43,
+        "absA_m2": 1.46036302159482e-71,
+        "dq_over_D_m2": 7.3018151079741e-72,
         "ratio_m2": 2.0
       },
       {

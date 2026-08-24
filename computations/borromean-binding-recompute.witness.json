@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T00:55:41.371670+00:00",
-  "commitSha": "82900c72a9ea9f2d71d502f2c9c2e66127bddee6",
+  "computedAt": "2026-08-23T22:52:52.541978+00:00",
+  "commitSha": "cd8acfc1cd9a5799184f208fb625094eb9a0e8a9",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "borromean-binding-recompute",
   "scriptFile": "borromean_binding_recompute.py",
-  "scriptHash": "1191cfecdb96",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "bffacadcc257",
+  "scriptCommitSha": "9951c2d6e3f3da63f6fae3255761d3b79d743a5d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +23,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/borromean_binding_recompute.py"
+    ],
+    "reproduce": "python3 -u computations/borromean_binding_recompute.py"
   },
   "schema": "borromean-binding/v1",
   "tau": 0.9985621638367873,
@@ -35,72 +42,72 @@
       "Z": 1,
       "N": 1,
       "B_AME": 2.224573,
-      "B_can0": 2.0898131460941918,
-      "B_tower": 2.480296257394451,
-      "delta_K_residual": 0.8968980997201164
+      "B_can0": 1.6166217381550836,
+      "B_tower": 2.063076949816325,
+      "delta_K_residual": 1.0782792179409755
     },
     {
       "iso": "3H",
       "Z": 1,
       "N": 2,
       "B_AME": 8.481821,
-      "B_can0": 3.5638784901553384,
-      "B_tower": 4.919026059345178,
-      "delta_K_residual": 1.7242886900113519
+      "B_can0": 3.137225560748612,
+      "B_tower": 4.741966424926435,
+      "delta_K_residual": 1.7886716690811626
     },
     {
       "iso": "3He",
       "Z": 2,
       "N": 1,
       "B_AME": 7.718058,
-      "B_can0": 3.128794173475609,
-      "B_tower": 4.300243507376386,
-      "delta_K_residual": 1.7947955707068437
+      "B_can0": 2.6033579456523555,
+      "B_tower": 3.94272358063608,
+      "delta_K_residual": 1.9575447890655435
     },
     {
       "iso": "4He",
       "Z": 2,
       "N": 2,
       "B_AME": 28.295673,
-      "B_can0": 3.860766193486161,
-      "B_tower": 6.387363096576777,
-      "delta_K_residual": 4.429945906028842
+      "B_can0": 3.531353053597401,
+      "B_tower": 6.475459552758949,
+      "delta_K_residual": 4.3696779772092444
     },
     {
       "iso": "6Li",
       "Z": 3,
       "N": 3,
       "B_AME": 31.994564,
-      "B_can0": 4.106471248016275,
-      "B_tower": 10.514812623387348,
-      "delta_K_residual": 3.042808763784984
+      "B_can0": 3.994499199157953,
+      "B_tower": 11.487453061658872,
+      "delta_K_residual": 2.7851747317938336
     },
     {
       "iso": "7Li",
       "Z": 3,
       "N": 4,
       "B_AME": 39.244533,
-      "B_can0": 4.131415349896913,
-      "B_tower": 13.433750098936727,
-      "delta_K_residual": 2.921338621827287
+      "B_can0": 4.081357830856327,
+      "B_tower": 15.049168650906994,
+      "delta_K_residual": 2.6077542162194307
     },
     {
       "iso": "12C",
       "Z": 6,
       "N": 6,
       "B_AME": 92.161728,
-      "B_can0": 4.1141933587637505,
-      "B_tower": 32.641552233916784,
-      "delta_K_residual": 2.823448080518601
+      "B_can0": 4.111993208477736,
+      "B_tower": 37.55866561603116,
+      "delta_K_residual": 2.453807303544421
     },
     {
       "iso": "16O",
       "Z": 8,
       "N": 8,
       "B_AME": 127.619,
-      "B_can0": 4.090710075887598,
-      "B_tower": 56.092234020012434,
-      "delta_K_residual": 2.275163438034371
+      "B_can0": 4.090571050647856,
+      "B_tower": 65.09570286743161,
+      "delta_K_residual": 1.9604827105085267
     },
     {
       "iso": "56Fe",
@@ -108,8 +115,8 @@
       "N": 30,
       "B_AME": 492.254,
       "B_can0": 3.861919751291598,
-      "B_tower": 685.1146435044327,
-      "delta_K_residual": 0.7184987281574797
+      "B_tower": 806.8411704090365,
+      "delta_K_residual": 0.6101002502765777
     }
   ]
 }

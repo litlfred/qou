@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T19:23:10.054606+00:00",
-  "commitSha": "3e188b3cb026b7306ab59a0f91082a1cb7692b9c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T02:25:47.871304+00:00",
+  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
   "assertions": [
     {
       "name": "qstar_residual_below_1e40",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "qbeta-magnitude-taylor-qstar",
   "scriptFile": "qbeta_magnitude_taylor_qstar_probe.py",
-  "scriptHash": "11eedf81f23b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0cdf6aadf958",
+  "scriptCommitSha": "934db778ba8dcc0d76519bf9ef862abfa46d326c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,9 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_magnitude_taylor_qstar_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_magnitude_taylor_qstar_probe.py"
   },
   "description": "Route A: close the S-channel magnitude |S_proton/S_muon|≈4.075 to a 1-ppQ SYMBOLIC FORM (L1 compute precision) via the Taylor expansion of S(q)=c3_target_at(q,Q_codata,m_e)+Vol(4₁) at its simple zero q*. The companion Bring-embedding probe showed the magnitude is NOT a knot period but the anchor-offset ratio near q*; this probe makes that leading-order identity a 1-ppQ symbolic form. DERIVED (not tuned): q* by findroot bracketed between the two anchors (opposite S-sign; S(q*) residual ~8e-56, <1e-40); the Taylor coefficients a=½S''/S', b=(1/6)S'''/S' by mpmath.diff. With δ=q−q*, the slope S'(q*) cancels in the ratio (Lean-proved linear_ratio_slope_independent), leaving |S_p/S_m|=|δ_p/δ_m|·g(δ_p)/g(δ_m), g(δ)=1+aδ+bδ²+…. Residual vs the DIRECT eval by Taylor order of g: order0 (offset ratio) 6.18e-7 (~6 digits, leading order of validity); order1 1.40e-13; order2 3.53e-20 (first ≤1e-15); order3 6.95e-27 — each order adds ~6–7 digits (δ~1e-8). MINIMUM Taylor order reaching 1 ppQ: N=2. SCOPE: this is L1 (internal symbolic-vs-direct cross-check), NOT L2 — |S_p/S_m| is an internal cross-check of the bar-odd residual's near-zero-crossing structure, not a measured observable/prediction. Closing the symbolic form does NOT close the closed form for q* (Route B, OPEN) nor the u(q₀) map (OPEN); anti-laundering — no c_k wired, no SDeformedVolumeChannel instance, no u(q₀) claimed.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
@@ -56,18 +65,18 @@
       "q_codata_is_fixed_constant": "0.78233341",
       "q_star": "1.1099785930315232884023283427354933150987634947114",
       "q_star_residual": "8.042e-56",
-      "direct_magnitude": "4.07512700316204532552627382494",
+      "direct_magnitude": "3.9369205094615926269984444568",
       "slope_L_cancels": "S'(q*) = 3838404.45814 (cancels in the ratio; Lean linear_ratio_slope_independent)",
       "taylor_coeffs": "a=½S''/S'=-48.2368373245, b=(1/6)S'''/S'=1409.029853, c=(1/24)S''''/S'=-32056.1334622",
-      "delta_offsets": "δ_proton=-1.02801424808e-8, δ_muon=2.52265728688e-9",
+      "delta_offsets": "δ_proton=-1.02801424808e-8, δ_muon=2.61121575828e-9",
       "symbolic_form": "|S_p/S_m| = |δ_p/δ_m| · g(δ_p)/g(δ_m),  g(δ)=1+a·δ+b·δ²+…",
       "residual_by_order": {
-        "order_0_offset_ratio": "6.17566e-7",
-        "order_1": "1.39941e-13",
-        "order_2": "3.5341e-20",
-        "order_3": "6.94603e-27"
+        "order_0_offset_ratio": "6.21838e-7",
+        "order_1": "1.39301e-13",
+        "order_2": "3.53971e-20",
+        "order_3": "6.94229e-27"
       },
-      "offset_ratio_leading_order_of_validity": "|δ_p/δ_m|=4.0751244865005186093 matches DIRECT to rel 6.176e-7 (~6 digits)",
+      "offset_ratio_leading_order_of_validity": "|δ_p/δ_m|=3.9369180613341034407 matches DIRECT to rel 6.218e-7 (~6 digits)",
       "min_taylor_order_for_1ppq": 2,
       "scope": "L1 compute precision (symbolic form vs direct evaluation), NOT L2 per-observable accuracy. |S_p/S_m|=4.075 is an INTERNAL cross-check of the bar-odd residual's near-zero-crossing structure, not a measured observable or a prediction against experiment.",
       "still_open": "closed form for q* (Route B — q* is obtained here numerically by findroot) and the u(q₀) map. No c_k wired to production, no SDeformedVolumeChannel instance fabricated, no u(q₀) map claimed."

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T04:26:20.809251+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T23:15:31.720368+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [
     {
       "name": "bond_type_reproduces_T_He3_ordering",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "bond-type sum gives B_T=7.515 vs B_³He=7.361; AME 8.48 vs 7.72 — ordering matches (the bond-type discriminator, 0 fit)."
+      "source": "bond-type sum gives B_T=7.095 vs B_³He=6.788; AME 8.48 vs 7.72 — ordering matches (the bond-type discriminator, 0 fit)."
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 44,
   "computation": "derive-binding-bond-type",
   "scriptFile": "derive_binding_bond_type.py",
-  "scriptHash": "7359da319a6e",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "f9ce3deb4636",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,54 +30,62 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derive_binding_bond_type.py"
+    ],
+    "reproduce": "python3 -u computations/derive_binding_bond_type.py"
   },
   "description": "DERIVATION (0 fit, level-1): bond-TYPE per-bond binding sum B(K)=n_pp·B_pp+n_pn·B_pn+n_nn·B_nn, B_xy=E_0·Δtr_M of the 2-nucleon (Z,N) sub-braid (pure-Python canonical Markov trace; pn=deuteron). E_0=m_e/(q₀(q₀−1)) calibration. Isolates the bond-type T-vs-³He discriminator; per-block + per-bond-growth need the Rust χ kernel.",
   "parameters": {
-    "E0_MeV": 4.185980827582892
+    "E0_MeV": 4.185981363294476
   },
   "data": {
     "bond_type_binding_MeV": {
-      "pp": 2.3785162259010546,
-      "pn": 2.491365700974405,
-      "nn": 2.5323249170235664
+      "pp": 2.1283609457570836,
+      "pn": 2.3296855762940316,
+      "nn": 2.4355847837462457
     },
     "per_atom": {
       "D": {
         "n_pp": 0,
         "n_pn": 1,
         "n_nn": 0,
-        "B_pred_MeV": 2.491365700974405,
-        "AME_MeV": 2.2245662000000004,
-        "err": 0.11993327102353904
+        "B_pred_MeV": 2.3296855762940316,
+        "AME_MeV": 2.2245662,
+        "err": 0.04725387641600945
       },
       "T": {
         "n_pp": 0,
         "n_pn": 2,
         "n_nn": 1,
-        "B_pred_MeV": 7.515056318972376,
-        "AME_MeV": 8.481796200000002,
-        "err": -0.11397820204965847
+        "B_pred_MeV": 7.094955936334309,
+        "AME_MeV": 8.4817962,
+        "err": -0.16350785033784362
       },
       "3He": {
         "n_pp": 1,
         "n_pn": 2,
         "n_nn": 0,
-        "B_pred_MeV": 7.361247627849864,
+        "B_pred_MeV": 6.787732098345147,
         "AME_MeV": 7.718,
-        "err": -0.0462234221495382
+        "err": -0.12053224950179492
       },
       "4He": {
         "n_pp": 1,
         "n_pn": 4,
         "n_nn": 1,
-        "B_pred_MeV": 14.87630394682224,
+        "B_pred_MeV": 13.882688034679456,
         "AME_MeV": 28.2956624,
-        "err": -0.4742549675450524
+        "err": -0.5093704526712386
       }
     },
     "t_he3_ordering_matches": true,
-    "A_growth": 5.971144236674659
+    "A_growth": 5.959039355329429
   }
 }

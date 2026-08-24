@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke-native + python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T18:20:42.412049+00:00",
-  "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+  "computedAt": "2026-08-23T23:15:52.219214+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [
     {
       "name": "sweep_ran_to_completion",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1913,
+  "durationMs": 4972,
   "computation": "derived-chi-catalogue-sweep",
   "scriptFile": "derived_chi_catalogue_sweep.py",
-  "scriptHash": "302c1358ca37",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "80c1ed1d6515",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derived_chi_catalogue_sweep.py"
+    ],
+    "reproduce": "python3 -u computations/derived_chi_catalogue_sweep.py"
   },
   "description": "Phase 3 production isotope sweep (max-A=4). Builds derived (K, λ, A) cells for every production isotope × every Wedderburn partition via pyhecke_native.chi_q_via_gp. Kauffman convention t = q² natively.",
   "data": {
@@ -21666,7 +21673,7 @@
         "crossings": 0,
         "partitions_swept": 3,
         "cells_emitted": 3,
-        "elapsed_seconds": 0.045579033001558855
+        "elapsed_seconds": 0.09576499400009197
       },
       "n": {
         "Z": 0,
@@ -21676,7 +21683,7 @@
         "crossings": 0,
         "partitions_swept": 3,
         "cells_emitted": 3,
-        "elapsed_seconds": 0.030463082999631297
+        "elapsed_seconds": 0.045457396000529116
       },
       "D": {
         "Z": 1,
@@ -21686,7 +21693,7 @@
         "crossings": 23,
         "partitions_swept": 11,
         "cells_emitted": 11,
-        "elapsed_seconds": 0.04290665699954843
+        "elapsed_seconds": 0.05870426199999201
       },
       "T": {
         "Z": 1,
@@ -21696,7 +21703,7 @@
         "crossings": 35,
         "partitions_swept": 30,
         "cells_emitted": 30,
-        "elapsed_seconds": 0.17407654999988154
+        "elapsed_seconds": 0.2812228929997218
       },
       "3He": {
         "Z": 2,
@@ -21706,7 +21713,7 @@
         "crossings": 35,
         "partitions_swept": 30,
         "cells_emitted": 30,
-        "elapsed_seconds": 0.19055452999964473
+        "elapsed_seconds": 0.3311119879999751
       },
       "4He": {
         "Z": 2,
@@ -21716,10 +21723,10 @@
         "crossings": 47,
         "partitions_swept": 77,
         "cells_emitted": 77,
-        "elapsed_seconds": 1.4140229939985147
+        "elapsed_seconds": 4.134753606999766
       }
     },
-    "sweep_wall_seconds": 1.9008098230005999,
+    "sweep_wall_seconds": 4.949653300000136,
     "backend": "pyhecke_native.chi_q_via_gp (Rust)"
   }
 }

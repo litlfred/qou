@@ -1,6 +1,7 @@
 {
   "computation": "chi-tritium-h9-at-qinv-50dps",
-  "description": "Numerical χ^λ_q(β_atomic(1, 2)) = tritium per partition λ ⊢ 9, evaluated at q = q_0^{-1} ≈ 0.900918 at 50 dps via the pyhecke-native MPFR kernel (PR #1748).  Bar-image cache for PR #1742's mirror pairing χ(q_0)·χ(q_0^{-1}).  Same partition order as the sibling `chi-tritium-h9-at-q0-50dps.witness.json`.",
+  "description": "Numerical \u03c7^\u03bb_q(\u03b2_atomic(1, 2)) = tritium per partition \u03bb \u22a2 9, evaluated at q = q_0^{-1} \u2248 0.900918 at 50 dps via the pyhecke-native MPFR kernel (PR #1748).  Bar-image cache for PR #1742's mirror pairing \u03c7(q_0)\u00b7\u03c7(q_0^{-1}).  Same partition order as the sibling `chi-tritium-h9-at-q0-50dps.witness.json`.",
+  "convention": "averaged-crossings",
   "q_inv_50dps_str": "0.90091828395574149216082288248109393601474162661054",
   "dps": 50,
   "n_strands": 9,
@@ -9,7 +10,7 @@
   "N": 2,
   "n_partitions": 30,
   "n_partitions_total": 30,
-  "compute_time_sec": 0.38,
+  "compute_time_sec": 1.66,
   "by_partition": [
     {
       "partition": [
@@ -296,6 +297,13 @@
     "pr_landing_kernel": 1748,
     "pr_consumer": 1742
   },
-  "convention": "averaged-crossings",
-  "convention_inferred_by": "chi_convention_audit.py --fix (computation-id:/^chi-(?!.*-free-).*-at-qinv-50dps$/)"
+  "scriptFile": "chi_at_q_inv_via_native_mpfr.py",
+  "scriptHash": "df96ec3f36cb",
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
+  "commitSha": "71dbb7727399801b8d6adc749026eb7697de6789",
+  "engine": "rust+mpmath",
+  "computedAt": "2026-08-23T22:43:06.912059+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

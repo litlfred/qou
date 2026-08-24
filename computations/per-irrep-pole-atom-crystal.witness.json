@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T20:19:29.616966+00:00",
-  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "computedAt": "2026-08-24T00:34:40.842948+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [
     {
       "name": "asserted_atoms_match_closed_form_shift",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12827,
+  "durationMs": 14894,
   "computation": "per-irrep-pole-atom-crystal",
   "scriptFile": "per_irrep_pole_atom_crystal.py",
-  "scriptHash": "26b39bf85022",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "c803172af497",
+  "scriptCommitSha": "f6624c90962950134e0307d06f61b8e7f22fb261",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/per_irrep_pole_atom_crystal.py",
+      "--continue-on-mismatch"
+    ],
+    "reproduce": "python3 -u computations/per_irrep_pole_atom_crystal.py --continue-on-mismatch"
   },
   "description": "Crystal-bases Path A pole-order verification of shift_NF(β_K) = 18Z + 21N + 1 for each atom K, computed via per-SYT-eigenline u-pole tally at q → 0 (Kashiwara crystal limit) on the canonical Δ_I-coupled atomic braid word.  Replaces the GS-reduction-bound per_irrep_pole_atom.py path that doesn't return at H_12. Per-letter contributions: σ on sym/anti = ±2; σ⁻¹ on sym/anti = ∓2; Δ_I = -2 always (leading u⁻² term).",
   "contentBlock": "rem:crystal-bases-path-a",
@@ -52,17 +62,17 @@
         "n_strands": 3,
         "n_partitions": 3,
         "word_length": 11,
-        "min_total_ord_u_eq_0": -19,
+        "min_total_ord_u_eq_0": -18,
         "min_total_lambda": [
           2,
           1
         ],
-        "second_min_total_ord": -4,
-        "u_pole_order_inferred": 19,
+        "second_min_total_ord": 2,
+        "u_pole_order_inferred": 18,
         "expected_shift": 19,
-        "match": true,
+        "match": false,
         "asserted": true,
-        "elapsed_sec": 0.0005843639373779297,
+        "elapsed_sec": 0.03884148597717285,
         "per_partition": [
           {
             "lambda": [
@@ -79,11 +89,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 3,
+            "ord_y_at_u_0": 4,
             "ord_chi_at_u_0": -22,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/4",
-            "total_ord_y_chi": -19
+            "total_ord_y_chi": -18
           },
           {
             "lambda": [
@@ -91,11 +101,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 6,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -10,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/4",
-            "total_ord_y_chi": -4
+            "total_ord_y_chi": null
           }
         ]
       },
@@ -107,17 +117,17 @@
         "n_strands": 3,
         "n_partitions": 3,
         "word_length": 11,
-        "min_total_ord_u_eq_0": -19,
+        "min_total_ord_u_eq_0": -18,
         "min_total_lambda": [
           2,
           1
         ],
         "second_min_total_ord": -2,
-        "u_pole_order_inferred": 19,
+        "u_pole_order_inferred": 18,
         "expected_shift": 22,
         "match": false,
         "asserted": false,
-        "elapsed_sec": 0.00014781951904296875,
+        "elapsed_sec": 0.000263214111328125,
         "per_partition": [
           {
             "lambda": [
@@ -134,11 +144,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 3,
+            "ord_y_at_u_0": 4,
             "ord_chi_at_u_0": -22,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/4",
-            "total_ord_y_chi": -19
+            "total_ord_y_chi": -18
           },
           {
             "lambda": [
@@ -146,11 +156,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 6,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -6,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/4",
-            "total_ord_y_chi": 0
+            "total_ord_y_chi": null
           }
         ]
       },
@@ -162,18 +172,17 @@
         "n_strands": 6,
         "n_partitions": 11,
         "word_length": 23,
-        "min_total_ord_u_eq_0": -40,
+        "min_total_ord_u_eq_0": -38,
         "min_total_lambda": [
           4,
-          1,
-          1
+          2
         ],
-        "second_min_total_ord": -39,
-        "u_pole_order_inferred": 40,
+        "second_min_total_ord": -34,
+        "u_pole_order_inferred": 38,
         "expected_shift": 40,
-        "match": true,
+        "match": false,
         "asserted": true,
-        "elapsed_sec": 0.0037660598754882812,
+        "elapsed_sec": 0.01203465461730957,
         "per_partition": [
           {
             "lambda": [
@@ -190,112 +199,112 @@
               5,
               1
             ],
-            "ord_y_at_u_0": 3,
+            "ord_y_at_u_0": 4,
             "ord_chi_at_u_0": -26,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "-1/32",
-            "total_ord_y_chi": -23
-          },
-          {
-            "lambda": [
-              4,
-              2
-            ],
-            "ord_y_at_u_0": 7,
-            "ord_chi_at_u_0": -46,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/32",
-            "total_ord_y_chi": -39
-          },
-          {
-            "lambda": [
-              4,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 6,
-            "ord_chi_at_u_0": -46,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/32",
-            "total_ord_y_chi": -40
-          },
-          {
-            "lambda": [
-              3,
-              3
-            ],
-            "ord_y_at_u_0": 11,
-            "ord_chi_at_u_0": -46,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/32",
-            "total_ord_y_chi": -35
-          },
-          {
-            "lambda": [
-              3,
-              2,
-              1
-            ],
-            "ord_y_at_u_0": 10,
-            "ord_chi_at_u_0": -34,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/32",
-            "total_ord_y_chi": -24
-          },
-          {
-            "lambda": [
-              3,
-              1,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 9,
-            "ord_chi_at_u_0": -46,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "-1/32",
-            "total_ord_y_chi": -37
-          },
-          {
-            "lambda": [
-              2,
-              2,
-              2
-            ],
-            "ord_y_at_u_0": 17,
-            "ord_chi_at_u_0": -46,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "-1/32",
-            "total_ord_y_chi": -29
-          },
-          {
-            "lambda": [
-              2,
-              2,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 13,
-            "ord_chi_at_u_0": -46,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "-1/32",
-            "total_ord_y_chi": -33
-          },
-          {
-            "lambda": [
-              2,
-              1,
-              1,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 12,
-            "ord_chi_at_u_0": -34,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/32",
             "total_ord_y_chi": -22
           },
           {
             "lambda": [
+              4,
+              2
+            ],
+            "ord_y_at_u_0": 8,
+            "ord_chi_at_u_0": -46,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/32",
+            "total_ord_y_chi": -38
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -46,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/32",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              3,
+              3
+            ],
+            "ord_y_at_u_0": 12,
+            "ord_chi_at_u_0": -46,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/32",
+            "total_ord_y_chi": -34
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -34,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/32",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -46,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "-1/32",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -46,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "-1/32",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -46,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "-1/32",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -34,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "-1/32",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
               1,
               1,
               1,
@@ -303,11 +312,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 15,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -18,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/32",
-            "total_ord_y_chi": -3
+            "total_ord_y_chi": null
           }
         ]
       },
@@ -319,19 +328,17 @@
         "n_strands": 9,
         "n_partitions": 26,
         "word_length": 35,
-        "min_total_ord_u_eq_0": -61,
+        "min_total_ord_u_eq_0": -58,
         "min_total_lambda": [
           6,
-          1,
-          1,
-          1
+          3
         ],
-        "second_min_total_ord": -60,
-        "u_pole_order_inferred": 61,
+        "second_min_total_ord": -54,
+        "u_pole_order_inferred": 58,
         "expected_shift": 61,
-        "match": true,
+        "match": false,
         "asserted": true,
-        "elapsed_sec": 0.18825745582580566,
+        "elapsed_sec": 0.23439383506774902,
         "per_partition": [
           {
             "lambda": [
@@ -348,22 +355,22 @@
               8,
               1
             ],
-            "ord_y_at_u_0": 3,
+            "ord_y_at_u_0": 4,
             "ord_chi_at_u_0": -30,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -27
+            "total_ord_y_chi": -26
           },
           {
             "lambda": [
               7,
               2
             ],
-            "ord_y_at_u_0": 7,
+            "ord_y_at_u_0": 8,
             "ord_chi_at_u_0": -50,
             "n_T_at_min": 2,
             "leading_coeff_chi": "1/64",
-            "total_ord_y_chi": -43
+            "total_ord_y_chi": -42
           },
           {
             "lambda": [
@@ -371,22 +378,22 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 6,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -50,
             "n_T_at_min": 2,
             "leading_coeff_chi": "1/64",
-            "total_ord_y_chi": -44
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
               6,
               3
             ],
-            "ord_y_at_u_0": 11,
+            "ord_y_at_u_0": 12,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -59
+            "total_ord_y_chi": -58
           },
           {
             "lambda": [
@@ -394,11 +401,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 10,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -60
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -407,140 +414,140 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 9,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -61
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
               5,
               4
             ],
-            "ord_y_at_u_0": 15,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 2,
-            "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -55
-          },
-          {
-            "lambda": [
-              5,
-              3,
-              1
-            ],
-            "ord_y_at_u_0": 14,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 5,
-            "leading_coeff_chi": "-3/128",
-            "total_ord_y_chi": -56
-          },
-          {
-            "lambda": [
-              5,
-              2,
-              2
-            ],
-            "ord_y_at_u_0": 17,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 3,
-            "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -53
-          },
-          {
-            "lambda": [
-              5,
-              2,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 13,
-            "ord_chi_at_u_0": -66,
-            "n_T_at_min": 2,
-            "leading_coeff_chi": "1/64",
-            "total_ord_y_chi": -53
-          },
-          {
-            "lambda": [
-              5,
-              1,
-              1,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 12,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -58
-          },
-          {
-            "lambda": [
-              4,
-              4,
-              1
-            ],
-            "ord_y_at_u_0": 18,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 3,
-            "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -52
-          },
-          {
-            "lambda": [
-              4,
-              3,
-              2
-            ],
-            "ord_y_at_u_0": 21,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 5,
-            "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -49
-          },
-          {
-            "lambda": [
-              4,
-              3,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 17,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 5,
-            "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -53
-          },
-          {
-            "lambda": [
-              4,
-              2,
-              2,
-              1
-            ],
-            "ord_y_at_u_0": 20,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 4,
-            "leading_coeff_chi": "1/64",
-            "total_ord_y_chi": -50
-          },
-          {
-            "lambda": [
-              4,
-              2,
-              1,
-              1,
-              1
-            ],
             "ord_y_at_u_0": 16,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 2,
-            "leading_coeff_chi": "1/64",
+            "leading_coeff_chi": "-1/64",
             "total_ord_y_chi": -54
           },
           {
             "lambda": [
+              5,
+              3,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 5,
+            "leading_coeff_chi": "-3/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 3,
+            "leading_coeff_chi": "-1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -66,
+            "n_T_at_min": 2,
+            "leading_coeff_chi": "1/64",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 3,
+            "leading_coeff_chi": "-1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 5,
+            "leading_coeff_chi": "-1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 5,
+            "leading_coeff_chi": "1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 4,
+            "leading_coeff_chi": "1/64",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 2,
+            "leading_coeff_chi": "1/64",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
               4,
               1,
               1,
@@ -548,11 +555,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 15,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -66,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -51
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -560,11 +567,11 @@
               3,
               3
             ],
-            "ord_y_at_u_0": 29,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -41
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -573,11 +580,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 24,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 3,
             "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -46
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -587,11 +594,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 20,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -50
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -600,11 +607,11 @@
               2,
               2
             ],
-            "ord_y_at_u_0": 27,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -43
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -614,11 +621,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 23,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -47
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -629,11 +636,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 19,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -66,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -47
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -643,11 +650,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 30,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -66,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -36
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -658,11 +665,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 26,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -66,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -40
+            "total_ord_y_chi": null
           }
         ]
       },
@@ -674,20 +681,17 @@
         "n_strands": 9,
         "n_partitions": 26,
         "word_length": 35,
-        "min_total_ord_u_eq_0": -58,
+        "min_total_ord_u_eq_0": -54,
         "min_total_lambda": [
-          5,
-          1,
-          1,
-          1,
-          1
+          6,
+          3
         ],
-        "second_min_total_ord": -57,
-        "u_pole_order_inferred": 58,
+        "second_min_total_ord": -50,
+        "u_pole_order_inferred": 54,
         "expected_shift": 58,
-        "match": true,
+        "match": false,
         "asserted": true,
-        "elapsed_sec": 0.17302608489990234,
+        "elapsed_sec": 0.20178842544555664,
         "per_partition": [
           {
             "lambda": [
@@ -704,22 +708,22 @@
               8,
               1
             ],
-            "ord_y_at_u_0": 3,
+            "ord_y_at_u_0": 4,
             "ord_chi_at_u_0": -22,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -19
+            "total_ord_y_chi": -18
           },
           {
             "lambda": [
               7,
               2
             ],
-            "ord_y_at_u_0": 7,
+            "ord_y_at_u_0": 8,
             "ord_chi_at_u_0": -46,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -39
+            "total_ord_y_chi": -38
           },
           {
             "lambda": [
@@ -727,22 +731,22 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 6,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -46,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -40
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
               6,
               3
             ],
-            "ord_y_at_u_0": 11,
+            "ord_y_at_u_0": 12,
             "ord_chi_at_u_0": -66,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -55
+            "total_ord_y_chi": -54
           },
           {
             "lambda": [
@@ -750,11 +754,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 10,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -66,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -56
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -763,137 +767,137 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 9,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -66,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -57
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
               5,
               4
             ],
-            "ord_y_at_u_0": 15,
-            "ord_chi_at_u_0": -66,
-            "n_T_at_min": 2,
-            "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -51
-          },
-          {
-            "lambda": [
-              5,
-              3,
-              1
-            ],
-            "ord_y_at_u_0": 14,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -56
-          },
-          {
-            "lambda": [
-              5,
-              2,
-              2
-            ],
-            "ord_y_at_u_0": 17,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -53
-          },
-          {
-            "lambda": [
-              5,
-              2,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 13,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 2,
-            "leading_coeff_chi": "1/64",
-            "total_ord_y_chi": -57
-          },
-          {
-            "lambda": [
-              5,
-              1,
-              1,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 12,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -58
-          },
-          {
-            "lambda": [
-              4,
-              4,
-              1
-            ],
-            "ord_y_at_u_0": 18,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 1,
-            "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -52
-          },
-          {
-            "lambda": [
-              4,
-              3,
-              2
-            ],
-            "ord_y_at_u_0": 21,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 3,
-            "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -49
-          },
-          {
-            "lambda": [
-              4,
-              3,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 17,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 4,
-            "leading_coeff_chi": "1/64",
-            "total_ord_y_chi": -53
-          },
-          {
-            "lambda": [
-              4,
-              2,
-              2,
-              1
-            ],
-            "ord_y_at_u_0": 20,
-            "ord_chi_at_u_0": -70,
-            "n_T_at_min": 5,
-            "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -50
-          },
-          {
-            "lambda": [
-              4,
-              2,
-              1,
-              1,
-              1
-            ],
             "ord_y_at_u_0": 16,
             "ord_chi_at_u_0": -66,
             "n_T_at_min": 2,
-            "leading_coeff_chi": "1/64",
+            "leading_coeff_chi": "-1/64",
             "total_ord_y_chi": -50
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 2,
+            "leading_coeff_chi": "1/64",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 3,
+            "leading_coeff_chi": "1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 4,
+            "leading_coeff_chi": "1/64",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -70,
+            "n_T_at_min": 5,
+            "leading_coeff_chi": "1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -66,
+            "n_T_at_min": 2,
+            "leading_coeff_chi": "1/64",
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -904,11 +908,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 15,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -55
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -916,11 +920,11 @@
               3,
               3
             ],
-            "ord_y_at_u_0": 29,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -41
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -929,11 +933,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 24,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 5,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -46
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -943,11 +947,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 20,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 3,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -50
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -956,11 +960,11 @@
               2,
               2
             ],
-            "ord_y_at_u_0": 27,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 3,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -43
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -970,11 +974,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 23,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 5,
             "leading_coeff_chi": "-3/128",
-            "total_ord_y_chi": -47
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -985,11 +989,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 19,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -51
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -999,11 +1003,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 30,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -40
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1014,11 +1018,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 26,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -44
+            "total_ord_y_chi": null
           }
         ]
       },
@@ -1030,21 +1034,17 @@
         "n_strands": 12,
         "n_partitions": 58,
         "word_length": 47,
-        "min_total_ord_u_eq_0": -79,
+        "min_total_ord_u_eq_0": -74,
         "min_total_lambda": [
-          7,
-          1,
-          1,
-          1,
-          1,
-          1
+          8,
+          4
         ],
-        "second_min_total_ord": -78,
-        "u_pole_order_inferred": 79,
+        "second_min_total_ord": -70,
+        "u_pole_order_inferred": 74,
         "expected_shift": 79,
-        "match": true,
+        "match": false,
         "asserted": true,
-        "elapsed_sec": 12.389358520507812,
+        "elapsed_sec": 14.30418586730957,
         "per_partition": [
           {
             "lambda": [
@@ -1061,22 +1061,22 @@
               11,
               1
             ],
-            "ord_y_at_u_0": 3,
+            "ord_y_at_u_0": 4,
             "ord_chi_at_u_0": -26,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -23
+            "total_ord_y_chi": -22
           },
           {
             "lambda": [
               10,
               2
             ],
-            "ord_y_at_u_0": 7,
+            "ord_y_at_u_0": 8,
             "ord_chi_at_u_0": -50,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/512",
-            "total_ord_y_chi": -43
+            "total_ord_y_chi": -42
           },
           {
             "lambda": [
@@ -1084,22 +1084,22 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 6,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -50,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/512",
-            "total_ord_y_chi": -44
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
               9,
               3
             ],
-            "ord_y_at_u_0": 11,
+            "ord_y_at_u_0": 12,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -59
+            "total_ord_y_chi": -58
           },
           {
             "lambda": [
@@ -1107,11 +1107,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 10,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 4,
             "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -60
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1120,22 +1120,22 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 9,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -70,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -61
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
               8,
               4
             ],
-            "ord_y_at_u_0": 15,
+            "ord_y_at_u_0": 16,
             "ord_chi_at_u_0": -90,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/512",
-            "total_ord_y_chi": -75
+            "total_ord_y_chi": -74
           },
           {
             "lambda": [
@@ -1143,11 +1143,11 @@
               3,
               1
             ],
-            "ord_y_at_u_0": 14,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -90,
             "n_T_at_min": 3,
             "leading_coeff_chi": "3/512",
-            "total_ord_y_chi": -76
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1155,11 +1155,11 @@
               2,
               2
             ],
-            "ord_y_at_u_0": 17,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -90,
             "n_T_at_min": 2,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -73
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1168,11 +1168,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 13,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -90,
             "n_T_at_min": 3,
             "leading_coeff_chi": "3/512",
-            "total_ord_y_chi": -77
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1182,22 +1182,22 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 12,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -90,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/512",
-            "total_ord_y_chi": -78
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
               7,
               5
             ],
-            "ord_y_at_u_0": 19,
+            "ord_y_at_u_0": 20,
             "ord_chi_at_u_0": -90,
             "n_T_at_min": 3,
             "leading_coeff_chi": "3/512",
-            "total_ord_y_chi": -71
+            "total_ord_y_chi": -70
           },
           {
             "lambda": [
@@ -1205,11 +1205,11 @@
               4,
               1
             ],
-            "ord_y_at_u_0": 18,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/512",
-            "total_ord_y_chi": -76
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1217,11 +1217,11 @@
               3,
               2
             ],
-            "ord_y_at_u_0": 21,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -73
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1230,11 +1230,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 17,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 3,
             "leading_coeff_chi": "-3/512",
-            "total_ord_y_chi": -77
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1243,11 +1243,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 20,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 3,
             "leading_coeff_chi": "-3/512",
-            "total_ord_y_chi": -74
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1257,11 +1257,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 16,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 3,
             "leading_coeff_chi": "-3/512",
-            "total_ord_y_chi": -78
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1272,204 +1272,204 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 15,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/512",
-            "total_ord_y_chi": -79
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
               6,
               6
             ],
-            "ord_y_at_u_0": 23,
+            "ord_y_at_u_0": 24,
             "ord_chi_at_u_0": -90,
             "n_T_at_min": 2,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -67
-          },
-          {
-            "lambda": [
-              6,
-              5,
-              1
-            ],
-            "ord_y_at_u_0": 22,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 2,
-            "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -72
-          },
-          {
-            "lambda": [
-              6,
-              4,
-              2
-            ],
-            "ord_y_at_u_0": 25,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 6,
-            "leading_coeff_chi": "-1/128",
-            "total_ord_y_chi": -69
-          },
-          {
-            "lambda": [
-              6,
-              4,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 21,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 8,
-            "leading_coeff_chi": "-3/256",
-            "total_ord_y_chi": -73
-          },
-          {
-            "lambda": [
-              6,
-              3,
-              3
-            ],
-            "ord_y_at_u_0": 29,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 4,
-            "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -65
-          },
-          {
-            "lambda": [
-              6,
-              3,
-              2,
-              1
-            ],
-            "ord_y_at_u_0": 24,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 16,
-            "leading_coeff_chi": "-1/64",
-            "total_ord_y_chi": -70
-          },
-          {
-            "lambda": [
-              6,
-              3,
-              1,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 20,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 11,
-            "leading_coeff_chi": "-5/512",
-            "total_ord_y_chi": -74
-          },
-          {
-            "lambda": [
-              6,
-              2,
-              2,
-              2
-            ],
-            "ord_y_at_u_0": 27,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 6,
-            "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -67
-          },
-          {
-            "lambda": [
-              6,
-              2,
-              2,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 23,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 11,
-            "leading_coeff_chi": "-3/512",
-            "total_ord_y_chi": -71
-          },
-          {
-            "lambda": [
-              6,
-              2,
-              1,
-              1,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 19,
-            "ord_chi_at_u_0": -82,
-            "n_T_at_min": 5,
-            "leading_coeff_chi": "-5/512",
-            "total_ord_y_chi": -63
-          },
-          {
-            "lambda": [
-              5,
-              5,
-              2
-            ],
-            "ord_y_at_u_0": 29,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 4,
-            "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -65
-          },
-          {
-            "lambda": [
-              5,
-              5,
-              1,
-              1
-            ],
-            "ord_y_at_u_0": 25,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 5,
-            "leading_coeff_chi": "-3/512",
-            "total_ord_y_chi": -69
-          },
-          {
-            "lambda": [
-              5,
-              4,
-              3
-            ],
-            "ord_y_at_u_0": 33,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 6,
-            "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -61
-          },
-          {
-            "lambda": [
-              5,
-              4,
-              2,
-              1
-            ],
-            "ord_y_at_u_0": 28,
-            "ord_chi_at_u_0": -94,
-            "n_T_at_min": 21,
-            "leading_coeff_chi": "-7/512",
             "total_ord_y_chi": -66
           },
           {
             "lambda": [
+              6,
+              5,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 2,
+            "leading_coeff_chi": "-1/256",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              6,
+              4,
+              2
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 6,
+            "leading_coeff_chi": "-1/128",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              6,
+              4,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 8,
+            "leading_coeff_chi": "-3/256",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              3
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 4,
+            "leading_coeff_chi": "-1/256",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              2,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 16,
+            "leading_coeff_chi": "-1/64",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 11,
+            "leading_coeff_chi": "-5/512",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              2,
+              2
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 6,
+            "leading_coeff_chi": "-1/256",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              2,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 11,
+            "leading_coeff_chi": "-3/512",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -82,
+            "n_T_at_min": 5,
+            "leading_coeff_chi": "-5/512",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              5,
+              2
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 4,
+            "leading_coeff_chi": "-1/256",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              5,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 5,
+            "leading_coeff_chi": "-3/512",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              4,
+              3
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 6,
+            "leading_coeff_chi": "-1/256",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
+              5,
+              4,
+              2,
+              1
+            ],
+            "ord_y_at_u_0": null,
+            "ord_chi_at_u_0": -94,
+            "n_T_at_min": 21,
+            "leading_coeff_chi": "-7/512",
+            "total_ord_y_chi": null
+          },
+          {
+            "lambda": [
               5,
               4,
               1,
               1,
               1
             ],
-            "ord_y_at_u_0": 24,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 13,
             "leading_coeff_chi": "-3/512",
-            "total_ord_y_chi": -70
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1478,11 +1478,11 @@
               3,
               1
             ],
-            "ord_y_at_u_0": 32,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 14,
             "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -62
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1491,11 +1491,11 @@
               2,
               2
             ],
-            "ord_y_at_u_0": 31,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 17,
             "leading_coeff_chi": "-1/512",
-            "total_ord_y_chi": -63
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1505,11 +1505,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 27,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -82,
             "n_T_at_min": 13,
             "leading_coeff_chi": "-11/512",
-            "total_ord_y_chi": -55
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1520,11 +1520,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 23,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 11,
             "leading_coeff_chi": "3/512",
-            "total_ord_y_chi": -71
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1534,11 +1534,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 30,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 13,
             "leading_coeff_chi": "3/512",
-            "total_ord_y_chi": -64
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1549,11 +1549,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 26,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 11,
             "leading_coeff_chi": "5/512",
-            "total_ord_y_chi": -68
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1561,11 +1561,11 @@
               4,
               4
             ],
-            "ord_y_at_u_0": 41,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 1,
             "leading_coeff_chi": "-1/512",
-            "total_ord_y_chi": -53
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1574,11 +1574,11 @@
               3,
               1
             ],
-            "ord_y_at_u_0": 36,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 10,
             "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -58
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1587,11 +1587,11 @@
               2,
               2
             ],
-            "ord_y_at_u_0": 35,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -82,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -47
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1601,11 +1601,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 31,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 17,
             "leading_coeff_chi": "1/512",
-            "total_ord_y_chi": -63
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1616,11 +1616,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 27,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 6,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -67
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1629,11 +1629,11 @@
               3,
               2
             ],
-            "ord_y_at_u_0": 39,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 10,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -55
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1643,11 +1643,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 35,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 14,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -59
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1657,11 +1657,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 34,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 21,
             "leading_coeff_chi": "7/512",
-            "total_ord_y_chi": -60
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1672,11 +1672,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 30,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 16,
             "leading_coeff_chi": "1/64",
-            "total_ord_y_chi": -64
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1686,11 +1686,11 @@
               2,
               2
             ],
-            "ord_y_at_u_0": 37,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 5,
             "leading_coeff_chi": "3/512",
-            "total_ord_y_chi": -57
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1701,11 +1701,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 33,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 8,
             "leading_coeff_chi": "3/256",
-            "total_ord_y_chi": -61
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1714,11 +1714,11 @@
               3,
               3
             ],
-            "ord_y_at_u_0": 50,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 1,
             "leading_coeff_chi": "1/512",
-            "total_ord_y_chi": -44
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1728,11 +1728,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 42,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 6,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -52
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1743,11 +1743,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 38,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 4,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -56
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1757,11 +1757,11 @@
               2,
               2
             ],
-            "ord_y_at_u_0": 41,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 4,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -53
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1772,11 +1772,11 @@
               1,
               1
             ],
-            "ord_y_at_u_0": 37,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 6,
             "leading_coeff_chi": "1/128",
-            "total_ord_y_chi": -57
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1787,11 +1787,11 @@
               2,
               1
             ],
-            "ord_y_at_u_0": 40,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -94,
             "n_T_at_min": 2,
             "leading_coeff_chi": "1/256",
-            "total_ord_y_chi": -54
+            "total_ord_y_chi": null
           },
           {
             "lambda": [
@@ -1802,11 +1802,11 @@
               2,
               2
             ],
-            "ord_y_at_u_0": 47,
+            "ord_y_at_u_0": null,
             "ord_chi_at_u_0": -90,
             "n_T_at_min": 2,
             "leading_coeff_chi": "-1/256",
-            "total_ord_y_chi": -43
+            "total_ord_y_chi": null
           }
         ]
       }

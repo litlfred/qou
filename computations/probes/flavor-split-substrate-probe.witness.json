@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-06T00:03:36.514371+00:00",
-  "commitSha": "cae8b397219377119fec73f49de896b6522c05b0",
+  "computedAt": "2026-08-24T00:37:35.017529+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [
     {
       "name": "flavor_split_matches_codata",
-      "computed": "0.00127707524",
+      "computed": "0.00127718964067",
       "expected": "0",
       "passed": true,
       "tolerance": 0.002,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "flavor-split-substrate-probe",
   "scriptFile": "flavor_split_substrate_probe.py",
-  "scriptHash": "9e54833f34ae",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0281d3edb84b",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,7 +35,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/flavor_split_substrate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/flavor_split_substrate_probe.py"
   },
   "description": "Verify the substrate-pure proton–neutron flavor-split closed form (m_n−m_p)/M_N = (q−1)²(1−q⁻⁴)/3 = ℏ_q²·h_q·[2]_q/3 (the PROVEN leading form; the posited (1+ℏ_q³) subleading is NOT this block's claim) at the canonical muon-anchored substrate q₀, via the shared canonical utility _li_2_q_util.flavor_split_leading. No fit and no u–d mass input: only q₀ and the nucleon scale M_N enter. Compares to the CODATA split built from codata_constants.M_{P,N}_MEV_VALIDATION (single source), cross-checks the two algebraic forms agree exactly, and asserts archimedean agreement < 0.2 % (measured ≈ 0.13 %, the block's −0.10 % leading residual).",
   "contentBlock": "prop:flavor-split-substrate",
@@ -43,8 +55,8 @@
     "inputs": {
       "q0": "1.10997858275138080759166909561",
       "q0_source": "q_parameter.Q_50_DIGIT_STR (muon-anchored canonical q0)",
-      "m_p_MeV": "938.27208816",
-      "m_n_MeV": "939.56542052",
+      "m_p_MeV": "938.27208943",
+      "m_n_MeV": "939.56542194",
       "codata_source": "codata_constants.M_{P,N}_MEV_VALIDATION",
       "producer": "_li_2_q_util.flavor_split_leading"
     },
@@ -57,9 +69,9 @@
       "delta_pred_leading": "0.00137571080702709600855110927411",
       "delta_factored": "0.00137571080702709600855110927411",
       "identity_gap": "3.53737464017e-74",
-      "delta_codata": "0.00137746993978103053256773015626",
-      "rel_error": "0.00127707524",
-      "rel_error_percent": 0.12770752399970084,
+      "delta_codata": "0.00137747009756603805743263050556",
+      "rel_error": "0.00127718964067",
+      "rel_error_percent": 0.1277189640668556,
       "tolerance": "0.002",
       "verdict": "PASS"
     }

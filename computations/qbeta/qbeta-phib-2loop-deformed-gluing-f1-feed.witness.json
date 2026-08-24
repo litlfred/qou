@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T22:41:49.356989+00:00",
-  "commitSha": "65d8ea7ab71a5202c0b8a5bb1a57e410b47f94b1",
+  "computedAt": "2026-08-24T02:27:35.033507+00:00",
+  "commitSha": "4edd9258ae20e47e60c573f1af6dc28d7b1ec499",
   "assertions": [
     {
       "name": "f1_feed_scoped_and_deformed_coupling_refuted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 25,
   "computation": "qbeta-phib-2loop-deformed-gluing-f1-feed",
   "scriptFile": "qbeta_phib_2loop_deformed_gluing_and_f1_feed.py",
-  "scriptHash": "c0f7db595516",
-  "scriptCommitSha": "65d8ea7ab71a5202c0b8a5bb1a57e410b47f94b1",
+  "scriptHash": "db5717833ad6",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_phib_2loop_deformed_gluing_and_f1_feed.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_phib_2loop_deformed_gluing_and_f1_feed.py"
   },
   "description": "Follow-up to merged Φ_b 2-loop b-dictionary (#3854). (2) EXACT two-variable deformed gluing: z*(q0) from the corpus Thurston solve solve_shape (not the #3854 single-constraint approx), meridian-deformed potential V_u=Li2(z)-Li2(1/z)-u log z (u=2 ln q0), GATE D1 V_u'(z*)=0 (deformed shape IS the critical point). Corrected A1(q0) vs the #3854 approximation reported. (1) F1-feed: the A1 2-loop b-dictionary is a SCALE-INVARIANT prefactor normalization ⇒ it does NOT move the root-test / dlog-Pade estimator radii, so it does not rescue the merged F1 acceleration's k=21 gate — honest verdict: the gate needs more rungs (k=31 drift persists), the b-dictionary fixes the resummed VALUE's normalization not the singularity location. Scope-(a); no c_k wired; no fit; coordinated with #3805.",
   "data": {

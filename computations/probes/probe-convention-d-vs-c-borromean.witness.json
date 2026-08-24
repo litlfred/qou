@@ -1,38 +1,38 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T14:12:45.457294+00:00",
-  "commitSha": "d7c68e88932ba136446e70ab79e1e74cbdb0508a",
+  "computedAt": "2026-08-24T00:54:08.379287+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "c_routes_agree_exact",
-      "computed": "0",
+      "computed": "(-t**26 + t**24 + t**23 + 3*t**22 - t**21 - 3*t**20 - t**18 + 6*t**17 + t**16 - 5*t**15 - 9*t**14 + 9*t**12 - 5*t**11 - t**10 + 6*t**9 + t**8 + 2*t**6 - 3*t**5 - 2*t**4 + t**3 - t**2 + 1)/(t**17 + 2*t**13 + t**9)",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "source": "tr_M_word (Hecke-expanded) and markov_trace_recursive (signed word) must give the SAME rational function — two independent implementations of convention C"
     },
     {
       "name": "d_minus_c_nonzero_at_q0",
-      "computed": 0.00019554135909192092,
+      "computed": -0.04967989903510526,
       "expected": 0.00019554,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-06,
       "source": "D differs from C by the PROBE-4 gap figure — the convention split is exact, not numerical"
     },
     {
       "name": "c_equals_wenzl_bridge_EXACT",
-      "computed": "0",
+      "computed": "(-t**26 + t**24 + t**23 + 3*t**22 - t**21 - 3*t**20 - t**18 + 6*t**17 + t**16 - 5*t**15 - 9*t**14 + 9*t**12 - 5*t**11 - t**10 + 6*t**9 + t**8 + 2*t**6 - 3*t**5 - 2*t**4 + t**3 - t**2 + 1)/(t**17 + 2*t**13 + t**9)",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "source": "canonical C minus the symbolic Wenzl-bridge trace (y_lambda_wenzl_bridge_symbolic x Hoefsmit chi^lambda) cancels to 0 as a rational function — C and the Wenzl z-trace are the SAME convention, exactly (upgraded from the earlier 7-digit numeric match)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 27,
+  "allPassed": false,
+  "durationMs": 30,
   "computation": "probe-convention-d-vs-c-borromean",
   "scriptFile": "probe_convention_d_vs_c_borromean.py",
-  "scriptHash": "b6b756357d91",
-  "scriptCommitSha": "d7c68e88932ba136446e70ab79e1e74cbdb0508a",
+  "scriptHash": "194627f06147",
+  "scriptCommitSha": "240059aef80fa7902bdc7249a451b145a10a7807",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,17 +41,28 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_convention_d_vs_c_borromean.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_convention_d_vs_c_borromean.py"
   },
   "description": "D =? C at beta_Bor: convention D (Borromean single-pipeline closed form / Lean BorromeanMarkovTrace, = SU(2)/TL Jones decomposition per PROBE 4) vs convention C (canonical Jones-Markov tr_M, markov_trace_canonical) — the one-line check queued in the trace-convention registry addendum (2026-06-09 audit, PR #3261).",
   "data": {
-    "tr_C_rational_in_t_sqrtq": "(-t**18 - t**17 + t**16 + t**15 + 4*t**14 + 2*t**13 - 4*t**12 - t**11 - 6*t**10 - t**9 + 6*t**8 - t**7 + 4*t**6 + 2*t**5 - 4*t**4 + t**3 - t**2 - t + 1)/t**9",
+    "tr_C_rational_in_t_sqrtq": "(-t**22 - t**21 + t**20 + t**19 + 4*t**18 + 3*t**17 - 4*t**16 - t**15 - 5*t**14 + t**13 + 5*t**12 - 4*t**11 - 4*t**10 + 3*t**9 + 4*t**8 - t**7 + 3*t**6 + t**5 - 3*t**4 + t**3 - t**2 - t + 1)/(t**13 + t**9)",
     "tau_pipe_rational_in_t_sqrtq": "(-t**24 + 3*t**20 - 2*t**16 + 4*t**12 - 2*t**8 + 3*t**4 - 1)/(t**16 + 2*t**12 + t**8)",
-    "d_minus_c_rational_in_t_sqrtq": "(t**26 - t**24 - t**23 - 2*t**22 + 3*t**21 + 2*t**20 - t**19 - t**18 - 4*t**17 + t**16 + 2*t**15 + 4*t**14 + 2*t**13 - 4*t**12 + 2*t**11 - t**10 - 4*t**9 + t**8 - t**7 - 2*t**6 + 3*t**5 + 2*t**4 - t**3 + t**2 - 1)/(t**17 + 2*t**13 + t**9)",
-    "tr_C_at_q0_50dps": "0.99836662183832063583560262669696494002032247692036",
-    "tau_pipe_at_q0_50dps": "0.99856216319741255675124095125192303395809934631358",
-    "d_minus_c_at_q0": "0.000195541359091921",
+    "d_minus_c_rational_in_t_sqrtq": "(t**26 - t**24 - t**23 - 3*t**22 + t**21 + 3*t**20 + t**18 - 6*t**17 - t**16 + 5*t**15 + 9*t**14 - 9*t**12 + 5*t**11 + t**10 - 6*t**9 - t**8 - 2*t**6 + 3*t**5 + 2*t**4 - t**3 + t**2 - 1)/(t**17 + 2*t**13 + t**9)",
+    "tr_C_at_q0_50dps": "1.0482420628718925282185760997200659881722104859881",
+    "tau_pipe_at_q0_50dps": "0.99856216383678726633024936121753901079179790335286",
+    "d_minus_c_at_q0": "-0.0496798990351053",
     "verdict": "D != C EXACTLY: the Borromean single-pipeline / Lean closed form (convention D, SU(2)/TL Jones decomposition) is NOT the canonical M1-M3 Jones-Markov trace C; C coincides with the Wenzl-bridge z-trace (PROBE 4's tau_W). The registry's naming tension resolves: C = Wenzl-bridge (one convention), D = TL pipeline (another); gap 1.9554e-4 at q0."
   }
 }

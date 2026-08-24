@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T14:36:51.923076+00:00",
-  "commitSha": "d2ab464acc599f6a4b366a739a07ffe6c95b85f0",
+  "computedAt": "2026-08-24T00:10:46.357323+00:00",
+  "commitSha": "bbf717a26ddcbe15e958e5663f32dc8fe5f3b3c9",
   "assertions": [
     {
       "name": "factored_form_exact",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 19,
   "computation": "phase2b-dim-v21-bridge",
   "scriptFile": "phase2b_dim_v21_bridge_derivation.py",
-  "scriptHash": "ee23f75fc565",
-  "scriptCommitSha": "b95f0922f66c5905be1d0bd3a6db67f7b550757b",
+  "scriptHash": "9e73f070e0a3",
+  "scriptCommitSha": "bce25b18e099d5f14605d054c2d95719f127820c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [

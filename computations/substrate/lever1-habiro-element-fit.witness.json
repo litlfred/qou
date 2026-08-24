@@ -12,12 +12,14 @@
     "no_simple_hypergeometric_fit": true
   },
   "verdict": "NEGATIVE. The D(m) sequence, its cyclotomic cofactors, and its first differences DO NOT fit a single q-hypergeometric/Habiro element with the r_k template. The true Habiro element must be a sum of such terms or a higher-order structure.",
-  "scriptHash": "c3377253d2be",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "engine": "mpmath",
-  "computedAt": "2026-07-18T19:19:18.937629+00:00",
+  "scriptFile": "lever1_habiro_element_fit.py",
+  "scriptHash": "97919b7fbd6a",
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
+  "commitSha": "1ea659f08fc58d9f59edf2080cb3fc8ad1f39fc8",
+  "engine": "python+mpmath",
+  "computedAt": "2026-08-23T23:46:22.560287+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "lever1_habiro_element_fit.py"
+  "engineVersion": "python 3.11 + mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

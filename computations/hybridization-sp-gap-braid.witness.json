@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:51:08.743271+00:00",
-  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
+  "computedAt": "2026-08-23T23:47:24.549163+00:00",
+  "commitSha": "1ea659f08fc58d9f59edf2080cb3fc8ad1f39fc8",
   "assertions": [
     {
       "name": "s-electron trefoil is a palindrome (self-dual ⇒ ℓ=0, symmetric block)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 20,
   "computation": "hybridization-sp-gap-braid",
   "scriptFile": "hybridization_sp_gap_braid.py",
-  "scriptHash": "e9a206159c00",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "8ac36d891f9a",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hybridization_sp_gap_braid.py"
+    ],
+    "reproduce": "python3 -u computations/hybridization_sp_gap_braid.py"
   },
   "description": "Shell-braid derivation of the sp³↔pure-p bond-angle base flip. (A) palindromicity-orbital-type: s (ℓ=0) is palindromic/self-dual ⇒ symmetric-block (trivial) character; the s trefoil e⁻=σ₀σ₁σ₀ is a palindrome; p is chiral ⇒ standard block. s,p sit in different Wedderburn blocks; hybridisation mixes them at the s–p promotion gap. (B) electron-shell-braid-capacity: ns Hopf-links the (n−1) inner shells ⇒ Δ(n) ∝ (n−1) = central-atom size; integer ⇒ DISCRETE flip; window closes at n=2→3. (C) group-16 O 104.5°→S/Se/Te ~90° flat confirms. Derives the mechanism + direction + discreteness; the exact Δ-vs-bonding numbers (atomic Φ₁ penetration model) remain open.",
   "contentBlock": "prop:symmetric-block-domain-weight",

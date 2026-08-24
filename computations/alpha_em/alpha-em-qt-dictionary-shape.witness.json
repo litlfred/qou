@@ -3,12 +3,12 @@
   "description": "Bean qou-tq20 tranche 6: q<->heat-time dictionary shape adjudication. Anchor q=1 <-> t=inf forced (consistency-1); canonical rate lambda = ln q (corpus); reciprocal power-law dictionaries t = c/|lambda|^p (p=1,2) pinned at one point FAIL the overdetermined curve test by 18.9%/31.1% (O(1), structural). Heat family does not realize the Markov deformation in this class; geometric family redirected to the MODULAR direction. Identification stays open. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-18-alpha-em-qt-dictionary-shape.md",
   "tier": "pre-stated overdetermined adjudication (exact Markov ratio + 30-dps theta); scope-(a) kills",
-  "computedAt": "2026-07-18T23:23:24.978714+00:00",
-  "commitSha": "02da2b59bd6205190bc02e32af6813bad3c26717",
+  "computedAt": "2026-08-23T22:25:21.995976+00:00",
+  "commitSha": "cffc1265f0020e076c7671e8081177c6d803a63d",
   "engine": "sympy+mpmath",
-  "engineVersion": "1.14.0/1.3.0",
+  "engineVersion": "1.14.0/1.4.1",
   "scriptFile": "alpha_em_qt_dictionary_shape_probe.py",
-  "scriptHash": "f671ec43817e",
+  "scriptHash": "789f190d3c39",
   "assertions": [
     {
       "name": "anchor_orientation_forced",
@@ -18,12 +18,12 @@
     {
       "name": "shape_p1_killed",
       "passed": true,
-      "detail": "t = c/|\u03bb| (c = 0.1085819962 pinned at q*=0.8): max rel dev 18.89% over the 6-point grid \u2014 O(1) miss vs the pre-stated 1% pass bar. KILLED (scope-(a): this shape, alone, as-is)"
+      "detail": "t = c/|\u03bb| (c = 0.2586395653 pinned at q*=0.8): max rel dev 25.65% over the 6-point grid \u2014 O(1) miss vs the pre-stated 1% pass bar. KILLED (scope-(a): this shape, alone, as-is)"
     },
     {
       "name": "shape_p2_killed",
       "passed": true,
-      "detail": "t = c/\u03bb\u00b2 (c = 0.02422937225): max rel dev 31.15% \u2014 O(1) miss. KILLED (scope-(a))"
+      "detail": "t = c/\u03bb\u00b2 (c = 0.05771375112): max rel dev 128.16% \u2014 O(1) miss. KILLED (scope-(a))"
     },
     {
       "name": "shape_mismatch_is_O1",
@@ -36,27 +36,27 @@
     "anchor": "q=1 <-> t=inf (forced); rate variable lambda = ln q (corpus canonical)",
     "shape_tests": {
       "1": {
-        "c": "0.1085819962",
-        "max_rel_dev": 0.18891711605019923,
+        "c": "0.2586395653",
+        "max_rel_dev": 0.256527629472514,
         "devs": [
-          "18.892%",
-          "4.762%",
-          "1.818%",
-          "8.641%",
-          "17.093%",
-          "12.859%"
+          "25.653%",
+          "15.614%",
+          "6.327%",
+          "2.189%",
+          "1.416%",
+          "0.350%"
         ]
       },
       "2": {
-        "c": "0.02422937225",
-        "max_rel_dev": 0.3114941439720653,
+        "c": "0.05771375112",
+        "max_rel_dev": 1.2816114343175167,
         "devs": [
-          "11.176%",
-          "31.149%",
-          "26.804%",
-          "26.221%",
-          "25.255%",
-          "13.010%"
+          "128.161%",
+          "74.281%",
+          "25.908%",
+          "3.302%",
+          "1.464%",
+          "0.350%"
         ]
       }
     },
@@ -66,5 +66,9 @@
   "context": {
     "bean": "qou-tq20 (B2 lift) tranche 6; #4019 consistency-1, #4022 structured null merged",
     "scope_guard": "these shapes alone, as-is; c pinned by pre-stated rule; tolerance pre-stated; no fit; nothing wired; 1/(8pi) stays phase-4"
-  }
+  },
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -5,7 +5,7 @@
  "q0Anchor": "independent",
  "q0AnchorReason": "Reads no q0. Kummer descents in Q_{5^4} and Q_{5^8} over K = Q(alpha); the substrate modulus never enters.",
  "scriptFile": "gswz_epsm_h_lift_m12_m24_probe.py",
- "commitSha": "8c51d2edc6a02d8826860700c60f906d01306436",
+ "commitSha": "c44b2c6f0c0190cb8bab5971eee507c4c5fb551e",
  "beans": [
   "qou-w4gn",
   "qou-y3xv",
@@ -23,7 +23,8 @@
   "control_unreachable_class_exists_at_both": true,
   "R_ambiguous_at_both": true,
   "RwF_well_defined_at_both": true,
-  "RwF_is_trivial_at_both": false
+  "RwF_is_nontrivial_at_12_and_24": true,
+  "levels_are_consistent_reductions_of_one_class": true
  },
  "result": {
   "per_level": {
@@ -94,7 +95,17 @@
     ]
    }
   },
-  "verdict": "The live set at v_1 is finished. m = 3 carries the only non-trivial invariant; m = 6 collapses onto it; m = 8, 12, 24 are REACHABLE via the unramified Kummer descent and all give R^{w_F} = 0. Addendum 39's 'not computable' was wrong on the mechanism and, it turns out, on the conclusion too -- they are computable, and trivial."
+  "RwF_by_level": {
+   "12": 8,
+   "24": 8
+  },
+  "cross_level_reductions": {
+   "V24": 8,
+   "V24_mod_12": 8,
+   "V24_mod_8": 0,
+   "V24_mod_3": 2
+  },
+  "verdict": "The live set at v_1 is finished, and it is ONE invariant seen at four levels, not five independent ones. R^{w_F} = 8 in Z/24 reduces to 8 mod 12, 0 mod 8 and 2 mod 3 -- matching every level measured separately. So m = 8 is not a vanishing invariant, it is the 2-part of a class whose content sits in the 3-part, which is also why m = 6 collapsed onto m = 3. Addendum 39's 'not computable' was wrong on the mechanism; my own expectation that 12 and 24 would be trivial was wrong on the conclusion."
  },
  "scope": "scope-(a) FINISHES the v_1 live set. The Addendum-41 observation -- that for a unit argument the Kummer extension is unramified, hence a finite Q_{5^d} rather than H -- is not special to m = 8. At m = 12 the four arguments' images generate an order-2 subgroup so L = Q_{5^4}; at m = 24 an order-4 subgroup so L = Q_{5^8}; both contain mu_m and mu_24. Both descents succeed, both are root independent over all m^2 choices, and Prop 2.5(b)'s split is re-measured at each level rather than carried over: R is ambiguous and R^{w_F} unique, and R^{w_F} = 0 at both. Combined with m = 6 collapsing onto m = 3, the live set {3,6,8,12,24} carries exactly ONE non-trivial invariant, eps_3; the rest are reachable and TRIVIAL, which corrects Addendum 39's 'not computable' on both the mechanism and the conclusion. Controls: an unreachable class is exhibited at each level, so the descent can fail. Constructs the lift only where the extension is unramified and small; not a general construction. Nothing wired."
 }

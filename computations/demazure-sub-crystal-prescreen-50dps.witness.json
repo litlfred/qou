@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:27:50.066875+00:00",
-  "commitSha": "414b4fd90594cd9a1b945fc6d5aff0fa9b7ee325",
+  "computedAt": "2026-08-23T23:15:28.306301+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [
     {
       "name": "prescreen_completed",
@@ -14,16 +14,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 48,
   "computation": "demazure-sub-crystal-prescreen-50dps",
   "scriptFile": "demazure_sub_crystal_h5_h6_h7_prescreen.py",
-  "scriptHash": "ab8f0d8ce38a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0538bdd6f073",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/demazure_sub_crystal_h5_h6_h7_prescreen.py"
+    ],
+    "reproduce": "python3 -u computations/demazure_sub_crystal_h5_h6_h7_prescreen.py"
   },
   "description": "Pre-screen of Demazure-inspired sub-sum schemes at H_5, H_6, H_7 against Reading-A's h² target -G. Tests 6 normalization schemes (full Wedderburn, per-irrep, bar-symmetric, self-conjugate, two-row, rectangle). If any scheme yields h² ≈ -G after h⁰ normalization to 5/2, flag for deeper Demazure-characters investigation.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

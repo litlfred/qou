@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-06-13T06:08:42.029972+00:00",
-  "commitSha": "4abe36592b580e0e670661f30d8764d9bf282c4f",
+  "computedAt": "2026-08-24T00:37:29.340624+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [
     {
       "name": "difference_links_are_composite_not_single_hyperbolic",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 445,
+  "durationMs": 574,
   "computation": "difference-knot-jsj-classification",
   "scriptFile": "difference_knot_jsj_classification_probe.py",
-  "scriptHash": "96d07075da97",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "41b7a59ea71f",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/difference_knot_jsj_classification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/difference_knot_jsj_classification_probe.py"
   },
   "description": "Classification of the binding difference knot D = W_atom·W_free⁻¹ (PR #2235 follow-up): cusp count (link components) + high-precision volume + solution type. Finding: the difference links are composite (2A−1 cusps; persistently 'degenerate tetrahedra' even at high precision) — not single hyperbolic knots. Records the two blockers gating rigorous promotion: (1) the JSJ decomposition / interval-verified volumes are Sage-only in SnapPy (unavailable here); (2) the amplification-vs-mass-table test is tautological because production m_pred = Σ m_nucleon − B_pred is circular. Diagnostic only.",
   "contentBlock": "prop:binding-error-amplification",

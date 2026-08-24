@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:56:30.130476+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-23T22:52:59.093204+00:00",
+  "commitSha": "cd8acfc1cd9a5799184f208fb625094eb9a0e8a9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 643,
+  "durationMs": 941,
   "computation": "canonical-isospin-pyhecke",
   "scriptFile": "canonical_isospin_pyhecke.py",
-  "scriptHash": "6c9436455541",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "ba7cd5580066",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/canonical_isospin_pyhecke.py"
+    ],
+    "reproduce": "python3 -u computations/canonical_isospin_pyhecke.py"
   },
   "description": "Canonical Markov trace via pyhecke.trace.markov_trace_symbolic_eval for atomic braids p, n, D, T, ³He, ⁴He.  Routes through the optimized backend (CRT/native).  Replaces the symbolic-q SymbolicHeckeDivision path which timed out on ³He at >25 min wallclock.",
   "reference_blocks": [
@@ -30,7 +38,7 @@
     "thm:jones-markov-trace",
     "rem:commutative-crossing-energy"
   ],
-  "timestamp": "2026-08-21T14:56:29.635584+00:00",
+  "timestamp": "2026-08-23T22:52:59.009816+00:00",
   "parameters": {
     "q_0": 1.1099785827513808,
     "precision": 30
@@ -41,42 +49,42 @@
       "N": 0,
       "include_inter": false,
       "tr_M_q0": 0.5054042265039308,
-      "walltime_sec": 0.2694852352142334
+      "walltime_sec": 0.5192935466766357
     },
     "n   (Z=0, N=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
       "tr_M_q0": 0.5054042265039308,
-      "walltime_sec": 0.0006806850433349609
+      "walltime_sec": 0.00099945068359375
     },
     "D   (Z=1, N=1)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
       "tr_M_q0": 0.13044803500008947,
-      "walltime_sec": 0.0024061203002929688
+      "walltime_sec": 0.003691434860229492
     },
     "T   (Z=1, N=2)": {
       "Z": 1,
       "N": 2,
       "include_inter": true,
       "tr_M_q0": 0.03740955111904189,
-      "walltime_sec": 0.007650613784790039
+      "walltime_sec": 0.016393184661865234
     },
     "³He (Z=2, N=1)": {
       "Z": 2,
       "N": 1,
       "include_inter": true,
       "tr_M_q0": 0.03740955111904189,
-      "walltime_sec": 0.0074062347412109375
+      "walltime_sec": 0.020493030548095703
     },
     "⁴He (Z=2, N=2)": {
       "Z": 2,
       "N": 2,
       "include_inter": true,
       "tr_M_q0": 0.009655642311246992,
-      "walltime_sec": 0.02507805824279785
+      "walltime_sec": 0.07182121276855469
     }
   },
   "q0Anchor": "proton",

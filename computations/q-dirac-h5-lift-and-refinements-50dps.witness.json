@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:50:41.807055+00:00",
-  "commitSha": "b0d8a0e860f7730ae0a6143c9e3ed077ce7631f4",
+  "computedAt": "2026-08-24T01:36:58.939082+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "probe_completed",
@@ -14,16 +14,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 117,
+  "durationMs": 143,
   "computation": "q-dirac-h5-lift-and-refinements-50dps",
   "scriptFile": "q_dirac_h5_lift_and_refinements_50dps.py",
-  "scriptHash": "072c4283d3d9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "edc720b6552d",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q_dirac_h5_lift_and_refinements_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/q_dirac_h5_lift_and_refinements_50dps.py"
   },
   "description": "Q-Dirac probe Part 3: lifts (1+D_q²)/ΣW scheme to H_5 and tests refined variants at H_4 to close the 3.5% gap to -G. Includes alpha-tuned and cosh-based variants.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

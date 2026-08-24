@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T04:26:20.251408+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T23:15:29.578831+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [
     {
       "name": "bond_sum_improves_A_growth_over_intensive",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "derive-binding-bond-sum",
   "scriptFile": "derive_binding_bond_sum.py",
-  "scriptHash": "defec72ee992",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "4092d0c49752",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,13 +30,21 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derive_binding_bond_sum.py"
+    ],
+    "reproduce": "python3 -u computations/derive_binding_bond_sum.py"
   },
   "description": "DERIVATION (0 fit, level-0): extensive per-bond binding sum B(K) = N_bonds(K)·B_bond, B_bond = derived deuteron single-bond (E_0·Δtr_M(D) archimedean per-block, +3.6%), bond count C(A,2) by type from (Z,N). Tests the intensive→extensive fix: bond-count A-growth vs the intensive 1.65×. Bond-type + per-bond-growth refinements isolated for the next step. E_0=m_e/(q₀(q₀−1)) calibration; AME comparison only.",
   "parameters": {
-    "E0_MeV": 4.185980827582892,
-    "B_bond_deuteron_MeV": 2.3040987662223973
+    "E0_MeV": 4.185981363294476,
+    "B_bond_deuteron_MeV": 2.329685576294031
   },
   "data": {
     "per_atom": {
@@ -47,9 +55,9 @@
         "n_pn": 1,
         "n_nn": 0,
         "N_bonds": 1,
-        "B_pred_MeV": 2.3040987662223973,
-        "AME_MeV": 2.2245662000000004,
-        "err": 0.03575194400705949
+        "B_pred_MeV": 2.329685576294031,
+        "AME_MeV": 2.2245662,
+        "err": 0.04725387641600928
       },
       "T": {
         "Z": 1,
@@ -58,9 +66,9 @@
         "n_pn": 2,
         "n_nn": 1,
         "N_bonds": 3,
-        "B_pred_MeV": 6.912296298667193,
-        "AME_MeV": 8.481796200000002,
-        "err": -0.1850433403873591
+        "B_pred_MeV": 6.989056728882094,
+        "AME_MeV": 8.4817962,
+        "err": -0.17599331980151867
       },
       "3He": {
         "Z": 2,
@@ -69,9 +77,9 @@
         "n_pn": 2,
         "n_nn": 0,
         "N_bonds": 3,
-        "B_pred_MeV": 6.912296298667193,
+        "B_pred_MeV": 6.989056728882094,
         "AME_MeV": 7.718,
-        "err": -0.10439280919056847
+        "err": -0.09444717169187689
       },
       "4He": {
         "Z": 2,
@@ -80,12 +88,12 @@
         "n_pn": 4,
         "n_nn": 1,
         "N_bonds": 6,
-        "B_pred_MeV": 13.824592597334386,
+        "B_pred_MeV": 13.978113457764188,
         "AME_MeV": 28.2956624,
-        "err": -0.5114236096719056
+        "err": -0.5059980126931332
       }
     },
-    "bond_count_A_growth": 6.000000000000001,
+    "bond_count_A_growth": 6.0,
     "intensive_A_growth_for_comparison": 1.65,
     "ame_A_growth": 12.72
   }

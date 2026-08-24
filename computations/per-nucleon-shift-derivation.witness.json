@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T19:56:47.508420+00:00",
-  "commitSha": "c0eb9e0577f77558f402f832fa894ac4c3ca216c",
+  "computedAt": "2026-08-23T22:41:12.849905+00:00",
+  "commitSha": "71dbb7727399801b8d6adc749026eb7697de6789",
   "assertions": [
     {
       "name": "Per-NEW-proton Δshift = 18 invariant across host",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 131,
+  "durationMs": 246,
   "computation": "per-nucleon-shift-derivation",
   "scriptFile": "per_nucleon_shift_derivation.py",
-  "scriptHash": "6a2c3804473a",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "13eab7c662b2",
+  "scriptCommitSha": "f6624c90962950134e0307d06f61b8e7f22fb261",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,8 +55,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/per_nucleon_shift_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/per_nucleon_shift_derivation.py"
   },
   "description": "Derive the (18, 21, 1) per-nucleon shift coefficients in shift = 18Z + 21N + 1 via per-NEW-nucleon additive analysis. Proves linearity: Δshift(A→A+1, +proton) = 18 EXACTLY, Δshift(A→A+1, +neutron) = 21 EXACTLY, independent of host. Decomposes per-new-nucleon = 12 generators - 3 (p) or 1.5 (n) total pole cancellations + 1 mixed (p,n) interface.",
   "contentBlock": "prop:per-nucleon-shift-additive-linearity",
@@ -274,45 +284,45 @@
     "cancellation_decomposition": {
       "(1, 1)": {
         "sigma_sq_adjacencies": 12,
-        "averaged_count": 4,
-        "predicted_avg_cancel": 2.0,
-        "implied_sigma_sq_cancel": 1.0
+        "averaged_count": 5,
+        "predicted_avg_cancel": 2.5,
+        "implied_sigma_sq_cancel": 0.5
       },
       "(1, 2)": {
         "sigma_sq_adjacencies": 18,
-        "averaged_count": 6,
-        "predicted_avg_cancel": 3.0,
-        "implied_sigma_sq_cancel": 1.5
+        "averaged_count": 7,
+        "predicted_avg_cancel": 3.5,
+        "implied_sigma_sq_cancel": 1.0
       },
       "(2, 1)": {
         "sigma_sq_adjacencies": 18,
-        "averaged_count": 6,
-        "predicted_avg_cancel": 3.0,
-        "implied_sigma_sq_cancel": 3.0
+        "averaged_count": 7,
+        "predicted_avg_cancel": 3.5,
+        "implied_sigma_sq_cancel": 2.5
       },
       "(2, 2)": {
         "sigma_sq_adjacencies": 24,
-        "averaged_count": 8,
-        "predicted_avg_cancel": 4.0,
-        "implied_sigma_sq_cancel": 3.5
+        "averaged_count": 9,
+        "predicted_avg_cancel": 4.5,
+        "implied_sigma_sq_cancel": 3.0
       },
       "(3, 2)": {
         "sigma_sq_adjacencies": 30,
-        "averaged_count": 10,
-        "predicted_avg_cancel": 5.0,
-        "implied_sigma_sq_cancel": 5.5
+        "averaged_count": 11,
+        "predicted_avg_cancel": 5.5,
+        "implied_sigma_sq_cancel": 5.0
       },
       "(3, 3)": {
         "sigma_sq_adjacencies": 36,
-        "averaged_count": 12,
-        "predicted_avg_cancel": 6.0,
-        "implied_sigma_sq_cancel": 6.0
+        "averaged_count": 13,
+        "predicted_avg_cancel": 6.5,
+        "implied_sigma_sq_cancel": 5.5
       }
     },
     "linear_fit_cancellation": {
-      "c_sigma_sq_adj": 0.29090909090909095,
-      "c_averaged": 0.09696969696969703,
-      "fit_residuals": null
+      "c_sigma_sq_adj": 0.9499999999999975,
+      "c_averaged": -1.6846153846153773,
+      "fit_residuals": 1.5230769230769212
     }
   }
 }

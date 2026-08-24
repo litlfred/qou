@@ -1,15 +1,15 @@
 {
   "engine": "sympy+python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T03:48:23.238499+00:00",
-  "commitSha": "b5087bafe04cc843dba5a97875b54ba8f5ce38c7",
+  "computedAt": "2026-08-23T23:45:31.860149+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "assertions": [],
   "allPassed": true,
-  "durationMs": -1781060111764,
+  "durationMs": 130337,
   "computation": "gs-filtration-binding-components",
   "scriptFile": "gs_filtration_binding_components.py",
-  "scriptHash": "b60e3e7dd0ce",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2122a3db08b2",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,8 +19,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gs_filtration_binding_components.py"
+    ],
+    "reproduce": "python3 -u computations/gs_filtration_binding_components.py"
   },
   "description": "GS-filtration decomposition of the canonical binding trace. GS-reduces W_atom/W_free to normal form (length-then-lex order: Hecke/far-comm/Yang–Baxter) and grades the trace by (1) NF word length (GS degree) and (2) bridge-count — the number of inter-nucleon bonds σ_{3i} per term: 0-bridge = nucleon cores (≈tr_free), 1-bridge = per-bond corrections (EXTENSIVE), ≥2-bridge = bond–bond correlation (non-extensive). Tests whether Δtr = tr_free − tr_atom is a sum over bonds (1-bridge dominates) or correlated (≥2-bridge dominates). EXPLORATORY — no production rewire; feeds the Δ_λ extensivity attack (delta_lambda_energy_scale_extensivity_probe.py).",
   "parameters": {
@@ -37,9 +47,9 @@
         "n_bridges_max": 1,
         "n_atom_NF_terms": 32,
         "n_free_NF_terms": 16,
-        "tr_M_atom": 0.388357,
-        "tr_M_free": 0.983526,
-        "Delta_tr": 0.595169,
+        "tr_M_atom": 0.575172,
+        "tr_M_free": 1.131717,
+        "Delta_tr": 0.556545,
         "length_grading_atom": {
           "0": {
             "n_terms": 1,
@@ -47,41 +57,41 @@
           },
           "1": {
             "n_terms": 5,
-            "trace": 0.08167
+            "trace": 0.100213
           },
           "2": {
             "n_terms": 10,
-            "trace": 0.282876
+            "trace": 0.425909
           },
           "3": {
             "n_terms": 10,
-            "trace": 0.110581
+            "trace": 0.204296
           },
           "4": {
             "n_terms": 5,
-            "trace": -0.06222
+            "trace": -0.141048
           },
           "5": {
             "n_terms": 1,
-            "trace": 0.005811
+            "trace": 0.016164
           }
         },
         "bridge_count_grading_atom": {
           "0": {
             "n_terms": 16,
-            "trace": 0.167098
+            "trace": 0.219133
           },
           "1": {
             "n_terms": 16,
-            "trace": 0.221259
+            "trace": 0.356039
           }
         },
-        "tr_core_0bridge": 0.167098,
-        "tr_1bridge_sum": 0.221259,
+        "tr_core_0bridge": 0.219133,
+        "tr_1bridge_sum": 0.356039,
         "tr_multibridge_corr": 0,
-        "bond_trace_total": 0.221259,
+        "bond_trace_total": 0.356039,
         "extensive_frac_1bridge": 1.0,
-        "compute_sec": 1.2
+        "compute_sec": 1.8
       },
       {
         "atom": "T",
@@ -92,9 +102,9 @@
         "n_bridges_max": 2,
         "n_atom_NF_terms": 256,
         "n_free_NF_terms": 64,
-        "tr_M_atom": 0.104071,
-        "tr_M_free": 0.908024,
-        "Delta_tr": 0.803953,
+        "tr_M_atom": 0.22931,
+        "tr_M_free": 1.117846,
+        "Delta_tr": 0.888536,
         "length_grading_atom": {
           "0": {
             "n_terms": 1,
@@ -102,57 +112,57 @@
           },
           "1": {
             "n_terms": 8,
-            "trace": -0.012247
+            "trace": -0.015027
           },
           "2": {
             "n_terms": 28,
-            "trace": -0.027676
+            "trace": -0.041671
           },
           "3": {
             "n_terms": 56,
-            "trace": 0.051538
+            "trace": 0.095216
           },
           "4": {
             "n_terms": 70,
-            "trace": 0.10129
+            "trace": 0.229619
           },
           "5": {
             "n_terms": 56,
-            "trace": 0.007711
+            "trace": 0.021448
           },
           "6": {
             "n_terms": 28,
-            "trace": -0.024849
+            "trace": -0.084813
           },
           "7": {
             "n_terms": 8,
-            "trace": 0.005552
+            "trace": 0.023252
           },
           "8": {
             "n_terms": 1,
-            "trace": -0.000354
+            "trace": -0.001819
           }
         },
         "bridge_count_grading_atom": {
           "0": {
             "n_terms": 64,
-            "trace": 0.019267
+            "trace": 0.033285
           },
           "1": {
             "n_terms": 128,
-            "trace": 0.051023
+            "trace": 0.108159
           },
           "2": {
             "n_terms": 64,
-            "trace": 0.033781
+            "trace": 0.087866
           }
         },
-        "tr_core_0bridge": 0.019267,
-        "tr_1bridge_sum": 0.051023,
-        "tr_multibridge_corr": 0.033781,
-        "bond_trace_total": 0.084804,
-        "extensive_frac_1bridge": 0.6017,
-        "compute_sec": 11.7
+        "tr_core_0bridge": 0.033285,
+        "tr_1bridge_sum": 0.108159,
+        "tr_multibridge_corr": 0.087866,
+        "bond_trace_total": 0.196026,
+        "extensive_frac_1bridge": 0.5518,
+        "compute_sec": 18.0
       },
       {
         "atom": "helium-3",
@@ -163,63 +173,63 @@
         "n_bridges_max": 2,
         "n_atom_NF_terms": 128,
         "n_free_NF_terms": 64,
-        "tr_M_atom": 0.206578,
-        "tr_M_free": 1.047756,
-        "Delta_tr": 0.841178,
+        "tr_M_atom": 0.403767,
+        "tr_M_free": 1.296676,
+        "Delta_tr": 0.892909,
         "length_grading_atom": {
           "1": {
             "n_terms": 1,
-            "trace": -0.009004
+            "trace": -0.011048
           },
           "2": {
             "n_terms": 7,
-            "trace": 0.015627
+            "trace": 0.023529
           },
           "3": {
             "n_terms": 21,
-            "trace": 0.108447
+            "trace": 0.200354
           },
           "4": {
             "n_terms": 35,
-            "trace": 0.108958
+            "trace": 0.247001
           },
           "5": {
             "n_terms": 35,
-            "trace": -0.000629
+            "trace": -0.001751
           },
           "6": {
             "n_terms": 21,
-            "trace": -0.021152
+            "trace": -0.072194
           },
           "7": {
             "n_terms": 7,
-            "trace": 0.004608
+            "trace": 0.019298
           },
           "8": {
             "n_terms": 1,
-            "trace": -0.000277
+            "trace": -0.001422
           }
         },
         "bridge_count_grading_atom": {
           "0": {
             "n_terms": 32,
-            "trace": 0.04232
+            "trace": 0.065457
           },
           "1": {
             "n_terms": 64,
-            "trace": 0.102602
+            "trace": 0.194725
           },
           "2": {
             "n_terms": 32,
-            "trace": 0.061656
+            "trace": 0.143584
           }
         },
-        "tr_core_0bridge": 0.04232,
-        "tr_1bridge_sum": 0.102602,
-        "tr_multibridge_corr": 0.061656,
-        "bond_trace_total": 0.164258,
-        "extensive_frac_1bridge": 0.6246,
-        "compute_sec": 6.2
+        "tr_core_0bridge": 0.065457,
+        "tr_1bridge_sum": 0.194725,
+        "tr_multibridge_corr": 0.143584,
+        "bond_trace_total": 0.33831,
+        "extensive_frac_1bridge": 0.5756,
+        "compute_sec": 9.4
       },
       {
         "atom": "helium-4",
@@ -230,79 +240,79 @@
         "n_bridges_max": 3,
         "n_atom_NF_terms": 1024,
         "n_free_NF_terms": 256,
-        "tr_M_atom": 0.055358,
-        "tr_M_free": 0.967323,
-        "Delta_tr": 0.911965,
+        "tr_M_atom": 0.160974,
+        "tr_M_free": 1.280783,
+        "Delta_tr": 1.119809,
         "length_grading_atom": {
           "1": {
             "n_terms": 1,
-            "trace": 0.000921
+            "trace": 0.00113
           },
           "2": {
             "n_terms": 10,
-            "trace": -0.002753
+            "trace": -0.004145
           },
           "3": {
             "n_terms": 45,
-            "trace": -0.011821
+            "trace": -0.02184
           },
           "4": {
             "n_terms": 120,
-            "trace": 0.008035
+            "trace": 0.018214
           },
           "5": {
             "n_terms": 210,
-            "trace": 0.045941
+            "trace": 0.127792
           },
           "6": {
             "n_terms": 252,
-            "trace": 0.028497
+            "trace": 0.097267
           },
           "7": {
             "n_terms": 210,
-            "trace": -0.010011
+            "trace": -0.041927
           },
           "8": {
             "n_terms": 120,
-            "trace": -0.005753
+            "trace": -0.029565
           },
           "9": {
             "n_terms": 45,
-            "trace": 0.00265
+            "trace": 0.016708
           },
           "10": {
             "n_terms": 10,
-            "trace": -0.000365
+            "trace": -0.002821
           },
           "11": {
             "n_terms": 1,
-            "trace": 1.7e-05
+            "trace": 0.00016
           }
         },
         "bridge_count_grading_atom": {
           "0": {
             "n_terms": 128,
-            "trace": 0.00488
+            "trace": 0.009942
           },
           "1": {
             "n_terms": 384,
-            "trace": 0.018292
+            "trace": 0.045731
           },
           "2": {
             "n_terms": 384,
-            "trace": 0.022774
+            "trace": 0.069865
           },
           "3": {
             "n_terms": 128,
-            "trace": 0.009413
+            "trace": 0.035435
           }
         },
-        "tr_core_0bridge": 0.00488,
-        "tr_1bridge_sum": 0.018292,
-        "tr_multibridge_corr": 0.032187,
-        "bond_trace_total": 0.050479,
-        "extensive_frac_1bridge": 0.3624,
-        "compute_sec": 65.9
+        "tr_core_0bridge": 0.009942,
+        "tr_1bridge_sum": 0.045731,
+        "tr_multibridge_corr": 0.1053,
+        "bond_trace_total": 0.151032,
+        "extensive_frac_1bridge": 0.3028,
+        "compute_sec": 101.1
       }
     ],
     "multiplicative_suppression": {
@@ -311,46 +321,46 @@
           "atom": "D",
           "A": 2,
           "bonds": 1,
-          "per_bond_suppression_f": 0.3949,
-          "log_ratio_free_over_atom": 0.9292,
-          "Delta_tr_linear_saturating": 0.595169
+          "per_bond_suppression_f": 0.5082,
+          "log_ratio_free_over_atom": 0.6768,
+          "Delta_tr_linear_saturating": 0.556545
         },
         {
           "atom": "T",
           "A": 3,
           "bonds": 2,
-          "per_bond_suppression_f": 0.3385,
-          "log_ratio_free_over_atom": 2.1662,
-          "Delta_tr_linear_saturating": 0.803953
+          "per_bond_suppression_f": 0.4529,
+          "log_ratio_free_over_atom": 1.5841,
+          "Delta_tr_linear_saturating": 0.888536
         },
         {
           "atom": "helium-3",
           "A": 3,
           "bonds": 2,
-          "per_bond_suppression_f": 0.444,
-          "log_ratio_free_over_atom": 1.6237,
-          "Delta_tr_linear_saturating": 0.841178
+          "per_bond_suppression_f": 0.558,
+          "log_ratio_free_over_atom": 1.1667,
+          "Delta_tr_linear_saturating": 0.892909
         },
         {
           "atom": "helium-4",
           "A": 4,
           "bonds": 3,
-          "per_bond_suppression_f": 0.3854,
-          "log_ratio_free_over_atom": 2.8607,
-          "Delta_tr_linear_saturating": 0.911965
+          "per_bond_suppression_f": 0.5009,
+          "log_ratio_free_over_atom": 2.074,
+          "Delta_tr_linear_saturating": 1.119809
         }
       ],
-      "f_mean": 0.3907,
-      "f_spread": 0.1055,
+      "f_mean": 0.505,
+      "f_spread": 0.1051,
       "model": "tr_atom ≈ tr_free · f^bonds  (f = per-bond trace suppression)",
       "consequence": "Δtr = tr_free·(1 − f^bonds) saturates (intensive) ⇒ B = Q_β·Δtr is bounded by Q_β·tr_free ≈ 0.78 MeV, cannot be extensive. The EXTENSIVE invariant is log(tr_free/tr_atom) = bonds·|log f| (= #2078 scale gate). The binding undershoot's A-growth is using the LINEAR difference where the LOG-RATIO is the additive (over bonds) observable. Structural diagnosis, NOT a fitted Δ_λ closure (f varies 0.34–0.44 with p/n composition; no 7th ansatz claimed)."
     },
     "verdict": {
       "extensive_frac_1bridge_by_atom": {
         "D": 1.0,
-        "T": 0.6017,
-        "helium-3": 0.6246,
-        "helium-4": 0.3624
+        "T": 0.5518,
+        "helium-3": 0.5756,
+        "helium-4": 0.3028
       },
       "interpretation": "1-bridge fraction falls (D 1.0 → ⁴He 0.36): bonds are GS-correlated (≥2-bridge grows), consistent with the multiplicative product structure — NOT a sum of independent bonds. The product becomes additive under log: log(tr_free/tr_atom) is the extensive invariant."
     }

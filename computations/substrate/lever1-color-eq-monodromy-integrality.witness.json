@@ -28,14 +28,14 @@
   },
   "allPassed": true,
   "verdict": "COLOR E_q CONFIRMED (j(q0)=129.86~129.9), but tr B = 2.6424 is NON-INTEGER so B is NOT the integral topological Gauss-Manin monodromy of E_q (which is SL2(Z), integer trace). B is the abelianised lambda_SW Cartan-connection holonomy (real/hyperbolic, tau=2cosh theta_binding, theta=0.7815). This REFRAMES option 2: a genus-1 Picard-Fuchs topological-monodromy computation would yield the WRONG (integer-trace) object. The decisive open step is the holonomy of the abelianised lambda_SW connection at q0, not the topological monodromy -- consistent with the M-workplan abelianisation (Cartan reduction) and the keystone non-compact (real-holonomy, q0 not a root of unity) arena. Curve identified; the explicit abelianised-connection holonomy = theta_binding stays the open keystone step. No fit; nothing wired.",
-  "scriptHash": "b97c9c0180da",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
-  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "scriptFile": "lever1_color_eq_monodromy_integrality.py",
+  "scriptHash": "d2cc35588103",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "sympy",
-  "computedAt": "2026-08-14T19:49:33.840990+00:00",
+  "computedAt": "2026-08-24T02:44:50.310139+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "lever1_color_eq_monodromy_integrality.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

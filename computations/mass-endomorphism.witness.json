@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T01:57:38.919389+00:00",
-  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
+  "computedAt": "2026-08-23T23:55:22.939596+00:00",
+  "commitSha": "5218280df85b6efebc5a4d740cbe8ef77436dc57",
   "assertions": [],
   "allPassed": true,
   "durationMs": 24,
   "computation": "mass-endomorphism",
   "scriptFile": "mass_endomorphism.py",
-  "scriptHash": "28266c000178",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "08c8eeec1809",
+  "scriptCommitSha": "0a257c92e04236c9ff6b545949805da23967c75f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +23,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mass_endomorphism.py"
+    ],
+    "reproduce": "python3 -u computations/mass_endomorphism.py"
   },
   "description": "Mass endomorphism via Φ_q tower with z²-weighted cross-term. m_p/m_e = 9310.3278 (CODATA: 1836.152, error 407.06%). Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra.",
   "parameters": {

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T17:21:10.868455+00:00",
-  "commitSha": "e31e89d1b1180bc329079a8f7adb8eb3d5c1a782",
+  "computedAt": "2026-08-23T22:51:02.546960+00:00",
+  "commitSha": "07459fce7ff6672557aa05e74722dcc268a7ac8b",
   "assertions": [
     {
       "name": "deuteron_below_ceiling",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 95,
   "computation": "binding-error-source",
   "scriptFile": "binding_error_source.py",
-  "scriptHash": "88b5200bbe55",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "18ae4c3a509a",
+  "scriptCommitSha": "d55f2e7f8ec9dc42341aff8066a162f441d9058a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,56 +37,64 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
-  "description": "Error-source diagnosis for the A≥3 binding undershoot: Δtr is an intensive, saturating observable (≤ |tr_free| ≈ 1), capping B = m_e·Vol·Δtr at ~3.74 MeV for any A, while physical binding is extensive. Deuteron sits below the ceiling (+0.2%); A≥3 is clipped (−59%/−88%). Structural pointer: the extensive analog is -log(tr), which grows with A — but no recalibrated formula is claimed (fitting).",
+  "invocation": {
+    "argv": [
+      "computations/binding_error_source.py"
+    ],
+    "reproduce": "python3 -u computations/binding_error_source.py"
+  },
+  "description": "Error-source diagnosis for the A≥3 binding undershoot: Δtr is an intensive, saturating observable (≤ |tr_free| ≈ 1), capping B = m_e·Vol·Δtr at ~3.74 MeV for any A, while physical binding is extensive. Deuteron sits below the ceiling (−6.3%, trace convention D; the +0.2% previously quoted here was convention C, excised by owner ruling 2026-08-09 — bean qou-jdhm); A≥3 is clipped (−59%/−88%). Structural pointer: the extensive analog is -log(tr), which grows with A — but no recalibrated formula is claimed (fitting).",
   "data": {
     "ceiling_MeV": "3.74445966",
     "isotopes": {
       "2H": {
-        "tr_free": "1.13171690525",
-        "tr_atom": "0.575090872103",
-        "delta_tr": "0.55662603315",
-        "B_cat_MeV": "2.084263727",
+        "tr_free": "1.13171690432",
+        "tr_atom": "0.57509087163",
+        "delta_tr": "0.556626032692",
+        "B_cat_MeV": "2.084263725",
         "B_AME_MeV": "2.2245662",
-        "clip_pct": -6.306958776805962,
+        "clip_pct": -6.306958853819167,
         "neg_log_ratio": "0.676963077038",
-        "B_over_dtr": "3.99651843",
+        "B_over_dtr": "3.996518433",
         "B_over_log": "3.286096798"
       },
       "3H": {
-        "tr_free": "1.11784623026",
-        "tr_atom": "0.229277660803",
-        "delta_tr": "0.888568569459",
-        "B_cat_MeV": "3.327209163",
+        "tr_free": "1.11784622898",
+        "tr_atom": "0.22927766054",
+        "delta_tr": "0.888568568439",
+        "B_cat_MeV": "3.32720916",
         "B_AME_MeV": "8.4817962",
-        "clip_pct": -60.772351929055,
+        "clip_pct": -60.77235197409991,
         "neg_log_ratio": "1.58422534257",
-        "B_over_dtr": "9.545460521",
+        "B_over_dtr": "9.545460532",
         "B_over_log": "5.353907662"
       },
       "3He": {
-        "tr_free": "1.29667561395",
-        "tr_atom": "0.403709914586",
-        "delta_tr": "0.892965699368",
-        "B_cat_MeV": "3.343674039",
+        "tr_free": "1.29667561224",
+        "tr_atom": "0.403709914054",
+        "delta_tr": "0.892965698191",
+        "B_cat_MeV": "3.343674035",
         "B_AME_MeV": "7.71804132",
-        "clip_pct": -56.677168463340045,
+        "clip_pct": -56.67716852042337,
         "neg_log_ratio": "1.16686246129",
-        "B_over_dtr": "8.643155415",
+        "B_over_dtr": "8.643155427",
         "B_over_log": "6.614353941"
       },
       "4He": {
-        "tr_free": "1.28078315363",
-        "tr_atom": "0.160951371947",
-        "delta_tr": "1.11983178169",
-        "B_cat_MeV": "4.193164932",
+        "tr_free": "1.28078315153",
+        "tr_atom": "0.160951371683",
+        "delta_tr": "1.11983177985",
+        "B_cat_MeV": "4.193164926",
         "B_AME_MeV": "28.2956624",
-        "clip_pct": -85.1808914272055,
+        "clip_pct": -85.18089145156733,
         "neg_log_ratio": "2.07412472683",
-        "B_over_dtr": "25.26777938",
+        "B_over_dtr": "25.26777942",
         "B_over_log": "13.64221835"
       }
     },

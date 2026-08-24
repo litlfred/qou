@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-24T11:58:03.828566+00:00",
-  "commitSha": "1e4bfb1655362502884d2545cff5e1ce4bee56e0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T00:43:07.331416+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "he4-qreeb-phase-falsification",
   "scriptFile": "he4_qreeb_phase_falsification_probe.py",
-  "scriptHash": "c401919300b3",
-  "scriptCommitSha": "619eacc998988bbe501f07db6e99b5e0520864f8",
+  "scriptHash": "fc84198a040d",
+  "scriptCommitSha": "726eecfe685f46afdfb16e38c02c38616459e667",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,14 +19,23 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/he4_qreeb_phase_falsification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/he4_qreeb_phase_falsification_probe.py"
   },
   "description": "4He falsification of the q-Reeb-phase/pairwise-deficit relation D/Sigma|Dtheta|~0.2065 MeV/rad (PR #2681, A=3). Per-bond pairwise binding on the canonical H_12 braid atom_braid_word_3A(2,2), |chi| combiner, 0 fit; deficit vs 6*B2 yardstick compared to 0.2065*17.2334=3.56 MeV prediction. Caveat: 4He is doubly magic, yardstick weakest here.",
   "inputs": {
-    "E0_MeV": "4.185980828",
-    "q0": "1.10997859556",
+    "E0_MeV": "4.185981363",
+    "q0": "1.10997858275",
     "B2_MeV": "2.224566",
     "sum_abs_dtheta_4He_rad": "17.2334",
     "ratio_A3_MeV_per_rad": "0.2065",
@@ -34,16 +43,16 @@
   },
   "data": {
     "per_bond_MeV": [
-      "2.0236701",
-      "2.442058",
-      "2.8761526"
+      "2.076509",
+      "2.6365445",
+      "3.1973511"
     ],
-    "B_pair_model_MeV": "7.3418807",
+    "B_pair_model_MeV": "7.9104046",
     "pair_target_MeV": "13.347396",
-    "deficit_observed_MeV": "6.0055153",
+    "deficit_observed_MeV": "5.4369914",
     "deficit_predicted_MeV": "3.5586971",
-    "ratio_observed_MeV_per_rad": "0.34848117",
-    "ratio_rel_to_A3_pct": "68.756",
+    "ratio_observed_MeV_per_rad": "0.31549151",
+    "ratio_rel_to_A3_pct": "52.7804",
     "verdict": "FALSIFIED (>40%)"
   }
 }

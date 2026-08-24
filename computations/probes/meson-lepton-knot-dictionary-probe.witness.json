@@ -1,13 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-07-18T14:57:44.373546+00:00",
+  "computedAt": "2026-08-24T00:50:51.651807+00:00",
   "computation": "meson-lepton-knot-dictionary-probe",
   "description": "Full knot-particle dictionary validation. Documents torus-knot \u2192 particle assignments for all leptons + quarks + mesons. Validates b/c generation assignment (paper puts c=T_{2,7}, b=T_{2,5} \u2014 swapped vs SM generations). Computes H_2 Markov traces, meson NF coefficients in H_3, and crossing-count ratios for mass sweep. Key finding: tr_M(\u03c3^5)/tr_M(\u03c3^3) = 1.36, misses m_K/m_\u03c0 = 3.54 by 63% \u2014 confirming m_\u03c0 is independent (CAL-3).",
   "parameters": {
     "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
-    "h_q": "0.20906029879563931543084621312967494385975749526306",
-    "m_e_MeV": "0.51099895069"
+    "h_q": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
+    "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678"
   },
   "data": {
     "torus_knot_properties": {
@@ -170,9 +170,11 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "5cc016f55a6e",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "26973183b25852920493b30c3687548ecfdc582e",
+  "scriptFile": "meson_lepton_knot_dictionary_probe.py",
+  "scriptHash": "27c7504b0d67",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "durationMs": 0,
-  "scriptFile": "meson_lepton_knot_dictionary_probe.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

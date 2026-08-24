@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T22:36:37.235577+00:00",
-  "commitSha": "b60c449bdc544e0569bd06a550f6a29b731cf05a",
+  "computedAt": "2026-08-23T23:45:38.997629+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "assertions": [
     {
       "name": "habiro_pochhammer_reproduces_witness",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1998,
+  "durationMs": 1573,
   "computation": "habiro-q-difference-fourier",
   "scriptFile": "habiro_q_difference_fourier.py",
   "scriptHash": "e299554c9208",
-  "scriptCommitSha": "86a218eb31906ceb0b4a575f0231d1c28a5a2f77",
+  "scriptCommitSha": "3a47febca402f1297fdfe2c726e76398cacd48a4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -160,11 +160,11 @@
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
-        "sha256": "f1681ffc8fd5e6db1e068b62c6b830119e0c678cb3c2778e131913c8d4c3aaf2",
+        "sha256": "0ee4ca7903b95fb332dc9fd6015b69302c4bcfc1ed752fad34ca03549bd18a15",
         "size_bytes": 10289,
-        "commitSha": "06f7907c98af57a87635b879184d4156351546eb",
-        "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
-        "computedAt": "2026-08-18T16:04:42.256921+00:00"
+        "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
+        "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
+        "computedAt": "2026-08-23T23:44:53.832446+00:00"
       }
     ]
   }

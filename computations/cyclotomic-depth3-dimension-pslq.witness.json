@@ -1,33 +1,55 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-11T02:19:33.776352+00:00",
-  "commitSha": "5e865af818831f1fbdaa91cb8b4c93cbc017eca0",
+  "computedAt": "2026-08-23T23:06:53.483144+00:00",
+  "commitSha": "8d9873290685978b454dd302af7220c37778bf35",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 41,
   "computation": "cyclotomic-depth3-dimension-pslq",
   "scriptFile": "cyclotomic_depth3_dimension_pslq.py",
-  "scriptHash": "f3b3967c1fe6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "38d967a66d58",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/cyclotomic_depth3_dimension_pslq.py"
+    ],
+    "reproduce": "python3 -u computations/cyclotomic_depth3_dimension_pslq.py"
+  },
   "description": "PSLQ certification at 50 dps that the genuinely-new depth-3 content over Q(zeta_K) for prime K has Borel-rank-saturated dimension (K-3)/2. Verified at K = 5 (dim 1, reproduces PR #634 round 12) and K = 7 (dim 2 — two antisymmetric generators Y_1, Y_2 certified mutually independent and independent of {zeta(3), pi^3} up to coefficient norm 1e8).",
-  "timestamp": "2026-05-11T02:19:33.762803+00:00",
-  "precision_decimal_digits": 50,
+  "timestamp": "2026-08-23T23:06:52.691082+00:00",
+  "precision_decimal_digits": 70,
   "K_5": {
     "borel_rank": 2,
     "predicted_genuinely_new_dim": 1,
-    "antisymmetric_generator_X5_str": "0.95572314353826862475076392705832322282974187981191",
+    "antisymmetric_generator_X5_str": "0.9557231435382686247507639270583232228297418798119072429682560312861292",
     "pslq_X5_vs_zeta3_pi3": "NONE FOUND",
     "saturated": true
   },
   "K_7": {
     "borel_rank": 3,
     "predicted_genuinely_new_dim": 2,
-    "cl3_2pi_7_str": "0.55201525870499399422904331448142745352549590086742",
-    "cl3_4pi_7_str": "-0.30861813586545893492324297937147866082669847279846",
-    "cl3_6pi_7_str": "-0.83215968765239756644036596523800593103266826513369",
-    "Y_1_str": "0.86063339457045292915228629385290611435219437366589",
-    "Y_2_str": "0.52354155178693863151712298586652727020596979233523",
+    "cl3_2pi_7_str": "0.5520152587049939942290433144814274535254959008674236627833537690975798",
+    "cl3_4pi_7_str": "-0.3086181358654589349232429793714786608266984727984648408549346592485213",
+    "cl3_6pi_7_str": "-0.8321596876523975664403659652380059310326682651336929681123888512409793",
+    "Y_1_str": "0.8606333945704529291522862938529061143521943736658885036382884283461012",
+    "Y_2_str": "0.523541551786938631517122985866527270205969792335228127257454191992458",
     "pslq_Y1_vs_zeta3_pi3": "NONE FOUND",
     "pslq_Y2_vs_zeta3_pi3": "NONE FOUND",
     "pslq_Y1_vs_Y2_zeta3_pi3": "NONE FOUND",

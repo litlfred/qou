@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-24T20:42:37.419646+00:00",
-  "commitSha": "6b04c69c047961e870f95350fbe142c01a5f3e8f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T01:33:19.523616+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "control_tau0_passes",
@@ -44,11 +44,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 619,
+  "durationMs": 657,
   "computation": "tau-dictionary-hauptmodul-validator",
   "scriptFile": "tau_dictionary_hauptmodul_validator.py",
-  "scriptHash": "45ac7a97d359",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5e2d97717924",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,8 +58,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/tau_dictionary_hauptmodul_validator.py"
+    ],
+    "reproduce": "python3 -u computations/probes/tau_dictionary_hauptmodul_validator.py"
   },
   "description": "t5(tau0) = -10 hauptmodul gate wired as a discrete validator on q0 -> tau dictionary candidates (uploaded-papers idea A2 consumer, A3-integer-trace-prune spirit). t5(tau) = (eta(tau)/eta(5tau))^6 and j(5tau) are Gamma0(5)-invariant (RR92 Thm 1 gauge), so evaluating them at a candidate tau tests Bring-class membership directly: PASS iff |t5+10| <= 1e-3 and |j(5tau)+25/2| <= 1.0. Control tau0 PASSes; the corpus's one stated dictionary (exact nome tau = i|ln q0|/(2pi)) FAILs — refuted-as-stated, scope-(a): the map, as stated, does not land on the Bring class. Three labelled strawmen (rate, hbar_q, half-shifted rate) demonstrate FAIL mechanics; the naive nome branch is ill-defined (Im tau < 0). Verdicts are q0-pin-independent (asserted across muon/proton pins). Gate composes with the polarization-blindness constraint (2026-07-19) as an independent discrete filter. Audit-only; nothing wired; no fit.",
   "auditOnly": "docs/audits/2026-07-24-tau-dictionary-hauptmodul-gate-wiring.md",

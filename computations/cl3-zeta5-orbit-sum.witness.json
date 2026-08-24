@@ -1,33 +1,55 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-11T00:42:41.114293+00:00",
-  "commitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "computedAt": "2026-08-23T22:54:18.240233+00:00",
+  "commitSha": "cd8acfc1cd9a5799184f208fb625094eb9a0e8a9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 29,
   "computation": "cl3-zeta5-orbit-sum",
   "scriptFile": "cl3_zeta5_orbit_sum.py",
-  "scriptHash": "d213ae649553",
-  "scriptCommitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "scriptHash": "70303eeb3d6a",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/cl3_zeta5_orbit_sum.py"
+    ],
+    "reproduce": "python3 -u computations/cl3_zeta5_orbit_sum.py"
+  },
   "description": "Verification at 50 decimal digits of the orbit-sum identity Cl_3(2π/5) + Cl_3(4π/5) = -(12/25) ζ(3), derived from the multiplication formula Σ Li_3(ζ_5^k) = -(24/25) ζ(3) restricted to real parts. Together with prop:bring-trilog-imaginary-tate-rational (round 10), reduces the 2-dim Bring trilog content to: ζ(3)-line (classical) ⊕ Cl_3(2π/5)-Cl_3(4π/5) (genuinely new, 1 real number).",
-  "timestamp": "2026-05-11T00:42:41.106593+00:00",
-  "precision_decimal_digits": 50,
+  "timestamp": "2026-08-23T22:54:17.089537+00:00",
+  "precision_decimal_digits": 70,
   "cl_3_values": {
-    "cl_3_2pi_5": "0.18936791501083168387944480476641361363127422974423",
-    "cl_3_4pi_5": "-0.76635522852743694087131912229190960919846765006767"
+    "cl_3_2pi_5": "0.1893679150108316838794448047664136136312742297442338898539828423610234",
+    "cl_3_4pi_5": "-0.7663552285274369408713191222919096091984676500676733531142731889251058"
   },
   "orbit_sum_identity": {
     "claim": "Cl_3(2π/5) + Cl_3(4π/5) = -(12/25) · ζ(3)",
-    "actual_str": "-0.57698731351660525699187431752549599556719342032344",
-    "predicted_str": "-0.57698731351660525699187431752549599556719342032344",
-    "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+    "actual_str": "-0.5769873135166052569918743175254959955671934203234394632602903465640823",
+    "predicted_str": "-0.5769873135166052569918743175254959955671934203234394632602903465640823",
+    "residual_str": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
     "residual_below_1e_40": true
   },
-  "zeta_3_str": "1.2020569031595942853997381615114499907649862923405",
+  "zeta_3_str": "1.202056903159594285399738161511449990764986292340498881792271555341838",
   "antisymmetric_generator": {
     "expression": "Cl_3(2π/5) - Cl_3(4π/5)",
-    "value_str": "0.95572314353826862475076392705832322282974187981191",
+    "value_str": "0.9557231435382686247507639270583232228297418798119072429682560312861292",
     "interpretation": "The genuinely-new depth-3 element for B1 over Q(ζ_5). Lives in P_3 / (P_2 + ζ(3)·Q + Tate)."
   },
   "borel_rank_2_decomposition": {

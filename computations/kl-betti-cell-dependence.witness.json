@@ -1,7 +1,7 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-18T18:18:49.063832+00:00",
+  "computedAt": "2026-08-23T23:52:42.918066+00:00",
   "computation": "kl-betti-cell-dependence",
   "scriptFile": "kl_betti_cell_dependence_probe.py",
   "description": "KL left-cell Betti sum B_\u03bb = \u03a3_{w\u2208\u0393_\u03bb} P_{e,w}(1) is NOT cell-invariant: distinct left cells of the same shape \u03bb over S_6 give different Betti sums (e.g. (3,3): 6..23). Hence B_\u03bb is not a function of \u03bb and cannot canonically supply |\u0394_\u03bb|=f^\u03bb. Hooks ARE cell-invariant and equal f^\u03bb. (a)-scope negative; reinforces the PROBE-4 KL-positivity sign prune. Pure-Python KL, literature-validated.",
@@ -169,12 +169,12 @@
     "hooks_also_vary": true,
     "deuteron": {
       "B_AME_MeV": 2.22452,
-      "sum_f_lambda": -0.7437808819224515,
-      "B_pred_f_lambda_MeV": 0.3800712502056555,
-      "B_pred_Bmin_MeV": 0.456799946603156,
-      "B_pred_Bmax_MeV": 0.816943902986969,
-      "magnification_min": 1.201879769532641,
-      "magnification_max": 2.149449353364462
+      "sum_f_lambda": -0.717445421638373,
+      "B_pred_f_lambda_MeV": 0.36661385763455323,
+      "B_pred_Bmin_MeV": 0.39945430345224464,
+      "B_pred_Bmax_MeV": 0.5244958186299079,
+      "magnification_min": 1.0895777536331628,
+      "magnification_max": 1.4306491904425884
     }
   },
   "assertions": [
@@ -192,12 +192,14 @@
     },
     {
       "label": "f^lambda baseline reproduces canonical deuteron sum -0.7438",
-      "passed": true
+      "passed": false
     }
   ],
-  "allPassed": true,
-  "scriptHash": "8f760cb75540",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "b860526b7601f1a3fed649619dd7950ed8afc73e",
-  "durationMs": 0
+  "allPassed": false,
+  "scriptHash": "2584c186b9cc",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "5218280df85b6efebc5a4d740cbe8ef77436dc57",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

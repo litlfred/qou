@@ -1,7 +1,7 @@
 {
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "compute": "pentagon_to_borromean_h4_probe",
-  "computedAt": "2026-08-23T09:26:05.902957+00:00",
+  "computedAt": "2026-08-24T00:51:42.150193+00:00",
   "description": "Tests whether the post-\u03c4 Pentagon archimedean refinement (Rogers log\u00b2 correction h\u00b2 \u2192 h\u2074 residual) at a natural Borromean (u, v) specialization gives the empirical h\u2074 = \u22123/4 coefficient of the Borromean Markov-trace closed form. Multiple specializations tested; matches indicate candidates for the categorical Pentagon \u2192 h\u2074 derivation.",
   "durationMs": 0,
   "engine": "mpmath",

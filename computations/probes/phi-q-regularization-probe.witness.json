@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:58:54.173007+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T00:51:43.138231+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "zeta_reg_improves_over_li2q",
@@ -10,7 +10,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 1e-12,
-      "source": "Zeta-regularized bar-pair gives m_p = 21.7172 MeV, a 3.178× improvement over the production Li_2^q tower's 6.83288 MeV.  Pass iff improvement > 2×."
+      "source": "Zeta-regularized bar-pair gives m_p = 22.6082 MeV, a 3.309× improvement over the production Li_2^q tower's 6.83288 MeV.  Pass iff improvement > 2×."
     },
     {
       "name": "zeta_reg_bounded_between_li2q_and_phi_q",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "phi-q-regularization-probe",
   "scriptFile": "phi_q_regularization_probe.py",
-  "scriptHash": "3fb204f4c509",
-  "scriptCommitSha": "1d06c9193dcdabfa16fb23a7a354b52fc057f2ea",
+  "scriptHash": "eeb5d1b70b42",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,12 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/phi_q_regularization_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/phi_q_regularization_probe.py"
   },
   "description": "Tests Route (b) closure for the proton mass-formula gap via zeta-regularization of log Φ_{q⁻¹}(V) at |V| > q⁻¹.  The regularized bar-pair Archimedean realization gives m_p ≈ 21.75 MeV — a 3× improvement over the pre-Archim Li_2^q tower (6.83 MeV) but still 43× off CODATA.  Confirms direction of Route (b) but not full closure.  See docs/audits/2026-05-25-gap-closure-structural-analysis.md for the framing.",
   "auditOnly": "docs/audits/2026-05-25-gap-closure-structural-analysis.md",
@@ -55,22 +63,22 @@
       "T3": "0.1983134794318745686",
       "sum": "13.371604382174749133",
       "m_p_pred_MeV": "6.8328758083331025473",
-      "ratio_codata_over_pred": "137.317304526"
+      "ratio_codata_over_pred": "137.317304712"
     },
     "zeta_reg_barpair_archim": {
       "T2": "27.4957952373937615",
-      "T3": "3.4486439516682707113",
-      "sum": "42.49942476150956338",
-      "m_p_pred_MeV": "21.717161458059990388",
-      "ratio_codata_over_pred": "43.2041770271",
-      "improvement_over_li2q": "3.17833399395"
+      "T3": "5.192406145651976474",
+      "sum": "44.243186955493269143",
+      "m_p_pred_MeV": "22.608222109438556263",
+      "ratio_codata_over_pred": "41.501365516",
+      "improvement_over_li2q": "3.30874184511"
     },
     "unregularized_phi_q": {
       "T2": "1096980.1731100158192",
-      "T3": "82016.295608886228747",
-      "sum": "1179008.0237044744955",
-      "m_p_pred_MeV": "602471.86296807711385",
-      "ratio_codata_over_pred": "0.00155737080158"
+      "T3": "123486.77431811442789",
+      "sum": "1220478.5024137026946",
+      "m_p_pred_MeV": "623663.23407310470923",
+      "ratio_codata_over_pred": "0.00150445310573"
     }
   },
   "q0Anchor": "proton",

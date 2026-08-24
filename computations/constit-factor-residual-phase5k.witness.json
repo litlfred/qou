@@ -1,25 +1,25 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T16:58:51.261345+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-23T23:06:44.596608+00:00",
+  "commitSha": "8d9873290685978b454dd302af7220c37778bf35",
   "assertions": [
     {
       "name": "phase_5k_1_residual_matches_h_to_5_unit_coeff",
-      "computed": 1.0159501980054337,
+      "computed": 254.5006853351794,
       "expected": 1.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.05,
       "unit": "dimensionless",
       "source": "Phase 5k.1 residual / h^5 at q_0; if coefficient is close to ±1, residual is O(h^5) with unit coefficient. Empirically c = 1.016, within 2% of unity."
     }
   ],
-  "allPassed": true,
-  "durationMs": 12,
+  "allPassed": false,
+  "durationMs": 9,
   "computation": "constit-factor-residual-phase5k",
   "scriptFile": "constit_factor_residual_phase5k.py",
-  "scriptHash": "a37f3f4f91e8",
-  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
+  "scriptHash": "ddf116510b1f",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,85 +27,104 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/constit_factor_residual_phase5k.py"
+    ],
+    "reproduce": "python3 -u computations/constit_factor_residual_phase5k.py"
   },
   "description": "Phase 5k.1: high-precision residual analysis for the constit-side per-Z step factor at q_0. Decomposes the 0.033% gap between measured 1.220358 and predicted (2q - 1) = 1.219957 across powers of h(q_0). Empirical result: |residual| = 4.057e-4, matching h^5(q_0) = 3.994e-4 with coefficient c = 1.016 — a striking unit-coefficient O(h^5) fit at q_0. Phase 5k.2 (queued): varying-q measurement to confirm the power empirically across the substrate window.",
   "contentBlock": "conj:constit-factor-2q-minus-1",
   "parameters": {
-    "q_0": "1.1099785827513808"
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672"
   },
   "data": {
-    "rho_Z_constit_measured": 1.2203628890866955,
+    "rho_Z_constit_measured": 1.321592984237347,
     "phase_5k_1_residual_vs_h_powers": {
-      "rho_measured": 1.2203628890866955,
+      "rho_measured": 1.321592984237347,
       "predicted_2q_minus_1": 1.2199571655027617,
-      "residual": 0.0004057235839339928,
-      "rel_err": 0.0003325719913836388,
+      "residual": 0.1016358187345854,
+      "rel_err": 0.08331097321166996,
       "h_at_q0": 0.2090602987956393,
       "powers_of_h": {
         "h^1": {
           "h_k_value": 0.2090602987956393,
-          "c_estimate": 0.001940701253520143,
-          "rel_to_residual": 515.2776596532563
+          "c_estimate": 0.48615552221101754,
+          "rel_to_residual": 2.0569549337875186
         },
         "h^2": {
-          "h_k_value": 0.04370620853252198,
-          "c_estimate": 0.009282973690845138,
-          "rel_to_residual": 107.72410148982748
+          "h_k_value": 0.04370620853252199,
+          "c_estimate": 2.3254320643932704,
+          "rel_to_residual": 0.4300276130667831
         },
         "h^3": {
-          "h_k_value": 0.009137233015033566,
-          "c_estimate": 0.04440333121268249,
-          "rel_to_residual": 22.520832844955105
+          "h_k_value": 0.009137233015033568,
+          "c_estimate": 11.123260024929111,
+          "rel_to_residual": 0.08990170127811724
         },
         "h^4": {
-          "h_k_value": 0.0019102326642882975,
-          "c_estimate": 0.2123948519565049,
-          "rel_to_residual": 4.708212043692962
+          "h_k_value": 0.001910232664288298,
+          "c_estimate": 53.20598931986759,
+          "rel_to_residual": 0.0187948765314395
         },
         "h^5": {
-          "h_k_value": 0.0003993538115653016,
-          "c_estimate": 1.0159501980054337,
-          "rel_to_residual": 0.9843002166476782
+          "h_k_value": 0.00039935381156530175,
+          "c_estimate": 254.5006853351794,
+          "rel_to_residual": 0.003929262503489891
         },
         "h^6": {
-          "h_k_value": 8.348902717101938e-05,
-          "c_estimate": 4.859603683043359,
-          "rel_to_residual": 0.2057780973969761
+          "h_k_value": 8.348902717101942e-05,
+          "c_estimate": 1217.3554079914475,
+          "rel_to_residual": 0.0008214527930260983
         },
         "h^7": {
-          "h_k_value": 1.7454240966530562e-05,
-          "c_estimate": 23.244985829632434,
-          "rel_to_residual": 0.04302003052740999
+          "h_k_value": 1.745424096653057e-05,
+          "c_estimate": 5822.987028165673,
+          "rel_to_residual": 0.00017173316635654858
         }
       },
-      "best_k_unit_coeff": 5
+      "best_k_unit_coeff": 1
     },
     "phase_5k_1b_refined_candidate": {
       "candidate": "(2q - 1) + h^5",
       "value_at_q0": 1.2203565193143269,
-      "rho_measured": 1.2203628890866955,
-      "residual": 6.369772368691239e-06,
-      "improvement_over_2q_minus_1": 63.695146458954945
+      "rho_measured": 1.321592984237347,
+      "residual": 0.10123646492302009,
+      "improvement_over_2q_minus_1": 1.0039447625109092
     },
     "phase_5k_2_analytic_structure": {
       "h": 0.2090602987956393,
-      "h_squared": 0.04370620853252198,
-      "h_cubed": 0.009137233015033566,
-      "h_to_4": 0.0019102326642882975,
-      "h_to_5": 0.0003993538115653016,
+      "h_squared": 0.04370620853252199,
+      "h_cubed": 0.009137233015033568,
+      "h_to_4": 0.001910232664288298,
+      "h_to_5": 0.00039935381156530175,
       "cosh_h": 1.0219328133414665,
       "cosh_log_q": 1.0054484333535612,
-      "exp_h": 1.2325193157199539,
-      "two_q_minus_1": 1.2199571655027617,
-      "exp_h_minus_2q_plus_1": 0.012562150217192324,
-      "cosh_h_at_q0": 1.0219328133414665,
-      "sinh_h_at_q0": 0.2105865023784874
-    }
+      "exp_h": "1.23251931571995394078741129126160213665007842793512773733188",
+      "two_q_minus_1": "1.21995716550276161518333819122153775974899824374715527211344",
+      "exp_h_minus_2q_plus_1": "0.0125621502171923256040731000400643769010801841879724652184361",
+      "cosh_h_at_q0": "1.02193281334146653474948806830652399951814312643396261265893",
+      "sinh_h_at_q0": "0.210586502378487406037923222955078137131935301501165124672948"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "delta-lambda-fr-identity-phase5c.witness.json",
+        "sha256": "676a880c779910e822e2ab033fea4244990130eff51c39e5ae61ab4a296e0c41",
+        "size_bytes": 21057,
+        "commitSha": "360a9ae0c3c45df38f3e28d866982ce2e93ee1ac",
+        "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+        "computedAt": "2026-08-23T21:48:08.359795+00:00"
+      }
+    ]
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

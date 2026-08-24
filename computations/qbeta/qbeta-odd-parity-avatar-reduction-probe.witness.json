@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T14:24:39.635095+00:00",
-  "commitSha": "153ee3bb9e0b4546d30a845272697fb952cc9213",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T02:25:52.488274+00:00",
+  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
   "assertions": [
     {
       "name": "reduction_c3_equals_g",
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 6,
   "computation": "qbeta-odd-parity-avatar-reduction-probe",
   "scriptFile": "qbeta_odd_parity_avatar_reduction_probe.py",
-  "scriptHash": "12a34dc80553",
-  "scriptCommitSha": "153ee3bb9e0b4546d30a845272697fb952cc9213",
+  "scriptHash": "dbc5695745f3",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,76 +35,85 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_odd_parity_avatar_reduction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_odd_parity_avatar_reduction_probe.py"
   },
   "description": "Odd-parity extension of the Q_β c_k generating-function avatar. Shows that the ladder constraints c_1=0 (starts at k=2) and c_2=-1 (proved, even) force the odd content into a single scalar g with c_3=g, so an odd-parity closure reduces EXACTLY to the already-saturated single-formula c_3 search. Confirms the reduction numerically (c_2=-1 indep of g; c_3=g) and tests bar-antisymmetric closed-form g candidates at both anchors (all NEGATIVE — inside the saturated bracket). Companion to the cosh-avatar even-parity NEGATIVE (PR #1866); together they close the generating-function reframing of c_3 as not opening new search space. No fits.",
   "contentBlock": "conj:qbeta-precision-ladder",
   "data": {
     "c3_target_proton": "-2.06934257711516783787971951724962858902203099810343886691284",
-    "c3_target_muon": "-2.02020023502125517138232674988576251890206061330068660325496",
+    "c3_target_muon": "-2.01986031187400546349321995587646029747377592135260349078716",
     "reduction_c3_equals_g_confirmed": true,
     "g_candidates": [
       {
         "candidate": "h = q-q⁻¹",
         "bar_odd": true,
         "g_proton": "0.209060298795639315430846213129674943859757495263024555381696",
-        "g_muon": "0.209060321989879461101608422297921906461756303916458683983049",
+        "g_muon": "0.209060322150316746630800261501919885980137169225879113703739",
         "proton_miss_ppm": 1101027.3992849877,
-        "muon_miss_ppm": 1103484.9508309655,
+        "muon_miss_ppm": 1103502.3664365942,
         "closure": false
       },
       {
         "candidate": "h³",
         "bar_odd": true,
         "g_proton": "0.00913723301503356763283260942522974236783522565421198639575934",
-        "g_muon": "0.00913723605623079471933154301490441127465072696084127187002690",
+        "g_muon": "0.00913723607726711577642476574384733685424834636093672673235052",
         "proton_miss_ppm": 1004415.524580648,
-        "muon_miss_ppm": 1004522.9358445919,
+        "muon_miss_ppm": 1004523.6970217953,
         "closure": false
       },
       {
         "candidate": "h·(q+q⁻¹)",
         "bar_odd": true,
         "g_proton": "0.420398699801005873137589691393884059931148885120493493930623",
-        "g_muon": "0.420398746946350278165374435145377673673562317686967121571345",
+        "g_muon": "0.420398747272460167848370283514856551538343865940732370908521",
         "proton_miss_ppm": 1203155.680673751,
-        "muon_miss_ppm": 1208097.5636268684,
+        "muon_miss_ppm": 1208132.5846154275,
         "closure": false
       },
       {
         "candidate": "q³-q⁻³",
         "bar_odd": true,
         "g_proton": "0.636318129401951513925371248814254573947107711443285652540848",
-        "g_muon": "0.636318202025869178024156809908670130659919638710217323819174",
+        "g_muon": "0.636318202528217355668825550249606994794659854038574067843568",
         "proton_miss_ppm": 1307497.7224356108,
-        "muon_miss_ppm": 1314977.7883374884,
+        "muon_miss_ppm": 1315030.796331578,
         "closure": false
       },
       {
         "candidate": "-(q³-q⁻³)",
         "bar_odd": true,
         "g_proton": "-0.636318129401951513925371248814254573947107711443285652540848",
-        "g_muon": "-0.636318202025869178024156809908670130659919638710217323819174",
+        "g_muon": "-0.636318202528217355668825550249606994794659854038574067843568",
         "proton_miss_ppm": 692502.2775643892,
-        "muon_miss_ppm": 685022.2116625116,
+        "muon_miss_ppm": 684969.2036684221,
         "closure": false
       },
       {
         "candidate": "h·b",
         "bar_odd": true,
         "g_proton": "0.181377384270091355364218366259939191748377046443067624293634",
-        "g_muon": "0.181377404464502837402238783233209741648857381048580593018222",
+        "g_muon": "0.181377404604189955522105693931584431946096363714032635920856",
         "proton_miss_ppm": 1087649.7619465918,
-        "muon_miss_ppm": 1089781.8945469998,
+        "muon_miss_ppm": 1089797.0040492106,
         "closure": false
       },
       {
         "candidate": "h/ℏ_q²",
         "bar_odd": false,
         "g_proton": "21.2953374950518715897996098069255340073047918592093832656726",
-        "g_muon": "21.2953353908653819001702447910161333071031169469914466066617",
+        "g_muon": "21.2953353763104782483446130936355495046685874862938921856317",
         "proton_miss_ppm": 11290870.989925364,
-        "muon_miss_ppm": 11541200.333362661,
+        "muon_miss_ppm": 11542974.309224823,
         "closure": false
       },
       {
@@ -113,16 +122,16 @@
         "g_proton": "-2.00000000000000000000000000000000000000000000000000000000000",
         "g_muon": "-2.00000000000000000000000000000000000000000000000000000000000",
         "proton_miss_ppm": 33509.47198498039,
-        "muon_miss_ppm": 9999.125171393041,
+        "muon_miss_ppm": 9832.517504925512,
         "closure": false
       },
       {
         "candidate": "-(q²+q⁻²)·h/(q-q⁻¹)",
         "bar_odd": false,
         "g_proton": "-2.04370620853252198940201933567738830976821396071350610903595",
-        "g_muon": "-2.04370621823051207775827988827462492440063240209988114746020",
+        "g_muon": "-2.04370621829759421892785015989221935173016583434240254771797",
         "proton_miss_ppm": 12388.653703914522,
-        "muon_miss_ppm": 11635.471970435441,
+        "muon_miss_ppm": 11805.720565629003,
         "closure": false
       }
     ],

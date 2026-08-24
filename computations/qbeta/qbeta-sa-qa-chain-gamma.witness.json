@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T20:27:54.431782+00:00",
-  "commitSha": "efbdea701c43151f5363e822d49c112bd9521410",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T02:27:44.418986+00:00",
+  "commitSha": "4edd9258ae20e47e60c573f1af6dc28d7b1ec499",
   "assertions": [
     {
       "name": "q_N_7_matches_q_codata_within_1_ppb",
@@ -28,11 +28,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 6,
   "computation": "qbeta-sa-qa-chain-gamma",
   "scriptFile": "qbeta_sa_qa_chain_gamma.py",
-  "scriptHash": "08d27f2531ad",
-  "scriptCommitSha": "7fd30e32fac0dba442847e070fcf87aab1e1d7b9",
+  "scriptHash": "b842d8b776e0",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,33 +44,41 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_sa_qa_chain_gamma.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_sa_qa_chain_gamma.py"
   },
   "data": {
     "u_substrate": "0.00851723455015614218925557360331",
     "one_over_u_substrate": "117.409001021542550045447142069",
     "q_a_at_q0_MeV": "0.783645827374621213074939751341",
-    "cos_factor_at_q0": "0.998398945253084499336489635207",
+    "cos_factor_at_q0": "0.998999136574409781000164313151",
     "q_codata_MeV": "0.78233341",
     "partial_products_pi_k_at_u_sub": {
       "2": "0.999927456715617626498201895199",
-      "3": "0.999926178227462743056070434904"
+      "3": "0.999325429946342103263601118639"
     },
     "c_k_extracted": {
       "2": "-1.0",
-      "3": "-2.06934257711516783787971951725"
+      "3": "-974.431887746748422982615210779"
     },
     "q_n_partial_MeV": {
-      "2": "0.782334410277840137760143636388",
+      "2": "0.782804713582601608047366699594",
       "3": "0.78233341"
     },
     "c_k_plus_1_over_c_k_ratios": [
       {
         "k": 2,
         "c_k": "-1.0",
-        "c_{k+1}/c_k": 2.069342577115168,
-        "c_{k+1}/c_k / (1/u)": 0.01762507609391446
+        "c_{k+1}/c_k": 974.4318877467484,
+        "c_{k+1}/c_k / (1/u)": 8.299464941090477
       }
     ],
     "final_q_n_err_ppb": 0.0,

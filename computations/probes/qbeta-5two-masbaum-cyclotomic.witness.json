@@ -3,12 +3,12 @@
   "description": "Authoritative 5\u2082=K_2 cyclotomic coefficients C_{5_2,n}(q) from Masbaum's twist-knot formula (masbaum2003), via the derived Kashaev-tail basis bridge C_{K,n}=(-1)^n q^{n(n+1)/2} f\u0303_{K,n}. Reproduces V_{5_2} at N=2; the self-calibrating heuristic matches exactly. scope-(b).",
   "audit_only": true,
   "tier": "symbolic-exact (cited authoritative formula)",
-  "computedAt": "2026-07-18T22:19:29.880665+00:00",
-  "commitSha": "76944209cd14a37795d665823121b113755b86d0",
+  "computedAt": "2026-08-23T23:43:10.551970+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "qbeta_5two_masbaum_cyclotomic_probe.py",
-  "scriptHash": "44c4960b614a",
+  "scriptHash": "35b94e1ff7e0",
   "assertions": [
     {
       "name": "masbaum_reproduces_jones_5two_at_N2",
@@ -53,5 +53,9 @@
     "reference": "masbaum2003 (DOI 10.2140/agt.2003.3.537); library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf",
     "lean": "QOU.QBeta.HabiroCyclotomicOddLocus (c52_1/c52_2/c52_3, sorry-free)",
     "supports": "#3966 b3ix"
-  }
+  },
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

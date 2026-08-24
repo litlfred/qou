@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T20:20:10.529237+00:00",
-  "commitSha": "3cc6541c1da47b49ab1d1af8ddab249b5dfce902",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T22:28:22.958708+00:00",
+  "commitSha": "cffc1265f0020e076c7671e8081177c6d803a63d",
   "assertions": [
     {
       "name": "epstein_zero_is_minus_one_area_free",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 13,
   "computation": "alpha-em-zeta-anomaly-b1-count",
   "scriptFile": "alpha_em_zeta_anomaly_b1_count_probe.py",
-  "scriptHash": "aca6dc23af99",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "858c6cb2e608",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em/alpha_em_zeta_anomaly_b1_count_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em/alpha_em_zeta_anomaly_b1_count_probe.py"
   },
   "description": "Front-3 structural lead: the flat-torus scale anomaly ζ_{Δ₁}(0)=−b₁ is the canonical AREA-FREE home of the bare b₁=dim H¹(M_Bring)=8 count that the data-selected α_EM per-loop measure 1/(π b₁)=1/(8π) needs (1/Area excluded at −1419 ppb). On J(M)=T^{b₁} the photon Hodge 1-form Laplacian Δ₁=Δ₀⊗Id_{ℝ^{b₁}}, so ζ_{Δ₁}(0)=b₁·E_Λ(0). The scalar Epstein zeta E_Λ(0)=−1 for EVERY lattice (the −1/s heat-kernel constant-term pole killed by 1/Γ(s); covolume enters only the regular 1/(s−d/2) pole) — verified for ℤ^d (d=1,2,3,8) and a non-cubic 2D lattice (Gram [[2,1],[1,2]], det 3) to confirm area/shape-independence. So ζ_{Δ₁}(0)=−b₁ exactly and area-free. STRICT scope: this fixes the bare b₁ count (the μ-scale-anomaly weight), NOT the full 1/(π b₁): the π and the reciprocal form require the full determinant + per-mode weight and remain OPEN. Does NOT manufacture 8π (spec kill-criterion respected). Scope-(a) POSITIVE-partial; no α_k wired; no fit; 1/(8π) stays a phase-4 identification.",
   "contentBlock": "prop:alpha-em-categorical-trace",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T19:37:06.448312+00:00",
-  "commitSha": "757490e9367c738533bf2a8b64d17a3c4dc97438",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T22:20:03.720226+00:00",
+  "commitSha": "4ac5ddf779edd34e90cda0c5d1e2a9a76ef97724",
   "assertions": [
     {
       "name": "framework_ansatz_residual_pinned",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "alpha-em-yekutieli-h2-extraction",
   "scriptFile": "alpha_em_yekutieli_h2_extraction.py",
-  "scriptHash": "c4ea84d7bdd7",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptHash": "f070b372e226",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_yekutieli_h2_extraction.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_yekutieli_h2_extraction.py"
   },
   "description": "Derive-or-refute: does the exact Markov-trace product for the FSC torus knots T(2,9) and T(3,5) close the ~500 ppm α_EM residual left by the bare q·[9]_q·[10]_q ansatz? Yekutieli h² extraction: T(2,9) vanishes (single generator); T(3,5)'s h² content is already in the closed-form Markov trace via central-full-twist factorisation (Δ₃² = I on (2,1), eigenvalues of σ₁σ₂ are cube roots of unity → χ_(2,1)((σ₁σ₂)⁵) = −1 EXACTLY, independent of q). No fit; no fitting.",
   "data": {
@@ -44,10 +54,10 @@
     },
     "canonical_exact": {
       "formula": "q · tr_M(T(2,9), Wenzl-H₂) · tr_M(T(3,5), Wenzl-H₃)",
-      "trM_T29": "1.19653667086",
-      "trM_T35": "0.602110861987",
-      "value": "0.799681546175",
-      "residual_ppm": -994164.4418144132
+      "trM_T29": "1.46820318352",
+      "trM_T35": "0.906560428957",
+      "value": "1.47739804103",
+      "residual_ppm": -989218.9056094261
     },
     "yekutieli_h2_status": {
       "T29": "vanishes (single generator, [σ₁,σ₁]=0)",

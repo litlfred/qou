@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-09T04:46:56.320459+00:00",
-  "commitSha": "53c90b579194ef43996563402859718e68850880",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-23T23:06:49.509786+00:00",
+  "commitSha": "8d9873290685978b454dd302af7220c37778bf35",
   "assertions": [
     {
       "name": "crystal_pole[T_2_1]_equals_published_alpha_shift",
@@ -216,11 +216,33 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 6,
   "computation": "crystal-pole-order",
   "scriptFile": "crystal_pole_order.py",
-  "scriptHash": "e448a52a00b9",
-  "scriptCommitSha": "1816b4958fef85760328dc6af05b8be5213d37de",
+  "scriptHash": "36fc3f0af224",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/crystal_pole_order.py"
+    ],
+    "reproduce": "python3 -u computations/crystal_pole_order.py"
+  },
   "description": "Combinatorial verification of the crystal-R-matrix proof of Sub-lemma 2.1 (refined). For T_{p,k} on p strands, the column SYT (1^p) has all axial distances ρ = -1, so the pole-per-cycle is p-1 and the total over k cycles is k(p-1) — matching prop:alpha-shift-torus-knot. AXKIA chain T_{2,9}→9, T_{3,5}→10 verified.",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "data": {

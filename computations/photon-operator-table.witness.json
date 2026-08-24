@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:40.181370+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-23T22:41:21.039112+00:00",
+  "commitSha": "71dbb7727399801b8d6adc749026eb7697de6789",
   "assertions": [
     {
       "name": "T_{1,0} e⁻ pair count",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "photon-operator-table",
   "scriptFile": "photon_operator_table.py",
   "scriptHash": "7e0be1143fdb",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,8 +70,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/photon_operator_table.py"
+    ],
+    "reproduce": "python3 -u computations/photon_operator_table.py"
   },
   "description": "Compact photon operator table: NF of b_i·β(T_{m,n})·b_j for all 6×6 basis pairs and 5 torus knot operators. Each operator stored as a 6×6 matrix of 6-element NF vectors. Replaces the verbose knot-operator-table witness (78KB → ~8KB).",
   "contentBlock": "rem:knot-operator-basis-table",

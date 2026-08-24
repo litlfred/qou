@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T18:13:50.909341+00:00",
-  "commitSha": "c4c2d382d90224492a2d72ac6c95b38e6107ab4d",
+  "computedAt": "2026-08-23T22:35:46.232883+00:00",
+  "commitSha": "b60c449bdc544e0569bd06a550f6a29b731cf05a",
   "assertions": [
     {
       "name": "predicted_matches_m_p_minus_m_e_within_1000_ppb",
-      "computed": 471.823999724014,
+      "computed": 471.820744077321,
       "expected": 0,
       "passed": true,
       "tolerance": 1000
@@ -19,29 +19,51 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "proton-m_e-anomaly-audit",
   "scriptFile": "proton_m_e_anomaly_audit.py",
-  "scriptHash": "9b70aa04b632",
-  "scriptCommitSha": "5732dad052080159e3430d82e2817a9880b65028",
+  "scriptHash": "eb84b01bc9de",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/proton_m_e_anomaly_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/proton_m_e_anomaly_audit.py"
+  },
   "description": "Diagnostic-only audit of the proton 544k ppb defect.  Documents that the placeholder literals M_HECKE_PIPELINE_AT_Q0['p']=1.4283 and ['e']=0.0007783 in derivation_chain.py:73-76 give a Hecke ratio matching (m_p - m_e)/m_e to ~470 ppb, NOT m_p/m_e.  The 544,145 ppb error in proton-mass-50dps.derivation.json is structurally the missing electron-rest anchor.  This audit does NOT apply a fix: a `+1` patch on the Hecke ratio would hit CODATA by algebraic cancellation but would be fitting, not derivation.  Resolution options enumerated in docs/audits/2026-05-09-proton-m_e-anomaly.md (Options A-E).  Recommended: D (relabel-then-derive) or E (defer and focus 1ppb work on T1 / binding-energy chains that don't consume these placeholders).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "auditOnly": "docs/audits/2026-05-09-proton-m_e-anomaly.md",
   "parameters": {
     "M_E_HECKE_placeholder": 0.0007783,
     "M_P_HECKE_placeholder": 1.4283,
-    "M_E_MEV_codata": 0.51099895,
-    "M_P_MEV_codata": 938.27208816
+    "M_E_MEV_codata": 0.51099895069,
+    "M_P_MEV_codata": 938.27208943
   },
   "data": {
     "ratio_predicted": 1835.1535397661569,
-    "ratio_codata_m_p_over_m_e": 1836.1526734252586,
-    "ratio_codata_m_p_minus_m_e_over_m_e": 1835.1526734252584,
-    "ratio_diff_to_codata": 0.9991336591017443,
-    "ratio_diff_to_codata_minus_one": -0.0008663408984830312,
-    "m_p_predicted_MeV": 937.7615319092894,
-    "ppb_vs_codata_m_p": -544145.1974893615,
-    "ppb_vs_codata_m_p_minus_m_e": 471.823999724014,
+    "ratio_codata_m_p_over_m_e": 1836.1526734312363,
+    "ratio_codata_m_p_minus_m_e_over_m_e": 1835.1526734312363,
+    "ratio_diff_to_codata": 0.9991336650793983,
+    "ratio_diff_to_codata_minus_one": -0.0008663349206017301,
+    "m_p_predicted_MeV": 937.7615331755454,
+    "ppb_vs_codata_m_p": -544145.2007431982,
+    "ppb_vs_codata_m_p_minus_m_e": 471.820744077321,
     "finding": "Hecke ratio sits at (m_p - m_e)/m_e to ~470 ppb. Not a Phi_q precision issue, not a convention bug, not a q_0 drift. Placeholders calibrated to wrong target (or upstream missing rest-mass anchor). NO FIX APPLIED.",
     "resolution_options": {
       "A_relabel_only": "Demote chain step to PLACEHOLDER; flag literals' provenance",

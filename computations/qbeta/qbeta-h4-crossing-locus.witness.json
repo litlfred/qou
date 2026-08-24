@@ -36,12 +36,14 @@
   ],
   "verdict": "no derivable constant-coupling 4th strand passes the gate (fit-trap wall confirmed structurally); a passer would need q-dependent (higher-Taylor) couplings",
   "allPassed": true,
-  "scriptHash": "946f0ce8d4df",
-  "scriptCommitSha": "eae3496e006800c88530fa37edefadbe1222b96f",
-  "commitSha": "eae3496e006800c88530fa37edefadbe1222b96f",
+  "scriptFile": "qbeta_h4_crossing_locus_probe.py",
+  "scriptHash": "df8643f4ad0e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
   "engine": "sympy",
-  "computedAt": "2026-07-18T01:35:51.418135+00:00",
-  "durationMs": 52882,
+  "computedAt": "2026-08-24T02:22:35.476542+00:00",
+  "durationMs": 62355,
   "engineVersion": "sympy 1.14.0",
-  "scriptFile": "qbeta_h4_crossing_locus_probe.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

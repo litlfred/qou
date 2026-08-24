@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:47:48.887307+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-24T01:53:26.353368+00:00",
+  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
   "assertions": [
     {
       "name": "step4_enumeration_complete",
@@ -23,8 +23,8 @@
   "durationMs": 5,
   "computation": "qbeta-chain4-kashiwara-step4-n5",
   "scriptFile": "qbeta_chain4_kashiwara_step4_n5.py",
-  "scriptHash": "14555641f34b",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "392172a24545",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -242,5 +242,7 @@
     },
     "near_match_count": 0,
     "next_step": "Step 5: Demazure characters at fundamental weights"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

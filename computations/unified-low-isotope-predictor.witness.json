@@ -1,15 +1,15 @@
 {
   "engine": "python+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:23:20.323838+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "computedAt": "2026-08-24T02:56:13.535703+00:00",
+  "commitSha": "0edc2c20d675db59edab2e722441847123300b5f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 66,
+  "durationMs": 38,
   "computation": "unified-low-isotope-predictor",
   "scriptFile": "unified_low_isotope_predictor.py",
-  "scriptHash": "eba70b193ab6",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "a84f7373d484",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,15 +21,24 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/unified_low_isotope_predictor.py"
+    ],
+    "reproduce": "python3 -u computations/unified_low_isotope_predictor.py"
   },
   "description": "Unified low-isotope binding predictor — applies all 6 derived terms uniformly, with derivable rules for term applicability (no special-casing). T1 = descended Markov trace binding via free-vs-atom subtraction. T4 = universal Frobenius co-Casimir (Lean-proved). T5 = BW + chirality, applied only where BW is structurally valid (A ≥ 3). T6 = Habiro residue (placeholder, deferred Laurent expansion). k≥3 = entanglement-orders tail in subtractive form. Δm_shell = σ_shell ILP-derived. SINGLE β-decay calibration throughout.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0": 1.1099785827513808,
     "m_e_MeV": 0.51099895069,
-    "Q_beta_n_MeV": 0.7823334093100222,
-    "E_0_MeV_per_cat": 7.390664894220538,
+    "Q_beta_n_MeV": 0.7823334093099085,
+    "E_0_MeV_per_cat": 7.390664894219464,
     "tr_M_proton_at_q_0": 0.7022506773529952,
     "tr_M_neutron_at_q_0": 0.5963964111256355
   },
@@ -40,45 +49,45 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "T1_descended": 3.1858965180868237,
+        "T1_descended": 3.1856703166744724,
         "T4_frobenius": 1.0475478489145,
         "T5_BW_chirality": 0.0,
         "T6_habiro": 0.0,
-        "k3_plus_tail": -10575.102337746954,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": -10570.825368453634,
+        "k3_plus_tail": -261785.1267946423,
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": -261780.8500515504,
         "B_AME_MeV": 2.2245662,
-        "err_pct": -475285.9202236209
+        "err_pct": -11767825.772851821
       },
       {
         "sym": "T",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "T1_descended": 2.126370478187458,
+        "T1_descended": 2.1263882951037503,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "8.75008974974357",
+        "T5_BW_chirality": "8.750089749743567144040546964330734172442477919892027468250130656235442",
         "T6_habiro": 0.0,
-        "k3_plus_tail": -14521.125110617564,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "-14509.1575776144",
+        "k3_plus_tail": -340659.0117455838,
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "-340647.0441947637089917327931731274505537472874701239312147192498693438",
         "B_AME_MeV": 8.4817962,
-        "err_pct": "-171162.322596414"
+        "err_pct": "-4016313.501979259034738885606175984624719154028379015634805136040066961"
       },
       {
         "sym": "3He",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "T1_descended": 2.510446422740093,
+        "T1_descended": 2.5104294640344715,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "8.24294524226905",
+        "T5_BW_chirality": "8.242945242269052447615333588623143713667287322371138428872983788808781",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "11.8444644402427",
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "11.84444748153710405040940761730260446642269084104789624137298378880878",
         "B_AME_MeV": 7.71804132,
-        "err_pct": "53.4646414699777"
+        "err_pct": "53.4644217418766518841666762790009591492067053346846912186191718451485"
       },
       {
         "sym": "4He",
@@ -87,13 +96,13 @@
         "A": 4,
         "T1_descended": 0.0,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "22.546675175696",
+        "T5_BW_chirality": "22.54667517569600283781089951133847581657324259373903974488953343147113",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "23.6377479509296",
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "23.63774795092958268242239734462285060870204393956423505738953343147113",
         "B_AME_MeV": 28.2956624,
-        "err_pct": "-16.4615847589078"
+        "err_pct": "-16.46158475890784705929615709250877526657376515042429183505522644383421"
       },
       {
         "sym": "6Li",
@@ -102,13 +111,13 @@
         "A": 6,
         "T1_descended": 0.0,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "30.884038444499",
+        "T5_BW_chirality": "30.8840384444989538899283518780698015591231519590773729887903088157174",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "31.9751112197325",
-        "B_AME_MeV": 31.993987199999996,
-        "err_pct": "-0.0589985241584785"
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "31.9751112197325337345398497113541763512519533049025683012903088157174",
+        "B_AME_MeV": 31.9939872,
+        "err_pct": "-0.058998524158519605725395479954134234874691453893268214454378837631034"
       },
       {
         "sym": "7Li",
@@ -117,13 +126,13 @@
         "A": 7,
         "T1_descended": 0.0,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "44.4540953400198",
+        "T5_BW_chirality": "44.45409534001983409279290526683325879275798797607421875",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "45.5451681152534",
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "45.5451681152534139374044031001176335848867893218994140625",
         "B_AME_MeV": 39.24453,
-        "err_pct": "16.0548186339687"
+        "err_pct": "16.05481863396864957161915081237483827932653084514763842236798039957021"
       },
       {
         "sym": "9Be",
@@ -132,13 +141,13 @@
         "A": 9,
         "T1_descended": 0.0,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "63.4208390122793",
+        "T5_BW_chirality": "63.4208390122793372878362561095855198800563812255859375",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "64.5119117875129",
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "64.5119117875129171324477539428698946721851825714111328125",
         "B_AME_MeV": 58.16498,
-        "err_pct": "10.911946995448"
+        "err_pct": "10.91194699544797786978569150429290366517965296032342260990797436975366"
       },
       {
         "sym": "11B",
@@ -147,13 +156,13 @@
         "A": 11,
         "T1_descended": 0.0,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "82.9161334833823",
+        "T5_BW_chirality": "82.9161334833823087109294647234492003917694091796875",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "84.0072062586159",
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "84.0072062586158885555409625567335751838982105255126953125",
         "B_AME_MeV": 76.20548,
-        "err_pct": "10.2377496455844"
+        "err_pct": "10.23774964558440521833785455583024813007770184079918487068494176963587"
       },
       {
         "sym": "12C",
@@ -162,13 +171,13 @@
         "A": 12,
         "T1_descended": 0.0,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "95.8203041012445",
+        "T5_BW_chirality": "95.82030410124451589130406081130018718756409874964012705693608407109918",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "96.9113768764781",
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "96.91137687647809573591555864458456197969290009546532236943608407109918",
         "B_AME_MeV": 92.16175,
-        "err_pct": "5.15357713636959"
+        "err_pct": "5.153577136369587173947232986637415413405805564228184376582613794463737"
       },
       {
         "sym": "16O",
@@ -177,18 +186,18 @@
         "A": 16,
         "T1_descended": 0.0,
         "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "135.311360675041",
+        "T5_BW_chirality": "135.31136067504102182823544353595934808254241943359375",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "136.402433450275",
+        "delta_m_shell": 0.04352492631907981,
+        "B_pred_MeV": "136.4024334502746016728469413692437228746712207794189453125",
         "B_AME_MeV": 127.61929,
-        "err_pct": "6.8823008263677"
+        "err_pct": "6.882300826367702456334178059032862762659789270276577758631579667225111"
       }
     ],
     "stats": {
-      "mean_abs_err_pct": "64656.7468438026",
-      "max_abs_err_pct": 475285.9202236209
+      "mean_abs_err_pct": "1578425.850022934275122643807534869175685605533302143541206444234393409",
+      "max_abs_err_pct": 11767825.772851821
     }
   },
   "caveats": [

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:41:37.054672+00:00",
-  "commitSha": "193f561e21bc87a95617b7e750acca2bc12e0d6a",
+  "computedAt": "2026-08-24T01:37:00.138962+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "extended_prescreen_completed",
@@ -14,16 +14,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 195,
+  "durationMs": 242,
   "computation": "q-dirac-linking-weight-extended-50dps",
   "scriptFile": "q_dirac_linking_weight_extended_50dps.py",
-  "scriptHash": "483fcb0c8723",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c316fa6cee39",
+  "scriptCommitSha": "64f1cfe3fc58f4d536afc96b3b26ffd38903aa85",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q_dirac_linking_weight_extended_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/q_dirac_linking_weight_extended_50dps.py"
   },
   "description": "Extended q-Dirac variants — 12 weighting+normalization schemes at H_4 (50 dps). Follows breakthrough where scheme 6 of parent probe gave NEGATIVE h² coefficient (-0.79 vs target -G = -0.916). Searches for variant matching -G more precisely.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

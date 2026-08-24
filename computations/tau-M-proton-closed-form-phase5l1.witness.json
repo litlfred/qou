@@ -1,15 +1,37 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-20T18:59:21.303731+00:00",
-  "commitSha": "8786d45872315d24ac7bdbc598e8f3ab0125a8c9",
+  "computedAt": "2026-08-24T02:55:56.757371+00:00",
+  "commitSha": "0edc2c20d675db59edab2e722441847123300b5f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 400,
+  "durationMs": 361,
   "computation": "tau-M-proton-closed-form-phase5l1",
   "scriptFile": "tau_M_proton_closed_form_phase5l1.py",
-  "scriptHash": "4d14efd7aad0",
-  "scriptCommitSha": "906fb5db622970310d0f3e01ea711bc6c52b9b67",
+  "scriptHash": "cd263fcd8c3e",
+  "scriptCommitSha": "4d0d608dd79329affdb994ed40436b9a43414c14",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/tau_M_proton_closed_form_phase5l1.py"
+    ],
+    "reproduce": "python3 -u computations/tau_M_proton_closed_form_phase5l1.py"
+  },
   "description": "Phase 5l.1: symbolic closed-form derivation of T(B_p, q) [structural form; see header for normalization caveat] as a Laurent rational in q.  Decomposes the Markov trace as Σ_λ y_λ(q) · χ_λ(B_p, q) over partitions of 3.  Uses trivial / sign reps directly (scalar Hecke values) and Hoefsmit symbolic 2x2 matrices for (2,1).  y_λ(q) given by the Wenzl-bridge structural form (∝ q-hook-content).",
   "auditOnly": "docs/audits/2026-05-20-constit-factor-closure-chain.md",
   "parameters": {
@@ -22,12 +44,18 @@
       "(2, 1)": "(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1)/(4*q**11)"
     },
     "y_lambda_structural": {
-      "(3,)": "(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(11/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6)*(q**6*(1 - 1/(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1))))*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6)) + 2*q**2*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)**2*(1 - q**6)) + (-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(11/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6))))",
-      "(2, 1)": "q**2*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)**2*(1 - q**6)*(q**6*(1 - 1/(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1))))*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6)) + 2*q**2*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)**2*(1 - q**6)) + (-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(11/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6))))",
-      "(1, 1, 1)": "q**6*(1 - 1/(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1))))*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6)*(q**6*(1 - 1/(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1))))*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6)) + 2*q**2*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)**2*(1 - q**6)) + (-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(11/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6))))"
+      "(3,)": "(q**4 + 1)/(q**4 + 2*q**2 + 1)",
+      "(2, 1)": "q**2/(q**2 + 1)**2",
+      "(1, 1, 1)": "0"
     },
-    "T_proton_structural_symbolic": "(q**(25/2)*(1 - q**2)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(q**4 + 2*q**2 + 1)*(-q**(11/2) + q**(3/2) + (1 - q**2)*(q + 1)) + q**(19/2)*(1 - q**2)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**4 - 2*q**2 - 1) + q**2*(1 - q**4)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1))/(4*q**(23/2)*(2*q**(3/2)*(1 - q**4)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1)) + q**3*(1 - q**2)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1) + (1 - q**2)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(-q**(11/2) + q**(3/2) + (1 - q**2)*(q + 1))))",
-    "T_proton_structural_at_q0_eval": "1.06530622859238925515327756997",
-    "normalization_note": "T(B_p, q) is the structural symbolic form (∝ Wenzl y_λ).  Differs from canonical tr_M^3(𝓑_p, q) [Phase 5l witness] by a q-independent constant.  Phase 5l.2 reconciles the normalization."
+    "T_proton_structural_symbolic": "(q**22 + q**20 + q**18 + q**14 + q**10*(q**2 + 1)**2*(q**4 + 1) - q**8 - q**4 - q**2 - 1)/(4*q**9*(q**2 + 1)**2)",
+    "T_proton_structural_at_q0_eval": "1.14575969245730086968908159577",
+    "normalization_note": "T(B_p, q) is the structural symbolic form (∝ Wenzl y_λ).  Differs from canonical tr_M^3(𝓑_p, q) [Phase 5l witness] by a q-independent constant.  Phase 5l.2 reconciles the normalization.",
+    "lean_uniqueness_ref": {
+      "nucleus": "proton",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }

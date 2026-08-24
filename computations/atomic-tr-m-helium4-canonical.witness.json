@@ -1,33 +1,49 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T18:09:14.693061+00:00",
-  "commitSha": "782c44d57d37e40e1d5b18513ba77d1b100684d2",
+  "computedAt": "2026-08-23T22:28:26.792210+00:00",
+  "commitSha": "cffc1265f0020e076c7671e8081177c6d803a63d",
   "assertions": [
     {
       "name": "abs_tau_4he_positive",
-      "computed": 0.1538719675410952,
+      "computed": 0.4185152019887448,
       "expected": 0.15,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.1,
       "source": "Phase 5q witness: 4He tau_M_closed_form = 0.1538719675... at q_0, |tr_M| = 0.1539 (sign positive)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 324,
+  "allPassed": false,
+  "durationMs": 751,
   "computation": "atomic-tr-m-helium4-canonical",
   "scriptFile": "atomic_tr_m_helium4_canonical.py",
-  "scriptHash": "22f4488cc097",
-  "scriptCommitSha": "782c44d57d37e40e1d5b18513ba77d1b100684d2",
+  "scriptHash": "e62cc6ada70a",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/atomic_tr_m_helium4_canonical.py"
+    ],
+    "reproduce": "python3 -u computations/atomic_tr_m_helium4_canonical.py"
   },
   "description": "Canonical |tr_M(⁴He)| via Phase 5q closed form: tr_M(𝓑_⁴He) = tau_p² · tau_n² · ∏_i f_i(q) where f_i ∈ {positive=z, negative=z-h, averaged=z-h/2} per interface. Replaces the deprecated disjoint-product witness atomic-tr-m-helium4.witness.json (PR #564 audit). 22M× faster than the empirical slow path; matches the slow path at machine precision (1e-49 rel.err per Phase 5q witness).",
   "parameters": {
-    "q_0": "1.10997859555418057528159407960950937799328227995870",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "Z": 2,
     "N": 2,
     "A": 4,
@@ -35,11 +51,11 @@
     "dps": 50
   },
   "data": {
-    "tau_p_str": "1.2203628890866930559573610722293749052989255383283",
-    "tau_n_str": "1.1948624257725539719887096473953037103823437807473",
-    "tau_4he_str": "0.1538719675410951817775870768115277227299070568586",
-    "abs_tau_4he_str": "0.1538719675410951817775870768115277227299070568586",
-    "abs_tau_4he_float": 0.1538719675410952,
+    "tau_p_str": "1.321592984237344535484100338492756505170133273442",
+    "tau_n_str": "1.2575579046963118128438700052596363151245672304443",
+    "tau_4he_str": "0.41851520198874482655145607143982298058465028091072",
+    "abs_tau_4he_str": "0.41851520198874482655145607143982298058465028091072",
+    "abs_tau_4he_float": 0.4185152019887448,
     "interface_census": {
       "positive": 2,
       "negative": 1,
@@ -47,13 +63,18 @@
       "total": 3
     },
     "wall_seconds": {
-      "h3_baseline": 0.31285336000019015,
-      "closed_form_4he": 0.00010015699990617577,
-      "total": 0.3129535170000963
+      "h3_baseline": 0.7404344739998123,
+      "closed_form_4he": 0.00011853300020447932,
+      "total": 0.7405530070000168
     },
     "supersedes": {
       "witness": "atomic-tr-m-helium4.witness.json",
       "reason": "disjoint-product extension on H_12 fails the Schur-Weyl identity Σ_λ y_λ χ^λ = tr_M by ~5x per PR #564 audit; this canonical-word closed-form path matches the empirical slow path at 1e-49"
+    },
+    "lean_uniqueness_ref": {
+      "helium4": "qou:QOU.BraidKnot.helium4_uniqueness_closed",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). The real per-nucleus SDP (multi-term cost + non-empty constraints) is per-nucleus substantive open work. Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }

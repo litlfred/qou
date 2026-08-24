@@ -41,14 +41,14 @@
   },
   "allPassed": true,
   "verdict": "INTRINSIC MISS (scope-(a) on the principled candidate): tau_E is validated (kleinj*1728=j to <1e-6), but the torus-calibrated candidate theta_cand = 2 pi Im(tau_E) = 5.846981567 misses theta_binding = 0.7814539438 at q0 (6.5x), and its q-slope (1.76e-03) is ~6x flatter than theta_binding's (1.01e-02). Reason: Im(tau_E)~0.93 -> the color E_q is GENERIC, not near the Tate/cusp regime where the torus calibration (theta_torus=2 pi Im tau_torus, Im~0.03) lives. Scope (a): rules out THIS principled candidate, not every intrinsic invariant (a j-tuned one would be fishing). With the monodromy (integer-trace) and transport (too-small) negatives, the geometric origin of theta_binding is NOT a color-E_q period -- it points to the W_lambda-side Plancherel/MTC localization (keystone residual i, the already-open frontier). No fit; nothing wired.",
-  "scriptHash": "43180c978e92",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-  "commitSha": "0d757116bd4fcf43b442bbde1022907394d89f3d",
+  "scriptFile": "lever1_color_eq_intrinsic_tau_rapidity.py",
+  "scriptHash": "7755269febeb",
+  "scriptCommitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "mpmath",
-  "computedAt": "2026-08-23T08:40:46.729589+00:00",
+  "computedAt": "2026-08-24T02:44:47.444503+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "lever1_color_eq_intrinsic_tau_rapidity.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

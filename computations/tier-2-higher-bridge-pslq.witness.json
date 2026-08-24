@@ -1,15 +1,37 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T00:36:06.999157+00:00",
-  "commitSha": "23fe9c9869ba1ac8198f0dc7d257cb5ca6876b35",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T02:55:58.556140+00:00",
+  "commitSha": "0edc2c20d675db59edab2e722441847123300b5f",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "tier-2-higher-bridge-pslq",
   "scriptFile": "tier_2_higher_bridge_pslq.py",
-  "scriptHash": "e4906f294ecf",
-  "scriptCommitSha": "23fe9c9869ba1ac8198f0dc7d257cb5ca6876b35",
+  "scriptHash": "6aa0f5bba066",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/tier_2_higher_bridge_pslq.py"
+    ],
+    "reproduce": "python3 -u computations/tier_2_higher_bridge_pslq.py"
+  },
   "description": "Tier-2 PSLQ extension over hyperbolic knots from SnapPy at high precision (≥60 dps). All basis values now come from SnapPy directly (replacing earlier hardcoded atlas constants which had ≤5 sig figs for K_11a259 / L_11a62 and contained transcription errors for several other knots). Tests whether 2/(3π) lies in the integer-multiple lattice of these BW values.",
   "contentBlock": "conj:bring-hyperbolic-knot-bloch-decomposition",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",

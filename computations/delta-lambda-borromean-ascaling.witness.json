@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-30T23:32:48.848018+00:00",
-  "commitSha": "bfae789b2d953067d95542aabcb8e49de34ee040",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T23:09:31.478123+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "delta-lambda-borromean-ascaling",
   "scriptFile": "delta_lambda_borromean_ascaling.py",
-  "scriptHash": "11ebf6581efb",
-  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "scriptHash": "348be513f08a",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,88 +19,98 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_borromean_ascaling.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_borromean_ascaling.py"
   },
   "description": "Borromean per-braid tower net/target vs canonical sgn(w₀)·dim; A-scaling diagnostic + edge-set test + extensive-bulk comparison (no fit, no closure).",
   "schema": "delta-lambda-borromean-ascaling/v1",
-  "tower_net_over_target_spread": 6.1655584950713145,
+  "tower_net_over_target_spread": 7.162229445453156,
   "rows": [
     {
       "iso": "D",
       "A": 2,
       "B_AME": 2.224573,
-      "B_tower": 2.480295937516178,
-      "tower_net_over_target": 1.114953718091597,
-      "canon_sgn_dim_net_over_target": 0.17085186593588303
+      "B_tower": 2.063076949816325,
+      "tower_net_over_target": 0.9274035735470695,
+      "canon_sgn_dim_net_over_target": 0.16480239924488357
     },
     {
       "iso": "T",
       "A": 3,
       "B_AME": 8.481821,
-      "B_tower": 4.919025491475729,
-      "tower_net_over_target": 0.5799492221629917,
-      "canon_sgn_dim_net_over_target": 0.2250151160229988
+      "B_tower": 4.741966424926435,
+      "tower_net_over_target": 0.559074097994574,
+      "canon_sgn_dim_net_over_target": 0.14911863461602473
     },
     {
       "iso": "3He",
       "A": 3,
       "B_AME": 7.718058,
-      "B_tower": 4.300242950437091,
-      "tower_net_over_target": 0.5571664465902032,
-      "canon_sgn_dim_net_over_target": 0.30378240760528336
+      "B_tower": 3.94272358063608,
+      "tower_net_over_target": 0.5108439947764165,
+      "canon_sgn_dim_net_over_target": 0.2038549592827259
     },
     {
       "iso": "4He",
       "A": 4,
       "B_AME": 28.295673,
-      "B_tower": 6.387362312165436,
-      "tower_net_over_target": 0.2257363630179581,
-      "canon_sgn_dim_net_over_target": 0.1073728468868487
+      "B_tower": 6.475459552758949,
+      "tower_net_over_target": 0.22884981575659813,
+      "canon_sgn_dim_net_over_target": 0.0034481931848160422
     },
     {
       "iso": "6Li",
       "A": 6,
       "B_AME": 31.994564,
-      "B_tower": 10.51481132572877,
-      "tower_net_over_target": 0.32864368227455043,
+      "B_tower": 11.487453061658872,
+      "tower_net_over_target": 0.3590439007594813,
       "canon_sgn_dim_net_over_target": null
     },
     {
       "iso": "12C",
       "A": 12,
       "B_AME": 92.161728,
-      "B_tower": 32.64154831230646,
-      "tower_net_over_target": 0.354176826114919,
+      "B_tower": 37.55866561603116,
+      "tower_net_over_target": 0.4075299631538068,
       "canon_sgn_dim_net_over_target": null
     },
     {
       "iso": "16O",
       "A": 16,
       "B_AME": 127.619,
-      "B_tower": 56.092227337216826,
-      "tower_net_over_target": 0.43952881104864344,
+      "B_tower": 65.09570286743161,
+      "tower_net_over_target": 0.5100784590651205,
       "canon_sgn_dim_net_over_target": null
     },
     {
       "iso": "56Fe",
       "A": 56,
       "B_AME": 492.254,
-      "B_tower": 685.1145641713874,
-      "tower_net_over_target": 1.3917907506518736,
+      "B_tower": 806.8411704090365,
+      "tower_net_over_target": 1.6390748889984368,
       "canon_sgn_dim_net_over_target": null
     }
   ],
   "edge_set_test": {
-    "all_pairs_spread": 6.1655584950713145,
-    "adjacent_spread": 17.8975134867134,
+    "all_pairs_spread": 6.165558451841673,
+    "adjacent_spread": 17.897513765057127,
     "hypothesis_refuted": true,
     "note": "sparsifying the edge set (all-pairs C(A,2)~A² → adjacent A−1~A) WORSENS the spread (monotone under-bind at heavy A) — the U-shape is NOT a pure edge-count effect; it is A²-overscaling at the heavy end PLUS the ⁴He magic dip (no shell structure). Edge-set lever (w5tg) alone is insufficient; the per-pair magnitude (~0.4 MeV) is far below ~8 MeV/nucleon, so closure needs magnitude-reshaping (z2bn R(q,x)) + shell/magic structure, not sparsification."
   },
   "extensive_bulk": {
     "per_nucleon_2me8G_MeV": 7.4889193198832205,
     "magic_net_over_target_spread_Age4": 1.6484519057674925,
-    "tower_net_over_target_spread": 6.1655584950713145,
+    "tower_net_over_target_spread": 7.162229445453156,
     "note": "the extensive A-linear 2·m_e·8G (≈7.49 MeV/nucleon ≈ empirical ~8) gives net/target 0.85–1.06 for A≥4 (spread 1.65×) — FAR flatter than the tower's A² pair structure (6.17×). The BULK binding is extensive (A-linear shell residue), NOT a q-deformed pair sum; the tower's C(A,2)~A² scaling is the q-Gaussian obstruction (Σ q₀^cr(π) ~ q₀^C(A,2) diverges at q₀>1, prop:q-gaussian-obstruction-at-q0). q-Askey kernels (Hahn-Exton q-Bessel / q-Hermite) are the FIBRE per-λ kernel (|q|≤1), not the A-scaling bulk."
   }
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:23:52.682386+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T22:58:01.812328+00:00",
+  "commitSha": "6ed921b93f9313ae60a4bc3a923191ec90ee7085",
   "assertions": [
     {
       "name": "canonical_a_k_finite_for_A_geq_3",
@@ -12,18 +12,18 @@
     },
     {
       "name": "deuteron_true_delta_I_differs_from_fallback_and_a_k",
-      "computed": 0.8095310402711084,
+      "computed": 0.8095310169838701,
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 14,
   "computation": "canonical-a-k-magnitude-audit",
   "scriptFile": "canonical_a_k_magnitude_audit.py",
-  "scriptHash": "0de8f9e3c625",
-  "scriptCommitSha": "bc60c4d79ae695d3022cb53914e2693e7ddcf29b",
+  "scriptHash": "61dcd018ef0f",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,11 +31,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/canonical_a_k_magnitude_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/canonical_a_k_magnitude_audit.py"
   },
   "description": "Item (b) audit: canonical_a_k(jet-knot) values for A≥3 atoms (0.065/0.205/0.677 for ³H/³He/⁴He) capture a DIFFERENT physical quantity than what Strategy-3's t1_atom needs. Verified by comparing the deuteron's true Δ_I = 0.1904 (from closed-form atomic Markov trace) — a different VALUE and different DERIVATION than what canonical_a_k would produce. Both canonical_a_k and Δ_I are partial views of the iterative LP-dual shadow-price differences u^{(l)*}[atom] − u^{(l)*}[free] per term7-alpha5's prop:mass-formula-iterative-lp-dual. The 70-84% binding-energy under-prediction reflects this structural mismatch, not an error in canonical_a_k itself.",
   "contentBlock": "prop:mass-coefficient-shadow-price",
@@ -50,11 +59,11 @@
       "⁶Li": 0.13927998,
       "⁷Li": 0.30927
     },
-    "deuteron_true_delta_I": 0.19046895972889152,
+    "deuteron_true_delta_I": 0.1904689830161299,
     "tr_M_at_q0": {
       "p": 1.6331535640480814,
       "n": 1.2482482717548398,
-      "D": 0.3882864240747888
+      "D": 0.3882864715477132
     },
     "structural_finding": "canonical_a_k and Δ_I measure different things. canonical_a_k is a Wedderburn-weighted character ratio in the branched Hecke algebra; Δ_I is the atomic-braid Markov-trace ratio. Both are partial views of the iterative LP-dual; only the unified treatment via 𝔪 = Σ_l u^{(l)*} per term7-alpha5 gives the framework-consistent path. 70-84% binding under-prediction reflects the structural mismatch, not an error in canonical_a_k."
   },

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T16:58:47.395785+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T22:52:56.052606+00:00",
+  "commitSha": "cd8acfc1cd9a5799184f208fb625094eb9a0e8a9",
   "assertions": [
     {
       "name": "unit_circle_canonical_basis_hypothesis_falsified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 267,
+  "durationMs": 490,
   "computation": "bring-zero-mode-bloch-hunt",
   "scriptFile": "bring_zero_mode_bloch_hunt.py",
-  "scriptHash": "6b4c9ad93cf5",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "f40fdf5eb4bd",
+  "scriptCommitSha": "2d40f31ad29c5add7ecf899d706a801e1a2a4ebf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/bring_zero_mode_bloch_hunt.py"
+    ],
+    "reproduce": "python3 -u computations/bring_zero_mode_bloch_hunt.py"
   },
   "description": "Canonical search for [Z] ∈ B(ℂ) with D[Z] = 2/(3π) (the open sub-problem of prop:em-coupling-bring-zero-mode). Tests the unit-circle hypothesis: D(e^(iθ)) = Cl_2(θ) at canonical Bring-symmetric angles. Indexing convention (PR #952 review r3292598288): an angle kπ/n corresponds to the 2n-th root of unity z = e^(iπk/n) = e^(2πi · k/(2n)); 'n ≤ 30' here means the denominator-2n basis covers up to N = 60 (2 · 30). The basis sweep is intentionally partial — it covers the low-denominator angles natural to the Bring S_5 / S_4 structure (n ∈ {3, 4, 5, 6, 9, 10, 15, 30}) and the k coprime to 2n that fall in 0 < kπ/n < π. PSLQ search at maxcoeff ≤ 50 looks for integer combinations hitting the target. NEGATIVE on this partial basis is reported honestly as a partial refutation, NOT a comprehensive refutation across all higher-denominator angles.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

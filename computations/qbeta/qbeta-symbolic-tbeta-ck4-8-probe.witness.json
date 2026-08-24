@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:52:38.154045+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T02:37:36.392907+00:00",
+  "commitSha": "b1b47ca6a26506d5f736cf882b5578a2e462907a",
   "assertions": [
     {
       "name": "at_least_one_candidate_respects_c2_structural",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 379,
+  "durationMs": 978,
   "computation": "qbeta-symbolic-tbeta-ck4-8-probe",
   "scriptFile": "qbeta_symbolic_tbeta_ck4_8_probe.py",
-  "scriptHash": "b401dadb0bf2",
-  "scriptCommitSha": "a2ddbd04658a8877f2c0366de03f2c19ca9be286",
+  "scriptHash": "5b005bcdd12d",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py"
   },
   "description": "1 ppQ keystone: compute c_4..c_8 symbolically (unbiased) from canonical operator-valued T_β candidates using PR #1786's exact α(q),b(q) chain. Filters by c_2=-1 (structural), evaluates Q_β(q_0) ppQ vs CODATA, and cross-anchor stability. Reports which candidate reaches 1 ppQ + is q-stable.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
@@ -58,9 +66,9 @@
           "7": "0",
           "8": "0"
         },
-        "Q_beta_qp_MeV": "0.782334410277840138",
-        "eps_qp_ppm": 5.6373625453935805,
-        "cross_anchor_swing": 3.035282532325721e-08
+        "Q_beta_qp_MeV": "0.782804713582601608",
+        "eps_qp_ppm": 606.7945529400739,
+        "cross_anchor_swing": 3.0150805604467524e-08
       },
       {
         "candidate": "C1: cos(√2·u) [matrix-exp tail]",
@@ -77,9 +85,9 @@
           "7": "0",
           "8": "131/840"
         },
-        "Q_beta_qp_MeV": "0.782334410964062738",
-        "eps_qp_ppm": 5.6382396977459175,
-        "cross_anchor_swing": 3.035282458614641e-08
+        "Q_beta_qp_MeV": "0.782804714269236733",
+        "eps_qp_ppm": 606.7954306197297,
+        "cross_anchor_swing": 3.015080486735673e-08
       },
       {
         "candidate": "C2: exp(-u²/(1-u))",
@@ -96,9 +104,9 @@
           "7": "-1",
           "8": "-5/8"
         },
-        "Q_beta_qp_MeV": "0.782333924804665807",
-        "eps_qp_ppm": 5.0168147275539665,
-        "cross_anchor_swing": 3.035321698766789e-08
+        "Q_beta_qp_MeV": "0.782804227817583233",
+        "eps_qp_ppm": 606.1736320775547,
+        "cross_anchor_swing": 3.0151197268878284e-08
       },
       {
         "candidate": "C3: 1/(1+u²)",
@@ -115,9 +123,9 @@
           "7": "0",
           "8": "1"
         },
-        "Q_beta_qp_MeV": "0.782334414394896984",
-        "eps_qp_ppm": 5.642625103197036,
-        "cross_anchor_swing": 3.0352820901041584e-08
+        "Q_beta_qp_MeV": "0.782804717702133439",
+        "eps_qp_ppm": 606.799818661484,
+        "cross_anchor_swing": 3.01508011822519e-08
       },
       {
         "candidate": "C4: exp(-u²-2u³)",
@@ -134,9 +142,9 @@
           "7": "0",
           "8": "3/8"
         },
-        "Q_beta_qp_MeV": "0.782333445578005022",
-        "eps_qp_ppm": 4.404251409280223,
-        "cross_anchor_swing": 3.0353601923780886e-08
+        "Q_beta_qp_MeV": "0.782803748302833519",
+        "eps_qp_ppm": 605.5607005145134,
+        "cross_anchor_swing": 3.015158220499136e-08
       }
     ],
     "c2_respecting_candidates": [

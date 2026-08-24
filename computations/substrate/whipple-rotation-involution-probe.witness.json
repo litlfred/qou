@@ -4,18 +4,18 @@
   "discipline": "no fit; sympy exact + mpmath 50 dps; discovery outputs labeled; (a)-scoped.",
   "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
   "results": {
-    "alpha_spread_point1": "4.0927e-50",
-    "alpha_spread_point2": "2.1349e-50",
+    "alpha_spread_point1": "1.6789e-70",
+    "alpha_spread_point2": "7.0372e-71",
     "whipple_constant_point1": "(0.141118040809449224776624820197 - 0.194232320022439164733620026448j)",
     "gamma_ratio_mu": {
-      "value": "(0.285714285714285714285714285714 - 4.09296839846344016707478820425e-52j)",
+      "value": "(0.285714285714285714285714285714 + 4.20810135207942853168851818648e-72j)",
       "matched_law": "1/(nu+mu+1/2)",
-      "rel_err": 1.432538939462204e-51
+      "rel_err": 1.4728354732278e-71
     },
     "gamma_ratio_nu": {
-      "value": "(-0.285714285714285714285714285714 - 2.30572610968818220934042061586e-52j)",
+      "value": "(-0.285714285714285714285714285714 + 4.70407321390519414502867185751e-73j)",
       "matched_law": "-1/(nu+mu+1/2)",
-      "rel_err": 2.4739904887540602e-51
+      "rel_err": 1.646425624866818e-72
     },
     "lean_cert_quarter_period": "QOU/Mass/ComplexVolumeZeta4Partner (corpus, sorry-free)",
     "lean_cert_ladder_locus": "QOU.BraidsAndKnots.toroidal_locus_forced (this PR, sorry-free)"
@@ -31,11 +31,13 @@
   },
   "allPassed": true,
   "verdict": "EIGENFUNCTION-LEVEL STRUCTURE CONSISTENT, IDENTIFICATION STAYS A LEAD: the interpolating ladder is bar-EVEN ([d] invariant under q -> q^{-1}); the Whipple cosh<->coth argument exchange is an exact involution (the geometric winding exchange); the zeta_4 quarter-period shift maps the cosh channel to i*sinh (corpus Lean-certified); and numerically at 50 dps the toroidal pair P^{-mu}_{nu-1/2}(coth a) / Q^nu_{mu-1/2}(cosh a) (pairing discovered by a 48-combo scan; DLMF 14.9.16 convention) is sqrt(sinh a)-proportional with an a-independent constant (degree<->order exchange verified at two generic (nu, mu) points), whose Gamma-shift laws r_mu = +1/(nu+mu+1/2) and r_nu = -1/(nu+mu+1/2) are recorded as discovery output — one Gamma(nu+mu+1/2) with an alternating nu-sign. SCOPE (a): these are the necessary structural facts for 'rotation_step archimedean shadow = Whipple involution'; the identification itself remains an open lead (audit S9) and nothing here touches production or observables.",
-  "scriptHash": "8482629d585e",
-  "scriptCommitSha": "unknown",
-  "commitSha": "971463a192c142173bb34f7e7b980c8c7f4ba3e3",
+  "scriptFile": "whipple_rotation_involution_probe.py",
+  "scriptHash": "75f9a462281f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "0edc2c20d675db59edab2e722441847123300b5f",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-07-06T22:45:47.092797+00:00",
+  "computedAt": "2026-08-24T02:55:55.201392+00:00",
   "durationMs": 0,
-  "scriptFile": "whipple_rotation_involution_probe.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

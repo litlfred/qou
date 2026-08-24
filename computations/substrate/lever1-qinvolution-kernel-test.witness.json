@@ -96,14 +96,14 @@
   "anyKernelMatch": false,
   "allPassed": true,
   "verdict": "q-INVOLUTION SKELETON CONFIRMED + CYCLOTOMIC FIBRE CORRECTION ISOLATED (scope-limited (a) on the bare ansatz, POSITIVE structural finding on the correction). The parameter-free order-2 recurrence S(m)=S(m-1)+[m-1]_q*S(m-2) is EXACT at the seed m=2,3 and its q=1 limit IS the classical involution recursion I(m)=I(m-1)+(m-1)I(m-2) (sanity passes) -- so the C-finite involution skeleton is the correct leading kernel. Beyond the seed it drifts, but the correction D(m)=S(m)-(S(m-1)+[m-1]_q S(m-2)) is NOT noise: every D(m) carries a universal (q-1)^2 prefactor (double root at q=1 => deviation is O(h^2), a pure fibre/q-deformation effect) and FACTORS INTO CYCLOTOMIC POLYNOMIALS (D4=(q-1)^2(q^2+q+1)/q^2; D5=2(q-1)^2(q+1)^2(q^2-q+1)(q^2+q+1)/q^4; D6 carries Phi_5). Cyclotomic + (q-1)^2 is the HABIRO-RING signature: the lever-1 fibre kernel is the q-involution operator dressed by a cyclotomic (Habiro-class) correction -- the SAME object class the kehn c_k/Q_beta closure needs (a Habiro element F(q) whose archimedean evaluation supplies the c_k), and the q^k-DEPENDENT (q-holonomic) shape QBesselContiguityRecurrence.lean predicts over the C-finite SL2 the depth-2 probe falsified. Refutes the BARE q-involution ansatz alone (a), not the q-holonomic/Habiro kernel class; the D(m) cyclotomic tower is the derived, parameter-free constraint on that kernel. No fit.",
-  "scriptHash": "6d33852778db",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
-  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "scriptFile": "lever1_qinvolution_kernel_test.py",
+  "scriptHash": "1a2a9358b7d9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "sympy",
-  "computedAt": "2026-08-14T19:49:38.151606+00:00",
+  "computedAt": "2026-08-24T02:44:54.695166+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "lever1_qinvolution_kernel_test.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

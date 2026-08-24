@@ -1,39 +1,61 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-11T00:41:07.533298+00:00",
-  "commitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "computedAt": "2026-08-23T23:51:36.740135+00:00",
+  "commitSha": "f6f629021f5b87ea63749872ad354a3e119b53e0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "kummer-reflection-zeta5",
   "scriptFile": "kummer_reflection_zeta5.py",
-  "scriptHash": "3b2351680358",
-  "scriptCommitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "scriptHash": "b94cd006f5f6",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/kummer_reflection_zeta5.py"
+    ],
+    "reproduce": "python3 -u computations/kummer_reflection_zeta5.py"
+  },
   "description": "Verification at 50 decimal digits of the Kummer reflection formula Li_3(z) - Li_3(1/z) = -log³(-z)/6 - π²log(-z)/6 evaluated at z = ζ_5 = exp(2πi/5). Yields the closed form Im Li_3(ζ_5) = 4π³/125 — a Tate-rational depth-3 number, projecting to zero under the Beilinson regulator quotient. Sharpening of conj:bring-trilog-depth-3-witness: only the real part Cl_3(2π/5) is the genuinely new depth-3 element.",
-  "timestamp": "2026-05-11T00:41:07.526780+00:00",
-  "precision_decimal_digits": 50,
+  "timestamp": "2026-08-23T23:51:36.136952+00:00",
+  "precision_decimal_digits": 70,
   "input": {
     "z": "ζ_5 = exp(2πi/5)",
-    "z_str": "(0.30901699437494742410229341718281905886015458990288 + 0.95105651629515357211643933337938214340569863412575j)"
+    "z_str": "(0.3090169943749474241022934171828190588601545899028814310677243113526302 + 0.9510565162951535721164393333793821434056986341257502224473056444301532j)"
   },
   "closed_form": {
     "expression": "4 π³ / 125",
-    "value_str": "0.99220085376959424561524208214724464647120923410832",
+    "value_str": "0.9922008537695942456152420821472446464712092341083234462126252193218046",
     "tate_class": "Tate(3) = (2πi)³ · ℚ"
   },
   "direct_polylog": {
     "expression": "Im Li_3(ζ_5)",
-    "value_str": "0.99220085376959424561524208214724464647120923410832",
+    "value_str": "0.9922008537695942456152420821472446464712092341083234462126252193218046",
     "method": "mpmath.polylog at 50 dps"
   },
-  "closed_vs_direct_residual": "1.3363823550460978230702682335757409394075984400525e-51",
+  "closed_vs_direct_residual": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
   "closed_vs_direct_below_1e_40": true,
   "kummer_formula_check": {
-    "log_neg_zeta5_principal_str": "(0.0 - 1.8849555921538759430775860299677017305183016396251j)",
-    "lhs_str": "(0.0 + 1.9844017075391884912304841642944892929424184682166j)",
-    "rhs_str": "(0.0 + 1.9844017075391884912304841642944892929424184682167j)",
-    "residual_str": "5.3455294201843912922810729343029637576303937602101e-51",
+    "log_neg_zeta5_principal_str": "(0.0 - 1.88495559215387594307758602996770173051830163962506349258496675538469j)",
+    "lhs_str": "(0.0 + 1.984401707539188491230484164294489292942418468216646892425250438643609j)",
+    "rhs_str": "(0.0 + 1.984401707539188491230484164294489292942418468216646892425250438643609j)",
+    "residual_str": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
     "residual_below_1e_40": true
   },
   "interpretation": "Im Li_3(ζ_5) is Tate-rational (4π³/125), in (2πi)³·ℚ. Under Beilinson's regulator quotient P_3 → P_3/Tate, this component vanishes. Only Re Li_3(ζ_5) = Cl_3(2π/5) ≈ 0.18937 carries genuinely new depth-3 information. Reduces the 2-dim Bring trilog content to the single real-part component for the regulator image.",

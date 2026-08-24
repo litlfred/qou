@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T23:35:29.016761+00:00",
-  "commitSha": "90502dca9e06bf83198c5a89b19d5faee87dba7c",
+  "computedAt": "2026-08-24T00:50:48.845713+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "c_3_exact_match",
@@ -22,11 +22,33 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "khovanov-klr-rank-cohomology-probe",
   "scriptFile": "khovanov_klr_rank_cohomology_probe.py",
-  "scriptHash": "0d3f018825df",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2f47ee437b90",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/khovanov_klr_rank_cohomology_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/khovanov_klr_rank_cohomology_probe.py"
+  },
   "description": "Cohomological-strata probe for Q_β precision-ladder c_k. Tests whether empirical c_4, c_5 decompose as (integer Khovanov rank or KLR canonical-basis dim) − α·b² for clean integer α. Exploratory; the residual α values indicate where further strata or q-deformations would close the categorical derivation.",
   "data": {
     "klr_canonical_dimensions": [

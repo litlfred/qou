@@ -43,12 +43,14 @@
   },
   "allPassed": true,
   "verdict": "E_UNIT IS BAR-EVEN; THE BAR-ODD TRANSITION SECTOR IS EXCLUDED (b), THE BAR-EVEN SINGLE-FACTOR CLASS IS NEGATIVE (a). Parity: B (binding, cosh) and 5g are bar-even (z = 1/[2]_v, [2]_v bar-invariant, g^2 bar-even — checked exactly), so E_unit = B/(5g) is bar-even; Q_beta (bar-odd, sinh/decay) and every odd transition-sector quantum are structurally excluded. NEGATIVE — no bar-even single factor within 0.4%: m_e, 2m_e, E_0, m_e[2]_v all miss E_unit = 0.995940 MeV (closest 2m_e, 2.55%). No coincidence with an underived constant (e.g. 4/pi, bar-odd Q_beta) is claimed — numerology + entropy-bound guard. CONCLUSION: closing E_unit needs a NEW bar-even absolute scale ~0.996 MeV, unreachable from the anchors by one derived factor — Subgoal-2 (absolute scales), owner-gated. The hard wall is now localized to a single bar-even energy.",
-  "scriptHash": "23bc05992df0",
-  "scriptCommitSha": "e5fc2b93f37c7d84da20f1be46f8b4c704f5bccd",
-  "commitSha": "e5fc2b93f37c7d84da20f1be46f8b4c704f5bccd",
+  "scriptFile": "e_unit_parity_constraint_probe.py",
+  "scriptHash": "fa867f9d8064",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "mpmath",
-  "computedAt": "2026-07-07T12:48:36.589780+00:00",
+  "computedAt": "2026-08-24T02:44:34.763320+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "e_unit_parity_constraint_probe.py"
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

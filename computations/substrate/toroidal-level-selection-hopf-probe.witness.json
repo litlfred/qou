@@ -24,11 +24,13 @@
   },
   "allPassed": true,
   "verdict": "TORUS-LINK TOWER IS THE FORCED TOROIDAL FAMILY: the (2,2k) torus-link (Hopf-power) two-channel trace tower x_k = W+ q^{2k} + W- q^{-2k} satisfies the 2 cosh(eta) degree recurrence at eta = 2 ln q and equals sqrt(pi sinh eta / 2) [ (W+ + W-) P^{1/2}_{k-1/2} + (W+ - W-) k P^{-1/2}_{k-1/2} ](cosh eta) exactly (coefficients k-independent, verified to ~1e-42 at k=3..5 after solving at k=1,2): the bar-even channel rides P^{+1/2} (cosh) and the bar-odd channel P^{-1/2} (sinh), at exactly the P1-forced order mu = 1/2 and half-integer degree k - 1/2. LEVEL-SELECTION READING (GAP-A-3 candidate, (a)-scoped): allowed levels = integer windings k, Hopf/2H at k = 1, zero-point = the forced -1/2. Structural only: selects levels, produces no binding number, nothing wired (Delta_lambda gate respected).",
-  "scriptHash": "401da715c238",
-  "scriptCommitSha": "unknown",
-  "commitSha": "f0e63af38f8f343b03c9a5de17fb0fc93b3ea8cb",
+  "scriptFile": "toroidal_level_selection_hopf_probe.py",
+  "scriptHash": "822a207516af",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-07-06T23:03:07.536621+00:00",
+  "computedAt": "2026-08-24T02:44:57.433704+00:00",
   "durationMs": 0,
-  "scriptFile": "toroidal_level_selection_hopf_probe.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:39:10.081724+00:00",
-  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "computedAt": "2026-08-24T00:09:53.742003+00:00",
+  "commitSha": "bbf717a26ddcbe15e958e5663f32dc8fe5f3b3c9",
   "assertions": [
     {
       "name": "h3_nf_gram_reassembly_max_residual",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 88,
+  "durationMs": 103,
   "computation": "option-e-phase1-h3-cross-check",
   "scriptFile": "option_e_phase1_h3_cross_check.py",
-  "scriptHash": "ee789b8c1b0a",
-  "scriptCommitSha": "42be74517db05741c3bad0d69edfc44f5a0748f8",
+  "scriptHash": "4414f1814bb4",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

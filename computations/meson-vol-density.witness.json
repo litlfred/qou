@@ -1,7 +1,7 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:57:53.664300+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T23:56:19.119713+00:00",
   "computation": "meson-vol-density",
   "scriptFile": "meson_vol_density.py",
   "description": "Meson-sector mass ratios. Baryon reference routes through the canonical muon-anchored facade (canonical_mass.proton_mass_mev; λ_A excised 2026-06-24); mesons use m=m_π×Geom_meson where m_π is CAL-3. Tests three m_K candidates. Also cross-checks Q_β as derived from CAL-1+CAL-2.",
@@ -55,9 +55,9 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "d66a5499d99a",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "scriptHash": "f8fa4d2dd657",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "5218280df85b6efebc5a4d740cbe8ef77436dc57",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

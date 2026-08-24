@@ -1,10 +1,10 @@
 {
   "computation": "fourone-stokes-series-selfcheck",
   "scriptFile": "fourone_stokes_series_selfcheck.py",
-  "scriptHash": "f18ad6d198a1",
-  "commitSha": "2a7b6b96617d7aaeca6d486c0b57463c961738dc",
-  "scriptCommitSha": "",
-  "computedAt": "2026-08-01T18:43:55.721583+00:00",
+  "scriptHash": "eb12687a6444",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
+  "computedAt": "2026-08-23T23:43:09.562029+00:00",
   "engine": "python-fractions (exact Q[[q]] arithmetic)",
   "reference": "Fantini-Wheeler, arXiv:2410.20973v1, Section 4.1, eq (72)-(74)",
   "knot": "4_1 (figure-eight)",
@@ -188,5 +188,8 @@
   ],
   "allPassed": true,
   "verdict": "MATCH -- E_1 (eq 73) derived from the divisor-function Lambert series reproduces the published integer sequence exactly; the full eq (72)->(74) machinery (g_0, G_0) also matches FW eq (74).",
-  "discipline": "self-check vs published integer sequence (Fantini-Wheeler eq 73); no fit; nothing wired"
+  "discipline": "self-check vs published integer sequence (Fantini-Wheeler eq 73); no fit; nothing wired",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

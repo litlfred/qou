@@ -1,63 +1,85 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T01:24:27.011502+00:00",
-  "commitSha": "f7403a5abdaff14705606cc3a5c5f51e6fd25534",
+  "computedAt": "2026-08-24T01:53:57.668374+00:00",
+  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
   "assertions": [
     {
       "name": "c_4_extracted_matches_empirical",
-      "computed": 2.20467108571997e-07,
+      "computed": 114135.009597005,
       "expected": 0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-05,
       "source": "SDP-T_β extraction matches empirical sweep c_4"
     },
     {
       "name": "c_5_extracted_matches_empirical",
-      "computed": 4.488483768305418e-07,
+      "computed": 13400477.538302563,
       "expected": 0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-05,
       "source": "SDP-T_β extraction matches empirical sweep c_5"
     },
     {
       "name": "c_6_extracted_matches_empirical",
-      "computed": 6.18922254409204e-08,
+      "computed": 1573336681.0721166,
       "expected": 0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-05,
       "source": "SDP-T_β extraction matches empirical sweep c_6"
     },
     {
       "name": "c_7_extracted_matches_empirical",
-      "computed": 3.2571234902055566e-07,
+      "computed": 184723887995.0142,
       "expected": 0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.001,
       "source": "SDP-T_β extraction matches empirical sweep c_7"
     }
   ],
-  "allPassed": true,
-  "durationMs": 10,
+  "allPassed": false,
+  "durationMs": 5,
   "computation": "qbeta-decay-sdp-full-ck-derivation",
   "scriptFile": "qbeta_decay_sdp_full_ck.py",
-  "scriptHash": "e55e6f5b8135",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f18fad50827b",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_decay_sdp_full_ck.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_decay_sdp_full_ck.py"
+  },
   "description": "FULL c_k derivation from SDP-T_β framework. R(q_0) = Q_β / (Q_A · cos) factored as ∏(1 + c_k·b^k·ℏ_q^(2k)) sequentially. All c_k (k=2..7) reproduced EXACTLY at 50dps. This validates the audit claim that the c_k are tautologically determined by the precision-ladder structure once Q_β CODATA is input.",
   "parameters": {
-    "q_0_50dps": "1.10997859555...",
-    "Q_AME_50dps": "0.78233341400000004817906074094935320317745208740256"
+    "q_0_50dps": "1.10997859556...",
+    "Q_AME_50dps": "0.78233355931000000000000000000000000000000000000011"
   },
   "data": {
-    "R_q0": "0.99992621502020147816",
-    "R_minus_1": "-7.37849797985e-5",
+    "R_q0": "0.99932562066973194966",
+    "R_minus_1": "-0.000674379330268",
     "c_k_extracted": {
-      "c_2": -1.0171161867712344,
-      "c_3": -2.0097397609790155,
-      "c_4": -1.1435367795328915,
-      "c_5": -1.2229125511516232,
-      "c_6": 3.4975620618922254,
-      "c_7": 57.14924267428765
+      "c_2": -9.296233772838528,
+      "c_3": -974.1231856054314,
+      "c_4": -114136.15313400501,
+      "c_5": -13400478.761215562,
+      "c_6": -1573336677.5745547,
+      "c_7": -184723887937.86493
     },
     "c_k_closed_forms": {
       "c_2": "-1 (factor convention)",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:47:48.659113+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-24T01:53:26.056566+00:00",
+  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
   "assertions": [
     {
       "name": "step3_cross_anchor_verdict_recorded",
@@ -23,8 +23,8 @@
   "durationMs": 5,
   "computation": "qbeta-chain4-kashiwara-step3-cross-anchor",
   "scriptFile": "qbeta_chain4_kashiwara_step3_cross_anchor.py",
-  "scriptHash": "b6f077971164",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "a3ffc59e8fe4",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -62,5 +62,7 @@
     "tier_proton": "MISS",
     "tier_muon": "MISS",
     "verdict": "WIDE MISS — candidate refuted at cross-anchor"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

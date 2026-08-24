@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T09:59:47.047395+00:00",
-  "commitSha": "86df9c49b2c8a53a61d7b733fa49972557d0d668",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T01:32:23.772649+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "theta_and_annihilator_exact",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 6,
   "computation": "qbeta-g3-deformed-blocks-41",
   "scriptFile": "qbeta_g3_deformed_blocks_41.py",
-  "scriptHash": "9282db487407",
-  "scriptCommitSha": "86df9c49b2c8a53a61d7b733fa49972557d0d668",
+  "scriptHash": "96125c83db74",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_deformed_blocks_41.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_deformed_blocks_41.py"
   },
   "description": "A_omega deformed leg, tranche A: GGM sec 5.2 holomorphic blocks A_m/B_m of the deformed 4_1 (q-Hahn Bessel + theta), certified by the theta q-difference, the PROVEN Theorem-14 factorization against the certified u=0 GK/G-series side, and the Theorem-16 annihilator. Exact deformed Z evaluated near the Kashaev ray where the two-saddle trans-series is unsuppressed.",
   "contentBlock": "conj:im-q-physical-role",

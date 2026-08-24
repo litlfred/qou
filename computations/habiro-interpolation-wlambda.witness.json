@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+exact-Q5",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:26:41.456049+00:00",
-  "commitSha": "99fd620b0975095c2384f3bf59d87b5f55bc86c3",
+  "computedAt": "2026-08-23T23:51:25.956159+00:00",
+  "commitSha": "bf3c70c8c9c845d2e846430789f233194851b20d",
   "assertions": [
     {
       "name": "uniform_candidate_interpolates_all_fibre_roots",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 6,
   "computation": "habiro-interpolation-wlambda",
   "scriptFile": "habiro_interpolation_wlambda.py",
-  "scriptHash": "02bbdfe7dd7a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0017419c0189",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro_interpolation_wlambda.py"
+    ],
+    "reproduce": "python3 -u computations/habiro_interpolation_wlambda.py"
   },
   "description": "Habiro interpolation of the folded fibre boundary data of Sigma(2,3,5) -- the W_lambda keystone, mu-p root-cause follow-up to the LR modulus identification (#3822, single order-5 root). Extends the Hikami colored-Gauss-sum machinery to the order-2 (zeta=i) and order-3 (zeta=e^{i pi/3}) exceptional fibres and tests ONE uniform candidate interpolant F_lambda(q) = [mark lambda]^2_q / D(q)^2 (q-Verlinde measure of the affine-E8 McKay marks 1,2,3,4,5,6,4,2,3) against every computed root. STRUCTURAL REASON (not a fit): the LR colored flat amplitude factorizes |A_m^(j)(alpha)| = |A_bare|*|[alpha]_{zeta_pj^ell}| with color-INDEPENDENT bare amplitude, so the normalized squared amplitude over the McKay nodes equals [mark]^2/Sum[mark]^2 = F_lambda(zeta) EXACTLY. Sigma(2,3,5) has exactly 2 flat connections (D(2,3,5)=2, Fintushel-Stern) with rotation numbers ell_j^(m)=e_m*(30/p_j) mod p_j, E8 exponents e=1,7: orders 2,3 give ell=1 both connections (one root each), order 5 gives ell=(1,2) (the Galois pair). Four nontrivial roots + q=1; the fold changes per r (alcove {1} at p=2, {1,2} at p=3, {1,2,3,4} at p=5) -- derived, not assumed from r=5. EXACT per-root: D^2 = 4 (p2), 6 (p3), 10+-2sqrt5 (p5); F_lambda normalized (Sum=1) at every root, all in Q(sqrt5) union Z. The factorization is CONFIRMED numerically at orders 2,3 via parameter-free 2x2 amplitude inversion (ratio |A_m(alpha)|/|A_m(1)| = |[alpha]_zeta|, 40 dps, fresh-N cross-check); char-zero colors are flat-free. Archimedean F_lambda(q0) reported at both documented q0 pins with cross-pin swing -- NOT wired, mu-p tension NOT resolved. Habiro injectivity is NOT proved (class hypothesis, #3681); 4 roots + q=1 CONSTRAIN but do not UNIQUELY PIN F_lambda. No fit; nothing wired to production.",
   "data": {
@@ -217,14 +227,14 @@
         "2": {
           "m1": {
             "ell": 1,
-            "predicted_char": 4.1340642196527976e-43,
+            "predicted_char": 8.163677470282527e-72,
             "ratio_pair1": 0.01385105637196617,
             "ratio_pair2": 0.012167310865783263,
             "ok": true
           },
           "m2": {
             "ell": 1,
-            "predicted_char": 4.1340642196527976e-43,
+            "predicted_char": 8.163677470282527e-72,
             "ratio_pair1": 0.021053321484721138,
             "ratio_pair2": 0.01377082483799289,
             "ok": true
@@ -283,14 +293,14 @@
         "3": {
           "m1": {
             "ell": 1,
-            "predicted_char": 4.773606180127486e-43,
+            "predicted_char": 9.4266027700898e-72,
             "ratio_pair1": 0.0203004795550878,
             "ratio_pair2": 0.018037995847785156,
             "ok": true
           },
           "m2": {
             "ell": 1,
-            "predicted_char": 4.773606180127486e-43,
+            "predicted_char": 9.4266027700898e-72,
             "ratio_pair1": 0.031246005453062466,
             "ratio_pair2": 0.02057588214189804,
             "ok": true
@@ -682,5 +692,7 @@
       }
     ],
     "sum_mark_sq_eq_120": true
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

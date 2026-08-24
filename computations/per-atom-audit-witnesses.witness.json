@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T04:34:28.309110+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "computedAt": "2026-08-24T00:15:19.157375+00:00",
+  "commitSha": "1901f9774dfc48725eed2208f2cef5382bd817ca",
   "assertions": [
     {
       "name": "all_audits_processed",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "per-atom-audit-witnesses",
   "scriptFile": "per_atom_audit_witnesses.py",
-  "scriptHash": "5f11b91fcf88",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "116e414c90a0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,14 +31,22 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/per_atom_audit_witnesses.py"
+    ],
+    "reproduce": "python3 -u computations/per_atom_audit_witnesses.py"
   },
   "description": "Per-atom audit witnesses (item 6 from author 2026-05-25 multi-select). For each KLR-violating atom: bug type (per PR #1228 §3 taxonomy), squash path (per §5 options), canonical-formula candidate using the new Rust upstream pn.trace_weights_n (PR #1251 commit 0592a22c5). First production-grade use of the n-generic Rust ABI; demonstrates the migration path for 15+ legacy H_3-locked callers.",
   "parameters": {
-    "q_0_f64": 1.1099785827513808,
-    "h_f64": 0.20906029879563937,
-    "h_sq_f64": 0.04370620853252201,
+    "q_0_f64": 1.1099785955573347,
+    "h_f64": 0.20906032199559366,
+    "h_sq_f64": 0.0437062182329013,
     "klr_positivity_violations": 8
   },
   "data": {
@@ -49,9 +57,9 @@
         "Z": 1,
         "N": 1,
         "n_strands": 6,
-        "B_AME_MeV": 2.2245662000000004,
+        "B_AME_MeV": 2.2245662,
         "B_prod_MeV": 2.2488,
-        "rel_err_pct": 1.089371941369951,
+        "rel_err_pct": 1.0893719413699712,
         "klr_positivity_violates": true,
         "jet_order_classification": "between h^4 and h^2/2",
         "bug_type": "Type 3 (census-assigned, no canonical β)",
@@ -62,9 +70,9 @@
         "canonical_candidate": {
           "n_strands": 6,
           "num_partitions": 11,
-          "tr_M_via_rust_atlas": 0.9967359130932111,
-          "B_atlas_corrected_MeV": 14.928949652611877,
-          "elapsed_seconds": 0.0006499290466308594
+          "tr_M_via_rust_atlas": 0.9971263937694979,
+          "B_atlas_corrected_MeV": 14.934798229331752,
+          "elapsed_seconds": 0.0007429122924804688
         }
       },
       {
@@ -73,9 +81,9 @@
         "Z": 1,
         "N": 2,
         "n_strands": 9,
-        "B_AME_MeV": 8.481796200000002,
+        "B_AME_MeV": 8.4817962,
         "B_prod_MeV": 8.4686,
-        "rel_err_pct": -0.1555826111455167,
+        "rel_err_pct": -0.15558261114549576,
         "klr_positivity_violates": false,
         "jet_order_classification": "≈ h^4 (1.91e-03)",
         "bug_type": "(KLR-consistent — clean h^4 closure)",
@@ -85,9 +93,9 @@
         "canonical_candidate": {
           "n_strands": 9,
           "num_partitions": 30,
-          "tr_M_via_rust_atlas": 0.9951078671647595,
-          "B_atlas_corrected_MeV": 22.35684756514549,
-          "elapsed_seconds": 0.01871967315673828
+          "tr_M_via_rust_atlas": 0.9956926887437053,
+          "B_atlas_corrected_MeV": 22.369986640197617,
+          "elapsed_seconds": 0.0498051643371582
         }
       },
       {
@@ -109,9 +117,9 @@
         "canonical_candidate": {
           "n_strands": 9,
           "num_partitions": 30,
-          "tr_M_via_rust_atlas": 0.9951078671647595,
-          "B_atlas_corrected_MeV": 22.35684756514549,
-          "elapsed_seconds": 0.019464731216430664
+          "tr_M_via_rust_atlas": 0.9956926887437053,
+          "B_atlas_corrected_MeV": 22.369986640197617,
+          "elapsed_seconds": 0.04854226112365723
         }
       },
       {
@@ -134,9 +142,9 @@
         "canonical_candidate": {
           "n_strands": 12,
           "num_partitions": 77,
-          "tr_M_via_rust_atlas": 0.9934824804497567,
-          "B_atlas_corrected_MeV": 29.760440527037336,
-          "elapsed_seconds": 99.9042739868164
+          "tr_M_via_rust_atlas": 0.9942610451517628,
+          "B_atlas_corrected_MeV": 29.783763000177277,
+          "elapsed_seconds": 322.0545473098755
         }
       },
       {
@@ -259,6 +267,16 @@
           "skipped": true,
           "reason": "Heavy atom — atlas data needed"
         }
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   },

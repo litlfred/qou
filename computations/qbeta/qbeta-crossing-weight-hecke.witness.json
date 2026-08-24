@@ -3,12 +3,12 @@
   "description": "W1/W2 gates for the independent Q_beta crossing-weight determination from the H_3 GS reducer. W1 PASS (counit reproduction); W2 KILL (full GS augmentation is not the production cos*(1+c_k u^2) ladder; disagrees at O(u), +0.75% vs +0.17% N=0). scope-(a).",
   "audit_only": true,
   "tier": "structural-exact (symbolic; + numeric cross-checks; no fit, no CODATA in the algebra)",
-  "computedAt": "2026-08-23T16:54:59.460026+00:00",
-  "commitSha": "d4da997dca727d86fcdbc672c7b6b7497b5d8bab",
+  "computedAt": "2026-08-23T23:45:02.158289+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "qbeta_crossing_weight_hecke_probe.py",
-  "scriptHash": "6633dfe99869",
+  "scriptHash": "8b730c8db051",
   "assertions": [
     {
       "name": "W1_gs_net_matches_counit_through_hbar2",
@@ -87,5 +87,9 @@
     "gs_reducer": "computations/qbeta/qbeta_h4_nucleon_assembly.py (reproduces free-neutron-decay witness)",
     "production_ladder": "computations/qbeta/qbeta_utils.py (Q_A, Q_N1, u, c3_target_at)",
     "flip_flop_guard": "registry section 8 -- no c_k wired"
-  }
+  },
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

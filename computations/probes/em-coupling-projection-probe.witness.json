@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-05T12:57:54.077045+00:00",
-  "commitSha": "4ce89ca9672ac90864bb31a7a9906f7a458161ec",
+  "computedAt": "2026-08-24T00:37:30.782853+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [
     {
       "name": "alpha_em_matches_codata",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "em-coupling-projection-probe",
   "scriptFile": "em_coupling_projection_probe.py",
-  "scriptHash": "40864fbaa3c8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e8e8dbcceb38",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/em_coupling_projection_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/em_coupling_projection_probe.py"
   },
   "description": "Verify the categorical fine-structure-constant closed form α_EM(q) = q⁻¹/([9]_q·[10]_q), where [9]_q = dim_q T_{2,9} and [10]_q = dim_q T_{3,5} are the q-dimensions of the genus-4 Bring-forced torus-knot pair, against CODATA α_EM = 1/137.035999206 at the canonical muon-anchored substrate q₀. No fit: q₀, c_s=9, c_w=10 are all forced. Reports the archimedean relative error (~0.16 %) and asserts agreement < 0.5 %.",
   "contentBlock": "prop:em-coupling-projection",

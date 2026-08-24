@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-08T09:58:24.127956+00:00",
-  "commitSha": "78ce3174ecd7aeeb498c1ac0a2ae6d56255449d1",
+  "computedAt": "2026-08-23T23:47:41.891156+00:00",
+  "commitSha": "1ea659f08fc58d9f59edf2080cb3fc8ad1f39fc8",
   "assertions": [
     {
       "name": "jet_order_independence_base_case",
@@ -13,11 +13,33 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2365,
+  "durationMs": 3102,
   "computation": "jet-order-pivots",
   "scriptFile": "jet_order_pivots.py",
-  "scriptHash": "380671554d5b",
-  "scriptCommitSha": "9ce80195f72c6a408815676ad07a8de5351746cc",
+  "scriptHash": "1eadd3f17d76",
+  "scriptCommitSha": "5f9413fcb8a6698592ed160f89cc3900b732da5a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/jet_order_pivots.py"
+    ],
+    "reproduce": "python3 -u computations/jet_order_pivots.py"
+  },
   "contentBlock": "conj:three-knot-jet-order-independence",
   "data": {
     "knots": [
@@ -29,13 +51,13 @@
     "jet_jacobian": {
       "4_1": [
         "1/4",
-        "-1",
-        "55/16"
+        "0",
+        "11/4"
       ],
       "5_2": [
         "1/2",
-        "0",
-        "-1/16"
+        "1",
+        "1/4"
       ],
       "Borromean": [
         "1",
@@ -43,11 +65,11 @@
         "0"
       ]
     },
-    "elimination_det": "1/16",
+    "elimination_det": "-11/4",
     "lu_pivots": [
       "1/4",
-      "2",
-      "1/8"
+      "1",
+      "-11"
     ]
   }
 }

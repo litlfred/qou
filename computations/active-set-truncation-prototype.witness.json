@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T10:40:32.645417+00:00",
-  "commitSha": "fb39f0437cfe7a1b502335ae08dd6c144e0e7a0e",
+  "computedAt": "2026-08-23T22:19:19.499538+00:00",
+  "commitSha": "4ac5ddf779edd34e90cda0c5d1e2a9a76ef97724",
   "assertions": [
     {
       "name": "rows_le_3_recovers_99pct",
-      "computed": 1.0,
+      "computed": 0.996603,
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.02,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "active-set-truncation-prototype",
   "scriptFile": "active_set_truncation_prototype.py",
-  "scriptHash": "1a66900746ef",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "a96ad1d629b1",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,9 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/active_set_truncation_prototype.py"
+    ],
+    "reproduce": "python3 -u computations/active_set_truncation_prototype.py"
   },
   "description": "PROTOTYPE — few-row truncation of tr_M reproduces the full Markov trace (rows≤2 ≳ 93%, rows≤3 ≳ 99% on D/T), verifying the active-set compute optimization: binding scales O(A·few) by summing only few-row partitions + caching nucleon blocks, skipping the high-dim deep partitions (= the matrix-M skipped-max-dim set).",
   "data": {
@@ -44,56 +53,56 @@
             "tr_M_trunc": 1.27103153,
             "frac_recovered": 0.584262,
             "n_partitions_kept": 1,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 1
           },
           "2": {
             "tr_M_trunc": 2.17544682,
             "frac_recovered": 1.0,
             "n_partitions_kept": 4,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 9
           },
           "3": {
             "tr_M_trunc": 2.17544682,
             "frac_recovered": 1.0,
             "n_partitions_kept": 7,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 16
           },
           "4": {
             "tr_M_trunc": 2.17544682,
             "frac_recovered": 1.0,
             "n_partitions_kept": 9,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 16
           }
         }
       },
       {
         "isotope": "T",
         "n_partitions_total": 30,
-        "tr_M_full": 2.51155334,
+        "tr_M_full": 1.08602401,
         "by_max_rows_R": {
           "1": {
-            "tr_M_trunc": 0.8527874,
-            "frac_recovered": 0.339546,
+            "tr_M_trunc": 0.25267358,
+            "frac_recovered": 0.232659,
             "n_partitions_kept": 1,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 1
           },
           "2": {
-            "tr_M_trunc": 2.51155334,
-            "frac_recovered": 1.0,
+            "tr_M_trunc": 1.09152026,
+            "frac_recovered": 1.005061,
             "n_partitions_kept": 5,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 48
           },
           "3": {
-            "tr_M_trunc": 2.51155334,
-            "frac_recovered": 1.0,
+            "tr_M_trunc": 1.08233505,
+            "frac_recovered": 0.996603,
             "n_partitions_kept": 12,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 168
           },
           "4": {
-            "tr_M_trunc": 2.51155334,
-            "frac_recovered": 1.0,
+            "tr_M_trunc": 1.08575384,
+            "frac_recovered": 0.999751,
             "n_partitions_kept": 18,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 216
           }
         }
       }

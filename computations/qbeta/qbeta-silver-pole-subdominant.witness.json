@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T20:08:49.586130+00:00",
-  "commitSha": "38940fd65b2028e82eb55aec5cdbd56ac1a5f860",
+  "computedAt": "2026-08-24T02:27:49.500175+00:00",
+  "commitSha": "4edd9258ae20e47e60c573f1af6dc28d7b1ec499",
   "assertions": [
     {
       "name": "silver_pole_genuine_and_subdominant",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 28,
   "computation": "qbeta-silver-pole-subdominant",
   "scriptFile": "qbeta_silver_pole_subdominant_probe.py",
-  "scriptHash": "c149b9f02fcc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "05b02fcaefd7",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_silver_pole_subdominant_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_silver_pole_subdominant_probe.py"
   },
   "description": "Corrects PR #2445's dominance claim: the silver/Q_A zero IS a genuine pole of F=Q_β/[Q_A·cos α_eff] (Δ(net)(silver)=82216+58136√2≠0 while Q_A(silver)=0; the true Q_β uses GB-reduced Δ(net), not the cheat-sheet leading term≈Q_A — that check was circular). But it is SUBDOMINANT: u_silver≈0.321 → char root ≈3.12, not the dominant 1/u_substrate≈117.4 (PR #1727). The dominant pole is from a non-Q_A source. NO FLOAT. Exploratory.",
   "contentBlock": "prop:qbeta-silver-anchor-grounding",
@@ -37,9 +47,9 @@
     "qA_numerator_at_silver": "0",
     "delta_net_numerator_at_silver": "82216 + 58136*sqrt(2)",
     "silver_factor_divides_delta_net": false,
-    "u_substrate": "0.008517234550156142189255573603309202969194221611630136163602977805856105",
+    "u_substrate": "0.00851723634048492143993311290229939608238904223028150470840514780214707",
     "u_silver": "0.3209834580317308973723915911963031012135113455031900587189492825779151",
-    "char_root_dominant_1_over_u_substrate": "117.4090010215425500454471420688129707423250965232546473787297023281228",
+    "char_root_dominant_1_over_u_substrate": "117.408976342091954927614463998260672535624406042733041545376912444822",
     "char_root_silver_1_over_u_silver": "3.115425343511455216965387030215241372587013736523711651483510605537769"
   }
 }

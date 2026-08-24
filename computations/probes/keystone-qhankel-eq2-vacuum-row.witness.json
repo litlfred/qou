@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T14:14:59.517137+00:00",
-  "commitSha": "95cf7b962bb41d3777900cc6bc494b271c14d179",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T00:50:47.895834+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "roots_found",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 5,
   "computation": "keystone-qhankel-eq2-vacuum-row",
   "scriptFile": "keystone_qhankel_eq2_vacuum_row.py",
-  "scriptHash": "43e5939111fa",
-  "scriptCommitSha": "85a9304a849e4923abbf6e677952752a4cf334e9",
+  "scriptHash": "528488ba923c",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,8 +33,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_qhankel_eq2_vacuum_row.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_qhankel_eq2_vacuum_row.py"
   },
   "description": "s013 redirect (ii), decisive sourced test: the Plancherel-fixed E_q(2) vacuum row — roots μ_j of the third (Hahn–Exton) q-Bessel C_α (Koornwinder–Swarttouw 1208.2521 eq.1.2), α∈{0,1/2,1,2}, and C_α at the q-lattice nodes — vs the compact target d_q={[1],[4],[5],[4][3]/[2]}. 0-dof, no fit; every candidate reported with ratio. Nothing wired.",
   "data": {

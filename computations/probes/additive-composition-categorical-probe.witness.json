@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:21:32.085223+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-08-24T00:15:21.066181+00:00",
+  "commitSha": "1901f9774dfc48725eed2208f2cef5382bd817ca",
   "assertions": [
     {
       "name": "additive_composition_supported_by_all_4_hypotheses",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 21,
   "computation": "additive-composition-categorical-probe",
   "scriptFile": "additive_composition_categorical_probe.py",
-  "scriptHash": "7a959bff7c02",
-  "scriptCommitSha": "1a49d588f3fd22e20ee53a990f8f6ad57e1bb4ce",
+  "scriptHash": "2f396035f190",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,13 +26,22 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
-  "description": "Probe of the categorical origin of the ADDITIVE composition rule for the two Faddeev factors in the Bring + Faddeev h⁴ candidate linking_weight. Tests 4 hypotheses (H_4 Wedderburn direct sum, S_4 ↓ S_3 restriction, half-symmetric Frobenius reciprocity, KLR positivity / Kashiwara crystal). All four converge on ADDITIVE as the canonical composition: the Family A linking_weight (1/4)·Σ_{λ ⊢ 4} dim_q V_λ has inherent sum-over-partitions structure; Bring color-tube and Faddeev h⁴ both decompose as KLR canonical-basis sums with positive integer coefficients; Frobenius reciprocity + KLR positivity force the additive composition. Empirical match (additive 108 ppm vs multiplicative 1243 ppm at q_0) is consistent with the categorical prediction.",
+  "invocation": {
+    "argv": [
+      "computations/probes/additive_composition_categorical_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/additive_composition_categorical_probe.py"
+  },
+  "description": "Probe of the categorical origin of the ADDITIVE composition rule for the two Faddeev factors in the Bring + compact-q-dilog h⁴ candidate linking_weight. Tests 4 hypotheses (H_4 Wedderburn direct sum, S_4 ↓ S_3 restriction, half-symmetric Frobenius reciprocity, KLR positivity / Kashiwara crystal). All four converge on ADDITIVE as the canonical composition: the Family A linking_weight (1/4)·Σ_{λ ⊢ 4} dim_q V_λ has inherent sum-over-partitions structure; Bring color-tube and compact-q-dilog h⁴ both decompose as KLR canonical-basis sums with positive integer coefficients; Frobenius reciprocity + KLR positivity force the additive composition. Empirical match (additive 108 ppm vs multiplicative 1243 ppm at q_0) is consistent with the categorical prediction.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "data": {
     "hypotheses": [
@@ -46,7 +55,7 @@
         "label": "H2 — S_4 ↓ S_3 restriction",
         "claim": "Both factors live at H_4; (1/4)·Σ is the Family A inheritance",
         "supports_additive": true,
-        "load_bearing_step": "Verify Bring color-tube and Faddeev h⁴ are both H_4-level (not H_3 or H_5)"
+        "load_bearing_step": "Verify Bring color-tube and compact-q-dilog h⁴ are both H_4-level (not H_3 or H_5)"
       },
       {
         "label": "H3 — Half-symmetric Frobenius reciprocity",
@@ -61,6 +70,6 @@
         "load_bearing_step": "Show H_4 crystal admits no tensor-product structure (i.e. cannot be multiplicative)"
       }
     ],
-    "conclusion": "All 4 hypotheses converge on additive composition. The remaining load-bearing step (research-grade) is the specific partition-channel assignment proof: WHICH 4 of the 5 H_4 partition blocks Bring color-tube occupies, vs WHICH 1 contains the Faddeev h⁴ correction."
+    "conclusion": "All 4 hypotheses converge on additive composition. The remaining load-bearing step (research-grade) is the specific partition-channel assignment proof: WHICH 4 of the 5 H_4 partition blocks Bring color-tube occupies, vs WHICH 1 contains the compact-q-dilog h⁴ correction."
   }
 }

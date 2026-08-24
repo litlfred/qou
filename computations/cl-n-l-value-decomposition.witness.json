@@ -1,35 +1,57 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-11T03:04:29.433552+00:00",
-  "commitSha": "83c5c0ce3dc2054bfe45560a782bbb06b59fab58",
+  "computedAt": "2026-08-23T22:54:19.921051+00:00",
+  "commitSha": "cd8acfc1cd9a5799184f208fb625094eb9a0e8a9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 47,
   "computation": "cl-n-l-value-decomposition",
   "scriptFile": "cl_n_l_value_decomposition.py",
-  "scriptHash": "c1c8e3ca67e7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c9612c3bcc33",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/cl_n_l_value_decomposition.py"
+    ],
+    "reproduce": "python3 -u computations/cl_n_l_value_decomposition.py"
+  },
   "description": "Numerical verification at 50 dps that our framework's depth-n cyclotomic content decomposes into Dirichlet L-values. Concrete instance: beta(3) = L(chi_4, 3) = pi^3/32 derived constructively from Theorem A (prop:jonquiere-cyclotomic-tate-rationality) at (n, K) = (3, 4). Connects the graded-Mikusinski framework to classical analytic number theory (Dirichlet beta function and odd-character L-values). Also records the N = 5 case: Cl_3 values at zeta_5 generate the predicted (K-3)/2 = 1 dimensional genuinely-new content (plus zeta(3)-line), aligning with the L-value content of the 2 odd characters mod 5.",
-  "timestamp": "2026-05-11T03:04:29.419625+00:00",
-  "precision_decimal_digits": 50,
+  "timestamp": "2026-08-23T22:54:18.788067+00:00",
+  "precision_decimal_digits": 70,
   "beta_3_from_theorem_a": {
     "claim": "β(3) = Im Li_3(i) = π³/32",
-    "im_li3_zeta4_closed_form_str": "0.96894614625936938048363484584691860006954026768391",
-    "im_li3_zeta4_direct_str": "0.96894614625936938048363484584691860006954026768391",
-    "residual_str": "0.0",
-    "beta_3_closed_form_str": "0.96894614625936938048363484584691860006954026768391",
-    "beta_3_series_approx_str": "0.96894608376874145246258402080548520065400000546694",
-    "series_residual_str": "0.000000062490627928021050825041433399415540262216968980672",
+    "im_li3_zeta4_closed_form_str": "0.9689461462593693804836348458469186000695402676839096154420168157439498",
+    "im_li3_zeta4_direct_str": "0.9689461462593693804836348458469186000695402676839096154420168157439498",
+    "residual_str": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+    "beta_3_closed_form_str": "0.9689461462593693804836348458469186000695402676839096154420168157439498",
+    "beta_3_series_approx_str": "0.9689460837687414524625840208054852006540000054669412367263735478072163",
+    "series_residual_str": "0.00000006249062792802105082504143339941554026221696837871564326793673354044921",
     "below_1e_40": true,
     "interpretation": "Catalan-like depth-3 L-value derived from Jonquière inversion (Theorem A) — classical beta(3) = pi^3/32 is a corollary of the framework."
   },
   "N_5_l_value_content": {
-    "cl3_2pi_5_str": "0.18936791501083168387944480476641361363127422974423",
-    "cl3_4pi_5_str": "-0.76635522852743694087131912229190960919846765006767",
-    "s3_2pi_5_str": "0.99220085376959424561524208214724464647120923410832",
-    "s3_4pi_5_str": "0.49610042688479712280762104107362232323560461705416",
-    "genuinely_new_generator_str": "0.95572314353826862475076392705832322282974187981191",
+    "cl3_2pi_5_str": "0.1893679150108316838794448047664136136312742297442338898539828423610234",
+    "cl3_4pi_5_str": "-0.7663552285274369408713191222919096091984676500676733531142731889251058",
+    "s3_2pi_5_str": "0.9922008537695942456152420821472446464712092341083234462126252193218046",
+    "s3_4pi_5_str": "0.4961004268847971228076210410736223232356046170541617231063126096609023",
+    "genuinely_new_generator_str": "0.9557231435382686247507639270583232228297418798119072429682560312861292",
     "interpretation": "(K-3)/2 = 1 genuinely-new generator at N = 5, corresponding to the 2 odd characters mod 5 paired by complex conjugation. Theorem G dim count matches."
   }
 }

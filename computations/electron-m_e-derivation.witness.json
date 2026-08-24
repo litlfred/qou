@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:22:11.161567+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T23:15:39.036051+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "electron-m_e-derivation",
   "scriptFile": "derive_m_e_hecke_path_a.py",
-  "scriptHash": "3b28bbb82880",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "d87ea303f3f3",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,7 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derive_m_e_hecke_path_a.py"
+    ],
+    "reproduce": "python3 -u computations/derive_m_e_hecke_path_a.py"
   },
   "description": "Workplan 2 Phase 2 — closed-form Path A derivation of m_e_Hecke at 50 dps for the electron at H_2 from CAL-1 M_E_MEV and CAL-2 q_0_50dps alone. NO FITTING per owner directive 2026-05-10. Replaces the DEPRECATED placeholder literal M_HECKE_PIPELINE_AT_Q0['e']=0.0007783. T1(e) is the standard Markov parameter z; T4(e) is the H_2 instantiation of the Frobenius co-Casimir master formula. Partial Path A subset (T1+T4); T2/T3/T5/T6 quarantined same as the proton derivation (see derive_m_p_hecke_path_a.py).",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
@@ -32,22 +41,22 @@
       "braid": "β_e = 1 (identity in H_2(q), zero crossings)",
       "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798",
       "t1_descended": {
-        "value_50dps": "0.499320334033561271768966386275737140161175797899895610447189",
+        "value_50dps": "0.612688050548890157044516774581866149005964144342327566400904",
         "formula": "z = 1 / (q^{1/2} + q^{-1/2})",
         "dimensionality": "cat-units (dimensionless)"
       },
       "t4_frobenius_co_casimir": {
-        "value_50dps_MeV": "0.768236860014506359726467634712715566108102918737393579470061",
+        "value_50dps_MeV": "0.942660476732060424258004960651648065866136656248072118731778",
         "formula": "M_E_MEV · z · ([2]_q + 1)",
         "irrep_decomposition": {
           "lambda_2_sym": "σ_1 ↦ +q, dim_q = [2]_q",
           "lambda_11_alt": "σ_1 ↦ -q^{-1}, dim_q = 1",
-          "co_casimir_h2_dimensionless": "1.50340203042914072275561532173665130644556807267402557135611"
+          "co_casimir_h2_dimensionless": "1.84474053314432340103325420519690434643803604137704433068821"
         }
       },
       "m_e_hecke_partial": {
-        "cat_units": "2.00272236446270199452458170801238844660674387057392118180329",
-        "MeV": "1.02338902676383646484423137820549846173672520894086402440654",
+        "cat_units": "2.45742858369321355807777097977877049544400018571937189708911",
+        "MeV": "1.25574342766284497305182234408108493151021552055876555175536",
         "construction": "T1(e) + T4(e); same trustable subset as proton"
       },
       "no_fitting_assertion": "Both T1(e) and T4(e) are closed-form expressions in q_0 (CAL-2) and M_E_MEV (CAL-1). No upstream witness consumed; no CODATA m_p / m_n / m_e_other tuning. The construction is the H_2 instantiation of the master Frobenius co-Casimir formula proved in QOU.BraidKnot.MassFormulaCategorical."

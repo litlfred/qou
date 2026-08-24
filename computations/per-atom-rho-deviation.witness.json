@@ -1,22 +1,44 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-09T04:03:48.654292+00:00",
-  "commitSha": "9cea308a27e042de9b2da145acdcf3e7262f0f86",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T00:10:32.429624+00:00",
+  "commitSha": "bbf717a26ddcbe15e958e5663f32dc8fe5f3b3c9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 5,
   "computation": "per-atom-rho-deviation",
   "scriptFile": "per_atom_rho_deviation.py",
-  "scriptHash": "79e8a73f7526",
-  "scriptCommitSha": "ba9a03f9f210ccc55f6287a2c9d554654a9a3b97",
+  "scriptHash": "37e8b480c986",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/per_atom_rho_deviation.py"
+    ],
+    "reproduce": "python3 -u computations/per_atom_rho_deviation.py"
+  },
   "description": "Per-atom ρ-deviation decomposition for the hard-coded light-atom probe {²H, ³H, ³He, ⁴He}. Computes ρ_true = B_AME/(m_e·Vol_hyp(K)) and tests δρ = ρ_true/ρ_struct − 1 against pre-specified categorical q-forms (no fitting), then propagates the Z=N correction through the α-cluster chain {⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca}.",
   "auditOnly": "docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md",
   "parameters": {
-    "q_0": 1.1099785955541805,
-    "m_e_MeV": 0.51099895,
+    "q_0": 1.1099785827513808,
+    "m_e_MeV": 0.51099895069,
     "VOL_BORROMEAN_EIGHT_G": 7.327724753417752,
-    "VOL_BORROMEAN_SNAPPY": 7.327724753846269,
+    "VOL_BORROMEAN_SNAPPY": 7.327724753417752,
     "KNOT_VOL": {
       "6_2": 4.400832516123046,
       "8_11": 8.286316817806593,
@@ -31,42 +53,42 @@
       "rho_struct": 1,
       "Vol_eff": 4.400832516123046,
       "B_AME_MeV": 2.22456612,
-      "B_pred_MeV": 2.2488207948647343,
-      "err_MeV": 0.024254674864734316,
-      "err_pct": 1.0903103596999093,
-      "rho_true": 0.989214491914998,
-      "delta_rho": -0.010785508085002005,
-      "delta_rho_pct": -1.0785508085002005,
+      "B_pred_MeV": 2.248820797901309,
+      "err_MeV": 0.024254677901308863,
+      "err_pct": 1.090310496201788,
+      "rho_true": 0.9892144905792652,
+      "delta_rho": -0.010785509420734751,
+      "delta_rho_pct": -1.0785509420734751,
       "top_5_categorical_matches": [
         {
           "form": "-[2]_q−floor",
-          "value": -0.010896869118481867,
-          "residual": 0.00011136103347986204,
-          "abs_resid": 0.00011136103347986204
+          "value": -0.010896866707121866,
+          "residual": 0.00011135728638711484,
+          "abs_resid": 0.00011135728638711484
         },
         {
           "form": "-([2]_q−2)",
-          "value": -0.010896869118481867,
-          "residual": 0.00011136103347986204,
-          "abs_resid": 0.00011136103347986204
+          "value": -0.010896866707121866,
+          "residual": 0.00011135728638711484,
+          "abs_resid": 0.00011135728638711484
         },
         {
           "form": "-([2]_q−2)−floor",
-          "value": -0.010896869118481867,
-          "residual": 0.00011136103347986204,
-          "abs_resid": 0.00011136103347986204
+          "value": -0.010896866707121866,
+          "residual": 0.00011135728638711484,
+          "abs_resid": 0.00011135728638711484
         },
         {
           "form": "-([2]_q−2)/(A−1)",
-          "value": -0.010896869118481867,
-          "residual": 0.00011136103347986204,
-          "abs_resid": 0.00011136103347986204
+          "value": -0.010896866707121866,
+          "residual": 0.00011135728638711484,
+          "abs_resid": 0.00011135728638711484
         },
         {
           "form": "-([2]_q−2)/(A−1)−floor",
-          "value": -0.010896869118481867,
-          "residual": 0.00011136103347986204,
-          "abs_resid": 0.00011136103347986204
+          "value": -0.010896866707121866,
+          "residual": 0.00011135728638711484,
+          "abs_resid": 0.00011135728638711484
         }
       ]
     },
@@ -76,42 +98,42 @@
       "rho_struct": 2,
       "Vol_eff": 8.286316817806593,
       "B_AME_MeV": 8.4817984,
-      "B_pred_MeV": 8.46859838653302,
-      "err_MeV": -0.013200013466979854,
-      "err_pct": -0.15562753138508753,
-      "rho_true": 2.0031174021637326,
-      "delta_rho": 0.0015587010818662872,
-      "delta_rho_pct": 0.15587010818662872,
+      "B_pred_MeV": 8.468598397968139,
+      "err_MeV": -0.013200002031862113,
+      "err_pct": -0.15562739656559288,
+      "rho_true": 2.0031173994589304,
+      "delta_rho": 0.0015586997294652072,
+      "delta_rho_pct": 0.15586997294652072,
       "top_5_categorical_matches": [
         {
           "form": "+ℏ_q²",
-          "value": 0.009817188513478667,
-          "residual": -0.00825848743161238,
-          "abs_resid": 0.00825848743161238
+          "value": 0.009817186454275078,
+          "residual": -0.00825848672480987,
+          "abs_resid": 0.00825848672480987
         },
         {
           "form": "+ℏ_q²−floor",
-          "value": 0.009817188513478667,
-          "residual": -0.00825848743161238,
-          "abs_resid": 0.00825848743161238
+          "value": 0.009817186454275078,
+          "residual": -0.00825848672480987,
+          "abs_resid": 0.00825848672480987
         },
         {
           "form": "+[2]_q−floor",
-          "value": 0.010896869118481867,
-          "residual": -0.00933816803661558,
-          "abs_resid": 0.00933816803661558
+          "value": 0.010896866707121866,
+          "residual": -0.009338166977656659,
+          "abs_resid": 0.009338166977656659
         },
         {
           "form": "-ℏ_q²",
-          "value": -0.009817188513478667,
-          "residual": 0.011375889595344954,
-          "abs_resid": 0.011375889595344954
+          "value": -0.009817186454275078,
+          "residual": 0.011375886183740285,
+          "abs_resid": 0.011375886183740285
         },
         {
           "form": "-ℏ_q²−floor",
-          "value": -0.009817188513478667,
-          "residual": 0.011375889595344954,
-          "abs_resid": 0.011375889595344954
+          "value": -0.009817186454275078,
+          "residual": 0.011375886183740285,
+          "abs_resid": 0.011375886183740285
         }
       ]
     },
@@ -121,42 +143,42 @@
       "rho_struct": 2,
       "Vol_eff": 7.327724753417752,
       "B_AME_MeV": 7.7180375,
-      "B_pred_MeV": 7.48891930977096,
-      "err_MeV": -0.22911819022904023,
-      "err_pct": -2.968606854126327,
-      "rho_true": 2.061188585629466,
-      "delta_rho": 0.030594292814732915,
-      "delta_rho_pct": 3.0594292814732915,
+      "B_pred_MeV": 7.4889193198832205,
+      "err_MeV": -0.22911818011677987,
+      "err_pct": -2.9686067231051916,
+      "rho_true": 2.0611885828462504,
+      "delta_rho": 0.030594291423125197,
+      "delta_rho_pct": 3.0594291423125197,
       "top_5_categorical_matches": [
         {
           "form": "+([3]_q−3)/2",
-          "value": 0.021853109115255842,
-          "residual": 0.008741183699477073,
-          "abs_resid": 0.008741183699477073
+          "value": 0.02185310426626086,
+          "residual": 0.008741187156864338,
+          "abs_resid": 0.008741187156864338
         },
         {
           "form": "+([3]_q−3)/2−floor",
-          "value": 0.021853109115255842,
-          "residual": 0.008741183699477073,
-          "abs_resid": 0.008741183699477073
+          "value": 0.02185310426626086,
+          "residual": 0.008741187156864338,
+          "abs_resid": 0.008741187156864338
         },
         {
           "form": "+([3]_q−3)/(A−1)",
-          "value": 0.021853109115255842,
-          "residual": 0.008741183699477073,
-          "abs_resid": 0.008741183699477073
+          "value": 0.02185310426626086,
+          "residual": 0.008741187156864338,
+          "abs_resid": 0.008741187156864338
         },
         {
           "form": "+([3]_q−3)/(A−1)−floor",
-          "value": 0.021853109115255842,
-          "residual": 0.008741183699477073,
-          "abs_resid": 0.008741183699477073
+          "value": 0.02185310426626086,
+          "residual": 0.008741187156864338,
+          "abs_resid": 0.008741187156864338
         },
         {
           "form": "+[3]_q−floor",
-          "value": 0.043706218230511684,
-          "residual": -0.013111925415778769,
-          "abs_resid": 0.013111925415778769
+          "value": 0.04370620853252172,
+          "residual": -0.01311191710939652,
+          "abs_resid": 0.01311191710939652
         }
       ]
     },
@@ -166,116 +188,116 @@
       "rho_struct": 2,
       "Vol_eff": 29.31089901367101,
       "B_AME_MeV": 28.2956912,
-      "B_pred_MeV": 29.95567723908384,
-      "err_MeV": 1.6599860390838401,
-      "err_pct": 5.866568260696314,
-      "rho_true": 1.8891705217788888,
-      "delta_rho": -0.05541473911055561,
-      "delta_rho_pct": -5.5414739110555615,
+      "B_pred_MeV": 29.955677279532882,
+      "err_MeV": 1.6599860795328816,
+      "err_pct": 5.8665684036475545,
+      "rho_true": 1.8891705192279487,
+      "delta_rho": -0.055414740386025674,
+      "delta_rho_pct": -5.541474038602567,
       "top_5_categorical_matches": [
         {
           "form": "-([4]_q−4)/2",
-          "value": -0.054841217818854204,
-          "residual": -0.0005735212917014065,
-          "abs_resid": 0.0005735212917014065
+          "value": -0.05484120560397088,
+          "residual": -0.0005735347820547965,
+          "abs_resid": 0.0005735347820547965
         },
         {
           "form": "-([4]_q−4)/2−floor",
-          "value": -0.054841217818854204,
-          "residual": -0.0005735212917014065,
-          "abs_resid": 0.0005735212917014065
+          "value": -0.05484120560397088,
+          "residual": -0.0005735347820547965,
+          "abs_resid": 0.0005735347820547965
         },
         {
           "form": "-[3]_q−floor",
-          "value": -0.043706218230511684,
-          "residual": -0.011708520880043927,
-          "abs_resid": 0.011708520880043927
+          "value": -0.04370620853252172,
+          "residual": -0.011708531853503956,
+          "abs_resid": 0.011708531853503956
         },
         {
           "form": "-([4]_q−4)/3",
-          "value": -0.036560811879236134,
-          "residual": -0.018853927231319477,
-          "abs_resid": 0.018853927231319477
+          "value": -0.036560803735980585,
+          "residual": -0.01885393665004509,
+          "abs_resid": 0.01885393665004509
         },
         {
           "form": "-([4]_q−4)/3−floor",
-          "value": -0.036560811879236134,
-          "residual": -0.018853927231319477,
-          "abs_resid": 0.018853927231319477
+          "value": -0.036560803735980585,
+          "residual": -0.01885393665004509,
+          "abs_resid": 0.01885393665004509
         }
       ]
     }
   ],
   "z_eq_n_propagation": {
-    "B_4He_corrected": 28.31287141870395,
-    "correction_4He_factor": 0.9451587821811458,
-    "c_alpha_MeV": 2.426989503762857,
+    "B_4He_corrected": 28.31287182283982,
+    "correction_4He_factor": 0.9451587943960291,
+    "c_alpha_MeV": 2.4269895070400125,
     "rows": [
       {
         "atom": "8Be",
         "n_alpha": 2,
         "n_pairs": 1,
         "B_AME_MeV": 56.49951,
-        "B_pred_orig_MeV": 62.338343981930535,
-        "err_pct_orig": 10.33430906202644,
-        "B_pred_corr_MeV": 59.05273234117075,
-        "err_pct_corr": 4.519016786465497,
-        "improvement_factor": 2.2868490094964473
+        "B_pred_orig_MeV": 62.338344066105776,
+        "err_pct_orig": 10.334309211010458,
+        "B_pred_corr_MeV": 59.052733152719654,
+        "err_pct_corr": 4.51901822284769,
+        "improvement_factor": 2.286848315583517
       },
       {
         "atom": "12C",
         "n_alpha": 3,
         "n_pairs": 3,
         "B_AME_MeV": 92.16175,
-        "B_pred_orig_MeV": 97.1480002285401,
-        "err_pct_orig": 5.410325030221432,
-        "B_pred_corr_MeV": 92.21958276740042,
-        "err_pct_corr": 0.06275137722583077,
-        "improvement_factor": 86.21842690002896
+        "B_pred_orig_MeV": 97.14800035971868,
+        "err_pct_orig": 5.4103251725565995,
+        "B_pred_corr_MeV": 92.21958398963949,
+        "err_pct_corr": 0.06275270341491002,
+        "improvement_factor": 86.21660706447125
       },
       {
         "atom": "16O",
         "n_alpha": 4,
         "n_pairs": 6,
         "B_AME_MeV": 127.61929,
-        "B_pred_orig_MeV": 134.38464597891252,
-        "err_pct_orig": 5.301201706193875,
-        "B_pred_corr_MeV": 127.81342269739294,
-        "err_pct_corr": 0.1521186157617165,
-        "improvement_factor": 34.84913190702345
+        "B_pred_orig_MeV": 134.3846461603716,
+        "err_pct_orig": 5.3012018483816945,
+        "B_pred_corr_MeV": 127.81342433359936,
+        "err_pct_corr": 0.1521198978613271,
+        "improvement_factor": 34.848839125663126
       },
       {
         "atom": "20Ne",
         "n_alpha": 5,
         "n_pairs": 10,
         "B_AME_MeV": 160.64486,
-        "B_pred_orig_MeV": 174.0482812330478,
-        "err_pct_orig": 8.34351079334116,
-        "B_pred_corr_MeV": 165.8342521311483,
-        "err_pct_corr": 3.2303505578381473,
-        "improvement_factor": 2.5828499551221777
+        "B_pred_orig_MeV": 174.04828146806454,
+        "err_pct_orig": 8.343510939637005,
+        "B_pred_corr_MeV": 165.83425418459922,
+        "err_pct_corr": 3.2303518360931207,
+        "improvement_factor": 2.582848978372549
       },
       {
         "atom": "24Mg",
         "n_alpha": 6,
         "n_pairs": 15,
         "B_AME_MeV": 198.2569,
-        "B_pred_orig_MeV": 216.1389059909459,
-        "err_pct_orig": 9.019613436377693,
-        "B_pred_corr_MeV": 206.28207106866654,
-        "err_pct_corr": 4.047864699118436,
-        "improvement_factor": 2.2282398515795325
+        "B_pred_orig_MeV": 216.13890628279748,
+        "err_pct_orig": 9.019613583586485,
+        "B_pred_corr_MeV": 206.2820735426391,
+        "err_pct_corr": 4.047865946980456,
+        "improvement_factor": 2.2282392010325225
       },
       {
         "atom": "40Ca",
         "n_alpha": 10,
         "n_pairs": 45,
         "B_AME_MeV": 342.05212,
-        "B_pred_orig_MeV": 408.771300060167,
-        "err_pct_orig": 19.505559579682476,
-        "B_pred_corr_MeV": 392.343241856368,
-        "err_pct_corr": 14.702765723647035,
-        "improvement_factor": 1.3266592113557873
+        "B_pred_orig_MeV": 408.7713006121294,
+        "err_pct_orig": 19.505559741050394,
+        "B_pred_corr_MeV": 392.3432460451988,
+        "err_pct_corr": 14.70276694826472,
+        "improvement_factor": 1.326659111831499
       }
     ],
     "n_improved": 6,

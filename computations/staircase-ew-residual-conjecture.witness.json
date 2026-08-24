@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-08T00:39:09.889262+00:00",
-  "commitSha": "4c270191521894fbd25b5cc7d404ea1a957ea0b7",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-08-24T02:52:16.189638+00:00",
+  "commitSha": "0edc2c20d675db59edab2e722441847123300b5f",
   "assertions": [
     {
       "name": "k3_residual_matches_q_one_fifth",
@@ -48,15 +48,37 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 63647,
+  "durationMs": 856024,
   "computation": "staircase-ew-residual-conjecture",
   "scriptFile": "staircase_ew_residual_conjecture.py",
-  "scriptHash": "deacf52d5ef9",
-  "scriptCommitSha": "96d52c7105b35699e1b17adcf05a839ff4c4af76",
+  "scriptHash": "7c148216f731",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/staircase_ew_residual_conjecture.py"
+    ],
+    "reproduce": "python3 -u computations/staircase_ew_residual_conjecture.py"
+  },
   "description": "Test the staircase EW-residual conjecture: q^(1/(2k-1)) appears as the residual factor between raw β_EW spectral ratio and the structurally-meaningful ratio for staircase ρ_k = (k, k-1, …, 1).  Verified for k=3 (q^(1/5) closes the cot θ_W gap to 0.13%).  Tests k=2 (n=3, dim=2), k=3 (n=6, dim=16) for cross-validation, and k=4 (n=10, dim=768) for the prediction.  ρ_5 (dim≈3·10⁵) recorded as prediction only.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
-    "q_0": 1.1099785955541805
+    "q_0": 1.1099785827513808
   },
   "data": {
     "predictions": {
@@ -67,7 +89,7 @@
         ],
         "n": 3,
         "h_corner": 3,
-        "q_pow_inv_hc": 1.0353921501090408
+        "q_pow_inv_hc": 1.0353921461282078
       },
       "k_3": {
         "shape": [
@@ -77,7 +99,7 @@
         ],
         "n": 6,
         "h_corner": 5,
-        "q_pow_inv_hc": 1.0210874086805357
+        "q_pow_inv_hc": 1.021087406325035
       },
       "k_4": {
         "shape": [
@@ -88,7 +110,7 @@
         ],
         "n": 10,
         "h_corner": 7,
-        "q_pow_inv_hc": 1.015017464587894
+        "q_pow_inv_hc": 1.015017462915395
       },
       "k_5": {
         "shape": [
@@ -100,7 +122,7 @@
         ],
         "n": 15,
         "h_corner": 9,
-        "q_pow_inv_hc": 1.0116608787430426
+        "q_pow_inv_hc": 1.011660877446512
       }
     },
     "empirical_results": {
@@ -108,31 +130,31 @@
         "skipped": true,
         "reason": "insufficient positive eigenvalues (1)",
         "n_real_pos_eigs": 1,
-        "predicted_q_power_inv_hc": 1.0353921501090408
+        "predicted_q_power_inv_hc": 1.0353921461282078
       },
       "3": {
-        "best_ratio_value": 1.0920785668553477,
+        "best_ratio_value": 1.0920785798883728,
         "best_ratio_indices": [
           8,
           9
         ],
-        "log_distance": 0.06721467603357706,
-        "relative_error": 0.06952505492800834,
-        "predicted_q_power_inv_hc": 1.0210874086805357,
+        "log_distance": 0.06721469027457812,
+        "relative_error": 0.06952507015911588,
+        "predicted_q_power_inv_hc": 1.021087406325035,
         "n_real_pos_eigs": 8,
-        "top_two_ratio": 1.7831508101184945
+        "top_two_ratio": 1.7831507148237866
       },
       "4": {
-        "best_ratio_value": 1.0135740227975927,
+        "best_ratio_value": 1.0135740205390367,
         "best_ratio_indices": [
-          256,
-          216
+          241,
+          182
         ],
-        "log_distance": 0.001423097792614127,
-        "relative_error": 0.0014220856691242885,
-        "predicted_q_power_inv_hc": 1.015017464587894,
+        "log_distance": 0.0014230983731690783,
+        "relative_error": 0.0014220862488536423,
+        "predicted_q_power_inv_hc": 1.015017462915395,
         "n_real_pos_eigs": 384,
-        "top_two_ratio": 1.0000000000000007
+        "top_two_ratio": 1.0000000000000033
       }
     },
     "k5_matrix_free_sweep": {
@@ -158,50 +180,50 @@
         11,
         13
       ],
-      "eig_sample_size": 32,
-      "target_q_pow_inv_hc": 1.0116608787430426,
-      "eigs_runtime_seconds": 21.460941553115845,
+      "eig_sample_size": 256,
+      "target_q_pow_inv_hc": 1.011660877446512,
+      "eigs_runtime_seconds": 744.771231174469,
       "leading_real_eigenvalues": [
-        139.29406098407364,
-        139.29406098406065,
-        139.2940609840606,
-        139.29406098406005,
-        139.29406098406005,
-        139.29406098405988,
-        139.29406098405954,
-        139.29406098405954,
-        139.29406098405937,
-        139.29406098405914,
-        139.2940609840581,
-        116.63333983119827,
-        116.63333983119794,
-        116.63333983119787,
-        116.63333983119752,
-        116.63333983119728,
-        116.63333983119713,
-        116.63333983119702,
-        116.6333398311967,
-        116.63333983119657,
-        102.96929992122698,
-        102.96929992101494,
-        102.96929992101465,
-        102.96929992101441,
-        102.96929992101427,
-        102.96929992101414,
-        102.9692999210138,
-        102.96929992101364,
-        93.61631827225912,
-        93.61631827225891,
-        93.61631827225881,
-        93.61631827225871
+        139.29398469226766,
+        139.29398469226717,
+        139.2939846922668,
+        139.29398469226658,
+        139.29398469226652,
+        139.29398469226638,
+        139.29398469226606,
+        139.2939846922658,
+        139.29398469226572,
+        139.29398469226564,
+        139.2939846922655,
+        139.2939846922655,
+        139.29398469226544,
+        139.29398469226533,
+        139.29398469226524,
+        139.29398469226516,
+        139.29398469226513,
+        139.29398469226504,
+        139.29398469226496,
+        139.29398469226484,
+        139.29398469226484,
+        139.29398469226481,
+        139.2939846922648,
+        139.2939846922648,
+        139.29398469226476,
+        139.2939846922647,
+        139.29398469226462,
+        139.2939846922645,
+        139.2939846922645,
+        139.29398469226442,
+        139.2939846922644,
+        139.29398469226433
       ],
       "best_pairwise_ratio_match": {
-        "ratio": 1.000000000002072,
-        "relative_error": 0.011526469972288482,
-        "numerator_index": 20,
-        "denominator_index": 27,
-        "numerator_eigenvalue": 102.96929992122698,
-        "denominator_eigenvalue": 102.96929992101364
+        "ratio": 1.0000000000000397,
+        "relative_error": 0.011526468707483136,
+        "numerator_index": 136,
+        "denominator_index": 212,
+        "numerator_eigenvalue": 102.96924632986548,
+        "denominator_eigenvalue": 102.96924632986139
       }
     }
   }

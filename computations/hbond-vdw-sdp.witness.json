@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:49:23.511112+00:00",
-  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
+  "computedAt": "2026-08-23T23:47:16.158371+00:00",
+  "commitSha": "1ea659f08fc58d9f59edf2080cb3fc8ad1f39fc8",
   "assertions": [
     {
       "name": "Frobenius moment Gram is PSD (well-posed channel geometry)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 354,
+  "durationMs": 578,
   "computation": "hbond-vdw-sdp",
   "scriptFile": "hbond_vdw_sdp.py",
-  "scriptHash": "0a6cf3ecd10c",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "2cc0f16f66f6",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hbond_vdw_sdp.py"
+    ],
+    "reproduce": "python3 -u computations/hbond_vdw_sdp.py"
   },
   "description": "Operator-selection LP/SDP (prop:operator-selection-lp; lp_dual_solver) over the inter-molecular sub-braid channels {1, σ₁ (H-bond), σ₁² (Hopf link 𝓛_H = T_{2,2}, Vol=0, symmetric carrier e₊)} with canonical Markov traces t_i=tr_M(b_i) and Frobenius moment Gram G_{ij}=tr_M(b_i b_j). Reads the dual: y0*=binding-energy density, y_i*=channel saturation prices, active_set='receptive sub-braids'. Computes the e₊/e₋ q-dims and σ₁² block weights. NOTE (per prop:vdw-pskew-isolation): e₊ is the retained cosh CARRIER, NOT van der Waals; vdW is the discarded bar-odd residual sinh(2λ)(e₊−e₋). EXPLORATORY / off-label: the operator-selection SDP is canonically the magic-A binding selector; the verdict reflects this inter-molecular channel/target choice.",
   "contentBlock": "rem:molecular-hbond-phase-transition",

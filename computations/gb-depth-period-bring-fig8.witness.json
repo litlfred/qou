@@ -1,36 +1,58 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-11T00:45:08.358800+00:00",
-  "commitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "computedAt": "2026-08-23T23:44:41.278283+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 40470,
+  "durationMs": 87222,
   "computation": "gb-depth-period-bring-fig8",
   "scriptFile": "gb_depth_period_bring_fig8.py",
-  "scriptHash": "7b79990a763a",
-  "scriptCommitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "scriptHash": "a55345b39ef8",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gb_depth_period_bring_fig8.py"
+    ],
+    "reproduce": "python3 -u computations/gb_depth_period_bring_fig8.py"
+  },
   "description": "Depth-2 numerical witness for conj:bring-figure-eight-depth-2-witness — the depth-2 instance of the keystone conjecture conj:gb-depth-period-correspondence.  The figure-8 knot 4_1 embeds in Bring's genus-4 surface via the 4-strand braid word sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1}.  The depth-2 grouplike Li_2^q at the regular-ideal-tetrahedron shape z = e^(i pi/3) has std-part 2 Cl_2(pi/3) = Vol(S^3 \\ 4_1) by Lobachevsky-Thurston. Computed at 50 decimal digits via mpmath.polylog. The Clausen-series 2M-term partial sum is a low-precision sanity check (~13-digit / SnapPy-range agreement), NOT a 50-digit independent cross-validation. Per Copilot PR #634 review.",
-  "timestamp": "2026-05-11T00:45:08.352361+00:00",
-  "precision_decimal_digits": 50,
+  "timestamp": "2026-08-23T23:44:40.475582+00:00",
+  "precision_decimal_digits": 70,
   "shape_parameter": {
     "form": "e^(i pi/3)",
-    "value_str": "(0.5 + 0.86602540378443864676372317075293618347140262690519j)",
+    "value_str": "(0.5 + 0.8660254037844386467637231707529361834714026269051903140279034897259665j)",
     "modulus_is_one": true,
     "tetrahedron_type": "regular ideal (Thurston 1978)"
   },
   "algebraic_side_polylog": {
     "expression": "2 * Im Li_2(e^(i pi/3))",
-    "value_str": "2.0298832128193072500424051085490405718833786150606",
+    "value_str": "2.029883212819307250042405108549040571883378615060599584034978213553195",
     "method": "mpmath.polylog at 50 dps"
   },
   "algebraic_side_clausen": {
     "expression": "2 * Cl_2(pi/3) = 2 * sum_{k>=1} sin(k pi/3) / k^2",
-    "value_str": "2.0298832128197402623112843012217592241656052841488",
+    "value_str": "2.029883212819740262311284301221759224165605284149155207628751075669348",
     "method": "direct partial sum, 2_000_000 terms (~13-digit)",
     "purpose": "sanity check at SnapPy precision range only"
   },
-  "sanity_check_residual": "0.00000000000043301226887919267271865228222666908823651476713813",
+  "sanity_check_residual": "0.0000000000004330122688791926727186522822266690885556235937728621161528441162178148",
   "sanity_check_below_1e_minus_12": true,
   "fifty_digit_value_authority": "mpmath.polylog at mp.dps=50 is the canonical computation; cross-validation to 50 digits would require an independent high-precision routine (e.g. Lobachevsky integral via mpmath.quad or BBP-style formula) — deferred",
   "geometric_identification": {

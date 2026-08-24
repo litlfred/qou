@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T00:56:55.574575+00:00",
-  "commitSha": "c867ef1230ce09678fc7961d289bc2c16e0c5270",
+  "computedAt": "2026-08-23T23:51:43.150041+00:00",
+  "commitSha": "f6f629021f5b87ea63749872ad354a3e119b53e0",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "lepton-tower-additive-screening",
   "scriptFile": "lepton_tower_additive_screening.py",
-  "scriptHash": "a08ad2c1570a",
-  "scriptCommitSha": "0cda7fdc1a2f980f3f099730fe4cbf1bb7593f15",
+  "scriptHash": "016d3c6c2f87",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,7 +18,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lepton_tower_additive_screening.py"
+    ],
+    "reproduce": "python3 -u computations/lepton_tower_additive_screening.py"
   },
   "description": "Bean qou-htk4. Closes the additive-interface direction the multiplicative bend screen left open: every positive sum of two geometric modes is log-convex (bend <= 1) by the Lagrange form of Cauchy-Schwarz, while the lepton tower is log-concave at 12.295.",
   "contentBlock": "prop:lepton-continuant-recurrence",
@@ -29,7 +41,7 @@
   "data": {
     "observed_lepton_bend": {
       "definition": "m_mu^2 / (m_e * m_tau)",
-      "value": "12.29517288103792224609294396199356043783153431909516729669229059917404",
+      "value": "12.29517288103791915377193008030334499590073600336165878299935156643905",
       "log_concave": true
     },
     "lagrange_identity": {
@@ -105,7 +117,7 @@
       ],
       "bound_respected": true,
       "excess_over_one": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
-      "tolerance": "9.9999999999999992929287939988014500233064511906197367398133222223193e-41",
+      "tolerance": "1.0e-40",
       "reading": "every positive two-mode tower has bend <= 1; the observed 12.295 is out of reach by a factor of 12, not by a margin"
     },
     "equality_cases_and_shape": {
@@ -171,5 +183,7 @@
   },
   "caveats": [
     "Scope-(b) covers POSITIVE two-mode sums only. More than two modes is not formalised (the Lagrange identity generalises by symmetrising over pairs, but that is not done here). Sign-indefinite combinations are NOT excluded and are demonstrated above to escape -- they remain the one open shape in this direction."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

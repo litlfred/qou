@@ -25,11 +25,13 @@
   },
   "allPassed": true,
   "verdict": "THREE STRANDS ADD ONE RIGID COMPACT (COLOR) WINDING, SAME FORCED FAMILY: on the (2,1) Hoefsmit block rho(sigma_1 sigma_2) has trace -1, det 1 and cubes to the identity EXACTLY AND q-INDEPENDENTLY, so the (3,k) torus-link tower is x_k = W+ q^{2k} + W- q^{-2k} + W0 2cos(2pi k/3): the T2 hyperbolic winding pair (substrate modulus, eta = 2 ln q) plus a topological zeta_3 winding of period 3 that does not flow with q. The tower is annihilated by the factored order-4 operator (E^2+E+1)(E^2-(q^2+q^-2)E+1), and the compact channel rides the SAME forced mu = 1/2 elementary Legendre family on the compact locus cos theta (verified with constants at 50 dps) — one family, two locus rows of the channel-rotation table. LEVEL SELECTION (GAP-A-3 candidate, (a)-scoped): three-strand (Borromean/nucleon) levels are indexed by the winding pair (k, k mod 3) — hyperbolic + color/triality. Structural only; no binding number; nothing wired.",
-  "scriptHash": "1a7adda1286d",
-  "scriptCommitSha": "unknown",
-  "commitSha": "5c019a5cc40293efc0e7467e5233ae6f8d4d71bd",
+  "scriptFile": "toroidal_level_selection_three_strand_probe.py",
+  "scriptHash": "f628a0394fdd",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-07-06T23:17:09.514995+00:00",
+  "computedAt": "2026-08-24T02:44:59.478268+00:00",
   "durationMs": 0,
-  "scriptFile": "toroidal_level_selection_three_strand_probe.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

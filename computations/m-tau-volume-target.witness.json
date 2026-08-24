@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T10:28:32.099011+00:00",
-  "commitSha": "ab31230586f27d46551c12a88f049e858fa09fdd",
+  "computedAt": "2026-08-23T23:54:33.480475+00:00",
+  "commitSha": "5218280df85b6efebc5a4d740cbe8ef77436dc57",
   "assertions": [
     {
       "name": "k2_target_value",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "m-tau-volume-target",
   "scriptFile": "m_tau_volume_target_probe.py",
-  "scriptHash": "9778d6eb247b",
-  "scriptCommitSha": "ab31230586f27d46551c12a88f049e858fa09fdd",
+  "scriptHash": "877447ec0bd7",
+  "scriptCommitSha": "2bcbefee49512c1b95bb27f7cfed57731e11aada",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/m_tau_volume_target_probe.py"
+    ],
+    "reproduce": "python3 -u computations/m_tau_volume_target_probe.py"
   },
   "description": "EXPLORATORY census-reach quantification for obs:m-tau-knot-prediction (bean qou-ejxn): exact targets Vol = (m_tau/m_e) * hbar_q^k at canonical q0 for k = 1,2,3, with reach verdicts. Re-scopes the block's 'Refuted' to scope-(a): real for k=3 over the census, untested for k=2 (target beyond census reach), unreachable for k=1. No candidate proposed, no fit.",
   "auditOnly": "docs/audits/2026-08-01-tau-knot-discussion-review.md",
@@ -66,9 +78,9 @@
       "hbar_q": "0.099081716044258507839"
     },
     "targets": {
-      "k=1": "344.52991548057701302",
-      "k=2": "34.136615254398915085",
-      "k=3": "3.382314419348456709"
+      "k=1": "344.52991548057701121",
+      "k=2": "34.136615254398914906",
+      "k=3": "3.3823144193484566913"
     },
     "verdicts": {
       "1": "unreachable by any tabulated prime knot (target ~344)",

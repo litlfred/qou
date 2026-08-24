@@ -1,34 +1,34 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T15:25:54.952738+00:00",
-  "commitSha": "07d44efde23b1459217042346bfddc16825a25c9",
+  "computedAt": "2026-08-24T00:15:25.050105+00:00",
+  "commitSha": "1901f9774dfc48725eed2208f2cef5382bd817ca",
   "assertions": [
     {
       "name": "closed_form_matches_measured_slopes",
-      "computed": 0.00040026447354502004,
+      "computed": 0.048326918719249656,
       "expected": 0.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.001,
       "unit": "max |closed − measured| over A=6..12",
       "source": "kappa-writhe-side-decomposition-probe.witness.json (measured values rounded to 3-4 dp)"
     },
     {
       "name": "plateau_equals_pn_trace_ratio",
-      "computed": 1.3718095572365478,
+      "computed": 1.4222629791962889,
       "expected": 1.37181,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.0001,
       "unit": "log_q0(tau_p/tau_n)",
       "source": "tr_M_via_wenzl_bridge_mpfr on canonical H_3 words at 50 dps"
     }
   ],
-  "allPassed": true,
-  "durationMs": 7,
+  "allPassed": false,
+  "durationMs": 10,
   "computation": "b-pred-mirror-slope-closed-form",
   "scriptFile": "b_pred_mirror_slope_closed_form.py",
-  "scriptHash": "b010429f3ec7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ab9a002b9b7f",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,60 +38,70 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/b_pred_mirror_slope_closed_form.py"
+    ],
+    "reproduce": "python3 -u computations/probes/b_pred_mirror_slope_closed_form.py"
   },
   "description": "DERIVATION (trace-level algebra on the Phase 5q closed form): the framework side of the writhe coefficient. b_pred(A) = log_q0(tau_p/tau_n) + geometrically-vanishing interface correction; plateau 1.37181 = the p/n trace ratio; matches the measured mirror slopes (A=6..12) to their rounding. Framework component of kappa DERIVED: kappa_FW = -log_q0(tau_p/tau_n)/4 = -0.34295; the AME-side remainder (~-0.094, Coulomb) is not framework-derivable. The interface-only candidate log_q0(z/(z-h))/4 = 1.2998 is refuted as the asymptote (scope (a)). Discriminant: the Borromean pipeline (tau_p = tau_n, GAP-A-4) must show a different b_pred (interfaces only). Not wired; kappa overall stays near-match (AME piece open).",
   "parameters": {
-    "tau_p": "1.06530622861316705936528454643137255765066167413514037118040",
-    "tau_n": "0.923233297186153557105253395990686040138662121901334577251726",
-    "plateau_log_q0_taup_over_taun": "1.37180955723654777872126806015831487545889124094578620263716",
-    "kappa_FW": "-0.342952389309136944680317015039578718864722810236446550659290"
+    "tau_p": "1.14575969245730086968908159577411930594372806194352738498820",
+    "tau_n": "0.987743688115809571634020165501294982055048759062827475627723",
+    "plateau_log_q0_taup_over_taun": "1.42226297919628896520632638616498190416506689568482239049874",
+    "kappa_FW": "-0.355565744799072241301581596541245476041266723921205597624684"
   },
   "data": {
     "rows": [
       {
         "A": 6,
         "pair": "(2,4)<->(4,2)",
-        "b_pred_closed_form": "1.32611288248521644661573513586226401748969955058856344776878",
-        "eps_correction": "-0.0456966747513313321055329242960508579691916903572227548683775",
+        "b_pred_closed_form": "1.28982683338442406813007362240062426234677559852432278773098",
+        "eps_correction": "-0.132436145811864897076252763764357641818291297160499602767762",
         "b_pred_measured": 1.326,
-        "abs_dev": 0.000113
+        "abs_dev": 0.036173
       },
       {
         "A": 8,
         "pair": "(3,5)<->(5,3)",
-        "b_pred_closed_form": "1.36524078066930134250719229369221673161573988635093467923213",
-        "eps_correction": "-0.00656877656724643621407576646609814384315135459485152340502935",
+        "b_pred_closed_form": "1.39035455260760181887252030015609908527056743728133779611543",
+        "eps_correction": "-0.0319084265886871463338060860088828188944994584034845943833121",
         "b_pred_measured": 1.365,
-        "abs_dev": 0.000241
+        "abs_dev": 0.025355
       },
       {
         "A": 9,
         "pair": "(4,5)<->(5,4)",
-        "b_pred_closed_form": "1.36940026447354495306007976510634112782737367741014601046125",
-        "eps_correction": "-0.00240929276300282566118829505197374763151756353564019217591272",
+        "b_pred_closed_form": "1.40680413201266956798147399126678939049245551780471941924915",
+        "eps_correction": "-0.0154588471836193972248523948981925136726113778801029712495883",
         "b_pred_measured": 1.369,
-        "abs_dev": 0.0004
+        "abs_dev": 0.037804
       },
       {
         "A": 10,
         "pair": "(4,6)<->(6,4)",
-        "b_pred_closed_form": "1.37085865283810237096699593817093727631331454268975873167368",
-        "eps_correction": "-0.000950904398445407754272121987377599145576698256027470963483019",
+        "b_pred_closed_form": "1.41442190325156179986374280510621275769083047416423953526125",
+        "eps_correction": "-0.00784107594472716534258358105876914647423642152058285523748502",
         "b_pred_measured": 1.371,
-        "abs_dev": 0.000141
+        "abs_dev": 0.043422
       },
       {
         "A": 12,
         "pair": "(5,7)<->(7,5)",
-        "b_pred_closed_form": "1.37167176369352840482039373100356723508199869716285720403148",
-        "eps_correction": "-0.000137793543019373900874329154747640376892543782928998605676045",
+        "b_pred_closed_form": "1.42032691871924968568743475007145434207077508661323495394644",
+        "eps_correction": "-0.00193606047703927951889163609352756209429180907158743655229404",
         "b_pred_measured": 1.372,
-        "abs_dev": 0.000328
+        "abs_dev": 0.048327
       }
     ],
-    "interface_only_candidate_log_q0_z_ratio_over_4": "1.29975781651032895811406879218483566985731256479092169720894",
+    "interface_only_candidate_log_q0_z_ratio_over_4": "1.00000000000000000000000000000000000000000000000000000000000",
     "interface_candidate_verdict": "REFUTED as asymptote — scope (a): appears only inside the vanishing eps correction, not the plateau"
   }
 }

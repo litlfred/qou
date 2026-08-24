@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-06-23T23:30:59.236388+00:00",
-  "commitSha": "147754c771d484f76e2855949a808490c2cfe27b",
+  "computedAt": "2026-08-24T00:37:31.750124+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [
     {
       "name": "constant_prefactor_holds_within_10pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 527,
+  "durationMs": 545,
   "computation": "difference-knot-volume-prefactor",
   "scriptFile": "difference_knot_volume_prefactor_probe.py",
-  "scriptHash": "17618fcfc179",
-  "scriptCommitSha": "81b286b6b75382730a0886067c550a30ed123a68",
+  "scriptHash": "a9c7107e1670",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/difference_knot_volume_prefactor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/difference_knot_volume_prefactor_probe.py"
   },
   "description": "Cheap non-rigorous version of the difference-knot JSJ-volume decisive test (runnable without Sage): k_i = B_AME_i/Vol(D_i) for D/T/³He/⁴He; constant k ⇒ the geometric closure B≈m_e·Vol·ρ/ℏ_q² with a single ρ is viable (motivates Sage rigor); non-constant ⇒ refuted (per-atom ρ needed = same wall). Volume non-rigorous (composite links, degenerate tets); rigorous interval volume is Sage-only. Exploratory; no fit.",
   "contentBlock": "rem:difference-knot-jsj-volume",
@@ -41,8 +51,8 @@
         "cusps": 3,
         "two_A_minus_1": 3,
         "vol_D_nonrigorous": "6.088331475643957074135733977566603719109642106968824080260788448",
-        "B_AME_MeV": "2.2245662000000004",
-        "k_B_over_vol": "0.3653819127455950671118126958940776923704969303408236644364507987882398",
+        "B_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+        "k_B_over_vol": "0.3653819127455950043400402397223809231508148483732505049549262000195355",
         "n_canonical_tets": -1,
         "solution_type": "contains degenerate tetrahedra"
       },
@@ -52,8 +62,8 @@
         "cusps": 5,
         "two_A_minus_1": 5,
         "vol_D_nonrigorous": "14.647477626620405111118254972426559030196170412279651146839311821",
-        "B_AME_MeV": "8.481796200000002",
-        "k_B_over_vol": "0.5790618983151842638448038736112060986553962439068897533027205644707439",
+        "B_AME_MeV": "8.481796200000000000000000000000000000000000000000009585209925309324894",
+        "k_B_over_vol": "0.5790618983151841571982764065803549871565872811507315270719433981088977",
         "n_canonical_tets": -1,
         "solution_type": "contains degenerate tetrahedra"
       },
@@ -63,8 +73,8 @@
         "cusps": 5,
         "two_A_minus_1": 5,
         "vol_D_nonrigorous": "16.547191924043296603806497154410554356437824939008407681544973611",
-        "B_AME_MeV": "7.71804132",
-        "k_B_over_vol": "0.4664260471159206421254740630665836580078946528445600123548084888098596",
+        "B_AME_MeV": "7.718041319999999999999999999999999999999999999999995711041411183331376",
+        "k_B_over_vol": "0.4664260471159206297384450044390958749135983104609473931723001527295972",
         "n_canonical_tets": -1,
         "solution_type": "contains degenerate tetrahedra"
       },
@@ -74,20 +84,20 @@
         "cusps": 7,
         "two_A_minus_1": 7,
         "vol_D_nonrigorous": "32.847288436482324981531769632900833325016132872571936634261805363",
-        "B_AME_MeV": "28.2956624",
-        "k_B_over_vol": "0.8614306917514995474507899621000062463710772708557739046981492028427137",
+        "B_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
+        "k_B_over_vol": "0.8614306917514995105183804481250212091549259847148066113123642461477069",
         "n_canonical_tets": -1,
         "solution_type": "contains degenerate tetrahedra"
       }
     ],
-    "k_spread_max_over_min": "2.357617226530008888924370917045301336401029490466954758852230861265245",
-    "k_min": "0.3653819127455950671118126958940776923704969303408236644364507987882398",
-    "k_max": "0.8614306917514995474507899621000062463710772708557739046981492028427137",
+    "k_spread_max_over_min": "2.357617226530009192878668309551498992168313939333687504258327902056556",
+    "k_min": "0.3653819127455950043400402397223809231508148483732505049549262000195355",
+    "k_max": "0.8614306917514995105183804481250212091549259847148066113123642461477069",
     "rho_implied_per_atom": [
-      "0.03125145676962814636006181560289613195126773246763662492644610328640484",
-      "0.04952770580829457547275256665318610208289409821725241077039272879993657",
-      "0.03989385609741697500463638661697970131336556247366916411560965244987391",
-      "0.0736789728342331813526695586691638668320335347821746576315506680860152"
+      "0.03125144983352163253000044624380414067378512945683303692588106126208299",
+      "0.04952769481586483296605115742447376925890372449674001128770650137866297",
+      "0.03989384724317261136474041294512851231446148562427402940960743952715114",
+      "0.07367895648154898879892400742008001755300182208698436369566090353455368"
     ],
     "note_sage_gate": "verify_hyperbolicity (rigorous interval volume) is Sage-only and unavailable here; canonical_retriangulation works without Sage (tet counts above). This probe is the non-rigorous prune; the rigorous per-piece JSJ volume sum still needs Sage IF the prefactor is constant here."
   }

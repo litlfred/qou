@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:48:48.946679+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-08-23T23:44:50.256772+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "assertions": [
     {
       "name": "H₂O lones are symmetric (equal defects), H₂S lones are asymmetric",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 8,
   "computation": "h2s-lone-pair-asymmetry",
   "scriptFile": "h2s_lone_pair_asymmetry.py",
-  "scriptHash": "2a607b41ca93",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "3b2d97f562a0",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +29,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/h2s_lone_pair_asymmetry.py"
+    ],
+    "reproduce": "python3 -u computations/h2s_lone_pair_asymmetry.py"
   },
   "description": "The H₂S +2.1° residual is a lone-pair braid-word asymmetry. H₂O's two lone pairs are equivalent self-dual e⁻=σ₀σ₁σ₀ (palindromic defect 0,0 — symmetric). H₂S's are inequivalent: the inert 3s² (self-dual, defect 0) and the 3p_z (chiral, non-palindrome, defect 2ℓ=2). The defect mismatch (0 vs 2) is the asymmetry; the chiral p-lone's directional bias opens the orbital-locked 90° base. The asymmetry exists iff the s-channel is inert (pure-p, third row) — H₂O (s active) has none.",
   "contentBlock": "prop:symmetric-block-domain-weight",

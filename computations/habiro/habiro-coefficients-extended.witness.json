@@ -1,6 +1,6 @@
 {
   "computation": "habiro-coefficients-extended",
-  "computedAt": "2026-08-23T22:36:33.158552+00:00",
+  "computedAt": "2026-08-23T23:46:27.522489+00:00",
   "description": "Cyclotomic Habiro coefficients a_m(u) of tr_M(T_w, q) for atomic braids A = 2..6 via the markov_peel symbolic-q pipeline (vs the original habiro_coefficients_atomic.py Hoefsmit-symbolic pipeline which was intractable for A ≥ 3). Each row contains the full integer expansion p(u) = Σ_m a_m(u) · (u; u)_m together with D(u) (the Markov-normalisation denominator, factored) and verification that every a_m has integer coefficients (the cyclotomic integrality witness).  Resolves the D(u) blocker noted in habiro-coefficients-interpolate.witness.json.",
   "reference_blocks": [
     "def:habiro-ring",
@@ -129,11 +129,11 @@
       "all_integral": true,
       "reconstruction_matches": true,
       "timings_sec": {
-        "symbolic_trace": 0.84,
-        "together": 0.29,
-        "to_u_poly": 0.68,
-        "cyclotomic": 0.15,
-        "reconstruction_check": 1.37
+        "symbolic_trace": 0.59,
+        "together": 0.23,
+        "to_u_poly": 0.53,
+        "cyclotomic": 0.11,
+        "reconstruction_check": 1.01
       },
       "sympy_ops_raw": 2703
     },
@@ -270,11 +270,11 @@
       "all_integral": true,
       "reconstruction_matches": true,
       "timings_sec": {
-        "symbolic_trace": 6.41,
-        "together": 1.91,
-        "to_u_poly": 5.95,
-        "cyclotomic": 0.25,
-        "reconstruction_check": 2.86
+        "symbolic_trace": 5.63,
+        "together": 1.74,
+        "to_u_poly": 4.31,
+        "cyclotomic": 0.18,
+        "reconstruction_check": 1.99
       },
       "sympy_ops_raw": 20658
     },
@@ -411,11 +411,11 @@
       "all_integral": true,
       "reconstruction_matches": true,
       "timings_sec": {
-        "symbolic_trace": 3.01,
-        "together": 1.37,
-        "to_u_poly": 2.77,
-        "cyclotomic": 0.22,
-        "reconstruction_check": 2.16
+        "symbolic_trace": 2.7,
+        "together": 0.8,
+        "to_u_poly": 2.27,
+        "cyclotomic": 0.21,
+        "reconstruction_check": 2.02
       },
       "sympy_ops_raw": 9684
     },
@@ -573,19 +573,19 @@
       "all_integral": true,
       "reconstruction_matches": true,
       "timings_sec": {
-        "symbolic_trace": 47.41,
-        "together": 6.48,
-        "to_u_poly": 19.55,
-        "cyclotomic": 0.31,
-        "reconstruction_check": 4.88
+        "symbolic_trace": 37.88,
+        "together": 5.18,
+        "to_u_poly": 16.53,
+        "cyclotomic": 0.32,
+        "reconstruction_check": 4.2
       },
       "sympy_ops_raw": 63108
     }
   },
   "scriptFile": "habiro_coefficients_extended.py",
   "scriptHash": "e1bc7603b208",
-  "scriptCommitSha": "e9c4d31b55a958e0f8824d005fec0ddb94e338f5",
-  "commitSha": "b60c449bdc544e0569bd06a550f6a29b731cf05a",
+  "scriptCommitSha": "3a47febca402f1297fdfe2c726e76398cacd48a4",
+  "commitSha": "1ea659f08fc58d9f59edf2080cb3fc8ad1f39fc8",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",

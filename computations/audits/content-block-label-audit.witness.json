@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T22:35:21.657352+00:00",
-  "commitSha": "b60c449bdc544e0569bd06a550f6a29b731cf05a",
+  "computedAt": "2026-08-23T23:58:35.346628+00:00",
+  "commitSha": "bc844579d7516387aab60255c989e0dcb4479e5a",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d9e8d0615e0d",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptCommitSha": "1ca6fe52b601d383fcbe29c47a389b301e32b88e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,9 +39,10 @@
   "invocation": {
     "argv": [
       "computations/audits/content_block_label_audit.py",
-      "--strict"
+      "--list",
+      "missing_label"
     ],
-    "reproduce": "python3 -u computations/audits/content_block_label_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/content_block_label_audit.py --list missing_label"
   },
   "description": "I5 audit per local/compute-integration-watcher: every computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",

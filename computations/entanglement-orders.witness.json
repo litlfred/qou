@@ -1,10 +1,10 @@
 {
   "computation": "entanglement-orders",
   "description": "Entanglement energy tracked at all GB filtration orders (k = 0, 1, 2, ..., n_gens).  Each k-subset contribution weighted by z^(2\u00b7span) where span = max(i) - min(i) of the subset, reflecting the total number of crossings the k-entanglement spans.",
-  "timestamp": "2026-08-16T12:59:43.667791+00:00",
+  "timestamp": "2026-08-23T22:36:41.392027+00:00",
   "q_0": 1.1099785827513808,
   "z": 0.6126880371464652,
-  "calibration_MeV_per_cat": 0.0039018384864282244,
+  "calibration_MeV_per_cat": 0.0039018384917095658,
   "particles": [
     {
       "particle": "proton",
@@ -202,13 +202,13 @@
       "total": 1035028.2058887171
     }
   ],
+  "scriptFile": "entanglement_orders.py",
   "scriptHash": "5c4717b103fd",
   "scriptCommitSha": "6f485d0ba5e5c56c73f5d285890d58aff49dd753",
-  "commitSha": "fc9819f75c7b82f1235a47fe9533978a7100b621",
+  "commitSha": "b60c449bdc544e0569bd06a550f6a29b731cf05a",
   "engine": "python",
-  "computedAt": "2026-08-16T12:59:44.015292+00:00",
+  "computedAt": "2026-08-23T22:36:42.189078+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "entanglement_orders.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

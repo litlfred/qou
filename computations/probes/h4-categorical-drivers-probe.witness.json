@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:47:03.537514+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-24T00:39:55.591675+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [
     {
       "name": "h4_categorical_driver_search_completed",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 21,
   "computation": "h4-categorical-drivers-probe",
   "scriptFile": "h4_categorical_drivers_probe.py",
-  "scriptHash": "5bf6e909c015",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "5a233090ddd5",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,18 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
-  "description": "Probe of which of the 13 canonical drivers (per `docs/audits/2026-05-23-lambda-scale-canonical-unification.md`) reproduces the empirical α ≈ 1.011 h⁴ residual identified by `lambda_scale_refinement_h4_correction_bring.py`. The h² concrete test established that Bring color-tube and canonical+Yekutieli are categorically distinct (h² coefficients 6 vs 3/4 − G), so the +α·h⁴ correction is additive to the Bring base. This probe tests 7 candidate drivers (Faddeev iterated, Φ_q power series, Rogers Li_2^q, 6j Biedenharn-Elliott, MacMahon partition algebra, Lobachevsky-Catalan G², KLR crystal-graph positivity) without empirical fitting.",
+  "invocation": {
+    "argv": [
+      "computations/probes/h4_categorical_drivers_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/h4_categorical_drivers_probe.py"
+  },
+  "description": "Probe of which of the 13 canonical drivers (per `docs/audits/2026-05-23-lambda-scale-canonical-unification.md`) reproduces the empirical α ≈ 1.011 h⁴ residual identified by `lambda_scale_refinement_h4_correction_bring.py`. The h² concrete test established that Bring color-tube and canonical+Yekutieli are categorically distinct (h² coefficients 6 vs 3/4 − G), so the +α·h⁴ correction is additive to the Bring base. This probe tests 7 candidate drivers (iterated compact-q-dilog, Φ_q power series, Rogers Li_2^q, 6j Biedenharn-Elliott, MacMahon partition algebra, Lobachevsky-Catalan G², KLR crystal-graph positivity) without empirical fitting.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
     "dps": 80,
@@ -44,12 +52,12 @@
   "data": {
     "candidates": [
       {
-        "driver": "(i) Faddeev iterated at z = h⁴",
+        "driver": "(i) iterated compact-q-dilog at z = h⁴",
         "form": "1/(1 − h⁴) − 1 (as h⁴ correction)",
         "value": "0.00191388948806077802384458",
         "alpha_proxy": "1.001913889488060778023845",
         "alpha_proxy_name": "(1/(1-h⁴) - 1) / h⁴",
-        "categorical": "Faddeev functional equation Φ_q(qz)/Φ_q(z) = 1/(1-z) at substrate-natural z = h⁴",
+        "categorical": "compact-q-dilog functional equation Φ_q(qz)/Φ_q(z) = 1/(1-z) at substrate-natural z = h⁴",
         "rel_to_target": "0.008987250753649083"
       },
       {
@@ -58,7 +66,7 @@
         "value": "-0.1916909956407451152836638",
         "alpha_proxy": "-100.3495093213860616145823",
         "alpha_proxy_name": "value / h⁴",
-        "categorical": "Faddeev explicit formula log Φ_q(z) = Σ z^n / (n·(1−q^{2n}))",
+        "categorical": "compact-q-dilog explicit formula log Φ_q(z) = Σ z^n / (n·(1−q^{2n}))",
         "rel_to_target": "100.25767489751341"
       },
       {
@@ -107,9 +115,11 @@
         "rel_to_target": "0.010880316518298714"
       }
     ],
-    "closest_driver": "(i) Faddeev iterated at z = h⁴",
+    "closest_driver": "(i) iterated compact-q-dilog at z = h⁴",
     "closest_alpha": "1.001913889488060778023845",
     "closest_rel_to_target_pct": "0.8987250754",
     "found_match_within_5pct": true
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

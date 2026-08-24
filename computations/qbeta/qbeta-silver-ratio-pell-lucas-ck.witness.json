@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T23:19:33.329254+00:00",
-  "commitSha": "77dba8f7663981877aa8960f788259b0f228d903",
+  "computedAt": "2026-08-24T02:27:51.155948+00:00",
+  "commitSha": "4edd9258ae20e47e60c573f1af6dc28d7b1ec499",
   "assertions": [
     {
       "name": "c_3_at_silver_is_minus_2",
@@ -27,14 +27,52 @@
       "passed": true,
       "tolerance": 0,
       "source": "c_7 = c_3³ is constant; clean integer"
+    },
+    {
+      "name": "delta_net_at_silver_is_zero",
+      "computed": 0.0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "prop:silver-ratio-beta-decay-null — Δ(net) = h(h-2)/2 vanishes at h=2 → β⁻ decay forbidden at leading (Form A) order"
+    },
+    {
+      "name": "b_sq_at_silver_is_seven_eighths",
+      "computed": 0.875,
+      "expected": 0.875,
+      "passed": true,
+      "tolerance": 0,
+      "source": "prop:silver-ratio-beta-decay-null — b² = 1 - 1/[2]_q² = 7/8 exactly at silver, where [2]_q² = (2√2)² = 8"
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "qbeta-silver-ratio-pell-lucas-ck",
   "scriptFile": "qbeta_silver_ratio_pell_lucas_ck.py",
-  "scriptHash": "ce449238a317",
-  "scriptCommitSha": "7baf1635360ce8593e51444657ba5b4694f24062",
+  "scriptHash": "7e0f16981655",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_silver_ratio_pell_lucas_ck.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_silver_ratio_pell_lucas_ck.py"
+  },
   "description": "Silver-ratio (q = 1 + √2) benchmark for c_k closed forms. At silver ratio: h = 2 (β-decay null), b² = 7/8 exactly, q-integers reduce to Pell-Lucas. Tests whether c_k closed forms evaluate to Pell-Lucas-clean rationals at the silver ratio — categorical correctness criterion.",
   "data": {
     "silver_ratio_polynomial": "q² - 2q - 1 = 0",

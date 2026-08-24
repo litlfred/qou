@@ -1,11 +1,11 @@
 {
   "engine": "mpmath+numpy",
   "engineVersion": "mpmath50dps/f64-chi",
-  "computedAt": "2026-07-18T19:19:23.439922+00:00",
+  "computedAt": "2026-08-23T23:44:38.342177+00:00",
   "computation": "su4-1111-markov-trace",
   "scriptFile": "su4_1111_markov_trace_probe.py",
-  "description": "PROBE 2b: GENUINE Schur-Weyl [1^4]-flavour-projected 3A-strand Markov trace. e_A[h_3] antisymmetric SU(4) plethysm (exact power-sum + Murnaghan-Nakayama) → Schur mult m_λ, y_λ-normalised (Wenzl bridge) sum of exact Hoefsmit characters χ_λ(β_atom), gated by C(4,A). Replaces the PROBE-2 Mayer-cluster stand-in. Audit-only, no fit, single canonical operator.",
-  "tier": "structural (exact plethysm + Wenzl y_λ + Hoefsmit χ_λ; f64 trace)",
+  "description": "PROBE 2b: GENUINE Schur-Weyl [1^4]-flavour-projected 3A-strand Markov trace. e_A[h_3] antisymmetric SU(4) plethysm (exact power-sum + Murnaghan-Nakayama) \u2192 Schur mult m_\u03bb, y_\u03bb-normalised (Wenzl bridge) sum of exact Hoefsmit characters \u03c7_\u03bb(\u03b2_atom), gated by C(4,A). Replaces the PROBE-2 Mayer-cluster stand-in. Audit-only, no fit, single canonical operator.",
+  "tier": "structural (exact plethysm + Wenzl y_\u03bb + Hoefsmit \u03c7_\u03bb; f64 trace)",
   "precision": "chi=f64 (magnitude verdict); y_lambda=mpfr_50dps; plethysm=exact rational",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -22,13 +22,13 @@
       "(3, 3, 3, 3)": 1
     },
     "he4": {
-      "full_trM": "0.055358415544598871816676476149849662292269266160111",
-      "proj_sum": "0.0058164430644792125431044095922897836096707853555202",
-      "T_1111": "0.0058164430644792125431044095922897836096707853555202",
+      "full_trM": "0.16097414544240868895369983110554893624705587181191",
+      "proj_sum": "0.0046827209822981107938962438970736698389274372506461",
+      "T_1111": "0.0046827209822981107938962438970736698389274372506461",
       "gate_C44": 1,
-      "T_over_full": "0.10506881396909313592919938415641382808787279396051",
-      "closed_form_trM": "0.055358415544598859033713843773726777515259413655084",
-      "closed_form_rel_err": "2.3091272585425930002119170510950233914820293372389e-16",
+      "T_over_full": "0.029089894960637862077538028118656125582542640693376",
+      "closed_form_trM": "0.16097414544240862856574609467675797135697481867925",
+      "closed_form_rel_err": "3.751407008278460369673022036895135442622040782309e-16",
       "per_partition": [
         {
           "lambda": [
@@ -39,9 +39,9 @@
           ],
           "m": 1,
           "f": 4158,
-          "y_lambda": "-0.0000017747681912312627219503394058450980768816158234149",
-          "chi": "23.617726147079168",
-          "contrib": "-0.000041915989115046994083023952175437432928400362131643"
+          "y_lambda": "0.0",
+          "chi": "23.617726147079157",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -51,9 +51,9 @@
           ],
           "m": 1,
           "f": 2673,
-          "y_lambda": "0.000042030749230527359291330962266592371456913611400794",
-          "chi": "4.652088216755553",
-          "contrib": "0.00019553075323674385693994379060486389057768907860976"
+          "y_lambda": "0.0",
+          "chi": "4.652088216755558",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -64,9 +64,9 @@
           ],
           "m": 1,
           "f": 2376,
-          "y_lambda": "-0.000017836043100487074110153797095189806421255858511726",
-          "chi": "-23.129047148680616",
-          "contrib": "0.0004125306818170651382894852176340608858561609419938"
+          "y_lambda": "0.0",
+          "chi": "-23.129047148680606",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -76,9 +76,9 @@
           ],
           "m": 1,
           "f": 1650,
-          "y_lambda": "0.000014393229995226292199195985893068428864482455019905",
-          "chi": "63.62389632535532",
-          "contrib": "0.00091575337300327203387403833762519336293705337296827"
+          "y_lambda": "0.0",
+          "chi": "63.62389632535526",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -89,9 +89,9 @@
           ],
           "m": 1,
           "f": 1485,
-          "y_lambda": "-0.0000041531982136902815722135645547775673793845396167315",
-          "chi": "-7.607511118465146",
-          "contrib": "0.000031595501587838399688512083084008162549140936342259"
+          "y_lambda": "0.0",
+          "chi": "-7.60751111846515",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -101,9 +101,9 @@
           ],
           "m": 1,
           "f": 1408,
-          "y_lambda": "0.00012698792652968259744756145870137590442258628815294",
-          "chi": "1.6922831153160764",
-          "contrib": "0.0002148995239151802986301299516083563213045342220602"
+          "y_lambda": "0.0",
+          "chi": "1.69228311531608",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -113,9 +113,9 @@
           ],
           "m": 1,
           "f": 891,
-          "y_lambda": "0.00017559289443406745714860863257542229931355821423501",
-          "chi": "12.772664718255385",
-          "contrib": "0.0022427891675143557331076817359514045397756871883249"
+          "y_lambda": "0.0",
+          "chi": "12.772664718255395",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -126,9 +126,9 @@
           ],
           "m": 1,
           "f": 462,
-          "y_lambda": "-0.0000000046549971124618308958671300748663376454054713192089",
-          "chi": "23.624759258339868",
-          "contrib": "-0.00000010997318613017799018456302118414192607268807545223"
+          "y_lambda": "0.0",
+          "chi": "23.624759258339836",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -139,9 +139,9 @@
           ],
           "m": 1,
           "f": 165,
-          "y_lambda": "-0.000015310187195440082788184902877297541595500465758896",
-          "chi": "-3.3064392130727676",
-          "contrib": "0.00005062220330248766945499575214620977009437667768938"
+          "y_lambda": "0.0",
+          "chi": "-3.3064392130727684",
+          "contrib": "0.0"
         },
         {
           "lambda": [
@@ -150,31 +150,31 @@
           ],
           "m": 1,
           "f": 132,
-          "y_lambda": "0.000087665272026570984594819550546405043374110874853768",
-          "chi": "20.47273430988118",
-          "contrib": "0.0017947478224034465851928312388323082514306159877387"
+          "y_lambda": "0.00022872963188107212306885239207553781822040549587563",
+          "chi": "20.47273430988115",
+          "contrib": "0.0046827209822981107938962438970736698389274372506461"
         }
       ]
     },
     "deuteron": {
-      "full_trM": "0.38835714119779245985833127763378342627553193984495",
-      "T_11": "1.4978492439816594147377832057776700634914065144308",
+      "full_trM": "0.5751722439177740779362453056209537024766099542729",
+      "T_11": "1.9092295899419139283686103543056023579110920414925",
       "gate_C42": 6,
-      "T_over_full": "0.64281434324511641276509430638221699868883001656496"
+      "T_over_full": "0.55323415728398021137463178603125321788357892296686"
     },
     "li6": {
       "gate_C46": 0,
       "T_1111111": "0 (exact via gate)"
     },
     "enhancement_metrics": {
-      "m1": 0.00030929482930562607,
-      "m2": 0.0018557689758337565,
-      "m3": 0.47851584174941175,
-      "m4": 0.07811290772197715
+      "m1": 0.00019535449460326434,
+      "m2": 0.001172126967619586,
+      "m3": 0.47828796108000704,
+      "m4": 0.025128565693681208
     },
     "needed_super_pairwise": 2.0925,
     "verdict": "DOES-NOT",
-    "verdict_note": "PARTIAL / scope-(a): the genuine e_A[h_3]-plethysm [1^4]-projected trace is right-KIND (categorical antisymmetric supermultiplet, not the pairwise-derived Mayer cluster) and right-LOCALITY (A=6 → 0 EXACTLY via the proved C(4,6)=0 gate; the internal plethysm e_6[h_3] is itself non-zero). It does NOT close the magnitude parameter-free: every enhancement metric vs 2.093 carries a denominator convention (pair count / pairwise-scale) — a Rule-14 hidden DOF — so a within-5% hit is a units-mismatched near-match and must NOT be wired. Constrains the magnitude and confirms the ingredient KIND; does NOT exclude it."
+    "verdict_note": "PARTIAL / scope-(a): the genuine e_A[h_3]-plethysm [1^4]-projected trace is right-KIND (categorical antisymmetric supermultiplet, not the pairwise-derived Mayer cluster) and right-LOCALITY (A=6 \u2192 0 EXACTLY via the proved C(4,6)=0 gate; the internal plethysm e_6[h_3] is itself non-zero). It does NOT close the magnitude parameter-free: every enhancement metric vs 2.093 carries a denominator convention (pair count / pairwise-scale) \u2014 a Rule-14 hidden DOF \u2014 so a within-5% hit is a units-mismatched near-match and must NOT be wired. Constrains the magnitude and confirms the ingredient KIND; does NOT exclude it."
   },
   "assertions": [
     {
@@ -191,22 +191,22 @@
     },
     {
       "name": "full_trace_multiplicativity_crosscheck",
-      "computed": "2.309127258542593e-16",
+      "computed": "3.7514070082784606e-16",
       "expected": "<1e-6",
       "passed": true
     }
   ],
   "auditOnly": true,
   "context": {
-    "axis": "GAP-A-4 class-D — A=4 [1^4] supermultiplet (Δ_λ magnitude leg)",
+    "axis": "GAP-A-4 class-D \u2014 A=4 [1^4] supermultiplet (\u0394_\u03bb magnitude leg)",
     "gate_lean": "qou:QOU.MassTheory.SU4SupermultipletGate",
     "supersedes_standin": "probes/su4-connected-1111-magnitude.witness.json",
-    "scoping": "docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md §3"
+    "scoping": "docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md \u00a73"
   },
   "allPassed": true,
-  "scriptHash": "bfab7b14bf9c",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "scriptHash": "3e7610d22a3a",
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

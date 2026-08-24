@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:47:48.175430+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-24T01:53:25.198963+00:00",
+  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
   "assertions": [
     {
       "name": "real_demazure_d_i_wiring",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "qbeta-chain4-demazure-fund-weights",
   "scriptFile": "qbeta_chain4_demazure_fund_weights.py",
-  "scriptHash": "338bfdf56a60",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "7fe424582a5b",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -114,5 +114,7 @@
       "candidate_count": 564
     },
     "next_step": "Step 6 cross-anchor if any NEAR-1PCT survives at proton anchor"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

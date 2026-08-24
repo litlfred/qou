@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T12:15:23.762132+00:00",
-  "commitSha": "82e723a48b92bbb2127246f610780c188af4015f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T02:27:41.380341+00:00",
+  "commitSha": "4edd9258ae20e47e60c573f1af6dc28d7b1ec499",
   "assertions": [
     {
       "name": "at_least_one_categorical_match",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "qbeta-residue-categorical-id-probe",
   "scriptFile": "qbeta_residue_categorical_id_probe.py",
-  "scriptHash": "13211a1b45c6",
-  "scriptCommitSha": "5457e61015728ef2917f5d0620c9f4314c6c7c6d",
+  "scriptHash": "2ecd90af87b4",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,9 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_residue_categorical_id_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_residue_categorical_id_probe.py"
   },
   "description": "Tests categorical closed forms for the Q_β simple-pole residue A = 1.804e-15 at u_substrate (Step 1+2 of PR #1727). Three hypothesis families: (1) ℏ_q^N integer powers, (2) b^N·ℏ_q^M products, (3) Q_β · small-q_0-rational ε. Reports tiered PROVED <1ppm / NEAR-MATCH <1% / REFUTED otherwise. NO fits.",
   "data": {

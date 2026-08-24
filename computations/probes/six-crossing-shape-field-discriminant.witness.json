@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T15:04:00.378672+00:00",
-  "commitSha": "be80d32294671da22480701ae355aebd82cc1316",
+  "computedAt": "2026-08-24T01:33:01.867871+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "six_crossing_shape_discriminants_verified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 20,
   "computation": "six-crossing-shape-field-discriminant",
   "scriptFile": "six_crossing_shape_field_discriminant.py",
-  "scriptHash": "41f20255adc3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1a844deef407",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,9 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/six_crossing_shape_field_discriminant.py"
+    ],
+    "reproduce": "python3 -u computations/probes/six_crossing_shape_field_discriminant.py"
   },
   "description": "Reproducibility witness for the 6-crossing shape-field arithmetic fingerprints formalized by QOU/QBeta/SixOneShapeDiscriminant.lean. Shapes from snappy.Manifold('6_1'/'6_2') (dec_prec=90), minimal polynomials from PARI algdep; re-verified here with mpmath+sympy only (no SnapPy at run time). 6_1: x^4-3x^3+6x^2-5x+2, disc 257 (prime); 6_2: x^5-3x^4+5x^3-5x^2+4x-1, disc 1777 (prime). Each shape is a root to |p(z)|<1e-60 at 90 digits; discriminants match and are prime. GGM works explicit saddle curves only for 4_1/5_2, so the 6-crossing datum is taken from the hyperbolic geometry (SnapPy) instead. No fit; nothing wired.",
   "data": {

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T20:09:21.020189+00:00",
-  "commitSha": "8ebaee55993e8d63c7cb3b4196bcdbee4b275bab",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T00:37:26.769290+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "chirality-weighted-3body-cluster",
   "scriptFile": "chirality_weighted_3body_cluster_probe.py",
-  "scriptHash": "650e9c6470aa",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptHash": "d591c25d1cc9",
+  "scriptCommitSha": "726eecfe685f46afdfb16e38c02c38616459e667",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,30 +21,37 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/chirality_weighted_3body_cluster_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/chirality_weighted_3body_cluster_probe.py"
   },
   "description": "Connected 3-body cluster c3=joint-pair_sum for abs/signed/chiral combiners over the H_9 joint trace (Rust kernel, 0 fit). Tests whether the chirality sign sgn(w0^{S_l'}) flips c3 to attractive.",
   "parameters": {
-    "q_0": "1.1099785827513808",
-    "E0_MeV": "4.18598136329447",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "E0_MeV": "4.1859813632944758969450621587590084101434868908797",
     "free_parameters": 0
   },
   "data": {
     "rows": [
       {
         "atom": "T",
-        "abs_c3_MeV": "-1.7687753",
-        "signed_c3_MeV": "-1.6324812",
-        "chiral_c3_MeV": "0.075991527",
+        "abs_c3_MeV": "-1.3723314",
+        "signed_c3_MeV": "-1.3723314",
+        "chiral_c3_MeV": "0.11155618",
         "b3_empirical_MeV": "1.8081"
       },
       {
         "atom": "3He",
-        "abs_c3_MeV": "-1.4054244",
-        "signed_c3_MeV": "-1.3288376",
-        "chiral_c3_MeV": "0.12021733",
+        "abs_c3_MeV": "-1.0338363",
+        "signed_c3_MeV": "-1.0338363",
+        "chiral_c3_MeV": "0.15464001",
         "b3_empirical_MeV": "1.044345"
       }
     ]

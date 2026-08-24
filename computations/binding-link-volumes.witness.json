@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T17:21:12.044405+00:00",
-  "commitSha": "e31e89d1b1180bc329079a8f7adb8eb3d5c1a782",
+  "computedAt": "2026-08-23T22:51:03.156131+00:00",
+  "commitSha": "07459fce7ff6672557aa05e74722dcc268a7ac8b",
   "assertions": [
     {
       "name": "L6a4_is_borromean",
@@ -14,7 +14,7 @@
     },
     {
       "name": "deuteron_endomorphism_holds",
-      "computed": 6.306958776805962,
+      "computed": 6.306958853819167,
       "expected": 0,
       "passed": false,
       "tolerance": 1,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 296,
+  "durationMs": 831,
   "computation": "binding-link-volumes",
   "scriptFile": "binding_link_volumes.py",
-  "scriptHash": "4091a1d2b729",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "f228c890954a",
+  "scriptCommitSha": "59ea22b8210c4ca2fdf86167991901727ada14a8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,9 +37,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_link_volumes.py"
+    ],
+    "reproduce": "python3 -u computations/binding_link_volumes.py"
   },
   "description": "Hyperbolic volumes of the SDP binding links (Hopf/8₁₁/L6a4). L6a4 = Borromean (Vol = 8G). The endomorphism B = m_e·Vol(K_bind)·Δtr matches ²H at +0.2% but fails A≥3 (−60%): honest negative, A-dependence is not in a single binding-link volume.",
   "data": {
@@ -55,25 +63,25 @@
         "link": "Hopf (L2a1)",
         "vol": "0.0",
         "vol_eff": "7.327724753417752",
-        "B_pred_MeV": "2.084263726803241",
+        "B_pred_MeV": "2.0842637250900315",
         "B_AME_MeV": "2.2245662",
-        "err_pct": -6.306958776805962
+        "err_pct": -6.306958853819167
       },
       "3H": {
         "link": "8_11",
         "vol": "8.286316817806593",
         "vol_eff": "8.286316817806593",
-        "B_pred_MeV": "3.7624651819021393",
+        "B_pred_MeV": "3.7624651775817193",
         "B_AME_MeV": "8.4817962",
-        "err_pct": -55.640702827755526
+        "err_pct": -55.640702878693084
       },
       "3He": {
         "link": "L6a4",
         "vol": "7.327724753417752",
         "vol_eff": "7.327724753417752",
-        "B_pred_MeV": "3.3436740389934063",
+        "B_pred_MeV": "3.343674034587692",
         "B_AME_MeV": "7.71804132",
-        "err_pct": -56.677168463340045
+        "err_pct": -56.67716852042337
       }
     }
   }

@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T00:39:30.624790+00:00",
-  "commitSha": "74074440e60b2e843d7494aceb29387d5d6ce029",
+  "computedAt": "2026-08-24T00:15:29.571423+00:00",
+  "commitSha": "1901f9774dfc48725eed2208f2cef5382bd817ca",
   "assertions": [
     {
       "name": "density_base_cancels_splits_identical",
-      "computed": 2.0231542602067396e-06,
+      "computed": 2.036264609266329e-06,
       "expected": 0.0,
       "passed": false,
       "tolerance": 1e-20
     },
     {
       "name": "color_too_small_under_perknot_base",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
+      "passed": false,
       "tolerance": 0
     }
   ],
   "allPassed": false,
-  "durationMs": 18,
+  "durationMs": 23,
   "computation": "binding-color-vs-charge-tn3he-perknot-rerun",
   "scriptFile": "binding_color_vs_charge_tn3he_perknot_rerun.py",
-  "scriptHash": "8c5a8ad4a75f",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "c152a3ff5328",
+  "scriptCommitSha": "7768c9d262ae5510c126e523f063aabfe3474f17",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,40 +38,47 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_color_vs_charge_tn3he_perknot_rerun.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_color_vs_charge_tn3he_perknot_rerun.py"
   },
   "data": {
     "audit": "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md",
     "bean": "x5az",
-    "q_0": "1.10997858275138080759166909561",
-    "delta_flavor_split": "0.00137571080702709600855110927408",
-    "lambda_A_at_q0": "2.53277965639939149205151450176",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "delta_flavor_split": "0.0013757108070270960085511092740775743468931781588563",
+    "lambda_A_at_q0": "2.5327796563993914920515145017575653075332079020377",
     "B0_bonds_MeV": {
-      "pp": "2.28608750851925910722618784769",
-      "pn": "2.30483644539544470919094653808",
-      "nn": "2.24972738365573153938816257161"
+      "pp": "2.1283609457570830029849782494900139736151749150263",
+      "pn": "2.3296855762940313855810032240000356151165314686646",
+      "nn": "2.4355847837462455944328948701264400297956990805591"
     },
     "needed_split_MeV": "0.7637962",
     "lambda_A_normalized_baseline": {
       "weights": {
-        "pp": "0.999541826461937922348660682486",
-        "pn": "1.00000094813192737058176735639",
-        "nn": "1.00045985910593295868559239554"
+        "pp": "0.9995418264619379223486606824860301267758700656354",
+        "pn": "1.0000009481319273705817673563923379619329851548383",
+        "nn": "1.0004598591059329586855923955447929166605479874105"
       },
-      "color_split_MeV": "-0.034278142438188959771823721651",
-      "color_fraction_of_needed": "-0.0448786501401669185730744950695"
+      "color_split_MeV": "0.30931902249503073092932768121209142575357606978265",
+      "color_fraction_of_needed": "0.40497585939158996984971603840408138421423943950317"
     },
     "per_knot_base_free": {
       "weights": {
-        "pp": "0.999542270877757444061057444191",
-        "pn": "1.00000094629011228557189629069",
-        "nn": "1.00045941141577550806675818371"
+        "pp": "0.99954227087775744406105744419089594290203900110521",
+        "pn": "1.0000009462901122855718962906925370261448788180529",
+        "nn": "1.0004594114157755080667581837069476591333011198778"
       },
-      "color_split_MeV": "-0.0342801655924491665112481452962",
-      "color_fraction_of_needed": "-0.044881298954418949074698388518"
+      "color_split_MeV": "0.3093169862304214646003054656814373838985709124472",
+      "color_fraction_of_needed": "0.40497319341261643433196638799909895322675199542391"
     },
-    "abs_split_difference_MeV": "0.00000202315426020673942442364519666",
-    "max_weight_difference": "0.0000004476901574506188342118379782",
+    "abs_split_difference_MeV": "0.000002036264609266329022215530654041855005157335449946",
+    "max_weight_difference": "0.00000044769015745061883421183784525752724686753275484106",
     "verdict": "ROBUST — the color-vs-charge T−³He refutation is NOT a λ_A density artifact. λ_A entered the pre-swap original only as the normalization of the color weight w = bw(Z,N,q0)/λ_A, and since bw = λ_A·(1+δ·asym+δ²·sym) by construction, the density base cancels algebraically — the same cancellation holds for any per-knot tr_M base. Both forms give the identical split (≈ −0.034 MeV, ≈ 4.5 % of the needed +0.764 MeV): color at the δ = flavor-split scale is ~20× too small either way; the T−³He split remains CHARGE/Coulomb (α_EM sector). Scope (a): color weighting, alone, at this scale does not supply the split — no ingredient-level exclusion claimed. (Note: the audit's step-2 'λ_A-family-bound' classification was overcautious for THIS script — the bond energies were already per-block tr_M at H_6 and the λ_A base cancels; the refutation is density-base-independent.)",
     "refutation_scope": "scope-limited negative (a) per AGENTS.md"
   },

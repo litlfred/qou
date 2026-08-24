@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:23:05.233883+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "computedAt": "2026-08-24T02:55:58.348925+00:00",
+  "commitSha": "0edc2c20d675db59edab2e722441847123300b5f",
   "assertions": [
     {
       "name": "H2",
-      "computed": 5.21,
+      "computed": 6.79,
       "expected": 4.478,
-      "passed": true,
+      "passed": false,
       "tolerance": 2.239,
       "unit": "eV"
     },
     {
       "name": "H2O",
-      "computed": 10.42,
+      "computed": 13.58,
       "expected": 9.51,
       "passed": true,
       "tolerance": 4.755,
@@ -22,31 +22,31 @@
     },
     {
       "name": "NH3",
-      "computed": 15.63,
+      "computed": 20.37,
       "expected": 11.6,
-      "passed": true,
+      "passed": false,
       "tolerance": 5.8,
       "unit": "eV"
     },
     {
       "name": "CH4",
-      "computed": 20.84,
+      "computed": 27.16,
       "expected": 17.4,
-      "passed": true,
+      "passed": false,
       "tolerance": 8.7,
       "unit": "eV"
     },
     {
       "name": "C2H6",
-      "computed": 36.46,
+      "computed": 47.52,
       "expected": 29.7,
-      "passed": true,
+      "passed": false,
       "tolerance": 14.85,
       "unit": "eV"
     },
     {
       "name": "C2H4",
-      "computed": 26.05,
+      "computed": 33.94,
       "expected": 23.1,
       "passed": true,
       "tolerance": 11.55,
@@ -54,23 +54,23 @@
     },
     {
       "name": "CO",
-      "computed": 15.63,
+      "computed": 20.37,
       "expected": 11.09,
-      "passed": true,
+      "passed": false,
       "tolerance": 5.545,
       "unit": "eV"
     },
     {
       "name": "CO2",
-      "computed": 20.84,
+      "computed": 27.16,
       "expected": 16.56,
-      "passed": true,
+      "passed": false,
       "tolerance": 8.28,
       "unit": "eV"
     },
     {
       "name": "C6H6",
-      "computed": 62.51,
+      "computed": 81.47,
       "expected": 57.4,
       "passed": true,
       "tolerance": 28.7,
@@ -78,19 +78,19 @@
     },
     {
       "name": "C3H8",
-      "computed": 52.09,
+      "computed": 67.89,
       "expected": 42.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 21.0,
       "unit": "eV"
     }
   ],
-  "allPassed": true,
-  "durationMs": 7,
+  "allPassed": false,
+  "durationMs": 9,
   "computation": "unified-mass-molecular",
   "scriptFile": "unified-mass-molecular.py",
-  "scriptHash": "06443f53ca39",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "da2e17a3a2c9",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -102,7 +102,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/unified-mass-molecular.py"
+    ],
+    "reproduce": "python3 -u computations/unified-mass-molecular.py"
   },
   "description": "Unified atomic mass + molecular binding. Per-generator 3-channel Wedderburn on H_{A+Z}(q) with electrons. Bond: inverse crossings at boundary. Gluon: LP-derived.",
   "contentBlock": "def:molecular-braid",
@@ -111,200 +120,200 @@
     "w_s": 0.16546138503360688,
     "w_d": 0.6690772299327864,
     "w_a": 0.16546138503360688,
-    "E_mol_eV": 6.729338575040661,
+    "E_mol_eV": 6.729338426152079,
     "kappa_MeV": 0.51099895069
   },
   "data": {
-    "mass_mae_pct": 0.7661526195781876,
-    "molecular_mae_pct": 21.55490277643211,
+    "mass_mae_pct": 0.7677067146935076,
+    "molecular_mae_pct": 58.41415214939464,
     "mass_H": {
       "Z": 1,
       "N": 0,
-      "Phi1": -0.9978390423349817,
-      "M_pred": 938.2731924070993,
+      "Phi1": -0.8107444355469727,
+      "M_pred": 938.3687988248478,
       "M_obs": 938.783,
-      "error_pct": -0.05430515815697093
+      "error_pct": -0.0441210775176205
     },
     "mass_He": {
       "Z": 2,
       "N": 2,
-      "Phi1": -3.0024422446378267,
-      "M_pred": 3755.1627704248626,
+      "Phi1": -2.3282297443212605,
+      "M_pred": 3755.507297385067,
       "M_obs": 3728.401,
-      "error_pct": 0.7177814410215744
+      "error_pct": 0.7270220500709859
     },
     "mass_Li": {
       "Z": 3,
       "N": 4,
-      "Phi1": -7.1003097929039525,
-      "M_pred": 6570.982692558322,
+      "Phi1": -5.582073394934339,
+      "M_pred": 6571.758518654585,
       "M_obs": 6535.367,
-      "error_pct": 0.5449685160500065
+      "error_pct": 0.5568397100665443
     },
     "mass_Be": {
       "Z": 4,
       "N": 5,
-      "Phi1": -4.768958651586979,
-      "M_pred": 8450.522518175914,
+      "Phi1": -3.718509508087595,
+      "M_pred": 8451.059308015996,
       "M_obs": 8394.794,
-      "error_pct": 0.6638461667542331
+      "error_pct": 0.6702404849481262
     },
     "mass_B": {
       "Z": 5,
       "N": 6,
-      "Phi1": -16.513866904114668,
-      "M_pred": 10322.869390013613,
+      "Phi1": -13.505696526313951,
+      "M_pred": 10324.406575890163,
       "M_obs": 10255.103,
-      "error_pct": 0.6608065273807002
+      "error_pct": 0.6757960001977963
     },
     "mass_C": {
       "Z": 6,
       "N": 6,
-      "Phi1": -12.953393029737196,
-      "M_pred": 11263.471875538069,
+      "Phi1": -11.763666686223873,
+      "M_pred": 11264.079839691212,
       "M_obs": 11177.93,
-      "error_pct": 0.7652747470960077
+      "error_pct": 0.7707137161461204
     },
     "mass_N": {
       "Z": 7,
       "N": 7,
-      "Phi1": -0.571978046034456,
-      "M_pred": 13148.147273233488,
+      "Phi1": -0.15876384940884436,
+      "M_pred": 13148.358443034374,
       "M_obs": 13043.781,
-      "error_pct": 0.8001228572718825
+      "error_pct": 0.8017417881699607
     },
     "mass_O": {
       "Z": 8,
       "N": 8,
-      "Phi1": -14.869852811913493,
-      "M_pred": 15019.189581861718,
+      "Phi1": -14.331281008876747,
+      "M_pred": 15019.464811807942,
       "M_obs": 14899.169,
-      "error_pct": 0.8055521879221438
+      "error_pct": 0.8073994717956572
     },
     "mass_F": {
       "Z": 9,
       "N": 10,
-      "Phi1": -29.934398158031588,
-      "M_pred": 17829.40554314792,
+      "Phi1": -29.057934547009914,
+      "M_pred": 17829.85343926347,
       "M_obs": 17696.901,
-      "error_pct": 0.7487443318348185
+      "error_pct": 0.7512752614905098
     },
     "mass_Ne": {
       "Z": 10,
       "N": 10,
-      "Phi1": -15.16510280590619,
-      "M_pred": 18775.735724685972,
+      "Phi1": -15.019437113280468,
+      "M_pred": 18775.81018510206,
       "M_obs": 18622.835,
-      "error_pct": 0.8210389271342029
+      "error_pct": 0.8214387610804649
     },
     "mass_Na": {
       "Z": 11,
       "N": 12,
-      "Phi1": -31.400781738715434,
-      "M_pred": 21585.353237938263,
+      "Phi1": -31.308623136984398,
+      "M_pred": 21585.400360097043,
       "M_obs": 21414.83,
-      "error_pct": 0.7962857418819642
+      "error_pct": 0.7965057863968145
     },
     "mass_Mg": {
       "Z": 12,
       "N": 12,
-      "Phi1": -14.10738446665929,
-      "M_pred": 22532.973232908837,
+      "Phi1": -14.286716277817776,
+      "M_pred": 22532.881625021506,
       "M_obs": 22341.908,
-      "error_pct": 0.8551876272556358
+      "error_pct": 0.8547776001114428
     },
     "mass_Al": {
       "Z": 13,
       "N": 14,
-      "Phi1": -30.811028835493207,
-      "M_pred": 25342.35161631435,
+      "Phi1": -31.276445370362527,
+      "M_pred": 25342.113823243402,
       "M_obs": 25133.143,
-      "error_pct": 0.8324013288523061
+      "error_pct": 0.8314551954103084
     },
     "mass_Si": {
       "Z": 14,
       "N": 14,
-      "Phi1": -11.77505169266929,
-      "M_pred": 26290.862067770384,
+      "Phi1": -12.259268589381582,
+      "M_pred": 26290.61466900426,
       "M_obs": 26060.344,
-      "error_pct": 0.8845549689228313
+      "error_pct": 0.8836056385297821
     },
     "mass_P": {
       "Z": 15,
       "N": 16,
-      "Phi1": -28.498696987578146,
-      "M_pred": 29100.230230723664,
+      "Phi1": -29.419912239836496,
+      "M_pred": 29099.759530066403,
       "M_obs": 28851.873,
-      "error_pct": 0.8608010673125608
+      "error_pct": 0.8591696284896435
     },
     "mass_S": {
       "Z": 16,
       "N": 16,
-      "Phi1": -8.18672924510123,
-      "M_pred": 30049.39271203721,
+      "Phi1": -8.971906333495456,
+      "M_pred": 30048.991528008937,
       "M_obs": 29781.8,
-      "error_pct": 0.89851087589471
+      "error_pct": 0.897163798054308
     },
     "mass_Cl": {
       "Z": 17,
       "N": 18,
-      "Phi1": -24.6339448525129,
-      "M_pred": 32858.90213027074,
+      "Phi1": -25.956466228129575,
+      "M_pred": 32858.22636768554,
       "M_obs": 32573.283,
-      "error_pct": 0.8768509157358844
+      "error_pct": 0.8747763241597015
     },
     "mass_Ar": {
       "Z": 18,
       "N": 22,
-      "Phi1": -1.8807118577718338,
-      "M_pred": 37567.57377764655,
+      "Phi1": -3.07013107903125,
+      "M_pred": 37566.96603647256,
       "M_obs": 37224.719,
-      "error_pct": 0.9210406065027633
+      "error_pct": 0.919407978533188
     },
     "mass_K": {
       "Z": 19,
       "N": 20,
-      "Phi1": -19.3135016415708,
-      "M_pred": 36618.317886430115,
+      "Phi1": -21.00557722069988,
+      "M_pred": 36617.45328711469,
       "M_obs": 36294.464,
-      "error_pct": 0.8922955479659801
+      "error_pct": 0.8899133683712415
     },
     "mass_Ca": {
       "Z": 20,
       "N": 20,
-      "Phi1": 2.7706161164752965,
-      "M_pred": 37568.38593454208,
+      "Phi1": 1.3775324345181188,
+      "M_pred": 37567.67412104238,
       "M_obs": 37224.918,
-      "error_pct": 0.9226828506165706
+      "error_pct": 0.920770654329933
     },
     "bond_HH": {
       "k": 7,
-      "E": 5.209169599262788,
+      "E": 6.788752790887951,
       "obs": 4.478
     },
     "bond_CH": {
       "k": 7,
-      "E": 5.209169599262789,
+      "E": 6.788752790887948,
       "obs": 4.33
     },
     "bond_CC": {
       "k": 7,
-      "E": 5.209169599262789,
+      "E": 6.788752790887936,
       "obs": 3.6
     },
     "bond_CO": {
       "k": 7,
-      "E": 5.209169599262789,
+      "E": 6.788752790887936,
       "obs": 3.71
     },
     "bond_OH": {
       "k": 7,
-      "E": 5.209169599262789,
+      "E": 6.78875279088796,
       "obs": 4.82
     },
     "bond_NH": {
       "k": 7,
-      "E": 5.209169599262786,
+      "E": 6.788752790887951,
       "obs": 3.87
     }
   },

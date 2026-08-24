@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T00:54:36.548445+00:00",
-  "commitSha": "27303e6755b4e07583d4d861302880a74c3e30a7",
+  "computedAt": "2026-08-23T23:47:25.771187+00:00",
+  "commitSha": "1ea659f08fc58d9f59edf2080cb3fc8ad1f39fc8",
   "assertions": [
     {
       "name": "T2_finite",
@@ -21,12 +21,34 @@
   "durationMs": 10,
   "computation": "hydrogen-qshuffle-compound",
   "scriptFile": "hydrogen_qshuffle_compound.py",
-  "scriptHash": "b63e70681a86",
-  "scriptCommitSha": "27303e6755b4e07583d4d861302880a74c3e30a7",
+  "scriptHash": "5e3781e01a66",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hydrogen_qshuffle_compound.py"
+    ],
+    "reproduce": "python3 -u computations/hydrogen_qshuffle_compound.py"
+  },
   "description": "¹H mass via q-shuffle convolution (full-order, *_q)",
   "data": {
     "convention": "q-shuffle compound braid (*_q on disjoint strand sets ⇒ concatenation with boundary identity gen)",
-    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "q_pinned": "1.10997859555733471989976322048322502665620840878015368660798114614493",
     "compound_braid": {
       "n_strands": 5,
       "n_gens": 4,
@@ -34,12 +56,12 @@
         {
           "idx": 0,
           "source": "proton_g0",
-          "V_hat_full": "0.9890073159292597737327090873425711234998226354167"
+          "V_hat_full": "1.0802152945037791169129056536610818247775645179075"
         },
         {
           "idx": 1,
           "source": "proton_g1",
-          "V_hat_full": "0.97107015865274369644467729606208246103317407697938"
+          "V_hat_full": "0.9469372315845926374785838549537102785108736803297"
         },
         {
           "idx": 2,
@@ -49,24 +71,24 @@
         {
           "idx": 3,
           "source": "electron_g0",
-          "V_hat_full": "0.55423488310225769831693818897735540256376498894246"
+          "V_hat_full": "0.5542348831037915817933815538140062669183482253086335735817879353099246"
         }
       ]
     },
     "compound_terms_cat": {
-      "T1": "0.53228468279059995382367439124429937526715758339372",
-      "T2": "2.933579237873890573267592104762773464518652109682",
-      "T3": "0.96555138539851344890076152586089745159216056820644",
-      "T4": "1.6362871034827517326799193655339867440321053551337",
-      "T5": "4.2555566663353856920207709358429786509171184735535",
-      "T6": "1.921135705204251",
-      "m_compound_sum": "12.244394781085392400692718323244935686327194089969"
+      "T1": "0.5669246895992225687305423007262489583266878573258790809523069801622034",
+      "T2": "2.979334202279378444643221218272503968065797392556284313821801001665299",
+      "T3": "0.9950928673262240536249041537861426548122504847383939547424556631741666",
+      "T4": "1.636287114593083917134660394638053126521738160248",
+      "T5": "4.1887308561594223214016865798174551309011361181315",
+      "T6": "1.9211357026101485369694937915059302643594631996641",
+      "m_compound_sum": "12.28750543256747984250450843874633410298707321266415734951656364500167"
     },
     "predictions_MeV": {
-      "m_H_pred_compound": "6.2568728765201147871685184417475437224291368601004",
+      "m_H_pred_compound": "6.278902382639656752137530273793626865710556806305598572865748383106861",
       "m_H_pred_additive": "5.92245",
       "m_H_CODATA": "938.7830731",
-      "compound_residual_pct": "-99.3335123889847098706525966183030932918480273715",
+      "compound_residual_pct": "-99.33116578658520161252175326702813482314047948013586754849790352668568",
       "additive_residual_pct": "-99.37"
     },
     "comparison": "Compound vs additive: same gap pattern (~99 %); confirms the convention-choice (additive vs *_q) is not the source of the shortfall."

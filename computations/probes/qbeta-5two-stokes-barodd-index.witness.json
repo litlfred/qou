@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T17:52:55.488437+00:00",
-  "commitSha": "80bd9ad75cd025ccb05177289a22b62020530d06",
+  "computedAt": "2026-08-24T01:32:20.273282+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "printed_H_tables_exact",
@@ -73,8 +73,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-stokes-barodd-index",
   "scriptFile": "qbeta_5two_stokes_barodd_index_probe.py",
-  "scriptHash": "d7c1bd5f8a7f",
-  "scriptCommitSha": "c4df210824c148c3fc6c9f1ad2c7a5aca10aa864",
+  "scriptHash": "48dc8a689f68",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -84,8 +84,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_stokes_barodd_index_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_stokes_barodd_index_probe.py"
   },
   "description": "A2 (bean qou-ls2y): the 5₂ GGM Stokes automorphisms S⁺(q), S⁻(q) (2007.10190 eqs 29a/29b, 112-124) evaluated at the substrate point q=1/q₀ from the published integer-coefficient q-series. Gates: all 18 printed H-series tables exact to O(q⁵); det W=2; assembled q→0 limits = the eq-100a/b products; assembled (0,0) entry = Ind^rot (eq 102); det S± = 1; S⁺ᵀ·S⁻ = 1 (Conjecture 1b) in series AND numerically with independently-assembled matrices. Measurement: the ODD chirality datum O = ½(S⁺−S⁻) at the substrate — a DERIVED, calibration-free fibre-level odd-Stokes datum of the chiral 5₂; the rotated 3D index at 1/q₀ (bar-EVEN by eq 124 despite chirality); honest anchor-dependence (smooth O(10²) slope, NOT the swing — SRigidityPrune binds). Note: the Peacock eq-99 towers are per-ray radar factors, not entries of the assembled matrix (first-run lesson). No fit; no c_k wired; auditOnly.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

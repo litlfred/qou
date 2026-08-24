@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T18:40:48.116617+00:00",
-  "commitSha": "75bb53314159c396f6784c7d8154d5f7e7b1f773",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T02:27:41.060384+00:00",
+  "commitSha": "4edd9258ae20e47e60c573f1af6dc28d7b1ec499",
   "assertions": [
     {
       "name": "cross_anchor_c3_swing_resolvable",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 7,
   "computation": "qbeta-reeb-sinh-fmap-brane-tower-probe",
   "scriptFile": "qbeta_reeb_sinh_fmap_brane_tower_probe.py",
-  "scriptHash": "0b280be3ec2f",
-  "scriptCommitSha": "1f014ddcb8d81c55d28d4a13f63f32ff0f772eaf",
+  "scriptHash": "b5c40c0a9371",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,17 +34,26 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_reeb_sinh_fmap_brane_tower_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_reeb_sinh_fmap_brane_tower_probe.py"
   },
   "description": "Test the 1/u^k f-map between a fibre-level Reeb sinh(ℓη) q-weight and the observable Q_β c_k ladder rung — the structural route the data-blocked recurrence axis (#1880) leaves open, sharpened via the Reeb-sinh parity lead (#1887). For each closed-form f-map candidate, solve c_3 = sinh(ℓ·η)/f at both anchors and ask: is ℓ_3 the SAME natural integer at q_proton and q_muon (= brane-tower level, GAP-A-3)? PASS would be the first cross-anchor structural identification of c_3; FAIL pins down whether ℓ_3 is non-integer or the f-map family needs to extend. No fits; closed-form denominators only.",
   "contentBlock": "conj:qbeta-precision-ladder",
   "data": {
     "eta_proton": "0.104340720319519512315906279973072397053744280828984303250862",
-    "eta_muon": "0.104340731853795842332313842423389889355843923272577950437907",
+    "eta_muon": "0.104340731933579787492493769163872830029930916836723181184440",
     "u_proton": "0.00851723455015614218925557360330920296919422161162716337301758",
-    "u_muon": "0.00851723634004395810711354481100800446027960281897626531559873",
+    "u_muon": "0.00851723635242482310735822116750811832077898606325755114370897",
     "c3_target_proton": "-2.06934257711516783787971951724962858902203099810343886691284",
-    "c3_target_muon": "-2.02020023502125517138232674988576251890206061330068660325496",
+    "c3_target_muon": "-2.01986031187400546349321995587646029747377592135260349078716",
     "n_candidates": 6,
     "n_closures": 0,
     "verdict": "NEGATIVE_NO_INTEGER_BRANE_TOWER_LEVEL",
@@ -52,9 +61,9 @@
       {
         "f_candidate": "u^3",
         "ell_proton": "-0.0000122539014818577091659427244432692340925239240109381702722171",
-        "ell_muon": "-0.0000119629044498032039989058290862264852961997719284577778657869",
-        "ell_diff_abs": 2.9099703205450517e-07,
-        "ell_diff_rel": 0.023747296523098014,
+        "ell_muon": "-0.0000119608915893137839035305058970712849680955051219335775607655",
+        "ell_diff_abs": 2.9300989254392526e-07,
+        "ell_diff_rel": 0.02391155934930077,
         "nearest_int": 0,
         "int_distance": 1.2253901481857708e-05,
         "roundtrip_ppm_proton": 1000000.0,
@@ -66,9 +75,9 @@
       {
         "f_candidate": "2·cosh(η) · u^3",
         "ell_proton": "-0.0000246413320947849953365360119384011832553712172164251940163855",
-        "ell_muon": "-0.0000240561671036538023547208988188913552811726934523260246553210",
-        "ell_diff_abs": 5.85164991131193e-07,
-        "ell_diff_rel": 0.02374729535239027,
+        "ell_muon": "-0.0000240521194489971683583973954751971560778801585464835726649321",
+        "ell_diff_abs": 5.89212645787827e-07,
+        "ell_diff_rel": 0.023911558170693452,
         "nearest_int": 0,
         "int_distance": 2.4641332094784994e-05,
         "roundtrip_ppm_proton": 1000000.0,
@@ -80,9 +89,9 @@
       {
         "f_candidate": "h^3 = (2·sinh η)^3",
         "ell_proton": "-0.181203836677876577215320281711999922231295057312152879890430",
-        "ell_muon": "-0.176901177352782946487184061966948485742114251101588890010815",
-        "ell_diff_abs": 0.00430265932509363,
-        "ell_diff_rel": 0.02374485774681695,
+        "ell_muon": "-0.176871415239002148856248889481386861179879677979653772959438",
+        "ell_diff_abs": 0.0043324214388744285,
+        "ell_diff_rel": 0.0239091043451586,
         "nearest_int": 0,
         "int_distance": 0.18120383667787657,
         "roundtrip_ppm_proton": 1000000.0,
@@ -94,9 +103,9 @@
       {
         "f_candidate": "b^3 · u^3",
         "ell_proton": "-0.00000800219421160760982962525554525494795273017211773325393689139",
-        "ell_muon": "-0.00000781216374206249566540545792818906400036398163448026524148986",
-        "ell_diff_abs": 1.9003046954511416e-07,
-        "ell_diff_rel": 0.0237472953692457,
+        "ell_muon": "-0.00000781084927908777750041060513569386170143981394514213591993128",
+        "ell_diff_abs": 1.9134493251983234e-07,
+        "ell_diff_rel": 0.023911558187662614,
         "nearest_int": 0,
         "int_distance": 8.00219421160761e-06,
         "roundtrip_ppm_proton": 1000000.0,
@@ -108,9 +117,9 @@
       {
         "f_candidate": "cosh(η)·h·u^2",
         "ell_proton": "-0.000302417657942429261106083694932470692408295409673032571759957",
-        "ell_muon": "-0.000295236027213266265306859754000616140566476952025389740696964",
-        "ell_diff_abs": 7.181630729162996e-06,
-        "ell_diff_rel": 0.02374739219272094,
+        "ell_muon": "-0.000295186351038853300296092686810428221871840652150152817722132",
+        "ell_diff_abs": 7.231306903575961e-06,
+        "ell_diff_rel": 0.02391165566447371,
         "nearest_int": 0,
         "int_distance": 0.00030241765794242925,
         "roundtrip_ppm_proton": 1000000.0,
@@ -122,9 +131,9 @@
       {
         "f_candidate": "u^3 / (1+η²)",
         "ell_proton": "-0.0000121219301985022996875590671483927892018046765319439350073615",
-        "ell_muon": "-0.0000118340670994684606017159853570182484816424108071314823723877",
-        "ell_diff_abs": 2.878630990338391e-07,
-        "ell_diff_rel": 0.023747298847621265,
+        "ell_muon": "-0.0000118320759167648874723018303227665079836478344786899643036082",
+        "ell_diff_abs": 2.898542817374122e-07,
+        "ell_diff_rel": 0.023911561689509198,
         "nearest_int": 0,
         "int_distance": 1.21219301985023e-05,
         "roundtrip_ppm_proton": 1000000.0,

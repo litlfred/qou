@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:42:08.374243+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T02:37:46.468376+00:00",
+  "commitSha": "b1b47ca6a26506d5f736cf882b5578a2e462907a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 173,
+  "durationMs": 486,
   "computation": "s5-so3-su2-u1-fiber-action",
   "scriptFile": "s5_so3_su2_u1_fiber_action.py",
-  "scriptHash": "ebf04365abfd",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "d62058fdfbee",
+  "scriptCommitSha": "c7ab28b6fc601f6b87eb5c36b0bdf8e769db0f54",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,12 +17,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/s5_so3_su2_u1_fiber_action.py"
+    ],
+    "reproduce": "python3 -u computations/s5_so3_su2_u1_fiber_action.py"
   },
   "description": "Icosahedral I=A5 in SO(3) branching of V_l (l<=6), Borromean Markov-trace h-coefficients, SU(2) binary-icosahedral double cover facts, and U(1) writhe/framing phase. RAW, audit-only. No tuning to h4=-3/4, m_n-m_p, spin, or hypercharge.",
   "auditOnly": "docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md",

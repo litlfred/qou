@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T08:03:46.643764+00:00",
-  "commitSha": "7cfd7ffc53dc1d948bd547835942ed52cdc88a63",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T23:43:15.374746+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "assertions": [
     {
       "name": "embeddability_admits_four_but_generations_are_three",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 5,
   "computation": "generation-count-t29-truncation",
   "scriptFile": "generation_count_t29_truncation_probe.py",
-  "scriptHash": "3f590a399ca6",
-  "scriptCommitSha": "0e1fa424ae89df1daec34af37ba15593c8d49484",
+  "scriptHash": "61f72b9b06a8",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,8 +47,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/generation_count_t29_truncation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/generation_count_t29_truncation_probe.py"
   },
   "description": "EXPLORATORY probe of the three-generation question (bean qou-4dxs), which the corpus records as 'nowhere addressed'. Locates it precisely: `torus-embeddable-complete-proof` PROVES the genus bound admits n in {3,5,7,9} for T(2,n), while `lepton-continuant-recurrence` assigns only n = 3,5,7 to e/mu/tau. The generation count IS the exclusion of T(2,9). Reports that the primality condition which would close it appears exactly once in the corpus, as an underived parenthetical, and tests the ladder's own predictive content using the corpus's Morgan-Voyce recurrence. No derivation is claimed and nothing is wired.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",

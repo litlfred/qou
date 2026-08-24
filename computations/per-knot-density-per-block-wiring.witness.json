@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:23:14.792414+00:00",
-  "commitSha": "27470cbcf273e6d24533b083bfa7ad34acebc177",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T00:10:37.736062+00:00",
+  "commitSha": "bbf717a26ddcbe15e958e5663f32dc8fe5f3b3c9",
   "assertions": [
     {
       "name": "discipline_gate_per_block_reproduces_production",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 15,
+  "durationMs": 5,
   "computation": "per-knot-density-per-block-wiring",
   "scriptFile": "per_knot_density_per_block_wiring.py",
-  "scriptHash": "906d51dcfaa9",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "47d5250ab415",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,16 +30,24 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
-  "description": "Discipline-gate verification of the paper's per-block Σ_λ factor (prop:hoefsmit-scattering-pipeline Stage 4) against production's global linking_weight collapse (vol_density_borromean). Computes m(K) = m_e·[Vol(K)/ℏ_q²]·tr_M(K) per knot using the canonical H₃ Markov trace from the chi-{atom}-h3-at-q0 caches, vs production m = m_e·[Vol/ℏ_q²]·linking_weight (the H₄ scalar 2.53). VERDICT (raw, no fudge): the per-block H₃ trace tr_M(proton)≈1.065 is NOT the global H₄ scalar 2.53; they differ by ≈2.38×. The per-block reading gives m_p≈406 MeV (−56.7%), so production's near-correct m_p does NOT come from the paper's per-block formula as literally written — the global H₄ scalar lands near the CODATA-implied λ≈2.46 coincidentally, using the WRONG index set (H₄ not H₃). This is a flagged structural discrepancy, NOT hard-coded away. Corroborates sibling PR #1608/#1613 findings.",
+  "invocation": {
+    "argv": [
+      "computations/per_knot_density_per_block_wiring.py"
+    ],
+    "reproduce": "python3 -u computations/per_knot_density_per_block_wiring.py"
+  },
+  "description": "Discipline-gate verification of the paper's per-block Σ_λ factor (prop:hoefsmit-scattering-pipeline Stage 4) against production's global linking_weight collapse (per_knot_density_borromean). Computes m(K) = m_e·[Vol(K)/ℏ_q²]·tr_M(K) per knot using the canonical H₃ Markov trace from the chi-{atom}-h3-at-q0 caches, vs production m = m_e·[Vol/ℏ_q²]·linking_weight (the H₄ scalar 2.53). VERDICT (raw, no fudge): the per-block H₃ trace tr_M(proton)≈1.065 is NOT the global H₄ scalar 2.53; they differ by ≈2.38×. The per-block reading gives m_p≈406 MeV (−56.7%), so production's near-correct m_p does NOT come from the paper's per-block formula as literally written — the global H₄ scalar lands near the CODATA-implied λ≈2.46 coincidentally, using the WRONG index set (H₄ not H₃). This is a flagged structural discrepancy, NOT hard-coded away. Corroborates sibling PR #1608/#1613 findings.",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "Vol_B3": "7.32772475341775212043682811946",
     "geom_leading_Vol_over_hbar2": "746.418007597967138987935109265",
     "linking_weight_H4_global": "2.53277965639939149205151450176",
-    "implied_lambda_m_p_roundtrip": "2.45995226837411720903216758137"
+    "implied_lambda_m_p_roundtrip": "2.45995227170379036062482281467"
   },
   "data": {
     "per_knot": {
@@ -48,20 +56,20 @@
         "index_set": "H_3 (partitions of 3)",
         "tr_M_at_q0": "1.1457596924573008697",
         "geom_leading": "746.41800759796713899",
-        "vol_density_per_block": "855.21566683003809302",
+        "per_knot_density_per_block": "855.21566683003809302",
         "m_per_block_MeV": "437.01430836379810411",
-        "codata_MeV": "938.27208816",
-        "rel_err_per_block": "-0.534234990171"
+        "codata_MeV": "938.27208943",
+        "rel_err_per_block": "-0.534234990802"
       },
       "neutron": {
         "n_strands": 3,
         "index_set": "H_3 (partitions of 3)",
         "tr_M_at_q0": "0.98774368811580957163",
         "geom_leading": "746.41800759796713899",
-        "vol_density_per_block": "737.26967570087043289",
+        "per_knot_density_per_block": "737.26967570087043289",
         "m_per_block_MeV": "376.74403065870138152",
-        "codata_MeV": "939.56542052",
-        "rel_err_per_block": "-0.599023098945"
+        "codata_MeV": "939.56542179",
+        "rel_err_per_block": "-0.599023099487"
       }
     },
     "linking_weight_h_series": {
@@ -78,10 +86,10 @@
       "neutron": "2.5642073818065560077"
     },
     "production_m_avg_MeV": "966.04982446659753566",
-    "production_gap_pct": "2.88960786023",
+    "production_gap_pct": "2.88960772106",
     "per_block_m_avg_MeV": "406.87916951124974282",
-    "per_block_gap_pct": "-56.6651355476",
-    "recovered_fraction_pct": "-1860.99741863"
+    "per_block_gap_pct": "-56.6651356062",
+    "recovered_fraction_pct": "-1860.9975151"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

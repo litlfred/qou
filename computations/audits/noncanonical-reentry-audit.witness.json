@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T16:44:37.676435+00:00",
-  "commitSha": "b35c11e43ad6c72af440a085b0b92cda62301287",
+  "computedAt": "2026-08-23T22:31:27.393844+00:00",
+  "commitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
   "assertions": [
     {
       "name": "no_purged_form_reentered_production",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "noncanonical-reentry-audit",
   "scriptFile": "noncanonical_reentry_audit.py",
-  "scriptHash": "4634ffde05a0",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptHash": "216708c30e52",
+  "scriptCommitSha": "7768c9d262ae5510c126e523f063aabfe3474f17",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,25 +33,36 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/noncanonical_reentry_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/noncanonical_reentry_audit.py"
   },
   "description": "NEGATIVE-finding guard. AST-scans production compute (computations/, excluding _deprecated/, probes/, data/) and fails if any script imports, defines, or uses a PURGED non-canonical form. Registry: lambda_scale_yekutieli_extended (Yekutieli −G·h² correction, falsified PR #985/#1027), lambda_scale_family_a (lambda-scale alias, removed PR #1089), the lambda_scale_* symbol prefix (owner directive 'no lambda-scale ANYWHERE in production'), and the purged module lambda_yekutieli_extended_borromean. Uses AST so historical mentions in comments/docstrings are not false-positives. Detection covers direct imports, module-as-symbol imports (from pkg import <banned-module>), def, bare-name use, and attribute access (mod.<banned>); strict mode also fails on unparseable production scripts so there is no blind spot. Keeps the documented purges durable against silent sibling-branch re-entry.",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "production_scripts_scanned": 1390,
+    "production_scripts_scanned": 2330,
     "banned_symbols": [
       {
         "symbol": "lambda_scale_yekutieli_extended",
         "reason": "Yekutieli per-cell curvature correction λ_Y = λ_A − G·h². Falsified by the S₄↓S₃ half-symmetric bijection (κ = +0.5, not −G) — a substrate-q₀ numerical coincidence, not a categorical theorem. The Yekutieli non-abelian Stokes functor itself stays canonical; only this empirical correction is purged.",
         "purged_by": "PR #985 (NEGATIVE) / PR #1027 (production revert)",
-        "canonical_replacement": "canonical_mass.proton_neutron_mass_mev() for absolute mass (λ_A excised as density 2026-06-24); vol_density_per_block for binding/trace ratios"
+        "canonical_replacement": "canonical_mass.proton_neutron_mass_mev() for absolute mass (λ_A excised as density 2026-06-24); per_knot_density_per_block for binding/trace ratios"
       },
       {
         "symbol": "lambda_scale_family_a",
         "reason": "Legacy lambda-scale alias. Owner directive 2026-05-24: 'no lambda-scale ANYWHERE in production'. λ_scale was absorbed into the per-knot VolDensity(K) evaluation.",
         "purged_by": "PR #1080 (absorb into VolDensity) / PR #1089 (alias removal)",
-        "canonical_replacement": "canonical_mass.proton_neutron_mass_mev() for absolute mass (the former vol_density_borromean route was excised as a fit 2026-06-24); vol_density_per_block for binding/trace ratios"
+        "canonical_replacement": "canonical_mass.proton_neutron_mass_mev() for absolute mass (the former per_knot_density_borromean route was excised as a fit 2026-06-24); per_knot_density_per_block for binding/trace ratios"
       }
     ],
     "banned_modules": [

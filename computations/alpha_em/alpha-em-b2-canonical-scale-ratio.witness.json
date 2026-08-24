@@ -3,12 +3,12 @@
   "description": "Normalization-independent restatement attempt for the B2 tau-scale '25 = deg(5-isogeny)^2' observation. OUTCOME (iii): the gauge group has three scales (Markov, Hodge, intertwiner s^2), so two canonical pins cannot make the ratio convention-free; the surviving conditional restatement is theta_5 = frac(log_5(c*8pi)) = 0 under the 5-power-grading hypothesis H5, whose Markov leg fails for the declared intrinsic pins (y_lambda, Wedderburn w_lambda, cellular anchor \u2014 mutually inequivalent mod 5^Z; trace pins are module-scale-blind). Exact matching condition for a future tau-derivation stated. Hodge canonical pin blocked on absent Riera-Rodriguez Z + non-CM periods. Observation stays open/double-gated; nothing wired; 1/(8pi) phase-4.",
   "auditOnly": "docs/audits/2026-07-25-alpha-em-b2-canonical-scale-ratio.md",
   "tier": "numerical-certified structure rows (50 dps); the theta_5 restatement is CONDITIONAL (hypothesis H5); K4 rows are scope-(a) per-pin negatives",
-  "computedAt": "2026-07-25T13:38:35.759392+00:00",
-  "commitSha": "0d1e6212ba866f87badadfb0e8895a1a093c2f0c",
+  "computedAt": "2026-08-23T22:23:27.997381+00:00",
+  "commitSha": "4ac5ddf779edd34e90cda0c5d1e2a9a76ef97724",
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "alpha_em_b2_canonical_scale_ratio_probe.py",
-  "scriptHash": "b22a98ccfb9b",
+  "scriptHash": "df0fdc44594a",
   "precisionMetadata": {
     "compute_dps": 60,
     "target_dps": 50,
@@ -34,10 +34,10 @@
     },
     {
       "name": "K3_markov_canonical_pins_computed",
-      "passed": true,
-      "detail": "(a) y_(4,1)(q0) = 0.10937853185894286297 (Jones-Markov, corpus producer) with tr(1)=1 certified: sum_lam y_lam*f^lam = 1 to 6.55e-51; (b) w_(4,1)(q0) = d_q^2/[5]_q! = 0.12862000417524688333 (corpus _wedderburn_weight normalization, distinct from (a) \u2014 reported as-is); (c) cellular anchor candidate gamma_(T^lam) = [4]_(q^2)! = 47.042282292036314839 relative to the corpus-STRICT presentation, dictionary T = q*sigma exact (True); its two unverified convention legs NAMED (tableau-0 = T^lam; Hoefsmit-natural = Murphy-unitriangular)",
+      "passed": false,
+      "detail": "(a) y_(4,1)(q0) = 0.12498539716794710592 (Jones-Markov, corpus producer) with tr(1)=1 certified: sum_lam y_lam*f^lam = 1 to 5.0e-31; (b) w_(4,1)(q0) = d_q^2/[5]_q! = 0.12862000417524688333 (corpus _wedderburn_weight normalization, distinct from (a) \u2014 reported as-is); (c) cellular anchor candidate gamma_(T^lam) = [4]_(q^2)! = 47.042282292036314839 relative to the corpus-STRICT presentation, dictionary T = q*sigma exact (True); its two unverified convention legs NAMED (tableau-0 = T^lam; Hoefsmit-natural = Murphy-unitriangular)",
       "computed": [
-        0.10937853185894286,
+        0.12498539716794711,
         0.12862000417524688,
         47.04228229203631
       ],
@@ -46,10 +46,10 @@
     {
       "name": "K3_F1_no_unique_markov_5class",
       "passed": true,
-      "detail": "frac(log_5) of the pins: y = -0.37497733, w = -0.27429142, gamma = 0.39278992 \u2014 pairwise 5-class differences ['0.10069', '0.23223', '0.33292'] all > 1e-3: the intrinsic Markov candidates are MUTUALLY INEQUIVALENT mod 5^Z; there is no unique canonical Markov 5-class, so H5's Markov leg FAILS for the declared pin menu",
+      "detail": "frac(log_5) of the pins: y = -0.29210226, w = -0.27429142, gamma = 0.39278992 \u2014 pairwise 5-class differences ['0.017811', '0.31511', '0.33292'] all > 1e-3: the intrinsic Markov candidates are MUTUALLY INEQUIVALENT mod 5^Z; there is no unique canonical Markov 5-class, so H5's Markov leg FAILS for the declared pin menu",
       "computed": [
-        0.10068590809155627,
-        0.2322327458415301,
+        0.017810842608810107,
+        0.3151078113242763,
         0.3329186539330864
       ],
       "expected": "all > 1e-3",
@@ -58,8 +58,8 @@
     {
       "name": "K3_F2_trace_pins_module_scale_blind",
       "passed": true,
-      "detail": "G-adjoint invariant under G -> lam*G to 0.0: every Markov-trace observable lives on End(V) where the module-form scale cancels \u2014 the canonical trace normalizations (a),(b) are ALGEBRA scalars and transmit NO canonical scale to the module Gram entering c. A trace pin is not a module pin (structural)",
-      "computed": 0.0,
+      "detail": "G-adjoint invariant under G -> lam*G to 1.34e-51: every Markov-trace observable lives on End(V) where the module-form scale cancels \u2014 the canonical trace normalizations (a),(b) are ALGEBRA scalars and transmit NO canonical scale to the module Gram entering c. A trace pin is not a module pin (structural)",
+      "computed": 1.3363823550460978e-51,
       "expected": 0.0,
       "tolerance": 1e-45
     },
@@ -68,7 +68,7 @@
       "passed": true,
       "detail": "under each declared intrinsic pin the ratio moves OFF the 5-power grading (all |frac(log_5)| >> 1e-4): the 24.9997 ~ 25 match does NOT survive any declared canonical Markov pin alone. Scope-(a): refutes these pins as-stated as the route to a normalization-free 25; does not exclude a future verified module-level pin + Hodge anchor combination",
       "computed": {
-        "y_lambda": "-0.3749841778",
+        "y_lambda": "-0.2921091123",
         "w_wedderburn": "-0.2742982697",
         "gamma_cellular": "0.3927830764"
       },
@@ -78,9 +78,9 @@
     {
       "name": "K5_matching_condition_stated",
       "passed": true,
-      "detail": "'25 survives canonically' <=> lam_M/(mu_H*s^2) in 5^Z <=> frac(log_5(mu_H*s^2)) equals frac(log_5 lam_M) per pin: targets {'y_lambda': '-0.3749841778', 'w_wedderburn': '-0.2742982697', 'gamma_cellular': '0.3927830764'}. This is the sharp, falsifiable condition a legitimate tau-identification must satisfy for the deg^2 = 25 observation to become a derived integer. Stated, not adjudicated (owner-level)",
+      "detail": "'25 survives canonically' <=> lam_M/(mu_H*s^2) in 5^Z <=> frac(log_5(mu_H*s^2)) equals frac(log_5 lam_M) per pin: targets {'y_lambda': '-0.2921091123', 'w_wedderburn': '-0.2742982697', 'gamma_cellular': '0.3927830764'}. This is the sharp, falsifiable condition a legitimate tau-identification must satisfy for the deg^2 = 25 observation to become a derived integer. Stated, not adjudicated (owner-level)",
       "computed": {
-        "y_lambda": "-0.3749841778",
+        "y_lambda": "-0.2921091123",
         "w_wedderburn": "-0.2742982697",
         "gamma_cellular": "0.3927830764"
       },
@@ -94,28 +94,28 @@
       "expected": "named obstruction"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "result": {
     "c_geo_routeC_convention": "0.9947074314027334584089552",
     "c_8pi_routeC_convention": "24.999724471728005075",
     "theta_5": "-6.84785137e-6",
     "k_selected_routeC_gauge": 2,
     "markov_pins": {
-      "y_lambda_41_q0": "0.1093785318589428629694584",
+      "y_lambda_41_q0": "0.1249853971679471059242398",
       "w_wedderburn_41_q0": "0.1286200041752468833338508",
       "gamma_cellular_anchor_q0": "47.04228229203631483867104",
       "frac_log5": {
-        "y": "-0.374977329941",
+        "y": "-0.292102264458",
         "w": "-0.274291421849",
         "gamma": "0.392789924218"
       }
     },
     "per_pin_rows": {
       "y_lambda": {
-        "pin_value": "0.1093785318589428629694584",
-        "c_8pi_under_pin": "2.7344331595956951378",
-        "log5": "0.625015822207947",
-        "frac_log5_folded": "-0.3749841778"
+        "pin_value": "0.1249853971679471059242398",
+        "c_8pi_under_pin": "3.1246004921881713642",
+        "log5": "0.707890887690693",
+        "frac_log5_folded": "-0.2921091123"
       },
       "w_wedderburn": {
         "pin_value": "0.1286200041752468833338508",
@@ -132,7 +132,7 @@
     },
     "matching_condition": "frac(log5(mu_H*s^2)) == frac(log5 lam_M) per pin (K5 targets above)",
     "hodge_pin_status": "BLOCKED \u2014 Riera-Rodriguez Z absent; non-CM Neron periods (no closed form); isogeny frame not S5-equivariant",
-    "verdict": "OUTCOME (iii) \u2014 the normalization-independent restatement CANNOT be completed as posed, for precisely-named reasons; a weaker conditional restatement survives. (1) The gauge group has THREE scales (Markov, Hodge, intertwiner s^2 \u2014 Lean-proved covariance); two canonical pins cannot fix it (K1). (2) Under hypothesis H5 (all residual gauges 5-power-graded) the invariant content of '25 = deg(5-isogeny)^2' is theta_5 := frac(log_5(c*8pi)) = 0, measured -6.9e-6 in the route-C gauge with k = 2 selected (K2) \u2014 the maximum extractable normalization-independent statement, CONDITIONAL on H5. (3) H5's Markov leg FAILS for the declared intrinsic pin menu: the corpus-canonical trace normalizations y_(4,1)(q0) = 0.1094, w_(4,1)(q0) = d_q^2/[5]_q! = 0.1286, and the cellular anchor [4]_(q^2)! = 47.05 are mutually inequivalent mod 5^Z (no unique canonical Markov 5-class), and the trace pins structurally transmit NO module scale (End(V) blindness) (K3). (4) Under each declared pin the 24.9997 ~ 25 match moves off the 5-grading \u2014 the 25 was a property of the entry-[0,0]=1 convention, not (yet) of any canonical normalization (K4). (5) The exact matching condition for a future closure is stated: frac(log_5(mu_H*s^2)) must equal frac(log_5 lam_M) (K5); the Hodge-side canonical evaluation is gated on the absent Riera-Rodriguez Z + non-CM Neron periods (K6). The deg^2 = 25 observation REMAINS open, owner-level, double-gated; scope-(a) throughout \u2014 the declared pins are refuted as-stated as the normalization-freedom route, no ingredient is structurally excluded. Nothing wired; 1/(8pi) stays phase-4."
+    "verdict": "INCONCLUSIVE \u2014 an assertion failed; re-derive before citing."
   },
   "context": {
     "epic": "qou-k42c",
@@ -144,5 +144,9 @@
     "lean_covariance": "QOU/Archimedean/InvariantFormTransport.lean::invariantForm_pullback_smul",
     "ruling": "2026-07-19: the per-loop identification is not derived-proved \u2014 respected; nothing asserted",
     "scope_guard": "no fit; no TauRhoHodgeLift instance; nothing wired; 1/(8pi) phase-4; conditional language throughout"
-  }
+  },
+  "scriptCommitSha": "8d91dbe8f0d55ef7067c94c93906f8296c4d910b",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

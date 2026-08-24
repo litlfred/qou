@@ -1,50 +1,50 @@
 {
   "engine": "python3/mpmath",
   "engineVersion": "50dps",
-  "computedAt": "2026-07-18T19:19:17.024862+00:00",
+  "computedAt": "2026-08-23T23:13:05.110051+00:00",
   "computation": "delta-lambda-binding-full-evaluation",
   "scriptFile": "delta_lambda_binding_full_evaluation.py",
-  "description": "Full numerical evaluation of the Δ_λ binding formula B(K) = m_e × |Σ y_λ · χ^λ(β_K) · sgn(w_0^{S_{λ prime}}) · f^λ| for D, T, ³He, ⁴He. Zero free parameters. All factors: y_λ (Wenzl), χ^λ (Hoefsmit+interface), sgn (Macdonald), f^λ (hook-length).",
+  "description": "Full numerical evaluation of the \u0394_\u03bb binding formula B(K) = m_e \u00d7 |\u03a3 y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb prime}}) \u00b7 f^\u03bb| for D, T, \u00b3He, \u2074He. Zero free parameters. All factors: y_\u03bb (Wenzl), \u03c7^\u03bb (Hoefsmit+interface), sgn (Macdonald), f^\u03bb (hook-length).",
   "data": {
     "D": {
       "A": 2,
       "Z": 1,
       "N": 1,
-      "sum": -0.7439005054492055,
-      "B_pred_MeV": 0.3801323777023046,
+      "sum": -0.717445421638373,
+      "B_pred_MeV": 0.36661385763455323,
       "B_AME_MeV": 2.22452,
-      "err_MeV": -1.8443876222976954,
-      "err_pct": -82.91171229288544
+      "err_MeV": -1.8579061423654468,
+      "err_pct": -83.51941732892699
     },
     "T": {
       "A": 3,
       "Z": 1,
       "N": 2,
-      "sum": -3.7347446647642837,
-      "B_pred_MeV": 1.9084506047896248,
+      "sum": -2.475140289713602,
+      "B_pred_MeV": 1.2647940908541933,
       "B_AME_MeV": 8.4818,
-      "err_MeV": -6.573349395210375,
-      "err_pct": -77.49946232179933
+      "err_MeV": -7.217005909145806,
+      "err_pct": -85.08814059687573
     },
     "3He": {
       "A": 3,
       "Z": 2,
       "N": 1,
-      "sum": -4.5880514246742665,
-      "B_pred_MeV": 2.3444894637203095,
+      "sum": -3.0789912094959777,
+      "B_pred_MeV": 1.5733612772361787,
       "B_AME_MeV": 7.71804,
-      "err_MeV": -5.373550536279691,
-      "err_pct": -69.62325326481452
+      "err_MeV": -6.144678722763821,
+      "err_pct": -79.61449698063007
     },
     "4He": {
       "A": 4,
       "Z": 2,
       "N": 2,
-      "sum": -5.945489513716075,
-      "B_pred_MeV": 3.038138902847313,
+      "sum": -0.19093779375635747,
+      "B_pred_MeV": 0.0975690122565623,
       "B_AME_MeV": 28.29567,
-      "err_MeV": -25.25753109715269,
-      "err_pct": -89.26288402837851
+      "err_MeV": -28.198100987743437,
+      "err_pct": -99.65518041362313
     }
   },
   "assertions": [
@@ -66,8 +66,10 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "072a01bf2371",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "durationMs": 0
+  "scriptHash": "4df13cda5f0d",
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-06-12T15:33:32.405409+00:00",
-  "commitSha": "adced7b0c6b3bbb5a514fd200e12030e6d5c1a0b",
+  "computedAt": "2026-08-24T00:50:50.310811+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "2H_named_matches_within_3p5pct",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 166,
+  "durationMs": 156,
   "computation": "knot-id-volume-match-adjudication",
   "scriptFile": "knot_id_volume_match_adjudication.py",
-  "scriptHash": "10ffd637c5aa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "78703acf5003",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -75,46 +75,67 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/knot_id_volume_match_adjudication.py"
+    ],
+    "reproduce": "python3 -u computations/probes/knot_id_volume_match_adjudication.py"
   },
   "description": "Adjudicates the conj:canonical-knot-id-sdp volume fork: scores BOTH knot sets (named {6_2, 8_11, L6a4} vs orphan {6_1, 8_1, 6^3_1}) under the zero-free-parameter law B_AME ≈ ρ·m_e·Vol(K) with the conjecture's own multiplicities ρ={1,2,2}. Named set reproduces the historical match-quality pattern (≤3 %); orphan set fails (27–59 % at table ρ; deuteron ≥27 % at EVERY integer ρ ≤ 4). Verdict: the names are right, the printed digits are stale. Diagnostic only — content/Lean digit fixes remain owner-confirmed thread-4 actions.",
   "data": {
     "2H_named_knot": "6_2",
     "2H_named_vol": "4.4008325161230461014412038656409280339834854185165",
-    "2H_named_B_pred": "2.2488207948647346286380486620784553023911253662022",
-    "2H_named_rel_err": "0.01090315813",
+    "2H_named_B_pred": "2.2488207979013090647629504720728859696833657096508",
+    "2H_named_rel_err": "0.01090306861",
     "2H_orphan_knot": "6_1",
     "2H_orphan_vol": "3.1639632288831439839910147159731544848127876715181",
-    "2H_orphan_B_pred": "1.6167818877978962485182253292968301699271254467187",
-    "2H_orphan_rel_err": "-0.273214691",
-    "2H_B_AME": "2.224566",
+    "2H_orphan_B_pred": "1.6167818899810308764475946782506303239486020412395",
+    "2H_orphan_rel_err": "-0.2732147553",
+    "2H_B_AME": "2.2245662",
     "2H_rho_table": "1",
     "3H_named_knot": "8_11",
     "3H_named_vol": "8.2863168178065925881268247977511671629487442454111",
-    "3H_named_B_pred": "8.4685983865330202312211798769696175630825744264472",
-    "3H_named_rel_err": "-0.001556228227",
+    "3H_named_B_pred": "8.4685983979681374397942776485846357839791851113165",
+    "3H_named_rel_err": "-0.00155601499",
     "3H_orphan_knot": "8_1",
     "3H_orphan_vol": "3.4272052462740162198635395900533060307058393707238",
-    "3H_orphan_B_pred": "3.5025965645610274012664757476013396514387033546171",
-    "3H_orphan_rel_err": "-0.5870455103",
-    "3H_B_AME": "8.481798",
+    "3H_orphan_B_pred": "3.5025965692905706411246181310130242857122656769911",
+    "3H_orphan_rel_err": "-0.5870454221",
+    "3H_B_AME": "8.4817962",
     "3H_rho_table": "2",
     "3He_named_knot": "L6a4",
     "3He_named_vol": "7.3277247534177521204368281194590728861931949942534",
-    "3He_named_B_pred": "7.4889193097709604898069854207481216256363842784175",
-    "3He_named_rel_err": "-0.02968676",
+    "3He_named_B_pred": "7.4889193198832206495234833469509444304899048613641",
+    "3He_named_rel_err": "-0.02968654748",
     "3He_orphan_knot": "6^3_1",
     "3He_orphan_vol": "5.3334895668981195815934249252213000881967677771053",
-    "3He_orphan_B_pred": "5.4508151370417877263373589273838257254069114549893",
-    "3He_orphan_rel_err": "-0.2937568323",
-    "3He_B_AME": "7.718043",
+    "3He_orphan_B_pred": "5.4508151444020033286567639499827521222123055767008",
+    "3He_orphan_rel_err": "-0.2937566776",
+    "3He_B_AME": "7.71804132",
     "3He_rho_table": "2",
     "2H_orphan_best_rho": "1",
-    "2H_orphan_best_rel_err": "0.273214691",
+    "2H_orphan_best_rel_err": "0.2732147553",
     "3H_orphan_best_rho": "4",
-    "3H_orphan_best_rel_err": "0.1740910207",
+    "3H_orphan_best_rel_err": "0.1740908443",
     "3He_orphan_best_rho": "3",
-    "3He_orphan_best_rel_err": "0.0593647516"
+    "3He_orphan_best_rel_err": "0.05936498363",
+    "upstream_witness_hashes": [
+      {
+        "path": "ame-2020-binding-energies.witness.json",
+        "sha256": "e2b7d19c294df4b20ef322f1a96650fbf34bf5d28cc75e7bc02409ed82199d94",
+        "size_bytes": 3246,
+        "commitSha": "bc787ae9a14e34547a52806b232217dc50dc779b",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-08-19T17:36:26.225964+00:00"
+      }
+    ]
   }
 }

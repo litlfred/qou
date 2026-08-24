@@ -39,14 +39,14 @@
   },
   "allPassed": true,
   "verdict": "TARGET SHARPENED, NO CLOSURE. The lever-1 monodromy trace is a rational function of the quantum integer [2]_q alone: with s = q+q⁻¹ = [2]_q, a_D^(2)=1, a_D^(3)=(s+2)/3, a_D^(4)=(3s²−2)/4, and tr B = 3(3s²+2)/(4(s+2)) (50-dps verified, symbolic + numeric). det B = 1 (proved) with tr B ≈ 2.6424 > 2 makes B a HYPERBOLIC SL₂(ℝ) element (λ ≈ 2.1846); the trace is non-integer, so B is NOT an SL₂(ℤ) elliptic-fibration topological monodromy but the rank-2 q-DIFFERENCE connection matrix on W. The rank-2 W is forced by A₅-irreducibility of H^{1,0}(Bring) (Sage-free char theory) to be an isogeny/CM factor of Jac(Bring), not a form-subrep. NET: 'identify E(q)' is now 'find the rank-2 q-difference system on H¹(E) whose connection trace is 3(3[2]_q²+2)/(4([2]_q+2))' — a [2]_q-rational, hyperbolic target. The fixed j(Bring/S₄) and the q-family connection itself stay Sage/Magma- and owner-gated (s5-so3 keystone). No fit.",
-  "scriptHash": "f7c53db87c29",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
-  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "scriptFile": "lever1_trB_quantum_integer_form.py",
+  "scriptHash": "01542c64cbc6",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "sympy",
-  "computedAt": "2026-08-14T19:49:40.196485+00:00",
+  "computedAt": "2026-08-24T02:44:56.553194+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "lever1_trB_quantum_integer_form.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

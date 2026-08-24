@@ -1,24 +1,24 @@
 {
   "engine": "python+regex",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:43:44.090978+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T00:09:55.737392+00:00",
+  "commitSha": "bbf717a26ddcbe15e958e5663f32dc8fe5f3b3c9",
   "assertions": [
     {
       "name": "found_non_arch_misuse_sites",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.0,
       "source": "Regex audit of paper .md files"
     }
   ],
-  "allPassed": false,
-  "durationMs": 8,
+  "allPassed": true,
+  "durationMs": 240,
   "computation": "paper-modulus-audit-nonarchimedean",
   "scriptFile": "paper_modulus_audit_nonarchimedean.py",
-  "scriptHash": "65a4f87d4e6f",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "958d47720ce8",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,26 +26,205 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/paper_modulus_audit_nonarchimedean.py"
+    ],
+    "reproduce": "python3 -u computations/paper_modulus_audit_nonarchimedean.py"
   },
   "description": "Full paper audit of |...| usage in non-archimedean sections. Per user 2026-06-01: |...| should appear only in archimedean specializations; categorical / pre-τ statements should use signed tr_M and let the archimedean reduction add |...| if convergence requires it.",
   "auditOnly": "docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md",
   "data": {
-    "total_sites": 0,
+    "total_sites": 104,
     "by_classification": {
-      "ARCHIMEDEAN-OK": 0,
-      "NON-ARCH-MISUSE": 0,
-      "BOTH-SIGNALS": 0,
-      "AMBIGUOUS": 0
+      "ARCHIMEDEAN-OK": 13,
+      "NON-ARCH-MISUSE": 17,
+      "BOTH-SIGNALS": 27,
+      "AMBIGUOUS": 47
     },
-    "by_directory_misuse_count": {},
-    "non_arch_misuse_sample": [],
-    "archimedean_ok_sample": [],
+    "by_directory_misuse_count": {
+      "mass-theory": 7,
+      "braids-and-knots": 2,
+      "knots-particles-confinement": 2,
+      "predicted-spectra": 2,
+      "observations": 1,
+      "lifting-and-descent": 1,
+      "mass-endomorphism": 1,
+      "molecular-construction": 1,
+      "brings-surface": 0,
+      "audit": 0,
+      "appendix-mass-binding-algorithms": 0,
+      "fluid-dynamics": 0,
+      "appendix-knot-periodic-table": 0,
+      "notation": 0,
+      "climax-volume-mass": 0,
+      "q-geometric-langlands": 0,
+      "appendix-qvalues": 0,
+      "nuclear-interactions": 0
+    },
+    "non_arch_misuse_sample": [
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md",
+        "line": 1,
+        "text": "The **Borromean categorical observable** $F_{\\mathrm{Bor}}(q) := |\\mathrm{tr}_M(\\beta_{\\mathrm{Bor}}, q)| \\cdot [3]_q! / q^3$ is the natural Wedderbur"
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md",
+        "line": 4,
+        "text": "\\frac{\\bigl|\\mathrm{tr}_M(\\beta_{\\mathrm{Bor}}, q)\\bigr| \\cdot [3]_q!}{q^3}."
+      },
+      {
+        "file": "content/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration.md",
+        "line": 12,
+        "text": "\\bigl|\\mathrm{tr}_M^{\\mathrm{e^- + \\bar\\nu}}\\bigr|"
+      },
+      {
+        "file": "content/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md",
+        "line": 34,
+        "text": "*The proton's 9-crossing element $\\mathcal{B}_3 \\times \\Delta_3(\\mathfrak{u}\\mathfrak{u}\\mathfrak{d})$ admits $N_\\ell = 84$ feasible ILP solutions at "
+      },
+      {
+        "file": "content/quantum-observable-universe/observations/magic-numbers-from-q.md",
+        "line": 6,
+        "text": "\\Phi(Z) = \\sum_{k=3}^{K} \\sum_{\\lambda \\vdash k} w_\\lambda \\, \\ln|\\chi_\\lambda(Z)|"
+      },
+      {
+        "file": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou-su2.md",
+        "line": 22,
+        "text": "R_{\\mathrm{tot}} =  2d + |\\chi(A)|"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.md",
+        "line": 5,
+        "text": "$\\mathfrak{m}_{q,\\mathcal{K}} = |\\mathrm{tr}_M|$ and per-braid"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance-proof.md",
+        "line": 99,
+        "text": "should give the same $|\\tau|$ to 50 dps; the resulting"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.md",
+        "line": 23,
+        "text": "= |\\mathrm{tr}_M(\\rho(\\beta))|$.  $\\square$"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/phi-q-tower-algebraic-stratification.md",
+        "line": 9,
+        "text": "\\bigl\\| \\mathrm{tr}_M(\\rho(\\beta_\\emptyset))\\bigr\\|_F"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.md",
+        "line": 7,
+        "text": "{|\\mathrm{tr}_M(\\mathcal{B}_K)|}"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.md",
+        "line": 12,
+        "text": "Since categorical mass is $\\mathfrak{m} = |\\mathrm{tr}_M|$:"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.md",
+        "line": 15,
+        "text": "|\\mathrm{tr}_M(\\mathfrak{n})| > |\\mathrm{tr}_M(\\mathfrak{p})|"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.md",
+        "line": 14,
+        "text": "\\bigl|\\mathrm{tr}_M(\\rho(\\beta))\\bigr|"
+      },
+      {
+        "file": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique-proof.md",
+        "line": 2,
+        "text": "The argument inherits from the [uniqueness of hadrons](#prop:hadron-unique). The Hecke normal form is unique in $H_3(q)$. Permuting the colour tubes $"
+      },
+      {
+        "file": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique-proof.md",
+        "line": 2,
+        "text": "The argument is identical to that for the [uniqueness of the categorical proton](#prop:categorical-proton-unique), applying the partition $(\\mathfrak{"
+      },
+      {
+        "file": "content/quantum-observable-universe/molecular-construction/shell-filling-electronegativity-ilp.md",
+        "line": 5,
+        "text": "*The integer LP builds each electron shell from scratch. Starting from the bare nucleus, we add electrons one at a time. At each step, we select the o"
+      }
+    ],
+    "archimedean_ok_sample": [
+      {
+        "file": "content/quantum-observable-universe/knots-particles-confinement/magic-shell-coupling-kappa.md",
+        "line": 45,
+        "text": "the inverse Markov weight of the trivial partition $(3) \\vdash 3$. This is the reusable content of the block. The index $3$ is the strand count of a s"
+      },
+      {
+        "file": "content/quantum-observable-universe/observations/mass-comparison-table.md",
+        "line": 21,
+        "text": "The proton and neutron rows derive from the LO $\\rho_K$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-vi"
+      },
+      {
+        "file": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
+        "line": 248,
+        "text": "### Layer-1 canonical $|\\mathrm{tr}_M(q_0)|$ table"
+      },
+      {
+        "file": "content/quantum-observable-universe/notation/notation-collisions.md",
+        "line": 112,
+        "text": "| $B_{\\mathrm{sym}}$ | $-\\alpha \\ln\\lvert\\mathrm{tr}_M(K)\\rvert$ (log-trace) | **exact** symbolic, light $A$ | kept |"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md",
+        "line": 13,
+        "text": "- **And $p = -1/2$ was already measured, by checks that were read as measuring something else.** For any *pair* of manifolds, $c_1\\sqrt{\\tau_1} = c_2\\"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md",
+        "line": 17,
+        "text": "- **And $k = 2^{-1/2}$ is forced by the saddle condition, before any manifold is named.** Laplace's method on a state-sum whose logarithm expands as $"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance-proof.md",
+        "line": 11,
+        "text": "m_e \\cdot \\rho \\cdot \\bigl|\\tau(\\beta_{\\mathfrak{H}})\\bigr|,"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal-proof.md",
+        "line": 134,
+        "text": "from the descended $|\\mathrm{tr}_M|$ and brane-tower pieces,"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.md",
+        "line": 15,
+        "text": "The mass formula $M(K) = \\rho_K \\cdot m_e \\cdot |\\mathrm{tr}_M(\\mathcal{B}_K)|$ is exact. If we force $\\Delta_\\lambda \\equiv 0$, the sum collapses exa"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/plancherel-term-7-formulation-proof.md",
+        "line": 35,
+        "text": "bounded but lets each block contribute $O(\\log|\\chi|)$, which can"
+      },
+      {
+        "file": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity-derivation.md",
+        "line": 11,
+        "text": "| $|\\mathrm{tr}_M(\\beta_{\\mathrm{Bor}}, q_0)|$ | $0.998562163\\ldots$ |"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.md",
+        "line": 18,
+        "text": "This direct form supersedes the equivalent factorisation $\\mathfrak{m}(K) = \\rho_K m_e |\\mathrm{tr}_M(K)|$, where $\\rho_K = \\rho_K^{\\mathrm{LO}} + (\\S"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md",
+        "line": 14,
+        "text": "m_e \\cdot |\\mathrm{tr}_M(\\mathcal{B}_K)| \\cdot \\left(\\rho_K^{\\text{LO}} + \\rho_K^{\\text{single-gen}} + \\rho_K^{\\text{pair-gen}}\\right)"
+      }
+    ],
     "audit_method": {
       "patterns_searched": [
         "\\|\\s*\\\\mathrm\\{tr\\}_M[^\\|]*\\|",
@@ -59,6 +238,6 @@
       "classification_rule": "see classify_site() — context window 5 lines either side",
       "limitation": "regex-based; some misuse may classify as AMBIGUOUS if context lacks clear hints"
     },
-    "recommendation": "Found 0 sites with |...| in contexts that read as categorical / pre-τ rather than archimedean. Per user 2026-06-01: refactor these to use signed tr_M (or χ, etc.) in the categorical statement, with archimedean specialization adding |...| ONLY where convergence requires it. The fact that sites like conj:im-q-physical-role use |tr_M| at the conjecture level — a conjecture about Im(q) — is itself self-contradictory and a candidate for the first refactor pass."
+    "recommendation": "Found 17 sites with |...| in contexts that read as categorical / pre-τ rather than archimedean. Per user 2026-06-01: refactor these to use signed tr_M (or χ, etc.) in the categorical statement, with archimedean specialization adding |...| ONLY where convergence requires it. The fact that sites like conj:im-q-physical-role use |tr_M| at the conjecture level — a conjecture about Im(q) — is itself self-contradictory and a candidate for the first refactor pass."
   }
 }

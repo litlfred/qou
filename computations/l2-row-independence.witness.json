@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-09T21:13:33.654546+00:00",
-  "commitSha": "92047cba5eb08f92e2e1f277d085ad94f8c15fec",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T23:51:36.530491+00:00",
+  "commitSha": "f6f629021f5b87ea63749872ad354a3e119b53e0",
   "assertions": [
     {
       "name": "predictions_for_m_n_and_delta_pn_add_no_framework_content",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 5,
   "computation": "l2-row-independence",
   "scriptFile": "l2_row_independence_probe.py",
-  "scriptHash": "ac277e7a9d30",
-  "scriptCommitSha": "51ccb91d87ba61762fc184add7f50c1a9d4eb533",
+  "scriptHash": "f3f59b1d0dae",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/l2_row_independence_probe.py"
+    ],
+    "reproduce": "python3 -u computations/l2_row_independence_probe.py"
   },
   "description": "Separates prediction-side from target-side redundancy on the L2 dashboard. The PREDICTIONS for m_n and Delta_pn are exactly Q_beta/m_p plus m_e, so the framework has only two independent quantities on the fail list (Q_beta, m_mu) once m_p is recognised as an unscored anchor round-trip. The TARGETS stopped being redundant on 2026-08-09 when the CODATA vintage fix repointed the neutron at the independent direct determination — a gain in the dashboard's information content that does not add a third lever. Audit-only.",
   "auditOnly": "docs/audits/2026-08-09-codata-registry-vintage-straddle.md",
@@ -66,16 +74,16 @@
     "caveat": "Prediction-redundant does not mean wrong to publish — m_n in MeV is a useful number. It means the row is not an independent test OF THE FRAMEWORK, so L2 planning must not count it as a separate front.",
     "target_side_change_2026_08_09": "Pre-fix the neutron target was M_N_MEV_AME_DERIVED, constructed as M_P + M_E + Q_BETA, so the target side was redundant too and the m_n row tested nothing new. It now points at M_N_MEV_CODATA_DIRECT, so ~0.16 ppb of independent experimental information enters."
   },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "upstream": [
     {
       "path": "per-observable-100x-status.witness.json",
-      "sha256": "eea3d26d1b28e5f3dedfa89b2ba9749100b7c24ec7be043dc0e262c2302b0b10",
-      "size_bytes": 11210,
-      "commitSha": "92047cba5eb08f92e2e1f277d085ad94f8c15fec",
-      "scriptCommitSha": "4e3cfd3121dfc9eca5cba5906667f4b87c7f45e0",
-      "computedAt": "2026-08-09T21:09:59.867239+00:00"
+      "sha256": "f41181bc6881bdc6c68ccf7139ec2f7d70909cf89b45b0438ccde3c9a21639cb",
+      "size_bytes": 11903,
+      "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
+      "scriptCommitSha": "dde3930f727335922558baa7f5ef7925afb27c0f",
+      "computedAt": "2026-08-23T19:40:31.148602+00:00"
     }
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

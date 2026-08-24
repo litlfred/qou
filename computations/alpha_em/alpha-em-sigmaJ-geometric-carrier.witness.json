@@ -3,12 +3,12 @@
   "description": "Brick 4: the sigma->J map's geometric carrier \u2014 the Bring vertex V=[1:i:-1:-i:0] (on-curve exact) is fixed by the (2,4,5) order-4 rotation with multiplier exactly i = the democratic q, so dU|_V = J|_V (J automorphism-realized); conjugation swaps the +-i multiplier families (= bar on the degenerate pair = conjugation on spec(J)); the order-4 quotient is genus-1 = E_{5tau0}, the dominant Jacobian factor. The tau target is now concrete. Derives no clause; nothing wired.",
   "auditOnly": "docs/audits/2026-07-18-alpha-em-sigmaJ-geometric-carrier.md",
   "tier": "symbolic-exact (sympy; on-curve check, projective multipliers, Riemann-Hurwitz)",
-  "computedAt": "2026-07-18T14:53:46.156254+00:00",
-  "commitSha": "ec38b6a49c46df31bd2c779c2d747e5609bd6fda",
+  "computedAt": "2026-08-23T22:25:23.222136+00:00",
+  "commitSha": "cffc1265f0020e076c7671e8081177c6d803a63d",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "alpha_em_sigmaJ_geometric_carrier_probe.py",
-  "scriptHash": "b52d3a3570dd",
+  "scriptHash": "7b613f67dd39",
   "assertions": [
     {
       "name": "vertex_on_bring_exact",
@@ -43,5 +43,9 @@
     "builds_on": "merged #3933 (bricks 1-3: corrected dictionary, unique tau target, sigma->J at the degenerate locus) + Braden-Disney-Hogg Prop 3.9/SS4.3/Prop 4.6 (PDF in library/)",
     "remaining": "the functorial statement tau(braiding) = the order-4 automorphism action; its classical limit inherits the conformal structure J defines, hence a0 (Clause A)",
     "scope_guard": "derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4"
-  }
+  },
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

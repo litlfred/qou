@@ -3,12 +3,12 @@
   "description": "Applies the Faddeev modular double / Rogers two-saddle transformation (hbar_q -> i*hbar_q) to the categorical GS net departure to bridge the cosh-like growth to the cos-like observable ladder.",
   "audit_only": true,
   "tier": "symbolic-exact",
-  "computedAt": "2026-07-07T17:57:47.768947+00:00",
-  "commitSha": "2d79f9d751c40e3b875b5c9c9bdf4ea7dd7439f4",
+  "computedAt": "2026-08-23T23:44:39.366073+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "qbeta_c3_faddeev_rogers_probe.py",
-  "scriptHash": "7fa824f3edea",
+  "scriptHash": "a6e5a59b8ebe",
   "assertions": [
     {
       "name": "1_gs_departure_cosh_like",
@@ -26,5 +26,15 @@
     "GS_Departure": "-3023*t**7/8 - 1253*t**6/8 - 217*t**5/4 - 57*t**4/4 - 2*t**3 + t**2",
     "Faddeev_Transformed_Departure": "3023*I*t**7/8 + 1253*t**6/8 - 217*I*t**5/4 - 57*t**4/4 + 2*I*t**3 - t**2",
     "verdict": "PASS: Faddeev/Rogers transformation maps the cosh-like GS categorical net to a cos-like observable ladder shape (negative leading t^2 term)."
-  }
+  },
+  "context": {
+    "input_source": "qbeta-crossing-weight-hecke.witness.json -> result.Q_beta_GS_over_Q_A_minus_1",
+    "input_producer": "computations/qbeta/qbeta_crossing_weight_hecke_probe.py",
+    "flip_flop_guard": "registry section 8 -- no c_k wired",
+    "convention": "convention-C frame; awaits re-derivation under D (bean qou-cds1)"
+  },
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

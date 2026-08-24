@@ -39,14 +39,14 @@
   },
   "allPassed": true,
   "verdict": "DEPTH-2 CONSTANT-COEFFICIENT RECURRENCE FALSIFIED FOR lw(c) BEYOND THE SEED. tau fit to n<=4 (=2.6424, the closed form) fails the n=5 verification (lw(4) off by 0.0205 = 0.4%), n=6 by 14%, n=7 worse; the windowed kernel drifts 2.6424 -> 2.6505. So the selection-rule values lw(c) are NOT the prolonged periods phi(M^n v0) of a fixed 2x2 SL2 M (those satisfy the recurrence exactly by Cayley-Hamilton). theta_binding=arccosh(tau/2)=0.7815 is a 3-point SEED-FIT artifact, not a derived recurrence rate -- this is the audit fork (b), concrete. The a_D=lw identification holds only at the n=2,3,4 anchors (a near-match, not a derivation, exactly the cross-anchor pattern the canonical discipline flags). Does NOT refute the Jac(Bring)~E^4 isogeny (sibling mass-open-keystone, correct) or the 2x2 M's existence -- it refutes that the lw values ARE that M's prolonged periods. No fit.",
-  "scriptHash": "3d3851f3890e",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
-  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "scriptFile": "lever1_lw_depth2_recurrence_test.py",
+  "scriptHash": "dcab0ef21910",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "sympy",
-  "computedAt": "2026-08-14T19:49:35.897249+00:00",
+  "computedAt": "2026-08-24T02:44:52.426482+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "lever1_lw_depth2_recurrence_test.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

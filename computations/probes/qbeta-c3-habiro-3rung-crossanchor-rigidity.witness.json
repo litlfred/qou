@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:20:34.954852+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T01:32:21.151716+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "c3_habiro_3rung_tracks_empirical_across_anchors",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 14,
   "computation": "qbeta-c3-habiro-3rung-crossanchor-rigidity",
   "scriptFile": "qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py",
-  "scriptHash": "d79c91ed99e0",
-  "scriptCommitSha": "757273be272ddbe39b770fdd23abf8f6690df2a1",
+  "scriptHash": "806c975c4626",
+  "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,24 +27,34 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py"
   },
   "data": {
-    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798",
-    "q_muon": "1.10997859555418057528159407960950937799328227995868622546675",
-    "anchor_separation": "0.00000000000315414461816914087371564866292612882146746114122945699118400",
-    "c3_formula_proton": "-2.06934807526929071332322744586560212549163374031608084420235",
-    "c3_formula_muon": "-2.06934807526613882385821943478345231808474819342063413634300",
+    "q_proton": "1.10997858275138080759166909561076887987449912187357873607281",
+    "q_muon": "1.10997859564273904668179512938000175270006556102901155697405",
+    "anchor_separation": "0.0000000128913582390901260337692328728255664391554328209012315298173",
+    "c3_formula_proton": "-2.06934806247249333267102942082213995621957576140770579731599",
+    "c3_formula_muon": "-2.06934807535463397766669417726357003562651681533097609842468",
     "c3_empirical_proton": "-2.0693",
     "c3_empirical_muon": "-2.0097",
-    "err_proton_pct": -0.0023232624216195843,
-    "err_muon_pct": -2.968008920044722,
-    "formula_swing_pct": -1.523131609745183e-10,
-    "empirical_swing_pct": -2.8802010341661477,
-    "swing_ratio_formula_over_empirical": 5.2882822819558767e-11,
-    "mismatch_factor_empirical_over_formula": 18909731869.119305,
+    "err_proton_pct": -0.0023226440097295063,
+    "err_muon_pct": -2.9680089244481254,
+    "formula_swing_pct": 6.225216955336096e-07,
+    "empirical_swing_pct": -2.8802010341661433,
+    "swing_ratio_formula_over_empirical": -2.1613827928988226e-07,
+    "mismatch_factor_empirical_over_formula": 4626667.720708608,
     "tracks_across_anchors": false,
-    "interpretation": "The real-q 3-rung [3]_q/25 c_3 closure swings -1.52e-10% across the two anchors while empirical c_3 swings -2.88% (ratio 5.29e-11). The formula is RIGID; it reproduces empirical c_3 only at the proton anchor (miss -2.97% at muon). This CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre element — consistent with the known impossibility of a real-q c_3=f(q) matching multiple anchors (AGENTS.md). The genuine Habiro element, if it exists, is complex-analytic / root-of-unity. Falsification test; no fit, no production change."
+    "interpretation": "The real-q 3-rung [3]_q/25 c_3 closure swings +6.23e-07% across the two anchors while empirical c_3 swings -2.88% (ratio -2.16e-07). The formula is RIGID; it reproduces empirical c_3 only at the proton anchor (miss -2.97% at muon). This CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre element — consistent with the known impossibility of a real-q c_3=f(q) matching multiple anchors (AGENTS.md). The genuine Habiro element, if it exists, is complex-analytic / root-of-unity. Falsification test; no fit, no production change."
   }
 }

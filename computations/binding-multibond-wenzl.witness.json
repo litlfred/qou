@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T17:21:15.825205+00:00",
-  "commitSha": "e31e89d1b1180bc329079a8f7adb8eb3d5c1a782",
+  "computedAt": "2026-08-23T22:51:27.212396+00:00",
+  "commitSha": "cd8acfc1cd9a5799184f208fb625094eb9a0e8a9",
   "assertions": [
     {
       "name": "deuteron_single_bond_holds",
-      "computed": 6.30695900896109,
+      "computed": 6.306958853819184,
       "expected": 0,
       "passed": false,
       "tolerance": 1,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 2060,
+  "durationMs": 22351,
   "computation": "binding-multibond-wenzl",
   "scriptFile": "binding_multibond_wenzl.py",
-  "scriptHash": "7ce68c29ed54",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "e51bf27bddd3",
+  "scriptCommitSha": "d55f2e7f8ec9dc42341aff8066a162f441d9058a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,9 +29,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_multibond_wenzl.py"
+    ],
+    "reproduce": "python3 -u computations/binding_multibond_wenzl.py"
   },
   "description": "Multi-bond binding test in canonical Wenzl JM. Per-bond Δtr (each chain bond from vacuum) and the additive sum B = m_e·Vol(𝓑₃)·Σ Δtr_bond vs AME, alongside the combined single-link value. No scale fit (deuteron-fixed m_e·Vol(𝓑₃)).",
   "data": {
@@ -39,43 +47,43 @@
       "2H": {
         "n_bonds": 1,
         "per_bond_dtr": [
-          "0.556626031771"
+          "0.556626032692"
         ],
-        "sum_per_bond": "0.556626031771",
-        "dtr_combined": "0.556626031771",
-        "B_sum_MeV": "2.084263722",
-        "B_combined_MeV": "2.084263722",
+        "sum_per_bond": "0.556626032692",
+        "dtr_combined": "0.556626032692",
+        "B_sum_MeV": "2.084263725",
+        "B_combined_MeV": "2.084263725",
         "B_AME_MeV": "2.2245662",
-        "err_sum_pct": -6.30695900896109,
-        "err_combined_pct": -6.30695900896109
+        "err_sum_pct": -6.306958853819184,
+        "err_combined_pct": -6.306958853819184
       },
       "3H": {
         "n_bonds": 2,
         "per_bond_dtr": [
-          "0.549803849702",
-          "0.666652483351"
+          "0.549803850433",
+          "0.666652483752"
         ],
-        "sum_per_bond": "1.21645633305",
-        "dtr_combined": "0.8885685684",
-        "B_sum_MeV": "4.554971667",
-        "B_combined_MeV": "3.327209159",
+        "sum_per_bond": "1.21645633418",
+        "dtr_combined": "0.888568568439",
+        "B_sum_MeV": "4.554971671",
+        "B_combined_MeV": "3.32720916",
         "B_AME_MeV": "8.4817962",
-        "err_sum_pct": -46.297086610047465,
-        "err_combined_pct": -60.77235197582137
+        "err_sum_pct": -46.29708656010016,
+        "err_combined_pct": -60.772351974099905
       },
       "3He": {
         "n_bonds": 2,
         "per_bond_dtr": [
-          "0.50221797564",
-          "0.637759671291"
+          "0.502217976563",
+          "0.637759672031"
         ],
-        "sum_per_bond": "1.13997764693",
-        "dtr_combined": "0.892965697659",
-        "B_sum_MeV": "4.268600312",
-        "B_combined_MeV": "3.343674033",
+        "sum_per_bond": "1.13997764859",
+        "dtr_combined": "0.892965698191",
+        "B_sum_MeV": "4.268600318",
+        "B_combined_MeV": "3.343674035",
         "B_AME_MeV": "7.71804132",
-        "err_sum_pct": -44.69321768064851,
-        "err_combined_pct": -56.6771685462316
+        "err_sum_pct": -44.69321759997606,
+        "err_combined_pct": -56.677168520423365
       }
     },
     "lean_uniqueness_ref": {

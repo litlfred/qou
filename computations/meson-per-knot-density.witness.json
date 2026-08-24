@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-21T14:57:53.242529+00:00",
+  "computedAt": "2026-08-23T23:56:18.824772+00:00",
   "computation": "meson-per-knot-density",
   "scriptFile": "meson_per_knot_density.py",
   "description": "Meson-sector mass ratios (per-knot twin). Baryon reference routes through the canonical muon-anchored facade (canonical_mass.proton_mass_mev; \u03bb_A excised 2026-06-24); mesons use m=m_\u03c0\u00d7Geom_meson where m_\u03c0 is CAL-3. Tests three m_K candidates. Also cross-checks Q_\u03b2 as derived from CAL-1+CAL-2.",
@@ -55,9 +55,9 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "57f36f33a652",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "scriptHash": "bd907a16e065",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "5218280df85b6efebc5a4d740cbe8ef77436dc57",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

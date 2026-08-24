@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-18T09:33:24.818767+00:00",
-  "commitSha": "5dee38b805c3e4a44fb8d73d0ae3afb0ba61e750",
+  "computedAt": "2026-08-23T22:31:55.475108+00:00",
+  "commitSha": "52575b84442ae5d15d7307817541a1484ecc186b",
   "assertions": [
     {
       "name": "control_intersection_form_unimodular",
@@ -48,8 +48,8 @@
   "allPassed": true,
   "computation": "alpha-em-count-carrying-object",
   "scriptFile": "alpha_em_count_carrying_object_probe.py",
-  "scriptHash": "a57f005cecac",
-  "scriptCommitSha": "5dee38b805c3e4a44fb8d73d0ae3afb0ba61e750",
+  "scriptHash": "bbe15c009865",
+  "scriptCommitSha": "e84f6249b40e3200146a1d544b9949f86d3e64c8",
   "candidates": [
     {
       "tag": "A",
@@ -98,5 +98,8 @@
   "environment": {
     "python": "3.11.15",
     "sympy": "1.14.0"
-  }
+  },
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

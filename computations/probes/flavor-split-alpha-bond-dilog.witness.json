@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:33.118118+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-24T00:37:34.245389+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [
     {
       "name": "bond_dilog_O1_arg_worse_than_geometric",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "flavor-split-alpha-bond-dilog",
   "scriptFile": "flavor_split_alpha_bond_dilog_probe.py",
-  "scriptHash": "c8a9dc0426fa",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "bd3ae3ca48de",
+  "scriptCommitSha": "76e640cac9a12372238b3aa9a7fe647b761695cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [

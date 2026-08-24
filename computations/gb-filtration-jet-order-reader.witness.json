@@ -1,15 +1,37 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T01:06:04.055123+00:00",
-  "commitSha": "9cd29e5460be025f80010446657d2357a10e57ec",
+  "computedAt": "2026-08-23T23:43:13.914823+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "gb-filtration-jet-order-reader",
   "scriptFile": "gb_filtration_jet_order_reader.py",
-  "scriptHash": "ead2d6c0c795",
-  "scriptCommitSha": "ed7301985379777a611c704a9230131989188c90",
+  "scriptHash": "9c21b2b4cb56",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gb_filtration_jet_order_reader.py"
+    ],
+    "reproduce": "python3 -u computations/gb_filtration_jet_order_reader.py"
+  },
   "description": "Python-fallback reader for the GB-filtration / jet-order witness (P6 from PR #564). Loads gb-filtration-jet-order.witness.json and exposes a SparsityPattern API + decorate_solver_problem helper for any Python SDP solver to consume the filtration cutoffs and jet-chain ordering. Rust solver wiring is held pending #565's answers on Rust solver location and F11 strict-mode scope.",
   "auditOnly": "AUDIT-DEEP-2026-05.md",
   "patterns_loaded": [
@@ -52,6 +74,46 @@
       "filtered_basis_size": 6,
       "total_basis_size": 6,
       "speedup_estimate": 1.0
+    },
+    {
+      "name": "electron-stab σ_1^3 in H_4 (trefoil + 2 unknots)",
+      "n_strands": 4,
+      "max_grade": 1,
+      "filtered_basis_size": 2,
+      "total_basis_size": 24,
+      "speedup_estimate": 12.0
+    },
+    {
+      "name": "ascending σ_1 σ_2 σ_3 σ_1 σ_2 σ_1 in H_4 (longest)",
+      "n_strands": 4,
+      "max_grade": 6,
+      "filtered_basis_size": 1,
+      "total_basis_size": 24,
+      "speedup_estimate": 24.0
+    },
+    {
+      "name": "Borromean ⊗ σ_3 in H_4 (proton-stab)",
+      "n_strands": 4,
+      "max_grade": 3,
+      "filtered_basis_size": 5,
+      "total_basis_size": 24,
+      "speedup_estimate": 4.8
+    },
+    {
+      "name": "ascending σ_1 σ_2 σ_3 σ_4 in H_5",
+      "n_strands": 5,
+      "max_grade": 4,
+      "filtered_basis_size": 1,
+      "total_basis_size": 120,
+      "speedup_estimate": 120.0
+    },
+    {
+      "name": "²H disjoint mock (σ_1σ_2^{-1})^3 ⊗ σ_3..σ_5 in H_6",
+      "n_strands": 6,
+      "max_grade": 5,
+      "filtered_basis_size": 5,
+      "total_basis_size": 720,
+      "speedup_estimate": 144.0
     },
     {
       "name": "ascending σ_1 σ_2 σ_1 in H_3 (longest element)",

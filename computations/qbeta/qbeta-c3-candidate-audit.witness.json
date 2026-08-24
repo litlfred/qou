@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T01:35:32.037501+00:00",
-  "commitSha": "42a41839d9c30d2fb61f677e40969c1087f6cbf8",
+  "computedAt": "2026-08-24T01:51:20.476884+00:00",
+  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
   "assertions": [
     {
       "name": "no_existing_candidate_predicts_c_3_eq_neg_2_structurally",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 347,
+  "durationMs": 407,
   "computation": "qbeta-c3-candidate-audit",
   "scriptFile": "qbeta_c3_candidate_audit.py",
-  "scriptHash": "2e92944895e4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b596b3eae2f3",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_candidate_audit.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_candidate_audit.py"
   },
   "description": "Taylor-expand each N=3 candidate from probe_q_beta_operator_valued_N3.py to u³ order and read off the predicted c_3. Sanity-check against c_2 = -1 STRUCTURAL (prop:q-beta-c-2-eq-neg-one-structural). Verdict: which candidate (if any) predicts c_3 = -2 (the empirical near-match) structurally. Honest scoping — does not claim a structural c_3 derivation.",
   "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
@@ -120,7 +131,7 @@
       "c_3_status": "empirical near-match; no structural derivation",
       "candidates_predicting_c3_neg_2_structurally": 0,
       "empirical_c3_target": -2,
-      "j_hopf_q0_value": -2.043706208532522
+      "j_hopf_q0_value": -2.0437062182329013
     }
   }
 }

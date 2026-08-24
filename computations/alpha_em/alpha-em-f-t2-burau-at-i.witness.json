@@ -3,12 +3,12 @@
   "description": "F-construction T2 (qou-yuff): the local braid monodromy of the T1 cover reproduces the H2(i) Jordan module exactly. Dictionary q_B = q_H^{-2} sends q_H = i to the Burau integral point q_B = -1 = chi(deck)^2 (Gambaudo-Ghys jump locus); Burau there is a genuine Jordan block; rescaled generator conjugate to !![i,1;0,i] (VertexLocalTauModel) with the rho-partner under conjugation. First potential failure point of the McMullen route passes. T3-T5 open. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-19-alpha-em-f-t2-burau-at-i.md",
   "tier": "symbolic-exact (sympy; Burau/Hecke specializations + explicit conjugation)",
-  "computedAt": "2026-07-19T00:12:45.032206+00:00",
-  "commitSha": "9b20131e76b810d407f0a8cf580a09a5a0dd711c",
+  "computedAt": "2026-08-23T22:23:33.168058+00:00",
+  "commitSha": "4ac5ddf779edd34e90cda0c5d1e2a9a76ef97724",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "alpha_em_f_t2_burau_at_i_probe.py",
-  "scriptHash": "5764e3c3685c",
+  "scriptHash": "0bb6b489bb77",
   "assertions": [
     {
       "name": "parameter_dictionary",
@@ -40,7 +40,11 @@
   },
   "context": {
     "bean": "qou-yuff (T2) of milestone qou-a46k; T1 merged #4039",
-    "literature": "library/mcmullen-braids-hodge-2013/mcmullen-braids-hodge-2013.pdf; library/squier-burau-unitary-1984/squier-burau-unitary-1984.pdf; library/gambaudo-ghys-braids-signatures-2005/gambaudo-ghys-braids-signatures-2005.pdf; library/deligne-mostow-1986/deligne-mostow-1986.pdf",
+    "literature": "library/mcmullen-braids-hodge-2013/mcmullen-braids-hodge-2013.pdf; library/squier-burau-unitary-1984.pdf; library/gambaudo-ghys-braids-signatures-2005/gambaudo-ghys-braids-signatures-2005.pdf; library/deligne-mostow-1986/deligne-mostow-1986.pdf",
     "scope_guard": "local model only (disk around the two branch points); global monodromy = T3/T5; no fit; nothing wired; 1/(8pi) stays phase-4"
-  }
+  },
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

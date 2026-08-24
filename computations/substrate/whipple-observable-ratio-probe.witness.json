@@ -12,9 +12,9 @@
         ],
         "whipple_C_magnitude": "0.6002108774",
         "toroidal_amp_ratio_at_a": "0.6002108774",
-        "observed_B_even_over_B_odd": "3.3734444",
+        "observed_B_even_over_B_odd": "41232.154",
         "best_parameterfree_match": "1/C",
-        "best_rel_err": "0.5061",
+        "best_rel_err": "1.0000",
         "is_match_within_5pct": false
       },
       "3": {
@@ -36,38 +36,38 @@
     },
     "observed": {
       "2": {
-        "B_even": 3.000303217771135,
-        "B_odd": 0.8893886671066227,
+        "B_even": 2.8330938612149654,
+        "B_odd": 6.871078955833235e-05,
         "B_AME": 2.2245662
       }
     },
     "factor2_generalization_falsification": {
       "2H": {
         "A": 2,
-        "observed_B_even_over_B_odd": "3.3734",
+        "observed_B_even_over_B_odd": "41232.1541",
         "A_over_C_d_eq_A": "3.332",
-        "rel_err": "0.0122",
-        "matches_within_5pct": true
+        "rel_err": "0.9999",
+        "matches_within_5pct": false
       },
       "3H": {
         "A": 3,
-        "observed_B_even_over_B_odd": "2.2892",
+        "observed_B_even_over_B_odd": "6.5903",
         "A_over_C_d_eq_A": "12.496",
-        "rel_err": "4.4584",
+        "rel_err": "0.8961",
         "matches_within_5pct": false
       },
       "3He": {
         "A": 3,
-        "observed_B_even_over_B_odd": "6.6422",
+        "observed_B_even_over_B_odd": "-6.5914",
         "A_over_C_d_eq_A": "12.496",
-        "rel_err": "0.8812",
+        "rel_err": "2.8958",
         "matches_within_5pct": false
       },
       "4He": {
         "A": 4,
-        "observed_B_even_over_B_odd": "3.3438",
+        "observed_B_even_over_B_odd": "126349.6831",
         "A_over_C_d_eq_A": "58.313",
-        "rel_err": "16.4391",
+        "rel_err": "0.9995",
         "matches_within_5pct": false
       }
     },
@@ -81,12 +81,14 @@
   },
   "allPassed": true,
   "verdict": "NULL (honest, not a fit): the bare Whipple constant |C(nu,mu)| and the raw toroidal amplitude ratio at the physical forced windings (mu,nu)=(1/2,d-1/2) do NOT reproduce the observed even/odd binding ratio (deuteron B_even/B_odd) to 5% under any parameter-free combination {C, 1/C, amp, 1/amp}. The Whipple identification is mathematically exact but its BARE amplitude is not the observable ratio -- the binding-closure gap must supply the E0-scaled, many-body dressing between the dimensionless toroidal amplitude and the MeV even/odd split. This sharpens (does not close) the gap; nothing is fitted or wired. FURTHER: the tempting deuteron 2/|C| match is FALSIFIED as a derived factor — ratio = A/|C(d=A)| fails 446%/1644% at A=3/4 (see factor2_generalization_falsification); the factor-2 is a coincidence, explicitly NOT wired.",
-  "scriptHash": "61f8cabe6638",
-  "scriptCommitSha": "337badb759d0296187044074f8ef00c99a0d8513",
-  "commitSha": "337badb759d0296187044074f8ef00c99a0d8513",
+  "scriptFile": "whipple_observable_ratio_probe.py",
+  "scriptHash": "886148173817",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "968e82d89d05f16fecd7221931706e948ac17ea3",
   "engine": "mpmath",
-  "computedAt": "2026-07-13T12:40:35.196731+00:00",
+  "computedAt": "2026-08-24T02:45:01.584826+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "whipple_observable_ratio_probe.py"
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

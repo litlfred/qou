@@ -70,9 +70,9 @@
         3,
         5
       ],
-      "single_x": "4.52488547168",
-      "res_W5": "0.0683508",
-      "res_max": "0.0683508"
+      "single_x": "-4.43161783269",
+      "res_W5": "0.142709",
+      "res_max": "0.142709"
     },
     {
       "k": 3,
@@ -125,9 +125,9 @@
         45,
         47
       ],
-      "single_x": "2.8915159549",
-      "res_W5": "0.95118",
-      "res_max": "1.00001"
+      "single_x": "3.04584682819",
+      "res_W5": "0.933659",
+      "res_max": "1.00002"
     },
     {
       "k": 7,
@@ -169,9 +169,9 @@
         67,
         69
       ],
-      "single_x": "4.1674371528",
-      "res_W5": "0.134882",
-      "res_max": "34.2524"
+      "single_x": "4.0128256592",
+      "res_W5": "0.452325",
+      "res_max": "1.00001"
     }
   ],
   "verdict": {
@@ -194,15 +194,17 @@
     }
   ],
   "witness": {
-    "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-    "scriptHash": "3e42732e95da",
+    "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+    "scriptHash": "bb0da32f8b19",
     "producer": "computations/probes/bn_minus_bp_winding_iterate_probe.py"
   },
-  "scriptHash": "3e42732e95da",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "2f1e7a7eee69983b4a18228ff6a006122fe3b7f6",
+  "scriptFile": "bn_minus_bp_winding_iterate_probe.py",
+  "scriptHash": "bb0da32f8b19",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "1901f9774dfc48725eed2208f2cef5382bd817ca",
   "engine": "python",
-  "computedAt": "2026-07-18T13:52:59.363182+00:00",
+  "computedAt": "2026-08-24T00:16:54.214441+00:00",
   "durationMs": 0,
-  "scriptFile": "bn_minus_bp_winding_iterate_probe.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

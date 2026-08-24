@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:23:16.306052+00:00",
-  "commitSha": "858f41202339ad977e9ea3a8352ffaeea3b40863",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T23:15:34.150602+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [
     {
       "name": "he4_binding_is_majority_many_body",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "⁴He pairwise chain-sum = 26% of AME; residual 20.9 MeV is irreducible many-body (4-body α) binding — the pairwise bond-sum cannot contain it. Sub-α (A≤3) keeps the pairwise path + ordering."
+      "source": "⁴He pairwise chain-sum = 24% of AME; residual 21.4 MeV is irreducible many-body (4-body α) binding — the pairwise bond-sum cannot contain it. Sub-α (A≤3) keeps the pairwise path + ordering."
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 41,
   "computation": "derive-binding-chain-cooperative",
   "scriptFile": "derive_binding_chain_cooperative.py",
-  "scriptHash": "c65abc37e752",
-  "scriptCommitSha": "2ee1eddd42e93090f831004dd65c95525b5255f7",
+  "scriptHash": "83d778b42f9c",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,51 +28,61 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derive_binding_chain_cooperative.py"
+    ],
+    "reproduce": "python3 -u computations/derive_binding_chain_cooperative.py"
   },
   "description": "DERIVATION (0 fit): chain (A−1) pairwise bond-sum over the canonical braid's adjacency, and the many-body residual B_AME − B_chain. Bond types from binding_canonical (pp/pn/nn 2-nucleon sub-braids), E_0 calibration. Localizes: sub-α (A≤3) pairwise path + T/³He ordering; ⁴He residual ~20.9 MeV = irreducible 4-body α-binding (beyond pairwise).",
   "parameters": {
-    "E0_MeV": 4.185980827582892
+    "E0_MeV": 4.185981363294476
   },
   "data": {
     "bond_type_binding_MeV": {
-      "pp": 2.3785162259010546,
-      "pn": 2.491365700974405,
-      "nn": 2.5323249170235664
+      "pp": 2.1283609457570836,
+      "pn": 2.3296855762940316,
+      "nn": 2.4355847837462457
     },
     "per_atom": {
       "D": {
         "chain_bonds": [
           "pn"
         ],
-        "B_chain_MeV": 2.491365700974405,
-        "AME_MeV": 2.2245662000000004,
-        "err": 0.11993327102353904,
-        "many_body_residual_MeV": -0.2667995009744044,
-        "fraction_pairwise": 1.119933271023539
+        "B_chain_MeV": 2.3296855762940316,
+        "AME_MeV": 2.2245662,
+        "err": 0.04725387641600945,
+        "many_body_residual_MeV": -0.10511937629403176,
+        "fraction_pairwise": 1.0472538764160095
       },
       "T": {
         "chain_bonds": [
           "pn",
           "nn"
         ],
-        "B_chain_MeV": 5.023690617997971,
-        "AME_MeV": 8.481796200000002,
-        "err": -0.4077091102474296,
-        "many_body_residual_MeV": 3.4581055820020303,
-        "fraction_pairwise": 0.5922908897525704
+        "B_chain_MeV": 4.765270360040278,
+        "AME_MeV": 8.4817962,
+        "err": -0.43817674373733745,
+        "many_body_residual_MeV": 3.7165258399597225,
+        "fraction_pairwise": 0.5618232562626626
       },
       "3He": {
         "chain_bonds": [
           "pp",
           "pn"
         ],
-        "B_chain_MeV": 4.869881926875459,
+        "B_chain_MeV": 4.458046522051115,
         "AME_MeV": 7.71804132,
-        "err": -0.3690261913659385,
-        "many_body_residual_MeV": 2.848159393124541,
-        "fraction_pairwise": 0.6309738086340615
+        "err": -0.4223862846524492,
+        "many_body_residual_MeV": 3.259994797948885,
+        "fraction_pairwise": 0.5776137153475508
       },
       "4He": {
         "chain_bonds": [
@@ -80,13 +90,13 @@
           "pn",
           "nn"
         ],
-        "B_chain_MeV": 7.402206843899026,
+        "B_chain_MeV": 6.893631305797361,
         "AME_MeV": 28.2956624,
-        "err": -0.7383978243994378,
-        "many_body_residual_MeV": 20.893455556100974,
-        "fraction_pairwise": 0.2616021756005622
+        "err": -0.756371446324672,
+        "many_body_residual_MeV": 21.402031094202638,
+        "fraction_pairwise": 0.243628553675328
       }
     },
-    "he4_pairwise_fraction": 0.2616021756005622
+    "he4_pairwise_fraction": 0.243628553675328
   }
 }

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-28T04:41:01.210056+00:00",
-  "commitSha": "bc44957b45c651c81245f367871ed18da68f5d13",
+  "computedAt": "2026-08-23T23:45:36.156254+00:00",
+  "commitSha": "1b23f5f1e3667f19afa6e31aed4e041db7bbd295",
   "assertions": [
     {
       "name": "R_alg_is_algebraic",
@@ -14,16 +14,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 910,
+  "durationMs": 1217,
   "computation": "habiro-derivation-vs-fit-analysis",
   "scriptFile": "habiro_derivation_vs_fit.py",
-  "scriptHash": "bdf484a39e56",
-  "scriptCommitSha": "3168ca553cfb4a3a9ca6c5137318a609a2a483f6",
+  "scriptHash": "a0697bc06450",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_derivation_vs_fit.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_derivation_vs_fit.py"
   },
   "description": "Symbolic analysis of Habiro correction: the bridge R_alg(q) is algebraic but S = R_alg/(Vol/ℏ²) is transcendental. The third-factor coefficient is fitted: tightest numerical fit 1/1256, structural near-match 1/1260 = 1/(C(9,4)·10). Neither is derived.",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",

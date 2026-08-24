@@ -1,19 +1,41 @@
 {
   "engine": "snappy",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-05-01T15:55:59.975876+00:00",
-  "commitSha": "c38d0c8dbecfe61a2536464084fc9240bd80dbc4",
+  "computedAt": "2026-08-24T02:37:48.443999+00:00",
+  "commitSha": "b1b47ca6a26506d5f736cf882b5578a2e462907a",
   "assertions": [],
   "allPassed": true,
   "durationMs": 44,
   "computation": "snappy-cusp-seeding",
   "scriptFile": "snappy_cusp_seeding.py",
-  "scriptHash": "d5cfda288bf3",
-  "scriptCommitSha": "c38d0c8dbecfe61a2536464084fc9240bd80dbc4",
+  "scriptHash": "f4733c216049",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/snappy_cusp_seeding.py"
+    ],
+    "reproduce": "python3 -u computations/snappy_cusp_seeding.py"
+  },
   "description": "SnapPy-driven test of `conj:shared-denominator-cusp-holonomy`. For a few cusped hyperbolic 3-manifolds, compares the QOU algebraic q-Pochhammer denominator zeros against SnapPy's tetrahedral shape parameters, evaluates Thurston gluing-equation residuals at both, and drives Newton-Raphson on the gluing system from the algebraic seeds.",
   "contentBlock": "conj:shared-denominator-cusp-holonomy",
   "parameters": {
-    "q0": 1.1099785955541805,
+    "q0": 1.1099785827513808,
     "manifolds": [
       "m004",
       "m003",
@@ -43,7 +65,7 @@
             "imag": 0.1
           },
           {
-            "real": 0.9009182735643011,
+            "real": 0.9009182839557415,
             "imag": 0.1
           }
         ],
@@ -59,16 +81,16 @@
           },
           {
             "seed_index": 1,
-            "seed_real": 0.9009182735643011,
+            "seed_real": 0.9009182839557415,
             "seed_imag": 0.1,
             "snappy_index": 0,
             "snappy_real": 0.4999999999999998,
             "snappy_imag": 0.8660254037844383,
-            "distance": 0.8645983930825292
+            "distance": 0.8645983979010882
           }
         ],
         "max_pairing_distance": 0.9147649530032903,
-        "min_pairing_distance": 0.8645983930825292
+        "min_pairing_distance": 0.8645983979010882
       },
       {
         "name": "m003",
@@ -91,7 +113,7 @@
             "imag": 0.1
           },
           {
-            "real": 0.9009182735643011,
+            "real": 0.9009182839557415,
             "imag": 0.1
           }
         ],
@@ -107,16 +129,16 @@
           },
           {
             "seed_index": 1,
-            "seed_real": 0.9009182735643011,
+            "seed_real": 0.9009182839557415,
             "seed_imag": 0.1,
             "snappy_index": 1,
             "snappy_real": 0.49999999999999933,
             "snappy_imag": 0.8660254037844378,
-            "distance": 0.8645983930825291
+            "distance": 0.8645983979010881
           }
         ],
         "max_pairing_distance": 0.9147649530032902,
-        "min_pairing_distance": 0.8645983930825291
+        "min_pairing_distance": 0.8645983979010881
       },
       {
         "name": "L6a4",
@@ -163,31 +185,31 @@
             "imag": 0.1
           },
           {
-            "real": 0.9009182735643011,
+            "real": 0.9009182839557415,
             "imag": 0.1
           },
           {
-            "real": 0.811653735642081,
+            "real": 0.811653754365758,
             "imag": 0.1
           },
           {
-            "real": 0.7312336822466793,
+            "real": 0.7312337075494336,
             "imag": 0.1
           },
           {
-            "real": 0.658781786581745,
+            "real": 0.6587818169760302,
             "imag": 0.1
           },
           {
-            "real": 0.5935085498228316,
+            "real": 0.5935085840512905,
             "imag": 0.1
           },
           {
-            "real": 0.5347026980520374,
+            "real": 0.5347027350564906,
             "imag": 0.1
           },
           {
-            "real": 0.4817234315992154,
+            "real": 0.481723470493535,
             "imag": 0.1
           }
         ],
@@ -203,77 +225,77 @@
           },
           {
             "seed_index": 1,
-            "seed_real": 0.9009182735643011,
+            "seed_real": 0.9009182839557415,
             "seed_imag": 0.1,
             "snappy_index": 7,
             "snappy_real": 0.5000000000000002,
             "snappy_imag": 0.5000000000000001,
-            "distance": 0.5663351146430704
+            "distance": 0.5663351219993481
           },
           {
             "seed_index": 2,
-            "seed_real": 0.811653735642081,
+            "seed_real": 0.811653754365758,
             "seed_imag": 0.1,
             "snappy_index": 6,
             "snappy_real": 0.4999999999999999,
             "snappy_imag": 0.4999999999999999,
-            "distance": 0.5070779535137216
+            "distance": 0.5070779650214277
           },
           {
             "seed_index": 3,
-            "seed_real": 0.7312336822466793,
+            "seed_real": 0.7312337075494336,
             "seed_imag": 0.1,
             "snappy_index": 6,
             "snappy_real": 0.4999999999999999,
             "snappy_imag": 0.4999999999999999,
-            "distance": 0.46202707258921333
+            "distance": 0.46202708525264724
           },
           {
             "seed_index": 4,
-            "seed_real": 0.658781786581745,
+            "seed_real": 0.6587818169760302,
             "seed_imag": 0.1,
-            "snappy_index": 6,
-            "snappy_real": 0.4999999999999999,
+            "snappy_index": 5,
+            "snappy_real": 0.4999999999999998,
             "snappy_imag": 0.4999999999999999,
-            "distance": 0.4303622378300526
+            "distance": 0.4303622490439996
           },
           {
             "seed_index": 5,
-            "seed_real": 0.5935085498228316,
+            "seed_real": 0.5935085840512905,
             "seed_imag": 0.1,
             "snappy_index": 5,
             "snappy_real": 0.4999999999999998,
             "snappy_imag": 0.4999999999999999,
-            "distance": 0.4107844311679411
+            "distance": 0.41078443895950734
           },
           {
             "seed_index": 6,
-            "seed_real": 0.5347026980520374,
+            "seed_real": 0.5347027350564906,
             "seed_imag": 0.1,
             "snappy_index": 5,
             "snappy_real": 0.4999999999999998,
             "snappy_imag": 0.4999999999999999,
-            "distance": 0.40150252458993435
+            "distance": 0.40150252778830786
           },
           {
             "seed_index": 7,
-            "seed_real": 0.4817234315992154,
+            "seed_real": 0.481723470493535,
             "seed_imag": 0.1,
             "snappy_index": 5,
             "snappy_real": 0.4999999999999998,
             "snappy_imag": 0.4999999999999999,
-            "distance": 0.40041732349201437
+            "distance": 0.40041732171673167
           }
         ],
         "max_pairing_distance": 0.6403124237432848,
-        "min_pairing_distance": 0.40041732349201437
+        "min_pairing_distance": 0.40041732171673167
       }
     ],
     "summary": {
       "manifolds_tested": 3,
-      "min_pairing_distance": 0.40041732349201437,
+      "min_pairing_distance": 0.40041732171673167,
       "max_pairing_distance": 0.9147649530032903,
-      "mean_pairing_distance": 0.6147954811450727
+      "mean_pairing_distance": 0.6147954862778343
     }
   },
   "caveats": [

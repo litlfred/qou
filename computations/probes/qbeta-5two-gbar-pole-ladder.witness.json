@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T13:11:14.076922+00:00",
-  "commitSha": "c6e2b5bf5b1e84bab1be5f1f8c9a4a25ced66dcb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T01:09:23.003196+00:00",
+  "commitSha": "e1a6295df21d28953301afb189a2f7fd94721bb8",
   "assertions": [
     {
       "name": "star_identity_exact",
@@ -49,8 +49,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-gbar-pole-ladder",
   "scriptFile": "qbeta_5two_gbar_pole_ladder_probe.py",
-  "scriptHash": "871b7f8a7cb1",
-  "scriptCommitSha": "c6e2b5bf5b1e84bab1be5f1f8c9a4a25ced66dcb",
+  "scriptHash": "18c00914acf8",
+  "scriptCommitSha": "726eecfe685f46afdfb16e38c02c38616459e667",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,8 +60,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_gbar_pole_ladder_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_gbar_pole_ladder_probe.py"
   },
   "description": "A6.4: the W9 q-Borel function DERIVED. The balanced-binomial inversion collapses the transform to the exact cancellation-free formula (−1)ⁿT̂_n = (q̃;q̃)_n²·Σ_k q̃^{k(n+1)}[n,k]_{q̃} (gated vs the direct route at dps 500), giving: the pole residue c∞ = (q̃;q̃)_∞² in closed form (the A6.3 Aitken plateau derived); the transient ratio exactly q̃ = 1/q₀ (the A6.3 0.90086 observation derived); and the POLE LADDER ĝ ~ poles at w = −q₀ᵏ (k = 1 rung located by Padé after exact pole subtraction). θ-Laplace re-run with the exact pole split: regularized D_odd vs the g3 median value, with the new pipeline's honest band. auditOnly; no c_k wired; no fit — every constant is derived.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-24T16:52:50.494125+00:00",
-  "commitSha": "94bbe54b4ed2ce8253d78c1f4aa180b3648d8305",
+  "computedAt": "2026-08-24T00:38:08.490946+00:00",
+  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
   "assertions": [
     {
       "name": "D5_functional_equation_exact",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14005,
+  "durationMs": 18130,
   "computation": "gk-d5-cyclic-dilog-4one",
   "scriptFile": "gk_d5_cyclic_dilog_4one_probe.py",
-  "scriptHash": "498abe400e0e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4dd9caf05815",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -76,8 +76,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gk_d5_cyclic_dilog_4one_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gk_d5_cyclic_dilog_4one_probe.py"
   },
   "description": "B4 residue of the Vector-2 double pincer: the Garoufalidis–Kashaev (arXiv:1411.6062) cyclic quantum dilogarithm D₅ product evaluated on the explicit 4₁ state-integral data ((A,B)=(1,2), g(z)=−z(1−z)⁻², z± = e(±1/6)) at b² = 1/5. Exact results in ℚ(ζ₃₀): (/D₅(θ;ζ₅))⁵ is real with minpoly x⁴−46x³−94x²+79x+1 (θ₊=ζ₃₀) / x⁴+29x³−69x²+29x+1 (θ₋=ζ₆); the state sums G₅⁺ are real with minpolys x⁴−60x³+960x²−5175x+6525 / x⁴−60x³+885x²−4500x+6525 — all degree 4, generating the FULL real quartic field ℚ(ζ₃₀)⁺, not ℚ(√5). The assembled Cor 1.2 evaluation I_{1,2}(1/√5) = (1/√5)[c₊e^{−V/10π} + c₋e^{V/10π}] (|c₊|≈5.97438, |c₋|≈5.53868) matches the DIRECT Faddeev state integral to quadrature precision (~2e-9 scale; quadrature itself validated at b=1 against GK eq (2)). The icosahedral Σ(2,3,5) vacuum-row entries (2/√5)sin(kπ/5) do NOT appear: exact in-field comparisons |c±|¹⁰ = ((5∓√5)/10)⁵ all FALSE. Scope-(a): the GK leg closes; the only √5 in the 4₁ evaluation remains the Gauss-sum prefactor 1/√N = 1/√5; m stays OPEN; nothing wired.",
   "auditOnly": "docs/audits/2026-07-24-vector2-residues-sprime-d5.md",

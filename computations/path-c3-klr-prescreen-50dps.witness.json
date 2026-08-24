@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:17:08.806326+00:00",
-  "commitSha": "b0abd866f9926c8c27dc2948ae049572da28c3db",
+  "computedAt": "2026-08-24T00:09:56.645195+00:00",
+  "commitSha": "bbf717a26ddcbe15e958e5663f32dc8fe5f3b3c9",
   "assertions": [
     {
       "name": "ktheory_prediction_ruled_out",
@@ -14,32 +14,48 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 6,
   "computation": "path-c3-klr-prescreen-50dps",
   "scriptFile": "path_c3_klr_prescreen_50dps.py",
-  "scriptHash": "001141a8555c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0d70d950ba6b",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/path_c3_klr_prescreen_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/path_c3_klr_prescreen_50dps.py"
   },
   "description": "Path C3 KLR / Kashiwara crystal-graph pre-screen at 50 dps. Tests the K-theory regulator prediction c_4 = -3/4 against the empirical c_4 implied by Reading-A's h⁴ residual. K-theory prediction is ~100× larger than empirical — DECISIVE NEGATIVE for direct K-theory c_4 hypothesis. Demazure sub-crystal at H_5+ remains open as research direction.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870"
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "c_4_empirical_from_reading_a_residual": "-0.007236543513963042331491294",
+    "c_4_empirical_from_reading_a_residual": "-0.007509571348493500874670283",
     "c_4_ktheory_prediction": "-0.75",
-    "ratio_ktheory_to_empirical": "103.640639838",
+    "ratio_ktheory_to_empirical": "99.872544676",
     "m_p_predictions_ppm": {
-      "ktheory_c4_minus_3_over_4": "-576.78003",
+      "ktheory_c4_minus_3_over_4": "-576.56788",
       "reading_a_h2_only": "5.62",
       "alpha_curiosity": "-0.05"
     },
-    "verdict": "K-theory regulator prediction c_4 = -3/4 gives m_p residual ~576.8 ppm, ~102.6× WORSE than Reading-A alone. The audit-2026-05-24 §4 K-theory regulator hypothesis (r_2^(2) = -6G → c_4 = -3/4) is RULED OUT as the direct source of the h⁴ correction. Possible reframings (different normalization, lifted KLR at H_5+ Demazure) require multi-session KLR machinery build — out of single-session scope.",
+    "verdict": "K-theory regulator prediction c_4 = -3/4 gives m_p residual ~576.6 ppm, ~102.6× WORSE than Reading-A alone. The audit-2026-05-24 §4 K-theory regulator hypothesis (r_2^(2) = -6G → c_4 = -3/4) is RULED OUT as the direct source of the h⁴ correction. Possible reframings (different normalization, lifted KLR at H_5+ Demazure) require multi-session KLR machinery build — out of single-session scope.",
     "open_directions": [
       "Demazure sub-crystal at H_5+ (Brundan-Kleshchev KLR)",
       "K-theory with re-normalized r_2^(2)/Vol",
