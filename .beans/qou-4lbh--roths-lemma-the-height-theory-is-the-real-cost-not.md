@@ -3219,3 +3219,38 @@ its hypotheses hold with **equality** (`2^F = K`, `q·n(n+1)(2n+3) = F·p`, `c =
 `RothLemmaUniform` still takes the former. Migrating it is a deliberate one-off that touches
 every use site, and is worth doing on evidence — which `rothGammaFull_descend` now supplies:
 the `p/q` idiom carries everything the `ω : ℚ` one does and clause 4 besides.
+
+### ⚠ The migration is not mechanical — my own "next" understated it
+
+Last entry ended: "Migrate `RothLemmaUniform` onto `RothGammaFull` and retire `RothGamma`.
+Touches every use site, so worth doing as one deliberate pass." That framing was wrong in the
+same way as the "height chain" one: it named the *count* of edits and missed the *kind*.
+
+`RothLemmaUniform`'s height condition is `∀ j, B ≤ qⱼ^E` with `E : ℕ`, and the base case is
+built on it — `RothBaseCase.index_le_of_abs_leadingCoeff_le` takes `|lead| ≤ q^e` and returns
+`index ≤ e/d`. Clause 4 is `b^{Mq} ≤ K₁^{s₁p}`, a **different encoding**. Swapping it in means
+`RothBaseCase` needs a variant taking a power bound, which is not a use-site edit at all.
+
+Landed instead, both clean:
+
+- `RothGammaFull.toRothGamma` — the full object implies the three-clause one at `ω = q/p`, so
+  `rothGammaFull_descend` already feeds everything `RothGamma` feeds. The only content is
+  clause 3: `rothDenomFloor` rounds `(q/p)(m−1)m(2m+1)` up, `floorExp` says `F` is already at
+  least that, so the ceiling is at most `F`.
+- `le_pow_of_pow_le_pow` — the bridge between the two height idioms, with the rounding as an
+  explicit hypothesis (`S ≤ Q·e`) rather than a ceiling.
+
+### ⚠ What the migration would cost, and why it is not obviously affordable
+
+From `b^{Mq} ≤ K^{s₁p}` the smallest usable `e` is `⌈s₁p/(Mq)⌉`, so the base case yields
+`index ≤ ⌈s₁p/(Mq)⌉/d` rather than `s₁p/(Mqd)`. The excess is at most `1/d`.
+
+Whether `1/d` is affordable is **not obvious and not checked**. `d` is a large degree so it is
+small — but clause 3's calibration is exactly tight (`height_descend_pq_witness` sits on the
+boundary in *four* hypotheses at once), and this arc has twice found that small slack in a tight
+place is exactly where the constants stop working: the `√2` in `le_two_mul_max_of_sum_le` cost
+`2^{m+1}−3 → 3^m−2`, and the rounded `j` interval collapsed to empty.
+
+So the check comes before the migration, not after. Recorded in the module rather than left as
+a plan, because a plan that has not costed its own main step is the thing this arc keeps
+catching itself writing.

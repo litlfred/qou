@@ -306,6 +306,69 @@ structure RothGammaFull {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (p q F : ℕ)
   heightBound : ∀ j : Fin m, (j : ℕ) = 0 →
     b ^ (m * q) ≤ qd (o.symm j) ^ (d (o.symm j) * p)
 
+/-- **From a `p/q` power bound to an `E : ℕ` one** — the bridge between the arc's two height
+idioms, with the rounding as an explicit hypothesis.
+
+`RothGammaFull`'s clause 4 is `b^{Mq} ≤ K₁^{s₁p}`; `RothBaseCase.index_le_of_abs_leadingCoeff_le`
+wants `|lead| ≤ K^e` with `e : ℕ`.  This converts one to the other given `S ≤ Q·e`, which is
+`e ≥ S/Q` written without a ceiling — the same device as `height_descend_exp`'s `j`. -/
+theorem le_pow_of_pow_le_pow {x y : ℤ} {Q S e : ℕ} (hQ : Q ≠ 0) (hy : 1 ≤ y)
+    (h : x ^ Q ≤ y ^ S) (he : S ≤ Q * e) : x ≤ y ^ e := by
+  have hy0 : (0 : ℤ) ≤ y := le_trans zero_le_one hy
+  refine le_of_pow_le_pow_left₀ hQ (by positivity) ?_
+  calc x ^ Q ≤ y ^ S := h
+    _ ≤ y ^ (Q * e) := pow_le_pow_right₀ hy he
+    _ = (y ^ e) ^ Q := by rw [← pow_mul, mul_comm]
+
+/-- **`Γ_M` in full implies the three-clause form** — so `RothGammaFull` feeds everything
+`RothGamma` feeds, at `ω = q/p`.
+
+The only content is clause 3: `rothDenomFloor m (q/p)` rounds `(q/p)(m−1)m(2m+1)` **up**, while
+`floorExp` says `F` is already at least that value, so the ceiling is at most `F` and the
+rounded floor is at most `2^F`. -/
+theorem RothGammaFull.toRothGamma {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {p q F : ℕ}
+    {d : σ → ℕ} {qd : σ → ℤ} {b : ℤ} (hp : p ≠ 0)
+    (hg : RothGammaFull o p q F d qd b) :
+    RothGamma o ((q : ℚ) / (p : ℚ)) d qd where
+  growth := hg.growth
+  height := hg.height
+  floor := by
+    intro j hj
+    refine le_trans ?_ (hg.floor j hj)
+    have hpQ : (0 : ℚ) < (p : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hp
+    have hA : ((q * ((m - 1) * m * (2 * m + 1)) : ℕ) : ℚ) ≤ ((F * p : ℕ) : ℚ) := by
+      exact_mod_cast hg.floorExp
+    have hceil : ⌈(q : ℚ) / (p : ℚ) * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ)⌉₊ ≤ F := by
+      rw [Nat.ceil_le, div_mul_eq_mul_div, div_le_iff₀ hpQ]
+      push_cast at hA ⊢
+      linarith
+    show ((rothDenomFloor m ((q : ℚ) / (p : ℚ)) : ℕ) : ℤ) ≤ (2 : ℤ) ^ F
+    unfold rothDenomFloor
+    push_cast at hceil ⊢
+    exact pow_le_pow_right₀ (by norm_num) hceil
+
+/-! ### ⚠ Why `RothGamma` is not retired here
+
+`RothGammaFull.toRothGamma` makes the full object strictly richer, so `rothGammaFull_descend`
+already feeds everything `RothGamma` feeds.  Retiring `RothGamma` and putting `RothGammaFull`
+into `RothLemmaUniform` looks mechanical and is **not**.
+
+`RothLemmaUniform`'s height condition is `∀ j, B ≤ qⱼ^E` with `E : ℕ`, and the base case is
+built on it: `RothBaseCase.index_le_of_abs_leadingCoeff_le` takes `|lead| ≤ q^e` and returns
+`index ≤ e/d`.  Clause 4 is `b^{Mq} ≤ K₁^{s₁p}` — a different encoding, and swapping it in means
+`RothBaseCase` needs a variant taking a power bound.
+
+`le_pow_of_pow_le_pow` is the bridge, and it shows what the variant would cost: from
+`b^{Mq} ≤ K^{s₁p}` one gets `b ≤ K^e` for any `e` with `s₁p ≤ Mq·e`, so the smallest usable `e`
+is `⌈s₁p/(Mq)⌉` and the base case then yields `index ≤ ⌈s₁p/(Mq)⌉/d` rather than
+`s₁p/(Mqd)`.  ⚠ The excess is at most `1/d`.
+
+Whether `1/d` is affordable is **not obvious and not checked**: `d` is a large degree, so it is
+small — but clause 3's calibration is exactly tight (`height_descend_pq_witness` sits on the
+boundary in four hypotheses at once), and this arc has now twice found that "small slack in a
+tight place" is where the constants stop working.  That is the thing to check before migrating,
+not after. -/
+
 /-- **Rescaling the degree vector preserves `Γ_m`** — the companion to `rothGrowth_scale`.
 
 The induction step measures its sub-problems against `r·d`, and all three clauses survive.
