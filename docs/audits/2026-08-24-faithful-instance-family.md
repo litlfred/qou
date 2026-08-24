@@ -1,8 +1,16 @@
-# The "Faithful instance" family: 34 promised `sorry`s, 0 real ones
+# The "Faithful instance" family: 37 promised `sorry`s, 0 real ones
 
 **Date:** 2026-08-24
 **Bean:** `qou-hjf4` (successor to `qou-lo1t`, merged as [#5621](https://github.com/litlfred/qou/pull/5621))
-**Status:** findings recorded; no Lean changed in this pass.
+**Status:** four fixes landed — `CrystalGraphRealization.canonical` and
+`QIntegerMassFormula.canonical` demoted to `def`s, the `QOU.PhiQJSJ`
+duplication resolved by import, and five collided `QOU.Molecular` classes
+renamed. Findings B (the `IsAMEValue` gate), C (`MassEndomorphism`) and the
+five vacuous `core-levi-form` carriers are recorded and await an authorial
+call.
+
+> This line read *"findings recorded; no Lean changed in this pass"* and was
+> left behind by the first three of those commits.
 
 ---
 
@@ -17,7 +25,7 @@ Measured with the comment-stripper from
 
 | | count |
 |---|---|
-| occurrences of `sorry` in these 13 files | **34** |
+| occurrences of `sorry` in these 13 files | **37** |
 | occurrences that are a `sorry` **term** | **0** |
 
 Every one is inside a docstring or a `--` comment. The conjectures are not
