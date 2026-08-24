@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: low
 created_at: 2026-08-16T11:00:00Z
-updated_at: 2026-08-24T19:11:53Z
+updated_at: 2026-08-24T19:56:00Z
 ---
 
 Found while adding a sixth — caught in review of my own PR (#5205, bean `wpdb`).
@@ -257,3 +257,105 @@ This raises the priority a notch: the disposition proposed above (one
 `QOU.YoungDiagram.Content` module, existing names as deprecated aliases) would
 have to cover `axialDistance` too, and the failure mode is now a confusing
 silent `rw` failure rather than only duplicated effort.
+
+
+---
+
+## 2026-08-24 (drain, part 4) — re-measured from the tree; the count was understated a THIRD time
+
+PR #5704. I measured the duplication myself rather than reading it off this
+record, per the standing instruction not to trust it. Good thing: **ten**
+reachable `content` copies in the library tree, not eight.
+
+### Four copies were never recorded anywhere
+
+| declaration | file | why it escaped |
+|---|---|---|
+| `QOU.SchurWeyl.cellContent` | `SchurWeyl/HoefsmitRep.lean:115` | the 2026-08-16 "correction" above states outright that this **does not exist** ("there is *no* `QOU.SchurWeyl.cellContent` — the HoefsmitRep one is `QOU.BraidKnot.TableauContent.content`"). Both exist. The correction was itself an error, and it is the one that made the `axialDistance` escalation hard to see, since `QOU.SchurWeyl.axialDistance` is built on exactly the copy this record denied. |
+| `QOU.QBeta.WenzlWeight.content` | `QBeta/WenzlWeightVanishing.lean:91` | never listed |
+| `QOU.Hecke.content` | `Hecke/Hoefsmit.lean:80` | never listed |
+| `QOU.HeckeAlgebra.JonesMarkovWenzl.cellContent` | `HeckeAlgebra/JonesMarkovWenzl.lean:195` | never listed; takes an unused `(_lam : Nat.Partition n)`, so it does not match a search shaped by the signature of the others |
+
+All four bridge by `rfl`. The last one's bridge is stated for *every* partition,
+which is the precise sense in which its argument is inert.
+
+### A fourth naming error in this record
+
+`QOU.Hecke.Hoefsmit.axialDistance` (2026-08-24 appendix) does not exist either.
+`Hecke/Hoefsmit.lean` opens `namespace QOU.Hecke` and the only nested namespace
+is `HoefsmitRepresentation` (l.143–224), which the declaration is not inside. The
+name is **`QOU.Hecke.axialDistance`**. That is now four wrong fully-qualified
+names recorded in this bean; the file path and line number have been right every
+time. Prefer `path:line` over the name when citing from here.
+
+### And it *is* in scope, contrary to the appendix
+
+The appendix set `QOU.Hecke.axialDistance` aside as "tableau-indexed — a
+different signature, so probably not part of this drain". Checked rather than
+assumed: it is a different signature, **and** it is built on the fourth
+unrecorded `content` copy above, and it bridges — one lemma per branch of its
+`dite`, plus a lemma showing the `+1` index shift cancels (it is a translation of
+both cells, so the difference is unchanged). Different shape, same duplication.
+Signature-shape is not a scope test.
+
+### What landed (PR #5704, additive only)
+
+* `axialDistance` in `QOU.MathlibExt.YoungDiagramCells` with `_apply`, `_self`,
+  `_antisymm`, `_same_row`, `_same_col`, `_trans`.
+* 13 new bridge lemmas in `YoungDiagramCellsBridges`: the four missing `content`
+  copies (all `rfl`), both `axialDistance` copies (`rfl`), their composite, and
+  three lemmas for `QOU.Hecke.axialDistance`.
+* Importing all six host modules together is itself the test that no two of the
+  ten copies share a fully-qualified name. They do not.
+
+Verified `lean`-direct exit 0 on both changed files plus all three importers of
+a changed file (`TwoFiltrationBridge`, `WardFiltrationCounting`,
+`WordFiltrationObstruction`), against a **rebuilt** olean in a private
+`LEAN_PATH` overlay — not the stale restored one. `#print axioms` on all 13: no
+`sorryAx`, and the seven pure-`rfl` bridges depend on no axioms at all. No
+`lake build`.
+
+Name capture was the one real risk of adding `axialDistance` to a namespace, and
+it is structurally excluded: the single `open QOU.MathlibExt.YoungDiagramCells`
+in the tree (`TwoFiltrationBridge.lean:266`) is a **selective** open naming
+`content sup_content inf_content …`, so it cannot pick up a new name.
+
+### Not done, and why — `qou-m8zb`
+
+The `@[deprecated]`-alias half of the disposition and the call-site migration are
+**not** in #5704. Aliasing ten declarations fires warnings at 80+ call sites
+across eight files whose dependent cones are not verifiable here (restored olean
+cache, no CI); the migration was already declined with numbers in part 3, and
+that measurement predates these four copies, so 80+ is a floor. Both are in
+`qou-m8zb`.
+
+### Where part 3's verdict stands
+
+Part 3 said "hazard fixed, lemma-sharing delivered, cosmetic dedup declined".
+The first clause was **premature** — it was written about the same-name clash on
+`QOU.BraidKnot.cellContent`, and one level up a *second* hazard was live and
+unnoticed: the silent `rw` failure between the two `axialDistance` constants.
+The cost/benefit argument against the migration survives; "the hazard is fixed"
+did not. Worth remembering that this record has now been corrected in every one
+of its four passes, and three of those corrections were of the *previous*
+correction.
+
+
+### Correction to part 4, same day — my own count was sloppy twice
+
+The part-4 entry above and the commit message of `90bdba5` say "13 new
+declarations" and "the seven pure-`rfl` bridges depend on no axioms at all".
+Measured off `git diff origin/main`:
+
+* **16 new theorems + 1 new `def`**, of which **10** are bridge lemmas. "13" was
+  the count of the bridges file's *pre-existing* lemmas, carried over by hand.
+* **7 declarations depend on no axioms** -- the number is right, the description
+  is not. The axiom-free set is **not** the `rfl`-bridge set:
+  `content_eq_jonesMarkovWenzl` is stated `:= rfl` and still carries `propext`
+  (via `Nat.Partition`), while `axialDistance_apply`, which is not a bridge at
+  all, carries none. Two errors that happened to cancel into a right number.
+* `#print axioms` over all 16: **0 `sorryAx`**.
+
+Recorded rather than silently fixed, because a hand-carried count that looks
+plausible is exactly what this bean has been wrong about in all four of its
+passes -- and this time it was wrong in the entry correcting the previous three.
