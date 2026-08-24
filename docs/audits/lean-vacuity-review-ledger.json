@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-24T10:52:56.000Z",
+  "updated_at": "2026-08-24T10:59:29.000Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -1817,15 +1817,35 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 78,
-      "verdict": "needs-agent",
-      "file_sha": "3c27a5f3f1e7"
+      "verdict": "genuine",
+      "file_sha": "3c27a5f3f1e7",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "The class field IS the conclusion verbatim: `markovTrace_branching : markovTrace = (range nPartitions).sum (fun l => markovWeight l * spechtPartialTrace l)`, and the body returns it. No derivation. The docstring is candid that the content is open -- \"This requires massive infrastructure (the Wenzl-bridge decomposition)\" and \"This remains an open gap\" -- which makes the encoding the problem, not the honesty: an open gap belongs in a carrier with NO instance (AGENTS.md 3b-tax), not in a field the theorem hands back. Contrast the descended/transient cluster in this same batch, where the class carries DISTINCT inputs and the payoff composes them; there the projection entries are `legit`.",
+      "reviewed_at": "2026-08-24T10:59:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean::markovTrace_branching::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 78,
-      "verdict": "needs-agent",
-      "file_sha": "3c27a5f3f1e7"
+      "verdict": "genuine",
+      "file_sha": "3c27a5f3f1e7",
+      "disposition": "docstring-describes-a-sorry-that-is-not-there",
+      "evidence": "Docstring says the body is a `sorry` while the body is a class-field projection. The sorry became an ASSUMPTION and the prose was left behind -- the MISLEADING direction, since a reader and the has_sorry status derivation both see an honestly-open declaration. Same shape as mobius_frobenius_kernel (PR #5562). Arrived with main's 'resolve sorry gaps via class field enrichment' / 'Convert sorry to class fields' batch.",
+      "reviewed_at": "2026-08-24T10:59:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean::q_ns_wellposedness::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1838,29 +1858,69 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "exact-field-projection",
       "line": 141,
-      "verdict": "needs-agent",
-      "file_sha": "c2c9348c84d8"
+      "verdict": "legit",
+      "file_sha": "c2c9348c84d8",
+      "disposition": "named-open-input-no-instance",
+      "evidence": "LEGIT -- this is the 3b-cond conditional-input shape, and a prior agent already repaired it. The body is `exact hi.strong_duality` where `hi : HasConfinementSDPStrongDuality n h` is a SEPARATE class from the data class, parameterised by the Slater hypothesis `h : slaterStrict n`, and it has NO instance -- the file states \"Callers must supply an instance\". Verified: no `instance` targets it anywhere in content/. So the theorem is genuinely conditional on a named, uninhabited open input rather than discharged behind the caller's back.\n\nThe body's own comment records the earlier defect and its fix: the body \"previously read `exact HasConfinementSDPData.strong_duality`, projecting a `strong_duality` field the DATA class carried (doc-labelled 'conclusion'), while this docstring said the conic-duality step 'is discharged by `sorry` here' ... Both were false. The data-class field is deleted.\" That repair stands; only the docstring was left behind, which is the separate entry on this declaration.",
+      "reviewed_at": "2026-08-24T10:59:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean::ConfinementSDP::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 141,
-      "verdict": "needs-agent",
-      "file_sha": "c2c9348c84d8"
+      "verdict": "genuine",
+      "file_sha": "c2c9348c84d8",
+      "disposition": "docstring-describes-a-sorry-that-is-not-there",
+      "evidence": "Docstring says the body is a `sorry` while the body is a class-field projection. The sorry became an ASSUMPTION and the prose was left behind -- the MISLEADING direction, since a reader and the has_sorry status derivation both see an honestly-open declaration. Same shape as mobius_frobenius_kernel (PR #5562). Arrived with main's 'resolve sorry gaps via class field enrichment' / 'Convert sorry to class fields' batch. Specific here: the docstring still reads \"it is discharged by `sorry` here\" although the body is `exact hi.strong_duality`. Note the PROJECTION entry on this same declaration is `legit` -- the encoding was already repaired by a prior agent and only the prose is stale, so the two entries must not be conflated.",
+      "reviewed_at": "2026-08-24T10:59:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean::nucleon_ordering_factorization::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 100,
-      "verdict": "needs-agent",
-      "file_sha": "1e3019e7a0a7"
+      "verdict": "genuine",
+      "file_sha": "1e3019e7a0a7",
+      "disposition": "regression-of-a-documented-fix",
+      "evidence": "GENUINE, and it is a REGRESSION of a documented fix -- the strongest instance of this shape so far.\n\nThe class field IS the conclusion verbatim (factorization_ident : trM_N = W_sym*S_pi + ...) and the body returns it. What makes this more than an ordinary projection: this defect was FIXED on 2026-08-08, and the docstring added to record that fix is still present and now says the opposite of the truth --\n  \"Honest `sorry` -- and now actually one. Until 2026-08-08 this docstring said 'honest sorry' while the body read `exact ctx.factorization_ident` ... body is a real `sorry`, so `#print axioms` now agrees with the prose.\"\nThe body reads `ctx.factorization_ident` again. Measured in the diff of commit b67ee924e84 'Convert sorry to class fields for all 15 EXT_CITE files':\n  +  factorization_ident : trM_N = W_sym * S_pi + W_std * (z * a_pi + b_pi) + W_alt * A_pi\n  -  sorry\n  +  ctx.factorization_ident\nSo the sorry-drain re-introduced the exact defect a prior pass removed, and left that pass's own documentation standing as a false claim. Same family as `descended_level_zero` in PR #5562, where a sibling re-introduced the projection the library had explicitly removed.",
+      "reviewed_at": "2026-08-24T10:59:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean::nucleon_ordering_factorization::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 100,
-      "verdict": "needs-agent",
-      "file_sha": "1e3019e7a0a7"
+      "verdict": "genuine",
+      "file_sha": "1e3019e7a0a7",
+      "disposition": "docstring-describes-a-sorry-that-is-not-there",
+      "evidence": "Docstring says the body is a `sorry` while the body is a class-field projection. The sorry became an ASSUMPTION and the prose was left behind -- the MISLEADING direction, since a reader and the has_sorry status derivation both see an honestly-open declaration. Same shape as mobius_frobenius_kernel (PR #5562). Arrived with main's 'resolve sorry gaps via class field enrichment' / 'Convert sorry to class fields' batch. Specific here: the docstring asserts the defect was fixed (\"and now actually one\"), which is now false. See the projection entry on this declaration for the measured diff.",
+      "reviewed_at": "2026-08-24T10:59:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Knot/WhiteheadVolumeConjecture.lean::whitehead_volume_conjecture::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
