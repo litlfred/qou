@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15 + mpmath 1.4.1",
-  "computedAt": "2026-08-23T07:51:27.063673+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T18:02:26.740413+00:00",
+  "commitSha": "6efb2b4d0f26c31bde0456850744681081cd7de8",
   "assertions": [
     {
       "name": "A_total_matches_uniform_probe",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 9,
   "computation": "b4-1four-pairtype-magnitude-profile",
   "scriptFile": "b4_1four_pairtype_magnitude_profile.py",
   "scriptHash": "0b45e3ecd62d",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -107,5 +107,7 @@
     ],
     "verdict": "Preregistered enumeration; no option selected. Type-aware Ursell profiles reported per option against the AME targets. Scope-(a): results constrain the listed (type→magnitude) assignments only."
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

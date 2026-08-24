@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T21:12:06.074199+00:00",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T18:02:18.775802+00:00",
+  "commitSha": "6efb2b4d0f26c31bde0456850744681081cd7de8",
   "assertions": [
     {
       "name": "m_p_within_1_percent",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 25,
+  "durationMs": 34,
   "computation": "proton-mass-full-tower-50dps",
   "scriptFile": "derive_m_p_hecke_full_tower_50dps.py",
   "scriptHash": "f597b2ee422e",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,7 +36,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "30fd920c241a54fa"
@@ -121,11 +121,11 @@
     "upstream_witness_hashes": [
       {
         "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
-        "sha256": "d2714f8d2189de35698560d39ada72d2a5cc027a1711b2970139005c849a988d",
-        "size_bytes": 10957,
-        "commitSha": "d1b0e1f679bf4f14abc74c7115bcd930ee7cebba",
-        "scriptCommitSha": "ff92e214435373f69f93b57a6f186937b0ae1795",
-        "computedAt": "2026-08-23T07:58:23.921215+00:00"
+        "sha256": "2ae9ce807deaf49dc59f98f44a5093de9b5d8622e8c1cc26ae3bb76258aa9df8",
+        "size_bytes": 10739,
+        "commitSha": "971e1e83c30cd9d6d4a146fb573633973a74ce61",
+        "scriptCommitSha": "3f63d180a4b8bfaa425f98971fe64eb17fe32670",
+        "computedAt": "2026-08-24T08:50:26.782178+00:00"
       }
     ]
   }

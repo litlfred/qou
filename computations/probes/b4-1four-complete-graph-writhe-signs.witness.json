@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:51:26.310584+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T18:02:25.513115+00:00",
+  "commitSha": "6efb2b4d0f26c31bde0456850744681081cd7de8",
   "assertions": [
     {
       "name": "pp_sign_positive_from_convention",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 8,
   "computation": "b4-1four-complete-graph-writhe-signs",
   "scriptFile": "b4_1four_complete_graph_writhe_signs.py",
   "scriptHash": "e82388c70cc3",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -116,5 +116,7 @@
     "spec": "docs/design/2026-07-06-gap-a4-writhe-derivation-lit-review-and-framework.md",
     "status": "pp/nn signs derived; pn sign open (needs [1⁴] framing / #3407 Lk_R^{(k)})"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

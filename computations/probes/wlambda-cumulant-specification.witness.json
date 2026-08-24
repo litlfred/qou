@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15 + mpmath 1.4.1",
-  "computedAt": "2026-08-23T07:51:30.397680+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T18:02:30.532738+00:00",
+  "commitSha": "6efb2b4d0f26c31bde0456850744681081cd7de8",
   "assertions": [
     {
       "name": "det_b3_near_AME_within_10pct",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "wlambda-cumulant-specification",
   "scriptFile": "wlambda_cumulant_specification.py",
   "scriptHash": "942b964a7c7f",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -79,5 +79,7 @@
     ],
     "wlambda_specification": "W_λ per-body-order spec (signed correction AME − det, relative to the collective determinant at g=0.4467): b₂ det/AME=0.419, correction +1.293 MeV/pair (W_λ RAISES the 2-body — the open-bond linear deficit, since det treats the single pair as a loop; the proved 5g=2.2336 in-unit already supplies it); b₃ det/AME=1.042, correction -0.060 MeV (≈right, small); b₄ det/AME=1.629, correction -5.814 MeV (W_λ LOWERS the connected 4-body — det over-supplies it). So W_λ's signature is signed (+, ≈0, −): raise the 2-body (open bond), leave 3-body ≈ intact, lower the connected 4-body. Scope-(a); no fit, no closure."
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

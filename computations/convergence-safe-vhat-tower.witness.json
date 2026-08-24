@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T07:40:49.548930+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T18:02:13.265963+00:00",
+  "commitSha": "6efb2b4d0f26c31bde0456850744681081cd7de8",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "convergence-safe-vhat-tower",
   "scriptFile": "convergence_safe_vhat_tower.py",
   "scriptHash": "d3ba70f8ada8",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,7 @@
   "z_markov": "0.499320334183694452413442680257666303751948164041532207464352",
   "h": "0.209060298795639315430846213129674943859757495263022562533407",
   "radius_li2q": "1.10997858275138080759166909561076887987449912187357763605672",
-  "generated": "2026-08-23T07:38:51.655598+00:00",
+  "generated": "2026-08-24T17:59:21.540999+00:00",
   "vhat_std_derived": {
     "proton": {
       "g0": "1.14610143246416131871008044613853833312413067120547937529002",
@@ -273,7 +273,7 @@
       "proton": {
         "T1": "1.06530614425444997566663340374450341305288725349323826124698",
         "T2": "inf",
-        "T3": "0.468015550265704791636916555065052519162968511584322659207106",
+        "T3": "0.468015550265704791636916555065052519164250250373881969870524",
         "tower_total": "inf",
         "finite": false
       },
