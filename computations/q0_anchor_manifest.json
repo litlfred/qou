@@ -1,6 +1,6 @@
 {
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
   "ideal_muon": [
     "alpha_5_lp_dual_crystal",
     "alpha_em_coulomb_channel_probe",
@@ -12,7 +12,6 @@
     "binding_qgaussian_ell1_ceiling_measurement",
     "binding_via_interface_knot",
     "block_swap_binding",
-    "borromean-axial-coupling",
     "bwhk_st_matrix_corroboration",
     "casimir_carlitz_q_bernoulli_probe",
     "casimir_grid_sweep_probe",
@@ -191,6 +190,7 @@
     "bk_coordination_contact_binding",
     "bk_crossing_coordination",
     "bond_extensivity_equal_weight",
+    "borromean-axial-coupling",
     "borromean_volume_propagation_to_m_p",
     "braid_encoding_audit",
     "branching-qvalue-chain",
