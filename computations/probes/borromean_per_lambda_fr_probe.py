@@ -5,7 +5,8 @@ per-λ weight candidate on the Borromean single binding pipeline.
 CONTEXT (Step-9b frontier; docs/workplans/2026-07-02-step9b-gap-approaches.md).
 The Borromean tower (borromean_binding_recompute.py) converges ∀Z but its
 residual net/target = B_tower/B_AME is U-shaped (over-binds D and ⁵⁶Fe,
-under-binds A=4–16; 6.17× spread). The named frontier object is the
+under-binds A=4–16; 7.16× spread under convention D). The named
+frontier object is the
 per-partition weight Δ_λ in `B = m_e·Σ_λ y_λ χ^λ Δ_λ`; the structural
 candidate (brane-tower plan §7; depth-stratified-frobenius-reciprocity.md)
 is the FR-restricted knot-ideal projector weight `χ^λ → χ^λ·χ^λ(e_{K*})`
@@ -41,7 +42,7 @@ for 4₁ on (2,1); NO fitted parameters, honoring the Δ_λ gate):
 
 PASS/FAIL vs the U-shape: PASS iff a candidate simultaneously moves the
 over-bound ends (D, ⁵⁶Fe) down and the under-bound middle (⁴He…¹⁶O) up,
-shrinking the max/min spread below the 6.17× baseline. A monotone
+shrinking the max/min spread below the 7.16× baseline. A monotone
 rescale (all isotopes moved the same way) is a FAIL for that candidate
 — same structural reason edge-set sparsification failed.
 
@@ -94,7 +95,15 @@ ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821), ("3He", 2, 1, 7.718058),
 def params():
     q = mp.mpf(str(Q0)); qi = 1 / q; h = q - qi
     E0 = mp.mpf(str(M_E)) / (q * (q - 1))
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + sqrt(1/q)), excised.
+    # This matters here beyond the ruling: tower() below is documented as a
+    # MIRROR of borromean_binding_recompute.borromean_binding, and that
+    # original is z_D (its docstring says 'NOT convention C').  Under C the
+    # mirror disagreed with its original by 16% (6.17x vs 7.1622x); under D
+    # it reproduces it exactly.  The old value was a frame straddle, not a
+    # second measurement.
+    z = q**3 / (q**2 + 1)
     tau = (4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4)  # Lean BorromeanMarkovTrace
     return q, qi, h, E0, z, tau
 
@@ -222,7 +231,7 @@ def main() -> int:
         "re-lift τ = Σ_λ y_λ χ^λ(β_Bor) and a candidate reweight of the "
         "(2,1) channel (56.1% of τ). 4 structural candidates × 2 placements "
         "tested against the U-shaped net/target residual (baseline spread "
-        "6.17×). No fitted parameters (Δ_λ gate honored). Audit-only.")
+        "7.16x, convention D). No fitted parameters (Δ_λ gate honored). Audit-only.")
     b.add_parameter("tau_closed_form", fmt(tau))
     b.add_parameter("channel_fraction_21", fmt(fracs[(2, 1)]))
     b.add_data("wedderburn_lift_mismatch_rel", lift_mismatch)
@@ -235,9 +244,14 @@ def main() -> int:
     b.add_data("overall", overall)
     b.add_assertion(
         "baseline_spread_reproduced",
-        computed=float(base_spread), expected=6.17, tolerance=0.5,
+        computed=float(base_spread), expected=7.16, tolerance=0.5,
         unit="max/min |net/target|",
-        source="2026-06-28-delta-lambda-borromean-ascaling-diagnostic.md (6.17x)")
+        source="borromean_binding_recompute.py (z = q^3/(q^2+1), convention D) "
+               "gives 7.162229445453156; this mirror now reproduces it. The "
+               "old 6.17 reference was the C-frame straddle recorded in "
+               "2026-06-28-delta-lambda-borromean-ascaling-diagnostic.md. "
+               "Referenced against the PRODUCER, not its committed witness, "
+               "which is 17-23% stale (bean qou-5t68).")
     b.add_assertion(
         "wedderburn_lift_consistent_to_2em4",
         computed=lift_mismatch, expected=0.0, tolerance=5e-4,

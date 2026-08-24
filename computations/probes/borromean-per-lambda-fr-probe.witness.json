@@ -1,17 +1,17 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:44:03.243884+00:00",
-  "commitSha": "3b7d6f2be742b50be21ad5ac1e2b74e252ff9fa2",
+  "computedAt": "2026-08-24T10:27:11.904323+00:00",
+  "commitSha": "1c768a5ad3dddbb5c86fe78fdc53ce98a6faef2d",
   "assertions": [
     {
       "name": "baseline_spread_reproduced",
-      "computed": 6.165558451841673,
-      "expected": 6.17,
+      "computed": 7.162229445453156,
+      "expected": 7.16,
       "passed": true,
       "tolerance": 0.5,
       "unit": "max/min |net/target|",
-      "source": "2026-06-28-delta-lambda-borromean-ascaling-diagnostic.md (6.17x)"
+      "source": "borromean_binding_recompute.py (z = q^3/(q^2+1), convention D) gives 7.162229445453156; this mirror now reproduces it. The old 6.17 reference was the C-frame straddle recorded in 2026-06-28-delta-lambda-borromean-ascaling-diagnostic.md. Referenced against the PRODUCER, not its committed witness, which is 17-23% stale (bean qou-5t68)."
     },
     {
       "name": "wedderburn_lift_consistent_to_2em4",
@@ -26,7 +26,7 @@
   "durationMs": 4,
   "computation": "borromean-per-lambda-fr-probe",
   "scriptFile": "borromean_per_lambda_fr_probe.py",
-  "scriptHash": "6a2f67d50ea6",
+  "scriptHash": "ce596ada2659",
   "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -50,7 +50,7 @@
     ],
     "reproduce": "python3 -u computations/probes/borromean_per_lambda_fr_probe.py"
   },
-  "description": "H_3-level probe of the FR-restricted knot-ideal projector weight (K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-λ weight on the Borromean single binding pipeline, via the Wedderburn re-lift τ = Σ_λ y_λ χ^λ(β_Bor) and a candidate reweight of the (2,1) channel (56.1% of τ). 4 structural candidates × 2 placements tested against the U-shaped net/target residual (baseline spread 6.17×). No fitted parameters (Δ_λ gate honored). Audit-only.",
+  "description": "H_3-level probe of the FR-restricted knot-ideal projector weight (K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-λ weight on the Borromean single binding pipeline, via the Wedderburn re-lift τ = Σ_λ y_λ χ^λ(β_Bor) and a candidate reweight of the (2,1) channel (56.1% of τ). 4 structural candidates × 2 placements tested against the U-shaped net/target residual (baseline spread 7.16x, convention D). No fitted parameters (Δ_λ gate honored). Audit-only.",
   "parameters": {
     "tau_closed_form": "0.998562163836787265951213135146650202094025880059411134127535",
     "channel_fraction_21": "0.493868038658694878822238240951401409387786270582777369606794"
@@ -63,102 +63,102 @@
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 2.480296257394451,
-            "net_over_target": 1.1149538618847081
+            "B_tower": 2.063076949816325,
+            "net_over_target": 0.9274035735470695
           },
           "3H": {
             "A": 3,
-            "B_tower": 4.919026059345178,
-            "net_over_target": 0.5799492891143515
+            "B_tower": 4.741966424926435,
+            "net_over_target": 0.559074097994574
           },
           "3He": {
             "A": 3,
-            "B_tower": 4.300243507376386,
-            "net_over_target": 0.5571665187507513
+            "B_tower": 3.94272358063608,
+            "net_over_target": 0.5108439947764165
           },
           "4He": {
             "A": 4,
-            "B_tower": 6.387363096576777,
-            "net_over_target": 0.22573639073991197
+            "B_tower": 6.475459552758949,
+            "net_over_target": 0.22884981575659816
           },
           "6Li": {
             "A": 6,
-            "B_tower": 10.514812623387348,
-            "net_over_target": 0.3286437228332709
+            "B_tower": 11.487453061658872,
+            "net_over_target": 0.3590439007594813
           },
           "7Li": {
             "A": 7,
-            "B_tower": 13.433750098936727,
-            "net_over_target": 0.3423088280585917
+            "B_tower": 15.049168650906994,
+            "net_over_target": 0.38347172205889146
           },
           "12C": {
             "A": 12,
-            "B_tower": 32.641552233916784,
-            "net_over_target": 0.3541768686663165
+            "B_tower": 37.55866561603116,
+            "net_over_target": 0.40752996315380674
           },
           "16O": {
             "A": 16,
-            "B_tower": 56.092234020012434,
-            "net_over_target": 0.43952886341385244
+            "B_tower": 65.09570286743161,
+            "net_over_target": 0.5100784590651205
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 685.1146435044327,
-            "net_over_target": 1.3917909118146987
+            "B_tower": 806.8411704090365,
+            "net_over_target": 1.639074888998437
           }
         },
-        "spread": 6.165558451841673
+        "spread": 7.162229445453156
       },
       "w_chirality_1_minus_h2::both": {
         "tau_weighted": "0.977008100188249030277631494752645207739585026786003381424976",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 2.378094603438761,
-            "net_over_target": 1.0690117175020828
+            "B_tower": 1.979457592917592,
+            "net_over_target": 0.8898146264103682
           },
           "3H": {
             "A": 3,
-            "B_tower": 4.6475912417992244,
-            "net_over_target": 0.5479473384075453
+            "B_tower": 4.490040801727197,
+            "net_over_target": 0.5293722658998813
           },
           "3He": {
             "A": 3,
-            "B_tower": 4.063106262428831,
-            "net_over_target": 0.5264415300362904
+            "B_tower": 3.7340069639777598,
+            "net_over_target": 0.48380136090941006
           },
           "4He": {
             "A": 4,
-            "B_tower": 5.980187885273634,
-            "net_over_target": 0.2113463738881077
+            "B_tower": 6.08341652111121,
+            "net_over_target": 0.2149945866674106
           },
           "6Li": {
             "A": 6,
-            "B_tower": 9.796320255529286,
-            "net_over_target": 0.3061870215055685
+            "B_tower": 10.750371520830393,
+            "net_over_target": 0.33600618907731933
           },
           "7Li": {
             "A": 7,
-            "B_tower": 12.536035304815604,
-            "net_over_target": 0.31943392739099746
+            "B_tower": 14.1085091125666,
+            "net_over_target": 0.35950253536120813
           },
           "12C": {
             "A": 12,
-            "B_tower": 30.737610029175393,
-            "net_over_target": 0.3335181609135561
+            "B_tower": 35.50820352430052,
+            "net_over_target": 0.38528144268627995
           },
           "16O": {
             "A": 16,
-            "B_tower": 53.14338187925664,
-            "net_over_target": 0.4164221775696145
+            "B_tower": 61.87764176148707,
+            "net_over_target": 0.4848622991990775
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 659.5093819284286,
-            "net_over_target": 1.3397745512041113
+            "B_tower": 777.5798838298622,
+            "net_over_target": 1.5796314175808877
           }
         },
-        "spread": 6.339236044397066,
+        "spread": 7.347307865125574,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chirality_1_minus_h2::atom_only": {
@@ -166,51 +166,51 @@
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 2.5873892186888905,
-            "net_over_target": 1.1630947686090276
+            "B_tower": 2.204451717351873,
+            "net_over_target": 0.9909549910710385
           },
           "3H": {
             "A": 3,
-            "B_tower": 5.004851225941881,
-            "net_over_target": 0.5900680085021696
+            "B_tower": 4.8943993134223085,
+            "net_over_target": 0.5770458152114161
           },
           "3He": {
             "A": 3,
-            "B_tower": 4.420366246571487,
-            "net_over_target": 0.5727303742173857
+            "B_tower": 4.138365475672871,
+            "net_over_target": 0.5361925857091085
           },
           "4He": {
             "A": 4,
-            "B_tower": 6.514358595545665,
-            "net_over_target": 0.2302245504302253
+            "B_tower": 6.71178428648815,
+            "net_over_target": 0.23720179005772898
           },
           "6Li": {
             "A": 6,
-            "B_tower": 10.771341581245752,
-            "net_over_target": 0.33666161480574486
+            "B_tower": 11.960885484309134,
+            "net_over_target": 0.37384117765471453
           },
           "7Li": {
             "A": 7,
-            "B_tower": 13.77509029983114,
-            "net_over_target": 0.3510066051704868
+            "B_tower": 15.677253800449321,
+            "net_over_target": 0.39947612067263794
           },
           "12C": {
             "A": 12,
-            "B_tower": 33.73469751770971,
-            "net_over_target": 0.3660380317273316
+            "B_tower": 39.54145861898885,
+            "net_over_target": 0.4290442407827775
           },
           "16O": {
             "A": 16,
-            "B_tower": 58.07482408209096,
-            "net_over_target": 0.4550640898462687
+            "B_tower": 68.6930250664196,
+            "net_over_target": 0.5382664420377812
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 710.0488382902842,
-            "net_over_target": 1.4424440193279977
+            "B_tower": 852.2965843353114,
+            "net_over_target": 1.7314162695179958
           }
         },
-        "spread": 6.265378807918066,
+        "spread": 7.299338968296202,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_over_d::both": {
@@ -218,51 +218,51 @@
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 0.16038797310329966,
-            "net_over_target": 0.07209831869005856
+            "B_tower": 0.13630622178587706,
+            "net_over_target": 0.06127298217944615
           },
           "3H": {
             "A": 3,
-            "B_tower": 0.16219848276665358,
-            "net_over_target": 0.019123073072003473
+            "B_tower": 0.1776483535803755,
+            "net_over_target": 0.02094460064417482
           },
           "3He": {
             "A": 3,
-            "B_tower": 0.1422645492012543,
-            "net_over_target": 0.018432687238325276
+            "B_tower": 0.14956062052541924,
+            "net_over_target": 0.01937801199802065
           },
           "4He": {
             "A": 4,
-            "B_tower": 0.21657832867349505,
-            "net_over_target": 0.007654114771311326
+            "B_tower": 0.25266355904963933,
+            "net_over_target": 0.008929406239944862
           },
           "6Li": {
             "A": 6,
-            "B_tower": 0.512293095053534,
-            "net_over_target": 0.016011879238408563
+            "B_tower": 0.6089353239075934,
+            "net_over_target": 0.019032462011596512
           },
           "7Li": {
             "A": 7,
-            "B_tower": 0.7399777338776208,
-            "net_over_target": 0.01885556222258068
+            "B_tower": 0.8872621466538427,
+            "net_over_target": 0.022608554079464844
           },
           "12C": {
             "A": 12,
-            "B_tower": 2.2737217461140227,
-            "net_over_target": 0.024670997337571866
+            "B_tower": 2.7110146885697377,
+            "net_over_target": 0.029415840473062067
           },
           "16O": {
             "A": 16,
-            "B_tower": 4.143686398007961,
-            "net_over_target": 0.032469196577374536
+            "B_tower": 4.943593317296785,
+            "net_over_target": 0.038737126268790584
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 54.18102698652342,
-            "net_over_target": 0.11006721527204132
+            "B_tower": 64.94889987422852,
+            "net_over_target": 0.13194184277675453
           }
         },
-        "spread": 14.380136509657312,
+        "spread": 14.776104841834282,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_over_d::atom_only": {
@@ -270,51 +270,51 @@
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 4.87042592538905,
-            "net_over_target": 2.189375635409155
+            "B_tower": 5.247638063801956,
+            "net_over_target": 2.3589417222100404
           },
           "3H": {
             "A": 3,
-            "B_tower": 6.647184081044701,
-            "net_over_target": 0.7836977555933685
+            "B_tower": 7.866515621049408,
+            "net_over_target": 0.9274559815692182
           },
           "3He": {
             "A": 3,
-            "B_tower": 6.627250147479302,
-            "net_over_target": 0.8586680933829859
+            "B_tower": 7.838427887994452,
+            "net_over_target": 1.015595877615127
           },
           "4He": {
             "A": 4,
-            "B_tower": 9.124530831010746,
-            "net_over_target": 0.32247088913597305
+            "B_tower": 11.56837939976886,
+            "net_over_target": 0.4088391677331322
           },
           "6Li": {
             "A": 6,
-            "B_tower": 16.56591920175212,
-            "net_over_target": 0.5177729317315316
+            "B_tower": 22.681969776561104,
+            "net_over_target": 0.7089319853385438
           },
           "7Li": {
             "A": 7,
-            "B_tower": 21.55021108598272,
-            "net_over_target": 0.5491264499435558
+            "B_tower": 30.124667183095838,
+            "net_over_target": 0.7676143625685605
           },
           "12C": {
             "A": 12,
-            "B_tower": 58.76829828909163,
-            "net_over_target": 0.6376648915381842
+            "B_tower": 85.69098795374902,
+            "net_over_target": 0.9297892933794494
           },
           "16O": {
             "A": 16,
-            "B_tower": 103.47122110233614,
-            "net_over_target": 0.8107822589295962
+            "B_tower": 152.42639478926438,
+            "net_over_target": 1.1943863749854204
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 1280.2488276024442,
-            "net_over_target": 2.600789079626461
+            "B_tower": 1909.0092906748548,
+            "net_over_target": 3.878098076754795
           }
         },
-        "spread": 8.065190276849496,
+        "spread": 9.485632451160367,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_abs_over_d::both": {
@@ -322,51 +322,51 @@
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 1.4721711694617026,
-            "net_over_target": 0.6617769654948175
+            "B_tower": 1.2340432842341098,
+            "net_over_target": 0.55473265396735
           },
           "3H": {
             "A": 3,
-            "B_tower": 2.461185793928998,
-            "net_over_target": 0.29017186214245716
+            "B_tower": 2.4381636298596283,
+            "net_over_target": 0.2874575671733261
           },
           "3He": {
             "A": 3,
-            "B_tower": 2.1529131459575788,
-            "net_over_target": 0.2789449296646357
+            "B_tower": 2.0326375931039156,
+            "net_over_target": 0.2633612747019931
           },
           "4He": {
             "A": 4,
-            "B_tower": 2.945594063194584,
-            "net_over_target": 0.10410051258348173
+            "B_tower": 3.1144904477815496,
+            "net_over_target": 0.11006949535293081
           },
           "6Li": {
             "A": 6,
-            "B_tower": 4.9509112330785126,
-            "net_over_target": 0.15474226287560952
+            "B_tower": 5.65789326121789,
+            "net_over_target": 0.17683920497300384
           },
           "7Li": {
             "A": 7,
-            "B_tower": 6.621984144985976,
-            "net_over_target": 0.16873647458070087
+            "B_tower": 7.7311100939226325,
+            "net_over_target": 0.19699839704864452
           },
           "12C": {
             "A": 12,
-            "B_tower": 18.562986311054868,
-            "net_over_target": 0.20141751585923895
+            "B_tower": 21.867295144552116,
+            "net_over_target": 0.2372708891108478
           },
           "16O": {
             "A": 16,
-            "B_tower": 33.59383454132738,
-            "net_over_target": 0.26323536888180743
+            "B_tower": 39.64053462936517,
+            "net_over_target": 0.3106162454600426
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 439.0686586580169,
-            "net_over_target": 0.8919554917949206
+            "B_tower": 520.6954390744942,
+            "net_over_target": 1.0577779745304134
           }
         },
-        "spread": 8.568214215848661,
+        "spread": 9.6100919799688,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_abs_over_d::atom_only": {
@@ -374,51 +374,51 @@
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 3.531090033898083,
-            "net_over_target": 1.5873113779130121
+            "B_tower": 3.4549599500314923,
+            "net_over_target": 1.5530890422708052
           },
           "3H": {
             "A": 3,
-            "B_tower": 5.732648140579063,
-            "net_over_target": 0.6758746901849335
+            "B_tower": 6.1956193805926985,
+            "net_over_target": 0.7304586338939124
           },
           "3He": {
             "A": 3,
-            "B_tower": 5.424375492607644,
-            "net_over_target": 0.7028161090014668
+            "B_tower": 5.790093343836986,
+            "net_over_target": 0.7502008074877108
           },
           "4He": {
             "A": 4,
-            "B_tower": 7.612920200419468,
-            "net_over_target": 0.269048917847597
+            "B_tower": 8.753803393172445,
+            "net_over_target": 0.30936897642167566
           },
           "6Li": {
             "A": 6,
-            "B_tower": 13.082286656681609,
-            "net_over_target": 0.40889091836605773
+            "B_tower": 16.219235705236013,
+            "net_over_target": 0.5069372317508691
           },
           "7Li": {
             "A": 7,
-            "B_tower": 16.86526876430243,
-            "net_over_target": 0.4297482343413905
+            "B_tower": 21.376348541820125,
+            "net_over_target": 0.5446962139113778
           },
           "12C": {
             "A": 12,
-            "B_tower": 43.66027539218,
-            "net_over_target": 0.4737354251016213
+            "B_tower": 57.65643911550337,
+            "net_over_target": 0.6256006735844121
           },
           "16O": {
             "A": 16,
-            "B_tower": 76.07561961065353,
-            "net_over_target": 0.5961151522159986
+            "B_tower": 101.56205586201153,
+            "net_over_target": 0.79582237646441
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 936.3212582626899,
-            "net_over_target": 1.9021100047184785
+            "B_tower": 1267.42465277511,
+            "net_over_target": 2.5747371332180338
           }
         },
-        "spread": 7.069755269545185,
+        "spread": 8.322544694037514,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_raw::both": {
@@ -426,51 +426,51 @@
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 0.00022684025057558403,
-            "net_over_target": 0.00010197024353688733
+            "B_tower": 0.0001931837475535075,
+            "net_over_target": 8.684082183569947e-05
           },
           "3H": {
             "A": 3,
-            "B_tower": 0.00015182057567569922,
-            "net_over_target": 1.789952601872867e-05
+            "B_tower": 0.00018409286183260228,
+            "net_over_target": 2.170440307955123e-05
           },
           "3He": {
             "A": 3,
-            "B_tower": 0.00013327076426920739,
-            "net_over_target": 1.7267396056003646e-05
+            "B_tower": 0.0001560655524647876,
+            "net_over_target": 2.022083177721489e-05
           },
           "4He": {
             "A": 4,
-            "B_tower": 0.0002905406408735669,
-            "net_over_target": 1.02680236965407e-05
+            "B_tower": 0.0003448341655362748,
+            "net_over_target": 1.2186816179854596e-05
           },
           "6Li": {
             "A": 6,
-            "B_tower": 0.0007357298289718923,
-            "net_over_target": 2.299546350973535e-05
+            "B_tower": 0.0008762486068248938,
+            "net_over_target": 2.7387421401488507e-05
           },
           "7Li": {
             "A": 7,
-            "B_tower": 0.0010640456639300967,
-            "net_over_target": 2.711322017591843e-05
+            "B_tower": 0.0012779754512721115,
+            "net_over_target": 3.256441989696021e-05
           },
           "12C": {
             "A": 12,
-            "B_tower": 0.0032712351427909726,
-            "net_over_target": 3.5494507468338404e-05
+            "B_tower": 0.003906721263912006,
+            "net_over_target": 4.2389843904749775e-05
           },
           "16O": {
             "A": 16,
-            "B_tower": 0.005961447292818092,
-            "net_over_target": 4.6712850694787545e-05
+            "B_tower": 0.007123827512328937,
+            "net_over_target": 5.5821057305957085e-05
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 0.07793550450348877,
-            "net_over_target": 0.00015832376070786376
+            "B_tower": 0.09357590141342327,
+            "net_over_target": 0.00019009678217632212
           }
         },
-        "spread": 15.419107453092758,
+        "spread": 15.598559900375081,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_raw::atom_only": {
@@ -478,51 +478,51 @@
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 5.0306235797300785,
-            "net_over_target": 2.26138840115837
+            "B_tower": 5.46382323838277,
+            "net_over_target": 2.4561222483518277
           },
           "3H": {
             "A": 3,
-            "B_tower": 6.738526894893276,
-            "net_over_target": 0.7944670012363236
+            "B_tower": 8.038259112646573,
+            "net_over_target": 0.9477044036471145
           },
           "3He": {
             "A": 3,
-            "B_tower": 6.738508345081869,
-            "net_over_target": 0.8730834032449444
+            "B_tower": 8.038231085337205,
+            "net_over_target": 1.0414836329731139
           },
           "4He": {
             "A": 4,
-            "B_tower": 9.303090029511434,
-            "net_over_target": 0.32878136630683547
+            "B_tower": 11.902544213970378,
+            "net_over_target": 0.42064891737935967
           },
           "6Li": {
             "A": 6,
-            "B_tower": 17.002837382930416,
-            "net_over_target": 0.531428944708558
+            "B_tower": 23.501477629043972,
+            "net_over_target": 0.7345459569020528
           },
           "7Li": {
             "A": 7,
-            "B_tower": 22.13803998537682,
-            "net_over_target": 0.5641050687334417
+            "B_tower": 31.236153533434145,
+            "net_over_target": 0.7959364310293652
           },
           "12C": {
             "A": 12,
-            "B_tower": 60.666850316288574,
-            "net_over_target": 0.6582651132180223
+            "B_tower": 89.26088460268677,
+            "net_over_target": 0.9685244248316045
           },
           "16O": {
             "A": 16,
-            "B_tower": 106.9135003544099,
-            "net_over_target": 0.8377553526858063
+            "B_tower": 158.90266055331503,
+            "net_over_target": 1.245133252519727
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 1323.422456711848,
-            "net_over_target": 2.688495079190516
+            "B_tower": 1990.6174024485567,
+            "net_over_target": 4.043882634673475
           }
         },
-        "spread": 8.17715161108454,
+        "spread": 9.613438826532207,
         "verdict": "FAIL (monotone rescale)"
       }
     },
