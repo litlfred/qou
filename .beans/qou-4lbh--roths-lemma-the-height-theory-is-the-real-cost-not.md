@@ -3528,3 +3528,337 @@ divisibility statement about a lowest coefficient.
 ⚠ The missing half should come by symmetry: reversing a polynomial swaps lowest and highest
 coefficients and sends `κ ↦ 1/κ`, i.e. `P ↔ Q`. Recorded in `RothBaseCase` so the next attempt
 starts from the reversal rather than from scratch. Not attempted here.
+
+### §10's missing half — proved. And correction seventeen.
+
+Both halves of §10 are now in `QOU/Mathlib/RothHeightBound.lean`, and §10's estimate itself is
+`MvPolynomial.index_le_of_abs_coeff_le` in `QOU/Mathlib/RothBaseCase.lean`:
+
+    a ≤ H^e,  H = max(|p|,|q|) ≥ 2,  |coeff n P| ≤ a,  gcd(p,q)=1,  P ≠ 0,  d ≠ 0
+      ⟹  index_d(P; p/q)  ≤  e/d
+
+Log-free by choice: taking logarithms gives Mahler's `Θ₁ ≤ log a/(d log H)`, but the recursion
+is sensitive to rounding (`two_sqrt_expands` shows any positive perturbation is amplified to
+≈ 4), so the exponential form is what gets carried.
+
+**⚠⚠ Correction seventeen.** The previous entry above, and `RothHeightBound`'s own "Next" block,
+called `pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero` *"the `m = 1` base case of Roth's
+lemma, complete and with no analysis in it"*. The theorem is true. The label was the name of the
+statement it was a **step toward** — and read back later, a label becomes a completion.
+
+Same species as corrections 12 and 14, and it survived for the same reason both did: **nothing
+in a green build objects to a docstring.** Every mechanical check this arc runs — `lake build`,
+`#print axioms`, the linter — passes on a file whose prose claims twice what its theorems prove.
+The only check that catches it is re-reading the source next to the Lean, which is what produced
+17 of the 17.
+
+**⚠ The recorded plan was wrong about the method.** It said the half "should come by symmetry:
+reversing a polynomial swaps lowest and highest and sends `κ ↦ 1/κ`" and told the next attempt
+to start there. Reversal works, but it is unnecessary: `Polynomial.trailingCoeff` is
+multiplicative in a domain for exactly the reason `leadingCoeff` is, so `trailingCoeff_dvd_of_dvd`
++ `trailingCoeff_qX_sub_C` give the half **directly**, in four lines, with no reversal and no
+reciprocal. The plan came from thinking about the *page* — where "the lowest and the highest …
+respectively" invites a symmetry argument — rather than about the available API. Worth noting
+because the plan was recorded as guidance for the next agent, and it would have cost them the
+detour.
+
+What the plan did get right is that the halves are **not** symmetric. `q > 0` is free (Lean's ℚ
+keeps a positive denominator) but `p ≠ 0` is not, and at `κ = 0` Mahler's clause is *vacuous*
+rather than false: `P^j = 0` divides only `0`. The assembled bound discharges that corner
+separately, where coprimality forces `q = 1` and `H^j = 1`.
+
+**Why the half was never a detail.** `H = max(|P|,|Q|)`, so the leading half bounds `|Q|^j` and
+proves nothing whenever the numerator carries the height. Validated in Lean at the smallest such
+point: `κ = 3/1`, `P = X − 3`, `d = 1`, `e = 1` — the new theorem gives `index ≤ 1`, which is the
+true value, and `index_le_of_abs_leadingCoeff_le` (which needs `q ≥ 2`) does not apply at all.
+
+**Refactors, because the same block had been written out twice and was about to be a third
+time:** `exists_index_eq_div` (the index in one variable is literally `n₀/d` — and it needs *no*
+hypothesis on `d`, since `idxWeight` reads `n/d` in ℚ where `n/0 = 0`), `taylor_coeff_eq_zero_of_index_eq`,
+and `map_qX_sub_C_pow_dvd_of_taylor_coeff_eq_zero` (the ℚ-divisibility step both height halves
+consume).
+
+**Next:** `Θ₁ ≤ e/d` — feeding this into `IsRothTheta`'s attainment clause at `σ = Unit`. Needs a
+naturality lemma (`pUnitAlgEquiv` commutes with coefficient maps) and `IsCoprime (num) (den)`
+from `Rat.reduced`. Mechanical, but it is the base case *in Θ form*, which is what §13/§14's
+recursion actually consumes.
+
+### ⚠⚠ Correction eighteen — `K_h` is the HEIGHT `H_h`, not the denominator
+
+Read from the page scan of §11 (doc p. 91), immediately after the abstract definition of `Γ_M`
+on `b, s₁,…,s_M, K₁,…,K_M`:
+
+> By way of application, let `m ≥ 2`; let the ordered system of numbers `a, r₁,…,r_m, H₁,…,H_m`
+> have the property `Γ_m`
+
+So `b = a`, `s_h = r_h`, **`K_h = H_h`**. §13's descent settles it beyond argument: the new
+system is `b, ρ₁,…,ρ_{m−1}, H₁,…,H_{m−1}` — *the same heights, truncated* — and its clauses are
+printed as `ρ_h log H_h ≥ ρ₁ log H₁` and `H₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`, in `H` throughout.
+
+This arc called the field `qd`, the definition `rothDenomFloor`, and the clauses "the first
+*denominator*". Renamed to `Kh` / `rothHeightFloor`, with the correction recorded at the
+definition. The structures themselves were already right — `RothGamma` is abstract in the
+parameter and `rothGamma_descend` truncates it, which is exactly §13's descent — so nothing
+proved was false. **What was false was an inference drawn from the name.**
+
+**The inference, and why it mattered.** The record above says clause (i) is "the `m = 1`
+specialisation whose `K₁ ≥ 2` comes from the standing `2 ≤ qⱼ`". Read with `K = H` that is a
+different statement, and the consequence is sharp:
+
+    clause (i) supplies   a ≤ H₁^{r₁t}
+    the q-form of §10 gives   Θ₁ ≤ log a/(r log q)  ≤  t·log H/log q   ≥  t
+
+so the `q`-form **cannot** close the base case — it lands on the wrong side of `t` by exactly
+the factor `log H/log q ≥ 1`. Only the `H`-form does:
+
+    a ≤ H₁^{r₁t}  and  Θ₁ ≤ log a/(r log H)   ⟹   Θ₁ ≤ t.
+
+So the `P^j` half proved earlier this session was never optional and never a symmetry
+nicety — **it is precisely the hypothesis `Γ₁` hands over.** The bean's own earlier note that
+"that gap is exactly why this arc's base case is stated with `a ≤ q^E` rather than `a ≤ H^E`"
+was right about the symptom and had not connected it to `Γ`.
+
+**The arc was internally inconsistent and did not notice.** Two docstrings in
+`RothLemmaStatement.lean` (around §13's `ρ_m log H_m ≥ ρ₁ log H₁` discussion) already wrote the
+clause in `H`, while the structure they describe was named for `q`. Nothing checks prose against
+prose. Corrections 17 and 18 are the same failure at one remove: **17 was a label read back as a
+theorem, 18 was a name read back as an identification.**
+
+Method note: 18 came from reading the page scan for a question the Lean could not raise —
+"what does `K_h` denote?" is invisible to `lake build`, because the structure is abstract in it
+and every theorem about it is true either way.
+
+### The base case is closed — `Γ₁ ⟹ RothBound 1 t Θ₁`
+
+`rothBound_one_of_gamma_one`. The chain, all `#print axioms`-clean:
+
+    Γ₁ clause (i):  a^q ≤ H^{r·p}          (t = p/q, cleared of its exponent)
+      → index_le_of_pow_abs_coeff_le       index ≤ S/(Q·d)
+      → isRothTheta_le_of_gamma_one        Θ₁ ≤ t
+      → rothBound_one_of_gamma_one         RothBound 1 t Θ₁
+
+`RothBound` is the shape `rothBound_chain` and `rothConstant_chain` consume, so the base case
+now *enters* the recursion rather than sitting beside it needing translation. Correction eleven
+traced `c_m = 2^{m+1} − 3` to the base case rather than to the recurrence; this is that starting
+value, proved from `Γ₁` instead of assumed.
+
+The powered form is the one `Γ₁` delivers. Routing through the unpowered `a ≤ H^e` would need an
+`e : ℕ` with `s₁p ≤ q·e`, and `two_sqrt_expands` says the recursion amplifies that `1/d` to `≈ 4`
+however small it starts — the fourth time in this arc that a rounding step turned out to cost
+more than it saved.
+
+**Roadmap after today.** §9 done, §10 done (both halves, `Θ` form, `Γ₁` form). Remaining:
+
+1. **§12** — `hfac` and `hres` are still *assumptions* in `index_le_of_rothGrowth_of_factor_bound`.
+   This is now the largest open item.
+2. **§13/§14 assembly** — `RothLemma4` and `RothLemmaTheta` are `def`s; nothing proves them for
+   `m ≥ 2`.
+3. **The induction step itself** — `RothLemmaUniform`/`RothLemmaMahler` remain `def`s proved only
+   at `m = 1`.
+
+### Correction eighteen, second consequence — `RothLemmaUniform` restated on heights
+
+`RothLemmaUniform` quantified **one** function `qd : σ → ℤ` and used it in two incompatible
+roles: as the denominator of the point (`index d (fun j => pn j / qd j)`, `IsCoprime (pn j) (qd j)`)
+and as `Γ_m`'s `K_h` (`RothGamma o ω d qd`, `B ≤ qd j ^ E`). Under correction eighteen those are
+different objects, and `H ≥ Q` with equality only when the denominator dominates.
+
+The old form was **not false.** `B ≤ Q^E` implies `B ≤ H^E`, so it was a theorem with a stronger
+hypothesis and a weaker conclusion. What it could not be is *fed from `Γ_m`*, which supplies only
+`B ≤ H^E`. Since the induction consumes this schema at `m − 1` and `Γ` is what the induction
+carries, the old form was unusable at exactly its point of use — the same defect as the base
+case's, one level up, and from the same root.
+
+Restated: the point is a rational `κ : σ → ℚ` (Lean's `ℚ` supplies lowest terms and a positive
+denominator, so the coprimality clause §9 states is carried by the type and disappears), and
+`Kh` is pinned to its height by `∀ j, max |(κ j).num| |((κ j).den : ℤ)| = Kh j` — the same shape
+`InRothFracSet` took after correction sixteen. Two fewer hypotheses, one more, and strictly
+stronger.
+
+`rothLemmaUniform_one` now routes through `index_le_of_abs_coeff_le`, i.e. through **both**
+halves of §10. It has to — the `Q^j` half cannot bound `B` by a power of the *height*. Updated
+in step: `index_rescaled_wronskian_le`, `index_rescaled_wronskian_le_right`, both witnesses, and
+the satisfiability example. All rebuild, standard axioms.
+
+⚠ **Self-correction from this session:** the `Θ`-form work added `map_pUnitAlgEquiv`, which is
+`pUnitAlgEquiv_map` — already sixty lines up in the same file, added earlier in this arc.
+Removed. The lesson is the one `beans` already carries in a different domain: *check before you
+create*. A duplicate lemma type-checks, so nothing objects.
+
+**Both halves of `hres` now have the right shape.** `index_rescaled_wronskian_le` (the `x` half,
+from the induction hypothesis) and `index_rescaled_wronskian_le_right` (the `y` half, from the
+base case) are stated in `κ` and heights, so `Γ` can feed them. `hfac` in
+`index_le_of_rothGrowth_of_factor_bound` is still an assumption — assembling the two halves into
+it is the next step, and it is now a matter of composition rather than of a missing theorem.
+
+### ⚠ A gap nothing had noticed: the separated representation carried no degree bound
+
+`hres`'s `x` half is `index_rescaled_wronskian_le`, which needs `degreeOf j (φ k) ≤ d₁ j` before
+`RothLemmaUniform` at `m − 1` can apply. **Nothing in the chain from `P` to `φ` supplied any
+bound on the factors' degrees.** `exists_sepW_ne_zero_le_degreeOf` gave `0 < r`, `r ≤ d + 1`,
+the operator-length bounds, the representation equation, and non-vanishing — and no degrees. So
+`hres` was not merely un-discharged; it was **un-dischargeable** as the chain stood.
+
+The arc had `n ≤ r_m + 1` from the *same* construction and not this, which is why it went
+unnoticed: the construction was mined for the clause the recursion's row cost needed and not
+for the clause the induction hypothesis needed. §7 supplies it on the source's side — "the
+degrees of `U` in `x₁,…,x_{m−1}` do not exceed `ρ₁,…,ρ_{m−1}`".
+
+Now proved and threaded through every level:
+
+    exists_separated_representation_monomial_right   φ j is a sum of monomials whose exponents
+                                                     are x-parts of P's own support
+    exists_separated_representation_fin_right        + the ψ side (bare monomials)
+    exists_shorter_of_{phi,psi}_dep                  shortening preserves any degree bound
+    exists_indep_representation                      composition through the induction
+    ..._indep_card_le, ..._indep_le_degreeOf         ∀ k x, degreeOf x (φ k) ≤ degreeOf (inl x) P
+    exists_sepW_ne_zero_le_degreeOf                  both clauses, where the recursion reads them
+
+The mathematics is cheap — the shortening steps replace `φ i` by `φ i − c·φ j`, and a degree
+bound survives a linear combination. The clause is stated as *preservation*
+(`∀ D, (∀ k x, degreeOf x (φ k) ≤ D x) → ∀ k x, degreeOf x (φ' k) ≤ D x`) rather than against a
+fixed `D`, which is what lets it compose through the induction without threading `P` down.
+
+**What this unblocks.** `hres` is now composable: both halves have the right shape (correction
+18b) and the degrees they ask for are available (this). What is still missing before `hres` can
+actually be built is §12's height estimate — a uniform `B` and `E` with `B ≤ H^E` and
+`E ≤ ε·(r·d j)`, where `abs_coeff_det_pderivList_le` gives `B = r!·(S·(d^L·B₀))^r` and §12
+computes `b = 2^{2n(r₁+…+r_m)}·n!·a^n`. That is doc pages 92–93, **not yet read**.
+
+### §12's height estimate, read from the page scan (doc p. 92)
+
+Verbatim, the tail of §11's descent proof:
+
+    n ≤ r_m + 1 ≤ r₁ + 1 ≤ 2^{r₁},   hence   n! ≤ n^n ≤ 2^{n r₁} = 2^{ρ₁}
+    and, by assumption,   a ≤ H₁^{(1/m) r₁ t},   r₁ + r₂ + … + r_m ≤ m r₁
+    Therefore
+      b ≤ 2^{2n·m r₁} · 2^{ρ₁} · a^n  ≤  2^{(2m+1)ρ₁} · H₁^{(1/m) ρ₁ t}  ≤  H₁^{(1/(m−1)) ρ₁ t}
+    because
+      H₁^{(1/(m−1))ρ₁t} / H₁^{(1/m)ρ₁t} = H₁^{(1/(m(m−1)))ρ₁t} ≥ 2^{(2m+1)ρ₁}
+
+The last step is clause 3 exactly — `H₁ ≥ 2^{(1/t)(m−1)m(2m+1)}` raised to `ρ₁t/(m(m−1))` —
+which this arc had already identified. The new content is the rest: `ρ₁ = n·r₁`, `n! ≤ 2^{ρ₁}`
+via `n ≤ 2^{r₁}`, and `Σ r_h ≤ m r₁` (which is `Γ`'s derived `Σ s_h ≤ M s₁`). The conclusion
+`b ≤ H₁^{ρ₁t/(m−1)}` is **clause 4 at arity `m−1`**, with `ε` moving `t/m → t/(m−1)`.
+
+⚠⚠ **An open question, deliberately not recorded as a correction — §13 has not been read.**
+
+`RothLemmaUniform` asks for a **single** `E` with `∀ j, B ≤ Kh j ^ E` *and* `∀ j, E ≤ ε·d j`.
+§11 states clause 4 only at `h = 1` (`b ≤ K₁^{(1/M)s₁t}`); clause 2 (`K_h^{s_h} ≥ K₁^{s₁}`)
+propagates it as `b ≤ K_h^{ε s_h}` — an exponent that **varies with `h`**. A single `E` bounded
+by `ε·min_h d_h` does not follow: `E ≤ ε s_h` makes `K_h^E ≤ K_h^{ε s_h}`, so `b ≤ K_h^{ε s_h}`
+is the wrong direction to give `b ≤ K_h^E`.
+
+So the uniform-`E` form may be a hypothesis `Γ` cannot supply — the same defect as corrections
+18 and 18b, a third time. **Or it may be exactly what §13's recursion produces**, in which case
+the varying exponent is absorbed somewhere I have not read.
+
+I do not know which, and the arc's own history says guessing here is how corrections 14 and 17
+happened: 14 read one display without the derivation, 17 read a label without the theorem. The
+answer is in §13 (doc pp. 93–95), which is the next thing to read — **before** any change to
+`RothLemmaUniform`'s `E`.
+
+### Correction nineteen — the uniform-`E` question, answered by §12, and my flag was aimed wrong
+
+The previous entry flagged that `RothLemmaUniform`'s single `E` might not be suppliable from
+`Γ`, and said §13 would settle it. §12 (doc p. 93) settles it, and the answer is sharper than
+the question: **the induction never uses an `E` at all.** At the point of invocation Mahler
+writes
+
+    J(U; ρ₁,…,ρ_{m−1}; κ₁,…,κ_{m−1}) ≤ Θ_{m−1}(b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1})
+    J(V; ρ_m; κ_m)                    ≤ Θ₁(b; ρ_m; H_m)
+    Φ_m = Θ_{m−1}(b;ρ;H) + Θ₁(b;ρ_m;H_m),   J(W;r;κ) ≤ n·Φ_m   (since ρ_h = n·r_h)
+
+Both bounds are **the definition of `Θ`** — `U ∈ R(b;ρ)`, `κ ∈ Q(H)`, nothing else. The `Γ`
+clauses enter *separately*: §11's descent proves `Γ_{m−1}` for the descended system, and that is
+what lets the induction hypothesis bound `Θ_{m−1}`.
+
+So `RothLemmaUniform` fuses two things the source keeps apart — set membership and `Γ` — into
+one `∀`-statement sharing an `E`. The flagged arithmetic was right (clause 2 propagates clause 4
+with an exponent that varies with `h`, so a single `E ≤ ε·min_h d_h` does not follow), but the
+conclusion to draw is not "fix `E`": it is that the `E`-encoded schema is the wrong object.
+**`RothLemmaTheta` — `Γ` as hypothesis, `IsRothTheta` for the sup, `RothBound` as conclusion,
+no `E` — was already the right shape**, and `isRothTheta_le_of_gamma_one` (proved earlier this
+session) is its `m = 1` case. The arc built the correct formulation without knowing it was the
+correct one.
+
+⚠ Worth naming: holding the question open one turn was the right call. Answering it from the
+arithmetic alone would have produced a "fix" to `E` — plausible, self-consistent, and aimed at
+the wrong object. That is correction fourteen's shape exactly.
+
+### ⚠⚠ Correction twenty — `RothLemmaTheta` was FALSE at `m = 1`
+
+`RothGammaFull` encodes `Γ_M`'s case **(ii)**, which requires `M ≥ 2`. At `M = 1` the source uses
+case **(i)**: `M = 1, K₁ ≥ 2, b ≤ K₁^{s₁t}`. Nothing in case (ii) forces `K₁ ≥ 2` when `m = 1` —
+clause 3a reads `q·((1−1)·1·3) ≤ F·p`, i.e. `0 ≤ 0`, so `F = 0` is admissible and clause 3b says
+only `1 ≤ K₁`.
+
+Counterexample, every clause checked by hand:
+
+    σ = Unit,  m = 1,  p = 1,  q = 2  (t = 1/2),  F = 0,  a = 1,  r ≡ 1,  H ≡ 1
+    growth       vacuous (one variable, no consecutive pair)
+    height       1 ≤ 1
+    floorExp     2·((1−1)·1·3) = 0 ≤ 0·1 = 0
+    floor        2⁰ = 1 ≤ 1
+    heightBound  1^(1·2) = 1 ≤ 1^(1·1) = 1
+    Θ = 1        attained at A = x − 1, κ = 1 (height max(1,1) = 1, so κ ∈ Q(1)),
+                 whose translate is x, support {1}, idxWeight 1/1 = 1
+    conclusion   RothBound 1 (1/2) 1  asks  1 ≤ 1/2.          FALSE
+
+A second, independent failure: `q = 0` makes `t = p/0 = 0` in `ℚ` while `heightBound` degenerates
+to `1 ≤ K₁^{r₁p}`, so `Θ ≤ 0` is demanded — false at `a = 100`, `H = 2`, `A = 2x − 1`, `κ = 1/2`,
+where `Θ ≥ 1`. §14's Theorem 1 opens with `0 < t ≤ 1`; `RothLemmaMahler` carried it and
+`RothLemmaTheta` did not.
+
+**Fixed** by adding to `RothGammaFull` the two clauses §11 actually carries —
+`two_le : ∀ j, 2 ≤ Kh j` (§11's derived list "K₁ ≥ 2, K₂ ≥ 2, …, K_M ≥ 2"; a *consequence* at
+`m ≥ 2`, where `(m−1)m(2m+1) ≥ 10` forces `F ≥ 1`, and case (i)'s *statement* at `m = 1`) and
+`degPos : ∀ j, d j ≠ 0` (§11's "positive integers") — and by carrying `0 < t ≤ 1` on
+`RothLemmaTheta`. `rothGammaFull_descend` drops its separate `hq2` hypothesis in exchange.
+
+This is the **fifth** time in this arc that a missing clause in a hypothesis object made a
+statement stronger than the source's. The list is now long enough to be a rule rather than an
+anecdote: `Γ`'s clauses 2–3, `Γ`'s clause 4, `InRothFracSet`'s `≤` for `=`, `RothLemmaUniform`'s
+fused `Kh`, and this. **Every one was found by re-reading the source, none by any mechanical
+check** — a missing hypothesis type-checks perfectly.
+
+### `RothLemmaTheta` is now proved at `m = 1`
+
+`rothLemmaTheta_one`. `RothGammaFull.heightBound` at `m = 1` is `a^{1·q} ≤ K₁^{r₁p}`, which is
+case (i) cleared of its exponent; `two_le` supplies case (i)'s `K₁ ≥ 2`; `isRothTheta_le_of_gamma_one`
+gives `Θ ≤ t`; `rothBound_one` packages it. First instance of `RothLemmaTheta` proved, and the
+starting value `c₁ = 1` that `rothConstant_chain` needs.
+
+⚠ Also caught: the module's summary paragraph still read "Both are `def`s, and neither is
+proved" after `rothLemmaTheta_one` landed. Correction seventeen's failure mode, twice in one
+session. Fixed, and flagged in place.
+
+⚠ `RothLemma4` has the same shape and has **not** been checked against correction twenty. Its
+conclusion `Θ ≤ t + 2w` is weaker so the counterexample does not transfer directly, and none has
+been sought. Recorded as unchecked rather than asserted either way.
+
+### §12's step, in the shape §12 uses it
+
+`index_rescaled_wronskian_le_theta` and `..._right_theta` — the two halves of `hres` consuming
+`IsRothTheta`'s upper-bound clause directly instead of the `RothLemmaUniform` schema. Both
+proved first try, with a witness.
+
+The evidence that this is the right formulation is the hypothesis stack. Against the schema
+versions these drop **`Kh`, `E`, coprimality, `2 ≤ Kh`, `RothGamma`, and `r ≠ 0`** — six
+hypotheses — and prove in a third the lines. §12 asks for `U ∈ R(b;ρ)` and `κ ∈ Q(H)`; that is
+all `IsRothTheta.1` wants, so nothing else has to be threaded through.
+
+The `RothLemmaUniform` versions are **superseded, not wrong** — proved, true, and carrying a
+stack the induction cannot produce. Kept until the recursion confirms nothing needs them.
+
+**What is left for `hres`**, now that both halves and their degree bounds are in place:
+
+1. §12's height estimate — a uniform `b` for the determinant. `abs_coeff_det_pderivList_le`
+   gives `b = r!·(S·(d^L·B))^r`; §12 wants `b = 2^{2n(r₁+…+r_m)}·n!·a^n` and shows
+   `b ≤ H₁^{ρ₁t/(m−1)}`. Read verbatim, not formalised.
+2. `Γ_{m−1}` for the descended system — **`rothGammaFull_descend`, proved.**
+3. `RothLemmaTheta` at `m−1` to turn `Θ_{m−1}` into a number — the induction itself, with
+   `rothLemmaTheta_one` as its base and `rothBound_succ_of_lemma4` as its arithmetic.
+
+So the chain is now: two proved halves, a proved descent, a proved base case, and a proved
+step-arithmetic, with (1) the one genuinely unformalised link.

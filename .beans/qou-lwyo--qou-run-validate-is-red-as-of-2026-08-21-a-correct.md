@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T22:53:13Z
-updated_at: 2026-08-22T22:59:28Z
+updated_at: 2026-08-23T07:59:20Z
 ---
 
 `bun run scripts/run-validate.ts content/quantum-observable-universe` exits
@@ -400,3 +400,59 @@ the instance"* and *"was closed by not needing the instance"* are both true.
 The scoping pass's three probe defects stand on their own and are NOT
 addressed by the reclassification — they remain live.
 
+
+
+## Habiro infra BUILT — and the obvious non-vanishing route is dead, provably
+
+`lean/QOU/Habiro/CyclotomicEvaluation.lean`, 13 declarations, sorry-free,
+`lean`-direct exit 0. Corpus-grep first saved re-deriving two lemmas:
+`QOU.Common.qPochDiag` and `cyclotomic_value_truncates` already existed.
+
+**1. The root-of-unity bridge (was missing).** `cyclotomic_value_truncates`
+assumes `(ζ;ζ)_N = 0` as a *hypothesis*.
+`qPochDiag_eq_zero_of_pow_eq_one` derives it from `ζ^N = 1`. Without this the
+truncation lemma cannot be applied to a root of unity except by assuming its own
+conclusion.
+
+**2. Evaluation well-definedness.** `habiroEval_stable`: past the order of `ζ`,
+truncating further changes nothing — the property that makes `ev_ζ` well defined
+on the inverse limit. `habiroEval_add` gives additivity;
+`habiroEval_at_two_mul` is the concrete `ℤ[ζ_{2p}]` form.
+
+**Multiplicativity is NOT proved.** The Habiro product is not termwise in
+cyclotomic coordinates. `ev_ζ` here is a well-defined *additive* evaluation, which
+is what `frobenius_at` consumes. Do not cite it as a ring hom.
+
+**3. Non-vanishing for all p — and why the natural criterion is vacuous here.**
+`habiroEval_ne_zero_of_head_not_dvd`: if the `j`-term head is not divisible by
+`(ζ;ζ)_j` then the evaluation is non-zero **for every `N ≥ j`** — a genuine
+∀p criterion, not a per-prime check.
+
+The natural instance `j = 1` reads *"`(1-ζ) ∤ a₀ ⇒ ev ≠ 0`"*. **At the primes
+this framework needs it says nothing.** `Norm(1 - ζ_n) = Φ_n(1)`, which is 1
+unless `n` is a prime power; `2p` for odd `p` is not. Computed exactly:
+
+    p        2     3     5     7    11    13
+    n = 2p   4     6    10    14    22    26
+    Φ_n(1)   2     1     1     1     1     1
+             ok  unit  unit  unit  unit  unit
+
+So `1 - ζ_{2p}` is a **unit** for every odd prime and divides everything. `j = 1`
+covers `p = 2` and nothing else. Recorded as the theorem
+`head_criterion_vacuous_of_isUnit`, not as a comment — I nearly shipped the `j=1`
+version as *the* answer before running that check.
+
+**The escape, and it is why the theorem is stated `j`-generally:** `j = 2`.
+`(ζ;ζ)_2 = (1-ζ)(1-ζ²)`, and for primitive `ζ_{2p}` the element `ζ²` is a
+primitive `p`-th root, so `1 - ζ²` has norm `Φ_p(1) = p` — a non-unit.
+
+## What is now open, and it is sharper than before
+
+Non-vanishing at every prime is reduced to a concrete arithmetic condition on the
+**head** of the atomic Markov trace's Habiro expansion: is
+`a₀ + a₁(1-ζ)` divisible by `(1-ζ)(1-ζ²)` in `ℤ[ζ_{2p}]`? If not — for every p —
+`frobenius_at p ≠ 0` follows for all p at once.
+
+That is a question about the first two Habiro coefficients of a specific series,
+answerable from the coefficient data the probe already carries. It is **not**
+closed here and no instance is provided.

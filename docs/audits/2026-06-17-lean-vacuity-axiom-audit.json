@@ -1,8 +1,8 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-24T15:16:16.509Z",
+  "generated": "2026-08-24T18:57:40.571Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3115,
+  "scanned_files": 3117,
   "files_flagged": 155,
   "total_defects": 135,
   "total_exempt": 59,
@@ -15,7 +15,7 @@
     "proof-no-provable-axiom": 3
   },
   "conjecture_graph": {
-    "total": 245,
+    "total": 244,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -870,7 +870,7 @@
       {
         "name": "QSchurYLambdaClosedFormClaim",
         "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean",
-        "line": 171
+        "line": 176
       },
       {
         "name": "QuantumAPolynomial",
@@ -1066,11 +1066,6 @@
         "name": "TowerSummandRealization",
         "file": "content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean",
         "line": 55
-      },
-      {
-        "name": "TowerSummandRealization",
-        "file": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean",
-        "line": 53
       },
       {
         "name": "TrackCReducedAxiom",
