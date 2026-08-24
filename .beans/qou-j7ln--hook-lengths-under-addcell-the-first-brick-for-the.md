@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T16:21:23Z
+updated_at: 2026-08-24T16:28:44Z
 ---
 
 ## Landed — PR #5645
@@ -539,3 +539,38 @@ the Vandermonde -- strictly less work than the plan recorded above.
 
 `vandPairProd` / `sum_vandPairProd_scale` remain proved and correct; they are
 simply not on the shortest path to `hw`.
+
+
+## Every piece of the final assembly now exists
+
+Commits `b632874ad` (per-pair q-ratio factors) and `f3796710f` (pair-product
+split).
+
+    qratio_factor_lower  (j > a)  exact match, no leftover factor
+    qratio_factor_upper  (j < a)  same match, times one Q
+    betaR_addCell                 beta_i(mu + box at a) = beta_i(mu) + [i=a]
+    prod_pairs_split_ne           two families agreeing off the pairs
+                                  involving a differ exactly by their row-a
+                                  and column-a factors  (division-free)
+
+Together with `schurPrincipal_mul_const`, `betaR_lt`, `nPart_addCell` and
+`sum_eq_bracket_mul_of_qratio_scaling`, nothing conceptual is left.
+
+**One reindexing stands between here and `hw`.** `SchurPrincipalBetaForm`
+writes P as `prod_{i<r} prod_{k < r-(i+1)}` (offset form, inherited from
+`SYTBetaGapVandermonde`), while `prod_pairs_split` uses
+`prod_{i<r} prod_{j in Ico (i+1) r}` (interval form). `Finset.prod_Ico_eq_prod_range`
+bridges them; do it once, in whichever direction keeps the split usable, and
+prefer converting the beta-form file rather than weakening the split.
+
+Then: apply `prod_pairs_split_ne` with `h i j = 1 - Q^{beta'_i - beta'_j}` and
+`g i j = 1 - Q^{beta_i - beta_j}` (the off-pairs hypotheses discharge by
+`betaR_addCell` + `if_neg`), rewrite the row-a and column-a factors by the two
+`qratio_factor_*` lemmas, collect the `Q` per upper pair into `Q^a`, cancel it
+against `nPart_addCell`, and divide two instances of `schurPrincipal_mul_const`.
+
+### Trap for whoever finishes this
+
+`ring` does NOT close associativity/commutativity goals over a `CommMonoid` --
+it wants a semiring. Use `ac_rfl` (or `mul_right_comm`). Cost me two rounds
+across two files.
