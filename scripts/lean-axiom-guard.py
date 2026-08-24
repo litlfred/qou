@@ -80,6 +80,17 @@ QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_facto
 QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | sorryAx
 QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | sorryAx
 QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | sorryAx
+
+# --- fibration exactness (bean qou-de7r, item 2 of qou-pan0) ---
+# Measured 2026-08-24. The topological half of the homotopy LES, and only the
+# MIDDLE spot: exactness of pi_N(F) -> pi_N(E) -> pi_N(B) at pi_N(E), from a
+# stationary-relative homotopy lifting hypothesis. There is no connecting map
+# and no exactness at the other two spots, so `clean` here is NOT a claim about
+# the long exact sequence.
+QOU.Mathlib.FibrationExactness | QOU.Mathlib.FibrationExactness.homotopyGroupMap_eq_const_iff | clean
+QOU.Mathlib.FibrationExactness | QOU.Mathlib.FibrationExactness.range_homotopyGroupHom_eq_ker | clean
+# The witness that the lifting hypothesis above is satisfiable at all.
+QOU.Mathlib.HomotopyLifting | QOU.Mathlib.HomotopyLifting.Prod.hasHomotopyLiftingPropertyRel_fst | clean
 """
 
 
