@@ -601,14 +601,49 @@ def compute_tr_m_via_branching(
     # own default — caught by testing the default path, which is the one case
     # it would have been easy not to test. 1e-12 separates cleanly: the float64
     # truncation is ~1e-16, while the bar image is ~2e-1 away.
-    _q_anchor = mp.mpf(str(extract.get("q0Value", "0")))
-    if _q_anchor > 0 and abs(mp.mpf(str(q_val)) - _q_anchor) > mp.mpf("1e-12"):
-        return None, 0.0, (
-            f"A^λ extract is frozen at q={mp.nstr(_q_anchor, 12)} and is not "
-            f"re-evaluated; q_val={mp.nstr(mp.mpf(str(q_val)), 12)} would "
-            f"return a hybrid, not tr_M at either q. Use "
-            f"tr_m_atom_via_transfer.tr_m_atom_zn for q ≠ q_0 (bean qou-8chw)."
-        )
+    # FAIL-CLOSED on an UNSTAMPED frozen extract (2026-08-24). Keying the guard
+    # on `q0Value` alone is quiet exactly where provenance is least known: an
+    # extract with no stamp gives `_q_anchor = 0`, the `> 0` test is false, and
+    # a hybrid sails through.
+    #
+    # THIS IS FORWARD-LOOKING HARDENING, NOT A LIVE-BUG FIX — stated plainly
+    # because I first wrote it up as the latter and it is not. Of the 13
+    # registered extracts, 11 are ABSENT from disk (they fail loudly above),
+    # the H_6 pn deuteron is stamped, and `(9, "nn")` is present and UNSTAMPED.
+    # But `A >= 3` returns via the fine-Bratteli transfer well before this
+    # point, so `n` here is ALWAYS 6 and no H_9 entry is reachable from this
+    # function at all. The unstamped file is consumed by
+    # `sublemma_2_1_h9_tritium_verify` and `sublemma_2_1_h12_helium_4_framework`
+    # instead; whether those need the same treatment is a separate question
+    # (bean `qou-8chw`), not one this guard answers.
+    #
+    # What this change actually buys: an entry added to EXTRACT_FILENAMES at
+    # n = 6 without a stamp, or the deuteron extract losing its stamp in a
+    # regeneration, now refuses off-anchor instead of going silent.
+    #
+    # A BUILT extract legitimately carries no `q0Value` — it carries
+    # `built_at_q` instead — so key on that to tell "built at q_val" from
+    # "frozen at an unrecorded q", rather than on the absence of a stamp.
+    if "built_at_q" not in extract:
+        _q_anchor = mp.mpf(str(extract.get("q0Value", "0")))
+        _q_here = mp.mpf(str(q_val))
+        if _q_anchor <= 0:
+            # Unstamped. Presume it was generated at the package anchor and
+            # refuse anywhere else — the conservative reading, since a wrong
+            # presumption here costs a refusal while the alternative costs a
+            # silent hybrid.
+            _q_anchor = mp.mpf(str(Q_FLOAT))
+            _why = ("carries no q0Value stamp, so its generation q is presumed "
+                    "to be the package anchor")
+        else:
+            _why = f"is frozen at q={mp.nstr(_q_anchor, 12)}"
+        if abs(_q_here - _q_anchor) > mp.mpf("1e-12"):
+            return None, 0.0, (
+                f"A^λ extract {_why} and is not re-evaluated; "
+                f"q_val={mp.nstr(_q_here, 12)} would return a hybrid, not tr_M "
+                f"at either q. Use tr_m_atom_via_transfer.tr_m_atom_zn for "
+                f"q ≠ q_0 (bean qou-8chw)."
+            )
 
     # Loop over λ ⊢ n
     t0 = time.time()
