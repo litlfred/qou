@@ -1,13 +1,13 @@
 ---
 doc_id: 9710022v2
-doc_title: "Harmonic Analysis on the quan tum Loren tz group E/. Bu/ enoir Lab oratoire de Ph ysique Math / ematique et Th / eorique"
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
 section_id: sec-000-abstract
 section_title: "Abstract"
 section_number: null
 pages: 1-57
 source_pdf: 9710022v2.pdf
 source_sha256: e5ff373a1ec6884a
-doc_brief: "Harmonic Analysis on the quan tum Loren tz group E/. Bu/ enoir Lab oratoire de Ph ysique Math / ematique et Th / eorique — This w ork b egins with a review of complexi/ cation and reali/ cation of"
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi/ cation and reali/ cation of Hopf algebras/."
 ---
 This w ork b egins with a review of complexi/
 cation and reali/

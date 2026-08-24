@@ -1945,6 +1945,37 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.154Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.930Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'This construction yields a genuine AddCommGroup rather than a typeclass ansatz.' is the block's actual content - it exists to replace an ansatz with a construction - so the contrast is substantive. MATH FINDING recorded here (see notes).",
+        "notes": "STANDING-TRAP FINDING, report only, never fix math inline: the Rogers-form constraints are written e_3 = e_2/e_1, e_4 = (1 - e_2^{-1})/(1 - e_1^{-1}), e_5 = (1 - e_2)/(1 - e_1). Tested numerically at mpmath dps=30 with x = 0.3+0.7i, y = -0.4+1.3i: the standard five-term relation D(x) - D(y) + D(y/x) - D((1-x^{-1})/(1-y^{-1})) + D((1-x)/(1-y)) evaluates to EXACTLY 0.0, while the block's orientation (e_4, e_5 inverted) evaluates to 1.979625777. Note e_3 = e_2/e_1 DOES match the standard form under the identification (x, y) = (e_1, e_2), so no relabelling of x and y rescues e_4 and e_5 - with e_1 = y the e_3 constraint breaks instead. Since D(1/z) = -D(z), the inversion is not a harmless convention: it flips two of the five signs. Proposed fix: e_4 = (1 - e_1^{-1})/(1 - e_2^{-1}) and e_5 = (1 - e_1)/(1 - e_2), or state explicitly the sign convention under which the given orientation closes."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1964,6 +1995,21 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.209Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
       }
     ],
     "trap-em-dash": [
@@ -1983,6 +2029,21 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 258 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.267Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
       }
     ],
     "trap-triples": [
@@ -2002,6 +2063,36 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 258 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.334Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.074Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'the pentagon identity proof for Cl_2 ..., Bloch-Wigner regulator D tensor Q injectivity, and the Suslin map K_3^ind(C) -> R' is a three-item list that matches the three rows of tbl:bloch-wigner-mathlib-filler-table3-data one-for-one. Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -2021,6 +2112,21 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.487Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
       }
     ],
     "trap-meta-commentary": [
@@ -2040,6 +2146,37 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.617Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.007Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No 'note the framing' construction. STRUCTURAL OBSERVATION in notes.",
+        "notes": "report only: this is a proposition block, but three of its paragraphs are status and to-do content about its own Lean construction - 'This makes pentagonRelationGenerators too permissive', 'A ValidPentagonShape F predicate MUST constrain ...', 'The remaining work includes ...'. Per AGENTS.md 4d that belongs in .ts authorNotes (kind 'status' / 'caveat'), leaving the proposition to state only what is constructed. Not a trap category; flagged for the one-voice axis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2059,6 +2196,21 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.680Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
       }
     ],
     "trap-performed-warmth": [
@@ -2078,6 +2230,21 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.738Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
       }
     ],
     "trap-superlative": [
@@ -2097,6 +2264,21 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.809Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
       }
     ],
     "trap-nonspeakable": [
@@ -2116,6 +2298,21 @@
         "reviewed_at": "2026-08-15T10:31:01.219Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.866Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proposition: quotient construction, over-permissiveness of PentagonShape, Rogers-form constraints, remaining work, archimedean banner. All ten categories judged; the Rogers constraints recomputed numerically."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2139,5 +2336,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:36:41.074Z"
 }

@@ -7,7 +7,7 @@ section_number: 6.1
 pages: 18-20
 source_pdf: 0901.1612v1.pdf
 source_sha256: b4f3efcadd1e5caf
-doc_brief: "Matemática Contemporânea, Vol. 34, 251–283 © 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were"
+doc_brief: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 duplicate_of: "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"
 ---
 Proposition. The fundamental solution of the scalar Laplacian on the 3-torus T 3 is

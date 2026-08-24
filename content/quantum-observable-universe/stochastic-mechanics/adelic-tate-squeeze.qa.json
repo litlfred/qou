@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:37.706Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Block-final: 'it is not only the global eps-squeeze that forbids rogue zeros, but a separate squeeze at each prime.'",
+        "notes": "False-positive class: strengthening ('not only X but Y'), and the localisation IS the block's content - the same sentence is the docstring of the Lean theorem adelic_reeb_squeeze_local_to_global. Kept."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,21 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:37.749Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of all six sections (opening, tau/St duality, Setup, local--global bound, Tate local functional equation, Conclusion). Zero spaced em-dashes (all -- are LaTeX en-dashes in 'local--global' / 'Adelic--Tate'). No performed warmth, no pivot, no meta-narration. Cross-checked against the Lean sibling of prop:adelic-reeb-restricted-product: the .md's 'strict at each place then sum' is consistent with adelic_reeb_squeeze_local_to_global (weak everywhere + strict at one place)."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1300,21 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 283 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:37.791Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of all six sections (opening, tau/St duality, Setup, local--global bound, Tate local functional equation, Conclusion). Zero spaced em-dashes (all -- are LaTeX en-dashes in 'local--global' / 'Adelic--Tate'). No performed warmth, no pivot, no meta-narration. Cross-checked against the Lean sibling of prop:adelic-reeb-restricted-product: the .md's 'strict at each place then sum' is consistent with adelic_reeb_squeeze_local_to_global (weak everywhere + strict at one place)."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1334,22 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 283 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:37.831Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'each local place carries its own eps_v, the global eps is a restricted product of eps_v's, and the surreal squeeze at each prime descends to the global squeeze'",
+        "notes": "Substantive three-element enumeration: three logically distinct claims (local existence, product structure, descent), not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:37.871Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of all six sections (opening, tau/St duality, Setup, local--global bound, Tate local functional equation, Conclusion). Zero spaced em-dashes (all -- are LaTeX en-dashes in 'local--global' / 'Adelic--Tate'). No performed warmth, no pivot, no meta-narration. Cross-checked against the Lean sibling of prop:adelic-reeb-restricted-product: the .md's 'strict at each place then sum' is consistent with adelic_reeb_squeeze_local_to_global (weak everywhere + strict at one place)."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:37.911Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of all six sections (opening, tau/St duality, Setup, local--global bound, Tate local functional equation, Conclusion). Zero spaced em-dashes (all -- are LaTeX en-dashes in 'local--global' / 'Adelic--Tate'). No performed warmth, no pivot, no meta-narration. Cross-checked against the Lean sibling of prop:adelic-reeb-restricted-product: the .md's 'strict at each place then sum' is consistent with adelic_reeb_squeeze_local_to_global (weak everywhere + strict at one place)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1437,22 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:37.950Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'**Conclusion.** ... This provides the local--global structure: ...'",
+        "notes": "Conventional Conclusion section of an expository remark; the second clause adds the per-prime refinement rather than restating, so not a manufactured closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1472,21 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:37.992Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of all six sections (opening, tau/St duality, Setup, local--global bound, Tate local functional equation, Conclusion). Zero spaced em-dashes (all -- are LaTeX en-dashes in 'local--global' / 'Adelic--Tate'). No performed warmth, no pivot, no meta-narration. Cross-checked against the Lean sibling of prop:adelic-reeb-restricted-product: the .md's 'strict at each place then sum' is consistent with adelic_reeb_squeeze_local_to_global (weak everywhere + strict at one place)."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1506,21 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:38.033Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of all six sections (opening, tau/St duality, Setup, local--global bound, Tate local functional equation, Conclusion). Zero spaced em-dashes (all -- are LaTeX en-dashes in 'local--global' / 'Adelic--Tate'). No performed warmth, no pivot, no meta-narration. Cross-checked against the Lean sibling of prop:adelic-reeb-restricted-product: the .md's 'strict at each place then sum' is consistent with adelic_reeb_squeeze_local_to_global (weak everywhere + strict at one place)."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:30:59.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e7c291cd1603",
+          "ts": "02434cb65838"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:38.072Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'The Tate thesis Fourier factorisation of the global L-function is compatible with the surreal-order decomposition.'",
+        "notes": "Five-noun chain but every element is a named object introduced earlier in the block; parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:16:38.072Z"
 }

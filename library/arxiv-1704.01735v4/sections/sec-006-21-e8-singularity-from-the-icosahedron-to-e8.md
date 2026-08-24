@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1704.01735v4
-doc_title: "Modular curves, invariant theory and E8 Lei Yang"
+doc_title: "Modular curves, invariant theory and E8"
 section_id: sec-006-21-e8-singularity-from-the-icosahedron-to-e8
 section_title: "E8-singularity: from the icosahedron to E8"
 section_number: 2.1
 pages: 8-10
 source_pdf: 1704.01735v4.pdf
 source_sha256: 3935747ae9291f76
-doc_brief: "Modular curves, invariant theory and E8 Lei Yang — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
+doc_brief: "Modular curves, invariant theory and E8 — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
 ---
 Let us recall some classical result on the relation between the icosa hedron
 and the E8-singularity (see [31]). Starting with the polynomial invariants of

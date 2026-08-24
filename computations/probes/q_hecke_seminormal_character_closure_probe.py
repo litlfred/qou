@@ -55,6 +55,7 @@ from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from markov_weights_symbolic import y_lambda_symbolic  # noqa: E402
 from markov_trace_recursive import markov_trace_of_word  # noqa: E402
 from markov_trace_recursive import q as Q_RECURSIVE_SYM  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _partitions_of(n: int):
@@ -91,7 +92,7 @@ def main() -> int:
         "q-hecke-seminormal-character-closure-probe",
         engine="mpmath+sympy",
     )
-    mp.dps = 50
+    set_compute_dps()
     q_sympy = sp.Float(Q_50_DIGIT_STR, 50)
 
     # Pre-evaluate y_λ at q_0 ONCE per n (the symbolic expressions

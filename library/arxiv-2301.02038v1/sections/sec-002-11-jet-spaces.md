@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2301.02038v1
-doc_title: "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Diﬀerential Equations"
+doc_title: "Vinogradov's Cohomological Geometry of Partial Differential Equations"
 section_id: sec-002-11-jet-spaces
 section_title: "jet spaces"
 section_number: 1.1
 pages: 3-6
 source_pdf: 2301.02038v1.pdf
 source_sha256: 27b303939826ab39
-doc_brief: "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a"
+doc_brief: "Vinogradov's Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li"
 ---
 1.2. the Cartan distribution 6
 1.3. diﬃeties 8

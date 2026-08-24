@@ -62,8 +62,10 @@ import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
 _T0 = _time.monotonic()
 import json, math, os, hashlib, datetime
 from mpmath import mp, mpf
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 

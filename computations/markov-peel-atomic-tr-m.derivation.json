@@ -1,0 +1,82 @@
+{
+  "target": "production atomic Markov trace tr_M(beta_atom; q_0) for p, n, D, T, 3He, 4He via Markov-axiom recursive ascent on the Groebner-Shirshov normal form",
+  "target_value": "tr_M(beta_atom) computed symbolically in H_{3A}(q) by incremental GS reduction followed by recursive Markov-axiom descent, then evaluated at q_0; emitted at BOTH substrate pins as a deliberate comparison pair",
+  "target_tolerance": 0.0,
+  "content_block": "prop:categorical-mass-markov",
+  "description": "Derivation chain for the production atomic Markov-trace witnesses (PR #516, closing #508) -- the recursive-ascent path that makes A >= 4 feasible where the Hoefsmit path is not. Covers markov-peel-atomic-tr-m.witness.json (proton pin) and markov-peel-atomic-tr-m-muon.witness.json (muon pin) -- 2 witnesses, one per anchor. Trust profile: one AXIOM entrypoint (Hecke energy), one AXIOM (Markov axioms / Finite-Jones uniqueness), two DERIVED steps, one SCRIPT_CITED frontier.\n\nThe two witnesses are a SANCTIONED two-pin pair, not a layer straddle: each declares its own q0Anchor, neither mixes pins inside one quantity, and AGENTS.md explicitly allows a comparison producer to carry both.",
+  "steps": [
+    {
+      "name": "Hecke relation and the balanced q-integer",
+      "operation": "The Iwahori-Hecke algebra H_n(q) is the braid-group algebra of B_n modulo (sigma_i - q)(sigma_i + q^{-1}) = 0; the eigenvalue separation (q - q^{-1}) is the per-crossing Hecke energy scale, the AXIOM entrypoint.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "hecke_relation",
+      "output_value": "sigma_i^2 = (q - q^{-1}) sigma_i + 1",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Groebner-Shirshov normal form of the atomic braid word",
+      "operation": "Build the canonical nucleus braid word beta_atom on n = 3A strands and reduce it in H_n(q) by INCREMENTAL Groebner-Shirshov rewriting -- interleaving reduce and multiply so the intermediate term count stays bounded rather than blowing up before the final reduction. The output is the normal-form element, exact in q.",
+      "inputs": [
+        "hecke_relation",
+        "Cat.Action"
+      ],
+      "output_name": "gs_normal_form",
+      "output_value": "NF(beta_atom) in H_{3A}(q), a bounded Z[q,q^{-1}]-combination of GS basis elements",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 1,
+      "citation": "manuscript:atomic-braid-recipe",
+      "notes": "Confluence of the GS rewriting system is what makes the normal form well-defined; the Diamond Lemma is the standing citation. Measured bounding: the deuteron's 23-crossing word reduces to 32 terms, 4He's to a form the recursive trace handles end-to-end in ~60 s -- against the Hoefsmit path, which materialises dim-up-to-462 symbolic matrices per partition and is infeasible at A >= 4. The 23 here agrees with the crossing count independently recorded in atomic-braid-recipe-d.derivation.json."
+    },
+    {
+      "name": "Markov-axiom recursive ascent for tr_M",
+      "operation": "Compute the Markov trace of the normal form by recursive descent on the Markov axioms rather than by summing y_lambda chi^lambda over the Wedderburn blocks: tr_M(x sigma_{n-1} y) reduces via the trace axiom to a trace in H_{n-1}(q) scaled by the Markov parameter z, and the recursion bottoms out at the identity. Uniqueness of the trace satisfying the axioms is the Finite-Jones input, so this and the Wedderburn route compute the SAME functional by construction.",
+      "inputs": [
+        "gs_normal_form",
+        "FiniteJones"
+      ],
+      "output_name": "tr_M_symbolic",
+      "output_value": "tr_M(NF(beta_atom)) as an exact rational function of q",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:MarkovTraceUniqueness",
+      "citation": "kassel1995",
+      "notes": "The Markov parameter z is the convention-carrying object. Under the canonical convention D, z = q^3/(q^2+1), and the corpus records a structural consequence that needs no source and no anchor to test: the peel's deuteron denominator factors as 192 q^23 (q^2+1)^3 -- ONE (q^2+1) per peel. Convention C (z = sqrt(q)/(q+1)) leaves half-integer powers and cannot produce that factorisation. Recorded from AGENTS.md and computations/markov/peel_anchor_identification_probe.py (PR #5190); NOT independently re-verified in this chain."
+    },
+    {
+      "name": "Evaluation at the substrate anchor -- both pins, deliberately",
+      "operation": "Evaluate the symbolic trace at q_0 to 30+ digits, once at the experimental (proton) pin and once at the ideal-CAL-2 (muon) pin, emitting a separate witness for each. The pair is the point: their difference IS the mu-p substrate tension propagated through the trace.",
+      "inputs": [
+        "tr_M_symbolic"
+      ],
+      "output_name": "tr_M_at_q0_both_pins",
+      "output_value": "proton: tr_M(p) = 1.0653061442544499756666334037445034130528872534934;  muon: tr_M(p) = 1.0653062286131670593652845464313725576506616741348",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:three-calibration-discipline",
+      "notes": "The two proton values differ from the two muon values by ~7.9e-8 relative on the proton atom -- the 11.5 ppb anchor tension amplified by the word's q-degree (11 crossings for p). Each witness DECLARES its q0Anchor, so this is the sanctioned comparison pair, not the straddle AGENTS.md forbids: no single computed quantity mixes an ideal-layer input with an experimental-layer one."
+    },
+    {
+      "name": "Cross-check against the Hoefsmit / Wenzl-bridge path",
+      "operation": "Compare the recursive-ascent trace against the independent Hoefsmit + Wenzl-bridge witness for the atoms both cover, and record the residual per atom.",
+      "inputs": [
+        "tr_M_at_q0_both_pins"
+      ],
+      "output_name": "peel_vs_bridge",
+      "output_value": "deuteron: peel 0.38835714119779098941649346949090499349342765669822 vs bridge 0.388357122562352815076554060811402206896142251599849801491787, abs_diff = 1.86354e-8",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "script: computations/markov/markov_peel_atomic_witness.py -- the frontier step. Bridge witness: atomic-tr-m-mpfr-50dps.witness.json.\n\nTHE RESIDUAL IS NOT ZERO AND THE CHAIN DOES NOT SMOOTH IT. The deuteron differs by 1.86354e-8 -- far above the 50-dps floor either path claims. The witness ATTRIBUTES this to the bridge being colour-blind (it carries `bridge_is_color_blind: true`), i.e. the bridge is the sign-only convention while the peel path is colour-weighted. That attribution is the producer's, and it is NOT independently verified in this chain. Two reasons to keep it flagged rather than accept it: the two conventions differ by a FACTOR OF ~7 on the individual character chi^(6) (1.5599 vs 11.0214, measured in chi-at-q0-sign-only-atomic.derivation.json), so a 5e-8 relative residual on the trace is a much smaller effect than a bare convention swap would suggest; and a ~1e-8 residual on an object claiming 50 dps is exactly the signature that turned out to be STALE WITNESSES rather than a real difference in the chi backends (bean qou-chib). Whether this residual is the colour convention, an anchor difference, or staleness is OPEN."
+    }
+  ]
+}

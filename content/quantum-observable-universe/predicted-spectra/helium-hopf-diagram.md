@@ -7,6 +7,7 @@ The helium atom $\mathcal{A}(2, 2)$ provides the simplest closed electron shell.
   & & T_{2,3} \\
   \underset{e_1}{\text{electron 1}} & \underset{1s^2 \text{ (closed)}}{\text{—————————————}} & \underset{e_2}{\text{electron 2}}
 \end{tikzcd}
+```
 
 The Hopf link $\mathcal{L}_H$ defines the linking operation between $e_1$ and $e_2$. Each trefoil threads the Seifert surface of the other exactly once ($\mathrm{lk}(e_1, e_2) = 1$).
 
@@ -38,6 +39,7 @@ This matrix has rank $1$. Adding a third component $e_3$ requires $\mathrm{lk}(e
   & T_{2,3} & \\
   & \underset{2s^1}{\text{outer electron}} &
 \end{tikzcd}
+```
 
 $$
   \mathcal{A}(3, 4) = 

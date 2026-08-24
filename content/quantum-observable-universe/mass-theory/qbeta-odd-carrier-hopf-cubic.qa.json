@@ -978,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:03.964Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'So the obstruction is not a 3-dimensional representation (H_3 has none - its Wedderburn blocks are 1, 2, 1) nor a single knot invariant, but the two-crossing isospin amplitude difference.' Both denied alternatives are the ones a reader would actually reach for, and the first is refuted on the spot by a verified fact (blocks 1,2,1); this is substantive mathematical contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -997,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.031Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the remark plus its 4-row sector table. RE-DERIVED every algebraic claim with sympy and all of it is exactly right: num(q) = (q-1)(q+1)R_12(q) with R_12 = q^12-4q^10+6q^8-10q^6+6q^4-4q^2+1; num(q) - (q^8-q^6).C(q^2+q^-2) = 0 identically, so Delta^odd = (h/4)C(y) is exact; C = y^3-4y^2+3y-2 has no rational root (C(1)=-2, C(-1)=-10, C(2)=-4, C(-2)=-32) hence is irreducible, disc(C) = -152 = -2^3.19 and is not a square so Gal = S_3; C_Hopf + C_unknot = (y^3-6y^2+10y-6) + (2y^2-7y+4) = C exactly; disc(C_Hopf) = -76 = -2^2.19, sharing the prime 19 as claimed; C(3) = -2, C(6) = 88, C(2) = -4 all nonzero at the golden/silver/classical anchors (y=3,6,2 all verified); and H_3's Wedderburn blocks are indeed 1,2,1 so there is no 3-dimensional rep. The ONE defect is the knot naming in the table, recorded separately. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1017,6 +1047,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "5 stylistic spaced dashes in 320 words (1.56/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.092Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three spaced dashes: two bracket a genuine three-item apposition of anchors ('golden ... - silver ... - classical ...'), and one sets off the conclusion clause ('the cubic - hence the degree-3 field - is sourced entirely by ...'), a correctly paired parenthetical. No afterthought appending."
       }
     ],
     "trap-triples": [
@@ -1036,6 +1081,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 320 words)"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.150Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the remark plus its 4-row sector table. RE-DERIVED every algebraic claim with sympy and all of it is exactly right: num(q) = (q-1)(q+1)R_12(q) with R_12 = q^12-4q^10+6q^8-10q^6+6q^4-4q^2+1; num(q) - (q^8-q^6).C(q^2+q^-2) = 0 identically, so Delta^odd = (h/4)C(y) is exact; C = y^3-4y^2+3y-2 has no rational root (C(1)=-2, C(-1)=-10, C(2)=-4, C(-2)=-32) hence is irreducible, disc(C) = -152 = -2^3.19 and is not a square so Gal = S_3; C_Hopf + C_unknot = (y^3-6y^2+10y-6) + (2y^2-7y+4) = C exactly; disc(C_Hopf) = -76 = -2^2.19, sharing the prime 19 as claimed; C(3) = -2, C(6) = 88, C(2) = -4 all nonzero at the golden/silver/classical anchors (y=3,6,2 all verified); and H_3's Wedderburn blocks are indeed 1,2,1 so there is no 3-dimensional rep. The ONE defect is the knot naming in the table, recorded separately. No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1055,6 +1115,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.209Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the remark plus its 4-row sector table. RE-DERIVED every algebraic claim with sympy and all of it is exactly right: num(q) = (q-1)(q+1)R_12(q) with R_12 = q^12-4q^10+6q^8-10q^6+6q^4-4q^2+1; num(q) - (q^8-q^6).C(q^2+q^-2) = 0 identically, so Delta^odd = (h/4)C(y) is exact; C = y^3-4y^2+3y-2 has no rational root (C(1)=-2, C(-1)=-10, C(2)=-4, C(-2)=-32) hence is irreducible, disc(C) = -152 = -2^3.19 and is not a square so Gal = S_3; C_Hopf + C_unknot = (y^3-6y^2+10y-6) + (2y^2-7y+4) = C exactly; disc(C_Hopf) = -76 = -2^2.19, sharing the prime 19 as claimed; C(3) = -2, C(6) = 88, C(2) = -4 all nonzero at the golden/silver/classical anchors (y=3,6,2 all verified); and H_3's Wedderburn blocks are indeed 1,2,1 so there is no 3-dimensional rep. The ONE defect is the knot naming in the table, recorded separately. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1074,6 +1149,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.291Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the remark plus its 4-row sector table. RE-DERIVED every algebraic claim with sympy and all of it is exactly right: num(q) = (q-1)(q+1)R_12(q) with R_12 = q^12-4q^10+6q^8-10q^6+6q^4-4q^2+1; num(q) - (q^8-q^6).C(q^2+q^-2) = 0 identically, so Delta^odd = (h/4)C(y) is exact; C = y^3-4y^2+3y-2 has no rational root (C(1)=-2, C(-1)=-10, C(2)=-4, C(-2)=-32) hence is irreducible, disc(C) = -152 = -2^3.19 and is not a square so Gal = S_3; C_Hopf + C_unknot = (y^3-6y^2+10y-6) + (2y^2-7y+4) = C exactly; disc(C_Hopf) = -76 = -2^2.19, sharing the prime 19 as claimed; C(3) = -2, C(6) = 88, C(2) = -4 all nonzero at the golden/silver/classical anchors (y=3,6,2 all verified); and H_3's Wedderburn blocks are indeed 1,2,1 so there is no 3-dimensional rep. The ONE defect is the knot naming in the table, recorded separately. No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1093,6 +1183,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.354Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the remark plus its 4-row sector table. RE-DERIVED every algebraic claim with sympy and all of it is exactly right: num(q) = (q-1)(q+1)R_12(q) with R_12 = q^12-4q^10+6q^8-10q^6+6q^4-4q^2+1; num(q) - (q^8-q^6).C(q^2+q^-2) = 0 identically, so Delta^odd = (h/4)C(y) is exact; C = y^3-4y^2+3y-2 has no rational root (C(1)=-2, C(-1)=-10, C(2)=-4, C(-2)=-32) hence is irreducible, disc(C) = -152 = -2^3.19 and is not a square so Gal = S_3; C_Hopf + C_unknot = (y^3-6y^2+10y-6) + (2y^2-7y+4) = C exactly; disc(C_Hopf) = -76 = -2^2.19, sharing the prime 19 as claimed; C(3) = -2, C(6) = 88, C(2) = -4 all nonzero at the golden/silver/classical anchors (y=3,6,2 all verified); and H_3's Wedderburn blocks are indeed 1,2,1 so there is no 3-dimensional rep. The ONE defect is the knot naming in the table, recorded separately. No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1112,6 +1217,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.426Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the remark plus its 4-row sector table. RE-DERIVED every algebraic claim with sympy and all of it is exactly right: num(q) = (q-1)(q+1)R_12(q) with R_12 = q^12-4q^10+6q^8-10q^6+6q^4-4q^2+1; num(q) - (q^8-q^6).C(q^2+q^-2) = 0 identically, so Delta^odd = (h/4)C(y) is exact; C = y^3-4y^2+3y-2 has no rational root (C(1)=-2, C(-1)=-10, C(2)=-4, C(-2)=-32) hence is irreducible, disc(C) = -152 = -2^3.19 and is not a square so Gal = S_3; C_Hopf + C_unknot = (y^3-6y^2+10y-6) + (2y^2-7y+4) = C exactly; disc(C_Hopf) = -76 = -2^2.19, sharing the prime 19 as claimed; C(3) = -2, C(6) = 88, C(2) = -4 all nonzero at the golden/silver/classical anchors (y=3,6,2 all verified); and H_3's Wedderburn blocks are indeed 1,2,1 so there is no 3-dimensional rep. The ONE defect is the knot naming in the table, recorded separately. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1131,6 +1251,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.475Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'no quadratic-anchor or real-q construction can reproduce the odd carrier' is an absolute exclusion, but it is a scope-(b) structural claim with the invariant cited and verified: C is an irreducible cubic and a degree-<=2 number cannot be its root. Earned, not inflated."
       }
     ],
     "trap-nonspeakable": [
@@ -1150,6 +1285,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "68643374fec1",
+          "ts": "18092b2833b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:04.533Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the remark plus its 4-row sector table. RE-DERIVED every algebraic claim with sympy and all of it is exactly right: num(q) = (q-1)(q+1)R_12(q) with R_12 = q^12-4q^10+6q^8-10q^6+6q^4-4q^2+1; num(q) - (q^8-q^6).C(q^2+q^-2) = 0 identically, so Delta^odd = (h/4)C(y) is exact; C = y^3-4y^2+3y-2 has no rational root (C(1)=-2, C(-1)=-10, C(2)=-4, C(-2)=-32) hence is irreducible, disc(C) = -152 = -2^3.19 and is not a square so Gal = S_3; C_Hopf + C_unknot = (y^3-6y^2+10y-6) + (2y^2-7y+4) = C exactly; disc(C_Hopf) = -76 = -2^2.19, sharing the prime 19 as claimed; C(3) = -2, C(6) = 88, C(2) = -4 all nonzero at the golden/silver/classical anchors (y=3,6,2 all verified); and H_3's Wedderburn blocks are indeed 1,2,1 so there is no 3-dimensional rep. The ONE defect is the knot naming in the table, recorded separately. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1172,5 +1322,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:21:04.533Z"
 }

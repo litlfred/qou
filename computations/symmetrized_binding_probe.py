@@ -60,8 +60,10 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 # Q_β(n) free-neutron β-decay Q-value (binding_canonical.py scale) and the
 # canonical energy scale E_0 = m_e/(q₀(q₀−1)). The binding-scale identity is

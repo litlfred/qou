@@ -1359,6 +1359,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not fit.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:10.683Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "FIXED: the Application closed on 'its knot factor is $(1-h^2)^2$ — derived, not fit.' — assertion by denial. Now states the positive claim.",
+        "notes": "fix applied: '$(1 - h^2)^2$ — derived, not fit.' -> '$(1 - h^2)^2$, a derived value.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:10.728Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Read the full proof block (10 lines, Brunnian decoupling + Application note); judged all ten categories in context; no further trap constructions."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:10.771Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "The block's only spaced em-dash was the one in the negation-contrast, removed by that fix; no dashes remain."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:10.814Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Read the full proof block (10 lines, Brunnian decoupling + Application note); judged all ten categories in context; no further trap constructions."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:10.855Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Read the full proof block (10 lines, Brunnian decoupling + Application note); judged all ten categories in context; no further trap constructions."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:10.901Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Read the full proof block (10 lines, Brunnian decoupling + Application note); judged all ten categories in context; no further trap constructions."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:10.944Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Read the full proof block (10 lines, Brunnian decoupling + Application note); judged all ten categories in context; no further trap constructions."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:10.987Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Read the full proof block (10 lines, Brunnian decoupling + Application note); judged all ten categories in context; no further trap constructions."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:11.029Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Read the full proof block (10 lines, Brunnian decoupling + Application note); judged all ten categories in context; no further trap constructions."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.880Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6f2f1a5294c3",
+          "ts": "e950d55fc289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:01:11.073Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Read the full proof block (10 lines, Brunnian decoupling + Application note); judged all ten categories in context; no further trap constructions."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1703,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:01:11.073Z"
 }

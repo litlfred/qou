@@ -7,7 +7,7 @@ section_number: 30
 pages: 28-29
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
-doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The dilogarithm function — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 duplicate_of: "zagier-the-dilogarithm-function"
 ---
 Proof. All three of these identities can be proved in essentially the same way.

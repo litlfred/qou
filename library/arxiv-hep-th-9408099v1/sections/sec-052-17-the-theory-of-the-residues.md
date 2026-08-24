@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "E. Witten Institute for Advanced Study"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-052-17-the-theory-of-the-residues
 section_title: "The Theory Of The Residues"
 section_number: 17

@@ -891,11 +891,206 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:35.626Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "smoke"
+      },
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.256Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.126Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.193Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.313Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.371Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.431Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.492Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.551Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.619Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2bb1bd88f719",
+          "ts": "cf40f7a3aebb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.675Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block: 12-row Feynman<->QOU dictionary, no prose sentences. RECOMPUTED/checked: hbar_q = 1 - q^{-1} matches the AGENTS.md definition and ->0 as q->1, so the 'classical limit hbar->0 <-> q->1' row is consistent; R-matrix eigenvalues q, -q^{-1} match SS7a (sigma-q)(sigma+q^{-1})=0; Z = dim_q(V^{otimes n}) = sum_lambda dim_q(V_lambda)dim(S_lambda) is the correct Schur-Weyl decomposition. Generator written sigma_i (never T) and Markov trace tr_M (never V_K(t)), per SS7a. No numerics, no braid words, no q_0 values, no convention-C z.",
+        "notes": "No prose to adjudicate; ten trap categories n/a. Minor: the 'Regularisation / renormalisation | Absent (finite sum, no divergences)' row is the one evaluative cell in the table, but it is a scope statement rather than a trap construction."
+      }
     ]
   },
   "source_hashes": {
     "md": "2bb1bd88f719",
     "ts": "cf40f7a3aebb"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:15:05.675Z"
 }

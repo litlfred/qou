@@ -1359,6 +1359,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a canonical approximation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.269Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 202-word proof (octahedral decomposition, alpha = m_e x 8G, two levels of use, error budget, novelty closer); Clausen values recomputed at 30 dps."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.316Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 202-word proof (octahedral decomposition, alpha = m_e x 8G, two levels of use, error budget, novelty closer); Clausen values recomputed at 30 dps."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1429,22 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 131 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.356Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 202-word proof (octahedral decomposition, alpha = m_e x 8G, two levels of use, error budget, novelty closer); Clausen values recomputed at 30 dps."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1464,22 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 131 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.391Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 202-word proof (octahedral decomposition, alpha = m_e x 8G, two levels of use, error budget, novelty closer); Clausen values recomputed at 30 dps."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1499,23 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.429Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Final sentence is the recurring novelty-closer template: 'While the hyperbolic volume ... is a classical result established by Thurston, identifying this exact geometric constant as the fundamental multiplicative physical binding scale factor ... represents a mathematically novel unifying synthesis specific to the Quantum Observable Universe.' It adds no mathematics and is placed to end on a claim of significance.",
+        "notes": "proposed (structural, NOT applied): delete from prose and migrate to the .ts authorNotes as {kind:'note'} per AGENTS.md 4d; the block's mathematical content ends at the error-budget paragraph."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1535,22 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.464Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 202-word proof (octahedral decomposition, alpha = m_e x 8G, two levels of use, error budget, novelty closer); Clausen values recomputed at 30 dps."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1570,22 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.504Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 202-word proof (octahedral decomposition, alpha = m_e x 8G, two levels of use, error budget, novelty closer); Clausen values recomputed at 30 dps."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1605,22 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.540Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 202-word proof (octahedral decomposition, alpha = m_e x 8G, two levels of use, error budget, novelty closer); Clausen values recomputed at 30 dps."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1640,23 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.575Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'the fundamental multiplicative physical binding scale factor' and 'a mathematically novel unifying synthesis specific to the Quantum Observable Universe' are unqualified maximum-strength claims in the same sentence.",
+        "notes": "proposed: removed together with the closer above."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1676,23 @@
         "reviewed_at": "2026-08-15T10:31:00.800Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f47eb7c2b9f1",
+          "ts": "7f905d022ac7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.613Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "The closer is a single 48-word sentence built from stacked noun modifiers ('the fundamental multiplicative physical binding scale factor connecting the lepton sector and baryon topology'); it stalls read aloud.",
+        "notes": "proposed: removed with the closer. FIX APPLIED elsewhere in the block -- 'a theorem of hyperbolic geometry, not a canonical approximation' -> '... not a numerical approximation' (token-substitution damage: 'canonical' standing in for 'numerical'). RIGOR (not a trap), TWO CONFIRMED ERRORS: (1) 'G = Cl_2(pi/4)' is WRONG -- Catalan's constant is Cl_2(pi/2) = 0.9159655942; Cl_2(pi/4) = 0.9818721511. The adjacent arithmetic is right (4G = 3.663862377 IS the regular ideal octahedron volume), so only the name/argument is wrong -- exactly the Lambda-vs-Cl_2 class named in AGENTS.md. The sibling block binding-scale-catalan.md defines G correctly as sum (-1)^k/(2k+1)^2. (2) 'measurement uncertainty of m_e (+-3 x 10^-8 relative)' is stale by ~100x: CODATA 2018 gives 0.51099895000(15) MeV = 2.9e-10, which is what the sibling calibration-inputs.md table states."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1715,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:30.613Z"
 }

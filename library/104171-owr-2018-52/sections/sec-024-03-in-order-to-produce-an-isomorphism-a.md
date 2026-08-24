@@ -1,13 +1,13 @@
 ---
 doc_id: 104171-owr-2018-52
-doc_title: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018"
+doc_title: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018)"
 section_id: sec-024-03-in-order-to-produce-an-isomorphism-a
 section_title: "In order to produce an isomorphism A"
 section_number: 0.3
 pages: 48-50
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
-doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
+doc_brief: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018) — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical"
 ---
 ∼
 −→U (n∨), we construct an action of

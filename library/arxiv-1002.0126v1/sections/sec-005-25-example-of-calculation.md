@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1002.0126v1
-doc_title: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI"
+doc_title: "An introduction to the volume conjecture"
 section_id: sec-005-25-example-of-calculation
 section_title: "Example of calculation"
 section_number: 2.5
 pages: 10-15
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
-doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
+doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 2 σ1σ−1
 2 . Its closure E is a knot

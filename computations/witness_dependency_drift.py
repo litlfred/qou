@@ -84,6 +84,10 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 
+#: upstream bare-names that resolve to more than one file in the tree.
+#: Reported at the end of a run so an ambiguous pick is never silent.
+_AMBIGUOUS_UPSTREAMS: dict = {}
+
 
 def _sha256_of(path: Path) -> str | None:
     if not path.exists():
@@ -139,6 +143,30 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
         ups_path = witness_path.parent / ups_name
         if not ups_path.exists():
             ups_path = HERE / ups_name
+        if not ups_path.exists():
+            # THIRD: search the tree. The two lookups above cover a sibling and
+            # the flat computations/ root, which was the whole layout before the
+            # Phase-6 refactor moved clusters into subdirectories. Upstreams that
+            # landed in data/, alpha/, sweeps/ etc. resolve to neither, and were
+            # being reported as `upstream_missing` while sitting in the repo:
+            # ame2020.json (data/), alpha-cluster-recursion.witness.json (alpha/)
+            # and low-isotope-binding-sweep.witness.json (sweeps/) accounted for
+            # 357 of 688 drift records on their own — all false.
+            #
+            # `load_and_hash_upstream` records a BARE FILENAME, so this cannot be
+            # made exact without a schema change; sorted() keeps it deterministic
+            # and _AMBIGUOUS_UPSTREAMS records any name that matches more than
+            # one path, so a wrong pick is visible rather than silent.
+            # some entries carry a path, not a bare name, and rglob
+            # rejects an absolute pattern outright
+            _base = Path(ups_name).name
+            matches = sorted(HERE.rglob(_base)) if _base else []
+            matches = [m for m in matches if "_deprecated" not in m.parts]
+            if matches:
+                if len(matches) > 1:
+                    _AMBIGUOUS_UPSTREAMS.setdefault(
+                        ups_name, [str(m.relative_to(HERE)) for m in matches])
+                ups_path = matches[0]
         recorded_sha = entry.get("sha256")
         current_sha = _sha256_of(ups_path)
         if current_sha is None:

@@ -76,7 +76,7 @@ file:
 to (SUM), and (SUM) was proved without it.
 
 -- Ref: [manuscript] docs/coordination/1ppq-qbeta.md, 2026-08-02 row
--- Ref: [garoufalidis2020] https://arxiv.org/abs/2012.00062 eq (233)–(234)
+-- Ref: [garoufalidis-gu-marino2023peacock] https://arxiv.org/abs/2012.00062 eq (233)–(234)
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Algebra.BigOperators.Fin

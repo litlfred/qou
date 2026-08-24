@@ -1,13 +1,13 @@
 ---
 doc_id: helicity03mmj
-doc_title: "MOSCOW MA THEMA TICAL JOURNAL"
+doc_title: "Geometry of higher helicities"
 section_id: sec-010-5-linking-of-foliations-and-brownian-motion
 section_title: "Linking of Foliations and Brownian Motion"
 section_number: 5
 pages: 15-22
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
-doc_brief: "MOSCOW MATHEMATICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
+doc_brief: "Geometry of higher helicities — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 An attempt to generalize the ergodic view on helicity to higher dimensions en-
 counters the following diﬃculty. Consider, for instance, the Hopf invariant for a

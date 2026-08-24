@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-27T17:10:15.637026+00:00",
-  "commitSha": "e1e876bef197fdfe793f5f088befa48f0eb11858",
+  "computedAt": "2026-08-23T09:52:31.007577+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "even_channel_is_cross_form_exact",
@@ -21,8 +21,8 @@
   "durationMs": 5,
   "computation": "qbeta-even-channel-magnitude",
   "scriptFile": "qbeta_even_channel_magnitude_probe.py",
-  "scriptHash": "8f05d2179d92",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "74a77e3ef171",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_even_channel_magnitude_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_even_channel_magnitude_probe.py"
   },
   "description": "Even (cosh/Vol) channel of the winding lattice (#4401/#4405): derived exactly, Re 𝔙₄₁(u_{m,ℓ}) = Vol₄₁ − (3/8)(ln q₀)²·(2m+ℓ)ℓ — the CROSS form, the second integer form alongside the sign channel's norm form (2m+ℓ)²−3ℓ². Pre-registered derived magnitude candidates ALL MISS the observed |S_p/S_m| ≈ 4.075: exponential bridge e^{−ΔVol/ℏ} at ℏ ∈ {ℏ_q, ℏ_q², 1} (astronomically small — the per-anchor knot reading with ΔVol = Vol_Bor − Vol_41 ≈ 5.30 is dead on arrival for the ratio), winding scaling n² = 2.25 (45% miss), volume ratio Vol_Bor/Vol_41 ≈ 3.610 (closest, 11.4% miss). Scope-(a): these candidates alone as-is are excluded; magnitude OPEN; nothing adopted, nothing wired, no tuning (all candidates fixed before evaluation).",
   "contentBlock": "conj:binding-qbeta-complex-volume",
@@ -39,15 +51,15 @@
     "even_channel_readout": {
       "cross_form": "Re 𝔙₄₁ − Vol₄₁ = −(3/8)(ln q₀)²·(2m+ℓ)ℓ (exact, [M1])",
       "two_channel_split": "magnitude=bar-even cross form (2m+ℓ)ℓ; sign=bar-odd norm form (2m+ℓ)²−3ℓ²",
-      "target_ratio": "4.075127003",
+      "target_ratio": "3.936920509",
       "candidates": {
-        "exp bridge, ΔVol/ℏ_q  (μ↔4₁, p↔Bor)": "6.005233631e-24",
-        "exp bridge, ΔVol/ℏ_q²": "4.297050343e-235",
+        "exp bridge, ΔVol/ℏ_q  (μ↔4₁, p↔Bor)": "6.005233864e-24",
+        "exp bridge, ΔVol/ℏ_q²": "4.297053707e-235",
         "exp bridge, ΔVol/1": "0.005002379696",
         "winding scaling n²: (3/2)²": "2.25",
         "volume ratio Vol_Bor/Vol_41": "3.609924309"
       },
-      "closest": "volume ratio Vol_Bor/Vol_41 at 11.42%",
+      "closest": "volume ratio Vol_Bor/Vol_41 at 8.306%",
       "verdict": "all pre-registered derived magnitude maps miss >1% (closest: volume ratio, 11.4%) — scope-(a) exclusion of these candidates as-is; magnitude OPEN"
     }
   }

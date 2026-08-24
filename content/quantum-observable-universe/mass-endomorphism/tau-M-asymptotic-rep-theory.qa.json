@@ -2151,6 +2151,22 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.008Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'The rung coefficients are not free. They are determined by the proved second-order q-difference ... recursion.'",
+        "notes": "Substantive: it denies freeness in order to name the determining recursion, and the recursion is cited. Documented false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2170,6 +2186,22 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.050Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Boxed factorisation, bullet glossary, status table.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -2189,6 +2221,22 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 261 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.095Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "One, in the bold lead ('tr_M ladder -- representation-theoretic structure').",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -2208,6 +2256,22 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 261 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.137Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Four glossary bullets, six status-table rows.",
+        "notes": "n/a"
       }
     ],
     "trap-closing-aphorism": [
@@ -2227,6 +2291,22 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.178Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "n/a -- see trap-thesis-restatement.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -2246,6 +2326,22 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.220Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'We establish the hbar_q-parity and the determination of the rung coefficients.'",
+        "notes": "Ordinary signposting."
       }
     ],
     "trap-thesis-restatement": [
@@ -2265,6 +2361,23 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.261Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "Block-final dangling boilerplate banner, nothing after it: '**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, including real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter q_0. ...'",
+        "notes": "PROPOSED (not applied -- reported per the audit brief): delete. NINTH recorded instance of this class and the FOURTH in this batch (with phi-d-syt-count-conjecture.md, qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md, qbeta-per-block-chi-closed-forms.md). Note this is a LONGER variant of the banner text than the other three carry, so a scan keyed on the exact string of one will miss the others."
       }
     ],
     "trap-performed-warmth": [
@@ -2284,6 +2397,22 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.302Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -2303,6 +2432,23 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.343Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "Status table row: 'k = 2 | c_2 = -1, factor (1 - b^2 hbar_q^4) | **proved** seed (bar-even); **wired**'. Also 'the exact finite Habiro sum, which the production system evaluates **without truncation**'.",
+        "notes": "REPORT ONLY, not fixed (math status). (1) 'PROVED' IS THE WORD AGENTS.md EXPLICITLY RETRACTS for this exact claim. Its 2026-08-16 correction states: for c_2 = -1, '**PROVED** IS wrong ... The Lean is 1 - b^2 hbar^4 = 1 - (b hbar^2)^2, a one-line ring identity ... N2_factor is a bare def with NO theorem deriving it ... **Structural is the defensible word** (no fit, no CODATA, no q_0) ... the compression to PROVED happened here, not there.' The same word recurs in the sibling proof ('We prove the seed c_2 = -1 categorically') and scope ('The low-order data are proved unconditionally ... the bar-even seed c_2 = -1') blocks, so all three need the same edit: proved -> structural. (2) NO CONVENTION LABEL. AGENTS.md's 2026-08-15 ruling states that every c_k number is convention-C-frame, that convention D is canonical, and that the ladder 'must be RE-DERIVED under D' -- with QOU.QBeta.decayLadder_zC_threeRow_ne_zero making the C-frame ladder and the mass channel's three-row forcing mutually exclusive. This block presents the whole ladder with no C-scope label. (3) 'evaluates without truncation' sits against AGENTS.md's record that the canonical producer extracts ONE rung and never computes c_4..c_7 (greedy_rung_exact / greedy_later_rungs_vanish). (4) VERIFIED CORRECT, do not re-flag: b = sqrt(q^4+q^2+1)/(q^2+1) evaluates to 0.86758406730705817866 at the old-muon 50-digit pin, matching the corpus's recorded Hoefsmit b (0.8675840673070581786583...) to 20 digits -- so the closed form is right, and the recorded value is old-muon-pinned (proton gives 0.86758406696525). The factor identities are consistent: u = b hbar_q^2, so (1 + c_2 u^2) = (1 - b^2 hbar_q^4) and (1 + c_3 u^3) with c_3 = -2 gives (1 - 2 b^3 hbar_q^6). The product index prod_(k>=2) correctly omits a k=1 factor. The conditional banner ('Proposition (conditional on the open recursion kernel ...)') is proper sec 3b-cond hygiene. (5) Minor: the status table lists a 'k = 0 | c_0 = 0' row for a product that starts at k = 2, so c_0 has no factor to belong to."
       }
     ],
     "trap-nonspeakable": [
@@ -2322,6 +2468,22 @@
         "reviewed_at": "2026-08-15T10:31:01.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0abb8caffe6e",
+          "ts": "55d420ffb512"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:02.383Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Heaviest: 'the off-diagonal coupling of rho_lambda(sigma_i) in the standard-tableau basis'.",
+        "notes": "Parses. Notation checked: sigma_i is used throughout, never T_w, per AGENTS.md sec 7a."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2345,5 +2507,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:16:02.383Z"
 }

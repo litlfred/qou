@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.048Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "\"The argument is structural, not case-by-case\" does not appear here; the one denial, \"a further identification, not stated there and assumed here\", is an honest gap disclosure with an audit-doc citation."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.089Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.129Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.167Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.205Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Ends on an empirical share of the He-4 binding, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,22 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.243Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "\"Future work should reference $\\mathfrak{m}^{(k)}$ uniformly\" is a directive to later authors sitting in the proof body; AGENTS 4d puts that kind of note in authorNotes. Recorded pass on the trap axis and flagged for one-voice."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.283Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The historical-labelling and chirality sections both add material."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.323Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,23 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.367Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "SWEEP DAMAGE on the one empirical claim: \"empirically it accounts for $\\sim 3\\%$ of the binding energy of $^4$He (**the formal derivation witness**)\". \"the formal derivation\" stands where a script or witness name belongs - the documented token-substitution class - so the 3% figure is left with no traceable source, and the .ts carries no computation or witness field to supply one. Two further findings: the alpha_k coefficients of the statement block never appear in this proof, so the decomposition it proves is sum_k m^(k) rather than the weighted sum stated; and the proof correctly flags, with an audit-doc citation, that the word-depth to partition-depth identification is assumed rather than established - which means the depth-indexed decomposition the block proves is itself conditional and the statement block does not say so.",
+        "notes": "Reported, not edited. Route: restore the producer name behind \"the formal derivation witness\" and add the computation/witness to the .ts; reconcile alpha_k between statement and proof; carry the word-depth/partition-depth caveat up into the statement block."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.408Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:46.408Z"
 }

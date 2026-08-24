@@ -1801,6 +1801,22 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.072Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "High density (9+ denials) but every one is a scope claim the corpus disciplines require: 'not a claim about the classical Collatz problem', 'the attractor is this 2-cycle, not the literal unknot polynomial 1', 'a divisibility fact, not a dynamical one', 'structurally analogous to — not an instance of — the algebrization barrier', 'The class is shared; the verdicts are not.' Substantive-mathematical-contrast class throughout.",
+        "notes": "Density note only: the block is a corrections-carrying conjecture, so denial is its subject matter."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1820,6 +1836,21 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.137Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Note carefully what this does not say: it bars ... it does not bar ...' is the arity-conflation correction itself, an argument step rather than a setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1839,6 +1870,21 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (5 in 619 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.201Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "About five em-dashes over 1281 words, all matched parenthetical pairs ('Unlike the integers — where every element is even or odd — a Laurent polynomial ...')."
       }
     ],
     "trap-triples": [
@@ -1858,6 +1904,21 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 619 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.263Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three-item enumerations are the shared trichotomy (descent / polynomial budget / bounded) and the divisor set {1,2,3,6}; both are content-determined."
       }
     ],
     "trap-closing-aphorism": [
@@ -1877,6 +1938,21 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.330Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on a Lean pointer ('this convergence question is Halts / halts_of_len_descent'), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1896,6 +1972,23 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.454Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "Two sentences narrate the text's own editing rather than the mathematics: 'The caveat ... applies here too, and is stated now so it is not rediscovered' and 'Conflating the two is a recurring error, and this sentence carried it until 2026-08-15.' The second is a dated changelog note in scholarly prose.",
+        "notes": "STRUCTURAL — do not delete the provenance. AGENTS.md §4d puts correction/status notes in the .ts authorNotes field (kind: 'refined-framing', date: '2026-08-15'), not in the .md. Proposed: keep 'Conflating the two is a recurring error.' in prose, move 'and this sentence carried it until 2026-08-15' to authorNotes; likewise trim 'and is stated now so it is not rediscovered'."
       }
     ],
     "trap-thesis-restatement": [
@@ -1915,6 +2008,21 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.536Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The conjecture's content therefore sits in the descent measure on the filtration, not in the vanishing of kappa_C' is the inference the two numbered steps establish, not a restatement of the opening."
       }
     ],
     "trap-performed-warmth": [
@@ -1934,6 +2042,21 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.612Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal or affective register."
       }
     ],
     "trap-superlative": [
@@ -1953,6 +2076,21 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.685Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Claims are scoped ('One direction is safe'; 'is not established'; 'a scope-(a) objection ... not a proof that no such equivalence holds'), which is the opposite of unqualified maximum-strength."
       }
     ],
     "trap-nonspeakable": [
@@ -1972,6 +2110,23 @@
         "reviewed_at": "2026-08-15T10:30:59.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2eb50ab86163",
+          "ts": "777af29c3fcd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:07.745Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "One sentence stalls aloud through stacked nominalisation and a double negative: 'Cheapness of this kind cannot by itself discharge an equivalence with a hard uniform statement without collapsing the equivalence — a scope-(a) objection to the route as stated, not a proof that no such equivalence holds.'",
+        "notes": "Math-adjacent (it states the scope class), so proposed rather than applied: 'On its own, a cheap vanishing criterion cannot be equivalent to a hard uniform statement — the equivalence would collapse. This is a scope-(a) objection to the route as stated; it does not show that no such equivalence holds.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1995,5 +2150,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:38:10.737Z"
+  "updated_at": "2026-08-19T21:29:07.745Z"
 }

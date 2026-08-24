@@ -1,13 +1,13 @@
 ---
 doc_id: 2018sorus020
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Reidemeister torsion on character varieties"
 section_id: sec-052-1-if-the-upper-right-entry-ofρa-was-0-then-again
 section_title: "If the upper-right entry ofρ(a) was 0, then againρ would be reducible, hence we"
 section_number: 1
 pages: 67-70
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
+doc_brief: "Reidemeister torsion on character varieties — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ"
 ---
 can ﬁx, up to conjugacy that preserves the diagonal matrixρ(b), this entry to be1.
 Now observe that the Cayley-Hamilton identityρ(a)2−Tr(ρ(a))ρ(a)+Id = 0 implies

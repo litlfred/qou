@@ -1400,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:05.698Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:05.739Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 491 words)"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:05.780Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1457,6 +1505,23 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 491 words)"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:06.073Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "'This produces three effects:' followed by a numbered list whose items 2 and 3 are the same statement. The block defines F_Pauli^{(A)} = |tr_alt(N)| / |net(N)| earlier; item 2 is 'The alternating trace is suppressed relative to the net amplitude' and item 3 is 'The Pauli factor F_Pauli^{(A)} is lower' — item 3 is item 2 with the ratio's name substituted, so the list is a two-item finding padded to the reflex three. (The block's opening triple — shell closure, Pauli factor, odd-odd pairing deficit — is by contrast substantive: those are its three actual sections, and it passes.)",
+        "notes": "flagged, not fixed (numbered-list structure, and the padding straddles a defined quantity). Proposed: 'This produces two effects: 1. The normal form has a lower total amplitude ... 2. The alternating trace is suppressed relative to the net amplitude, so the Pauli factor F_Pauli^{(A)} is lower.' TWO SEPARATE COMPUTE FINDINGS on the same block, not fixed inline. (1) The 'Computational verification' table's term counts are non-monotonic and contradict the O(A^3) claim the section asserts: A=8 -> 14256, A=9 -> 234504, A=10 -> 8.7M, then A=12 -> 923319 (FEWER than A=10) and A=16 -> 3.4M. Cubic growth from A=8 to A=9 would be a factor (9/8)^3 = 1.42; the table shows 16.4. Either the counts are measured under different quotient/stripping settings (the v2/v3/v6 engine labels suggest so) and the table is comparing incomparable runs, or one row is wrong. The 'Scaling' cell 'A^3 = 4096 (matches)' also compares a pure number to a 38 s wall time and matches nothing. (2) 'the integer coefficients grow as O(q^{A^2})' confuses degree with coefficient size — q^{A^2} is a statement about the DEGREE of the Laurent polynomial in ZZ[qcheck^{+-1}], not about its integer coefficients. The digit counts quoted afterwards (10^18 at A=16, 10^100 at A=40) are self-consistent with digits proportional to A^2 and are fine; only the O(q^{A^2}) phrasing is wrong. NOTE (not a defect): qcheck = q^{1/2} here is the ring variable for half-integer powers, NOT a Markov parameter, so this block is not convention-C-dependent."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1541,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:05.822Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1576,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:05.865Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1611,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:05.907Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1646,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:05.948Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1681,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:05.991Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1716,22 @@
         "reviewed_at": "2026-08-15T10:31:01.207Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "be1342bdad55",
+          "ts": "8ca64a3656c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:06.031Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (mu_2 torsion / Pauli evaluation, Kummer divisibility shell closure, odd-odd pairing deficit, complexity, symbolic witnesses). No negation-contrast, no pivot, no aphorism (it ends on a concrete arithmetic-range statement), no meta-commentary beyond standard 'We observe' / 'We verify', no warmth, no superlative inflation, no non-speakable chain. Recomputed the one arithmetic claim: net(6He)/net(6Li) = 6.64/4.96 = 1.3387, so '= 1.34' and '34% pairing enhancement' are both right, and Z=2/N=4 is even-even against Z=3/N=3 odd-odd as stated. Hecke relation is written sigma^2 = (q-q^{-1})sigma + 1 with alternating root -q^{-1} and symmetric root q, matching the AGENTS.md 7a convention.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1754,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:06:06.073Z"
 }

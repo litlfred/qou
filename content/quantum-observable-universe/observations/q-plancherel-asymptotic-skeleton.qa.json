@@ -1988,6 +1988,21 @@
         "reviewed_at": "2026-08-15T11:37:22.573Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.678Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No denial constructions in 114 words."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2022,6 +2037,21 @@
         "reviewed_at": "2026-08-15T11:37:22.615Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.792Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Definition, three numbered clauses, epistemic split; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -2056,6 +2086,21 @@
         "reviewed_at": "2026-08-15T11:37:22.668Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.881Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2090,6 +2135,21 @@
         "reviewed_at": "2026-08-15T11:37:22.716Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.938Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "The three numbered clauses are the proposition's actual parts, and the closing lines say which hold and which do not."
       }
     ],
     "trap-closing-aphorism": [
@@ -2124,6 +2184,21 @@
         "reviewed_at": "2026-08-15T11:37:22.760Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.998Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Ends by naming the two open problems inside part (3)."
       }
     ],
     "trap-meta-commentary": [
@@ -2159,6 +2234,21 @@
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "'Established results.' / 'Conjectural results.' labels",
         "notes": "temporal/epistemic status labels are factual scope statements, not narrated emphasis"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:21.069Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'We define a topological space Omega_q and pushforward maps' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2193,6 +2283,21 @@
         "reviewed_at": "2026-08-15T11:37:22.841Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:21.165Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2227,6 +2332,21 @@
         "reviewed_at": "2026-08-15T11:37:22.897Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:21.250Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2261,6 +2381,22 @@
         "reviewed_at": "2026-08-15T11:37:22.965Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:21.356Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Claims are tiered explicitly ('Established results. Parts (1) and (2) hold. Conjectural results. Part (3) ...').",
+        "notes": "Two flags reported separately: (i) w_lambda(q) is defined here as dim_q^2(lambda)/[n]_q!, while prf:trace-locality-meets-gs-non-locality uses w_lambda(q) for Wenzl's Markov-trace proportionality constant (the hook/content product; verified there to sum to 1 against dimensions) and rem:non-commutative-probability-dictionary uses it for tr_M(e_lambda) -- three inequivalent objects under one symbol, the collision AGENTS.md's notation register warns about. (ii) kind is 'proposition' while clause (3) is self-labelled conjectural, which is the 3b propagation question. Citation keys vershik-kerov1977, biane1998, feray2010 all resolve."
       }
     ],
     "trap-nonspeakable": [
@@ -2295,6 +2431,21 @@
         "reviewed_at": "2026-08-15T11:37:23.016Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2d47440feb94",
+          "ts": "6dfc544c3622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:21.437Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Short clauses parse aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2318,5 +2469,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:50:21.437Z"
 }

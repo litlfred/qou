@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0502543v2
-doc_title: "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR IGOR RIVIN"
+doc_title: "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR"
 section_id: sec-001-3-convex-polytopes
 section_title: "Convex polytopes"
 section_number: 3
 pages: 5-11
 source_pdf: 0502543v2.pdf
 source_sha256: 227ef8150cb08faf
-doc_brief: "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR IGOR RIVIN — In his paper [6] J."
+doc_brief: "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR — In his paper [6] J."
 ---
 spherical polytopes in all dimensions) the proof given in Section 2
 goes through without change, with the one proviso that it is n ot

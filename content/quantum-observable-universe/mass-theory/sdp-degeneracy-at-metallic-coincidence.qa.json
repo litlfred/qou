@@ -1429,6 +1429,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a vertex.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.571Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "'the LP optimum is a face of the feasible polytope, not a vertex' IS the degeneracy being described, and 'Smooth observables do not see this discrete arithmetic structure ... The LP-vertex combinatorics sees it' is the block's substantive claim. Both substantive-contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1448,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.614Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "The smooth-observables / LP-combinatorics contrast is a real mechanism claim with a stated reason (rational functions have no discontinuities), not a reframe that empties the setup."
       }
     ],
     "trap-em-dash": [
@@ -1467,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 454 words)"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.656Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "One pair, a true parenthetical defining the cost-coincidence loci. Note: it is set UNSPACED (LP/SDP-points ... equal-the), against the spaced style used elsewhere in the chapter."
       }
     ],
     "trap-triples": [
@@ -1486,6 +1531,23 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 454 words)"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.699Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "severity": "minor",
+        "evidence": "Three reflex symptom-triples in a six-paragraph block: 'rapid loss of conditioning, ambiguous identification of binding constraints, and multiple optimal solutions returned'; '(Wenzl weights, Jones polynomial signs, n=3 per-block character signs)'; 'rising condition-number of the KKT system, multiple optimal solutions reported by the solver, and y_i values dropping to tolerance for all i simultaneously'. The first and third are the same list twice, once as signature and once as falsifiability handle.",
+        "notes": "PROPOSED: merge the first and third — state the degeneracy signature once in The mechanism, and have Falsifiability handle say only what is measured and at what q-values, rather than restating the symptom list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1505,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.746Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "'Each observation tests the algebraic identification' is a short factual closer tied to the preceding list."
       }
     ],
     "trap-meta-commentary": [
@@ -1524,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.792Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "Seven bolded lead-ins structure the block but none narrates the author's emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1543,6 +1635,21 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.837Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "Structural significance and Physical interpretation each add content rather than echoing."
       }
     ],
     "trap-performed-warmth": [
@@ -1562,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.883Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1581,6 +1703,23 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.936Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "severity": "minor",
+        "evidence": "A run of definite-article identity claims for what the .ts itself scopes to conj:color-superconductivity-borromean: the loci 'coincide EXACTLY with the metallic-ratio ladder'; 'THE first non-null result'; identifying silver with CFL 'gives THE empirical handle'; 'The CFL transition density rho_c IS THE physical realization of the silver-coincidence point'; 'The SDP degeneracy there IS THE order-parameter discontinuity of the first-order CFL transition'.",
+        "notes": "PROPOSED: 'is a candidate physical realization' / 'would be the order-parameter discontinuity', matching the block's own Generalisation (conditional) register. THE UNDERLYING ALGEBRA IS CORRECT and I verified it by hand: t_1 = t_2 iff 2(q + 1/q) = (q - 1/q)(q + 1/q) iff q - 1/q = 2 (dividing by q + 1/q > 0) iff q^2 - 2q - 1 = 0 iff q = 1 + sqrt2 = 2.4142136 = delta_silver; the general statement also checks, since the Hecke relation sigma^2 = (q - 1/q) sigma + 1 gives sigma^2 = n sigma + 1 exactly when q - 1/q = n, and q - 1/q = n iff q = (n + sqrt(n^2+4))/2 = delta_n; phi^2 = 2.6180340 and 1/phi^2 = 0.3819660 are bar-mirrors as stated; and the degenerate-face argument is right. TWO SMALLER ITEMS: (i) 'For n=2, S(2) = {2} (silver only)' writes the ladder INDEX where S(n) is defined as a subset of {delta_k}, and the next sentence writes {delta_silver} for n=3 — should be S(2) = {delta_2}. (ii) 'a series of prior CANONICAL probes that all returned smooth observables' looks like the documented sweep substitution of canonical for numerical; 'prior numerical probes' is the reading that makes sense."
       }
     ],
     "trap-nonspeakable": [
@@ -1600,6 +1739,21 @@
         "reviewed_at": "2026-08-15T10:31:00.718Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "871ea85ad173",
+          "ts": "70120b590288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:26.979Z",
+        "reviewed_sha": "24810e2d1f3a1896f4bfe3a1a30c191f6b695664",
+        "evidence": "Sentences are short and the LP argument is stated step by step."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1622,5 +1776,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:37:26.979Z"
 }

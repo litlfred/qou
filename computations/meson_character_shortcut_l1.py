@@ -66,7 +66,7 @@ def chi_21_full_matrix(word, q_val):
 
 def main():
     set_compute_dps()
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     q_f = float(q)
 

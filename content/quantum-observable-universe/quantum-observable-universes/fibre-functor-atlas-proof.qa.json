@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.397Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No negative construction in the four numbered steps."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.437Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Four numbered steps, each stating and discharging its own point; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,23 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 138 words)"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.477Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "Two spaced em-dashes in ~180 words, both the same construction: 'a concrete coordinate system for the abstract category - an affine chart.' and 'a principal homogeneous space for G - a G-torsor.' Each is a genuine appositive naming the term just described, so each passes as a true parenthetical; recorded as pass with the density noted because two identical term-glosses in a short proof is at the threshold.",
+        "notes": "If a third gloss is added, convert these to commas or colons ('..., an affine chart.' / '...for G: a G-torsor.')."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 138 words)"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.518Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Four numbered steps, not three; step (4) itself pairs connectedness with simple transitivity. No reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.560Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on 'Simple transitivity: the isomorphism is unique up to G. square' - a technical claim closing the proof, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.602Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.642Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Step (4) states two new facts (connectedness and simple transitivity) that complete the gerbe conditions rather than restating earlier steps."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.683Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.722Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No maximum-strength claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,22 @@
         "reviewed_at": "2026-08-15T10:30:59.939Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "826c36e384c3",
+          "ts": "be22d89b0373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:05.762Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Longest chain is 'the unique monoidal natural isomorphism tau-prime -> tau-triple-prime corresponding to the group product'; speakable.",
+        "notes": "TWO SEPARATE FLAGS (not traps, reported not fixed): (1) MIS-CITATION - step (2) reads 'By the Tannaka-Krein theorem ([SU(2) emergence](#thm:su2-emergence))', pointing the Tannaka-Krein attribution at thm:su2-emergence, which is the SU(2)-emergence theorem, not Tannaka-Krein. Step (4) cites '(Tannaka-Krein)' with no link at all. Suggest citing the literature entry for Tannaka-Krein and keeping the thm:su2-emergence link only where G = SU(2) is actually used. (2) 'Simple transitivity: the isomorphism is unique up to G' is loose - simple transitivity is the statement that G acts simply transitively on the set of monoidal natural isomorphisms; 'unique up to G' inverts that into a uniqueness claim."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1569,5 +1722,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-18T21:36:14.004Z"
+  "updated_at": "2026-08-22T01:04:05.762Z"
 }

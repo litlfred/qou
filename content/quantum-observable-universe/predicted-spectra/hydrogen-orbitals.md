@@ -12,6 +12,7 @@ The trefoil spins around the Borromean anchor. This motion sweeps out the electr
     & \\
   & \underset{\text{proton (anchor)}}{\mathrm{Vol} \approx 7.328} &
 \end{tikzcd}
+```
 
 The Borromean volume pins the massive proton in place. The zero volume of the trefoil keeps the electron light. Vacuum drag alone supplies its mass. The Hopf link $\oplus$ provides the electromagnetic binding.
 
@@ -61,4 +62,6 @@ The sum $\sum(2\ell + 1) = n^2$ matches standard quantum mechanics. The topologi
 
 *The space of sections of the normal bundle $N_{T_{2,3}}$ of the trefoil in the Bring's surface, at total framing twist $k = 2(n-1)$, has dimension $n^2$.*
 
-This appears as a conjecture below. The $2\ell + 1$ orientations and the cutoff $\ell \leq n - 1$ must follow from the $\mathrm{SO}(3)$ representation theory of this section space.
+This is stated as [`conj:orbital-space-normal-bundle`](#conj:orbital-space-normal-bundle) in the Bring's-surface chapter.
+
+The two ingredients of the count have different sources, and only one of them is representation-theoretic. The $2\ell + 1$ orientations are the dimension of the irreducible $\mathrm{SO}(3)$ representation $V_\ell$ carried by the mode, matching the spherical harmonics $Y_\ell^m$. The cutoff $\ell \leq n - 1$ is not: it is the length-and-framing bound already used above, that only modes of wavelength at least $L/n$ fit along the Seifert surface. In the eigenvalue form $\lambda_\ell \leq \lambda_{n-1}$ this is an arithmetic consequence rather than a group-theoretic one, and it is proved as `mode_cutoff_iff` in the Lean sibling of that conjecture, with no symmetry group entering the argument.

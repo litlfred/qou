@@ -55,6 +55,7 @@ sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_deformed_blocks_41", _HERE / "qbeta_g3_deformed_blocks_41.py")
@@ -62,7 +63,7 @@ _b41 = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_b41)
 theta, qpoch_inf = _b41.theta, _b41.qpoch_inf
 
-mp.mp.dps = 45
+set_compute_dps()
 NTERM = 4000
 _TINY = mp.mpf(10) ** (-mp.mp.dps - 5)
 

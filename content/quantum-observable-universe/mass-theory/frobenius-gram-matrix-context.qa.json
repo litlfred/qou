@@ -944,6 +944,22 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.395Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Three denials, all load-bearing: 'not \"numerically singular\", zero' (the exact-vs-approximate distinction is the correction's point), 'not an approximation to one under D; the latter does not exist', 'not on the 6-dimensional $H_3$'. Substantive-contrast false-positive class.",
+        "notes": "Density note: 'The Frobenius structure itself is not lost, only relocated' is the one instance whose positive form ('the structure descends to the quotient') would read as well."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.435Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'not lost, only relocated: the radical is a two-sided ideal, so tr_M descends' has the pivot shape but the second clause is the mathematical content (descent to $TL_3$), not a reframe."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1013,22 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 373 words)"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.472Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Two em-dashes in 464 words. 'Ocneanu--Wenzl' is en-dash markup, not a load-bearing dash.",
+        "notes": "One of the two appends a restatement ('with coefficient $1$ — the Frobenius dual selects the trefoil operator for the electron'); flagged under trap-thesis-restatement."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1048,21 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 373 words)"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.508Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'cyclicity + Hecke quadratic + Markov axiom restricted to the sub-algebra' names the three inputs actually used in the displayed derivation."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1082,21 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.545Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Block ends on a stated proposition ($e^-\\cdot e^+ = \\gamma$), not a closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1116,22 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.585Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'Every use of $G^{-1}$ and of $K^\\vee$ below should be read on that quotient' is a reading instruction attached to a correction, i.e. bookkeeping, not narrated emphasis.",
+        "notes": "AUTHORNOTES FLAG (one-voice Cat. H, not fixed inline): the whole blockquote is a dated status banner in scholarly prose — '**$G$ is singular on $H_3$ under convention D...** Corrected 2026-08-09. The paragraph above ... presuppose $\\det G \\neq 0$.' Per AGENTS.md §4d this belongs in authorNotes kind 'caveat' with date 2026-08-09; the mathematical content (radical, descent, corank 1, Lean decls) stays in prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1151,23 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.623Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "severity": "major",
+        "evidence": "Three consecutive sentences state the same fact: 'Each basis element pairs maximally with exactly one knot operator (the operator whose braid word contains that element)', then 'The electron dual pairs with $T_{2,3}$ (trefoil) with coefficient $1$', then '— the Frobenius dual selects the trefoil operator for the electron.'",
+        "notes": "PROPOSED (not applied — the appended clause is the physical reading the author may want to keep, so deletion is not meaning-neutral): drop the dash clause, or drop the generic sentence and keep only the instance plus its reading."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1187,21 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.661Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1221,21 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.695Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'encodes all interaction pairings' and 'pairs maximally' are mild and locally justified (the Gram matrix does carry every basis pairing)."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1255,21 @@
         "reviewed_at": "2026-08-15T10:31:00.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "93bf8030bbd9",
+          "ts": "78ea77a16f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:10.732Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "The long Markov-recursion chain is a displayed derivation, not prose noun-stacking."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1296,5 @@
     "md": "93bf8030bbd9",
     "ts": "78ea77a16f88"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:48:10.732Z"
 }

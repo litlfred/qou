@@ -148,7 +148,7 @@ We construct the keystone's `SnWedderburnSpectralData R n` by wiring each field 
   from the **proved** core `SpechtTriangularCore.standardPolytabloid_triangular'`, so the `rank`
   sorry-path is the **spanning / straightening stub only** — not the independence stub and not the
   opaque brick-2 finrank stub `Specht.specht_finrank_eq_numSYT`. -/
-noncomputable def snSpectralData (n : ℕ) :
+noncomputable def snSpectralData (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R] :
     RegularRepBlockTrace.SnWedderburnSpectralData R n :=
   -- Destructure the single aligned core once and wire every projection-data field to it.
   let pf := (SnWedderburnPartitionBridge.snBlocks_c2_aligned (R := R) n).choose_spec.choose_spec
@@ -181,7 +181,7 @@ noncomputable def snSpectralData (n : ℕ) :
 existence statement that discharges the side-2 hypothesis of Identity (B).  Constructed by
 `snSpectralData`, whose `Idx` / `d` / `ω` fields are sorry-free and whose projection data is wired
 to the bricks (see the per-field map in `snSpectralData`). -/
-theorem sn_spectralData_exists (n : ℕ) :
+theorem sn_spectralData_exists (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R] :
     Nonempty (RegularRepBlockTrace.SnWedderburnSpectralData R n) :=
   ⟨snSpectralData n⟩
 
@@ -194,13 +194,18 @@ theorem sn_spectralData_exists (n : ℕ) :
 `Σ_i ω_i · dim(λ_i)² = n! · binom(n,2)`
 
 for **all `n`** — where `ω_i` is the Jucys–Murphy content-square eigenvalue and `dim(λ_i)` the SYT
-dimension of block `i`.  This is the unconditional general-`n` Identity (B): the only residual inputs
-are the bricks' own honest `sorry`s (the isotypic-projection identification, the OV eigenvalue
-theorem, the standard-basis dimension theorem's spanning core), all wired in `snSpectralData`.
+dimension of block `i`.  This is the unconditional general-`n` Identity (B).
+
+**Corrected 2026-08-23.** The sentence that stood here said "the only residual inputs are the
+bricks' own honest `sorry`s (the isotypic-projection identification, the OV eigenvalue theorem, the
+standard-basis dimension theorem's spanning core)". Measured, there are none left:
+`#print axioms` on `identityB_general`, on `sum_numSYT_sq_eq_factorial` and on `snSpectralData`
+reports `[propext, Classical.choice, Quot.sound]`. The class hypothesis `SnIsotypicSpechtSplit` is
+also no longer an open premise — it is inhabited by `SnIsotypicSpechtSplitInstance`.
 
 (The statement is stated exactly as the keystone's `identityB_conditional` concludes, against the
 assembled `W := (sn_spectralData_exists n).some`.) -/
-theorem identityB_general (n : ℕ) :
+theorem identityB_general (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R] :
     ∑ i : (sn_spectralData_exists (R := R) n).some.Idx,
         (sn_spectralData_exists (R := R) n).some.ω i
           * ((sn_spectralData_exists (R := R) n).some.d i : R) ^ 2
@@ -219,7 +224,7 @@ of the Burnside identity `Σ_λ (f^λ)² = n!` (`DeltaLambdaSignRule.burnside`);
 additionally needs `dimIrrep = numSYT` (the hook-length formula `numSYT_mul_hookProduct` + the
 custom-`Partition` ↔ `YoungDiagram` hookProduct bridge) and the `List (Partition n)` ↔
 `PartitionIndex n` reindexing. -/
-theorem sum_numSYT_sq_eq_factorial (n : ℕ) :
+theorem sum_numSYT_sq_eq_factorial (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] :
     ∑ i : SpechtClassification.PartitionIndex n, numSYT i.diagram ^ 2 = n.factorial := by
   have h := RegularRepBlockTrace.sumSq_dim_eq (snSpectralData (R := ℚ) n)
   have key : ((∑ i : SpechtClassification.PartitionIndex n, numSYT i.diagram ^ 2 : ℕ) : ℚ)

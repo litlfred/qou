@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:19:35.178692+00:00",
-  "commitSha": "0ec50f1e17ddcbf67ac724fdd8386ad07616306c",
+  "computedAt": "2026-08-21T14:48:07.436963+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 84,
+  "durationMs": 94,
   "computation": "delta-lambda-l1-ceiling-sign-prune",
   "scriptFile": "delta_lambda_l1_ceiling_sign_prune.py",
   "scriptHash": "10e8d1b53d57",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,23 +18,26 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "ℓ¹-ceiling sign-only prune for the per-block binding closure B/m_e = Σ_λ y_λ χ^λ Δ_λ with the proven Δ_λ = sgn(w_0^{S_λ'})·dim_λ (PR #2416). For every sign reassignment s_λ∈{±1}, |Σ s_λ y_λ χ^λ dim_λ| ≤ ‖c‖₁ (triangle inequality). Measured ‖c‖₁/|target| ∈ [0.36,0.59] < 1 for D/T/³He/⁴He ⟹ (b) STRUCTURAL: no sign/chirality-only re-derivation closes the binding deficit; a magnitude-adding ingredient is necessary. Magnitude-side mirror of the PROBE-4 KL-positivity prune. Pure ℓ¹ arithmetic on canonical y_λ + χ^λ witnesses (no recompute) — env-skew-immune.",
   "invariant": "triangle/ell1: |Σ_λ s_λ a_λ| ≤ Σ_λ |a_λ| for all s_λ∈{±1}",
   "scope": "(b) structural-exclusion of the {sign/chirality-only on fixed y_λ,χ^λ,|Δ_λ|=dim} sub-class",
   "delta_lambda_form": "sgn(w_0^{S_{lambda'}}) * dim_lambda (proven, Lean PR #2416, S5SO3FiberAction.lean)",
   "parameters": {
-    "q_0": "1.10997859555733471989976322048322502665620840878015405145269",
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
     "m_e_MeV": 0.51099895069
   },
   "source_witnesses": {
     "y_lambda": {
       "file": "y-lambda-at-q0.witness.json",
-      "scriptHash": "b91120f66f3e",
-      "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
-      "computedAt": "2026-06-22T14:35:27.408550+00:00"
+      "scriptHash": "b88ffe51a43d",
+      "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+      "computedAt": "2026-08-10T19:03:52.564561+00:00"
     },
     "chi_D": {
       "file": "atom-chi-rust-d.witness.json",
@@ -70,13 +73,13 @@
         "A": 2,
         "B_AME_MeV": 2.224566,
         "target_units_m_e": -4.353367060727183,
-        "net_sum_units_m_e": -0.7437808854290497,
-        "l1_ceiling_units_m_e": 2.2466261660843534,
-        "pos_sum": 0.751422640327652,
-        "neg_sum": -1.4952035257567018,
-        "net_over_target": 0.17085186593588303,
-        "l1_ceiling_over_target": 0.5160663308986123,
-        "net_over_l1_survival": -0.33106570939899005
+        "net_sum_units_m_e": -0.7174453364014862,
+        "l1_ceiling_units_m_e": 2.464604356614619,
+        "pos_sum": 0.8735795101065663,
+        "neg_sum": -1.5910248465080525,
+        "net_over_target": 0.16480239924488352,
+        "l1_ceiling_over_target": 0.5661375028190097,
+        "net_over_l1_survival": -0.2910995975788054
       },
       {
         "atom": "T",
@@ -85,13 +88,13 @@
         "A": 3,
         "B_AME_MeV": 8.481798,
         "target_units_m_e": -16.59846461239707,
-        "net_sum_units_m_e": -3.7349054405621667,
-        "l1_ceiling_units_m_e": 5.934980036613724,
-        "pos_sum": 1.100037298025779,
-        "neg_sum": -4.834942738587947,
-        "net_over_target": 0.2250151160229988,
-        "l1_ceiling_over_target": 0.357561989931346,
-        "net_over_l1_survival": -0.6293037916759637
+        "net_sum_units_m_e": -2.475140379723055,
+        "l1_ceiling_units_m_e": 5.982292162949675,
+        "pos_sum": 1.7535758916133102,
+        "neg_sum": -4.228716271336365,
+        "net_over_target": 0.1491186346160247,
+        "l1_ceiling_over_target": 0.36041238166580886,
+        "net_over_l1_survival": -0.41374448326887514
       },
       {
         "atom": "3He",
@@ -100,13 +103,13 @@
         "A": 3,
         "B_AME_MeV": 7.718043,
         "target_units_m_e": -15.103833363216019,
-        "net_sum_units_m_e": -4.588278863146767,
-        "l1_ceiling_units_m_e": 8.938724763901602,
-        "pos_sum": 2.175222950377419,
-        "neg_sum": -6.763501813524185,
-        "net_over_target": 0.3037824076052834,
-        "l1_ceiling_over_target": 0.591818285394424,
-        "net_over_l1_survival": -0.5133035174856487
+        "net_sum_units_m_e": -3.0789913352714784,
+        "l1_ceiling_units_m_e": 10.459258290599942,
+        "pos_sum": 3.6901334776642325,
+        "neg_sum": -6.7691248129357104,
+        "net_over_target": 0.2038549592827259,
+        "l1_ceiling_over_target": 0.6924903128282979,
+        "net_over_l1_survival": -0.2943795104513924
       },
       {
         "atom": "4He",
@@ -115,21 +118,21 @@
         "A": 4,
         "B_AME_MeV": 28.295673,
         "target_units_m_e": -55.37325069218333,
-        "net_sum_units_m_e": -5.945583568198888,
-        "l1_ceiling_units_m_e": 22.47597524477152,
-        "pos_sum": 8.265195838286308,
-        "neg_sum": -14.2107794064852,
-        "net_over_target": 0.10737284688684867,
-        "l1_ceiling_over_target": 0.40589950858608886,
-        "net_over_l1_survival": -0.2645306156217618
+        "net_sum_units_m_e": -0.19093766565789583,
+        "l1_ceiling_units_m_e": 24.002871758921078,
+        "pos_sum": 11.905967046631591,
+        "neg_sum": -12.09690471228949,
+        "net_over_target": 0.0034481931848160253,
+        "l1_ceiling_over_target": 0.4334741316227151,
+        "net_over_l1_survival": -0.007954784226472009
       }
     ],
     "all_isotopes_l1_ceiling_below_target": true,
     "l1_ceiling_over_target_range": [
-      0.357561989931346,
-      0.591818285394424
+      0.36041238166580886,
+      0.6924903128282979
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

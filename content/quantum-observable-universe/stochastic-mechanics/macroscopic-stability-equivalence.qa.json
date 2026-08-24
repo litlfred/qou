@@ -2115,6 +2115,21 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.356Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the theorem block (lead sentence, 3-clause equivalence, closing scope sentence). Zero em-dashes, no closer, no warmth, no meta-narration. Clause (1) <-> (2) is the genuine classical result (von Koch): psi(X) = X + O(X^{1/2+eps}) for all eps > 0 iff RH; clause (2) is stated correctly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2134,6 +2149,21 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.402Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the theorem block (lead sentence, 3-clause equivalence, closing scope sentence). Zero em-dashes, no closer, no warmth, no meta-narration. Clause (1) <-> (2) is the genuine classical result (von Koch): psi(X) = X + O(X^{1/2+eps}) for all eps > 0 iff RH; clause (2) is stated correctly."
       }
     ],
     "trap-em-dash": [
@@ -2153,6 +2183,21 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.447Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the theorem block (lead sentence, 3-clause equivalence, closing scope sentence). Zero em-dashes, no closer, no warmth, no meta-narration. Clause (1) <-> (2) is the genuine classical result (von Koch): psi(X) = X + O(X^{1/2+eps}) for all eps > 0 iff RH; clause (2) is stated correctly."
       }
     ],
     "trap-triples": [
@@ -2172,6 +2217,22 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.492Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "The three-clause equivalence (macroscopic stability / Riemann hypothesis / spectral persistence).",
+        "notes": "Substantive: a stated TFAE, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2191,6 +2252,21 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.538Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the theorem block (lead sentence, 3-clause equivalence, closing scope sentence). Zero em-dashes, no closer, no warmth, no meta-narration. Clause (1) <-> (2) is the genuine classical result (von Koch): psi(X) = X + O(X^{1/2+eps}) for all eps > 0 iff RH; clause (2) is stated correctly."
       }
     ],
     "trap-meta-commentary": [
@@ -2210,6 +2286,21 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.578Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the theorem block (lead sentence, 3-clause equivalence, closing scope sentence). Zero em-dashes, no closer, no warmth, no meta-narration. Clause (1) <-> (2) is the genuine classical result (von Koch): psi(X) = X + O(X^{1/2+eps}) for all eps > 0 iff RH; clause (2) is stated correctly."
       }
     ],
     "trap-thesis-restatement": [
@@ -2229,6 +2320,21 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.621Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the theorem block (lead sentence, 3-clause equivalence, closing scope sentence). Zero em-dashes, no closer, no warmth, no meta-narration. Clause (1) <-> (2) is the genuine classical result (von Koch): psi(X) = X + O(X^{1/2+eps}) for all eps > 0 iff RH; clause (2) is stated correctly."
       }
     ],
     "trap-performed-warmth": [
@@ -2248,6 +2354,21 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.663Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the theorem block (lead sentence, 3-clause equivalence, closing scope sentence). Zero em-dashes, no closer, no warmth, no meta-narration. Clause (1) <-> (2) is the genuine classical result (von Koch): psi(X) = X + O(X^{1/2+eps}) for all eps > 0 iff RH; clause (2) is stated correctly."
       }
     ],
     "trap-superlative": [
@@ -2267,6 +2388,23 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.705Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "severity": "major",
+        "evidence": "Opening line 'The stability of the macroscopic spacetime continuum is equivalent to the Riemann hypothesis.' asserted flatly, and clause (3) presented as an equivalent of RH.",
+        "notes": "STRUCTURAL, do not fix inline - the finding is in the Lean sibling macroscopic-stability-equivalence.lean and it is serious. (a) The whole 'theorem' is two axiom applications: 'theorem macroscopic_stability_equivalence ... := <macroscopic_iff_rh psi zeta, rh_iff_persistence zeta spectral_limit>', where both components unfold to 'axiom macroscopic_iff_rh_axiom' and 'axiom rh_iff_persistence_axiom'. Nothing is derived (AGENTS.md 'Axiomatization is NOT a Proof' / 'Never launder ... through Lean axioms'). (b) 'axiom rh_iff_persistence_axiom' is captioned '**External axiom (Weil 1948 explicit formula)**', but Weil 1948 proves the Riemann hypothesis for curves over finite fields; it does not relate the classical RH to this framework's spectral persistence. The citation key weil1948 does resolve in references.ts, so this is a mis-attribution of content, not a dangling key. (c) 'def SpectralPersistence (spectral_limit) : Prop := (forall n i, spectral_limit n i = 1/2) -> forall i, spectral_limit 0 i = 1/2' is a TAUTOLOGY - instantiating the hypothesis at n = 0 IS the conclusion, so it is inhabited by 'fun h i => h 0 i' for every spectral_limit. Clause (3) therefore asserts nothing. (d) Consequently the axioms are INCONSISTENT as written: both quantify their arguments independently, so 'rh_iff_persistence_axiom zeta f : RiemannHypothesis zeta <-> SpectralPersistence f' combined with (c) yields 'RiemannHypothesis zeta' for EVERY zeta : C -> C; taking zeta = (fun _ => 0) and s = 1/4 (0 < 1/4 < 1, zeta s = 0, s.re != 1/2) refutes the local definition 'RiemannHypothesis zeta := forall s, 0 < s.re -> s.re < 1 -> zeta s = 0 -> s.re = 1/2', so False is derivable. The same independent quantification makes macroscopic_iff_rh_axiom absurd on its own. Blast radius is contained: I grepped and no other .lean imports this file. Proposed: state (3) with a real hypothesis relating the pre-limit and post-limit spectra, tie psi, zeta and spectral_limit to one another in the axiom signatures, and demote the block per AGENTS.md 3b since clause (3) is conjectural."
       }
     ],
     "trap-nonspeakable": [
@@ -2286,6 +2424,21 @@
         "reviewed_at": "2026-08-15T10:30:59.557Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:33:11.744Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the theorem block (lead sentence, 3-clause equivalence, closing scope sentence). Zero em-dashes, no closer, no warmth, no meta-narration. Clause (1) <-> (2) is the genuine classical result (von Koch): psi(X) = X + O(X^{1/2+eps}) for all eps > 0 iff RH; clause (2) is stated correctly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2309,5 +2462,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:33:11.744Z"
 }

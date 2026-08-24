@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:20:27.728055+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:21:42.380917+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "hoefsmit_additivity_structural_lemma_recorded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "casimir-hoefsmit-additivity-probe",
   "scriptFile": "casimir_hoefsmit_additivity_probe.py",
-  "scriptHash": "2025dfe1cb02",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "c05a5986a66e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,14 +29,24 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/casimir_hoefsmit_additivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/casimir_hoefsmit_additivity_probe.py"
   },
   "description": "Route-B probe for conj:casimir-epsilon-vacuum: verify Hoefsmit Geom additivity on disjoint unions of unknots.  Step 1: record hyperbolic-volume additivity (well-known, Thurston).  Step 2: derive the symbolic form Geom_ε(N·⊙) = N · ε / ℏ_q² under the ε-relaxed vacuum axiom and tabulate the real-part coefficient for several N.  Step 3: dimensional cross-check against the conjecture's A/d³ scaling — uncovers that the surreal-infinitesimal birthday rank of N⊙ may be ε⁻² rather than ε⁻¹ once the ℏ_q² normalisation in VolDensity is accounted for; this is a refinement to carry back into the conjecture .md.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785955573347,
-    "hbar_q_sq": 0.00981718851398598
+    "substrate_q": 1.1099785827513808,
+    "hbar_q_sq": 0.009817186454275078
   },
   "data": {
     "hyperbolic_volume_additivity_pairs": [
@@ -87,48 +97,48 @@
         "Vol_N_unknots": "1 · ε",
         "linking_weight": 1.0,
         "Geom_epsilon_N_unknots": "1 · ε / ℏ_q² ≈ 101.8622 · ε",
-        "real_part_coefficient": 101.86215723324024
+        "real_part_coefficient": 101.86217860459716
       },
       {
         "N": 2,
         "Vol_N_unknots": "2 · ε",
         "linking_weight": 1.0,
-        "Geom_epsilon_N_unknots": "2 · ε / ℏ_q² ≈ 203.7243 · ε",
-        "real_part_coefficient": 203.72431446648048
+        "Geom_epsilon_N_unknots": "2 · ε / ℏ_q² ≈ 203.7244 · ε",
+        "real_part_coefficient": 203.72435720919432
       },
       {
         "N": 5,
         "Vol_N_unknots": "5 · ε",
         "linking_weight": 1.0,
-        "Geom_epsilon_N_unknots": "5 · ε / ℏ_q² ≈ 509.3108 · ε",
-        "real_part_coefficient": 509.3107861662012
+        "Geom_epsilon_N_unknots": "5 · ε / ℏ_q² ≈ 509.3109 · ε",
+        "real_part_coefficient": 509.3108930229858
       },
       {
         "N": 10,
         "Vol_N_unknots": "10 · ε",
         "linking_weight": 1.0,
-        "Geom_epsilon_N_unknots": "10 · ε / ℏ_q² ≈ 1018.6216 · ε",
-        "real_part_coefficient": 1018.6215723324024
+        "Geom_epsilon_N_unknots": "10 · ε / ℏ_q² ≈ 1018.6218 · ε",
+        "real_part_coefficient": 1018.6217860459716
       },
       {
         "N": 100,
         "Vol_N_unknots": "100 · ε",
         "linking_weight": 1.0,
-        "Geom_epsilon_N_unknots": "100 · ε / ℏ_q² ≈ 10186.2157 · ε",
-        "real_part_coefficient": 10186.215723324023
+        "Geom_epsilon_N_unknots": "100 · ε / ℏ_q² ≈ 10186.2179 · ε",
+        "real_part_coefficient": 10186.217860459716
       },
       {
         "N": 1000,
         "Vol_N_unknots": "1000 · ε",
         "linking_weight": 1.0,
-        "Geom_epsilon_N_unknots": "1000 · ε / ℏ_q² ≈ 101862.1572 · ε",
-        "real_part_coefficient": 101862.15723324024
+        "Geom_epsilon_N_unknots": "1000 · ε / ℏ_q² ≈ 101862.1786 · ε",
+        "real_part_coefficient": 101862.17860459717
       }
     ],
     "dimensional_consistency_check": {
       "naive_N_birthday_in_eps": "ε⁻¹",
       "after_Geom_normalisation_N_birthday": "ε⁻²",
-      "ℏ_q²_at_substrate": 0.00981718851398598,
+      "ℏ_q²_at_substrate": 0.009817186454275078,
       "implication": "The conjecture's N⊙ ~ ε⁻¹ · A/d³ scaling may need refinement: dimensional analysis with the VolDensity = Vol/ℏ_q² normalisation suggests N⊙ ~ ε⁻² · A/d³, with the extra ε⁻¹ factor absorbing the ℏ_q² denominator.",
       "follow_up": "Recompute the conditional Casimir derivation under the ε⁻² scaling and confirm π²/(240 d⁴) still falls out."
     }

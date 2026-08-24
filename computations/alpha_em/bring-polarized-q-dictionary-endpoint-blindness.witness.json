@@ -3,12 +3,12 @@
   "description": "Formalize-first method-class constraint for the \u03b1_EM magnitude leg: the two non-vacuous (endpoint) observables of any period-side q-deformation dictionary are identical for the polarized (\u03c4\u2080\u00b7M) and product (\u03c4\u2080\u00b7diag) periods \u2014 t\u21920 exactly (Jacobi + det equality), t\u2192\u221e trivially \u2014 while the ~12-orders polarization effect (#4043) is confined to the dictionary-gated interior. The q-route collapses onto the \u03c4-functor wall (independent convergence with #4030). Scope-(a); no dictionary fitted; no 8\u03c0; nothing wired.",
   "auditOnly": "docs/audits/2026-07-19-bring-polarized-q-dictionary-endpoint-blindness.md",
   "tier": "symbolic-exact (t\u21920 equality via Jacobi inversion + det identity; t\u2192\u221e trivial) + numeric confirmation; scope-(a) method-class constraint",
-  "computedAt": "2026-07-19T01:09:50.742220+00:00",
-  "commitSha": "5c641fd0f7d959f22a7b9f000233653d0a8388c5",
+  "computedAt": "2026-08-23T08:53:00.947776+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "numpy+mpmath",
   "engineVersion": "2.4.6/1.4.1",
   "scriptFile": "bring_polarized_q_dictionary_endpoint_blindness_probe.py",
-  "scriptHash": "80c091e9edfb",
+  "scriptHash": "fde867a1af4d",
   "assertions": [
     {
       "name": "covolume_polarization_independent",

@@ -1600,6 +1600,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.044Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'This does not mean that Form A and Form B measure different observables.'",
+        "notes": "Assertion-by-denial, and in this block the denied reading is the one the numbers most invite (the two forms differ by 6.4% of CODATA). PROPOSED: 'Form A and Form B measure the same observable; the $1/z$ is a basis normalisation.' Not applied -- rewriting the negation into a positive assertion would strengthen a claim I am flagging in the same block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1619,6 +1636,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.081Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (proof + Reading + Provenance + Lean sections). VERIFIED the Lean provenance claim: q-beta-spectral-bridge.lean really does declare polynomial_bridge_identity (:74), leading_order_ratio_identity (:86) and bridge_first_order_remainder (:101), with 3 sorries carrying -- Ref: [manuscript]. The (1-h/2)/(1-zh/2) = 1+(z-1)h/2+O(h^2) expansion is algebraically correct.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1638,6 +1672,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 357 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.119Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (proof + Reading + Provenance + Lean sections). VERIFIED the Lean provenance claim: q-beta-spectral-bridge.lean really does declare polynomial_bridge_identity (:74), leading_order_ratio_identity (:86) and bridge_first_order_remainder (:101), with 3 sorries carrying -- Ref: [manuscript]. The (1-h/2)/(1-zh/2) = 1+(z-1)h/2+O(h^2) expansion is algebraically correct.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1657,6 +1708,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 357 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.161Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Form A / Form B / Ratio / Exponential remainder -- four proof parts.",
+        "notes": "Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1676,6 +1744,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.200Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (proof + Reading + Provenance + Lean sections). VERIFIED the Lean provenance claim: q-beta-spectral-bridge.lean really does declare polynomial_bridge_identity (:74), leading_order_ratio_identity (:86) and bridge_first_order_remainder (:101), with 3 sorries carrying -- Ref: [manuscript]. The (1-h/2)/(1-zh/2) = 1+(z-1)h/2+O(h^2) expansion is algebraically correct.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1695,6 +1780,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.244Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (proof + Reading + Provenance + Lean sections). VERIFIED the Lean provenance claim: q-beta-spectral-bridge.lean really does declare polynomial_bridge_identity (:74), leading_order_ratio_identity (:86) and bridge_first_order_remainder (:101), with 3 sorries carrying -- Ref: [manuscript]. The (1-h/2)/(1-zh/2) = 1+(z-1)h/2+O(h^2) expansion is algebraically correct.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1714,6 +1816,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.282Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'## Reading' section restates the bridge formula.",
+        "notes": "Legitimate -- it interprets the basis change rather than re-asserting the result, and introduces the 1/z normalisation reading."
       }
     ],
     "trap-performed-warmth": [
@@ -1733,6 +1852,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.322Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (proof + Reading + Provenance + Lean sections). VERIFIED the Lean provenance claim: q-beta-spectral-bridge.lean really does declare polynomial_bridge_identity (:74), leading_order_ratio_identity (:86) and bridge_first_order_remainder (:101), with 3 sorries carrying -- Ref: [manuscript]. The (1-h/2)/(1-zh/2) = 1+(z-1)h/2+O(h^2) expansion is algebraically correct.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1752,6 +1888,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.362Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'Both forms agree with the CODATA value of $0.7823$ MeV within $7\\%$'; 'At $N \\geq 1$, the bound is sub-keV'; 'Finite-depth truncations recover the exact $\\mathfrak{Q}_\\beta$ exponentially fast in depth $N$'; '$= \\ln(1 + z\\,h) + O(h^3)$'.",
+        "notes": "FOUR FAILURES. (a) THE TOLERANCE IS DOING THE WORK. Q^B = 0.832395 MeV misses CODATA by +6.399% -- I recomputed it -- and 'within 7%' is the one band wide enough to call that agreement, in a chapter that elsewhere quotes this same observable to 306 ppm. Asked the diagnostic question: nothing in this proof would have counted as failure. (b) THE EXPONENTIAL-CONVERGENCE CLAIM IS REFUTED BY THE CHAPTER'S OWN TABLE. tbl:q-beta-form-a-n1-symbolic-table-data gives the N=1 residual as +9.01 keV against N=0's +1.31 keV -- 6.9x WORSE, not sub-keV, and moving away from CODATA. I reproduced both from that table's q0. (c) ORDER-BOOKKEEPING ERROR: 'zh + O(h^2) = ln(1+zh) + O(h^3)' is wrong at both ends -- zh - ln(1+zh) = (zh)^2/2 + ... = 0.00544843, which is O(h^2), and an expression already carrying O(h^2) error cannot be re-expressed with O(h^3). (d) PROVENANCE SPLIT: the Provenance section names q_beta_spectral_bridge_witness.py / q-beta-spectral-bridge.witness.json (CORRECT -- I grepped, all five table numbers are in that file), but the .ts `computation` field declares computations/gram-matrix-dual.py and gram-matrix-dual.witness.json, which contain none of them. The .ts points at the wrong producer. VERIFIED SOUND: the Lean provenance claim checks out in full -- polynomial_bridge_identity (:74), leading_order_ratio_identity (:86) and bridge_first_order_remainder (:101) all exist, with 3 sorries carrying -- Ref: [manuscript]; and the (1-h/2)/(1-zh/2) expansion is algebraically correct."
       }
     ],
     "trap-nonspeakable": [
@@ -1771,6 +1924,23 @@
         "reviewed_at": "2026-08-15T10:31:01.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "26111511713d",
+          "ts": "ab4b8f89b7e3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.403Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The exponential-remainder bound dampens the eigenfunction (conj:archimedean-remainder-exponential-decay).' and 'Both truncations inhabit the spectral decomposition of the q-Hamiltonian along the Gröbner basis filtration of the free-neutron sector $K \\subset H_3(q)$ at $q = q_0$.'",
+        "notes": "Two sentences whose subjects cannot perform their verbs: a bound does not dampen an eigenfunction, and truncations do not inhabit a decomposition. The second also stacks five nested genitives. PROPOSED: 'The exponential-remainder bound controls the size of the neglected tail.' Math-adjacent, so flagged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1793,5 +1963,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:07.403Z"
 }

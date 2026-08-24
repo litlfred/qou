@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2605.22763v1",
  "source_sha256": "1fe6b92bb5eb0b45",
- "brief": "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1† , Anton Kovsharov1† , Sergey Shirobokov1† , Anja Surina1, Moritz Firsching1, Gergely — 14 sections: Intro",
- "extended": "**2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1† , Anton Kovsharov1† , Sergey Shirobokov1† , Anja Surina1, Moritz Firsching1, Gergely**\n\n*Bérczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Miklós*\n\n59 pp, 14 sections.\n\n**Outline.** Introduction; AlphaProof Nexus; Systematic Evaluation on Open Problems; Deployment in Mathematics Research; Impact of Agent Architecture and Model; Discussion; Materials and Methods; Further Details on AlphaProof Nexus Agents; Prompts; Supplementary Text; Related Work; Selection of Erdős and OEIS Problems; Details on Comparisons across Agent Architectu; Deformalized Lean Proofs\n\n**Extracted claims (proposals, not verified).**\n- Theorem: (i).There is an infinite set𝐴⊆ℕ satisfying that there are no distinct𝑎,𝑏,𝑐∈𝐴\n- Theorem: There exists an infinite set𝐴⊂ℤ + with no distinct𝑎,𝑏,𝑐∈𝐴 with 𝑏,𝑐 > 𝑎,\n- Theorem: Let M(𝑆) denote the set of multiples of a subset𝑆⊆ℕ , and let𝑑(𝑋) denote\n- Theorem: is still used to construct a counterexample, but with additional constraints to\n- Theorem: Let𝐴⊂ℝ 2 be an infinite set for which there exists some𝜖 >0such that in any\n- Theorem: , any finite coloring of the edges of the infinite complete graph must contain a",
+ "brief": "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob",
+ "extended": "**Advancing mathematics research with AI-driven formal proof search**\n\n*Bérczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Miklós*\n\n59 pp, 14 sections.\n\n**Outline.** Introduction; AlphaProof Nexus; Systematic Evaluation on Open Problems; Deployment in Mathematics Research; Impact of Agent Architecture and Model; Discussion; Materials and Methods; Further Details on AlphaProof Nexus Agents; Prompts; Supplementary Text; Related Work; Selection of Erdős and OEIS Problems; Details on Comparisons across Agent Architectu; Deformalized Lean Proofs\n\n**Extracted claims (proposals, not verified).**\n- Theorem: (i).There is an infinite set𝐴⊆ℕ satisfying that there are no distinct𝑎,𝑏,𝑐∈𝐴\n- Theorem: There exists an infinite set𝐴⊂ℤ + with no distinct𝑎,𝑏,𝑐∈𝐴 with 𝑏,𝑐 > 𝑎,\n- Theorem: Let M(𝑆) denote the set of multiples of a subset𝑆⊆ℕ , and let𝑑(𝑋) denote\n- Theorem: is still used to construct a counterexample, but with additional constraints to\n- Theorem: Let𝐴⊂ℝ 2 be an infinite set for which there exists some𝜖 >0such that in any\n- Theorem: , any finite coloring of the edges of the infinite complete graph must contain a",
  "tokens": {
-  "brief": 50,
-  "extended": 321
+  "brief": 36,
+  "extended": 292
  },
  "sections": [
   {

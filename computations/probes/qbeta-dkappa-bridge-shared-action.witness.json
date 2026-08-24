@@ -3,12 +3,12 @@
   "description": "Formalize-first pruning of the d\u2194\u03ba normalization bridge: the \u03ba-ladder one-instanton Borel action converges to Vol(4\u2081)/\u03c0 and its finite-order estimate matches the #3898 corpus tower singularity Re=0.6310 \u2014 so the bridge needs no new action (shared Vol/\u03c0), only a \u221a3-graded Stokes constant (the tower Im). scope-(a).",
   "audit_only": true,
   "tier": "numerical (large-order asymptotics; formalize-first pruning)",
-  "computedAt": "2026-07-18T14:10:12.650898+00:00",
-  "commitSha": "4070524fd0cc9d99120065b78d009b353cde7d64",
+  "computedAt": "2026-08-23T09:36:51.184908+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "qbeta_dkappa_bridge_shared_action_probe.py",
-  "scriptHash": "858586e98244",
+  "scriptHash": "3d581caeb1c1",
   "assertions": [
     {
       "name": "kappa_action_monotone_toward_vol_over_pi",

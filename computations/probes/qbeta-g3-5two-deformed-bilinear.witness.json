@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T20:42:11.857364+00:00",
-  "commitSha": "f552411dabb84f37062be1377a4a836bc98a2e4a",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:37:21.319815+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "descendant_bilinear_certified",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "qbeta-g3-5two-deformed-bilinear",
   "scriptFile": "qbeta_g3_5two_deformed_bilinear.py",
-  "scriptHash": "44c23364d9e9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3bac406deaca",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,19 +38,27 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_deformed_bilinear.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_deformed_bilinear.py"
   },
   "description": "Analytic 5_2 M-dictionary part 2c-1: descendant blocks (241), deformed W_m (244), bilinear W_(m,mu) (245/246) with Theorem 22(c) u-entirety at descendant orders, the (247) symmetry, and the (250) wall-crossing determinant identity (exact q->q^-1 bar-transform) certified at generic points against the independently certified #3951 machinery.",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
     "checks": {
-      "C1_regression_rel": "2.318522033e-45",
-      "C2_symmetry_rel": "1.392169112e-45",
+      "C1_regression_rel": "2.184814024e-70",
+      "C2_symmetry_rel": "8.994376651e-71",
       "C3_entirety_two_radius_rel": "4.601736643e-34",
-      "C4_crossing_rel": "1.110151346e-45",
+      "C4_crossing_rel": "1.531230122e-70",
       "C4_reading": "printed: theta(-q^-1/2 ...), prefactor y"
     },
-    "verdict": "DEFORMED LAYER CERTIFIED — the descendant blocks (241), the deformed W_m (244), and the bilinear W_(m,mu) = W_-mu(xt;qt^-1) Delta(tau) W_m(x;q)^T (245/246) stand: [W_00]_11 reproduces the certified Z_52 to 2.32e-45 (C1); the (247) x<->x^-1 symmetry holds at descendant order (1.39e-45, C2); Theorem 22(c) u-ENTIRETY verified at the lattice point u* = log q for (m,mu)=(1,2) by two-radius circle-average agreement (4.6e-34; a pole tail would shift the mean proportionally to 1/r) (C3); and the (250) WALL-CROSSING determinant identity — the exact q -> q^-1 bar-transform of the deformed H-blocks — holds at generic (x,y,z,q) to 1.11e-45 (printed: theta(-q^-1/2 ...), prefactor y) (C4). The exact bar-transform tool for the intrinsic bar-odd extraction is now in hand: NEXT (part 2c-2) apply (250) to the substrate bar-pair to strip the classical prefactor structurally and extract phi_odd at derived precision (vs the #3987 preliminary -0.004145). No fit; no c_k wired; scope-(a)."
+    "verdict": "DEFORMED LAYER CERTIFIED — the descendant blocks (241), the deformed W_m (244), and the bilinear W_(m,mu) = W_-mu(xt;qt^-1) Delta(tau) W_m(x;q)^T (245/246) stand: [W_00]_11 reproduces the certified Z_52 to 2.18e-70 (C1); the (247) x<->x^-1 symmetry holds at descendant order (8.99e-71, C2); Theorem 22(c) u-ENTIRETY verified at the lattice point u* = log q for (m,mu)=(1,2) by two-radius circle-average agreement (4.6e-34; a pole tail would shift the mean proportionally to 1/r) (C3); and the (250) WALL-CROSSING determinant identity — the exact q -> q^-1 bar-transform of the deformed H-blocks — holds at generic (x,y,z,q) to 1.53e-70 (printed: theta(-q^-1/2 ...), prefactor y) (C4). The exact bar-transform tool for the intrinsic bar-odd extraction is now in hand: NEXT (part 2c-2) apply (250) to the substrate bar-pair to strip the classical prefactor structurally and extract phi_odd at derived precision (vs the #3987 preliminary -0.004145). No fit; no c_k wired; scope-(a)."
   }
 }

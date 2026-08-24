@@ -1194,6 +1194,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.376Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1213,6 +1230,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.416Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1232,6 +1266,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 141 words)"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.455Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). Two em-dashes, forming one closed parenthetical at L3 ('Its positivity-where $f^{\\dagger} \\circ f$ is positive in $\\mathrm{End}(\\mathbf{1})$-is the categorical analogue of the $C^*$-axiom'). True parenthetical, so it passes; noted only that it is set unspaced while the rest of the chapter spaces its em-dashes.",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -1251,6 +1302,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 141 words)"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.494Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). 'Three observations place these results in context.' followed by three sentences - each names a real downstream block (rem:dagger-notation, rem:tannaka-krein-overview, rem:axiom-independence), so the count is determined by the content, not by reflex.",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1270,6 +1338,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.535Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). final sentence is \"Finally, the QU axioms are independent over arbitrary rings.\" - a substantive statement, not a placed quotable closer",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -1289,6 +1374,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.575Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-thesis-restatement": [
@@ -1308,6 +1410,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.617Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). final sentence is \"Finally, the QU axioms are independent over arbitrary rings.\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1327,6 +1446,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.658Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1346,6 +1482,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.700Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -1365,6 +1518,23 @@
         "reviewed_at": "2026-08-15T10:31:00.166Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.742Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md (5 lines, kind=prose, title=\"QU consequences section intro\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1387,5 +1557,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:08:10.742Z"
 }

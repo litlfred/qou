@@ -1,7 +1,7 @@
 {
-  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "rt_binomial_trace_evaluation_probe",
-  "computedAt": "2026-07-18T17:52:24.339560+00:00",
+  "computedAt": "2026-08-23T09:40:06.651846+00:00",
   "cross_particle_ratios": {
     "W/H": {
       "SM": 0.6425179856115107,
@@ -22,7 +22,7 @@
   "description": "Cherry-picks the unified binomial pattern from sibling PR #1125 (c_{2j}(T(2,2m)) = C(m+j, 2j)/2, sympy-proved) and evaluates the trace polynomial P_m(h_0) for W=T(2,4), Z=T(2,6), H=T(2,8). Reports cross-particle ratios + structural-limitation analysis. Honest follow-up to PR #1126's retraction of the W = \u221a[2]_q substrate-point fit.",
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "honest_limits": [
     "Trace polynomial values P_m(h_0) are in [0.5, 0.75] range; actual masses span [80, 125] GeV",
     "Mass-to-trace ratio varies per particle (no clean single normalization)",
@@ -32,7 +32,7 @@
   ],
   "interpretation": "The trace polynomial P_m(h_0) using PR #1125's binomial coefficients gives W/Z within 1% of SM cos \u03b8_W \u2014 suggestive structural pattern. But Z/H and W/H deviations remain ~20%, showing the trace polynomial alone CANNOT predict all 3 SM ratios simultaneously. Structural conclusion: full SM mass spectrum derivation requires gauge-coupling chain (g, g', \u03bb) currently absent from framework. The CategoricalHiggsIdempotent class (existing placeholder) is the structural target for this extension (per PR #1126 retraction audit \u00a73).",
   "parameters": {
-    "H_0": "0.20906029879563931543084621312967494385975749526306",
+    "H_0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "Q_0": "1.1099785827513808075916690956107688798744991218736",
     "binomial_pattern_source": "PR #1125 (sympy-proved, 54 cells m=1..9, j=0..5)",
     "dps": 50,
@@ -82,9 +82,11 @@
       "spin": 1
     }
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "rt_binomial_trace_evaluation_probe.py",
-  "scriptHash": "b96ba5837b84",
+  "scriptHash": "823beb68674f",
   "status": "exploratory",
   "tags": [
     "rt-route",

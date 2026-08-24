@@ -20,6 +20,7 @@
       "derived_masses",
       "experimental_constants",
       "m_p_substrate_identity_50dps",
+      "meson_em_sinh_closed_form",
       "meson_mass_from_hecke",
       "per_observable_100x_status",
       "q_parameter",
@@ -43,13 +44,13 @@
       },
       "meson_mass_from_hecke": {
         "description": "meson ratios (m_K/m_pi)",
-        "modules": 6,
+        "modules": 7,
         "unresolved": [],
         "untraceable": []
       },
       "per_observable_100x_status": {
         "description": "the L2 dashboard \u2014 all seven scored observables",
-        "modules": 8,
+        "modules": 9,
         "unresolved": [],
         "untraceable": []
       },
@@ -71,9 +72,9 @@
       }
     },
     "counts": {
-      "modules": 15,
+      "modules": 16,
       "unresolved_imports": 0,
-      "unit_or_structural_floats": 23,
+      "unit_or_structural_floats": 26,
       "adjudicated_legit": 0,
       "untraceable": 1
     },

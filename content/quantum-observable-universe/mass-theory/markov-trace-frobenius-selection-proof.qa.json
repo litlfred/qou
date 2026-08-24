@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.524Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. Denials present ('the radical is not an obstruction to determining tau, it is a set of blocks tau ignores'; 'The framework does not get to choose z: it is forced by the mass fibre'; 'false rather than unprovable') are all substantive mathematical contrasts — the forced-vs-free status of z IS the content of Step 3b, and false-vs-unprovable is a real logical distinction.",
+        "notes": "Register note only: the anthropomorphic 'does not get to choose' is colloquial for a proof block; 'The parameter z is not free: Step 3b forces it' would be flatter. Not a trap fix."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.577Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Steps 1-3 fix the trace given z. The framework does not get to choose z...' reads pivot-shaped, but the first clause substantively summarises Steps 1-3 rather than throat-clearing, so the second clause does not carry everything."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1427,23 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (14 in 1224 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.633Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "12 spaced em-dashes in 1585 words (~1/132). Most are true parentheticals in dense math prose ('— a two-sided ideal, on which tau itself vanishes —', '— the one place faithfulness is used —'). One is a classic appended afterthought: 'which is why it is untouched by the degeneracy convention D introduces — and equally why it cannot, by itself, select z.'",
+        "notes": "Proposed: replace that dash with a comma ('..., and equally why it cannot, by itself, select z.'). Other 11 instances keep."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (2 in 1224 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.727Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The two triples are substantive: M1/M2/M3 is the definition of a Markov trace, and the closing 'What is not claimed: (a) non-degeneracy on H_n, (b) non-degeneracy selects it, (c) the antecedent is established' is an exhaustive scope list, each item a distinct real caveat."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.784Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on a scope disclaimer naming an open bean (qou-n1dj), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1531,23 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.837Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "'This is the statement that matters below: the radical is not an obstruction to determining tau, it is a set of blocks tau ignores.' announces its own importance rather than placing the emphasis. ('Note what this induction does not use' and 'Note also that' are standard mathematical prose and pass.)",
+        "notes": "Proposed (not applied — proof-block signposting is math-adjacent): 'The radical is therefore not an obstruction to determining tau; it is a set of blocks tau ignores. Step 3 uses this.' Keeps the forward pointer without the value judgement."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.892Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Step 4 combines the prior steps into the selection conclusion — that is the proof's terminal deduction, not a restatement of an already-established thesis."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.945Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1635,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:41.002Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No unqualified maximum-strength claims; 'sharply', 'exactly', 'load-bearing' are each discharged by the surrounding derivation."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:41.091Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Long but speakable; noun chains ('framing ratio', 'negative-crossing loop value') are defined terms."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:29:41.091Z"
 }

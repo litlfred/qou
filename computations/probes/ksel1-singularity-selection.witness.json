@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T09:52:39.779463+00:00",
-  "commitSha": "ad859fb62f6bd67726d25024fa2c2d9b4c0aa75b",
+  "computedAt": "2026-08-23T17:39:52.106071+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "k1_corpus_singularity_datum_q1",
@@ -70,7 +70,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37924,
+  "durationMs": 33373,
   "computation": "ksel1-singularity-selection",
   "scriptFile": "ksel1_singularity_selection_probe.py",
   "scriptHash": "58a2fb927aec",
@@ -88,7 +88,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ksel1_singularity_selection_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ksel1_singularity_selection_probe.py"
   },
   "description": "KSel-1 (singularity matching) on the (REP) canonical-choice continuum (bean qou-334t; audit-only, scope-(a), NO FIT, nothing wired; machinery reused with attribution from rep_jackson_identification_probe / bean qou-u5p0). K1: the corpus's independently-known binding Borel singularity datum re-pinned with tiers — q = 1 level-1/2 plane, xi* = 1/sqrt(2) on the positive real axis (Pringsheim exact; class Lean-proved Gevrey-1/2; location measured scope-(a)); at q0 the corpus already showed that classical plane collapses. K2 (model leg): the exact map u |-> output pole set derived and verified — an input Borel-plane pole at xi* puts the atomic-kernel q-Laplace output's poles EXACTLY on xi*(1-p)/u·qt^Z (positivity forbids residue cancellation); u |-> [lattice class] is a free transitive circle action, so one output-pole datum would select a UNIQUE u mod qt^Z: KSel-1 is uniquely selective IN FORM. K3 (q = 1.2 + both q0 pins, n <= 400): the REAL binding data fail both hypotheses — the q-Borel-side carrier b^q_n = S(n)/[n]_q! satisfies b^q_n ~ q^(-n^2/4)·rho_phi^(-n) (two-cycle-converged), so phi is ENTIRE (no input singularity to match); the balanced period series is GEOMETRIC with newly measured radius r* (~0.46807 at q = 1.2; ~0.34039 at both q0 pins), all coefficients positive => the output-side singularity is the positive-axis wall x* = r*. K4: by Tonelli (positivity) + moment u-invariance the kernel output on the positive axis IS the u-independent series for EVERY u (verified < 1e-25 at u = 1, 1.3, qt^(1/2)) — the wall x* = r* is EXACTLY u-invariant. VERDICT: the u-continuum SURVIVES KSel-1 — no unique u; the selection axis is degenerate on the positive axis for the same reindex reason the moments are u-invariant, and has no input-side referent (phi entire). K5: balanced moments hold at the sigma-self-dual points u = 1 and u = qt^(1/2) (u-invariance asserted); the family is a circle (mu_(qt·u) = mu_u); the two self-dual points' model pole-lattice classes differ by exactly half a qt-step — recorded, not interpreted (no selected u exists for a KSel-3 coincidence). Nothing here proves or refutes the conjecture.",
   "auditOnly": "docs/audits/2026-08-01-ksel1-singularity-selection.md",
@@ -173,11 +180,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

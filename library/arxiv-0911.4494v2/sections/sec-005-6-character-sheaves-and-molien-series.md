@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0911.4494v2
-doc_title: "The geometry of Markov traces Ben Webster Geordie Williamson"
+doc_title: "The geometry of Markov traces"
 section_id: sec-005-6-character-sheaves-and-molien-series
 section_title: "Character sheaves and Molien series"
 section_number: 6
 pages: 11-13
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
-doc_brief: "The geometry of Markov traces Ben Webster Geordie Williamson — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on"
+doc_brief: "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn."
 ---
 need only sum over the sheaves that appear as summands of K1, since the trivial local
 system is the only unipotent character sheaf onT. Let us give a more careful description

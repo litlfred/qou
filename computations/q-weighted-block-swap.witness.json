@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:25:01.137406+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T09:42:44.731634+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "signal_robust_to_q_symmetrizer",
-      "computed": 0.02414811662923999,
+      "computed": 0.02414811387070287,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.1,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "q-weighted-block-swap",
   "scriptFile": "q_weighted_block_swap.py",
-  "scriptHash": "f52d348ee68d",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "3902aabbeb1e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,11 +32,18 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q_weighted_block_swap.py"
+    ],
+    "reproduce": "python3 -u computations/q_weighted_block_swap.py"
   },
   "description": "q-weighted Young symmetrizer for the ⁴He block-swap binding signal. The Hecke q-symmetrizer E_±=(β±…)/(q+q⁻¹) is a reweighting of the four block-swap traces (no recompute; the (q+q⁻¹)² norm cancels in the signal ratio). Because q₀≈1.11≈1 the q-bosonic signal sits within a few %% of the plain ¼Σ value — the +0.27 production signal (symmetrization relieves the under-prediction, sub-dominant O(1 MeV)) is ROBUST to the symmetrizer choice. Caveat: β (two 3-strand blocks) is not a single Hecke generator, so E_± is a first-order q-deformation, not the exact block R-matrix spectral projector; the w∈{q⁻¹,1,q} spread bounds the residual ambiguity.",
   "parameters": {
-    "q0": 1.1099785955573347
+    "q0": 1.1099785827513808
   },
   "data": {
     "rows": [
@@ -48,18 +55,18 @@
       },
       {
         "symmetrizer": "q-bosonic E_+",
-        "S_atom": 1.1387892188906523,
-        "S_free": 1.5326030179009023,
-        "signal": 0.29700199939210703
+        "S_atom": 1.1387892411549934,
+        "S_free": 1.5326030436369105,
+        "signal": 0.2970019966335699
       },
       {
         "symmetrizer": "q-fermionic E_-",
-        "S_atom": 0.8750785029722142,
-        "S_free": 0.597238979256781,
-        "signal": -0.38199626645931267
+        "S_atom": 0.8750784789001455,
+        "S_free": 0.5972389594619886,
+        "signal": -0.38199627209468395
       }
     ],
-    "plain_vs_qbosonic_spread": 0.02414811662923999,
+    "plain_vs_qbosonic_spread": 0.02414811387070287,
     "verdict": "The q-weighted (E_+) bosonic signal +0.2970 sits within 0.0241 of the plain +0.2729 — because q₀≈1.11≈1 the symmetrizer choice shifts the signal by only ~9%. The conclusion is ROBUST: POSITIVE (symmetrization relieves the under-prediction), O(1 MeV), sub-dominant. The fermionic (Pauli) projector gives -0.3820 — a distinct sector, not the bosonic ground state.",
     "upstream_witness_hashes": [
       {
@@ -72,6 +79,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Meson VolDensity: the meson-sector analog of vol_density_borromean.
+Meson VolDensity: the meson-sector analog of per_knot_density_borromean.
 
 For baryons:  m_p = 2·(m_μ·F_Bor − 6·m_e) — the canonical muon-anchored
               Hecke energy (canonical_mass facade; the former
@@ -32,7 +32,8 @@ from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 # ── substrate (from constants.py) ────────────────────────────────

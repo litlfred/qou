@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2510.04782v2
-doc_title: "q-Hodge complexes over the Habiro ring Ferdinand Wagner"
+doc_title: "q-Hodge complexes over the Habiro ring"
 section_id: sec-014-references
 section_title: "References"
 section_number: null
 pages: 81-82
 source_pdf: 2510.04782v2.pdf
 source_sha256: 591d0bdf2c48d12f
-doc_brief: "q-Hodge complexes over the Habiro ring Ferdinand Wagner — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm∈N Z[q]∧"
+doc_brief: "q-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm∈N Z[q]∧ (qm−1)."
 ---
 References
 [AHL22] Johannes Anschütz, Ben Heuer, and Arthur-César Le Bras,v-vector bundles onp-adic

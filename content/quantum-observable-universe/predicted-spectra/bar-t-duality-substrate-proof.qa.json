@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:39.550Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:39.599Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 237 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:39.692Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,37 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 237 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:39.734Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:40.213Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The deleted closer was the only reflex triple ('yields ... bridges ... enforces'); the surviving three clauses are the proposition's own three parts. MATH FINDING in notes.",
+        "notes": "fix applied: see trap-closing-aphorism. STANDING-TRAP FINDING, report only: clause (1) defines Delta(E_q) = -4p(q)^3 - 27r(q)^2 while clause (2) writes j(E_q) = -1728 * 64 * p(q)^3 / Delta(q). Those are inconsistent by a factor of 16. Verified symbolically: for y^2 = x^3 + ax + b the standard discriminant is Delta_std = -16(4a^3 + 27b^2) and j = c4^3/Delta_std = -1728*64*a^3/Delta_std; with the block's unscaled Delta = -4a^3 - 27b^2 = Delta_std/16 the correct coefficient is -1728*4, i.e. j = -6912 p^3 / Delta. Clause (1) is unaffected because it only uses Delta = 0, which is scale-invariant. Proposed fix: either write Delta(E_q) = -16(4p^3 + 27r^2) throughout, or change the j numerator to -1728*4."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1328,37 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:39.778Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:40.163Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Block previously closed on a quotable three-verb line; removed. It now ends on the substantive claim that the Hecke bar involution descends to iota on the moduli parameter.",
+        "notes": "fix applied: deleted 'Framing the standard $q \\\\to q^{-1}$ involution as a Hecke-bar origin yields an algebraic geometry for the substrate that bridges T-duality with involution algebra and enforces algebraic parity on the substrate.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1378,21 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:39.818Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1412,21 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:39.857Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1446,21 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:39.934Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1480,21 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:40.010Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1514,21 @@
         "reviewed_at": "2026-08-15T10:31:01.200Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6b556e59030b",
+          "ts": "1dc74630f2cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:40.087Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: iota_* construction, three clauses, bar-conjugate transfer, Hecke-bar origin. All ten categories judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1551,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:32:40.213Z"
 }

@@ -1190,6 +1190,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.773Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism. 'produces unique normal forms but does not distinguish physical braid words' states the actual gap the section fills.",
+        "notes": "Kept."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1225,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.821Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism.",
+        "notes": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1260,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 181 words)"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.901Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1295,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 181 words)"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.978Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism.",
+        "notes": "Substantive enumerations."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1330,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:28.062Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism.",
+        "notes": "Closer is a contents item."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1365,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:28.130Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism.",
+        "notes": "After the fix below, no sentence announces its own importance."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:28.204Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism.",
+        "notes": "No block-final restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:28.292Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1470,23 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:28.381Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism. The sentence 'The Frobenius reciprocity statement is central: every subsequent observable is ...' announced the claim's importance instead of stating it; 'is central' is an unqualified strength claim, and the colon construction made the announcement carry the sentence.",
+        "notes": "FIX APPLIED: 'The Frobenius reciprocity statement is central: every subsequent observable is a $G^{-1}$-weighted dual pairing against the active set identified by the LP.' -> 'By Frobenius reciprocity, every subsequent observable is a $G^{-1}$-weighted dual pairing against the active set identified by the LP.' Content preserved; only the announcement removed. NOTE: this block writes the Q-value as \\mathfrak{Q}_\\beta while its sibling sec:garside-gram-intro writes \\mathcal{Q}_q; worth an ontologist pass."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1506,22 @@
         "reviewed_at": "2026-08-15T10:31:01.303Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "79c5999babdf",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:28.466Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the four-paragraph section intro. Checked each paragraph for the ten constructions; the section-contents enumerations (algebraic/vacuous primality; LP -> operator selection -> dual stability; SDP -> feasibility -> MISDP -> Picard-Lefschetz) are substantive deliverable lists, not reflex triples, and the closing 'Finally, ...' sentence is a contents item rather than an aphorism.",
+        "notes": "Speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1544,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:04:28.466Z"
 }

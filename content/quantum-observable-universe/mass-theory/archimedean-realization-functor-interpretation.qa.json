@@ -944,6 +944,22 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.392Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'A map out of a ring is not a functor between categories'; '$\\mathcal{R}_{top}$ is the archimedean realization / evaluation into $\\mathbb{R}$, not a functor between QOU categories'; 'It requires no continuous differential equations or Lebesgue measures.'",
+        "notes": "The first two are the block's whole point (a notation-register correction to a legacy label) and are stated directly rather than narrated - the 'load-bearing disambiguation' false-positive class. The third is a substantive scope claim about the framework's machinery."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.437Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, R_top as motivic measure vs functor, and its identification with tau_arch); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1013,22 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 238 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.491Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Two spaced dashes inside one long paragraph: 'a **motivic measure** in the sense of Denef-Loeser - while $\\pi_\\infty$ is an archimedean place' and 'not a functor between QOU categories - consistent with the notation register'.",
+        "notes": "Both append a clause that could take a semicolon, but each carries real content and the density is 2 in 2.2 kB. Kept; noted for a later pass if the paragraph is split."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1048,22 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 238 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.547Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'adelic stitching, motivic integration, and archimedean projection'.",
+        "notes": "Three named pipeline stages that exist independently of this sentence, not a manufactured cadence - though the sentence carrying them is recorded as a fail under trap-thesis-restatement."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1083,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.600Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, R_top as motivic measure vs functor, and its identification with tau_arch); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1117,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.647Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, R_top as motivic measure vs functor, and its identification with tau_arch); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1151,23 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.693Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "The block ends with a section literally headed '**Synthesis.**' whose three sentences restate the chain the block already walked: 'The framework processes discrete categorical data along a single chain: adelic stitching, motivic integration, and archimedean projection. It requires no continuous differential equations or Lebesgue measures. The Kashaev limit of the algebraic quantum volume exemplifies this mechanism.' Only the middle sentence adds anything; 'adelic stitching' is not developed in this block at all (it belongs to rem:adelic-substrate-integration).",
+        "notes": "NOT fixed - three sentences plus a heading, beyond the two-sentence inline budget, and removing 'adelic stitching' touches the block's scope. proposed: delete the '**Synthesis.**' heading and the first and third sentences; keep the one non-redundant claim, appended to the identification paragraph: 'The chain requires no continuous differential equations or Lebesgue measures.' If the Kashaev pointer is wanted, make it a cross-reference rather than an 'exemplifies this mechanism' closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1187,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.772Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, R_top as motivic measure vs functor, and its identification with tau_arch); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1221,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.824Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, R_top as motivic measure vs functor, and its identification with tau_arch); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1255,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f9819e2bdf50",
+          "ts": "214e5ba01670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:50.870Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, R_top as motivic measure vs functor, and its identification with tau_arch); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1296,5 @@
     "md": "f9819e2bdf50",
     "ts": "214e5ba01670"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:32:50.870Z"
 }

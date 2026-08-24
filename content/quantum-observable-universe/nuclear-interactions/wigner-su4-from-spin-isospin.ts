@@ -16,7 +16,7 @@ export default conjecture({
     "wigner1937",
     "elliott1958",
     "kashiwara1991",
-    "khovanov-lauda2009",
+    "khovanovlauda2009",
   ],
   tags: [
     "wigner-su4",

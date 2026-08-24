@@ -11,6 +11,12 @@ Formalises the manuscript **horizon functor**
 `∂ : π₀(Bun°(ℙ(V))) → 𝒫(Bun ∖ Bun°)` sending each aeon `𝒜` to its boundary
 — the configurations that are limits of diagrams in `𝒜` but have
 `A₀|_𝒮 = 0` (hence lie *outside* the observable subcategory `Bun°`).
+
+**Naming note.** The codomain is a **power set** `𝒫(…)`, so `∂` is encoded
+as the set-valued map `boundary : Aeon → Set Config` — an object-level map,
+not a `CategoryTheory.Functor` (no morphism-map/laws). This matches the
+manuscript, which writes the target as `𝒫(…)` and observes ∂ degenerates to
+the identity on component inclusions. "Functor" is a naming convention here.
 -/
 
 namespace QOU

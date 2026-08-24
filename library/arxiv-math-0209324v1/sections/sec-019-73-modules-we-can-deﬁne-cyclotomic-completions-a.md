@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0209324v1
-doc_title: "CYCLOTOMIC COMPLETIONS OF POL YNOMIAL RINGS KAZUO HABIRO"
+doc_title: "Cyclotomic completions of polynomial rings"
 section_id: sec-019-73-modules-we-can-deﬁne-cyclotomic-completions-a
 section_title: "Modules. We can deﬁne cyclotomic completions also for any Z-modules"
 section_number: 7.3
 pages: 16-16
 source_pdf: 0209324v1.pdf
 source_sha256: ae2ea5024a0a45e8
-doc_brief: "CYCLOTOMIC COMPLETIONS OF POLYNOMIAL RINGS KAZUO HABIRO — The main object of study in this paper is the completion Z[q]N = lim←− n Z[q]/ ((1− q)(1− q2)···(1− qn)) of the polynomial ring Z[q], which"
+doc_brief: "Cyclotomic completions of polynomial rings — The main object of study in this paper is the completion Z[q]N = lim←− n Z[q]/ ((1− q)(1− q2)···(1− qn)) of the polynomial ring Z[q], which arises from"
 ---
 as follows. Let A be a Z-module, and let A[q] denote the Z[q]-module of poly-
 nomials in q with coeﬃcients in A. For each S⊂ N let A[q]S denote the

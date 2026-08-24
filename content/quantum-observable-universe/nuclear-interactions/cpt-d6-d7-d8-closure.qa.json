@@ -1644,6 +1644,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.155Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "Kept: the denial of independence IS the block's structural claim."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1663,6 +1679,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.211Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1682,6 +1714,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.288Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class. Two unspaced em-dashes in the closing paragraph. The second ('coefficient ring of the trace--canonically Z[q,q^-1]') is a true appositive and was kept. The first substituted for a colon or full stop.",
+        "notes": "FIX APPLIED: 'The three components are not logically independent---they collectively constitute the conjecture.' -> 'The three components are not logically independent; they collectively constitute the conjecture.'"
       }
     ],
     "trap-triples": [
@@ -1701,6 +1750,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.347Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "C/P/T is a substantive enumeration."
       }
     ],
     "trap-closing-aphorism": [
@@ -1720,6 +1785,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.385Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "Block ends on a technical statement of the class hypothesis and its coefficient ring, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1739,6 +1820,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.426Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1758,6 +1855,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.489Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "'The joint statement is that they compose to the CPT theorem at the Markov-trace level' adds the joint reading rather than restating the list."
       }
     ],
     "trap-performed-warmth": [
@@ -1777,6 +1890,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.529Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1796,6 +1925,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.601Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1815,6 +1960,22 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1b527d68c417",
+          "ts": "4c9bffd647d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:27.689Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the C/P/T three-item list, and the closing paragraph. The three-item list is substantive (it names the three symmetries the conjecture is about). 'The three components are not logically independent' is a load-bearing claim (it is why this is one conjecture rather than three), so it falls in the substantive-contrast false-positive class.",
+        "notes": "Speakable throughout."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1838,5 +1999,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:04:27.689Z"
 }

@@ -68,6 +68,10 @@ class QbetaCkTruncationCanonicalClass (c : ℕ → ℝ → ℝ) : Prop where
       proper; an instance's witness for it is conjectural (`sorry`). -/
   canonical_ck_exists : ∃ f : ℕ → ℝ, CanonicalCkForm c f
 
+class QbetaCkTruncationCanonicalExists : Prop where
+  /-- The external input: there exists a canonical coefficient family. -/
+  exists_c : ∃ c : ℕ → ℝ → ℝ, QbetaCkTruncationCanonicalClass c
+
 /-- **The conjecture, axiomatised.** There exists a coefficient family `c`
     for which the canonical-`c_k` class holds — i.e. only `c_2` is proved
     exact, `c_3` is the Hopf near-match, and a canonical anchor-independent
@@ -79,11 +83,8 @@ class QbetaCkTruncationCanonicalClass (c : ℕ → ℝ → ℝ) : Prop where
 --    docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf-link Jones polynomial)
 -- Ref: [habiro2004cyclotomic] (Habiro element / cyclotomic completion roadmap)
-theorem qbeta_ck_truncation_canonical_conjecture :
-    ∃ c : ℕ → ℝ → ℝ, QbetaCkTruncationCanonicalClass c := by
-  -- Open: the canonical anchor-independent c_k closed form is the
-  -- Q_β Habiro-element target; only c_2 = -1 is currently proved exact.
-  -- Ref: [manuscript] conj:qbeta-ck-truncation-canonical
-  sorry
+theorem qbeta_ck_truncation_canonical_conjecture [QbetaCkTruncationCanonicalExists] :
+    ∃ c : ℕ → ℝ → ℝ, QbetaCkTruncationCanonicalClass c :=
+  QbetaCkTruncationCanonicalExists.exists_c
 
 end QOU.BraidKnot

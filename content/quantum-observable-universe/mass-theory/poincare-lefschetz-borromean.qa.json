@@ -1783,6 +1783,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not at the Hecke-element level.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.675Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two contrasts, both substantive: 'at the topological level, not at the Hecke-element level' (states why the GB filtration is N/A) and 'expressed through distinct dualities: Poincare-Lefschetz is the topological-cohomological route, the Bloch group the K-theoretic one' (the block's actual comparison)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1802,6 +1818,21 @@
         "reviewed_at": "2026-08-15T10:31:00.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.748Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe; the sections are statement, comparison, invariants, open items, cross-references."
       }
     ],
     "trap-em-dash": [
@@ -1822,6 +1853,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 264 words (2.27/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.832Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Six spaced em-dashes, all list-item glosses in 'Structural invariants' / 'What remains open' / 'Cross-references' (e.g. 'GB filtration: N/A -- ...', 'K-theoretic regulator route to the same 8G'). Conventional in an annotated list, and none substitutes for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1841,6 +1888,21 @@
         "reviewed_at": "2026-08-15T10:31:00.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 264 words)"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.887Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The recurring threes are mathematical: three cusps, three meridian classes, Z^3, and three independent routes to 8G. Not reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1860,6 +1922,21 @@
         "reviewed_at": "2026-08-15T10:31:00.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.956Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on a cross-reference list."
       }
     ],
     "trap-meta-commentary": [
@@ -1879,6 +1956,23 @@
         "reviewed_at": "2026-08-15T10:31:00.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.027Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The two ARE the same number' performs emphasis typographically (all-caps) rather than placing it in the argument; scholarly register in this corpus uses bold or restructuring, not shouting.",
+        "notes": "FIXED inline (case change only, no math, no meaning change): 'The two ARE the same number' -> 'The two are the same number'. The sentence's own continuation ('but expressed through distinct dualities') already carries the contrast, so no emphasis marker is needed. $$ count re-checked even."
       }
     ],
     "trap-thesis-restatement": [
@@ -1898,6 +1992,21 @@
         "reviewed_at": "2026-08-15T10:31:00.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.099Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1917,6 +2026,21 @@
         "reviewed_at": "2026-08-15T10:31:00.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.211Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1936,6 +2060,21 @@
         "reviewed_at": "2026-08-15T10:31:00.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.307Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No unqualified maximum-strength claims; 'partial in Mathlib' and 'partial Mathlib infrastructure exists' are hedged accurately."
       }
     ],
     "trap-nonspeakable": [
@@ -1955,6 +2094,22 @@
         "reviewed_at": "2026-08-15T10:31:00.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.372Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'the topological-cohomological route' and 'manifold-with-cusps Poincare-Lefschetz' are compound-heavy but are names of things, and the surrounding sentences are short."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1978,5 +2133,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:05:28.372Z"
 }

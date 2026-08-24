@@ -63,6 +63,7 @@ sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _load(name):
@@ -75,7 +76,7 @@ def _load(name):
 _tw = _load("qbeta_g3_5two_analytic_hm_tower")     # towers + E2hat
 _bs = _load("qbeta_g3_5two_barodd_substrate")      # exact Z52 (Thm 22)
 
-mp.mp.dps = 45
+set_compute_dps()
 
 PHASES = [mp.mpc(1), mp.mpc(-1), mp.mpc(0, 1), mp.mpc(0, -1),
           mp.e ** (mp.mpc(0, 1) * mp.pi / 4),

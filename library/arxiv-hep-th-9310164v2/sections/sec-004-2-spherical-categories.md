@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9310164v2
-doc_title: ""
+doc_title: "SPHERICAL CATEGORIES"
 section_id: sec-004-2-spherical-categories
 section_title: "Spherical categories"
 section_number: 2
 pages: 1-4
 source_pdf: 9310164v2.pdf
 source_sha256: e0972e04667ccc47
-doc_brief: "This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative. The motivating examples are categories of representations of Hopf algebras."
+doc_brief: "SPHERICAL CATEGORIES — This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative."
 ---
 3. Spherical Hopf algebras
 0. Introduction

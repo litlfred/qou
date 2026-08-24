@@ -23,11 +23,18 @@ def tower_depth {C : Type*} [GBCategory C] {tower : C → Type*} [bt : BraneTowe
 
 /-- **CONJECTURE.** The Coxeter-length tower depth between the m_e level and the
     v level equals 90 Hecke generations. -/
+class TowerDepthNinetyConjecture {C : Type*} [GBCategory C] {tower : C → Type*} [BraneTower tower] (level_m_e level_v : C) : Prop where
+  /-- The depth is 90. -/
+  is_ninety : tower_depth (tower := tower) level_m_e level_v = 90
+
+/-- **CONJECTURE.** The Coxeter-length tower depth between the m_e level and the
+    v level equals 90 Hecke generations. -/
 theorem tower_depth_m_e_to_v_is_ninety
     {C : Type*} [GBCategory C] {tower : C → Type*} [BraneTower tower]
-    (level_m_e level_v : C) :
+    (level_m_e level_v : C)
+    [hi : TowerDepthNinetyConjecture level_m_e level_v] :
     tower_depth (tower := tower) level_m_e level_v = 90 := by
   -- Ref: [manuscript] conj:n-v-tower-depth-ninety
-  sorry
+  exact hi.is_ninety
 
 end QOU.Observations

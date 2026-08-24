@@ -1851,6 +1851,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.710Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1870,6 +1886,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.749Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-em-dash": [
@@ -1889,6 +1921,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.787Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-triples": [
@@ -1908,6 +1956,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.826Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-closing-aphorism": [
@@ -1927,6 +1991,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.864Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-meta-commentary": [
@@ -1946,6 +2026,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.903Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1965,6 +2061,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.943Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-performed-warmth": [
@@ -1984,6 +2096,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.982Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-superlative": [
@@ -2003,6 +2131,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.023Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "trap-nonspeakable": [
@@ -2022,6 +2166,22 @@
         "reviewed_at": "2026-08-15T10:31:00.397Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "977af8cef004",
+          "ts": "3d54f957d74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.064Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Definition block, read in full. All ten categories clean. 'The Reeb bundle provides three structures. The base ... The fibre ... The total space ...' is NOT a compulsive triple: base, fibre and total space are the canonical and exhaustive trichotomy of a fibre bundle, so the three-ness is forced by the object. No dashes, no closer, no meta-commentary, no superlatives. NOTATION PASS: the block uses the current QOU archimedean 4-tuple (C, Theta, G, S) rather than the deprecated 5-tuple (M, Theta, G, P, E) -- correct per AGENTS.md SS7; S_p is written as the exceptional divisor P^1(C) = S^2 and the Hopf fibration S^3 -> S^2 is correctly oriented; [2]_q = q + q^{-1} is the right quantum integer. RIGOR CHECK on the holonomy: e^{2 pi i/[2]_q} gives 2 pi/[2]_q = 3.12446 rad at the proton pin, and at q = 1 it degenerates to e^{i pi} = -1, the standard Hopf/spinor holonomy -- a good consistency check that the [2]_q normalisation is the intended one.",
+        "notes": "One precision note, not fixed. 'the holonomy around a generator of pi_1(S^1)' is loose: holonomy of a principal U(1)-bundle is taken around a loop in the BASE, and here the base S_p = S^2 is simply connected, so pi_1(S^1) must mean the fibre circle's fundamental class or a loop in a punctured chart. As written the phrase does not name a loop the holonomy can be evaluated on. Proposed fix: say which loop (e.g. 'around the fibre generator', or 'around a meridian of the punctured base')."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2045,5 +2205,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:46:11.064Z"
 }

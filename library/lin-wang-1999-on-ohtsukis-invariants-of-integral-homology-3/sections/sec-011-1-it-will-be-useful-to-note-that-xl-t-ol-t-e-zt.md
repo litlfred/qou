@@ -1,13 +1,13 @@
 ---
 doc_id: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3
-doc_title: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+doc_title: "On Ohtsuki's invariants of integral homology 3-spheres"
 section_id: sec-011-1-it-will-be-useful-to-note-that-xl-t-ol-t-e-zt
 section_title: "It will be useful to note that X(L; t), O(L; t) E Z[t, t -1, t--~]-"
 section_number: 1
 pages: 7-10
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
-doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
+doc_brief: "On Ohtsuki's invariants of integral homology 3-spheres — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres"
 ---
 300 Xiaosong Linet aL 
 The normalized Jones polynomial X(L;t) and the "averaged" Jones polynomial O(L; t) 

@@ -200,7 +200,23 @@ def main() -> int:
         "engine": "python+sympy+markov_peel",
         "results": results,
     }
-    out_path = HERE / "habiro-coefficients-extended.witness.json"
+    # Write to the CONSUMERS' location, not beside this script.
+    #
+    # This previously wrote `HERE / ...`, i.e. computations/habiro/. Every
+    # consumer that matters reads the computations/ root — cross_check_trM_1ppb
+    # (the L1 gate), d_u_closed_form_proof, mass_formula_6term_mpfr_50dps — so
+    # the producer refreshed a copy nobody reads while the copy everybody reads
+    # went stale. That is how the top-level witness stayed convention C through
+    # the 25-atom convention-D sweep (cde2fbcd894), which touched only the
+    # per-isotope files: the L1 gate's Habiro column did not move because its
+    # input was never written by this producer. Bean qou-kcii.
+    #
+    # `_path_bridge.witness_path` is deliberately NOT used here: it searches
+    # prefer_dir first, which is what handed a habiro/-local probe the dead
+    # error-record copy and made it report the wrong q0Anchor (667c9ab3f6).
+    # For OUTPUT the canonical location is not a search result.
+    _COMPUTATIONS = HERE.parent
+    out_path = _COMPUTATIONS / "habiro-coefficients-extended.witness.json"
     import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
     _d = _os.path.dirname(_os.path.abspath(__file__))
     while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
@@ -211,6 +227,33 @@ def main() -> int:
     out["scriptFile"] = _os.path.basename(__file__)
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print(f"\nWitness: {out_path}")
+
+    # Exit non-zero when any atom errored. This returned 0 unconditionally,
+    # and the errors are recorded INSIDE the witness (`results[label] =
+    # {"error": ...}`, above), so a total failure was indistinguishable from a
+    # clean run to anything reading the exit code.
+    #
+    # It is not hypothetical. As of 2026-08-21 this script fails on ALL FOUR
+    # atoms — `ValueError: LaurentQ.from_sympy: non-Laurent factor
+    # -(1 - 1/q**4)*(q - 1)**2/12 + 1/2` — and still exited 0. The witness it
+    # writes here is 4/4 errors; the good copy the corpus actually consumes is
+    # a separate file at `computations/` that this script no longer reaches
+    # (bean qou-kcii) and, given the failure, can no longer reproduce.
+    #
+    # So any sweep that "re-runs producers" would overwrite good data with
+    # error stubs and report success. That is the specific accident this
+    # guards, and it nearly happened here: the fix proposed for the L1 gate's
+    # pin straddle (bean qou-3zby) was "regenerate this witness", which would
+    # have destroyed the only working copy.
+    _errored = sorted(k for k, v in results.items()
+                      if isinstance(v, dict) and "error" in v)
+    if _errored:
+        print(f"\n✗ {len(_errored)} of {len(results)} atoms ERRORED: "
+              f"{', '.join(_errored)}\n"
+              "  The witness above records the errors and is NOT a usable "
+              "result. Do not treat it as a regeneration, and do not copy it "
+              "over a good witness.", file=sys.stderr)
+        return 1
     return 0
 
 

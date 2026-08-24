@@ -2037,6 +2037,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.478Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'an output of R, not a fitted constant' and 'R cannot be fixed by fitting the B_n; it must be derived' are the block's substantive derived-vs-fitted content (false-positive class: substantive mathematical contrast), not manufactured emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2056,6 +2072,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.514Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
       }
     ],
     "trap-em-dash": [
@@ -2075,6 +2107,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 218 words)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.550Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
       }
     ],
     "trap-triples": [
@@ -2094,6 +2142,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 218 words)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.585Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
       }
     ],
     "trap-closing-aphorism": [
@@ -2113,6 +2177,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.620Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Ends on a cross-reference to the Q_beta precision ladder -- bookkeeping, not an aphorism."
       }
     ],
     "trap-meta-commentary": [
@@ -2132,6 +2212,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.656Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
       }
     ],
     "trap-thesis-restatement": [
@@ -2151,6 +2247,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.689Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
       }
     ],
     "trap-performed-warmth": [
@@ -2170,6 +2282,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.722Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
       }
     ],
     "trap-superlative": [
@@ -2189,6 +2317,22 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.758Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
       }
     ],
     "trap-nonspeakable": [
@@ -2208,6 +2352,23 @@
         "reviewed_at": "2026-08-15T10:31:00.352Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.793Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Reads aloud cleanly.",
+        "notes": "RIGOR (not a trap): the precision-floor / c_k information-bound argument matches the corpus framing; no numeric claims to recheck."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2231,5 +2392,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:28.793Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9805023v1
-doc_title: "q-LAGUERRE POL YNOMIALS AND BIG q-BESSEL"
+doc_title: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations"
 section_id: sec-008-43-this-then-gives-together-with-the-analytic-pr
 section_title: "This then gives, together with the analytic proofs of th e previous section a complete"
 section_number: 4.3
 pages: 13-19
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
-doc_brief: "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em."
+doc_brief: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment probl em."
 ---
 alternative analytic proof of Theorem 4.1.
 For α > −1, c > 0, k ∈ Z, x ∈ R put

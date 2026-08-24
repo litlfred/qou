@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0808.1533v3
-doc_title: "The third order helicity of magnetic ﬁelds via link maps. R. Komendarczyk ∗†"
+doc_title: "On the third order helicity of magnetic fields on invariant domains in S³"
 section_id: sec-002-comparison-to-the-known-approaches-via-massey-pr
 section_title: "Comparison to the known approaches via Massey products."
 section_number: null
 pages: 25-29
 source_pdf: 0808.1533v3.pdf
 source_sha256: 3e003cc35a4e5711
-doc_brief: "The third order helicity of magnetic fields via link maps. R. Komendarczyk ∗† — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us"
+doc_brief: "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a"
 ---
 products.
 In several prior works [5, 13, 25, 27] helicities were developed via th e Massey product for-

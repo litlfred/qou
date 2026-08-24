@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1704.01735v4
-doc_title: "Modular curves, invariant theory and E8 Lei Yang"
+doc_title: "Modular curves, invariant theory and E8"
 section_id: sec-005-5-an-explicit-construction-of-the-modular-curve
 section_title: "An explicit construction of the modular curve X(13)"
 section_number: 5
 pages: 1-8
 source_pdf: 1704.01735v4.pdf
 source_sha256: 3935747ae9291f76
-doc_brief: "Modular curves, invariant theory and E8 Lei Yang — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
+doc_brief: "Modular curves, invariant theory and E8 — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
 ---
 1. Introduction
 The E8 root lattice (see [14]) occurs in: the equation of the E8-singularity

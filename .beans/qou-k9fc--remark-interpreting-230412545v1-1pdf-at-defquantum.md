@@ -3,8 +3,9 @@
 title: Remark interpreting 2304.12545v1 (1).pdf at def:quantum-bloch-group
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:35:45Z
-updated_at: 2026-08-08T23:35:45Z
+updated_at: 2026-08-21T17:04:58Z
 ---
 
 The corpus should record explicitly that the extended Bloch group, not the ordinary one, is what resolves the branch ambiguity — and that the primary sources cited inside this survey (Neumann; Zickert; Goette) still need registering before any Lean statement leans on the lifted 5-term relation.
@@ -17,3 +18,10 @@ Source: `library/arxiv-2304.12545v1/2304.12545v1 (1).pdf` — no `references.ts`
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-2304.12545v1/  ->  [arxiv-2304.12545v1]
+  HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [arxiv-2304.12545v1] as the citation key when you do it.

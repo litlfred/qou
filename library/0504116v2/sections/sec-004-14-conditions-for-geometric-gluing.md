@@ -1,6 +1,6 @@
 ---
 doc_id: 0504116v2
-doc_title: "On deformations of hyperbolic 3–manifolds with geodesic boundary ROBERTO FRIGERIO Let M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty geodesic boundary an"
+doc_title: "On deformations of hyperbolic 3-manifolds with geodesic boundary"
 section_id: sec-004-14-conditions-for-geometric-gluing
 section_title: "Conditions for geometric gluing"
 section_number: 1.4

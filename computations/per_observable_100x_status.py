@@ -587,12 +587,28 @@ def main() -> dict:
         "note": "calibration anchor — err defined as 0",
     })
 
-    # ── m_K/m_π — derived sub-ppb closure (#1442 + #1448) ────────────
-    # Closed form: m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(3q² − 1)/(2q²)
+    # ── m_K/m_π — derived closure (#1442 + #1448) ────────────────────
+    # Closed form: m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(1 + log(1+ℏ_q))
     # - strong sector [3]_q·[4]_q: Lean-proved q-Clebsch–Gordan fusion
     #   (prop:meson-qcg-fusion-identity, QOU.BraidKnot.meson_qCG_3x4)
-    # - EM sinh-channel (3q²−1)/(2q²): Lean-proved ring identity
-    #   (prop:meson-em-sinh-closed-form, QOU.BraidKnot.meson_EM_closed_form)
+    # - EM sinh-channel: the FULL series `1 + log(1+ℏ_q)`.
+    #
+    #   🛑 DE-FITTED 2026-08-22 — this line used to carry the two-term
+    #   truncation `(3q²−1)/(2q²)`, which is exactly `1 + ℏ_q − ℏ_q²/2`
+    #   (Lean ring identity QOU.BraidKnot.meson_EM_closed_form — still
+    #   true, and still proved; it is the IDENTIFICATION of that
+    #   truncation as the physical factor that was wrong). The owner
+    #   directive of 2026-08-09 already ruled the full series canonical
+    #   (docs/precision-goals.md §L2) but no producer was updated, so
+    #   the truncation stayed live here for 13 days.
+    #
+    #   Why the truncation is a fit, measured at 70 dps: the error as a
+    #   function of stopping order is 479.1 / **23.4** / 53.5 / 51.3 /
+    #   51.49 / 51.474 / 51.4755 ppb for orders ℏ¹…ℏ⁷, converging to
+    #   51.4754 ppb = the untruncated `1 + log(1+ℏ_q)`. Order 2 is the
+    #   ONLY order below the limit — a non-monotonic dip. Every further
+    #   term walks away from the data. A stopping point that beats the
+    #   series it approximates was chosen against the data.
     # - α_em from prop:em-coupling-projection (q·[9]_q·[10]_q, CS-corrected
     #   to 137.035944, 399 ppb off CODATA)
     #
@@ -610,20 +626,37 @@ def main() -> dict:
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
     from mpmath import pi as _pi
     q0 = mpf(Q_50_DIGIT_STR)
-    _hbar_factor = (3 * q0 ** 2 - 1) / (2 * q0 ** 2)  # sinh-channel closed form
+    _hbar_q = 1 - 1 / q0
+    _hbar_factor = 1 + mp.log(1 + _hbar_q)  # sinh-channel, FULL series
     _qcg_strong = (q0 ** 2 + 1 + q0 ** -2) * (
         (q0 ** 4 - q0 ** -4) / (q0 - q0 ** -1)
     )  # [3]_q · [4]_q
     # CLASS-A acknowledged anchor: pending Witten-κ Gram-determinant sorry.
-    _alpha_em_inv = mpf("137.035944")  # CS-corrected α_em (Witten κ, 399 ppb)
+    # α_em is DERIVED, not copied. This line held the literal
+    # mpf("137.035944") -- the MUON-anchor evaluation from before the
+    # 2026-05-28 proton re-pin, and a TRUNCATED CS tower besides. At the
+    # current proton pin the exact resummation gives 137.0359350939756,
+    # i.e. the literal was 65.0 ppb off, and its stated "399 ppb vs CODATA"
+    # understated the real residual of 468 ppb. pyhecke.constants and
+    # meson_em_sinh_closed_form were both corrected; this consumer and
+    # meson_em_residual_alpha_em were not, so the fix never reached the
+    # dashboard. Effect on m_K/m_pi is 0.0066 ppb -- the L2 verdict is
+    # unchanged; the defect was in what the number CLAIMED, not what it did.
+    from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
+    _alpha_em_inv = alpha_em_inv_derived(q0)
     _mk_sq_over_mpi_sq = _qcg_strong + (1 / _alpha_em_inv) / _pi * _hbar_factor
     mk_pred = mp.sqrt(_mk_sq_over_mpi_sq)
     rows.append(_row_for(
         "m_K/m_pi", mk_pred,
-        "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces "
-        "Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, "
-        "qou:QOU.BraidKnot.meson_EM_closed_form); α_em is a CLASS-A "
-        "acknowledged anchor (CS ansatz conditional on Witten-κ class)",
+        "[3]_q·[4]_q + (α_em/π)·(1+log(1+ℏ_q)) — closed form. Strong core "
+        "Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4). EM factor is the "
+        "FULL series: the two-term truncation (3q²−1)/(2q²) was removed "
+        "2026-08-22 as a data-selected stopping point (owner directive "
+        "2026-08-09), costing 23.45 → 51.48 ppb — still inside the "
+        "263.6 ppb target at 5.1× margin. NOT parameter-free: α_em is a "
+        "CLASS-A acknowledged anchor (CS ansatz conditional on the open "
+        "Witten-κ sorry) and the (3,4) pair is scan-selected — see "
+        "docs/audits/2026-08-22-mK-mpi-l2-red-team.md",
     ))
 
     return {

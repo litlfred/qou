@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0103325v4
-doc_title: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine"
+doc_title: "Quantum algebras in phenomenological description of particle properties"
 section_id: sec-002-3-octet-baryon-mass-sum-rules-best-can
 section_title: "Octet baryon mass sum rules: best can-"
 section_number: 3
 pages: 2-3
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
-doc_brief: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine — 28 sections: Introduction; V ector meso"
+doc_brief: "Quantum algebras in phenomenological description of particle properties — 28 sections: Introduction; V ector mesons: q-deformation vs m; Octet baryon mass sum rules: best"
 ---
 didates from q-deformation
 Using Uq(sun), the q-deformed mass relation

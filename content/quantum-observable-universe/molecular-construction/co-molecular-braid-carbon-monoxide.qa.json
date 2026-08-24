@@ -882,6 +882,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.841Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -901,6 +917,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.884Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -920,6 +952,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 291 words)"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.927Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -939,6 +987,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 291 words)"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.968Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -958,6 +1022,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:14.007Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: final prose sentence is: \"The LP dual optimises the assignment of which 3 of carbon's 4 valence electrons are shared (and which 2 of oxygen's valence electrons are shared) b...\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -977,6 +1057,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:14.047Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -996,6 +1092,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:14.086Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: final sentence checked against the body: \"The LP dual optimises the assignment of which 3 of carbon's 4 valence electrons are shared (and which 2 of oxygen's valence electrons are shared) b...\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1015,6 +1127,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:14.127Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1034,6 +1162,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:14.167Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Descriptive build text; no inflated claim.",
+        "notes": "CARRIED FINDING (internal inconsistency, three incompatible electron accountings): Stage 1 says oxygen has 'two open valence sites, two lone pairs' (O shares 2). Stage 2 'After assembly' says C retains 2 core + 1 lone pair = 4 and O retains 2 core + 1 lone pair = 4, i.e. C shares 2 and O shares 4 - the dative picture, which sums to the stated 6 shared electrons and agrees with prop:co-lp-dual-binding. Stage 3 step 5 says the LP assigns 'which 3 of carbon's 4 valence electrons are shared (and which 2 of oxygen's valence electrons are shared)' - that is 5 electrons, not 6, and contradicts both of the above. Verified clean in the same block: 18 = 12+6, 24 = 16+8, 42 = 18+24, 6x8 = 48 proton pairs, 3 pairs x 2 = 6 attractive crossings."
       }
     ],
     "trap-nonspeakable": [
@@ -1053,6 +1197,22 @@
         "reviewed_at": "2026-08-15T10:31:01.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "309dc77d096c",
+          "ts": "bc965ecb1e77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:14.204Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the example block (three-stage build; recomputed 18/24/42 strands, 6x8=48 proton pairs, 3x2=6 attractive crossings; audited the electron bookkeeping). Judged on the whole text: read aloud end to end (15 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1075,5 +1235,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:14.204Z"
 }

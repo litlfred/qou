@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:26.962Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.004Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.045Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.087Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.128Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.170Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.211Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.252Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1503,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.295Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1537,21 @@
         "reviewed_at": "2026-08-15T10:31:00.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fff130dea4cf",
+          "ts": "5e863811a301"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:27.335Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Short technical glossary entry (definition + Mathlib reference); no trap constructions in any of the ten categories."
       }
     ],
     "wall-base-ring-minimal": [

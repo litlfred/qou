@@ -1772,6 +1772,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:19.590Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of proposition. No denials."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1791,6 +1806,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:19.712Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Statement-first."
       }
     ],
     "trap-em-dash": [
@@ -1810,6 +1840,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:19.830Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1829,6 +1874,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:19.947Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Gram matrix, LP cost vectors, shadow prices' is a substantive enumeration of the three LP objects the scalar cancels in."
       }
     ],
     "trap-closing-aphorism": [
@@ -1848,6 +1908,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:20.028Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the standing archimedean-specialisation boilerplate."
       }
     ],
     "trap-meta-commentary": [
@@ -1867,6 +1942,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:20.079Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1886,6 +1976,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:20.155Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1905,6 +2010,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:20.210Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1924,6 +2044,21 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:20.261Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'exact up to a global scalar' is precise and qualified."
       }
     ],
     "trap-nonspeakable": [
@@ -1943,6 +2078,22 @@
         "reviewed_at": "2026-08-15T10:31:00.360Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9b1c9e336954",
+          "ts": "09e93aeaa7bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:33:20.309Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "Two out-of-criterion notes. (1) STATEMENT/PROOF MISMATCH: this block gives C(n,q) = (-q^{1/2}-q^{-1/2})^{n-1} with no writhe factor, while its proof sibling gives C(n,q) = (-q^{1/2}-q^{-1/2})^{n-1} (-q^{-3/2})^{-w(beta)} and explicitly notes the writhe term only cancels for equal-writhe braids; as stated here the proposition is false for braids of different writhe. (2) CONVENTION: that C is the loop value (-1/z)^{n-1} at convention C, since 1/(q^{1/2}+q^{-1/2}) is exactly z_C; under production convention D the loop value is 1/z_D = (q^2+1)/q^3. Not load-bearing for the ratio claim (any C depending only on n, q, w cancels), but the identity J = C tr_M as written is convention-C-tied. Cross-check: z/z_- = q^4 identically at D but not at C (symbolic), i.e. only D kills l(lambda)>=3, so the Jones/TL reading belongs to D."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1966,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:33:20.309Z"
 }

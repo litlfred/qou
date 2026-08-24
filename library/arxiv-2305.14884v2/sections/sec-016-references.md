@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2305.14884v2
-doc_title: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
+doc_title: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-016-references
 section_title: "References"
 section_number: null
 pages: 46-48
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
-doc_brief: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further"
+doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)"
 ---
 [1] Jørgen Ellegaard Andersen and Rinat Kashaev. The Teichm¨ uller T QFT. In Proceedings of the Interna-
 tional Congress of Mathematicians—Rio de Janeiro 2018. Vol . III. Invited lectures , pages 2541–2565.

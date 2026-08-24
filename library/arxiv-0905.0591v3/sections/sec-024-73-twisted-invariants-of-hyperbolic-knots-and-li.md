@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0905.0591v3
-doc_title: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS"
+doc_title: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS"
 section_id: sec-024-73-twisted-invariants-of-hyperbolic-knots-and-li
 section_title: "Twisted invariants of hyperbolic knots and links"
 section_number: 7.3
 pages: 25-25
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
-doc_brief: "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 link. Then the corresponding representation π1(S3 \νL) →PSL (2, C) lifts to a canonical
 representation γcan : π1(S3 \νL) → SL(2, C) and it induces the adjoint representation

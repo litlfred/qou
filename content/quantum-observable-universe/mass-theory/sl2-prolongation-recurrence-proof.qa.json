@@ -1202,6 +1202,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.124Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No assert-by-denying constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1221,6 +1236,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.164Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Cayley-Hamilton, symplectic argument, substitution, Lean citation; linear."
       }
     ],
     "trap-em-dash": [
@@ -1240,6 +1270,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 138 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.204Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1259,6 +1304,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 138 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.246Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1278,6 +1338,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.286Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Ends on the tau-recovery formula and a QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1297,6 +1372,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.325Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "The Lean rewrite chain is provenance, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1316,6 +1406,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.364Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Each step advances the argument."
       }
     ],
     "trap-performed-warmth": [
@@ -1335,6 +1440,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.407Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1354,6 +1474,21 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.450Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No unqualified maxima; the proof does not repeat the parent's 'last open number' claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1373,6 +1508,22 @@
         "reviewed_at": "2026-08-15T10:31:00.355Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cc90875f9070",
+          "ts": "fe8e92492527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.489Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Three compact paragraphs around one display.",
+        "notes": "VERIFIED: Cayley-Hamilton for 2x2 is B^2 = tr(B)B - det(B)1; a 2-dimensional space carrying a preserved non-degenerate alternating form gives B in Sp(2) = SL_2 hence det B = 1; B^{n+2} = B^n(tau B - 1) = tau B^{n+1} - B^n; and tau = (a^(n) + a^(n+2))/a^(n+1) inverts the recurrence correctly. The standard facts invoked are also right — the cup-product pairing is topological hence flat for the Gauss-Manin connection, and Hodge-Riemann makes the (1,0)-(0,1) pairing perfect for a curve. The one asserted step is that the S_5-invariant form restricts NON-DEGENERATELY to the rank-2 W-isotypic plane, which is plausible for a self-dual W but is stated rather than shown. The parent block's superseded 'last open number' claim does not appear here."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1395,5 +1546,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:58:04.489Z"
 }

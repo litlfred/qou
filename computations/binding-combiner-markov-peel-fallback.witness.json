@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-15T20:47:53.430916+00:00",
-  "commitSha": "f933ce228900e206c942f5e4448d5c5ffd35cc19",
+  "computedAt": "2026-08-19T21:23:33.812841+00:00",
+  "commitSha": "7e3bd0a3378564d3c3f253bdae475d42c79ab069",
   "assertions": [
     {
       "name": "a3plus_atoms_bypass_rank_deficiency_blocker",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 18,
   "computation": "binding-combiner-markov-peel-fallback",
   "scriptFile": "binding_combiner_markov_peel_fallback.py",
   "scriptHash": "8eddf0a46788",
@@ -56,8 +56,8 @@
           "reduced_term_count": 16,
           "trace_sympy_ops": 589,
           "word_length": 22,
-          "elapsed_reduce_sec": 0.339,
-          "elapsed_trace_sec": 0.002
+          "elapsed_reduce_sec": 0.35,
+          "elapsed_trace_sec": 0.003
         },
         "bound_config": {
           "tr_M_at_q0": "0.57509087162981031675163288302552596606318116186846",
@@ -65,7 +65,7 @@
           "reduced_term_count": 32,
           "trace_sympy_ops": 1387,
           "word_length": 23,
-          "elapsed_reduce_sec": 0.425,
+          "elapsed_reduce_sec": 0.464,
           "elapsed_trace_sec": 0.006
         },
         "B_dim": "0.55662603269239976597967468509",
@@ -86,7 +86,7 @@
           "reduced_term_count": 64,
           "trace_sympy_ops": 2373,
           "word_length": 33,
-          "elapsed_reduce_sec": 1.83,
+          "elapsed_reduce_sec": 1.938,
           "elapsed_trace_sec": 0.014
         },
         "bound_config": {
@@ -95,8 +95,8 @@
           "reduced_term_count": 256,
           "trace_sympy_ops": 11958,
           "word_length": 35,
-          "elapsed_reduce_sec": 9.623,
-          "elapsed_trace_sec": 0.167
+          "elapsed_reduce_sec": 9.829,
+          "elapsed_trace_sec": 0.173
         },
         "B_dim": "0.888568568438537398588003309107",
         "B_MeV_E0": "0.695156877552",
@@ -116,8 +116,8 @@
           "reduced_term_count": 64,
           "trace_sympy_ops": 2352,
           "word_length": 33,
-          "elapsed_reduce_sec": 1.867,
-          "elapsed_trace_sec": 0.021
+          "elapsed_reduce_sec": 1.864,
+          "elapsed_trace_sec": 0.018
         },
         "bound_config": {
           "tr_M_at_q0": "0.40370991405397142290816009300989545876232380731516",
@@ -125,8 +125,8 @@
           "reduced_term_count": 128,
           "trace_sympy_ops": 5316,
           "word_length": 35,
-          "elapsed_reduce_sec": 3.017,
-          "elapsed_trace_sec": 0.054
+          "elapsed_reduce_sec": 3.025,
+          "elapsed_trace_sec": 0.047
         },
         "B_dim": "0.89296569819097259482973920222",
         "B_MeV_E0": "0.698596899063",
@@ -146,8 +146,8 @@
           "reduced_term_count": 256,
           "trace_sympy_ops": 8282,
           "word_length": 44,
-          "elapsed_reduce_sec": 9.827,
-          "elapsed_trace_sec": 0.126
+          "elapsed_reduce_sec": 9.567,
+          "elapsed_trace_sec": 0.125
         },
         "bound_config": {
           "tr_M_at_q0": "0.16095137168262356078215455930035027559197455023721",
@@ -155,8 +155,8 @@
           "reduced_term_count": 1024,
           "trace_sympy_ops": 38452,
           "word_length": 47,
-          "elapsed_reduce_sec": 49.051,
-          "elapsed_trace_sec": 1.729
+          "elapsed_reduce_sec": 47.993,
+          "elapsed_trace_sec": 1.639
         },
         "B_dim": "1.11983177984602284985418330783",
         "B_MeV_E0": "0.876081814181",
@@ -180,7 +180,7 @@
     "bypasses_rank_deficiency_blocker": true,
     "closure_status": "blocker-free baseline; does NOT close binding (under-binds, wrong A-trend) — trace difference has no magic-A scale factor",
     "color_weighting_note": "strict_averaged used; canonical bring_color_weighted delta is a sub-0.1% numeric perturbation not representable in the exact-symbolic-in-q trace path",
-    "total_wall_sec": 80.8
+    "total_wall_sec": 79.8
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

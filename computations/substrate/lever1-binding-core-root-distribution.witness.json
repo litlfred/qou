@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-02T16:49:55.058421+00:00",
-  "commitSha": "a2d8220258426ddc9ab2106d631d4430760fa92c",
+  "computedAt": "2026-08-21T22:04:59.876859+00:00",
+  "commitSha": "dae5529271403c2a8beef93cfc3a02cc2ec86385",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "lever1-binding-core-root-distribution",
   "scriptFile": "lever1_binding_core_root_distribution.py",
   "scriptHash": "d49b691d888a",
-  "scriptCommitSha": "a2d8220258426ddc9ab2106d631d4430760fa92c",
+  "scriptCommitSha": "5776312548de7899fa5d45c2d28257d433526a92",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +18,12 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Lever-1 binding cores R_m: exact on/off-unit-circle root distribution (Dickson y=q+1/q reduction + Sturm count) and R_m(1) prime factorization.",
   "data": {
@@ -36,6 +40,10 @@
   },
   "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
   "bean": "z2bn",
+  "computationDetail": {
+    "script": "computations/substrate/lever1_binding_core_root_distribution.py",
+    "reads": "computations/substrate/lever1-binding-correction-cyclotomic-structure.witness.json"
+  },
   "root_distribution": {
     "m=6": {
       "deg": 8,

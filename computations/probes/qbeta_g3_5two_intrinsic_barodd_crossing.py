@@ -59,6 +59,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_deformed_bilinear",
@@ -66,7 +67,7 @@ _spec = importlib.util.spec_from_file_location(
 _db = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_db)
 
-mp.mp.dps = 50
+set_compute_dps()
 
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")

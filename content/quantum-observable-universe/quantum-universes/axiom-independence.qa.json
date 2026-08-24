@@ -1234,6 +1234,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a consequence of it.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.502Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). Four 'X is not a consequence of Y' constructions (L5 'strictly stronger than the Hopf axioms', L7 'a genuine restriction ... not a consequence of it', L9 'follows by linearity ... rather than being assumed', L11 'an assumption rather than a theorem'). All fall in the substantive-mathematical-contrast false-positive class: the block's entire subject IS axiom independence, i.e. exactly the claim that one axiom does not follow from the others.",
+        "notes": "no fix needed - contrast is the block's content"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1253,6 +1270,23 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.545Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1272,6 +1306,23 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.584Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -1291,6 +1342,23 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.624Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). no reflex three-item list; enumerations present are content-determined",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1310,6 +1378,23 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.664Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). Final line 'In full generality, all four axioms are independent.' is the plain answer to the block's opening question, not a quotable-sounding placed closer.",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -1329,6 +1414,23 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.705Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-thesis-restatement": [
@@ -1348,6 +1450,23 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.747Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). Final line aggregates four separately-argued pairwise independence results into the joint claim, and adds the scope qualifier 'in full generality'; it is a conclusion, not a restatement of established prose.",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1367,6 +1486,40 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:13.832Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "severity": "minor",
+        "evidence": "Full read (13 lines, remark 'Independence of the QU axioms'): no personal register, no gratitude, no journey/excitement language; institutional mathematical prose throughout.",
+        "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.788Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1386,6 +1539,23 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.828Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -1405,6 +1575,23 @@
         "reviewed_at": "2026-08-15T10:31:00.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "216c99a8d2bd",
+          "ts": "8447c6b15d85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:07:55.868Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/axiom-independence.md (13 lines, kind=remark, title=\"Independence of the QU axioms\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1427,5 +1614,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:07:55.868Z"
 }

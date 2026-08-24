@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0006111v2
-doc_title: "APPROXIMA TE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane"
+doc_title: "Approximate factorization and concentration for characters of symmetric groups"
 section_id: sec-013-32-generalization-to-other-tensor-states-leth-h0
 section_title: "Generalization to other tensor states. LetH =H0 ⊕H1, be a Z/ 2-graded"
 section_number: 3.2
 pages: 10-11
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
-doc_brief: "APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
+doc_brief: "Approximate factorization and concentration for characters of symmetric groups — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 Hilbert space with grading operator ∆. Endow B(H ⊗q) = B(H)⊗q with a tensor
 stateτ⊗q whereτ is a state on B(H), of the form τ(X) = Tr (TX ), withT a positive

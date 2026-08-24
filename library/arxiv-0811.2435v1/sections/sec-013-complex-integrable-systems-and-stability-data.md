@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.2435v1
-doc_title: "Stability structures, motivic"
+doc_title: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations"
 section_id: sec-013-complex-integrable-systems-and-stability-data
 section_title: "Complex integrable systems and stability data"
 section_number: null
 pages: 35-38
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 In this section we explain how complex integrable systems (w ith some ad-
 ditional structures) give rise to stability data in the grad ed Lie algebra gΓ

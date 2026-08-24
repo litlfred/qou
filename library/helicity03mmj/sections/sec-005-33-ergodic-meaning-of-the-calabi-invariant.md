@@ -1,13 +1,13 @@
 ---
 doc_id: helicity03mmj
-doc_title: "MOSCOW MA THEMA TICAL JOURNAL"
+doc_title: "Geometry of higher helicities"
 section_id: sec-005-33-ergodic-meaning-of-the-calabi-invariant
 section_title: "Ergodic meaning of the Calabi invariant."
 section_number: 3.3
 pages: 8-10
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
-doc_brief: "MOSCOW MATHEMATICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
+doc_brief: "Geometry of higher helicities — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 ﬁelds with an invariant solid torus knotted in a complicated way. However, in
 the case of a “complicated ﬁeld” in a “simple” standard solid torus the following

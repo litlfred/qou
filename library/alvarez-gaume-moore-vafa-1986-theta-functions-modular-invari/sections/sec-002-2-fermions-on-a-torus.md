@@ -1,13 +1,13 @@
 ---
 doc_id: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari
-doc_title: "Communications in"
+doc_title: "Theta Functions, Modular Invariance, and Strings"
 section_id: sec-002-2-fermions-on-a-torus
 section_title: "Fermions on a Torus"
 section_number: 2
 pages: 2-4
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
-doc_brief: "Commun. Math. Phys. 106, 1-40 (1986) Mathematical Physics© Springer-Verlag 1986 — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some"
+doc_brief: "Theta Functions, Modular Invariance, and Strings — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string"
 ---
 In this section we will consider fermions on a torus. We label the points of the torus
 by the complex quantity σ1 + τσ2, where σx and σ2 are periodic variables with

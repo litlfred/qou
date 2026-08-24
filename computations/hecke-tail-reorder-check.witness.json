@@ -1,0 +1,487 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-21T22:08:21.385132+00:00",
+  "commitSha": "c598b0aa5f1d71f2c684d1a47f22efe80f4217da",
+  "assertions": [
+    {
+      "name": "tails_where_the_reordered_schedule_fails",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 154,
+  "computation": "hecke-tail-reorder-check",
+  "scriptFile": "hecke_tail_reorder_check.py",
+  "scriptHash": "ba373c238508",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "The tail's two blocks act on different terms, so their steps commute and MultiStepReduction fixes no order beyond each step's redex being present. Running block 2 BEFORE block 1 -- the reverse of the engine's deg-lex schedule -- means block 2's bystander is term 1 in its PRE-block form, which is not an extension of the block's left context. Measured: under the reordered schedule [block2, block1, monic, monic] BOTH hpark hypotheses hold, every step's source is unique in the term list (monicStep's hne), and the chain still reaches zero. So the collision hecke-tail-collision-check found is a scheduling artifact: nothing needs weakening, the tail assembles from the lemmas already on main.",
+  "parameters": {
+    "engine_schedule": "block1, monic, monic, block2",
+    "reordered_schedule": "block2, block1, monic, monic",
+    "why_it_is_legal": "the two blocks act on different terms; SingleStepReduction requires only that the redex be present with nonzero coefficient"
+  },
+  "data": {
+    "cases_checked": 8,
+    "cases": [
+      {
+        "a": 3,
+        "b": 4,
+        "read": true,
+        "tail_steps": 14,
+        "engine_order_is_block1_monic_monic_block2": true,
+        "reordered_hpark": {
+          "block2": {
+            "A_rel_i": [
+              2,
+              1
+            ],
+            "bystander_rel_i": [
+              1,
+              0,
+              2,
+              1,
+              3,
+              2,
+              4,
+              0
+            ],
+            "holds": true
+          },
+          "block1": {
+            "A_rel_i": [
+              1
+            ],
+            "bystander_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4,
+              0,
+              1,
+              2
+            ],
+            "holds": true
+          }
+        },
+        "reordered_all_sources_unique": true,
+        "reordered_reaches_zero": true,
+        "reorder_works": true
+      },
+      {
+        "a": 3,
+        "b": 5,
+        "read": true,
+        "tail_steps": 20,
+        "engine_order_is_block1_monic_monic_block2": true,
+        "reordered_hpark": {
+          "block2": {
+            "A_rel_i": [
+              2,
+              1
+            ],
+            "bystander_rel_i": [
+              1,
+              0,
+              2,
+              1,
+              3,
+              2,
+              4,
+              5,
+              0
+            ],
+            "holds": true
+          },
+          "block1": {
+            "A_rel_i": [
+              1
+            ],
+            "bystander_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4,
+              5,
+              0,
+              1,
+              2
+            ],
+            "holds": true
+          }
+        },
+        "reordered_all_sources_unique": true,
+        "reordered_reaches_zero": true,
+        "reorder_works": true
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "read": true,
+        "tail_steps": 20,
+        "engine_order_is_block1_monic_monic_block2": true,
+        "reordered_hpark": {
+          "block2": {
+            "A_rel_i": [
+              2,
+              1,
+              2
+            ],
+            "bystander_rel_i": [
+              1,
+              2,
+              0,
+              1,
+              3,
+              2,
+              4,
+              3,
+              5,
+              0
+            ],
+            "holds": true
+          },
+          "block1": {
+            "A_rel_i": [
+              1,
+              2
+            ],
+            "bystander_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4,
+              5,
+              0,
+              1,
+              2,
+              3
+            ],
+            "holds": true
+          }
+        },
+        "reordered_all_sources_unique": true,
+        "reordered_reaches_zero": true,
+        "reorder_works": true
+      },
+      {
+        "a": 4,
+        "b": 6,
+        "read": true,
+        "tail_steps": 28,
+        "engine_order_is_block1_monic_monic_block2": true,
+        "reordered_hpark": {
+          "block2": {
+            "A_rel_i": [
+              2,
+              1,
+              2
+            ],
+            "bystander_rel_i": [
+              1,
+              2,
+              0,
+              1,
+              3,
+              2,
+              4,
+              3,
+              5,
+              6,
+              0
+            ],
+            "holds": true
+          },
+          "block1": {
+            "A_rel_i": [
+              1,
+              2
+            ],
+            "bystander_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              0,
+              1,
+              2,
+              3
+            ],
+            "holds": true
+          }
+        },
+        "reordered_all_sources_unique": true,
+        "reordered_reaches_zero": true,
+        "reorder_works": true
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "read": true,
+        "tail_steps": 26,
+        "engine_order_is_block1_monic_monic_block2": true,
+        "reordered_hpark": {
+          "block2": {
+            "A_rel_i": [
+              2,
+              1,
+              2,
+              3
+            ],
+            "bystander_rel_i": [
+              1,
+              2,
+              3,
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              4,
+              6,
+              0
+            ],
+            "holds": true
+          },
+          "block1": {
+            "A_rel_i": [
+              1,
+              2,
+              3
+            ],
+            "bystander_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "holds": true
+          }
+        },
+        "reordered_all_sources_unique": true,
+        "reordered_reaches_zero": true,
+        "reorder_works": true
+      },
+      {
+        "a": 5,
+        "b": 7,
+        "read": true,
+        "tail_steps": 36,
+        "engine_order_is_block1_monic_monic_block2": true,
+        "reordered_hpark": {
+          "block2": {
+            "A_rel_i": [
+              2,
+              1,
+              2,
+              3
+            ],
+            "bystander_rel_i": [
+              1,
+              2,
+              3,
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              4,
+              6,
+              7,
+              0
+            ],
+            "holds": true
+          },
+          "block1": {
+            "A_rel_i": [
+              1,
+              2,
+              3
+            ],
+            "bystander_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "holds": true
+          }
+        },
+        "reordered_all_sources_unique": true,
+        "reordered_reaches_zero": true,
+        "reorder_works": true
+      },
+      {
+        "a": 6,
+        "b": 7,
+        "read": true,
+        "tail_steps": 32,
+        "engine_order_is_block1_monic_monic_block2": true,
+        "reordered_hpark": {
+          "block2": {
+            "A_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4
+            ],
+            "bystander_rel_i": [
+              1,
+              2,
+              3,
+              4,
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6,
+              5,
+              7,
+              0
+            ],
+            "holds": true
+          },
+          "block1": {
+            "A_rel_i": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "bystander_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "holds": true
+          }
+        },
+        "reordered_all_sources_unique": true,
+        "reordered_reaches_zero": true,
+        "reorder_works": true
+      },
+      {
+        "a": 6,
+        "b": 8,
+        "read": true,
+        "tail_steps": 44,
+        "engine_order_is_block1_monic_monic_block2": true,
+        "reordered_hpark": {
+          "block2": {
+            "A_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4
+            ],
+            "bystander_rel_i": [
+              1,
+              2,
+              3,
+              4,
+              0,
+              1,
+              2,
+              3,
+              5,
+              4,
+              6,
+              5,
+              7,
+              8,
+              0
+            ],
+            "holds": true
+          },
+          "block1": {
+            "A_rel_i": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "bystander_rel_i": [
+              2,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "holds": true
+          }
+        },
+        "reordered_all_sources_unique": true,
+        "reordered_reaches_zero": true,
+        "reorder_works": true
+      }
+    ]
+  },
+  "caveats": [
+    "Off-diagonal only (b > a), a = 3..6. The diagonal runs blockPassFromTwo and is not covered.",
+    "These are the hypotheses READ OFF the lemma statements and checked against the measured words. A pass does not mean the Lean composes: whether the terms unify on the nose is a Lean question, attempted separately."
+  ]
+}

@@ -83,18 +83,17 @@ axiom evenPower_necessary_for_blockPosSemidef :
     -- The decidable proxy:
     (∀ g ∈ w.eraseDups, (w.count g + w.count (-g)) % 2 = 0)
 
-/-- **Length-bound proxy is necessary for canonical-T_w-search.**
+/-- The **length-bound proxy** for the canonical-T_w search: a candidate
+    word is within the enumerator's search space only if `w.length ≤ L_max`
+    (the R5-full SDP search bounds candidate length to `L_K_max ≤ 4`, per
+    `binding-k-enumerator`'s parameter).
 
-    The R5-full SDP search for canonical T_w bounds candidate
-    word length to `L_K_max ≤ 4` (per `binding-k-enumerator`'s
-    parameter).  Any candidate violating this bound is excluded
-    from the search by hypothesis; the bound is a categorical
-    necessary condition for "candidate considered by the
-    enumerator". -/
-theorem length_bound_necessary {w : List Int} {L_max : ℕ}
-    (h : ¬(w.length ≤ L_max)) :
-    -- The "in-enumerator-search-space" condition fails:
-    ¬(w.length ≤ L_max) := h
+    Named as a decidable predicate (§3b: naming, not asserting). The
+    necessity is the enumerator's search-space restriction — a definitional
+    bound, not a derived theorem. The previous `(h : ¬P) : ¬P := h` was a
+    self-assuming tautology that asserted nothing about braid words. -/
+def withinLengthBound (w : List Int) (L_max : ℕ) : Prop :=
+  w.length ≤ L_max
 
 /-- **Structural-validity proxy is necessary for braid-word
     interpretation.**  A binding word with a zero-index generator

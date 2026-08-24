@@ -1,13 +1,13 @@
 ---
 doc_id: helicity03mmj
-doc_title: "MOSCOW MA THEMA TICAL JOURNAL"
+doc_title: "Geometry of higher helicities"
 section_id: sec-008-41-linking-of-a-curve-with-a-foliation
 section_title: "Linking of a curve with a foliation"
 section_number: 4.1
 pages: 12-14
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
-doc_brief: "MOSCOW MATHEMATICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
+doc_brief: "Geometry of higher helicities — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 foliation of codimension 2 and a divergence-free vector ﬁeld is a direct generaliza-
 tion of the cross-helicity, cf. [ 2], [ 16], [ 17]. The corresponding helicity invariants in

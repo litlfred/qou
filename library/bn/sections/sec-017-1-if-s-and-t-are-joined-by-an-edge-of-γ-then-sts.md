@@ -1,13 +1,13 @@
 ---
 doc_id: bn
-doc_title: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009"
+doc_title: "Braid groups and Hodge theory"
 section_id: sec-017-1-if-s-and-t-are-joined-by-an-edge-of-γ-then-sts
 section_title: "If s and t are joined by an edge of Γ, then sts = tst (we say s and t"
 section_number: 1
 pages: 22-27
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
-doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
+doc_brief: "Braid groups and Hodge theory — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their"
 ---
 braid);
 2. Otherwise, s and t commute.

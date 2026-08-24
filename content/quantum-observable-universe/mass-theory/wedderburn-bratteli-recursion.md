@@ -11,4 +11,4 @@ $$
 
 *The sum runs over Bratteli edges $\mu \subset \lambda$. The coefficient $F_q$ is a q-rational function determined by the Hoefsmit seminormal eigenvalues.*
 
-This recursion confirms that $\alpha_k(H_n)$ at a fixed $k$ involves only finitely many strata. The tower of Jones-Markov weights propagates dynamically without requiring expensive $p(n) \times p(n)$ linear-system solves.
+This recursion confirms that $\alpha_k(H_n)$ at a fixed $k$ involves only finitely many strata. The tower of Jones-Markov weights propagates without requiring expensive $p(n) \times p(n)$ linear-system solves.

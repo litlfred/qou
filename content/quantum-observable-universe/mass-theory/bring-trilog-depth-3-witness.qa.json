@@ -1752,6 +1752,22 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.228Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 118-word conjecture."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1771,6 +1787,22 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.262Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 118-word conjecture."
       }
     ],
     "trap-em-dash": [
@@ -1790,6 +1822,22 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 105 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.296Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 118-word conjecture."
       }
     ],
     "trap-triples": [
@@ -1809,6 +1857,22 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 105 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.330Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 118-word conjecture."
       }
     ],
     "trap-closing-aphorism": [
@@ -1828,6 +1892,23 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.367Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Final sentence is a placed significance closer: 'This constitutes the first depth-3 canonical witness, subjecting the graded-Mikusinski correspondence to falsifiability tests at depths 2 and 3.'",
+        "notes": "proposed (structural, NOT applied): state what the witness verifies and at what precision; move the 'first' claim to authorNotes if it is worth recording at all."
       }
     ],
     "trap-meta-commentary": [
@@ -1847,6 +1928,22 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.401Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 118-word conjecture."
       }
     ],
     "trap-thesis-restatement": [
@@ -1866,6 +1963,22 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.435Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 118-word conjecture."
       }
     ],
     "trap-performed-warmth": [
@@ -1885,6 +1998,22 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.470Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 118-word conjecture."
       }
     ],
     "trap-superlative": [
@@ -1904,6 +2033,23 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.504Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Five unqualified intensifiers in 118 words: 'verifies this equivalence to 50 decimal places', 'confirms the sum identically', 'a strict 50-digit cross-validation', 'cleanly matches', 'the first depth-3 canonical witness', 'constitute the primary candidate'.",
+        "notes": "proposed: re-hedge; see also the RIGOR note, which says the 'primary candidate' claim is not merely unhedged but probably wrong."
       }
     ],
     "trap-nonspeakable": [
@@ -1923,6 +2069,23 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f1dee0d794d0",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.537Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Three short paragraphs parse.",
+        "notes": "RIGOR (not a trap): 'hyperbolic 4-manifold volumes on Bring-cusped quotients constitute the primary candidate' for a depth-3 geometric realisation looks wrong on its face -- by Gauss-Bonnet, the volume of an even-dimensional hyperbolic manifold is a rational multiple of its Euler characteristic times a constant, i.e. it lands in pi^2 * Q (a Tate/weight-2 object), which is exactly what a genuinely new depth-3 period cannot be. The block's own sibling (bring-figure-eight-depth-2-witness) lists the three honest depth-3 routes (Li_3 at an algebraic argument, Chern-Simons, a MZV such as zeta(3)) and does not include 4-manifold volumes. Also 'The canonical evaluation verifies ...' is very likely the 'canonical' for 'numerical' token substitution."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1946,5 +2109,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:38.537Z"
 }

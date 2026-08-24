@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1504.07260v3
-doc_title: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Swe"
+doc_title: "Fricke S-duality in CHL models"
 section_id: sec-010-32-self-duality-and-the-witten-index
 section_title: "Self-duality and the Witten index"
 section_number: 3.2
 pages: 20-22
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
-doc_brief: "Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden 2Theory Group, SLAC National Accelerator Laborat"
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting"
 ---
 From the above discussion, it is clearly important to determine which CHL models are self-
 dual under Fricke S-duality. This can be determined simply in terms of the Frame shape∏

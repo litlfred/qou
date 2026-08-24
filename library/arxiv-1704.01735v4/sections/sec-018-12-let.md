@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1704.01735v4
-doc_title: "Modular curves, invariant theory and E8 Lei Yang"
+doc_title: "Modular curves, invariant theory and E8"
 section_id: sec-018-12-let
 section_title: "Let"
 section_number: 12
 pages: 24-24
 source_pdf: 1704.01735v4.pdf
 source_sha256: 3935747ae9291f76
-doc_brief: "Modular curves, invariant theory and E8 Lei Yang — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
+doc_brief: "Modular curves, invariant theory and E8 — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
 ---
 Φ 20 = w5
 0 + w5

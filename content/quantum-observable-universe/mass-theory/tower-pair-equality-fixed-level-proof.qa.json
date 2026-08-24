@@ -1177,6 +1177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.207Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "\"this residual is not a sharpness gap in the level-0 pair formula ... rather, the residual is the level->=1 contribution\" is a substantive attribution of an error term, not manufactured emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.248Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 230 words)"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.288Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Two spaced em-dashes in 3.0k, one a true parenthetical (\"- the set of unordered pairs -\")."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1279,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 230 words)"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.328Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1313,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.370Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Ends on an explicitly open bound (\"once the uniform Delta_max bound is established (still open)\") - honest scope, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1347,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.412Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Section labels only."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1381,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.453Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "The closing paragraph adds the truncation-error bound rather than restating the lemma."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1415,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.492Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1449,22 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.531Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Numbers verified: the quoted sub-1% residuals, 0.57% for 6Li and 0.86% for 16O, match the cited source block mass-endomorphism-jet-tower-table1-data.md exactly (rows \"6Li ",
+        "notes": " 2.00% | 0.57%\" and \"16O | 2.45% | 0.86%\"). The truncation claim is properly gated as open. The P_n index-set defect recorded on the lemma block recurs here in the restated formula.|"
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1484,21 @@
         "reviewed_at": "2026-08-15T10:31:00.631Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "62e3c8209d0f",
+          "ts": "da7413a7aec9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:23.570Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1521,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:08:23.570Z"
 }

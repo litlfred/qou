@@ -359,13 +359,51 @@ user's last message, not the most recently mentioned file.
         one *deletes the field this audit keys on* (measured: 15 keys in, 7
         and 9 out). Fix the producer to emit provenance first.
 
-      **And a `substantive` verdict is not a work order — measured, 39 %.**
-      Of 72 substantive producers actually re-run under a time budget, only
-      **28 moved a single mathematical field**; 44 were byte-identical, 3
-      crashed, 2 timed out. So "the code changed, therefore the payload can
-      move" over-flags by roughly 61 %, and the genuinely actionable queue is
-      ~105 of 268, not 268 — and not the 751 the raw self-stale count suggests.
-      Re-run to decide; do not treat the class as a to-do list.
+      **A `substantive` verdict over-flags — but by ~27 %, not the 61 % this
+      text used to claim. CORRECTED 2026-08-23.** The old figure (39 % move,
+      28 of 72) was measured PER WITNESS, and the queue was then 268 witnesses
+      over only 146 producers with **119 of them from one producer**. So one
+      "did not move" fact was counted ~119 times and dragged the rate down.
+      **Do not quote 39 %.**
+
+      **MEASURED, third attempt: 58 % move, so `substantive` over-flags by
+      ~41 %.** Full sweep, all **152 producers**, baselined from git and
+      calibrated against three hand-verified answers before it was trusted:
+
+          completed (rate denominator)   128
+            moved, substantive field      74   -> 58 %
+            moved, noise only              2
+            identical                     52
+          excluded: 14 crashed, 10 timed out
+
+      **Both earlier figures were wrong, in opposite directions, and both were
+      mine.** 39 % (implying 61 % over-flag) came from PER-WITNESS sampling when
+      119 of 268 witnesses shared one producer, so a single "did not move" fact
+      counted ~119 times. 73 % (implying 27 % over-flag) came from a
+      CONTAMINATED BASELINE: the sweep snapshotted `before` from the working
+      tree it was itself mutating, and producers write sibling witnesses. Two of
+      three spot-checked MOVED verdicts under that method were false.
+
+      **Baseline from git** (`git show origin/main:<witness>`), never from a
+      tree your own sweep writes to. That single change turned both known false
+      positives back to IDENTICAL while leaving the known true positive intact.
+
+      **16 % of producers cannot complete at all** — 14 crash, 10 exceed 240 s.
+      They are excluded from the rate, and they are their own backlog: a
+      producer that cannot run is a stronger defect than one whose numbers
+      drifted.
+
+      Two lessons in the measurement itself, both worth more than the number:
+      **mask volatile keys or you measure your own harness** — `timestamp`,
+      `elapsed_seconds`, `measured_at`, `start_time_monotonic` and the
+      `/invocation/*` block all change every run; and **record WHICH fields
+      moved**, so a mask gap is re-classifiable from the checkpoint instead of
+      costing another full sweep. Both errors were made here before being
+      caught, the first one twice.
+
+      So re-run to decide, and expect roughly 1 in 4 to be a false alarm rather
+      than 3 in 5. Sample is 49 of 152 producers; timeouts and crashes are
+      excluded from the rate.
 
       **Producers write SIBLING witnesses.** The isotope producer rewrote 21
       `canonical-isotope-witness-Z*.json` files that the sampler never targeted.
@@ -373,9 +411,16 @@ user's last message, not the most recently mentioned file.
       `computations/` tree afterwards, not the one file it was looking at, or it
       leaves a dirty tree that reads as real work.
 
-      And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
-      resolves to nothing, because rebase-merge (rule 8) rewrote the branch
-      sha the witness was written under. This is the same effect the
+      And ~49 % of the backlog is `rewritten` — the recorded `commitSha`
+      resolves to nothing. **This text previously named rebase-merge as the
+      cause; that is confirmed for only 46 of 376.** Agent clones here are
+      **shallow**, so a sha can be missing merely because the history was never
+      fetched. Split on the shallow-boundary date, 46 witnesses were computed
+      after it (sha was in the fetched window ⇒ genuinely rewritten) and 330
+      before it (**cause undetermined**). Do not repeat the stronger claim, and
+      note a direct `git fetch origin <sha>` cannot settle it — GitHub refuses
+      arbitrary-sha fetches regardless of whether the object exists. This is
+      the same effect the
       `scriptCommitSha` ruling above describes, one field over: **"diff the
       producer first" is unrunnable for half the queue**, and hand-patching
       the sha (13 such commits on `main` in one 8-day window) buys only the
@@ -590,7 +635,15 @@ ephemeral.
     > |---|---|
     > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
     > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
-    > | Copilot review | Still expected — this is the one review to wait on. |
+    > | Copilot review | **Does not arrive.** Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+    >
+    > **🛑 So the Phase-4 gate table now has ZERO live external gates, not
+    > one.** All three original gates are gone. The agent's own verification
+    > is not the last gate standing — it is the *only* gate. Act accordingly:
+    > state the verification you actually ran, and do **not** wait on Copilot.
+    > `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a
+    > check run that is never created; that wait can only expire, so skip it
+    > and record why (citing `qou-gwe9`) rather than burning the window.
     >
     > **Phase-4 verification gate (replaces "CI green").** Because CI
     > is unavailable, the agent's own verification *is* the gate — this
@@ -1141,12 +1194,28 @@ ask whether a **formalizable structural claim prunes the class first**:
 This is the **forward** complement to the corpus-grep checklist above
 (which prunes *backward* against already-known results). Worked
 precedents where one structural argument killed an entire numerical
-family this session: `dc_3/dq ≈ 4.6e6` impossible for smooth real `f`
+family this session: `dc_3/dq ≈ 3.84e6` impossible for smooth real `f`
 (kills the real-q c_3 family, [PR #1821](https://github.com/litlfred/qou/pull/1821));
 the PSLQ entropy bound `precision > n_terms·log10(2·height)` (kills the
 12-constant basis, [PR #1805](https://github.com/litlfred/qou/pull/1805));
 A is ~4 sig figs from `c_2..c_10` (no high-precision identification
 possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
+
+> **Figure corrected 2026-08-22 — the conclusion is untouched.** This read
+> `≈ 4.6e6` here and in five other places. That value is the **stale-c₃
+> twin** of the "≈ 3 %" swing this document already corrects two sections
+> up: both were computed from the pre-#1422 muon `c_3 = -2.0097` and its
+> 2.88 % swing, and both should have been re-derived at the same time.
+> With the live anchors (`c_3(p) = -2.0693425728`, `c_3(μ) =
+> -2.0202002328`, `Δq = 1.28e-8`) three independent routes agree:
+> **3.8375e6** by secant, **3.8320e6** from `2.37/u³` at `u = 0.00852`,
+> and `3838404.458` recorded in `rem-qstar`'s own witness as
+> `S_prime_qstar`. Reaching 4.7e6 would need `u = 0.0079595`. Since
+> 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
+> **prune stands and the real-q c₃ family stays killed** — only the
+> quoted magnitude was wrong. The five other sites are audit docs and
+> `local/compute-author` §precedent-table; tracked in `qou-3nva`.
+
 **Caveat:** if the formalization is harder than the probe AND the probe
 is cheap and decisive, just run the probe — this rule targets
 wide/expensive searches, not every one-off check. Full protocol +
@@ -1213,7 +1282,7 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
-> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
+> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
 
 The derivation chain:
 
@@ -1290,7 +1359,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -1328,6 +1397,21 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   five. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
   **never** bare `beats_100x_count`. Full analysis:
   [`docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md`](docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md).
+- **🛑 Even the 1/5 is inflated — the UNCONDITIONAL parameter-free count is
+  0/5 (red-team 2026-08-22).** The single "scoreable win" `m_K/m_π` is itself
+  **not** a parameter-free prediction. Its derived core `√([3]_q·[4]_q)` (a
+  legitimate ~0.1 % categorical postdiction of the strong ratio) misses this
+  observable's own — unusually loose, 264 ppb — 100× target by **385×** on its
+  own; the sub-100× result is manufactured by an EM correction
+  `(α_em/π)·(3q²−1)/(2q²)` whose **truncation order beats the untruncated
+  series** (chosen against the data — the same fit signature the `c_k` red-team
+  caught) and whose `α_em` input is **conditional on an open Lean `sorry`**
+  (Witten-κ Gram determinant). So `beats_100x_scoreable = 1` is the dashboard's
+  arithmetic metric; the count of **unconditional, parameter-free** sub-100×
+  predictions is **0**. State it as "1/5 scoreable — and that 1 is
+  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/5 unconditional**". Full
+  analysis:
+  [`docs/audits/2026-08-22-mK-mpi-l2-red-team.md`](docs/audits/2026-08-22-mK-mpi-l2-red-team.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
@@ -1576,7 +1660,7 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.06 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to

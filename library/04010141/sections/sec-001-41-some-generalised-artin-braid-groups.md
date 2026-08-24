@@ -1,13 +1,13 @@
 ---
 doc_id: 04010141
-doc_title: "Advanced Studies in Pure Mathematics 40, 2004"
+doc_title: "Cellular algebras and diagram algebras in representation theory"
 section_id: sec-001-41-some-generalised-artin-braid-groups
 section_title: "Some generalised Artin braid groups"
 section_number: 4.1
 pages: 13-14
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
-doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
+doc_brief: "Cellular algebras and diagram algebras in representation theory — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to"
 ---
 The generalised Artin group r n of type Bn is well known to be the 
 fundamental group of the space of unordered n-tuples of distinct points 

@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.231Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full table read. Only negations are \"(chiral, not hyperbolic)\" and \"(torus, not hyperbolic)\" in the Vol column.",
+        "notes": "False-positive class \"substantive mathematical contrast\": each negation states the reason the volume entry is 0 (the knot is not hyperbolic). Load-bearing, not manufactured emphasis."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.271Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Pure data table, 12 rows, no connective prose; no setup-then-reframe construction anywhere.",
+        "notes": "No change."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.310Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Zero spaced em-dashes in the file (grep -o \" — \" = 0).",
+        "notes": "No change."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.352Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Row groupings follow Seifert genus g=0..4; no reflex three-item list.",
+        "notes": "No change."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.391Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "File ends on the T(3,5)=10_124 data row; no closing line of any kind.",
+        "notes": "No change."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.431Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "No narration of emphasis; the only annotations are parenthetical knot-type facts.",
+        "notes": "No change."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.472Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Table-data block with no prose sentences; nothing to restate.",
+        "notes": "No change."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.514Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "No personal register.",
+        "notes": "No change."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.557Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "No maximum-strength claims; the checkmark on the 4_1 row marks a verified volume, not an unqualified superlative.",
+        "notes": "No change."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.598Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Cells are terse noun phrases as a table requires; column headers are readable aloud.",
+        "notes": "No change."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:10:39.598Z"
 }

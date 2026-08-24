@@ -2142,6 +2142,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.138Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2161,6 +2177,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.177Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-em-dash": [
@@ -2180,6 +2212,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.215Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-triples": [
@@ -2199,6 +2247,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.255Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-closing-aphorism": [
@@ -2218,6 +2282,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.299Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-meta-commentary": [
@@ -2237,6 +2317,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.360Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-thesis-restatement": [
@@ -2256,6 +2352,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.399Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-performed-warmth": [
@@ -2275,6 +2387,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.436Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-superlative": [
@@ -2294,6 +2422,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.474Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "trap-nonspeakable": [
@@ -2313,6 +2457,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ae5c8f11397d",
+          "ts": "0a9c83f2f8db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:17.513Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proposition, read in full. All ten trap categories clean: the only prose is the two-sentence lead and the definition bullets; the block-final sentence is a cross-reference to the context remark (documented false-positive class), and the one spaced em-dash pair is a true parenthetical. RIGOR PASS (recomputed at the proton pin q_0 = 1.1099785827513808): b = sqrt(q^4+q^2+1)/(q^2+1) = 0.867584067, hbar_q = (q-1)/q = 0.099081716, u = b*hbar_q^2 = 0.0085172346 (context's 0.00852 correct), b^2 = 0.75270211 (context's 0.7527 correct), Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) = 0.78364583 MeV (AGENTS.md's 0.784 correct). The four printed rungs correctly encode c_2 = -1, c_3 = -2, c_4 = c_3 b^4; the odd-looking 'b^4 cdot b^4' is deliberate (c_4's b^4 times u^4's b^4) and is NOT an error.",
+        "notes": "FOUR FINDINGS, all math-adjacent so none fixed inline. (1) THE FIFTH RUNG IS WRONG. The boxed formula's last factor is (1 - (b^2 + 1/2) b^5 hbar_q^10), i.e. c_5 = -(b^2+1/2) = -1.25270211. The context remark states c_5 = c_3^2*3 + b = +12.8675841 twice, and tbl:q-beta-categorical-precision-ladder-table3-data labels the N=5 row with that same form. The two differ in SIGN and by a factor of 10, and the numerics decide it: u^5 = 4.4822186e-11, so the -(b^2+1/2) form contributes -0.0561 ppb and moves table 2's N=4 residual of -0.57 ppb to -0.63 ppb, while the 3c_3^2+b form contributes +0.5768 ppb and moves it to +0.0068 ppb -- which is what table 2 ('~0 ppb, sub-ppt') and table 3 ('+0.04 ppb') both report. Only the large positive coefficient reproduces the published N=5 residual, so the boxed formula here carries the superseded coefficient. Note table 1 records that -(b^2+1/2) was 'previously misattributed as c_4', which is how it survived. (2) THE HEADLINE RESIDUAL MATCHES NO ROW OF ITS OWN TABLE. The block claims '-0.0066 ppm residual against CODATA'; tbl:...-table2-data gives +6.02 ppb (= +0.00602 ppm) at N=3 and -0.57 ppb at N=4. The claim differs in sign from the N=3 row and by ~10 percent in magnitude. (3) UNDEFINED SYMBOL, load-bearing: alpha = (z-1)h/2 uses h, which the block never defines -- it defines hbar_q = (q-1)/q instead. The two readings are not interchangeable: reconstructing table 2's N=1 rung (+73.79 ppm) requires h = q - q^{-1} = 0.2090688 (I get +73.64 ppm), whereas h = hbar_q gives +1254 ppm, off by a factor of 17. State h = q - q^{-1} explicitly. (4) CONVENTION C: z is the Markov parameter, given as 1/(q^{1/2}+q^{-1/2}) = 0.49932033 in the sibling direction-sanity gate -- convention C, excised by the 2026-08-15 R1 ruling in favour of z_D = q^3/(q^2+1) = 0.61268804. The dependence is real (z enters alpha, hence the N=1 rung), and AGENTS.md already scopes this whole ladder as C-frame pending re-derivation (bean qou-cds1); recording it here so the block itself carries the scope."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2336,5 +2496,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:35:17.513Z"
 }

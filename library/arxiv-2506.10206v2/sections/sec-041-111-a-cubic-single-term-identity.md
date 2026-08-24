@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2506.10206v2
-doc_title: "5), and Q(√−7)"
+doc_title: "Analytic dilogarithm identities"
 section_id: sec-041-111-a-cubic-single-term-identity
 section_title: "A cubic single-term identity"
 section_number: 11.1
 pages: 31-31
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
-doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
+doc_brief: "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 Using Lemma 2, set:
 (u− 1)

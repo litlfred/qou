@@ -883,7 +883,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.854Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.893Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.933Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.972Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.009Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.050Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.090Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.128Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.166Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Row 1: '$z$ | $0.49932..$ | Markov--Jones parameter'. Final row: 'residual (cos) | $+305.7$ ppm | $5.49\\times$ tighter'.",
+        "notes": "THE TABLE'S FIRST ROW IS THE EXCISED TRACE CONVENTION. 0.49932 is z_C = sqrt(q)/(q+1); the canonical value under the 2026-08-15 ruling (convention D) is 0.6126880. Every subsequent row depends on it, so the whole table is convention-C-frame and the '5.49x tighter' verdict does not carry over -- recomputed under D the same construction gives 856.7 ppm and 1.96x. VERIFIED SOUND within convention C: all nine rows reproduce (alpha -0.0523361, cos 0.9986308, Q^A 0.78365, Q^{A,cos} 0.782573, 1677.54 ppm, 306.02 ppm, ratio 5.48)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4e870609a644",
+          "ts": "6daa03a8ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.204Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 9-row table. Recomputed every row (see trap-superlative): alpha, cos alpha, both Q values, both ppm residuals and the 5.49x ratio all reproduce to the printed digits.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:06.204Z"
 }

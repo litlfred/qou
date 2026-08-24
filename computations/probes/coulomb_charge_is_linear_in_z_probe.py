@@ -144,6 +144,7 @@ import sys
 
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
+from _precision import set_compute_dps  # noqa: E402
 
 A_COULOMB = "0.697"
 CASES = [("4He", 2, 2), ("12C", 6, 6), ("40Ca", 20, 20),
@@ -151,7 +152,7 @@ CASES = [("4He", 2, 2), ("12C", 6, 6), ("40Ca", 20, 20),
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     import mass_binding_dashboard as M
     from mass_at_3A_proper import atom_braid_word_3A
 

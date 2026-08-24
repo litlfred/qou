@@ -66,6 +66,14 @@ import pathlib
 from mpmath import cos as mpmath_cos
 from mpmath import (arg, exp, fabs, findroot, im, log, mp, mpc, mpf, nint, nstr,
                     pi, polyroots, quad, re, sqrt)
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 
 def roots_at(ph):
@@ -81,7 +89,7 @@ def in_not_cut(w):
 
 
 def main() -> int:
-    mp.dps = 40
+    set_compute_dps()
     N = 199
     REAL_TOL = mpf(10) ** -30      # below this, an "imaginary part" is noise
     gates = []

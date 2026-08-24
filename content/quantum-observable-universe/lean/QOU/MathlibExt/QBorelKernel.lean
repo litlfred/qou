@@ -21,7 +21,7 @@ C1's slope ½, the `d`-th roots `B₁,B₂`, and the actual Stokes matrices
 (`F(P₁,P₂) ≅ Matr(ℂ)²`) are NOT here — the genuine RSZ-wild residual, beaned (`qou-xufp`).
 §7c: generic `Monoid` (commutativity unused). Sorry-free. No fit; nothing wired.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§3.3, q-Borel transform)
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, q-Borel transform)
 -/
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Algebra.Group.Basic

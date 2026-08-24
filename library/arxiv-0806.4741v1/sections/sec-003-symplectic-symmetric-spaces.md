@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0806.4741v1
-doc_title: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louva"
+doc_title: "The deformation quantizations of the hyperbolic plane"
 section_id: sec-003-symplectic-symmetric-spaces
 section_title: "Symplectic symmetric spaces"
 section_number: null
 pages: 4-7
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We"
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 expressed as an oscillatory integral, analogous to the oscillatory integral formulation (8) of Weyl’s composi-
 tion. In [33], A. Weinstein suggested a beautiful geometrical interpretation of the asymptotics of the phase

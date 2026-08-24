@@ -31,7 +31,7 @@ embeddings of the trace field is a Galois trace, and the assertion is that this
 trace *closes*: it equals a combination of $\pi^{2}$, a squared logarithm, and
 a squared argument, with no dilogarithm left over.
 
-Three features are worth separating.
+Three features of the statement separate out.
 
 **The right-hand side is real, and manifestly so.** Each of its three terms is
 built from real data — $\pi$, $\log t$ for $t \in (0,1)$, and $\arg a$ — even
@@ -41,7 +41,7 @@ $\mathrm{Li}_2^{\mathrm{ext}}(\bar a)$ cancel against each other, which is the
 conjugate pair doing exactly what the $S_3$ structure of the trace field
 predicts.
 
-**The coefficient $2/3$ is not adjustable, and it is not decorative.** It
+**The coefficient $2/3$ is forced.** It
 descends from the branch relation
 
 $$

@@ -28,6 +28,7 @@ import mpmath as mp
 
 from q_parameter import Q_50_DIGIT_STR
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 
 def gram_entry_symbolic(u: mp.mpf, i: int, j: int) -> mp.mpf:
@@ -70,7 +71,7 @@ def gram_entry_symbolic(u: mp.mpf, i: int, j: int) -> mp.mpf:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     q = mp.mpf(Q_50_DIGIT_STR)
     u = mp.sqrt(q)

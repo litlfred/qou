@@ -21,4 +21,4 @@ The degree of palindromic defect is the minimum number of histogram entries that
 
 See [Table 2](#tbl:palindromicity-orbital-type-table2-data).
 
-This provides a purely algebraic definition of orbital angular momentum. We find $\ell$ is half the palindromic defect of the Hecke algebra NF histogram.
+This provides a purely algebraic definition of orbital angular momentum: $\ell$ is half the palindromic defect of the Hecke algebra NF histogram.

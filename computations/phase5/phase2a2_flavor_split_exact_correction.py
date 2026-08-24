@@ -79,7 +79,7 @@ def X_target_from_mn(q_val, m_n_target):
 def main():
     set_compute_dps()
     t0 = time.time()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
     m_n = mp.mpf(M_N_MEV_VALIDATION)

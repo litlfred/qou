@@ -1,13 +1,13 @@
 ---
 doc_id: crmath-2011-349-19-20-1037-0
-doc_title: "C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037–1039 Contents lists available at SciVerse ScienceDirect"
+doc_title: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières"
 section_id: sec-002-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
-doc_brief: "C. R. Acad. Sci. Paris, Ser. I www.sciencedirect.com Équations différentielles Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put"
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put and Reversat described the form of a pure q-difference module with non"
 ---
 A un module auxq-différences, on peut associer un polygone de Newton (cf. [5]), et les pentes de ce polygone, qui sont
 rationnelles, sont les pentes du module auxq-différences. Un module pur isocline (c’est à dire qui n’a qu’une seule pente), à

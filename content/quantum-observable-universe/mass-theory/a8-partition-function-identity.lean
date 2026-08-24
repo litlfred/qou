@@ -162,11 +162,14 @@ canonical partition function. -/
     This is the standard Hardy–Ramanujan partition-function table:
     `p(1) = 1, p(2) = 2, p(3) = 3, p(4) = 5, p(5) = 7` (OEIS A000041).
 
-    Stated as a `sorry` pending a uniform Mathlib `decide`-route for
-    `Fintype.card (Nat.Partition n)`; the values themselves are
-    standard and uncontested.  Resolution is a one-line `decide` once
-    Mathlib's `Nat.Partition.fintypeInstance` becomes
-    `Decidable`-friendly at small `n`. -/
+    Axiomatised pending a uniform Mathlib `decide`-route for
+    `Fintype.card (Nat.Partition n)`; the values themselves are standard and
+    uncontested (OEIS A000041: `p(1..5) = 1, 2, 3, 5, 7`).  Verified 2026-08-21
+    that `decide` currently **fails** on the Mathlib `Nat.Partition` Fintype
+    instance (`Tactic decide failed`), so this remains a cited external fact
+    rather than a discharged lemma; resolution is a one-line `decide` once that
+    instance becomes `Decidable`-friendly at small `n`. -/
+-- Ref: [manuscript] a8-partition-function-identity — semantic bridge; partition values are the standard Hardy–Ramanujan table (OEIS A000041)
 axiom partitionCount_eq_fintype_card_partition_small :
     ∀ n ∈ Finset.Icc 1 5,
       partitionCount n = Fintype.card (Nat.Partition n)

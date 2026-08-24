@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1112.5179v1
-doc_title: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA "
+doc_title: "3-Manifolds and 3d Indices"
 section_id: sec-021-b-figure-eight-index-from-six-tetrahedra
 section_title: "B Figure-eight index from six tetrahedra"
 section_number: null
 pages: 70-71
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-doc_brief: "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK — We"
+doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
 ---
 The gluing data for the six-tetrahedron triangulation of the ﬁgure-eight knot complement
 was described in Section 4.6 of [19]. A map of the torus boundary, which encodes all the

@@ -1183,7 +1183,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.309Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.349Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.388Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "The four spaced dashes are all label-gloss separators in a numbered panel list ('**Braid flow diagram** --- ...'), the conventional definition-list form, not sentence-structure substitutes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.423Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.462Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.498Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.536Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.576Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.613Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.650Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:54:36.650Z"
 }

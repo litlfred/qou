@@ -18,7 +18,7 @@ the bar involution $q \mapsto q^{-1}$ — is what selects the
 figure-8 as a *mass* invariant rather than a chirality invariant.
 
 **Pre-archimedean (substrate) representation.**
-On the algebraic side, $4_1$ has a completely rigorous motivic
+On the algebraic side, $4_1$ has a rigorous motivic
 representation via its Hecke normal form. The
 [algebraic quantum volume](#def:algebraic-quantum-volume) of $4_1$
 is a finite product of Laurent polynomials,

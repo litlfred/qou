@@ -1420,6 +1420,21 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:52.619Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. 'Generator distance |i-j| is NOT preserved' and 'the JM form is not only a basis change' are substantive technical claims, and the second is explicitly hedged as a suggestion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1439,6 +1454,21 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:52.725Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1458,6 +1488,21 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 627 words)"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:52.814Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Four em-dashes in 809 words, each marking a genuine appositive or consequence."
       }
     ],
     "trap-triples": [
@@ -1477,6 +1522,21 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 627 words)"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:52.890Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The three 'Advantages' and the four implementation steps are enumerated content, not reflex lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1496,6 +1556,21 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:52.967Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on an Open question, correctly labelled as such."
       }
     ],
     "trap-meta-commentary": [
@@ -1515,6 +1590,21 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:53.025Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This remark reframes ...' states the block's subject, which a remark may do."
       }
     ],
     "trap-thesis-restatement": [
@@ -1534,6 +1624,21 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:53.110Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing paragraph advances a hypothesis rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1553,6 +1658,21 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:53.201Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1572,6 +1692,23 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:53.291Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Substituted-token intensifiers that do not parse: 'which is most ACCORDINGLY expressed in the JM / SYT cell basis' and 'The pair set P_n ... is ACCORDINGLY cell-indexed' (in both places the word wanted is 'naturally'), and 'is justified UNIVERSALLY (all k1 < k2, not just adjacent pairs)' where the claim is uniformity over pairs, not universality. Two section headings are also truncated mid-predicate: 'Descent structure visible.' and 'Multi-level sum structural.'",
+        "notes": "Proposed: restore 'naturally' / 'uniformly' and complete the two headings ('Descent structure is visible', 'The multi-level sum is structural'). Not applied inline because these read as substituted tokens, so the original wording should be recovered from history rather than guessed at."
       }
     ],
     "trap-nonspeakable": [
@@ -1591,6 +1728,23 @@
         "reviewed_at": "2026-08-15T10:31:00.744Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "566dc5941356",
+          "ts": "0d0650fa1527"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:53.391Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Sweep damage makes several sentences unparseable, and one cross-reference is structurally broken. (1) BROKEN ANCHOR, twice: both citations point at '#sim:descent-rate-canonical evaluation' — a label containing a SPACE, which cannot resolve. The link texts disagree with each other ('descent rate categorical' vs 'descent rate canonical evaluation'), consistent with a 'numerical' -> 'canonical' substitution having landed inside the label itself. (2) SCRIPT-NAME SUBSTITUTION, twice: 'available via hecke_characters.build_seminormal_matrices in THE FORMAL DERIVATION' and 'A first-pass implementation (THE FORMAL DERIVATION) computes ...'. (3) 'equation\\\\~\\\\ref{eq:syt-cell-tower}' carries an escaped tilde.",
+        "notes": "Proposed: recover the simulator label (probably sim:descent-rate-numerical) and the two producer names from history; fix '\\\\~\\\\ref' to '~\\\\ref'. THREE MATH FINDINGS, reported not fixed. (a) FORMULA CONTRADICTS ITS OWN PARENT: eq:syt-cell-tower is written with the Faddeev Phi_q and PLUS signs, but prop:mass-endomorphism-tower — which this block says it 'matches' — uses the symmetric q-dilogarithm Li_2^q with MINUS signs and negated arguments, and states outright that 'The Faddeev Phi_q form was empirically incompatible with isospin symmetry at q_0'. The two cannot both be the mass tower. (b) THE z^2 JUSTIFICATION IS FALSE FOR JM ELEMENTS: 'two successive Markov peels of commuting elements each contribute a factor z, so tr_M(L_{k1} L_{k2}) = z^2' requires tr_M(L_k) = z, but L_k is not a generator. L_2 = sigma_1^2 = (q - q^{-1}) sigma_1 + 1, so tr_M(L_2) = h z + 1 = 1.1281 at the proton pin under convention D, not z = 0.6127. Commutativity gives factorisation of the trace only against a peel axiom stated for generators. (c) CALIBRATION CAVEAT on the validation table: 'with E_0 calibrated per path on the proton' means each of the two columns carries its own free scale, so the D row (0.120% vs 0.105%) is within the calibration freedom and only the T / 3He rows (18.0% -> 0.277%, 60.1% -> 0.219%) carry signal. Also: this block indexes generators sigma_1..sigma_{n-1} while the rest of the chapter uses sigma_0..sigma_{n-2}."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1613,5 +1767,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:48:53.391Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2006.02042v1
-doc_title: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT"
+doc_title: "The Strong AJ Conjecture for the Figure 8 Knot"
 section_id: sec-004-21-step-1-applying-symmetric-conditions
 section_title: "Step 1: Applying symmetric conditions"
 section_number: 2.1
 pages: 4-5
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
-doc_brief: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and"
+doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
 ---
 p2 and p−2 to be the same as those of the A-polynomial squared. Namely we let
 p2(t, M) = ˜a2(M) = 1 and p−2(t, M) = ˜a−2(M) = 1 .

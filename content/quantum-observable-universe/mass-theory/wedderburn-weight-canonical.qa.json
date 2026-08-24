@@ -1777,6 +1777,21 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (11 lines). Highest intensifier density in the batch before the fix."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1811,21 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (11 lines). Highest intensifier density in the batch before the fix."
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1845,21 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (11 lines). Highest intensifier density in the batch before the fix."
       }
     ],
     "trap-triples": [
@@ -1834,6 +1879,21 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (11 lines). Highest intensifier density in the batch before the fix."
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1913,21 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (11 lines). Highest intensifier density in the batch before the fix."
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1947,21 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (11 lines). Highest intensifier density in the batch before the fix."
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1981,23 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "\"This establishes the central canonicity of the weight $w_\\lambda(q)$.\" restates the proposition statement two lines above it and adds no content (\"central canonicity\" names nothing the statement had not already named).",
+        "notes": "proposed (not applied - removing it strands the paragraph opening): delete the sentence and open the paragraph on the LP form."
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2017,21 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (11 lines). Highest intensifier density in the batch before the fix."
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2051,23 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Four unhedged intensifiers in eleven lines: \"holds universally across all $\\lambda$\", \"applies exclusively to the self-conjugate stratum\", \"The LP form strictly multiplies\", \"diverge predictably via Wenzl's rigorous hook-content closed form\".",
+        "notes": "FIX APPLIED (4 subs): \"holds universally across all\" -> \"holds for all\"; \"applies exclusively to\" -> \"applies only to\"; \"strictly multiplies\" -> \"multiplies\"; \"diverge predictably via Wenzl's rigorous hook-content closed form\" -> \"diverge via Wenzl's hook-content closed form\"."
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2087,23 @@
         "reviewed_at": "2026-08-15T10:31:00.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "25ad56367123",
+          "ts": "fc15c823658d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.750Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "The proposition statement itself does not parse aloud: \"The Bethe-Weizsacker mass coefficient and the LP shadow-price scale the identical canonical $q$-deformed Wedderburn-block weight\" - \"scale\" is read first as a noun, and the intended verb is unrecoverable (\"share\"? \"are scaled by\"?).",
+        "notes": "proposed (structural, not applied - meaning at stake, inside the italic statement): the author should say which, e.g. \"...are both scaled by the same canonical $q$-deformed Wedderburn-block weight\"."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2127,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:38:29.750Z"
 }

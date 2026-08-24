@@ -49,6 +49,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 import mpmath
 from mpmath import mp, mpf, pslq, pi as mp_pi
+from _precision import set_compute_dps  # noqa: E402
 
 
 # ── Tier-1 basis values (re-used at the same precision) ────────
@@ -121,7 +122,7 @@ def _tier2_basis() -> tuple[tuple[mpf, ...], str]:
 def main() -> int:
     # 50 dps suffices when the basis is at literature precision (~15 dps);
     # if SnapPy promotes to 100+ dps, raise this.
-    mp.dps = 50
+    set_compute_dps()
 
     target = 2 / (3 * mp_pi)
     tier1 = _tier1_basis()

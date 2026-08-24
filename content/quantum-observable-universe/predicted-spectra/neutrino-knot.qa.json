@@ -1867,6 +1867,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.814Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "'It contributes no hyperbolic volume and thus carries no topological mass. Instead, neutrino mass arises entirely from vacuum drag.' The denial is doing real work: the unknot genuinely has zero hyperbolic volume, so the framework's topological mass term vanishes and the block must say where the mass comes from instead. The negation states a computed fact and the 'instead' clause supplies the alternative mechanism — substantive contrast, not manufactured emphasis.",
+        "notes": "pass. Two small notes, neither fixed. (a) 'a trivial Skein polynomial J_nu(q) = 1' — the symbol J is the Jones polynomial, which is right per 7a, but 'Skein polynomial' conventionally names HOMFLY; proposed 'a trivial Jones polynomial'. (b) mu_0 is used for the vacuum-drag constant and is undefined in the block; it also collides with the SI vacuum permeability. Observation on the Lean sibling: neutrino_neutral, neutrino_genus_zero and neutrino_crossing_zero are all 'Neutrino.mk.<field> = 0 := rfl', i.e. they read back values the constructor sets rather than deriving them — the assert-then-rfl shape AGENTS.md's Strict Lean Discipline item 9 warns about. For a definition block recording its own data this is defensible, so I record it as an observation, not a defect."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1886,6 +1902,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.485Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.Neutrino) and its Lean sibling neutrino-knot.lean, which exists and carries real declarations (structure Neutrino, neutrino_neutral, neutrino_genus_zero, neutrino_crossing_zero) rather than a shadow stub. The three stated unknot invariants are all correct: Seifert genus 0, crossing number 0, Jones J(q) = 1. The Jones polynomial is written J_nu(q), per the AGENTS.md 7a convention, not V(t). The mass scaling m_nu ~ mu_0 (q-1) does vanish at q = 1 as claimed. The defined term is bolded once at its canonical site. No pivot, no dash, no aphorism, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1905,6 +1937,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.527Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.Neutrino) and its Lean sibling neutrino-knot.lean, which exists and carries real declarations (structure Neutrino, neutrino_neutral, neutrino_genus_zero, neutrino_crossing_zero) rather than a shadow stub. The three stated unknot invariants are all correct: Seifert genus 0, crossing number 0, Jones J(q) = 1. The Jones polynomial is written J_nu(q), per the AGENTS.md 7a convention, not V(t). The mass scaling m_nu ~ mu_0 (q-1) does vanish at q = 1 as claimed. The defined term is bolded once at its canonical site. No pivot, no dash, no aphorism, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1924,6 +1972,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.854Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Two enumerations, both substantive. 'Seifert genus 0, crossing number 0, and a trivial Skein polynomial' is three genuinely independent knot invariants, each separately checkable and each separately true of the unknot. The three bullets (zero crossing chirality, trivial braiding, vacuum drag mass) name three distinct physical consequences — neutrality, non-interaction, and the mass mechanism — not one point written three ways.",
+        "notes": "pass (substantive enumerations). Stray sentence worth an author's eye, though not a trap: 'We draw the neutrino as a simple circle.' is a presentation aside sitting in the middle of a definition block, between the invariant list and the consequences list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1943,6 +2007,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.567Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.Neutrino) and its Lean sibling neutrino-knot.lean, which exists and carries real declarations (structure Neutrino, neutrino_neutral, neutrino_genus_zero, neutrino_crossing_zero) rather than a shadow stub. The three stated unknot invariants are all correct: Seifert genus 0, crossing number 0, Jones J(q) = 1. The Jones polynomial is written J_nu(q), per the AGENTS.md 7a convention, not V(t). The mass scaling m_nu ~ mu_0 (q-1) does vanish at q = 1 as claimed. The defined term is bolded once at its canonical site. No pivot, no dash, no aphorism, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1962,6 +2042,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.609Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.Neutrino) and its Lean sibling neutrino-knot.lean, which exists and carries real declarations (structure Neutrino, neutrino_neutral, neutrino_genus_zero, neutrino_crossing_zero) rather than a shadow stub. The three stated unknot invariants are all correct: Seifert genus 0, crossing number 0, Jones J(q) = 1. The Jones polynomial is written J_nu(q), per the AGENTS.md 7a convention, not V(t). The mass scaling m_nu ~ mu_0 (q-1) does vanish at q = 1 as claimed. The defined term is bolded once at its canonical site. No pivot, no dash, no aphorism, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1981,6 +2077,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.650Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.Neutrino) and its Lean sibling neutrino-knot.lean, which exists and carries real declarations (structure Neutrino, neutrino_neutral, neutrino_genus_zero, neutrino_crossing_zero) rather than a shadow stub. The three stated unknot invariants are all correct: Seifert genus 0, crossing number 0, Jones J(q) = 1. The Jones polynomial is written J_nu(q), per the AGENTS.md 7a convention, not V(t). The mass scaling m_nu ~ mu_0 (q-1) does vanish at q = 1 as claimed. The defined term is bolded once at its canonical site. No pivot, no dash, no aphorism, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -2000,6 +2112,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.693Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.Neutrino) and its Lean sibling neutrino-knot.lean, which exists and carries real declarations (structure Neutrino, neutrino_neutral, neutrino_genus_zero, neutrino_crossing_zero) rather than a shadow stub. The three stated unknot invariants are all correct: Seifert genus 0, crossing number 0, Jones J(q) = 1. The Jones polynomial is written J_nu(q), per the AGENTS.md 7a convention, not V(t). The mass scaling m_nu ~ mu_0 (q-1) does vanish at q = 1 as claimed. The defined term is bolded once at its canonical site. No pivot, no dash, no aphorism, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -2019,6 +2147,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.734Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.Neutrino) and its Lean sibling neutrino-knot.lean, which exists and carries real declarations (structure Neutrino, neutrino_neutral, neutrino_genus_zero, neutrino_crossing_zero) rather than a shadow stub. The three stated unknot invariants are all correct: Seifert genus 0, crossing number 0, Jones J(q) = 1. The Jones polynomial is written J_nu(q), per the AGENTS.md 7a convention, not V(t). The mass scaling m_nu ~ mu_0 (q-1) does vanish at q = 1 as claimed. The defined term is bolded once at its canonical site. No pivot, no dash, no aphorism, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -2038,6 +2182,22 @@
         "reviewed_at": "2026-08-15T10:31:01.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "897a9acfd9c6",
+          "ts": "5b33f1c7674e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:41.774Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.Neutrino) and its Lean sibling neutrino-knot.lean, which exists and carries real declarations (structure Neutrino, neutrino_neutral, neutrino_genus_zero, neutrino_crossing_zero) rather than a shadow stub. The three stated unknot invariants are all correct: Seifert genus 0, crossing number 0, Jones J(q) = 1. The Jones polynomial is written J_nu(q), per the AGENTS.md 7a convention, not V(t). The mass scaling m_nu ~ mu_0 (q-1) does vanish at q = 1 as claimed. The defined term is bolded once at its canonical site. No pivot, no dash, no aphorism, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2061,5 +2221,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:24:41.854Z"
 }

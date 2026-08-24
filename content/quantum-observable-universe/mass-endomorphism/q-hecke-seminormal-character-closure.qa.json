@@ -2136,6 +2136,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.044Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "'The q=1 limit of the Hecke character is not the character required here; the trace must be taken of the q-Hecke character'; 'vanishes ... and so cannot serve as the weight. The correct weight is y_lambda(q)'; 'incorrectly returned the classical Murnaghan-Nakayama character ... instead of the q-Hecke character'.",
+        "notes": "All substantive: each names a specific wrong object against the right one, which is the block's content (a bug post-mortem). Documented false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2155,6 +2171,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.149Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "'Two layers have to be got right, and each has a natural wrong answer:' -- setup with a pointed second clause, but it introduces a genuine two-item enumeration that follows immediately.",
+        "notes": "Passes. Register note: 'have to be got right' is colloquial for a proposition block; 'Two layers must be right' would match sec clarity-grad-style."
       }
     ],
     "trap-em-dash": [
@@ -2174,6 +2206,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 220 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.220Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Zero em-dashes in the .md.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -2193,6 +2241,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 220 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.265Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "The one list is TWO items (weight layer, character layer); the table is a 5-row data table.",
+        "notes": "n/a"
       }
     ],
     "trap-closing-aphorism": [
@@ -2212,6 +2276,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.307Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Final line 'All three paths agree at the precision floor of their respective layers.' is a factual claim, not a quotable closer.",
+        "notes": "Its accuracy is recorded under trap-superlative and trap-thesis-restatement."
       }
     ],
     "trap-meta-commentary": [
@@ -2231,6 +2311,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.413Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "No narration of the author's own emphasis.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -2250,6 +2346,23 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.459Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "severity": "major",
+        "evidence": "The block-final section '## Production paths' consists entirely of: 'The canonical values are rigorously evaluated via formal trace definitions. All three paths agree at the precision floor of their respective layers.' The section title promises to name the production paths and names none; the two sentences restate the headline claim already made in the lead and demonstrated in the table. 'The canonical values are rigorously evaluated via formal trace definitions' is also the documented token-substitution sweep artefact -- a script name replaced by 'formal trace definitions'. 'All three paths' has no antecedent in the .md, which names two.",
+        "notes": "PROPOSED (not applied -- restoring the script names is content the .ts docstring has and the .md lost): replace the section body with the three actual paths named in the .ts docstring -- markov_trace_recursive (canonical reducer), wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal (partition sum), and rho_k_h3a_refinement.py (50-dps mpmath) -- or delete the section."
       }
     ],
     "trap-performed-warmth": [
@@ -2269,6 +2382,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.500Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -2288,6 +2417,23 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.558Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "severity": "major",
+        "evidence": "'The canonical values are **rigorously** evaluated'; 'The recursive Markov-axiom ascent and partition-sum Wedderburn formulas **must** agree'; 'All three paths agree at the precision floor'. Checking the claim these point at (per the audit brief) found the whole verification table refuted by its own cited witness.",
+        "notes": "REPORT ONLY, not fixed (math). computations/tr-m-q-hecke-seminormal.witness.json (fresh 2026-08-15, allPassed true) records, per atom, canonical |tr_M| and rel err vs the .md table: proton 1.14575978172 vs .md 1.06530622859 (ratio 0.9298), rel err 7.79e-08 vs .md 3.96e-15; neutron 0.98774375637 vs .md 0.92323329717 (0.9347), 6.91e-08 vs 4.21e-15; deuteron 0.57517232917 vs .md 0.38828647155 (0.6751), 1.48e-07 vs 7.01e-15; tritium 0.22931014586 vs .md 0.10405211868 (0.4538), 1.91e-07 vs 1.07e-14; helium-3 0.40376713624 vs .md 0.20654085856 (0.5115), 2.46e-07 vs 1.03e-14. ALL TEN NUMBERS in the table are stale, and the error column overstates the agreement by SEVEN ORDERS OF MAGNITUDE. The deuteron pair 0.388 -> 0.575 is exactly the tr_M_atom import-cone drift recorded in AGENTS.md (48%), so this is the known stale-value class, not a transcription slip; the ratios differ per atom (0.93/0.93/0.68/0.45/0.51) so no uniform rescale explains it. The witness's own assertions gate only at 1e-3 and 1e-6, so nothing anywhere supports a 1e-15 claim. The .ts sets computation.status 'verified' on this block. Note in passing the witness's y_at_q0 = (0.5054042265, 0.2472978867, 0.0) is the convention-D / proton-pin vector, i.e. the producer is current even though the .md is not."
       }
     ],
     "trap-nonspeakable": [
@@ -2307,6 +2453,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9eaf2fe238b8",
+          "ts": "95923503f2b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:18.661Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Heaviest: 'binding-energy analysis via rho_K refinement and force-carrier saturation identities'; 'the recursive Markov-axiom ascent and partition-sum Wedderburn formulas'.",
+        "notes": "Parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2330,5 +2492,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:00:18.661Z"
 }

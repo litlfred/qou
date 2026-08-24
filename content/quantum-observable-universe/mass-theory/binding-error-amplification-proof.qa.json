@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.093Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'are not independent problems'; 'assumes nothing about the q-deformation, the calibration inputs, or the knot assignment'; 'rather than a cancellation of two large ones'.",
+        "notes": "All substantive: the first is the corollary's claim, the second delimits the proof's hypotheses, the third contrasts two computational routes. Table arithmetic verified against AME/CODATA: 1875.6/2.225 = 843, 2808.9/8.482 = 331, 2808.4/7.718 = 364, 3727.4/28.296 = 132 - all four amplification factors correct, and the mass formula is quoted in its canonical form m_e Vol(K) rho(K)/hbar_q^2."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.142Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1428,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "7 stylistic spaced dashes in 249 words (2.81/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.197Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 249 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.245Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.295Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Forming the difference object *before* evaluating - so that binding is computed as a single quantity rather than a cancellation of two large ones - is the structural way to avoid the amplification.'",
+        "notes": "Prescriptive, but it states a concrete methodological consequence that follows from the amplification factor just derived. Substantive, not quotable filler."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.341Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1565,23 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.394Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "The Corollary paragraph opened 'The per-knot mass-prediction accuracy and the binding-energy accuracy are not independent problems.' and then closed the same paragraph with '- i.e. the binding problem depends on the mass problem and is not separable from it', which restates the opening sentence in different words with nothing added in between beyond the quantitative requirement.",
+        "notes": "fix applied: deleted the trailing clause, so the paragraph now ends on the quantitative requirement ('... finer than $B/M_{atom} \\approx 0.1\\%-0.8\\%$ of the experimental binding target.'). The corollary's claim survives in its opening sentence; only the duplicate was removed. Kept: 'Binding is the amplified shadow of the bound-state mass error' - a figure, but it introduces the mechanism the rest of the sentence spells out."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.442Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1635,21 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.484Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1669,23 @@
         "reviewed_at": "2026-08-15T10:31:00.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ef4dd3878e27",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:37.555Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "'This also explains why computing binding as a difference of two large Markov traces ... is canonical hostile:' - 'canonical hostile' is not grammatical. The intended word is almost certainly 'numerically' (the sentence is about catastrophic cancellation), and the same substitution appears seven times across this batch ('canonical evaluation points/values', 'The canonical evidence', 'canonical evaluation-rebuild cost').",
+        "notes": "NOT fixed - repairing it means asserting which word was replaced, and the same token has to be reverted consistently across nine files. Recorded as anomaly 8 (systematic sweep substitution) in the batch report, where the full 19-occurrence census is given. proposed: 'is numerically hostile:'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1708,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:39:37.555Z"
 }

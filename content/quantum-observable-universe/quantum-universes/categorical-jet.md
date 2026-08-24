@@ -4,7 +4,7 @@ $$
   J^1(A) := A \otimes_{\mathbf{C}} \Omega^1(A),
 $$
 
-where $\Omega^1(A) = \ker(\mu \colon A \otimes A \to A)$ is the bimodule of K\"ahler differentials. The jet object fits into the universal extension
+where $\Omega^1(A) = \ker(\mu \colon A \otimes A \to A)$ is the bimodule of Kähler differentials. The jet object fits into the universal extension
 
 ```tex
 \begin{equation}\label{eq:jet-ses}

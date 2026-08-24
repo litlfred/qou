@@ -1,13 +1,13 @@
 ---
 doc_id: 0310279v5
-doc_title: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO"
+doc_title: "Stabilization in the braid groups I: MTWS"
 section_id: sec-019-43-construction-of-the-tabs
 section_title: "Construction of the tabs"
 section_number: 4.3
 pages: 46-52
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
-doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
+doc_brief: "Stabilization in the braid groups I: MTWS — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 In this section we modify the discs R1,..., Rk which we constructed in Section 2 to
 special foliated discs T1

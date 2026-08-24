@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2002.07369v2
-doc_title: "GR¨OBNER-SHIRSHOV BASES FOR THE COXETER GROUPS OF THE TYPESG 2,F 4,E 6,E 7 ANDE 8"
+doc_title: "Groebner-Shirshov bases for the Coxeter groups of the types G2, F4, E6, E7 and E8"
 section_id: sec-001-2-preliminaries
 section_title: "Preliminaries"
 section_number: 2
 pages: 2-13
 source_pdf: 2002.07369v2.pdf
 source_sha256: 6b8b1e509553b90c
-doc_brief: "GRÖBNER-SHIRSHOV BASES FOR THE COXETER GROUPS OF THE TYPESG 2,F 4,E 6,E 7 ANDE 8 — It is known that the finite Coxeter groups are classified in terms of Coxeter-Dynkin diagrams."
+doc_brief: "Groebner-Shirshov bases for the Coxeter groups of the types G2, F4, E6, E7 and E8 — It is known that the finite Coxeter groups are classified in terms of Coxeter-Dynkin diagrams."
 ---
 LetKbe a field,K⟨X⟩be the non-commutative polynomial algebra generated
 byXwhereX={x 1,...,x n}is a finite set. LetX ∗ ={u|u=x i1···x im,m≥

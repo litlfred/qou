@@ -1,35 +1,76 @@
 {
-  "type": "validation-input",
-  "version": "1",
-  "engine": "manual-entry",
-  "engineVersion": "ame-2020",
-  "scriptFile": "binding_canonical.py",
-  "scriptHash": "6a6dd187656d",
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-19T17:36:26.225964+00:00",
+  "commitSha": "bc787ae9a14e34547a52806b232217dc50dc779b",
+  "assertions": [
+    {
+      "name": "binding_routes_agree",
+      "computed": "0.000456000",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.001",
+      "unit": "keV",
+      "source": "AME2020 binding_energy_per_A x A  vs  Z*D(1H)+N*D(n)-D(Z,A)"
+    },
+    {
+      "name": "nuclide_count",
+      "computed": 11,
+      "expected": 11,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "nuclides",
+      "source": "NUCLIDES table"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "ame-2020-binding-energies",
+  "scriptFile": "ame_2020_binding_energies.py",
+  "scriptHash": "0ca5d6dc31b7",
   "scriptCommitSha": "unknown",
-  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
-  "computedAt": "2026-07-18T23:59:56.849702+00:00",
-  "description": "AME 2020 atomic binding energies for the canonical light isotopes (D, T, 3He, 4He, 5Li, 6Li, 7Li, 8Be, 9Be) plus the two alpha-conjugate cluster / shell-closure points 12C (3-alpha) and 16O (doubly-magic, 2nd magic point) — comparison-only validation values, NOT prediction inputs. Used by binding-energy-prediction scripts to compute `err = pred - AME_B_<X>_MEV_VALIDATION`. Per AGENTS.md three-calibration discipline (CAL-1 m_e, CAL-2 m_µ/m_e, CAL-3 Q_β), these values are PREDICTIONS of the framework; importing them as upstream inputs to a mass / binding pipeline would inflate the calibration count beyond the allowed 3.",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "AME 2020 total nuclear binding energies for the canonical light isotopes (D, T, 3He, 4He, 5Li, 6Li, 7Li, 8Be, 9Be) plus the two alpha-conjugate cluster / shell-closure points 12C (3-alpha) and 16O (doubly-magic). Read from the VENDORED AME2020 table via codata_constants.ame_binding_mev, not hand-entered. COMPARISON-ONLY validation values, NOT prediction inputs: used to form `err = pred - B_AME`. Per the AGENTS.md three-calibration discipline (CAL-1 m_e, CAL-2 D_beta, CAL-3 D_pi), importing them as upstream inputs to a mass / binding pipeline would inflate the calibration count beyond the allowed 3.",
   "parameters": {
-    "source": "AME 2020 (Wang, M. et al., 'The AME 2020 atomic mass evaluation', Chinese Physics C 45.3 (2021) 030003)",
-    "precision_note": "Values stored as strings (per codata_constants._load_mpf convention) to preserve precision through JSON round-trip; 6-7 sig figs from the AME 2020 evaluation.",
-    "correction_note_2026-06-22": "B_li5 (26.32800→26.3306625, was −2.66 keV off), B_li7 (39.24397→39.2450807, −1.11 keV), B_be9 (58.16480→58.1640237, +0.78 keV) corrected against the vendored AME2020 binding_energy_total_keV in qou-mass/src/qou_mass/data/ame2020.json (the authoritative evaluation). The other values verified within 0.1 keV; B_li6 (31.99405) confirmed correct (0.06 keV) — an earlier triage mis-flagged it. PR #2577.",
-    "superseded_note_2026-06-22": "SUPERSEDED for the registry: codata_constants.py now reads the AME binding/atomic-mass values DIRECTLY (by Z,A) from qou-mass/src/qou_mass/data/ame2020.json — the single source of truth ('write a number once'). This hand-maintained copy is retained ONLY for the legacy scripts that still load it directly; those should migrate to `from codata_constants import AME_B_*_MEV_VALIDATION`, after which this file can be deleted. Do NOT hand-edit — any value here must trace to the vendored ame2020.json.",
-    "derivation_note_c12_o16": "B(12C)=6*(Delta_H + Delta_n)=6*(7.288971+8.071317)=92.16173 MeV (Delta(12C)=0 by the u definition). B(16O)=8*(Delta_H+Delta_n)-Delta(16O)=8*15.360288-(-4.737001)=127.61931 MeV, using AME2020 mass excesses Delta_H=7.288971, Delta_n=8.071317, Delta(16O)=-4.737001 MeV."
+    "source": "AME2020 mass.mas20 (Huang, Wang, Kondev, Audi, Naimi, Chinese Physics C45 030002, 2021), vendored at qou-mass/src/qou_mass/data/ame2020.json from computations/data/ame2020.mas20.txt",
+    "column": "binding_energy_total_keV (= binding_energy_per_A_keV x A)",
+    "precision_note": "Values are read as strings and carried as mpmath.mpf inside workdps(>=50); serialized via _precision.fmt. No float64 anywhere on this path.",
+    "supersedes_manual_entry": true
   },
   "data": {
-    "B_deuteron_MeV": "2.224566",
-    "B_tritium_MeV": "8.481798",
-    "B_he3_MeV": "7.718043",
-    "B_he4_MeV": "28.295673",
+    "B_deuteron_MeV": "2.2245662",
+    "B_deuteron_MeV_mass_excess_route": "2.224566229",
+    "B_tritium_MeV": "8.4817962",
+    "B_tritium_MeV_mass_excess_route": "8.481796284",
+    "B_he3_MeV": "7.71804132",
+    "B_he3_MeV_mass_excess_route": "7.718041308",
+    "B_he4_MeV": "28.2956624",
+    "B_he4_MeV_mass_excess_route": "28.295662378",
     "B_li5_MeV": "26.3306625",
-    "B_li6_MeV": "31.99405",
+    "B_li5_MeV_mass_excess_route": "26.330662312",
+    "B_li6_MeV": "31.9939872",
+    "B_li6_MeV_mass_excess_route": "31.993986932",
     "B_li7_MeV": "39.2450807",
-    "B_be8_MeV": "56.49950",
+    "B_li7_MeV_mass_excess_route": "39.245080802",
+    "B_be8_MeV": "56.4994848",
+    "B_be8_MeV_mass_excess_route": "56.499484496",
     "B_be9_MeV": "58.1640237",
-    "B_c12_MeV": "92.16173",
-    "B_o16_MeV": "127.61931"
+    "B_be9_MeV_mass_excess_route": "58.164023556",
+    "B_c12_MeV": "92.1617352",
+    "B_c12_MeV_mass_excess_route": "92.161734744",
+    "B_o16_MeV": "127.6193152",
+    "B_o16_MeV_mass_excess_route": "127.619315162"
   },
-  "durationMs": 0,
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: 1172-3
-doc_title: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS KAZUO HABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Pr"
+doc_title: "On the colored Jones polynomials of some simple links"
 section_id: sec-003-4-the-kauffman-bracket-skein-module-of-the-solid
 section_title: "THE KAUFFMAN BRACKET SKEIN MODULE OF THE SOLID TORUS"
 section_number: 4
 pages: 4-5
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
-doc_brief: "ON THECOLOREDJONESPOLYNOMIALSOF SOMESIMPLELINKS KAZUOHABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Progress Towards the Volume C"
+doc_brief: "On the colored Jones polynomials of some simple links — 9 sections: INTRODUCTION; KAUFPMAN BRACKET SKEIN MODULES; RESULTS"
 ---
 We use the Kauﬀman bracket skein module $B=B(V)$ of the solid
 torus $V=S^{1}\cross D^{2}$. For details, see [BHMV].

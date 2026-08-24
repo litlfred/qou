@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T15:44:17.600951+00:00",
-  "commitSha": "49d9cd66f0ae1845facee9b4b225d3db30fe8f94",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:56.388762+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "alpha1_reproduces_bare_tauN",
-      "computed": 2.936582693806283e-38,
+      "computed": 2.2269290288621444e-68,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-25,
@@ -22,7 +22,7 @@
     },
     {
       "name": "alpha5_split_node_vanishes",
-      "computed": 7.992159319423726e-41,
+      "computed": 2.0986274160728857e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3089,
+  "durationMs": 4362,
   "computation": "keystone-valuemap-colored-marks-s013",
   "scriptFile": "keystone_valuemap_colored_marks_s013.py",
-  "scriptHash": "e7913ca2ec74",
-  "scriptCommitSha": "49d9cd66f0ae1845facee9b4b225d3db30fe8f94",
+  "scriptHash": "aae45821b581",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,8 +60,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_valuemap_colored_marks_s013.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_valuemap_colored_marks_s013.py"
   },
   "description": "LR modulus ID (three-front spec §2, m_p/m_μ root cause): McKay-mark colour-α insertion on the p₃=5 fibre of the validated Σ(2,3,5) false-theta S-matrix (Hikami math-ph/0405028), colours α∈{1,4,5,6} = S₅-dims of the 4 bwS0 classes = Ê₈ marks under McKay(2I↔Ê₈)∘(A₅⊂S₅). Anchor: α=1 reproduces bare τ_N to machine zero. VERDICT: the mark family does NOT escape the D=2 collapse (p=5 fibre supports colours 1..4 only; α=4≡α=1, α=5 split, α=6 wraps to [6]_ζ≠[5]_ζ+1) — the keystone W_λ=d_ζ(λ)/D is not carried by this object. Pre-registered scope-(a) negative (K2/K3). No fit; nothing wired; Lean loc_matches gate open.",
   "data": {
@@ -86,13 +96,13 @@
     "s0_colored_modulus": {
       "(5)": 0.5257311121191336,
       "(4,1)": 0.5257311121191336,
-      "(3,2)": 7.992159319423726e-41,
+      "(3,2)": 2.0986274160728857e-71,
       "(3,1,1)": 0.5257311121191336
     },
     "s0_ratio_vector": {
       "(5)": 1.0,
       "(4,1)": 1.0,
-      "(3,2)": 1.5201990400013948e-40,
+      "(3,2)": 3.991826558663557e-71,
       "(3,1,1)": 1.0
     },
     "distinct_nonzero_s0_values": 1,
@@ -104,12 +114,12 @@
         1.0,
         1.0,
         1.0,
-        8.667159005433181e-40
+        6.664409594024054e-70
       ],
       "5": [
         1.0,
         1.0,
-        6.187574181174918e-40,
+        4.332794559606092e-70,
         1.0
       ],
       "7": [

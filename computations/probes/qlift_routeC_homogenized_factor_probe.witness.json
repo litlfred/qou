@@ -1,9 +1,9 @@
 {
   "description": "Route C homogenized order-3 factorization test: are the q-lift kernel candidates C1 (q-involution, [m+2]_q b_{m+2} = b_{m+1} + b_m) or C2 (GGM eq-49) right factors of the homogenized order-3 recurrence of the 4_1 colored Jones? Locates both kernels relative to the actual colored-Jones q-holonomic module.",
   "computation": "P1 Habiro sum symbolic sanity; P2 minimal inhomogeneous order-2 recurrence recovered by mod-p undetermined coefficients and CERTIFIED exactly per-m as a Z[q,1/q] Laurent identity for m=2..40 (minimality per garoufalidis-le-2005, not re-proved); P3 homogenization L3 = (beta_{m+1} - beta_m S) o L; P4 exact-rational solution-space membership tests with positive controls; reporting at mp.dps=50",
-  "generated": "2026-07-20T03:42:50+00:00",
+  "generated": "2026-08-23T09:40:05+00:00",
   "parameters": {
-    "dps": 50,
+    "dps": 70,
     "q_values": [
       "21/20",
       "55499/50000"

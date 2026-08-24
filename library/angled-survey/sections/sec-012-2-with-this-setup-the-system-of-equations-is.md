@@ -1,13 +1,13 @@
 ---
 doc_id: angled-survey
-doc_title: "Contemporary Mathematics From angled triangulations to hyperbolic structures"
+doc_title: "From angled triangulations to hyperbolic structures"
 section_id: sec-012-2-with-this-setup-the-system-of-equations-is
 section_title: "With this setup, the system of equations is"
 section_number: 2
 pages: 8-10
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
-doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
+doc_brief: "From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifoldM with"
 ---
 Av =[ π,...,π,2π,...,2π ]T,
 where v ∈ R3n is the vector of angles. Then dimA(τ)=3 n−rank(A).

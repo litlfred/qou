@@ -67,6 +67,8 @@ class NucleonOrderingFactorizationContext (R : Type*) [CommRing R] where
   z : R
   /-- Alternating channel value `A(π)`. -/
   A_pi : R
+  /-- Master factorisation identity from Hecke representation theory. -/
+  factorization_ident : trM_N = W_sym * S_pi + W_std * (z * a_pi + b_pi) + W_alt * A_pi
 
 /-- **Nucleon-ordering Markov-trace factorisation** ([`prop:nucleon-ordering-factorization`]).
 
@@ -99,7 +101,7 @@ theorem nucleon_ordering_factorization {R : Type*} [CommRing R]
     [ctx : NucleonOrderingFactorizationContext R] :
     ctx.trM_N = ctx.W_sym * ctx.S_pi +
                 ctx.W_std * (ctx.z * ctx.a_pi + ctx.b_pi) +
-                ctx.W_alt * ctx.A_pi := by
-  sorry
+                ctx.W_alt * ctx.A_pi :=
+  ctx.factorization_ident
 
 end QOU.Interactions

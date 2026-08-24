@@ -25,6 +25,7 @@ from pyhecke import atom  # noqa: E402
 import pyhecke.constants as c  # noqa: E402
 from lr_coefficients import partitions_of  # noqa: E402
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def conjugate(lam: tuple) -> tuple:
@@ -34,7 +35,7 @@ def conjugate(lam: tuple) -> tuple:
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     print(f"q0 = {float(c.q0):.8f}\n")
     print(f"  {'n':>2} {'Σ W_λ (C1)':>16} {'max|W_λ−W_λ′| (C2)':>20} {'min W_λ (C3)':>14}")
     for n in (3, 4, 5, 6):

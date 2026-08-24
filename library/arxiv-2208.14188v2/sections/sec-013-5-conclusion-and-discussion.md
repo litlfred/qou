@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2208.14188v2
-doc_title: "Prepared for submission to JHEP KIAS-P22064 Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdae"
+doc_title: "Resurgence in complex Chern-Simons theory at generic levels"
 section_id: sec-013-5-conclusion-and-discussion
 section_title: "Conclusion and discussion"
 section_number: 5
 pages: 34-38
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
-doc_brief: "Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea bSchool of Phyiscs and Shing-Tung Yau"
+doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41,S 3\52 with generic"
 ---
 In this short note we study the resurgent properties of the sl(2, C) Chern-Simons state
 integral model on knot complemnets S3\41, S3\52 at generic level k ≥ 1. When the

@@ -1,13 +1,13 @@
 ---
 doc_id: symmetry-04-00039-v3
-doc_title: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 2"
+doc_title: "Knots on a Torus: A Model of the Elementary Particles"
 section_id: sec-002-21-introduction
 section_title: "Introduction"
 section_number: 2.1
 pages: 8-12
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
-doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos V"
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, th e unknot and the trefoil."
 ---
 To anticipate what we have to look forward to in what follows, here’s another quotation [3]: “The 
 topologically iconic Moebius strip (M S) is a closed ribbon that incor porates a single ha lf-twist but it 

@@ -74,8 +74,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import sympy as sp  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 40
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")           # substrate q₀ (s013 / mckay convention)
 P3 = 5                                     # order of the coloured exceptional fibre
 

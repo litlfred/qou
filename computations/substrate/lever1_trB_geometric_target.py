@@ -50,7 +50,8 @@ import pathlib
 import sympy as sp
 import mpmath as mp
 
-mp.mp.dps = 40
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
 
 results: dict = {}

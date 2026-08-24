@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5286v3
-doc_title: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen"
+doc_title: "Hochschild homology of affine Hecke algebras"
 section_id: sec-003-13-parabolic-subalgebras
 section_title: "Parabolic subalgebras"
 section_number: 1.3
 pages: 8-12
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
-doc_brief: "Hochschild homology of affine Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not"
+doc_brief: "Hochschild homology of affine Hecke algebras — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 For a set of simple roots P ⊂ ∆ we introduce the notations
 RP = QP ∩R R ∨

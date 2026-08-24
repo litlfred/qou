@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1101.0956v3
-doc_title: "CONSTANTIN M. ARCUS ¸"
+doc_title: "Algebraic constructions in the category of vector bundles"
 section_id: sec-000-31-the-pull-back-lie-algebroid-of-a-generalized
 section_title: "The pull-back Lie algebroid of a generalized Lie algebroid"
 section_number: 3.1
 pages: 7-15
 source_pdf: 1101.0956v3.pdf
 source_sha256: 28fffdb404e88501
-doc_brief: "CONSTANTIN M. ARCUS ¸ — In this paper we present the category of generalized Lie algebroids ."
+doc_brief: "Algebraic constructions in the category of vector bundles — In this paper we present the category of generalized Lie algebroids ."
 ---
 Let
 (

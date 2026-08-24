@@ -1,13 +1,13 @@
 ---
 doc_id: pjm-v154-n1-p09-s
-doc_title: "Pacific Journal of Mathematics THE PERIOD MA TRIX OF BRING’S CURVE"
+doc_title: "The period matrix of Bring's curve"
 section_id: sec-002-3-the-riemann-matrix-we-now-compute-the-values-o
 section_title: "The Riemann matrix. We now compute the values of the complex"
 section_number: 3
 pages: 8-12
 source_pdf: pjm-v154-n1-p09-s.pdf
 source_sha256: cbf5c02babe5a61e
-doc_brief: "Pacific Journal of Mathematics THE PERIOD MATRIX OF BRING’S CURVE — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
+doc_brief: "The period matrix of Bring's curve — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
 ---
 number τ so that the matrix τ-c is the period matrix of Bring's curve;
 it is the only value modulo ΓQ(5) that comes from a Riemann surface.

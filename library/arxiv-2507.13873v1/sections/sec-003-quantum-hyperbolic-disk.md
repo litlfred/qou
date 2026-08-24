@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2507.13873v1
-doc_title: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡"
+doc_title: "Probing the singularity at the holographic screen via q-holography"
 section_id: sec-003-quantum-hyperbolic-disk
 section_title: "Quantum hyperbolic disk"
 section_number: null
 pages: 9-11
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡ — We study the emergence ofq-deformed spacetime in a lower-dimensional"
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 We have up to this point only discussed the boundary quantum algebra action on boundary
 correlation functions. Here we show how this almost uniquely fixes the non-commutative

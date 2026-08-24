@@ -3,7 +3,7 @@
   "description": "Tests Sum_lambda y_lambda(q)*chi^lambda(beta) = tr_M(beta) as an identity of RATIONAL FUNCTIONS -- no q0 in the statement or the check. Strictly stronger than the two facts it complements: the normalisation result Sum y_lambda*dim V_lambda = 1 evaluates at the IDENTITY braid, and the ~1e-50 bridge-vs-peel agreements are two points of the q-line. Both sides are built from the same colour-weighted canonical word, so the comparison is of one object rather than two conventions.",
   "scriptFile": "markov/markov_identity_symbolic_probe.py",
   "q0Anchor": "independent",
-  "q0_independence_note": "No q0 is read. The peel's numeric (c, d) only SELECT one of five crossing templates -- a q-independent combinatorial choice -- and chi takes delta as the closed form flavor_split_leading(q).",
+  "q0AnchorReason": "No pin governs the result: the identity is checked SYMBOLICALLY, as an equality of rational functions in q, and the sole assertion reads only that symbolic check. The peel's numeric (c, d) only SELECT one of five crossing templates -- a q-independent combinatorial choice -- and chi takes delta as the closed form flavor_split_leading(q). Both substrate values DO appear in the source, as two of the five sample points in `residual_evaluations` (beside q = 1.3, 0.7, 2); they are reported, not depended on. Said explicitly because the earlier wording here was 'No q0 is read', which a reader grepping for 1.1099 would find flatly contradicted by the file.",
   "results": [
     {
       "atom": "proton",
@@ -19,13 +19,13 @@
       "convention": "averaged-crossings",
       "peel": {
         "float_atoms": 0,
-        "elapsed_sec": "0.23",
+        "elapsed_sec": "0.07",
         "rational_in_q": true
       },
       "bridge": {
         "float_atoms": 0,
         "chi_float_atoms_total": 0,
-        "elapsed_sec": "0.53"
+        "elapsed_sec": "0.26"
       },
       "identically_zero": true,
       "zero_test_method": "normalised-numerator",
@@ -78,13 +78,13 @@
       "convention": "colour-weighted-averaged-crossing",
       "peel": {
         "float_atoms": 0,
-        "elapsed_sec": "19.02",
+        "elapsed_sec": "2.62",
         "rational_in_q": true
       },
       "bridge": {
         "float_atoms": 0,
         "chi_float_atoms_total": 0,
-        "elapsed_sec": "1525.86"
+        "elapsed_sec": "225.10"
       },
       "identically_zero": true,
       "zero_test_method": "normalised-numerator",
@@ -130,11 +130,11 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "8c762139e330",
-  "scriptCommitSha": "847c4435e54bb2dae28e7bc0ffd771c2d8757b37",
-  "commitSha": "847c4435e54bb2dae28e7bc0ffd771c2d8757b37",
+  "scriptHash": "5418ad603947",
+  "scriptCommitSha": "90b1419778f06b3c3539c1c62769f1056ee082b1",
+  "commitSha": "03d1c95465daea084a6ce28fbb7986843e8d328b",
   "engine": "sympy",
-  "computedAt": "2026-08-16T11:54:46.727852+00:00",
+  "computedAt": "2026-08-19T15:45:36.916707+00:00",
   "durationMs": 0,
-  "engineVersion": "sympy 1.12"
+  "engineVersion": "sympy 1.14.0"
 }

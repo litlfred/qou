@@ -1,13 +1,13 @@
 ---
 doc_id: 1-s20-s0097316524000426-main
-doc_title: "Journal of Combinatorial Theory, Series A 206 (2024) 105903 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A journal homepage: www.elsevier.com/l"
+doc_title: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 1-s2.0-S0097316524000426-main.pdf
 source_sha256: 76a8ab857163aa09
-doc_brief: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions Olivia X.M. Yao — 7 sections: Proof of a conjecture of Ballantin; Introduction; Proofs of Theorem 1.3 and Coroll"
+doc_brief: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions — 7 sections: Proof of a conjecture of Ballantin; Introduction; Proofs of Theorem 1.3 and Corollar"
 ---
 Recall that a partition of a positive integer n is an integer sequence λ =( λ1, λ2, ...,  λk)
 such that λ1 ≥ λ2 ≥···≥ λk > 0a n d λ1 + λ2 + ··· + λk = n. The numbers λi are called 

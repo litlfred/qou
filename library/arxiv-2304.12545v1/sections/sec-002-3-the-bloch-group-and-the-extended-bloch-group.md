@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-2304.12545v1
-doc_title: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
+doc_title: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN"
 section_id: sec-002-3-the-bloch-group-and-the-extended-bloch-group
 section_title: "The Bloch group and the extended Bloch group"
 section_number: 3

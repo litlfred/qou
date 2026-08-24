@@ -1307,6 +1307,21 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.068Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1326,6 +1341,21 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.124Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -1346,6 +1376,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "5 stylistic spaced dashes in 219 words (2.28/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.181Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-triples": [
@@ -1365,6 +1410,21 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 219 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.243Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1384,6 +1444,21 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.292Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -1403,6 +1478,21 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.361Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1422,6 +1512,21 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.421Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-performed-warmth": [
@@ -1441,6 +1546,21 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.476Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -1460,6 +1580,21 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.533Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. It is a model §3b-cond citizen: the conditional banner names conj:tower-geometric-lower-bound, uses[] lists it, and the Lean sibling takes it as the class hypothesis [TowerGeometricLowerBound w r c]. Growth argument re-derived: c r^{k(A)} <= w(k(A)) <= M A gives k(A) <= log_r((M/c)A), matching the stated logarithmic bound, and the A >= 1 restriction is correctly justified. All ten categories clean."
       }
     ],
     "trap-nonspeakable": [
@@ -1479,6 +1614,22 @@
         "reviewed_at": "2026-08-15T10:31:00.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e0c00b323499",
+          "ts": "f2477c03fea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:57.601Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Prose is direct throughout.",
+        "notes": "note for the sweep-damage axis, not a trap: the Proof idea writes 'formally $(A) = o(r^{A})$ as $A \\to \\infty$', where '$(A)$' is a stripped '$(A : \\mathbb{R})$' — the Lean-structure section three paragraphs later has the intact form '$(A:\\mathbb{R}) = o[\\mathrm{atTop}]\\, r^{A}$'. Math, so not fixed inline; proposed: restore '$(A : \\mathbb{R})$'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1508,5 +1659,5 @@
     "lean": "94c0b926724f",
     "lean_statement": "9e12f6db9a01"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:12:57.601Z"
 }

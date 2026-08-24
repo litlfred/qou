@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-16T14:02:46Z
+updated_at: 2026-08-21T20:56:34Z
 ---
 
 
@@ -2625,3 +2625,1608 @@ two blocks, and the closing steps, with the `OverlapComposition` and its `spoly`
 identity at the end. Same wiring the `a > b` regime needed, over a longer list.
 No new *kind* of object is known to be missing; that claim is only as good as
 the measurements above, which cover `a ≤ 7` and a sample of `b`.
+
+### Landed — PR #5247 merged 2026-08-19
+
+Rebase-merged, so the arc's commits sit on `main` individually (`895f5e07`
+… `114abbb1`). Verified on `main` after the merge: `quadStep` and
+`farComm_transport_right_sources` both present in `HeckeCompletion.lean`, and
+both probes with their witnesses present under `computations/`.
+
+The bean stays **in-progress**: the merge landed the *infrastructure* for the
+`a ≤ b` regime, not the regime. `hecke_is_gs_basis` is untouched by this arc so
+far.
+
+**The next tranche, in order.**
+
+1. **The outer induction over the block's levels.** Everything it needs exists:
+   the per-level lemma is `farComm_transport_right_sources`, and the level
+   structure is measured — `b > a` gives `a` levels with lengths
+   `min(b−a−1+k, b−a+2)`, `b = a` gives `a−1` levels with `min(k, 2)`. Because
+   the number of *short* levels is fixed (two, or one on the diagonal), this
+   should be a fixed prologue plus a uniform single-index loop, i.e. the same
+   kind of object as §4af's loop rather than a new one.
+2. **The assembly.** `MultiStepReduction.trans` over: prefix loop passes, the
+   two `Y·Q` pairs, the two blocks, the closing steps, then the
+   `OverlapComposition` and its `spoly` identity. Same wiring the `a > b`
+   regime needed, over a longer list.
+
+**Two cautions for whoever picks this up.**
+
+- The measurements behind (1) cover `a ≤ 7` and a *sample* of `b`. "No new kind
+  of object is missing" is an inference from that sample, not a theorem — this
+  arc has already had three structural guesses fail (the linear prefix fit, the
+  quadratic-step contexts, the transport direction).
+- Verify with `lean`-direct, never `lake build`, on a tree restored from
+  `lake-cache/qou-<toolchain-slug>`: that branch carries Mathlib but **no UGB
+  oleans**, so build the cone Elem → Basic → CompositionLemma → NormalForms →
+  AlgOps → HeckeGS first (~30 s), then `HeckeCompletion` (~2 min).
+
+### The block's uniform loop — `blockTransportRight` (§4ai)
+
+Half of next-tranche item 1. Measured the per-level `(A, X, W, B)` decomposition
+across the block, and the level-to-level transition is:
+
+    B_{k−1} = [σ just moved] ++ B_k        (the moved letter joins B)
+    W_{k−1} = one letter longer, until the cap; then fixed
+    A_{k−1} = A_k shortened correspondingly
+
+So in the **capped** region — every level after the fixed two (one on the
+diagonal) — the run `W` is constant and each level peels one letter off the
+right end of the remaining block and carries it across. That is exactly "carry a
+whole word `X` rightwards past a whole word `W`", with no reference to the block
+at all, which is what `blockTransportRight` states.
+
+**Peeling direction is forced.** `X` must be peeled from the **right**: its last
+letter sits against `W`, transports across, and joins `B`. From the left there
+is no single transport to apply — the head of `X` is separated from `W` by the
+rest of `X`. Hence `List.reverseRecOn` rather than ordinary list induction.
+
+**Parked-term hypothesis.** Enumerating this induction's intermediates would
+mean splitting `X` *and* `W` simultaneously, which is unusable. But every word
+any step rewrites is `A ++ z`, so `loopTwoGen`'s single hypothesis — no parked
+term begins with `A` — discharges every collision obligation at once. Same
+device, same reason.
+
+Built first try. Sorry-free, standard axioms, `lean`-direct exit 0 on the full
+file with no warnings, and checked non-vacuous by carrying a two-letter block
+past a two-letter run (four far-commutations) with a bystander that does not
+begin with the context.
+
+**Remaining, narrowed.** (a) The fixed prologue — two short levels off the
+diagonal, one on it — as individual `farComm_transport_right_sources`
+applications with explicit contexts, in the style of the `a > b` regime's
+`s1`–`s4`. (b) The assembly. Note (a) is a *fixed* amount of work independent of
+`a` and `b`, which is the whole point of the level-structure measurement.
+
+### The block is CLOSED — `blockPass` (§4aj)
+
+Next-tranche item 1 is done, and it went further than the plan: rather than
+write the two short levels as named lemmas alongside `blockTransportRight`, the
+whole block composes into one lemma.
+
+**Blueprint, measured over 102 levels** (`a = 2 … 7`, `b = a … a+3`), uniform on
+and off the diagonal — the diagonal differs only in *which* levels exist, not in
+their shapes. Level with high letter `σ_h`:
+
+    W = descWord (min(h−2, j₁+1)) j₂        the run it passes
+    B = descWord (h−1) (j₁+1) ++ [σ_i]      what sits to its right
+
+**So the block is three steps**, and the two short levels need **no new lemma** —
+they are `farComm_transport_right_sources` applications, with the blueprint
+supplying their arguments:
+
+    h = j₁+1   transport across descWord (j₁−1) j₂
+    h = j₁+2   transport across descWord j₁ j₂
+    h ≥ j₁+3   one blockTransportRight, X = descWord i (j₁+3)
+
+**The composition is forced by the left contexts.** With `A` the block
+transport's context, the earlier steps must run at
+`A₂ = A ++ descWord i (j₁+3) ++ [σ_{j₁+1}]` and `A₁ = A₂ ++ [σ_{j₁+2}, σ_{j₁}]`.
+Then each step's target is the next one's source *on the nose*, because
+`descWord j₁ j₂` and `descWord (j₁+1) j₂` peel exactly the letters those
+contexts carry. Two `descWord_cons` peelings plus
+`descWord (j₁+2) (j₁+1) = [σ_{j₁+2}, σ_{j₁+1}]` are the entire gluing — no
+bridging lemmas, which is the payoff for the word definitions having been
+chosen to match syntactically.
+
+**One hypothesis dropped.** I first stated `blockPass` with `j₁+3 ≤ i`; the
+linter flagged it unused and it genuinely is — if the bound fails,
+`descWord i (j₁+3)` is empty and the middle step is vacuous, which is exactly
+the degenerate short-block case. The lemma is more general without it.
+
+Sorry-free, standard axioms, `lean`-direct exit 0 on the full file with zero
+warnings. Checked non-vacuous by instantiating at a **real** block — the
+`a = 4, b = 6` corner (rank 13, `i = 11`, `j₁ = 7`, `j₂ = 5`) — with a bystander
+that does not begin with the context, so every index hypothesis is satisfied at
+once rather than merely individually satisfiable.
+
+**What is left is now only the assembly.** Every *kind* of step in the `a ≤ b`
+chain now has its lemma: loop passes (§4af), the quadratic pairs (`quadStep` +
+`monicStep` for the Yang–Baxter half), and the blocks (`blockPass`). Remaining is
+`MultiStepReduction.trans` over the whole list plus the `OverlapComposition` and
+its `spoly` identity — the same wiring the `a > b` regime needed, over a longer
+list. Caveat unchanged: the blueprint is measured over `a ≤ 7` and a sample of
+`b`, not proved, and this arc has had structural guesses fail before.
+
+### The assembly is not only wiring — the chain cancels, twice
+
+Started the assembly and found the arc's own description of it incomplete.
+"`MultiStepReduction.trans` over a longer list" assumes a fixed-shape term list.
+It is not fixed-shape.
+
+**Measured** (`computations/hecke_chain_cancellation.py`, all 20 pairs
+`a = 2 … 6`, `b = a … a+3`): the two quadratic steps each add a term, so the
+element peaks at **four**; then **two** later steps remove two at once. No
+rewrite can do that — a far-commutation takes one term to one term — so each is
+a pair reconverging on a single word with opposite coefficients and
+annihilating. At `a = 4, b = 6`, step 24 rewrites `h · (σ_i σ_{i−4} ⋯)` into
+precisely the word already carried by `−h`, and both vanish.
+
+**The second event is the FINAL step.** So the chain does not terminate by some
+separate mechanism: reaching zero *is* a cancellation. The lemma is therefore
+needed twice, and the second use is what will deliver "reduces to zero".
+
+My first predicate asserted *one* cancellation and failed all 20 cases. Counting
+the final collapse is the whole correction — the failure was mine, not the
+chain's.
+
+**`ofTerms_cancel_pair`** (§4ak) is the bridge. `MultiStepReduction` is stated
+through `CoeffEq`, so the cancellation is **sound** with no help at all (§6
+already carries the congruences); what was missing is the **shape** bridge,
+without which every lemma downstream of a cancellation would have to be stated
+against a list whose first two entries are dead weight.
+
+Sorry-free, standard axioms, `lean`-direct exit 0 on the full file, zero
+warnings, non-vacuous at the configuration the chain actually produces. One
+note for whoever edits it: the `unnecessarySeqFocus` linter suggestion inside it
+is **wrong** — `(simp only …; ring)` fails with "no goals to be solved" because
+`simp only` already closes several `split_ifs` branches, and taking the
+suggestion silently introduced `sorryAx` until `#print axioms` caught it. The
+option is disabled for that declaration with the reason in a comment.
+
+**Where the assembly stands.** The term-count profile is now known end to end:
+
+    2 terms → (quad) 3 → (quad) 4 → (cancel) 2 → both blocks at 2 → (cancel) 0
+
+so the multi-term phase is confined to the prefix, and **both blocks run on a
+two-term element**, which `blockPass` already handles via its `L₁`/`L₂`
+parameters. What remains is the prefix's own step-by-step composition — the
+`a²+a+5` steps up to the first cancellation — and then the closing
+`OverlapComposition` + `spoly` identity. Unchanged caveat: all of this is
+measured over `a ≤ 7` and a sample of `b`, not proved.
+
+### Two scope defects in the merged `blockPass` — found, fixed
+
+Started the prefix, asked whether `small(a)` could reuse `blockPass`, and the
+answer exposed two things wrong with what #5354 merged.
+
+**1. The diagonal was excluded.** `blockPass` carried `hj₂ : j₂ ≤ j₁ − 1`, and
+`b = a` gives `j₂ = j₁`, so it could not be instantiated on the diagonal *at
+all*. But `a ≤ b` includes `b = a`, and the diagonal block is real — `a−1`
+levels rather than `a`, starting one level higher, which is why it doesn't fit:
+the first level is simply absent there. **So #5354's claim that the block is
+"closed at general depth" was too strong** — it was closed for `b > a`.
+
+**2. The trailing word was hardcoded.** Source and target both ended `++ [σ_i]`.
+Right for the top-level block; wrong for `small(a)`, where what sits to the
+right is `descWord j₁ j₂`.
+
+**How the check nearly went wrong.** `small(a)` has the *same*
+`(high, length)` level profile as a diagonal block — measured, identical at
+every `a` from 3 to 6. That agreement is real and it is **not sufficient**: the
+`W` words match exactly and the `B` words do not. Had I stopped at the profile I
+would have asserted reuse that does not hold.
+
+**The unified blueprint**, over 102 top-level levels and 56 `small(a)` levels:
+
+    W = descWord (min(h−2, j₁+1)) j_eff        B = descWord (h−1) (j₁+1) ++ T
+
+    top-level:  j_eff = j₂,  T = [σ_i]
+    small(a):   j_eff = j₁,  T = descWord j₁ j₂
+
+**The fix** handles both defects at once: `blockPassFromTwo` covers the second
+level upward, asks only `j₂ ≤ j₁`, and takes `T` as a parameter — so it covers
+the diagonal *and* `small(a)`. `blockPass` is now one leading transport plus it.
+Freeing `T` is what turns the prefix's `block · two steps · block`
+self-similarity into literal lemma reuse rather than an observation about
+shapes.
+
+Both sorry-free, standard axioms, `lean`-direct exit 0 on the full file, zero
+warnings.
+
+**Running count of structural descriptions in this arc that failed under
+measurement: five.** The linear prefix fit; the quadratic-step contexts; the
+transport direction; "the assembly is wiring"; and now "the block is closed at
+general depth". Every one was caught by measuring rather than by reasoning from
+the previous description. That is the working method for the rest of this arc,
+not a run of bad luck.
+
+### The prefix, read by term lineage — and it needs no new lemma kinds
+
+`computations/hecke_prefix_phases.py` + witness. The prefix's step list resists
+reading because the element is multi-term there and the engine interleaves the
+terms by deg-lex, so consecutive chain steps often belong to *different* terms.
+Tagging each step by term lineage makes it simple.
+
+**Exactly two lineages act, running the same script, offset.** Measured over
+`a = 3 … 6`, `b ∈ {a, a+1, a+2}` — 12 cases, none failing:
+
+    A = [B₂₁, F₀₂, B₁₀] ++ (B minus its trailing [B₁₀⟨b⟩, B₂₁])
+    B = for d = 1 … a−3:  one Bokut–Shiao step, then d far-commutations
+        then one bare Bokut–Shiao step
+        then Y_{j₁,j₁+1} Q_{j₁}, adjacent
+
+`B`'s script is §4af's loop followed by the quadratic pair.
+
+**The lengths corrected my own first phrasing.** "A is the head prepended to
+B's script" is what the picture suggests, and it is wrong: `|A| = |B| + 1`, not
+`|B| + 3`, because `B` ends with two steps `A` has no counterpart for. The check
+now pins that exactly rather than comparing a common prefix — the weaker form
+would have passed while leaving `B`'s last two steps unexamined.
+
+**Consequence — the prefix introduces no new *kind* of step:**
+
+    loop passes      §4af (loopTwo / loopTwoGen / blockStep)
+    B and Y steps    monicStep          (§4x)
+    Q steps          quadStep           (§4ah)
+    small(a)         blockPassFromTwo   (§4aj — reachable only because T was freed)
+    the cancellation ofTerms_cancel_pair (§4ak)
+
+**That is an inventory result, not a schedule**, and the witness says so. The
+pieces still have to compose on the nose across an interleaving of two
+lineages. Given the arc's record — five structural descriptions falsified by
+measurement, one of them about this same assembly — the composition should be
+attempted and allowed to fail loudly, not assumed from the inventory.
+
+**Remaining:** the prefix composition itself, then the `OverlapComposition` and
+its `spoly` identity.
+
+### `quadPair` (§4al) — the pair, and why it is a pair
+
+The prefix uses the quadratic rule exactly twice, each time right after a
+Yang–Baxter. One lemma covers both occurrences (they differ only in `L` and
+`R`), but the mechanism is the part worth recording:
+
+    L ++ [σ_{j₁+1}, σ_{j₁}, σ_{j₁+1}] ++ (σ_{j₁} :: R)
+      Y →   L ++ [σ_{j₁}, σ_{j₁+1}] ++ [σ_{j₁}, σ_{j₁}] ++ R
+      Q →   (L ++ [σ_{j₁}, σ_{j₁+1}, σ_{j₁}] ++ R,  c·h)
+            (L ++ [σ_{j₁}, σ_{j₁+1}] ++ R,          c)
+
+The Yang–Baxter step ends by emitting a `σ_{j₁}`; `R` already **begins** with
+one. They land adjacent, and that adjacency *is* the quadratic redex — neither
+step creates it alone. The original handoff was right to name the pair rather
+than the quadratic step on its own.
+
+**The Yang–Baxter step does not go through `yangBaxterRelation`.** That rule
+carries `−1` at its own leading word, so it is not monic and `monicStep` cannot
+take it. The route is `bokutShiaoRelation j₁ (j₁+1) j₁` — the same relation at
+`j = i−1` (§4j), monic, leading word the right way round. `braid_hrel` /
+`braid_hlm` are exactly that repackaging and already existed; finding them was
+the whole difficulty.
+
+Sorry-free, standard axioms, `lean`-direct exit 0, zero warnings, non-vacuous at
+a **real** occurrence — the first quadratic pair of the `a = 4, b = 6` corner
+(rank 13, `i = 11`, `j₁ = 7`) with the measured contexts.
+
+**Inventory status.** Every piece of the prefix now has a lemma *by name*:
+
+    loop passes      §4af (loopTwo / loopTwoGen / blockStep)
+    B steps          monicStep           (§4x)
+    the Y·Q pairs    quadPair            (§4al)
+    small(a)         blockPassFromTwo    (§4aj)
+    the cancellation ofTerms_cancel_pair (§4ak)
+
+**Remaining: the composition itself**, then the `OverlapComposition` + `spoly`
+identity. That is now the only unattempted piece of the `a ≤ b` regime — and it
+is the one the arc has been wrong about before, so it should be attempted and
+allowed to fail rather than scheduled from the inventory.
+
+### First test of the inventory — `blockPass` does fit the chain
+
+The prefix-phases result was an *inventory* ("every kind of step has a lemma"),
+explicitly not a schedule. `computations/hecke_tail_assembly_fit.py` is the
+first direct test of it.
+
+It takes `blockPass`'s **actual Lean statement** — source and target, written in
+the same `descWord` formulas the lemma uses — and asks whether they reproduce
+the chain's measured block transition. `A` and `T` are **solved for** by
+searching splits, and both source and target must come out right under the
+**same** `(A, T)`. A lemma matching its source under one context and its target
+under another would not compose; that is the failure this is built to catch.
+
+**All 8 off-diagonal cases fit**, with clean contexts:
+
+    A = descWord (i−1) (j₁+2)      [rel 1 … a−2]
+    T = [σ_i]                      [rel 0]
+
+`T` is exactly the tail `blockPass` originally hardcoded — a small vindication
+of the earlier generalisation: freeing `T` did not disturb the top-level use, it
+only added `small(a)`.
+
+**What a pass means:** `blockPass` is *applicable* at the transition the engine
+actually performs, with the contexts it actually has. That is genuinely more
+than the inventory claimed.
+
+**What it does not mean:** that the tail assembles. The `hpark` collision
+hypotheses are properties of the *other* term and are untested here, and the
+Lean chain may order its steps differently from the engine. Off-diagonal only —
+`blockPass` does not cover `b = a`, so the diagonal needs its own fit check,
+not yet written.
+
+**Tail shape, measured** (`a = 4, b = 6`), for whoever assembles it:
+
+    T_pre  −1·(1,2,0,1,3,2,4,3,5,6,0)   +1·(2,1,2,0,1,3,2,4,3,5,6)
+    T_b1   −1·(1,2,3,4,5,6,0,1,2,3,0)   +1·(…unchanged…)     ← blockPass on term 1
+    T_mid  +1·(2,1,2,0,1,3,2,4,3,5,6)   −1·(2,1,2,3,4,5,6,0,1,2,3)
+    T_end  0 terms                       ← blockPass on term 2, then the pair cancels
+
+So the tail is four applications: `blockPass`, two `monicStep`s, `blockPass`,
+then `ofTerms_cancel_pair`. The second block drives term 2 onto term 1's word
+with the opposite coefficient, and that is the final annihilation.
+
+---
+
+## The `a ≤ b` tail composes (2026-08-21, PR #5435, §4am)
+
+The inventory's untested hypothesis, tested — and the answer changed the fix.
+
+**`hpark` fails, and it is the engine's fault.** `blockPass` asks that no other
+term be an extension of the block's left context. That is a property of the
+*other* term, so no fit of a transition can see it — but the tail runs the block
+twice, once per surviving term, so each application has the other as bystander.
+Measured (`hecke_tail_collision_check.py`, 8/8 off-diagonal): `hpark` **holds at
+block 1 and fails at block 2**, because block 2's *last step emits the
+bystander* — that emission is the cancellation ending the chain. The bystander
+is never a word either block *rewrites*.
+
+**The reflex fix was wrong.** Since `SingleStepReduction` reads the redex
+coefficient off the **source** side, a collision on a word only ever *produced*
+costs nothing, so the apparent fix was to propagate down the source-only
+relaxation `farComm_transport_right_sources` already carries. That is three
+lemmas restated, plus an argument that a block's destination differs from each
+of its own intermediate sources.
+
+**None of it was needed — the schedule was.** The two blocks act on *different
+terms*, so their steps commute and `MultiStepReduction` fixes no order beyond
+each redex being present. Deg-lex runs block 1 first; that is the engine's
+accident. Run block 2 first and its bystander is term 1 *pre*-block, which does
+not extend `σ_{i−2} :: A`; by the time term 1 moves, term 2 begins `σ_{i−2}` and
+does not extend `A`. `hecke_tail_reorder_check.py`: both `hpark`s hold, every
+source unique, chain still reaches zero, 8/8.
+
+**`tailChain` (§4am), sorry-free.** `blockPass` on term 2 → `blockPass` on
+term 1 → two `bsStep`s. Ends at a pair differing only in sign — the `a > b`
+regime's own ending (`chain` → `T6` → `T6_isZero`), so **`ofTerms_cancel_pair`
+is not what finishes the tail** after all; it stays the right tool for the
+*mid-prefix* cancellation, where the chain continues. The two terms meet by two
+instances of `descWord_split`.
+
+Also landed: `bsStep` (Bokut–Shiao at general depth in `monicStep`'s shape),
+`bsWord₂_ne_bsWord₁`, `heckeGen_ne_of_val_ne`, and
+`tailChain_indices_nonvacuous` (a = 4, b = 6 at n = 13 satisfies every index
+hypothesis).
+
+**Two corrections to my own work this tranche.** (1) The first collision check
+reported the bystander was *not* the block's final word — a harder problem. That
+was my bug: the chain ends at zero, so reading the post-block term set finds
+nothing and the test went vacuous; asking the last step what it *emits* is the
+fix. (2) I began re-deriving `descWord_split`, which the file already had; my
+grep for it had been truncated by `head -40`, and the compiler caught it.
+
+**Still open.** The **prefix** (`a² + a + 5` steps) is not assembled — only its
+inventory is known, and this tranche is precisely a case of the inventory being
+insufficient. Then the `OverlapComposition` + `spoly` identity joining the two.
+The diagonal `b = a` runs `blockPassFromTwo` and is covered by *neither* the
+collision nor the reorder measurement.
+
+### Two follow-ons, same tranche
+
+**The mid-prefix cancellation is forced — for a different reason than I gave.**
+`hecke_prefix_schedule_check.py` simulates the chain in the **list** model Lean
+actually uses (`ofTerms L`, every lemma reading its redex off
+`L₁ ++ (W, c) :: L₂`, so `W` must occur exactly once) rather than the engine's
+cleaned word→coefficient map. The two agree until the cancellation: the engine
+drops the reconverged pair, the list keeps both entries. Measured:
+
+- `dup_sources = 0` — no step ever rewrites a duplicated word, so the dead pair
+  is inert **as a source** and could be carried on that count alone;
+- **4** entries at `T_pre` against the **2** `tailChain` is stated on;
+- **one** dead word extends a live term's block context — which is exactly what
+  `hpark` forbids.
+
+So `ofTerms_cancel_pair` is forced, and `hecke_chain_cancellation.py` gave the
+wrong reason (a word being reduced twice; it never is) and the wrong count
+(twice; it is once, the second cancellation being the sign-pair ending).
+Consequence: **`tailChain` reaches the prefix's output only if the cancellation
+is discharged before it.** Nothing new is needed — `Basic.lean` §6 already has
+`SingleStepReduction.of_coeffEq_left` and `MultiStepReduction.congr_source`,
+whose disjunctive conclusion `reducesToZero_congr` shows how to absorb.
+
+**The diagonal.** `hecke_tail_diagonal_check.py` runs the fit, the collision and
+the reorder at `a = b = 3..6` against `blockPassFromTwo`'s actual source and
+target: fits both terms under a common `(A, T)`; `hpark` fails at the second
+block under the engine's order and holds under the reordered one; reaches zero.
+4/4. The two Bokut–Shiao steps and the endpoint are the **same** as the
+off-diagonal's — measured. `tailChainFromTwo` (sorry-free) is that argument, and
+its `j₂ ≤ j₁` covers the diagonal. Neither tail statement subsumes the other:
+the hypotheses nest, the sources do not.
+
+**Next.** The prefix assembly itself (`a² + a + 5` steps, two lineages, the
+loop, the quadratic pair, `small(a)`), then `OverlapComposition` + `spoly`
+joining it to the tail. The prefix's own per-step hypotheses have **not** been
+swept — the clash above is measured only against the block contexts `tailChain`
+would use.
+
+### The prefix will be harder than the tail — measured, before writing its Lean
+
+Every context hypothesis in the tail was discharged by **one letter**: no other
+term shared the source's first letter, so "no other term extends this context"
+followed from `List.cons.inj` whatever context the lemma picked. Free, and
+lemma-independent. `hecke_prefix_head_separation.py` asks whether the prefix
+affords the same, over `a = 3..5`, `b ∈ {a, a+1, a+2}`:
+
+- **`4(a−1)` of the prefix's `a²+a+5` steps are NOT head-separated** — 8 of 17,
+  12 of 25, 16 of 35. Roughly half.
+- The shared prefix runs as deep as **`2a+1`**.
+- Only **B** and **F** steps clash; the **Y** and **Q** steps of the quadratic
+  pair never do.
+- All three counts are **independent of `b`** — the clash structure is a
+  function of the depth alone; the block length does not enter it.
+
+**And scheduling does not repair it.** That is what repaired the tail, so it was
+the first thing to try. Both lineage-grouped orders are legal and reach the same
+endpoint; lineage-0-first clashes exactly as often as the engine's order, and
+lineage-1-first is strictly worse (12/18/25 vs 8/12/16). **Scope (a)** — those
+two groupings, alone, do not help; the space of legal orders is far larger than
+three and nothing here excludes a better one.
+
+**Refined — head separation was a proxy, and it overstated the difficulty.** The
+real condition is closed-form. A left context `A` is necessarily a *prefix* of
+the source (every lemma reads its source as `A ++ redex ++ tail`), so `hpark`
+holds exactly when `lcp(source, r) < |A|` for every other term `r`; and `|A|`
+reaches at most the redex offset. So a working context **exists iff
+`redex_offset > max lcp`**. Against that:
+
+- `2(a−2)` of the head-clashing steps are **rescued** — their redex sits past
+  the shared prefix;
+- the **hard core is `2a`** steps (6, 8, 10 at a = 3, 4, 5) where no choice of
+  left context works;
+- and the clashes are a **contiguous suffix** beginning at step `a²−3a+9`.
+
+So the prefix splits cleanly: an **opening phase** of `a²−3a+9` steps that are
+entirely head-separated and need no collision reasoning at all, then a
+**closing phase** of `4(a−1)` where the lineages have converged enough to share
+prefixes. That seam is the natural place to cut the assembly, and the opening
+phase is the obvious next Lean target. All of it independent of `b`.
+
+`context_fits` is optimistic — it asks whether a context exists at the *full*
+redex offset, and a lemma may force a shorter `A` (`blockPass`'s stops where the
+block begins). The `2a` figure is the robust one. The necessary condition is
+separately clean (`dup_sources = 0` chain-wide).
+
+### §4af's loop fits the opening phase (a ≥ 4)
+
+The phase seam makes the opening phase the cheapest remaining Lean target — if
+the lemma covering it fits. `hecke_prefix_loop_fit.py` does for `loopTwoGen`
+what `hecke_tail_assembly_fit` did for `blockPass`: actual Lean source and
+target, `A`/`S` solved by searching splits, `k`/`e` searched over the whole
+range, every side condition enforced (`kd+1=k`, `ed+1=e`, `j₁≤ed`, `j₂≤e`,
+`k≥e`, the `hD` decomposition of `descWord i j₁`, `hY` on the resulting `Y`),
+and the predicted target required to occur in the chain.
+
+**At `a ≥ 4`, both lineages fit** — B from its starting word, A from its word
+after its own three-step head `[B21, F02, B10]`.
+
+**`a = 3` has no loop pass at all** — its group structure is `[0]`, one bare
+Bokut–Shiao step, zero far-commutations. `loopTwoGen` has nothing to fit there;
+that opening phase needs its own treatment. My first version of the probe
+counted this as a failure, and also tested starting words only, which made
+lineage A miss by construction. Both were probe defects, not corpus facts.
+
+A fit is applicability, not assembly: `loopTwoGen` carries a bystander `P` with
+the same `∀ z, P ≠ A ++ z` shape as `hpark`, and fit and collision are separate
+questions — the distinction the tail turned on.
+
+**State of the `a ≤ b` regime**
+
+| piece | status |
+|---|---|
+| tail, off-diagonal | `tailChain` — sorry-free |
+| tail, diagonal | `tailChainFromTwo` — sorry-free |
+| opening phase, `a ≥ 4` | lemma fits (measured); **not assembled** |
+| opening phase, `a = 3` | no loop; needs its own treatment |
+| closing phase (`4(a−1)` steps, hard core `2a`) | **open** — no schedule helps |
+| mid-prefix cancellation | forced; `Basic.lean` §6 has the bridge |
+| `OverlapComposition` + `spoly` | ~~open~~ **already in the corpus** — see below |
+
+### Correction: the overlap and s-polynomial were never open
+
+This arc carried "`OverlapComposition` + `spoly`" on its open list. Wrong, and
+it is the failure the corpus-grep rule exists to catch. Neither
+`CornerGeneral.oc` nor `oc_spoly_coeff` relates `j₁` to `j₂` — both ask only
+`j₁ ≤ i₁` and `j₂ ≤ i₁`. So the overlap is constructible and its S-polynomial is
+identified as `T0` for `j₂ ≤ j₁`, **diagonal included**.
+
+Verified rather than read off the signature: instantiated `oc_spoly_coeff` at
+`j₂ ≤ j₁` and at `j₂ = j₁`, `lean`-direct exit 0 on both. Separately measured
+against the engine — the `a ≤ b` start element is exactly
+`ofTerms [(V0, 1), (U0, −1)] = T0` at (a,b) = (3,4), (4,6) and the diagonal
+(5,5).
+
+**So the only regime-specific piece is the reduction chain from `T0` to zero.**
+Recorded in `oc_spoly_coeff`'s docstring, where the next reader will be
+standing.
+
+
+### §4an — the opening was mostly already proved
+
+Two `CornerGeneral` results carry the `a ≤ b` regime unchanged, both established
+by **instantiation**, not by reading a signature:
+
+- `oc` / `oc_spoly_coeff` never relate `j₁` to `j₂` → same `T0`, diagonal
+  included.
+- **`s1` and `s2` too.** They ask only `i₁+1 = i`, `i₂+1 = i₁`, `j₁ ≤ i₂`; Lean's
+  unused-variable linter reports **`j₂` unused** when they are instantiated,
+  which is the sharpest possible statement of it. They carry the chain to
+  `ofTerms [(V2, 1), (U0, −1)]` — exactly where the engine's replay lands after
+  two steps.
+
+So the regime-specific part starts *later* than this arc assumed. `s3`/`s4` are
+where it begins: they need `hed : ed+1 = j₂` with `j₁ ≤ ed`, i.e. `j₁ < j₂`, and
+cannot be instantiated at `j₂ ≤ j₁` at all.
+
+New namespace **`CornerLe`** with **`uHead`** (sorry-free): the *second* term's
+head — the same two-rule motif as `s1`/`s2` (Bokut–Shiao then far-commutation)
+displaced one letter right, because `U0` carries a leading `σᵢ₋₁` that `V0` does
+not. The Bokut–Shiao redex straddles the two descending runs. Both collision
+hypotheses fall to one letter: the bystander `V2` opens `σᵢ₋₂`, every word here
+opens `σᵢ₋₁`.
+
+**Revised state of the `a ≤ b` regime**
+
+| piece | status |
+|---|---|
+| overlap + S-polynomial | already in the corpus, both depths |
+| chain steps 1–2 (on `V0`) | `s1`/`s2` — already proved, `j₂`-independent |
+| chain steps 3–4 (on `U0`) | `CornerLe.uHead` — sorry-free |
+| tail, off-diagonal / diagonal | `tailChain` / `tailChainFromTwo` — sorry-free |
+| middle of the opening phase, `a ≥ 4` | `loopTwoGen` fits (measured); not assembled |
+| opening phase, `a = 3` | no loop; own treatment |
+| closing phase — `4(a−1)` steps, hard core `2a` | needs the source-only relaxation; **not** an obstruction |
+| mid-prefix cancellation | forced; `Basic.lean` §6 has the bridge |
+
+### Correction: the `2a` hard core is a lemma-shape problem
+
+I called it "the single genuine obstruction in this regime". That over-claims.
+
+`hpark` is **sufficient, not necessary**. What a step actually needs is
+`monicStep`'s `hne` — the *source* word absent from the rest of the list, so its
+coefficient reads off `L₁ ++ (W, c) :: L₂`. A bundled lemma needs that at each of
+its own intermediate sources, which is exactly the relaxation
+`farComm_transport_right_sources` already carries one level down (it excludes
+only the split naming the transport's final word).
+
+**Measured: every source in the chain is unique, the `2a` hard-core steps
+included** (9/9 per case, plus the chain-wide `dup_sources = 0`). So the precise
+per-step condition holds everywhere, and the `2a` figure measures that
+`blockTransportRight` / `blockPassFromTwo` / `blockPass` / `loopTwoGen` do not
+propagate the relaxation — a known fix, not a wall.
+
+**The symmetry worth keeping.** For the **tail**, scheduling made the relaxation
+unnecessary, and I recorded that ("none of it was needed"). For the **closing
+phase**, scheduling does not help — both lineage groupings measured no better or
+worse — and the relaxation is the route. Same two options at each phase; the
+answer differs.
+
+So nothing in this regime is currently known to be blocked. What remains is
+work: propagate the source-only hypothesis into the four bundled lemmas, then
+assemble.
+
+**First of the four is done (§4ai).** `blockTransportRightSources` narrows the
+hypothesis to the family the transport actually rewrites —
+`A ++ P ++ u ++ (x :: (v ++ (S ++ B)))` for `P ++ (x :: S) = X`, `u ++ v = W`,
+`v ≠ []` — one per letter of `X` and per interior split of `W`. The recursion
+threads it through: when `X` loses its last letter to `B`, a split of `X'`
+becomes a split of `X` with `S` extended by that letter. `blockTransportRight`
+keeps its exact signature and is now the one-line corollary, so `blockPass`,
+`blockPassFromTwo` and both tail chains are untouched (`#print axioms` on all
+six: no `sorryAx`). Proved first attempt — the claim that this was "a known fix"
+is now tested rather than asserted.
+
+Remaining to relax: `blockPassFromTwo`, `blockPass`, `loopTwoGen`.
+
+---
+
+## PR #5435 merged (`f2875e72`); relaxations complete on #5454
+
+**All four bundled lemmas now have source-only forms**, each keeping its
+original as a one-line corollary so no caller changed:
+
+| lemma | § | note |
+|---|---|---|
+| `farComm_transport_right_sources` | 4ah | already existed — the template |
+| `blockTransportRightSources` | 4ai | landed in #5435 |
+| `blockPassFromTwoSources` | 4aj | two families, one per transport |
+| `blockPassSources` | 4aj | three — those two plus the leading transport |
+| `loopTwoGenSources` | 4af | two families **per level** |
+
+`blockStep` needed nothing: its `hne` already names the redex and its `hcol`
+already carries `u ≠ []`. The over-approximation lived entirely in
+`loopTwoGen`.
+
+**Why `loopTwoGen` went through unchanged despite being the one with real
+induction structure.** Its accumulator only ever grows on the *right* of `A`, so
+quantifying over that growth `D` makes the hypothesis closed under the recursion
+for free — descending a level replaces `D` by `σ_kd :: D`, and the level's own
+obligations are the `D = []` instances. No new argument was needed.
+
+**One error, compiler-caught:** I first wrote the block transport's hypothesis
+with `W` and `X` swapped, as though the run passed were `descWord i jppp` and
+the block carried `descWord jp j₂`. It is the other way round, and the
+conclusion `A ++ (X ++ (W ++ B)) → A ++ (W ++ (X ++ B))` says so. I had read the
+call site rather than the conclusion.
+
+**Next:** the opening-phase assembly (`a ≥ 4`, `loopTwoGen` measured to fit both
+lineages), then `a = 3` (no loop pass — needs its own treatment), then the
+closing phase, which now has every lemma it needs.
+
+### Opening-phase coverage, measured (#5454)
+
+`uHead` turned out to be **`loopTwoGen` at m = 0** — I hand-proved a lemma the
+file had. Same reuse failure as `descWord_split`, but with a difference worth
+keeping: there the *name* collided and the compiler stopped me; here nothing
+collided, so nothing would have. It surfaced only because `uHead`'s target
+looked like a `loopTwoGen` endpoint while setting up the opening phase.
+
+**The consequence is the useful part.** If one level is `loopTwoGen` at m = 0,
+the whole U-side loop is `loopTwoGen` at general **m = a − 4** — a single
+application, not a chain. That also *explains* two earlier findings instead of
+restating them: `a = 3` would need m = −1 (hence no loop pass), and `a = 4` is
+m = 0 (hence `uHead`).
+
+`hecke_opening_coverage.py`, 6/6 at a = 4..6:
+
+| | a=4 | a=5 | a=6 |
+|---|---|---|---|
+| opening phase | 13 | 19 | 27 |
+| `s1`/`s2` → V2 | 2 | 2 | 2 |
+| `loopTwoGen` (k = i₁, e = jppp) | 2 | 5 | 9 |
+| U-side steps after the loop | **3** | **3** | **3** |
+| covered | 4 | 7 | 11 |
+| left (the V-side loop) | 9 | 12 | 16 |
+
+Those 3 trailing U-side steps are a bare Bokut–Shiao plus the Y-then-Q pair
+that §4al's `quadPair` already covers — so the U side needs **one** named step
+beyond loop + quadPair, not a family.
+
+**Probe bug, recorded because it recurred:** the first version looked for the
+loop's endpoint at the *end* of the contiguous U run, which continues past the
+loop into those 3 steps. False negative in all six cases. Same wrong-index
+shape as the tail's collision check — twice now.
+
+**Next:** the V-side loop (9/12/16 steps), then the closing phase.
+
+### Opening phase fully specified (#5454)
+
+**All five stretches have named lemmas; none is new.**
+
+| stretch | lemma | note |
+|---|---|---|
+| V0 → V2 | `s1`, `s2` | already proved, `j₂`-independent |
+| U loop | `CornerLe.uLoop` | `loopTwoGen`, `A = [σ_{i−1}]`, `k = i₁`, `S = [σᵢ]`, **m = a−4** |
+| U trio | `bsStep` + `quadPair` | `BS(jp, jpp, j₁)`, then `Y(j₁, jp)`, then `Q(j₁)` |
+| V loop | `loopTwoGen` | `A = [σ_{i−2}]`, **k = i**, `S = []`, **m = a−3** |
+| V trio | same as U trio | identified by rule, uniform in a and b |
+
+`uLoop` landed; `uHead` is its `m = 0` case; the dead `U0₁` is gone.
+
+**Scheduling constraint (new).** `loopTwoGen` is stated for a **two-term**
+element; `quadPair` takes general `L₁`/`L₂` and tolerates any number. Under the
+engine's order the U trio — whose quadratic step **splits U in two** — runs
+*before* the V loop, so the V loop would face three terms and `loopTwoGen`
+could not be applied at all. Measured: U splits at step 6/9/13, V loop completes
+at 9/15/23. **Both loops must precede both trios**, which is legal because steps
+on different terms commute.
+
+That is the **third** time in this arc the engine's schedule proved an accident
+rather than a constraint: the tail's two blocks, the closing phase (where
+reordering did *not* help), and now the opening phase. Worth treating the
+schedule as a free parameter by default and asking what the lemmas need.
+
+**Two hypothesis lessons.** `uLoop` first asked `j₂ ≤ j₁` — the regime's fact —
+when `loopTwoGen` needs only `j₂ ≤ jppp`; the strong form made `uHead`
+un-instantiable. And the earlier fit search's two-letter V context was a
+*different parse* of the same word, not the natural one (`A = [σ_{i−2}]`,
+`k = i`).
+
+**Next:** compose the five stretches into one `openingPhase` lemma under the
+loops-first schedule. Then `a = 3` (no loop) and the closing phase.
+
+### Opening phase CLOSED — `T0 →* TOpen`, sorry-free (#5454)
+
+`CornerLe.openingPhase` proves the whole `a²−3a+9` opening for `a ≥ 4`, from
+the S-polynomial to a four-term element. Five stretches, four lemma calls:
+
+    s1, s2  →  uLoop  →  vLoop  →  trio (U)  →  trio (V)
+
+Three things had to be built; all three turned out smaller than expected.
+
+**1. `loopListSources` — the loop against an arbitrary term list.** `loopTwo`
+and its descendants fixed `blockStep`'s list to `[(P, c')]` and `[]`, parking
+the bystander in the FIRST slot. `blockStep` had taken general `L₁`/`L₂` all
+along, so the restriction was in the *statement*, never in the mathematics.
+
+It bites because `ofTerms` is a **representation, not a normal form** — the
+same element with its terms in the other order is a different *value*. `uLoop`
+runs `loopTwoGen` (parked first) and ends at `[(V2L, 1), (U0L, −1)]`; the V loop
+has V active and U parked, so its source must list V first. Those two do not
+compose syntactically.
+
+I first tried a `CoeffEq` congruence (`MultiStepReduction.congr_target` beside
+the existing `congr_source`). **Wrong tool, reverted.** `congr_source` returns a
+*disjunction* because `refl` is a syntactic constructor and an empty chain
+leaves only the source available; discharging the degenerate branch needs a
+refutation of `CoeffEq` between the two words the loop exists to separate.
+`loopTwoGenRightSources` — the same induction against the other slot — is both
+smaller and exact.
+
+**2. `vLoop`.** `V2` is already the loop's entry shape on the nose, so this is
+`loopTwoGenRight` at `A = [σᵢ₋₂]`, `k = i`, `S = []`, `m = i − jppp` — one more
+than `uLoop`'s. Measured: U and V take `2/5/9` and `3/6/10` steps at
+`a = 4/5/6`, i.e. `V = U + 1`, 6/6. It went through first try.
+
+**3. `trio` — ONE lemma, both lineages.** The six steps after `TL` are
+`B(jp,jpp,j₁)`, `Y(j₁,jp)`, `Q(j₁)` twice, and the two occurrences differ only
+in `A` and a trailing `T`:
+
+| | `A` | `T` |
+|---|---|---|
+| U | `[σᵢ₋₁] ++ descWord i₂ jpp ++ descWord i jppp` | `[σᵢ]` |
+| V | `[σᵢ₋₂] ++ descWord i₁ jpp ++ descWord i jppp` | `[]` |
+
+`hj₂ : j₂ ≤ j₁` **is the regime** (`b ≥ a`) and is what makes `descWord jp j₂`
+open `σ_jp, σ_j₁` — so `trio` does not instantiate in the `a > b` corner at all.
+The diagonal `b = a` is included (`descWord jm j₂` empty).
+
+#### What the new probe measured — `hecke_opening_trio_shape.py`, 7/7, 6/6
+
+`hecke_opening_coverage.py` replays under deg-lex; `openingPhase` uses the other
+(legal) order, so the continuation could not be read off that trace.
+
+* **`TL` is reached exactly** — the element after the forced loops-first
+  schedule is precisely `{V2L, U0L}`. Confirms no logic, but checks the Lean's
+  *words* against the engine's, which sorry-freeness does not.
+* **Term count `2,2,3,3,3,4`.** The QUADRATIC step splits, at the END of each
+  trio. So the first trio runs at two terms and the second at three — both fine
+  (`bsStep` and `quadPair` take general lists), and it confirms from the other
+  side why the loops must come first: they are the only two-term-only lemmas.
+* **Exactly 6 steps left after `TL`**, in all six cases. `opening = 2L + 9`.
+* **After the trios: far-commutations** (`F(jpp,j₁)`, `F(jppp,jp)`) at four
+  terms. That is where the next tranche starts.
+
+#### Four errors this tranche, all mine, all the same two shapes
+
+*A check that finds nothing reads as a measurement* (now **three** instances):
+
+1. `importlib.util.spec_from_file_location` returns a **fresh** module, so
+   loading the engine a second time left the probe reading an untuned (empty)
+   rule table. No redex was ever found; every stretch measured 0 steps and the
+   run reported `0/6` rather than erroring.
+2. Then the *same bug* in my ad-hoc inspection script, one level up — the probe
+   module loads its own copy of the sibling, so `cov.retune` there tuned a third
+   instance. It made `TL` look unreachable when the probe had just proved it was.
+
+*A structural claim not measured is usually wrong* (**two** more):
+
+3. I derived the trio's words for the **V** lineage and tested them against the
+   **first** trio, which is the **U** side's — deg-lex reaches `U0L` before
+   `V2L`. Six clean `False`s rather than a near miss is what made it findable.
+   `U_trio_runs_first` is now its own assertion.
+4. `openingLoops`' docstring gave `L = jpp − j₁`. That is `2` for every `a` and
+   agrees with the measured `2, 5, 9` only at `a = 4`. Right figure
+   `L = (a²−3a)/2`; it is the loop's *level* `m = a−4` that is linear in `a`,
+   not its step count. Corrected in place.
+
+Plus three Lean metavariable failures with one cause worth naming: a bare
+`have` has no expected type, so an implicit the hypotheses do not *determine*
+stays open and the `by omega` beside it is asked to prove something about a
+metavariable. Every index is now pinned by name at those call sites.
+
+**Next:** the region after `TOpen` — far-commutations at four terms — then
+`a = 3` (no loop pass: `m` would be −1) and the closing phase.
+
+### Closing phase measured — and the `2a` core is NOT a wall (#5454)
+
+`hecke_closing_from_topen.py`, 8/8 assertions, 6/6 cases. Measured from
+`TOpen`, which is where the next lemma has to start.
+
+**`TOpen` is exact** — the four-word element the Lean names, checked against
+the engine word by word, not just by term count.
+
+**One shape, uniform in `a` and `b`:**
+
+    F-run (2a−3)  →  B(i₁,i,j₁)  →  B(i₂,i₁,j₁)  →  the SAME F-run  →  cancel
+
+Machine-checked, not eyeballed: exactly two adjacent B steps, the two F-runs
+literally equal, each `2a−3` long. The F-run is `F(i_{a−2}, j₁)` then
+`F(x, jp), F(x, j₁)` for `x = i_{a−3} … i₁, i` — a far-commutation transport,
+which §4u/§4v already carry in source-only form.
+
+Term count 4 throughout, dropping to 2 on the last step: one cancellation,
+`ofTerms_cancel_pair`. `2(2a−3) + 2 = 4(a−1)`, and **opening + closing = the
+prefix exactly**, 6/6.
+
+**The `2a` hard core: confirmed, and defused.** `hpark` — "no other term
+extends this step's left context" — fails on exactly `2a` closing steps
+(8/10/12 at `a = 4/5/6`), reproducing `hecke_prefix_head_separation.py`'s count
+at the very steps it applies to. **It is not an obstruction.** Every lemma the
+closing phase needs (`farComm_transport_*_sources`, `bsStep` via `monicStep`)
+already takes the source-only hypothesis. That is what this arc's four
+relaxations were for, and this is the measurement that says they suffice.
+
+#### The fifth vacuous check
+
+The source-uniqueness test in the first version was a **tautology**: the engine
+keys the element by word, so no word can appear twice, and `not any(u == w for
+u in gg if u is not w)` cannot be false. I wrote "dict keys are unique by
+construction" in the comment beside it and did not draw the conclusion.
+
+`monicStep`'s `hne` **cannot be measured in this model at all**. Its Lean-side
+content is that the assembled LIST repeats no word — a property of the
+assembly, under the prover's control, which `hecke_prefix_schedule_check.py`
+measures directly (`dup_sources = 0`).
+
+Also: the cancellation detector compared the term count against
+`before + |image|`, but a far-commutation is a two-word rule and a quadratic a
+three-word one, so the expected count differs per rule. It fired on step 1 of
+every case and reported a 1-step closing phase.
+
+**Pattern to watch, now with five instances:** a test whose subject is
+determined by the *data structure* rather than by the mathematics. Ask what
+would have to be true for the check to FAIL before trusting a pass.
+
+**Next:** the closing phase in Lean — F-run transport, two `bsStep`s, the
+F-run again, `ofTerms_cancel_pair`. Then `a = 3`.
+
+#### The F-run sequences into three lemma calls, not `2a−3` steps
+
+Traced at `a = 6` and checked across all six cases. The engine interleaves two
+letters, but they can be sequenced, and the net effect is small:
+
+    trioLeft ++ [σ_jp, σ_jpp, σ_j₁, σ_jp, σ_j₁] ++ T
+      →  [σ_x] ++ descWord y jpp ++ [σ_jp, σ_j₁] ++ descWord i jppp
+                                 ++ [σ_jpp, σ_jp, σ_j₁] ++ T
+
+Step 0 is the bare far-commutation `F(jpp, j₁)`, which makes `σ_jp σ_j₁`
+**adjacent**. The remaining `2(a−2)` steps then migrate that pair left through
+`descWord i jppp`, one letter at a time, alternating. Since they are on one
+term, the order is free, so:
+
+* `σ_jp` transports fully left — every letter of `descWord i jppp` is
+  `≥ jppp = jp + 2`, so all far-commute;
+* then `σ_j₁` transports fully left — every letter is `≥ jppp = j₁ + 3`.
+
+That is **one `monicStep` plus two `farComm_transport_left_sources`**, whose
+hypothesis is source-only — which is exactly why the `2a` `hpark` failures do
+not matter here.
+
+For the U lineage the target has the closed form
+`descWord i₁ j₁ ++ descWord i j₁ ++ T`; for V it does **not**, because V's left
+context is `[σ_{i₂}] ++ descWord i₁ jpp`, which jumps from `i₂` to `i₁` and is
+not a descending run. Do not state the lemma in the closed form — state it in
+the `[σ_x] ++ descWord y jpp ++ …` form both lineages share.
+
+**Measurement note.** Two wrong guesses on the way, both caught the same way.
+First `T = [σᵢ]`, which is only right on the diagonal (`descWord jm j₂` is empty
+there); off-diagonal it must be `descWord jm j₂ ++ [σᵢ]`, and the three
+diagonal cases passing while the three off-diagonal ones failed is what named
+it. Then I expected all four terms to have moved after `2a−3` steps — only
+**one** has: the engine transports a single lineage word per F-run, which is
+what the `F-run, B, B, F-run` shape says and I had not carried over.
+
+**Next in Lean:** `fRun` (one `monicStep` + two transports), then the two
+`bsStep`s, then `fRun` again, then `ofTerms_cancel_pair`. Then `a = 3`.
+
+### `fRun` landed; the closing phase's remaining contexts measured
+
+`CornerLe.fRun` is in (`bb64de7aaa`), sorry-free: `2a−3` engine steps as one
+`monicStep` plus two `farComm_transport_left_sources`. Its hypotheses are in the
+**source-only** form deliberately — see below.
+
+**Why the `A`-prefix hypothesis is unavailable, confirmed at `TOpen`.**
+`quadPair` splits a word into two differing only in an interior `σ_j₁`, so the
+two terms of one lineage share their entire left context. Measured directly:
+`U1` extends `Uh`'s `A`. That is the `2a` hard core, and it is why `fRun` takes
+`monicStep`'s `hne` plus the two transports' split-indexed conditions rather
+than "no other term extends `A`". This is the payoff of the four `_sources`
+relaxations built earlier in this arc.
+
+**The closing phase's full schedule** (traced at `a = 6`, `b = 7`; identical
+shape on the diagonal):
+
+| steps | what | on |
+|---|---|---|
+| `0 … 2a−4` | `fRun` | T0 |
+| `2a−3` | `bsStep (i' := i₁) (i := i) (j := j₂)`, `a = descWord i₁ j₁`, `b = []` | T0 |
+| `2a−2` | `bsStep (i' := i₂) (i := i₁) (j := j₁)`, `a = []`, `b = σ_i :: descWord i₁ j₂` | T0 |
+| `2a−1 … 4a−5` | `fRun` again | T1 |
+| `4a−5` | …its **last step cancels** against T0's word | — |
+
+Contexts read off the trace, not derived. Note the index asymmetry, which is
+invisible on the diagonal and is exactly the kind of thing this arc keeps
+punishing: the **first** B step is at `j₂`, the **second** at `j₁`. On `b = a`
+they coincide; at `b = a+1` the first redex is `bsWord₁ i j₂`, because
+`descWord i j₁ ++ descWord jm j₂ = descWord i j₂`.
+
+**Two of the four terms never move.** Only T0 and T1 are touched; the other two
+are bystanders for the whole phase. That is what makes the source-only
+hypotheses dischargeable — the bystanders are fixed words, so each obligation is
+a word-inequality rather than a prefix claim.
+
+**Inventory, not schedule.** Every piece the closing phase needs now exists:
+`fRun`, `bsStep`, `fRun`, `ofTerms_cancel_pair`. **No new lemma *kind* is
+missing** — but `hecke_prefix_phases.py` records five structural descriptions in
+this arc that failed under measurement, including one about this very assembly,
+so treat that as an inventory result. The pieces still have to compose on the
+nose, and the cancellation has to land on the word `ofTerms_cancel_pair` expects.
+
+**Next:** assemble the closing phase (`fRun`, two `bsStep`s, `fRun`,
+`ofTerms_cancel_pair`) into `closingPhase`, then chain with `openingPhase` for
+the whole prefix. Then `a = 3`.
+
+### Every closing-phase piece now exists; the assembly's hard part is cheap
+
+Landed this tranche, all sorry-free, `#print axioms` clean:
+
+| lemma | what |
+|---|---|
+| `CornerLe.fRun` | the `2a−3`-step F-run as one `monicStep` + two `farComm_transport_left_sources` |
+| `CornerLe.closingBs` | the two B steps — first at `j₂`, second at `j₁` |
+| `ofTerms_cancel_split` | cancellation with terms in between; `ofTerms_cancel_pair` is its `M = []` case |
+
+**The cancellation is not adjacent, and that is forced.** `trio` emits its
+h-weighted word immediately before its plain one, in place, so `TOpen` reads
+`[(Vh, h), (V1, 1), (Uh, −h), (U1, −1)]` and the two terms that reconverge are
+the two h-weighted ones — with `(V1, 1)` between them. `ofTerms` is a
+representation, not a normal form, so reordering the list is not available
+either. Hence `ofTerms_cancel_split`. Cancelling the two h-terms leaves
+`[(V1, 1), (U1, −1)]`, which is the measured 4 → 2 drop.
+
+**The closing phase's endpoint is `closingBs`'s target, exactly.** Traced: T0's
+`fRun` + `closingBs` lands on `bsWord₂ i₂ i₁ j₁ ++ (σ_i :: descWord i₁ j₂)`, and
+T1's `fRun` lands on the *same word* — its target
+`[σ_{i₂}] ++ descWord i₁ j₁ ++ descWord i j₂` is that word letter for letter.
+So the cancellation needs no bridging lemma beyond the split one.
+
+#### The source-only hypotheses discharge on two cheap facts
+
+This was the part I expected to be hard, since one bystander shares the moving
+term's entire left context (that *is* the `2a` core). Measured across all six
+cases, **zero unresolved**:
+
+* **two bystanders by first letter** — the V words open `σ_{i₂}`, the moving U
+  word opens `σ_{i₁}`;
+* **one bystander by length** — the other U term shares the prefix but is one
+  letter shorter.
+
+And the load-bearing detail: **every intermediate word of an F-run has the same
+length** (measured as a singleton set in all six cases), because both the swap
+and the two transports are length-preserving. So "length ≠ |U1|" is a *single*
+fact that discharges every split at once, rather than a per-split argument. In
+Lean that is `congrArg List.length` on the word equation, then
+`simp [List.length_append]` and `omega`.
+
+**Next:** assemble `closingPhase : TOpen →* [(V1, 1), (U1, −1)]` from the four
+pieces, then chain with `openingPhase` for the whole prefix. Then `a = 3`.
+
+### CORRECTION — "the assembly's hard part is cheap" was measured on ONE run
+
+The previous entry reported **zero unresolved bystanders across all six cases**
+and concluded the discharge is "head letter × 2, length × 1". That measurement
+covered **F-run 1 only**. Completing it to F-run 2 gives `(1, 1, 1)` — one
+bystander separated by head, one by length, and **one unresolved** in every
+case.
+
+**The unresolved one is `W*` itself** — the word F-run 2 is heading for, i.e.
+the word the cancellation happens on. It shares the mover's head *and* its
+length, because the transports are length-preserving and `W*` is where they
+land.
+
+**It is not an obstruction, and the file already anticipated it.**
+`farComm_transport_left_sources` carries `u ≠ []` precisely to exclude the
+transport's final word, and its docstring says so in as many words: *"In the
+corner chain of §4af the bystanding term IS the final word, so the unrestricted
+hypothesis is false exactly where the transport is needed."* Measured
+`inSources = False`: `W*` is never the source of any step in the run, so neither
+`hcol₁` nor `hcol₂` constrains it.
+
+**What does remain is one interior-letter argument.** `fRun`'s `hne` — the
+swap's `monicStep` obligation — compares the bystanders against the run's
+*source*, and there `W*` is not excluded by anything. The two words share the
+prefix `σ_{i₂} :: σ_{i₁} :: descWord i₂ jpp`; after it the mover continues
+`descWord i jppp` (head `σ_i`) and `W*` continues `descWord jp j₁` (head
+`σ_jp`), because `descWord i₂ j₁ = descWord i₂ jpp ++ descWord jp j₁`. So the
+discriminator is `σ_jp ≠ σ_i`, after one peel. Measured uniform: the first
+differing index is exactly `|A_V|` in all six cases.
+
+**Corrected summary of the discharge:** head letter, or length, or — for `W*`
+against the swap's source alone — one `descWord_split` peel then a head
+comparison. Still bounded; not the two-fact story the previous entry told.
+
+Sixth instance of the arc's recurring shape, in its subtlest form yet: not a
+check that *could not* fail, but a check run over a **proper subset** of its
+subject and reported as if complete. The tell was there — I wrote "F-run 1" in
+the probe and then generalised in the prose.
+
+### DEFECT in `closingU` as committed (4ac0cb67b6) — true, but not instantiable
+
+`closingU` takes one packaged collision hypothesis:
+
+    hV : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∃ t, r = σ_{i₂} :: t
+
+and its commit message claims the length argument "lands at the caller". **That
+is wrong.** At the intended call site the U run acts on `TOpen`'s *third* entry,
+so `L₁ = [(Vh, h), (V1, 1)]` and `L₂ = [(U1, −1)]` — and `U1` is
+`trioLeft i i₁ i₂ …`, which opens **`σ_{i₁}`**, not `σ_{i₂}`. `hV` is therefore
+**false at the call site**, and `closingU` cannot be applied there at all.
+
+The lemma is *true* — everything it proves, it proves — and `lean`-direct exit 0
+plus a clean `#print axioms` say nothing about whether its hypothesis is
+reachable. That is the whole point: **sorry-freeness does not check
+instantiability.** This is the §3b-cond non-degeneracy concern in a different
+costume, and the same failure the `uLoop`/`uHead` episode produced earlier in
+this arc (a hypothesis made too strong, so the intended instance did not fit) —
+second time this session.
+
+**What it should be.** The five obligations split three ways, per the measured
+discrimination:
+
+* `Vh`, `V1` — open `σ_{i₂}`; one `List.cons.inj`.
+* `U1` — opens `σ_{i₁}`, same lineage, split off by `quadPair`; separated by
+  **length**. It differs from the run's words only in carrying
+  `descWord jm j₂ ++ [σᵢ]` where they carry `σ_j₁ :: (descWord jm j₂ ++ [σᵢ])`.
+* (V run only) `WStar` — same head *and* length; excluded from the transports by
+  `u ≠ []`, and separated from the swap's source by one `descWord_split` peel.
+
+So `closingU` should take the five hypotheses **raw**, in the shape `fRun` and
+`closingBs` state them, and let `closingPhase` discharge each against the three
+concrete bystanders with whichever of the three arguments applies. That matches
+the file's `_sources` idiom and is the only form that instantiates.
+
+A useful fact for that rewrite, worth recording: **every word in the entire
+closing run has the same length.** Far-commutation is a two-word rule swapping
+adjacent letters; Bokut–Shiao takes `descWord i j ++ [σᵢ]` to
+`σ_{i−1} :: σᵢ :: descWord (i−1) j`, and `|descWord i j| = |descWord (i−1) j| + 1`,
+so both are length-preserving. No length *formula* is needed anywhere — the same
+`descWord`s appear on both sides and `omega` closes with their lengths opaque.
+
+**Next:** restate `closingU` with raw hypotheses, then `closingV`, then
+`closingPhase`. Then `a = 3`.
+
+### THE WHOLE `a ≤ b` PREFIX IS PROVED — `prefixChain`, sorry-free
+
+`CornerLe.prefixChain : T0 →* TCancel` covers all `a² + a + 5` steps of the
+corner's `a ≤ b` prefix, from the S-polynomial to the first cancellation.
+`a ≥ 4`, diagonal `b = a` included.
+
+    openingPhase   a² − 3a + 9   s1, s2, uLoop, vLoop, trio, trio
+    closingPhase   4(a − 1)      fRun, closingBs, fRun
+                   -----------
+                   a² + a + 5
+
+Both counts close against the prefix length exactly, 6/6 at `a = 4,5,6`,
+`b ∈ {a, a+1}`.
+
+`TCancel_coeffEq` is the cancellation: the two `WStar` entries carry `h` and
+`−h` and drop out, leaving `[(V1, 1), (U1, −1)]` — the measured 4 → 2 drop.
+
+**All four final declarations went through first try.** That is not luck and is
+worth recording as method: every endpoint had already been *forced* to match, by
+the two bridge lemmas (`trio_out_eq_fRun_source`, `fRun_target_eq`) and by
+stating each half against the same four-term list. `closingV_at_TOpen`'s source
+IS `closingU_at_TOpen`'s target, syntactically — so `closingPhase` is one
+`.trans` and `prefixChain` is another. The cost was paid earlier, in the six
+iterations `closingV_at_TOpen` took.
+
+#### What this arc actually cost, and where
+
+Ten errors, all mine, in two shapes that recurred until they were named:
+
+*A check that cannot fail, or covers less than it reports* — six instances,
+ending with the bystander sweep run over one of two F-runs and written up as
+complete. The tell each time: the probe's own variable names said what the prose
+did not.
+
+*A structural claim not measured is usually wrong* — four instances, including
+`L = jpp − j₁` (right only at `a = 4`), a diagonal-only `T`, and testing
+V-lineage words against the U trio.
+
+Plus two of one Lean-specific trap: a **hypothesis made too strong for its
+intended instance**. `uLoop`'s `j₂ ≤ j₁` broke `uHead`; `closingU`'s packaged
+`hV` was outright unsatisfiable at its call site. The second is the important
+one — **`lean`-direct exit 0 and a clean `#print axioms` say nothing about
+whether a hypothesis is reachable.** The discipline that fixed it, and that
+every later lemma used: *state the lemma and instantiate it at the real call
+site in the same commit.*
+
+**Remaining:** `a = 3` — loop parameter `m = −1`, no loop pass, the opening
+phase's shape does not arise. Its own treatment, sharing nothing with the
+general assembly. Stated in `prefixChain`'s docstring rather than left implicit.
+
+### The small-`a` framing was wrong — `a = 3` is the same construction
+
+Measured before touching Lean, and it revises what three probes have been
+saying in their caveats.
+
+**`a ∈ {1,2,3}` are all valid corners.** `oc` requires only `j₁ ≤ i₁`, i.e.
+`a ≥ 1`. All of `a = 1,2,3` (at `b ∈ {a, a+1, a+2}`) reach **zero**. The caveat
+*"a = 2 is excluded throughout this arc"*, carried verbatim in
+`hecke_opening_coverage.py`, `hecke_opening_trio_shape.py` and
+`hecke_closing_from_topen.py`, **records no reason** — and `a = 2` is a
+perfectly good resolvable corner. Treat that caveat as unexplained, not as a
+justification.
+
+**`a = 3` fits the SAME phase decomposition**, 3/3:
+
+| stretch | steps at `a = 3` |
+|---|---|
+| `s1`, `s2` | 2 |
+| U loop | **0** |
+| V loop | **1** |
+| two trios | 6 |
+| | `= 9 = a²−3a+9` |
+
+plus `4(a−1) = 8` closing, total **17**, matching the measured first
+cancellation at index 16. The U loop is 0 because at `a = 3`, `jpp = i₁`, so
+`descWord i₂ jpp` is empty and **`U0L` and `U0` are the same word** — the loop
+is the identity, not absent.
+
+So `a = 3` is **not** a different construction needing its own treatment. It is
+this one with `uLoop` replaced by `refl`. What blocked it was two hypotheses.
+
+**One of them was never needed.** `vLoop` carried `htop : jppp ≤ i₁`, copied
+from `uLoop`. `uLoop` genuinely needs it (its loop parameter is `m = i₁ − jppp`);
+`vLoop`'s is `m = i − jppp`, so it only ever needed `jppp ≤ i`. Weakened:
+`vLoop` compiled unchanged, and the only breakage was `openingLoops` passing its
+own `htop`, now discharged by `omega`. **At `a = 3`, `jppp = i`** — so the
+weakened form is satisfiable at exactly the case the arc called out of scope.
+
+Third instance of the too-strong-hypothesis trap, and the first with a
+consequence rather than a cosmetic one. The pattern across all three: a
+hypothesis copied from a sibling lemma whose *parameter* differs.
+
+**`a = 1` and `a = 2` are genuinely different.** `a² + a + 5` holds at `a = 2`
+and `a = 3` but **not** at `a = 1` (measured 6 steps to first cancellation, not
+7). Their rule sequences differ visibly from `a ≥ 3` — `a = 1` opens with two
+quadratic steps, `a = 2` with `Y, F, Y, Q`. Separate cases; measure each before
+assuming anything.
+
+**Next:** `openingPhase₃` — the same five stretches with `refl` for the U loop —
+then `prefixChain₃`. Then measure `a = 1` and `a = 2` properly.
+
+### `a = 3` PROVED — `prefixChain₃`. And what `a = 1`, `a = 2` actually need
+
+`prefixChain₃ : T0 →* TCancel`, all 17 steps, same `TCancel` and same five
+stretches. **So the `a ≤ b` prefix is proved for `a ≥ 3`, diagonal included:**
+
+    prefixChain    a ≥ 4
+    prefixChain₃   a = 3
+
+What unblocked it was one hypothesis that was never a bound. `fRun_target_eq`
+asked `hy : jpp ≤ y`, used *only* to prove
+`descWord y j₁ = descWord y jpp ++ [σ_jp, σ_j₁]`. `fRun_target_eq_of_left` takes
+that identity as a **hypothesis**; `fRun_target_eq` is its `descWord_split`
+supplier and keeps its signature. At `a = 3` the U lineage has `y = i₂` and
+`jpp = i₁ > i₂`, so `descWord_split` does not apply — and the identity is still
+true, because `descWord i₂ jpp` is empty and `jp = i₂`. **A different proof, not
+a weaker bound, is exactly when a side condition should become a hypothesis.**
+Fifth use of the `_sources` idiom here.
+
+Two further splits were genuinely over-strong and are now routed through
+`descWord i₁ j₁` instead of `descWord i₂ j₁` (`WStar_split`, `closingU.hAsplit`):
+`[σᵢ₋₁] ++ descWord i₂ jpp` **is** `descWord i₁ jpp`, so the `i₂` bound was never
+load-bearing. The whole closing chain now asks `jpp ≤ i₁` (true at `a = 3` with
+equality) rather than `jppp ≤ i₁` (false there).
+
+#### `a = 1` and `a = 2`, measured
+
+| | `s1`,`s2` reach `V2`? | `U0L` reached? | `V2L` reached? |
+|---|---|---|---|
+| `a = 1` | **no** | no | no |
+| `a = 2` | **yes** (2 steps) | **no** | yes, in **0** steps |
+
+* **`a = 2` is PARTIALLY the same.** `s1` and `s2` do apply — the engine names
+  the first step `Y(j₁,jp)` (Yang–Baxter) rather than a Bokut–Shiao step, but at
+  `a = 2` we have `j₁ = i₂`, and `bokutShiaoRelation i₂ i₁ i₂` **is** the braid
+  relation (§4j). `s1`'s hypothesis `j₁ ≤ i₂` holds with equality. The V loop is
+  trivial: at `a = 2`, `jpp = i`, so `descWord i₁ jpp` is empty and
+  **`V2L = V2`**.
+  What fails is the **U** side: `U0L ≠ U0` there (they differ by one letter —
+  `descWord i j₂` against `descWord i₁ j₂`), and the chain never produces `U0L`.
+  So `U0L` is simply the wrong U-side target at `a = 2`; the U lineage goes
+  somewhere else and needs its endpoint measured.
+* **`a = 1` differs from step one** — `s1`,`s2` do not reach `V2` at all. It also
+  does not satisfy `a² + a + 5` (measured 6 steps to first cancellation, not 7).
+  Its own construction.
+
+**The `a = 2` exclusion still has no recorded reason**, and this measurement
+weakens the case for one: two of the five stretches transfer unchanged. Do not
+carry that caveat forward as if it were justified.
+
+**Next:** measure the U-side endpoint at `a = 2` (the only stretch that does not
+transfer), then `a = 1` from scratch.
+
+### `a = 2`'s U side is a different SCRIPT, not a different target word
+
+Last entry guessed the `a = 2` case "may close with one new target word rather
+than a new construction". **Measured, and that is wrong.**
+
+Tracing the U lineage in isolation at `a = 2`, `b ∈ {2,3,4}`:
+
+    a=2 b=2:  Y(j₁,jp)  Q(j₁)  F(i,j₁)  Y(jp,i)  Y(j₁,jp)
+    a=2 b=3:  Y(j₁,jp)  Q(j₁)  F  F  F  Y(jp,i)  B(j₁,jp,j₂)
+    a=2 b=4:  Y(j₁,jp)  Q(j₁)  F  F  F  F  F  Y(jp,i)  B(j₁,jp,j₂)
+
+That is not `loop, trio`. The U side **opens with `quadPair`** — `Y(j₁,jp)` then
+`Q(j₁)` — where the `a ≥ 3` construction opens with a loop and reaches
+`quadPair` only inside the trio. Then a far-commutation transport of growing
+length, then a Yang–Baxter and a Bokut–Shiao step.
+
+Its endpoint is `bsWord₂ i₂ i₁ j₂ ++ [σᵢ, σᵢ₋₁]` (rel `[2,1] ++ descWord i₂ j₂
+++ [0,1]`, uniform in `b`) — **not** `WStar`, which at `a = 2` would be
+`bsWord₂ i₂ i₁ j₁ ++ (σᵢ :: descWord i₁ j₂)`, one letter longer. So neither the
+target nor the route transfers.
+
+**Revised scope for `a = 2`:** two of five stretches transfer unchanged (`s1`,
+`s2`; and the V loop is trivial since `V2L = V2`). The U side and both trios do
+not. It is a smaller job than `a = 1` but it is a construction, not a
+substitution.
+
+Why the U side differs is visible in the indices: at `a = 2`, `descWord i j₁` is
+only three letters (`j₁ = i₂`), so `U0` carries a braid redex `[σ_jp, σ_j₁,
+σ_jp]` from the start — the quadratic pair is *already present* rather than
+being produced by a loop pass. The `a ≥ 3` construction spends its loop building
+exactly that.
+
+**Standing correction to three probes:** the caveat *"a = 2 is excluded
+throughout this arc"* still records no reason, and now has a measured one — the
+U-side script differs. Whoever next edits those probes should replace the bare
+caveat with this.
+
+---
+
+## RETRACTION + `a = 2` PROVED (2026-08-23)
+
+**The section immediately above is wrong and is retracted.** It reports the
+`a = 2` U lineage's endpoint as `bsWord₂ i₂ i₁ j₂ ++ [σᵢ, σᵢ₋₁]`, concludes
+that "neither the target nor the route transfers", and revises the scope to
+"a construction, not a substitution". All three are wrong about the **prefix**.
+
+The error: `hecke_small_a_decomposition.py` ran the U lineage to its **normal
+form**. The prefix ends at the **first cancellation**, which is far earlier —
+and the branch that measurement followed is *never touched* before the prefix
+ends. It just sits there as a bystander, which is why the prefix's step count
+is independent of `b` while that branch's length is not.
+
+Re-measured to the first cancellation (9/9 assertions, 8 cases):
+
+| | `a = 1` | `a = 2` | `a ≥ 3` |
+|---|---|---|---|
+| prefix steps | 6 | **11** | `a²+a+5` |
+| matches `a²+a+5` | ✗ (7) | ✓ | ✓ |
+| opening / closing | — | 7 / 4 ✓ | `a²−3a+9` / `4(a−1)` |
+| cancellation word | `bsWord₂ i₁ i j₂` | **`WStar`** ✓ | `WStar` |
+| source-only at every step | ✓ | ✓ | ✓ |
+
+So `a = 2` obeys **every** general formula and lands on the **same word**. It is
+a substitution after all, in three of five stretches.
+
+`CornerLe.prefixChain₂` proves it — lean-direct exit 0, 0 sorries, `#print
+axioms` clean on all six new declarations. What actually degenerates, all from
+`j₁ = i₂` forcing `jp = i₁`, `jpp = i`:
+
+* **U loop absent** (not the identity): `descWord i j₁` is three letters, so
+  `U0` already carries `quadPair`'s redex and needs neither the loop nor the
+  trio's `bsStep`. `uQuad₂` is `trio` minus its first step. At `a = 3` the loop
+  is *present and is the identity* — the two small cases degenerate in
+  **opposite** directions.
+* **V loop trivial** (`descWord i₁ jpp` empty, `V2L = V2`).
+* **both F-runs one step** (`descWord i jppp` empty) — hence `fRun_gen`, which
+  takes the run as a parameter and the close-up as a hypothesis, leaving `fRun`
+  as its `descWord_split` supplier so the `a ≥ 3` chain is untouched.
+
+The V trio, `closingBs`, and the cancellation transfer unchanged. `closingBs`
+transfers because its `hj₁ : j₁ ≤ i₂` holds with **equality** here.
+
+**Why the trace's step 9 reads `Y` and not `B`.** Measured, not assumed: at
+`j = i′` the Bokut–Shiao rule and Yang–Baxter share a leading word on 8/8 pairs
+at `n = 9` and have the same relation on 0/8 — they differ by a **sign**, `Y`
+carrying `−1` at its own leading word. The engine names whichever its rule
+table reaches first; the Lean takes the monic Bokut–Shiao form, for the reason
+§4al already gives for `quadPair`.
+
+**Standing caveat, now discharged for `a = 2`.** The three sibling probes'
+bare "a = 2 is excluded throughout this arc" is replaced with the measured
+reason. All four Hecke GS probes now declare `q0Anchor: "independent"` with a
+reason (verified: the whole import cone reads no q₀; the engine's only symbol
+is a formal `sp.Symbol("h")`). Audit: `Q0_INDEPENDENT` 35 → 39,
+`Q0_ANCHOR_MISSING` 1924 → 1922.
+
+### Method note — the fourth instance in this arc
+
+This is the **fourth** structural claim in this arc to reach a durable artifact
+having been measured against the wrong question (after: V-lineage words tested
+against the U trio; `L = jpp − j₁`; `T` hardcoded to `[σᵢ]`). The pattern is
+not "insufficient measurement" — each had a measurement — it is a measurement
+answering a *neighbouring* question. The probe now states its question in its
+own docstring: **run to the first cancellation, not to a normal form.**
+
+### `a = 1` — measured, open
+
+6 steps, not 7. Schedule `QQYQBQ` for `b ≥ 2`, `QQYYQQ` on the diagonal
+`b = 1`. Cancellation word `bsWord₂ i₁ i j₂` = `σᵢ₋₁ :: σᵢ :: descWord i₁ j₂`,
+uniform in `b`. Nothing transfers: at `a = 1`, `j₁ = i₁`, so **both** `V0` and
+`U0` carry a bare quadratic redex `σᵢ₋₁σᵢ₋₁` from the start and the chain opens
+with two `Q` steps, one per term. Not yet proved.
+
+### `a = 1` PROVED — the `a ≤ b` regime is complete (2026-08-23)
+
+`prefixChain₁`: six steps, `T0` to the first cancellation. Unlike `a = 2`,
+`a = 1` shares **neither** the count formula (6, not 7) **nor** the target
+(`bsWord₂ i₁ i j₂`, not `WStar`) — the "measured, open" entry above is now
+closed, and its measurement stands.
+
+| | steps | target |
+|---|---|---|
+| `prefixChain`  | `a ≥ 4` | `a²+a+5` | `WStar` |
+| `prefixChain₃` | `a = 3` | 17 | `WStar` |
+| `prefixChain₂` | `a = 2` | 11 | `WStar` |
+| `prefixChain₁` | `a = 1` | 6 | `bsWord₂ i₁ i j₂` |
+
+`oc` requires only `j₁ ≤ i₁`, i.e. `a ≥ 1`, so **no uncovered corner is left in
+this regime.** All four are lean-direct exit 0, 0 sorries, and `#print axioms`
+clean.
+
+Two things worth keeping from the `a = 1` proof:
+
+* **Every word is written over `D = descWord i₂ j₂`,** which is *empty* on the
+  diagonal `b = 1`. That is what makes the bystander arguments uniform in `b`:
+  the words have lengths `|D|+2 … |D|+5`, and at the three places where two
+  collide they differ in their first letter.
+* **The chain's order is deliberately not deg-lex's, and that is load-bearing.**
+  Deg-lex interleaves the lineages and at `b = 1` takes a U step before the V
+  one; under that order the U word after its `bsStep` and the V word after its
+  braid are both `|D|+4` long *and* agree in their first three letters, so
+  separating them would need a case split on whether `D` is empty. Running the U
+  lineage to its end first means the V words are only ever compared against
+  words of a different length. `MultiStepReduction` fixes no order beyond each
+  step's redex being present — deg-lex picks one, the Lean is not obliged to.
+
+### The `a > b` corner — measured, and it is EASIER (2026-08-23)
+
+I had written *"the `a > b` corner is a new construction, not an extension"*
+into this PR's body and a scheduled follow-up note, inferred from `trio`'s
+`hj₂ : j₂ ≤ j₁` not instantiating there. Sound inference, wrong emphasis, and
+**unmeasured**. Measured (15 cases, `a ∈ 2..6`, `b ∈ 1..a−1`, 8/8 assertions,
+[`hecke_agtb_corner_shape.py`](../computations/hecke_agtb_corner_shape.py)):
+
+| | `a ≤ b` | `a > b` |
+|---|---|---|
+| S-polynomial | partial cancellation, 2 terms survive | **reduces to ZERO**, 15/15 |
+| max terms | 4 | **2** |
+| quadratic steps | 2 (one per trio) | **0**, 15/15 |
+| step count | `a² + a + 5` | `b² + 3b + 5` — **no `a` dependence at all** |
+| first cancellation | mid-chain | **is the end of the chain**, 15/15 |
+
+`Q` is the only rule that splits one term into two, so with zero `Q`s the whole
+4-term apparatus this arc built — `quadPair`, `trio`, `TOpen`,
+`ofTerms_cancel_split` — is **unnecessary** in `a > b`. It is a 2-term
+convergence over `monicStep` / `bsStep` / `farComm_transport_left_sources`
+ending at the zero element. So: *"new construction"* was right about the route
+and **wrong about the effort** — `a > b` is the easier half, and the hard half
+is the one already done.
+
+It also understates how related they are. Same two-run target shape, **bottoms
+swapped**:
+
+```
+a ≤ b :  WStar = bsWord₂ i₂ i₁ j₁       ++ descWord i j₂
+a > b :          bsWord₂ i₂ i₁ (j₂ − 1) ++ descWord i j₁
+```
+
+and both counts quadratic in `min(a,b)`: `m² + m + 5` for `m = a ≤ b`,
+`m² + 3m + 5` for `m = b < a`. They differ by `2m`, so they do **not** meet on
+the diagonal — the diagonal belongs to `a ≤ b`.
+
+**Sixth instance of the arc's recurring error, caught by the probe rather than
+shipped.** I first wrote the middle run as `descWord i₂ j₁`. That is right
+exactly when `b = a−1` or `b = 1` — which is every case a quick eyeball lands
+on. Extending the sweep to `a = 6` broke it and the assertion fired. The
+formula is asserted in the probe rather than stated in prose *because* of this.
+
+## The `a > b` corner (2026-08-23, PR #5539, §4ao)
+
+Measured first, then proved. The shape, from `hecke_agtb_corner_shape.py` and
+`hecke_agtb_lineage_schedule.py`:
+
+- the S-polynomial **reduces completely to zero** — no residue, where `a ≤ b`
+  ends its prefix at a *partial* cancellation with two survivors;
+- the element **never exceeds two terms**, because the chain uses **no
+  quadratic step**. `quadStep` is the only rule that splits a term, so
+  `quadPair`, `trio`, `TOpen` and `ofTerms_cancel_split` — the whole four-term
+  apparatus the other corner needed — are unnecessary here;
+- step count `b² + 3b + 5`, with **no `a`-dependence**;
+- meeting word `bsWord₂ i₂ i₁ (j₂ − 1) ++ descWord i j₁`.
+
+**This retracts an unmeasured claim of mine.** I had written that `a > b` was
+"a new construction, not an extension", inferred from `trio`'s `hj₂ : j₂ ≤ j₁`
+not instantiating. The inference is sound; the conclusion about *effort* was
+wrong. `a > b` is the easier half, and the hard half was already done.
+
+### Both lineages are BLOCKS
+
+Each lineage is a sequence of blocks: one Bokut–Shiao step, then a run of
+far-commutations. **69/77 of those runs move a single letter past
+contiguously-descending obstacles**, so the whole run is one
+`farComm_transport_left_sources` call and a block costs **two lemma
+applications** however long its run — `b² + 3b + 5` steps but `O(b)` lemma
+calls. `gtBlock` packages exactly that pair.
+
+Per lineage: `b` blocks with an F-run, and on the second lineage **two**
+trailing B-only steps. (I first wrote `b + 1` blocks in a check-in note; that
+was the index *range* end read back as a count, corrected in the probe.)
+
+The first lineage's opening is **`b`-independent** — `vOpen`, five steps with
+an arbitrary trailing context `S` carried inert, where `b = 1` is `S = []`.
+The second lineage's opening is **not**, which the probe measures rather than
+assumes.
+
+### Proved
+
+| | |
+|---|---|
+| `sPolyChain_gt₁` | `b = 1`, 9 steps → `(W, 1), (W, −1)` |
+| `sPoly_zero_gt₁` | → 0 |
+| `sPolyChain_gt₂` | `b = 2`, 15 steps → `(W, 1), (W, −1)` |
+| `sPoly_zero_gt₂` | → 0 |
+
+`b = 2` is `vOpen` at `S = [σᵢ₋₂]` — its first call with a **non-empty**
+trailing context, which is what the parameter was stated for — then one
+`gtBlock`; and on the second lineage two `gtBlock`s at runs of one and two
+letters, then two bare `bsStep`s. Same two lemmas throughout; only the
+arguments change. Both new lemmas are now instantiated at a second real call
+site, per the rule that a lemma is not established until its hypotheses are
+shown reachable.
+
+All sorry-free; `#print axioms` on each: `propext`, `Classical.choice`,
+`Quot.sound`.
+
+### `a = b + 1` is not an exception for the Lean
+
+The probe records the eight `a = b + 1` cases as exceptions because deg-lex
+interleaves the last block's two moved letters differently there.
+`MultiStepReduction` does not require deg-lex order — only that each step is
+applicable — so `sPolyChain_gt₂`'s hypothesis is `j₁ ≤ i₃`, i.e. `a ≥ 3`
+**with equality allowed**, and it covers `a = 3` as well. The exception is in
+the engine's schedule, not in the mathematics.
+
+### CLOSED — `gtRun`, and the chain at every `b`
+
+The induction landed the same session. `sPolyChain_gt` proves the corner for
+every `b ≥ 2`; with `sPolyChain_gt₁` that is the **whole `a > b` half**, and
+both resolve to zero.
+
+| | |
+|---|---|
+| `gtRun` | the induction — `gtBlock` iterated over a run of any length |
+| `sPolyChain_gt` | `b ≥ 2`, any `a > b` → `(W, 1), (W, −1)` |
+| `sPoly_zero_gt` | → 0 |
+
+The whole chain is **four lemma applications regardless of `b`** — `vOpen` +
+`gtRun` on the first lineage, `gtRun` + two `bsStep`s on the second — where the
+step count is `b² + 3b + 5`. That is the measured block decomposition turned
+into Lean.
+
+Two design points, both bought by proving `b = 1` and `b = 2` concretely first:
+
+- **`z` and `j₂'` are parameters with `+1 =` hypotheses, not constructed.**
+  That is the file's idiom (`descWord_cons_le` takes its `i'` the same way).
+  The one place a `Fin n` predecessor must be *built* is the recursive call's
+  `z − 1`.
+- **The split `w ++ descWord y j₁ = descWord i j₁` is a hypothesis, not a
+  computation.** Stating `w` as `descWord i (y+1)` instead would have forced a
+  `Fin n` **successor** at every level; carrying the split forces none. This
+  was the obstacle identified below, and carrying the split is what dissolved
+  it.
+
+`b = 1` is not covered by the general theorem and cannot be: there the first
+lineage's run `descWord i₂ j₂` is **empty** (`j₂ = i₁ > i₂`), so `vOpen`
+already lands on the meeting word and `gtRun`, whose run has `k + 1 ≥ 1`
+letters, has nothing to do.
+
+### How the induction was found
+
+The block, in `descWord`-relative form, is the induction step:
+
+```
+A ++ (descWord i j₁ ++ (σ_y :: T))   →*   (A ++ [σ_{y−1}]) ++ (descWord i j₁ ++ T)
+```
+
+— each block pulls the leading letter of the trailing run across
+`descWord i j₁`, demoting it by one and depositing it on the left. Both
+lineages are that same move: the whole trailing descending run slides down by
+one and jumps to the left of `descWord i j₁`. Verified against the exact words
+at `b = 2` and `b = 3`.
+
+The obstacle looked like `Fin n` predecessor arithmetic — the deposited
+letters are `y−1, y−2, …`. It was not: passing the predecessors as parameters
+with `+1 =` hypotheses, and carrying the split rather than computing `w`,
+removes every construction but one. `b = 2` was proved concretely first,
+deliberately, to check that `gtBlock` composes at a longer run before
+committing to a design for the induction — and that is what made the right
+statement visible.
+
+## The `a ≤ b` prefix and tail are JOINED (2026-08-23, PR #5586, §4ap)
+
+`sPoly_le_resolves` (`a ≥ 4`) and `sPoly_le_resolves₃` (`a = 3`): the `a ≤ b`
+S-polynomial reduces to an element that is coefficientwise **zero**, for every
+`b ≥ a`, the diagonal included. With `sPoly_gt_resolves` (#5539) that is the
+whole Bokut–Shiao corner except `a = 1, 2`.
+
+Every piece was already on `main`. What was missing was the join, and **the join
+is not a `trans`**:
+
+```
+prefixChain      T0 →* TCancel                 (4 terms, two a cancelling WStar pair)
+TCancel_coeffEq  CoeffEq TCancel (2-term pair)
+tailChain        2-term pair →* sign-pair
+```
+
+The middle arrow is a `CoeffEq`, and `MultiStepReduction` is stated on
+**representations** — `ofTerms` is a representation, never a normal form. So
+`TCancel` and `tailPair` are the same element and different objects.
+`MultiStepReduction.congr_source` is the way through; its conclusion is a
+disjunction, forced by `refl` being a syntactic constructor. Both branches give
+the same thing, so the join costs only naming them. That `Basic.lean` §6
+machinery was written for exactly this and had **no consumer until now**.
+
+**The case split is on the diagonal, not on `a`.** `tailChain` runs off it,
+`tailChainFromTwo` on it; their targets are literally the same expression, so
+only the sources needed reconciling. At `j₂ = j₁`, `descWord jm j₂` is empty
+while `descWord j₁ j₂` is one letter, so `tailChainFromTwo`'s trailing `σ_jp` —
+which sits *after* its run where `tailPair`'s sits *before* — lands in the same
+place. Off the diagonal the two words genuinely differ. That is the recorded
+"neither tail statement subsumes the other", now used rather than noted.
+
+**`a = 3` forced a hypothesis correction.** `tailFromCancel` takes `jpp ≤ i₁`
+**directly**, not `htop : jppp ≤ i₁`. At `a = 3`, `jpp = i₁` so `jppp = i₁ + 1`
+and `htop` is **false**. Stating the tail on `htop` — which reads naturally,
+since it is what `prefixChain` carries — would have made `sPoly_le_resolves₃`
+unprovable for precisely the case it exists to cover. Compiler-caught, along
+with an invented `hleft` hypothesis that is `closingPhase₃`'s parameter, not
+`prefixChain₃`'s.
+
+Also dropped: an `hq : q − q⁻¹ ≠ 0` I had put on `sPoly_le_resolves`. The
+cancellation is `h` against `−h` whatever `h` is, so it was never needed —
+the unused-variable linter caught it. Same failure mode as `closingU`'s
+unsatisfiable packaged hypothesis, one step milder.
+
+### `a = 1` and `a = 2` do NOT transfer — measured, not assumed
+
+Checked concretely rather than left as "unmeasured", since assuming a transfer
+is what this arc has repeatedly paid for:
+
+- **`a = 2`.** `TCancel₂_coeffEq` *does* leave a two-term pair, and its **first**
+  word is exactly `tailPair`'s: at `a = 2`, `jp = i₁` and `jpp = i`, so
+  `trioLeft i i₂ i₁ jpp jppp` collapses to `[σᵢ₋₂]` and the rest lines up. Its
+  **second** does not. `tailPair`'s second word carries a leading `σᵢ₋₁` that
+  `TCancel₂`'s lacks, because the peel `descWord i₁ jpp = σᵢ₋₁ :: descWord i₂ jpp`
+  needs `jpp ≤ i₁` — and at `a = 2`, `jpp = i`. The same bound is `hjppid` in
+  both tail statements, so neither applies as stated.
+- **`a = 1`.** `TCancel₁_coeffEq` leaves **four** terms, with coefficients
+  `h, 1, −h, −1`. It does not reach a two-term pair at all, so there is nothing
+  for a tail stated on a pair to consume.
+
+So both small cases need their own tail argument. Neither is a rewrite of this
+one, and the obstruction in each is a specific index bound rather than effort.

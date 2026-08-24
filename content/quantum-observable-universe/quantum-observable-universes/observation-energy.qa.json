@@ -2052,6 +2052,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.265Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: proposition block. 'The classical energy can increase or decrease under observation; only the quantum energy monotonically increases.' is substantive mathematical contrast -- the classical/quantum split IS the proposition's second half, and step (3) of the proof discharges exactly it. Verified the displayed identity: (1 - 1/(q+d)) - (1 - 1/q) = d/(q(q+d)), correct as printed.",
+        "notes": "Pass by the substantive-contrast carve-out."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2071,6 +2087,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.308Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "trap-em-dash": [
@@ -2090,6 +2122,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.350Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "trap-triples": [
@@ -2109,6 +2157,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.393Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "trap-closing-aphorism": [
@@ -2128,6 +2192,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.439Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "trap-meta-commentary": [
@@ -2147,6 +2227,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.481Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "trap-thesis-restatement": [
@@ -2166,6 +2262,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.526Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "trap-performed-warmth": [
@@ -2185,6 +2297,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.570Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "trap-superlative": [
@@ -2204,6 +2332,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.615Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "trap-nonspeakable": [
@@ -2223,6 +2367,22 @@
         "reviewed_at": "2026-08-15T10:30:59.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "b24b54858352"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:55.658Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read of the proposition; no instance of this construction. The block-final sentence introduces the classical-versus-quantum distinction rather than restating the earlier inequality, so it is not category-7. Notation checked against the collision register: fraktur S_q for the categorical action is correct.",
+        "notes": "No trap."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2246,5 +2406,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:36:55.658Z"
 }

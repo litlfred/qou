@@ -31,7 +31,7 @@ Then:
    $$
    \theta_p(w)=0 \iff w\in -p^{\mathbb{Z}},
    $$
-   and $\operatorname{ord}_{w}\theta_p = 1$ at each such $w$. The argument
+   and $\mathrm{ord}_{w}\theta_p = 1$ at each such $w$. The argument
    principle on the annulus $\rho<|z|<p\rho$ reads the winding difference of
    (2) as the number of zeros there counted with multiplicity, so that number
    is $1$; claim (1) supplies a zero at $-p^{k}$ whenever the annulus meets the

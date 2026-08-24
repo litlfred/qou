@@ -3,8 +3,9 @@
 title: Cite 1611.03697v5.pdf at conj:stokes-dt-bps-bridge
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:13Z
-updated_at: 2026-08-08T16:13:13Z
+updated_at: 2026-08-21T17:05:10Z
 ---
 
 conj:stokes-dt-bps-bridge names Omega_DT without a source that defines it as Stokes/RH data; Defn 2.1-2.3 supplies that, and Thm 3.2 supplies the solvable-case precedent.
@@ -19,3 +20,10 @@ Source: `library/arxiv-1611.03697v5/1611.03697v5.pdf` — no `references.ts` ent
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1611.03697v5/  ->  [bridgeland2016]
+  RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [bridgeland2016] as the citation key when you do it.

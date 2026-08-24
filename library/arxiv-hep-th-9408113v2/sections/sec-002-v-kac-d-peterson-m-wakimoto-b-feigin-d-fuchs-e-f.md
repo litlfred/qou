@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "Steklov Mathematical Institute"
+doc_title: "Dilogarithm identities"
 section_id: sec-002-v-kac-d-peterson-m-wakimoto-b-feigin-d-fuchs-e-f
 section_title: "Kac, D. Peterson, M. Wakimoto, B. Feigin, D. Fuchs, E. Fren kel,... )"
 section_number: V
 pages: 2-4
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 — Exactly Solvable Models (R. Baxter, V. Bazhanov, A.N. Kiri llov, N.Yu. Reshetikhin,
 W. Nahm, A. Varchenko, ...)

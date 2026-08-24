@@ -153,7 +153,7 @@ def main():
     print(f"    {'✓ Verified' if diff == 0 else '✗ Does not match — checking numerically...'}")
 
     if diff != 0:
-        mp.mp.dps = 50
+        set_compute_dps()
         q0 = mp.mpf(Q_50_DIGIT_STR)
         num = float(sum_yz.subs(q, float(q0)).evalf())
         z_num = float(z_target.subs(q, float(q0)).evalf())

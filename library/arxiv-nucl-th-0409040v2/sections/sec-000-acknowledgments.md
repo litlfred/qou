@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-0409040v2
-doc_title: "On the correlation between the binding energies of the trito n and the α-particle L. Platter ∗"
+doc_title: "On the correlation between the binding energies of the triton and the alpha-particle"
 section_id: sec-000-acknowledgments
 section_title: "Acknowledgments"
 section_number: null
 pages: 6-7
 source_pdf: 0409040v2.pdf
 source_sha256: 986093ee95b94b24
-doc_brief: "On the correlation between the binding energies of the trito n and the α-particle L. Platter ∗ — We consider the correlation between the binding energies of the triton and the α-particle which is"
+doc_brief: "On the correlation between the binding energies of the triton and the alpha-particle — We consider the correlation between the binding energies of the triton and the α-particle which is empirically"
 ---
 We thank A. Nogga for valuable discussions and comments on the man uscript. L. Plat-
 ter thanks the INT in Seattle for its hospitality during completion of t his work. This

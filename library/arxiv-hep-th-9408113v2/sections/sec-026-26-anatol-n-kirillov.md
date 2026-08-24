@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "Steklov Mathematical Institute"
+doc_title: "Dilogarithm identities"
 section_id: sec-026-26-anatol-n-kirillov
 section_title: "Anatol N. Kirillov"
 section_number: 26
 pages: 26-28
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 Remark. One can show that the ﬁve-term relation (1.4) follows from th e nine-term
 relation (1.30). Namely, let us take x := a = b and y := bc in (1.30) ( a,b,c ∈ R). Then

@@ -1830,6 +1830,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.210Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Full read of all four stages plus the proof; no assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1849,6 +1864,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.297Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1868,6 +1898,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 536 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.333Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1887,6 +1932,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 536 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.369Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The Geom(K) three-case split (hyperbolic / torus / unknot) is an exhaustive definition, and \"the three base characters chi^sym, chi^std, chi^alt\" are the three irreps of H_3 that seed the branching."
       }
     ],
     "trap-closing-aphorism": [
@@ -1906,6 +1966,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.413Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Closes on the \"Archimedean specialisation\" boilerplate; its defect is factual, reported below."
       }
     ],
     "trap-meta-commentary": [
@@ -1925,6 +2000,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.456Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "\"Each stage proves separately\" is a proof-structure pointer, not emphasis narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1944,6 +2034,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.506Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Stage 4 assembles rather than restates."
       }
     ],
     "trap-performed-warmth": [
@@ -1963,6 +2068,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.549Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1982,6 +2102,23 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.590Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "\"The matrix is **maximally sparse**: at most 2 nonzeros per row\" — at most 2 nonzeros per row is sparse, but \"maximally\" is false as an absolute (a diagonal matrix is sparser, and the block's own 1x1 same-row/same-column cases ARE 1-nonzero rows). Compounded by the all-caps \"the UNIQUE non-degenerate pairing\", typographic emphasis carrying a uniqueness claim whose argument (\"the rigidity of omega_A\") is only gestured at.",
+        "notes": "NOT fixed (the sparsity claim is math-adjacent and the uniqueness claim needs the author). Proposed fix: \"The matrix is sparse: at most 2 nonzeros per row.\" and drop the caps on \"unique\"."
       }
     ],
     "trap-nonspeakable": [
@@ -2001,6 +2138,23 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.639Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "Stage 3 of the proof stacks unpronounceable modifier chains: \"its evaluation on the knot complement is determined by **tau-image Thurston geometrization** and the Yekutieli rigid dualizing complex\". \"tau-image Thurston geometrization\" has no spoken form. The closing paragraph then carries Lean syntax into prose twice — \"real inputs $v_1,v_2,v_3 : \\mathbb{R}$\" and \"over $[\\mathrm{Field}\\ R]$\".",
+        "notes": "NOT fixed (bundled with the factual defect in the same paragraph — see findings). Proposed fix: \"...is determined, after applying tau, by Thurston geometrization and the Yekutieli rigid dualizing complex\"; and delete or rewrite the Archimedean paragraph entirely. Separate (non-trap) findings, several verified: (1) KIND/PROSE MISMATCH — the .ts builder is conjecture({label: \"conj:hoefsmit-scattering-pipeline\"}) but the .md opens \"**Proposition (conditional on ...)**\" and then carries a full \"*Proof.*\" with a QED box. (2) DEPENDENCY MISMATCH — the banner conditions on conj:hyperbolic-volume-transcendence and rem:baryon-period-ratio, while uses[] declares a THIRD, unrelated conjecture (conj:geom-yekutieli-alignment) and neither banner item at all. (3) CIRCULAR NORMALISATION — Geom(K) is DEFINED as Vol(K)/hbar_q^2 for hyperbolic K, so the claim that the scalar \"is fixed by requiring Geom(4_1) * hbar_q^2 = Vol(4_1)\" is an identity that fixes nothing; and \"the figure-eight knot defines q_0\" is not the corpus convention (q_0 is pinned by CAL-2 through m_mu/m_e = Vol(4_1)/hbar_q^2, i.e. by the LEPTON RATIO together with the 4_1 volume). (4) PURGED-WRAPPER SHAPE — AGENTS.md purged the opaque Geom_full(K) wrapper in favour of the explicit Vol(K)*rho(K)/hbar_q^2; \"Geom(K)\" is used here in exactly the opaque way, as an unexplained arrow in the pipeline. (5) WEIGHT-FAMILY COLLISION — this block writes J_K(q) = sum_lambda w_lambda chi_lambda(beta)/dim(lambda) with w_lambda = dim_q(lambda)^2/[k]_q!, while every sibling block in this batch (he4-two-row-dominance, hecke-generator-poly-reduction, hoefsmit-V21) writes tr_M = sum_lambda y_lambda chi^lambda with NO division by dim; the notation register warns that y_lambda, w_lambda and tilde-w_lambda are distinct at q != 1. (6) VERIFIED CORRECT: the convergence rate does check — [2]_q = 2.0108968667 and [2]_q^2 = 4.0437062085 at the proton pin, matching \"approximately 4.04 per level\", and this is also where prop:hecke-convergence-bound's undefined \"r\" comes from. (7) The closing \"Archimedean specialisation\" paragraph describes a \"scattering-amplitude vanishing test ... over real inputs v_1, v_2, v_3\" that DOES NOT EXIST anywhere in this block; together with the same boilerplate in prop:hecke-mass-trace (\"the R->R realisation is acknowledged here\") and prop:hecke-markov-transition (\"What follows...\", placed last so nothing follows), these three read as a sweep-inserted paragraph that should be audited as a class. (8) The italic \"Formal asymptotic content\" note ends \"see Big-O via ordw and the body asymptotics catalog\" — two cross-references with no labels or links."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2024,5 +2178,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:28:18.639Z"
 }

@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.820Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.858Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.894Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.932Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.968Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.004Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.040Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.074Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.779Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Caption plus table.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a86d9ca6c2ed",
+          "ts": "4a7447f9d1a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.817Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No superlative; the caption is a careful disclaimer and the dagger footnote calls the p/n rows a calibration tautology.",
+        "notes": "EVERY CELL RECOMPUTED AND CORRECT -- do not re-flag. Predicted = Z*938.272088 + N*939.565421 exactly for all six rows (D 1877.837509, T 2817.402929, He-3 2816.109597, He-4 3755.675017); Delta and rel err reproduce (D +2.224566 / 0.1186%, T +8.481796 / 0.3020%, He-3 +7.717990 / 0.2748%, He-4 +28.295639 / 0.7591%); the CODATA column matches the current values (m_p 938.27208816, m_n 939.56542052, deuteron 1875.61294257, triton 2808.92113298, helion 2808.39160743, alpha 3727.3794066); and the binding column matches the Delta column. The caption correctly implements the 2026-08-11 absolute-mass excision ('the m_e-scaled realization of the dimensionless mass ratio ... absolute mass in MeV is not a framework prediction'). Minor only: the parent block's lead names five isotopes while this table carries six rows (He-4 is unannounced)."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:12:30.817Z"
 }

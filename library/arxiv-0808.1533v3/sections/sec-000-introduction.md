@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0808.1533v3
-doc_title: "The third order helicity of magnetic ﬁelds via link maps. R. Komendarczyk ∗†"
+doc_title: "On the third order helicity of magnetic fields on invariant domains in S³"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-21
 source_pdf: 0808.1533v3.pdf
 source_sha256: 3e003cc35a4e5711
-doc_brief: "The third order helicity of magnetic fields via link maps. R. Komendarczyk ∗† — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us"
+doc_brief: "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a"
 ---
 A purpose of this paper is to develop a particular formula for the thir d order helicity on
 certain invariant sets of a volume preserving vector ﬁeld B. The third order helicity, [3], is

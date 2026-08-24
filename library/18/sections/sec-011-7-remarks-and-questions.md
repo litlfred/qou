@@ -1,13 +1,13 @@
 ---
 doc_id: 18
-doc_title: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE"
+doc_title: "Combinatorial scalar curvature and rigidity of ball packings"
 section_id: sec-011-7-remarks-and-questions
 section_title: "Remarks and questions"
 section_number: 7
 pages: 9-9
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
-doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
+doc_brief: "Combinatorial scalar curvature and rigidity of ball packings — 19 sections: Introduction; These; Conformal simplices"
 ---
 The results above can be viewed as generalizing of the work of Colin
 de Verdi`ere [2] to higher dimensions. A rather diﬃcult problem (perhaps

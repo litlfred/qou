@@ -2096,6 +2096,21 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.273Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Definition block read in full (Lean class snippet + one closing paragraph); eight of ten categories clean. The class carries LP-theory HYPOTHESES (duality gap zero, complementary slackness), not the consumer's conclusion, so it is a legitimate §3b-cond carrier rather than an anti-laundering violation."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2115,6 +2130,21 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.360Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Definition block read in full (Lean class snippet + one closing paragraph); eight of ten categories clean. The class carries LP-theory HYPOTHESES (duality gap zero, complementary slackness), not the consumer's conclusion, so it is a legitimate §3b-cond carrier rather than an anti-laundering violation."
       }
     ],
     "trap-em-dash": [
@@ -2134,6 +2164,23 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 67 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.456Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "'This isolates standard LP-theory proofs—currently awaiting a full finite-dimensional LP Mathlib module—into cleanly defined conditional fields.' uses an UNSPACED em-dash pair to bury a scope caveat inside the sentence that states the definition's purpose. The caveat is the most consequential thing in the paragraph (the class is unproved pending Mathlib) and it is the part in dashes.",
+        "notes": "proposed: 'This isolates standard LP-theory proofs into conditional fields. Mathlib has no finite-dimensional LP-duality module yet, so the class is currently unproved.' Not applied inline: promoting the caveat to its own sentence changes the block's epistemic emphasis, which is an author call."
       }
     ],
     "trap-triples": [
@@ -2153,6 +2200,21 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 67 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.534Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Definition block read in full (Lean class snippet + one closing paragraph); eight of ten categories clean. The class carries LP-theory HYPOTHESES (duality gap zero, complementary slackness), not the consumer's conclusion, so it is a legitimate §3b-cond carrier rather than an anti-laundering violation."
       }
     ],
     "trap-closing-aphorism": [
@@ -2172,6 +2234,21 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.599Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Definition block read in full (Lean class snippet + one closing paragraph); eight of ten categories clean. The class carries LP-theory HYPOTHESES (duality gap zero, complementary slackness), not the consumer's conclusion, so it is a legitimate §3b-cond carrier rather than an anti-laundering violation."
       }
     ],
     "trap-meta-commentary": [
@@ -2191,6 +2268,21 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.673Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Definition block read in full (Lean class snippet + one closing paragraph); eight of ten categories clean. The class carries LP-theory HYPOTHESES (duality gap zero, complementary slackness), not the consumer's conclusion, so it is a legitimate §3b-cond carrier rather than an anti-laundering violation."
       }
     ],
     "trap-thesis-restatement": [
@@ -2210,6 +2302,21 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.771Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Definition block read in full (Lean class snippet + one closing paragraph); eight of ten categories clean. The class carries LP-theory HYPOTHESES (duality gap zero, complementary slackness), not the consumer's conclusion, so it is a legitimate §3b-cond carrier rather than an anti-laundering violation."
       }
     ],
     "trap-performed-warmth": [
@@ -2229,6 +2336,21 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.881Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Definition block read in full (Lean class snippet + one closing paragraph); eight of ten categories clean. The class carries LP-theory HYPOTHESES (duality gap zero, complementary slackness), not the consumer's conclusion, so it is a legitimate §3b-cond carrier rather than an anti-laundering violation."
       }
     ],
     "trap-superlative": [
@@ -2248,6 +2370,23 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:10.955Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "'a trivial model substitution will UNCONDITIONALLY discharge the class requirements WITHOUT ALTERING ANY downstream mathematical commitments' — two maximum-strength quantifiers on a promise about a Mathlib module that does not exist. Neither is checkable today, and 'cleanly defined conditional fields' adds a third unearned qualifier.",
+        "notes": "proposed: 'once Mathlib provides finite-dimensional LP duality, the class can be discharged and no downstream statement need change.'"
       }
     ],
     "trap-nonspeakable": [
@@ -2267,6 +2406,21 @@
         "reviewed_at": "2026-08-15T10:31:00.639Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8b9fa0537964",
+          "ts": "a01757481f22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:11.042Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Definition block read in full (Lean class snippet + one closing paragraph); eight of ten categories clean. The class carries LP-theory HYPOTHESES (duality gap zero, complementary slackness), not the consumer's conclusion, so it is a legitimate §3b-cond carrier rather than an anti-laundering violation."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2290,5 +2444,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:15:11.042Z"
 }

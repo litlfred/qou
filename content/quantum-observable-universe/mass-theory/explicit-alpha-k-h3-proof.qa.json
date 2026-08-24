@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.342Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'An alpha_1 value beyond zero would require a higher Hochschild operation (Gerstenhaber bracket on HH^*(H_3(R,q))) - not the direct trace pairing.' Substantive: it names the operation that could produce a non-zero alpha_1 and distinguishes it from the pairing actually used, which is the mathematical content of the alpha_1 = 0 clause."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.125Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:explicit-alpha-k-h3 (E_inf table, Jones-Markov weights, four per-class alpha_k derivations, witness pointer, Wenzl-bridge section). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 255 words)"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.380Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "One spaced em-dash in the whole block (the Gerstenhaber-bracket sentence), introducing a genuine contrast rather than dodging sentence structure; a single occurrence is not the density pattern."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 255 words)"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.160Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:explicit-alpha-k-h3 (E_inf table, Jones-Markov weights, four per-class alpha_k derivations, witness pointer, Wenzl-bridge section). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.195Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:explicit-alpha-k-h3 (E_inf table, Jones-Markov weights, four per-class alpha_k derivations, witness pointer, Wenzl-bridge section). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.234Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:explicit-alpha-k-h3 (E_inf table, Jones-Markov weights, four per-class alpha_k derivations, witness pointer, Wenzl-bridge section). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,23 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.417Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "severity": "major",
+        "evidence": "The block's final section is a CHARACTER-IDENTICAL DUPLICATE of the section immediately before it: '## Alternative derivation via Wenzl-bridge' occupies lines 76-86 and is then repeated verbatim at lines 88-98 (diff of the two ranges is empty). The block therefore closes by repeating, word for word, material it has already given.",
+        "notes": "STRUCTURAL - not fixed inline (11 lines, contains display-level math). Proposed: delete lines 87-98 (the second copy). While fixing, note that the surviving copy says 'the per-class derivations BELOW can be replaced by a uniform application of the bridge formula' but the per-class derivations are ABOVE it (lines 20-70) - either move the section above the alpha_0..alpha_3 subsections or change 'below' to 'above'."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.271Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:explicit-alpha-k-h3 (E_inf table, Jones-Markov weights, four per-class alpha_k derivations, witness pointer, Wenzl-bridge section). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1632,22 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.454Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'Trivial:', 'inherit this q-rational structure automatically' - ordinary mathematical register, no maximum-strength rhetoric.",
+        "notes": "RIGOR (reported, not fixed - all math-adjacent): (1) LIVE CONVENTION-C LEAK, contradicting the block's own declared convention. The statement sibling prop:explicit-alpha-k-h3 declares z = q^3/(q^2+1) (convention D, canonical per the 2026-08-15 owner ruling R1). This proof then writes: 'Equivalently, using h/(q^{1/2}+q^{-1/2}) = q^{1/2}-q^{-1/2}: alpha_3 = z(1 + q^{1/2} - q^{-1/2})'. That step needs h.z = q^{1/2}-q^{-1/2}, which holds ONLY for z = 1/(q^{1/2}+q^{-1/2}) = sqrt(q)/(q+1) = z_C, the excised convention C. Recomputed at 30 dps, q0 = 1.1099785827513808: h.z_C = 0.104388058259 = q^{1/2}-q^{-1/2} exactly, but h.z_D = 0.128088744114. So the 'Equivalently' form evaluates to 0.676645351663 while the correct convention-D alpha_3 is 0.691166478358 - a 2.1% error, not a restatement. Proposed: delete the 'Equivalently' display, or re-derive z_D(1 + h z_D) in convention D. The half-powers in the Wenzl-bridge section (X = Q^r = q^{3/2}/(1+q-q^2-q^3+q^{3/2})) are the same convention-C residue and need the same check. (2) TOKEN-SUBSTITUTION SWEEP DAMAGE, two sites: line 71 begins a sentence with a lowercase 'canonical evaluation at q_0 ~ 1.110 matches the symbolic forms above to ~10^{-16}' - the lowercase start shows a capitalised 'Numerical' was replaced by 'canonical'; and line 45 'verified to canonical precision 10^{-16}' is the same substitution for 'numerical precision'. (3) NO-FLOAT64: 'The vanishing is exact (verified to ... 10^{-16})' reports agreement at the float64 floor as evidence of exactness; 10^{-16} is the resolution of the arithmetic, not a measurement of the vanishing. (4) VERIFIED CORRECT: tr_M(sigma_1 sigma_2 sigma_1) = h z^2 + z follows exactly from cyclicity plus sigma_1^2 = h sigma_1 + 1 (SS7a form), and the E_inf table uses sigma_i throughout (SS7a compliant). (5) q_0 ~ 1.110 is a 4-figure rounding, consistent with both live pins."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "08516e496928",
+          "ts": "35bcc2c8ec5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.307Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:explicit-alpha-k-h3 (E_inf table, Jones-Markov weights, four per-class alpha_k derivations, witness pointer, Wenzl-bridge section). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:46:07.454Z"
 }

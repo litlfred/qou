@@ -1146,6 +1146,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.522Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'not on H_n itself' and 'is Catalan, not n!' are both genuine corrections of a specific wrong alternative, which is the substantive class. The closing 'the spectral decomposition provides the physical interpretation; the LP provides the constructive selection' is a balanced division of labour, not assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1165,6 +1180,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.599Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe; the correction blockquote states its correction directly."
       }
     ],
     "trap-em-dash": [
@@ -1184,6 +1214,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 475 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.650Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two em-dashes, both paired parentheticals ('non-degenerate — for q != 0, 1 — on the quotient'). NOTE a separate typographic point, not a trap: the active-set sentence uses a raw ASCII double hyphen ('active demand channels -- the channels that ...') where the rest of the block uses a true dash."
       }
     ],
     "trap-triples": [
@@ -1203,6 +1248,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 475 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.759Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'three strands encoding three quark colors, six NF basis elements ..., and the Borromean link as the unique LP vertex' enumerates the three data of the n = 3 instantiation; substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1222,6 +1282,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.826Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the NF-basis-vs-irrep-basis division of labour, a technical comparison."
       }
     ],
     "trap-meta-commentary": [
@@ -1241,6 +1316,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.900Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1260,6 +1350,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:53.958Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Final section relates the LP to the spectral decomposition — new content."
       }
     ],
     "trap-performed-warmth": [
@@ -1279,6 +1384,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:54.029Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1298,6 +1418,21 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:54.087Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflated claims; the dated correction blockquote is explicitly hedged and scoped."
       }
     ],
     "trap-nonspeakable": [
@@ -1317,6 +1452,22 @@
         "reviewed_at": "2026-08-15T10:31:00.705Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eea74a172",
+          "ts": "883ed0bc8899"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:54.139Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud; tables carry the dense material.",
+        "notes": "RIGOR. VERIFIED CORRECT (all recomputed): d = n! = 2, 6, 24, 120 for n = 2..5; rank G = C_n = 2, 5, 14, 42 (Catalan); corank 0, 1, 10, 78 with the stated sum-of-squares decompositions exact — 10 = 3^2 + 1^2 is dim[2,1,1]^2 + dim[1^4]^2, and 78 = 6^2+5^2+4^2+1^2 is dim[3,1,1]^2 + dim[2,2,1]^2 + dim[2,1,1,1]^2 + dim[1^5]^2, i.e. exactly the l(lambda) >= 3 partitions the note says convention D kills; dim TL_n = C_n confirms the quotient claim. The tabled optimum sums to 0.998 - 0.010 + 0.009 + 0.046 - 0.044 + 0 = 0.999, consistent with the net constraint at n_target approx 1.000. INTERNAL CONTRADICTION (reported, not fixed): the n = 3 paragraph says 'the Borromean link B_3 as the unique LP vertex', and the sibling rem:operator-selection-lp-interpretation opens 'selects the Borromean link B_3 as the unique optimizer over the 6-element NF basis of H_3(q)' — but the correction blockquote FOUR LINES BELOW, in this same file, states that on H_n the LP 'has a corank G-dimensional space of optima differing by radical directions the trace cannot see', and it tabulates corank = 1 at n = 3. Uniqueness therefore holds only on the quotient H_3/rad tr_M = TL_3, not on the 6-element NF basis both sentences name. Proposed: qualify both 'unique' claims with 'on the quotient', or state the one-parameter radical family explicitly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1339,5 +1490,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:45:54.139Z"
 }

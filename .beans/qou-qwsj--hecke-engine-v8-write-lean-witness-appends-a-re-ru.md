@@ -1,11 +1,11 @@
 ---
 # qou-qwsj
 title: hecke-engine v8 write_lean_witness APPENDS — a re-run duplicates Lean decls into a non-compiling witness
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T21:12:37Z
-updated_at: 2026-08-19T21:13:07Z
+updated_at: 2026-08-21T21:27:55Z
 ---
 
 FOUND 2026-08-19 while running the hecke-engine binaries for the qou-8q0u
@@ -38,3 +38,17 @@ FIX SKETCH. Either truncate (.write(true).truncate(true)) so a re-run replaces,
 or read-then-skip-if-present so the file accumulates one block per nucleus as
 the append presumably intended. Decide which behaviour is wanted first -- the
 filename is per-nucleus (witness-4he.lean), which argues for truncate.
+
+
+FIXED 2026-08-21. v8.rs write_lean_witness now opens with
+.create(true).write(true).truncate(true) instead of .append(true).
+
+The decision this bean flagged as open was not actually ambiguous once the code
+was read: the filename is per-nucleus (witness-{A}{sym}.lean) and every
+declaration written is NAME-KEYED to that nucleus (tr_alt_4he, net_4he, ...), so
+appending on a re-run emits a second copy of the same names -- duplicate
+definitions, a witness that cannot compile. Truncate is the only coherent
+behaviour; accumulate was never a real option.
+
+VERIFIED empirically: hecke-engine 2 2 run TWICE now yields 5 declarations with
+0 duplicate names (pre-fix it duplicated, which is how the bug was found).

@@ -34,6 +34,14 @@ from pathlib import Path
 
 import sympy as sp
 from mpmath import mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent          # computations/qbeta
 ROOT = HERE.parent                               # computations/
@@ -60,7 +68,7 @@ def ser_mul(a, bb):
 
 def main() -> int:
     t0 = time.monotonic()
-    mp.dps = 50
+    set_compute_dps()
 
     print("=" * 76)
     print(" c4^even — EXACT-rational s-series of the net-route ladder (bean 9fnm)")

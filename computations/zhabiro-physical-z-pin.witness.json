@@ -1,18 +1,18 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-18T19:19:24.550814+00:00",
+  "computedAt": "2026-08-23T09:41:12.426815+00:00",
   "computation": "zhabiro-physical-z-pin",
   "scriptFile": "zhabiro_physical_z_pin.py",
-  "scriptHash": "f15eadb54447",
+  "scriptHash": "0f685e1c3d79",
   "contentBlock": "prop:mass-endomorphism-tower",
-  "description": "Pins the physical brane-tower variable z = |V̂_i^full| (additive Wedderburn traced volume per generator) from production witnesses and compares the SUPERSEDED Faddeev Φ_q (brane-legacy) against the PRODUCTION symmetric −Li₂^q(−z) (li2q) at each physical z_i. At every z_i (all < 1) Φ_q is convergent-but-enormous (10²–10⁶) while −Li₂^q(−z) is O(1): wiring per-generator Φ_q regresses the mass table (the −737 MeV isospin pathology); the production li2q form is bounded. The z-Habiro / Φ_q bridge has no non-regressing production continuation — the n⋆ level-selection rule is refuted across all six probed families.",
+  "description": "Pins the physical brane-tower variable z = |V\u0302_i^full| (additive Wedderburn traced volume per generator) from production witnesses and compares the SUPERSEDED compact q-dilog \u03a6_q (brane-legacy) against the PRODUCTION symmetric \u2212Li\u2082^q(\u2212z) (li2q) at each physical z_i. At every z_i (all < 1) \u03a6_q is convergent-but-enormous (10\u00b2\u201310\u2076) while \u2212Li\u2082^q(\u2212z) is O(1): wiring per-generator \u03a6_q regresses the mass table (the \u2212737 MeV isospin pathology); the production li2q form is bounded. The z-Habiro / \u03a6_q bridge has no non-regressing production continuation \u2014 the n\u22c6 level-selection rule is refuted across all six probed families.",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "hbar_q_squared": "0.00981718851347867143648141194145",
     "phi_q_at_hbar_q_sq_correction_pct": "9.3597875",
     "production_tower_mode": "li2q",
-    "superseded_tower_mode": "brane-legacy (Faddeev Φ_q)"
+    "superseded_tower_mode": "brane-legacy (compact q-dilog \u03a6_q)"
   },
   "data": {
     "atoms": {
@@ -185,8 +185,5 @@
     "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
     "mass-endomorphism.witness.json",
     "vhat-std-vs-full-tower-compare.witness.json"
-  ],
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "durationMs": 0
+  ]
 }

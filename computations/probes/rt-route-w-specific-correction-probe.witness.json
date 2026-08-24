@@ -161,9 +161,9 @@
       "total_abs_deviation_pct": 918.0046221730086
     }
   ],
-  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "rt_route_w_specific_correction_probe",
-  "computedAt": "2026-07-18T17:49:43.794141+00:00",
+  "computedAt": "2026-08-23T09:40:06.846644+00:00",
   "description": "W-specific multiplicative-correction search for the RT-chain Z/H-matches-but-W-diverges finding from PR #1119. Tests 16 candidate corrections (twist counts, quantum dimensions, trigonometric factors, etc.) applied to |J_2(T(2,4))| only. Identifies the best correction by total |deviation| on W/Z and W/H ratios.",
   "direct_solve": {
     "C_W_average": 1.4315911813382258,
@@ -174,7 +174,7 @@
   },
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "interpretation": "If a single C_W satisfies BOTH W/Z and W/H ratios (within small \u0394), there exists a structurally-consistent W-only correction. The value of that C_W identifies the missing categorical factor. Candidates: charge \u00b11 (W has |Q|=1 vs Z, H neutral), twist count k=4 (T(2,4) vs T(2,6), T(2,8)), quantum dimensions, or trigonometric factors. If no single C_W works, the W's structural correction is more complex (e.g., depends on N or involves a non-multiplicative modification).",
   "parameters": {
     "N_color": 2,
@@ -185,9 +185,11 @@
     "dps": 50,
     "precision": "mpfr"
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "rt_route_w_specific_correction_probe.py",
-  "scriptHash": "ca6352d9bf2b",
+  "scriptHash": "3ddbdd80a9f4",
   "status": "exploratory",
   "tags": [
     "rt-route",

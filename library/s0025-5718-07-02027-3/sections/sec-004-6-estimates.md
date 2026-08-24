@@ -1,13 +1,13 @@
 ---
 doc_id: s0025-5718-07-02027-3
-doc_title: "MA THEMA TICS OF COMPUT A TION"
+doc_title: "Li(p)-service? An algorithm for computing p-adic polylogarithms"
 section_id: sec-004-6-estimates
 section_title: "Estimates"
 section_number: 6
 pages: 11-14
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
-doc_brief: "MATHEMATICS OF COMPUTATION — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
+doc_brief: "Li(p)-service? An algorithm for computing p-adic polylogarithms — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 In this section we provide estimates for the valuations of the coeﬃcients in the
 power seriesgn(v) of Proposition 4.3,Fn,ζ(t) of Proposition 4.4 andHn(t)o fP r o p o -

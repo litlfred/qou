@@ -2126,6 +2126,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.621Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2145,6 +2160,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.677Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-em-dash": [
@@ -2164,6 +2194,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 79 words)"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.726Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-triples": [
@@ -2183,6 +2228,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 79 words)"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.770Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-closing-aphorism": [
@@ -2202,6 +2262,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.827Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-meta-commentary": [
@@ -2221,6 +2296,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.871Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-thesis-restatement": [
@@ -2240,6 +2330,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.913Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-performed-warmth": [
@@ -2259,6 +2364,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.960Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-superlative": [
@@ -2278,6 +2398,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:07.002Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "trap-nonspeakable": [
@@ -2297,6 +2432,21 @@
         "reviewed_at": "2026-08-15T10:31:01.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:07.047Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2320,5 +2470,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:13:07.047Z"
 }

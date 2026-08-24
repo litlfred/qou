@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1601.02479v5
-doc_title: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A"
+doc_title: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras"
 section_id: sec-019-43-the-cohomological-wall-crossing-isomorphism-t
 section_title: "The cohomological wall crossing isomorphism — Theorem B"
 section_number: 4.3
 pages: 40-43
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
-doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
+doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
 ---
 section we prove Theorem B, which is a categoriﬁcation of the motivic wall crossing
 formula (8). In Section 6.4 we will prove that this isomorphism can be r ealised in

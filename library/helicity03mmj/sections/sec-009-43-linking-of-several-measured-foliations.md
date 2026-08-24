@@ -1,13 +1,13 @@
 ---
 doc_id: helicity03mmj
-doc_title: "MOSCOW MA THEMA TICAL JOURNAL"
+doc_title: "Geometry of higher helicities"
 section_id: sec-009-43-linking-of-several-measured-foliations
 section_title: "Linking of several measured foliations."
 section_number: 4.3
 pages: 14-15
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
-doc_brief: "MOSCOW MATHEMATICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
+doc_brief: "Geometry of higher helicities — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 the problem of generalizing the ergodic linking to foliations. However, there is one
 case where such a generalization follows immediately from the deﬁnitions above.

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-ph-0105039v1
-doc_title: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI †"
+doc_title: "Hyperbolic Structure Arising from a Knot Invariant"
 section_id: sec-011-4-asymptotic-behavior-and-3-dimensional-picture
 section_title: "Asymptotic Behavior and 3-dimensional Picture"
 section_number: 4
 pages: 11-14
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
-doc_brief: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI † — We study the knot invariant based on the quantum dilogarithm function."
+doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
 ---
 We shall reveal the 3-dimensional picture of the knot invari ant τ1(K) by studying an asymptotic
 behavior in a limit γ → 0. Using eq. (2.12), we ﬁnd that the S-operator (2.26) is represented by

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T14:55:20.835785+00:00",
-  "commitSha": "be80d32294671da22480701ae355aebd82cc1316",
+  "computedAt": "2026-08-23T07:40:50.578641+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "no_parameter_free_graph_invariant_matches_all_four",
@@ -45,11 +45,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1,
+  "durationMs": 2,
   "computation": "deltalambda-k4-complete-graph-collective-magnitude",
   "scriptFile": "deltalambda_k4_complete_graph_collective_magnitude_probe.py",
   "scriptHash": "d267303f8911",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,16 +61,25 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deltalambda_k4_complete_graph_collective_magnitude_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deltalambda_k4_complete_graph_collective_magnitude_probe.py"
   },
   "description": "Δ_λ attack Vector 1: tests whether a parameter-free invariant of the K_A complete coordination graph (Laplacian spectrum {0,4,4,4}, spanning trees 16, edge count, pseudo-det, algebraic connectivity) supplies the collective deficit the #3943 additive per-pair route missed. Forward test vs the four committed deficits with NO free prefactor + the ³H/³He mirror diagnostic. Double honest negative: unsigned invariants are isospin-blind (scope-(b)), and no invariant reproduces the deficit magnitudes (scope-(a)); the collective DOF is isospin, not a super-additive graph term. No fit, no AME inversion, audit-only.",
   "tier": "structural forward-test (parameter-free graph invariant -> predicted deficit -> compare; no tuning)",
   "result": {
     "hypothesis": "the missing collective Δ_λ term is a parameter-free invariant of the complete coordination graph K_A (²H=K₂, ³H/³He=K₃, ⁴He=K₄), not an additive sum of per-pair terms (#3943)",
     "constants": {
-      "q0": "1.10997859556",
-      "E0_MeV_m_e/(q(q-1))": "4.1859808",
-      "g_reeb_parameter_free_m": "0.446727067798",
+      "q0": "1.10997858275",
+      "E0_MeV_m_e/(q(q-1))": "4.1859814",
+      "g_reeb_parameter_free_m": "0.446727067906",
       "ceiling_1/sqrt5": "0.4472135955"
     },
     "derived_inputs_not_fitted": {
@@ -133,7 +142,7 @@
             "iso": "2H",
             "A": 2,
             "invariant": 1,
-            "pred_MeV_E0_times_inv": "4.1859808",
+            "pred_MeV_E0_times_inv": "4.1859814",
             "deficit_MeV": "1.8444947",
             "pred/deficit": "2.26945",
             "required_prefactor": "0.440636"
@@ -142,7 +151,7 @@
             "iso": "3H",
             "A": 3,
             "invariant": 3,
-            "pred_MeV_E0_times_inv": "12.557942",
+            "pred_MeV_E0_times_inv": "12.557944",
             "deficit_MeV": "6.5732882",
             "pred/deficit": "1.91045",
             "required_prefactor": "0.523437"
@@ -151,7 +160,7 @@
             "iso": "3He",
             "A": 3,
             "invariant": 3,
-            "pred_MeV_E0_times_inv": "12.557942",
+            "pred_MeV_E0_times_inv": "12.557944",
             "deficit_MeV": "5.3734523",
             "pred/deficit": "2.33703",
             "required_prefactor": "0.427893"
@@ -160,7 +169,7 @@
             "iso": "4He",
             "A": 4,
             "invariant": 6,
-            "pred_MeV_E0_times_inv": "25.115885",
+            "pred_MeV_E0_times_inv": "25.115888",
             "deficit_MeV": "25.257486",
             "pred/deficit": "0.994394",
             "required_prefactor": "1.00564"
@@ -175,7 +184,7 @@
             "iso": "2H",
             "A": 2,
             "invariant": 1,
-            "pred_MeV_E0_times_inv": "4.1859808",
+            "pred_MeV_E0_times_inv": "4.1859814",
             "deficit_MeV": "1.8444947",
             "pred/deficit": "2.26945",
             "required_prefactor": "0.440636"
@@ -184,7 +193,7 @@
             "iso": "3H",
             "A": 3,
             "invariant": 3,
-            "pred_MeV_E0_times_inv": "12.557942",
+            "pred_MeV_E0_times_inv": "12.557944",
             "deficit_MeV": "6.5732882",
             "pred/deficit": "1.91045",
             "required_prefactor": "0.523437"
@@ -193,7 +202,7 @@
             "iso": "3He",
             "A": 3,
             "invariant": 3,
-            "pred_MeV_E0_times_inv": "12.557942",
+            "pred_MeV_E0_times_inv": "12.557944",
             "deficit_MeV": "5.3734523",
             "pred/deficit": "2.33703",
             "required_prefactor": "0.427893"
@@ -202,7 +211,7 @@
             "iso": "4He",
             "A": 4,
             "invariant": 16,
-            "pred_MeV_E0_times_inv": "66.975693",
+            "pred_MeV_E0_times_inv": "66.975702",
             "deficit_MeV": "25.257486",
             "pred/deficit": "2.65172",
             "required_prefactor": "0.377114"
@@ -217,7 +226,7 @@
             "iso": "2H",
             "A": 2,
             "invariant": 2,
-            "pred_MeV_E0_times_inv": "8.3719617",
+            "pred_MeV_E0_times_inv": "8.3719627",
             "deficit_MeV": "1.8444947",
             "pred/deficit": "4.53889",
             "required_prefactor": "0.220318"
@@ -226,7 +235,7 @@
             "iso": "3H",
             "A": 3,
             "invariant": 9,
-            "pred_MeV_E0_times_inv": "37.673827",
+            "pred_MeV_E0_times_inv": "37.673832",
             "deficit_MeV": "6.5732882",
             "pred/deficit": "5.73135",
             "required_prefactor": "0.174479"
@@ -235,7 +244,7 @@
             "iso": "3He",
             "A": 3,
             "invariant": 9,
-            "pred_MeV_E0_times_inv": "37.673827",
+            "pred_MeV_E0_times_inv": "37.673832",
             "deficit_MeV": "5.3734523",
             "pred/deficit": "7.0111",
             "required_prefactor": "0.142631"
@@ -244,10 +253,10 @@
             "iso": "4He",
             "A": 4,
             "invariant": 64,
-            "pred_MeV_E0_times_inv": "267.90277",
+            "pred_MeV_E0_times_inv": "267.90281",
             "deficit_MeV": "25.257486",
             "pred/deficit": "10.6069",
-            "required_prefactor": "0.0942786"
+            "required_prefactor": "0.0942785"
           }
         ],
         "required_prefactor_spread_max/min": "2.33688",
@@ -259,7 +268,7 @@
             "iso": "2H",
             "A": 2,
             "invariant": 2,
-            "pred_MeV_E0_times_inv": "8.3719617",
+            "pred_MeV_E0_times_inv": "8.3719627",
             "deficit_MeV": "1.8444947",
             "pred/deficit": "4.53889",
             "required_prefactor": "0.220318"
@@ -268,7 +277,7 @@
             "iso": "3H",
             "A": 3,
             "invariant": 3,
-            "pred_MeV_E0_times_inv": "12.557942",
+            "pred_MeV_E0_times_inv": "12.557944",
             "deficit_MeV": "6.5732882",
             "pred/deficit": "1.91045",
             "required_prefactor": "0.523437"
@@ -277,7 +286,7 @@
             "iso": "3He",
             "A": 3,
             "invariant": 3,
-            "pred_MeV_E0_times_inv": "12.557942",
+            "pred_MeV_E0_times_inv": "12.557944",
             "deficit_MeV": "5.3734523",
             "pred/deficit": "2.33703",
             "required_prefactor": "0.427893"
@@ -286,7 +295,7 @@
             "iso": "4He",
             "A": 4,
             "invariant": 4,
-            "pred_MeV_E0_times_inv": "16.743923",
+            "pred_MeV_E0_times_inv": "16.743925",
             "deficit_MeV": "25.257486",
             "pred/deficit": "0.662929",
             "required_prefactor": "1.50846"

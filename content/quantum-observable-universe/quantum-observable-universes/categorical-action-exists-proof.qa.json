@@ -1359,6 +1359,21 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.938Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Proof block; every step affirmative."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:45.977Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Rigid structure -> functoriality -> composition -> identification with the trace; linear."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:46.071Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:46.177Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'The three-fold composition' names the three arrows of the displayed composite."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:46.215Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on the identification with tr(Phi), i.e. the claim being proved."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1529,23 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:46.313Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The block opened with a two-sentence strategy preamble narrating the proof about to be given, in a proof that is four lines long; removed.",
+        "notes": "fix applied: deleted the opening paragraph 'The proof strategy directly leverages the dualizability inherent in the rigid monoidal category. By explicitly composing the coevaluation morphism with the endomorphism $\\\\Phi$ and the evaluation morphism, we construct the required map $\\\\mathbf{1} \\\\to \\\\mathbf{1}$.' -> (nothing; block now opens 'The rigid structure of $\\\\mathbf{C}$ supplies...'). It restated the proof verbatim, paraphrased the composite inaccurately (it says 'composing coev with Phi', while the proof uses Phi tensor id), and used business register ('leverages', 'inherent in'). No mathematical content lost. Math delimiters rechecked: 2 dollar-dollar, balanced."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:46.352Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Post-fix the block states the proof once."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:46.391Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:46.428Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Post-fix no intensifiers remain ('directly', 'explicitly', 'inherent' were all in the removed preamble)."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1667,22 @@
         "reviewed_at": "2026-08-15T10:31:00.032Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "734716a1e81c",
+          "ts": "aee49512cc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:57:46.466Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Remaining prose is short declaratives.",
+        "notes": "MATH FINDING to report (not edited, two mismatches in the surviving text): (i) the prose says 'The tensor id_{A^vee} tensor Phi is a morphism by functoriality' while the display uses 'Phi tensor id' - the factors are in the opposite order; (ii) ev_A is declared A^vee tensor A -> 1 but the display applies it to A tensor A^vee. With coev_A : 1 -> A tensor A^vee, closing the composite needs the left/pivotal evaluation A tensor A^vee -> 1, not the declared ev_A. Fix: either declare both duality maps for the side actually used, or run the composite as 1 -> A^vee tensor A -> A^vee tensor A -> 1."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:57:46.466Z"
 }

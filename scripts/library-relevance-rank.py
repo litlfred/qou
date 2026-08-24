@@ -8,6 +8,20 @@ measures how much formal material a document offers and says nothing about
 whether we want it. A 236-candidate journal volume topped that list. This
 ranks by topical overlap with the qou corpus instead.
 
+## What "uncited" means, and why it changed
+
+It used to mean "no `references.ts` entry names this copy". That backlog is
+drained — every library document is registered — so the measure went to
+zero and the ranking with it, which made the output an empty table under
+prose describing a queue that no longer existed.
+
+Registered is not cited. An entry can name a copy and be referenced by
+nothing in the paper, and 278 of the 351 held sources are in exactly that
+state. So "uncited" now means what it says: no content block cites the
+entry, by `\cite{}` in a `.md`, by `cites: []` in a `.ts`, or by a Lean
+`-- Ref: [key]`. That is the question `local/paper-relevance-triage`
+exists to work.
+
 ## Where the vocabulary comes from
 
 Not a hand-supplied topic list — those encode whatever the author happened
@@ -62,6 +76,52 @@ these those which such have been will more than also into over under
 """.split())
 
 TOKEN = re.compile(r"[a-z][a-z0-9\-']{3,}")
+
+
+def cited_docs() -> set[str]:
+    """doc-ids whose references.ts entry is cited by some content block.
+
+    Three citation paths, and all three count: `\\cite{}` in a `.md`,
+    `cites: [...]` in a `.ts` manifest, and a Lean `-- Ref: [key]`. Reading
+    only the first would call a document uncited when a proof cites it.
+    """
+    refs = open(REFS, encoding="utf-8").read()
+    # entry id -> doc-id, taken from each entry's `library:` block. Read by
+    # brace-matching from `ref({` rather than by a flat regex: `id` and
+    # `docId` sit in different nested objects, and a file-wide scan pairs
+    # them across entry boundaries.
+    id_to_doc: dict[str, str] = {}
+    for m in re.finditer(r"\bref\(\{", refs):
+        i = refs.index("{", m.start())
+        depth = 0
+        blk = ""
+        for j in range(i, len(refs)):
+            if refs[j] == "{":
+                depth += 1
+            elif refs[j] == "}":
+                depth -= 1
+                if depth == 0:
+                    blk = refs[i:j + 1]
+                    break
+        a = re.search(r'\bid:\s*"([^"]+)"', blk)
+        b = re.search(r'docId:\s*"([^"]+)"', blk)
+        if a and b:
+            id_to_doc[a.group(1)] = b.group(1)
+
+    keys: set[str] = set()
+    for path in glob.glob(os.path.join(REPO, "content", "**", "*.md"), recursive=True):
+        t = open(path, encoding="utf-8", errors="replace").read()
+        for m in re.finditer(r"\\cite[tp]?\*?(?:\[[^\]]*\])*\{([^}]*)\}", t):
+            keys.update(k.strip() for k in m.group(1).split(","))
+    for path in glob.glob(os.path.join(REPO, "content", "**", "*.ts"), recursive=True):
+        t = open(path, encoding="utf-8", errors="replace").read()
+        for m in re.finditer(r"cites:\s*\[([^\]]*)\]", t):
+            keys.update(k.strip().strip("\"'") for k in m.group(1).split(","))
+    for path in glob.glob(os.path.join(REPO, "content", "**", "*.lean"), recursive=True):
+        t = open(path, encoding="utf-8", errors="replace").read()
+        keys.update(re.findall(r"--\s*Ref:\s*\[([^\]]+)\]", t))
+    keys.discard("")
+    return {doc for rid, doc in id_to_doc.items() if rid in keys}
 
 
 def corpus_vocabulary() -> Counter:
@@ -140,7 +200,7 @@ def main() -> int:
 
     vocab_c = corpus_vocabulary()
     vocab = set(vocab_c)
-    cited = set(re.findall(r'docId: "([^"]+)"', open(REFS, encoding="utf-8").read()))
+    cited = cited_docs()
 
     docs: list[tuple[set[str], dict]] = []
     for d in sorted(glob.glob(os.path.join(LIB, "*"))):
@@ -194,13 +254,24 @@ def main() -> int:
         out = [
             "# Uncited library documents — triage queue",
             "",
-            "**Generated** 2026-08-15 by `scripts/library-relevance-rank.py --write-triage`.",
-            "Regenerate rather than edit.",
+            "**Generated** by `scripts/library-relevance-rank.py --write-triage`.",
+            "Regenerate rather than edit — the numbers below move whenever a source is",
+            "cited or a document is added, and a stamped date here just goes stale (this",
+            "line used to read \"Generated 2026-08-15\" long after it was not).",
             "",
-            f"{len(ranked)} of {N} library documents carry no `library:` back-reference from",
-            "`content/schema/references.ts` — nothing in the bibliography points at them.",
-            "That is the backlog [`local/paper-relevance-triage`](../../.claude/skills/local/paper-relevance-triage.md)",
-            "exists to work; it was invisible until the sources were sectioned.",
+            f"{len(ranked)} of {N} library documents are **held and registered but",
+            "cited by nothing** — no content block references their `references.ts`",
+            "entry, by `\\cite{}` in a `.md`, by `cites: []` in a `.ts`, or by a Lean",
+            "`-- Ref: [key]`. That is the backlog",
+            "[`local/paper-relevance-triage`](../../.claude/skills/local/paper-relevance-triage.md)",
+            "exists to work.",
+            "",
+            "**This measures something different than it used to.** It counted documents",
+            "with no `library:` back-reference from the bibliography — i.e. unregistered.",
+            "That backlog is drained: every library document now has an entry, so the",
+            "count went to zero and this page became an empty table under prose",
+            "describing a queue that no longer existed. Registered is not cited, and the",
+            "gap between them is the whole of this list.",
             "",
             "## How this is ranked",
             "",

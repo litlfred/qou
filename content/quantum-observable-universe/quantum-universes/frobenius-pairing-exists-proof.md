@@ -17,7 +17,7 @@ $\mathrm{ev} = \int_A \circ\, \mu$. Those identities *exhibit $A$ as its
 own dual*; they are not consequences of a rigid structure on
 $\mathbf{C}$, and asserting them is exactly what axiom 2 does.
 
-So the correct reading is: the pairing is non-degenerate **because the
+The pairing is therefore non-degenerate **because the
 Frobenius–Hopf data says so**, and the self-duality $A \cong A^\vee$ is a
 conclusion about $A$ rather than an instance of a duality every object
 enjoys. Rigidity is imposed one level up, on a

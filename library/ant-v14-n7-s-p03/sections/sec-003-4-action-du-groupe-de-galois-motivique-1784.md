@@ -1,13 +1,13 @@
 ---
 doc_id: ant-v14-n7-s-p03
-doc_title: "Nouvelles cohomologies de Weil en caractéristique positive Joseph Ayoub"
+doc_title: "Nouvelles cohomologies de Weil en caractéristique positive"
 section_id: sec-003-4-action-du-groupe-de-galois-motivique-1784
 section_title: "Action du groupe de Galois motivique 1784"
 section_number: 4
 pages: 1-8
 source_pdf: ant-v14-n7-s-p03.pdf
 source_sha256: e32fde16c3ce0940
-doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive Joseph Ayoub — periods” admitting an explicit description by generators and relations."
+doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive — periods” admitting an explicit description by generators and relations."
 ---
 Bibliographie 1789
 1. Introduction

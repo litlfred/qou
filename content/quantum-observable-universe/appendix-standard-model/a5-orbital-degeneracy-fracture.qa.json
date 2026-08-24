@@ -937,6 +937,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a prediction wired to any computation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:10.790Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Denials are the block's content: 'discrete automorphisms rather than a continuous rotation group' (the two competing pictures), 'an interpretive consequence, not a prediction wired to any computation' and 'untestable rather than falsifiable' (scope statements the (a)/(b) refutation rule requires). Substantive-mathematical-contrast class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -956,6 +971,21 @@
         "reviewed_at": "2026-08-15T10:31:01.522Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:10.878Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Second, and more fundamental, ...' introduces the second of two enumerated objections; no setup-then-reframe where a trailing clause carries the weight."
       }
     ],
     "trap-em-dash": [
@@ -976,6 +1006,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "5 stylistic spaced dashes in 205 words (2.44/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:10.934Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "3 em-dashes over 537 words, each a true parenthetical with matched pair or a definitional gloss ('are *native* — they are exactly the dimensions 1, 3, 5')."
       }
     ],
     "trap-triples": [
@@ -995,6 +1040,21 @@
         "reviewed_at": "2026-08-15T10:31:01.522Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 205 words)"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.016Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The s, p, d degeneracies' is the exact set of rows that restrict irreducibly (verified below); not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1014,6 +1074,21 @@
         "reviewed_at": "2026-08-15T10:31:01.522Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.076Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Closes on 'What is withdrawn is the claim that this block's value lies in falsifiability' — scope bookkeeping mandated by the (a)/(b) refutation-scoping rule, paired with 'Nothing here excludes the truncation picture'."
       }
     ],
     "trap-meta-commentary": [
@@ -1033,6 +1108,21 @@
         "reviewed_at": "2026-08-15T10:31:01.522Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.162Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'recorded here as an interpretive consequence' and 'This is a scope-(a) objection' are corpus scope labels, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1052,6 +1142,21 @@
         "reviewed_at": "2026-08-15T10:31:01.522Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.243Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Final paragraph adds the independent re-derivation and the scope class before restating the withdrawal; the restatement is the (a)/(b) bookkeeping, a cross-reference-closer false positive."
       }
     ],
     "trap-performed-warmth": [
@@ -1071,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.522Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.290Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Institutional register; a self-correction stated without affect."
       }
     ],
     "trap-superlative": [
@@ -1090,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:01.522Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.341Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'far tighter than any lanthanide measurement' is a correct comparison (Hughes--Drever clock-comparison bounds vs ensemble line structure), not unqualified inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1109,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:31:01.522Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "616c8372831f",
+          "ts": "c7b657cc37a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.466Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Long sentences, but each carries one clause chain and reads aloud; no noun-pile."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1131,5 +1281,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:25:11.466Z"
 }

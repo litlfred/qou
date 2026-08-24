@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1704.01735v4
-doc_title: "Modular curves, invariant theory and E8 Lei Yang"
+doc_title: "Modular curves, invariant theory and E8"
 section_id: sec-009-23-brings-curve-and-frickes-octavic-curve-from-t
 section_title: "Bring’s curve and Fricke’s octavic curve: from the icos ahedron"
 section_number: 2.3
 pages: 12-13
 source_pdf: 1704.01735v4.pdf
 source_sha256: 3935747ae9291f76
-doc_brief: "Modular curves, invariant theory and E8 Lei Yang — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
+doc_brief: "Modular curves, invariant theory and E8 — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
 ---
 to E8
 Both Bring’s curve and Fricke’s octavic curve arise from the resolut ion

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1004.1533v3
-doc_title: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT"
+doc_title: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT"
 section_id: sec-011-7-extended-combinatorial-surfaces
 section_title: "Extended combinatorial surfaces"
 section_number: 7
 pages: 24-27
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
-doc_brief: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
+doc_brief: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
 ---
 We begin by generalizing the deﬁnition of a polytope decomposition to e xtended
 surfaces.

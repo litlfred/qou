@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1004.1533v3
-doc_title: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT"
+doc_title: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-2
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
-doc_brief: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
+doc_brief: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
 ---
 Turaev–Viro (TV) invariants of 3-manifolds ZT V (M ) were deﬁned by Turaev
 and Viro in [TV1992] using a quantum analog of 6j symbols for sl2. In the same

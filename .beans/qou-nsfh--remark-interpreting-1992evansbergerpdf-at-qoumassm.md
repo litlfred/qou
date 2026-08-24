@@ -3,8 +3,9 @@
 title: Remark interpreting 1992EvansBerger.pdf at QOU.Mass.MilnorIndeterminacyGate
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:05Z
-updated_at: 2026-08-08T23:37:05Z
+updated_at: 2026-08-21T17:05:00Z
 ---
 
 Record, against the indeterminacy gate, that the gate's conclusion is about the LINK residue and does not apply to a braid-level third-order winding number. Deliberately NOT proposed as aid-proof: I have not checked that the corpus's closure convention and basepoint choices make Psi_ijk well defined on its braid words, nor that it is the right scale/units for a binding channel. Those two checks are what would have to happen first.
@@ -17,3 +18,10 @@ Source: `library/1992evansberger/1992EvansBerger.pdf` — no `references.ts` ent
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/1992evansberger/  ->  [evans-berger1992]
+  A Hierarchy of Linking Integrals
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [evans-berger1992] as the citation key when you do it.

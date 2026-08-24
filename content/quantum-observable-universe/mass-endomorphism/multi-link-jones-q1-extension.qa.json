@@ -1519,6 +1519,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.305Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "'What follows is **infrastructure, not closure**'; 'They are not closures.'; 'do NOT match empirical c_5'; 'rather than as a direct scalar multiple of a single Jones value'.",
+        "notes": "All are honest scope/status statements (documented false-positive class, cf. ', not yet carried out') plus one substantive mathematical contrast. The block's value is precisely that it labels itself non-closure."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1538,6 +1554,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.350Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "No setup-then-reframe construction; the two sections state a candidate table then quantify its failure.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -1557,6 +1589,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 271 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.395Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "One spaced em-dash, in the bold lead line ('Multi-link Jones values at q=1 — Lean infrastructure for the c_5/c_6 candidate investigation'). Zero in body prose.",
+        "notes": "Density far below threshold."
       }
     ],
     "trap-triples": [
@@ -1576,6 +1624,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 271 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.437Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "'Three new Link constructors' (verified: trefoil, borromean, doubleHopf = 3), 'Three new jonesAtOne cases' (3), 'Two combination values' (2), 'three structural hypotheses' (3 distinct). Nested triple inside hypothesis 3: 'higher-rank irrep coupling, Mostow rigidity gap correction, non-trivial Habiro residue'.",
+        "notes": "Outer counts are verified artifact counts, not reflex lists. The nested speculative triple is borderline but the three items name genuinely different mechanisms; recorded as pass with the observation."
       }
     ],
     "trap-closing-aphorism": [
@@ -1595,6 +1659,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.484Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Final sentence is a concrete work item: 'This requires extending the Wenzl-bridge y_lambda infrastructure to eps^10, eps^12 evaluations of the tr_M expansion on V_(2,1), V_(3), V_(1,1,1) separately.'",
+        "notes": "Math-bearing directive, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1614,6 +1694,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.529Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "'What follows is infrastructure, not closure'; 'We posit three structural hypotheses'; 'We must test whether...'",
+        "notes": "Signposting of epistemic status and statement of hypotheses, not narration of the author's own emphasis. Plain register throughout."
       }
     ],
     "trap-thesis-restatement": [
@@ -1633,6 +1729,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.574Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Block ends on a forward research requirement, not a recapitulation.",
+        "notes": "n/a"
       }
     ],
     "trap-performed-warmth": [
@@ -1652,6 +1764,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.616Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1671,6 +1799,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.661Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "'closest simple multi-link Jones candidate' is the only superlative and it is scoped ('simple multi-link') and immediately quantified ('50x off in scale and sign', '3000x off'). BUT checking the claim it points at (per the audit brief) found the underlying arithmetic wrong -- see notes.",
+        "notes": "Language is measured, so PASS on the trap. Recomputed findings recorded for the coordinating session, NOT fixed inline (math): (i) J_L(q=1) = (-2)^(c-1) for any c-component link (skein at t=1 makes V crossing-change invariant); so Borromean (c=3) is +4, NOT -8, and doubleHopf = Hopf u Hopf (c=4) is -8, NOT +4 -- the two values are swapped w.r.t. the normalised convention the same table uses for trefoil (+1) and Hopf (-2). Confirmed independently by summing V(L6a4) = -t^-3+3t^-2-2t^-1+4-2t+3t^2-t^3 at t=1 = 4. -8 is the UNREDUCED value (delta*V, delta(1) = -2), i.e. the block splices two conventions. (ii) 'disjoint-union multiplicativity' is false for the normalised Jones: V(L1 u L2) = delta*V(L1)*V(L2). (iii) 'closest candidate -J_Borromean = +8, 50x off in scale AND SIGN' -- with the correct +4 the candidate is -4, which has the SAME sign as c_5 = -395.4 and is ~99x off, so the stated sign mismatch evaporates. Same values appear in QOU/BraidKnot/BraidLinkTypes.lean:132-140 and multi-link-jones-q1-extension.lean."
       }
     ],
     "trap-nonspeakable": [
@@ -1690,6 +1834,22 @@
         "reviewed_at": "2026-08-15T10:31:01.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c6a04bafb569",
+          "ts": "818ebc5eb6d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:26.708Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Heaviest constructions are the bold run-in list labels ('Precision-ladder normalisation revision', 'Sum-over-Wedderburn-blocks', 'New categorical input at k >= 5') and 'the mixed Kashiwara-plus-Hopf-half b^2 + 1/2'.",
+        "notes": "Run-in headers are a normal list device; the sentences under them parse aloud. No fix."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1713,5 +1873,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:50:26.708Z"
 }

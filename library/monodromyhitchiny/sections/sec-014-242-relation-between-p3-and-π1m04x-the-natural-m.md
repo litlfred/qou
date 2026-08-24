@@ -1,13 +1,13 @@
 ---
 doc_id: monodromyhitchiny
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the monodromy of the Hitchin connection"
 section_id: sec-014-242-relation-between-p3-and-π1m04x-the-natural-m
 section_title: "Relation between P3 and π1(M0,4,x ). The natural map"
 section_number: 2.4.2
 pages: 5-6
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
+doc_brief: "On the monodromy of the Hitchin connection — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND ; Introduction; Review of mapping class groups, mo"
 ---
 M0,4 = P1
 C \ {0, 1, ∞} − →X3, z ↦→(0, 1,z )

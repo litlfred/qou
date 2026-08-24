@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un c"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-076-63-le-mt-o1n-sch-ema-en-groupe-v-de-515-agit-sur
 section_title: "Le MT( O[1/N])-sch´ ema en groupe V de 5.15 agit sur P0,0 et P1,0. On d´ eﬁnit la"
 section_number: 6.3
 pages: 71-74
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 ﬁltration D de Lie V par la condition que DpLie V soit maximal tel que l’action de Lie V sur
 O(P0,0) et O(P0,1) envoie DpLie V ⊗ DqO(P0,0) dans Dp+qO(P0,0) et DpLie V ⊗ DqO(P1,0)

@@ -61,7 +61,9 @@
  *
  * Survey mode (default) prints the offenders and exits 0. `--diff <files…>`
  * restricts to the named paths and exits 1 if any of them is an offender —
- * that is the pre-commit gate.
+ * that is the pre-commit gate. `--diff` additionally WARNS (exit 0) when a
+ * changed block loads fine but no chapter lists it; see `--orphans` below for
+ * why that is worth saying out loud.
  *
  * ## `--orphans`: the other way content goes missing
  *
@@ -77,9 +79,20 @@
  *                      → chapter `<dir>/<dir>.ts` → `sections[].blocks[]`
  *                        (recursing through `subsections`)
  *
- * Measured 2026-08-15 across all five paper directories. QOU is clean at the
- * chapter level (36/36 included) with 10 unlisted blocks, 3 of which are the
- * unloadable manifests above and 6 of which are `fluid-dynamics`.
+ * Measured 2026-08-15 across all five paper directories, updated 2026-08-19.
+ * QOU is clean at the chapter level (36/36 included) and now has 4 unlisted
+ * blocks: the 3 unloadable manifests above plus `delta-max-numerical-scale`.
+ *
+ * It had 10. Six were `fluid-dynamics` remarks that the 2026-07-18 clarity
+ * drain `5629c88c42` extracted out of statement blocks and never listed —
+ * that commit created 8 blocks there and wired 3, so the text it moved
+ * "verbatim into follow-on remark blocks" left the paper instead of moving
+ * within it, while the message reported the pass "manifest-safe". They are
+ * wired now, each beside the block it `interprets`. Checking the whole commit
+ * afterwards: those five were its ONLY misses across 422 files, so the damage
+ * was bounded to one chapter. That miss is why `--diff` now warns on an
+ * unlisted block and not only an unloadable one.
+ *
  * `fred2005-formal-groups`, `bach2013-double-slit` and `visualizer` are clean
  * on both levels. `unital-groebner-bases` carries a whole second generation of
  * itself — 2 of its 3 chapter directories
@@ -237,6 +250,43 @@ async function orphanSurvey(quiet: boolean): Promise<number> {
   return 0;
 }
 
+/** Walk up from a chapter dir to the paper dir (the one holding `<name>/<name>.ts`). */
+function findPaperDir(chapterDir: string): string | null {
+  let cur = chapterDir;
+  for (let i = 0; i < 4; i++) {
+    const parent = dirname(cur);
+    if (existsSync(join(parent, `${basename(parent)}.ts`))) return parent;
+    if (parent === cur) break;
+    cur = parent;
+  }
+  return null;
+}
+
+const _listedCache = new Map<string, Set<string> | null>();
+
+/** Every block root-name reachable from a paper manifest, through its listed chapters. */
+async function listedInPaper(paperDir: string): Promise<Set<string> | null> {
+  if (_listedCache.has(paperDir)) return _listedCache.get(paperDir)!;
+  let out: Set<string> | null = null;
+  try {
+    const manifest = (await import(join(paperDir, `${basename(paperDir)}.ts`))).default as {
+      chapters?: { dir?: string }[];
+    };
+    out = new Set<string>();
+    for (const c of manifest.chapters ?? []) {
+      if (!c.dir) continue;
+      const chPath = join(paperDir, c.dir, `${c.dir}.ts`);
+      if (!existsSync(chPath)) continue;
+      const ch = (await import(chPath)).default as { sections?: unknown[] };
+      for (const sec of ch.sections ?? []) listedBlocks(sec as never, out);
+    }
+  } catch {
+    out = null;
+  }
+  _listedCache.set(paperDir, out);
+  return out;
+}
+
 async function main(argv: string[]): Promise<number> {
   const quiet = argv.includes("--quiet");
   if (argv.includes("--orphans")) return orphanSurvey(quiet);
@@ -282,7 +332,35 @@ async function main(argv: string[]): Promise<number> {
       );
       return 1;
     }
-    if (!quiet) console.log("block-manifest-audit: every manifest in this diff loads.");
+    // Loading is necessary, not sufficient: a block no chapter lists is still
+    // absent from the paper. Reported as a WARNING and not a failure, because
+    // parking a block on disk can be deliberate — but silence here is how the
+    // 2026-07-18 clarity drain moved five fluid-dynamics remarks out of the
+    // paper while reporting itself "manifest-safe".
+    const unlisted: string[] = [];
+    for (const md of candidates) {
+      const chapterDir = dirname(md);
+      const paperDir = findPaperDir(chapterDir);
+      if (!paperDir) continue;
+      const listed = await listedInPaper(paperDir);
+      if (listed === null) continue; // paper manifest unreadable; not this check's business
+      const root = basename(md, ".md");
+      if (!listed.has(root)) unlisted.push(md);
+    }
+    if (unlisted.length) {
+      console.log(
+        `\n⚠ block-manifest-audit: ${unlisted.length} block(s) in this diff load fine\n` +
+          `  but no chapter in the paper manifest lists them, so they render nowhere:`,
+      );
+      for (const u of unlisted) console.log(`    ${rel(u)}`);
+      console.log(
+        `  Add each to its chapter's \`sections[].blocks[]\` — beside the block it\n` +
+          `  \`interprets\`, if it has one. Deliberately parked? Then ignore this line.`,
+      );
+    }
+    if (!quiet && !unlisted.length) {
+      console.log("block-manifest-audit: every manifest in this diff loads and is listed.");
+    }
     return 0;
   }
 

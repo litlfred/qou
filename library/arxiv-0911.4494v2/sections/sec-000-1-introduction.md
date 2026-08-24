@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0911.4494v2
-doc_title: "The geometry of Markov traces Ben Webster Geordie Williamson"
+doc_title: "The geometry of Markov traces"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
-doc_brief: "The geometry of Markov traces Ben Webster Geordie Williamson — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on"
+doc_brief: "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn."
 ---
 ing from surprising directions; one of the foremost was the H OMPLYPT polynomial,
 independently discovered by several groups of researchers (see [FYH +85, PT88]). In

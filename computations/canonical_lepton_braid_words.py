@@ -52,6 +52,7 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 # ── Canonical lepton braid words (c, d, gen_idx) format ─────────
@@ -195,10 +196,11 @@ def lepton_mass_dimensionless(
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     # Substrate at q_0
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     cal2_target = M_MU_OVER_M_E
     cal_tau_e   = mp.mpf("3477.23")
     hbar_q_sq = Vol_4_1 / cal2_target

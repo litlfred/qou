@@ -12,7 +12,7 @@ changes that choice without changing the tetrahedron. Any volume formula written
 *Relabelling cyclically permutes the three dihedral angles, and the volume is unchanged:*
 
 $$
-  \operatorname{vol}\Bigl(\tfrac{1}{1-z}\Bigr) \;=\; \operatorname{vol}(z) .
+  \mathrm{vol}\Bigl(\tfrac{1}{1-z}\Bigr) \;=\; \mathrm{vol}(z) .
 $$
 
 The mechanism is that $\Lambda(\theta_1) + \Lambda(\theta_2) + \Lambda(\theta_3)$ is symmetric under cycling its arguments, together with the two identities

@@ -3,8 +3,9 @@
 title: Cite 1906.12122v2.pdf at rem:feynman-qou-comparison
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:35:53Z
-updated_at: 2026-08-08T23:35:53Z
+updated_at: 2026-08-21T17:04:41Z
 ---
 
 rem:feynman-qou-comparison contrasts the folio's zero-fitted-parameter formula with the five-coefficient SEMF; a modern EFT benchmark belongs in that comparison, and its absence is the kind of gap a referee flags first.
@@ -17,3 +18,10 @@ Source: `library/arxiv-1906.12122v2/1906.12122v2.pdf` — no `references.ts` ent
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1906.12122v2/  ->  [hammer2019]
+  Nuclear effective field theory: status and perspectives
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [hammer2019] as the citation key when you do it.

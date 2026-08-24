@@ -1525,6 +1525,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not over M generically.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:38.818Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "Four denials, all load-bearing: 'What it does *not* yet pin down is which algebraic relations survive' (the gap the conjecture fills), 'holds only in R, not over H_q generically' (the archimedean-accident definition), 'there is no recourse to distributions or limits' (the point of the surreal lift), 'mentions no partition' (an honest attribution correction)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1544,6 +1559,21 @@
         "reviewed_at": "2026-08-15T10:31:00.740Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:38.855Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "'The categorical analog ... does exactly this. What it does not yet pin down is X. The present conjecture supplies the structural answer' has the pivot shape but is standard gap-then-contribution motivation, and the answer is then actually given in two bullets."
       }
     ],
     "trap-em-dash": [
@@ -1564,6 +1594,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "7 stylistic spaced dashes in 497 words (1.41/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:38.891Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "severity": "minor",
+        "evidence": "Nine em-dashes in 667 words, and one pair breaks its sentence outright: 'The cellular GB-depth on $Z(H_n(q))$ — attributed here to [prop:curvature-rank-gb-stratification], though **that proposition stratifies by the curvature rank of *words* and mentions no partition**; the max-hook statistic is QOU.BraidKnot.gbDepth, a definition, and the step joining them is unestablished (see docs/audits/...) — (max hook of partition) is a **separate** filtration ...'. A 60-word interruption leaves '(max hook of partition)' reading as the grammatical subject.",
+        "notes": "PROPOSED (structural, not applied): split into two sentences — 'The cellular GB-depth on Z(H_n(q)) (max hook of partition) is a separate filtration from the iterated-integral depth used here.' then 'Its attribution to prop:curvature-rank-gb-stratification is unestablished: that proposition stratifies by the curvature rank of words and mentions no partition, and the max-hook statistic QOU.BraidKnot.gbDepth is a definition, not a theorem joining the two (docs/audits/2026-08-16-three-gb-filtrations-one-name.md).'"
       }
     ],
     "trap-triples": [
@@ -1583,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.740Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 497 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:38.927Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "No reflex three-item list; the generator set exp_q, log_q, Li_2^q, ..., Li_n^q is an indexed family."
       }
     ],
     "trap-closing-aphorism": [
@@ -1602,6 +1664,23 @@
         "reviewed_at": "2026-08-15T10:31:00.740Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:38.961Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "severity": "major",
+        "evidence": "Two coined one-liners closing their sections. (i) 'This is the wall-crossing criterion: depth determines what survives.' — restates the two bullets immediately above it and coins a term that appears NOWHERE else in content/ or docs/ (grepped). (ii) 'This makes the *algebraic core survives* mechanism into a quantitative statement: it survives **at the depth at which it lives**.'",
+        "notes": "FIXED (i): sentence deleted in full — 'This is the wall-crossing criterion: depth determines what survives.' It named nothing reused and said nothing the preceding two bullets had not. NOT FIXED (ii): 'it survives at the depth at which it lives' is aphoristically phrased but IS the quantitative claim being made, so deletion would lose content; propose 'the depth at which the core lives bounds the period-filtration level of its archimedean image.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1621,6 +1700,21 @@
         "reviewed_at": "2026-08-15T10:31:00.740Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:38.998Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "The self-correction about a mis-attributed proposition is substantive honesty, not narrated emphasis, and it points at the adjudicating audit doc."
       }
     ],
     "trap-thesis-restatement": [
@@ -1640,6 +1734,22 @@
         "reviewed_at": "2026-08-15T10:31:00.740Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:39.034Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "After the fix above, no section closes by restating itself.",
+        "notes": "The deleted wall-crossing sentence was equally a restatement; recorded under trap-closing-aphorism, not double-counted."
       }
     ],
     "trap-performed-warmth": [
@@ -1659,6 +1769,21 @@
         "reviewed_at": "2026-08-15T10:31:00.740Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:39.072Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1678,6 +1803,22 @@
         "reviewed_at": "2026-08-15T10:31:00.740Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:39.111Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "'sharp at every depth' is a precise mathematical claim (and the block flags it as Open); 'no concrete computation suffices' is a scope statement about what would discharge the conjecture.",
+        "notes": "VERIFIED: the depth-2 evidence is exactly right — 2 Cl_2(pi/3) = 2.02988321282 = 2 Im Li_2(e^{i pi/3}), and this is the correct Vol(4_1) value under the correct name (AGENTS.md Lambda-vs-Cl_2 guard). No coefficient slip here."
       }
     ],
     "trap-nonspeakable": [
@@ -1697,6 +1838,23 @@
         "reviewed_at": "2026-08-15T10:31:00.740Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c9d002a479c2",
+          "ts": "3ab7b74153d2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:03:39.147Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "severity": "minor",
+        "evidence": "The Cellular-vs-iterated-integral bullet cannot be read aloud (see trap-em-dash); its subject and predicate are 60 words apart with a semicolon-joined aside in between.",
+        "notes": "TWO CITATION DEFECTS (not fixed — bibliography, not prose): (i) three references appear as bare bracketed keys rather than \\cite{} — '([bloch2000], [suslin1991])' and '([kontsevich1995], ...)' — which is the escaped/bare-bracket citation class the sweep produces, and which renders as broken link syntax rather than a citation; (ii) two references have no key at all, 'Goncharov 2001' and 'the Mikusinski (1959) construction'. POSSIBLE TOKEN SUBSTITUTION: 'See the explicit canonical witness in conj:bring-figure-eight-depth-2-witness' reads as the documented 'canonical' <- 'numerical' substitution ('the explicit numerical witness'); flagged, not changed, since 'canonical witness' is also a phrase this corpus uses legitimately."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1720,5 +1878,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:03:39.147Z"
 }

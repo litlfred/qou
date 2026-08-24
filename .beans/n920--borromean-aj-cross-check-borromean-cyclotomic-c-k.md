@@ -3,8 +3,9 @@
 title: 'Borromean AJ: cross-check Borromean cyclotomic c_k against Habiro [H1] (simple links, RIMS Kokyuroku 1172) — NOT Masbaum math/0306345 (twist knots only); ref unavailable, DEFERRED'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-04T10:42:30Z
-updated_at: 2026-07-07T14:03:51Z
+updated_at: 2026-08-21T15:00:58Z
 ---
 
 UNBLOCKED 2026-07-06: owner uploaded library/arxiv-math-0508100v6/0508100v6.pdf (GL2011).
@@ -86,3 +87,5 @@ object) — supplied as clean input, no forced coincidence.
 Also this branch: laptop-runnable explicit-operator reconstruction
 script (borromean_operator_reconstruct_laptop.py) delivered for the
 degree-terminus-blocked multi-hour CRT run.
+
+CORPUS NOTE 2026-08-21 (bean qou-kqbk): the primary source this bean's TITLE calls unavailable — Habiro [H1], RIMS Kokyuroku 1172 — IS in the library and is now greppable: library/1172-3/ ('ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS', Kazuo Habiro), whose own opening names 'the trefoil and the figure eight knots, the Whitehead and the Borromean links'. The 2026-07-06 unblock came via a different document (arxiv-math-0508100v6, GL2011), so the transcription stands; this is a second, independent copy of the formula's original statement available for cross-check. Its extracted title was over-welded ('THECOLOREDJONESPOLYNOMIALSOF') which is why a title-grep missed it.

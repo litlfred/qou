@@ -893,9 +893,179 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.232Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.272Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.311Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.352Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.391Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.432Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.472Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.512Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.552Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "811859eede5c",
+          "ts": "bc7df498cb62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.592Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row data table (Lean object inventory for the n-strand generalisation), no prose sentences: none of the ten constructions can occur. Hecke relation printed as sigma_i^2 = (q - q^{-1}) sigma_i + 1, which is AGENTS.md 7a-correct (generator sigma_i, not T; equivalent to (sigma_i - q)(sigma_i + q^{-1}) = 0)."
+      }
     ]
   },
   "label": "tbl:braid-group-n-strand-table1-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:21:27.592Z"
 }

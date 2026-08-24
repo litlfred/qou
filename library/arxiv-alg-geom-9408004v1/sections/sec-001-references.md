@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-alg-geom-9408004v1
-doc_title: "Eyal Markman 2 University of Michigan"
+doc_title: "Cubics, Integrable Systems, and Calabi-Yau Threefolds"
 section_id: sec-001-references
 section_title: "References"
 section_number: null
 pages: 26-28
 source_pdf: 9408004v1.pdf
 source_sha256: d3bc00265294aa02
-doc_brief: "CUBICS, INTEGRABLE SYSTEMS, AND CALABI-YAU THREEFOLDS Ron Donagi 1 University of Pennsylvania Eyal Markman 2 University of Michigan — 2 sections: This number is conjectured, but no; References"
+doc_brief: "Cubics, Integrable Systems, and Calabi-Yau Threefolds — 2 sections: This number is conjectured, but no; References"
 ---
 [AG] V.I. Arnol’d and A.B. Givental’: Symplectic Geometry. In: Arnol’d,
 V.I., Novikov, S.P. (eds.) Dynamical systems IV (EMS, vol. 4 ),

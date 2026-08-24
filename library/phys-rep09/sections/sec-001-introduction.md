@@ -1,13 +1,13 @@
 ---
 doc_id: phys-rep09
-doc_title: "PhysicsReports470(2009)151–238 Contents lists available at ScienceDirect PhysicsReports journal homepage: www.elsevier.com/locate/physrep TheMagnusexpansionandsomeofitsapplications"
+doc_title: "The Magnus expansion and some of its applications"
 section_id: sec-001-introduction
 section_title: "Introduction"
 section_number: null
 pages: 48-79
 source_pdf: phys-rep09.pdf
 source_sha256: cd345d3df9358efc
-doc_brief: "PhysicsReports470(2009)151–238 PhysicsReports TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeVale"
+doc_brief: "The Magnus expansion and some of its applications — 8 sections: Introduction; Introduction; Stochastic differential equations"
 ---
 TheMagnusexpansion,asformulatedinSection 2,hasfoundextensiveuseinmathematicalphysics,quantumchemistry,
 controltheoryetc,essentiallyasaperturbativetoolinthetreatmentofthelinearequation

@@ -196,7 +196,7 @@ def saddle_V(y, branch):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     y1, y2, y3 = saddle_roots()
     V1, V2, V3 = saddle_V(y1, -1), saddle_V(y2, +1), saddle_V(y3, +1)
     shift = mp.pi ** 2 / 2

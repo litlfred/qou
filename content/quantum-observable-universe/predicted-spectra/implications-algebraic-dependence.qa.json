@@ -1420,6 +1420,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.038Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 5 framework) plus a Lean-formalisation paragraph. Judged all ten categories.",
+        "notes": "Logic verified: 'algebraic dependence is weaker than Q-linear dependence' is correct (a Q-linear relation IS a degree-one algebraic relation, so linear dependence implies algebraic dependence and not conversely), and it follows correctly that a degree > 1 dependence does not refute Milnor. The three invariant trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) are correctly assigned. NOTE reported separately: this block attributes Q-linear independence of non-commensurable volumes to MILNOR while its sibling conj:hyperbolic-volume-transcendence attributes the same statement to BOREL--ZAGIER; the two blocks interpret the same conjecture and should name it the same way."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1439,6 +1455,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.078Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 5 framework) plus a Lean-formalisation paragraph. Judged all ten categories.",
+        "notes": "Logic verified: 'algebraic dependence is weaker than Q-linear dependence' is correct (a Q-linear relation IS a degree-one algebraic relation, so linear dependence implies algebraic dependence and not conversely), and it follows correctly that a degree > 1 dependence does not refute Milnor. The three invariant trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) are correctly assigned. NOTE reported separately: this block attributes Q-linear independence of non-commensurable volumes to MILNOR while its sibling conj:hyperbolic-volume-transcendence attributes the same statement to BOREL--ZAGIER; the two blocks interpret the same conjecture and should name it the same way."
       }
     ],
     "trap-em-dash": [
@@ -1458,6 +1490,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 274 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.117Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 5 framework) plus a Lean-formalisation paragraph. Judged all ten categories.",
+        "notes": "Logic verified: 'algebraic dependence is weaker than Q-linear dependence' is correct (a Q-linear relation IS a degree-one algebraic relation, so linear dependence implies algebraic dependence and not conversely), and it follows correctly that a degree > 1 dependence does not refute Milnor. The three invariant trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) are correctly assigned. NOTE reported separately: this block attributes Q-linear independence of non-commensurable volumes to MILNOR while its sibling conj:hyperbolic-volume-transcendence attributes the same statement to BOREL--ZAGIER; the two blocks interpret the same conjecture and should name it the same way."
       }
     ],
     "trap-triples": [
@@ -1477,6 +1525,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 274 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.155Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "'The topological mass formula, the Groebner--Shirshov construction, and the spectral predictions remain valid.' Three named, non-overlapping framework components, each doing distinct work in the argument. Substantive enumeration.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1496,6 +1560,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.196Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 5 framework) plus a Lean-formalisation paragraph. Judged all ten categories.",
+        "notes": "Logic verified: 'algebraic dependence is weaker than Q-linear dependence' is correct (a Q-linear relation IS a degree-one algebraic relation, so linear dependence implies algebraic dependence and not conversely), and it follows correctly that a degree > 1 dependence does not refute Milnor. The three invariant trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) are correctly assigned. NOTE reported separately: this block attributes Q-linear independence of non-commensurable volumes to MILNOR while its sibling conj:hyperbolic-volume-transcendence attributes the same statement to BOREL--ZAGIER; the two blocks interpret the same conjecture and should name it the same way."
       }
     ],
     "trap-meta-commentary": [
@@ -1515,6 +1595,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.234Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 5 framework) plus a Lean-formalisation paragraph. Judged all ten categories.",
+        "notes": "Logic verified: 'algebraic dependence is weaker than Q-linear dependence' is correct (a Q-linear relation IS a degree-one algebraic relation, so linear dependence implies algebraic dependence and not conversely), and it follows correctly that a degree > 1 dependence does not refute Milnor. The three invariant trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) are correctly assigned. NOTE reported separately: this block attributes Q-linear independence of non-commensurable volumes to MILNOR while its sibling conj:hyperbolic-volume-transcendence attributes the same statement to BOREL--ZAGIER; the two blocks interpret the same conjecture and should name it the same way."
       }
     ],
     "trap-thesis-restatement": [
@@ -1534,6 +1630,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.273Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 5 framework) plus a Lean-formalisation paragraph. Judged all ten categories.",
+        "notes": "Logic verified: 'algebraic dependence is weaker than Q-linear dependence' is correct (a Q-linear relation IS a degree-one algebraic relation, so linear dependence implies algebraic dependence and not conversely), and it follows correctly that a degree > 1 dependence does not refute Milnor. The three invariant trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) are correctly assigned. NOTE reported separately: this block attributes Q-linear independence of non-commensurable volumes to MILNOR while its sibling conj:hyperbolic-volume-transcendence attributes the same statement to BOREL--ZAGIER; the two blocks interpret the same conjecture and should name it the same way."
       }
     ],
     "trap-performed-warmth": [
@@ -1553,6 +1665,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.314Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 5 framework) plus a Lean-formalisation paragraph. Judged all ten categories.",
+        "notes": "Logic verified: 'algebraic dependence is weaker than Q-linear dependence' is correct (a Q-linear relation IS a degree-one algebraic relation, so linear dependence implies algebraic dependence and not conversely), and it follows correctly that a degree > 1 dependence does not refute Milnor. The three invariant trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) are correctly assigned. NOTE reported separately: this block attributes Q-linear independence of non-commensurable volumes to MILNOR while its sibling conj:hyperbolic-volume-transcendence attributes the same statement to BOREL--ZAGIER; the two blocks interpret the same conjecture and should name it the same way."
       }
     ],
     "trap-superlative": [
@@ -1572,6 +1700,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.353Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 5 framework) plus a Lean-formalisation paragraph. Judged all ten categories.",
+        "notes": "Logic verified: 'algebraic dependence is weaker than Q-linear dependence' is correct (a Q-linear relation IS a degree-one algebraic relation, so linear dependence implies algebraic dependence and not conversely), and it follows correctly that a degree > 1 dependence does not refute Milnor. The three invariant trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) are correctly assigned. NOTE reported separately: this block attributes Q-linear independence of non-commensurable volumes to MILNOR while its sibling conj:hyperbolic-volume-transcendence attributes the same statement to BOREL--ZAGIER; the two blocks interpret the same conjecture and should name it the same way."
       }
     ],
     "trap-nonspeakable": [
@@ -1591,6 +1735,22 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d82d42b41cf4",
+          "ts": "d91ca7e16b8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.392Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Checked the densest sentences ('The invariant identifying the proton as a three-body configuration is computable without the infinite tower'; 'The distinction between the Borromean link B_3 and a sum of Hopf pairs reduces to finite categorical data') -- each has a finite verb early and a single postmodifier. They read aloud.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1613,5 +1773,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:54.392Z"
 }

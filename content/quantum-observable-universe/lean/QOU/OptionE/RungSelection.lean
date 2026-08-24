@@ -79,12 +79,17 @@ theorem depthBasedRule_second_rung
   unfold depthBasedRule
   rfl
 
-/-- **k ≥ 3 reach property**: for crystals with ≥ 3 vertices, the
-    depth-based rule assigns rung 3 (or higher) to at least one
-    vertex (the third vertex by index). This is the substrate-
-    derived k ≥ 3 content the τ_M k=2 truncation lacks. -/
-theorem depthBasedRule_reaches_k3
-    (n : ℕ) (Γ : CrystalGraph n) (h : 3 ≤ Γ.vertexCount) :
+/-- **Verification**: the depth-based rule assigns rung 3 to the third vertex
+    (idx 2), continuing the `source_rung` / `second_rung` pattern.
+
+    NOTE: on the current **placeholder** depth function `k v := v.idx + 1` this
+    holds for every `Γ`; the previous `depthBasedRule_reaches_k3` carried an
+    **unused** `h : 3 ≤ Γ.vertexCount` and a "k ≥ 3 reach property" docstring it
+    did not establish. The substantive "substrate-derived k ≥ 3" content — that
+    the *concrete* crystal-graph depth reaches 3 below the k = 2 horizon — is the
+    open Option-E goal (property 2 in the header), not this placeholder unfolding. -/
+theorem depthBasedRule_third_rung
+    (n : ℕ) (Γ : CrystalGraph n) :
     (depthBasedRule n Γ).k ⟨2⟩ = 3 := by
   unfold depthBasedRule
   rfl

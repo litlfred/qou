@@ -1,6 +1,6 @@
 ---
 doc_id: afst-2007-6-16-3-665-0
-doc_title: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques"
+doc_title: "Galois theory of q-difference equations"
 section_id: sec-021-71-picard-vessiot-theory-and-examples
 section_title: "Picard-Vessiot theory and examples"
 section_number: 7.1

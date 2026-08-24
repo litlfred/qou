@@ -1428,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.103Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Two candidates, both in the false-positive classes. \"The refactor identifies this directly in the spectral sequence, rather than via shell-model fitting\" is a substantive methodological contrast. \"It is not the Plancherel-weighted character sum ... which vanishes identically at certain atomic-braid cycle types\" is load-bearing disambiguation between two genuinely different objects, and the whole \"Operator-level support\" section exists to make that distinction.",
+        "notes": "No change. Separate one-voice note: \"The refactor identifies this\" leaks the editing process into scholarly prose - \"refactor\" is not a mathematical object. Proposed: \"The spectral sequence identifies this directly, rather than via shell-model fitting.\""
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1447,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.142Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No setup-then-reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1466,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 430 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.180Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1485,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 430 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.219Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "The Discussion's three numbered evidence items are distinct in kind (numerical, conditional-equivalence, phenomenological); a genuine enumeration.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1504,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.259Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Closes on a scope statement about the downstream cone, not a quotable line - and an honest one (\"stays conjectural until either the conjecture is proved or the prediction is demoted\").",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1523,6 +1603,23 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.301Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "severity": "major",
+        "evidence": "\"This conditional structure justifies authoring both conjectures together.\" The sentence narrates the document's own construction - why two blocks were written as a pair - rather than stating mathematics. The mathematical content it is standing in for is the next sentence (\"A proof of either implies the other under the substrate axioms\").",
+        "notes": "STRUCTURAL (deleting it changes the paragraph's opening and the following \"The categorical conjecture ... the homological conjecture ...\" depends on the pairing being introduced), not edited. Proposed: open the paragraph with the content instead - \"Under the substrate axioms the two conjectures are equivalent: the categorical one is the Hecke-side content, the homological one its brane-tower-side image under Yekutieli rigidity\" - and drop the authoring sentence entirely."
       }
     ],
     "trap-thesis-restatement": [
@@ -1542,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.343Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Each section closes on new content.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1561,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.384Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1580,6 +1709,23 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.425Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "severity": "major",
+        "evidence": "Discussion item 3: \"the seven values {2, 8, 20, 28, 50, 82, 126} form the only nucleon counts at which the experimental binding curve exhibits a discontinuous first-derivative drop\". \"The only\" is unqualified and overstated - the sub-magic numbers (6, 14, 16, 28-region N=32/34) show observed kinks in separation energies, and 126 is established as magic for neutrons only. The phrase \"discontinuous first-derivative drop\" is also loose for a curve defined on integers.",
+        "notes": "STRUCTURAL / math-adjacent, not edited. Proposed: \"the seven values ... are the nucleon counts at which the experimental separation-energy curve shows the largest drops\". Two further items for the coordinating session: (1) the biconditional \"A proof of either implies the other under the substrate axioms\" is stronger than the argument given, which runs one way only (categorical neutrality -> self-dual BB stratification -> the E_infty vanishing); Discussion item 2 repeats it as \"Conditional equivalence\". (2) An evidence gap: the block says verification confirms E_infty^{p,>0}(n) = 0 \"at n = 2, 8, 20\" and that the downstream cone affects \"n in {50, 82, 126}\" - n = 28 is in neither list, so its status is unstated."
       }
     ],
     "trap-nonspeakable": [
@@ -1599,6 +1745,23 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1d79d7457e5f",
+          "ts": "289cffec1e61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.465Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "severity": "minor",
+        "evidence": "\"the algebraic-geometry crystallisation of this cancellation\" and \"its brane-tower-side image\" are the two densest phrases; both parse aloud.",
+        "notes": "Note: three copular substitutions in this block - \"forms the algebraic-geometry crystallisation\", \"forms the Hecke-side content\", \"forms its brane-tower-side image\" - the same is-to-forms class flagged across this chapter. Below the fail threshold on its own; listed so a chapter-wide pass can pick them up."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1621,5 +1784,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:23:28.465Z"
 }

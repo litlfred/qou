@@ -27,6 +27,6 @@ is recovered as the global Tate integral of the standard adelic
 Schwartz function. Local $q$-zeta data and macroscopic real-valued
 observables are two faces of the same adelic object.
 
-This is the global stitch: discrete quantum data at every prime,
-glued by adelic restriction, projected to physical numbers by the
+Discrete quantum data at every prime is glued by adelic restriction
+and projected to physical numbers by the
 [archimedean realization functor](#def:archimedean-realization-functor).

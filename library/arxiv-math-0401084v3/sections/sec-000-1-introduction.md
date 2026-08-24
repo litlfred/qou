@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0401084v3
-doc_title: "THE COLORED JONES POL YNOMIALS OF THE"
+doc_title: "Some limits of the colored Jones polynomials of the figure-eight knot"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
+doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
 ---
 Let K be a knot and JN (K; t) be the colored Jones polynomial of K in the
 three-sphere S3 corresponding to the N -dimensional representation of sl2(C) (see

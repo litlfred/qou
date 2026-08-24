@@ -1428,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:23.472Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'appears to introduce a non-trace transcendental species ... It does not.' is a stated-then-refuted appearance, and refuting exactly that appearance is the remark's whole purpose (its title is that Phi_q resums Markov traces). Substantive class, though the two-word sentence is a rhetorical beat."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1447,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:23.549Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The 'appears to X. It does not.' opening has the setup-then-reverse shape, but the reversal is the block's thesis and the next sentence supplies the mechanism (the resummation factors through the same per-generator subwords), so the second clause is not carrying unearned weight."
       }
     ],
     "trap-em-dash": [
@@ -1466,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:23.631Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One matched pair setting off 'which saddle regime this resummation lives in' — a true parenthetical gloss on 'context-sorting'."
       }
     ],
     "trap-triples": [
@@ -1485,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:23.691Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1504,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:23.779Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing line is a balanced 'X, yet Y' summary rather than a quotable aphorism; its defect is restatement, recorded under trap-thesis-restatement."
       }
     ],
     "trap-meta-commentary": [
@@ -1523,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:23.850Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1542,6 +1632,23 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:23.947Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "Final sentence: 'The Phi_q resummation provides exact computational convenience, yet the underlying algebraic engine remains the canonical Jones-Markov trace applied to atomic braids and their derivatives.' Both halves are already established: the opening paragraph says Phi_q only 'appears' to introduce a new species and 'strictly factors through Markov traces of the identical per-generator subwords', and paragraph 2 says the tower 'generates from symbolic differentiation of the descended trace'. The sentence adds no fact and closes by re-asserting the thesis in the block-final position, which is the category's signature.",
+        "notes": "Proposed (NOT applied inline — deleting it removes the one clause that is not pure restatement, 'exact computational convenience', so this is a meaning change and belongs to a human): either cut the sentence outright, or keep only what is new by making it a scope note on the cost side, e.g. 'The resummation is a computational convenience only; it introduces no term the baseline trace does not already contain.' — and if that is the intent, it belongs in paragraph 1 beside the claim it qualifies, not as a closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1561,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:24.018Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1580,6 +1702,22 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:24.111Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'strictly factors', 'The entire tower', 'exact computational convenience' are mild and each attaches to a specific claim.",
+        "notes": "RIGOR (reported, MAJOR — a sign error, verified numerically). The block displays Phi_q(z) = prod_{k>=1} (1 - q^{-k} z)^{-1} and then says 'Using the expansion Phi_q(z) = exp[ sum_{k>=1} z^k / (k(1 - q^k)) ]'. The two disagree: the correct exponent for the displayed product is sum_{k>=1} z^k / (k(q^k - 1)), i.e. the sign of the denominator is flipped. Derivation: -log prod_{k>=1}(1 - q^{-k}z) = sum_{k>=1} sum_{m>=1} q^{-km} z^m / m = sum_m (z^m/m) * q^{-m}/(1 - q^{-m}) = sum_m z^m / (m (q^m - 1)). Checked numerically at q_0 = 1.1099785827513808 and z = 0.3 (mpmath, 30 dps, product to k = 4000): the product is 19.1252192245359338, exp[sum z^k/(k(q^k-1))] = 19.1252192245359338 (agreeing to 30 digits), while the block's exp[sum z^k/(k(1-q^k))] = 0.05228698234826454 — its RECIPROCAL, wrong by a factor of 366 at this point. The stated expansion is the correct one for the OPPOSITE convention prod(1 - q^{+k} z)^{-1} with |q| < 1, which is presumably where it was copied from. This is load-bearing: the very next sentence says 'each evaluation unpacks into a series of Plancherel-weighted Markov traces', and that unpacking runs through this exponent. Proposed: z^k / (k(q^k - 1)). SEE ALSO the batch note on Phi_q convention drift — prf:phi-q-tower-algebraic-stratification in this same batch writes Phi_q as prod_{n>=0}(1 - q^n x), with no inverse, positive powers of q, and index from 0: three differences from the product displayed here."
       }
     ],
     "trap-nonspeakable": [
@@ -1599,6 +1737,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7ba1dd17f268",
+          "ts": "24536220d2d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:24.205Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud; sentences are short."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1621,5 +1774,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:02:24.205Z"
 }

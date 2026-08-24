@@ -50,11 +50,9 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-try:
-    from _precision import set_compute_dps
-    set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
-except Exception:
-    mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps
+set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
 
 ISO = {"D": (2.224566, 1, 2), "T": (8.481821, 1, 3),
        "3He": (7.718058, 2, 3), "4He": (28.295661, 2, 4)}

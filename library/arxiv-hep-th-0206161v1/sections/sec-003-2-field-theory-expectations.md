@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0206161v1
-doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1"
+doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING"
 section_id: sec-003-2-field-theory-expectations
 section_title: "Field theory expectations"
 section_number: 2
 pages: 7-8
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
-doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 26 sections: Introduction; (1 .3); (α±"
 ---
 In this section we explain our approach in the ﬁeld theory lan guage. We exploit the
 fact that the supersymmetric gauge theory on ﬂat space has a l arge collection of observables

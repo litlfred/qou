@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T14:30:26.207415+00:00",
-  "commitSha": "7f4b0230b68828609d205d854c311cd0b44d332f",
+  "computedAt": "2026-08-23T07:40:51.102978+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "z_naive_unphysical_at_A4",
@@ -34,7 +34,7 @@
   "computation": "deltalambda-perpair-bond-magnitude-derive",
   "scriptFile": "deltalambda_perpair_bond_magnitude_derive_probe.py",
   "scriptHash": "81a320041f59",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,17 +46,26 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deltalambda_perpair_bond_magnitude_derive_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deltalambda_perpair_bond_magnitude_derive_probe.py"
   },
   "description": "Forward (non-fit) test of the parameter-free per-pair bond magnitude m — the one remaining gated Delta_lambda scalar. Both corpus parameter-free magnitudes (z_naive, g_reeb) evaluated on the complete-graph exchange determinant of 2H/3H/3He/4He and checked against the four deficits target-B_dim SIMULTANEOUSLY. z excluded (unphysical at A=4); g_reeb physical but non-monotone (mirror split) => no single parameter-free m closes; the Delta_lambda magnitude gate stands. No fit, no wiring, no inversion.",
   "tier": "structural forward-test (parameter-free m -> predicted residual -> compare; no tuning)",
   "result": {
     "gate": "the ONE remaining gated Delta_lambda scalar = per-pair bond magnitude m; locality/sign/ceiling already DERIVED (#3924)",
     "constants": {
-      "q0": "1.10997859556",
-      "E0_MeV_m_e/(q(q-1))": "4.1859808",
-      "z_naive_1/[2]_v": "0.499320334034",
-      "g_reeb_1/sqrt(5+(q0-1)^2/q0)": "0.446727067798",
+      "q0": "1.10997858275",
+      "E0_MeV_m_e/(q(q-1))": "4.1859814",
+      "z_naive_1/[2]_v": "0.499320334184",
+      "g_reeb_1/sqrt(5+(q0-1)^2/q0)": "0.446727067906",
       "ceiling_1/sqrt5": "0.4472135955"
     },
     "derived_inputs_not_fitted": {
@@ -88,7 +97,7 @@
     },
     "forward_test_per_candidate": {
       "z_naive": {
-        "magnitude": "0.499320334033561272",
+        "magnitude": "0.499320334183694452",
         "below_ceiling_1/sqrt5": false,
         "physical_all_four": false,
         "rows": [
@@ -96,7 +105,7 @@
             "iso": "2H",
             "A": 2,
             "det_I_plus_G": "0.7506792",
-            "det_term_MeV": "1.2004425",
+            "det_term_MeV": "1.2004427",
             "deficit_MeV": "1.8444947",
             "det_term/deficit": "0.650825",
             "det_term/AME": "0.53963",
@@ -105,8 +114,8 @@
           {
             "iso": "3H",
             "A": 3,
-            "det_I_plus_G": "0.0030557258",
-            "det_term_MeV": "24.239919",
+            "det_I_plus_G": "0.0030557251",
+            "det_term_MeV": "24.239923",
             "deficit_MeV": "6.5732882",
             "det_term/deficit": "3.68764",
             "det_term/AME": "2.85787",
@@ -116,7 +125,7 @@
             "iso": "3He",
             "A": 3,
             "det_I_plus_G": "0.5010195",
-            "det_term_MeV": "2.8929743",
+            "det_term_MeV": "2.8929747",
             "deficit_MeV": "5.3734523",
             "det_term/deficit": "0.538383",
             "det_term/AME": "0.374832",
@@ -135,7 +144,7 @@
         "mirror_3H/3He_deficit_ratio": null
       },
       "g_reeb": {
-        "magnitude": "0.446727067798147204",
+        "magnitude": "0.44672706790566138",
         "below_ceiling_1/sqrt5": true,
         "physical_all_four": true,
         "rows": [
@@ -143,7 +152,7 @@
             "iso": "2H",
             "A": 2,
             "det_I_plus_G": "0.80043493",
-            "det_term_MeV": "0.9317995",
+            "det_term_MeV": "0.93179962",
             "deficit_MeV": "1.8444947",
             "det_term/deficit": "0.505179",
             "det_term/AME": "0.418868",
@@ -153,7 +162,7 @@
             "iso": "3H",
             "A": 3,
             "det_I_plus_G": "0.22300254",
-            "det_term_MeV": "6.2813661",
+            "det_term_MeV": "6.2813669",
             "deficit_MeV": "6.5732882",
             "det_term/deficit": "0.95559",
             "det_term/AME": "0.740568",
@@ -163,7 +172,7 @@
             "iso": "3He",
             "A": 3,
             "det_I_plus_G": "0.57960702",
-            "det_term_MeV": "2.2830547",
+            "det_term_MeV": "2.283055",
             "deficit_MeV": "5.3734523",
             "det_term/deficit": "0.424877",
             "det_term/AME": "0.295807",
@@ -172,8 +181,8 @@
           {
             "iso": "4He",
             "A": 4,
-            "det_I_plus_G": "0.0017406534",
-            "det_term_MeV": "26.595607",
+            "det_I_plus_G": "0.001740653",
+            "det_term_MeV": "26.595611",
             "deficit_MeV": "25.257486",
             "det_term/deficit": "1.05298",
             "det_term/AME": "0.939918",

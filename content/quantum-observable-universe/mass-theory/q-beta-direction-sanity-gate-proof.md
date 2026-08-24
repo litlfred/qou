@@ -110,5 +110,4 @@ which exceeds $10$ already at $m = 4$ (where $0.998 \cdot 16 \approx
 16.0$). Repeated stabilisation can only shrink the magnitude — it can
 never climb to a target of order unity, let alone to the
 linking-weight scale $\approx 2.5$ of the precedent — so the entire
-family fails the gate for every $m \ge 4$. The gate refutes a whole
-direction-error class on paper, before any compute. $\blacksquare$
+family fails the gate for every $m \ge 4$. $\blacksquare$

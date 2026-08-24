@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1102.3530v1
-doc_title: "THE COLORED JONES POL YNOMIAL, THE CHERN–SIMONS"
+doc_title: "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-4
 source_pdf: 1102.3530v1.pdf
 source_sha256: ad3edab19f3dc404
-doc_brief: "THE COLORED JONES POLYNOMIAL, THE CHERN–SIMONS — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons"
+doc_brief: "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight"
 ---
 Let JN (K;q) be the colored Jones polynomial of a knot K in the three-sphere
 S3 associated with the N -dimensional irreducible representation of sl(2; C). We

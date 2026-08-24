@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2006.02042v1
-doc_title: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT"
+doc_title: "The Strong AJ Conjecture for the Figure 8 Knot"
 section_id: sec-003-13-main-result
 section_title: "Main result"
 section_number: 1.3
 pages: 2-4
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
-doc_brief: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and"
+doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
 ---
 variety of G, see [CS]. Suppose G = Z2. Every pair of generators µ, λ deﬁnes an isomor-
 phism between χ(G) and ( C∗)2/τ , where ( C∗)2 is the set of non-zero complex pairs ( M, L)

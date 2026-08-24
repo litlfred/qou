@@ -43,19 +43,38 @@ del _sys, _Path
 # the cast value is bit-identical to the prior literal. The old literal
 # 0.51099895000 was truncated by 3 figs. The computations/ dir is on
 # sys.path via the path bridge above, so this resolves cleanly.
-from codata_2022_source import M_E_MEV as _M_E_MEV  # noqa: E402
-M_E_MEV     = float(_M_E_MEV)   # ± 0.00000000015 MeV
-M_E_MEV_ERR = 0.00000000015
+# READ from the registry -- this file already did so for M_E_MEV and
+# hardcoded everything else, which is how the CODATA-2018 values below
+# survived under 2022 labels (drain qou-7ot6-a, 2026-08-21).
+from codata_2022_source import (  # noqa: E402
+    M_E_MEV as _M_E_MEV,
+    M_E_MEV_ERR as _M_E_MEV_ERR,
+    M_P_MEV as _M_P_MEV,
+    M_P_MEV_ERR as _M_P_MEV_ERR,
+    M_N_MEV as _M_N_MEV,
+    M_N_MEV_ERR as _M_N_MEV_ERR,
+    M_N_MINUS_P_MEV as _M_N_MINUS_P_MEV,
+    M_N_MINUS_P_MEV_ERR as _M_N_MINUS_P_MEV_ERR,
+    M_MU_OVER_M_E as _M_MU_OVER_M_E,
+    M_MU_OVER_M_E_ERR as _M_MU_OVER_M_E_ERR,
+)
+M_E_MEV     = float(_M_E_MEV)
+M_E_MEV_ERR = float(_M_E_MEV_ERR)   # was 0.00000000015; table says ...16
 
 # Energy scale for Q-values: κ = m_e / 3
 # This is E_× × μ₀ where E_× = ½(q−q⁻¹)×m_e c² and μ₀ = m_e/(3×E_×).
 KAPPA       = M_E_MEV / 3.0   # 0.170333 MeV
 
-M_P_MEV     = 938.27208816    # ± 0.00000029 MeV
-M_P_MEV_ERR = 0.00000029
+M_P_MEV     = float(_M_P_MEV)       # was 938.27208816 (CODATA-2018)
+M_P_MEV_ERR = float(_M_P_MEV_ERR)
 
-M_N_MEV     = 939.56542052    # ± 0.00000054 MeV
-M_N_MEV_ERR = 0.00000054
+# NOTE: the registry's M_N_MEV is the AME-DERIVED neutron mass
+# (939.56542179), not the CODATA-direct 939.56542194. That is the corpus's
+# deliberate choice -- see codata_2022_source -- so reading the registry
+# follows it rather than the raw table. The literal here was 939.56542052,
+# the CODATA-2018 DIRECT value: wrong edition and wrong determination.
+M_N_MEV     = float(_M_N_MEV)
+M_N_MEV_ERR = float(_M_N_MEV_ERR)
 
 # ── Free neutron beta-decay Q-value (CODATA 2022) ────────────────
 # n → p + e⁻ + ν̄ₑ,  Q = m_n − m_p − m_e
@@ -71,8 +90,11 @@ M_N_MEV_ERR = 0.00000054
 #           = 0.78233341 MeV
 # δQ = sqrt(δm_n² + δm_p² + δm_e²)
 #    = sqrt(5.4e-7² + 2.9e-7² + 1.5e-16²) ≈ 6.1e-7 MeV
-M_N_MINUS_P_MEV     = 1.2933321    # ± 0.0000005 MeV  (direct CODATA 2022 value)
-M_N_MINUS_P_MEV_ERR = 0.0000005    # https://physics.nist.gov/cgi-bin/cuu/Value?mnmpm
+# Was the literal 1.2933321 labelled "direct CODATA 2022 value" -- 320 ppb
+# from the actual 2022 entry (1.29333251). Now read from the registry, where
+# codata_table_vintage_audit checks it against the NIST table.
+M_N_MINUS_P_MEV     = float(_M_N_MINUS_P_MEV)
+M_N_MINUS_P_MEV_ERR = float(_M_N_MINUS_P_MEV_ERR)
 
 import math as _math
 Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
@@ -92,11 +114,14 @@ G_F_MEV_ERR = 0.0000006e-11
 HBAR_MEV_S  = 6.582119569e-22 # ± 0.000000030e-22 MeV·s (exact in SI since 2019)
 HBAR_MEV_S_ERR = 0.0          # exact by definition
 
-ALPHA_EM_INV     = 137.035999084  # ± 0.000000021 (CODATA 2018, Cs recoil)
+# noqa: P31 - DELIBERATE determination choice, not a stale edition. The
+# Cs-recoil value is retained on purpose; CODATA-2022 would be a
+# different determination, not merely newer digits.
+ALPHA_EM_INV     = 137.035999084  # noqa: P31 - CODATA 2018, Cs recoil, +/- 21e-9
 ALPHA_EM_INV_ERR = 0.000000021
 
-MU_OVER_E        = 206.7682830    # ± 0.0000046 (CODATA 2022)
-MU_OVER_E_ERR    = 0.0000046
+MU_OVER_E        = float(_M_MU_OVER_M_E)      # was 206.7682830 (CODATA-2018)
+MU_OVER_E_ERR    = float(_M_MU_OVER_M_E_ERR)
 
 TAU_OVER_E       = 3477.23        # ± 0.23 (CODATA 2022; m_τ = 1776.86 MeV, m_e = 0.511 MeV)
 TAU_OVER_E_ERR   = 0.23

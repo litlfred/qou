@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0410233v4
-doc_title: "CUSP SHAPES UNDER CONE DEFORMA TION JESSICA S. PURCELL"
+doc_title: "Cusp shapes under cone deformation"
 section_id: sec-010-31-boundary-relations
 section_title: "Boundary relations"
 section_number: 3.1
 pages: 11-15
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
-doc_brief: "CUSP SHAPES UNDER CONE DEFORMATION JESSICA S. PURCELL — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
 ---
 We will let U be a horoball neighborhood of the one cusp, and V1, . . . , Vn
 be tubular neighborhoods of the components of the singular l ocus Σ, each

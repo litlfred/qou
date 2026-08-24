@@ -49,8 +49,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf, sin, cos, pi, sqrt  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 LEVEL = 7
 TOL = mpf(10) ** (-40)
 

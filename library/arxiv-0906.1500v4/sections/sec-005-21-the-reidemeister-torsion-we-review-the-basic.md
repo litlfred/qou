@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0906.1500v4
-doc_title: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
+doc_title: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds"
 section_id: sec-005-21-the-reidemeister-torsion-we-review-the-basic
 section_title: "The Reidemeister torsion. We review the basic notions and results about the"
 section_number: 2.1
 pages: 3-5
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
-doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
+doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
 ---
 sign–determined Reidemeister torsion introduced by V. Turaev whic h are needed in
 this paper. Details can be found in Milnor’s survey [Mil66] and in Turaev’s mono-
