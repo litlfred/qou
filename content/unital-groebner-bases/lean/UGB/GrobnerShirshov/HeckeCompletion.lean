@@ -17248,9 +17248,18 @@ hit it:
 
 (the second word is the first with a trailing `σ₀`, since
 `descWord i 1 ++ [σ₀] = descWord i 0`). `i = 1` is degenerate — `descWord (i−1) …`
-collapses and the normal form has four terms. The chain grows: measured under
-that strategy it is `i(i+5)/2` steps on the left and one more on the right,
-which is a size estimate for the induction, not a fact about the algebra.
+collapses and the normal form has four terms.
+
+The shape of that induction is also measured. For `i ≥ 2` **exactly one
+quadratic step fires, always on `σ₀`**: it is the only coefficient-producing
+rule, which is why the normal form has two terms — the split's `1` branch drops
+two letters and its `(q − q⁻¹)σ₀` branch drops one, so the two words differ by a
+trailing `σ₀`. Every other step is a length-preserving monomial rewrite. So the
+coefficient bookkeeping is a single `heckeRelation` split and the rest is word
+combinatorics. The chain grows: measured under that strategy it is `i(i+5)/2`
+steps on the left and one more on the right — a size estimate for the induction,
+not a fact about the algebra, and reason to want a general step lemma rather
+than an enumeration.
 -/
 
 /-- **The completed Hecke rewriting system is a Gröbner–Shirshov basis**, modulo

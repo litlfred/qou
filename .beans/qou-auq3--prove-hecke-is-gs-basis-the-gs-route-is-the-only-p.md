@@ -5110,3 +5110,52 @@ Yang–Baxter `lc = −1` sign that makes `wHi → wLo`.
 (`683299faf7`). Counts would move `total_scanned` 2731 → 2732, `prov_ok`
 2333 → 2335, `Q0_INDEPENDENT` 47 → 48. Tree restored; not swept into a Lean PR.
 All blocking precision gates green.
+
+### The shape of the induction, measured (rule census)
+
+Tracing *which* rules fire, not just that the sides converge:
+
+| i ≥ 3 | QUAD | YB | FC | BS |
+|---|---|---|---|---|
+| A | 1 | 1 | `(i+4)(i−1)/2` | `i` |
+| B | 1 | 1 | `(i+4)(i−1)/2 − 1` | `i+2` |
+
+**For `i ≥ 2` exactly ONE quadratic step fires, always on `σ₀`.** That is the
+only coefficient-producing rule, and it is why the normal form has two terms:
+the split's `1` branch drops two letters and its `Hσ₀` branch drops one, so the
+two words differ by a trailing `σ₀`. Everything else is a length-preserving
+monomial rewrite.
+
+**Consequence for the Lean proof:** the coefficient bookkeeping is a single
+`heckeRelation` split. The rest is pure word combinatorics — which is the
+tractable half. `i = 1` is degenerate (three quadratic steps at indices
+`[0,1,0]`, hence the `H²` and four terms).
+
+The QUAD count is the **robust** one, and it is now *measured* rather than
+argued. I first wrote that it is "pinned by the two-term normal form" — but that
+is only an argument, and it has a hole: a second split whose branch died would
+produce the same two-term form. So the census now runs under the **reversed rule
+order** as well, and gets one quadratic step on `σ₀` both ways.
+
+The YB/FC/BS split is strategy-dependent bookkeeping, like the step count;
+asserted so a change in the rule set surfaces, not claimed as algebra. Totals
+reconcile: `1 + 1 + (i+4)(i−1)/2 + i = i(i+5)/2` ✓.
+
+### Next tranche: the `hdeep` induction — what the measurements say to build
+
+Not started. Recorded so it is not re-derived.
+
+- **Target** (§4bn docstring + probe): both sides land on
+  `bsWord₂(i−1,0)·descWord(i,1) + H·bsWord₂(i−1,0)·descWord(i,0)` for `i ≥ 2`.
+- **Coefficient work is one step.** A single `heckeRelation` split on `σ₀`;
+  every other rewrite is monomial. So the chain lemmas can be stated on *words*
+  and the algebra enters once.
+- **Do not look for a shared pre-split word.** Measured: the two sides reach
+  the `σ₀σ₀` differently — at `i = 2` A splits in `(0,1,2,0,1,0,0)` and B in
+  `(1,2,0,1,0,0,2)`. The convergence is after the split, not before it, so a
+  "both reduce to a common word, then split once" plan does not fit.
+- **Size:** the chain grows by about `i+2` rewrites per level
+  (`FC` by `i+1`, `BS` by `1`), so an enumeration will not scale — the step
+  lemma has to be general in `i`.
+- **`i = 1` needs its own case** (three splits, `H²`, four terms), as does
+  `i = 2` (its YB/FC/BS counts do not follow the `i ≥ 3` pattern).
