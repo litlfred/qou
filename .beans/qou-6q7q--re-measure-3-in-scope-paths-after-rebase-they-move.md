@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:37:53Z
-updated_at: 2026-08-24T18:14:30Z
+updated_at: 2026-08-24T18:24:26Z
 ---
 
 ## The claim that needs qualifying
@@ -162,3 +162,52 @@ The re-run is left going: it is checkpointed per producer, so nothing is lost if
 it dies, and the partial record self-describes with `partial: true`. It will hit
 the four confirmed long producers from `qou-uz7q` and burn a timeout on each;
 that is expected, not a fault.
+
+
+## RESOLVED — the one real path re-measures `UNCHANGED`
+
+`--resume` re-measured `computations/audits/q0_anchor_consistency_audit.py`:
+**verdict `UNCHANGED`, no `changed_fields`.** The committed witness reproduces
+exactly when the producer is re-run on this tree, so there is no stale verdict
+to correct. Combined with the scope correction above (the other two paths were
+never in the sweep), **this bean's re-measurement work is done: 1 path, and it
+came back clean.**
+
+**I expected the opposite and said so.** My stated expectation was that it would
+move again, since its prior verdict was `SUBSTANTIVE` with `Q0_OK 669 → 695` and
+main has been landing q0 labelling work all session. It did not. The rebase is
+why: it brought main's regenerated copy, so the committed artifact was already
+current for this tree.
+
+## The file still differs from main — and that is NOT staleness
+
+`q0-anchor-consistency-audit.witness.json` differs from `origin/main`:
+
+| count | main | mine | delta |
+|---|---|---|---|
+| `Q0_OK` | 953 | 947 | **−6** |
+| `Q0_ANCHOR_MISSING` | 1645 | 1644 | −1 |
+
+**My first explanation was wrong and is retracted.** I assumed this was my own
+`parabolic_cylinder` stamp change (muon → proton) shifting the counts. That
+accounts for **at most 1**, not 7.
+
+The actual cause: **this branch is 79 commits behind main**, and main has kept
+labelling witnesses throughout. `Q0_OK` being *higher* on main is the signature —
+main has stamped ~6 more since my rebase point. My copy is correct **for my
+tree**; main's is correct for **its** tree; both reproduce where they live, which
+is exactly what `UNCHANGED` reports.
+
+**Second independent illustration of the population point**, from the opposite
+direction to the 47 → 142 finding: comparing counts across two trees without
+naming the tree is meaningless, and here it would have produced a false
+staleness report. That is precisely why `tree_commit` now sits beside the tally
+(`75a0dce00d`).
+
+## Sweep status
+
+Left at **62 / 142, `partial: true`** — my outer `timeout 900` killed it, not a
+fault. Checkpointed, so `--resume` continues from there. Its `TIMEOUT` count has
+reached **7**, one beyond `qou-uz7q`'s six; per that bean's result a `TIMEOUT`
+verdict is not evidence of a slow producer, so the seventh needs the same
+measurement before anyone treats it as one.
