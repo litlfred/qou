@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:42:01Z
-updated_at: 2026-08-24T09:26:39Z
+updated_at: 2026-08-24T11:40:49Z
 ---
 
 MEASURED 2026-08-19. computations/canonical_tr_m_via_branching.compute_tr_m_via_branching(Z, N, q_val) returns IDENTICAL values at q and 1/q:
@@ -239,3 +239,58 @@ REGRESSION TARGETS for whoever does it:
                            give it a second)
 
 Not started. The guard stays until this lands.
+
+
+## 2026-08-24 — wiring landed, and it found a SECOND, larger freeze
+
+Both q-freezes on the A=2 branching path are now fixed (`64867e938f`).
+
+**1. A^λ (the one this branch set out to fix).** `build_A_extract_at_q`
+constructs the extract at `q_val` from
+`a_operator_gauge_align.gauge_aligned_A_combiner_general`. Gauge precondition
+MEASURED before the swap, as I said I would: both constructions at q_0 over all
+11 λ ⊢ 6 and all 35 (ξ,ν) pairs, 0 missing, worst entrywise diff **7.05e-51**.
+Same gauge, no transform.
+
+**2. h — found while checking why the fix did not close the gap.**
+`per_nucleon_intra_word` built the per-nucleon word from `hecke_core.h`, a
+float64 `q_0 - 1/q_0` MODULE CONSTANT, ignoring `q_val`. At the bar image the
+true h is SIGN-FLIPPED, so the neutron's Hecke-negative letters `(1, -h, g)`
+carried the wrong sign outright.
+
+Against the transfer's `-0.0014808531711619370338`:
+
+| A^λ | h | tr_M^atom(D) at 1/q_0 |
+|---|---|---|
+| frozen | frozen | `+0.0332037`  (21x off, wrong sign) |
+| built | frozen | `+0.0331943`  (A^λ freeze is only ~3e-4) |
+| built | threaded | `-0.00148039` (3.2e-4, sign agrees) |
+
+**The freeze I chased was the small one.** A^λ moved the answer by 3e-4; h is
+what inverted the sign. Both were invisible at q_0 because each degenerates to
+the correct value there — the path failed TOWARD agreement with an independent
+method exactly where it is tested.
+
+## The regression target is NOT met — scope-(a), not closed
+
+I scoped this bean as "the wiring is what would give the transfer's bar value a
+second method". It gives it one **at ~3 significant figures, not 16**, and I am
+recording that as a miss rather than a win.
+
+3.2e-4 is **~10 orders above this computation's float64 floor**, so it is a real
+discrepancy, not arithmetic: the `Σ_λ y_λ χ^λ` cancellation is only 2.06 orders
+(max |term| 0.170 against a sum of 0.00148), putting the f64 floor on the result
+at ~2.5e-14. Measured, not estimated.
+
+**Still open:** a third q-carrying input is frozen, or the two constructions
+genuinely differ off-anchor. `gauge_aligned_A_combiner_general` computes its own
+`h = q - 1/q` from `q_str`, so it is not that one. Next candidates: `y_lambda_at`
+at the bar image, and `_avg_color_delta()` (a module-level constant used by the
+colour-weighted interface `_d_pn`).
+
+Regressions clean: q_0 = 8.7e-17 vs the four-method target; default float64-Q
+path = 3.8e-15. Precision gates: one RED (`q0-anchor flip`, 3 qbeta witnesses)
+is pre-existing — identical on the stashed clean tree, none of the three touched.
+
+The q guard survives as fallback-only, for (n_outer, interface) pairs the
+builder does not cover (e.g. the still-unstamped H_9 nn extract).
