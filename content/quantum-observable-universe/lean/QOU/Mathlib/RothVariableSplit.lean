@@ -251,6 +251,88 @@ theorem rothGammaFull_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (p q F : ℕ)
     simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
     exact height_descend_pq ha0 hb0 hK rfl ha hb (hc j.castSucc hjc) hFe
 
+/-! ### Lemma 4 and Roth's Lemma, in `Θ_m` form
+
+Every statement in this arc so far bounds the index of one polynomial.  With `Θ_m` characterised
+and known to exist, the source's own two statements can finally be written.
+
+**Lemma 4** (§13, read verbatim): let `m ≥ 2` and let `a; r₁,…,r_m; H₁,…,H_m` have property
+`Γ_m`.  Then there exists a system `b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1}` with `Γ_{m−1}` such that
+`Θ_m ≤ t + 2·max(Ψ_m, √Ψ_m)` where `Ψ_m = Θ_{m−1} + t`.
+
+**Roth's Lemma** (§14): if the system has `Γ_m` then `Θ_m ≤ c_m·t^{2^{−(m−1)}}`.
+
+⚠ Both are `def`s, and neither is proved.  What *is* proved is the implication between them —
+`rothBound_succ_of_lemma4` — which is the induction step of §14 in `Θ` language. -/
+
+/-- **Lemma 4**, stated.  `w` encodes `max(Ψ, √Ψ)` root-free as `w = Ψ ∨ w² = Ψ`. -/
+def RothLemma4 (σ : Type*) (n p q F : ℕ) : Prop :=
+  ∀ (o : σ ≃ Fin (n + 1)) (a : ℤ) (r H : σ → ℕ) (Θ : ℚ),
+    RothGammaFull o p q F r (fun j => (H j : ℤ)) a →
+    IsRothTheta a r H Θ →
+    ∃ (b : ℤ) (ρ H' : Fin n → ℕ) (Θ' w : ℚ),
+      RothGammaFull (Equiv.refl (Fin n)) p q F ρ (fun j => (H' j : ℤ)) b ∧
+      IsRothTheta b ρ H' Θ' ∧
+      (w = Θ' + (p : ℚ) / (q : ℚ) ∨ w ^ 2 = Θ' + (p : ℚ) / (q : ℚ)) ∧
+      Θ ≤ (p : ℚ) / (q : ℚ) + 2 * w
+
+/-- **Roth's Lemma**, stated in `Θ_m` form: `Γ_m` forces `Θ_m ≤ c_m·t^{2^{−(m−1)}}`,
+with the conclusion in `RothBound`'s root-free shape. -/
+def RothLemmaTheta (σ : Type*) (m p q F : ℕ) : Prop :=
+  ∀ (o : σ ≃ Fin m) (a : ℤ) (r H : σ → ℕ) (Θ : ℚ),
+    RothGammaFull o p q F r (fun j => (H j : ℤ)) a →
+    IsRothTheta a r H Θ →
+    RothBound m ((p : ℚ) / (q : ℚ)) Θ
+
+/-- **§14's induction step in `Θ` language** — Lemma 4's conclusion plus the sub-problem's
+`RothBound` gives the next one.
+
+Both levels sit at the *same* `t`: level `n` uses the variable `s²` and level `n+1` uses `s`,
+and `(s²)^{2^{n−1}} = s^{2^n}`.  That is what makes this a single-parameter induction.
+
+The three inputs are exactly Lemma 4's: the sub-problem's bound `RothBound n t Θ'`, the
+`max(Ψ, √Ψ)` disjunct, and `Θ ≤ t + 2w`.  ⚠ The leading term is `t`, not `s` — Lemma 4 leads
+with the row cost — and `t ≤ s` is what lets `rothConstant_step_lemma4` accept it. -/
+theorem rothBound_succ_of_lemma4 {n : ℕ} (hn : 1 ≤ n) {s t Θ Θ' w : ℚ}
+    (hs0 : 0 ≤ s) (hs1 : s ≤ 1) (ht : t = s ^ (2 ^ n)) (hΘ0 : 0 ≤ Θ)
+    (hsub : RothBound n t Θ')
+    (hw : w = Θ' + t ∨ w ^ 2 = Θ' + t)
+    (hΘ : Θ ≤ t + 2 * w) :
+    RothBound (n + 1) t Θ := by
+  subst ht
+  have hpow : (s ^ 2) ^ (2 ^ (n - 1)) = s ^ (2 ^ n) := by
+    rw [← pow_mul]
+    congr 1
+    have hn1 : n - 1 + 1 = n := by omega
+    calc 2 * 2 ^ (n - 1) = 2 ^ (n - 1 + 1) := by rw [pow_succ]; ring
+      _ = 2 ^ n := by rw [hn1]
+  have hs2 : (0 : ℚ) ≤ s ^ 2 := sq_nonneg s
+  have hsub' : Θ' ≤ ((rothConstant n : ℚ)) * s ^ 2 :=
+    ((rothBound_pow_iff (m := n) (s := s ^ 2) (θ := Θ') hs2).mp (by rwa [hpow])).2
+  have h2 : (2 : ℕ) ≤ 2 ^ n := by
+    calc (2 : ℕ) = 2 ^ 1 := by norm_num
+      _ ≤ 2 ^ n := Nat.pow_le_pow_right (by norm_num) hn
+  have hts2 : s ^ (2 ^ n) ≤ s ^ 2 := pow_le_pow_of_le_one hs0 hs1 h2
+  have hsq : s ^ 2 ≤ s := by nlinarith
+  have hts : s ^ (2 ^ n) ≤ s := le_trans hts2 hsq
+  have hΨ : Θ' + s ^ (2 ^ n) ≤ ((rothConstant n : ℚ) + 1) * s ^ 2 := by nlinarith
+  have hstep := rothConstant_step_lemma4 (θ := Θ) hn hs0 hs1 hΨ hw (by linarith)
+  have hfin : RothBound (n + 1) (s ^ (2 ^ (n + 1 - 1))) Θ :=
+    (rothBound_pow_iff hs0).mpr ⟨hΘ0, by simpa using hstep⟩
+  simpa using hfin
+
+/-- **Non-vacuity of the induction step.**  `n = 1`, `s = 1/4`, so `t = 1/16`; sub-problem
+bound `Θ' = 1/16` (tight for `RothBound 1`), `Ψ = w = 1/8`, `Θ = 5/16`.
+
+⚠ Three hypotheses hold with **equality** — `Θ' = t`, `w = Ψ`, and `Θ = t + 2w` — so the
+witness sits on the boundary of what the step allows, not comfortably inside it. -/
+theorem rothBound_succ_of_lemma4_witness : RothBound 2 (1 / 16 : ℚ) (5 / 16) :=
+  rothBound_succ_of_lemma4 (n := 1) (s := 1 / 4) (t := 1 / 16) (Θ := 5 / 16)
+    (Θ' := 1 / 16) (w := 1 / 8)
+    le_rfl (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    ((rothBound_one _ _).mpr ⟨by norm_num, by norm_num⟩)
+    (Or.inl (by norm_num)) (by norm_num)
+
 /-- **Non-vacuity of the full descent** — the largest hypothesis stack in this arc, satisfied.
 
 Arity `2 → 1`, `t = 1` (`p = q = 1`), `F = 10`, `K = 1024 = 2^F`, `d ≡ 1`, `a = 1`, `r = 1`,

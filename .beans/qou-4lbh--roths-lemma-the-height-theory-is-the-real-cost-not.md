@@ -3425,3 +3425,31 @@ works and needs no `DecidableEq`.
 
 `Θ_m` is now a characterised object that provably exists, and `IsRothTheta.unique` makes it
 *the* `Θ_m`. §9 is complete: finiteness, attainment, monotonicity in `a`, and `0 ≤ Θ_m ≤ m`.
+
+### Lemma 4 and Roth's Lemma, stated in `Θ_m` form — and the induction step proved
+
+With `Θ_m` characterised and known to exist, the source's own two statements can finally be
+written. Every statement in this arc before now bounded the index of **one** polynomial.
+
+- `RothLemma4 σ n p q F` — §13's packaged conclusion: from `Γ_{n+1}` and `Θ_{n+1}`, there
+  *exists* a sub-system with `Γ_n` and its own `Θ_n` such that `Θ_{n+1} ≤ t + 2·max(Ψ, √Ψ)`,
+  with `Ψ = Θ_n + t` and the max encoded root-free as `w = Ψ ∨ w² = Ψ`.
+- `RothLemmaTheta σ m p q F` — §14: `Γ_m` forces `RothBound m t Θ`.
+
+⚠ Both are `def`s and neither is proved. What **is** proved is the implication between them:
+
+`rothBound_succ_of_lemma4` — Lemma 4's conclusion plus `RothBound n t Θ'` gives
+`RothBound (n+1) t Θ`. This is §14's induction step in `Θ` language, and it is the first
+theorem in the arc whose statement is about Roth's lemma rather than about a polynomial.
+
+The bookkeeping that makes it a single-parameter induction: **both levels sit at the same `t`**.
+Level `n` uses the variable `s²`, level `n+1` uses `s`, and `(s²)^{2^{n−1}} = s^{2^n}`. So no
+reparameterisation happens across the step — which is what `rothBound_pow_iff` was for.
+
+⚠ Note the leading term is `t`, not `s`. Lemma 4 leads with the row cost; `t ≤ s` (from
+`0 ≤ s ≤ 1` and `2 ≤ 2^n`) is what lets `rothConstant_step_lemma4` accept it. That is the same
+`t`-vs-`s` distinction corrections 12 and 15 were about, now discharged mechanically rather
+than argued.
+
+`rothBound_succ_of_lemma4_witness` sits on the boundary in three hypotheses at once (`Θ' = t`,
+`w = Ψ`, `Θ = t + 2w`).
