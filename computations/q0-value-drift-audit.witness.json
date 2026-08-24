@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 229,
-      "proton-pin": 1513,
+      "proton-pin": 1517,
       "unknown": 25,
-      "canonical": 293
+      "canonical": 290
     },
     "stale_total": 229,
     "new_stale": 0,
@@ -2675,9 +2675,9 @@
       {
         "file": "computations/borromean-axial-coupling.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/borromean-volume-propagation-to-m-p.witness.json",
@@ -10009,6 +10009,13 @@
         "ppb_vs_canonical": -0.0028416265239649993
       },
       {
+        "file": "computations/probes/delta-lambda-closure-tl-support.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/delta-lambda-h6-branching.witness.json",
         "field": "parameters.q0",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -13161,16 +13168,16 @@
       {
         "file": "computations/rho-w-crystal-vertex-trace.witness.json",
         "field": "q_0_50dps",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/rho-w-crystal-vertex-trace.witness.json",
         "field": "q0Value",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/ribbon-framing-ladder-scale.witness.json",
