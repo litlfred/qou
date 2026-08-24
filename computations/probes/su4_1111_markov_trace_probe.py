@@ -73,7 +73,7 @@ import math  # noqa: E402
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from _precision import str_at_true_precision  # noqa: E402
+from _precision import fmt, str_at_true_precision  # noqa: E402
 import mass_at_3A_proper as m3  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402, F401
 from hoefsmit_mpmath import (  # noqa: E402
@@ -319,6 +319,33 @@ def _chi(lam, word, n_gens):
     return chi_lambda_of_word_sparse_mp(sig, dim, word, n_gens)
 
 
+# ── the row-count prune ────────────────────────────────────────────────
+#
+# `y_lambda_wenzl_bridge_numeric` is the SU(2) Wenzl weight, and the quantum
+# dimension of a partition with more than N rows vanishes in SU(N). At N=2
+# that means y_lambda is EXACTLY zero -- `y == 0` is True, not merely small --
+# for every lambda with three or more rows.
+#
+# MEASURED on e_4[h_3], the ten partitions of 12 that carry the A=4 [1^4]
+# object: NINE have >= 3 rows and weight exactly 0. The whole projected trace
+# is carried by (6,6), the ONLY two-row partition, at dim=132.
+#
+#     (5,3,3,1) f=4158   (6,4,2) f=2673   (7,3,1,1) f=2376   (6,3,3) f=1650
+#     (5,5,1,1) f=1485   (7,4,1) f=1408   (8,3,1)   f= 891   (3,3,3,3) f=462
+#     (9,1,1,1) f= 165   -- all y_lambda = 0
+#     (6,6)     f= 132   -- y_lambda = 0.00022872963188107212307
+#
+# So computing chi_lambda for the nine is multiplying an expensive number by
+# zero. Checking `y` FIRST turns this probe from ~an hour into seconds, and it
+# is not an optimisation detail -- it is the structural fact that the [1^4]
+# channel at this weight is a ONE-TERM sum. AGENTS.md's formalize-first probe
+# discipline is exactly this: ask whether a structural claim prunes the class
+# before running the wide search. Recorded in bean `qou-fmoi`.
+def _weight_is_zero(lam) -> bool:
+    """True when the SU(2) Wenzl weight vanishes identically for `lam`."""
+    return len(tuple(lam)) > 2
+
+
 def atom_traces(Z, N, q, *, projected_only=True, verbose=False):
     """Return dict with the full Markov trace tr_M(β_K)=Σ_λ y_λ χ_λ and the
     [1^A]-projected trace T_[1^A]=C(4,A)·Σ_{m_λ≠0} m_λ y_λ χ_λ."""
@@ -333,14 +360,29 @@ def atom_traces(Z, N, q, *, projected_only=True, verbose=False):
     proj_rows = []
     for lam, mlam in sorted(mult.items(), key=lambda kv: -_fdim(kv[0])):
         y = y_lambda_wenzl_bridge_numeric(list(lam), q, dps=50)
-        chi = _chi(lam, word, n_gens)
-        contrib = mlam * y * chi
+        # Skip the character when the weight is identically zero. Not a
+        # tolerance test -- `_weight_is_zero` is the row-count criterion, and
+        # the numeric `y` is exactly 0 for those, so the product is 0 whatever
+        # chi is. Asserted rather than assumed, so a change in the weight
+        # convention (SU(2) -> SU(N)) fails loudly instead of silently pruning
+        # terms that now contribute.
+        if _weight_is_zero(lam):
+            assert y == 0, (
+                f"{tuple(lam)} has {len(tuple(lam))} rows so the SU(2) Wenzl "
+                f"weight should vanish, but y = {mp.nstr(y, 12)}. The weight "
+                f"convention changed; the row-count prune is no longer valid.")
+            chi = None
+            contrib = mp.mpf(0)
+        else:
+            chi = _chi(lam, word, n_gens)
+            contrib = mlam * y * chi
         proj += contrib
         proj_rows.append({"lam": lam, "m": mlam, "f": _fdim(lam),
                           "y": y, "chi": chi, "contrib": contrib})
         if verbose:
             print(f"    {str(lam):>20} m={mlam} f={_fdim(lam):>5} "
-                  f"y={mp.nstr(y,6):>12} chi={mp.nstr(chi,8):>14} "
+                  f"y={mp.nstr(y,6):>12} "
+                  f"chi={'(skipped: y=0)' if chi is None else mp.nstr(chi,8):>14} "
                   f"contrib={mp.nstr(contrib,8):>14}")
     T_proj = gate * proj
 
@@ -349,8 +391,10 @@ def atom_traces(Z, N, q, *, projected_only=True, verbose=False):
         full = mp.mpf(0)
         for lam in partitions_of(n):
             y = y_lambda_wenzl_bridge_numeric(list(lam), q, dps=50)
-            chi = _chi(lam, word, n_gens)
-            full += y * chi
+            if _weight_is_zero(lam):
+                assert y == 0, f"{tuple(lam)}: weight convention changed"
+                continue
+            full += y * _chi(lam, word, n_gens)
 
     return {"A": A, "n_strands": n, "gate_C4A": gate,
             "T_proj": T_proj, "proj_sum": proj, "proj_rows": proj_rows,
@@ -461,12 +505,21 @@ def main() -> int:
         ("m3  1+|T4|/(3|T2|)", m3v, "PROBE-2-shape lift over pairwise scale"),
         ("m4  frac4/fracD", m4, "channel-fraction ratio ⁴He:[1^4] vs D:[1^2]"),
     ]:
-        r = float(val) / float(need)
-        print(f"  {name:>22} = {float(val):8.4f}   ratio/2.093 = {r:6.3f}   {note}")
+        # mpf / mpf -- `need` is mp.mpf("2.0925") and the metrics are mpf, so
+        # the ratio stays exact. float() below is DISPLAY ONLY.
+        r = val / need
+        print(f"  {name:>22} = {float(val):8.4f}   "
+              f"ratio/2.093 = {float(r):6.3f}   {note}")
 
     # ── verdict ──
-    ratios = {"m1": float(m1) / float(need), "m2": float(m2) / float(need),
-              "m3": float(m3v) / float(need), "m4": float(m4) / float(need)}
+    # These four ratios ARE the verdict -- `within5` and `order` below are
+    # thresholded on them, and the witness stores them. They were built with
+    # float(m)/float(need), which is arithmetic rather than display and is the
+    # case AGENTS.md calls out: a probe's float64 corrupts the ANALYSIS, which
+    # is the expensive kind of wrong. Both operands are mpf, so keep them mpf
+    # and convert at the serialization boundary with `fmt`.
+    ratios = {"m1": m1 / need, "m2": m2 / need,
+              "m3": m3v / need, "m4": m4 / need}
     within5 = [k for k, r in ratios.items() if abs(r - 1) < 0.05]
     order = [k for k, r in ratios.items() if 0.5 < r < 2.0]
     verdict = ("CLOSES" if within5 and len(within5) >= 1 and
@@ -498,8 +551,29 @@ def main() -> int:
             "(Wenzl bridge) sum of exact Hoefsmit characters χ_λ(β_atom), gated "
             "by C(4,A). Replaces the PROBE-2 Mayer-cluster stand-in. Audit-only, "
             "no fit, single canonical operator."),
-        "tier": "structural (exact plethysm + Wenzl y_λ + Hoefsmit χ_λ; f64 trace)",
-        "precision": "chi=f64 (magnitude verdict); y_lambda=mpfr_50dps; plethysm=exact rational",
+        # AGENTS.md §4: "any new witness must record its q0 so a later reader
+        # can tell which layer it belongs to without inferring it from a call
+        # site." Q_50_DIGIT_STR is the PROTON pin (1.1099785827513808...), the
+        # standing default for all compute; the muon pin is
+        # 1.1099785955573347... and the two agree to 8 digits, so they cannot
+        # be told apart by eye.
+        #
+        # TOP LEVEL, not inside "data". `q0_anchor_consistency_audit.py:134`
+        # reads `body.get("q0Anchor")`, so an anchor nested one level down is
+        # invisible to the checker while looking perfectly present to a human
+        # -- which is how I first wrote it, and the audit is what caught it:
+        # Q0_ANCHOR_MISSING went UP after I "added" the anchor.
+        "q0Anchor": "proton",
+        "q0Value": str(q),
+        "tier": "structural (exact plethysm + Wenzl y_λ + Hoefsmit χ_λ, all exact)",
+        # Was "chi=f64 (magnitude verdict)". No longer true: chi now comes from
+        # `hoefsmit_mpmath.chi_lambda_of_word_sparse_mp` in exact mpmath at the
+        # module dps, via `seminormal_matrices_mp`. Leaving the old string
+        # would have UNDERSTATED the witness's own precision -- the mirror of
+        # the usual defect, but a mislabel either way.
+        "precision": ("chi=mpfr_exact (sparse trace-only, cross-checked vs "
+                      "dense at 7e-71); y_lambda=mpfr_50dps; "
+                      "plethysm=exact rational"),
         "data": {
             "q0": str(q),
             "plethysm_A4_partitions": {str(l): m for l, m in
@@ -527,8 +601,8 @@ def main() -> int:
                 "T_11": str(d["T_proj"]), "gate_C42": d["gate_C4A"],
                 "T_over_full": str(fracD)},
             "li6": {"gate_C46": li6_gate, "T_1111111": "0 (exact via gate)"},
-            "enhancement_metrics": {k: float(v) for k, v in ratios.items()},
-            "needed_super_pairwise": float(need),
+            "enhancement_metrics": {k: fmt(v) for k, v in ratios.items()},
+            "needed_super_pairwise": fmt(need),
             "verdict": verdict,
             "verdict_note": (
                 "PARTIAL / scope-(a): the genuine e_A[h_3]-plethysm [1^4]-"
