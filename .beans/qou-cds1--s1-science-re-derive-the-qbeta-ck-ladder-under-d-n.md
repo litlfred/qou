@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T16:05:23Z
+updated_at: 2026-08-24T18:09:12Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1434,3 +1434,50 @@ mine, the sibling's witness-layer one, the value-literal one — exists only
 because z is re-spelled at each site. A site that calls the helper needs no
 detector at all. Converting an inline spelling to `markov_z(q)` is strictly
 better than converting it to a D spelling, and costs the same edit.
+
+
+## Independent numerical confirmation that convention D is FORCED, not stipulated
+
+`closed_form_tau_M.markov_z`'s docstring asserts the selection is forced: the
+row cap `ell(λ) ≤ 2` gives `y_(1³) = 0`, and given that,
+`markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free) makes the faithful
+normalised Markov trace unique and equal to `q³/(q²+1)`.
+
+Checked it numerically rather than taking it on the docstring's word, by
+solving the three H_3(q) normalised-trace equations at both conventions
+(`ocneanu_param_from_fibre_dimension.markov_weights(q, z)`, which is
+parameterised by z so both frames go through one code path):
+
+    q0 = 1.109978582751381
+
+    convention C   z = 0.49932033418369
+        y_(3)   = 0.4153957953606134
+        y_(2,1) = 0.2809296310310197
+        y_(1^3) = 0.02274494257734718      <-- NONZERO
+        sum = 1.0
+
+    convention D   z = 0.61268803714647
+        y_(3)   = 0.5054042265039308
+        y_(2,1) = 0.2472978867480346
+        y_(1^3) = 0.0                      <-- EXACTLY ZERO
+        sum = 1.0
+
+So D is not a preference among conventions: it is the **unique** z at which the
+three-row weight vanishes, and C fails that condition by 0.0227. The Lean
+theorem and the owner ruling agree with the arithmetic.
+
+Worth having explicitly, because most of this branch's work is mechanical
+excision and it is easy to lose sight of *why* D is canonical. It is not
+"because the ruling says so" — the ruling follows the mathematics.
+
+## What this did NOT settle: `TRM_L6A4 = 0.998367` (qou-5pgl)
+
+None of the six weights above is `0.998367`, so that constant is **not** a
+`y_λ`. It is a *trace value* — the `_deprecated` tables list it as the λ=[3]
+entry for p / n / ³He, one of them annotated *"(registry; convention TBD)"*.
+Weights and traces are different objects and I should not have implied the
+weight solve would answer it.
+
+`qou-5pgl`'s question therefore stands open: is `0.998367` convention-C, and
+what is its D value? That needs the trace machinery, not the weight solve.
+Recording the negative so the next attempt does not repeat this route.
