@@ -74,6 +74,49 @@ GATES=(
   # does not apply here. Coverage as of 2026-08-22: 42 modules, 18 cone
   # witnesses, 122 package-data witnesses, 0 uncovered.
   "qou-mass vendor mirror|scripts/sync-qou-mass-vendor.py|--check|yes"
+  # BLOCKING, and RED ON ARRIVAL -- 3 of 8. Owner-chosen 2026-08-24 (blocking
+  # was picked over advisory and over deferring), bean qou-wee5.
+  #
+  # A LAYER STRADDLE is a witness whose value mixes the ideal (muon) and
+  # experimental (proton) layers inside one computed quantity. This gate runs
+  # each inline-q0 producer twice -- QOU_Q0_ANCHOR=physical, then =ideal -- and
+  # fails if any NON-STAMP field moves. A producer with a q of its own should
+  # move nothing but its stamp; if its numbers move, a second q reached them.
+  #
+  # COST. This is the only gate here that EXECUTES producers rather than
+  # scanning files: 8 producers x 2 runs. The other four are static. Budget for
+  # it accordingly, and use --timeout to bound a hung producer (an exceeded run
+  # reports TIMEOUT = UNTESTED, never "clean").
+  #
+  # STATE: GREEN. clean=8, STRADDLE=0, measured on main 2026-08-24 (#5646).
+  #
+  # It ARRIVED red -- STRADDLE=3, per_generator_V_hat_general (24 fields),
+  # xi_ell_phi_q_probe (36), t6_tau_h5_embedding_probe (15) -- and was drained
+  # the same day rather than allowlisted. All three shared one carrier: the
+  # Plancherel weights in `per_generator_V_hat_general`, built from
+  # `hecke_characters.qfac` / `dim_q`, NEITHER OF WHICH TAKES A q. Both used the
+  # module-level `q_int`, closing over the shim's Q -- so the weights read the
+  # ENTRY POINT, which is how two probes that derive q0 inline from the muon
+  # ratio, and reference the manifest nowhere, still moved under an anchor flip.
+  #
+  # No allowlist was seeded, deliberately, and that is why there is nothing to
+  # unwind now: seeding a 3-entry allowlist would have been the "make it green
+  # by widening a baseline" move AGENTS.md forbids, applied to the very defect
+  # being gated. The gate went green because the defect went away.
+  #
+  # NOT the same as "the class is closed". `qfac`/`dim_q` still have 135
+  # defaulted call sites across ~70 files (dim_q 78 of 119, qfac 57 of 59),
+  # every one of them still reading the entry point. Nothing straddles today
+  # only because the producers that combined two layers all funnelled through
+  # that one function. Bean qou-wee5.
+  # The 3 drain via qou-wee5.
+  #
+  # WHAT IT CANNOT DO. Only --candidates (inline closed-form q0) is sound.
+  # --literal reports MOVES, not STRADDLE: its selector cannot tell a computed
+  # second anchor from a documented one, a selftest constant, or a deliberate
+  # comparison leg. Do not wire --literal here. And a producer whose q reaches
+  # ONLY stamps is vetoed as STAMP-ONLY, not counted (bean qou-bdkx).
+  "anchor-flip layer straddle|computations/audits/anchor_flip_straddle_audit.py|--candidates --timeout 300|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then
@@ -93,6 +136,10 @@ fi
 #   scriptHash + upstream drift   RED   dominated by sha256_mismatch against
 #                                       q-pinning-50-digit.witness.json
 #   q0 constant staleness         RED   6 witnesses in the muon basin
+#   anchor-flip layer straddle    green clean=8 / STRADDLE=0. Added 2026-08-24
+#                                       red on arrival (3 of 8) by choice, and
+#                                       drained the same day in #5646 -- one
+#                                       shared carrier, no allowlist to unwind
 #   qou-mass vendor mirror        green as of this commit, and it has now gone
 #                                       red TWICE from two unrelated causes:
 #

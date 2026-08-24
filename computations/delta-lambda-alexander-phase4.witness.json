@@ -35,7 +35,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Phase 4 of the closed-forms-first-principles workplan: tests whether Alexander polynomial (computed from Burau rep) gives a per-knot factor V(K) that captures the N-direction structure missing from Vol_hyp(K) (Phase 3). Tests V(K) ∈ {|Δ_K(-1)| (determinant), |Δ_K(q_0)|, |Δ_K(q_0^2)|} against the empirical |Δ_λ*| across D, T, ³He, ⁴He.",
+  "description": "Phase 4 of the closed-forms-first-principles workplan: tests whether Alexander polynomial (computed from Burau rep) gives a per-knot factor V(K) that captures the N-direction structure missing from Vol_hyp(K) (Phase 3). Tests V(K) \u2208 {|\u0394_K(-1)| (determinant), |\u0394_K(q_0)|, |\u0394_K(q_0^2)|} against the empirical |\u0394_\u03bb*| across D, T, \u00b3He, \u2074He.",
   "parameters": {
     "q0": "1.1099785827513808"
   },
@@ -172,5 +172,8 @@
         "computedAt": "2026-07-05T11:19:13.300674+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

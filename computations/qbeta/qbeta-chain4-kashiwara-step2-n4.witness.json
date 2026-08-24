@@ -9,7 +9,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "Step 2 enumerated 37 candidates (target ≥ 20)"
+      "source": "Step 2 enumerated 37 candidates (target \u2265 20)"
     }
   ],
   "allPassed": true,
@@ -40,7 +40,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_chain4_kashiwara_step2_n4.py"
   },
-  "description": "Step 2 of PR #1772 Chain 4 — Kashiwara crystal probe at n=4. Survey of 37 prefactor candidates derived from partition invariants of the 5 partitions of 4: f^λ, hook products, cocharge sums, q-dimensions at proton-pinned q_0. Best near-match: cocharge_(1,1,1,1) → NEAR-1PCT (ratio 0.991805). Anti-pattern guards respected: TIERED reporting; cross-anchor deferred to Step 3; NO ansatz proposed.",
+  "description": "Step 2 of PR #1772 Chain 4 \u2014 Kashiwara crystal probe at n=4. Survey of 37 prefactor candidates derived from partition invariants of the 5 partitions of 4: f^\u03bb, hook products, cocharge sums, q-dimensions at proton-pinned q_0. Best near-match: cocharge_(1,1,1,1) \u2192 NEAR-1PCT (ratio 0.991805). Anti-pattern guards respected: TIERED reporting; cross-anchor deferred to Step 3; NO ansatz proposed.",
   "data": {
     "residue_target_A": "0.000000000000001804",
     "prefactor_target": "6.049575175114390896756313964722279951108675365620768061324039337169818",
@@ -114,7 +114,7 @@
         "ratio": "0.991805",
         "tier": "NEAR-1PCT"
       },
-      "q-dim²_(2,2)": {
+      "q-dim\u00b2_(2,2)": {
         "value": "4.17674",
         "ratio": "0.690418",
         "tier": "NEAR-CLOSE"
@@ -129,7 +129,7 @@
         "ratio": "1.32241",
         "tier": "NEAR-CLOSE"
       },
-      "q-dim_(2,2) · f^(2,2)": {
+      "q-dim_(2,2) \u00b7 f^(2,2)": {
         "value": "4.08741",
         "ratio": "0.675653",
         "tier": "NEAR-CLOSE"
@@ -167,5 +167,8 @@
     },
     "near_match_count": 1,
     "next_step": "Step 3: cross-anchor validation (q_muon)"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_proton). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

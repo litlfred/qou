@@ -45,6 +45,13 @@ mp.dps = 50
 
 
 M_E_MEV = mpf("0.51099895069")
+# ARCHIVAL: the v9-era substrate literal, 243,000 ppb (0.024 %) from
+# both live pins. NOT migrated on purpose — these files ARE the record
+# of the v1..v9 progression that docs/coordination/option-e.md tracks
+# ("DO NOT REPEAT failed paths"), and option_e_probe1_derive_1plusq_over_2
+# exists specifically to show the published 0.11 %% near-match was obtained
+# at THIS stale q0. Re-pinning would silently alter a recorded historical
+# result and delete that probe's subject. Do not read it as a live pin.
 Q_0 = mpf("1.1097090249")
 
 H = Q_0 - 1 / Q_0

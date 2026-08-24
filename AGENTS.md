@@ -1725,11 +1725,14 @@ Do not regress either.
 > **Never straddle the two layers inside one quantity.** Mixing an
 > ideal-layer input with an experimental-layer input in a single computed
 > number is a defect regardless of its size. Worked example + measurement:
-> the μ₃ Fréchet probe took `y_λ` from the muon-built cache while
+> the μ₃ Fréchet probe took `y_λ` from the then-muon-built cache while
 > evaluating `χ_λ` at the proton `q₀` — an 11.54 ppb layer separation (=
 > the μ–p substrate tension itself), ~1e-7 relative on the result. See
 > [`computations/deltalambda/mu3_anchor_consistency_probe.py`](computations/deltalambda/mu3_anchor_consistency_probe.py)
 > and [`docs/audits/2026-08-07-mu3-door-status-consolidated.md` §4ter](docs/audits/2026-08-07-mu3-door-status-consolidated.md).
+> *"then-"* is load-bearing: that cache was re-derived and re-pinned to proton
+> in the 2026-08-09 convention-D cascade, so the incident is history and the
+> **discipline** is what generalises. See the closed-case note below.
 >
 > **The shape to check for (the rule; its named instance is now closed).**
 > A cached-witness accessor that serves precomputed data **when the caller's
@@ -1781,6 +1784,13 @@ Do not regress either.
 > **The μ₃ Fréchet incident above is unaffected** — 11.54 ppb, `y_λ` from the
 > muon-built cache against `χ_λ` at the proton `q₀`, is a real measured
 > straddle and the reason the rule exists. Only the *mechanism* has changed.
+>
+> **Two producers bypass the accessor and read the cache file directly** —
+> `probe_theta_carry_binding.py` and `delta_lambda_empirical_tabulation.py`.
+> They get D-at-proton, which is correct; noting them so a future reader does
+> not conclude the accessor is the only path to that file.
+> Independent evidence for the same correction:
+> [`docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md`](docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md).
 
 The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:

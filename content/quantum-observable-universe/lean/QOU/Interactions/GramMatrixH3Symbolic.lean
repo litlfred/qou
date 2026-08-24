@@ -5,6 +5,7 @@ import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.LinearAlgebra.Matrix.Symmetric
 import Mathlib.Tactic
 import QOU.Shared.DetFin
+import QOU.Machinery.HeckeH3GramNondegeneracy
 
 
 /-!
@@ -708,6 +709,52 @@ theorem gramMatrixD_not_posDef (q : ℝ) : ¬ Matrix.PosDef (gramMatrixD q) := b
   have hcon := hpos.2 (gramRadicalD q) (gramRadicalD_ne_zero q)
   rw [hv] at hcon
   simp at hcon
+
+
+/-! ## Both frames are specialisations of one convention-agnostic Gram
+
+`QOU.Machinery.H3.gramMatrix (z h : R)` carries the Markov weight `z` and the
+Hecke parameter `h` symbolically over any `CommRing`, is tied to the actual trace
+pairing by `QOU.Machinery.H3.gramMatrix_eq`, and has a sorry-free closed-form
+determinant
+
+  `det G = -(z² - hz - 1)⁵ · ((h²+4)z² - (h³+4h)z - 1)`.
+
+The two 6×6 tables above are that matrix at two points. Before these lemmas the
+three objects were maintained independently and nothing checked that they agreed;
+now the tables are *derived* facts about one form.
+
+The Hecke specialisation is `h = q - q⁻¹` throughout. Convention C is written in
+`u = √q`, so its `h` is `u² - (u²)⁻¹`. -/
+
+set_option maxHeartbeats 1600000 in
+/-- **Convention D is the general Gram at `z = q³/(q²+1)`.** -/
+theorem gramMatrixD_eq_general (q : ℝ) (hq : q ≠ 0) :
+    gramMatrixD q = QOU.Machinery.H3.gramMatrix (q ^ 3 / (q ^ 2 + 1)) (q - q⁻¹) := by
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [gramMatrixD, gramEntryD, QOU.Machinery.H3.gramMatrix] <;> field_simp <;> ring
+
+set_option maxHeartbeats 1600000 in
+/-- **Convention C is the general Gram at `z = u/(u²+1)`**, with `u = √q`. -/
+theorem gramMatrix_eq_general (u : ℝ) (hu : u ≠ 0) :
+    gramMatrix u = QOU.Machinery.H3.gramMatrix (u / (u ^ 2 + 1)) (u ^ 2 - (u ^ 2)⁻¹) := by
+  have hd : (u ^ 2 + 1) ≠ 0 := by positivity
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [gramMatrix, gramEntry, QOU.Machinery.H3.gramMatrix] <;> field_simp <;> ring
+
+/-- **The D-frame determinant, reached through the general form.**
+
+`gramMatrixD_det_eq_zero` proves this from the explicit radical, which is the
+more informative route -- it hands back the null direction. Stating it here as a
+fact about `QOU.Machinery.H3.gramMatrix` is what makes the agreement between the
+hand-written table and the general form a proof rather than a coincidence. -/
+theorem gramMatrixD_det_eq_zero_via_general (q : ℝ) (hq : q ≠ 0) :
+    (QOU.Machinery.H3.gramMatrix (q ^ 3 / (q ^ 2 + 1)) (q - q⁻¹)).det = 0 := by
+  rw [← gramMatrixD_eq_general q hq]
+  exact gramMatrixD_det_eq_zero q
 
 end QOU.Interactions.GramMatrixH3Symbolic
 

@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
-      "unit": "max over {𝟙, σ_0, σ_1, L_+, L_-, e^-} of |tr_M(b) − closed_form(b)|",
+      "unit": "max over {\ud835\udfd9, \u03c3_0, \u03c3_1, L_+, L_-, e^-} of |tr_M(b) \u2212 closed_form(b)|",
       "source": "Ocneanu-Wenzl recursion + Hecke quadratic + Markov axiom."
     },
     {
@@ -19,7 +19,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
-      "unit": "max over (i,j) of |G_{ij} − G_{ji}|",
+      "unit": "max over (i,j) of |G_{ij} \u2212 G_{ji}|",
       "source": "Cyclicity of the Markov trace tr_M(ab) = tr_M(ba)."
     },
     {
@@ -29,7 +29,7 @@
       "passed": false,
       "tolerance": 0.0,
       "unit": "boolean (0 = non-degenerate, 1 = degenerate)",
-      "source": "Frobenius self-duality A ≅ A^∨ implies the Markov-trace pairing is non-degenerate at generic q."
+      "source": "Frobenius self-duality A \u2245 A^\u2228 implies the Markov-trace pairing is non-degenerate at generic q."
     },
     {
       "name": "gram_matrix_indefinite_signature",
@@ -38,7 +38,7 @@
       "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (0 = has both positive AND negative eigvals, 1 = same-sign)",
-      "source": "Proposition states G has indefinite signature, NOT positive definite — confirmed empirically."
+      "source": "Proposition states G has indefinite signature, NOT positive definite \u2014 confirmed empirically."
     }
   ],
   "allPassed": false,
@@ -69,7 +69,7 @@
     ],
     "reproduce": "python3 -u computations/probes/frobenius_gram_matrix_probe.py"
   },
-  "description": "I1 probe for prop:frobenius-gram-matrix.  Verifies the 6×6 Markov-trace Gram matrix G_{ij} = tr_M(b_i · b_j) over the NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} of H_3(R, q): (1) the six single-element traces match the corrected closed forms (1, z, z, z², z², hz² + z) at q_0; (2) G is symmetric to ~1e-40; (3) det G ≠ 0 (non-degenerate); (4) signature is indefinite (G has both positive and negative eigenvalues).  Reproduces the corrected Gram-matrix structure after the Markov-bug fix in audit 2026-05-19-trm5-markov-bug (stale `tr_M(e^-) = z³` replaced by `hz² + z`).",
+  "description": "I1 probe for prop:frobenius-gram-matrix.  Verifies the 6\u00d76 Markov-trace Gram matrix G_{ij} = tr_M(b_i \u00b7 b_j) over the NF basis {\ud835\udfd9, \u03c3_0, \u03c3_1, L_+, L_-, e^-} of H_3(R, q): (1) the six single-element traces match the corrected closed forms (1, z, z, z\u00b2, z\u00b2, hz\u00b2 + z) at q_0; (2) G is symmetric to ~1e-40; (3) det G \u2260 0 (non-degenerate); (4) signature is indefinite (G has both positive and negative eigenvalues).  Reproduces the corrected Gram-matrix structure after the Markov-bug fix in audit 2026-05-19-trm5-markov-bug (stale `tr_M(e^-) = z\u00b3` replaced by `hz\u00b2 + z`).",
   "contentBlock": "prop:frobenius-gram-matrix",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -87,42 +87,42 @@
   "data": {
     "single_element_traces": [
       {
-        "basis_element": "γ = 𝟙",
+        "basis_element": "\u03b3 = \ud835\udfd9",
         "expected_closed_form": "1",
         "expected_at_q0": 1.0,
         "computed_at_q0": 1.0,
         "residue": 0.0
       },
       {
-        "basis_element": "σ_0",
+        "basis_element": "\u03c3_0",
         "expected_closed_form": "q**3/(q**2 + 1)",
         "expected_at_q0": 0.6126880371464652,
         "computed_at_q0": 0.6126880371464652,
         "residue": 0.0
       },
       {
-        "basis_element": "σ_1",
+        "basis_element": "\u03c3_1",
         "expected_closed_form": "q**3/(q**2 + 1)",
         "expected_at_q0": 0.6126880371464652,
         "computed_at_q0": 0.6126880371464652,
         "residue": 0.0
       },
       {
-        "basis_element": "L_+ = σ_0 σ_1",
+        "basis_element": "L_+ = \u03c3_0 \u03c3_1",
         "expected_closed_form": "q**6/(q**4 + 2*q**2 + 1)",
         "expected_at_q0": 0.3753866308623884,
         "computed_at_q0": 0.3753866308623884,
         "residue": 3.062918244623176e-42
       },
       {
-        "basis_element": "L_- = σ_1 σ_0",
+        "basis_element": "L_- = \u03c3_1 \u03c3_0",
         "expected_closed_form": "q**6/(q**4 + 2*q**2 + 1)",
         "expected_at_q0": 0.3753866308623884,
         "computed_at_q0": 0.3753866308623884,
         "residue": 3.062918244623176e-42
       },
       {
-        "basis_element": "e^- = σ_0 σ_1 σ_0",
+        "basis_element": "e^- = \u03c3_0 \u03c3_1 \u03c3_0",
         "expected_closed_form": "(q**7 + q**3)/(q**4 + 2*q**2 + 1)",
         "expected_at_q0": 0.6911664783584446,
         "computed_at_q0": 0.6911664783584446,
@@ -138,8 +138,11 @@
       0.7527021132519655
     ],
     "notes": {
-      "errata_fix_propagated": "tr_M(e^-) corrected from stale z³ to canonical hz² + z",
+      "errata_fix_propagated": "tr_M(e^-) corrected from stale z\u00b3 to canonical hz\u00b2 + z",
       "audit_reference": "docs/audits/2026-05-19-trm5-markov-bug.md"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

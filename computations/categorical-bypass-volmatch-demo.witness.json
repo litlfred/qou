@@ -25,7 +25,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Bypass demo: compute B(𝔥) directly from joint-tower SDP Wedderburn blocks via tr_M = Σ_λ y_λ · χ_λ at q_0, without using volume-match knot identification. Surfaces a 27%–15× discrepancy with mass-table-ppb's volume-match B = m_e · ρ · Vol_hyp(K), establishing that the regular Markov trace at q_0 ≠ Vol_hyp(K). The canonical chain in PR #442 step (5)–(7) needs further resolution before sub-percent accuracy is possible.",
+  "description": "Bypass demo: compute B(\ud835\udd25) directly from joint-tower SDP Wedderburn blocks via tr_M = \u03a3_\u03bb y_\u03bb \u00b7 \u03c7_\u03bb at q_0, without using volume-match knot identification. Surfaces a 27%\u201315\u00d7 discrepancy with mass-table-ppb's volume-match B = m_e \u00b7 \u03c1 \u00b7 Vol_hyp(K), establishing that the regular Markov trace at q_0 \u2260 Vol_hyp(K). The canonical chain in PR #442 step (5)\u2013(7) needs further resolution before sub-percent accuracy is possible.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0": "1.1099785827513808",
@@ -260,8 +260,11 @@
     }
   },
   "caveats": [
-    "Direct formula tr_M = Σ y_λ · χ_λ at q_0 does NOT reproduce the volume-match B values; ratio is 0.73 for electron, ~0.07 for deuteron, ~0.10 for ³He.",
+    "Direct formula tr_M = \u03a3 y_\u03bb \u00b7 \u03c7_\u03bb at q_0 does NOT reproduce the volume-match B values; ratio is 0.73 for electron, ~0.07 for deuteron, ~0.10 for \u00b3He.",
     "Resolving the bypass requires either (A) extra Markov-trace normalization, (B) evaluation at root of unity then analytic continuation, or (C) switching the canonical invariant from Wenzl-Markov to RT / colored-Jones.",
     "Cannot reach 1 ppb on B/A or sub-MeV on Q until this gap is resolved."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:49:23.511112+00:00",
-  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
+  "computedAt": "2026-08-23T20:05:24.170686+00:00",
+  "commitSha": "8fc423a79a855b1728b7f6ee83414756a3163a61",
   "assertions": [
     {
       "name": "Frobenius moment Gram is PSD (well-posed channel geometry)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 354,
+  "durationMs": 496,
   "computation": "hbond-vdw-sdp",
   "scriptFile": "hbond_vdw_sdp.py",
-  "scriptHash": "0a6cf3ecd10c",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "792042b7b805",
+  "scriptCommitSha": "de48ab178411871a0b6297d5b719aa51ce7a11f8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,20 +37,28 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hbond_vdw_sdp.py"
+    ],
+    "reproduce": "python3 -u computations/hbond_vdw_sdp.py"
   },
   "description": "Operator-selection LP/SDP (prop:operator-selection-lp; lp_dual_solver) over the inter-molecular sub-braid channels {1, σ₁ (H-bond), σ₁² (Hopf link 𝓛_H = T_{2,2}, Vol=0, symmetric carrier e₊)} with canonical Markov traces t_i=tr_M(b_i) and Frobenius moment Gram G_{ij}=tr_M(b_i b_j). Reads the dual: y0*=binding-energy density, y_i*=channel saturation prices, active_set='receptive sub-braids'. Computes the e₊/e₋ q-dims and σ₁² block weights. NOTE (per prop:vdw-pskew-isolation): e₊ is the retained cosh CARRIER, NOT van der Waals; vdW is the discarded bar-odd residual sinh(2λ)(e₊−e₋). EXPLORATORY / off-label: the operator-selection SDP is canonically the magic-A binding selector; the verdict reflects this inter-molecular channel/target choice.",
   "contentBlock": "rem:molecular-hbond-phase-transition",
   "parameters": {
-    "q": 1.1099785827513808
+    "q": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "markov_traces_sigma1_powers": {
       "T0": 1.0,
-      "T1": 0.6126880371464652,
-      "T2": 1.128088744114354,
-      "T3": 0.8485266070590096,
-      "T4": 1.3054819701221603
+      "T1": "0.61268803714646525159582986394589924802630839154506",
+      "T2": "1.1280887441143537855931516549992460492834828187552",
+      "T3": "0.84852660705900955620174974681210708036642896327417",
+      "T4": "1.3054819701221603557628262084551698508220288327162"
     },
     "channels": [
       "1 (trivial)",
@@ -58,31 +66,31 @@
       "σ₁² (Hopf link)"
     ],
     "t": [
-      1.0,
-      0.6126880371464652,
-      1.128088744114354
+      "1.0",
+      "0.612688037146465251595829863945899248026308391545064022473816",
+      "1.12808874411435378559315165499924604928348281875520712191396"
     ],
     "G": [
       [
-        1.0,
-        0.6126880371464652,
-        1.128088744114354
+        "1.00000000000000000000000000000000000000000000000000000000000",
+        "0.612688037146465251595829863945899248026308391545064022473816",
+        "1.12808874411435378559315165499924604928348281875520712191396"
       ],
       [
-        0.6126880371464652,
-        1.128088744114354,
-        0.8485266070590096
+        "0.612688037146465251595829863945899248026308391545064022473816",
+        "1.12808874411435378559315165499924604928348281875520712191396",
+        "0.848526607059009556201749746812107080366428963274173387506137"
       ],
       [
-        1.128088744114354,
-        0.8485266070590096,
-        1.3054819701221603
+        "1.12808874411435378559315165499924604928348281875520712191396",
+        "0.848526607059009556201749746812107080366428963274173387506137",
+        "1.30548197012216035576282620845516985082202883271624023068881"
       ]
     ],
     "G_eigenvalues": [
-      -5.865194939967677e-17,
-      0.5297512462406163,
-      2.9038194679958966
+      "1.59916860091827590299437935915695696550235126440794551117149e-51",
+      "0.529751246240616673034890724908208473593272378040749477007356",
+      "2.90381946799589746832108713854620742651223927343069119368364"
     ],
     "n_target": 1.0,
     "x_star": [
@@ -114,7 +122,7 @@
     "tr_M_e_minus_antisym_directional": 0.2472978867480346,
     "sigma1sq_symmetric_weight_q2": 1.232052454166764,
     "sigma1sq_antisym_weight_qinv2": 0.811653754365758,
-    "sigma1sq_pct_symmetric": 60.28520386261565,
+    "sigma1sq_pct_symmetric": 60.28520386261566,
     "finding": "The operator-selection SDP on the Hopf channel, in two parts. (1) The naive sub-braid basis {1, σ₁, σ₁²} is RANK-DEFICIENT (Gram rank 2, one zero eigenvalue): σ₁² = hσ₁+1 is not independent in H_2(q), so 'the Hopf σ₁² channel' is NOT separate from {1, σ₁} at 2 strands. (2) The independent Wedderburn idempotents ARE the channels: the symmetric block e₊ (trivial rep, q-dim 0.7527) is the Hopf/[2]_q CARRIER (Vol=0); the antisymmetric block e₋ (q-dim 0.2473) is the directional H-bond channel. The Hopf link decomposes σ₁² = q²·e₊ + q⁻²·e₋ = 60.3% symmetric. CORRECTED FRAMING (per prop:vdw-pskew-isolation): e₊ is the RETAINED cosh carrier, NOT van der Waals — vdW is the DISCARDED bar-odd residual sinh(2λ)(e₊−e₋) (small, absent from the main mass/binding formula). The earlier 'vdW = the symmetric block e₊' label is superseded. Exploratory/off-label: the operator-selection SDP is canonically the magic-A binding selector; the channel/target setup is the modelling input."
   },
   "q0Anchor": "proton",

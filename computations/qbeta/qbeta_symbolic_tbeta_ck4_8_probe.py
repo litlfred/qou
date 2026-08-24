@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
-# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
-# probe's historical / cross-anchor / pinned comparison value. The CURRENT
-# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
-# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
+# ANCHOR NOTE — CORRECTED 2026-08-23. The 2026-06-22 boilerplate that stood
+# here had the two anchors INVERTED, in all 13 files carrying it. Measured:
+#   • 1.10997858275… is NOT "the RETIRED pre-2026-05-28 proton anchor" — it is
+#     the CURRENT proton pin. q_at() returns 1.10997858275138…
+#   • "the CURRENT canonical proton q0 is ≈ 1.1099785955573347" named the MUON
+#     value; q_at() never returns it.
+#   • "q_muon_at() ≈ 1.10997859555418" named the SUPERSEDED (CODATA-2018) muon
+#     value; q_muon_at() returns 1.10997859564274… See
+#     computations/audits/muon_pin_three_values_probe.py for the three values.
+# An agent trusting it would read the two-layer discipline backwards.
+#
+# What is true: the 1.10997858275… occurrences below ARE the current proton
+# pin, and this probe is preserved as-is by design — its cross-anchor
+# comparison is the point, so it must NOT be migrated.
 """qbeta_symbolic_tbeta_ck4_8_probe.py — the 1 ppQ keystone probe.
 
 Probe 6.a' established the c_k generating function is BOUNDED /

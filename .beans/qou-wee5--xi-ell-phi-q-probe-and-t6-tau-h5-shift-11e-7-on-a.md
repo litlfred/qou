@@ -1,11 +1,11 @@
 ---
 # qou-wee5
 title: xi_ell_phi_q_probe and t6_tau_h5 shift 1.1e-7 on a manifest entry they never reference
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T22:25:49Z
-updated_at: 2026-08-23T22:41:33Z
+updated_at: 2026-08-24T13:11:37Z
 ---
 
 ## What
@@ -201,3 +201,59 @@ decision below governs three producers, not one.
 
 The audit restores every witness it touches and exits 1 when any straddle is
 found, so it can gate.
+
+
+## The named carrier is WRONG — measured 2026-08-24 (PR #5634)
+
+This bean names a defaulted `_cached_seminormal` as the carrier of the 113 ppb.
+It is not. Three hypotheses tested and refuted in order:
+
+1. the defaulted call site         -> fixed (q now REQUIRED, 18 sites named)
+2. the module's defaulted params   -> fixed (9 repointed to constants.Q)
+3. `QI` / `HA_VAL`                 -> fixed (repointed)
+
+After all three: `xi_ell_phi_q_probe` still moves **36** fields,
+`t6_tau_h5_embedding_probe` still **15**.
+
+**The real carrier**, from a cross-anchor diff of every module-level float in
+the cone: the shim rebinds ~**20** derived constants (HA, Q_INV, HBAR_Q, LN_Q,
+E_CROSS + _MP/_ERR variants), so every module importing ANY of them tracks the
+entry point. `hecke_core` alone carries a dozen that move —
+ALPHA_EM_INV_DERIVED 137.03593509 -> 137.03594594, E_HARTREE_EV, E_MOL,
+FIG8_A_BULK. That is **qou-1c4y territory** with its sign-off gate.
+
+**Blanket 'default to proton' is wrong for a muon producer.** Forcing proton at
+`vhat_per_crossing_chain` flipped its internal `scalar_vs_matrix_agree`
+True -> False (17 fields). Both muon producers now pass their own q; re-measured,
+each moves 0.
+
+
+## CLOSED — the carrier is the PLANCHEREL WEIGHTS, and the gate is drained (2026-08-24)
+
+Fourth hypothesis, and this one holds. `per_generator_V_hat_general` builds its
+Plancherel weights as `dq**2 / nfac` from `hecke_characters.qfac` and
+`dim_q` — **neither of which takes a q at all**. They use the module-level
+`q_int`, which closes over `q_parameter.Q`: the SHIM's Q, rebound to muon
+whenever the entry-point stem is manifest-listed.
+
+That is why two probes deriving q₀ inline from the muon ratio, referencing the
+manifest nowhere, still moved 36 / 15 fields when a stem was added to it.
+
+**Fix:** `qfac(n, q=None)` and `dim_q(shape, q=None)` gain an OPTIONAL explicit
+q (backwards compatible — verified identical values with and without, so all 135
+existing call sites are unaffected), and `per_generator_V_hat_general` names
+`Q0_PROTON` for both.
+
+**Measured after:**
+
+    anchor-flip straddle audit --candidates:  clean=8, STRADDLE=0
+
+versus 3 of 8 before. The blocking gate added in PR #5636 is fully drained.
+Re-running the shared producer moves **0** non-ephemeral fields, so the fix is
+inert under normal (proton) operation.
+
+**Still open, and now sized:** `qfac`/`dim_q` have **135 defaulted call sites
+across ~70 files** (dim_q 78 of 119, qfac 57 of 59). Those still track the entry
+point. Threading q through all of them is a real migration, not a session task —
+but nothing straddles today, because the only producers that combined two
+layers went through this one function.

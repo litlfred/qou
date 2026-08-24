@@ -37,7 +37,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Per-block Fréchet test of the μ₃ sign door on the adjacent H₉ |χ|-joint-trace. Mu3BlockwiseExclusion.lean proves Δ² is linear over Wedderburn blocks and that a block is submodular iff its joint damping falls below the Fréchet–Hoeffding lower bound r_a+r_b−1; the per-block Δ²|χ|_λ sign is therefore exactly the per-block Fréchet test on the geometry. Gated on (i) linearity Σ_λΔ²_λ = Δ²g, (ii) the factorisation Δ²_λ = y_λ·Δ²|χ|_λ, and (iii) the #4404 baseline c₃ = −1.769 (T) / −1.405 (³He). No fit, nothing wired.",
+  "description": "Per-block Fr\u00e9chet test of the \u03bc\u2083 sign door on the adjacent H\u2089 |\u03c7|-joint-trace. Mu3BlockwiseExclusion.lean proves \u0394\u00b2 is linear over Wedderburn blocks and that a block is submodular iff its joint damping falls below the Fr\u00e9chet\u2013Hoeffding lower bound r_a+r_b\u22121; the per-block \u0394\u00b2|\u03c7|_\u03bb sign is therefore exactly the per-block Fr\u00e9chet test on the geometry. Gated on (i) linearity \u03a3_\u03bb\u0394\u00b2_\u03bb = \u0394\u00b2g, (ii) the factorisation \u0394\u00b2_\u03bb = y_\u03bb\u00b7\u0394\u00b2|\u03c7|_\u03bb, and (iii) the #4404 baseline c\u2083 = \u22121.769 (T) / \u22121.405 (\u00b3He). No fit, nothing wired.",
   "parameters": {
     "q0": "1.1099785827513808",
     "E0_MeV": "4.1859813632944762145"
@@ -754,7 +754,10 @@
     "n_negative_y_lambda_at_9": 10
   },
   "caveats": [
-    "y_λ is NOT sign-definite at n=9 (10 of 30 weights negative), so a block's Δ²_λ<0 may come from submodular geometry OR from supermodular geometry carried by a negative weight. Only the former is a Fréchet violation; the two are reported separately. Consequently the Lean lemma reweight_cannot_open_door (hypothesis w_λ ≥ 0) does not apply to this spectrum.",
-    "Measurement only. No Δ_λ closure, no μ₃ value fitted, nothing wired to production."
-  ]
+    "y_\u03bb is NOT sign-definite at n=9 (10 of 30 weights negative), so a block's \u0394\u00b2_\u03bb<0 may come from submodular geometry OR from supermodular geometry carried by a negative weight. Only the former is a Fr\u00e9chet violation; the two are reported separately. Consequently the Lean lemma reweight_cannot_open_door (hypothesis w_\u03bb \u2265 0) does not apply to this spectrum.",
+    "Measurement only. No \u0394_\u03bb closure, no \u03bc\u2083 value fitted, nothing wired to production."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513804319",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.results.3He.per_block[].r_a, data.results.T.per_block[].r_b, parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

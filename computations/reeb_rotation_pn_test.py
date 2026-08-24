@@ -55,6 +55,7 @@ import numpy as np  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as q0, Q_INV as qi, HA as h  # noqa: E402
 from mass_at_3A_proper import (  # noqa: E402
+    Q0_PROTON,
     atom_braid_word_3A,
     _cached_seminormal,
     partitions_of,
@@ -66,7 +67,7 @@ UNIT_TOL = 1e-9           # |λ| within this of 1 counts as unit-modulus
 
 def block_operator(word, shape):
     """Seminormal operator Π (c σ_g + d I) on the λ-block; eigen-data."""
-    sigmas, dim, _ = _cached_seminormal(shape)
+    sigmas, dim, _ = _cached_seminormal(shape, Q0_PROTON)
     if dim == 0:
         return None
     P = np.eye(dim)

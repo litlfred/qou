@@ -1,11 +1,11 @@
 ---
 # qou-zf9n
 title: Convention-D migration for the H_3 Gram Lean file and its spectrahedral-phase-collapse consumer
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-23T21:34:56Z
+updated_at: 2026-08-24T11:30:53Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -226,3 +226,108 @@ over R (det = 0 with an explicit radical, full NF basis, n=3), sympy (exactly
 one degenerate direction, indefinite signature, same basis), and numpy general-n
 (corank = block count, partition-indexed). The third is a different matrix, not
 a generalisation of the first two.
+
+
+## Progress 2026-08-24 — item 1 of 4 done (PR #5618)
+
+**DONE: `prop:spectrahedral-phase-collapse` scoped to convention C.** The
+threshold reading does not survive D; the theorem does, and stays. Probe
+`computations/probes/spectrahedral_phase_collapse_frame_probe.py` (7/7, exact
+over Q(u)/Q(q), parses the Gram out of the committed .lean so it cannot drift).
+
+Two findings beyond the scoping:
+
+- **The block was understating itself.** On u > 0, det G_C has TWO positive real
+  zeros: u = 1/psi (multiplicity 5) and u = 1, i.e. q = 1, the classical limit
+  (multiplicity 1). Only the first was in the corpus. The remaining real root
+  u = -psi from (u^3+u^2+1)^5 is negative, and both sextic factors are
+  real-rootless, so those two are all there are.
+- **No collision with `gramMatrix_det_ne_zero`**, which assumes 1 < u: both
+  zeros are at or below 1, and the substrate u_0 = 1.0536 is above both.
+
+REMAINING on this bean:
+  2. Convention-D migration of the H_3 Gram Lean file itself (the C
+     declarations are scoped but still the default the file leads with).
+  3. Untraced Delta_lambda residual drift.
+  4. The A=3 mirror pair fails to cancel while A=7 cancels exactly.
+
+My judgement on order: item 2 is now the natural next — #5592 has the general-n
+TL picture and #5502 landed the n=3 anchor, so the migration has both ends
+pinned. Items 3 and 4 are independent of the convention work.
+
+
+## Item 2 — the migration target already exists, and the corpus mislabels it
+
+**FOUND: `QOU.Machinery.H3.gramMatrix (z h : R)`** — the convention-AGNOSTIC
+H_3 Gram over a generic CommRing, with `gramMatrix_eq` tying it to the actual
+`tr_M` pairing and a sorry-free closed-form determinant
+
+    det G = -(z^2 - hz - 1)^5 * ((h^2+4)z^2 - (h^3+4h)z - 1)
+
+`gramMatrix_det_ne_zero` already excludes `z = q^3/(q^2+1)` by name. So #5502's
+`det G(q,z)` over Q(q,z) was a RE-DERIVATION. My corpus-grep missed it because
+three different declarations are called `gramMatrix` and I only looked at one.
+Recorded rather than glossed.
+
+**This re-frames the migration.** The right end state is not "rename C to *C and
+promote D": it is to make `GramMatrixH3Symbolic`'s two hand-written 6x6 tables
+SPECIALISATIONS of the general `(z,h)` form, so there is one determinant and one
+place where a convention is chosen. That is a bridge lemma
+(`gramMatrixD q = QOU.Machinery.H3.gramMatrix (q^3/(q^2+1)) (q - q^-1)`), not a
+mass rename — cheaper AND safer than what this bean originally proposed.
+
+**DONE: corrected a wrong identification in that file's docstring** (PR #5618).
+It attributed the two quadratic zeros to the `(2,1)` block. Measured exactly
+over Q(q):
+
+    z = q^3/(q^2+1)     corank 1   sign (1^3)    radical = q-antisymmetriser
+    z = -1/(q(q^2+1))   corank 1   trivial (3)   radical = q-symmetriser
+    z = q, z = -1/q     corank 5   (quintic factor)
+
+`(2,1)` has dim 2, so it would cost corank 4, not 1. The theorem is TRUE and
+untouched — the proof never used the attribution. But the misreading severs the
+link to `y_lambda = 0` for >= 3-row partitions (qou-8iru): `(1^3)` has >= 3 rows
+and `(2,1)` does not, so it makes one phenomenon look like two.
+
+The z_D radical from the general form is byte-identical to `gramRadicalD` from
+the 6x6 table — two routes, same vector.
+
+REMAINING: the bridge lemma above (item 2 proper); item 3 Delta_lambda drift;
+item 4 the A=3 mirror pair.
+
+
+## Item 2 DONE (PR #5618) — bridged, not renamed
+
+Three sorry-free theorems now tie both hand-written 6x6 tables to
+`QOU.Machinery.H3.gramMatrix (z h)`:
+
+    gramMatrixD_eq_general : gramMatrixD q = H3.gramMatrix (q^3/(q^2+1)) (q - q^-1)
+    gramMatrix_eq_general  : gramMatrix  u = H3.gramMatrix (u/(u^2+1)) (u^2 - (u^2)^-1)
+    gramMatrixD_det_eq_zero_via_general
+
+**The bean asked for the wrong thing and this is the correction.** It proposed
+renaming the C declarations and promoting D. Three 6x6 objects existed and
+nothing checked they agreed; a rename would have left that gap open. Bridging
+closes it -- a future edit to either table that breaks agreement now fails to
+compile.
+
+lean-direct exit 0 on the whole file (3m16s, FASTER than the 4m43s baseline);
+#print axioms clean on all three; 0 sorry terms. Both bridges verified exactly
+in sympy (36/36, both frames) before any Lean was written.
+
+**Reusable tactic finding.** `simp only` with a hand-picked Matrix.cons set
+leaves the RHS an unreduced vecCons tower for any index above 1, and TIMES OUT
+at 6.4M heartbeats rather than failing cleanly -- so the symptom looks like "too
+hard" when it is actually "wrong lemma set". Plain `simp` with the three defs
+closes all 36 goals and is an order of magnitude faster.
+
+Two process notes:
+  - I dropped `Matrix.head_cons` on an "unused simp argument" linter hint. The
+    hint was right for the entry it fired on and wrong for the other 35. A
+    per-goal linter verdict is not a per-theorem one.
+  - Iterating on the 750-line file cost 9 min/round; extracting the two tables
+    into a scratch file cut it to 17-36 s. Do that FIRST, not fourth.
+
+REMAINING on this bean: item 3 (Delta_lambda residual drift), item 4 (the A=3
+mirror pair that fails to cancel while A=7 cancels exactly). Neither touches the
+convention work, so this bean's convention thread is now closed.

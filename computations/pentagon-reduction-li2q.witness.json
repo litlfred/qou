@@ -118,5 +118,8 @@
       }
     ]
   },
-  "observable_type": "raw_trace"
+  "observable_type": "raw_trace",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.convergence_radius_Li2q, parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

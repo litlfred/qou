@@ -4550,3 +4550,370 @@ infix `lm₁` of length ≥ 3 starting at `p ≥ 1` would need its two copies of
 own max both strictly inside a strictly-decreasing run. The length-2 shapes are
 separated by their consecutive drop (0 for `σᵢσᵢ`, ≥ 2 for far-commutation,
 1 elsewhere).
+
+## Half of §4m's antichain, for every n (2026-08-24, §4az)
+
+Acting on §4ay's conclusion that the **inclusion half** is the better target than
+another overlap cell — it is half of `IsGrobnerShirshovBasis`, and §4m has it
+only at `n = 4` by `decide`.
+
+`lm_split` is the engine: every leading monomial is `h :: (mid ++ [l])`, and all
+four families read off through a single `List.append_inj'` — interiors `[]`,
+`[σᵢ]`, `[]`, `descWord i' j`. Off it:
+
+- `lm_interior_lt_head` — the interior is **strictly** below the head.
+- `lm_last_eq_head_or_far` — the last letter **is** the head, except
+  far-commutation, where it drops by ≥ 2 **and the interior is empty**. The
+  second conjunct is deliberate: it lets a consumer *discharge* the exception
+  rather than reason about it.
+- `lm_cons_snoc` — every leading monomial has length ≥ 2.
+
+**`lm_not_proper_suffix`** is what closes: no leading monomial is a proper suffix
+of another, for every `n`. Three lemmas in sequence, no case analysis of its own
+— `lm₁`'s head lands in `lm₂`'s interior so is strictly below `lm₂`'s head, while
+`lm₁`'s last letter *is* `lm₂`'s last letter, which is `lm₂`'s head; and a head
+dominates its own word.
+
+### Not done, and why it does not follow
+
+The other direction — proper **prefix**, and the strictly-interior case — needs
+two facts about `descWord` the file does not have:
+
+1. **no repeated letter** — separates a Bokut–Shiao word sitting inside another's
+   descending run (equal head and last letter would be a repeat);
+2. **adjacent letters drop by exactly one** — rules out the far-commutation word
+   (drop ≥ 2) sitting in that run.
+
+(1) looks routine: `descWord` is a `filter`/`reverse`/`map` off `List.finRange`,
+so `List.nodup_finRange` plus injectivity of `⟨·⟩` should give it. (2) is the
+real work; `descWord_split` plus (1) is the likely route, since splitting at a
+letter exhibits its successor as the head of the second piece.
+
+**So the antichain is NOT generalised — half of it is.** Do not read §4az as
+closing the inclusion half.
+
+## The antichain's second case (2026-08-24, §4ba)
+
+`lm₂ = left ++ lm₁ ++ right` splits three ways:
+
+| case | status |
+|---|---|
+| `right = []` — proper suffix | §4az `lm_not_proper_suffix` |
+| `left = []` — proper prefix | §4ba `lm_not_proper_prefix` |
+| both non-empty — strictly interior | **open** |
+
+**The two are not one argument run backwards.** §4az reads `lm₁`'s *head* out of
+`lm₂`'s interior; §4ba reads `lm₁`'s *last letter* out of it, and discharges the
+far-commutation exception differently — there by its empty interior, here by what
+`lm₂`'s interior *begins* with. In both Yang–Baxter and Bokut–Shiao that first
+interior letter is exactly one step below the head (`σᵢ` under `σᵢ₊₁`; `σᵢ₋₁`
+under `σᵢ`, via `descWord_head`), while far-commutation demands a drop of ≥ 2.
+
+**The third case does not follow from the two.** There is no re-association of
+`left ++ lm₁ ++ right` making either apply, because `lm₁ ++ right` is not itself
+a leading monomial. It needs the two `descWord` facts §4az names.
+
+### `descWord_nodup` — tested, not landed
+
+§4az predicted it "looks routine". **Checked: it does prove**, in two lines —
+`List.Nodup.map` with `⟨·⟩` injective, over
+`List.nodup_reverse.mpr ((List.nodup_finRange n).filter _)`. One wrong lemma name
+on the first attempt (`List.Pairwise.reverse` flips the relation;
+`List.nodup_reverse` is the one that does not).
+
+It is **not** in the file, because nothing there would consume it yet — the
+consumer is the strictly-interior case. Recorded here so the next agent does not
+re-derive it, and so the prediction is on record as *tested* rather than assumed.
+
+## §4m's antichain, generalised (2026-08-24, §4bb)
+
+`lm_infix_antichain` and `inclusion_contexts_empty_general` — §4m's two
+`decide`-at-`n = 4` theorems, now proved for every `n`.
+
+The third case landed with the two tools §4az named:
+
+- **`descWord_nodup`** — the two-line fact §4ba recorded as tested. Now it has
+  its consumer.
+- **`descWord_adjacent`** — the one that needed work. Route: `descWord_split`
+  above the letter exhibits its successor as the head of the second piece
+  (`descWord_last`, `descWord_head`), and `nodup_split_unique` — a letter pins
+  its own position in a duplicate-free list — matches that against the
+  decomposition in hand. It needs the letter not to be the run's bottom, which
+  is `descWord_last`'s second use.
+
+`lm_not_proper_interior` then has two outcomes and no arithmetic: three of the
+four families repeat their head as their last letter, so inside a
+duplicate-free run they would place one letter twice
+(`repeat_of_head_eq_last`); far-commutation's two letters are adjacent but drop
+by ≥ 2, which `descWord_adjacent` forbids.
+
+### The antichain, complete
+
+| case | closed by |
+|---|---|
+| `right = []` — proper suffix | §4az |
+| `left = []` — proper prefix | §4ba |
+| both non-empty — strictly interior | §4bb |
+
+### This is NOT the inclusion half of the criterion
+
+It says every inclusion composition has **empty contexts and a shared leading
+monomial**. `inclusion_resolves` additionally needs the classification of *rule
+pairs* on a shared leading monomial — either the same rule
+(`InclusionComposition.spoly_isZero_of_self`) or §4j's Yang–Baxter/Bokut–Shiao
+pair (`DegenerateYbBs`) — **and that those are the only two**.
+`mem_heckeCompletedRewritingSystem_rules` (§4at) is the tool; it would be that
+lemma's first non-`lm_cases` consumer.
+
+## The inclusion half of the criterion, for every n (2026-08-24, §4bc)
+
+`inclusion_resolves_general` — `IsGrobnerShirshovBasis`'s **`inclusion_resolves`
+obligation, discharged for every `n`**, for an arbitrary `InclusionComposition`
+whose two rules are in the system.
+
+`shared_lm_classify` is the missing piece §4bb named: two rules sharing a
+leading monomial are **the same rule, or §4j's Yang–Baxter / Bokut–Shiao pair,
+and nothing else**. Sixteen cases off `mem_heckeCompletedRewritingSystem_rules`
+(§4at) — its **first consumer outside `lm_cases`**, and the leading-monomial
+inversion could not have served, since the conclusion is about *rules*. Eleven
+cases are impossible, most dying on `bsWord₁_length_ge_three` with no
+arithmetic; the two live off-diagonal ones force the descending run to a
+singleton (`descWord_eq_singleton`), which pins `j = i − 1` — exactly §4j.
+
+**No structure bridge was needed**, unlike the overlap side's §4av.
+`InclusionComposition.spoly_isZero_of_scaled` already takes an arbitrary `ic`
+and asks only for empty contexts plus a coefficient identity, so the arbitrary
+composition is discharged where it stands.
+
+### Where the criterion now stands
+
+| obligation | state |
+|---|---|
+| `inclusion_resolves` — **every `ic`, every `n`** | **done, §4bc** |
+| `overlap_resolves` — BS × BS cell | done modulo the deep diagonal `j₁ = j₂ = 0 ∧ i₁ ≥ 1` (§4aw, §4ax) |
+| `overlap_resolves` — the other fifteen rule-kind pairs | open |
+
+Half the criterion is closed. Note the asymmetry in what remains: the overlap
+half's generic namespaces (`CyclicQuad`, `BraidSelfOverlap`, `BokutShiaoBraid`,
+…) are gated on overlap *shape*, and `overlap_length_one` (§4au) now supplies
+that gate — so several of the fifteen may be much cheaper than the BS × BS cell
+was.
+
+## One bridge for every family (2026-08-24, §4bd)
+
+**The remaining overlap work is bridges, not chains.** Measured against the
+`_resolves` inventory: the reduction chains for the other cells mostly already
+exist — `farComm_quad_resolves`, `yangBaxter_quad_resolves`,
+`bokutShiao_quad_resolves`, `quad_farComm_resolves`, `quad_yangBaxter_resolves`,
+`quad_bokutShiao_resolves`, the four `BraidSelfOverlap` theorems,
+`FarCommCyclic.{bokutShiao,yangBaxter}_resolves`,
+`CyclicFarCommLow.{bokutShiao,yangBaxter}_resolves`,
+`BokutShiaoBraid.{yangBaxter,bokutShiao}_resolves`,
+`BraidBokutShiao.{yangBaxter,bokutShiao}_resolves`. Each is stated for a
+*constructed* composition; what each lacks is the bridge from an arbitrary one.
+
+**`oc_ext_of_left_ne_nil` supplies every bridge at once**: two overlap
+compositions with the same two rules and non-empty left contexts are **equal**.
+§4au is what makes it true — with the overlap a single letter `x`,
+`lm₁ = left ++ [x]` fixes `left` and `x`, and `lm₂ = [x] ++ right` then fixes
+`right`. No hypothesis about which rules, no case analysis. It replaces the
+per-family bridge §4av had to write by hand.
+
+`quad_right_resolves` is the first column crossed: the obligation for an
+arbitrary composition whose **second** rule is quadratic, whatever the first is.
+Four branches, each reading `x` off `lm₁`'s last letter and handing the named
+composition to a chain that was already there.
+
+### Correction to §4bc's closing prediction
+
+§4bc guessed the generic-namespace cells "may be considerably cheaper than the
+BS × BS cell". Measured: **right, but for the wrong reason.** They are cheaper
+because their *chains already exist*, not because their shape gate is easier.
+And the saving is bigger than predicted, since the bridge turned out to be one
+lemma for all families rather than one per family.
+
+### Remaining overlap cells
+
+`quad_right_resolves` covers four of the sixteen. `CyclicQuadLeft` (quadratic
+first) is the mirror and has all three of its chains; the `FarCommCyclic` /
+`CyclicFarCommLow` / `BokutShiaoBraid` / `BraidBokutShiao` families cover more.
+All still need `oc.left ≠ []`, and the `left = []` degenerates are untouched
+outside the BS × BS cell (§4aw).
+
+## The mirror column, and a trap worth recording (2026-08-24, §4be)
+
+`quad_left_resolves` — §4bd's column reflected: an arbitrary composition whose
+**first** rule is quadratic. Same shape, `oc_ext_of_left_ne_nil` again.
+
+**One branch is not a mirror image, and I nearly wrote it as one.**
+`CyclicQuadLeft.quad_bokutShiao_resolves` covers Bokut–Shiao **at `j = i − 1`
+only** — `bsWord₂ i' i j` puts its extra letter on the left, so for `j < i − 1`
+the second word is not the shape its chain needs. The rest is `QuadBokutShiao`,
+a namespace written for exactly that gap (*"this covers precisely what §4q
+leaves open"*). The branch splits on `Nat.eq_or_lt_of_le` and calls a different
+chain on each side; the composition is unchanged across the split, only the
+reduction differs.
+
+**The general lesson for the remaining columns:** an existing `_resolves` may
+cover **less of its cell than its name suggests**, and the boundary lives in the
+docstring rather than the statement. §4bd's "the chains already exist" is true
+but needs reading per chain, not per name. Only the file's own prose caught this
+one.
+
+### Overlap cells crossed so far
+
+| cell | by |
+|---|---|
+| BS × BS | §4aw (modulo the deep diagonal) |
+| ? × quadratic | §4bd `quad_right_resolves` |
+| quadratic × ? | §4be `quad_left_resolves` |
+
+All still assume `oc.left ≠ []`.
+
+## CORRECTION: the remaining cells are not all mechanical (2026-08-24, §4bf)
+
+I told the owner, at the end of the §4be turn, that what remains is "mechanical
+application of the bridge, at roughly one column per PR". **Measured against the
+next cell, that is wrong.**
+
+Applying §4be's own lesson — read what each chain covers, not what it is called —
+to Bokut–Shiao against far-commutation turns up **four** namespaces, partitioned
+by where the far-commutation bottom `j₀` sits relative to the Bokut–Shiao
+bottom `j`:
+
+| `j₀` vs `j` | chain | target |
+|---|---|---|
+| `j₀ + 1 < j` | `CyclicFarCommLow.bokutShiao_resolves` | `CyclicFarCommLow.oc` |
+| `j₀ + 1 = j` | `BokutShiaoFarComm.oc_reduces_to_zero` (§4o) | `BokutShiaoFarComm.oc` |
+| `j₀ = j` | `BokutShiaoFarCommSame.oc_reduces_to_zero` | `BokutShiaoFarCommSame.oc` |
+| `j < j₀` | `CyclicFarCommInner.oc_reduces_to_zero` | `CyclicFarCommLow.oc` |
+
+The partition is complete (`farCommRelation i j₀` needs `j₀ + 1 < i`; the
+Bokut–Shiao side has `j ≤ i − 1`), and the last row shares its *target* with the
+first while needing a different chain — `σ_{j₀}` lands **inside** the descending
+run rather than below it.
+
+**Three of the four rows would go the §4bd/§4be way. The fourth will not:**
+`CyclicFarCommInner.oc_reduces_to_zero` asks for four structural hypotheses
+(`hsplit`, `hsplit'`, `hB`, `hfarA`) exhibiting how `descWord i j` breaks at
+`σ_{j₀}` — a caller has to *build* those with `descWord_split`, not read them off
+a leading monomial.
+
+So: `oc_ext_of_left_ne_nil` still bridges; what it does not do is **choose the
+chain**, and choosing it is where the remaining work actually is. §4bf records
+the map in the file so the next agent starts from it rather than re-deriving it.
+
+**Estimate to carry forward, stated as an estimate:** the two quadratic columns
+were ~1 PR each; this cell looks like more, chiefly for its fourth row. The
+braid-word families (`BraidSelfOverlap`, `BokutShiaoBraid`, `BraidBokutShiao`)
+have not been read this way yet and may hold similar splits — that is unmeasured.
+
+## The braid-word cell — the clean case, measured as such (2026-08-24, §4bg)
+
+§4bf read the next cell before writing it and found a four-way split. The same
+reading applied to the braid-word families finds the **opposite**, and the reason
+is in their own docstrings: `wHi i' i` carries **exactly two** rules (§4j), and on
+the other side *"`rule₁` cannot double: `j₁ ≤ i − 2` puts its leading monomial
+strictly longer than the braid word"*. `BraidSelfOverlap`'s four theorems are not
+a sample of a larger family — they are all of it.
+
+- **`lm_eq_wHi_cases`** — a rule of the completed system leading on `wHi i' i`
+  **is** `yangBaxterRelation i' i` or `bokutShiaoRelation i' i i'`. Quadratic and
+  far-commutation are the wrong length; a Bokut–Shiao word reaches length three
+  only when its descending run is a singleton (`descWord_eq_singleton`), forcing
+  `j = i − 1`.
+- **`braid_self_resolves`** — two applications of that plus one
+  `oc_ext_of_left_ne_nil` per branch. The bridge is unusually direct here, since
+  `BraidSelfOverlap.oc` takes its two rules as *parameters*, so the rule-equality
+  side conditions are the classification's own output.
+
+**A hypothesis dropped, not silenced.** The first draft gave `lm_eq_wHi_cases` an
+`hi : i'.val + 1 = i.val`; the linter flagged it unused, and it is — matching a
+leading monomial against `[σᵢ, σᵢ', σᵢ]` *forces* `i' + 1 = i` in both surviving
+families, so the side condition is an **output**, not an input. Removing it made
+the lemma strictly stronger. (The warning appeared only once the code was in the
+file, not in the scratchpad — worth knowing: the per-file linter set differs.)
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS × FC` | **mapped only** (§4bf) |
+
+## Bokut–Shiao against the braid word, both ways (2026-08-24, §4bh)
+
+Measured before writing, as §4bf and §4bg were. `BokutShiaoBraid.oc` admits any
+`j₁ ≤ i − 1`, but its two chains require `j₁ < i − 1` **strictly**. The excluded
+endpoint is **not a gap**: at `j₁ = i − 1` the Bokut–Shiao rule leads on the
+braid word itself (`bs_hlm`), so *both* rules do — and that is §4bg. The two
+sections compose to cover the cell, with §4bg a **prerequisite** of this one
+rather than a parallel result.
+
+Each direction splits on `Nat.eq_or_lt_of_le` at that point, the two branches
+going to different sections. `BraidBokutShiao` mirrors it exactly.
+
+This is the shape §4bd predicted for the generic-namespace cells, and it holds —
+with the caveat §4be added and §4bf illustrated: **the split point came from
+reading the chains' side conditions, not the family's name.**
+
+### Score on the "read before writing" discipline
+
+Three cells read this way so far: `BS × FC` (four-way, §4bf), braid-word (clean,
+§4bg), BS-against-braid-word (two-way, §4bh). Two of three had a split the name
+did not advertise, and none of the three matched a guess made without reading.
+The discipline has paid for itself each time; the `BS × FC` four-way remains the
+worst case found.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS × braid word`, both directions | §4bh |
+| `BS × FC` | **mapped only** (§4bf) |
+
+## The four-way cell, crossed (2026-08-24, §4bi)
+
+§4bf mapped `BS × FC` and stopped. §4bi crosses it. **The map held** — four rows
+on `j₀` against `j` — and row 4 needed exactly what §4bf said it would.
+
+**One side condition the map missed.** `BokutShiaoFarCommSame.oc_reduces_to_zero`
+also wants a `jp` with `j + 1 = jp ≤ i − 1`. It is *vacuous* here (that row has
+`j₀ = j`, and `farCommRelation i j` exists only for `j + 1 < i`), but it still
+has to be **supplied**. §4bf had read the chains' *docstrings*; reading their
+*hypotheses* is a different act, and only the second finds this.
+
+**Row 4 is the one that is not a bridge application**, as predicted.
+`CyclicFarCommInner` asks for four structural facts about how `descWord i j`
+breaks at `σ_{j₀}`, built rather than read off:
+
+- `descWord_split` cuts the run at `j₀`;
+- `descWord_last` peels `σ_{j₀}` off the upper piece to expose `A`;
+- **`descWord_nodup` is what makes every letter of `A` strictly above `j₀`** —
+  membership alone gives `≥`, and the chain needs `>`.
+
+All three come from §4bb, written for the antichain and reused here unchanged.
+That is the second time §4bb's `descWord` infrastructure has paid for itself
+outside its original purpose.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS ×` braid word, both directions | §4bh |
+| `BS × FC` | §4bi |
+
+Remaining: `FC × ?` and `YB × ?` combinations not covered above, the standing
+`oc.left ≠ []` assumption everywhere, and the deep diagonal
+`j₁ = j₂ = 0 ∧ i₁ ≥ 1`.

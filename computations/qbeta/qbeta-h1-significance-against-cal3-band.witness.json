@@ -5,8 +5,8 @@
   "tier": "error propagation on committed values (no fit)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-15T10:53:14.319320+00:00",
-  "commitSha": "79abc0a03b89f6423fe54519059596063fe786e9",
+  "computedAt": "2026-08-23T21:12:37.296596+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_h1_significance_against_cal3_band.py",
@@ -32,8 +32,8 @@
     },
     {
       "name": "quoted_048pct_is_the_muon_not_the_substrate_anchor",
-      "passed": true,
-      "detail": "muon 0.4793% vs proton 1.907% \u2014 the headline quotes the muon figure"
+      "passed": false,
+      "detail": "muon 0.4962% vs proton 1.907% \u2014 the headline quotes the muon figure"
     },
     {
       "name": "H1_not_refuted_only_unsupported",
@@ -41,7 +41,7 @@
       "detail": "scope-(a): no invariant forbids a 4_1-volume ingredient; the 0.031-sigma proton figure is not evidence against (H1) either"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "result": {
     "vol_4_1": "2.029883212819307",
     "sigma_Qbeta_MeV": "6.1e-7",
@@ -56,12 +56,12 @@
         "sigma_c3": "1.26194835214"
       },
       "muon": {
-        "q": "1.109978595554180575282",
-        "u": "0.008517236340044",
-        "c3": "-2.0202002350213",
-        "Q_N2": "0.78233438652402",
-        "dc3_dQbeta": "2068766.54895",
-        "sigma_c3": "1.26194759486"
+        "q": "1.109978595642739046682",
+        "u": "0.0085172363524248",
+        "c3": "-2.019860311874",
+        "Q_N2": "0.78233438635972",
+        "dc3_dQbeta": "2068766.54037",
+        "sigma_c3": "1.26194758962"
       }
     },
     "significance": {
@@ -71,9 +71,9 @@
         "n_sigma": "0.0312686"
       },
       "muon": {
-        "discrepancy": "0.00968297779805",
-        "relative_pct": "0.479308",
-        "n_sigma": "0.00767304"
+        "discrepancy": "0.0100229009453",
+        "relative_pct": "0.496218",
+        "n_sigma": "0.00794241"
       }
     },
     "sigma_c3_over_abs_c3_pct": "60.9831",
@@ -83,7 +83,7 @@
     "genericity_window_width": "0.0491423421",
     "acceptance_over_genericity_window": "51.3589014366",
     "Qbeta_improvement_for_1sigma_proton": "31.98096",
-    "Qbeta_improvement_for_1sigma_muon": "130.3264",
+    "Qbeta_improvement_for_1sigma_muon": "125.90642",
     "Qbeta_improvement_for_zero_location_test": "25.679447 (PR #5084)"
   },
   "context": {

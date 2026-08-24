@@ -1,8 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
+<<<<<<< HEAD
   "computedAt": "2026-08-24T12:37:39.855822+00:00",
   "commitSha": "138e649ab1c6c472fd79b0ecee70adfcdead18c9",
+=======
+  "computedAt": "2026-08-24T13:29:16.388203+00:00",
+  "commitSha": "7fbf708ba84b5f3af0504a392812d74d47e13817",
+>>>>>>> origin/main
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -58,6 +63,7 @@
   },
   "data": {
     "counts": {
+<<<<<<< HEAD
       "total_scanned": 2725,
       "prov_ok": 2346,
       "prov_audit_exempt": 78,
@@ -66,6 +72,16 @@
       "prov_missing": 75,
       "prov_parse_error": 0,
       "completeness_ratio": "0.972477064220183486238532110091743119266055045871559633027523"
+=======
+      "total_scanned": 2731,
+      "prov_ok": 2351,
+      "prov_audit_exempt": 78,
+      "prov_exempt_no_reader": 224,
+      "prov_exempt_acknowledged": 3,
+      "prov_missing": 75,
+      "prov_parse_error": 0,
+      "completeness_ratio": "0.972537532039545953863053826437202489930428414500183083119736"
+>>>>>>> origin/main
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2107,6 +2123,18 @@
         },
         {
           "witness": "d-density-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-cyclotomic-exponent.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-neutron-cyclotomic-rule.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-prefactor-localisation.witness.json",
           "missing_fields": []
         },
         {
@@ -5726,6 +5754,10 @@
           "missing_fields": []
         },
         {
+          "witness": "h3-gram-degeneracy-block-identification.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "h4-categorical-drivers-probe.witness.json",
           "missing_fields": []
         },
@@ -6819,6 +6851,10 @@
         },
         {
           "witness": "six-fifths-deviation-h4-correction-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "spectrahedral-phase-collapse-frame-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -11143,6 +11179,14 @@
         },
         {
           "witness": "habiro_tail_membership_gate.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "pentagon-rt-torus-knot-higgs-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

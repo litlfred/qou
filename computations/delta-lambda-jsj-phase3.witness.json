@@ -35,7 +35,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Phase 3 of the closed-forms-first-principles workplan: tests the JSJ-decomposition closure form Δ_λ(K) = Σ_P c_λ^(P) · Vol_hyp(P) on D, T, ³He, ⁴He. Uses SnapPy to extract hyperbolic volumes of canonical braid closures, then tests separability V(K) = Vol(K) against empirical |Δ_λ*|.",
+  "description": "Phase 3 of the closed-forms-first-principles workplan: tests the JSJ-decomposition closure form \u0394_\u03bb(K) = \u03a3_P c_\u03bb^(P) \u00b7 Vol_hyp(P) on D, T, \u00b3He, \u2074He. Uses SnapPy to extract hyperbolic volumes of canonical braid closures, then tests separability V(K) = Vol(K) against empirical |\u0394_\u03bb*|.",
   "parameters": {
     "snappy_version": "3.3.2",
     "q0": "1.1099785827513808"
@@ -66,7 +66,7 @@
         "n_components": 2,
         "hyperbolic_volume": 12.776095504236459,
         "n_tetrahedra": 20,
-        "simplification": "global→level→global→level→global"
+        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
       },
       "T": {
         "word_length": 35,
@@ -74,7 +74,7 @@
         "n_components": 3,
         "hyperbolic_volume": 12.776095552543637,
         "n_tetrahedra": 31,
-        "simplification": "global→level→global→level→global"
+        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
       },
       "3He": {
         "word_length": 35,
@@ -82,7 +82,7 @@
         "n_components": 1,
         "hyperbolic_volume": 12.554080052250034,
         "n_tetrahedra": 30,
-        "simplification": "global→level→global→level→global"
+        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
       },
       "4He": {
         "word_length": 47,
@@ -90,7 +90,7 @@
         "n_components": 2,
         "hyperbolic_volume": 12.554074507253288,
         "n_tetrahedra": 44,
-        "simplification": "global→level→global→level→global"
+        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
       }
     },
     "empirical_best_abs_delta": {
@@ -113,7 +113,7 @@
       "rel_std": 1.398222006615652,
       "n_valid": 4
     },
-    "verdict": "MISS — rel_std = 1.398, V(K) = Vol(K) insufficient",
+    "verdict": "MISS \u2014 rel_std = 1.398, V(K) = Vol(K) insufficient",
     "upstream_witness_hashes": [
       {
         "path": "delta-lambda-empirical-tabulation.witness.json",
@@ -124,5 +124,8 @@
         "computedAt": "2026-07-05T11:19:13.300674+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

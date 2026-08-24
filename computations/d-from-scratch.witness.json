@@ -23,7 +23,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Deuteron binding from scratch using full canonical infra at 50 dps mpmath. Combines Habiro polynomial Markov trace values (exact at q_0 from habiro-coefficients-atomic.witness.json) for the atom-level tr_M with light_isotope_sweep f64 values for the free-nucleon disconnected baseline. Term 4 and Δm_shell computed exactly at 50 dps. NO Vol_hyp, NO BW (invalid at A=2), NO census.",
+  "description": "Deuteron binding from scratch using full canonical infra at 50 dps mpmath. Combines Habiro polynomial Markov trace values (exact at q_0 from habiro-coefficients-atomic.witness.json) for the atom-level tr_M with light_isotope_sweep f64 values for the free-nucleon disconnected baseline. Term 4 and \u0394m_shell computed exactly at 50 dps. NO Vol_hyp, NO BW (invalid at A=2), NO census.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
@@ -53,7 +53,7 @@
     }
   },
   "caveats": [
-    "Free-nucleon Markov trace tr_M(D, include_inter=False) is computed at f64 via light_isotope_sweep — Habiro polynomial for this specific configuration is not yet in the witness. An end-to-end 50 dps result requires extending Habiro extraction to include_inter=False atom braids.",
-    "Term 5 (BW) explicitly NOT included — BW formula is structurally invalid at A=2 (surface dominates volume; B_bulk(D) = -4.44 MeV negative)."
+    "Free-nucleon Markov trace tr_M(D, include_inter=False) is computed at f64 via light_isotope_sweep \u2014 Habiro polynomial for this specific configuration is not yet in the witness. An end-to-end 50 dps result requires extending Habiro extraction to include_inter=False atom braids.",
+    "Term 5 (BW) explicitly NOT included \u2014 BW formula is structurally invalid at A=2 (surface dominates volume; B_bulk(D) = -4.44 MeV negative)."
   ]
 }
