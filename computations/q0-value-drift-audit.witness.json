@@ -7,7 +7,7 @@
       "STALE": 229,
       "proton-pin": 1523,
       "unknown": 25,
-      "canonical": 229
+      "canonical": 227
     },
     "stale_total": 229,
     "new_stale": 0,
@@ -10270,16 +10270,16 @@
       {
         "file": "computations/probes/gap-a4-He3-residual-probe.witness.json",
         "field": "parameters.q_0_50dps",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/gap-a4-He3-residual-probe.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
