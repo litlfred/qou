@@ -100,17 +100,34 @@ theorem master_upstream_complete (R : Type u) [CommRing R]
 
     Read this line as "the API is inhabited", never as "the GB
     filtration collapses" — see
-    `SpectralSequence.collapse_is_definitional`. -/
+    `SpectralSequence.collapse_is_definitional`.
+
+    **The Hecke line is the same shape, and this theorem had been red
+    since 2026-08-23** (found 2026-08-24).  `triv_hecke` was demoted
+    from `instance` to `def` on 2026-08-23 and its docstring recorded
+    the blast radius as *"one error, `triv_wedderburn` below, fixed in
+    place.  Nothing else in the corpus depended on the global
+    resolution."*  This theorem did.  It went unnoticed because
+    `Summary.olean` predated the demotion and nothing rebuilt this
+    cone, so `failed to synthesize IwahoriHeckeAlgebra R 2 q` was never
+    surfaced.  The witness is now named — `triv_hecke R 2 q`, the
+    `PUnit`-carrier model with all three relations `True` — and the
+    same reading applies: the API is inhabited; `H_2(q)` is not
+    constructed.
+
+    `WedderburnIsomorphism R 2 q` is deliberately still left to
+    `inferInstance`: `wedderburn_n2` is a real instance (blocks
+    `1² + 1² = 2 = 2!`, closed by `decide`), not a trivial model. -/
 theorem inventory_check (R : Type u) [CommRing R] (q : R) :
     -- Spectral sequence — inhabited by the trivial model only
     Nonempty (GBFiltrationCollapsesAtE2 R) ∧
-    -- Hecke algebra
+    -- Hecke algebra — inhabited by the trivial model only
     Nonempty (IwahoriHeckeAlgebra R 2 q) ∧
     Nonempty (WedderburnIsomorphism R 2 q) ∧
     -- Permutation enumeration (concrete sigma)
     coxeterLength sigma1_in_S3 = 1 ∧
     coxeterLength sigma2_in_S4 = 1 :=
-  ⟨⟨canonicalTrivial R⟩, ⟨inferInstance⟩, ⟨inferInstance⟩,
+  ⟨⟨canonicalTrivial R⟩, ⟨triv_hecke R 2 q⟩, ⟨inferInstance⟩,
    coxeterLength_sigma1_in_S3, coxeterLength_sigma2_in_S4⟩
 
 end QOU.Mathlib.Summary
