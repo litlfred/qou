@@ -183,11 +183,9 @@ theorem hecke_not_splits_at_neg_one {R : Type u} [CommRing R] [Nontrivial R]
     extension splits vacuously.
 
     It is **not** an added assumption in the QOU setting.
-    `R_q = LaurentPolynomial ℤ` is nontrivial by instance search, so the
-    hypothesis is discharged rather than assumed — recorded here as a checked
-    fact instead of left for a reader to wonder about. -/
-
-example : Nontrivial QOU.GroundRing.R_q := by infer_instance
+    `QOU.GroundRing.instNontrivialR_q` records that `R_q` is not the zero ring,
+    so the hypothesis is discharged rather than assumed. Cited rather than
+    re-derived — the fact has one home, next to `R_q` itself. -/
 
 /-- The non-split extension at `q = -1`, over the actual ground ring.
 
