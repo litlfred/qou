@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T17:05:55Z
+updated_at: 2026-08-24T17:17:26Z
 ---
 
 ## Landed — PR #5645
@@ -767,3 +767,49 @@ Three steps, in order:
    proved in `WenzlWeightLevelR`.
 
 Step 1 is the only one with any content left; 2 and 3 are transcription.
+
+
+## NORMALISATION DONE — all three defining properties at every level
+
+Commits `6f09a5edd`, `ce02eb408`, `7bc4b02e2`.
+
+    sum_dim_wenzlWeight_eq_one :
+      sum_{|mu| = n} f^mu * wenzlWeight r Q mu = 1
+
+`MarkovNormalisation` proves this at r=2, over R, at convention D. Same
+argument at every level, over any field. So the level-r weight system now has
+all three defining properties proved, sorry-free:
+
+* vanishes above r rows        `wenzlWeight_eq_zero_iff`
+* consistent under restriction `sum_addable_wenzlWeight_all`
+* sums to 1                    `sum_dim_wenzlWeight_eq_one`
+
+### The step that would have stalled the induction
+
+`sum_addable_wenzlWeight` carries `hrmu : colLen 0 <= r`. **The induction sums
+over EVERY diagram of size n**, including those with more than r rows, where
+that hypothesis fails. There the identity still holds, but for the opposite
+reason — both sides are 0: the diagram's weight vanishes, and so does every
+diagram obtained from it, because adding a box cannot lower the row count
+(`colLen_zero_le_addCell`). `sum_addable_wenzlWeight_all` is the
+hypothesis-free form. Missing this would have left the induction stuck on
+exactly the diagrams the level-r cap is about.
+
+### The indexing bridge, for the record
+
+`sum_addable_eq_sum_range` goes through an explicit `addableRowSet` Finset and
+`Finset.sum_subtype`, which **avoids forcing the noncomputable
+`Set.Finite.fintype` instance** — the whnf timeout that cost a round in #5575
+when `Equiv.sum_comp` was tried on the same subtype. Worth remembering: for
+these addable/corner subtypes, build the Finset and use `sum_subtype`, do not
+reach for an `Equiv`.
+
+Also: `sum_corner_eq_sum_addable` is the double-sum reindexer;
+`sum_cornerPair_eq_sum_addPair` is the flat sigma version, and substituting it
+by mistake times out at whnf rather than failing to unify.
+
+### Left
+
+Only the **trace instance** at general r. `markovTrace_unique` is already
+generic in the coefficient ring; what is r-specific is the weight system it is
+applied to, and that system is now fully proved.
