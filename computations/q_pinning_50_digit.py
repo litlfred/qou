@@ -112,7 +112,22 @@ HBAR_Q_SQ = HBAR_Q ** 2
 H_A       = Q - Q_INV
 TWO_Q     = Q + Q_INV       # [2]_q
 # Markov / Skein parameters
-Z_MARKOV  = mpf(1) / (sqrt(Q) + sqrt(Q_INV))
+# Convention D (`q^3/(q^2+1)`).  This read `mpf(1) / (sqrt(Q) + sqrt(Q_INV))`
+# — convention C, excised by the 2026-08-09 ruling — and was missed by BOTH
+# independent convention detectors, because that spelling uses `sqrt(Q_INV)`
+# rather than a second `sqrt(Q)` and matched neither pattern.  It is the
+# fourth distinct blind spelling recorded for this class.
+#
+# NOTE FOR WHOEVER REGENERATES THIS WITNESS: the source is now D but the
+# COMMITTED `q-pinning-50-digit.witness.json` still carries the C value in
+# `derived_50_digit.z_markov`.  That was left deliberately: this file is
+# ANCHOR-DEFINING (AGENTS.md rule 1 — it is what `_q0_value_for_anchor`
+# reads), and regenerating it to correct one inert field risks the q anchor
+# for no gain.  The field is read by NOTHING — grep for `["z_markov"]` /
+# `.get("z_markov"` across live .py returns zero — so it is a provenance
+# defect, not a live path, and it will correct itself on the next
+# regeneration done with the anchor context intact.
+Z_MARKOV  = Q ** 3 / (Q ** 2 + 1)
 S_SKEIN   = sqrt(Q) - sqrt(Q_INV)
 
 
