@@ -1288,3 +1288,63 @@ docstring, so the note is not merely stale prose — the numbers followed it.
 | `h4-form-AB-cross-anchor-stability` | **preserved artefact, degenerate comparison** | leave; annotate that its stability claim is muon-vs-muon |
 
 None of the three is mine, and none was visible to any check before today.
+
+
+## 2026-08-24 — the 12 `ideal_muon` producers that import from `qou_substrate.constants`
+
+Owner asked for option (b) — declare them muon — **conditioned on** double-checking
+that they actually intend the muon rather than the proton. **The check fails. Not
+one of the 12 is a muon-only producer.** Option (b) is void by its own condition.
+
+Re-derived on the post-merge tree (`ideal_muon` is now 120, not 124; the set is
+12, not 11 — main added `q_pinning_50_digit`). Method: resolve each manifest stem
+to exactly one file, AST-parse it, record the `ImportFrom` module and the actual
+call sites. Not `grep -rl`.
+
+**`q_at()` is the PROTON accessor** — `tools/qou-substrate/python/qou_substrate/
+constants.py:274-285`: *"via the proton substrate identity … this pin sits ~11.5
+ppb from `q_muon_at()`"*. `q_muon_at()` is labelled *"CROSS-CHECK: q from the
+muon-anchor closed form"*. So a producer that calls only `q_at()` computes at the
+proton, whatever the manifest says about it.
+
+| # | producer | calls | "muon" in source | what it actually is |
+|---|---|---|---|---|
+| 1 | `he4_rho_f_bar_symmetric_audit_probe` | `q_at` | **0** | proton-only |
+| 2 | `option_e_v9_bar_symmetric_test_probe` | `q_at` | **0** | proton-only |
+| 3 | `qbeta_cosh_q_sinh_q_candidate_scan` | `q_at` | **0** | proton-only |
+| 4 | `qbeta_signed_vs_abs_tower_diagnostic` | `q_at` | **0** | proton-only |
+| 5 | `yekutieli_a2_em_gauge_coupling_h2_probe` | `q_at` | **0** | proton-only |
+| 6 | `yekutieli_per_cell_qlambert_decomposition_probe` | `q_at` | **0** | proton-only |
+| 7 | `qbeta_c6_c10_crossanchor_falsification` | `q_at`+`q_muon_at` | 6 | cross-anchor |
+| 8 | `qbeta_jacobi_anger_tower_general` | `q_at`+`q_muon_at` | 9 | cross-anchor — `anchors = {"proton": q_at(), "muon": q_muon_at()}` (:212) |
+| 9 | `qbeta_route_alpha_lift_prediction` | `q_at`+`q_muon_at` | 12 | cross-anchor — `anchors = [("proton", …), ("muon", …)]` (:83); docstring calls itself *"the L3 anchor-stability gate"* |
+| 10 | `xq_habiro_element_search_probe` | `q_at`+`q_muon_at` | 13 | cross-anchor (:143) |
+| 11 | `binding_qgaussian_ell1_ceiling_measurement` | `Q_50_DIGIT_STR` + `q_muon_at` | 14 | cross-anchor — `measure(…,"proton_q0")` and `measure(…,"muon_q0")` (:223-224); witness says *"at both proton and muon anchors"* |
+| 12 | `q_pinning_50_digit` | `q_at`, `vol_4_1_at` | 14 | **the pin DEFINER** — `Q = q_at(mp.dps)` (:108), imports `MASS_RATIO_MU_E_STR` to *derive* the muon pin |
+
+Six mention the muon **zero times in their entire source** and call the proton
+accessor. Five deliberately evaluate at both and name the anchors in their own
+output — declaring them `ideal_muon` would silently rewrite what one arm of a
+comparison means. The twelfth defines the pin; declaring it `ideal_muon` makes
+the pin certify itself, which is exactly the *"stop the self-certification"*
+defect the owner already ruled against on the CODATA-2022 branch.
+
+### Recommended instead of (b) — awaiting owner
+
+1. **6 → `physical_proton`.** They call `q_at()` and nothing else. Zero risk.
+2. **5 → a `comparison` declaration**, not an anchor. A cross-anchor probe has no
+   single anchor; forcing one is what produced the degenerate-comparison defect
+   found 4× already (a probe whose `q_proton` field held a muon value, so it
+   measured the 3.15e-12 B↔A gap while reporting it as the 11.5 ppb μ↔p gap — a
+   factor ~3600). The manifest has no such class today; adding one is the fix.
+3. **1 (`q_pinning_50_digit`) → excluded by construction**, with the reason
+   recorded in the manifest rather than left implicit.
+
+### Related, found during the merge and NOT resolved
+
+`origin/main` now stamps `q0Anchor: muon` + the canonical A pin on
+`he4-rho-f-bar-symmetric-audit-probe.witness.json` and
+`qbeta-c3-habiro-3rung-crossanchor-rigidity.witness.json`, where this branch had
+no `q0Anchor` at all. Row 1 above says that producer mentions the muon zero
+times. **A sibling's regeneration is writing muon stamps onto proton
+computations, on main, at some scale.** Not diagnosed here — flagged.
