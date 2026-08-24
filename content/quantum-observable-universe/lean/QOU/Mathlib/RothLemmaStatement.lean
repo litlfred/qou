@@ -1291,37 +1291,66 @@ absorb the additive `t`, and it is exactly `t ≤ s^{2^k}` for the relevant `k` 
 ⚠ **The chain needs the `s_n` to exist as rationals.**  For a general rational `t` they do not:
 `s_n = t^{2^{−(n−1)}}` is irrational in general.  So this closes the induction exactly for `t`
 that is a perfect `2^{m−1}`-th power of a rational — which is a genuine restriction, and the
-price of staying in `ℚ`.  Going to `ℝ` for the exponent is the alternative; it is not taken. -/
-theorem rothConstant_chain {sq Θ w : ℕ → ℚ} {t : ℚ}
+price of staying in `ℚ`.  Going to `ℝ` for the exponent is the alternative; it is not taken. 
+⚠⚠ **Correction twenty-three: the ranges used to be unbounded, and that made this vacuous.**
+
+`hsq` read `∀ n, sq (n + 1) ^ 2 = sq n` — for **every** `n`.  Iterating, `sq 1 = sq (k+1)^{2^k}`
+for every `k`, so `sq 1` is a `2^k`-th power **in `ℚ`** for every `k`.  Writing `sq 1 = a/b` in
+lowest terms, each `a` and `b` is then a `2^k`-th power for every `k`, so every prime exponent in
+them is divisible by every `2^k` and hence zero: `sq 1 = 1` (or `0`, forcing `sq ≡ 0` and
+`t ≤ 0`).  At `sq 1 = 1` the whole sequence is `1` and the conclusion is `Θ n ≤ c_n`, with **no
+`t` in it at all** — not §14's `Θ_m ≤ c_m·t^{2^{−(m−1)}}`.
+
+So the only instance was the constant one the witness below exhibits, and the witness's own note
+— "the interesting instances have `sq n = s^{2^{m−n}}`" — describes a sequence that is not
+defined for `n > m` and therefore never satisfied `hsq`.
+
+Bounding the ranges to `n < M` fixes it: only `M` successive square roots are needed, so
+`sq 1 = t` may be any `2^{M−1}`-th power of a rational, which is what an application choosing its
+own `t` would supply anyway.
+
+⚠ The arithmetic above is elementary but **is not formalised here**.  A Lean witness would need
+the irrationality of `√2` (`Mathlib.Data.Real.Irrational`), whose `.olean` is not in this
+project's built Mathlib closure, so importing it would mean compiling that module.  Recorded as
+an argument, not as a theorem.
+
+⚠ The restriction to perfect powers is an artifact of the **root-free rational encoding**, not
+of §14 — over `ℝ` every non-negative `t` has a `2^k`-th root and the restriction vanishes.
+Removing it in `ℚ` means proving the step by passing to `ℝ` and back, which the inequalities all
+support (they are field-generic) but which is not done here.
+-/
+theorem rothConstant_chain {M : ℕ} {sq Θ w : ℕ → ℚ} {t : ℚ}
     (hs0 : ∀ n, 0 ≤ sq n) (hs1 : ∀ n, sq n ≤ 1)
-    (hsq : ∀ n, sq (n + 1) ^ 2 = sq n)
+    (hsq : ∀ n, n < M → sq (n + 1) ^ 2 = sq n)
     (ht : ∀ n, t ≤ sq n)
     (hbase : Θ 1 ≤ (rothConstant 1 : ℚ) * sq 1)
-    (hw : ∀ n, w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
-    (hstep : ∀ n, Θ (n + 1) ≤ t + 2 * w n) :
-    ∀ n, 1 ≤ n → Θ n ≤ (rothConstant n : ℚ) * sq n := by
+    (hw : ∀ n, n < M → w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
+    (hstep : ∀ n, n < M → Θ (n + 1) ≤ t + 2 * w n) :
+    ∀ n, 1 ≤ n → n ≤ M → Θ n ≤ (rothConstant n : ℚ) * sq n := by
   intro n hn
   induction n, hn using Nat.le_induction with
-  | base => exact hbase
+  | base => intro _; exact hbase
   | succ n hn ih =>
+      intro hnM
+      have hlt : n < M := by omega
       have hΨ : Θ n + t ≤ ((rothConstant n : ℚ) + 1) * sq (n + 1) ^ 2 := by
-        rw [hsq n]
-        linarith [ht n, ih]
-      exact rothConstant_step_lemma4 (θ := Θ (n + 1)) hn (hs0 (n + 1)) (hs1 (n + 1)) hΨ (hw n)
-        (by linarith [hstep n, ht (n + 1)])
+        rw [hsq n hlt]
+        linarith [ht n, ih (by omega)]
+      exact rothConstant_step_lemma4 (θ := Θ (n + 1)) hn (hs0 (n + 1)) (hs1 (n + 1)) hΨ
+        (hw n hlt) (by linarith [hstep n hlt, ht (n + 1)])
 
 /-- **The chain in `RothBound` shape.**  Same hypotheses, conclusion converted by
 `rothBound_pow_iff` at each level. -/
-theorem rothBound_chain {sq Θ w : ℕ → ℚ} {t : ℚ}
+theorem rothBound_chain {M : ℕ} {sq Θ w : ℕ → ℚ} {t : ℚ}
     (hs0 : ∀ n, 0 ≤ sq n) (hs1 : ∀ n, sq n ≤ 1)
-    (hsq : ∀ n, sq (n + 1) ^ 2 = sq n)
+    (hsq : ∀ n, n < M → sq (n + 1) ^ 2 = sq n)
     (ht : ∀ n, t ≤ sq n) (hΘ0 : ∀ n, 0 ≤ Θ n)
     (hbase : Θ 1 ≤ (rothConstant 1 : ℚ) * sq 1)
-    (hw : ∀ n, w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
-    (hstep : ∀ n, Θ (n + 1) ≤ t + 2 * w n) :
-    ∀ n, 1 ≤ n → RothBound n (sq n ^ (2 ^ (n - 1))) (Θ n) := fun n hn =>
+    (hw : ∀ n, n < M → w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
+    (hstep : ∀ n, n < M → Θ (n + 1) ≤ t + 2 * w n) :
+    ∀ n, 1 ≤ n → n ≤ M → RothBound n (sq n ^ (2 ^ (n - 1))) (Θ n) := fun n hn hnM =>
   (rothBound_pow_iff (hs0 n)).mpr
-    ⟨hΘ0 n, rothConstant_chain hs0 hs1 hsq ht hbase hw hstep n hn⟩
+    ⟨hΘ0 n, rothConstant_chain hs0 hs1 hsq ht hbase hw hstep n hn hnM⟩
 
 /-- ⚠ **Why the chain is parameterised by `s` and not by `t` alone.**
 

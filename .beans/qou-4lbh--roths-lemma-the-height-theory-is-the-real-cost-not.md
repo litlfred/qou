@@ -4087,3 +4087,61 @@ So the pieces of the induction step are: this theorem for `b`, `rothGammaFull_de
 `Γ_{m−1}`, `index_rescaled_wronskian_le_theta` / `..._right_theta` for the two halves,
 `rothLemmaTheta_one` for the base, `rothBound_succ_of_lemma4` for the arithmetic. **Every one is
 proved.** What is not written is the recursion that composes them.
+
+### Correction 22 — `RothLemma4` checked against 20, and it was defective
+
+Correction twenty's *first* half (`K₁ ≥ 2`) is fixed for free by `RothGammaFull`'s new `two_le`.
+The second half is not, and it bites at `n = 0` — arity `1`, where §13's Lemma 4 does not apply
+at all (it assumes `m ≥ 2`), but where the `def`'s `Fin (n+1)` admits it.
+
+At `n = 0` the sub-problem lives on `Fin 0`, where `idxWeight` sums over an empty support, so
+every index is `0` and `IsRothTheta b ρ H' Θ'` forces `Θ' = 0` (and `b ≥ 1`, else `R(b;ρ)` is
+empty and attainment fails). Then `w = Θ' + t = t` or `w² = t`. With `q = 0`, Lean's `ℚ` makes
+`t = p/0 = 0`, so `w = 0` and the conclusion demands `Θ ≤ 0`. But
+
+    σ = Unit, n = 0, p = 1, q = 0, F = 0, a = 100, r ≡ 1, H ≡ 2
+
+satisfies every clause — growth vacuous, height `2 ≤ 2`, floorExp `0 ≤ 0`, floor `2⁰ = 1 ≤ 2`,
+heightBound `100⁰ = 1 ≤ 2¹`, two_le `2 ≤ 2`, degPos `1 ≠ 0` — while `Θ = 1`, attained at
+`A = 2x − 1`, `κ = 1/2` (height `max(1,2) = 2`), whose translate is `2x`.
+
+Fixed the same way: carry §14's `0 < t ≤ 1`. With `q ≥ p ≥ 1` the `n = 0` case then asks only
+`Θ ≤ 3t`, which `rothLemmaTheta_one`'s `Θ ≤ t` supplies.
+
+### ⚠⚠ Correction 23 — `rothConstant_chain` / `rothBound_chain` were vacuous
+
+`hsq` read `∀ n, sq (n+1)^2 = sq n` — for **every** `n`. Iterating, `sq 1 = sq(k+1)^{2^k}` for
+every `k`, so `sq 1` is a `2^k`-th power **in `ℚ`** for every `k`. With `sq 1 = a/b` in lowest
+terms, `a` and `b` are then `2^k`-th powers for every `k`, so every prime exponent in them is
+divisible by every `2^k` and hence zero: `sq 1 = 1` (or `0`, forcing `sq ≡ 0` and `t ≤ 0`).
+
+At `sq 1 = 1` the whole sequence is `1` and the conclusion is `Θ n ≤ c_n` — **no `t` in it at
+all**, not §14's `Θ_m ≤ c_m·t^{2^{−(m−1)}}`. So the only instance was the constant one the
+witness exhibits, and the witness's own note — "the interesting instances have `sq n = s^{2^{m−n}}`"
+— describes a sequence undefined for `n > m`, which therefore never satisfied `hsq`.
+
+**Fixed** by bounding the ranges to `n < M`: only `M` successive square roots are needed, so
+`sq 1 = t` may be any `2^{M−1}`-th power of a rational.
+
+⚠ The arithmetic above is elementary but **not formalised**. A Lean witness needs irrationality
+of `√2` (`Mathlib.Data.Real.Irrational`), whose `.olean` is not in this project's built Mathlib
+closure — importing it means compiling that module. Recorded as an argument, not a theorem.
+
+⚠ The perfect-power restriction is an artifact of the **root-free rational encoding**, not of
+§14: over `ℝ` every `t ≥ 0` has its roots. Removing it means proving the step in `ℝ` and
+transferring back — the inequalities are all field-generic, so it should go through, but it is
+not done.
+
+### §14's recursion, one step — proved
+
+`rothLemmaTheta_succ`: `RothLemma4` at arity `n+1` plus `RothLemmaTheta` at `n` gives
+`RothLemmaTheta` at `n+1`. Four lines — Lemma 4 hands over a sub-problem with `Γ_n` and its `Θ'`,
+the induction hypothesis turns that into a `RothBound`, and `rothBound_succ_of_lemma4` does §14's
+arithmetic.
+
+`s` appears as an explicit hypothesis so correction 23's restriction is **visible at every use**
+rather than buried. Iterating from `1` to `m` needs such an `s` at every level, i.e. `t` a
+`2^{m−1}`-th power in `ℚ`.
+
+**With `rothLemmaTheta_one` as base, the §14 induction is now complete modulo `RothLemma4`
+itself** — which is §13, and is the last unproved link.

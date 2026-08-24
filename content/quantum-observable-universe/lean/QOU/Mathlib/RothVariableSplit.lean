@@ -274,12 +274,28 @@ seventeen's failure mode verbatim: prose that a green build has no opinion about
 because the arc has now caught it twice in one session. -/
 
 /-- **Lemma 4**, stated.  `w` encodes `max(Ψ, √Ψ)` root-free as `w = Ψ ∨ w² = Ψ`. 
-⚠ **Not checked against correction twenty.**  `RothLemma4` has the same shape as
-`RothLemmaTheta` — `RothGammaFull` as hypothesis, no `0 < t ≤ 1` — so it may carry the same
-defect.  Its conclusion `Θ ≤ t + 2w` is weaker, so the `m = 1` counterexample does not
-transfer directly, and no counterexample has been sought.  Recorded as unchecked rather than
-asserted either way. -/
+⚠⚠ **Correction twenty-two: checked against correction twenty, and it was defective.**
+
+Correction twenty's *first* half — `K₁ ≥ 2` — is fixed for free by `RothGammaFull`'s new `two_le`
+clause.  The *second* half is not, and it bites here at `n = 0` (arity `1`, where the source's
+Lemma 4 does not apply at all — §13 assumes `m ≥ 2`).
+
+At `n = 0` the sub-problem lives on `Fin 0`, where every index is `0` — `idxWeight` sums over an
+empty support — so `IsRothTheta b ρ H' Θ'` forces `Θ' = 0` (and `b ≥ 1`, else `R(b;ρ)` is empty
+and the attainment clause fails).  Then `w = Θ' + t = t` or `w² = t`.  With `q = 0` Lean's `ℚ`
+makes `t = p/0 = 0`, so `w = 0` and the conclusion demands `Θ ≤ 0`.  But:
+
+    σ = Unit, n = 0, p = 1, q = 0, F = 0, a = 100, r ≡ 1, H ≡ 2
+
+satisfies every `RothGammaFull` clause — `growth` vacuous at one variable, `height` `2 ≤ 2`,
+`floorExp` `0 ≤ 0`, `floor` `2⁰ = 1 ≤ 2`, `heightBound` `100^0 = 1 ≤ 2¹`, `two_le` `2 ≤ 2`,
+`degPos` `1 ≠ 0` — while `Θ = 1`, attained at `A = 2x − 1`, `κ = 1/2` (height `max(1,2) = 2`),
+whose translate is `2x`.  So `1 ≤ 0` is demanded.
+
+Fixed the same way as `RothLemmaTheta`: carry §14's opening `0 < t ≤ 1`.  With `q ≥ p ≥ 1` the
+`n = 0` case then asks only `Θ ≤ 3t`, which `rothLemmaTheta_one`'s `Θ ≤ t` supplies. -/
 def RothLemma4 (σ : Type*) (n p q F : ℕ) : Prop :=
+  0 < p → p ≤ q →
   ∀ (o : σ ≃ Fin (n + 1)) (a : ℤ) (r H : σ → ℕ) (Θ : ℚ),
     RothGammaFull o p q F r (fun j => (H j : ℤ)) a →
     IsRothTheta a r H Θ →
@@ -391,6 +407,31 @@ theorem rothBound_succ_of_lemma4 {n : ℕ} (hn : 1 ≤ n) {s t Θ Θ' w : ℚ}
   have hfin : RothBound (n + 1) (s ^ (2 ^ (n + 1 - 1))) Θ :=
     (rothBound_pow_iff hs0).mpr ⟨hΘ0, by simpa using hstep⟩
   simpa using hfin
+
+/-- **§14's recursion, one step** — `RothLemma4` at arity `n+1` plus `RothLemmaTheta` at `n`
+gives `RothLemmaTheta` at `n+1`.
+
+This is the induction the whole arc has been building toward, and with the pieces in place it is
+four lines: Lemma 4 hands over a sub-problem with `Γ_{n}` and its own `Θ'`, the induction
+hypothesis turns that `Θ'` into a `RothBound`, and `rothBound_succ_of_lemma4` does §14's
+arithmetic.
+
+⚠ **`s` is a hypothesis, and that is correction twenty-three showing through.**
+`rothBound_succ_of_lemma4` needs a *rational* `s` with `t = s^{2^n}`, because the root-free
+encoding cannot take square roots.  For the recursion to run from `1` to `m` one needs such an
+`s` at every level, i.e. `t` a `2^{m−1}`-th power in `ℚ`.  §14 has no such restriction — over `ℝ`
+every `t ≥ 0` has the roots — so this is an artifact of the encoding, and removing it means
+proving the step in `ℝ` and transferring back.  Not done; the hypothesis is explicit so that the
+restriction is visible at every use rather than buried. -/
+theorem rothLemmaTheta_succ {σ : Type*} {n p q F : ℕ} (hn : 1 ≤ n)
+    (h4 : RothLemma4 σ n p q F) (hIH : RothLemmaTheta (Fin n) n p q F)
+    {s : ℚ} (hs0 : 0 ≤ s) (hs1 : s ≤ 1) (hts : (p : ℚ) / (q : ℚ) = s ^ (2 ^ n)) :
+    RothLemmaTheta σ (n + 1) p q F := by
+  intro hp hpq o a r H Θ hg hΘ
+  obtain ⟨b, ρ, H', Θ', w, hg', hΘ', hw, hle⟩ := h4 hp hpq o a r H Θ hg hΘ
+  have hsub : RothBound n ((p : ℚ) / (q : ℚ)) Θ' :=
+    hIH hp hpq (Equiv.refl (Fin n)) b ρ H' Θ' hg' hΘ'
+  exact rothBound_succ_of_lemma4 hn hs0 hs1 hts hΘ.nonneg hsub hw hle
 
 /-- **Non-vacuity of the induction step.**  `n = 1`, `s = 1/4`, so `t = 1/16`; sub-problem
 bound `Θ' = 1/16` (tight for `RothBound 1`), `Ψ = w = 1/8`, `Θ = 5/16`.
