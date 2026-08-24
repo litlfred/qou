@@ -243,6 +243,48 @@ theorem IsRothTheta.nonneg {σ : Type*} {a : ℤ} {r H : σ → ℕ} {Θ : ℚ}
   rw [heq] at hle
   exact_mod_cast hle
 
+/-- ⚠ **`IsRothTheta` is satisfiable as stated** — a degenerate but genuine instance.
+
+At `r ≡ 0` every `idxWeight` term is `(i j)/0 = 0`, so `idxWeight` vanishes identically and the
+index of *any* non-zero polynomial is `0`.  Both clauses then hold with `Θ = 0`, attained at
+`A = 1`, `κ ≡ 0`.
+
+⚠ **This does not discharge the real obligation.**  Roth's degrees are positive, and at `r ≡ 0`
+the predicate is satisfied for a reason that disappears the moment any `rₕ ≠ 0`.  What it does
+rule out is the failure mode a two-clause `∀`/`∃` definition invites: that the upper-bound and
+attainment clauses contradict each other outright, leaving `IsRothTheta` empty for *every*
+parameter choice.  This arc has landed such a definition before — correction 10's `hres` was
+unsatisfiable and looked fine — so the cheap check is worth making. -/
+theorem isRothTheta_degenerate {σ : Type*} :
+    IsRothTheta (1 : ℤ) (fun _ : σ => 0) (fun _ : σ => 1) 0 := by
+  have hidx : ∀ (κ : σ → ℚ) (P : MvPolynomial σ ℚ), P ≠ 0 →
+      index (fun _ : σ => 0) κ P = ((0 : ℚ) : WithTop ℚ) := by
+    intro κ P hP
+    have hne : (translate κ P).support.Nonempty :=
+      support_nonempty.mpr ((translate_eq_zero_iff κ).not.mpr hP)
+    have hw : ∀ i : σ →₀ ℕ, idxWeight (fun _ : σ => 0) i = 0 := by
+      intro i; unfold idxWeight; simp
+    unfold index
+    rw [show (fun i => ((idxWeight (fun _ : σ => 0) i : ℚ) : WithTop ℚ))
+        = (fun _ : σ →₀ ℕ => ((0 : ℚ) : WithTop ℚ)) from funext fun i => by rw [hw i]]
+    exact Finset.inf_const hne _
+  classical
+  have hmap : ∀ B : MvPolynomial σ ℤ, B ≠ 0 → map (algebraMap ℤ ℚ) B ≠ 0 := by
+    intro B hB h
+    exact hB (map_injective (algebraMap ℤ ℚ) (algebraMap ℤ ℚ).injective_int
+      (by rw [map_zero]; exact h))
+  have hdeg1 : ∀ h : σ, degreeOf h (1 : MvPolynomial σ ℤ) = 0 := by
+    intro h; rw [← C_1]; exact degreeOf_C _ _
+  constructor
+  · intro A κ hA hκ
+    rw [hidx κ _ (hmap A hA.1)]
+  · refine ⟨1, fun _ => 0, ⟨one_ne_zero, fun h => ?_, fun n => ?_⟩, fun h => ⟨?_, ?_⟩,
+      hidx _ _ (hmap 1 one_ne_zero)⟩
+    · rw [hdeg1 h]
+    · rw [coeff_one]; split_ifs <;> norm_num
+    · norm_num
+    · norm_num
+
 /-- `R(a; r)` only grows with `a`. -/
 theorem InRothPolySet.mono {σ : Type*} {a a' : ℤ} {r : σ → ℕ} {A : MvPolynomial σ ℤ}
     (haa : a ≤ a') (h : InRothPolySet a r A) : InRothPolySet a' r A :=
