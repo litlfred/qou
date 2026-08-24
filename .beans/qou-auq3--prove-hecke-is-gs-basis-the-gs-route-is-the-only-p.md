@@ -5543,7 +5543,56 @@ four times in this bean. Head letters of *every* monomially-reachable word:
 | 4 | `{2, 4}` | `{3}` |
 | 5 | `{3, 5}` | `{4}` |
 | 6 | `{4, 6}` | `{5}` |
+| 7 | `{5, 7}` | `{6}` |
+| 8 | `{6, 8}` | `{7}` |
 
-Exactly `{i−2, i}` against `{i−1}`, disjoint throughout. That is also an
+Exactly `{i−2, i}` against `{i−1}`, disjoint throughout — extended to `i = 8`,
+where the closures are 2058 and 2055 words and still wholly disjoint. That is also an
 independent confirmation of the measured closure-disjointness, and it is the
 invariant the joining should thread — not length.
+
+## §4bt — `CtxAvoids`: the context abstraction the joining needs (PR pending)
+
+The joining needs every chain to run with the *other* side's term sitting
+alongside, which means `monicStep`'s side condition stops being vacuous at every
+step of every chain. Threading a bespoke condition through ~400 lines would have
+been the obvious way and would have been miserable. One definition avoids it:
+
+```lean
+def CtxAvoids (L) (a b) : Prop :=
+  ∀ w ∈ L.map Prod.fst, ∀ Z, w ≠ a ++ Z ++ b
+```
+
+Every intermediate of a chain that rewrites strictly inside `a … b` **has that
+shape**, so this single hypothesis discharges all of them. Two lemmas make it
+compositional — `.extend` (grow `a` on the right, for a recursive call that
+moves letters into the prefix) and `.extendRight` (grow `b` on the left) — and
+`.ne` turns it into the `q ≠ W` a step lemma wants, given `W = a ++ Z ++ b`.
+
+`ctxAvoids_nil` says the empty context avoids everything, so **the original
+single-term lemmas fall out as one-liners** rather than being duplicated:
+
+```lean
+theorem doubleDesc_sweep … := doubleDesc_sweep' … [] [] a b c hc (ctxAvoids_nil a b)
+```
+
+Generalised so far, each compiling first try: `gen_past_descWord'`,
+`doubleDesc_sweep'`, `pairList_unshuffle'` — the three **recursive** chains,
+which were the ones I expected to fight. The `∀ Z` shape is what made them
+cheap: a recursive call that moves `[σ_m]` from the middle into the prefix is
+`hctx.extend [σ_m]`, one term.
+
+### Why `∀ Z` and not a head-letter invariant
+
+I considered threading "every context word has a different first letter", which
+is what the *top-level* discharge will use (§4bs measured it). It is the wrong
+shape for the *interior*: each lemma would then have to prove its intermediates'
+heads, which is a second invariant to carry. `∀ Z, w ≠ a ++ Z ++ b` needs no
+proof obligation inside the chain at all — the shape is structural.
+
+### Remaining
+
+The A-side and B-side assemblies (non-recursive, so the same treatment should be
+quicker), then the joining itself: build the canonical composition, compute its
+S-polynomial, and run the two chains against each other, discharging `CtxAvoids`
+at top level from the head-letter separation.
