@@ -201,10 +201,61 @@ def _fdim(lam):
 # ══════════════════════════════════════════════════════════════════════
 # §2  y_λ-normalised Markov trace of the atom braid, projected onto e_A[h_3]
 # ══════════════════════════════════════════════════════════════════════
+class ExactCharacterInfeasible(RuntimeError):
+    """Raised when χ_λ cannot be computed at the required precision.
+
+    A guard, not a crash. See `_chi` for the measurement behind it.
+    """
+
+
 def _chi(lam, word, n_gens):
+    """χ_λ(β_K) at full precision -- or an explicit refusal.
+
+    THIS PROBE CANNOT CURRENTLY RUN, AND THE REASON IS NOT A BUG TO PATCH
+    AROUND. `atom_braid_word_3A` carries exact `mpf` offsets by default
+    (`allow_float64=False`), and `mass_at_3A_proper.chi_lambda_of_word`
+    multiplies them into `scipy.sparse` matrices, which reject `dtype
+    object` -- so the two halves are precision-incompatible. Measured on
+    the A=4 word: 25 of its 47 crossings carry an `mpf` coefficient.
+
+    The exact route EXISTS -- `hoefsmit_mpmath.chi_lambda_of_word_mp`, dense
+    mpmath, same accumulation order -- and is correct. It is also, measured
+    rather than estimated, unaffordable here:
+
+        dim = 132   ((6,6), the SMALLEST of the ten irreps)   65.7 s
+        dim = 4158  ((5,3,3,1), the largest)   ~571 h by cubic scaling
+
+    and that is one irrep of ten, for one isotope.
+
+    THE TEMPTING FIX IS BANNED. Casting `float(c)` makes this exit 0 in
+    0.01 s and produce numbers that look entirely plausible. It is exactly
+    the shortcut AGENTS.md §"PROBES ARE NOT EXEMPT" was made STRICT to stop,
+    and "note it as a limitation and ship" is named there as the wrong move.
+    Recording the honest state of the measurement, since it is easy to
+    misread in both directions: against the 50-dps reference at dim=132 the
+    float64 character agrees to 15 digits, i.e. this word is well conditioned
+    and float64 loses nothing to cancellation THERE. That is evidence about
+    conditioning at the smallest irrep; it is not permission, and it was not
+    tested at dim=4158 where the 47-factor product is far denser.
+
+    The real fix is neither cast nor dense-mpmath: the seminormal
+    `sigma_i` carry at most 2 nonzeros per row, so a SPARSE mpf product --
+    or a trace-only row-propagation -- should recover orders of magnitude
+    while staying exact. That is a compute-engineering task with its own
+    bean, not a line in a crash fix.
+    """
     sig, dim, _ = build_seminormal_matrices(tuple(lam))
     if dim == 0:
         return mp.mpf(0)
+    if any(isinstance(c, mp.mpf) or isinstance(d, mp.mpf) for c, d, _g in word):
+        raise ExactCharacterInfeasible(
+            f"chi_lambda for {tuple(lam)} (dim={dim}): the braid word carries "
+            f"exact mpf offsets, which scipy.sparse cannot hold (dtype "
+            f"object), and the dense mpmath route costs ~571 h at dim=4158. "
+            f"Needs a sparse-mpf or trace-only character product. Refusing "
+            f"rather than casting to float64 (AGENTS.md: probes are not "
+            f"exempt)."
+        )
     return mp.mpf(m3.chi_lambda_of_word(sig, dim, word, n_gens))
 
 
