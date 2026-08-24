@@ -26,7 +26,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "0.06"
+      "elapsed_sec": "0.05"
     },
     {
       "atom": "neutron",
@@ -77,7 +77,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "2.00"
+      "elapsed_sec": "1.93"
     },
     {
       "atom": "T",
@@ -94,7 +94,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "16.14"
+      "elapsed_sec": "15.62"
     },
     {
       "atom": "3He",
@@ -111,7 +111,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "9.45"
+      "elapsed_sec": "9.30"
     },
     {
       "atom": "D",
@@ -128,7 +128,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "1.59"
+      "elapsed_sec": "1.54"
     },
     {
       "atom": "T",
@@ -145,7 +145,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "2.46"
+      "elapsed_sec": "2.56"
     },
     {
       "atom": "3He",
@@ -162,7 +162,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "2.46"
+      "elapsed_sec": "2.18"
     }
   ],
   "assertions": [
@@ -193,13 +193,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "3e8218e348d6",
-  "scriptCommitSha": "122b020d8470de168790caa653459a4f44d32fdf",
-  "commitSha": "122b020d8470de168790caa653459a4f44d32fdf",
+  "scriptHash": "ee93fe5d93cc",
+  "scriptCommitSha": "bc3d27513263f8bd5a7464721845e08c0684a274",
+  "commitSha": "bc3d27513263f8bd5a7464721845e08c0684a274",
   "engine": "sympy",
-  "computedAt": "2026-08-24T06:24:51.276626+00:00",
+  "computedAt": "2026-08-24T06:45:29.289987+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/d_frame_cyclotomic_exponent_probe.py"
 }

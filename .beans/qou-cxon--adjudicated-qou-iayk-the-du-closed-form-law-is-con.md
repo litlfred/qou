@@ -239,3 +239,62 @@ strands). The difference A-1 is the linking that fuses A closures into one.
 
 Producer now covers 9 configurations, 5/5 assertions, including
 `cancellation_survives_interface_off` as the separation test.
+
+
+## 2026-08-24 (final) — Q2's residue CLOSED: the rule is co-location
+
+Producer: `computations/markov/d_frame_neutron_cyclotomic_rule_probe.py`
+(12 configurations, 5/5 assertions).
+
+The residue was: why does a lone NEUTRON's D-frame denominator carry no
+`(q^2+1)` while a lone PROTON's carries 2? Both are 3-strand, both `m = 2`.
+
+**The rule: cancellation fires iff SOME GENERATOR carries >= 2 averaged
+crossings.**
+
+    g0avg g1avg | cancelled
+        1     1 |     0        <- proton (uud)
+        2     0 |     2        <- neutron (udd)
+        1     0 |     0
+        0     0 |     0
+        0     2 |     2
+        3     0 |     2
+        2     1 |     2
+
+12/12. Not gen0-specific — two averaged on gen1 behaves identically. And it
+SATURATES: three on one generator still cancels 2, not 3.
+
+**Composition does NOT determine it.** Two count-matched controls, opposite
+directions, and they are the crux:
+
+* a proton word with ONE `zero -> full` has EXACTLY the neutron's composition
+  (5 zero, 2 avg, 4 full) and still cancels **0**;
+* a neutron word with ONE `full -> zero` has EXACTLY the proton's composition
+  (6 zero, 2 avg, 3 full) and still cancels **2**.
+
+**I was wrong twice on this sub-question before settling it.** First I said
+"same averaged count, different placement" — right instinct, but I had not
+checked the other counts. Then I corrected myself to "not placement; the
+neutron trades one identity for one full crossing" — which the count-matched
+controls refute. The variants settle it: placement, specifically CO-LOCATION
+on a single generator. Recording both wrong turns because the first correction
+was confidently stated and was itself the error.
+
+**Physical content.** The neutron (udd) puts both of its averaged ud-couplings
+on one generator; the proton (uud) spreads its two across both. Both nucleons
+have exactly TWO averaged couplings — the p/n asymmetry is where they sit, not
+how many there are.
+
+**Interpretation, flagged as such.** Two averaged crossings on the same
+generator multiply to a quadratic in that generator, which the Hecke relation
+`sigma^2 = h*sigma + 1` collapses; two on different generators never meet
+under that relation. That reading is NOT proved here — the falsifiable content
+is the `max(g0avg, g1avg) >= 2` criterion and its saturation.
+
+## Status of qou-cxon's two sub-questions
+
+* **Q1 (prefactor 6)** — LOCALISED to the single inter-nucleon interface
+  crossing; deriving 12 from `delta(q)` remains OPEN.
+* **Q2 (cyclotomic exponent)** — ANSWERED (`3A-1` minus 2 per neutron, by
+  cancellation), and its residue CLOSED (co-location rule, 12/12). What is
+  not proved is the Hecke-collapse interpretation of why co-location does it.

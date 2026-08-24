@@ -1,0 +1,222 @@
+{
+  "computation": "d-frame-neutron-cyclotomic-rule",
+  "description": "The per-neutron (q^2+1)^2 cancellation in the convention-D atomic Markov trace fires iff SOME GENERATOR carries two or more averaged crossings. Twelve 3-strand configurations; the rule holds on all twelve. Composition does not determine the outcome: a proton word with the neutron's exact template composition still cancels 0, and a neutron word with the proton's still cancels 2. Not gen0-specific (two averaged on gen1 behaves identically) and it saturates (three on one generator still cancels 2). The physical content is isospin placement: the neutron (udd) puts both averaged ud-couplings on one generator, the proton (uud) spreads its two across both -- both nucleons have exactly two. The Hecke-collapse reading in the docstring is an INTERPRETATION; the falsifiable content is the max(g0avg,g1avg) >= 2 criterion and its saturation. Scope-(a): these twelve configurations under bring_color_weighted at convention D.",
+  "convention": {
+    "markov_z": "q**3/(q**2 + 1)   (convention D, canonical per R1)",
+    "pn_convention": "bring_color_weighted (canonical per R3)",
+    "anchor": "NONE enters: every measured number is a polynomial degree or a factor multiplicity. The numeric d templates exist only so crossing_from_cd can recognise which template a crossing is; it substitutes the symbolic form. Top-level q0Anchor/q0Value are the ambient WitnessBuilder stamp."
+  },
+  "reference_blocks": [
+    "def:markov-trace",
+    "def:hecke-quadratic-relation",
+    "prop:atomic-braid-decomposition"
+  ],
+  "variants": [
+    {
+      "variant": "proton (real word)",
+      "gen0_avg": 1,
+      "gen1_avg": 1,
+      "zero": 6,
+      "avg": 2,
+      "full": 3,
+      "z_count_m": 2,
+      "phi_power": 2,
+      "cancelled": 0,
+      "rule_prediction": 0,
+      "rule_holds": true,
+      "elapsed_sec": "0.03"
+    },
+    {
+      "variant": "neutron (real word)",
+      "gen0_avg": 2,
+      "gen1_avg": 0,
+      "zero": 5,
+      "avg": 2,
+      "full": 4,
+      "z_count_m": 2,
+      "phi_power": 0,
+      "cancelled": 2,
+      "rule_prediction": 2,
+      "rule_holds": true,
+      "elapsed_sec": "0.02"
+    },
+    {
+      "variant": "proton + gen1 avg->full",
+      "gen0_avg": 1,
+      "gen1_avg": 0,
+      "zero": 6,
+      "avg": 1,
+      "full": 4,
+      "z_count_m": 2,
+      "phi_power": 2,
+      "cancelled": 0,
+      "rule_prediction": 0,
+      "rule_holds": true,
+      "elapsed_sec": "0.08"
+    },
+    {
+      "variant": "proton + one gen0 zero->full",
+      "gen0_avg": 1,
+      "gen1_avg": 1,
+      "zero": 5,
+      "avg": 2,
+      "full": 4,
+      "z_count_m": 2,
+      "phi_power": 2,
+      "cancelled": 0,
+      "rule_prediction": 0,
+      "rule_holds": true,
+      "elapsed_sec": "0.07"
+    },
+    {
+      "variant": "neutron - one gen1 full->zero",
+      "gen0_avg": 2,
+      "gen1_avg": 0,
+      "zero": 6,
+      "avg": 2,
+      "full": 3,
+      "z_count_m": 2,
+      "phi_power": 0,
+      "cancelled": 2,
+      "rule_prediction": 2,
+      "rule_holds": true,
+      "elapsed_sec": "0.04"
+    },
+    {
+      "variant": "proton, avg moved gen1->gen0",
+      "gen0_avg": 2,
+      "gen1_avg": 0,
+      "zero": 6,
+      "avg": 2,
+      "full": 3,
+      "z_count_m": 2,
+      "phi_power": 0,
+      "cancelled": 2,
+      "rule_prediction": 2,
+      "rule_holds": true,
+      "elapsed_sec": "0.02"
+    },
+    {
+      "variant": "2 avg on gen1",
+      "gen0_avg": 0,
+      "gen1_avg": 2,
+      "zero": 7,
+      "avg": 2,
+      "full": 2,
+      "z_count_m": 2,
+      "phi_power": 0,
+      "cancelled": 2,
+      "rule_prediction": 2,
+      "rule_holds": true,
+      "elapsed_sec": "0.09"
+    },
+    {
+      "variant": "2 avg on gen0",
+      "gen0_avg": 2,
+      "gen1_avg": 0,
+      "zero": 5,
+      "avg": 2,
+      "full": 4,
+      "z_count_m": 2,
+      "phi_power": 0,
+      "cancelled": 2,
+      "rule_prediction": 2,
+      "rule_holds": true,
+      "elapsed_sec": "0.03"
+    },
+    {
+      "variant": "1 avg each",
+      "gen0_avg": 1,
+      "gen1_avg": 1,
+      "zero": 6,
+      "avg": 2,
+      "full": 3,
+      "z_count_m": 2,
+      "phi_power": 2,
+      "cancelled": 0,
+      "rule_prediction": 0,
+      "rule_holds": true,
+      "elapsed_sec": "0.03"
+    },
+    {
+      "variant": "0 avg anywhere",
+      "gen0_avg": 0,
+      "gen1_avg": 0,
+      "zero": 7,
+      "avg": 0,
+      "full": 4,
+      "z_count_m": 2,
+      "phi_power": 2,
+      "cancelled": 0,
+      "rule_prediction": 0,
+      "rule_holds": true,
+      "elapsed_sec": "0.11"
+    },
+    {
+      "variant": "3 avg on gen0",
+      "gen0_avg": 3,
+      "gen1_avg": 0,
+      "zero": 4,
+      "avg": 3,
+      "full": 4,
+      "z_count_m": 2,
+      "phi_power": 0,
+      "cancelled": 2,
+      "rule_prediction": 2,
+      "rule_holds": true,
+      "elapsed_sec": "0.10"
+    },
+    {
+      "variant": "2 avg gen0 + 1 gen1",
+      "gen0_avg": 2,
+      "gen1_avg": 1,
+      "zero": 5,
+      "avg": 3,
+      "full": 3,
+      "z_count_m": 2,
+      "phi_power": 0,
+      "cancelled": 2,
+      "rule_prediction": 2,
+      "rule_holds": true,
+      "elapsed_sec": "0.05"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "real_words_reproduce_production_builder",
+      "passed": true,
+      "note": "the hand-built proton/neutron template lists give the same measurement as atom_braid_word_3A(Z, N)"
+    },
+    {
+      "name": "rule_holds_on_all_twelve",
+      "passed": true,
+      "note": "cancellation = 2 iff max(gen0_avg, gen1_avg) >= 2, else 0"
+    },
+    {
+      "name": "composition_does_not_determine_outcome",
+      "passed": true,
+      "note": "two count-matched controls in OPPOSITE directions: a proton word with the neutron's exact composition still cancels 0, and a neutron word with the proton's exact composition still cancels 2"
+    },
+    {
+      "name": "not_gen0_specific",
+      "passed": true,
+      "note": "two averaged on gen1 cancels exactly as two on gen0"
+    },
+    {
+      "name": "cancellation_saturates_at_two",
+      "passed": true,
+      "note": "three averaged on one generator still cancels 2, not 3"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "48a866713339",
+  "scriptCommitSha": "unknown",
+  "commitSha": "bc3d27513263f8bd5a7464721845e08c0684a274",
+  "engine": "sympy",
+  "computedAt": "2026-08-24T06:45:31.125298+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/d_frame_neutron_cyclotomic_rule_probe.py"
+}

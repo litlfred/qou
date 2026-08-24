@@ -23,7 +23,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "1",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "0.35"
+      "elapsed_sec": "0.22"
     },
     {
       "atom": "neutron",
@@ -51,7 +51,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "12",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "0.96"
+      "elapsed_sec": "0.97"
     },
     {
       "atom": "T",
@@ -65,7 +65,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "12",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "9.29"
+      "elapsed_sec": "9.15"
     },
     {
       "atom": "3He",
@@ -79,7 +79,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "12",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "4.40"
+      "elapsed_sec": "4.41"
     },
     {
       "atom": "4He",
@@ -93,7 +93,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "12",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "46.23"
+      "elapsed_sec": "43.53"
     }
   ],
   "assertions": [
@@ -124,13 +124,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "46e0614ec19e",
-  "scriptCommitSha": "unknown",
-  "commitSha": "3e2a0b4b9c2dd493890c1398c73464a01cfe111f",
+  "scriptHash": "735da63e1ab5",
+  "scriptCommitSha": "9639f1c49c672481a9f8611b9cf221d16127283e",
+  "commitSha": "bc3d27513263f8bd5a7464721845e08c0684a274",
   "engine": "sympy",
-  "computedAt": "2026-08-24T05:56:36.669410+00:00",
+  "computedAt": "2026-08-24T06:44:51.124708+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/d_frame_prefactor_localisation_probe.py"
 }
