@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T16:48:46Z
+updated_at: 2026-08-24T16:56:13Z
 ---
 
 ## Landed — PR #5645
@@ -675,3 +675,45 @@ All four are instances of "Q is not a root of unity", so the clean move is
 probably to package that once as a hypothesis class or a single
 `IsGeneric Q r` predicate rather than threading four separate non-vanishing
 conditions through every statement. Worth deciding before writing them.
+
+
+## HEADLINE LANDED — general-r branching is one theorem
+
+Commits `b9556fafb`, `a260d2856`.
+
+    sum_schurPrincipal_addCellOrSelf :
+      sum_{a<r} s_{mu + box at row a}(1,Q,...,Q^{r-1})
+        = (1 + Q + ... + Q^{r-1}) * s_mu(1,Q,...,Q^{r-1})
+
+for `QBeta.WenzlWeight.schurPrincipal` itself, at every level, sorry-free and
+axiom-clean. This is what #5575 proves at r=2 via `schurPrincipal_twoRow`'s
+telescoping closed form.
+
+**One hypothesis.** `hgen : forall k : Z, k != 0 -> Q^k != 1` — the same
+genericity `schurPrincipal_eq_zero_iff` already carries. The bean's previous
+note listed four separate non-vanishing conditions plus a row-count bound;
+`BranchingGenericity.lean` derives all of them from `hgen`, so nothing extra
+appears in the signature. Packaging first, as that note recommended, was the
+right call — writing them inline would have put five conditions on every
+downstream statement.
+
+**The summand is total**, `addCellOrSelf` guarded by the decidable
+`IsAddableCell`, rather than indexed by addability proofs. That is what
+`qratio_prod_eq_zero_of_not_addable` buys: on a row that cannot take a box the
+q-ratio is *already* zero, so the guarded sum and a sum over addable rows
+agree. The r=2 chain needed `rowLen_two_addCell_row2` plus a three-term
+expansion for the same fact.
+
+### Recurring Lean trap, third occurrence
+
+`dsimp only` before `rw` whenever the goal came from instantiating a
+`forall`-quantified hypothesis with a lambda — the redex blocks the rewrite.
+Hit in `betaPairProd_addCell`, `qratio_prod_eq_rowColProd` and again here.
+
+### Still open (unchanged, and not blocking anything)
+
+* **normalisation** `sum_{|mu|=n} f^mu w_mu = 1` at general r — branching is
+  its inductive step and is now available; the r=2 proof is
+  `MarkovNormalisation`.
+* **the trace instance** at general r — `markovTrace_unique` is already
+  generic in the coefficient ring; only the weight system is r-specific.
