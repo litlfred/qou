@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T16:10:31Z
+updated_at: 2026-08-24T16:21:23Z
 ---
 
 ## Landed — PR #5645
@@ -482,3 +482,60 @@ requires `IsAddableCell`, so the case cannot arise at all.
 
 Script: `ratio_check.py` / `illegal_check.py` in the session scratchpad
 (throwaway, exact symbolic in `Q`, no floats).
+
+
+## The closed form is proved — and the last step needs NO monomials
+
+Commits `a7f697c5e` and `552c8397f`.
+
+    schurPrincipal_mul_const :
+      schurPrincipal r Q mu * prod_{i<r} descFactF (1-Q^n) (r-1-i)
+        = Q^{nPart mu} * prod_{i<j<r} (1 - Q^{beta_i - beta_j})
+
+Division-free apart from `hD` (hook product nonzero -- the same genericity
+`schurPrincipal_eq_zero_iff` already carries). The left constant does not
+depend on `mu`, so in a ratio it cancels outright.
+
+Getting there needed both sides on one `beta`: the hook side indexes a **List**
+product over `range |l|` and measures beta against `|l|`; the content side a
+**Finset** product over `range r`, measured against `r`. `betaR r mu i =
+mu_i + (r-1-i)` is the common form; `betaNum_paddedRowLens` identifies it with
+the List-side `betaNum` on the zero-padded `rowLens`. Then `hookSide_betaR` and
+`contentSide_betaR` both land on `prod_{i<r} descFactF f (betaR r mu i)` -- the
+SAME product -- and `contentProd_mul_descFactF_eq` equates them.
+
+Also landed: `betaR_lt` (beta strictly decreases) and `nPart_addCell`.
+
+### CORRECTION to my own plan above
+
+I recorded the final step as "monomial bookkeeping" -- the `(-1)^{C(r,2)}` and
+`prod_{i<j} x_i` from converting `prod(1-Q^{beta_i-beta_j})` into
+`vandPairProd` -- and verified it symbolically before trusting it. **That
+verification stands, but the conversion is not needed.** Comparing
+`P(beta')/P(beta)` against the q-ratio directly, per pair with
+`x_i = Q^{beta_i}`:
+
+* `j > a` (`beta_j < beta_a`): `(Q x_a - x_j)/(x_a - x_j)` becomes
+  `(1 - Q^{beta_a+1-beta_j})/(1 - Q^{beta_a-beta_j})` after cancelling
+  `Q^{beta_j}` -- an exact match, no leftover factor.
+* `j < a` (`beta_j > beta_a`): the same cancellation of `Q^{beta_a}` leaves
+  one `Q`.
+
+So the q-ratio is `Q^{#{j<a}} = Q^a` times `P(beta')/P(beta)`, and `Q^a` is
+exactly `nPart_addCell`. Since `sum_eq_bracket_mul_of_qratio_scaling` wants the
+**q-ratio**, not `vandPairProd`, this route reaches it without ever building
+the Vandermonde -- strictly less work than the plan recorded above.
+
+### All that remains
+
+1. The two per-pair identities above (`j > a`, `j < a`), each a `Q`-power
+   cancellation under `betaR_lt`.
+2. `P(beta')` vs `P(beta)`: only pairs involving `a` change; split
+   `prod_{i<j}` at `a` as `VandermondeUpdateRatio.prod_erase_range_split`
+   already does for the other product.
+3. `betaR r (addCell mu s) i = betaR r mu i + [i = s.1]`, immediate from
+   `rowLen_addCell`.
+4. Divide two instances of `schurPrincipal_mul_const`, discharge `hw`.
+
+`vandPairProd` / `sum_vandPairProd_scale` remain proved and correct; they are
+simply not on the shortest path to `hw`.
