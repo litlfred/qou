@@ -97,6 +97,29 @@ def a_K_closed(A: int) -> float:
     return float("nan")
 
 
+
+def _dual_sum_companions(per_partition) -> dict:
+    """50-dps companions for the two `u_lambda_star` sums, when available."""
+    if not any("u_lambda_star_str" in r for r in per_partition):
+        return {}
+    with mp.workdps(50):
+        chi = mp.mpf(0)
+        sc = mp.mpf(0)
+        for r in per_partition:
+            s = r.get("u_lambda_star_str")
+            if s is None or not r.get("is_active"):
+                continue
+            v = mp.mpf(s)
+            if r.get("self_conjugate"):
+                sc += v
+            else:
+                chi += v
+        return {
+            "chirality_dual_sum_str": mp.nstr(chi, 50),
+            "self_conjugate_dual_sum_str": mp.nstr(sc, 50),
+        }
+
+
 def solve_atom_lp(atom: str) -> dict:
     """Build + solve the per-atom operator-selection LP, return full witness."""
     Z, N, n, fname = ATOM_CHI[atom]
@@ -245,6 +268,11 @@ def solve_atom_lp(atom: str) -> dict:
         "u0_star": u0_star,
         "chirality_dual_sum": chirality_dual_sum,
         "self_conjugate_dual_sum": sc_dual_sum,
+        # Both sums are over `u_lambda_star`, which carries a 50-dps
+        # companion per partition, so the sum has one too — summing the f64
+        # view and recording only that would drop the digits at the last step
+        # for a quantity whose inputs still have them. Bean `qou/ftuv`.
+        **_dual_sum_companions(per_partition),
         "a_K_via_lp_dual": aK_via_dual,
         "a_K_dual_status": aK_dual_status,
         "a_K_C_closed": aK_C,

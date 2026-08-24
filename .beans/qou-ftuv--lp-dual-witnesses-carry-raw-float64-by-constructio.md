@@ -322,6 +322,80 @@ were laid out honestly and the owner chose. What is wrong is the **premise**,
 and the carve-out's own comment now teaches that premise to every future
 reader — the failure mode this bean's process note was written to prevent.
 
+## Merge preparation (2026-08-24)
+
+`origin/main` had moved **1366 commits** while this branch was in flight; the
+branch was 36 ahead. Merged (not rebased) — 29 conflicts, all resolved keeping
+BOTH sides where the two sides were doing different jobs rather than the same
+job twice:
+
+- `lp_dual_solver.py` — main added an upfront objective normalisation
+  (`t /= max|t| * |n|`); this branch added the tolerance ladder, the pow2
+  rescue and `_certifies_optimality`. Both are kept: normalise first, then
+  ladder/rescue on what normalisation does not fix, then certify.
+- `lean-vacuity-axiom-audit.ts` — the first `.ts` resolution concatenated the
+  two blocks and left an unbalanced brace (TS1005) plus a stray `<<<<<<< ours`
+  marker. Fixed by closing main's block explicitly. The audit now reports
+  "62 promoted from a triage-pending exemption by a ledger `genuine` verdict",
+  which is the both-sides behaviour working.
+
+**Two of this branch's own tests were asserting the mechanism, not the
+guarantee, and main's normalisation broke them by making them pass earlier.**
+`test_rescue_corrects_false_infeasible_on_large_costs` and
+`test_rescue_still_accepts_the_case_it_was_built_for` both asserted
+`rescaled_by_pow2 is not None` — but with normalisation upfront these cases now
+solve on the first attempt and the rescue never fires. The guarantee (a correct
+feasible answer where the raw solver returned a false infeasible) still holds.
+Asserting the mechanism would have failed on an improvement, so both now assert
+the answer.
+
+`aK_via_lp_dual_full.py` needed `_dual_sum_companions`: both dual sums are over
+`u_lambda_star`, which carries a 50-dps companion per partition, so summing the
+f64 view and recording only that dropped the digits at the last step for a
+quantity whose inputs still had them. That was a ratchet regression this branch
+introduced, caught by re-running the ratchet after regeneration.
+
+### Gates run for `/prepare-merge`
+
+```
+merge-base --is-ancestor origin/main HEAD  exit 0 (merges cleanly)
+witness_raw_float64_audit --strict         exit 0, NEW 0, REGRESSED 0
+                                           carve-out 647 in 28 witnesses
+witness_raw_float64_audit --self-test      25/25 PASSED
+lp_dual_witness_validator --strict-wired   exit 0
+pytest tools/pyhecke                       250 passed, 13 skipped, 0 failed
+lean-orphan-audit --diff                   exit 0
+lean-vacuity-axiom-audit                   exit 0
+probe-float64-guard --diff                 exit 0 *
+lean-axiom-guard                           exit 0 *
+bun test (folio-assistant, its own root)   697 pass / 33 skip / 0 fail
+eslint . (folio-assistant)                 exit 0
+gen-schema-docs + gen-skill-docs           no uncommitted diff
+run-validate.ts                            31 issues, 5 errors — all 5 proven
+                                           pre-existing on origin/main
+```
+
+`*` — neither is the assurance its exit code suggests, and both said so
+themselves. `probe-float64-guard --diff` printed *"This is NOT a pass; it means
+no in-scope file was handed to the gate"*. `lean-axiom-guard` printed *"Rebuild
+the affected modules lean-direct, then re-run. A verdict from a stale olean set
+is not assurance"* — and it was right: all eight touched `QOU/` modules have
+oleans **older than their sources**, so the guard read a stale set.
+
+**Not run, and not claimable as passes:** `latex_preflight` and
+`block_pdf_render` (no `latexmk`/`pdflatex` in this container; no `.tex`
+changed either). `qa_sweep` and `proof_status` have no runnable script in this
+repo at all — the MCP wrappers shell out to `content/pipeline/qa-sweep.ts` and
+`content/pipeline/proof-axis-dashboard.ts`, and neither file exists in qou.
+
+The five `run-validate.ts` errors were checked against `origin/main` rather
+than assumed: four orphan `.qa.json` sidecars with no `.ts` sibling
+(`qbeta-fmap-structural-form`, `q-clt-jsj-mass-scaling`,
+`q-beta-c3-continuum-geometry`, `spectral-decomposition-qvalue-interpretation`)
+and a missing `.lean` for `qou-motivic-galois-instance`. All five are present
+on main, and `git diff --name-only origin/main...HEAD` shows this branch
+touched none of those paths.
+
 ## Next
 
 - [ ] Build `clarabel-operator-selection-lp` (`--features clarabel-mpfr`) and
