@@ -2813,3 +2813,48 @@ now it can be asserted because §14 has been read.
 ⚠ Necessary, not sufficient. A rational `q` with `S/rr ≤ q² ≤ Ψ` exists whenever
 `S/rr < Ψ` — rational squares are dense — but at equality only if `Ψ` is a rational square. The
 strict form is what a caller should establish; that density argument is **not** proved.
+
+### `Γ_m`'s missing clauses reinstated — and the numeric condition, fully explicit
+
+`RothGamma` now bundles all three of §11's clauses, and `RothLemmaUniform` carries it in place
+of `RothGrowth`. The arc had carried only clause 1 for its whole life, which made every
+statement here **stronger** than the source's — and a theorem stronger than the one the source
+proves is one nothing in the source will discharge.
+
+Clause 2, `s_h·log K_h ≥ s₁·log K₁`, clears its logarithms to `K₁^{s₁} ≤ K_h^{s_h}` — which is
+**exactly** Bombieri–Gubler 6.3.4's `qⱼ^{dⱼ} ≥ q₁^{d₁}`. The module header had been listing
+that as a textbook condition this variant does *not* carry. Two independent sources agreeing on
+a clause is better evidence than either reading alone.
+
+Clause 3's exponent `ω(m−1)m(2m+1)` is rational, so `rothDenomFloor` rounds it **up**. That
+makes the clause stronger than the source's and every statement carrying it weaker — the safe
+direction for a hypothesis being reinstated, since it cannot let a claim here outrun §14's.
+
+At `m = 1` the growth clause is vacuous and the other two follow from the standing `2 ≤ qⱼ`
+(`rothDenomFloor_one` gives floor = 1), so `rothLemmaUniform_one` still holds for every `ω` and
+both witnesses discharge `Γ_m` outright. `rothGamma_scale` is the companion to
+`rothGrowth_scale`; clause 2 survives rescaling because raising `K₁^{s₁} ≤ K_h^{s_h}` to the
+`r`-th power is monotone, clause 3 because it does not mention `d`.
+
+### ⚠ Where `Γ_m` is finally *needed*
+
+Chaining `index_le_of_rothGrowth_of_factor_bound`'s `(d₂+1)·Φ ≤ q²·D₂` with the junction's
+`q² ≤ Ψ`, and substituting §14's `Ψ = Θ_{m−1} + t = Φ + t`, the whole condition rearranges to
+
+    (d₂ + 1 − D₂)·Φ ≤ t·D₂,     which at D₂ = d₂ reads    Φ ≤ t·d₂
+
+(`factor_bound_le_of_split_degree`, `factor_bound_le_of_split_degree_eq`). That is a
+**largeness requirement on the split-off degree**, not a bookkeeping identity: `Φ ≈ Θ_{m−1} ≤
+c_{m−1}·t^{2^{−(m−2)}}`, which for small `t` is much bigger than `t`, so `d₂` must be at least
+`Φ/t`.
+
+⚠ This is the first place in the arc where clauses 2 and 3 have to be used — which is exactly
+why they went missing for so long. Nothing earlier needed them, so nothing earlier noticed.
+That is the same failure mode as corrections 9 and 10 seen from the other side: there, a
+hypothesis nobody had to discharge turned out to be false; here, a hypothesis nobody had to
+*use* turned out to be absent.
+
+Verification: whole-library `lake build QOU` — exit 0, 5770 jobs, no errors, zero warnings in
+any Roth-arc module (722 corpus warnings, all pre-existing elsewhere). `RothLemmaStatement` and
+`RothInductionHypothesis` each rebuilt with `.olean` deleted. All twelve new and re-signed
+declarations `#print axioms`-clean.

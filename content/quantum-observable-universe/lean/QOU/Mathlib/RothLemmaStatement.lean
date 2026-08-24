@@ -497,6 +497,33 @@ theorem le_mul_of_max_form_squeeze {S rr q Ψ : ℚ} (hrr : 0 ≤ rr)
     (hSq : S ≤ q ^ 2 * rr) (hqΨ : q ^ 2 ≤ Ψ) : S ≤ Ψ * rr := by
   nlinarith
 
+/-- **What the junction's condition becomes at the call site** — the numeric requirement, made
+fully explicit.
+
+`RothOperatorFamily.index_le_of_rothGrowth_of_factor_bound` carries §13's hypothesis in the
+form `(d₂ + 1)·Φ ≤ q²·D₂`, where `Φ` bounds each factor's index, `d₂` is the split-off
+variable's degree and `D₂ ≤ d₂` a floor for it.  `rothBound_of_max_form` adds `q² ≤ Ψ`.
+Chaining them through `le_mul_of_max_form_squeeze` gives `(d₂ + 1)·Φ ≤ Ψ·D₂`, and with §14's
+`Ψ = Θ_{m−1} + t = Φ + t` that rearranges to exactly the hypothesis below.
+
+⚠ **It is a largeness requirement on the split-off degree, not a bookkeeping identity.**  At
+the best case `D₂ = d₂` it reads `Φ ≤ t·d₂` (`factor_bound_le_of_split_degree_eq`), and
+`Φ ≈ Θ_{m−1} ≤ c_{m−1}·t^{2^{−(m−2)}}` is for small `t` *much* larger than `t` — so `d₂` must be
+at least `Φ/t`.  That is what `Γ_m`'s clauses 2 and 3 are for, and this is the point where they
+finally have to be used: nothing earlier in the arc needed them, which is exactly why they went
+missing for so long.
+
+⚠ Neither positivity of `Φ` nor of `D₂` is a hypothesis — the rearrangement is linear in the
+monomials.  Same reason `0 ≤ u` came off `rothConstant_step`. -/
+theorem factor_bound_le_of_split_degree {Φ t D₂ : ℚ} {d₂ : ℕ}
+    (h : (((d₂ : ℚ) + 1) - D₂) * Φ ≤ t * D₂) :
+    ((d₂ : ℚ) + 1) * Φ ≤ (Φ + t) * D₂ := by nlinarith
+
+/-- **The best case `D₂ = d₂`**, where the requirement is simply `Φ ≤ t·d₂`. -/
+theorem factor_bound_le_of_split_degree_eq {Φ t : ℚ} {d₂ : ℕ} (h : Φ ≤ t * (d₂ : ℚ)) :
+    ((d₂ : ℚ) + 1) * Φ ≤ (Φ + t) * (d₂ : ℚ) :=
+  factor_bound_le_of_split_degree (by nlinarith)
+
 /-- **Non-vacuity of the junction.**  `m = 1`, `s = 1/4`, `Ψ = 1/8`, `t = 1/16`, `A = q = 1/4`,
 `θ = 1/16 + 1/2 = 9/16`; the conclusion is `RothBound 2 (1/16) (9/16)`, a real bound. -/
 theorem rothBound_of_max_form_witness : RothBound 2 ((1 / 4 : ℚ) ^ (2 ^ 1)) (9 / 16) :=
