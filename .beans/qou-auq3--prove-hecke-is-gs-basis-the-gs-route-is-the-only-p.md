@@ -4961,3 +4961,52 @@ Recorded now so the next pass does not re-derive it.
 | `BS ×` braid word, both directions | §4bh |
 | `BS × FC` | §4bi |
 | `FC × ?` (whole row) | §4bj |
+
+## §4bk — `YB × FC`, and the `? × FC` row closed (PR pending)
+
+The one cell §4bj measured but did not cross. Because that measurement was
+*recorded* rather than left implicit, this pass spent nothing re-deriving it:
+the two-way split went straight into the proof.
+
+`yb_farComm_resolves` splits on `j₀ + 1` against `i'`:
+
+- `j₀ + 1 = i'` — §4p's own `YangBaxterFarComm.oc`, discharged by
+  `oc_reduces_to_zero`.
+- `j₀ + 1 < i'` — `CyclicFarCommLow.oc` at `left = [σ_{i'}]`, discharged by
+  `yangBaxter_resolves`.
+
+`Nat.eq_or_lt_of_le` off `j₀ + 1 ≤ i'` is the whole case split, and the two
+branches are jointly exhaustive because the far-commutation rule's condition is
+`j₀ + 1 < i = i' + 1`, i.e. `j₀ + 1 ≤ i'`. Nothing left over, nothing
+overlapping — the fit is exact, not merely adequate.
+
+`farComm_right_resolves` then closes the row by dispatch on `rule₁`'s family:
+quadratic → §4be, YB → here, FC → §4bj, BS → §4bi.
+
+**The dispatch has one shape, used four times.** The overlap is a single letter
+(§4au), `lm₂ = σᵢσ_{j₀}` starts with it, so the letter *is* `σᵢ`; hence
+`lm₁ = left ++ [σᵢ]`. Each branch then reads its family's `lm` and matches the
+last letter with `List.append_inj'`. That is why the four branches differ only
+in which `lm` lemma they rewrite with — the identification of `i` is uniform.
+
+### What this did NOT do
+
+- Still assumes `oc.left ≠ []`. Every cell §4bd–§4bk does; the nil-left
+  compositions are untouched and open.
+- Does not close `overlap_resolves`. The `YB × ?` combinations other than
+  `YB × FC` are not covered — that row is what remains.
+- The deep diagonal `j₁ = j₂ = 0 ∧ i₁ ≥ 1` of `BS × BS` (§4aw) is still the
+  only piece needing genuinely new reduction content.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS ×` braid word, both directions | §4bh |
+| `BS × FC` | §4bi |
+| `FC × ?` (whole row) | §4bj |
+| `YB × FC`, and `? × FC` (whole row) | §4bk |
