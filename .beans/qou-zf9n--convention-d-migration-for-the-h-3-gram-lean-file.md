@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-24T07:02:15Z
+updated_at: 2026-08-24T08:44:35Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -254,3 +254,43 @@ REMAINING on this bean:
 My judgement on order: item 2 is now the natural next — #5592 has the general-n
 TL picture and #5502 landed the n=3 anchor, so the migration has both ends
 pinned. Items 3 and 4 are independent of the convention work.
+
+
+## Item 2 — the migration target already exists, and the corpus mislabels it
+
+**FOUND: `QOU.Machinery.H3.gramMatrix (z h : R)`** — the convention-AGNOSTIC
+H_3 Gram over a generic CommRing, with `gramMatrix_eq` tying it to the actual
+`tr_M` pairing and a sorry-free closed-form determinant
+
+    det G = -(z^2 - hz - 1)^5 * ((h^2+4)z^2 - (h^3+4h)z - 1)
+
+`gramMatrix_det_ne_zero` already excludes `z = q^3/(q^2+1)` by name. So #5502's
+`det G(q,z)` over Q(q,z) was a RE-DERIVATION. My corpus-grep missed it because
+three different declarations are called `gramMatrix` and I only looked at one.
+Recorded rather than glossed.
+
+**This re-frames the migration.** The right end state is not "rename C to *C and
+promote D": it is to make `GramMatrixH3Symbolic`'s two hand-written 6x6 tables
+SPECIALISATIONS of the general `(z,h)` form, so there is one determinant and one
+place where a convention is chosen. That is a bridge lemma
+(`gramMatrixD q = QOU.Machinery.H3.gramMatrix (q^3/(q^2+1)) (q - q^-1)`), not a
+mass rename — cheaper AND safer than what this bean originally proposed.
+
+**DONE: corrected a wrong identification in that file's docstring** (PR #5618).
+It attributed the two quadratic zeros to the `(2,1)` block. Measured exactly
+over Q(q):
+
+    z = q^3/(q^2+1)     corank 1   sign (1^3)    radical = q-antisymmetriser
+    z = -1/(q(q^2+1))   corank 1   trivial (3)   radical = q-symmetriser
+    z = q, z = -1/q     corank 5   (quintic factor)
+
+`(2,1)` has dim 2, so it would cost corank 4, not 1. The theorem is TRUE and
+untouched — the proof never used the attribution. But the misreading severs the
+link to `y_lambda = 0` for >= 3-row partitions (qou-8iru): `(1^3)` has >= 3 rows
+and `(2,1)` does not, so it makes one phenomenon look like two.
+
+The z_D radical from the general form is byte-identical to `gramRadicalD` from
+the 6x6 table — two routes, same vector.
+
+REMAINING: the bridge lemma above (item 2 proper); item 3 Delta_lambda drift;
+item 4 the A=3 mirror pair.
