@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: low
 created_at: 2026-08-16T11:00:00Z
-updated_at: 2026-08-24T19:52:50Z
+updated_at: 2026-08-24T19:56:00Z
 ---
 
 Found while adding a sixth — caught in review of my own PR (#5205, bean `wpdb`).
@@ -339,3 +339,23 @@ The cost/benefit argument against the migration survives; "the hazard is fixed"
 did not. Worth remembering that this record has now been corrected in every one
 of its four passes, and three of those corrections were of the *previous*
 correction.
+
+
+### Correction to part 4, same day — my own count was sloppy twice
+
+The part-4 entry above and the commit message of `90bdba5` say "13 new
+declarations" and "the seven pure-`rfl` bridges depend on no axioms at all".
+Measured off `git diff origin/main`:
+
+* **16 new theorems + 1 new `def`**, of which **10** are bridge lemmas. "13" was
+  the count of the bridges file's *pre-existing* lemmas, carried over by hand.
+* **7 declarations depend on no axioms** -- the number is right, the description
+  is not. The axiom-free set is **not** the `rfl`-bridge set:
+  `content_eq_jonesMarkovWenzl` is stated `:= rfl` and still carries `propext`
+  (via `Nat.Partition`), while `axialDistance_apply`, which is not a bridge at
+  all, carries none. Two errors that happened to cancel into a right number.
+* `#print axioms` over all 16: **0 `sorryAx`**.
+
+Recorded rather than silently fixed, because a hand-carried count that looks
+plausible is exactly what this bean has been wrong about in all four of its
+passes -- and this time it was wrong in the entry correcting the previous three.
