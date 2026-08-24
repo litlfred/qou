@@ -3,8 +3,9 @@
 title: 'EXCISION (measured): convention C is a PRODUCER-layer problem -- 70 producers, 86 witnesses, 12 content blocks'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T19:35:36Z
-updated_at: 2026-08-09T19:35:36Z
+updated_at: 2026-08-24T03:13:41Z
 ---
 
 
@@ -354,3 +355,72 @@ failure at 2.2e-8. The R9 evaluator and the two `pyhecke_native` gates all use
 the proton-pinned registry value and all run against proton-pinned code, so they
 are unaffected — but any future gate placed on muon-pinned code must not reuse
 that constant blindly.
+
+
+---
+
+## Evidence from `claude/mass-table-comprehensive-triage` (2026-08-23/24)
+
+This bean measures the excision as 70 producers / 86 witnesses / 12 content
+blocks and sits at `todo`. A staleness-drain campaign on that branch produced
+**seven independent instances of the migration's downstream cost**, all found
+by accident while looking for something else. They are worth recording here
+because they are what the backlog looks like when it is not migrated.
+
+**1. `qbeta_jacobi_anger_tower_general` — a frozen convention-C constant.**
+`PHYSICAL_WEIGHT_RESIDUAL_N3 = 0.0683508`, copied from a reference producer.
+Under D the same reference yields 0.142709 and the two harnesses still agree
+exactly; only the copy had rotted. Fixed by reading the reference LIVE
+(9a5d18462).
+
+**2. `qbeta_sym_part_hecke_natural_form` — an EXACT identity re-indexed.**
+`sym = -h·h̃/2` (full-q × half-q, /2) under C becomes `-h·H/8` with
+H = q⁴−q⁻⁴ (full-q × q⁴, /8) under D. The structure survives — still a product
+of two bar-antisymmetric quantities — so the identity was never refuted, only
+re-indexed. Six sympy identities verify to 0 (cffc1265f).
+
+**3. `a4_brunnian_deficit_closed_form` — a third frozen literal.**
+`measured = 1.000145898` against a D value of 1.0001284313359779…, agreeing to
+~14 significant digits once the measurement probe is re-run under D. Fixed by
+reading the witness live (bf3c70c8c).
+
+**4. `atomic-tr-m-helium4-canonical`** — `abs_tau_4he_positive` 0.1539 → 0.4185;
+recorded pass 2026-05-25, producer untouched since 08-02.
+
+**5. `alpha-em-b2-canonical-scale-ratio`** — `y_(4,1)` 0.10937853 (≈ 7/64,
+convention C) → 0.12498540 (≈ 1/8, D, trace-certified to 5.0e-31). A C-era
+7/64 was being served past its own gate.
+
+**6. `nucleus_real_sdp` ×4 atoms (he3, deuteron, he4, tritium)** — tr_M moves and
+`negative_norm_blocks` / `sign_flip_conjugate_pairs` empty to `[]` on every
+atom. The payload shrink IS the content becoming correct.
+
+**7. `qbeta_ck_local_taylor_around_u0_probe` — NOT a stale pass, a dead solve.**
+Under D the Wenzl bridge returns `y_(1,1,1)` as the INTEGER 0 (the row cap
+y_λ = 0 for ℓ(λ) > 2), so `tr_M = y₃χ₃ + y₂₁χ₂₁ + y₁₁₁χ₁₁₁` loses its third
+term and a 7-unknown fit loses a degree of freedom it needs. `mnewton`'s
+Jacobian is singular, identically at dps 50/60/70/90. **The producer cannot
+compute its answer at all under the current formulation** — see bean qou-w7qk.
+That one is not fixable by re-reading a constant; it needs a re-derivation.
+
+## The finding that should change how the remaining 70 are approached
+
+**Twice the migration reached a producer through an IMPORT, and a file-grep
+pre-check could not see it.**
+
+  - qou-w701: `cyclic_intertwiner_verify` contains none of the family names;
+    `a_operator_gauge_align` changed the p-n interface underneath it.
+  - qou-w7qk (#7 above): the probe contains no reference to `y_lambda_at`,
+    `gram`, `TR_M` or `habiro-coefficients-atomic` — it imports
+    `y_lambda_wenzl_bridge_symbolic`, a different entry point to the same
+    family.
+
+Quantified afterwards (`computations/audits/import_staleness_audit.py`): of
+2122 witnesses the self-staleness axis rates FRESH, **921 (43.4%) sit on a
+first-party import committed after the witness was computed**, and the modules
+that move most are `q_parameter` (914), the constants family, and
+`pyhecke/gram` (703) — the C→D families exactly.
+
+**So any triage of the 70 must follow first-party imports, not grep the file.**
+Grepping will systematically under-count, and the two hardest instances found
+on that branch are both in the part it misses.
