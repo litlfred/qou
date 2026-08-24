@@ -92,6 +92,19 @@ structure ArchimedeanSubstrateField (M : Type*) where
   field : M → ℝ
   /-- Classicality bound: `q(p) ≥ 1` at every point. -/
   field_ge_one : ∀ p, 1 ≤ field p
+  /-- `q₀(p)` is never a root of unity.
+
+      Added to match the library declaration, which has carried it all along
+      and whose consumers use it (bean `qou-6ome`). It is genuinely
+      independent of the classicality bound — `q = 1` satisfies `1 ≤ q` and
+      *is* a root of unity — so it is a field rather than something the bound
+      derives, unlike positivity.
+
+      Flagged rather than adopted silently: `substrate-parameter.md` states the
+      substrate parameter as `q ∈ End(𝟙)` and says nothing about roots of
+      unity, so this is a library-side assumption the block does not yet
+      justify. Whether the block should state it is an owner call. -/
+  not_root_of_unity : ∀ (p : M) (k : ℕ), k ≥ 1 → field p ^ k ≠ 1
 
 namespace ArchimedeanSubstrateField
 

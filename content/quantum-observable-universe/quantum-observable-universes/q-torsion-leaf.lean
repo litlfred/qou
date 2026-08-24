@@ -50,11 +50,18 @@ structure ReebDecomposition (M : Type*) where
   /-- Decomposition identity: `total = horizontal + vertical`. -/
   decomp : ∀ (p : M), total p = horizontal p + vertical p
 
-/-- **q-deformed Reeb flow** over the ground ring `R_q` (local prerequisite;
-    the library counterpart `QOU.QReebFlow` evaluates time over `ℝ`). -/
+/-- **q-deformed Reeb flow** (local prerequisite, mirroring `QOU.QReebFlow`).
+
+    Flow time is `ℝ`. This docstring used to say "over the ground ring `R_q`"
+    and to note, without resolving it, that *"the library counterpart
+    `QOU.QReebFlow` evaluates time over `ℝ`"* — a divergence recorded in prose
+    and enforced by nothing (bean `qou-u87j`). `q-reeb-flow.md` settles it in
+    favour of `ℝ`: the flow is defined "in the archimedean realisation" by the
+    ODE `d/dt φ_t^q = ξ_q ∘ φ_t^q`. The `q` deforms the vector field, not the
+    time parameter. -/
 structure QReebFlow (M : Type*) where
-  /-- The flow map at time `t ∈ R_q`. -/
-  flow : R_q → M → M
+  /-- The flow map at time `t : ℝ`. -/
+  flow : ℝ → M → M
   /-- Initial condition: `φ^q_0 = id`. -/
   flow_zero : ∀ (p : M), flow 0 p = p
 
@@ -72,8 +79,11 @@ structure QTorsionLeaf (M : Type*) where
       with the leaf as support, the vertical component vanishes on the leaf. -/
   tangent_in_horizontal : ∀ (rd : ReebDecomposition M),
     (∀ p, p ∈ leaf → rd.vertical p = 0)
-  /-- Flow invariance: `φ^q_t(L) = L` for all `t ∈ ℝ`. -/
-  flow_invariant : ∀ (qrf : QReebFlow M) (t : R_q),
+  /-- Flow invariance: `φ^q_t(L) = L` for all `t ∈ ℝ`.
+
+      The binder said `t : R_q` while this docstring said `t ∈ ℝ` — the prose
+      was right and the type was not. -/
+  flow_invariant : ∀ (qrf : QReebFlow M) (t : ℝ),
     ∀ (p : M), p ∈ leaf → qrf.flow t p ∈ leaf
 
 end

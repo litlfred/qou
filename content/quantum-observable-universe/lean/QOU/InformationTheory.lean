@@ -29,17 +29,17 @@ namespace QOU.InformationTheory
     Planck constant `ℏ_q(p)`.
 
     LaTeX: `\label{sec:planck-info-unit}` -/
-noncomputable def localPlanckLength {M : Type*} (sp : SubstrateParameter M)
+noncomputable def localPlanckLength {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
   quantumPlanckConstant sp p
 
 /-- The local Planck length is non-negative. -/
-theorem localPlanckLength_nonneg {M : Type*} (sp : SubstrateParameter M)
+theorem localPlanckLength_nonneg {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : 0 ≤ localPlanckLength sp p :=
   quantumPlanckConstant_nonneg sp p
 
 /-- The local Planck length vanishes at classicality (`q = 1`). -/
-theorem localPlanckLength_classical {M : Type*} (sp : SubstrateParameter M)
+theorem localPlanckLength_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p = 1) :
     localPlanckLength sp p = 0 :=
   planck_classical_limit sp p hq
@@ -52,12 +52,12 @@ theorem localPlanckLength_classical {M : Type*} (sp : SubstrateParameter M)
     deep-quantum regime (`q → ∞`, rate → 1).
 
     LaTeX: `\label{sec:time-info}` -/
-noncomputable def informationRate {M : Type*} (sp : SubstrateParameter M)
+noncomputable def informationRate {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
   quantumPlanckConstant sp p
 
 /-- The information rate is bounded in `[0, 1)`. -/
-theorem informationRate_bounded {M : Type*} (sp : SubstrateParameter M)
+theorem informationRate_bounded {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : 0 ≤ informationRate sp p ∧ informationRate sp p < 1 :=
   ⟨quantumPlanckConstant_nonneg sp p, quantumPlanckConstant_lt_one sp p⟩
 
@@ -78,7 +78,7 @@ theorem informationRate_bounded {M : Type*} (sp : SubstrateParameter M)
     LaTeX: `\label{sec:big-bang-info}` -/
 structure DeepQuantumRegime (M : Type*) where
   /-- The substrate parameter. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The point where the regime holds. -/
   point : M
   /-- The deep-quantum threshold Q > 1 (e.g. Q = φ² ≈ 2.618). -/
@@ -96,7 +96,7 @@ structure DeepQuantumRegime (M : Type*) where
     LaTeX: `\label{sec:big-bang-info}` (contrast) -/
 structure ClassicalRegime (M : Type*) where
   /-- The substrate parameter. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The point where the regime holds. -/
   point : M
   /-- `q(p) = 1` at this point (classicality). -/

@@ -4,10 +4,10 @@
   "generated_from": "block .md narratives (](#kind:label) links + `kind:label` mentions), filtered to labels later in reading order and absent from uses[], unioned with the manifest's declared foreshadows[]",
   "note": "GENERATED — do not hand-edit. Rebuild with `bun run content/pipeline/build-foreshadows.ts <paper>`. The QA checkers derive the same data from source on every run and never read this file, so it cannot go stale in a way that changes a verdict.",
   "totals": {
-    "blocks": 504,
-    "derived": 868,
+    "blocks": 514,
+    "derived": 878,
     "declared": 18,
-    "effective": 878
+    "effective": 888
   },
   "blocks": {
     "conj:algebraic-geometric-dilog-equivalence": {
@@ -353,6 +353,17 @@
       "effective": [
         "tbl:qou-infra-discharges-goncharov-zeta5-table1-data",
         "tbl:qou-infra-discharges-goncharov-zeta5-table2-data"
+      ]
+    },
+    "conj:qou-motivic-galois-instance": {
+      "derived": [
+        "ex:qou-motivic-galois-instance-per-cell",
+        "rem:qou-motivic-galois-instance-verification"
+      ],
+      "declared": [],
+      "effective": [
+        "ex:qou-motivic-galois-instance-per-cell",
+        "rem:qou-motivic-galois-instance-verification"
       ]
     },
     "conj:qou-p-neq-np": {
@@ -723,17 +734,6 @@
         "def:q-flat-connection"
       ]
     },
-    "def:qou-motivic-galois-instance": {
-      "derived": [
-        "ex:qou-motivic-galois-instance-per-cell",
-        "rem:qou-motivic-galois-instance-verification"
-      ],
-      "declared": [],
-      "effective": [
-        "ex:qou-motivic-galois-instance-per-cell",
-        "rem:qou-motivic-galois-instance-verification"
-      ]
-    },
     "def:quantum-bloch-group": {
       "derived": [
         "rem:quantum-bloch-group-framework-connection"
@@ -746,12 +746,12 @@
     "def:quantum-universe": {
       "derived": [
         "def:frobenius-hopf-substrate",
-        "thm:frobenius-codim-universal"
+        "def:quantum-observable-universe"
       ],
       "declared": [],
       "effective": [
         "def:frobenius-hopf-substrate",
-        "thm:frobenius-codim-universal"
+        "def:quantum-observable-universe"
       ]
     },
     "def:stable-atom": {
@@ -790,6 +790,15 @@
       "effective": [
         "def:two-row-projection",
         "prop:he4-two-row-dominance"
+      ]
+    },
+    "ex:brings-surface-concrete": {
+      "derived": [
+        "ex:chi-minus-six-derivation"
+      ],
+      "declared": [],
+      "effective": [
+        "ex:chi-minus-six-derivation"
       ]
     },
     "ex:hadron-half-life-verification": {
@@ -1184,6 +1193,15 @@
         "thm:six-term-mass-formula-complete"
       ]
     },
+    "prf:frobenius-pairing-exists": {
+      "derived": [
+        "def:quantum-observable-universe"
+      ],
+      "declared": [],
+      "effective": [
+        "def:quantum-observable-universe"
+      ]
+    },
     "prf:frobenius-s-classification": {
       "derived": [
         "tbl:frobenius-s-classification-table3-data"
@@ -1543,18 +1561,18 @@
     "prf:quantum-dilogarithm-stratified": {
       "derived": [
         "conj:hoefsmit-scattering-pipeline",
+        "prf:spectral-sequence-collapse",
         "prop:curvature-rank-gb-stratification",
         "prop:phi-q-categorical-truncation",
-        "prop:plancherel-weight-boundedness",
-        "prop:spectral-sequence-collapse"
+        "prop:plancherel-weight-boundedness"
       ],
       "declared": [],
       "effective": [
         "conj:hoefsmit-scattering-pipeline",
+        "prf:spectral-sequence-collapse",
         "prop:curvature-rank-gb-stratification",
         "prop:phi-q-categorical-truncation",
-        "prop:plancherel-weight-boundedness",
-        "prop:spectral-sequence-collapse"
+        "prop:plancherel-weight-boundedness"
       ]
     },
     "prf:quantum-observable-universe-exists": {
@@ -1895,6 +1913,15 @@
       "declared": [],
       "effective": [
         "tbl:y-lambda-closed-form-wenzl-bridge-table2-data"
+      ]
+    },
+    "prop:a2-from-three-strands": {
+      "derived": [
+        "prop:schur-weyl-eightfold"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:schur-weyl-eightfold"
       ]
     },
     "prop:alpha-cluster-activation-gate": {
@@ -2480,6 +2507,15 @@
         "prop:alpha-shift-torus-knot"
       ]
     },
+    "prop:meson-octet-decomposition": {
+      "derived": [
+        "prop:schur-weyl-eightfold"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:schur-weyl-eightfold"
+      ]
+    },
     "prop:neutron-prediction-comparison": {
       "derived": [
         "tbl:neutron-prediction-comparison-table-data"
@@ -2655,6 +2691,15 @@
         "conj:ns-counterexample",
         "conj:q-aubin-lions",
         "conj:regularity-breakdown"
+      ]
+    },
+    "prop:schur-weyl-eightfold": {
+      "derived": [
+        "prop:color-su3-from-g2"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:color-su3-from-g2"
       ]
     },
     "prop:shell-closure-normal-form": {
@@ -2902,6 +2947,15 @@
         "prop:recursive-atom-knot-atlas"
       ]
     },
+    "prose:sm-params-gauge-couplings": {
+      "derived": [
+        "rem:per-observable-100x-status-dashboard"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:per-observable-100x-status-dashboard"
+      ]
+    },
     "rem:adelic-substrate-integration": {
       "derived": [
         "def:classical-riemann-zeta",
@@ -3004,6 +3058,15 @@
         "tbl:atom-mass-full-hecke-table-data"
       ]
     },
+    "rem:axiom-independence": {
+      "derived": [
+        "thm:frobenius-codim-universal"
+      ],
+      "declared": [],
+      "effective": [
+        "thm:frobenius-codim-universal"
+      ]
+    },
     "rem:b1-current-status": {
       "derived": [
         "tbl:b1-current-status-table2-data"
@@ -3104,6 +3167,17 @@
       "declared": [],
       "effective": [
         "rem:chirality-trefoil"
+      ]
+    },
+    "rem:braiding-eigenvalue-extraction-novelty": {
+      "derived": [
+        "prop:three-calibration-discipline",
+        "rem:epistemic-status-of-calibrations"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:three-calibration-discipline",
+        "rem:epistemic-status-of-calibrations"
       ]
     },
     "rem:bring-embeddable-knots": {
@@ -3442,6 +3516,15 @@
       "declared": [],
       "effective": [
         "def:bar-involution"
+      ]
+    },
+    "rem:eightfold-open-problems": {
+      "derived": [
+        "def:strand-twist-datum"
+      ],
+      "declared": [],
+      "effective": [
+        "def:strand-twist-datum"
       ]
     },
     "rem:em-completeness-interpretation": {
@@ -4097,14 +4180,12 @@
     "rem:ns-blowup-physical-evidence": {
       "derived": [
         "rem:calculus-up-to-epsilon",
-        "rem:conway-normal-form",
         "rem:millennium-unification",
         "rem:ns-surreal-bound"
       ],
       "declared": [],
       "effective": [
         "rem:calculus-up-to-epsilon",
-        "rem:conway-normal-form",
         "rem:millennium-unification",
         "rem:ns-surreal-bound"
       ]
@@ -4354,6 +4435,15 @@
       "declared": [],
       "effective": [
         "tbl:quantum-ideal-gas-law-interpretation-table-data"
+      ]
+    },
+    "rem:quantum-universe-axiom-motivation": {
+      "derived": [
+        "thm:frobenius-codim-universal"
+      ],
+      "declared": [],
+      "effective": [
+        "thm:frobenius-codim-universal"
       ]
     },
     "rem:qvalue-observation": {
