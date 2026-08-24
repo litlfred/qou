@@ -21,6 +21,7 @@ together gives the box-addition ratio.
 | `betaPairProd_addCell` | `P_ν · (row·col)_μ = P_μ · (row·col)_ν` |
 | `schurPrincipal_addCell_mul` | **the box-addition ratio, cross-multiplied** |
 | `qratio_prod_eq_rowColProd` | the `q`-ratio **is** `Q^a · (row·col)_ν/(row·col)_μ` |
+| `schurPrincipal_addCell_eq` | **`s_ν = (q-ratio) · s_μ`** — the branching hypothesis itself |
 
 The headline is stated **division-free** on purpose: as a cross-multiplied equation it needs no
 non-vanishing hypothesis beyond the two the closed form already carries, so it stays true at the
@@ -154,5 +155,38 @@ theorem qratio_prod_eq_rowColProd (Q : F) (hQ : Q ≠ 0) {r : ℕ} {μ : YoungDi
     Finset.prod_const, Finset.card_range, Finset.prod_div_distrib, Finset.prod_div_distrib,
     rowColProd, rowColProd]
   field_simp
+
+/-- **The box-addition ratio, in quotient form — the branching hypothesis itself.**
+
+`s_{μ+□ at row a}(1,…,Q^{r−1}) = (∏_{j ≠ a} (Q·x_a − x_j)/(x_a − x_j)) · s_μ(1,…,Q^{r−1})`,
+`x_i = Q^{β_i}`.
+
+This is `hw` of `QOU.Mathlib.sum_eq_bracket_mul_of_qratio_scaling` for `schurPrincipal`, so with it
+`∑_a s_{μ+□ at a} = [r]_Q · s_μ` — general-`r` branching for the corpus weight.
+
+The two extra hypotheses over the cross-multiplied form are the price of dividing: `levelConst` and
+the row-column product must be invertible.  Both are products of `1 − Q^k` at nonzero `k` (the
+β-numbers are distinct by `betaR_lt`), so both hold under the same root-of-unity genericity that
+`schurPrincipal_eq_zero_iff` already assumes. -/
+theorem schurPrincipal_addCell_eq (Q : F) (hQ : Q ≠ 0) {r : ℕ} {μ : YoungDiagram} {s : ℕ × ℕ}
+    (hs : IsAddableCell μ s) (ha : s.1 < r)
+    (hrμ : μ.colLen 0 ≤ r) (hrν : (addCell μ s hs).colLen 0 ≤ r)
+    (hDμ : (∏ c ∈ μ.cells, (1 - Q ^ QOU.QBeta.WenzlWeight.hook μ c)) ≠ 0)
+    (hDν : (∏ c ∈ (addCell μ s hs).cells,
+      (1 - Q ^ QOU.QBeta.WenzlWeight.hook (addCell μ s hs) c)) ≠ 0)
+    (hC : levelConst Q r ≠ 0) (hRC : rowColProd Q r s.1 μ ≠ 0) :
+    QOU.QBeta.WenzlWeight.schurPrincipal r Q (addCell μ s hs)
+      = (∏ j ∈ (Finset.range r).erase s.1,
+          (Q * Q ^ betaR r μ s.1 - Q ^ betaR r μ j) / (Q ^ betaR r μ s.1 - Q ^ betaR r μ j))
+        * QOU.QBeta.WenzlWeight.schurPrincipal r Q μ := by
+  have h := schurPrincipal_addCell_mul Q hs ha hrμ hrν hDμ hDν
+  have h' : QOU.QBeta.WenzlWeight.schurPrincipal r Q (addCell μ s hs) * rowColProd Q r s.1 μ
+      = Q ^ s.1 * rowColProd Q r s.1 (addCell μ s hs)
+        * QOU.QBeta.WenzlWeight.schurPrincipal r Q μ := by
+    refine mul_right_cancel₀ hC ?_
+    linear_combination h
+  rw [qratio_prod_eq_rowColProd Q hQ hs ha]
+  field_simp
+  linear_combination h'
 
 end QOU.SchurWeyl
