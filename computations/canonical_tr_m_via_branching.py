@@ -96,6 +96,32 @@ EXTRACT_FILENAMES = {
 }
 
 
+def _extract_anchor_q(extract: dict):
+    """The q an A^λ extract was generated at, or None if it records none.
+
+    TWO SPELLINGS, both live, which is the whole reason this exists. The H_6 pn
+    deuteron extract records `q0Value` at top level (50 digits); the H_9 nn
+    extract records `data.q_0` (float64). Same fact, different key, different
+    nesting, different precision — and a guard keying on only the first reads
+    the second as "no provenance at all".
+
+    I reported the H_9 extract as UNSTAMPED on that basis, in a bean and in a
+    commit message. It is not; it carries `data.q_0 = 1.1099785827513808`
+    alongside `h = 0.20906029879563937`. The provenance was there and the reader
+    was looking for the wrong key — so this returns the value rather than
+    letting an absent key stand in for an absent fact.
+    """
+    v = extract.get("q0Value")
+    if v is None:
+        v = (extract.get("data") or {}).get("q0Value")
+    if v is None:
+        v = (extract.get("data") or {}).get("q_0")
+    if v is None:
+        return None
+    q = mp.mpf(str(v))
+    return q if q > 0 else None
+
+
 def build_A_extract_at_q(n_outer: int, interface: str, q_val, dps: int = 50):
     """Build the A^λ_{ξν}(I) extract AT `q_val` from the categorical closed form.
 
@@ -607,34 +633,44 @@ def compute_tr_m_via_branching(
     # a hybrid sails through.
     #
     # THIS IS FORWARD-LOOKING HARDENING, NOT A LIVE-BUG FIX — stated plainly
-    # because I first wrote it up as the latter and it is not. Of the 13
-    # registered extracts, 11 are ABSENT from disk (they fail loudly above),
-    # the H_6 pn deuteron is stamped, and `(9, "nn")` is present and UNSTAMPED.
-    # But `A >= 3` returns via the fine-Bratteli transfer well before this
-    # point, so `n` here is ALWAYS 6 and no H_9 entry is reachable from this
-    # function at all. The unstamped file is consumed by
-    # `sublemma_2_1_h9_tritium_verify` and `sublemma_2_1_h12_helium_4_framework`
-    # instead; whether those need the same treatment is a separate question
-    # (bean `qou-8chw`), not one this guard answers.
+    # because I first wrote it up as the latter, twice, and it is neither time.
     #
-    # What this change actually buys: an entry added to EXTRACT_FILENAMES at
-    # n = 6 without a stamp, or the deuteron extract losing its stamp in a
-    # regeneration, now refuses off-anchor instead of going silent.
+    # First error: I called `(9, "nn")` a live hybrid risk here. `A >= 3`
+    # returns via the fine-Bratteli transfer well before this point, so `n` is
+    # ALWAYS 6 and no H_9 entry is reachable from this function at all.
+    #
+    # Second error: I then called that extract UNSTAMPED. It is not. It records
+    # `data.q_0 = 1.1099785827513808` next to `h = 0.20906029879563937`; the
+    # H_6 deuteron records the same fact as a top-level 50-digit `q0Value`. Two
+    # spellings of one stamp, and the reader only knew the first — so "key
+    # absent" was being read as "provenance absent". `_extract_anchor_q` now
+    # accepts both, which is why this branch is close to unreachable in
+    # practice: both extracts on disk DO record their q.
+    #
+    # Its two real consumers, `sublemma_2_1_h9_tritium_verify` and
+    # `sublemma_2_1_h12_helium_4_framework`, take no q parameter at all — they
+    # are anchor-only verification scripts, for which a frozen extract is
+    # correct. There is no q-threading defect there either.
+    #
+    # What this change actually buys: an extract that genuinely records nothing,
+    # or an n = 6 entry added without a stamp, now refuses off-anchor instead of
+    # going silent.
     #
     # A BUILT extract legitimately carries no `q0Value` — it carries
     # `built_at_q` instead — so key on that to tell "built at q_val" from
     # "frozen at an unrecorded q", rather than on the absence of a stamp.
     if "built_at_q" not in extract:
-        _q_anchor = mp.mpf(str(extract.get("q0Value", "0")))
+        _q_anchor = _extract_anchor_q(extract)
         _q_here = mp.mpf(str(q_val))
-        if _q_anchor <= 0:
-            # Unstamped. Presume it was generated at the package anchor and
-            # refuse anywhere else — the conservative reading, since a wrong
-            # presumption here costs a refusal while the alternative costs a
-            # silent hybrid.
+        if _q_anchor is None:
+            # Records no q under any spelling `_extract_anchor_q` knows.
+            # Presume the package anchor and refuse anywhere else — the
+            # conservative reading, since a wrong presumption costs a refusal
+            # while the alternative costs a silent hybrid.
             _q_anchor = mp.mpf(str(Q_FLOAT))
-            _why = ("carries no q0Value stamp, so its generation q is presumed "
-                    "to be the package anchor")
+            _why = ("records no generation q (checked `q0Value`, `data.q0Value`,"
+                    " `data.q_0`), so it is presumed to be at the package"
+                    " anchor")
         else:
             _why = f"is frozen at q={mp.nstr(_q_anchor, 12)}"
         if abs(_q_here - _q_anchor) > mp.mpf("1e-12"):
