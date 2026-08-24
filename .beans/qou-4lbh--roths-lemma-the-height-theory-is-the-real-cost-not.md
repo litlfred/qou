@@ -2858,3 +2858,55 @@ Verification: whole-library `lake build QOU` — exit 0, 5770 jobs, no errors, z
 any Roth-arc module (722 corpus warnings, all pre-existing elsewhere). `RothLemmaStatement` and
 `RothInductionHypothesis` each rebuilt with `.olean` deleted. All twelve new and re-signed
 declarations `#print axioms`-clean.
+
+### ⚠ Corrections twelve and thirteen — both from reading Lemma 4 and §14 in full
+
+Two claims made in this arc's own source files in the last two entries were wrong. Both are
+withdrawn, and both were caught by going back to the page scans rather than by more reasoning.
+
+**Twelve.** `rothConstant_step`'s docstring said §14's constant `2c+3` *identifies* which
+quantity `Ψ_m = Θ_{m−1} + t` refers to, because the row-cost reading would give a different
+constant. False. §14's own split leads with the row cost (weakened `t → s`) and bounds the
+square-root branch by the crude `2c+2`, where this arc's proof leads with `Ψ` and uses the
+sharper `c+2`:
+
+    §14:        1     + (2c+2)  =  2c+3
+    this arc:   (c+1) + (c+2)   =  2c+3
+
+`rothConstant_step_source` proves the second route, so the agreement is a **checked fact**.
+Two splits reaching the same constant means reproducing it discriminates nothing.
+
+⚠ Landing the second route also exposed a real difference: §14's needs no `s ≤ 1`, this arc's
+does (for `s² ≤ s`). They are not notational variants of one argument.
+
+**Thirteen.** `factor_bound_le_of_split_degree` presented `(d₂ + 1 − D₂)·Φ ≤ t·D₂` as the
+arc's open parameter question. It is a cost of the arc's own §13 formulation, not a hypothesis
+of Roth's lemma. **Lemma 4**, read verbatim:
+
+> Let `m ≥ 2` and let `a; r₁,…,r_m; H₁,…,H_m` have property `Γ_m`. Then there exists an
+> ordered system `b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1}` with property `Γ_{m−1}` such that
+> `Θ_m ≤ t + 2 max(Ψ_m, √Ψ_m)` where `Ψ_m = Θ_{m−1}(b; ρ; H) + t`.
+
+The max is over **one** quantity and its square root — no `/n`, no `/r_m`, **no side
+condition** — and the sub-system's `Γ_{m−1}` is *produced*, not assumed. The arc's
+`index_le_two_mul_max_of_det_bound` has `max(S/r, q)` with `S ≤ q²·rr` instead, and that is
+where the requirement comes from. Whatever it costs is discharged from `Γ_m` inside §13's
+proof body, which has not been read.
+
+### What reading Lemma 4 and §14 in full settled
+
+- **`c_m = 2^{m+1} − 3` is printed explicitly** in the statement of Roth's Lemma. Correction 11
+  is now read, not inferred.
+- **§14's computation, verbatim**: both branches of the max come out to exactly `(c+1)s` —
+  `Ψ ≤ cs² + t ≤ cs + s` and `√Ψ ≤ (c+1)s` via `c+1 ≤ (c+1)²` — which is why the `max`
+  disappears. Landed as `rothConstant_step_lemma4`, the faithful step.
+- **`c_{m−1} ≥ 1`** is Mahler's standing hypothesis in that computation (`rothConstant_one_le`).
+- ⚠ **`0 < t ≤ 1` is Theorem 1's opening hypothesis and this arc had not carried it.**
+  `RothLemmaMahler` now does. §14 uses it twice, for `s² ≤ s` and `t ≤ s`.
+- **Theorem 1's four clauses match `RothGamma` exactly**, including that clause 2 runs over
+  `h = 2,…,m` — which is the `∀ j k, (j : ℕ) = 0 → …` encoding, confirmed rather than guessed.
+
+⚠ `0 ≤ w` came off `rothConstant_step_lemma4` for the third time in this pattern: the linter
+flagged it unused, and it is genuinely not needed — a negative `w` only makes `s + 2w` smaller.
+Three times now the linter has been the cheap version of the signal corrections 9 and 10 cost
+real work to get.

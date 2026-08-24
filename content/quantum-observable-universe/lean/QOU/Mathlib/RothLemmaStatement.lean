@@ -472,6 +472,56 @@ theorem rothConstant_step_source {m : ℕ} (hm : 1 ≤ m) {s Ψ u θ : ℚ}
   rw [hrec]
   linarith
 
+/-- `c_m ≥ 1` for `m ≥ 1` — Mahler states this as a standing fact in §14's computation. -/
+theorem rothConstant_one_le {m : ℕ} (hm : 1 ≤ m) : 1 ≤ rothConstant m := by
+  obtain ⟨k, rfl⟩ := Nat.exists_eq_add_of_le hm
+  have h : (2 : ℕ) ^ 2 ≤ 2 ^ (1 + k + 1) := Nat.pow_le_pow_right (by norm_num) (by omega)
+  simp only [rothConstant]
+  omega
+
+/-- **§14's step exactly as printed** — Lemma 4's shape, and the faithful one.
+
+Lemma 4 (§13's packaged conclusion, now **read**) is
+
+    Θ_m ≤ t + 2·max(Ψ_m, √Ψ_m),      Ψ_m = Θ_{m−1} + t,
+
+given property `Γ_m`, and it **produces** a system with `Γ_{m−1}`.  ⚠ No side condition.
+
+§14 then bounds both branches of that max by the *same* quantity `(c+1)s`, which is why the
+`max` disappears and why the constant is what it is:
+
+* `Ψ ≤ c·s² + t ≤ c·s + s = (c+1)s`, using `s² ≤ s` and `t ≤ s`;
+* `√Ψ ≤ (c+1)s`, because `Ψ ≤ (c+1)s² ≤ (c+1)²s²` — the crude `c+1 ≤ (c+1)²`, valid since
+  `c ≥ 1` (`rothConstant_one_le`, which is Mahler's own standing hypothesis).
+
+Leading `t ≤ s` contributes `1`, the max contributes `2(c+1)`, total `2c+3`.
+
+`w` is `max(Ψ, √Ψ)`, encoded root-free as `w = Ψ ∨ w² = Ψ`.  ⚠ `0 ≤ w` is deliberately **not**
+required, though the max satisfies it: without it the second disjunct also admits `−√Ψ`, and a
+smaller `w` only makes `s + 2w` smaller, so the theorem is stronger without it.  Same reason
+`0 ≤ u` came off `rothConstant_step`.  Callers instantiate at the real max, where it holds.
+
+⚠ This covers what `rothConstant_step_source` does not — that one's `u² ≤ 4Ψ` is the `√Ψ`
+branch alone, which is the max only when `Ψ ≤ 1`. -/
+theorem rothConstant_step_lemma4 {m : ℕ} (hm : 1 ≤ m) {s Ψ w θ : ℚ}
+    (hs0 : 0 ≤ s) (hs1 : s ≤ 1)
+    (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2)
+    (hw : w = Ψ ∨ w ^ 2 = Ψ)
+    (hθ : θ ≤ s + 2 * w) :
+    θ ≤ (rothConstant (m + 1) : ℚ) * s := by
+  have hc1 : (1 : ℚ) ≤ (rothConstant m : ℚ) := by exact_mod_cast rothConstant_one_le hm
+  have hsq : s ^ 2 ≤ s := by nlinarith
+  have hws : w ≤ ((rothConstant m : ℚ) + 1) * s := by
+    rcases hw with h | h
+    · rw [h]; nlinarith
+    · refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
+      rw [h]
+      nlinarith [sq_nonneg s, mul_nonneg (le_trans zero_le_one hc1) (sq_nonneg s)]
+  have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
+    rw [rothConstant_rec m hm]; push_cast; ring
+  rw [hrec]
+  linarith
+
 /-- **The induction step in `RothBound` shape** — the obligation the recursion has to meet.
 
 From the sub-problem's bound and §13's inequality, the assembled bound satisfies `RothBound` at
@@ -553,9 +603,25 @@ Wronskians' summed index at the *unscaled* degrees by `r·(εU + εV)`, so the a
 the size of `Φ`.  Since `Θ_{m−1} ≤ c_{m−1}·t^{2^{−(m−2)}}` is for small `t` much larger than
 `t`, `d₂` must be at least `Φ/t`.
 
-That is what `Γ_m`'s clauses 2 and 3 are for, and this is the point where they finally have to
-be used: nothing earlier in the arc needed them, which is exactly why they went missing for so
-long.
+⚠⚠ **Correction thirteen: this is a cost of the arc's own §13 formulation, not a hypothesis of
+Roth's lemma.**  §13's packaged conclusion is Mahler's **Lemma 4**, now read:
+
+    Θ_m ≤ t + 2·max(Ψ_m, √Ψ_m),      Ψ_m = Θ_{m−1} + t,
+
+given `Γ_m`, and producing a system with `Γ_{m−1}`.  Its `max` is over **one** quantity and its
+square root — no `/n`, no `/r_m`, and **no side condition**.  The arc's
+`index_le_two_mul_max_of_det_bound` instead has `max(S/r, q)` with `S ≤ q²·rr`, which is where
+`(d₂ + 1 − D₂)·Φ ≤ t·D₂` comes from.
+
+So the requirement below is real for the arc's route and must be discharged, but it is **not**
+an extra hypothesis of Roth's lemma: whatever `S ≤ q²·rr` costs is discharged from `Γ_m` inside
+§13's proof.  ⚠ That proof body has not been read, so *how* is still open — this says only that
+it is not a gap in the theorem.  The previous version of this docstring presented the condition
+as the arc's open parameter question; that framing was wrong.
+
+`Γ_m`'s clauses 2 and 3 are still what any discharge must use, and this remains the first point
+in the arc where they are needed — nothing earlier needed them, which is exactly why they went
+missing for so long.
 
 ⚠ Neither positivity of `Φ` nor of `D₂` is a hypothesis — the rearrangement is linear in the
 monomials.  Same reason `0 ≤ u` came off `rothConstant_step`. -/
@@ -621,9 +687,13 @@ the only instance discharged.
 
 All three of `Γ_m`'s clauses are carried, via `RothGamma` inside the schema.  They were not,
 for most of this arc's life, which made its statements **stronger** than what §14 proves — a
-theorem stronger than the source's is one nothing in the source will discharge. -/
+theorem stronger than the source's is one nothing in the source will discharge.
+
+⚠ `0 < t ≤ 1` is Theorem 1's opening hypothesis and was missing here until §14 was read in
+full; §14's computation uses it twice (`s² ≤ s` and `t ≤ s`).  Carried now. -/
 def RothLemmaMahler (σ : Type*) (m : ℕ) (t : ℚ) : Prop :=
-  ∃ θ : ℚ, RothBound m t θ ∧ RothLemmaUniform σ m t⁻¹ (t / (m : ℚ)) θ
+  0 < t → t ≤ 1 →
+    ∃ θ : ℚ, RothBound m t θ ∧ RothLemmaUniform σ m t⁻¹ (t / (m : ℚ)) θ
 
 /-- **The `m = 1` case of Roth's lemma**, as an instance of the statement above.
 
@@ -669,8 +739,8 @@ theorem rothLemmaUniform_one (ω ε θ : ℚ) (hεθ : ε ≤ θ) : RothLemmaUni
 This is the one instance of `RothLemmaMahler` this repository proves.  At one variable the
 growth condition is vacuous and `ε = t/1 = t`, so the schema's `m = 1` case supplies `θ = t`
 directly — and `rothBound_one` says that is exactly what §14 asks for. -/
-theorem rothLemmaMahler_one {t : ℚ} (ht : 0 ≤ t) : RothLemmaMahler Unit 1 t :=
-  ⟨t, (rothBound_one t t).mpr ⟨ht, le_rfl⟩, rothLemmaUniform_one _ _ _ (by simp)⟩
+theorem rothLemmaMahler_one {t : ℚ} : RothLemmaMahler Unit 1 t := fun ht _ =>
+  ⟨t, (rothBound_one t t).mpr ⟨ht.le, le_rfl⟩, rothLemmaUniform_one _ _ _ (by simp)⟩
 
 /-! ### The hypotheses are jointly satisfiable
 
