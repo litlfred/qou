@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath(exact at the production floor)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T17:30:09.177638+00:00",
-  "commitSha": "303db476d988cf30443ba50358204e8545871e9b",
+  "computedAt": "2026-08-24T17:43:52.423017+00:00",
+  "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
   "assertions": [
     {
       "name": "residual_witness_is_a_single_run",
@@ -76,8 +76,8 @@
   "description": "Exact decomposition of the mirror proton-excess penalty into an experimental and a model half. Shows the penalty is not one quantity across A: experiment-dominated at A=3, model-dominated at A=7, with the model's asymmetry sign-backwards at both.",
   "source_witness": "computations/delta-lambda-canonical-residual.witness.json",
   "source_provenance": {
-    "computedAt": "2026-08-24T17:28:50.285063+00:00",
-    "commitSha": "303db476d988cf30443ba50358204e8545871e9b",
+    "computedAt": "2026-08-24T17:43:52.248912+00:00",
+    "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
     "scriptHash": "a95bac7baf8c",
     "q0Anchor": "proton"
   },
@@ -104,16 +104,16 @@
       "pair": "7Be / 7Li",
       "proton_rich": "7Be",
       "mirror": "7Li",
-      "experimental_asymmetry_logq": "-0.4101825054129652794706566393573531139284412870763045506629043561920052",
+      "experimental_asymmetry_logq": "-0.4101916227052327824809610003639637250352225655014500205654585908516068",
       "model_asymmetry_logq": "1.358987658817350416774874936784732540462175782734807419770600412492318",
-      "penalty_logq": "-1.769170164230315696245531576142085654390617069811111970433504768684324",
-      "penalty_from_witness_deviations": "-1.77",
+      "penalty_logq": "-1.769179281522583199255835937148696265497398348236257440336059003343925",
+      "penalty_from_witness_deviations": "-1.769",
       "recorded_penalty": "-1.770",
-      "experimental_mirror_energy_MeV": "-1.644181",
+      "experimental_mirror_energy_MeV": "-1.6442398",
       "dominated_by": "model",
-      "dominant_share_pct": "76.81497723021930111784593755913511029607975014860284018610994824997199",
+      "dominant_share_pct": "76.81458137175247192754081786609742513104968697822009312099693442924687",
       "model_sign_matches_experiment": false,
-      "abs_model_over_abs_exp": "3.313129255595976887934978476924024196371938014995580295918211716191788"
+      "abs_model_over_abs_exp": "3.313055614970300361022972387688929109263253874254023310464801413626232"
     }
   ],
   "q0Anchor": "proton",

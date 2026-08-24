@@ -236,6 +236,13 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             "tr_M_free": mp.nstr(tr_free_mp, mp.mp.dps),
             "Q_beta_n_MeV": Q_beta_n_mev,
             "B_MeV": float(B),
+            # Δtr is the DIMENSIONLESS categorical scalar — pure Hecke trace
+            # arithmetic at 50 dps with no experimental input, so it is the part
+            # of B that is genuinely precise. Exposed because Q_β CANCELS in any
+            # ratio of two B_pred: B(a)/B(b) = Δtr(a)/Δtr(b), so a consumer
+            # taking ratios (mirror asymmetries, per-A comparisons) can have 50
+            # digits instead of the 16 that float64 B_MeV leaves it.
+            "delta_tr_exact": mp.nstr(delta_tr, mp.mp.dps),
             "n_atom_terms": -1,
             "n_free_terms": -1,
             "use_closed_form": False,
@@ -297,8 +304,15 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             # Free config = no interface factors → just the constit part.
             tr_free_mp = (mp.mpf(tau_p) ** Z) * (mp.mpf(tau_n) ** N)
             dt = time.time() - t0
-            tr_atom = complex(float(tr_atom_mp), 0.0)
-            tr_free = complex(float(tr_free_mp), 0.0)
+            # Keep the 50-dps mpf. This used to be
+            #     complex(float(tr_atom_mp), 0.0)
+            # which threw away 34 of the 50 digits that had just been computed,
+            # for no reason: mpmath.mpf carries `.real` and `.imag` (0.0), so
+            # the Im-guard below works on it unchanged. Reachable by the
+            # use_closed_form callers (mass_table_comprehensive,
+            # binding_factor_f_*); the default use_transfer path never hit it.
+            tr_atom = tr_atom_mp
+            tr_free = tr_free_mp
             atom_n_terms = -1  # not computed in closed-form path
             free_n_terms = -1
             tr_atom_sym = None
@@ -374,6 +388,7 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         "tr_M_free": str(tr_free_r),
         "Q_beta_n_MeV": Q_beta_n_mev,
         "B_MeV": float(B),
+        "delta_tr_exact": str(delta_tr),
         "n_atom_terms": atom_n_terms,
         "n_free_terms": free_n_terms,
         "use_closed_form": use_closed_form,
@@ -543,6 +558,7 @@ if __name__ == "__main__":
         .set_audit_only("docs/audits/categorical-vs-fitted-q-decay-ba.md")
         .add_parameter("q0", q0)
         .add_parameter("Q_beta_n_MeV", float(_Q_BETA_N))
+        .add_parameter("precision_note", "B_MeV is bounded by EXPERIMENT, not by float64. Q_beta(n) = M_N - M_P - M_E carries a CODATA uncertainty of 6.664e-07 MeV, i.e. 8.518e-07 relative -- about 7.7e9 times coarser than float64's 1.1e-16. Storing B_MeV as a float is therefore already ~9 orders more precision than the physics supports, and serialising it at 50 dps would be fake precision by ~44 orders. Do NOT add a B_MeV_exact. What IS genuinely 50-dps is delta_tr_exact, the dimensionless trace difference: no experimental input enters it, and Q_beta cancels in any ratio B(a)/B(b) = delta_tr(a)/delta_tr(b), so ratio consumers should read delta_tr_exact rather than B_MeV.")
         .add_data("results", safe_results)
     )
     out = builder.save()

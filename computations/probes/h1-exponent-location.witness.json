@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-24T17:30:08.995653+00:00",
-  "commitSha": "303db476d988cf30443ba50358204e8545871e9b",
+  "computedAt": "2026-08-24T17:43:52.907031+00:00",
+  "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
   "assertions": [
     {
       "name": "D_decomposition_matches_witness_exponent",
@@ -116,11 +116,11 @@
     "upstream_witness_hashes": [
       {
         "path": "delta-lambda-canonical-residual.witness.json",
-        "sha256": "290fb904d4eb9f20704d310e3f1f8ec853541365bc79e43165b87ee4920af4c3",
-        "size_bytes": 7184,
-        "commitSha": "303db476d988cf30443ba50358204e8545871e9b",
-        "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
-        "computedAt": "2026-08-24T17:28:50.285063+00:00"
+        "sha256": "8bb9303bcd948b84d5ca1cdd66b73ea19570af1c787b8aa5f2e353a78361e423",
+        "size_bytes": 7187,
+        "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
+        "scriptCommitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
+        "computedAt": "2026-08-24T17:43:52.248912+00:00"
       }
     ]
   }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T17:28:50.285063+00:00",
-  "commitSha": "303db476d988cf30443ba50358204e8545871e9b",
+  "computedAt": "2026-08-24T17:43:52.248912+00:00",
+  "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
   "assertions": [
     {
       "name": "deuteron_exponent_matches_15",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "delta-lambda-canonical-residual",
   "scriptFile": "delta_lambda_canonical_residual.py",
   "scriptHash": "a95bac7baf8c",
-  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "scriptCommitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -122,52 +122,52 @@
         "Z": 3,
         "N": 3,
         "A": 6,
-        "B_AME_MeV": 31.994526,
+        "B_AME_MeV": 31.9939872,
         "B_pred_canonical_MeV": 1.0987340092144056,
-        "Delta_lambda": 29.1194,
-        "log_q0_Delta": 32.312,
+        "Delta_lambda": 29.119,
+        "log_q0_Delta": 32.311,
         "law_10A_minus_5": 55,
-        "deviation_from_law": -22.688,
-        "Delta_lambda_exact": "29.1194463188375082329337934826889391826115654359331456224811",
-        "log_q0_Delta_exact": "32.3115098213562141044877647309101554772754879363767158889462",
-        "deviation_from_law_exact": "-22.6884901786437858955122352690898445227245120636232841110538"
+        "deviation_from_law": -22.689,
+        "Delta_lambda_exact": "29.1189559362740475443948882734688221913352580103611311854221",
+        "log_q0_Delta_exact": "32.3113484220242287862301025530857323536042417048298771901584",
+        "deviation_from_law_exact": "-22.6886515779757712137698974469142676463957582951701228098416"
       },
       {
         "atom": "7Li",
         "Z": 3,
         "N": 4,
         "A": 7,
-        "B_AME_MeV": 39.244531,
+        "B_AME_MeV": 39.2450807,
         "B_pred_canonical_MeV": 1.106029521579684,
-        "Delta_lambda": 35.4824,
+        "Delta_lambda": 35.4829,
         "log_q0_Delta": 34.206,
         "law_10A_minus_5": 65,
         "deviation_from_law": -30.794,
-        "Delta_lambda_exact": "35.4823539826939638385077356956356337083801520966738824613992",
-        "log_q0_Delta_exact": "34.2055861897568845997038645782100912136347085722838160227338",
-        "deviation_from_law_exact": "-30.7944138102431154002961354217899087863652914277161839772662"
+        "Delta_lambda_exact": "35.4828509857027215905604236918894783754969408428461208717191",
+        "log_q0_Delta_exact": "34.2057204321610849852655905298285598360620330600321680478735",
+        "deviation_from_law_exact": "-30.7942795678389150147344094701714401639379669399678319521265"
       },
       {
         "atom": "7Be",
         "Z": 4,
         "N": 3,
         "A": 7,
-        "B_AME_MeV": 37.60035,
+        "B_AME_MeV": 37.6008409,
         "B_pred_canonical_MeV": 1.2745260017757178,
-        "Delta_lambda": 29.5014,
-        "log_q0_Delta": 32.436,
+        "Delta_lambda": 29.5018,
+        "log_q0_Delta": 32.437,
         "law_10A_minus_5": 65,
-        "deviation_from_law": -32.564,
-        "Delta_lambda_exact": "29.5014381406215104031612386991096393262610329618840857881249",
-        "log_q0_Delta_exact": "32.4364160255265690194264076668296084324685907453832406480352",
-        "deviation_from_law_exact": "-32.5635839744734309805735923331703915675314092546167593519648"
+        "deviation_from_law": -32.563,
+        "Delta_lambda_exact": "29.5018233034187511495760170682492189557577068370230403164129",
+        "log_q0_Delta_exact": "32.4365411506385019019784268906436283351021238417873801792020",
+        "deviation_from_law_exact": "-32.5634588493614980980215731093563716648978761582126198207980"
       }
     ],
     "law": {
       "candidate": "Delta_lambda(K) ≈ q0^(10A−5)",
       "equivalently": "B_AME ≈ B_canonical · q0^(5(2A−1))",
       "tier": "near-match (c_k tiering discipline) — observation, NOT wired",
-      "max_abs_deviation_all": 32.564,
+      "max_abs_deviation_all": 32.563,
       "max_abs_deviation_N_ge_Z": 30.794,
       "z_dependence_note": "³He (Z>N) deviates −1.40; the N≥Z isotopes (D, T, ⁴He) sit within 0.27 of the integer law."
     }
