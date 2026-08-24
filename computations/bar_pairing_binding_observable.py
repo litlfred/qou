@@ -81,11 +81,21 @@ from per_irrep_pole_atom import parts_of  # noqa: E402
 set_compute_dps()
 
 # AME 2020 binding energies (MeV), for comparison only.
+# From the CANONICAL accessor, not hand-typed. These were four mp.mpf(str)
+# literals -- full precision of slightly wrong numbers, which no float64 or
+# padding audit can see. Measured against the vendored AME2020 table:
+#     deuteron  2.224566   vs  2.2245662    -2.0e-7 MeV
+#     tritium   8.481798   vs  8.4817962     1.8e-6 MeV
+#     helium-3  7.718041   vs  7.71804132   -3.2e-7 MeV
+#     helium-4  28.295674  vs 28.2956624     1.16e-5 MeV
+# See bean qou-n55l: 35 producers share this defect. AME_MeV and the two
+# err_*_pct fields in this witness MOVE as a result.
+from codata_constants import ame_binding_mev as _ame_b  # noqa: E402
 AME_B_MEV = {
-    "deuteron": mp.mpf("2.224566"),
-    "tritium": mp.mpf("8.481798"),
-    "helium-3": mp.mpf("7.718041"),
-    "helium-4": mp.mpf("28.295674"),
+    "deuteron": _ame_b(1, 2),
+    "tritium": _ame_b(1, 3),
+    "helium-3": _ame_b(2, 3),
+    "helium-4": _ame_b(2, 4),
 }
 
 ISOTOPES = {
@@ -310,11 +320,14 @@ def compute_atom(atom: str) -> dict:
     err_bar = (B_bar - ame) / ame
     return {
         "atom": atom, "Z": Z, "N": N, "A": A, "n_strands": n,
-        "B_arch_MeV": float(B_arch),
-        "B_bar_MeV": float(B_bar),
-        "AME_MeV": float(ame),
-        "err_arch_pct": float(err_arch * 100),
-        "err_bar_pct": float(err_bar * 100),
+        # No float(): B_arch/B_bar are built entirely from mp.sqrt and E0, so
+        # every one of these was full-precision mpf until this dict cast it
+        # down on the way into the witness.
+        "B_arch_MeV": B_arch,
+        "B_bar_MeV": B_bar,
+        "AME_MeV": ame,
+        "err_arch_pct": err_arch * 100,
+        "err_bar_pct": err_bar * 100,
         "growth_channels_free": n_growth_free,
         "growth_channels_atom": n_growth_atom,
     }
@@ -377,7 +390,11 @@ def main(argv: list[str]) -> int:
     WitnessBuilder.stamp_staleness_metadata(
         witness, script_path=__file__,
         engine=witness.get("engine", "rust+mpmath"))
-    out.write_text(json.dumps(witness, indent=2))
+    # default=str: the repo convention (116 files) for mpf-valued witnesses --
+    # it serialises an mpf to its full decimal string losslessly. Without it a
+    # raw json.dumps raises "Object of type mpf is not JSON serializable",
+    # which is why the values above used to be cast to float on the way in.
+    out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out.name}", flush=True)
     return 0
 
