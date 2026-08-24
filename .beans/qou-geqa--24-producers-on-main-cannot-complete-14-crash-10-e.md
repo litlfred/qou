@@ -289,3 +289,49 @@ rate of a naive producer-runner, which came out around **6 in 7**.
 
 `su4` is the neat closure: the right disposition for it turned out to be
 *joining* the category this bean spent five corrections learning to recognise.
+
+## 2026-08-24, later — RETRACTED: hadron_knot_table is unresolved, not fixed
+
+I wrote above that `hadron_knot_table` "is **fixed on main** by the sibling
+`qou-n7ue` arc … Runs; slow". **That was not measured.** What I measured was a
+**timeout** — three `A=1` atoms printed, no traceback, then the 900 s budget
+expired. I read the absence of a traceback as success.
+
+The sibling bean `qou-q7lf` (landed on main after my run) reports a **second**
+scipy-sparse boundary, and it is not the one its own title names:
+
+    hecke_core_legacy.py:1435 unified_iterative_correction
+        Msig = sig_sparse.T.dot(M_run.T).T
+    TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))
+
+sparse **multiplication**, not construction. It is reached through
+`binding_energy`, which for `A = 1` returns 0 without engaging the correction
+loop — so the three atoms I saw complete prove nothing about it. My run timed
+out **at deuterium**, the first atom that would have exercised the path.
+
+### The third direction of the same error
+
+This bean already carries two rules bought the hard way: a non-zero exit is not
+proof of a defect, and a traceback is not proof of a defect. Here is the mirror:
+
+> **A timeout is not proof of success.**
+
+All three are the same mistake — treating a *process-level signal* as a verdict
+about the *computation*. The first two cost false negatives ("broken" when it
+was not); this one cost a false **positive**, which is worse, because it removed
+a producer from the backlog and put "fixed" into AGENTS.md and a PR body.
+
+That is now 6 corrections on this census, and the first one in the optimistic
+direction: **14 → 12 → 8 → 4 → 2 → 0 → 1**.
+
+### Consequence for the tally
+
+`hadron_knot_table` returns to **unresolved**, owned by `qou-q7lf` / the
+`qou-n7ue` arc — not by me, and not counted as fixed here. The sibling's bean
+already scopes it properly: the sparse path is an O(dim·nnz) vs O(dim³)
+optimisation with no scipy.sparse-over-mpf equivalent, so the options are dense
+mpmath (needs measuring), routing off `hecke_core_legacy` (10 live importers),
+or declaring the producer exploratory-only. A scoping decision, not a repair.
+
+Nothing else in the tally moves: the four producers this branch touches are
+unaffected, and none of them go through `hecke_core_legacy`.

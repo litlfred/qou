@@ -433,11 +433,25 @@ user's last message, not the most recently mentioned file.
       **The 2 real defects**, re-verified against `main` on 2026-08-24:
       `su4_1111_markov_trace_probe` (`scipy.sparse` rejects `dtype object` — an
       `mpf` reaching a sparse matrix) and `qbeta_habiro_element_probe`
-      (`TypeError: 'NoneType' object is not subscriptable`). `hadron_knot_table`
-      was on this list and **is fixed on `main`** by the sibling `qou-n7ue` arc;
-      it now runs, slowly, which is the "honest cost" that bean records. The 10
-      timeouts are a 240 s budget artifact and may simply be long-compute;
-      re-run with a real budget before calling any of them broken.
+      (`TypeError: 'NoneType' object is not subscriptable`).
+
+      **`hadron_knot_table` is UNRESOLVED, and the way I got that wrong is the
+      third lesson here.** I wrote that it "is fixed on `main` by the sibling
+      `qou-n7ue` arc; it now runs, slowly". What I actually measured was a
+      **timeout** after three `A=1` atoms with no traceback — and I read that
+      as success. It is not. The sibling bean `qou-q7lf` reports a **second**
+      scipy-sparse boundary in `hecke_core_legacy.unified_iterative_correction`
+      (sparse *multiplication*, not construction), reached via `binding_energy`
+      — a path that only engages once there is binding to compute, i.e. at
+      `A ≥ 2`. My run timed out at deuterium, the first atom that would have
+      exercised it. **A timeout is not proof of success, exactly as a non-zero
+      exit is not proof of failure** — the same error as the other two on this
+      list, in the third direction. Budget a run past the light atoms before
+      claiming this producer completes.
+
+      The 10 timeouts are a 240 s budget artifact and may simply be
+      long-compute; re-run with a real budget before calling any of them
+      broken — and, per the paragraph above, before calling any of them fixed.
 
       Two lessons in the measurement itself, both worth more than the number:
       **mask volatile keys or you measure your own harness** — `timestamp`,
