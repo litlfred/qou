@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-24T14:23:46Z
+updated_at: 2026-08-24T17:51:39Z
 ---
 
 ## Refines `qou-qpj9` (meson-binding braid gate)
@@ -141,3 +141,53 @@ Borel-summability literature, none about the down quark.
 **Deliberately not resolved.** Both this and the σ semantics are authorial calls;
 picking one to make the tables self-consistent would be the silent resolution the
 corpus disciplines forbid. Flagged with the evidence that decides them.
+
+
+## 🛑 RETRACTED — σ IS the T₃ grading, and THIS BEAN'S TARGET IS LARGELY ALREADY BUILT
+
+My note above ("σ CANNOT be T₃ as documented", "the discriminating assignment is
+**undefined**", "settling what σ denotes is a **prerequisite** for the T₃
+derivation") is **wrong**. Retracted.
+
+`lean/QOU/ParticleInteractions/MesonOperatorSelectionT3.lean` already formalises
+this bean's target:
+
+```lean
+def signedWrithe : Quark → ℤ
+  | .up   => 3   | .charm   => 5   | .top    => 7
+  | .down => -3  | .strange => -5  | .bottom => -7
+def genWinding (q : Quark) : ℕ := (signedWrithe q).natAbs
+def T3 (q : Quark) : ℚ := ((signedWrithe q).sign : ℚ) / 2
+```
+
+`T_{m,n}^σ = T_{m,-n}`, so σ **is** the writhe sign flip and `T₃` is exactly its
+sign. And it is Lean-proved to do the work this bean was opened for:
+
+- `T3_charm_ne_strange` — charm `+½`, strange `−½`
+- `unsigned_D_kaon_collide` — reproduces the blocker `{5,3} = {3,5}`
+- **`graded_D_kaon_distinct`** — the signed content SEPARATES D̄⁰ from the kaon
+- `gradedContent_injective_on_dictionary` — injective on `{π, K, η/φ, D}`
+
+**So the D-vs-K degeneracy this bean exists to resolve is CLOSED**, by a sibling,
+before I touched it. My whole framing — "the grading is missing / undefined /
+only unprojected" — was built without grepping the Lean for it, in the same
+directory as the file I was auditing.
+
+### What is actually still open
+
+That file's own honest remainder, not mine: with the neutral kaon `K⁰ = d̄s`
+admitted, the signed **multiset** still collides `D̄⁰ {−5,+3}` with `K⁰ {+3,−5}`,
+because `(n, T₃)` grades by *(generation, weak-sign)* and `c̄` shares `(5,−)` with
+`s` while `u` shares `(3,+)` with `d̄`. It records that a **third grade** —
+flavour (charm number vs strangeness) — is what a global separation needs.
+`orderedContent` is defined there as the ordered (non-multiset) refinement.
+
+**Re-scope this bean to that third grade**, or close it in favour of whichever
+bean owns `MesonOperatorSelectionT3`. Do not re-derive T₃.
+
+### Unaffected
+
+The two other findings from PR #5659 stand and are independent of σ:
+`𝔡` is given two incompatible knots (`T_{2,3}^σ` vs "the three-twist knot `5₂`";
+`lepton-meson-torus-knot-dictionary.lean:27` `pion: ū(3)+d(3)=6` settles it at 3
+crossings), and `𝔎_μ` is called amphichiral when the cinquefoil `5₁` is chiral.
