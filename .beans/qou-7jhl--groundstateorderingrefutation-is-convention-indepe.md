@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T21:35:46Z
-updated_at: 2026-08-24T21:36:05Z
+updated_at: 2026-08-24T21:50:15Z
 ---
 
 PR #5724, branch claude/gso-refutation-convention-d-2026-08-24.
@@ -43,3 +43,38 @@ OPEN (why this bean stays open):
    genuinely archimedean (abs, ordering, Real.sqrt), so a split would move two
    lemmas into a new module and break nothing but the module identity the
    content block cites. Left as is, deliberately.
+
+
+--- follow-up, coordinator review of PR #5724 ---
+
+NEAR-MISS, recorded because it is the most reusable thing here. hU is a
+SUFFICIENT condition mistaken for a NECESSARY one. hU only converts the gap
+identity into an inequality between ABSOLUTE values; the conclusion outlives
+it. I was about to "correct" the audit's "1 < q <~ 1.22" to the hU window
+1.13700 -- which would have replaced a correct number with a wrong one, in an
+audit doc, on the strength of a real measurement of the wrong quantity.
+
+  hU holds          C: 1 < q < 1.13700    D: 1 < q < 1.21061
+  conclusion holds  C: 1 < q < 1.22092    D: 1 < q < 1.57015
+
+Both pairs are now in the audit table, the PR body and the probe output, so
+nobody has to re-derive which quantity is which.
+
+SELFTEST DEFECT (fixed on this branch). scripts/lean-overlay-env.sh selftest
+asserted shadowing behaviour only, never coverage, and stayed green while the
+farm held 0 of 2161 QOU oleans. Check (2) cannot catch it structurally: it runs
+lean with LEAN_PATH="$OVL:$BASE_LEAN_PATH", so a module missing from the farm
+resolves from the real root behind it. Measured on the buggy variant with no
+LEAN_EXTRA_ROOTS: (2) prints "ok". Added (3) root completeness and (4) per-root
+reachability, both over an independently computed root list -- a check that
+iterated roots() is blind to a dropped root, since it never appears there. Also
+per-root link counts in init. Verified: fixed 12 ok / 0 FAIL / rc=0; buggy
+variant rc=1 naming the QOU root.
+
+LEAN_EXTRA_ROOTS WORDING CORRECTED. I called /tmp/ocn-overlay "actively
+harmful" -- true in my worktree, wrong as general guidance. The dropped root is
+always the LAST existing one, so which package it costs depends on the tree: in
+the main clone all three paper build dirs exist and the casualty was
+unital-groebner-bases, leaving both QOU roots intact. In my worktree only the
+QOU package .lake was symlinked in, making QOU last. Honest guidance: unset it
+unless you know what it contains; after the fix it is only ever additive.
