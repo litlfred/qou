@@ -5069,3 +5069,44 @@ is an explicit argument.
 completion is incomplete and needs a further rule. This statement is where that
 would surface — it is a reduction of the problem to one composition, not a
 closure of it.
+
+## The deep self-overlap RESOLVES — measured, with the target (PR pending)
+
+Before trying to prove `hdeep`, the cheap decisive check (AGENTS.md
+formalize-first §caveat: run the probe when it is cheap and decisive).
+[`computations/hecke_deep_selfoverlap_probe.py`](../computations/hecke_deep_selfoverlap_probe.py)
+reduces both sides of the S-polynomial under the completed system, exact
+symbolic in `q`, 1.8 s to `i = 9`.
+
+**It resolves for every `i = 1 … 9`, and the normal form does not depend on rule
+order** (checked against the reversed rule list). So the completion is **not**
+missing a rule — the outcome that would have mattered most did not happen.
+
+**The target, for `i ≥ 2` — both sides land on the same TWO-term normal form:**
+
+```
+bsWord₂(i−1, 0) · descWord(i, 1)  +  (q − q⁻¹) · bsWord₂(i−1, 0) · descWord(i, 0)
+```
+
+The second word is the first with a trailing `σ₀`. `i = 1` is degenerate
+(`descWord(i−1, …)` collapses; four terms). All three facts are **assertions in
+the probe**, not prose — a future edit that breaks them fails.
+
+**Chain size:** `i(i+5)/2` steps on the left, one more on the right, checked for
+`i = 2 … 9`. Strategy-dependent — a size estimate for the induction, not a fact
+about the algebra. It says the chain grows linearly per level, so the Lean proof
+wants a general step lemma, not an enumeration.
+
+Rules were read off the Lean `def`s (`heckeRelation`, `yangBaxterRelation`,
+`farCommRelation`, `bokutShiaoRelation`) rather than off prose, including the
+Yang–Baxter `lc = −1` sign that makes `wHi → wLo`.
+
+### Not mine, recorded rather than swept
+
+`precision-gates.sh --changed` reported two stale committed audit witnesses
+(`q0-anchor-consistency-audit`, `witness-provenance-audit`). The movement is
+**main's**, not this branch's: the newly-listed witnesses are
+`gz-third-knot-rank-grading` (`749186133b`) and `aomega-m3-adjoint-index-set`
+(`683299faf7`). Counts would move `total_scanned` 2731 → 2732, `prov_ok`
+2333 → 2335, `Q0_INDEPENDENT` 47 → 48. Tree restored; not swept into a Lean PR.
+All blocking precision gates green.
