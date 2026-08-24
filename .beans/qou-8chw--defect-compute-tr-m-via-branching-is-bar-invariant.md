@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:42:01Z
-updated_at: 2026-08-23T18:35:39Z
+updated_at: 2026-08-24T08:01:48Z
 ---
 
 MEASURED 2026-08-19. computations/canonical_tr_m_via_branching.compute_tr_m_via_branching(Z, N, q_val) returns IDENTICAL values at q and 1/q:
@@ -95,3 +95,44 @@ mpmath at 60 dps; the one float64 number is labelled as such.
 
 STATUS: the original claim is retracted; the underlying defect is confirmed and
 stays open, re-scoped to "q_val is not threaded into the A^lambda extract".
+
+
+LIVE HALF CLOSED 2026-08-24 -- PR #5619, branch claude/alambda-q-threading-2026-08-24.
+
+compute_tr_m_via_branching now REFUSES q_val off the extract's stamped anchor
+instead of returning a hybrid. It compares q_val to the extract's own q0Value
+and returns a clean error naming the cause and the alternative
+(tr_m_atom_via_transfer.tr_m_atom_zn).
+
+MY FIRST GATE WAS WRONG AND TESTING CAUGHT IT. Tolerance 1e-30 REFUSED
+PRODUCTION'S OWN DEFAULT: the default sets q_val = float(Q_FLOAT), a float64
+truncation ~1e-16 from the 50-digit stamp. 1e-12 separates cleanly (truncation
+~1e-16 vs bar image ~2e-1). Verified on five values: production default OK,
+50-digit q0 OK, bar image / q=1.5 / q0+1e-9 all REFUSED. Both live consumers
+pass float(Q_FLOAT) and are unaffected.
+
+THE "REAL FIX" DOES NOT EXIST, AND THE CORPUS SAID IT DID. I went looking to
+build A^lambda at arbitrary q rather than merely guard, because
+A_operator_extract_at_level's header says the correct non-fitted replacement is
+the closed form A^lambda_{xi nu}(I) = Pi rho_lambda(I) Pi in
+a_operator_categorical, "verified exact at 1e-49". BOTH HALVES OVER-READ:
+
+  * categorical_A_interface is a `raise NotImplementedError` STUB with ZERO
+    callers (only its own def and a TODO line reference it). Its docstring
+    calls step 4 "the crux ~500 LOC".
+  * the 1e-49 belongs to a DIFFERENT result -- the combiner identity at
+    lambda |- 12 / A=4 in a_operator_recursive.py. What passes on the
+    categorical route is the I = IDENTITY preflight, not the I != 1 interface
+    case actually needed.
+
+An agent reading the old wording concludes the replacement exists and needs
+only wiring. It does not. Corrected in that header, and recorded in the probe
+verdict so the next reader hits it before attempting to lift the refusal.
+
+STILL OPEN in this bean: (1) implementing categorical_A_interface -- the ~500
+LOC crux -- which is what would actually let A^lambda be built at arbitrary q;
+(2) the H_9 nn extract carrying NO q0Value stamp at all, so no drift check can
+classify it. Neither is touched here.
+
+NOT CLAIMED: this does not adjudicate tr_M^atom(1/q0). That still rests on a
+single method. The fix makes the combiner's unusability LOUD, not fixed.
