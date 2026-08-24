@@ -58,3 +58,58 @@ already catalogues thirteen such spellings for convention-C. Add this one:
 *a field written by a shared helper is invisible to a grep of the caller.*
 
 The su4 fix is unaffected — it was found by the audit, not by this sweep.
+
+## Replaced with a measured figure: 38 %, not 88 %
+
+`computations/audits/q0_anchor_reproducibility_audit.py`.
+
+```
+manifest-declared producer stems : 651
+witnesses carrying q0Anchor      : 1032
+
+  488  reproduces: manifest + builder
+  241  AT RISK: builder, but not manifest-declared
+  155  AT RISK: hand-built witness, never stamped
+  106  reproduces: producer writes it
+   42  producer-not-found
+
+  => 396 would NOT survive a re-run (38 %)
+```
+
+The grep said 88 %. It more than doubled the real number.
+
+### The rule the audit encodes
+
+From `witness.py:1590-1605`, which is authoritative and which I should have
+read before sweeping: `WitnessBuilder.save` stamps `q0Anchor` **only when the
+pin is positively declared** for that producer — an env var, or an entry in
+`q0_anchor_manifest.json`. Undeclared producers are deliberately left unstamped,
+because *"defaulting one in would assert a pin nobody established."*
+
+So a stamp reproduces when **either** the producer writes the field itself,
+**or** it is manifest-declared *and* reaches the builder. Everything else on
+disk is a backfill artifact one re-run from vanishing.
+
+### Two buckets, two different remediations
+
+- **241 builder, not manifest-declared** — the code is fine; the *manifest* is
+  short. Fix is a manifest entry, not an edit. Cheap.
+- **155 hand-built** — never on the stamping path at all. These need the field
+  written explicitly, as `su4` and `pentagon` now do.
+
+### Stated limits, so the next reader does not over-trust this either
+
+- `uses_builder` is textual **on the builder**, not on the field. A builder
+  reached only through a helper module is missed, which makes a safe stamp
+  read as at-risk. **396 is an upper bound**, not a point estimate.
+- 42 witnesses have no locatable producer and are unclassified — not counted
+  either way.
+- The total moved 831 → 1032 between the two sweeps because the branch rebased
+  onto main (+83 commits) in between. Same corpus question, larger corpus.
+
+### The selftest is the part that matters
+
+`--selftest` asserts that `su4_1111_markov_trace_probe` and
+`pentagon_rt_torus_knot_higgs_probe` classify as reproducing — two answers
+established by hand on this branch. Both pass. Without it this audit could be
+narrowed into reporting a clean tree, which is precisely how the grep failed.
