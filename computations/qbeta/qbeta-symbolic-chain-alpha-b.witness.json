@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:27:42.210817+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-24T08:47:45.384756+00:00",
+  "commitSha": "971e1e83c30cd9d6d4a146fb573633973a74ce61",
   "assertions": [
     {
       "name": "N2_factor_equals_one_minus_u_squared",
@@ -14,7 +14,7 @@
     },
     {
       "name": "alpha_q0_matches_probe_n3_witness",
-      "computed": 5.8235661443920095e-09,
+      "computed": 0.011850339835733775,
       "expected": 0.0,
       "passed": false,
       "tolerance": 1e-30,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 247,
+  "durationMs": 269,
   "computation": "qbeta-symbolic-chain-alpha-b",
   "scriptFile": "qbeta_symbolic_chain_alpha_b.py",
-  "scriptHash": "5331b7bfe32b",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "dece14987eae",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -36,8 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_symbolic_chain_alpha_b.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_symbolic_chain_alpha_b.py"
   },
   "description": "Symbolic chain α(q), b(q), α_eff(q), cos(α_eff(q)) for the Q_β precision ladder. Identifies the closed forms used in probe_q_beta_operator_valued_N3.py and shows that c_2 = -1 is structural (the (1 - b²·ℏ_q⁴) factor IS 1 + c_2·u² with u = b·ℏ_q²). Foundation for downstream c_3, c_4 categorical derivation. No fit. Reports the Q_β_CODATA residual after the N=2 partial-ladder Q_A · cos(α_eff) · (1-b²ℏ⁴) — what remains for c_3, c_4 to close categorically.",
   "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
@@ -56,18 +66,18 @@
     },
     "numerical_at_q0": {
       "q_0": "1.1099785955573347198997632204832250266562084087802",
-      "alpha_q0": "-0.05233612609179498319087423",
+      "alpha_q0": "-0.04048578043249506312110029",
       "b_q0": "0.8675840673071423874917978",
       "hbar_q_sq_q0": "0.009817188513985984393706487",
-      "alpha_eff_q0": "-0.05659474426203744391084079",
+      "alpha_eff_q0": "-0.04474439860273752384106684",
       "Q_A_q0_MeV": "0.7836458038973215495988765",
-      "Q_N1_q0_MeV": "0.7823911437652731195833985",
-      "Q_N2_q0_MeV": "0.7823343865181718847573066",
+      "Q_N1_q0_MeV": "0.7828614813338303277661494",
+      "Q_N2_q0_MeV": "0.7828046899668827573528469",
       "Q_beta_CODATA_MeV": "0.78233",
       "eps_N0_ppm": "1681.9",
-      "eps_N1_ppm": "78.156",
-      "eps_N2_ppm": "5.60699",
-      "residual_after_N2": "-5.60696071587398e-6"
+      "eps_N1_ppm": "679.357",
+      "eps_N2_ppm": "606.764",
+      "residual_after_N2": "-0.000606396426805822"
     },
     "N2_factor_minus_1_minus_u_squared_mpmath_50dps": "0.0"
   },

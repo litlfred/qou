@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:34.345632+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T08:50:56.602377+00:00",
+  "commitSha": "971e1e83c30cd9d6d4a146fb573633973a74ce61",
   "assertions": [
     {
       "name": "bar_odd_coeffs_derived_equal_hardcoded",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 19,
+  "durationMs": 18,
   "computation": "qbeta-jacobi-anger-tower-general",
   "scriptFile": "qbeta_jacobi_anger_tower_general.py",
   "scriptHash": "a78fb0cfd707",
