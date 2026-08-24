@@ -790,6 +790,23 @@ structure RothGammaFull {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (p q F : ℕ)
   /-- Clause 4, raised to `m·q` so that it is integral. -/
   heightBound : ∀ j : Fin m, (j : ℕ) = 0 →
     b ^ (m * q) ≤ Kh (o.symm j) ^ (d (o.symm j) * p)
+  /-- §11's derived list: `K₁ ≥ 2, K₂ ≥ 2, …, K_M ≥ 2`.
+
+  ⚠⚠ **Correction twenty.**  This clause was absent, and its absence made `RothLemmaTheta`
+  **false at `m = 1`** — see the counterexample recorded there.  At `m ≥ 2` it is a
+  *consequence* of clauses 3a/3b (`(m−1)m(2m+1) ≥ 10 > 0` forces `F ≥ 1`, so `2 ≤ 2^F ≤ K₁`,
+  and clause 2 carries it along), so adding it costs case (ii) nothing.  At `m = 1` those
+  clauses are vacuous, and §11 states `K₁ ≥ 2` outright — it is the middle conjunct of case (i),
+  `M = 1, K₁ ≥ 2, b ≤ K₁^{s₁t}`.  `RothGammaFull` encodes case (ii) only, so at `m = 1` it was
+  not `Γ₁`. -/
+  two_le : ∀ j, 2 ≤ Kh j
+  /-- §11's standing setting: `s₁,…,s_M, K₁,…,K_M` are **positive** integers.
+
+  ⚠ Also absent, and also unsafe in the same direction: without it `d j = 0` is admitted, where
+  `idxWeight` reads `n/0 = 0` in `ℚ` and the index collapses.  A hypothesis structure missing a
+  clause is a *weaker* hypothesis, hence a *stronger* theorem — the shape this arc has now got
+  wrong four times. -/
+  degPos : ∀ j, d j ≠ 0
 
 /-- **From a `p/q` power bound to an `E : ℕ` one** — the bridge between the arc's two height
 idioms, with the rounding as an explicit hypothesis.
