@@ -251,7 +251,47 @@ theorem farCommRelation_lm {n : ℕ} (i j : Fin n) (hij : j.val < i.val) :
     · exact heckeOrder_lt_of_lex (by simp)
         (List.Lex.rel (by simpa [HeckeGen.rank] using hij))
 
-/-! ## §4b  Classification of the system's leading monomials -/
+/-! ## §4b  Classification of the system's rules, and of their leading monomials
+
+Membership in `heckeRewritingSystem` is three list operations deep: a `map` for
+the quadratic family, and for each of the other two a `flatMap` over a
+`filterMap` whose `if` carries that family's side condition. Every proof that
+begins from `r ∈ rules` has to unpick that, and until now each one did it inline.
+
+`mem_heckeRewritingSystem_rules` does it once, and inverts to the **rule** —
+`r = heckeRelation i hp`, not merely `r.lm = [σᵢ, σᵢ]`. The distinction is not
+cosmetic. `OverlapComposition.spoly` is computed from `rule.relation` and
+`rule.lc`, so an inversion that stops at the leading monomial cannot reach it;
+and the *completed* system carries two distinct rules on one leading monomial
+(`HeckeCompletion` §4j puts `yangBaxterRelation i' i` and
+`bokutShiaoRelation i' i i'` on the same word), so there the lm does not
+determine the rule at all. The leading-monomial classification is recovered
+below as a corollary. -/
+
+/-- **Every rule of `heckeRewritingSystem` is one of the three relations**, with
+its indices and its side condition. This is the inversion of the three `_mem`
+lemmas, and unlike `heckeRewritingSystem_lm_cases` it lands on the rule itself,
+which is what any statement about `spoly` needs. -/
+theorem mem_heckeRewritingSystem_rules {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hr : r ∈ (heckeRewritingSystem n hn hp).rules) :
+    (∃ i : Fin n, r = heckeRelation i hp)
+    ∨ (∃ i j : Fin n, j.val = i.val + 1 ∧ r = yangBaxterRelation i j)
+    ∨ (∃ i j : Fin n, j.val + 1 < i.val ∧ r = farCommRelation i j) := by
+  simp only [heckeRewritingSystem, List.mem_append, List.mem_map,
+    List.mem_flatMap, List.mem_filterMap, List.mem_finRange, true_and] at hr
+  rcases hr with (⟨i, hi⟩ | ⟨i, j, hj⟩) | ⟨i, j, hj⟩
+  · exact Or.inl ⟨i, hi.symm⟩
+  · by_cases hc : j.val = i.val + 1
+    · simp only [hc] at hj
+      exact Or.inr (Or.inl ⟨i, j, hc, (Option.some.injEq _ _ ▸ hj).symm⟩)
+    · simp only [if_neg hc] at hj
+      exact Option.noConfusion hj
+  · by_cases hc : i.val > j.val + 1
+    · simp only [if_pos hc] at hj
+      exact Or.inr (Or.inr ⟨i, j, hc, (Option.some.injEq _ _ ▸ hj).symm⟩)
+    · simp only [if_neg hc] at hj
+      exact Option.noConfusion hj
 
 /-- Every rule of `heckeRewritingSystem` is one of the three families, and its
     leading monomial is the explicit word listed here. -/
@@ -261,27 +301,11 @@ theorem heckeRewritingSystem_lm_cases {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
     (∃ i : Fin n, r.lm (heckeOrder n) = [⟨i⟩, ⟨i⟩]) ∨
     (∃ i j : Fin n, j.val = i.val + 1 ∧ r.lm (heckeOrder n) = [⟨j⟩, ⟨i⟩, ⟨j⟩]) ∨
     (∃ i j : Fin n, j.val + 1 < i.val ∧ r.lm (heckeOrder n) = [⟨i⟩, ⟨j⟩]) := by
-  rcases List.mem_append.mp hr with hr' | hr'
-  · rcases List.mem_append.mp hr' with hr'' | hr''
-    · -- Hecke relations
-      obtain ⟨i, -, rfl⟩ := List.mem_map.mp hr''
-      exact Or.inl ⟨i, heckeRelation_lm i hp⟩
-    · -- Yang–Baxter relations
-      obtain ⟨i, -, hi⟩ := List.mem_flatMap.mp hr''
-      obtain ⟨j, -, hj⟩ := List.mem_filterMap.mp hi
-      by_cases hc : j.val = i.val + 1
-      · rw [if_pos hc] at hj
-        cases hj
-        exact Or.inr (Or.inl ⟨i, j, hc, yangBaxterRelation_lm i j (by omega)⟩)
-      · rw [if_neg hc] at hj; exact absurd hj (by simp)
-  · -- far commutation
-    obtain ⟨i, -, hi⟩ := List.mem_flatMap.mp hr'
-    obtain ⟨j, -, hj⟩ := List.mem_filterMap.mp hi
-    by_cases hc : i.val > j.val + 1
-    · rw [if_pos hc] at hj
-      cases hj
-      exact Or.inr (Or.inr ⟨i, j, hc, farCommRelation_lm i j (by omega)⟩)
-    · rw [if_neg hc] at hj; exact absurd hj (by simp)
+  rcases mem_heckeRewritingSystem_rules hn hp hr with
+    ⟨i, rfl⟩ | ⟨i, j, hj, rfl⟩ | ⟨i, j, hj, rfl⟩
+  · exact Or.inl ⟨i, heckeRelation_lm i hp⟩
+  · exact Or.inr (Or.inl ⟨i, j, hj, yangBaxterRelation_lm i j (by omega)⟩)
+  · exact Or.inr (Or.inr ⟨i, j, hj, farCommRelation_lm i j (by omega)⟩)
 
 /-- No rule of the Hecke system has an empty leading monomial. -/
 theorem heckeRewritingSystem_lm_ne_nil {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
