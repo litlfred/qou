@@ -436,7 +436,46 @@ theorem bokutShiao_lm_eq_yangBaxter_lm {n : ℕ} {i' i : Fin n} (hi : i'.val + 1
 The analogue of `heckeRewritingSystem_lm_cases` for the completed system. That
 classification is what §4e's irreducibility machinery runs on — `no_rule_infix_w₁`
 and friends dispatch on it — so the completed system needs its own before any of
-that can be redone against it. -/
+that can be redone against it.
+
+Two levels, and the difference between them is load-bearing here in a way it is
+not for the uncompleted system. `mem_heckeCompletedRewritingSystem_rules` inverts
+membership to the **rule**; `heckeCompletedRewritingSystem_lm_cases` inverts it
+only as far as the rule's **leading monomial**, and is now a corollary of the
+first. §4j is exactly the reason the weaker one cannot stand in for the stronger:
+`bokutShiao_lm_eq_yangBaxter_lm` puts `bokutShiaoRelation i' i i'` and
+`yangBaxterRelation i' i` on one leading monomial, so in this system the lm does
+not determine the rule. Anything phrased through `OverlapComposition.spoly` —
+which is computed from `rule.relation` and `rule.lc` — therefore needs the
+rule-level inversion; the criterion's `overlap_resolves` is such a statement. -/
+
+/-- **Every rule of `heckeCompletedRewritingSystem` is one of four relations**,
+with its indices and its side condition. The inversion of `heckeRelation_mem` and
+its three siblings, and the rule-level strengthening of
+`heckeCompletedRewritingSystem_lm_cases` below. -/
+theorem mem_heckeCompletedRewritingSystem_rules {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    (∃ i : Fin n, r = heckeRelation i hp)
+    ∨ (∃ i j : Fin n, j.val = i.val + 1 ∧ r = yangBaxterRelation i j)
+    ∨ (∃ i j : Fin n, j.val + 1 < i.val ∧ r = farCommRelation i j)
+    ∨ (∃ i' i j : Fin n, i'.val + 1 = i.val ∧ j.val ≤ i'.val
+        ∧ r = bokutShiaoRelation i' i j) := by
+  simp only [heckeCompletedRewritingSystem, List.mem_append] at hr
+  rcases hr with hbase | hbs
+  · rcases mem_heckeRewritingSystem_rules hn hp hbase with h | h | h
+    · exact Or.inl h
+    · exact Or.inr (Or.inl h)
+    · exact Or.inr (Or.inr (Or.inl h))
+  · simp only [List.mem_flatMap, List.mem_filterMap, List.mem_finRange,
+      true_and] at hbs
+    obtain ⟨i, i', j, hj⟩ := hbs
+    by_cases hc : i'.val + 1 = i.val ∧ j.val ≤ i'.val
+    · simp only [if_pos hc] at hj
+      exact Or.inr (Or.inr (Or.inr ⟨i', i, j, hc.1, hc.2,
+        (Option.some.injEq _ _ ▸ hj).symm⟩))
+    · simp only [if_neg hc] at hj
+      exact Option.noConfusion hj
 
 /-- **Every rule of `heckeCompletedRewritingSystem` is one of four families**, and
 its leading monomial is the explicit word listed here. The first three cases are
@@ -451,21 +490,12 @@ theorem heckeCompletedRewritingSystem_lm_cases {n : ℕ} (hn : 0 < n) (hp : Heck
     (∃ i j : Fin n, j.val + 1 < i.val ∧ r.lm (heckeOrder n) = [⟨i⟩, ⟨j⟩]) ∨
     (∃ i' i j : Fin n, i'.val + 1 = i.val ∧ j.val ≤ i'.val ∧
         r.lm (heckeOrder n) = bsWord₁ i j) := by
-  rcases List.mem_append.mp hr with hr' | hr'
-  · rcases heckeRewritingSystem_lm_cases hn hp r hr' with h | h | h
-    · exact Or.inl h
-    · exact Or.inr (Or.inl h)
-    · exact Or.inr (Or.inr (Or.inl h))
-  · -- the Bokut–Shiao block: three nested enumerations, then the side condition
-    obtain ⟨i, -, hi⟩ := List.mem_flatMap.mp hr'
-    obtain ⟨i', -, hi'⟩ := List.mem_flatMap.mp hi
-    obtain ⟨j, -, hj⟩ := List.mem_filterMap.mp hi'
-    by_cases hc : i'.val + 1 = i.val ∧ j.val ≤ i'.val
-    · rw [if_pos hc] at hj
-      cases hj
-      exact Or.inr (Or.inr (Or.inr
-        ⟨i', i, j, hc.1, hc.2, bokutShiaoRelation_lm hc.1 hc.2⟩))
-    · rw [if_neg hc] at hj; exact absurd hj (by simp)
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hr with
+    ⟨i, rfl⟩ | ⟨i, j, hj, rfl⟩ | ⟨i, j, hj, rfl⟩ | ⟨i', i, j, h₁, h₂, rfl⟩
+  · exact Or.inl ⟨i, heckeRelation_lm i hp⟩
+  · exact Or.inr (Or.inl ⟨i, j, hj, yangBaxterRelation_lm i j (by omega)⟩)
+  · exact Or.inr (Or.inr (Or.inl ⟨i, j, hj, farCommRelation_lm i j (by omega)⟩))
+  · exact Or.inr (Or.inr (Or.inr ⟨i', i, j, h₁, h₂, bokutShiaoRelation_lm h₁ h₂⟩))
 
 /-- No rule of the completed system has an empty leading monomial — the
 non-degeneracy `gs_basis_of_empty_lm` shows is essential, re-established for the
