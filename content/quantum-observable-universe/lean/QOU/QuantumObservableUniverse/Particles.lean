@@ -61,14 +61,14 @@ theorem total_eq_horizontal {M : Type*} (b : Boson M) (p : M) :
 
 /-- **q-Deformed exterior derivative**: `d_q α = q⁻¹ dα + (1 − q⁻¹) θ ∧ L_ξ α`.
     LaTeX: `\label{def:q-ext-deriv}` -/
-noncomputable def qExtDeriv {M : Type*} (sp : SubstrateParameter M)
+noncomputable def qExtDeriv {M : Type*} (sp : ArchimedeanSubstrateField M)
     (d_alpha : M → ℝ) (lieDerivReeb : M → ℝ) (theta : M → ℝ) (p : M) : ℝ :=
   (sp.field p)⁻¹ * d_alpha p +
     (1 - (sp.field p)⁻¹) * (theta p * lieDerivReeb p)
 
 /-- **q-Deformed Lie bracket**.
     LaTeX: `\label{def:q-lie-bracket}` -/
-noncomputable def qLieBracket {M : Type*} (sp : SubstrateParameter M)
+noncomputable def qLieBracket {M : Type*} (sp : ArchimedeanSubstrateField M)
     (bracket_VW : M → ℝ) (thetaV_LxiW : M → ℝ) (thetaW_LxiV : M → ℝ)
     (p : M) : ℝ :=
   (sp.field p)⁻¹ * bracket_VW p +
@@ -76,14 +76,14 @@ noncomputable def qLieBracket {M : Type*} (sp : SubstrateParameter M)
 
 /-- **q-Deformed connection**: `A_q = q⁻¹ A + (1 − q⁻¹) ι_ξ A · θ`.
     LaTeX: `\label{def:q-connection}` -/
-noncomputable def qConnection {M : Type*} (sp : SubstrateParameter M)
+noncomputable def qConnection {M : Type*} (sp : ArchimedeanSubstrateField M)
     (connA : M → ℝ) (iotaXiA : M → ℝ) (theta : M → ℝ) (p : M) : ℝ :=
   (sp.field p)⁻¹ * connA p +
     (1 - (sp.field p)⁻¹) * (iotaXiA p * theta p)
 
 /-- **q-Deformed Reeb vector field**.
     LaTeX: `\label{def:q-reeb-vector-field}` -/
-noncomputable def qReebVectorField {M : Type*} (sp : SubstrateParameter M)
+noncomputable def qReebVectorField {M : Type*} (sp : ArchimedeanSubstrateField M)
     (xi_f : M → ℝ) (bracket_q_xi_Xf : M → ℝ) (p : M) : ℝ :=
   (sp.field p)⁻¹ * xi_f p +
     (1 - (sp.field p)⁻¹) * bracket_q_xi_Xf p

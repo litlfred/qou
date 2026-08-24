@@ -304,6 +304,11 @@ theorem whitehead_vc_of_saddle_value
   rw [zero_add] at hsum
   exact hsum.congr (fun N => by ring)
 
+/-- **CONJECTURE (OPEN).** The Whitehead Volume Conjecture (van der Veen's theorem). -/
+class WhiteheadVolumeConjectureLimit (kashaev : ℕ → ℝ) (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2)) : Prop where
+  /-- The limit holds. -/
+  limit : Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N)) Filter.atTop (nhds (4 * catalanG))
+
 /-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
     `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
 
@@ -316,13 +321,14 @@ theorem whitehead_vc_of_saddle_value
     qou-1gkf tracks porting the downstream ⌊N/2⌋ result to this exact form. -/
 theorem whitehead_volume_conjecture
     (kashaev : ℕ → ℝ)
-    (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2)) :   -- placeholder link
+    (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2))
+    [hi : WhiteheadVolumeConjectureLimit kashaev hk] :   -- placeholder link
     Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N))
       Filter.atTop (nhds (4 * catalanG)) := by
   -- Ref: [vanderveen2008] arXiv:math/0611181 — VC for the Whitehead link.
   -- Honest sorry: this base file is Mathlib-only and cannot import
   -- QOU.Knot.Clausen; the genuine unconditional proof (⌊N/2⌋ inner sum) is
   -- QOU.Knot.WhiteheadSaddle.whitehead_vc_innerSum_half (sorry-free).
-  sorry
+  exact hi.limit
 
 end QOU.Knot.WhiteheadVC

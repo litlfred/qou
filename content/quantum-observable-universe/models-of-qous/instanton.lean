@@ -54,8 +54,12 @@ structure CRManifoldData where
   rs_sum : r + s = n
   /-- The contact form `θ` represented abstractly as a continuous 1-form. -/
   contactForm : M → ℝ
+  /-- **Non-degeneracy**: `θ` does not vanish identically. -/
+  contact_nondeg : ∃ p : M, contactForm p ≠ 0
   /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`. -/
-  reebField : M → M
+  reebField : C(M, M)
+  /-- The Reeb field preserves the contact form: `θ(ξ(p)) = θ(p)`. -/
+  reeb_preserves_contact : ∀ p : M, contactForm (reebField p) = contactForm p
 
 attribute [instance] CRManifoldData.topM
 
