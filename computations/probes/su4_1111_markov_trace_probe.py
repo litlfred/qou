@@ -341,6 +341,33 @@ def _chi(lam, word, n_gens):
 # channel at this weight is a ONE-TERM sum. AGENTS.md's formalize-first probe
 # discipline is exactly this: ask whether a structural claim prunes the class
 # before running the wide search. Recorded in bean `qou-fmoi`.
+# ── anchor identification ──────────────────────────────────────────────
+_PROTON_Q0 = "1.1099785827513808"    # experimental / Physical-Observations pin
+_MUON_Q0 = "1.1099785955573347"      # ideal CAL-2 pin
+
+
+def _anchor_of(q_val) -> str:
+    """Name the pin `q_val` actually is, or refuse.
+
+    The two pins agree to 8 digits and differ only past the 9th, so this
+    compares a 16-digit prefix -- enough to separate them, loose enough to
+    survive a re-derivation that moves the last recorded digits.
+
+    Refusing beats guessing: a witness whose `q0Anchor` disagrees with its
+    `q0Value` is worse than one with no anchor at all, because
+    `q0_anchor_consistency_audit` scores the first as a FLIP and the second
+    as a benign MISSING.
+    """
+    head = mp.nstr(q_val, 17, strip_zeros=False)[:18]
+    for name, ref in (("proton", _PROTON_Q0), ("muon", _MUON_Q0)):
+        if head.startswith(ref[:17]):
+            return name
+    raise ValueError(
+        f"q0 = {mp.nstr(q_val, 20)} matches neither the proton pin "
+        f"({_PROTON_Q0}...) nor the muon pin ({_MUON_Q0}...). Refusing to "
+        f"stamp an anchor that would not describe the value.")
+
+
 def _weight_is_zero(lam) -> bool:
     """True when the SU(2) Wenzl weight vanishes identically for `lam`."""
     return len(tuple(lam)) > 2
@@ -563,7 +590,18 @@ def main() -> int:
         # invisible to the checker while looking perfectly present to a human
         # -- which is how I first wrote it, and the audit is what caught it:
         # Q0_ANCHOR_MISSING went UP after I "added" the anchor.
-        "q0Anchor": "proton",
+        #
+        # DERIVED from the value, not hardcoded. `qou-wee5` (8cdcf3865a8)
+        # measured that the shim rebinds its whole derived q family to MUON
+        # when the running process's argv stem is manifest-listed -- so the
+        # same import can yield a different pin depending on who `__main__`
+        # is. Measured for this probe: running it as `__main__` gives the
+        # proton pin, so a hardcoded "proton" happens to be true today. It
+        # would become a silent lie the moment this producer were added to
+        # that manifest, and the witness would then claim an anchor it does
+        # not have -- the straddle AGENTS.md forbids. `_anchor_of` reads the
+        # value instead, and refuses rather than guessing.
+        "q0Anchor": _anchor_of(q),
         "q0Value": str(q),
         "tier": "structural (exact plethysm + Wenzl y_λ + Hoefsmit χ_λ, all exact)",
         # Was "chi=f64 (magnitude verdict)". No longer true: chi now comes from
