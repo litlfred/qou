@@ -404,6 +404,26 @@ def main() -> int:
         print("  The durable fix is recording cone hashes at generation time (bean qou-a2q5);")
         print("  this exists because that fix detects nothing retroactively.")
 
+    # Full population dump. The ranked table above prints only the worst 25,
+    # which is a lag-biased slice: unusable as a work list, and unusable for a
+    # stratified re-run sample -- the only thing that answers how many of these
+    # actually MOVE, since a newer cone module is grounds to suspect, not
+    # evidence. Attribution was fixed so `newest_dep` names a module that can
+    # actually move a number; without a way to EXPORT the rows, that fix could
+    # not be acted on.
+    if "--json" in sys.argv:
+        _out = sys.argv[sys.argv.index("--json") + 1]
+        with open(_out, "w", encoding="utf-8") as _f:
+            json.dump([{"witness": r["witness"],
+                        "producer": r["producer"],
+                        "newest_dep": r["newest_dep"],
+                        "lag_days": r["lag_days"],
+                        "n_movers": r["n_movers"],
+                        "n_substantive_movers": r.get("n_substantive_movers"),
+                        "provenance_only": r.get("provenance_only")}
+                       for r in stale], _f, indent=2)
+        print(f"\n  full population written to {_out} ({len(stale):,} rows)")
+
     return 0
 
 
