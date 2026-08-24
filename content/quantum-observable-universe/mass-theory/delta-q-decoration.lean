@@ -31,7 +31,6 @@ present.  The algorithmic content is implemented in Python
 -- Ref: [wenzl1988b] Wenzl 1988, DOI 10.1007/BF01393839 — placeholder
 --                   -- bib entry (title/venue to be verified); distinct from
 --                   -- wenzl1988 = Hecke algebras of type An (DOI BF01404457)
-sorry
 -/
 /-- **CONJECTURE.** A full Lean formalization requires the q-deformed Specht module construction. -/
 class DeltaQDecorationConjecture where
