@@ -177,6 +177,90 @@ theorem rothGrowth_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d
   nlinarith
 
 
+/-! ### `Θ_m` — the quantity Roth's lemma is actually about
+
+⚠ Everything in this arc up to here bounds the index of **one** polynomial.  Roth's lemma is
+about `Θ_m`, which §8 defines as the **least upper bound** of `J(A; r₁,…,r_m; κ₁,…,κ_m)` taken
+over two sets:
+
+* `R(a; r₁,…,r_m)` — non-zero integer polynomials of degree `≤ rₕ` in `xₕ` and height `≤ a`;
+* `Q(H₁,…,H_m)` — systems of `m` rationals `κₕ = Pₕ/Qₕ` in lowest terms with
+  `max(|Pₕ|,|Qₕ|) ≤ Hₕ`.
+
+§9's content is that **both sets are finite**, so the lub is *attained*; that `Θ_m` is
+non-decreasing in `a`; and that `0 ≤ Θ_m ≤ m`.
+
+⚠ **This arc previously recorded §9 as "Siegel's lemma plus a counting argument, the biggest
+unbuilt piece".  That is wrong** — Siegel's lemma is nowhere in §9.  What §9 needs is
+finiteness of two explicitly bounded sets and attainment of a maximum over them, which is
+elementary.  The mis-estimate came from reading a section *title* ("The upper bound `Θ_m(…)`")
+and inferring its content.
+
+`IsRothTheta` below characterises `Θ_m` rather than constructing it: the value is pinned
+(`IsRothTheta.unique`), so any construction that satisfies the predicate gives the same number,
+and downstream statements need not wait for one.  ⚠ The existence half is therefore an
+**undischarged obligation** — but unlike this arc's earlier undischarged hypotheses it is known
+satisfiable, because the two sets are finite.  Building the `Finset` construction that
+discharges it is separate, self-contained, and needs no analysis. -/
+
+/-- `R(a; r₁,…,r_m)` — non-zero integer polynomials of degree `≤ rₕ` in `xₕ`, height `≤ a`. -/
+def InRothPolySet {σ : Type*} (a : ℤ) (r : σ → ℕ) (A : MvPolynomial σ ℤ) : Prop :=
+  A ≠ 0 ∧ (∀ h, degreeOf h A ≤ r h) ∧ ∀ n, |coeff n A| ≤ a
+
+/-- `Q(H₁,…,H_m)` — systems of rationals of height `≤ Hₕ`.
+
+⚠ Mahler requires `(Pₕ, Qₕ) = 1`; Lean's `ℚ` is always in lowest terms, so that clause is
+carried by the type rather than stated. -/
+def InRothFracSet {σ : Type*} (H : σ → ℕ) (κ : σ → ℚ) : Prop :=
+  ∀ h, (κ h).num.natAbs ≤ H h ∧ (κ h).den ≤ H h
+
+/-- **`Θ_m` characterised** — the least upper bound of `J(A; r; κ)` over `R(a;r) × Q(H)`, and
+attained.  §9's finiteness is what makes the second clause available. -/
+def IsRothTheta {σ : Type*} (a : ℤ) (r H : σ → ℕ) (Θ : ℚ) : Prop :=
+  (∀ A κ, InRothPolySet a r A → InRothFracSet H κ →
+      index r κ (map (algebraMap ℤ ℚ) A) ≤ ((Θ : ℚ) : WithTop ℚ)) ∧
+  (∃ A κ, InRothPolySet a r A ∧ InRothFracSet H κ ∧
+      index r κ (map (algebraMap ℤ ℚ) A) = ((Θ : ℚ) : WithTop ℚ))
+
+/-- **The characterisation pins the value.**  So `IsRothTheta` may be carried as a hypothesis
+without ambiguity, and any later construction agrees with it. -/
+theorem IsRothTheta.unique {σ : Type*} {a : ℤ} {r H : σ → ℕ} {Θ Θ' : ℚ}
+    (h : IsRothTheta a r H Θ) (h' : IsRothTheta a r H Θ') : Θ = Θ' := by
+  obtain ⟨hub, A, κ, hA, hκ, heq⟩ := h
+  obtain ⟨hub', A', κ', hA', hκ', heq'⟩ := h'
+  have h1 : ((Θ : ℚ) : WithTop ℚ) ≤ ((Θ' : ℚ) : WithTop ℚ) := heq ▸ hub' A κ hA hκ
+  have h2 : ((Θ' : ℚ) : WithTop ℚ) ≤ ((Θ : ℚ) : WithTop ℚ) := heq' ▸ hub A' κ' hA' hκ'
+  exact le_antisymm (by exact_mod_cast h1) (by exact_mod_cast h2)
+
+/-- **`0 ≤ Θ_m`** — the index is a sum of non-negative terms, and `Θ_m` is attained. -/
+theorem IsRothTheta.nonneg {σ : Type*} {a : ℤ} {r H : σ → ℕ} {Θ : ℚ}
+    (h : IsRothTheta a r H Θ) :
+    0 ≤ Θ := by
+  obtain ⟨-, A, κ, -, -, heq⟩ := h
+  have hle : ((0 : ℚ) : WithTop ℚ) ≤ index r κ (map (algebraMap ℤ ℚ) A) := by
+    refine Finset.le_inf fun i _ => ?_
+    exact_mod_cast idxWeight_nonneg r i
+  rw [heq] at hle
+  exact_mod_cast hle
+
+/-- **The pointwise half of `Θ_m ≤ m`** — every exponent dominated by the degree vector has
+weight at most the number of variables.
+
+⚠ Turning this into `Θ_m ≤ m` needs `degreeOf` to survive `translate`, which this arc does not
+yet have (`index` is an infimum over the *translated* support).  That lemma is the remaining
+piece of §9's third property. -/
+theorem idxWeight_le_card {σ : Type*} [Fintype σ] (d : σ → ℕ) (i : σ →₀ ℕ)
+    (hd : ∀ j, d j ≠ 0) (hi : ∀ j, i j ≤ d j) :
+    idxWeight d i ≤ (Fintype.card σ : ℚ) := by
+  unfold idxWeight
+  calc ∑ j ∈ i.support, (i j : ℚ) / (d j : ℚ)
+      ≤ ∑ _j ∈ i.support, (1 : ℚ) := by
+        refine Finset.sum_le_sum fun j _ => ?_
+        rw [div_le_one (by exact_mod_cast Nat.pos_of_ne_zero (hd j))]
+        exact_mod_cast hi j
+    _ = (i.support.card : ℚ) := by simp
+    _ ≤ (Fintype.card σ : ℚ) := by exact_mod_cast Finset.card_le_univ i.support
+
 /-! ### Property `Γ_m` — all three clauses
 
 `RothGrowth` above is only the **first** of `Γ_m`'s three clauses.  The arc carried it alone for

@@ -3300,3 +3300,45 @@ which is why the generalisation was cheap once the shared half was factored out.
 `exists_index_eq_div_and_pow_le` is that shared half — the one-variable index is `n₀/d` for a
 natural `n₀`, with `q^{n₀} ≤ |lead|`. Both base-case theorems now derive from it rather than
 repeating the `translate`-invertibility and infimum-attainment argument.
+
+### `Θ_m` — the gap named, and §9 mis-estimated
+
+§8 read. Everything in this arc up to here bounds the index of **one** polynomial; Roth's lemma
+is about `Θ_m`, the **least upper bound** of `J(A; r; κ)` over two sets:
+
+- `R(a; r₁,…,r_m)` — non-zero integer polynomials of degree `≤ rₕ` in `xₕ`, height `≤ a`;
+- `Q(H₁,…,H_m)` — systems of `m` rationals `κₕ = Pₕ/Qₕ` in lowest terms, `max(|Pₕ|,|Qₕ|) ≤ Hₕ`.
+
+⚠ **The previous entry recorded §9 as "Siegel's lemma plus a counting argument, the biggest
+unbuilt piece". That is wrong.** Siegel's lemma appears nowhere in §9. What §9 establishes is:
+both sets are **finite**, so the lub is **attained**; `Θ_m` is non-decreasing in `a`; and
+`0 ≤ Θ_m ≤ m`. All elementary.
+
+The mis-estimate came from reading a section **title** — "The upper bound `Θ_m(a; H; r)`" — and
+inferring its content. Same failure as correction 14 (one display, no derivation) at a coarser
+grain: a title is even less of a proof than a display.
+
+### Options considered for the gap, and the one taken
+
+- **(A) `Finset.sup'` over explicit finite sets.** Faithful; gives attainment, monotonicity in
+  `a`, and `0 ≤ Θ ≤ m` for free from `Finset` lemmas. Costs a `Fintype` construction for
+  bounded-degree bounded-height integer polynomials.
+- **(B) `sSup`/`iSup` over a predicate.** Cheaper to state, but attainment then needs a separate
+  argument — which *is* the finiteness. Defers the work without removing it, and §13 needs the
+  maximiser, so it does not unblock anything.
+- **(C) Characterise rather than construct.** `IsRothTheta a r H Θ` := upper bound + attained.
+- **(D) Avoid `Θ_m`, keep bounding individual polynomials.** What the arc does now; it cannot
+  state Lemma 4.
+
+**Taken: (C), with (A) as the discharge.** `IsRothTheta` pins the value (`IsRothTheta.unique`),
+so any later construction agrees with it and downstream statements need not wait. The existence
+half is an **undischarged obligation** — but unlike corrections 9 and 10's hypotheses it is
+*known satisfiable*, because the sets are finite. That distinction is the whole reason (C) is
+acceptable here and was not there.
+
+Landed: `InRothPolySet`, `InRothFracSet` (Lean's `ℚ` is reduced, so Mahler's coprimality is
+carried by the type), `IsRothTheta`, `.unique`, `.nonneg`, and `idxWeight_le_card`.
+
+⚠ `Θ_m ≤ m` is **not** yet available: `index` is an infimum over the *translated* support, and
+`degreeOf_translate` does not exist in this arc. That is the remaining piece of §9's third
+property and is the next concrete item.
