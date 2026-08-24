@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T23:16:06.992422+00:00",
-  "commitSha": "61c8887b0d4891318c21259817baa18a78c05676",
+  "computedAt": "2026-08-24T10:56:07.822171+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 2291,
+  "durationMs": 445,
   "computation": "octonion-su3-stabilizer",
   "scriptFile": "octonion_su3_stabilizer_probe.py",
   "scriptHash": "2524d4479d65",
-  "scriptCommitSha": "4c803d413b4b86613b94ba160f192dd500094e44",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +18,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/octonion_su3_stabilizer_probe.py"
+    ],
+    "reproduce": "python3 -u computations/octonion_su3_stabilizer_probe.py"
   },
   "description": "su(3) stabilizer of a unit imaginary octonion in g2=Der(O): dim 8, so 14-8=6=dim S^6=dim G2/SU(3). Exact rational linear algebra.",
   "schema": "probe/v0",

@@ -1,11 +1,11 @@
 ---
 # qou-pin3
 title: 'alpha_5_lp_dual_crystal: regeneration picks a DIFFERENT optimal LP dual vertex — excluded from the tnjb batch'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T20:05:00Z
-updated_at: 2026-08-16T13:24:58Z
+updated_at: 2026-08-21T16:21:57Z
 ---
 
 Held out of the 2026-08-08 `tnjb` stale-stamp migration, deliberately, and
@@ -134,3 +134,28 @@ changed.
 `y₀ = 0` exactly. This one has no radical and a unique nonzero `y₀*`. I
 initially flagged them as plausibly the same and that was wrong; they share
 only the word "degenerate".
+
+## Summary of Changes
+
+Answered step 1 — **the LP is not degenerate** — and refuted the "different
+optimal dual vertex" reading with a closed form verified against every field of
+every stratum of the committed witness. `G = diag(|weight_λ|)` with no zero
+weight makes `Gx ≥ 0` into `x ≥ 0`, so the program is an argmin:
+`x* = n_target·e_argmin(t)`, `y₀* = min_j t_j`, `s*_j = (t_j − min t)/|w_j|`,
+all unique. There is no vertex to choose.
+
+The real cause is conditioning: `s*` divides by `|w_j| ~ 1e-06` in the `ht6`
+strata, amplifying error in `y₀*` by 1e+05–4.5e+05. All three reported entries
+are the argmin index — the channel whose true `s*` is exactly 0 — and imply a
+`y₀*` difference of 8.2e-10 to 7.2e-08 absolute, ~1e-09 relative. That is
+solver tolerance between the two stacks this bean already identified (scipy
+HiGHS f64 vs clarabel MPFR). Nothing substantive changed in the witness.
+
+Checker: `computations/alpha_5_lp_dual_crystal_closed_form.py`, stdlib only,
+reads the committed witness. Landed in #5251.
+
+Revised guidance for the anchor migration: the dual "change" is not a
+substantive event and needs no separate report. A deterministic tie-break would
+fix nothing — there is no tie. The open question is narrower than this bean
+framed it: **does any consumer read `y_star` in the `ht6` strata at all?** Those
+coordinates cannot be pinned better than ~1e-02 by any f64 solver.

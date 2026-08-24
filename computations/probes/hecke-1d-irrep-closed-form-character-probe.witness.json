@@ -1,150 +1,171 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T17:19:29.396208+00:00",
-  "commitSha": "71d15701e0a0e3c67fbc906dd551d3cc35ae25c6",
+  "computedAt": "2026-08-24T14:24:17.017818+00:00",
+  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "assertions": [
     {
       "name": "max_residue_across_all_tests_at_q0",
-      "computed": 1.6036588260553174e-50,
+      "computed": 7.24454326306137e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over {trivial, sign} \u00d7 {9 test braids} of |\u03c7_direct(\u03b2) \u2212 \u03c7_closed_form(\u03b2)|",
+      "unit": "max over {trivial, sign} × {9 test braids} of |χ_direct(β) − χ_closed_form(β)|",
       "source": "Universal closed form for 1-d Hecke irrep characters; direct LHS via canonical Hoefsmit-seminormal (`build_hoefsmit_mpfr` at 50 dps), closed-form RHS from the proposition statement."
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 19,
   "computation": "hecke-1d-irrep-closed-form-character-probe",
   "scriptFile": "hecke_1d_irrep_closed_form_character_probe.py",
-  "scriptHash": "d0ebec34267b",
-  "scriptCommitSha": "unknown",
-  "description": "I1 probe for prop:hecke-1d-irrep-closed-form-character.  Verifies the universal closed form \u03c7^(n)(\u03b2) = q^w \u00b7 ([2]_q/2)^m  and  \u03c7^(1^n)(\u03b2) = (-q\u207b\u00b9)^w \u00b7 (-[2]_q/2)^m  for the two 1-dim irreps of H_n(q), against the direct trace of the canonical H_n Hoefsmit-seminormal (n) and (1^n) reps.  9 test braids in B_2\u2026B_5 cover pure-positive, pure-negative, mixed-writhe, zero-writhe, and averaged-crossing (\u03c3_i \u2212 h/2\u00b7\ud835\udfd9) cases.  All residues at ~1e-50 (mpmath 50 dps) witness the closed form for each test.",
+  "scriptHash": "87a85d8d2c40",
+  "scriptCommitSha": "789481516761c41a7310863b11172b81af3b6707",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/hecke_1d_irrep_closed_form_character_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/hecke_1d_irrep_closed_form_character_probe.py"
+  },
+  "description": "I1 probe for prop:hecke-1d-irrep-closed-form-character.  Verifies the universal closed form χ^(n)(β) = q^w · ([2]_q/2)^m  and  χ^(1^n)(β) = (-q⁻¹)^w · (-[2]_q/2)^m  for the two 1-dim irreps of H_n(q), against the direct trace of the canonical H_n Hoefsmit-seminormal (n) and (1^n) reps.  9 test braids in B_2…B_5 cover pure-positive, pure-negative, mixed-writhe, zero-writhe, and averaged-crossing (σ_i − h/2·𝟙) cases.  All residues at ~1e-50 (mpmath 50 dps) witness the closed form for each test.",
   "contentBlock": "prop:hecke-1d-irrep-closed-form-character",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "num_test_cases": 9,
-    "max_residue_across_tests": 1.6036588260553174e-50
+    "max_residue_across_tests": 7.24454326306137e-71
   },
   "data": {
     "per_test_results": [
       {
-        "label": "B_2 \u03c3_1^3 (trefoil)",
+        "label": "B_2 σ_1^3 (trefoil)",
         "n": 2,
         "writhe": 3,
         "averaged_count": 0,
-        "chi_n_direct": 1.3675518842725483,
-        "chi_n_closed": 1.3675518842725483,
-        "chi_n_residue": 1.0691058840368783e-50,
-        "chi_1n_direct": -0.7312336822466792,
-        "chi_1n_closed": -0.7312336822466792,
-        "chi_1n_residue": 1.3363823550460978e-51
+        "chi_n_direct": 1.3675518369513853,
+        "chi_n_closed": 1.3675518369513853,
+        "chi_n_residue": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+        "chi_1n_direct": -0.7312337075494336,
+        "chi_1n_closed": -0.7312337075494336,
+        "chi_1n_residue": "4.527839539413356183754559645443895890341265599069569094791307444967751e-71"
       },
       {
-        "label": "B_2 \u03c3_1^-3 (mirror trefoil)",
+        "label": "B_2 σ_1^-3 (mirror trefoil)",
         "n": 2,
         "writhe": -3,
         "averaged_count": 0,
-        "chi_n_direct": 0.7312336822466792,
-        "chi_n_closed": 0.7312336822466792,
-        "chi_n_residue": 6.681911775230489e-51,
-        "chi_1n_direct": -1.3675518842725483,
-        "chi_1n_closed": -1.3675518842725483,
-        "chi_1n_residue": 2.6727647100921956e-51
+        "chi_n_direct": 0.7312337075494336,
+        "chi_n_closed": 0.7312337075494336,
+        "chi_n_residue": "0.0",
+        "chi_1n_direct": -1.3675518369513853,
+        "chi_1n_closed": -1.3675518369513853,
+        "chi_1n_residue": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71"
       },
       {
-        "label": "B_3 \u03b2_{4_1} = \u03c3_1 \u03c3_2\u207b\u00b9 \u03c3_1 \u03c3_2\u207b\u00b9 (writhe 0)",
+        "label": "B_3 β_{4_1} = σ_1 σ_2⁻¹ σ_1 σ_2⁻¹ (writhe 0)",
         "n": 3,
         "writhe": 0,
         "averaged_count": 0,
         "chi_n_direct": 1.0,
         "chi_n_closed": 1.0,
-        "chi_n_residue": 0.0,
+        "chi_n_residue": "0.0",
         "chi_1n_direct": 1.0,
         "chi_1n_closed": 1.0,
-        "chi_1n_residue": 0.0
+        "chi_1n_residue": "0.0"
       },
       {
-        "label": "B_3 \u03c3_1 \u03c3_2 (writhe 2)",
+        "label": "B_3 σ_1 σ_2 (writhe 2)",
         "n": 3,
         "writhe": 2,
         "averaged_count": 0,
-        "chi_n_direct": 1.2320524825884311,
-        "chi_n_closed": 1.2320524825884311,
-        "chi_n_residue": 5.345529420184391e-51,
-        "chi_1n_direct": 0.8116537356420809,
-        "chi_1n_closed": 0.8116537356420809,
-        "chi_1n_residue": 0.0
+        "chi_n_direct": 1.232052454166764,
+        "chi_n_closed": 1.232052454166764,
+        "chi_n_residue": "0.0",
+        "chi_1n_direct": 0.811653754365758,
+        "chi_1n_closed": 0.811653754365758,
+        "chi_1n_residue": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71"
       },
       {
-        "label": "B_4 \u03c3_1 \u03c3_2 \u03c3_3 (writhe 3)",
+        "label": "B_4 σ_1 σ_2 σ_3 (writhe 3)",
         "n": 4,
         "writhe": 3,
         "averaged_count": 0,
-        "chi_n_direct": 1.3675518842725483,
-        "chi_n_closed": 1.3675518842725483,
-        "chi_n_residue": 1.0691058840368783e-50,
-        "chi_1n_direct": -0.7312336822466792,
-        "chi_1n_closed": -0.7312336822466792,
-        "chi_1n_residue": 1.3363823550460978e-51
+        "chi_n_direct": 1.3675518369513853,
+        "chi_n_closed": 1.3675518369513853,
+        "chi_n_residue": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+        "chi_1n_direct": -0.7312337075494336,
+        "chi_1n_closed": -0.7312337075494336,
+        "chi_1n_residue": "4.527839539413356183754559645443895890341265599069569094791307444967751e-71"
       },
       {
-        "label": "B_4 \u03c3_1 \u03c3_2 \u03c3_3\u207b\u00b9 \u03c3_2 (writhe 2)",
+        "label": "B_4 σ_1 σ_2 σ_3⁻¹ σ_2 (writhe 2)",
         "n": 4,
         "writhe": 2,
         "averaged_count": 0,
-        "chi_n_direct": 1.2320524825884311,
-        "chi_n_closed": 1.2320524825884311,
-        "chi_n_residue": 5.345529420184391e-51,
-        "chi_1n_direct": 0.8116537356420809,
-        "chi_1n_closed": 0.8116537356420809,
-        "chi_1n_residue": 0.0
+        "chi_n_direct": 1.232052454166764,
+        "chi_n_closed": 1.232052454166764,
+        "chi_n_residue": "0.0",
+        "chi_1n_direct": 0.811653754365758,
+        "chi_1n_closed": 0.811653754365758,
+        "chi_1n_residue": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71"
       },
       {
-        "label": "B_3 single averaged \u03c3_1 \u2212 h/2 (w=0, m=1)",
+        "label": "B_3 single averaged σ_1 − h/2 (w=0, m=1)",
         "n": 3,
         "writhe": 0,
         "averaged_count": 1,
-        "chi_n_direct": 1.005448434559241,
-        "chi_n_closed": 1.005448434559241,
-        "chi_n_residue": 2.6727647100921956e-51,
-        "chi_1n_direct": -1.005448434559241,
-        "chi_1n_closed": -1.005448434559241,
-        "chi_1n_residue": 0.0
+        "chi_n_direct": 1.0054484333535612,
+        "chi_n_closed": 1.0054484333535612,
+        "chi_n_residue": "0.0",
+        "chi_1n_direct": -1.0054484333535612,
+        "chi_1n_closed": -1.0054484333535612,
+        "chi_1n_residue": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71"
       },
       {
-        "label": "B_3 \u03c3_1 (\u03c3_2 \u2212 h/2) (w=1, m=1)",
+        "label": "B_3 σ_1 (σ_2 − h/2) (w=1, m=1)",
         "n": 3,
         "writhe": 1,
         "averaged_count": 1,
-        "chi_n_direct": 1.1160262412942157,
-        "chi_n_closed": 1.1160262412942157,
-        "chi_n_residue": 8.018294130276587e-51,
-        "chi_1n_direct": 0.9058268678210405,
-        "chi_1n_closed": 0.9058268678210405,
-        "chi_1n_residue": 0.0
+        "chi_n_direct": 1.116026227083382,
+        "chi_n_closed": 1.116026227083382,
+        "chi_n_residue": "0.0",
+        "chi_1n_direct": 0.905826877182879,
+        "chi_1n_closed": 0.905826877182879,
+        "chi_1n_residue": "4.527839539413356183754559645443895890341265599069569094791307444967751e-71"
       },
       {
-        "label": "B_5 \u03c3_1 \u03c3_2 \u03c3_3 \u03c3_4 \u03c3_4\u207b\u00b9 \u03c3_3\u207b\u00b9 \u03c3_1 \u03c3_2 (writhe 4)",
+        "label": "B_5 σ_1 σ_2 σ_3 σ_4 σ_4⁻¹ σ_3⁻¹ σ_1 σ_2 (writhe 4)",
         "n": 5,
         "writhe": 4,
         "averaged_count": 0,
-        "chi_n_direct": 1.5179533198523165,
-        "chi_n_closed": 1.5179533198523165,
-        "chi_n_residue": 1.6036588260553174e-50,
-        "chi_1n_direct": 0.6587817865817449,
-        "chi_1n_closed": 0.6587817865817449,
-        "chi_1n_residue": 0.0
+        "chi_n_direct": 1.517953249818346,
+        "chi_n_closed": 1.517953249818346,
+        "chi_n_residue": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+        "chi_1n_direct": 0.6587818169760303,
+        "chi_1n_closed": 0.6587818169760303,
+        "chi_1n_residue": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71"
       }
     ],
     "closed_form_recipe": {
-      "trivial_irrep": "\u03c7^(n)(\u03b2) = q^w(\u03b2) \u00b7 ((q+q\u207b\u00b9)/2)^m(\u03b2)",
-      "sign_irrep": "\u03c7^(1^n)(\u03b2) = (-q\u207b\u00b9)^w(\u03b2) \u00b7 (-(q+q\u207b\u00b9)/2)^m(\u03b2)",
-      "writhe_def": "w(\u03b2) = #(\u03c3_i) \u2212 #(\u03c3_i\u207b\u00b9)",
-      "averaged_count_def": "m(\u03b2) = #(\u03c3_i \u2212 h/2\u00b7\ud835\udfd9)",
-      "two_q_def": "[2]_q = q + q\u207b\u00b9",
-      "h_def": "h = q \u2212 q\u207b\u00b9"
+      "trivial_irrep": "χ^(n)(β) = q^w(β) · ((q+q⁻¹)/2)^m(β)",
+      "sign_irrep": "χ^(1^n)(β) = (-q⁻¹)^w(β) · (-(q+q⁻¹)/2)^m(β)",
+      "writhe_def": "w(β) = #(σ_i) − #(σ_i⁻¹)",
+      "averaged_count_def": "m(β) = #(σ_i − h/2·𝟙)",
+      "two_q_def": "[2]_q = q + q⁻¹",
+      "h_def": "h = q − q⁻¹"
     }
   }
 }

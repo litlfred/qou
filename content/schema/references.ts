@@ -7893,6 +7893,35 @@ export const references: Reference[] = [
 
   // ── Klein 1884 — Vorlesungen über das Ikosaeder ───────────────
 
+  // ── Beilinson–Lusztig–MacPherson 1990 — q-Schur / geometric GL_n ──
+  ref({
+    id: "blm1990",
+    type: "article-journal",
+    title:
+      "A geometric setting for the quantum deformation of $\\mathrm{GL}_n$",
+    author: [
+      { family: "Beilinson", given: "A. A." },
+      { family: "Lusztig", given: "G." },
+      { family: "MacPherson", given: "R." },
+    ],
+    "container-title": "Duke Mathematical Journal",
+    volume: "61",
+    issue: "2",
+    page: "655-677",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.1215/S0012-7094-90-06124-1",
+    URL: "https://doi.org/10.1215/S0012-7094-90-06124-1",
+    note:
+      "UNVERIFIED — added 2026-08-24 (bean qou-2joi) because the q-Schur " +
+      "literature was entirely absent from this bibliography (0 hits for " +
+      "'q-Schur') while QSchurYLambdaClosedForm.lean names the 'Lusztig 1990 / " +
+      "BLM identity' as the provenance of its conjecture. Fields are from the " +
+      "agent's recall, NOT from the source: outbound fetch is blocked in this " +
+      "sandbox and the paper is not in library/, so nothing here could check " +
+      "them. Author to confirm volume/page/DOI before this is cited as " +
+      "verified. Not in content/bib-qa-verifications.json.",
+  }),
+
   // ── Lusztig 1990 — canonical bases / Hecke algebras ───────────
   ref({
     id: "lusztig1990",

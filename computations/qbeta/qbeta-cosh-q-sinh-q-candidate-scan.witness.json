@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:29.260574+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:14:24.624103+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "no_cosh_q_sinh_q_candidate_within_0.01_pct",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 10,
   "computation": "qbeta-cosh-q-sinh-q-candidate-scan",
   "scriptFile": "qbeta_cosh_q_sinh_q_candidate_scan.py",
   "scriptHash": "b81249a584b8",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -146,6 +146,6 @@
     "verdict": "ALL 16 CANDIDATES REFUTED at compute precision. Closest match -2 * cosh(h) * cosh(hbar_q) at +0.7439% — far from the 10⁻⁵⁰ compute precision a Taylor-exact candidate would need to satisfy. The empirical c_3 deviation does NOT cleanly factor through any natural q-hyperbolic correction.",
     "anti_pattern_guard": "DO NOT wire any of these candidates. The 0.7-0.9% best matches are 'interesting' but well within the 8th-ansatz fit-trap zone. Per AGENTS.md no-7th-ansatz discipline."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

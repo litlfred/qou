@@ -362,6 +362,11 @@ audit.
 /-- The standard-part image of any surreal QOU exists.
     Trivially: pick `Q := QOU_StandardPart K SQ`.
     Factored out of the original `VacuumEpsilon`. -/
+-- vacuous-by-design: the triviality IS the content — this records that the conjunct was provable for every `SQ`.
+-- Hence it was not part of `VacuumEpsilon`'s conjectural kernel, and the
+-- narrowed `VacuumEpsilon'` drops it. It is used by
+-- `VacuumEpsilon'.exists_epsilon_vacuum_with_st_image` to rebuild the
+-- original wider statement, so removing it would delete a narrowing audit.
 theorem qou_standardPart_image_exists (SQ : QOU_Surreal K) :
     ∃ Q : QOU_Real, QOU_StandardPart K SQ = Q :=
   ⟨QOU_StandardPart K SQ, rfl⟩

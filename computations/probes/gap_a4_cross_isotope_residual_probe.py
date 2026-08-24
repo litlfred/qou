@@ -62,7 +62,8 @@ from codata_constants import (  # noqa: E402
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q_0_50DPS = Q_50_DIGIT_STR
 
 # CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
 # registry (I9 — no hardcoded literals). See codata_constants.py.

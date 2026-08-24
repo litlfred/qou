@@ -36,6 +36,50 @@ tolerance chosen to fit an unexplained gap converts a detector into a
 rationalisation, and it passes forever.** No mechanical check can see that;
 it is named here because this file is where someone will look for it.
 
+A SECOND WAY A PASSING ASSERTION LIES: IT WENT STALE
+-----------------------------------------------------
+
+Also not caught here, also placed here because this is where someone will
+look. The mechanism above is a *fitted tolerance*. This one needs no bad
+tolerance at all — the assertion was correct when written and rotted in place.
+
+**A stored assertion is evaluated when the producer RUNS and then frozen into
+the file. It certifies the run that wrote it, never the file you are reading.**
+If its reference moves afterwards, the recorded `computed` does not, and the
+witness keeps reporting `passed: true` with a number that is now wrong.
+
+Measured instance (2026-08-24, bean `qou-nmza`).
+`averaged-block-swap-binding.witness.json` carried
+
+    id_trace_matches_binding_canonical  computed≈0  tolerance=1e-9  passed=true
+
+from 2026-06-11. Its `data.atom_traces.id` was `0.055358425349822354`. The
+`binding-canonical.witness.json` it names as its reference was recomputed
+2026-08-22 under convention D and reads `0.16097414544240738…`. So the
+assertion had been advertising agreement at 1e-9 while the two disagreed by
+**rel 0.6561 — 65.6 %** — for two and a half months. After re-running the
+producer the same assertion holds at rel 2.96e-31.
+
+Why the existing gates do not see it: this witness is not red (`allPassed`
+is `true`), so *this* audit skips it; its producer's `scriptHash` had not
+drifted, so the self-staleness check skips it; and `scriptCommitSha` drift is
+deliberately ignored corpus-wide (rebase-merge makes it stale-on-arrival). The
+staleness is in a DIFFERENT witness that this one merely reads.
+
+Practical rules:
+
+  * **Never read a passing assertion in a committed witness as evidence that
+    the value is current.** It is evidence about a past run. Only re-running
+    the producer, or an upstream-hash check, can tell you about the file.
+  * An assertion that names another witness as its reference is a
+    cross-witness dependency. `add_upstream` / `upstream_witness_hashes`
+    records it — prefer that to an assertion whose `source` string mentions
+    the upstream in prose, because only the recorded hash can be checked
+    without a re-run.
+  * When an upstream is recomputed under a new convention, its consumers do
+    not merely go stale — they can go stale *while still claiming to agree
+    with it*, which is worse than a plain stale number.
+
 WHAT IS A FAILURE, AND WHAT IS NOT
 -----------------------------------
 

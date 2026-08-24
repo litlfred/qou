@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-21T22:04:59.876859+00:00",
-  "commitSha": "dae5529271403c2a8beef93cfc3a02cc2ec86385",
+  "computedAt": "2026-08-24T14:11:06.535427+00:00",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
@@ -21,20 +21,27 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/substrate/lever1_binding_core_root_distribution.py"
+    ],
+    "reproduce": "python3 -u computations/substrate/lever1_binding_core_root_distribution.py"
   },
   "description": "Lever-1 binding cores R_m: exact on/off-unit-circle root distribution (Dickson y=q+1/q reduction + Sturm count) and R_m(1) prime factorization.",
   "data": {
     "upstream_witness_hashes": [
       {
         "path": "lever1-binding-correction-cyclotomic-structure.witness.json",
-        "sha256": "3099b828d10bee4b0b2c5fc8b8923d8e5d222cd87da62140c6d213847bd10638",
-        "size_bytes": 5168,
-        "commitSha": "03675bd4a98d04219715fbdc1a0d56fbd9f88100",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-02T12:18:13.344356+00:00"
+        "sha256": "b3b15d84b641c56c51acc428c96ef084f021e0a93392e15d818dd57400ba6715",
+        "size_bytes": 5389,
+        "commitSha": "dae5529271403c2a8beef93cfc3a02cc2ec86385",
+        "scriptCommitSha": "6a36fefb981b89f057038817750b47a58e5e02df",
+        "computedAt": "2026-08-21T22:05:39.893603+00:00"
       }
     ]
   },

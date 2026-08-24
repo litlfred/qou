@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:35.380734+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T16:41:07.630939+00:00",
+  "commitSha": "52f887ce7bd432ece74f5853cee770cb13f37dfe",
   "assertions": [
     {
       "name": "integer_spin_dim_sum_squares",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "gap-a4-T10-mckay-character-2I-probe",
   "scriptFile": "gap_a4_T10_mckay_character_2I_probe.py",
   "scriptHash": "c4f92be55f2c",
@@ -46,10 +46,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -60,7 +60,7 @@
   "description": "GAP-A-4 T10 \u2014 McKay-character / spin-lift candidate functor via 2I (binary icosahedral, double cover of I \u2245 A_5). The dim-5 irrep H is integer-spin \u2192 \u03c7_5^{2I} = \u03c7_5^{A_5} \u2218 \u03c0, so the spin-lift adds NO new structure at dim-5. REFUTED as the 6th candidate.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "discipline": "EXPLORATORY",
@@ -86,9 +86,8 @@
       "chi_5_on_betaBor_lifted": 5,
       "verdict": "Spin-lift adds no new structure at dim-5 (the dim-5 irrep is integer-spin, projects from 2I to A_5 trivially on the center). \u03c7_5^{2I}(\u03b2_Bor_lifted) = 5 exactly, identical to \u03c7_5^{A_5}(id). McKay-character candidate REFUTED \u2014 the h\u2074 obstruction is not resolved by spin-lifting."
     },
-    "synthesis_verdict": "The dim-5 irrep H is on the INTEGER-SPIN side of 2I (integer-spin irreps have dims (1,3,3,4,5) = exactly the A_5 irrep dimensions; half-spin are (2,4,6,2)). Therefore \u03c7_5^{2I} = \u03c7_5^{A_5} \u2218 \u03c0 via the natural projection \u03c0 : 2I \u2192 A_5, i.e. the spin \u2124_2 is in the kernel of the dim-5 character. For any element g \u2208 2I projecting to id \u2208 A_5 (such as a lifted \u03b2_Bor with writhe 0), \u03c7_5^{2I}(g) = \u03c7_5^{A_5}(id) = 5 exactly \u2014 independent of any q-deformation at the character-evaluation level. The McKay-character / spin-lift candidate is REFUTED \u2014 adding the spin double cover does NOT introduce new structure at the dim-5 level relevant to the cross-algebra h\u2074. This is the 6th candidate functor REFUTED. The non-Schur-Weyl direction must involve genuinely non-character-theoretic structure: T11 (Klein invariants) or T12 (Bring discriminant)."
+    "synthesis_verdict": "The dim-5 irrep H is on the INTEGER-SPIN side of 2I (integer-spin irreps have dims (1,3,3,4,5) = exactly the A_5 irrep dimensions; half-spin are (2,4,6,2)). Therefore χ_5^{2I} = χ_5^{A_5} ∘ π via the natural projection π : 2I → A_5, i.e. the spin ℤ_2 is in the kernel of the dim-5 character. For any element g ∈ 2I projecting to id ∈ A_5 (such as a lifted β_Bor with writhe 0), χ_5^{2I}(g) = χ_5^{A_5}(id) = 5 exactly — independent of any q-deformation at the character-evaluation level. The McKay-character / spin-lift candidate is REFUTED — adding the spin double cover does NOT introduce new structure at the dim-5 level relevant to the cross-algebra h⁴. This is the 6th candidate functor REFUTED. The non-Schur-Weyl direction must involve genuinely non-character-theoretic structure: T11 (Klein invariants) or T12 (Bring discriminant)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

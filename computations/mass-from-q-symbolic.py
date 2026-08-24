@@ -50,6 +50,8 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 import math
 import sys
 import os
+import json as _json
+from pathlib import Path as _Path
 from mpmath import mp
 
 import sympy as sp
@@ -436,15 +438,40 @@ w.add_parameter("s_skein", S_SKEIN0)
 w.add_parameter("z_markov", markov_z(Q0_MP))
 
 # ── Assertions: Fundamental constants ────────────────────────────
-# These are EXACT by construction (definitional), so tolerance is
-# just floating-point precision.
+# `q₀ = 1/(1 - ℏ_q)` below IS definitional and stays at 1e-15.
+#
+# The Vol(4_1) / (m_μ/m_e) relation is NOT, and had been asserted as though
+# it were. Until the 2026-05-28 proton re-pin it was: q₀ was pinned by
+# inverting Vol(4_1)/ℏ_q² = m_μ/m_e, so the identity held by construction.
+# Since the re-pin q₀ comes from m_p/m_e, and this relation is a PREDICTION —
+# the 9.5σ μ–p substrate tension. The assertion was never updated, so it had
+# been reporting a documented prediction gap as a failed identity at 1e-15.
+# That is the q0-repin staleness class named in AGENTS.md.
+#
+# Measured decomposition of the gap, exactly:
+#     209.806 ppb   the genuine substrate tension (proton pin vs muon pin)
+#       1.399 ppb   an artifact — the muon pin was solved against CODATA
+#                   206.768283, while this check compares to 206.7682827
+#     -----------
+#     211.206 ppb   total
+#
+# Re-stating it does NOT make m_μ met. Per AGENTS.md §"q₀ anchor convention"
+# rule 1 it misses its 100× target by 963.6× and must be reported as a FAIL
+# in every accuracy artifact. What changes here is only that this witness now
+# tests a band on a known prediction instead of asserting a false identity.
+_mu_p_tension_ppb = (mu_e_from_vol - MASS_RATIO_MU_E) / MASS_RATIO_MU_E * 1e9
 
 w.add_assertion(
-    "ℏ_q² = Vol(4_1) / (m_μ/m_e)",
-    computed=HBAR_Q_SQ0,
-    expected=VOL_FIGURE_EIGHT / MASS_RATIO_MU_E,
-    tolerance=1e-15,
-    source="Definitional (q_parameter.py)",
+    "μ–p substrate tension in band (PREDICTION at the proton pin, not an identity)",
+    computed=abs(_mu_p_tension_ppb),
+    expected=211.2,
+    tolerance=5.0,
+    unit="ppb",
+    source=(
+        "Vol(4_1)/ℏ_q²(proton) vs CODATA m_μ/m_e. Falsifiable: a drift outside "
+        "206–216 ppb means the anchor or Vol(4_1) moved. NOT a claim that m_μ "
+        "meets its target — it misses by 963.6×."
+    ),
 )
 
 w.add_assertion(
@@ -455,13 +482,28 @@ w.add_assertion(
     source="Definitional (q_parameter.py)",
 )
 
+# The relation IS definitional at the ideal/muon pin — that is what makes the
+# tension above a statement about the ANCHOR rather than about the framework.
+# Checked here against the committed 50-digit muon pin so the two layers stay
+# separable instead of being averaged into one number.
+_qm = _json.loads(
+    (_Path(__file__).resolve().parent / "q-pinning-50-digit.witness.json")
+    .read_text(encoding="utf-8")
+)["q0Value"]
+_hbar_mu_sq = (1.0 - 1.0 / float(_qm)) ** 2
+
 w.add_assertion(
-    "m_μ/m_e from Vol(4_1)/ℏ_q² (self-consistency)",
-    computed=mu_e_from_vol,
+    "Vol(4_1)/ℏ_q² is definitional AT THE MUON PIN (the ideal CAL-2 layer)",
+    computed=VOL_FIGURE_EIGHT / _hbar_mu_sq,
     expected=MASS_RATIO_MU_E,
-    tolerance=1e-8,
+    tolerance=1e-5,
     unit="dimensionless",
-    source="Topological mass formula",
+    source=(
+        "Ideal-layer check. Tolerance 1e-5 absolute (~48 ppb) because the muon "
+        "pin was solved against CODATA 206.768283 while MASS_RATIO_MU_E here is "
+        "206.7682827 — a 1.4 ppb difference that is a CODATA precision artifact, "
+        "not physics."
+    ),
 )
 
 # ── Assertions: Skein polynomials ────────────────────────────────

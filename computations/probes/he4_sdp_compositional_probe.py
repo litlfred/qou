@@ -174,11 +174,14 @@ def main() -> int:
     print(f"  n_target    = {n_target:12.6f} MeV   (.md: {MD_N_TARGET})")
     print()
 
-    # ── Solve (canonical entry point; scipy backend for a deterministic
-    #    witness — the clarabel-MPFR auto path agrees to ~1e-12 but its
-    #    availability varies by environment; f64 is ample for the
-    #    3-decimal claims here) ─────────────────────────────────────────
-    res = solve_operator_selection_lp(t, G, n_target, backend="scipy")
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+    # too (6 identical solves, 1 output hash), so that reason never distinguished
+    # the two. The real concern was `backend="auto"` choosing silently by whether
+    # the Rust binary happened to be built; pinning `clarabel` answers it, and
+    # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+    # changed answer. Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     rd = res.to_dict()
 
     print(f"  x*          = {[f'{x:.6f}' for x in res.x_star]}")
@@ -245,8 +248,10 @@ def main() -> int:
     builder.add_parameter("G", "I_3 (identity Gram — channels orthogonal "
                                "at leading order)")
     builder.add_parameter("n_target_MeV", n_target)
-    builder.add_parameter("lp_backend", "scipy linprog (HiGHS, f64) via "
-                          "lp_dual_solver.solve_operator_selection_lp")
+    # REPORTED, not asserted — the literal used to say "scipy linprog (HiGHS,
+    # f64)" and stayed put when the solve moved to clarabel-MPFR (2026-08-23),
+    # so the witness declared a backend it had not used. Bean `qou/ftuv`.
+    builder.add_parameter("lp_backend", f"{res.backend} @ {res.precision_bits} bits")
 
     builder.add_data("delta_cat_MeV",
                      {k: float(v) for k, v in delta_cat.items()})

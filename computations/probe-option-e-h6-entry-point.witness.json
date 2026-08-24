@@ -1,7 +1,7 @@
 {
   "computation": "option-e-h6-entry-point",
   "description": "Phase 2 entry-point structural cross-check at H_6 / deuteron scope. Consumes option-e-phase1-gram-h6.witness.json from PR #1697. NOT a fit; NOT a derivation; reads canonical Hoefsmit-seminormal witness data and exposes per-block structural quantities for ledger PROBE 1 (#1707, derive (1+q)/2) and ledger PROBE 4 (#1516, Kashiwara-crystal-coefficient angle).",
-  "timestamp_utc": "2026-07-18T17:56:18.494788+00:00",
+  "timestamp_utc": "2026-08-24T10:56:32.959099+00:00",
   "inputs": {
     "h6_gram_witness": "option-e-phase1-gram-h6.witness.json",
     "h6_gram_witness_commit_sha": "5d80bf9a735374582966d53ef493dcfd2187d1cc"
@@ -340,18 +340,18 @@
     }
   ],
   "phase_2_scope_notes": [
-    "PROBE 1 (#1707) consumes 'probe1_data_exposure_tr_sigma_1' to test whether (1 + tr(ρ_λ(σ_1)))/2 matches (1+q_0)/2 for some λ or weighted sum.",
-    "PROBE 4 (this PR) consumes 'probe4_data_exposure_w0_diagonal' as the candidate crystal-vertex weight data for the Δ_λ(K) = Σ_w n^w_λ · ρ_w(K) ansatz.",
-    "Open: derive the n^w_λ coefficients (Kazhdan-Lusztig multiplicities) and verify against probe-1's empirical Δ_λ(D) under bar-invariance."
+    "PROBE 1 (#1707) consumes 'probe1_data_exposure_tr_sigma_1' to test whether (1 + tr(\u03c1_\u03bb(\u03c3_1)))/2 matches (1+q_0)/2 for some \u03bb or weighted sum.",
+    "PROBE 4 (this PR) consumes 'probe4_data_exposure_w0_diagonal' as the candidate crystal-vertex weight data for the \u0394_\u03bb(K) = \u03a3_w n^w_\u03bb \u00b7 \u03c1_w(K) ansatz.",
+    "Open: derive the n^w_\u03bb coefficients (Kazhdan-Lusztig multiplicities) and verify against probe-1's empirical \u0394_\u03bb(D) under bar-invariance."
   ],
   "scriptHash": "c3d3d18fde7c",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "engine": "mpmath",
-  "computedAt": "2026-07-18T17:56:18.981247+00:00",
+  "computedAt": "2026-08-24T10:56:33.413684+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "probe_option_e_h6_entry_point.py",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "probe_option_e_h6_entry_point.py"
 }

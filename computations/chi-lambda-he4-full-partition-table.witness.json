@@ -18,8 +18,8 @@
   "durationMs": 18,
   "computation": "chi-lambda-he4-full-partition-table",
   "scriptFile": "chi_lambda_he4_full_partition_table.py",
-  "scriptHash": "980e1b3b295e",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3833838eb63c",
+  "scriptCommitSha": "417cfccfabef8259fef1c6fcc61a1269bc851296",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +57,7 @@
           12
         ],
         "partition_str": "(12)",
-        "dim_S_lambda": 1.0,
+        "dim_S_lambda": 1,
         "chi_lambda_he4": 1.0000000000000053,
         "abs_chi": 1.0000000000000053
       },
@@ -67,7 +67,7 @@
           1
         ],
         "partition_str": "(11,1)",
-        "dim_S_lambda": 11.0,
+        "dim_S_lambda": 11,
         "chi_lambda_he4": 10.976743241522342,
         "abs_chi": 10.976743241522342
       },
@@ -77,7 +77,7 @@
           2
         ],
         "partition_str": "(10,2)",
-        "dim_S_lambda": 54.0,
+        "dim_S_lambda": 54,
         "chi_lambda_he4": 53.7908920025064,
         "abs_chi": 53.7908920025064
       },
@@ -88,7 +88,7 @@
           1
         ],
         "partition_str": "(10,1,1)",
-        "dim_S_lambda": 55.0,
+        "dim_S_lambda": 55,
         "chi_lambda_he4": 54.790892002506425,
         "abs_chi": 54.790892002506425
       },
@@ -98,7 +98,7 @@
           3
         ],
         "partition_str": "(9,3)",
-        "dim_S_lambda": 154.0,
+        "dim_S_lambda": 154,
         "chi_lambda_he4": 153.18743246872975,
         "abs_chi": 153.18743246872975
       },
@@ -109,7 +109,7 @@
           1
         ],
         "partition_str": "(9,2,1)",
-        "dim_S_lambda": 320.0,
+        "dim_S_lambda": 320,
         "chi_lambda_he4": 318.3283514205039,
         "abs_chi": 318.3283514205039
       },
@@ -121,7 +121,7 @@
           1
         ],
         "partition_str": "(9,1,1,1)",
-        "dim_S_lambda": 165.0,
+        "dim_S_lambda": 165,
         "chi_lambda_he4": 164.1641757102521,
         "abs_chi": 164.1641757102521
       },
@@ -131,7 +131,7 @@
           4
         ],
         "partition_str": "(8,4)",
-        "dim_S_lambda": 275.0,
+        "dim_S_lambda": 275,
         "chi_lambda_he4": 273.2597957604768,
         "abs_chi": 273.2597957604768
       },
@@ -142,7 +142,7 @@
           1
         ],
         "partition_str": "(8,3,1)",
-        "dim_S_lambda": 891.0,
+        "dim_S_lambda": 891,
         "chi_lambda_he4": 885.3613741152486,
         "abs_chi": 885.3613741152486
       },
@@ -153,7 +153,7 @@
           2
         ],
         "partition_str": "(8,2,2)",
-        "dim_S_lambda": 616.0,
+        "dim_S_lambda": 616,
         "chi_lambda_he4": 612.1015783547707,
         "abs_chi": 612.1015783547707
       },
@@ -165,7 +165,7 @@
           1
         ],
         "partition_str": "(8,2,1,1)",
-        "dim_S_lambda": 945.0,
+        "dim_S_lambda": 945,
         "chi_lambda_he4": 939.1522661177554,
         "abs_chi": 939.1522661177554
       },
@@ -178,7 +178,7 @@
           1
         ],
         "partition_str": "(8,1,1,1,1)",
-        "dim_S_lambda": 330.0,
+        "dim_S_lambda": 330,
         "chi_lambda_he4": 328.05068776298333,
         "abs_chi": 328.05068776298333
       },
@@ -188,7 +188,7 @@
           5
         ],
         "partition_str": "(7,5)",
-        "dim_S_lambda": 297.0,
+        "dim_S_lambda": 297,
         "chi_lambda_he4": 294.91256387128107,
         "abs_chi": 294.91256387128107
       },
@@ -199,7 +199,7 @@
           1
         ],
         "partition_str": "(7,4,1)",
-        "dim_S_lambda": 1408.0,
+        "dim_S_lambda": 1408,
         "chi_lambda_he4": 1397.97982230608,
         "abs_chi": 1397.97982230608
       },
@@ -210,7 +210,7 @@
           2
         ],
         "partition_str": "(7,3,2)",
-        "dim_S_lambda": 1925.0,
+        "dim_S_lambda": 1925,
         "chi_lambda_he4": 1911.1986962398396,
         "abs_chi": 1911.1986962398396
       },
@@ -222,7 +222,7 @@
           1
         ],
         "partition_str": "(7,3,1,1)",
-        "dim_S_lambda": 2376.0,
+        "dim_S_lambda": 2376,
         "chi_lambda_he4": 2359.298692579848,
         "abs_chi": 2359.298692579848
       },
@@ -234,7 +234,7 @@
           1
         ],
         "partition_str": "(7,2,2,1)",
-        "dim_S_lambda": 2079.0,
+        "dim_S_lambda": 2079,
         "chi_lambda_he4": 2064.3861287085706,
         "abs_chi": 2064.3861287085706
       },
@@ -247,7 +247,7 @@
           1
         ],
         "partition_str": "(7,2,1,1,1)",
-        "dim_S_lambda": 1728.0,
+        "dim_S_lambda": 1728,
         "chi_lambda_he4": 1716.3081737265852,
         "abs_chi": 1716.3081737265852
       },
@@ -261,7 +261,7 @@
           1
         ],
         "partition_str": "(7,1,1,1,1,1)",
-        "dim_S_lambda": 462.0,
+        "dim_S_lambda": 462,
         "chi_lambda_he4": 459.07673958153384,
         "abs_chi": 459.07673958153384
       },
@@ -271,7 +271,7 @@
           6
         ],
         "partition_str": "(6,6)",
-        "dim_S_lambda": 132.0,
+        "dim_S_lambda": 132,
         "chi_lambda_he4": 131.02605181854992,
         "abs_chi": 131.02605181854992
       },
@@ -282,7 +282,7 @@
           1
         ],
         "partition_str": "(6,5,1)",
-        "dim_S_lambda": 1155.0,
+        "dim_S_lambda": 1155,
         "chi_lambda_he4": 1146.2344679358998,
         "abs_chi": 1146.2344679358998
       },
@@ -293,7 +293,7 @@
           2
         ],
         "partition_str": "(6,4,2)",
-        "dim_S_lambda": 2673.0,
+        "dim_S_lambda": 2673,
         "chi_lambda_he4": 2652.338390556515,
         "abs_chi": 2652.338390556515
       },
@@ -305,7 +305,7 @@
           1
         ],
         "partition_str": "(6,4,1,1)",
-        "dim_S_lambda": 3080.0,
+        "dim_S_lambda": 3080,
         "chi_lambda_he4": 3056.6242381355546,
         "abs_chi": 3056.6242381355546
       },
@@ -316,7 +316,7 @@
           3
         ],
         "partition_str": "(6,3,3)",
-        "dim_S_lambda": 1650.0,
+        "dim_S_lambda": 1650,
         "chi_lambda_he4": 1637.129974439169,
         "abs_chi": 1637.129974439169
       },
@@ -328,7 +328,7 @@
           1
         ],
         "partition_str": "(6,3,2,1)",
-        "dim_S_lambda": 5632.0,
+        "dim_S_lambda": 5632,
         "chi_lambda_he4": 5588.958620586692,
         "abs_chi": 5588.958620586692
       },
@@ -341,7 +341,7 @@
           1
         ],
         "partition_str": "(6,3,1,1,1)",
-        "dim_S_lambda": 3696.0,
+        "dim_S_lambda": 3696,
         "chi_lambda_he4": 3668.72581649031,
         "abs_chi": 3668.72581649031
       },
@@ -353,7 +353,7 @@
           2
         ],
         "partition_str": "(6,2,2,2)",
-        "dim_S_lambda": 1925.0,
+        "dim_S_lambda": 1925,
         "chi_lambda_he4": 1910.3897701996473,
         "abs_chi": 1910.3897701996473
       },
@@ -366,7 +366,7 @@
           1
         ],
         "partition_str": "(6,2,2,1,1)",
-        "dim_S_lambda": 3564.0,
+        "dim_S_lambda": 3564,
         "chi_lambda_he4": 3537.6997646717787,
         "abs_chi": 3537.6997646717787
       },
@@ -380,7 +380,7 @@
           1
         ],
         "partition_str": "(6,2,1,1,1,1)",
-        "dim_S_lambda": 2100.0,
+        "dim_S_lambda": 2100,
         "chi_lambda_he4": 2085.386734053655,
         "abs_chi": 2085.386734053655
       },
@@ -395,7 +395,7 @@
           1
         ],
         "partition_str": "(6,1,1,1,1,1,1)",
-        "dim_S_lambda": 462.0,
+        "dim_S_lambda": 462,
         "chi_lambda_he4": 459.07673958153396,
         "abs_chi": 459.07673958153396
       },
@@ -406,7 +406,7 @@
           2
         ],
         "partition_str": "(5,5,2)",
-        "dim_S_lambda": 1320.0,
+        "dim_S_lambda": 1320,
         "chi_lambda_he4": 1309.4271239104676,
         "abs_chi": 1309.4271239104676
       },
@@ -418,7 +418,7 @@
           1
         ],
         "partition_str": "(5,5,1,1)",
-        "dim_S_lambda": 1485.0,
+        "dim_S_lambda": 1485,
         "chi_lambda_he4": 1473.3136359631956,
         "abs_chi": 1473.3136359631956
       },
@@ -429,7 +429,7 @@
           3
         ],
         "partition_str": "(5,4,3)",
-        "dim_S_lambda": 2112.0,
+        "dim_S_lambda": 2112,
         "chi_lambda_he4": 2094.7500405467313,
         "abs_chi": 2094.7500405467313
       },
@@ -441,7 +441,7 @@
           1
         ],
         "partition_str": "(5,4,2,1)",
-        "dim_S_lambda": 5775.0,
+        "dim_S_lambda": 5775,
         "chi_lambda_he4": 5728.7425309082455,
         "abs_chi": 5728.7425309082455
       },
@@ -454,7 +454,7 @@
           1
         ],
         "partition_str": "(5,4,1,1,1)",
-        "dim_S_lambda": 3520.0,
+        "dim_S_lambda": 3520,
         "chi_lambda_he4": 3492.7298628527983,
         "abs_chi": 3492.7298628527983
       },
@@ -466,7 +466,7 @@
           1
         ],
         "partition_str": "(5,3,3,1)",
-        "dim_S_lambda": 4158.0,
+        "dim_S_lambda": 4158,
         "chi_lambda_he4": 4124.402843126517,
         "abs_chi": 4124.402843126517
       },
@@ -478,7 +478,7 @@
           2
         ],
         "partition_str": "(5,3,2,2)",
-        "dim_S_lambda": 4455.0,
+        "dim_S_lambda": 4455,
         "chi_lambda_he4": 4419.315406997792,
         "abs_chi": 4419.315406997792
       },
@@ -491,7 +491,7 @@
           1
         ],
         "partition_str": "(5,3,2,1,1)",
-        "dim_S_lambda": 7700.0,
+        "dim_S_lambda": 7700,
         "chi_lambda_he4": 7639.941227148071,
         "abs_chi": 7639.941227148071
       },
@@ -505,7 +505,7 @@
           1
         ],
         "partition_str": "(5,3,1,1,1,1)",
-        "dim_S_lambda": 3564.0,
+        "dim_S_lambda": 3564,
         "chi_lambda_he4": 3537.6997646717773,
         "abs_chi": 3537.6997646717773
       },
@@ -518,7 +518,7 @@
           1
         ],
         "partition_str": "(5,2,2,2,1)",
-        "dim_S_lambda": 3520.0,
+        "dim_S_lambda": 3520,
         "chi_lambda_he4": 3492.729862852821,
         "abs_chi": 3492.729862852821
       },
@@ -532,7 +532,7 @@
           1
         ],
         "partition_str": "(5,2,2,1,1,1)",
-        "dim_S_lambda": 3696.0,
+        "dim_S_lambda": 3696,
         "chi_lambda_he4": 3668.725816490309,
         "abs_chi": 3668.725816490309
       },
@@ -547,7 +547,7 @@
           1
         ],
         "partition_str": "(5,2,1,1,1,1,1)",
-        "dim_S_lambda": 1728.0,
+        "dim_S_lambda": 1728,
         "chi_lambda_he4": 1716.308173726589,
         "abs_chi": 1716.308173726589
       },
@@ -563,7 +563,7 @@
           1
         ],
         "partition_str": "(5,1,1,1,1,1,1,1)",
-        "dim_S_lambda": 330.0,
+        "dim_S_lambda": 330,
         "chi_lambda_he4": 328.0506877629837,
         "abs_chi": 328.0506877629837
       },
@@ -574,7 +574,7 @@
           4
         ],
         "partition_str": "(4,4,4)",
-        "dim_S_lambda": 462.0,
+        "dim_S_lambda": 462,
         "chi_lambda_he4": 458.1052198458469,
         "abs_chi": 458.1052198458469
       },
@@ -586,7 +586,7 @@
           1
         ],
         "partition_str": "(4,4,3,1)",
-        "dim_S_lambda": 2970.0,
+        "dim_S_lambda": 2970,
         "chi_lambda_he4": 2945.378088533198,
         "abs_chi": 2945.378088533198
       },
@@ -598,7 +598,7 @@
           2
         ],
         "partition_str": "(4,4,2,2)",
-        "dim_S_lambda": 2640.0,
+        "dim_S_lambda": 2640,
         "chi_lambda_he4": 2618.298920505893,
         "abs_chi": 2618.298920505893
       },
@@ -611,7 +611,7 @@
           1
         ],
         "partition_str": "(4,4,2,1,1)",
-        "dim_S_lambda": 4455.0,
+        "dim_S_lambda": 4455,
         "chi_lambda_he4": 4419.315406997792,
         "abs_chi": 4419.315406997792
       },
@@ -625,7 +625,7 @@
           1
         ],
         "partition_str": "(4,4,1,1,1,1)",
-        "dim_S_lambda": 1925.0,
+        "dim_S_lambda": 1925,
         "chi_lambda_he4": 1910.3897701996548,
         "abs_chi": 1910.3897701996548
       },
@@ -637,7 +637,7 @@
           2
         ],
         "partition_str": "(4,3,3,2)",
-        "dim_S_lambda": 2970.0,
+        "dim_S_lambda": 2970,
         "chi_lambda_he4": 2945.3780885331767,
         "abs_chi": 2945.3780885331767
       },
@@ -650,7 +650,7 @@
           1
         ],
         "partition_str": "(4,3,3,1,1)",
-        "dim_S_lambda": 4158.0,
+        "dim_S_lambda": 4158,
         "chi_lambda_he4": 4124.40284312651,
         "abs_chi": 4124.40284312651
       },
@@ -663,7 +663,7 @@
           1
         ],
         "partition_str": "(4,3,2,2,1)",
-        "dim_S_lambda": 5775.0,
+        "dim_S_lambda": 5775,
         "chi_lambda_he4": 5728.742530908265,
         "abs_chi": 5728.742530908265
       },
@@ -677,7 +677,7 @@
           1
         ],
         "partition_str": "(4,3,2,1,1,1)",
-        "dim_S_lambda": 5632.0,
+        "dim_S_lambda": 5632,
         "chi_lambda_he4": 5588.9586205866935,
         "abs_chi": 5588.9586205866935
       },
@@ -692,7 +692,7 @@
           1
         ],
         "partition_str": "(4,3,1,1,1,1,1)",
-        "dim_S_lambda": 2079.0,
+        "dim_S_lambda": 2079,
         "chi_lambda_he4": 2064.3861287085697,
         "abs_chi": 2064.3861287085697
       },
@@ -705,7 +705,7 @@
           2
         ],
         "partition_str": "(4,2,2,2,2)",
-        "dim_S_lambda": 1485.0,
+        "dim_S_lambda": 1485,
         "chi_lambda_he4": 1473.3136359631972,
         "abs_chi": 1473.3136359631972
       },
@@ -719,7 +719,7 @@
           1
         ],
         "partition_str": "(4,2,2,2,1,1)",
-        "dim_S_lambda": 3080.0,
+        "dim_S_lambda": 3080,
         "chi_lambda_he4": 3056.624238135544,
         "abs_chi": 3056.624238135544
       },
@@ -734,7 +734,7 @@
           1
         ],
         "partition_str": "(4,2,2,1,1,1,1)",
-        "dim_S_lambda": 2376.0,
+        "dim_S_lambda": 2376,
         "chi_lambda_he4": 2359.298692579855,
         "abs_chi": 2359.298692579855
       },
@@ -750,7 +750,7 @@
           1
         ],
         "partition_str": "(4,2,1,1,1,1,1,1)",
-        "dim_S_lambda": 945.0,
+        "dim_S_lambda": 945,
         "chi_lambda_he4": 939.1522661177578,
         "abs_chi": 939.1522661177578
       },
@@ -767,7 +767,7 @@
           1
         ],
         "partition_str": "(4,1,1,1,1,1,1,1,1)",
-        "dim_S_lambda": 165.0,
+        "dim_S_lambda": 165,
         "chi_lambda_he4": 164.16417571025252,
         "abs_chi": 164.16417571025252
       },
@@ -779,7 +779,7 @@
           3
         ],
         "partition_str": "(3,3,3,3)",
-        "dim_S_lambda": 462.0,
+        "dim_S_lambda": 462,
         "chi_lambda_he4": 458.10521984584733,
         "abs_chi": 458.10521984584733
       },
@@ -792,7 +792,7 @@
           1
         ],
         "partition_str": "(3,3,3,2,1)",
-        "dim_S_lambda": 2112.0,
+        "dim_S_lambda": 2112,
         "chi_lambda_he4": 2094.7500405467345,
         "abs_chi": 2094.7500405467345
       },
@@ -806,7 +806,7 @@
           1
         ],
         "partition_str": "(3,3,3,1,1,1)",
-        "dim_S_lambda": 1650.0,
+        "dim_S_lambda": 1650,
         "chi_lambda_he4": 1637.129974439172,
         "abs_chi": 1637.129974439172
       },
@@ -819,7 +819,7 @@
           2
         ],
         "partition_str": "(3,3,2,2,2)",
-        "dim_S_lambda": 1320.0,
+        "dim_S_lambda": 1320,
         "chi_lambda_he4": 1309.4271239104694,
         "abs_chi": 1309.4271239104694
       },
@@ -833,7 +833,7 @@
           1
         ],
         "partition_str": "(3,3,2,2,1,1)",
-        "dim_S_lambda": 2673.0,
+        "dim_S_lambda": 2673,
         "chi_lambda_he4": 2652.338390556536,
         "abs_chi": 2652.338390556536
       },
@@ -848,7 +848,7 @@
           1
         ],
         "partition_str": "(3,3,2,1,1,1,1)",
-        "dim_S_lambda": 1925.0,
+        "dim_S_lambda": 1925,
         "chi_lambda_he4": 1911.1986962398398,
         "abs_chi": 1911.1986962398398
       },
@@ -864,7 +864,7 @@
           1
         ],
         "partition_str": "(3,3,1,1,1,1,1,1)",
-        "dim_S_lambda": 616.0,
+        "dim_S_lambda": 616,
         "chi_lambda_he4": 612.1015783547728,
         "abs_chi": 612.1015783547728
       },
@@ -878,7 +878,7 @@
           1
         ],
         "partition_str": "(3,2,2,2,2,1)",
-        "dim_S_lambda": 1155.0,
+        "dim_S_lambda": 1155,
         "chi_lambda_he4": 1146.2344679359014,
         "abs_chi": 1146.2344679359014
       },
@@ -893,7 +893,7 @@
           1
         ],
         "partition_str": "(3,2,2,2,1,1,1)",
-        "dim_S_lambda": 1408.0,
+        "dim_S_lambda": 1408,
         "chi_lambda_he4": 1397.9798223060814,
         "abs_chi": 1397.9798223060814
       },
@@ -909,7 +909,7 @@
           1
         ],
         "partition_str": "(3,2,2,1,1,1,1,1)",
-        "dim_S_lambda": 891.0,
+        "dim_S_lambda": 891,
         "chi_lambda_he4": 885.3613741152516,
         "abs_chi": 885.3613741152516
       },
@@ -926,7 +926,7 @@
           1
         ],
         "partition_str": "(3,2,1,1,1,1,1,1,1)",
-        "dim_S_lambda": 320.0,
+        "dim_S_lambda": 320,
         "chi_lambda_he4": 318.32835142050493,
         "abs_chi": 318.32835142050493
       },
@@ -944,7 +944,7 @@
           1
         ],
         "partition_str": "(3,1,1,1,1,1,1,1,1,1)",
-        "dim_S_lambda": 55.0,
+        "dim_S_lambda": 55,
         "chi_lambda_he4": 54.79089200250662,
         "abs_chi": 54.79089200250662
       },
@@ -958,7 +958,7 @@
           2
         ],
         "partition_str": "(2,2,2,2,2,2)",
-        "dim_S_lambda": 132.0,
+        "dim_S_lambda": 132,
         "chi_lambda_he4": 131.02605181855014,
         "abs_chi": 131.02605181855014
       },
@@ -973,7 +973,7 @@
           1
         ],
         "partition_str": "(2,2,2,2,2,1,1)",
-        "dim_S_lambda": 297.0,
+        "dim_S_lambda": 297,
         "chi_lambda_he4": 294.9125638712814,
         "abs_chi": 294.9125638712814
       },
@@ -989,7 +989,7 @@
           1
         ],
         "partition_str": "(2,2,2,2,1,1,1,1)",
-        "dim_S_lambda": 275.0,
+        "dim_S_lambda": 275,
         "chi_lambda_he4": 273.2597957604773,
         "abs_chi": 273.2597957604773
       },
@@ -1006,7 +1006,7 @@
           1
         ],
         "partition_str": "(2,2,2,1,1,1,1,1,1)",
-        "dim_S_lambda": 154.0,
+        "dim_S_lambda": 154,
         "chi_lambda_he4": 153.18743246873018,
         "abs_chi": 153.18743246873018
       },
@@ -1024,7 +1024,7 @@
           1
         ],
         "partition_str": "(2,2,1,1,1,1,1,1,1,1)",
-        "dim_S_lambda": 54.0,
+        "dim_S_lambda": 54,
         "chi_lambda_he4": 53.79089200250659,
         "abs_chi": 53.79089200250659
       },
@@ -1043,7 +1043,7 @@
           1
         ],
         "partition_str": "(2,1,1,1,1,1,1,1,1,1,1)",
-        "dim_S_lambda": 11.0,
+        "dim_S_lambda": 11,
         "chi_lambda_he4": 10.976743241522387,
         "abs_chi": 10.976743241522387
       },
@@ -1063,7 +1063,7 @@
           1
         ],
         "partition_str": "(1,1,1,1,1,1,1,1,1,1,1,1)",
-        "dim_S_lambda": 1.0,
+        "dim_S_lambda": 1,
         "chi_lambda_he4": 1.0000000000000104,
         "abs_chi": 1.0000000000000104
       }
@@ -1078,7 +1078,7 @@
           1
         ],
         "partition_str": "(5,3,2,1,1)",
-        "dim_S_lambda": 7700.0,
+        "dim_S_lambda": 7700,
         "chi_lambda_he4": 7639.941227148071,
         "abs_chi": 7639.941227148071
       },
@@ -1091,7 +1091,7 @@
           1
         ],
         "partition_str": "(4,3,2,2,1)",
-        "dim_S_lambda": 5775.0,
+        "dim_S_lambda": 5775,
         "chi_lambda_he4": 5728.742530908265,
         "abs_chi": 5728.742530908265
       },
@@ -1103,7 +1103,7 @@
           1
         ],
         "partition_str": "(5,4,2,1)",
-        "dim_S_lambda": 5775.0,
+        "dim_S_lambda": 5775,
         "chi_lambda_he4": 5728.7425309082455,
         "abs_chi": 5728.7425309082455
       },
@@ -1117,7 +1117,7 @@
           1
         ],
         "partition_str": "(4,3,2,1,1,1)",
-        "dim_S_lambda": 5632.0,
+        "dim_S_lambda": 5632,
         "chi_lambda_he4": 5588.9586205866935,
         "abs_chi": 5588.9586205866935
       },
@@ -1129,7 +1129,7 @@
           1
         ],
         "partition_str": "(6,3,2,1)",
-        "dim_S_lambda": 5632.0,
+        "dim_S_lambda": 5632,
         "chi_lambda_he4": 5588.958620586692,
         "abs_chi": 5588.958620586692
       },
@@ -1141,7 +1141,7 @@
           2
         ],
         "partition_str": "(5,3,2,2)",
-        "dim_S_lambda": 4455.0,
+        "dim_S_lambda": 4455,
         "chi_lambda_he4": 4419.315406997792,
         "abs_chi": 4419.315406997792
       },
@@ -1154,7 +1154,7 @@
           1
         ],
         "partition_str": "(4,4,2,1,1)",
-        "dim_S_lambda": 4455.0,
+        "dim_S_lambda": 4455,
         "chi_lambda_he4": 4419.315406997792,
         "abs_chi": 4419.315406997792
       },
@@ -1166,7 +1166,7 @@
           1
         ],
         "partition_str": "(5,3,3,1)",
-        "dim_S_lambda": 4158.0,
+        "dim_S_lambda": 4158,
         "chi_lambda_he4": 4124.402843126517,
         "abs_chi": 4124.402843126517
       },
@@ -1179,7 +1179,7 @@
           1
         ],
         "partition_str": "(4,3,3,1,1)",
-        "dim_S_lambda": 4158.0,
+        "dim_S_lambda": 4158,
         "chi_lambda_he4": 4124.40284312651,
         "abs_chi": 4124.40284312651
       },
@@ -1192,7 +1192,7 @@
           1
         ],
         "partition_str": "(6,3,1,1,1)",
-        "dim_S_lambda": 3696.0,
+        "dim_S_lambda": 3696,
         "chi_lambda_he4": 3668.72581649031,
         "abs_chi": 3668.72581649031
       },
@@ -1206,7 +1206,7 @@
           1
         ],
         "partition_str": "(5,2,2,1,1,1)",
-        "dim_S_lambda": 3696.0,
+        "dim_S_lambda": 3696,
         "chi_lambda_he4": 3668.725816490309,
         "abs_chi": 3668.725816490309
       },
@@ -1219,7 +1219,7 @@
           1
         ],
         "partition_str": "(6,2,2,1,1)",
-        "dim_S_lambda": 3564.0,
+        "dim_S_lambda": 3564,
         "chi_lambda_he4": 3537.6997646717787,
         "abs_chi": 3537.6997646717787
       },
@@ -1233,7 +1233,7 @@
           1
         ],
         "partition_str": "(5,3,1,1,1,1)",
-        "dim_S_lambda": 3564.0,
+        "dim_S_lambda": 3564,
         "chi_lambda_he4": 3537.6997646717773,
         "abs_chi": 3537.6997646717773
       },
@@ -1246,7 +1246,7 @@
           1
         ],
         "partition_str": "(5,2,2,2,1)",
-        "dim_S_lambda": 3520.0,
+        "dim_S_lambda": 3520,
         "chi_lambda_he4": 3492.729862852821,
         "abs_chi": 3492.729862852821
       },
@@ -1259,7 +1259,7 @@
           1
         ],
         "partition_str": "(5,4,1,1,1)",
-        "dim_S_lambda": 3520.0,
+        "dim_S_lambda": 3520,
         "chi_lambda_he4": 3492.7298628527983,
         "abs_chi": 3492.7298628527983
       },
@@ -1271,7 +1271,7 @@
           1
         ],
         "partition_str": "(6,4,1,1)",
-        "dim_S_lambda": 3080.0,
+        "dim_S_lambda": 3080,
         "chi_lambda_he4": 3056.6242381355546,
         "abs_chi": 3056.6242381355546
       },
@@ -1285,7 +1285,7 @@
           1
         ],
         "partition_str": "(4,2,2,2,1,1)",
-        "dim_S_lambda": 3080.0,
+        "dim_S_lambda": 3080,
         "chi_lambda_he4": 3056.624238135544,
         "abs_chi": 3056.624238135544
       },
@@ -1297,7 +1297,7 @@
           1
         ],
         "partition_str": "(4,4,3,1)",
-        "dim_S_lambda": 2970.0,
+        "dim_S_lambda": 2970,
         "chi_lambda_he4": 2945.378088533198,
         "abs_chi": 2945.378088533198
       },
@@ -1309,7 +1309,7 @@
           2
         ],
         "partition_str": "(4,3,3,2)",
-        "dim_S_lambda": 2970.0,
+        "dim_S_lambda": 2970,
         "chi_lambda_he4": 2945.3780885331767,
         "abs_chi": 2945.3780885331767
       },
@@ -1323,7 +1323,7 @@
           1
         ],
         "partition_str": "(3,3,2,2,1,1)",
-        "dim_S_lambda": 2673.0,
+        "dim_S_lambda": 2673,
         "chi_lambda_he4": 2652.338390556536,
         "abs_chi": 2652.338390556536
       }

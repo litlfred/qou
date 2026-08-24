@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:03.043010+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:13:40.683703+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "bar_symmetric_rho_F_candidates_enumerated",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "he4-rho-f-bar-symmetric-audit-probe",
   "scriptFile": "he4_rho_f_bar_symmetric_audit_probe.py",
   "scriptHash": "de4d24957fbe",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -126,6 +126,6 @@
     "verdict": "BAR-SYMMETRIC ρ_F CANDIDATES ALL FAIL — best is C1: 2 [production, postulated] at +5.87% vs the current production at +5.87%. None of the substrate bar-symmetric forms naturally produce ⁴He binding. CONFIRMS that ⁴He gap needs the categorical multi-nucleon interface operator (per PR #1621 research direction), NOT a substrate constant. 8th-ansatz fishing among bar-symmetric forms is unproductive.",
     "anti_pattern_guard": "This probe TESTS existing bar-symmetric substrate forms; it does NOT propose new fit candidates. Verdict is binary: a bar-symmetric ρ_F either closes the gap (worth investigating) or doesn't (confirms structural-operator direction). Fishing for sub-1% matches in a 6-parameter family would be the 8th-ansatz trap per AGENTS.md."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -4,10 +4,10 @@
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
   "scriptFile": "wlambda_nuclear_braid_connected_probe.py",
-  "commitSha": "a5467686b4580f6204e0c793945ac3ea51d3951e",
-  "scriptHash": "42a971ab931f",
+  "commitSha": "e3c66da566c33dfd24e5d710d9136d567ddac837",
+  "scriptHash": "6372b1250a02",
   "description": "Connected part of the W_lambda-weighted nuclear-braid standard-rep transfer-matrix product for 2H/3He/3H/4He/6Li/12C: localizes the extensive binding channel to the non-abelian (2,1) rep (C_std=0 at A=2, grows with bonds for A>=3). Mechanism probe; NOT a binding closure; no fit.",
-  "generated": "2026-08-23T21:01:21.010150+00:00",
+  "generated": "2026-08-24T16:32:29.886039+00:00",
   "assertions": [
     {
       "name": "A2_single_bond_connected_zero",
@@ -27,77 +27,77 @@
   ],
   "allPassed": true,
   "result": {
-    "q0": "1.10997859555733471",
-    "W_21": 0.6606737723480263,
+    "q0": "1.1099785827513808076",
+    "W_21": 0.660673773661173,
     "nuclei": {
       "2H": {
         "A": 2,
         "nb": 1,
-        "V_std": 0.5081578895510933,
-        "std_fact": 0.5081578895510933,
+        "V_std": 0.5081578877486456,
+        "std_fact": 0.5081578877486456,
         "C_std": 0.0,
         "per_bond": 0.0,
-        "sp": 1.0054484345595378,
-        "ap": -1.0054484345595378
+        "sp": 1.0054484333535612,
+        "ap": -1.0054484333535612
       },
       "3He": {
         "A": 3,
         "nb": 3,
-        "V_std": 0.6193826199603853,
-        "std_fact": 0.1582110291845384,
-        "C_std": 0.4611715907758469,
-        "per_bond": 0.15372386359194898,
-        "sp": 1.1221068372401541,
-        "ap": -0.9107622062303156
+        "V_std": 0.6193826049256915,
+        "std_fact": 0.15821102460134842,
+        "C_std": 0.4611715803243431,
+        "per_bond": 0.15372386010811437,
+        "sp": 1.122106821602472,
+        "ap": -0.9107622145530744
       },
       "3H": {
         "A": 3,
         "nb": 3,
-        "V_std": 0.40803798895054666,
-        "std_fact": 0.1042265444619421,
-        "C_std": 0.30381144448860453,
-        "per_bond": 0.1012704814962015,
-        "sp": 0.9107622062303156,
-        "ap": -1.1221068372401541
+        "V_std": 0.4080379978762938,
+        "std_fact": 0.10422654625251575,
+        "C_std": 0.30381145162377804,
+        "per_bond": 0.10127048387459268,
+        "sp": 0.9107622145530744,
+        "ap": -1.122106821602472
       },
       "4He": {
         "A": 4,
         "nb": 6,
-        "V_std": 1.0219724987109646,
-        "std_fact": 0.016489788867671912,
-        "C_std": 1.0054827098432926,
-        "per_bond": 0.16758045164054877,
-        "sp": 1.0219724987109646,
-        "ap": 1.0219724987109646
+        "V_std": 1.021972493807779,
+        "std_fact": 0.016489788673270347,
+        "C_std": 1.0054827051345088,
+        "per_bond": 0.16758045085575143,
+        "sp": 1.021972493807779,
+        "ap": 1.021972493807779
       },
       "6Li": {
         "A": 6,
         "nb": 15,
-        "V_std": 0.5307342206003544,
-        "std_fact": 3.417033739135118e-05,
-        "C_std": 0.530700050262963,
-        "per_bond": 0.0353800033508642,
-        "sp": 1.0501182845772754,
-        "ap": -1.0501182845772754
+        "V_std": 0.53073421362515,
+        "std_fact": 3.417033654643639e-05,
+        "C_std": 0.5307000432886037,
+        "per_bond": 0.03538000288590691,
+        "sp": 1.050118273241275,
+        "ap": -1.050118273241275
       },
       "12C": {
         "A": 12,
         "nb": 66,
-        "V_std": 1.2160540592940856,
-        "std_fact": 2.061855759491371e-20,
-        "C_std": 1.2160540592940856,
-        "per_bond": 0.018425061504455845,
-        "sp": 1.2160540592940856,
-        "ap": 1.2160540592940856
+        "V_std": 1.2160540067849948,
+        "std_fact": 2.0618555703994567e-20,
+        "C_std": 1.2160540067849948,
+        "per_bond": 0.018425060708863558,
+        "sp": 1.2160540067849948,
+        "ap": 1.2160540067849948
       }
     },
     "non_monotone_in_bond_count": true,
     "per_bond_C_std": {
-      "3He": 0.15372386359194898,
-      "3H": 0.1012704814962015,
-      "4He": 0.16758045164054877,
-      "6Li": 0.0353800033508642,
-      "12C": 0.018425061504455845
+      "3He": 0.15372386010811437,
+      "3H": 0.10127048387459268,
+      "4He": 0.16758045085575143,
+      "6Li": 0.03538000288590691,
+      "12C": 0.018425060708863558
     },
     "verdict": "MECHANISM LOCALIZED (no closure): the extensive/connected binding channel is the STANDARD (2,1) rep \u2014 the non-abelian transfer-matrix product over inter-nucleon bonds \u2014 whose connected part C_std vanishes for A=2 and is NON-EMPTY (>0) for A>=3. The 1-dim (sym/alt) reps factorize over bonds and are disconnected/intensive. This is the (2,1) channel that brackets the deuteron f_pn (#2528). HONEST CAVEAT: C_std is NON-MONOTONE in bond count and its per-bond value SHRINKS for heavy nuclei \u2014 the fixed-H_3 braid localizes the channel but does not by itself sustain extensivity past the light nuclei (consistent with the known r18k det-direction non-monotonicity + light-nuclei breakdown). Localizes/confirms the channel is non-empty; does NOT set a scale, land AME magnitudes, or wire anything. No fit."
   },
@@ -107,9 +107,9 @@
     "structural": "1-dim reps factorize (disconnected); (2,1) is the non-abelian transfer-matrix product (connected)",
     "scope": "mechanism localization; NOT a closure; no scale/wiring/fit"
   },
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "computedAt": "2026-08-23T21:01:21.111857+00:00",
+  "scriptCommitSha": "d6e6e6ada93e69f06578bd71a13a7625f5088109",
+  "computedAt": "2026-08-24T16:32:29.898135+00:00",
   "durationMs": 0,
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

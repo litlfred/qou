@@ -4,10 +4,10 @@
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
     "dirty_witnesses": 32,
-    "total_fields": 1275,
-    "lp_dual_carved_out_fields": 32,
+    "total_fields": 1178,
+    "lp_dual_carved_out_fields": 15,
     "lp_dual_carved_out_by_file": {
-      "docs/audits/2026-05-02-per-atom-lp-frobenius-dual.witness.json": 32
+      "docs/audits/2026-05-02-per-atom-lp-frobenius-dual.witness.json": 15
     },
     "lp_dual_carved_out_field_names": [
       "dual_obj",
@@ -27,6 +27,6 @@
     "baseline_fields": 1275,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 0
+    "drained_files": 11
   }
 }

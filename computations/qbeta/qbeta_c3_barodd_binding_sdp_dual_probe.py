@@ -40,7 +40,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from pyhecke.gram import G as GRAM, TR_M, NF_NAMES, nf_of_word  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 FLIP = [0, 2, 1, 4, 3, 5]
@@ -58,7 +58,14 @@ def main() -> int:
     n_target = abs(float(beta @ t))
 
     # ---- 1. canonical operator-selection LP (full primal+dual) ----
-    r = solve_operator_selection_lp(t, G, n_target, backend="scipy")
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+    # too (6 identical solves, 1 output hash), so that reason never distinguished
+    # the two. The real concern was `backend="auto"` choosing silently by whether
+    # the Rust binary happened to be built; pinning `clarabel` answers it, and
+    # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+    # changed answer. Bean `qou/ftuv`.
+    r = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     d = r.to_dict() if hasattr(r, "to_dict") else vars(r)
     active = list(d.get("active_set", []))
     y_star = [float(x) for x in d.get("y_star", [])]
@@ -109,7 +116,9 @@ def main() -> int:
         "primal_obj": float(d.get("primal_obj", 0.0)),
         "dual_obj": float(d.get("dual_obj", 0.0)),
         "duality_gap": float(d.get("duality_gap", 0.0)),
-        "binding_channel_shadow_price": binding_shadow})
+        "binding_channel_shadow_price": binding_shadow,
+        # Solver, precision, and full-precision decimals behind the f64 above.
+        **provenance(r)})
     wb.add_data("why_lp_trivial", {
         "decay_ghost_tr_M": tr_decay, "tr_M_Lplus": float(t[3]), "tr_M_Lminus": float(t[4]),
         "note": "traceless decay mode invisible to linear trace-target LP"})

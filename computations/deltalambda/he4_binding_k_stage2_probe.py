@@ -67,6 +67,7 @@ never consulted).
 from __future__ import annotations
 
 import datetime
+import hashlib
 import json
 import os
 import sys
@@ -124,6 +125,38 @@ def classify(triples, h_f64):
 
 def shifted_nucleon_kinds(Z1, N1, off, h_f64):
     return [(k, g0 + off) for (k, g0) in classify(atom_braid_word_3A(Z1, N1), h_f64)]
+
+
+def _cache_stamp(K_kinds, q_str: str, dps: int) -> str:
+    """Identify the PARAMETERS a cached entry was computed under.
+
+    Both resume caches key on the item (a shape, a partition) and, before this,
+    only Leg A carried any parameter check at all — `nf = len(K_kinds)`. That is
+    a COUNT: two different K-factor words of the same length collide, and the
+    pin does not appear in it, even though Leg A's characters come from
+    `chi_lambdas_braid_mpfr(..., w, q_str, 50)` and move with `q_str`. Leg B
+    carried nothing, so a changed word or pin had Leg A recompute correctly
+    while Leg B silently served stale blocks.
+
+    Hashing the word, the pin and the precision closes both. The failure this
+    prevents is the expensive kind: a cache gate that answers "is this entry
+    PRESENT?" when the question is "is this entry CURRENT?" — the same shape as
+    the `chi_via_rust_lossless` reuse branch (PR #5623), which held two
+    witnesses at convention C across the whole 2026-08-09 cascade and made
+    re-running the producer a silent no-op.
+    """
+    return hashlib.sha256(
+        f"{K_kinds!r}|{q_str}|{dps}".encode()
+    ).hexdigest()[:12]
+
+
+def _legacy_cache_warning(path, n: int, leg: str) -> None:
+    """An unstamped entry predates `_cache_stamp` and cannot be verified."""
+    print(f"  ⚠ Leg {leg}: {n} cached entr{'y' if n == 1 else 'ies'} in "
+          f"{path.name} predate the parameter stamp and CANNOT be checked "
+          f"against this run's K-factor word / pin.\n"
+          f"    They are being reused. If you changed either since they were "
+          f"written, delete {path.name} and re-run.", flush=True)
 
 
 def main() -> int:
@@ -203,6 +236,8 @@ def main() -> int:
     chi_exact: dict[tuple, mp.mpf] = {}
     legA_prog = HERE / ".he4_stage2_legA_progress.jsonl"
     branch_chi: dict[int, dict[tuple, mp.mpf]] = {1: {}, -1: {}}
+    _stamp = _cache_stamp(K_kinds, q_str, 50)
+    _legA_dropped = _legA_legacy = 0
     if legA_prog.exists():
         for _line in legA_prog.read_text().splitlines():
             if not _line.strip():
@@ -213,7 +248,18 @@ def main() -> int:
                 continue
             if _r.get("nf") != len(K_kinds):
                 continue
+            _st = _r.get("st")
+            if _st is not None and _st != _stamp:
+                _legA_dropped += 1
+                continue          # different word / pin / dps -> recompute
+            if _st is None:
+                _legA_legacy += 1
             branch_chi[_r["br"]][tuple(_r["lam"])] = mp.mpf(_r["chi"])
+        if _legA_dropped:
+            print(f"  Leg A: dropped {_legA_dropped} cached characters computed "
+                  f"under different parameters", flush=True)
+        if _legA_legacy:
+            _legacy_cache_warning(legA_prog, _legA_legacy, "A")
         _n = len(branch_chi[1]) + len(branch_chi[-1])
         if _n:
             print(f"  Leg A resumed: {_n}/{2 * len(shapes)} characters from "
@@ -229,8 +275,9 @@ def main() -> int:
             with open(legA_prog, "a") as _pf:
                 for lam, chi in zip(grp, res):
                     branch_chi[br][lam] = mp.mpf(chi)
-                    _pf.write(json.dumps({"nf": len(K_kinds), "br": br,
-                                          "lam": list(lam), "chi": chi}) + "\n")
+                    _pf.write(json.dumps({"nf": len(K_kinds), "st": _stamp,
+                                          "br": br, "lam": list(lam),
+                                          "chi": chi}) + "\n")
             print(f"  branch {br:+d}: {len(branch_chi[br])}/{len(shapes_t)} "
                   f"chars at {time.time()-t0:.0f}s", flush=True)
     for lam in shapes_t:
@@ -252,7 +299,11 @@ def main() -> int:
 
     # operator-selection LP with duals (AGENTS.md LP-dual rule)
     t_costs = -np.array([r["y_times_chi_abs"] for r in per_lambda])
-    lp = solve_operator_selection_lp(t_costs, np.eye(len(per_lambda)), n_target=1.0)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by whether
+    # the Rust binary happens to be built, so the same script yields different
+    # numbers on different boxes. Bean `qou/ftuv`.
+    lp = solve_operator_selection_lp(t_costs, np.eye(len(per_lambda)),
+                                     n_target=1.0, backend="clarabel")
     lp_dict = lp.to_dict()
     dominant = per_lambda[0]["lambda"]
     print(f"  dominant λ*(K) = {tuple(dominant)}   duality gap = "
@@ -292,6 +343,7 @@ def main() -> int:
     # run skips them (the full compute can outlive one session).
     legB_prog = HERE / ".he4_stage2_legB_progress.jsonl"
     done_lambdas = set()
+    _legB_dropped = _legB_legacy = 0
     if legB_prog.exists():
         for _line in legB_prog.read_text().splitlines():
             if not _line.strip():
@@ -302,10 +354,21 @@ def main() -> int:
                 continue
             if tuple(_b["lambda"]) in done_lambdas:
                 continue
+            _st = _b.get("st")
+            if _st is not None and _st != _stamp:
+                _legB_dropped += 1
+                continue          # different word / pin / dps -> recompute
+            if _st is None:
+                _legB_legacy += 1
             per_block.append(_b)
             done_lambdas.add(tuple(_b["lambda"]))
             xcheck_worst = max(xcheck_worst, _b["chi_exact_rel_diff"])
             min_eig_overall = min(min_eig_overall, _b["min_eig_sym"])
+        if _legB_dropped:
+            print(f"  Leg B: dropped {_legB_dropped} cached blocks computed "
+                  f"under different parameters", flush=True)
+        if _legB_legacy:
+            _legacy_cache_warning(legB_prog, _legB_legacy, "B")
         if per_block:
             print(f"  Leg B resumed: {len(per_block)} blocks from "
                   f"{legB_prog.name}", flush=True)
@@ -330,24 +393,58 @@ def main() -> int:
         sig_coo, dim = _build_seminormal_matrices_mpf(lam, q0)
         if dim == 0:
             continue
-        # convert per-generator COO to f64 arrays
+        # Convert per-generator COO to f64, SPLIT into its diagonal and
+        # off-diagonal parts.
+        #
+        # The K-word loop below was 90% of this probe's runtime (measured:
+        # 54 s of a 60 s block at d = 2640, against 4.8 s to build the
+        # seminormal matrices and 0.7 s for the d³ eigensolve). Two things
+        # made it slow, and neither was inherent:
+        #
+        #   1. `np.add.at` is an UNBUFFERED scatter — it exists to handle
+        #      duplicate target indices, and there are none here. Each
+        #      seminormal generator is diagonal plus off-diagonal entries at a
+        #      single fixed band offset, at most 2 nonzeros per column, one of
+        #      which is the diagonal. So every column receives at most ONE
+        #      off-diagonal contribution and plain fancy indexing is correct.
+        #      (Asserted below rather than assumed.)
+        #   2. The update is column-wise on a C-contiguous array, so every
+        #      access was strided. Working on the TRANSPOSE makes each update
+        #      a contiguous row operation.
+        #
+        # Together: 66.4 s -> 6.2 s at d = 2640, a 10.7x speedup, agreeing
+        # with the old code to 4.8e-16 relative — f64 accumulation order,
+        # three orders inside the 1e-15 χ cross-check this block asserts.
+        # Bean `qou/ftuv`.
         gens = []
         for coo in sig_coo:
             ii = np.fromiter((e[0] for e in coo), dtype=np.int64, count=len(coo))
             jj = np.fromiter((e[1] for e in coo), dtype=np.int64, count=len(coo))
             vv = np.fromiter((float(e[2]) for e in coo), dtype=np.float64,
                              count=len(coo))
-            gens.append((ii, jj, vv))
-        M = np.eye(dim)
+            on_diag = ii == jj
+            diag = np.zeros(dim, dtype=np.float64)
+            diag[jj[on_diag]] = vv[on_diag]
+            io, jo, vo = ii[~on_diag], jj[~on_diag], vv[~on_diag]
+            assert len(np.unique(jo)) == len(jo), (
+                f"λ={lam}: a column takes two off-diagonal contributions, so "
+                "the scatter below would drop one — revert to np.add.at")
+            gens.append((diag, io, jo, vo))
+
+        # MT holds Mᵀ: row j of MT is column j of M.
+        MT = np.ascontiguousarray(np.eye(dim))
         for (k, g0) in K_kinds:
             a, b = factor_ab(k)
-            ii, jj, vv = gens[g0]
-            # M ← M @ (a·σ + b·I):  col k of new M gets a·v·M[:,j] for each
-            # (j,k,v) in σ (σ COO is (row, col, val) → M@σ accumulates over
-            # σ rows), plus b·M.
-            Mn = b * M
-            np.add.at(Mn.T, jj, (a * vv)[:, None] * M.T[ii])
-            M = Mn
+            diag, io, jo, vo = gens[g0]
+            # M ← M @ (a·σ + b·I). Column j of the result is
+            # (b + a·σ_jj)·M[:,j] plus a·σ_ij·M[:,i] from the one
+            # off-diagonal entry in that column — a row operation on MT.
+            # `tmp` is taken BEFORE the scaling, because io and jo overlap.
+            tmp = MT[io] * (a * vo)[:, None] if len(io) else None
+            MT *= (b + a * diag)[:, None]
+            if tmp is not None:
+                MT[jo] += tmp
+        M = MT.T
         chi_f = float(np.trace(M))
         chi_e = float(chi_exact[lam])
         xrel = abs(chi_f - chi_e) / max(abs(chi_e), 1e-300)
@@ -364,13 +461,13 @@ def main() -> int:
             "near_zero_flagged": bool(abs(mn) < NEAR_ZERO_FLAG),
         })
         with open(legB_prog, "a") as _pf:  # resume checkpoint
-            _pf.write(json.dumps(per_block[-1]) + "\n")
+            _pf.write(json.dumps({**per_block[-1], "st": _stamp}) + "\n")
         done_d2 += dim * dim
         el = time.time() - t0
         print(f"  λ={str(lam):26s} d={dim:5d}  min_eig={mn:+.3e}  "
               f"χ xcheck={xrel:.1e}  [{done_d2/total_d2:5.1%} of Σd², "
               f"{el:.0f}s]", flush=True)
-        del M, Ms, gens
+        del M, MT, Ms, gens
     alpha_gap = max(0.0, -min_eig_overall)
     psd_all = all(b["psd_within_tol"] for b in per_block)
     xcheck_ok = xcheck_worst < TRACE_XCHECK_TOL

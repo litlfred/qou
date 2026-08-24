@@ -1,16 +1,17 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T19:07:30.527551+00:00",
-  "commitSha": "7a12fc74b2c28978d848652181448cc9060d59a6",
+  "computedAt": "2026-08-24T14:01:48.106774+00:00",
+  "commitSha": "303a6edf1fdf7823d38b27303c4207c1efa64032",
   "assertions": [
     {
-      "name": "ℏ_q² = Vol(4_1) / (m_μ/m_e)",
-      "computed": 0.009817186454275078,
-      "expected": 0.009817188527722428,
-      "passed": false,
-      "tolerance": 1e-15,
-      "source": "Definitional (q_parameter.py)"
+      "name": "μ–p substrate tension in band (PREDICTION at the proton pin, not an identity)",
+      "computed": 211.20586411146246,
+      "expected": 211.2,
+      "passed": true,
+      "tolerance": 5.0,
+      "unit": "ppb",
+      "source": "Vol(4_1)/ℏ_q²(proton) vs CODATA m_μ/m_e. Falsifiable: a drift outside 206–216 ppb means the anchor or Vol(4_1) moved. NOT a claim that m_μ meets its target — it misses by 963.6×."
     },
     {
       "name": "q₀ = 1 / (1 - ℏ_q)",
@@ -21,13 +22,13 @@
       "source": "Definitional (q_parameter.py)"
     },
     {
-      "name": "m_μ/m_e from Vol(4_1)/ℏ_q² (self-consistency)",
-      "computed": 206.7683263706738,
+      "name": "Vol(4_1)/ℏ_q² is definitional AT THE MUON PIN (the ideal CAL-2 layer)",
+      "computed": 206.76828298931505,
       "expected": 206.7682827,
-      "passed": false,
-      "tolerance": 1e-08,
+      "passed": true,
+      "tolerance": 1e-05,
       "unit": "dimensionless",
-      "source": "Topological mass formula"
+      "source": "Ideal-layer check. Tolerance 1e-5 absolute (~48 ppb) because the muon pin was solved against CODATA 206.768283 while MASS_RATIO_MU_E here is 206.7682827 — a 1.4 ppb difference that is a CODATA precision artifact, not physics."
     },
     {
       "name": "P_proton(q₀) — Skein polynomial",
@@ -91,12 +92,12 @@
       "source": "Transfer matrix chain with σ⁻¹ = σ − HA crossing convention"
     }
   ],
-  "allPassed": false,
-  "durationMs": 35,
+  "allPassed": true,
+  "durationMs": 54,
   "computation": "mass-from-q-symbolic",
   "scriptFile": "mass-from-q-symbolic.py",
-  "scriptHash": "587206a42432",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptHash": "1fd2a958aac5",
+  "scriptCommitSha": "fe3d1469ab657f91d51ca727c36902d920978eef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -108,8 +109,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {

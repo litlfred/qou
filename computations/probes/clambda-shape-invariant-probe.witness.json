@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:45:50.447973+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:01:13.219604+00:00",
+  "commitSha": "785333b50d803d0708d936e5bee95b6379259206",
   "assertions": [
     {
       "name": "he4_rectangular_anchor_c_lambda_near_one",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 20,
   "computation": "clambda-shape-invariant-probe",
   "scriptFile": "clambda_shape_invariant_probe.py",
   "scriptHash": "e3f9f2302c80",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -43,8 +43,8 @@
   },
   "description": "Screens whether the binding residual c_lambda = B_AME/E_gate (E_gate = E0*ln(1/W_lambda)) is a parameter-free function of SU(4)-partition shape invariants (I_rect, contentVar, aspect, nDistinct) over 2H/3H/3He/4He/6Li/7Li. Formalize-first hypothesis screening, NOT a fit. Key control: 3H and 3He share the SAME partition (3,2,2,2) but differ in c_lambda (0.534 vs 0.486) -> c_lambda is NOT a function of lambda alone; a charge/Coulomb (Z) term is present. 4He (rectangular, I_rect=0) anchors c_lambda~1. Conclusion: a clean shape-only c_lambda does not close binding; the full keystone W_lambda match + a charge term is needed.",
   "data": {
-    "q0": 1.1099785955573347,
-    "E0_MeV": 4.185980827582891,
+    "q0": 1.1099785827513808,
+    "E0_MeV": 4.185981363294476,
     "rows": [
       {
         "iso": "2H",
@@ -58,9 +58,9 @@
           1
         ],
         "B_AME": 2.2245662000000004,
-        "W_lam": 0.11145220242002736,
-        "E_gate": 9.184709423168982,
-        "c_lam": 0.24220322032054692,
+        "W_lam": 0.11145220265739338,
+        "E_gate": 9.184710589690505,
+        "c_lam": 0.24220318955906928,
         "n": 6,
         "m": 4,
         "I_rect": 0.25,
@@ -81,9 +81,9 @@
           2
         ],
         "B_AME": 8.481796200000002,
-        "W_lam": 0.022496580645394164,
-        "E_gate": 15.883251966070729,
-        "c_lam": 0.5340087922875322,
+        "W_lam": 0.022496579951254238,
+        "E_gate": 15.883254127930389,
+        "c_lam": 0.5340087196039337,
         "n": 9,
         "m": 4,
         "I_rect": 0.25,
@@ -104,9 +104,9 @@
           2
         ],
         "B_AME": 7.71804132,
-        "W_lam": 0.022496580645394164,
-        "E_gate": 15.883251966070729,
-        "c_lam": 0.4859232439608099,
+        "W_lam": 0.022496579951254238,
+        "E_gate": 15.883254127930389,
+        "c_lam": 0.4859231778221049,
         "n": 9,
         "m": 4,
         "I_rect": 0.25,
@@ -127,9 +127,9 @@
           3
         ],
         "B_AME": 28.2956624,
-        "W_lam": 0.0007736733565687141,
-        "E_gate": 29.989876923004886,
-        "c_lam": 0.9435071198406529,
+        "W_lam": 0.0007736732673185835,
+        "E_gate": 29.98988124392632,
+        "c_lam": 0.9435069839007969,
         "n": 12,
         "m": 4,
         "I_rect": 0.0,
@@ -150,9 +150,9 @@
           4
         ],
         "B_AME": 31.993987199999996,
-        "W_lam": 0.0008930602690346444,
-        "E_gate": 29.389170655515432,
-        "c_lam": 1.0886318492963571,
+        "W_lam": 0.000893059868811062,
+        "E_gate": 29.389176292611104,
+        "c_lam": 1.0886316404874465,
         "n": 18,
         "m": 4,
         "I_rect": 0.09999999999999998,
@@ -173,9 +173,9 @@
           4
         ],
         "B_AME": 39.245080699999995,
-        "W_lam": 0.001655121573825133,
-        "E_gate": 26.80652231098012,
-        "c_lam": 1.4640123864155614,
+        "W_lam": 0.0016551204022395465,
+        "E_gate": 26.806528704680897,
+        "c_lam": 1.4640120372298375,
         "n": 21,
         "m": 4,
         "I_rect": 0.125,
@@ -186,13 +186,13 @@
       }
     ],
     "pearson_c_lambda_vs_invariant": {
-      "I_rect": -0.7003685125788521,
-      "contentVar": -0.7460411162882723,
-      "aspect": 0.9256215971600574,
-      "nDistinct": 0.3635263862753901
+      "I_rect": -0.7003685494289321,
+      "contentVar": -0.746041157436433,
+      "aspect": 0.9256215803364254,
+      "nDistinct": 0.363526329683256
     },
     "mirror_split_3H_3He_c_lambda": 0.0481
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

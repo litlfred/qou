@@ -25,11 +25,12 @@ import time
 from datetime import datetime, timezone
 from fractions import Fraction
 from pathlib import Path
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Substrate modulus q₀ (muon-pinned; computations/ layer canonical, from
 # q-pinning-50-digit.witness.json). High-precision decimal string, evaluated as float
 # for the numeric table (the structural facts below are exact integers/rationals).
-Q0_STR = "1.10997859555733471989976322048322502665620840878015"
+Q0_STR = Q_50_DIGIT_STR
 q0 = float(Q0_STR)
 t0 = q0 + 1.0 / q0  # fold parameter t = q + q⁻¹
 
