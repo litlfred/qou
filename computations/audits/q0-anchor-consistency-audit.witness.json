@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T20:41:56.713687+00:00",
-  "commitSha": "aba5860f5fd392a0a4d171a192c7696d472aebc1",
+  "computedAt": "2026-08-24T20:54:47.601862+00:00",
+  "commitSha": "0b11d651c1a5b30c7e4aa667bb91fd22335eedcc",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -49,11 +49,11 @@
       "Q0_AMBIGUOUS": 1,
       "Q0_AMBIGUOUS_NO_REASON": 14,
       "Q0_INDEPENDENT": 48,
-      "Q0_INDEPENDENT_NO_REASON": 1,
+      "Q0_INDEPENDENT_NO_REASON": 3,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1648,
+      "Q0_ANCHOR_MISSING": 1646,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 79,
       "Q0_PARSE_ERROR": 0,
@@ -979,10 +979,6 @@
           "detail": ""
         },
         {
-          "witness": "chi-content-eigenbasis.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "chi-content-single-mode.witness.json",
           "detail": ""
         },
@@ -1780,10 +1776,6 @@
         },
         {
           "witness": "e-hartree-round25-em-channel-induction.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "eigenbasis-structural-lemmas.witness.json",
           "detail": ""
         },
         {
@@ -11042,6 +11034,14 @@
         }
       ],
       "Q0_INDEPENDENT_NO_REASON": [
+        {
+          "witness": "chi-content-eigenbasis.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
+        },
+        {
+          "witness": "eigenbasis-structural-lemmas.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
+        },
         {
           "witness": "operator-selection-lp-symbolic-qq.witness.json",
           "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
