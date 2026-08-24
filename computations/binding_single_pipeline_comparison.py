@@ -108,6 +108,21 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402 — before any mpf is built
+import mpmath as mp  # noqa: E402
+
+set_compute_dps()
+
+
+def _mpf(x):
+    """`float` → `mpf` via `repr`; `str`/`mpf` pass straight through.
+
+    `mp.mpf(<float>)` would store the float's exact binary value and print its
+    50-digit dyadic tail — fake precision, and what the padding audit catches.
+    `repr` is the shortest round-tripping decimal, so a float64 becomes the mpf
+    of the digits it actually carries.
+    """
+    return mp.mpf(repr(x)) if isinstance(x, float) else mp.mpf(x)
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -117,11 +132,15 @@ _UPSTREAM_RECORDS: list = []
 
 def _constants():
     """E_0, m_e, q_0, 8G — all from the canonical substrate / knot-volume sources."""
-    from q_parameter import Q as q0
+    # Q_MP not Q, and no float(): `Q` is q_parameter's float64 member, VOL_BORROMEAN
+    # is documented right here as an "mpmath 50dps source", and M_E_MEV as
+    # "registry, full precision" — all three were being cast down on the way in.
+    # Q_MP is the SAME anchor as Q, verified: float(Q_MP) == Q bit-identically.
+    from q_parameter import Q_MP as q0
     from knot_volumes import VOL_BORROMEAN  # 8G = Vol(L6a4), mpmath 50dps source
     from codata_constants import M_E_MEV as me  # CAL-1 electron mass (registry, full precision)
-    me, q0, g8 = float(me), float(q0), float(VOL_BORROMEAN)
-    return me, q0, me / (q0 * (q0 - 1.0)), g8
+    me, q0, g8 = _mpf(me), _mpf(q0), _mpf(VOL_BORROMEAN)
+    return me, q0, me / (q0 * (q0 - 1)), g8
 
 
 def _load_canonical_traces():
@@ -140,11 +159,12 @@ def _load_canonical_traces():
     for r in results:
         if r.get("status") != "solved":
             continue
-        ta = float(r["tr_M_atom"].strip("()").split("+")[0])
-        tf = float(r["tr_M_free"].strip("()").split("+")[0])
+        # 50-digit strings in binding-canonical; float() collapsed them to 16.
+        ta = _mpf(r["tr_M_atom"].strip("()").split("+")[0])
+        tf = _mpf(r["tr_M_free"].strip("()").split("+")[0])
         out.append({
             "atom": r["atom"], "Z": r["Z"], "N": r["N"], "A": r["A"],
-            "B_AME_MeV": float(r["B_AME_MeV"]),
+            "B_AME_MeV": _mpf(r["B_AME_MeV"]),
             "tr_free": tf, "tr_atom": ta,
             "trace_source": "binding-canonical.witness.json",
         })
@@ -172,13 +192,15 @@ def _transfer_traces(nuclei, ame):
         ta, tf, chi, wall = tr_m_atom_zn(Z, N, dps=50)
         out.append({
             "atom": atom, "Z": Z, "N": N, "A": Z + N,
-            "B_AME_MeV": float(ame[_AME_KEY[atom]]),
-            "tr_free": float(tf), "tr_atom": float(ta),
+            "B_AME_MeV": _mpf(ame[_AME_KEY[atom]]),
+            # tr_m_atom_zn already returned these at dps=50 — float() here threw
+            # away 34 digits the line above had just computed.
+            "tr_free": tf, "tr_atom": ta,
             "trace_source": "tr_m_atom_zn (transfer path, live)",
             "n_partitions": len(chi), "wall_sec": round(wall, 3),
         })
         print(f"  [transfer] {atom}: A={Z + N} λ={len(chi)} {wall:.2f}s  "
-              f"tr_atom={float(ta):.6g} tr_free={float(tf):.6g}")
+              f"tr_atom={ta:.6g} tr_free={tf:.6g}")
     return out
 
 
@@ -193,7 +215,7 @@ def _bond_type_L():
     out = {}
     for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
-        out[key] = math.log(float(tf) / float(ta))
+        out[key] = mp.log(tf / ta)
     print(f"  [bond-type sub-braid L]  p-p={out['pp']:.4f}  "
           f"p-n={out['pn']:.4f}  n-n={out['nn']:.4f}")
     return out
@@ -203,8 +225,8 @@ def _forms(rec, alpha, ell_bond, me, g8, Lbond):
     """Evaluate the binding forms for one nucleus at scale `alpha`."""
     A, Z, N = rec["A"], rec["Z"], rec["N"]
     tf, ta = rec["tr_free"], rec["tr_atom"]
-    s = 1.0 - ta / tf                      # bond suppression ∈ [0,1)
-    L = math.log(tf / ta)                  # = −ln(1−s), exact log-ratio
+    s = 1 - ta / tf                        # bond suppression ∈ [0,1)
+    L = mp.log(tf / ta)                    # = −ln(1−s), exact log-ratio
     bonds_chain = A - 1
     bonds_allpairs = comb(A, 2)
     B_lin = alpha * s                      # leading term of B_sym (saturates at α)
@@ -251,7 +273,7 @@ def main() -> int:
     Lbond = _bond_type_L()
 
     deut = next(r for r in recs if r["atom"] == "D")
-    ell_bond = math.log(deut["tr_free"] / deut["tr_atom"])     # bulk per-bond log-suppression
+    ell_bond = mp.log(deut["tr_free"] / deut["tr_atom"])     # bulk per-bond log-suppression
     alpha_D = deut["B_AME_MeV"] / ell_bond                     # deuteron-pinned scale
 
     scales = {"E0_derived": E0, "alpha_D_pinned": alpha_D}
@@ -266,7 +288,13 @@ def main() -> int:
             for key in ("s_suppression", "log_ratio_L", "bonds_chain",
                         "bonds_allpairs", "n_pp", "n_pn", "n_nn",
                         "sigma_L_factorized", "Lbar_comp"):
-                row[key] = round(f[key], 5) if isinstance(f[key], float) else f[key]
+                # (float, mp.mpf): the test guards the INTEGER fields in this
+                # list (bonds_chain, n_pp, ...) from being rounded. An mpf is
+                # not a Python float, so once the forms became mpf this test
+                # started skipping the rounding entirely and 36 display fields
+                # silently went from 5 decimals to full precision.
+                row[key] = (round(f[key], 5)
+                            if isinstance(f[key], (float, mp.mpf)) else f[key])
             for bkey in ("B_lin", "B_lin_raw", "B_sym", "B_qCLT_chain",
                          "B_qCLT_allpairs", "B_qCLT_fac_chain",
                          "B_qCLT_fac_allpairs", "B_magic"):
@@ -473,7 +501,7 @@ def main() -> int:
     w.add_assertion(
         name="B_sym_E0_within_1p25x_T_3He",
         computed=bsym_norm_worst_E0,
-        expected=1.0, tolerance=0.25,
+        expected=mp.mpf("1.0"), tolerance=mp.mpf("0.25"),
         source="max over {T, ³He} of max(miss, 1/miss) for B_sym = E_0·ln("
                "tr_free/tr_atom); exact log-trace at the DERIVED scale, no fit.",
     )
@@ -481,7 +509,7 @@ def main() -> int:
     w.add_assertion(
         name="B_magic_He4_within_10pct",
         computed=he4["B_magic__E0_derived__miss_x"],
-        expected=1.0, tolerance=0.1,
+        expected=mp.mpf("1.0"), tolerance=mp.mpf("0.1"),
         source="⁴He B_AME / (2·m_e·A·8G); the doubly-magic specialization where "
                "no single hyperbolic knot (hence no per-knot trace) exists.",
     )
@@ -490,7 +518,7 @@ def main() -> int:
     w.add_assertion(
         name="E0_beats_deuteron_pin_generic",
         computed=bsym_gen_worst_E0 / bsym_gen_worst_D,
-        expected=0.5, tolerance=0.5,
+        expected=mp.mpf("0.5"), tolerance=mp.mpf("0.5"),
         source="ratio of worst-case generic miss factors (E_0 over α_D); in "
                "[0,1] means the derived E_0 is the tighter anchor across D/T/³He.",
     )
@@ -498,20 +526,20 @@ def main() -> int:
     w.add_assertion(
         name="B_qCLT_fac_chain_within_1p25x_T_3He",
         computed=bfac_norm_worst_E0,
-        expected=1.0, tolerance=0.25,
+        expected=mp.mpf("1.0"), tolerance=mp.mpf("0.25"),
         source="max over {T, ³He} of max(miss, 1/miss) for the bond-type "
                "factorized chain q-CLT B = E_0·(A−1)·(Σ bond-type L)/C(A,2); "
                "no fitted coefficients — bond L's from 2-nucleon sub-braids.",
     )
     # Assertion (e2): the factorized q-CLT RESOLVES the T/³He ordering
     # (T more bound than ³He), which the uniform q-CLT cannot. Boolean as 1.0/0.0.
-    fac_split_ok = 1.0 if (
+    fac_split_ok = mp.mpf(1) if (
         (T["B_qCLT_fac_chain__E0_derived"] - He3["B_qCLT_fac_chain__E0_derived"])
-        * (T["B_AME_MeV"] - He3["B_AME_MeV"]) > 0) else 0.0
+        * (T["B_AME_MeV"] - He3["B_AME_MeV"]) > 0) else mp.mpf(0)
     w.add_assertion(
         name="B_qCLT_fac_resolves_T_3He_ordering",
         computed=fac_split_ok,
-        expected=1.0, tolerance=0.0,
+        expected=mp.mpf("1.0"), tolerance=mp.mpf("0.0"),
         source="sign(B_fac(T)−B_fac(³He)) == sign(B_AME(T)−B_AME(³He)); the "
                "bond-type factorized q-CLT recovers T more bound than ³He "
                "(n-n bond L > p-p bond L), which the uniform q-CLT averages away.",
