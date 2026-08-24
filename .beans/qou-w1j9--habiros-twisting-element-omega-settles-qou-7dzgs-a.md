@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T17:33:32Z
-updated_at: 2026-08-24T18:46:59Z
+updated_at: 2026-08-24T21:05:12Z
 ---
 
 ## The source, and why it is decisive
@@ -130,3 +130,66 @@ that CAN break bar symmetry. T1's "the /q^3 is F_Bor's unique bar-breaker" is
 therefore forced rather than incidental — and `(1^3)` being the transpose of
 `(3)` gives `theta_{(1^3)} = theta_{(3)}^-1 = q^-3` directly, without needing the
 content-sum arithmetic at all.
+
+
+## 2026-08-24 — the alpha hedge is DISCHARGED for the 1-dimensional blocks
+
+New file, sorry-free, `lean`-direct exit 0, `#print axioms` clean on all seven
+declarations (`propext`, `Classical.choice`, `Quot.sound` only — no `sorryAx`):
+
+    content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneHeckeRootsForceTwist.lean
+
+### What was open
+
+`KeystoneModularTwist.lean`'s header hedged: *"for the Hecke MTC the exponent is
+**(up to convention)** the content sum"*. `theta` was a DEFINITION wearing a
+physical name — nothing derived the exponent.
+
+### The derivation
+
+From the corpus's own Hecke convention `(sigma_i - q)(sigma_i + q^-1) = 0` alone:
+
+1. A 1-dim rep sends every generator to a scalar satisfying that relation. Over a
+   field it has **exactly two** roots (`isHeckeRoot_iff`): `q` and `-q^-1`. No
+   third choice, no free parameter.
+2. The full twist `Delta^2 = (sigma_1...sigma_{n-1})^n` is a POSITIVE word of
+   length `n(n-1)`, so on a 1-dim rep it acts by `s^{n(n-1)}`.
+3. `n(n-1)` is **even** (`fullTwistLength_even`) — this is load-bearing. It is
+   why the sign root gives `(-q^-1)^{n(n-1)} = q^{-n(n-1)}`, a genuine inverse
+   power rather than a sign.
+4. `2*c([n]) = n(n-1)` was **already proved** in the corpus
+   (`two_mul_contentSum_single_row`) — that is the join. With `c(lambda') =
+   -c(lambda)` (`contentSum_conj`) the column block inverts.
+
+So `theta_{[n]}^2 = q^{n(n-1)}` (trivial root) and `theta_{[n]'}^2 =
+q^{-n(n-1)}` (sign root). The content-sum exponent on these blocks is the Hecke
+root squared — **derived, not conventional**.
+
+### The mass path, machine-checked
+
+`theta_single_col_sq_three`: at n=3, `theta_{(1^3)}^2 = q^-6`, i.e.
+`theta_{(1^3)} = q^-3` — the `/q^3` in `F_Bor`. gzs0 had the arithmetic right all
+along but could only observe the value was *of framing shape*; it is now forced
+by the sign root.
+
+### Scope — (a), and the hedge STAYS for general lambda
+
+This covers `lambda = [n]` and `lambda = (1^n)` ONLY, because those are what a
+CHARACTER argument reaches. General `lambda` needs Jucys-Murphy elements acting
+on the seminormal basis with eigenvalue `q^{2*content}`, which the corpus does
+not carry in Lean. **I did not edit the hedge in `KeystoneModularTwist.lean`** —
+it remains correct for `dim V_lambda > 1`.
+
+Library checked for the general case: `arxiv-2104.06067v1` (irreducible
+characters of the Iwahori-Hecke algebra in type A) and `arxiv-math-0309426v2`
+(Specht module elementary divisors) are plausible starting points. Not needed for
+this rung — the 1-dim case is elementary from the relation.
+
+### Not to be confused with the OTHER alpha
+
+`explicit-alpha-k-h3-proof.md` landed on main the same day with
+`alpha_0=1, alpha_1=0, alpha_2=z^2, alpha_3=hz^2+z`. Those are **Hochschild class
+weights** from Markov-trace pairing on `HH^*(H_3)` — a different object sharing
+the glyph. Adjacent and suggestive (in B_3 the Garside half-twist is
+`Delta = sigma_1 sigma_2 sigma_1`, so its `alpha_3` IS the half-twist's Markov
+trace, also derived from the Hecke relation) but NOT a dependency of this file.
