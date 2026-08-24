@@ -386,6 +386,51 @@ a lattice-membership problem, and it is the sharp form of Obstruction A.
    **254/254** positive words of length 1–7 reproduce `nf_of_word` exactly, and both
    `σᵢσᵢ⁻¹ = 1` identities hold. The numbers above are from the validated build.
 
+## The lattice question, correctly posed — and the radical in closed form
+
+**First, a correction to how I framed it.** I said the next step was to decide
+whether `Φ*` lies in the `ℤ[q,q⁻¹]`-lattice, and implied that was a computation.
+**At a numerical `q₀` the question is vacuous**: `ℤ[q₀,q₀⁻¹]` is a countable
+*dense* subring of `ℝ` for transcendental `q₀`, so every real vector is
+arbitrarily well approximated and "is `Φ*` in the lattice" carries no numerical
+content. The question is only meaningful **symbolically**, in `H₃(q)` over
+`ℚ(q)`. Any numerical near-miss or near-hit would have been an artifact.
+
+**The radical has a closed form.** `gram.py` records it and it is verified here:
+
+$$v \;=\; \sum_{w} (-q^{-1})^{\ell(w)}\, T_w$$
+
+Measured against the numerical null eigenvector of `G`: `|cos| = 1.0000000000000002`
+and `‖G·v‖ = 2.63e-16`. Coefficient by coefficient, with `ℓ = (0,1,1,2,2,3)` on the
+NF basis:
+
+| `T_w` | `1` | `σ₀` | `σ₁` | `σ₀σ₁` | `σ₁σ₀` | `σ₀σ₁σ₀` |
+|---|---|---|---|---|---|---|
+| `(−q⁻¹)^ℓ` | 1 | −0.90091828 | −0.90091828 | 0.81165375 | 0.81165375 | −0.73123371 |
+| eigenvector | 1 | −0.90091828 | −0.90091828 | 0.81165375 | 0.81165375 | −0.73123371 |
+
+**So the radical itself IS in the lattice** — its coefficients `(−q⁻¹)^{ℓ(w)}` are
+manifestly in `ℤ[q,q⁻¹]`.
+
+### This makes the question finite and decidable
+
+`Φ*` is pinned by six linear conditions, all with coefficients in `ℚ(q)`:
+
+- four tight positivity constraints, the active set `[0,1,4,5]` of `Gx ≥ 0`;
+- the net constraint `Σx = n_target`;
+- the quotient condition `x ⊥ v`, with `v` now known in closed form.
+
+Six equations, six unknowns, all data in `ℚ(q)` ⇒ **`Φ*(q) ∈ ℚ(q)⁶` is the
+solution of an explicit linear system.** Whether it lies in `ℤ[q,q⁻¹]⁶` up to
+scale is then decided by inspecting the denominators of that symbolic solution —
+a finite computation, not a search.
+
+**Not yet run.** `gram.py`'s exact path is `Fraction`-valued *at a numerical `q₀`*,
+not symbolic in `q`, so the symbolic `G(q)` and `t(q)` have to be built from the
+Hecke structure constants (`σᵢ² = hσᵢ + 1`, `h = q − q⁻¹`, Markov parameter
+`z = q³/(q²+1)` under convention D) before the system can be solved. That is the
+next concrete step, and it is algebra rather than enumeration.
+
 ## Route 2 (superseded blocker note, retained)
 
 Route 2 (the D-meson Frobenius–Gram operator-selection) is the one C-frame blocker
