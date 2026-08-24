@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-24T23:33:11Z
+updated_at: 2026-08-24T23:38:50Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -114,3 +114,35 @@ Still conditional. Two things remain, and neither is closed by this file:
 
 (2) is the larger and is what actually discharges `JucysMurphySpectrum`. Nothing in
 this pass touches it.
+
+
+## Third pass — adjacent commutativity has a FIRST INSTANCE, via a different route
+
+Added to the same file. All sorry-free, axioms clean.
+
+    jmRaw_hook              L_k = (s_{k-1}...s_1) s_0^2 (s_1...s_{k-1}), k >= 1
+    fullTwist3_symm         (s_0 s_1)^3 = (s_1 s_0)^3
+    jmRaw_two_mul_one       L_3 L_2 = (s_1 s_0)^3
+    jmRaw_comm_adjacent_one L_2 L_3 = L_3 L_2                <-- ADJACENT, i=1
+
+**The route is NOT the one the exchange relations suggest.** It goes through the
+HALF-twist: `Delta = s_0 s_1 s_0 = s_1 s_0 s_1` by the braid relation, and both
+`(s_0 s_1)^3` and `(s_1 s_0)^3` group into `Delta . Delta`. So L_2 L_3 and L_3 L_2 are
+the full twist approached from opposite sides, and the half-twist symmetry identifies
+them.
+
+**Why this does NOT generalise, stated so nobody assumes it does.** At i=1 both
+products are THE WHOLE full twist of B_3, which is what makes the half-twist argument
+close. For i >= 2 the products L_i L_{i+1} are proper sub-words of a larger twist and
+the argument has nothing to bite on. So this is one instance, not an induction base
+with a visible step.
+
+The hook-word form is now available (`jmRaw_hook`) as the tool for a real attack: it
+exhibits L_k as a palindrome around s_0^2 and makes the letter set explicit.
+
+### Still open
+
+1. General adjacent commutativity (i >= 2). Exchange relations exhausted; half-twist
+   argument does not extend; hook-word route now available but untried.
+2. General `prod L_i = Delta^2` — still n=2,3.
+3. The SPECTRAL half, untouched, and still the larger of the two.
