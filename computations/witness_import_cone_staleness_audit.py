@@ -119,31 +119,35 @@ _commit_time_cache: dict[Path, datetime | None] = {}
 # ── Provenance-only cone modules ────────────────────────────────────────
 #
 # A module that WRITES the witness cannot move the number inside it.  Excluding
-# those from ATTRIBUTION does not change the count -- 1,473 before and after --
-# it changes which module each stale witness is filed under.
+# those from ATTRIBUTION does not change the stale COUNT -- it changes which
+# module each stale witness is filed under.
 #
-# That distinction matters because `newest_dep` reports only the single newest
-# cone module, so one recent commit to a near-universally-imported module
-# OVERWRITES the attribution on everything behind it.  Measured on
-# origin/main 2026-08-23, peeling the layers one at a time:
+# That matters because `newest_dep` reports only the single newest cone module,
+# so one recent commit to a near-universally-imported module OVERWRITES the
+# attribution on everything behind it.  Worked example: the
+# `markov-peel-atomic-tr-m-muon` witness is genuinely cone-stale -- confirmed by
+# re-run, its numbers move up to 2.9x -- via the ctype/averaged_weighted repair
+# and four `canonical_braid_crossings` commits.  None of those appeared in the
+# output; it was filed under the JSON serializer, because the serializer commit
+# was newer.  A reader working that table would have re-run it, watched the
+# numbers move, and credited a serializer.
 #
-#     attributed to                              count
-#     qou_substrate/witness.py                    1444   <- before this fix
-#     substrate/witness_base.py                   1116   <- revealed by excluding the above
-#     substrate/q_parameter.py                    1171   <- revealed by excluding both
-#     mass_at_3A_proper.py                         247
-#     _li_2_q_util.py                               36
+# THE COUNTS BELOW DRIFT -- RE-MEASURE, DO NOT TRUST THEM.  Two snapshots,
+# ~700 commits apart, of the same corpus:
 #
-# So the two provenance modules were not standing in for nothing -- they were
-# standing in FRONT of real movers.  Only **15** of the 1,473 turn out to be
-# provenance-ONLY.  An earlier reading of this table (mine) took the 1,444 as
-# 1,444 false positives and concluded the real signal was ~29; that was wrong,
-# and the correction is recorded here because the table invites it.
+#                          2026-08-23    2026-08-24
+#     IMPORT-CONE STALE          1473          1618
+#       PROVENANCE-ONLY            15           206
+#       SUBSTANTIVE              1458          1412
 #
-# Worked example of the misfiling: `markov-peel-atomic-tr-m-muon` is genuinely
-# cone-stale -- confirmed by re-run, its numbers move up to 2.9x -- via the
-# ctype/averaged_weighted repair and four `canonical_braid_crossings` commits.
-# None of those appeared in the output; it was filed under the JSON serializer.
+#     top attribution        witness.py*  q_parameter.py 1059
+#                                          mass_at_3A_proper.py 255
+#                                          _path_bridge.py      206
+#     * pre-fix; the fix moved it off the serializer entirely
+#
+# A comment quoting corpus-wide counts is itself a measurement that goes stale,
+# which is the defect this whole file exists to detect.  Treat the shape as
+# durable and the digits as expired.
 #
 # The corpus already holds this judgement about `witness.py` one field over:
 # AGENTS.md records that it masks `scriptCommitSha` in `_EPHEMERAL_META_FIELDS`,
@@ -152,18 +156,17 @@ _commit_time_cache: dict[Path, datetime | None] = {}
 #
 # DELIBERATELY NOT LISTED: `_precision.py` and `q_parameter.py`.  Both CAN move
 # a number -- one sets working precision, the other serves q_0 -- so excluding
-# them would hide real staleness.  `q_parameter` is now the top attribution at
-# 1,171, and it is imported nearly as universally as WitnessBuilder, so the same
-# "one recent commit to a near-universal module" dynamic applies to it -- but it
-# applies to a module that genuinely can change values, which is the difference.
-# Whether those 1,171 actually moved is a re-run question, not one this detector
-# settles.
+# them would hide real staleness.  `q_parameter` is the top attribution and is
+# imported nearly as universally as WitnessBuilder, so the same "one recent
+# commit to a near-universal module" dynamic applies to it -- but to a module
+# that genuinely can change values, which is the difference.  Whether those
+# actually moved is a re-run question this detector does not settle.
 #
 # Keep this list minimal.  Every addition is a claim that the module cannot
 # affect a value, and a wrong path fails SILENTLY -- `computations/witness_base.py`
-# in the first draft of this list matched nothing (the file is at
-# `computations/substrate/witness_base.py`), so attribution simply fell through
-# to the next provenance module and the fix looked like it had worked.
+# in the first draft matched nothing (the file is at
+# `computations/substrate/witness_base.py`), so attribution fell through to the
+# next provenance module and the fix LOOKED like it had worked.
 PROVENANCE_ONLY = frozenset({
     "tools/qou-substrate/python/qou_substrate/witness.py",
     "computations/substrate/witness_base.py",
