@@ -196,6 +196,21 @@ def rothDenomFloor (m : ℕ) (ω : ℚ) : ℕ :=
 theorem rothDenomFloor_one (ω : ℚ) : rothDenomFloor 1 ω = 1 := by
   norm_num [rothDenomFloor]
 
+/-- **The floor is monotone in the arity.**
+
+This is what lets `Γ_m` hand its floor clause down to `Γ_{m−1}`: the sub-system asks for a
+*smaller* floor than the system supplies, because `(m−1)m(2m+1)` grows with `m`.  Without it
+the descent (`RothVariableSplit.rothGamma_descend`) would have nothing to discharge clause 3
+with. -/
+theorem rothDenomFloor_mono {m m' : ℕ} {ω : ℚ} (hω : 0 ≤ ω) (h : m' ≤ m) :
+    rothDenomFloor m' ω ≤ rothDenomFloor m ω := by
+  have hA : (m' - 1) * m' * (2 * m' + 1) ≤ (m - 1) * m * (2 * m + 1) :=
+    Nat.mul_le_mul (Nat.mul_le_mul (Nat.sub_le_sub_right h 1) h) (by omega)
+  have hQ : ω * (((m' - 1) * m' * (2 * m' + 1) : ℕ) : ℚ)
+      ≤ ω * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ) :=
+    mul_le_mul_of_nonneg_left (by exact_mod_cast hA) hω
+  exact Nat.pow_le_pow_right (by norm_num) (Nat.ceil_mono hQ)
+
 /-- **Property `Γ_m`** (§11), all three clauses.
 
     1.  max(s₂/s₁, …, s_M/s_{M−1}) ≤ t      — `growth`, which is `RothGrowth` with `ω = 1/t`

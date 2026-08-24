@@ -2954,3 +2954,36 @@ Four hypotheses now written down and found unused: `0 ≤ u`, `0 ≤ Φ`/`0 ≤ 
 Lean actually takes. `theta_one_le_of_gamma` is the clearest case: the source replaces the
 denominator first, which needs `log b ≥ 0`; bounding the numerator and multiplying through
 never forms that quotient. The linter is catching a specific habit, not random slack.
+
+### `Γ_m` descends to `Γ_{m−1}` — the piece Lemma 4 asserts and the arc had nothing for
+
+Lemma 4 does not merely conclude an inequality: it **produces** an ordered system
+`b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1}` *with property `Γ_{m−1}`*, and that is what lets the induction
+apply its hypothesis at all. Nothing here supplied it. The gap went unnoticed because every
+earlier step **consumed** a `Γ` and none had to produce one — the same blind spot as clauses 2
+and 3 going missing, one level up.
+
+`rothGamma_descend` (in `RothVariableSplit`, where the split machinery lives) takes §13's
+sub-system — first `m−1` variables, degrees rescaled by `n` (`ρ_h = n·r_h`), denominators
+unchanged — and carries all three clauses across:
+
+- **growth**: restricting the consecutive-pair condition to a prefix loses nothing; the
+  rescaling is `rothGrowth_scale`'s;
+- **height**: clause 2 compares every `h` against `h = 1`, so a prefix keeps its own first
+  element; raising to the `r`-th power is monotone given `2 ≤ qⱼ`;
+- **floor**: `rothDenomFloor_mono` — the floor grows with the arity, so the *larger* floor
+  `Γ_m` supplies implies the smaller one `Γ_{m−1}` asks for.
+
+Only the arity moves; `ω = 1/t` is the same throughout, which is what makes this a
+single-parameter induction.
+
+### ⚠ Clause 3 bites, and no previous witness in this arc tested it
+
+`rothDenomFloor_two : rothDenomFloor 2 1 = 1024`. So `Γ_2` demands `H₁ ≥ 1024` — a denominator
+of `2` is **not** admissible at arity 2. `rothGamma_descend_witness` is built at `q = 1024` for
+that reason.
+
+Every other witness in this arc uses `q = 2`, and every one of them is at **arity 1**, where
+`rothDenomFloor 1 ω = 1` and the clause is vacuous. So none of them tested clause 3, and none
+of them was wrong to — but it means the arc's non-vacuity evidence for `Γ` is thinner than the
+count of witnesses suggests. Worth knowing before the next one is quoted.

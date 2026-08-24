@@ -117,6 +117,80 @@ theorem rothGrowth_splitOrder {n : ℕ} (o : σ ≃ Fin (n + 1)) (ω : ℚ) (d :
   rw [Equiv.symm_symm, hD, hD]
   exact hg j k hjk
 
+/-- `splitLeft` in terms of the original ordering: position `j` of `Fin n` is position `j` of
+`Fin (n+1)`. -/
+@[simp] theorem splitLeft_apply {β : Type*} {n : ℕ} (o : σ ≃ Fin (n + 1)) (f : σ → β)
+    (j : Fin n) : splitLeft o f j = f (o.symm j.castSucc) := by
+  rw [splitLeft, splitOrder, Equiv.symm_trans_apply, splitLast_symm_inl]
+
+/-- **`Γ_m` descends to `Γ_{m−1}` on the sub-system** — the piece Lemma 4 asserts exists.
+
+Lemma 4 does not merely conclude an inequality: it produces an ordered system
+`b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1}` **with property `Γ_{m−1}`**, and that is what lets the
+induction apply its hypothesis at all.  Nothing in this arc supplied it until now — the gap
+went unnoticed because every earlier step consumed `Γ_m` and none had to *produce* one.
+
+The sub-system is §13's: the first `m−1` variables, degrees rescaled by `n` (`ρ_h = n·r_h`,
+read off §13's body), denominators unchanged.  All three clauses come across:
+
+* **growth** — restricting the consecutive-pair condition to a prefix loses nothing, and the
+  rescaling is `rothGrowth_scale`'s;
+* **height** — clause 2 compares every `h` against `h = 1`, so a prefix keeps its own first
+  element; raising to the `r`-th power is monotone once `2 ≤ qⱼ`;
+* **floor** — `rothDenomFloor` is monotone in the arity, so the *larger* floor `Γ_m` supplies
+  implies the smaller one `Γ_{m−1}` asks for.
+
+⚠ Only the arity moves.  `ω` is the same `t⁻¹` throughout, which is what makes this a
+single-parameter induction — and is why `rothDenomFloor_mono` needs no hypothesis relating two
+different `ω`s. -/
+theorem rothGamma_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (ω : ℚ) (hω : 0 ≤ ω)
+    (d : σ → ℕ) (qd : σ → ℤ) {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ qd j)
+    (hg : RothGamma o ω d qd) :
+    RothGamma (Equiv.refl (Fin n)) ω (fun k => r * splitLeft o d k) (splitLeft o qd) where
+  growth := by
+    intro j k hjk
+    have h := hg.growth j.castSucc k.castSucc (by simpa using hjk)
+    have hrQ : (0 : ℚ) < (r : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hr
+    simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply] at *
+    push_cast at *
+    nlinarith
+  height := by
+    intro j k hj
+    have h := hg.height j.castSucc k.castSucc (by simpa using hj)
+    have h0 : (0 : ℤ) ≤ qd (o.symm j.castSucc) ^ d (o.symm j.castSucc) :=
+      pow_nonneg (le_trans (by norm_num) (hq _)) _
+    simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
+    calc qd (o.symm j.castSucc) ^ (r * d (o.symm j.castSucc))
+        = (qd (o.symm j.castSucc) ^ d (o.symm j.castSucc)) ^ r := by rw [← pow_mul, mul_comm]
+      _ ≤ (qd (o.symm k.castSucc) ^ d (o.symm k.castSucc)) ^ r := pow_le_pow_left₀ h0 h r
+      _ = qd (o.symm k.castSucc) ^ (r * d (o.symm k.castSucc)) := by rw [← pow_mul, mul_comm]
+  floor := by
+    intro j hj
+    have h := hg.floor j.castSucc (by simpa using hj)
+    simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
+    refine le_trans ?_ h
+    exact_mod_cast rothDenomFloor_mono hω (Nat.le_succ n)
+
+/-- **Non-vacuity of the descent**, and a demonstration that clause 3 bites.
+
+`n + 1 = 2`, `d ≡ 1`, `r = 1`, `ω = 1`.  ⚠ The denominators cannot be `2`: at arity `2` the
+floor is `2^⌈1·(1·2·5)⌉ = 2^10 = 1024`, so `Γ_2` demands `H₁ ≥ 1024`.  That is worth exhibiting
+rather than describing — every other witness in this arc got away with `q = 2`, and clause 3 is
+the one hypothesis that makes that impossible. -/
+theorem rothGamma_descend_witness :
+    RothGamma (Equiv.refl (Fin 1)) 1
+      (fun k => 1 * splitLeft (Equiv.refl (Fin 2)) (fun _ : Fin 2 => 1) k)
+      (splitLeft (Equiv.refl (Fin 2)) (fun _ : Fin 2 => (1024 : ℤ))) :=
+  rothGamma_descend (Equiv.refl (Fin 2)) 1 (by norm_num) (fun _ => 1) (fun _ => 1024)
+    one_ne_zero (fun _ => by norm_num)
+    { growth := by intro j k hjk; norm_num
+      height := by intro j k _; exact le_rfl
+      floor := by intro j _; norm_num [rothDenomFloor] }
+
+/-- ⚠ **`Γ_2` really does exclude `q = 2`** — the floor at arity 2 is `1024`. -/
+theorem rothDenomFloor_two : rothDenomFloor 2 1 = 1024 := by
+  norm_num [rothDenomFloor]
+
 /-- **The split-off variable comes last** — the hypothesis `index_le_of_rothGrowth_*` needs. -/
 theorem splitLast_hlast (n : ℕ) (k : Fin n) :
     (((splitLast n).symm (Sum.inl k) : Fin (n + 1)) : ℕ) + 1
