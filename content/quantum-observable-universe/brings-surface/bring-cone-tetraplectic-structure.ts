@@ -18,6 +18,16 @@ export default definition({
   label: "def:bring-cone-tetraplectic-structure",
   title:
     "Tetraplectic structure on the affine cone $C(\\mathcal{B})$ over Bring's curve",
+  // WITHOUT an explicit `lean`, `definition()` MINTS one from the label —
+  // `qou:QOU.BringConeTetraplecticStructure`, a declaration that does not
+  // exist — and prints it in the index as if it did (bean qou-h1p7). Named
+  // explicitly here: `BringCone` in `lean/QOU/BringCone.lean` is the actual
+  // carrier of the object this block defines.
+  lean: {
+    ref: "qou:QOU.Tetraplectic.BringCone",
+    sorryFree: true,
+    validation: "not_checked",
+  },
   uses: ["def:brings-surface"],
   cites: ["foth2002"],
   tags: [

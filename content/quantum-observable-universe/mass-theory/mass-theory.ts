@@ -603,7 +603,11 @@ export default chapter({
         "gluing-equations-do-not-detect-hyperbolicity",
         "gluing-certification-mechanical-reach",
         "hyperbolic-knot-shape-fields",
-        "five-two-saddle-sum-rule",
+        // thm:five-two-saddle-sum-rule retired 2026-08-24 (bean qou-h1p7):
+        // it duplicated prop:fivetwo-saddle-sum-rule in appendix-qvalues,
+        // down to the same lean.ref, which lean-ref-owns-decl flags. The
+        // appendix block survives (three consumers to this one's none) and
+        // absorbed this one's cites, uses edge and two prose passages.
         "kummer-bloch-wigner-identity",
         "rivin-concavity-one-tetrahedron",
         "ideal-tetrahedron-relabelling-invariance",
