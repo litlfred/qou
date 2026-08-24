@@ -17577,4 +17577,217 @@ theorem gen_past_descWord (hn : 0 < n) (hp : HeckeParams) (m : Fin n) :
       (a ++ [(⟨k⟩ : HeckeGen n)]) b c hc
     simpa using key
 
+/-! ## §4br  The unshuffle — and side A of `hdeep`, complete
+
+§4bq gave the carry; this is the loop that uses it, and with it side A closes
+end to end.
+
+**The unshuffle.** `pairList m z` — the interleaved pairs
+`σ_{m−1}σ_m σ_{m−2}σ_{m−1} ⋯ σ_zσ_{z+1}`, i.e. `pairSweep` without its trailing
+`σ_zσ_z` — separates into **two descending runs**:
+
+`pairList m z ⟶* descWord (m−1) z ++ (descWord m z).dropLast`
+
+one `gen_past_descWord` per level. The induction hypothesis separates the pairs
+below, and then the top pair's upper letter `σ_m` is carried rightward across
+the lower run it now sits in front of. The base case is `m = z + 1`, where a
+single pair `σ_zσ_m` is already `descWord z z ++ (descWord m z).dropLast` and no
+step is needed.
+
+Writing the upper run as `(descWord m z).dropLast` — the run with its bottom
+letter removed — is what keeps `z + 1` from ever having to be named as a `Fin n`.
+
+**Side A, complete.** §4bp's head, then the unshuffle, then one last carry:
+`σ_i` leaves the leading block and crosses the lower run, which turns
+`σ_{i−2}σ_{i−1} ++ descWord (i−2) 0` into `bsWord₂ (i−2) (i−1) 0` and
+`σ_i ++ (descWord (i−1) 0).dropLast` into `(descWord i 0).dropLast`. What is left
+is **one word ending in `σ₀σ₀`**, and the single quadratic step of the whole
+reduction fires there, giving
+
+`NF + (q − q⁻¹)·(NF · σ₀)`,  `NF = bsWord₂ (i−2) (i−1) 0 · (descWord i 0).dropLast`
+
+which is the two-term normal form the probe measured. Every step before that one
+is monomial, exactly as the rule census said.
+
+So `aside_resolves` discharges side A of `hdeep` in full, general in `i`. Side B
+is done to its split word (§4bo) and still needs its tail — the same carry
+sequence shifted by one, plus two Bokut–Shiao steps — and then the two-term
+bookkeeping joins the halves.
+-/
+
+/-- `σ_{m−1}σ_m σ_{m−2}σ_{m−1} ⋯ σ_zσ_{z+1}` — `pairSweep` without its trailing
+`σ_zσ_z`, i.e. the interleaved pairs alone. Zipped against the run's own tail,
+so again no arithmetic on `Fin n`. -/
+def pairList {n : ℕ} (m z : Fin n) : Monomial (HeckeGen n) :=
+  (List.zip (descWord m z) (descWord m z).tail).flatMap (fun p => [p.2, p.1])
+
+theorem pairList_self (z : Fin n) : pairList z z = [] := by
+  simp [pairList, descWord_self]
+
+theorem pairList_cons {m' m z : Fin n} (hm : m'.val + 1 = m.val)
+    (hz : z.val ≤ m'.val) :
+    pairList m z = [(⟨m'⟩ : HeckeGen n), ⟨m⟩] ++ pairList m' z := by
+  simp only [pairList, descWord_cons hm hz, List.tail_cons]
+  obtain ⟨t, ht⟩ := descWord_head (i := m') (j := z) hz
+  rw [ht]
+  simp
+
+/-- **The interleaved pairs unshuffle into two descending runs.**
+
+`pairList m z ⟶* descWord (m−1) z ++ (descWord m z).dropLast`, by one
+`gen_past_descWord` carry per level: the induction hypothesis separates the
+pairs below, and then `σ_m` — the upper letter of the top pair — is carried
+rightward past the whole lower run it now sits in front of.
+
+`(descWord m z).dropLast` is the run with its bottom letter removed, which is
+the upper run; writing it that way avoids naming `z + 1`. -/
+theorem pairList_unshuffle (hn : 0 < n) (hp : HeckeParams) (z : Fin n) :
+    ∀ (d : ℕ) (m' m : Fin n), m'.val = z.val + d → m'.val + 1 = m.val →
+      ∀ (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms [(a ++ pairList m z ++ b, c)])
+          (AlgElement.ofTerms
+            [(a ++ descWord m' z ++ (descWord m z).dropLast ++ b, c)]) := by
+  intro d
+  induction d with
+  | zero =>
+    intro m' m hm' hm a b c _
+    have hz : z.val ≤ m'.val := by omega
+    have hm'z : m' = z := Fin.ext (by omega)
+    rw [pairList_cons hm hz, descWord_cons hm hz, hm'z, pairList_self,
+      descWord_self]
+    simp only [List.append_nil, List.dropLast_cons₂, List.dropLast_singleton,
+      List.append_assoc, List.cons_append, List.nil_append]
+    exact MultiStepReduction.refl _
+  | succ d ih =>
+    intro m' m hm' hm a b c hc
+    have hlt : m'.val - 1 < n := by have := m'.isLt; omega
+    have hzm' : z.val ≤ m'.val := by omega
+    have hval : (⟨m'.val - 1, hlt⟩ : Fin n).val = m'.val - 1 := rfl
+    have hz'' : z.val ≤ (⟨m'.val - 1, hlt⟩ : Fin n).val := by rw [hval]; omega
+    have hmm : (⟨m'.val - 1, hlt⟩ : Fin n).val + 1 = m'.val := by rw [hval]; omega
+    have hgap : (⟨m'.val - 1, hlt⟩ : Fin n).val = z.val + d := by rw [hval]; omega
+    have hgap2 : (⟨m'.val - 1, hlt⟩ : Fin n).val
+        = z.val + (m'.val - 1 - z.val) := by rw [hval]; omega
+    have hfar : (⟨m'.val - 1, hlt⟩ : Fin n).val + 1 < m.val := by rw [hval]; omega
+    rw [pairList_cons hm hzm']
+    have step1 := ih ⟨m'.val - 1, hlt⟩ m' hgap hmm
+      (a ++ [(⟨m'⟩ : HeckeGen n), (⟨m⟩ : HeckeGen n)]) b c hc
+    have step2 := gen_past_descWord hn hp m (m'.val - 1 - z.val)
+      ⟨m'.val - 1, hlt⟩ z hgap2 hfar (a ++ [(⟨m'⟩ : HeckeGen n)])
+      ((descWord m' z).dropLast ++ b) c hc
+    have h1 : (⟨m'⟩ : HeckeGen n) :: descWord ⟨m'.val - 1, hlt⟩ z = descWord m' z :=
+      (descWord_cons hmm hz'').symm
+    have h2 : (⟨m⟩ : HeckeGen n) :: (descWord m' z).dropLast
+        = (descWord m z).dropLast := by
+      obtain ⟨t, ht⟩ := descWord_head (i := m') (j := z) hzm'
+      rw [descWord_cons hm hzm', ht]
+      simp
+    refine MultiStepReduction.trans (by simpa using step1) ?_
+    refine MultiStepReduction.trans (by simpa using step2) ?_
+    have hgoal : a ++ [(⟨m'⟩ : HeckeGen n)] ++ descWord ⟨m'.val - 1, hlt⟩ z
+          ++ [(⟨m⟩ : HeckeGen n)] ++ ((descWord m' z).dropLast ++ b)
+        = a ++ descWord m' z ++ (descWord m z).dropLast ++ b := by
+      have e : a ++ [(⟨m'⟩ : HeckeGen n)] ++ descWord ⟨m'.val - 1, hlt⟩ z
+            ++ [(⟨m⟩ : HeckeGen n)] ++ ((descWord m' z).dropLast ++ b)
+          = a ++ ((⟨m'⟩ : HeckeGen n) :: descWord ⟨m'.val - 1, hlt⟩ z)
+            ++ ((⟨m⟩ : HeckeGen n) :: (descWord m' z).dropLast) ++ b := by simp
+      rw [e, h1, h2]
+    rw [← hgoal]
+    simp only [List.append_assoc]
+    exact MultiStepReduction.refl _
+
+/-- `pairSweep` is `pairList` with the trailing `σ_zσ_z` — the pairs, then the
+one place the quadratic rule can fire. -/
+theorem pairSweep_eq (z : Fin n) : ∀ (d : ℕ) (m : Fin n), m.val = z.val + d →
+    pairSweep m z = pairList m z ++ [(⟨z⟩ : HeckeGen n), ⟨z⟩] := by
+  intro d
+  induction d with
+  | zero =>
+    intro m hm
+    have hmz : m = z := Fin.ext (by omega)
+    rw [hmz, pairSweep_self, pairList_self]
+    simp
+  | succ d ih =>
+    intro m hm
+    have hlt : m.val - 1 < n := by have := m.isLt; omega
+    have hval : (⟨m.val - 1, hlt⟩ : Fin n).val = m.val - 1 := rfl
+    have hz : z.val ≤ (⟨m.val - 1, hlt⟩ : Fin n).val := by rw [hval]; omega
+    have hmm : (⟨m.val - 1, hlt⟩ : Fin n).val + 1 = m.val := by rw [hval]; omega
+    have hgap : (⟨m.val - 1, hlt⟩ : Fin n).val = z.val + d := by rw [hval]; omega
+    rw [pairSweep_cons hmm hz, pairList_cons hmm hz, ih ⟨m.val - 1, hlt⟩ hgap]
+    simp
+
+/-- **Side A of the deep self-overlap, reduced to one word.**
+
+Head (§4bp) → unshuffle → one last carry: `σ_i` leaves the leading block and
+crosses the lower run, which turns `σ_{i−2}σ_{i−1} ++ descWord (i−2) 0` into
+`bsWord₂ (i−2) (i−1) 0` and `σ_i ++ (descWord (i−1) 0).dropLast` into
+`(descWord i 0).dropLast`. What is left is a single word ending in `σ₀σ₀`. -/
+theorem aside_to_normalWord (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [(bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩], c)]) := by
+  have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  refine MultiStepReduction.trans (aside_to_sweptWord hn hp h₂ h₁ c hc) ?_
+  rw [pairSweep_eq ⟨0, hn⟩ i'.val i' (by simp)]
+  have hgap : i''.val = (⟨0, hn⟩ : Fin n).val + i''.val := by simp
+  have hfar : i''.val + 1 < i.val := by omega
+  have stepU := pairList_unshuffle hn hp ⟨0, hn⟩ i''.val i'' i' hgap h₂
+    [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+    [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩] c hc
+  have stepC := gen_past_descWord hn hp i i''.val i'' ⟨0, hn⟩ hgap hfar
+    [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)]
+    ((descWord i' ⟨0, hn⟩).dropLast
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]) c hc
+  refine MultiStepReduction.trans (by simpa using stepU) ?_
+  refine MultiStepReduction.trans (by simpa using stepC) ?_
+  have hb : (⟨i''⟩ : HeckeGen n) :: (⟨i'⟩ : HeckeGen n) :: descWord i'' ⟨0, hn⟩
+      = bsWord₂ i'' i' ⟨0, hn⟩ := rfl
+  have hd : (⟨i⟩ : HeckeGen n) :: (descWord i' ⟨0, hn⟩).dropLast
+      = (descWord i ⟨0, hn⟩).dropLast := by
+    obtain ⟨t, ht⟩ := descWord_head (i := i') (j := ⟨0, hn⟩) hz'
+    rw [descWord_cons h₁ hz', ht]
+    simp
+  have hgoal : [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] ++ ((descWord i' ⟨0, hn⟩).dropLast
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩])
+      = bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩] := by
+    have e : [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+          ++ [(⟨i⟩ : HeckeGen n)] ++ ((descWord i' ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩])
+        = ((⟨i''⟩ : HeckeGen n) :: (⟨i'⟩ : HeckeGen n) :: descWord i'' ⟨0, hn⟩)
+          ++ ((⟨i⟩ : HeckeGen n) :: (descWord i' ⟨0, hn⟩).dropLast)
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩] := by simp
+    rw [e, hb, hd]
+  rw [← hgoal]
+  simp only [List.append_assoc]
+  exact MultiStepReduction.refl _
+
+/-- **Side A of the deep self-overlap resolves, in full.** One word, then the
+single quadratic step, landing on the two-term element
+`NF + (q − q⁻¹)·(NF · σ₀)` with `NF = bsWord₂ (i−2) (i−1) 0 · (descWord i 0).dropLast`.
+Everything before that step is monomial. -/
+theorem aside_resolves (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [(bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], c * (hp.q - hp.q⁻¹)),
+         (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast, c)]) := by
+  refine MultiStepReduction.trans (aside_to_normalWord hn hp h₂ h₁ c hc) ?_
+  have hq := quadStep hn hp ⟨0, hn⟩ [] []
+    (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast) []
+    (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]) c hc
+    (by simp) (by simp)
+  simp only [List.append_nil, List.nil_append] at hq
+  exact MultiStepReduction.step (MultiStepReduction.refl _) hq
+
 end UGB.GrobnerShirshov.Hecke
