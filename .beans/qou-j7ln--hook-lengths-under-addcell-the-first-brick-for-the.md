@@ -1,11 +1,11 @@
 ---
 # qou-j7ln
 title: Hook lengths under addCell — the first brick for the arbitrary-z corner identity
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T18:14:36Z
+updated_at: 2026-08-24T19:09:44Z
 ---
 
 ## Landed — PR #5645
@@ -1063,3 +1063,69 @@ every factor cancels as it should.
 
 The last two are the only places where a new small lemma is needed; everything
 else is rewriting.
+
+
+## CLOSED 2026-08-24 — the Markov condition holds at every integer level
+
+`QOU.SchurWeyl.SeminormalRep.markov_wenzlWeight` (`WenzlMarkovLevelR.lean`),
+sorry-free, axioms `propext / Classical.choice / Quot.sound`:
+
+    sum_{|L|=m+2} w_L * tr(iota y * sigma_{m+1})|_L
+      = z_r * sum_{|nu|=m+1} w_nu * tr(y)|_nu,
+    w = wenzlWeight r (q^2),   z_r = Q^r / (q * [r]_Q).
+
+The three defining properties of the Ocneanu weights are now all at general
+`r`: vanishing (`wenzlWeight_eq_zero_iff`), branching
+(`sum_addable_wenzlWeight_all`), normalisation (`sum_dim_wenzlWeight_eq_one`),
+and now the Markov property.
+
+**Conservativity is derived, not asserted.** `markov_wenzlWeight_two`
+specialises `r = 2` and reproduces `MarkovConventionD.markov_conventionD` on
+the nose: `z_2 = q^4/(q(1+q^2)) = q^3/(q^2+1) = z_D`, and
+`wenzlWeight 2 (q^2) = ocneanuWeight q z_D`.
+
+### The three items this bean listed as remaining
+
+All three landed, and the plan above was accurate — no residual arithmetic
+appeared, every factor cancelled where it was predicted to.
+
+1. `betaR_ne_succ_of_addable` — the gap-of-2 from addability (`a4c092267`).
+2. `isCornerCell_row_lt` — the corner analogue of `isAddableCell_row_le`;
+   strict, because a corner is a cell of the diagram while an addable cell may
+   start a new row (`619378c43`).
+3. The assembly, `wenzlWeight_markov_corner` (`e62fe6273`), plus the
+   composition (`046afe8c8`).
+
+### One thing the plan did NOT anticipate
+
+`hne` at the corner node is **not** the addability gap. It needs
+`beta_i + 1 != beta_b` for every `i != b` where `b` is the **corner's** row,
+which addability of `i` says nothing about. What supplies it is that `c` is
+*removable*: `nu_{b+1} < nu_b`, so `beta_{b+1} <= beta_b - 2`. That is
+`betaR_succ_ne_of_corner`, the exact mirror of the addability lemma, and it is
+a second small lemma the plan did not list.
+
+### A real notation collision, recorded
+
+The corpus carries **two distinct `axialDistance` constants**:
+`QOU.SchurWeyl.axialDistance` (`HoefsmitRep`, via `cellContent`) and
+`QOU.BraidKnot.TableauContent.axialDistance` (via `content`). They are
+`rfl`-equal but are different constants, so a bare `axialDistance` inside
+`namespace QOU.SchurWeyl` resolves to the first **even under an `open` of the
+second**, and a `rw` with a lemma stated in the second silently fails to fire.
+`markov_of_corner_identity` uses the first; `axialDistance_corner_addable` uses
+the second. `axialDistance_eq_tableauContent` bridges them. Draining the
+duplication is a separate follow-up.
+
+### Pre-verified symbolically before any Lean was written
+
+Exact sympy, every diagram of at most 4 cells with at most `r` rows, every
+corner, `r = 2..5`: the identity holds and pins `z_r` to the value above.
+
+### Scope, restated
+
+`r` is the Wenzl level — the number of variables in the principal
+specialisation — and is a positive integer by construction. This closes
+**every point of the Wenzl lattice**. It says nothing about arbitrary `z`,
+which is off the lattice; the standing note not to finish the arbitrary-`z`
+corner identity is untouched.
