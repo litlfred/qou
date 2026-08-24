@@ -24,6 +24,7 @@ signature.
 | `colLen_zero_addCell_le` | adding a box at row `a` keeps the row count `≤ max(colLen, a+1)` |
 | `sum_schurPrincipal_addCellOrSelf` | **`∑_a s_{μ+□ at a} = [r]_Q · s_μ`** — general-`r` branching |
 | `sum_wenzlWeight_addCellOrSelf` | the same for the **normalised** weight: `∑_a w_{μ+□ at a} = w_μ` |
+| `wenzlWeight_addCell_beyond_eq_zero` | the addable cell the `range r` sum omits has weight `0` |
 
 The last is not a genericity fact at all — it is the shape bound that keeps `μ + □` inside the
 `≤ r`-row hypothesis — but it belongs with the others because it is the remaining side condition.
@@ -196,5 +197,26 @@ theorem sum_wenzlWeight_addCellOrSelf (Q : F) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1)
     sum_schurPrincipal_addCellOrSelf Q hQ0 hQ1 hgen hrμ,
     show (∑ k ∈ Finset.range r, Q ^ k) = levelBracket r Q from rfl, wenzlWeight, pow_succ]
   field_simp
+
+/-- **The one addable cell the `range r` sum omits carries weight zero.**
+
+A diagram with exactly `r` rows has an addable cell at row `r` — start a new row — and
+`sum_wenzlWeight_addCellOrSelf` sums only over rows `< r`, so that cell is missing from it.  It
+contributes nothing: the resulting diagram has `r + 1` rows, and `wenzlWeight_eq_zero_iff` kills it.
+
+This is what makes the guarded `range r` sum agree with a sum over the addable cells of `μ`, which
+is the indexing `MarkovNormalisation`'s `(λ, corner) ↔ (ν, addable)` reindexing uses.  Stated for any
+row `a ≥ r`, since none of them can appear in the sum either. -/
+theorem wenzlWeight_addCell_beyond_eq_zero {Q : F} {r a : ℕ} {μ : YoungDiagram} (hQ0 : Q ≠ 0)
+    (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hbr : levelBracket r Q ≠ 0)
+    (hra : r ≤ a) (hs : IsAddableCell μ (a, μ.rowLen a)) :
+    wenzlWeight r Q (addCell μ (a, μ.rowLen a) hs) = 0 := by
+  refine (wenzlWeight_eq_zero_iff hQ0 hgen hbr _).mpr ?_
+  · have hmem : ((a, μ.rowLen a) : ℕ × ℕ) ∈ addCell μ (a, μ.rowLen a) hs :=
+      (mem_addCell _ hs _).mpr (Or.inl rfl)
+    have hcol : a < (addCell μ (a, μ.rowLen a) hs).colLen 0 :=
+      mem_iff_lt_colLen.mp
+        ((addCell μ (a, μ.rowLen a) hs).up_left_mem (le_refl a) (Nat.zero_le _) hmem)
+    omega
 
 end QOU.SchurWeyl
