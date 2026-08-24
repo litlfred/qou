@@ -1,7 +1,7 @@
 {
   "engine": "mpmath+sympy+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T11:07:29.428216+00:00",
+  "computedAt": "2026-08-24T11:07:56.365202+00:00",
   "commitSha": "9934a13bbd55c243a4061df501d0b7355d10ef28",
   "assertions": [
     {
@@ -36,7 +36,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 18,
   "computation": "deuteron-from-scratch-ledger",
   "scriptFile": "deuteron_from_scratch_ledger.py",
   "scriptHash": "adce60cf01ae",
@@ -179,9 +179,9 @@
         "error_source": "uniform E₀ where a per-λ weight (Δ_λ / FR projector) belongs; +12% overbind is the scalar-collapse signature"
       },
       "R1b_tower_with_pair_negarg": {
-        "B_MeV": "2.7513161083238850679",
-        "err_rel_pct": 23.678769745035464,
-        "ratio_AME_over_pred": 0.8085462056758053,
+        "B_MeV": "2.9645081315906631758",
+        "err_rel_pct": 33.26230217786565,
+        "ratio_AME_over_pred": 0.7503997632168298,
         "tier": "derived (adds z²·(−Li₂^q(−·)) pair term, sign derived)",
         "error_source": "tower ADDS binding — the +33% shows the gap is not a truncation error of the tower"
       },
@@ -234,10 +234,10 @@
             "error_from_binding_MeV": -0.10511937629403117
           },
           "R1b_tower_with_pair_negarg": {
-            "m_D_MeV": "1875.0866663869814924",
-            "err_m_D_ppm": -280.5902008841742,
+            "m_D_MeV": "1874.8734743637147143",
+            "err_m_D_ppm": -394.25545566667313,
             "error_from_nucleon_masses_MeV": 0.0004711253053774852,
-            "error_from_binding_MeV": -0.526749908323885
+            "error_from_binding_MeV": -0.7399419315906631
           },
           "R2_borromean_level0": {
             "m_D_MeV": "1876.2213607571502939",
@@ -281,10 +281,10 @@
             "error_from_binding_MeV": -0.10511937629403117
           },
           "R1b_tower_with_pair_negarg": {
-            "m_D_MeV": "1875.0862087725203164",
-            "err_m_D_ppm": -280.834182171676,
+            "m_D_MeV": "1874.8730167492535382",
+            "err_m_D_ppm": -394.4994369541749,
             "error_from_nucleon_masses_MeV": 1.3510844201418002e-05,
-            "error_from_binding_MeV": -0.526749908323885
+            "error_from_binding_MeV": -0.7399419315906631
           },
           "R2_borromean_level0": {
             "m_D_MeV": "1876.2209031426891178",
