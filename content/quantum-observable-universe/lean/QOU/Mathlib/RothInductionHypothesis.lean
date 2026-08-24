@@ -48,7 +48,9 @@ theorem index_rescaled_wronskian_le [DecidableEq σ]
     {n : ℕ} (o' : σ ≃ Fin n) (ω ε θ : ℚ) (hIH : RothLemmaUniform σ n ω ε θ)
     {r : ℕ} (hr : r ≠ 0)
     (d₁ : σ → ℕ) (hd₁ : ∀ j, d₁ j ≠ 0)
-    (pn Kh : σ → ℤ) (B : ℤ) (E : ℕ) (hg : RothGamma o' ω d₁ Kh)
+    (κ : σ → ℚ) (Kh : σ → ℤ) (B : ℤ) (E : ℕ)
+    (hheight : ∀ j, max |(κ j).num| |(((κ j).den : ℤ))| = Kh j)
+    (hg : RothGamma o' ω d₁ Kh)
     (Dx : Fin r → List σ) (Dy : Fin r → List Unit)
     (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial Unit ℚ)
     (P : MvPolynomial (σ ⊕ Unit) ℤ)
@@ -58,9 +60,9 @@ theorem index_rescaled_wronskian_le [DecidableEq σ]
     (hdeg : ∀ j k, degreeOf j (φ k) ≤ d₁ j)
     (hB : ∀ m, |coeff m (Matrix.of fun i j =>
         pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det| ≤ B)
-    (hq2 : ∀ j, 2 ≤ Kh j) (hco : ∀ j, IsCoprime (pn j) (Kh j))
+    (hq2 : ∀ j, 2 ≤ Kh j)
     (hBq : ∀ j, B ≤ Kh j ^ E) (hE : ∀ j, (E : ℚ) ≤ ε * ((r * d₁ j : ℕ) : ℚ)) :
-    index (fun j => r * d₁ j) (fun j => (pn j : ℚ) / (Kh j : ℚ)) (mvGenWronskian Dx φ)
+    index (fun j => r * d₁ j) κ (mvGenWronskian Dx φ)
       ≤ ((θ : ℚ) : WithTop ℚ) := by
   classical
   obtain ⟨l, U', V', hl, hU', hV', hfact⟩ :=
@@ -72,9 +74,9 @@ theorem index_rescaled_wronskian_le [DecidableEq σ]
       (degreeOf_mvGenWronskian_le j Dx φ (d₁ j) (fun k => hdeg j k))
   have hBU : ∀ m, |coeff m U'| ≤ B := fun m =>
     abs_coeff_integral_wronskian_factor_le hfact hV'ne hB m
-  have hIHapp := hIH o' (fun j => r * d₁ j) pn Kh U' B E
-    (fun j => Nat.mul_ne_zero hr (hd₁ j))
-    (rothGamma_scale hr hq2 hg) hU'ne hdegU hBU hq2 hco hBq hE
+  have hIHapp := hIH o' (fun j => r * d₁ j) κ Kh U' B E
+    (fun j => Nat.mul_ne_zero hr (hd₁ j)) hheight
+    (rothGamma_scale hr hq2 hg) hU'ne hdegU hBU hq2 hBq hE
   have hmap : map (algebraMap ℤ ℚ) U' = C l * mvGenWronskian Dx φ := hU'
   rwa [hmap, index_C_mul _ _ hl] at hIHapp
 
@@ -110,9 +112,11 @@ theorem index_rescaled_wronskian_le_witness :
     (⟨fun _ => 0, fun _ => (), fun _ => rfl, fun i => Subsingleton.elim _ _⟩ :
       Unit ≃ Fin 1) 1 1 1 (rothLemmaUniform_one 1 1 1 le_rfl)
     one_ne_zero (fun _ => 1) (fun _ => one_ne_zero)
-    (fun _ => 1) (fun _ => 2) 1 0 ?_
+    (fun _ => ((1 : ℤ) : ℚ) / ((2 : ℤ) : ℚ)) (fun _ => 2) 1 0 ?_ ?_
     (fun _ => []) (fun _ => []) (fun _ => 1) (fun _ => 1) 1
-    ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_
+    ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_
+  · intro j
+    norm_num
   · exact
       { growth := by
           intro j k h
@@ -131,7 +135,6 @@ theorem index_rescaled_wronskian_le_witness :
     rw [hdet, coeff_one]
     split <;> simp
   · intro j; norm_num
-  · intro j; exact isCoprime_one_left
   · intro j; norm_num
   · intro j; norm_num
 
@@ -147,7 +150,8 @@ The growth condition does not appear: at one variable there is no consecutive pa
 theorem index_rescaled_wronskian_le_right [DecidableEq σ]
     (ε θ : ℚ) (hεθ : ε ≤ θ) {r : ℕ} (hr : r ≠ 0)
     (d₂ : Unit → ℕ) (hd₂ : ∀ j, d₂ j ≠ 0)
-    (pn Kh : Unit → ℤ) (B : ℤ) (E : ℕ)
+    (κ : Unit → ℚ) (Kh : Unit → ℤ) (B : ℤ) (E : ℕ)
+    (hheight : ∀ j, max |(κ j).num| |(((κ j).den : ℤ))| = Kh j)
     (Dx : Fin r → List σ) (Dy : Fin r → List Unit)
     (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial Unit ℚ)
     (P : MvPolynomial (σ ⊕ Unit) ℤ)
@@ -157,9 +161,9 @@ theorem index_rescaled_wronskian_le_right [DecidableEq σ]
     (hdeg : ∀ j k, degreeOf j (ψ k) ≤ d₂ j)
     (hB : ∀ m, |coeff m (Matrix.of fun i j =>
         pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det| ≤ B)
-    (hq2 : ∀ j, 2 ≤ Kh j) (hco : ∀ j, IsCoprime (pn j) (Kh j))
+    (hq2 : ∀ j, 2 ≤ Kh j)
     (hBq : ∀ j, B ≤ Kh j ^ E) (hE : ∀ j, (E : ℚ) ≤ ε * ((r * d₂ j : ℕ) : ℚ)) :
-    index (fun j => r * d₂ j) (fun j => (pn j : ℚ) / (Kh j : ℚ)) (mvGenWronskian Dy ψ)
+    index (fun j => r * d₂ j) κ (mvGenWronskian Dy ψ)
       ≤ ((θ : ℚ) : WithTop ℚ) := by
   classical
   obtain ⟨l, U', V', hl, hU', hV', hfact⟩ :=
@@ -173,15 +177,15 @@ theorem index_rescaled_wronskian_le_right [DecidableEq σ]
     abs_coeff_integral_wronskian_factor_le_right hfact hU'ne hB m
   have hIHapp := rothLemmaUniform_one 1 ε θ hεθ
     (⟨fun _ => 0, fun _ => (), fun _ => rfl, fun i => Subsingleton.elim _ _⟩ : Unit ≃ Fin 1)
-    (fun j => r * d₂ j) pn Kh V' B E
-    (fun j => Nat.mul_ne_zero hr (hd₂ j))
+    (fun j => r * d₂ j) κ Kh V' B E
+    (fun j => Nat.mul_ne_zero hr (hd₂ j)) hheight
     { growth := by intro j k h; have := j.isLt; have := k.isLt; omega
       height := by intro j k _; exact le_rfl
       floor := by
         intro j _
         rw [rothHeightFloor_one]
         exact le_trans (by norm_num) (hq2 ()) }
-    hV'ne hdegV hBV hq2 hco hBq hE
+    hV'ne hdegV hBV hq2 hBq hE
   have hmap : map (algebraMap ℤ ℚ) V' = C l⁻¹ * mvGenWronskian Dy ψ := hV'
   rwa [hmap, index_C_mul _ _ (inv_ne_zero hl)] at hIHapp
 
