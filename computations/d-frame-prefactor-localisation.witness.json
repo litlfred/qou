@@ -23,7 +23,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "1",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "5.83"
+      "elapsed_sec": "4.81"
     },
     {
       "atom": "neutron",
@@ -37,7 +37,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "1",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "0.05"
+      "elapsed_sec": "0.04"
     },
     {
       "atom": "D",
@@ -51,7 +51,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "12",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "1.25"
+      "elapsed_sec": "1.15"
     },
     {
       "atom": "T",
@@ -65,7 +65,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "12",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "11.91"
+      "elapsed_sec": "11.31"
     },
     {
       "atom": "3He",
@@ -79,7 +79,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "12",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "5.99"
+      "elapsed_sec": "5.80"
     },
     {
       "atom": "4He",
@@ -93,7 +93,7 @@
       "ratio_off_over_c": "1/2",
       "interface_factor_on_over_off": "12",
       "off_equals_2_pow_2A": true,
-      "elapsed_sec": "50.01"
+      "elapsed_sec": "57.04"
     }
   ],
   "assertions": [
@@ -126,9 +126,9 @@
   "allPassed": true,
   "scriptHash": "735da63e1ab5",
   "scriptCommitSha": "29ad606b294f950da1f97b80c678b52b24f0df06",
-  "commitSha": "7c37c6ee79f6e68faf8eedb93d6f42a1b83ed299",
+  "commitSha": "01936413df92f06301163373513442dc18e7a34c",
   "engine": "sympy",
-  "computedAt": "2026-08-24T08:11:59.878930+00:00",
+  "computedAt": "2026-08-24T09:27:42.879139+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
