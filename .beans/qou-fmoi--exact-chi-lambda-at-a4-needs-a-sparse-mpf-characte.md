@@ -80,3 +80,80 @@ rule. It exits non-zero — correctly, in the same category as
 `low_isotope_mass_table` and `qbeta_braid_nf_sdp_offset_probe`. The A=4 [1⁴]
 question stays **unanswered**, which is the honest state; it was not previously
 answered either, only opaque.
+
+## 2026-08-24 — route VALIDATED, and two of my own numbers corrected
+
+Prototyped the trace-only sparse product and ran it against the dense routine.
+**It works, and the gap is three orders of magnitude.**
+
+### Measured, at the canonical working precision (dps = 70)
+
+```
+dim=132  word=47 factors
+  dense   chi = 20.472734309881024467    81.2 s
+  sparse  chi = 20.472734309881024467     1.0 s     (80.8x)
+  relative difference  7.077e-71
+```
+
+`7e-71` at a 70-digit working precision is **exact agreement to the arithmetic**
+— the two routes compute the same number, which is what makes the timing
+meaningful.
+
+Extrapolating quadratically over the ten irreps (132, 165, 462, 891, 1408,
+1485, 1650, 2376, 2673, 4158):
+
+| route | all ten irreps |
+|---|---|
+| dense mpmath | **~1135 h** |
+| trace-only sparse, nnz/row = 1 | **~36 min** |
+| trace-only sparse, nnz/row = 2 | **~73 min** |
+
+The dim=132 irrep's `sigma_0` is diagonal (1.00 nonzero/row); larger irreps
+carry 2×2 blocks, so the honest figure is the second row. **Call it an hour.**
+The A=4 [1⁴] object is a lunch break, not a decade.
+
+### Method
+
+`tr(Π M_k) = Σ_i e_iᵀ (Π M_k) e_i`. Propagate one row vector through the 47
+factors as a dict of nonzeros — `v ← c·(v·σ_g) + d·v` — and read component `i`.
+The product is never materialised, so cost is `dim² · |word| · nnz_per_row`
+rather than `dim³ · |word|`. Accumulation order matches
+`chi_lambda_of_word_mp` (left-to-right), which is why the values agree exactly
+rather than merely closely.
+
+### CORRECTION 1 — the dense cost was understated
+
+This bean said 65.7 s at dim=132 ⇒ ~571 h at dim=4158. Both figures were
+measured at **`mp.dps = 15`**, mpmath's default. `_precision`'s own docstring
+warns about exactly this: *"IMPORTING THIS MODULE DOES NOT SET mp.dps … the
+number reads as measured while carrying ~15 significant digits."* Neither
+`su4_1111_markov_trace_probe` nor `hoefsmit_mpmath` raises it, so a harness that
+omits `set_compute_dps()` silently benchmarks float64-grade arithmetic. At the
+real dps=70 it is **81.2 s ⇒ ~705 h**.
+
+### CORRECTION 2 — the conditioning claim is RETRACTED
+
+This bean, the probe docstring and PR #5615 all said:
+
+> at dim=132, against the 50-dps exact reference, the float64 character agrees
+> to **15 digits** — so this word is well conditioned and float64 loses nothing
+> to cancellation *there*.
+
+**That is void.** Both sides of the comparison were at dps=15, so the agreement
+was the **floor of the arithmetic on both sides** and carried no information
+about the mathematics. It is precisely the invalid form AGENTS.md names —
+*"agreement at 1e-16 in float64 is the floor of the arithmetic, not evidence
+about the mathematics"* — committed in the same PR that quotes the rule.
+
+**There is currently no evidence about conditioning here, in either direction.**
+Do not cite it. Now that the sparse route is cheap, the question is answerable
+for real: run sparse-exact against float64 at several dims and see whether the
+agreement degrades with size.
+
+### Still to do
+
+Implementation is unchanged in shape but now has a measured target: placement
+(alongside `chi_lambda_of_word_mp` in `hoefsmit_mpmath`), tests against the
+dense routine at small dims, and a decision about whether `su4`'s guard lifts
+or the probe routes to the new function. The prototype lives in this session's
+scratchpad; it is ~30 lines.
