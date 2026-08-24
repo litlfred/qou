@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T18:49:51Z
-updated_at: 2026-08-24T20:16:40Z
+updated_at: 2026-08-24T22:36:28Z
 ---
 
 ## The measurement
@@ -339,3 +339,60 @@ it right:
 
 Step 4 is the one worth keeping: *a comparison between two code paths proves
 nothing until you verify they actually differ.*
+
+
+---
+
+## CONFIRMED by regeneration — the peel witness is simply STALE
+
+Ran `markov_peel_atomic_witness.py` non-destructively (whole `computations/`
+tree snapshotted and restored, nothing committed; 134 s wall). **Every row
+moved**, and they moved onto leg B:
+
+| Z,N | peel **committed** | peel **regenerated** |
+|---|---|---|
+| (1,0) proton | 1.0653061442544499756666 | **1.1457596924573008696890** |
+| (0,1) neutron | 0.9232332299116371779702 | **0.9877436881158095716340** |
+| (1,1) deuteron | 0.3883571411977909894164 | **0.5751722439177718708265** |
+| (1,2) triton | 0.1040710573547306741701 | **0.2293101021045565073320** |
+| (2,1) helium-3 | 0.2065784335106723458722 | **0.4037670368514281703686** |
+| (2,2) helium-4 | 0.0553584155445984267886 | **0.1609741454424073818258** |
+
+Against leg B's D values:
+
+| atom | committed vs leg B | **regenerated vs leg B** |
+|---|---|---|
+| proton | 7.02e-2 | **6.68e-8** |
+| neutron | 6.53e-2 | **6.18e-8** |
+
+**The O(1) term vanishes on regeneration.** So the "merely stale" reading is
+right and the alternative — that the peel output genuinely corresponds to C
+weights despite `markov_peel_rust_bridge.py:258` using `z = q³/(q²+1)` — is
+**refuted**. The engine is D; only the committed artifact was C-era.
+
+**The ~6.5e-8 that survives is defect 2**, the pin straddle: the regenerated
+peel is stamped `proton` (unchanged before → after) while leg B asserts muon.
+It is the same scale as the 7.1e-8 measured by injecting C weights, from the
+other direction.
+
+## The fix is now verified end to end, in order
+
+1. **Regenerate `markov/markov-peel-atomic-tr-m.witness.json`** — measured:
+   removes the O(1) term, 7 % → 6.7e-8. 134 s.
+2. **Then** drop leg B's `assert q.startswith("1.109978595557")` and its
+   `QOU_Q0_ANCHOR=ideal` default so both legs sit at proton — should remove the
+   remaining 6.5e-8.
+3. The 1ppQ assertion should then return toward the ~1e-50 recorded at
+   `6647e7e4ed`.
+
+Step 1 alone is a **10⁶× improvement** and is a pure regeneration — no source
+change, no judgement about which leg is right, and the engine already
+implements the canonical convention.
+
+## NOT COMMITTED
+
+The regenerated witness was captured to `/tmp/peel_after.json` and the tree
+restored. `markov-peel-atomic-tr-m.witness.json` is a canonical reference behind
+the L1 certification; committing it belongs to the owner or to #5722's C→D
+migration, not to a drive-by from this branch. #5722 was offered it and has not
+replied.
