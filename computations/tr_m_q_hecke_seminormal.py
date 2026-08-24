@@ -57,16 +57,28 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 import sympy as sp  # noqa: E402
 
-from hecke_characters import build_seminormal_matrices, partitions_of  # noqa: E402
-from mass_at_3A_proper import atom_braid_word_3A, chi_lambda_of_word  # noqa: E402
-from q_parameter import Q as Q_0_FLOAT  # noqa: E402  — single source of truth
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
+
+from hecke_characters import partitions_of  # noqa: E402
+from hoefsmit_mpmath import (BlockCacheMP,  # noqa: E402
+                             chi_lambda_of_word_sparse_mp,
+                             seminormal_matrices_mp)
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402  — single source of truth (mpf)
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q_0_HIGH = sp.Float(Q_0_FLOAT, 30)  # 30-dps for y_λ precision (derived from q_parameter.Q)
+# Was `sp.Float(Q_0_FLOAT, 30)`, i.e. THIRTY DIGITS OF A SEVENTEEN-DIGIT VALUE:
+# `q_parameter.Q` is the float64 q₀, so asking sympy for 30 dps could not
+# recover precision that was already gone. It read as a high-precision call and
+# was not one. `Q_MP` is the mpf q₀ and carries the digits for real.
+Q_0_HIGH = Q_MP
 REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
 
 
@@ -80,16 +92,22 @@ def _y_lambda_cached(n: int):
     return _Y_LAMBDA_CACHE[n]
 
 
-def _load_canonical_tr_m() -> dict[str, float]:
+def _load_canonical_tr_m() -> dict:
+    """Canonical tr_M reference, kept as mpf.
+
+    The field is named `tr_M_at_q0_50dps` and `float()` threw 33 of those
+    digits away on the way in -- while this producer's whole purpose is to
+    measure agreement AGAINST that reference to 1e-6.
+    """
     if not REF_WITNESS.exists():
         return {}
     data = json.loads(REF_WITNESS.read_text())
-    out: dict[str, float] = {}
+    out: dict = {}
     for row in data.get("results", []):
         name = row.get("atom")
         val = row.get("tr_M_at_q0_50dps")
         if name and val is not None:
-            out[name] = float(val)
+            out[name] = mp.mpf(str(val))
     return out
 
 
@@ -102,25 +120,28 @@ def _chi_contribution_worker(args):
     column partition (1^k) at H_n with k < n_gens_required + 1).
     """
     shape, y_val, q_val, word, n_gens_required = args
-    sigmas, dim, _syts = build_seminormal_matrices(shape, q=q_val)
+    sigmas, dim, _syts = seminormal_matrices_mp(
+        tuple(shape), cache=BlockCacheMP(mp.mpf(str(q_val))))
     if dim == 0:
         return None
     try:
-        chi = chi_lambda_of_word(sigmas, dim, word, n_gens_required)
+        chi = chi_lambda_of_word_sparse_mp(sigmas, dim, word, n_gens_required)
     except IndexError:
         return None
-    contrib = float(y_val) * float(chi)
+    y_mp = mp.mpf(str(y_val))
+    contrib = y_mp * chi
     return {
         "partition": list(shape),
         "dim": int(dim),
-        "y_at_q0": float(y_val),
-        "chi_q_at_q0": float(chi),
-        "contribution": float(contrib),
+        "y_at_q0": fmt(y_mp),
+        "chi_q_at_q0": fmt(chi),
+        "contribution": fmt(contrib),
+        "_contribution_mp": contrib,
     }
 
 
 def tr_m_via_partition_sum_q_hecke(
-    Z: int, N: int, q_val: float = Q_0_FLOAT,
+    Z: int, N: int, q_val=Q_MP,
     *, include_inter: bool = True, workers: int | None = None,
 ) -> tuple[float, list[dict]]:
     """tr_M(β_atomic(Z, N)) = Σ_{λ ⊢ 3A} y_λ(q) · χ^λ_q(β_atomic).
@@ -165,7 +186,7 @@ def tr_m_via_partition_sum_q_hecke(
             if row is not None:
                 rows.append(row)
 
-    total = sum(r["contribution"] for r in rows)
+    total = mp.fsum(r.pop("_contribution_mp") for r in rows)
     return total, rows
 
 
@@ -224,7 +245,7 @@ def main() -> int:
         t0 = time.monotonic()
         try:
             total, breakdown = tr_m_via_partition_sum_q_hecke(
-                Z, N, q_val=Q_0_FLOAT
+                Z, N, q_val=Q_MP
             )
             elapsed = time.monotonic() - t0
             new_abs = abs(total)
@@ -233,7 +254,7 @@ def main() -> int:
                 # canonical-word value.  Future regeneration of
                 # atomic-tr-m-mpfr-50dps.witness.json will validate
                 # against this number.
-                rel_err = float("nan")
+                rel_err = mp.nan
                 agrees_1e6 = False
                 agrees_1e3 = False
                 row = {
@@ -248,49 +269,49 @@ def main() -> int:
                         "hybrid-precision value is the FIRST canonical "
                         "(operator-valued interface) tr_M for this atom"
                     ),
-                    "q_hecke_partition_sum": float(total),
-                    "q_hecke_abs": float(new_abs),
+                    "q_hecke_partition_sum": fmt(total),
+                    "q_hecke_abs": fmt(new_abs),
                     "elapsed_sec": f"{elapsed:.3f}",
                     "non_zero_partitions": len(breakdown),
                     "top_3_contributions": sorted(
                         breakdown,
-                        key=lambda r: -abs(r["contribution"]),
+                        key=lambda r: -abs(mp.mpf(r["contribution"])),
                     )[:3],
                 }
                 rows.append(row)
                 builder.add_assertion(
                     name=f"q_hecke_seminormal_value_finite[{name}]",
-                    computed=str(0 < new_abs < 1e6),
+                    computed=str(mp.mpf(0) < new_abs < mp.mpf("1e6")),
                     expected="True",
                 )
                 print(f"  {name}: canonical=N/A (first-time computation), "
-                      f"q-Hecke seminormal={new_abs:.12f}, {elapsed:.2f}s",
+                      f"q-Hecke seminormal={mp.nstr(new_abs, 12)}, {elapsed:.2f}s",
                       file=sys.stderr)
                 continue
             rel_err = (
                 abs(new_abs - canonical_val) / canonical_val
                 if canonical_val != 0
-                else float("inf")
+                else mp.inf
             )
-            agrees_1e6 = rel_err < 1e-6
-            agrees_1e3 = rel_err < 1e-3
+            agrees_1e6 = rel_err < mp.mpf("1e-6")
+            agrees_1e3 = rel_err < mp.mpf("1e-3")
             rows.append({
                 "atom": name,
                 "Z": Z,
                 "N": N,
                 "A": Z + N,
                 "n_strands": 3 * (Z + N),
-                "canonical_abs_tr_M": float(canonical_val),
-                "q_hecke_partition_sum": float(total),
-                "q_hecke_abs": float(new_abs),
-                "rel_err_vs_canonical": float(rel_err),
+                "canonical_abs_tr_M": fmt(canonical_val),
+                "q_hecke_partition_sum": fmt(total),
+                "q_hecke_abs": fmt(new_abs),
+                "rel_err_vs_canonical": fmt(rel_err),
                 "agrees_to_1e_minus_3": bool(agrees_1e3),
                 "agrees_to_1e_minus_6": bool(agrees_1e6),
                 "elapsed_sec": f"{elapsed:.3f}",
                 "non_zero_partitions": len(breakdown),
                 "top_3_contributions": sorted(
                     breakdown,
-                    key=lambda r: -abs(r["contribution"]),
+                    key=lambda r: -abs(mp.mpf(r["contribution"])),
                 )[:3],
             })
             builder.add_assertion(
@@ -305,9 +326,9 @@ def main() -> int:
             )
             if not agrees_1e3:
                 all_passed = False
-            print(f"  {name}: canonical={canonical_val:.6f}, "
-                  f"q-Hecke seminormal={new_abs:.6f}, "
-                  f"rel_err={rel_err:.2e}, {elapsed:.2f}s",
+            print(f"  {name}: canonical={mp.nstr(canonical_val, 6)}, "
+                  f"q-Hecke seminormal={mp.nstr(new_abs, 6)}, "
+                  f"rel_err={mp.nstr(rel_err, 3)}, {elapsed:.2f}s",
                   file=sys.stderr)
         except Exception as exc:
             elapsed = time.monotonic() - t0
