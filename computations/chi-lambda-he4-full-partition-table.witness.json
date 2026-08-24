@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:24:16.217312+00:00",
-  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
+  "computedAt": "2026-08-24T14:41:45.968537+00:00",
+  "commitSha": "fae52f3277aa9bee8e61b78fec34f06a9601e139",
   "assertions": [
     {
       "name": "all_77_partitions_evaluated",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 33,
+  "durationMs": 19,
   "computation": "chi-lambda-he4-full-partition-table",
   "scriptFile": "chi_lambda_he4_full_partition_table.py",
   "scriptHash": "3833838eb63c",
@@ -33,7 +33,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -47,7 +48,7 @@
     "n_partitions": 77,
     "braid_length": 24,
     "beta_construction": "4 disjoint Borromean copies (strands 1-3, 4-6, 7-9, 10-12)",
-    "elapsed_seconds": 15.32422161102295
+    "elapsed_seconds": 13.444747924804688
   },
   "data": {
     "per_partition_chi_lambda": [
@@ -1343,6 +1344,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

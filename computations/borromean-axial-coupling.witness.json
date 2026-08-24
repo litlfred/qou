@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-24T13:57:29.929149+00:00",
-  "commitSha": "303a6edf1fdf7823d38b27303c4207c1efa64032",
+  "computedAt": "2026-08-24T14:41:16.420760+00:00",
+  "commitSha": "fae52f3277aa9bee8e61b78fec34f06a9601e139",
   "assertions": [
     {
       "name": "g_A",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
   "scriptHash": "9e202b78b7c5",
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [

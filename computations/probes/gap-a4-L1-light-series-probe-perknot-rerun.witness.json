@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:46:01.100765+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T14:42:31.102337+00:00",
+  "commitSha": "0baea0f7404d202791d61bdbe8ffec665866c317",
   "assertions": [
     {
       "name": "L1a_lambdaA_proton_gap_matches_documented",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 81,
+  "durationMs": 85,
   "computation": "gap-a4-L1-light-series-probe-perknot-rerun",
   "scriptFile": "gap_a4_L1_light_series_probe_perknot_rerun.py",
   "scriptHash": "c9326dc945a6",
@@ -41,7 +41,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -64,12 +64,12 @@
       "baseline": "global lambda_A = linking_weight_family_a(q0) ~ 2.533 (fit, p=n degenerate)",
       "perknot": "tr_M(K) from canonical chi-cache (canonical_tr_m_via_chi_cache), p!=n distinct",
       "tr_M_per_atom": {
-        "p": "1.1457596930251999584370288654945060349157742067613",
-        "n": "0.98774368843813104881681732268499206354875717805305",
-        "D": "0.57517224576977135550832960141387105713779381731119",
-        "T": "0.2293101034272885930681721202025177090726289685622",
-        "3He": "0.4037670390921084394302163632514281120280838715121",
-        "4He": "0.16097414674985649412031216051742460956265727205352"
+        "p": "1.1457596924573008696890815957741193059437280619435",
+        "n": "0.98774368811580957163402016550129498205504875906282",
+        "D": "0.57517224391777187082653534398618088915249435289287",
+        "T": "0.22931010210455650733209081026890887960280163645606",
+        "3He": "0.4037670368514281703686702533334025411550870705919",
+        "4He": "0.16097414544240738182587344098071685392360735413344"
       }
     },
     "rows": [
@@ -80,7 +80,7 @@
         "vol_K": "7.32772475341775212043682811945907288619319499425",
         "m_K_MeV": "938.27208943",
         "lambda_empirical": "2.4599527878181126403697202578393348565458916791958",
-        "tr_M_K": "1.1457596930251999584370288654945060349157742067613",
+        "tr_M_K": "1.1457596924573008696890815957741193059437280619435",
         "candidates": {
           "L1a_lambdaA": {
             "prediction": "2.5327796636746759826636838141577022737497563139135",
@@ -88,8 +88,8 @@
             "verdict": "NEAR-MATCH (< 5 %)"
           },
           "L1a_perknot": {
-            "prediction": "1.1457596930251999584370288654945060349157742067613",
-            "relative_error": "-0.53423508829149256484180961884118238518158166040434",
+            "prediction": "1.1457596924573008696890815957741193059437280619435",
+            "relative_error": "-0.53423508852235028355910776994218062951062188743599",
             "verdict": "REFUTED"
           },
           "L1b_phase4": {
@@ -103,8 +103,8 @@
             "verdict": "NEAR-MATCH (< 5 %)"
           },
           "L1c_perknot": {
-            "prediction": "1.1457596930251999584370288654945060349157742067613",
-            "relative_error": "-0.53423508829149256484180961884118238518158166040434",
+            "prediction": "1.1457596924573008696890815957741193059437280619435",
+            "relative_error": "-0.53423508852235028355910776994218062951062188743599",
             "verdict": "REFUTED"
           }
         }
@@ -116,7 +116,7 @@
         "vol_K": "7.32772475341775212043682811945907288619319499425",
         "m_K_MeV": "939.56542194",
         "lambda_empirical": "2.4633436346197936748355224829429041873098297886104",
-        "tr_M_K": "0.98774368843813104881681732268499206354875717805305",
+        "tr_M_K": "0.98774368811580957163402016550129498205504875906282",
         "candidates": {
           "L1a_lambdaA": {
             "prediction": "2.5327796636746759826636838141577022737497563139135",
@@ -124,8 +124,8 @@
             "verdict": "NEAR-MATCH (< 5 %)"
           },
           "L1a_perknot": {
-            "prediction": "0.98774368843813104881681732268499206354875717805305",
-            "relative_error": "-0.5990231835475991271204287877777654260613543578669",
+            "prediction": "0.98774368811580957163402016550129498205504875906282",
+            "relative_error": "-0.59902318367844627026882922141780069187413889456367",
             "verdict": "REFUTED"
           },
           "L1b_phase4": {
@@ -139,8 +139,8 @@
             "verdict": "REFUTED"
           },
           "L1c_perknot": {
-            "prediction": "1.7152277354607934736545190650927100237848783007357",
-            "relative_error": "-0.30369936562848594241760877626046001738892148235743",
+            "prediction": "1.7152277349010786975744733274550242661304217482169",
+            "relative_error": "-0.30369936585570343989291951071503098919373259115861",
             "verdict": "REFUTED"
           }
         }
@@ -152,7 +152,7 @@
         "vol_K": "12.776",
         "m_K_MeV": "1875.612945",
         "lambda_empirical": "2.8204307475655308158165273791125434659455656659456",
-        "tr_M_K": "0.57517224576977135550832960141387105713779381731119",
+        "tr_M_K": "0.57517224391777187082653534398618088915249435289287",
         "candidates": {
           "L1a_lambdaA": {
             "prediction": "2.5327796636746759826636838141577022737497563139135",
@@ -160,8 +160,8 @@
             "verdict": "NEAR-MATCH (< 25 %)"
           },
           "L1a_perknot": {
-            "prediction": "0.57517224576977135550832960141387105713779381731119",
-            "relative_error": "-0.79606936058747969157940082559011051830143802129652",
+            "prediction": "0.57517224391777187082653534398618088915249435289287",
+            "relative_error": "-0.79606936124411679790805543197468709912274502751827",
             "verdict": "REFUTED"
           },
           "L1b_phase4": {
@@ -175,8 +175,8 @@
             "verdict": "REFUTED"
           },
           "L1c_perknot": {
-            "prediction": "9.2529648427437755639968925279879268327740047609164",
-            "relative_error": "2.2806920895790543195827747151296287059078691257546",
+            "prediction": "9.2529648129501159314707680766705057149130740836446",
+            "relative_error": "2.2806920790155403392297120798643419623163920612584",
             "verdict": "REFUTED"
           }
         }
@@ -188,7 +188,7 @@
         "vol_K": "12.776",
         "m_K_MeV": "2808.92113668",
         "lambda_empirical": "4.2238818848517773276249849129011779570596454704004",
-        "tr_M_K": "0.2293101034272885930681721202025177090726289685622",
+        "tr_M_K": "0.22931010210455650733209081026890887960280163645606",
         "candidates": {
           "L1a_lambdaA": {
             "prediction": "2.5327796636746759826636838141577022737497563139135",
@@ -196,8 +196,8 @@
             "verdict": "REFUTED"
           },
           "L1a_perknot": {
-            "prediction": "0.2293101034272885930681721202025177090726289685622",
-            "relative_error": "-0.9457110521367395087561989306530642844971325072668",
+            "prediction": "0.22931010210455650733209081026890887960280163645606",
+            "relative_error": "-0.94571105244989506608364963977955085790932536386083",
             "verdict": "REFUTED"
           },
           "L1b_phase4": {
@@ -211,8 +211,8 @@
             "verdict": "REFUTED"
           },
           "L1c_perknot": {
-            "prediction": "59.34568830093895753610532629709609712175218124297",
-            "relative_error": "13.050034995952897312176604346642923503295340402404",
+            "prediction": "59.345687958614546651020900501224104766008337166947",
+            "relative_error": "13.050034914907920152002740040509509056170238175552",
             "verdict": "REFUTED"
           }
         }
@@ -224,7 +224,7 @@
         "vol_K": "12.554",
         "m_K_MeV": "2808.39161112",
         "lambda_empirical": "4.2977650026768797586253019721874981814682413247368",
-        "tr_M_K": "0.4037670390921084394302163632514281120280838715121",
+        "tr_M_K": "0.4037670368514281703686702533334025411550870705919",
         "candidates": {
           "L1a_lambdaA": {
             "prediction": "2.5327796636746759826636838141577022737497563139135",
@@ -232,8 +232,8 @@
             "verdict": "REFUTED"
           },
           "L1a_perknot": {
-            "prediction": "0.4037670390921084394302163632514281120280838715121",
-            "relative_error": "-0.90605185745599851125090967168260546175125563102027",
+            "prediction": "0.4037670368514281703686702533334025411550870705919",
+            "relative_error": "-0.90605185797735793124384312234133492700201752086082",
             "verdict": "REFUTED"
           },
           "L1b_phase4": {
@@ -247,8 +247,8 @@
             "verdict": "REFUTED"
           },
           "L1c_perknot": {
-            "prediction": "60.17544584754432480458659597892134068359213142193",
-            "relative_error": "13.001567282078897463718772795658937874813416667741",
+            "prediction": "60.175445513604401189832519756609964931090581197309",
+            "relative_error": "13.001567204378063796275744303030386842008680525413",
             "verdict": "REFUTED"
           }
         }
@@ -260,7 +260,7 @@
         "vol_K": "12.554",
         "m_K_MeV": "3727.3794118",
         "lambda_empirical": "5.7041192988551051416388422706668439263026418925667",
-        "tr_M_K": "0.16097414674985649412031216051742460956265727205352",
+        "tr_M_K": "0.16097414544240738182587344098071685392360735413344",
         "candidates": {
           "L1a_lambdaA": {
             "prediction": "2.5327796636746759826636838141577022737497563139135",
@@ -268,8 +268,8 @@
             "verdict": "REFUTED"
           },
           "L1a_perknot": {
-            "prediction": "0.16097414674985649412031216051742460956265727205352",
-            "relative_error": "-0.97177931625971318484976237073302459278002843123894",
+            "prediction": "0.16097414544240738182587344098071685392360735413344",
+            "relative_error": "-0.97177931648892457468813087421794833402776429157863",
             "verdict": "REFUTED"
           },
           "L1b_phase4": {
@@ -283,8 +283,8 @@
             "verdict": "REFUTED"
           },
           "L1c_perknot": {
-            "prediction": "385.94691684423212683497470287969766176139840479153",
-            "relative_error": "66.661087825020938534185970478022269007900517039857",
+            "prediction": "385.94691370953028800558702232685585194626472479004",
+            "relative_error": "66.661087275470398898984920634835589405098448100707",
             "verdict": "REFUTED"
           }
         }
@@ -297,7 +297,7 @@
       },
       "L1a_perknot": {
         "atom": "4He",
-        "rel_err": "-0.97177931625971318484976237073302459278002843123894"
+        "rel_err": "-0.97177931648892457468813087421794833402776429157863"
       },
       "L1b_phase4": {
         "atom": "4He",
@@ -309,17 +309,17 @@
       },
       "L1c_perknot": {
         "atom": "4He",
-        "rel_err": "66.661087825020938534185970478022269007900517039857"
+        "rel_err": "66.661087275470398898984920634835589405098448100707"
       }
     },
     "pn_asymmetry_check": {
       "lambda_emp_n_over_p": "1.0013784194633623804094146686526361038107853971998",
-      "tr_M_n_over_p": "0.86208625984227786140113261416334452046976638004409",
+      "tr_M_n_over_p": "0.86208625998825657343370980530832554027137290408171",
       "lambda_A_n_over_p": "1 (degenerate by construction)",
       "note": "Empirical n/p ratio of lambda_emp is m_n/m_p ~ 1.0014 (slightly >1). The per-knot base predicts tr_M(n)/tr_M(p) ~ 0.867 (<1, wrong direction, ~13% too low); lambda_A predicts exactly 1 (no split). Neither base carries the observed tiny p/n asymmetry at the multiplicative-lambda level."
     },
     "rerun_verdict": "ROBUST (scope-limited, class (a)): swapping the fitted lambda_A for the canonical per-knot tr_M(K) does NOT rescue the L1 multiplicative lambda(K) closure — the per-knot forms fail HARDER on every atom (per-knot density is smaller than lambda_emp everywhere and shrinks with A while lambda_emp grows). The original refutation's negative verdict therefore extends to the per-knot base FOR THESE MULTIPLICATIVE FORMS ONLY. This is a scope-limited negative (a): it constrains the L1a/L1c functional family on both density bases; it does not structurally exclude tr_M(K) as an ingredient (binding-ratio uses, where the absolute scale cancels, are untouched). The p!=n structure of tr_M also points the wrong way for the n/p lambda ratio (0.867 vs empirical 1.0014), so the per-knot leverage claimed by the audit is NOT realized in this multiplicative absolute-mass family — consistent with the audit's own nuance that per-knot leverage lives in BINDING, not absolute mass."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
