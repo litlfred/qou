@@ -134,7 +134,13 @@ def anchor_of_value(value) -> str | None:
     """
     if value is None:
         return None
-    recorded = repr(float(value)) if isinstance(value, float) else str(value)
+    # float64-ok: `value` is ALREADY a binary64 here (the isinstance
+    # guard); `float()` is a no-op and `repr` gives the shortest
+    # round-trip form, which is what the prefix compare below needs.
+    # Nothing is downcast -- a str input takes the other branch
+    # untouched, so a 50-dps companion keeps all its digits.
+    recorded = (repr(float(value))  # float64-ok: see above
+                if isinstance(value, float) else str(value))
     try:
         from qou_substrate.witness import (  # noqa: PLC0415
             _q0_value_for_anchor,

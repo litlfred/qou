@@ -316,7 +316,11 @@ def _is_full_precision_shadow(value, companion) -> bool:
 
     def _agrees(v: float, c: str) -> bool:
         try:
-            cv = float(c)
+            # float64-ok: the downcast IS the comparison. This asks whether the
+            # `*_str` companion round-trips to the f64 actually recorded, so
+            # the companion must be brought to f64 to be compared with it.
+            # Comparing at full precision would answer a different question.
+            cv = float(c)  # float64-ok: see above
         except ValueError:
             return False
         if cv == v:

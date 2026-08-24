@@ -470,6 +470,81 @@ generated before the 1366-commit merge, against a corpus that had not yet
 received main's re-anchoring. The delta that is genuinely this branch's is the
 small one from main: canonical +4, proton-pin −2, STALE −2.
 
+### Second integration, and what `probe-float64-guard` actually says
+
+`origin/main` moved another 47 commits during the gate run. `git merge-tree
+--write-tree` returned exit 0, the merge landed with **no conflicts**, and the
+branch is now 0 behind / 40 ahead. Main fixed one of the five `run-validate`
+errors in that window (the missing `.lean` for `qou-motivic-galois-instance`);
+the remaining four are the same orphan `.qa.json` sidecars, still untouched by
+this branch. 31 issues → 30.
+
+**Earlier in this session `probe-float64-guard --diff` returned exit 0 and said
+so itself: "This is NOT a pass; it means no in-scope file was handed to the
+gate."** It was right — nothing had been passed to it. Handed the branch's
+actual 45 changed `.py` files it returns **exit 1, 528 hits in 37 files**.
+
+That number is meaningless without a baseline, so one was measured rather than
+assumed: a detached worktree at `origin/main`, the same file list, the same
+command → **exit 1, 490 hits in 34 files**. The gate is red on main for these
+same files. `--diff` inspects whole FILES, not changed lines, and exits 1 on any
+hit, so no branch touching a `computations/` file with pre-existing float use
+can turn it green.
+
+Per-file delta, branch minus main (net **+38**, every one a `float-call`):
+
+```
+ +15  pn_alpha_lp_dual.py                          +4  frobenius_repose_probe.py
+ +10  probes/confinement_b3_enumeration_recheck…   +4  three_quark_borromean_lp_sweep.py
+  +5  mass_at_3A_proper.py                         +1  binding_sdp_bondgraph_degenerate.py
+  +1  q0_stamp.py    +1  witness_raw_float64_audit.py
+  -2  derive_e_0_lp_dual_h3.py                     -1  two_quark_active_set_mahler_sweep.py
+```
+
+The two files that went **0 → 1** are annotated, because a previously clean file
+is where the marker carries signal — and both are lines written this session
+whose reason is exact:
+
+- `q0_stamp.py` — `repr(float(value))` where the `isinstance` guard has already
+  established `value` is binary64. The call is a no-op; a string input takes the
+  other branch untouched, so a 50-dps companion keeps every digit.
+- `witness_raw_float64_audit.py` — `float(c)` inside `_agrees`. The downcast
+  **is** the comparison: the question is whether the `*_str` companion
+  round-trips to the f64 actually recorded. Comparing at full precision would
+  answer a different question.
+
+The marker must be a TRAILING comment — `_allowed` reads only
+`self.lines[node.lineno - 1]`, so a block comment above the offending line does
+not register. Both files are now clean under the guard (exit 0).
+
+The remaining +36 are bulk `float(np.linalg.norm(...))` diagnostics in producers
+whose precision is carried by the `_str` companion beside them. They are left
+unannotated deliberately: marking 36 lines with a generic reason to move a
+number that stays red anyway is the kind of green this gate exists to refuse.
+
+### Lean verification: unverified, not failing
+
+Against the dated olean snapshot, 15 of 16 changed `.lean` files verify exit 0.
+The 16th, `QOU/Mathlib/UpstreamSubstrateBridge.lean`, reported an `Application
+type mismatch` on `yekutieli_finite_slice_substrate Y`. It is **not this
+branch's**, established rather than assumed:
+
+- This branch's diff to that file is a single hunk at line 92; the error is at
+  line 174.
+- `origin/main`'s own copy of the file was swapped in and verified: it fails
+  **identically**, at line 158 — the same theorem, before this branch's 16-line
+  insertion shifted it down.
+- The cause is snapshot staleness, which the script's own header documents as a
+  known false-ERROR mode. `NonAbelianStokes.olean` is dated **2026-07-19** while
+  its source is current; rebuilding that module from current source succeeds
+  (exit 0, linter warnings only), and the type mismatch disappears.
+
+After the rebuild the bridge reports MISSING-OLEAN rather than ERROR — the cone
+keeps unwinding (`HeckeAlgebra` → `QPartitionCombinatorics` → …). On the merged
+tree the run is **11 exit 0, 0 error, 5 unverified**. Zero errors; five files
+this container cannot verify without rebuilding a cone far larger than a
+merge-prep. Recorded as unverified, which is not the same as verified.
+
 ## Next
 
 - [ ] Build `clarabel-operator-selection-lp` (`--features clarabel-mpfr`) and
