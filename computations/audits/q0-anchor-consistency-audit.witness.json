@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T20:54:47.601862+00:00",
-  "commitSha": "0b11d651c1a5b30c7e4aa667bb91fd22335eedcc",
+  "computedAt": "2026-08-24T22:07:22.750381+00:00",
+  "commitSha": "e4c55a5da9d19a80849957609595a5d48c5774c0",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -45,10 +45,10 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 952,
+      "Q0_OK": 953,
       "Q0_AMBIGUOUS": 1,
       "Q0_AMBIGUOUS_NO_REASON": 14,
-      "Q0_INDEPENDENT": 48,
+      "Q0_INDEPENDENT": 49,
       "Q0_INDEPENDENT_NO_REASON": 3,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -9429,6 +9429,10 @@
           "detail": ""
         },
         {
+          "witness": "markov-reduction-h3-to-h4-conventions.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "meson-lepton-knot-dictionary-probe.witness.json",
           "detail": ""
         },
@@ -10972,6 +10976,10 @@
         },
         {
           "witness": "lambda-scale-substrate-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "mfw-descending-writhe-bound.witness.json",
           "detail": ""
         },
         {
