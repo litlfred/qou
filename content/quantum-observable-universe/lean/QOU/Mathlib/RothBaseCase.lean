@@ -274,6 +274,49 @@ theorem index_le_of_abs_coeff_le {p q : ℤ} (hq0 : 0 < q) (hco : IsCoprime p q)
   rw [pow_succ] at hchain
   nlinarith
 
+/-- **§10's estimate with a *power* bound on both sides: `a^Q ≤ H^S ⟹ index ≤ S/(Q·d)`.**
+
+The shape `Γ₁`'s clause (i) actually delivers.  §11 states it as `b ≤ K₁^{s₁t}` with `t` a
+rational `0 < t ≤ 1`; writing `t = p/q` and clearing the exponent gives `b^q ≤ K₁^{s₁p}`, an
+inequality between integers with no root and no ceiling in it.  Going through
+`index_le_of_abs_coeff_le` instead would need an `e : ℕ` with `s₁p ≤ q·e`, and that rounding
+costs `1/d` — which `RothLemmaStatement.two_sqrt_expands` shows the recursion amplifies to `≈ 4`
+however small it starts.
+
+Same contradiction as the unpowered form, raised to the `Q`-th power:
+`H^{n₀Q} = (H^{n₀})^Q ≤ (max |trailing| |leading|)^Q ≤ a^Q ≤ H^S` against `S < n₀Q`. -/
+theorem index_le_of_pow_abs_coeff_le {p q : ℤ} (hq0 : 0 < q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) {Qe S : ℕ} (hQe : Qe ≠ 0) {a : ℤ}
+    (hH : 2 ≤ max |p| |q|) (ha : ∀ n, |P.coeff n| ≤ a)
+    (hae : a ^ Qe ≤ max |p| |q| ^ S) :
+    index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+        (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+      ≤ (((S : ℚ) / ((Qe : ℚ) * (d : ℚ)) : ℚ) : WithTop ℚ) := by
+  obtain ⟨n₀, hidx, hpow⟩ := exists_index_eq_div_and_height_pow_le hq0 hco hd hP
+  rw [hidx, WithTop.coe_le_coe]
+  by_contra hcon
+  push_neg at hcon
+  have hdQ : (0 : ℚ) < (d : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd
+  have hQQ : (0 : ℚ) < (Qe : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hQe
+  have hSn : S < n₀ * Qe := by
+    have h1 : (S : ℚ) < (n₀ : ℚ) * (Qe : ℚ) := by
+      rw [div_lt_div_iff₀ (mul_pos hQQ hdQ) hdQ] at hcon
+      nlinarith
+    exact_mod_cast h1
+  have hmax : max |P.trailingCoeff| |P.leadingCoeff| ≤ a :=
+    max_le (ha P.natTrailingDegree) (ha P.natDegree)
+  set Hgt : ℤ := max |p| |q| with hHdef
+  have hchain : Hgt ^ (S + 1) ≤ Hgt ^ S :=
+    calc Hgt ^ (S + 1) ≤ Hgt ^ (n₀ * Qe) := pow_le_pow_right₀ (by omega) (by omega)
+      _ = (Hgt ^ n₀) ^ Qe := by rw [← pow_mul]
+      _ ≤ (max |P.trailingCoeff| |P.leadingCoeff|) ^ Qe :=
+          pow_le_pow_left₀ (pow_nonneg (by omega) n₀) hpow _
+      _ ≤ a ^ Qe := pow_le_pow_left₀ (le_max_of_le_left (abs_nonneg _)) hmax Qe
+      _ ≤ Hgt ^ S := hae
+  have hpos : (0 : ℤ) < Hgt ^ S := pow_pos (by omega) S
+  rw [pow_succ] at hchain
+  nlinarith
+
 /-- **The base case with a *power* bound, and no rounding anywhere.**
 
 `|lead|^Q ≤ q^S` gives `index ≤ S/(Q·d)` directly.  ⚠ This is the shape `RothGammaFull`'s
