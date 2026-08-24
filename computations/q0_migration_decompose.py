@@ -41,6 +41,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import signal
 import subprocess
 import sys
 import time
@@ -98,7 +99,12 @@ MIGRATED: set[str] = set()
 
 def restore() -> None:
     """Reset every dirty file under computations/ EXCEPT the migrated ones."""
-    revert = [rel for rel in dirty() if rel not in MIGRATED]
+    # Witness/data JSON only. An earlier version reverted every dirty tracked
+    # file under computations/, which includes the producers' own sources and
+    # this script -- it silently ate an edit to itself mid-run. A sweep must
+    # never revert source it did not write.
+    revert = [rel for rel in dirty()
+              if rel not in MIGRATED and rel.endswith(".json")]
     for i in range(0, len(revert), 200):       # argv limit on a wide sweep
         subprocess.run(["git", "checkout", "--", *revert[i:i + 200]],
                        cwd=ROOT, capture_output=True)
@@ -124,14 +130,29 @@ def snapshot() -> dict[str, str]:
 
 def run_once(script: Path, anchor: str | None, timeout: int):
     t0 = time.monotonic()
+    # Popen, not subprocess.run: run()'s timeout kills only the DIRECT child, so
+    # a producer that spawns children leaves them alive and reparented to init,
+    # and the next leg then writes the same witness concurrently.
+    # q0_repin_sweep records observing exactly that. start_new_session puts the
+    # producer in its own group so the whole group can be killed by pgid.
+    proc = subprocess.Popen([sys.executable, script.name], cwd=script.parent,
+                            env=env_for(anchor), stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE, text=True,
+                            start_new_session=True)
     try:
-        cp = subprocess.run([sys.executable, script.name], cwd=script.parent,
-                            env=env_for(anchor), capture_output=True,
-                            text=True, timeout=timeout)
-        rc, err = cp.returncode, (cp.stderr or "").strip().splitlines()
+        _, stderr = proc.communicate(timeout=timeout)
+        rc = proc.returncode
+        # Last NON-EMPTY line: a traceback often ends blank, and reporting that
+        # made alpha_high_precision's rc=1 undiagnosable.
+        err = [ln for ln in (stderr or "").splitlines() if ln.strip()]
     except subprocess.TimeoutExpired:
+        try:
+            os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+        except (ProcessLookupError, PermissionError, OSError):
+            proc.kill()
+        proc.communicate()
         rc, err = -9, [f"TIMEOUT >{timeout}s"]
-    return rc, snapshot(), round(time.monotonic() - t0, 1), (err[-1] if err else "")
+    return rc, snapshot(), round(time.monotonic() - t0, 1), (err[-1].strip() if err else "")
 
 
 def differs(a: str | None, b: str | None) -> bool:
