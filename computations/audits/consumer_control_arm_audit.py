@@ -1,0 +1,573 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: static source/artifact audit, not a q-series compute.
+"""Find Python consumers that read a convention-C / muon-pinned witness ON PURPOSE.
+
+WHY. The `qou-q0zk` drain has a tail of candidate convention-C witnesses. A
+mechanical drain that reclassifies a witness and repoints its consumers **will
+break working controls**, and no witness-level test can see it:
+
+    THE CONTROL ARM IS A CONSUMER, NOT A WITNESS.
+
+Worked instance, established in PR #5616. `computations/h4_markov_weights_closed_form.py`
+reads the top-level convention-C, muon-pinned `alpha-k-jones-markov-h4.witness.json`
+and looks exactly like a stale-frame defect. It is not. It hardcodes the published
+`z` and the five published weights, evaluates its symbolic closed forms at that
+`(q0, z)` to demonstrate they reproduce the published record, and then evaluates
+at the proton anchor separately. Repointing or deleting its input breaks a
+working cross-check.
+
+The prior agent's error is the reason this exists: the intersection test was run
+at the WITNESS layer -- candidate witnesses against the fingerprint detector's
+control arms, intersection genuinely empty -- and concluded there were no control
+arms in scope. The layer was wrong, not the arithmetic.
+
+HOW IT IS DETECTED, and why not by name.
+-----------------------------------------
+`XCHECK_Z` / `XCHECK_WEIGHTS` is one SPELLING of a control arm's reference values.
+Keying on it would be entry fourteen in
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md`, which catalogues thirteen
+detector generations that each failed by keying on a form rather than a fact.
+
+So this keys on the FACT: a control arm has copied numbers OUT OF the artifact it
+reads INTO its own source, because that is what "reproduce the published record"
+requires. That is checkable against the bytes of both files and is invariant
+under every renaming.
+
+    A1  TRANSCRIPTION (primary, name-free).  A high-precision decimal literal in
+        the consumer's own code whose exact value also appears in a stale-frame
+        witness the consumer READS AND DOES NOT WRITE.
+
+    A2  SPECIFICITY (primary, name-free).  A transcribed value that occurs in at
+        most SPECIFICITY_MAX witnesses corpus-wide is SPECIFIC -- it identifies
+        that artifact. One occurring in hundreds is a shared physical constant
+        (m_e, hbar-c, a q0 pin) and says nothing about provenance. Measured: this
+        is what separates the known positive's five weights from `M_E =
+        mp.mpf("0.51099895069")`, which matched 148 witnesses.
+
+    A3  DUAL ANCHOR (corroborating, NAME-BASED, never decisive).  The consumer
+        also reaches the canonical proton anchor, i.e. it evaluates twice. Stated
+        separately and never used to promote a verdict, precisely because it is
+        the kind of signal the taxonomy says goes blind.
+
+WHAT THIS CANNOT SEE -- read before quoting its counts.
+--------------------------------------------------------
+  * A control arm that reads its reference value AT RUN TIME instead of
+    transcribing it is INVISIBLE here. This is not hypothetical: PR #5616's own
+    edit moved `published_q0` in the known positive from a transcription to a
+    run-time read of the witness. Had it moved `XCHECK_Z` and `XCHECK_WEIGHTS`
+    too, this detector would report nothing. The honest statement of the output
+    is "N consumers transcribe foreign stale-frame values", NEVER "there are N
+    control arms".
+  * Python only. A control arm in TypeScript, Lean or shell is invisible.
+  * Witness names are resolved by basename. 165 stems are duplicated in this tree
+    (bean `qou-kcii`), so a bare filename can name two files with different
+    payloads; every resolution is emitted so an ambiguous one is visible rather
+    than silently picked.
+  * The fingerprints are decimal prefixes of z_C and the muon q0. A stale-frame
+    witness that serialises neither is not in the candidate set at all.
+
+Arithmetic: `decimal.Decimal` end to end. Literals are recovered as SOURCE TEXT
+via `ast.get_source_segment` and witnesses are parsed with `parse_float=Decimal`,
+so no float64 exists anywhere in the comparison path.
+
+Usage:
+    python3 -u computations/audits/consumer_control_arm_audit.py
+    python3 -u computations/audits/consumer_control_arm_audit.py --selftest
+    python3 -u computations/audits/consumer_control_arm_audit.py --witness
+"""
+from __future__ import annotations
+
+import argparse
+import ast
+import json
+import sys
+from collections import Counter, defaultdict
+from decimal import Decimal, InvalidOperation
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parent.parent
+SKIP = (".git", ".claude", "_deprecated", "node_modules", "__pycache__", ".lake")
+
+# Decimal PREFIXES of the two stale-frame fingerprints. Prefixes rather than full
+# values because the corpus serialises each at several precisions.
+Z_C_PREFIX = "0.4993203340"          # Markov parameter, convention C
+MUON_Q0_PREFIX = "1.109978595"       # the ideal/CAL-2 (muon) pin
+
+# A literal needs this many significant digits to be a plausible transcription.
+# Below it the corpus is full of tolerances (1e-12), small rationals and counts.
+MIN_SIG_DIGITS = 10
+
+# A transcribed value in more than this many witnesses is a shared constant, not
+# a fingerprint of the artifact being reproduced.
+SPECIFICITY_MAX = 3
+
+# Calls that WRITE. A witness path reaching one of these is the module's own
+# output, so a literal it shares with that file was put there BY this module --
+# the transcription arrow points the wrong way and the pair must be dropped.
+WRITE_METHODS = {"write_text", "write_bytes", "dump", "save", "emit",
+                 "write_json", "write"}
+
+# A3 only. Name-based by nature; reported, never decisive.
+CANONICAL_ANCHOR_NAMES = {
+    "Q_50_DIGIT_STR", "q_at", "q_parameter", "qou_substrate", "constants",
+    "Q_MP", "proton", "PROTON",
+}
+
+KNOWN_POSITIVE_CONSUMER = "computations/h4_markov_weights_closed_form.py"
+KNOWN_POSITIVE_WITNESS = "computations/alpha-k-jones-markov-h4.witness.json"
+
+
+# ---------------------------------------------------------------- decimals
+def _sig_digits(d: Decimal) -> int:
+    digits = list(d.as_tuple().digits)
+    while digits and digits[0] == 0:
+        digits.pop(0)
+    while digits and digits[-1] == 0:
+        digits.pop()
+    return len(digits)
+
+
+def _as_decimal(value) -> Decimal | None:
+    """Exact Decimal for a JSON scalar or a source-literal string. Never float."""
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, Decimal):
+        return value
+    if isinstance(value, int):
+        return Decimal(value)
+    if isinstance(value, float):
+        # Reached only if a caller bypasses parse_float=Decimal. repr() is the
+        # shortest round-trip decimal, so this is a normalisation, not arithmetic.
+        try:
+            return Decimal(repr(value))
+        except InvalidOperation:
+            return None
+    if isinstance(value, str):
+        s = value.strip().rstrip("Ll")
+        if not s or len(s) > 80:
+            return None
+        try:
+            return Decimal(s)
+        except InvalidOperation:
+            return None
+    return None
+
+
+def _norm(d: Decimal) -> str:
+    return str(d.normalize())
+
+
+# ---------------------------------------------------------------- witnesses
+def witness_values(raw: str) -> set[str]:
+    """Every scalar in the witness with >= MIN_SIG_DIGITS, as normalised text."""
+    out: set[str] = set()
+    try:
+        doc = json.loads(raw, parse_float=Decimal, parse_int=Decimal)
+    except Exception:  # noqa: BLE001
+        return out
+    stack = [doc]
+    while stack:
+        node = stack.pop()
+        if isinstance(node, dict):
+            stack.extend(node.values())
+        elif isinstance(node, list):
+            stack.extend(node)
+        else:
+            d = _as_decimal(node)
+            if d is not None and _sig_digits(d) >= MIN_SIG_DIGITS:
+                out.add(_norm(d))
+    return out
+
+
+def build_witness_index():
+    """path -> (frame_tag, value_set), plus a basename index and a value census."""
+    raw_by_path: dict[Path, str] = {}
+    for p in sorted(REPO.rglob("*.witness.json")):
+        if any(x in p.parts for x in SKIP):
+            continue
+        try:
+            raw_by_path[p] = p.read_text(encoding="utf-8", errors="replace")
+        except Exception:  # noqa: BLE001
+            continue
+
+    values = {p: witness_values(r) for p, r in raw_by_path.items()}
+
+    frame: dict[Path, str] = {}
+    for p, r in raw_by_path.items():
+        tag = ""
+        if Z_C_PREFIX in r:
+            tag += "C"
+        if MUON_Q0_PREFIX in r:
+            tag += "M"
+        frame[p] = tag
+
+    by_base: dict[str, list[Path]] = defaultdict(list)
+    for p in raw_by_path:
+        by_base[p.name].append(p)
+
+    # How many witnesses carry each value -- the specificity census (A2).
+    census: Counter[str] = Counter()
+    for s in values.values():
+        census.update(s)
+
+    return values, frame, by_base, census
+
+
+# ---------------------------------------------------------------- consumers
+def _docstring_constant_ids(tree: ast.AST) -> set[int]:
+    out: set[int] = set()
+    for node in ast.walk(tree):
+        if not isinstance(node, (ast.Module, ast.FunctionDef,
+                                 ast.AsyncFunctionDef, ast.ClassDef)):
+            continue
+        body = getattr(node, "body", None)
+        if body and isinstance(body[0], ast.Expr) \
+                and isinstance(body[0].value, ast.Constant) \
+                and isinstance(body[0].value.value, str):
+            out.add(id(body[0].value))
+    return out
+
+
+def source_literals(tree: ast.AST, src: str) -> dict[str, int]:
+    """normalised decimal -> line, for high-precision literals in CODE.
+
+    The value is recovered from the SOURCE TEXT (`ast.get_source_segment`) rather
+    than from the parsed constant, so a float literal never becomes a Python
+    float on this path. Docstrings are excluded: a number quoted in prose is not
+    a value the module computes with.
+    """
+    docs = _docstring_constant_ids(tree)
+    out: dict[str, int] = {}
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Constant) or id(node) in docs:
+            continue
+        if not isinstance(node.value, (int, float, str)) or isinstance(node.value, bool):
+            continue
+        seg = ast.get_source_segment(src, node)
+        d = None
+        if seg is not None:
+            d = _as_decimal(seg.strip().strip("\"'"))
+        if d is None:
+            d = _as_decimal(node.value)
+        if d is not None and _sig_digits(d) >= MIN_SIG_DIGITS:
+            out.setdefault(_norm(d), node.lineno)
+    return out
+
+
+def _witness_name_strings(tree: ast.AST) -> set[str]:
+    out: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Constant) and isinstance(node.value, str) \
+                and node.value.endswith(".witness.json") \
+                and not node.value.startswith(("-", ".", "*")):
+            out.add(node.value)
+    return out
+
+
+def _bindings(tree: ast.AST) -> dict[str, set[str]]:
+    """variable name -> witness-name strings assigned into it (one hop)."""
+    inv: dict[str, set[str]] = defaultdict(set)
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Assign):
+            continue
+        names = {c.value for c in ast.walk(node.value)
+                 if isinstance(c, ast.Constant) and isinstance(c.value, str)
+                 and c.value.endswith(".witness.json")}
+        if not names:
+            continue
+        for t in node.targets:
+            if isinstance(t, ast.Name):
+                inv[t.id] |= names
+    return inv
+
+
+def written_witness_names(tree: ast.AST) -> set[str]:
+    """Witness-name strings this module WRITES.
+
+    Two call shapes, and the second is the one a receiver-only check misses:
+    `out.write_text(...)`, and `with open(path, "w") as f: json.dump(doc, f)`,
+    where the path never touches the write call at all -- the MODE argument to
+    `open` is the only evidence. Measured: without the `open` shape, two
+    self-writing probes were reported as foreign transcribers.
+    """
+    inv = _bindings(tree)
+
+    def names_reachable(node: ast.AST) -> set[str]:
+        found: set[str] = set()
+        for c in ast.walk(node):
+            if isinstance(c, ast.Constant) and isinstance(c.value, str) \
+                    and c.value.endswith(".witness.json"):
+                found.add(c.value)
+            elif isinstance(c, ast.Name):
+                found |= inv.get(c.id, set())
+        return found
+
+    out: set[str] = set()
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        fn = node.func
+        name = fn.attr if isinstance(fn, ast.Attribute) else \
+            (fn.id if isinstance(fn, ast.Name) else None)
+        if name == "open":
+            mode = ""
+            if len(node.args) > 1 and isinstance(node.args[1], ast.Constant):
+                mode = str(node.args[1].value)
+            for kw in node.keywords:
+                if kw.arg == "mode" and isinstance(kw.value, ast.Constant):
+                    mode = str(kw.value.value)
+            if any(ch in mode for ch in "wax") and node.args:
+                out |= names_reachable(node.args[0])
+        elif name in WRITE_METHODS:
+            if isinstance(fn, ast.Attribute):
+                out |= names_reachable(fn.value)
+            for arg in list(node.args) + [k.value for k in node.keywords]:
+                out |= names_reachable(arg)
+    return out
+
+
+def references_canonical_anchor(tree: ast.AST) -> bool:
+    """A3 -- name-based, corroborating only, never promotes a verdict."""
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Name) and node.id in CANONICAL_ANCHOR_NAMES:
+            return True
+        if isinstance(node, ast.Attribute) and node.attr in CANONICAL_ANCHOR_NAMES:
+            return True
+        if isinstance(node, (ast.Import, ast.ImportFrom)):
+            mod = getattr(node, "module", None) or ""
+            parts = set(mod.split(".")) | {a.name.split(".")[0] for a in node.names}
+            if parts & CANONICAL_ANCHOR_NAMES:
+                return True
+    return False
+
+
+# ---------------------------------------------------------------- scan
+def scan():
+    values, frame, by_base, census = build_witness_index()
+    edges = []          # one per (consumer, resolved stale-frame witness) pair
+    stats = {
+        "witnesses_scanned": len(values),
+        "witnesses_frame_C": sum(1 for t in frame.values() if "C" in t),
+        "witnesses_frame_muon": sum(1 for t in frame.values() if "M" in t),
+        "witnesses_stale_frame": sum(1 for t in frame.values() if t),
+        "duplicated_witness_basenames": sum(1 for v in by_base.values() if len(v) > 1),
+        "python_files_scanned": 0,
+        "python_files_naming_a_witness": 0,
+        "self_written_pairs_dropped": 0,
+        "unresolvable_name_references": 0,
+        "ambiguous_name_references": 0,
+    }
+
+    for path in sorted(REPO.rglob("*.py")):
+        if any(x in path.parts for x in SKIP):
+            continue
+        try:
+            src = path.read_text(encoding="utf-8")
+            tree = ast.parse(src)
+        except Exception:  # noqa: BLE001
+            continue
+        stats["python_files_scanned"] += 1
+
+        names = _witness_name_strings(tree)
+        if not names:
+            continue
+        stats["python_files_naming_a_witness"] += 1
+
+        written_names = written_witness_names(tree)
+        # Resolve WRITES to PATHS first. A module can spell one artifact two ways
+        # -- "b-over-a.witness.json" at the write site and
+        # "computations/b-over-a.witness.json" in its header -- and excluding by
+        # spelling then lets the second spelling through as a foreign read.
+        # Measured: that is exactly how `b_over_a_evaluator.py` was reported as a
+        # foreign transcriber of its own output.
+        written_paths: set[Path] = set()
+        for nm in written_names:
+            written_paths.update(by_base.get(nm.split("/")[-1], []))
+
+        literals = source_literals(tree, src)
+        dual_anchor = references_canonical_anchor(tree)
+
+        for nm in sorted(names):
+            base = nm.split("/")[-1]
+            resolved = by_base.get(base, [])
+            if not resolved:
+                stats["unresolvable_name_references"] += 1
+                continue
+            if len(resolved) > 1:
+                stats["ambiguous_name_references"] += 1
+            for wpath in resolved:
+                if not frame[wpath]:
+                    continue
+                if wpath in written_paths:
+                    stats["self_written_pairs_dropped"] += 1
+                    continue
+                shared = set(literals) & values[wpath]
+                if not shared:
+                    continue
+                specific = sorted(v for v in shared if census[v] <= SPECIFICITY_MAX)
+                common = sorted(v for v in shared if census[v] > SPECIFICITY_MAX)
+                edges.append({
+                    "consumer": str(path.relative_to(REPO)),
+                    "witness": str(wpath.relative_to(REPO)),
+                    "witness_frame": frame[wpath],
+                    "name_ambiguous": len(resolved) > 1,
+                    "specific_values": specific,
+                    "common_values": common,
+                    "census": {v: census[v] for v in sorted(shared)},
+                    "lines": {v: literals[v] for v in sorted(shared)},
+                    "dual_anchor_reference": dual_anchor,
+                    "verdict": "CONTROL-ARM" if specific else "SHARED-CONSTANT-ONLY",
+                })
+
+    # dedupe identical (consumer, witness) pairs produced by two spellings
+    seen, deduped = set(), []
+    for e in edges:
+        key = (e["consumer"], e["witness"])
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(e)
+    return deduped, stats
+
+
+# ---------------------------------------------------------------- output
+def _print_report(edges, stats) -> None:
+    print("=" * 78)
+    print("consumer-side convention-C / muon control-arm audit")
+    print("=" * 78)
+    for k, v in stats.items():
+        print(f"  {k:34s} {v}")
+
+    arms = [e for e in edges if e["verdict"] == "CONTROL-ARM"]
+    shared = [e for e in edges if e["verdict"] != "CONTROL-ARM"]
+    print(f"\n  foreign-transcription edges              {len(edges)}")
+    print(f"    CONTROL-ARM (>=1 specific value)       {len(arms)}"
+          f"   consumers: {len({e['consumer'] for e in arms})}")
+    print(f"    shared-constant only                   {len(shared)}"
+          f"   consumers: {len({e['consumer'] for e in shared})}")
+
+    print("\n" + "-" * 78)
+    print("CONTROL ARMS -- a drain MUST NOT repoint or delete these inputs")
+    print("-" * 78)
+    for e in arms:
+        print(f"  {e['consumer']}")
+        print(f"      reads   {e['witness']}  [frame {e['witness_frame']}]"
+              f"{'  (AMBIGUOUS NAME)' if e['name_ambiguous'] else ''}")
+        print(f"      transcribes {len(e['specific_values'])} specific value(s) "
+              f"from it:")
+        for v in e["specific_values"][:8]:
+            print(f"          {v}   (line {e['lines'][v]}, "
+                  f"in {e['census'][v]} witness(es) corpus-wide)")
+        if e["common_values"]:
+            print(f"      also shares {len(e['common_values'])} shared constant(s): "
+                  f"{[(v, e['census'][v]) for v in e['common_values'][:3]]}")
+        print(f"      dual-anchor reference (A3, name-based, not decisive): "
+              f"{e['dual_anchor_reference']}")
+
+    print("\n" + "-" * 78)
+    print("SHARED-CONSTANT ONLY -- the match is a pin / m_e / hbar-c, not a")
+    print("transcription. NOT evidence of a control arm, and NOT evidence")
+    print("against one. These need the ordinary per-file drain judgement.")
+    print("-" * 78)
+    for e in shared:
+        vals = [(v, e["census"][v]) for v in e["common_values"][:2]]
+        print(f"  {e['consumer']}")
+        print(f"      reads {e['witness']} [{e['witness_frame']}]  shares {vals}")
+
+    print("\n" + "=" * 78)
+    print("SCOPE. This reports transcription, not control arms. A control arm")
+    print("that reads its reference at run time is invisible here -- PR #5616")
+    print("made exactly that change to one field of the known positive. Treat")
+    print("the non-CONTROL-ARM population as UNMEASURED, not clear.")
+    print("=" * 78)
+
+
+def _write_witness(edges, stats) -> Path:
+    doc = {
+        "compute": "consumer_control_arm_audit",
+        "description": (
+            "Python consumers that transcribe values out of a convention-C or "
+            "muon-pinned witness they read but do not write. Such a consumer is a "
+            "deliberate control arm: it reproduces a published record at that "
+            "frame, so a qou-q0zk drain that repoints its input breaks a working "
+            "cross-check. The control arm is a CONSUMER, not a witness, so no "
+            "witness-level classification can see it."
+        ),
+        "status": "audit",
+        "bean": "qou-okkz",
+        "arithmetic": (
+            "decimal.Decimal end to end; source literals recovered as text via "
+            "ast.get_source_segment and witnesses parsed with parse_float=Decimal, "
+            "so no float64 exists on the comparison path"
+        ),
+        "parameters": {
+            "z_C_prefix": Z_C_PREFIX,
+            "muon_q0_prefix": MUON_Q0_PREFIX,
+            "min_significant_digits": MIN_SIG_DIGITS,
+            "specificity_max_witnesses": SPECIFICITY_MAX,
+        },
+        "counts": stats,
+        "control_arms": [e for e in edges if e["verdict"] == "CONTROL-ARM"],
+        "shared_constant_only": [e for e in edges if e["verdict"] != "CONTROL-ARM"],
+        "known_blind_spots": [
+            "a control arm that reads its reference value at run time instead of "
+            "transcribing it (PR #5616 made this change to published_q0 in the "
+            "known positive itself)",
+            "control arms outside Python (TypeScript, Lean, shell)",
+            "witness names resolved by basename; duplicated stems (bean qou-kcii) "
+            "are flagged via name_ambiguous but not adjudicated",
+            "a stale-frame witness serialising neither fingerprint is not in the "
+            "candidate set at all",
+        ],
+        "how_to_use": (
+            "Before draining a qou-q0zk candidate, check whether any consumer here "
+            "reads it. A CONTROL-ARM edge is a stop: leave the artifact where it "
+            "is. Everything else still needs the ordinary per-file verdict -- this "
+            "audit narrows the drain, it does not clear it."
+        ),
+    }
+    out = HERE / "consumer-control-arm-audit.witness.json"
+    out.write_text(json.dumps(doc, indent=2, sort_keys=True) + "\n")
+    return out
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--selftest", action="store_true",
+                    help="exit 1 unless the known positive is detected")
+    ap.add_argument("--witness", action="store_true",
+                    help="write consumer-control-arm-audit.witness.json")
+    args = ap.parse_args(argv)
+
+    edges, stats = scan()
+
+    if args.selftest:
+        hit = [e for e in edges
+               if e["consumer"] == KNOWN_POSITIVE_CONSUMER
+               and e["witness"] == KNOWN_POSITIVE_WITNESS
+               and e["verdict"] == "CONTROL-ARM"]
+        if not hit:
+            print("SELFTEST FAIL: the known positive was not detected.")
+            print(f"  expected {KNOWN_POSITIVE_CONSUMER}")
+            print(f"        -> {KNOWN_POSITIVE_WITNESS}  verdict CONTROL-ARM")
+            print("  A scan that cannot find the case it was built from is "
+                  "measuring itself, not the corpus.")
+            return 1
+        e = hit[0]
+        print("SELFTEST PASS: known positive detected.")
+        print(f"  {e['consumer']}")
+        print(f"    -> {e['witness']} [frame {e['witness_frame']}]")
+        print(f"    {len(e['specific_values'])} specific transcribed value(s): "
+              f"{e['specific_values'][:6]}")
+        return 0
+
+    _print_report(edges, stats)
+    if args.witness:
+        out = _write_witness(edges, stats)
+        print(f"\nwrote {out.relative_to(REPO)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
