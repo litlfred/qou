@@ -4379,13 +4379,18 @@ suffix of `lm₁` so once longer than one letter its head is strictly inside the
 descending run, capped at `i − 1` by `descWord_index_le`; and the trailing `σᵢ`
 is in the overlap either way.
 
-### Not proved
+### ~~Not proved~~ — closed the same day
 
-Only Bokut–Shiao as `rule₁` is machine-checked — the shape `CornerGeneral`
-composes and the only one whose lm is not of length 2 or 3. The other three
-`rule₁` shapes are covered by the enumeration but not by Lean; for them
-`left ≠ []` forces the overlap short by a length bound, which is easier but
-unwritten.
+The three remaining `rule₁` shapes are now proved too: `overlap_length_one`
+covers all four. Quadratic and far-commutation are a pure length bound (lm of
+length 2, so one letter of left context leaves exactly one); Yang–Baxter has one
+escape — a two-letter overlap `[σᵢ, σⱼ]` — which puts `σⱼ` behind `σᵢ` at the
+head of `lm₂`, forbidden by `lm_head_is_max` since `j = i + 1`.
+
+**The Lean is stronger than the probe here.** `overlap_length_one` assumes
+`oc.left ≠ []` **alone**; the probe measured only the *proper* compositions,
+where the right context is non-empty too. So the theorem also covers
+`left ≠ [], right = []`, which the enumeration never looked at.
 
 ### The remaining chain to `overlap_resolves`, as it now stands
 

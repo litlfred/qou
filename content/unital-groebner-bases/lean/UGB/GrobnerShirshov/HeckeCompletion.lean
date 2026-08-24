@@ -15191,4 +15191,69 @@ theorem overlap_length_one_of_bs_left (hn : 0 < n) (hp : HeckeParams)
   simp only at this
   omega
 
+/-- **Every composition with a non-empty left context overlaps in one letter.**
+The general statement, over all four rule shapes, of what
+`hecke_overlap_length_probe.py` measures at `n ≤ 8`.
+
+Three of the four are a length bound rather than an argument: the quadratic and
+far-commutation leading monomials have length 2, so one letter of left context
+already leaves exactly one; Yang–Baxter has length 3, and its one escape — a
+two-letter overlap `[σᵢ, σⱼ]` — puts `σⱼ` behind `σᵢ` at the head of `lm₂`,
+which `lm_head_is_max` forbids since `j = i + 1`. Only the Bokut–Shiao case
+needs `overlap_length_one_of_bs_left`.
+
+Note the hypothesis is `oc.left ≠ []` **alone**. The probe measures the
+*proper* compositions, where the right context is non-empty too; the Lean does
+not need that, so this covers `left ≠ [] , right = []` as well. -/
+theorem overlap_length_one (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    (hr₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hleft : oc.left ≠ []) :
+    oc.overlap.length = 1 := by
+  have hovne : oc.overlap ≠ [] := oc.overlap_nonempty
+  have hov1 : 1 ≤ oc.overlap.length :=
+    Nat.pos_of_ne_zero fun h => hovne (List.eq_nil_of_length_eq_zero h)
+  have hl1 : 1 ≤ oc.left.length :=
+    Nat.pos_of_ne_zero fun h => hleft (List.eq_nil_of_length_eq_zero h)
+  have hdec := oc.lm₁_decomp
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hr₁ with
+    ⟨i, hr⟩ | ⟨i, j, hj, hr⟩ | ⟨i, j, hj, hr⟩ | ⟨i', i, j, h₁, h₂, hr⟩
+  · -- quadratic: the leading monomial has length 2, so a non-empty left context
+    -- leaves exactly one letter.
+    rw [hr, heckeRelation_lm] at hdec
+    have := congrArg List.length hdec
+    simp at this; omega
+  · -- Yang–Baxter: length 3, so the only escape is a two-letter overlap, and
+    -- that one is killed by `lm_head_is_max` on rule₂.
+    rw [hr, yangBaxterRelation_lm i j (by omega)] at hdec
+    have hlen := congrArg List.length hdec
+    simp at hlen
+    rcases Nat.lt_or_ge oc.overlap.length 2 with hlt | hge
+    · omega
+    have hl : oc.left.length = 1 := by omega
+    obtain ⟨a, ha⟩ : ∃ a, oc.left = [a] := by
+      rcases hlc : oc.left with _ | ⟨a, as⟩
+      · exact absurd hlc hleft
+      · rw [hlc] at hl; simp at hl
+        exact ⟨a, by rw [hl]⟩
+    rw [ha] at hdec
+    have hov : oc.overlap = [(⟨i⟩ : HeckeGen n), (⟨j⟩ : HeckeGen n)] := by
+      exact (by simpa using hdec.symm : _ ∧ _).2
+    have hlm₂ : oc.rule₂.lm (heckeOrder n)
+        = (⟨i⟩ : HeckeGen n) :: ((⟨j⟩ : HeckeGen n) :: oc.right) := by
+      rw [oc.lm₂_decomp, hov]; rfl
+    have hy : (⟨j⟩ : HeckeGen n)
+        ∈ (⟨i⟩ : HeckeGen n) :: ((⟨j⟩ : HeckeGen n) :: oc.right) := by simp
+    have := lm_head_is_max hn hp hr₂ hlm₂ hy
+    simp only at this
+    omega
+  · -- far commutation: length 2, same as the quadratic case.
+    rw [hr, farCommRelation_lm i j (by omega)] at hdec
+    have := congrArg List.length hdec
+    simp at this; omega
+  · -- Bokut–Shiao: the only shape whose leading monomial is not of length 2 or
+    -- 3, and the only one needing an argument rather than a bound.
+    exact overlap_length_one_of_bs_left hn hp hr₂ h₁ h₂ hr hleft
+
 end UGB.GrobnerShirshov.Hecke
