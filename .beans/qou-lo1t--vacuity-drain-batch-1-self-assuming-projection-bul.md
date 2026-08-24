@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T21:28:27Z
-updated_at: 2026-08-23T17:23:27Z
+updated_at: 2026-08-24T13:21:24Z
 ---
 
 ## Batch 2 (2026-08-23) — Instanton.lean cluster, 4 defects
@@ -166,3 +166,60 @@ its two fields say only `-2 <= 2cos(t) <= 2` and `cos(t) = cos(-t)`, both true
 of every real. That bean's own EigenphaseCarrierVacuity.lean already
 demonstrates it; recorded, not re-derived. Its verbatim reproduction inside that
 demonstration file is `legit`.
+
+
+## 2026-08-24 — batch closed (42/42, gate green) and a DETECTOR GAP the drain exposed
+
+`--check-ledger` exits 0; all 154 candidates carry a fresh agent verdict.
+Final: **genuine 123 | legit 25 | advisory 6 | needs-agent 0**.
+
+### The drain was not uniform — 12 of 42 came out `legit`
+
+Pattern-matching *"class projection from the sorry-drain ⇒ vacuous"* would have
+mislabelled every one. Two discriminators are now written into the ledger
+evidence, where the next agent will hit them:
+
+1. **A globally-inhabited data class is harmful only if the instance fills its
+   fields with `True`/`trivial`.** `he4_strong_duality_value` has a global
+   instance bundling data *with* a `strong_duality` field — the `triv_hecke`
+   shape — but the instance reads `strong_duality := by norm_num` over concrete
+   rationals. It is a machine-checked LP certificate, and the accessor returns a
+   proved fact. I had the `genuine` verdict half-written. **Inhabitation alone
+   does not decide it; read the instance body.**
+2. **Carrier indexed by a USED side hypothesis ⇒ legit; indexed by the
+   conclusion's own data ⇒ genuine.** `ConfinementSDP` / `sdp_lp_projection`
+   (indexed by `slaterStrict n`, `bindingMultiplicity n = 1`, both genuinely
+   used) versus `elliptic_divisor_degree_zero` / `strong_duality`
+   (all four mathematical hypotheses `_`-prefixed and unused, so the statement
+   reduces to "for all …, [claim] → [claim]").
+
+### DETECTOR GAP: 5 of the 15 files in `b67ee924e84` raise NO candidate
+
+Measured against the ledger keys:
+
+    15 .lean in the commit — 10 raise candidates, 5 do not
+
+- `appendix-qvalues/qbeta-ck-truncation-canonical.lean`
+- `lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean`
+- `lean/QOU/q_gl_obstruction_calc.lean`
+- `mass-theory/phi-q-tower-jsj-bridge.lean`
+- `mass-theory/prop-rigid-monoidal-structural-gap-invariance.lean`
+
+Same commit, same "remove a sorry, add a class field" treatment, invisible to
+the audit. `q_gl_obstruction_calc` is the notable one: AGENTS.md §3b-tax already
+names it as the failure mode where *"a real claim hidden behind a tautology"*
+was *"repeatedly mis-called legit"* by heuristic-only triage.
+
+**Not adjudicated — they are not in the ledger, so there is nothing to
+adjudicate.** This is a criterion gap, not a queue item, and it is the natural
+successor to the free-`Prop` wiring question on `qou-tsnp`.
+
+### Two measurement errors of mine, both caught before being quoted
+
+- `git show --stat` **abbreviates long paths with `...`**, so a naive path-match
+  reported *"0 of 15 in the ledger"* — a file I had personally adjudicated. Very
+  nearly filed as a spectacular false alarm. Use `--name-only --format=`.
+- The staleness check `git show <sha> | grep "^[-+].*<decl>"` matches the
+  `---`/`+++` **file headers** when a file is named after its declaration. Three
+  files looked changed; the real hunks were docstring-only edits. **Exclude
+  headers.**
