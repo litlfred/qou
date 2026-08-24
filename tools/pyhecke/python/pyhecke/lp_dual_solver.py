@@ -382,37 +382,62 @@ def _rescale_mpfr_result(out: dict, s, G_str, d: int) -> dict:
             out["y_star_str"] = [mp.nstr(_mpf_or_float(v) * inv, 50)
                                  for v in out["y_star_str"]]
 
-        # (2) active set from primal slack, not from a magnitude threshold.
-        xs = out.get("x_star_str") or out.get("x_star")
-        if xs is not None and len(xs) == d:
-            x = [_mpf_or_float(v) for v in xs]
-            G = [[_mpf_or_float(v) for v in row] for row in G_str]
-            active = []
-            for i in range(d):
-                terms = [G[i][j] * x[j] for j in range(d)]
-                gx = mp.fsum(terms)
-                scale = mp.fsum(abs(v) for v in terms)
-                # Tight iff the row cancels to (near) nothing against the
-                # magnitude of its own terms.
-                #
-                # THE CONSTANT IS THE SOLVER'S OWN, not a fitted one.
-                # `operator_selection_lp.rs` declares `reduced_tol_feas =
-                # 1e-8` — its own statement of what it will call feasible —
-                # so a row whose relative slack is below that is one the
-                # solver cannot distinguish from tight, and it is not
-                # meaningful to claim otherwise. Trying the *primary*
-                # `tol_feas = 1e-12` instead mislabels genuinely tight rows:
-                # measured on the crosscheck suite, an IPM leaves ~5e-11
-                # relative residual on a row whose exact slack is 1e-16 and
-                # whose shadow price is 0.108 — visibly a real multiplier, not
-                # noise (cases rand-0-d3, rand-6-d3).
-                #
-                # There is no knife edge here in either direction: across all
-                # 14 cases checked the tight rows sit at 1e-11 or below and
-                # the slack rows at 0.49 or above, seven orders clear.
-                if scale == 0 or abs(gx) <= mp.mpf("1e-8") * scale:
-                    active.append(i)
+        # (2) active set from the DUAL, gated on the dual being non-zero.
+        #
+        # SUPERSEDES the primal-slack rule described in (2) above, 2026-08-24,
+        # by owner ruling after the primal rule was measured against scipy's
+        # vertex method on 27 constructed LPs:
+        #
+        #     primal slack   9/27      (0 of 18 with a DIAGONAL G)
+        #     dual           27/27
+        #
+        # The primal rule is not merely inaccurate for a diagonal `G`, it is
+        # VACUOUS: row `i` then has exactly one non-zero term, so
+        # `|(Gx)_i| / sum_j |G_ij x_j|` is identically 1 whenever `x_i != 0`
+        # and 0/0 otherwise. It can never report a row tight. On `G = I` with
+        # d=12, where the truth is that the eleven zero components of `x` are
+        # binding, scipy reports eleven and the primal rule reports none.
+        # The `x_i` sit at ~1e-42 rather than 0 (an IPM never reaches the
+        # bound exactly), which is what makes the ratio 1 instead of 0/0.
+        #
+        # THE GATE IS NOT OPTIONAL, and this is the subtle half. A bare
+        # relative dual test -- active iff `|y_i| > 1e-8 * max_j |y_j|` --
+        # scores 27/27 on that suite and still REINTRODUCES the exact bug
+        # defect (2) was written to fix, because normalising `y` by its own
+        # maximum turns an all-noise dual into an all-active answer. Measured
+        # on the committed corpus: `wedderburn-lp-ew-wiring` carries
+        # `max|y| = 1.19e-105` against `y0_star = 5.24e-06`, i.e. the row
+        # duals ARE zero and no Frobenius row is binding (scipy agrees, and
+        # `active_set: []` is what ships) -- yet the bare relative rule calls
+        # all 28 rows active. Six other blocks behave the same way
+        # (`r5-full-canonical-knot-solver` x2, `option-b-proton-mass-full-chain`
+        # x2, `two-quark-active-set-mahler-sweep`, and a second wedderburn
+        # deliverable block).
+        #
+        # So the row duals are first compared against `y0_star`, the NET-row
+        # dual, which prices the one constraint that is always binding and is
+        # therefore the natural scale for "is `y` anything at all". If the
+        # whole row-dual vector is negligible against it, nothing is active.
+        # Only then does the relative test choose among the rows.
+        #
+        # Both constants are `1e-8`, and it is the solver's own
+        # `reduced_tol_feas` from `operator_selection_lp.rs` -- its statement
+        # of what it will not distinguish -- not a fitted value. Separation is
+        # not marginal in either direction: on the ground-truth suite the
+        # active rows sit at 1e-2..1e0 of `max|y|` and the inactive at 1e-42.
+        ys = out.get("y_star_str") or out.get("y_star")
+        if ys is not None and len(ys) == d:
+            y = [abs(_mpf_or_float(v)) for v in ys]
+            y0 = abs(_mpf_or_float(out.get("y0_star_str")
+                                   or out.get("y0_star") or 0))
+            ymax = max(y) if y else mp.mpf(0)
+            tol = mp.mpf("1e-8")
+            if ymax == 0 or ymax <= tol * y0:
+                active = []          # the dual is numerically zero: nothing binds
+            else:
+                active = [i for i, v in enumerate(y) if v > tol * ymax]
             out["active_set"] = active
+
     return out
 
 

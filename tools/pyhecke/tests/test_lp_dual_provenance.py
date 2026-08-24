@@ -99,19 +99,17 @@ def test_rescue_corrects_false_infeasible_on_large_costs():
         "normalisation nor the rescue corrected it"
     )
     assert got.primal_obj == pytest.approx(ref.primal_obj, rel=1e-12)
-    # The ACTIVE SET is deliberately not compared here, and the reason is a
-    # finding rather than a convenience. `origin/main`'s
-    # `_rescale_mpfr_result` re-derives it from primal slack: a row counts as
-    # active iff `|(Gx)_i| <= 1e-8 * sum_j |G_ij x_j|`. That ratio test is
-    # DEGENERATE for a diagonal `G` — the sum has a single term, so the ratio
-    # is identically 1 whenever `x_i != 0`, and an interior-point method
-    # leaves a component that should be exactly 0 sitting at ~1e-42 rather
-    # than 0. This fixture uses `G = I`, where the true answer is that the ten
-    # zero components ARE tight (`x_i >= 0` binding), and scipy's vertex
-    # method reports them; the slack rule reports none. Flagged for the owner
-    # in bean `qou/ftuv` — not fixed here, because the rule is `main`'s and it
-    # is what its own wedderburn deliverable depends on.
-    #
+    # RESTORED 2026-08-24. This comparison was dropped while `active_set`
+    # came from primal slack, which is VACUOUS for a diagonal `G`: the row has
+    # one non-zero term, so `|(Gx)_i| / sum_j |G_ij x_j|` is identically 1
+    # whenever `x_i != 0`. This fixture uses `G = I`, where the truth is that
+    # the zero components of `x` are binding -- scipy's vertex method reports
+    # them, the slack rule reported none. The rule now derives the active set
+    # from the dual (gated on the dual being non-zero), which agrees with
+    # scipy on 27/27 constructed LPs against the slack rule's 9/27, so the
+    # assertion is meaningful again and is the point of the fixture.
+    assert list(got.active_set) == list(ref.active_set)
+
     # Deliberately NOT asserting `rescaled_by_pow2 is not None`. Merging
     # `origin/main` added an upfront objective normalisation, so this case now
     # solves correctly on the FIRST attempt and the rescue never fires. The
