@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:42:01Z
-updated_at: 2026-08-24T08:14:52Z
+updated_at: 2026-08-24T09:26:39Z
 ---
 
 MEASURED 2026-08-19. computations/canonical_tr_m_via_branching.compute_tr_m_via_branching(Z, N, q_val) returns IDENTICAL values at q and 1/q:
@@ -185,3 +185,57 @@ If those agree, the guard comes out and qou-8chw's main finding closes -- AND
 tr_M^atom(1/q_0) gains the SECOND independent method it has been missing.
 
 The stale stub should also be deleted or made to delegate.
+
+
+WIRING SCOPED 2026-08-24 (after the retraction above). Feasibility established,
+integration specified, NOT implemented -- the remaining risk is gauge, and a
+half-done adapter that silently moves tr_M would be worse than none.
+
+CONVENTIONS MATCH -- checked before anything else, because a mismatch here
+would make the regression test meaningless:
+
+    builder  a_operator_gauge_align._d_pn(h) = -h(1 - avg_color_delta/2)/2
+             i.e. the COLOUR-WEIGHTED p-n bridge (qou-gdtb, 3dcf933c5d)
+    extract  sublemma-2-1-A-operator-extract.witness.json records
+             "interface": "I = sigma_2 - h(1/2 - delta/4)"
+             "interface_ctype": "averaged_weighted"
+             "interface_d": -0.104458247769726289017834066290005644128
+
+So the frozen extract was regenerated AFTER the colour-weighting change and the
+two agree. Wiring the builder in is convention-consistent; it does not silently
+swap a colour-blind interface for a weighted one. (Relevant because
+3dcf933c5d missed two consumer sites -- one a real bug fixed on main, one filed
+inert as qou-tqfm. This is not a third.)
+
+BUILDER VERIFIED OFF-ANCHOR: gauge_aligned_A_combiner_general((4,2), 3, 3,
+q_str, 50) returns 4 (xi,nu) blocks at q_0, at 1/q_0, and at q = 1.5.
+
+INTEGRATION SPEC (the actual remaining work):
+
+  consumer  compute_chi_lambda_via_branching reads
+              extract_cache[(n, iface)]["results_per_lambda"][key]
+            with key = str(list(lam)) or str(tuple(lam)) -- both conventions
+            are already tried at canonical_tr_m_via_branching.py:286.
+  builder   gauge_aligned_A_combiner_general(lam, 3, 3, q_str, dps) returns
+            {(xi, nu): dict} for ONE lam -- so the adapter loops lam |- 6 and
+            reshapes into results_per_lambda.
+
+  THE RISK IS GAUGE, NOT PLUMBING. The closure-b design doc's own verification
+  criterion says the categorical A must match the full-rank H_6 extract
+  "modulo the V_xi (x) V_nu BASIS GAUGE". The builder is named
+  gauge_ALIGNED_..., which suggests it already fixes a gauge -- but whether it
+  is the SAME gauge the frozen extract used is unverified, and a mismatch would
+  change tr_M silently while every shape check passes.
+
+  So the first step is NOT to swap the call. It is: build A^lambda both ways at
+  q_0 and compare entrywise. Only if they agree (or differ by a verified gauge
+  transform) does the swap preserve meaning.
+
+REGRESSION TARGETS for whoever does it:
+    tr_M^atom(D) at q_0    0.5751722439177718708265353439861808891524943528928
+                           (four independent methods agree at this value)
+    tr_M^atom(D) at 1/q_0  -0.0014808531711619370338  (fine-Bratteli transfer;
+                           currently SINGLE-METHOD -- this wiring is what would
+                           give it a second)
+
+Not started. The guard stays until this lands.
