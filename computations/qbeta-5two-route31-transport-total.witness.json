@@ -1,15 +1,15 @@
 {
   "probe": "qbeta_5two_route31_transport_total",
   "bean": "qou-trns",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": "QOU/QBeta/FiveTwoTransport.lean",
   "gates": [
     {
       "gate": "G1",
       "claim": "S(phi) = sum_j Re V(x phi, y_j phi) is SYMMETRIC in the roots, so it needs no branch labelling: computed straight from polyroots at each phi it satisfies S(phi) - S(0) = phi^2 across the WHOLE arc, INCLUDING across phi_0 where two branches collide and swap. This is why `envelope_integrate` tolerating one exceptional point is enough and not a fudge -- the labelling is needed only to differentiate term by term, which is local",
       "n_points": 199,
-      "worst_deviation_from_phi_squared": "4.878760733e-40",
-      "at_phi": "0.267035375555",
+      "worst_deviation_from_phi_squared": "3.984498795e-70",
+      "at_phi": "0.61261056745",
       "phi_0_over_pi": "0.766225949378",
       "sampled_across_phi_0": true,
       "pass": true
@@ -29,7 +29,7 @@
       "pi_squared": "9.8696044010893586188",
       "raw_gap_from_pi_squared": "-6.28318530718e-12",
       "predicted_offset_minus_2_pi_eps": "-6.28318530718e-12",
-      "residual_against_exact_identity": "1.83670992316e-40",
+      "residual_against_exact_identity": "1.44890865261e-70",
       "pass": true
     },
     {

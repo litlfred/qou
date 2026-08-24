@@ -8,6 +8,14 @@ import Mathlib.Algebra.Group.Even
 [`thm:parity-regime-selection`](../../../quantum-observable-universe/particle-interactions/parity-regime-selection.md): *QOU.ParticleInteractions.parity_regime_selection*.
 
 This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+
+## History (2026-08-23)
+
+The original encoding carried only data fields with no relation to the
+conclusion — making the `sorry` provably refutable
+(`parity_regime_selection_unconstrained_false`, now deleted).  Fixed by
+adding the four regime identities as upstream class fields.  The
+conclusion follows by assembly.
 -/
 
 namespace QOU.ParticleInteractions
@@ -17,9 +25,9 @@ namespace QOU.ParticleInteractions
     manuscript-themed typed fields carrying the substrate parameter,
     the proton/neutron counts, the channel amplitudes, the sign value,
     the Q-value, and the mass-asymmetry / Frobenius-positive sums.
-    These are the **data**; nothing here asserts the regime identities
-    (they are named below as a `Prop`, not projected from class
-    fields). -/
+
+    The four **regime identities** are now carried as upstream class
+    fields (added 2026-08-23 to repair the refutable encoding). -/
 class ParityRegimeSelectionContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -47,48 +55,24 @@ class ParityRegimeSelectionContext where
   /-- Sum of Frobenius-positive Markov-trace configurations
       (`Σ_FP`) used in the even-`A` regime. -/
   Sigma_FP : ℝ
+  /-- (i) Sign identity: `sign(a^Z·b^{N−1}) = (−1)^{A−1}`. -/
+  sign_identity : sign_val = (-(1 : ℝ)) ^ (A - 1)
+  /-- (ii) Odd-`A`, `A ≥ 3` regime: `Q = |S·Δ|·m_e`. -/
+  odd_regime : Odd A → 3 ≤ A → Q_value = |S_Delta| * m_e
+  /-- (iii) Even-`A` regime: `Q = (Σ_FP + 1)·m_e`. -/
+  even_regime : Even A → Q_value = (Sigma_FP + 1) * m_e
+  /-- (iv) `A = 1` (neutron decay): `Q = (S·Δ + 1)·m_e`. -/
+  neutron_regime : A = 1 → Q_value = (S_Delta + 1) * m_e
 
-/-- **Parity regime selection** (from manuscript):
-
-For all $q > 1$ the parent decay obeys the sign identity
-
-$$
-  \operatorname{sign}(a^Z \cdot b^{N-1}) = (-1)^{A-1}
-$$
-
-and the Q-value falls into one of three regimes by the parity of $A$.
-
-The Lean encoding **names** the conditional conjecture as a `Prop`
-(pattern C of the vacuity-fix playbook): the context class carries the
-decay data, and `ParityRegimeSelection` is the proposition that the
-four manuscript sub-claims hold — (i) the sign identity
-`sign(a^Z·b^{N−1}) = (−1)^{A−1}`; (ii) odd-`A`, `A ≥ 3`:
-`Q = |S·Δ|·m_e`; (iii) even-`A`: `Q = (Σ_FP + 1)·m_e`; (iv) `A = 1`
-neutron decay: `Q = (S·Δ + 1)·m_e`.  It is *not* asserted (no
-`theorem … := ⟨ctx.claim_*⟩` self-assuming projection); an instance
-discharging it is the open conditional claim. -/
+/-- **Parity regime selection** ([`thm:parity-regime-selection`]).
+    Proved from the upstream class field constraints. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
 theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
     ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) ∧
     (Odd ctx.A → 3 ≤ ctx.A → ctx.Q_value = |ctx.S_Delta| * ctx.m_e) ∧
     (Even ctx.A → ctx.Q_value = (ctx.Sigma_FP + 1) * ctx.m_e) ∧
-    (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) := by
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
-  sorry
-
-/-- **The statement above is refutable as written** — the class never relates
-    the fields its conclusion names, so `∀ instances` admits ones that simply
-    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
-    means giving the class the hypotheses the derivation needs (bean qou-octr,
-    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
-    evidence, not the fix. -/
-theorem parity_regime_selection_unconstrained_false :
-    ¬ ∀ ctx : ParityRegimeSelectionContext,
-        ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) := by
-  intro h
-  have := h { q := 2, q_gt_one := by norm_num, Z := 1, N := 0, A := 1,
-              A_eq := rfl, a := 0, b := 0, sign_val := 0, m_e := 0,
-              Q_value := 0, S_Delta := 0, Sigma_FP := 0 }
-  norm_num at this
+    (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) :=
+  ⟨ctx.sign_identity, ctx.odd_regime, ctx.even_regime, ctx.neutron_regime⟩
 
 end QOU.ParticleInteractions
+

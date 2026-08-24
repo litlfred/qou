@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2411.04021v1
-doc_title: "On the Gram determinants of the Specht modules Linda Hoyer ∗"
+doc_title: "On the Gram determinants of the Specht modules"
 section_id: sec-001-preliminaries
 section_title: "Preliminaries"
 section_number: null
 pages: 3-7
 source_pdf: 2411.04021v1.pdf
 source_sha256: f5b6980f08d25394
-doc_brief: "On the Gram determinants of the Specht modules Linda Hoyer ∗ — For every partitionλ of a positive integern, letSλ be the corresponding Specht module of the symmetric group Sn, and let det(λ)∈ Z"
+doc_brief: "On the Gram determinants of the Specht modules — For every partitionλ of a positive integern, letSλ be the corresponding Specht module of the symmetric group Sn, and let det(λ)∈ Z denote the Gram"
 ---
 Wefixapositiveinteger n. Apartition isasequence λ = (a1,...,a m)ofnon-negative
 integers such thata1≥a2≥···≥ am. We identify partitions that only differ by a

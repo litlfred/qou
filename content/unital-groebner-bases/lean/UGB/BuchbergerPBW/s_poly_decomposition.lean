@@ -13,7 +13,7 @@ subtraction), and the decomposition claim is a genuine **equation in
 (two-rule) case of the manuscript's telescoping decomposition.
 
 Content block
-[`prop:s-polynomial-decomposition`](../../../unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.md):
+[`prop:ugb-s-poly-decomposition`](../../../unital-groebner-bases/buchberger-and-pbw/ugb-s-polynomial-decomposition.md):
 *$S$-polynomial decomposition*.
 
 ## Manuscript statement
@@ -67,7 +67,7 @@ def sPoly (a₁ a₂ : k) (f₁ f₂ : AlgElement G k) : AlgElement G k :=
     coefficient extensionality for `AlgElement` (a raw data structure;
     see `AlgOps.lean` §6); supplying that ext principle is the remaining
     manuscript step. -/
--- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.ts
+-- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/ugb-s-polynomial-decomposition.ts
 theorem s_poly_decomposition
     (a₁ a₂ c₁ c₂ : k) (f₁ f₂ : AlgElement G k)
     (ha₁ : a₁ ≠ 0) (ha₂ : a₂ ≠ 0)

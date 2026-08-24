@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.229Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-negation-contrast constructions present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.272Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-rhetorical-pivot constructions present."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.315Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-em-dash constructions present."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.357Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-compulsive-triple constructions present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1312,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.400Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-closing-aphorism constructions present."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1346,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.441Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-meta-commentary constructions present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1380,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.483Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-thesis-restatement constructions present."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1414,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.523Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-performed-warmth constructions present."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1448,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.583Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-superlative-inflation constructions present."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1482,21 @@
         "reviewed_at": "2026-08-15T10:30:58.993Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1455b9f430cf",
+          "ts": "cede38a5993f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:55.625Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof; 'completely determines... up to isotopy' is a standard proof closer, not thesis restatement); no trap-nonspeakable-syntax constructions present."
       }
     ],
     "wall-base-ring-minimal": [

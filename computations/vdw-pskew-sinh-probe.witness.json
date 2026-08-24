@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:28:30.642494+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T20:05:24.650017+00:00",
+  "commitSha": "8fc423a79a855b1728b7f6ee83414756a3163a61",
   "assertions": [
     {
       "name": "cosh(2λ) = (q²+q⁻²)/2 (algebraic = transcendental)",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "vdw-pskew-sinh-probe",
   "scriptFile": "vdw_pskew_sinh_probe.py",
-  "scriptHash": "e3dbb4103394",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "4a921f292d3f",
+  "scriptCommitSha": "de48ab178411871a0b6297d5b719aa51ce7a11f8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,26 +41,36 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/vdw_pskew_sinh_probe.py"
+    ],
+    "reproduce": "python3 -u computations/vdw_pskew_sinh_probe.py"
   },
   "description": "Narrowed van der Waals probe (formalize-first; Lean prop:vdw-pskew-isolation sorry-free). The Hopf link σ₁²=q²e₊+q⁻²e₋ splits under the bar involution into 2cosh(2λ)·𝟙 (bar-even, retained P_avg carrier) + 2sinh(2λ)·(e₊−e₋) (bar-odd, the P_skew/Coulomb-EM channel the canonical projection discards). vdW IS that bar-odd residual sinh(2λ)·(e₊−e₋) — an exact q-expression, NOT an h^k fit nor a cosh factor on the covalent ladder (the earlier 0.81 was the wrong sinh⁴/covalent framing). Per rem-im-q-vs-p-skew the residual is REAL at real q (P_skew), not Im(q). α_EM Habiro [2]_q(1−h²α)=2cosh λ(1−h²α) is the bar-EVEN sibling (cosh carrier × sinh² correction); vdW is bar-ODD (sinh·cosh) — same machinery, opposite sector. Open: the archimedean 1/r⁶ separation scaling the fibre residual to the molecular vdW energy (not fitted).",
   "contentBlock": "prop:vdw-pskew-isolation",
   "parameters": {
-    "q": 1.1099785955573347
+    "q": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "rapidity_lambda": 0.10434073185663745,
-    "cosh_2lambda": 1.0218531091164507,
-    "sinh_2lambda": 0.2101993734789825,
-    "e_plus": 0.6963254203129335,
-    "e_minus": 0.30367457968706657,
-    "e_diff": 0.39265084062586697,
-    "vdw_bar_odd_residual": 0.08253496069555304,
+    "rapidity_lambda": 0.10434072031951953,
+    "cosh_2lambda": "1.0218531042662609947010096678386941548841069803568",
+    "sinh_2lambda": "0.21019934990050293656879484569694202996557444256024",
+    "e_plus": "0.75270211325196540159377935162023613783017559887491",
+    "e_minus": "0.2472978867480345984062206483797638621698244011251",
+    "e_diff": "0.50540422650393080318755870324047227566035119774981",
+    "vdw_bar_odd_residual": "0.10623563984809279089214198716055189439937583839845",
     "vdw_residual_imag_at_real_q": 0.0,
-    "alpha_em_carrier_2coshlambda": 2.0108968691190756,
-    "finding": "van der Waals is the bar-odd (sinh / P_skew) residual of the Hopf link: 2σ₁² = 2cosh(2λ)·𝟙 + 2sinh(2λ)·(e₊−e₋), with the cosh part the retained P_avg carrier and the sinh·(e₊−e₋)=0.0825 part the discarded Coulomb-EM channel = vdW. This narrows the probe to the EXACT bar-odd q-expression (no h^k fit, no cosh-on-covalent factor). The residual is real at real q (P_skew ≠ Im(q)). Lean prop:vdw-pskew-isolation proves the decomposition sorry-free. α_EM Habiro is the bar-even sibling. Open: the archimedean 1/r⁶ separation to the molecular energy (not fitted)."
+    "alpha_em_carrier_2coshlambda": "2.0108968667071222997524919780918628158892407484841",
+    "finding": "van der Waals is the bar-odd (sinh / P_skew) residual of the Hopf link: 2σ₁² = 2cosh(2λ)·𝟙 + 2sinh(2λ)·(e₊−e₋), with the cosh part the retained P_avg carrier and the sinh·(e₊−e₋)=0.1062 part the discarded Coulomb-EM channel = vdW. This narrows the probe to the EXACT bar-odd q-expression (no h^k fit, no cosh-on-covalent factor). The residual is real at real q (P_skew ≠ Im(q)). Lean prop:vdw-pskew-isolation proves the decomposition sorry-free. α_EM Habiro is the bar-even sibling. Open: the archimedean 1/r⁶ separation to the molecular energy (not fitted)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

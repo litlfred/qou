@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T12:55:20.801683+00:00",
-  "commitSha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:35.380734+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "integer_spin_dim_sum_squares",
@@ -10,7 +10,7 @@
       "expected": 60.0,
       "passed": true,
       "tolerance": 1e-30,
-      "source": "Integer-spin 2I irreps factor through A_5; Σ dim² over them equals |A_5| = 60 (Burnside on the quotient)."
+      "source": "Integer-spin 2I irreps factor through A_5; \u03a3 dim\u00b2 over them equals |A_5| = 60 (Burnside on the quotient)."
     },
     {
       "name": "half_spin_dim_sum_squares",
@@ -18,7 +18,7 @@
       "expected": 60.0,
       "passed": true,
       "tolerance": 1e-30,
-      "source": "Half-spin 2I irreps are genuinely 2I-valued; Σ dim² over them equals |2I| − |A_5| = 60."
+      "source": "Half-spin 2I irreps are genuinely 2I-valued; \u03a3 dim\u00b2 over them equals |2I| \u2212 |A_5| = 60."
     },
     {
       "name": "total_2I_burnside",
@@ -26,15 +26,15 @@
       "expected": 120.0,
       "passed": true,
       "tolerance": 1e-30,
-      "source": "Σ dim² over all 2I irreps = |2I| = 120."
+      "source": "\u03a3 dim\u00b2 over all 2I irreps = |2I| = 120."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "gap-a4-T10-mckay-character-2I-probe",
   "scriptFile": "gap_a4_T10_mckay_character_2I_probe.py",
-  "scriptHash": "fcb0f71639bc",
-  "scriptCommitSha": "4a31d4ede99743f90b21f40a1cef7be86b1c7f6a",
+  "scriptHash": "c4f92be55f2c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,12 +46,21 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
-  "description": "GAP-A-4 T10 — McKay-character / spin-lift candidate functor via 2I (binary icosahedral, double cover of I ≅ A_5). The dim-5 irrep H is integer-spin → χ_5^{2I} = χ_5^{A_5} ∘ π, so the spin-lift adds NO new structure at dim-5. REFUTED as the 6th candidate.",
+  "invocation": {
+    "argv": [
+      "computations/probes/gap_a4_T10_mckay_character_2I_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap_a4_T10_mckay_character_2I_probe.py"
+  },
+  "description": "GAP-A-4 T10 \u2014 McKay-character / spin-lift candidate functor via 2I (binary icosahedral, double cover of I \u2245 A_5). The dim-5 irrep H is integer-spin \u2192 \u03c7_5^{2I} = \u03c7_5^{A_5} \u2218 \u03c0, so the spin-lift adds NO new structure at dim-5. REFUTED as the 6th candidate.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
     "discipline": "EXPLORATORY",
@@ -75,8 +84,11 @@
       "total_burnside_sum_sq": 120,
       "dim_5_is_integer_spin": true,
       "chi_5_on_betaBor_lifted": 5,
-      "verdict": "Spin-lift adds no new structure at dim-5 (the dim-5 irrep is integer-spin, projects from 2I to A_5 trivially on the center). χ_5^{2I}(β_Bor_lifted) = 5 exactly, identical to χ_5^{A_5}(id). McKay-character candidate REFUTED — the h⁴ obstruction is not resolved by spin-lifting."
+      "verdict": "Spin-lift adds no new structure at dim-5 (the dim-5 irrep is integer-spin, projects from 2I to A_5 trivially on the center). \u03c7_5^{2I}(\u03b2_Bor_lifted) = 5 exactly, identical to \u03c7_5^{A_5}(id). McKay-character candidate REFUTED \u2014 the h\u2074 obstruction is not resolved by spin-lifting."
     },
-    "synthesis_verdict": "The dim-5 irrep H is on the INTEGER-SPIN side of 2I (integer-spin irreps have dims (1,3,3,4,5) = exactly the A_5 irrep dimensions; half-spin are (2,4,6,2)). Therefore χ_5^{2I} = χ_5^{A_5} ∘ π via the natural projection π : 2I → A_5, i.e. the spin ℤ_2 is in the kernel of the dim-5 character. For any element g ∈ 2I projecting to id ∈ A_5 (such as a lifted β_Bor with writhe 0), χ_5^{2I}(g) = χ_5^{A_5}(id) = 5 exactly — independent of any q-deformation at the character-evaluation level. The McKay-character / spin-lift candidate is REFUTED — adding the spin double cover does NOT introduce new structure at the dim-5 level relevant to the cross-algebra h⁴. This is the 6th candidate functor REFUTED. The non-Schur-Weyl direction must involve genuinely non-character-theoretic structure: T11 (Klein invariants) or T12 (Bring discriminant)."
-  }
+    "synthesis_verdict": "The dim-5 irrep H is on the INTEGER-SPIN side of 2I (integer-spin irreps have dims (1,3,3,4,5) = exactly the A_5 irrep dimensions; half-spin are (2,4,6,2)). Therefore \u03c7_5^{2I} = \u03c7_5^{A_5} \u2218 \u03c0 via the natural projection \u03c0 : 2I \u2192 A_5, i.e. the spin \u2124_2 is in the kernel of the dim-5 character. For any element g \u2208 2I projecting to id \u2208 A_5 (such as a lifted \u03b2_Bor with writhe 0), \u03c7_5^{2I}(g) = \u03c7_5^{A_5}(id) = 5 exactly \u2014 independent of any q-deformation at the character-evaluation level. The McKay-character / spin-lift candidate is REFUTED \u2014 adding the spin double cover does NOT introduce new structure at the dim-5 level relevant to the cross-algebra h\u2074. This is the 6th candidate functor REFUTED. The non-Schur-Weyl direction must involve genuinely non-character-theoretic structure: T11 (Klein invariants) or T12 (Bring discriminant)."
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

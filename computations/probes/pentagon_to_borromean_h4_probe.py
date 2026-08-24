@@ -25,7 +25,7 @@ This script:
 Specializations tested:
   (u, v) = (1/2, 1/2)         — pentagon diagonal
   (u, v) = (1/3, 1/3)         — symmetric, smaller
-  (u, v) = (z_markov, z_markov) — Markov parameter z = 1/(q^{1/2}+q^{-1/2})
+  (u, v) = (z_markov, z_markov) — Markov parameter z = q^3/(q^2+1) (convention D)
   (u, v) = (h², h²)            — substrate-natural at h_0
   (u, v) = (1/q_0, 1/q_0)      — substrate-q⁻¹
   (u, v) = (h²/2, h²/2)        — half-substrate
@@ -60,8 +60,9 @@ from pathlib import Path
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpf
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 H_0 = Q_0 - mpf(1) / Q_0
@@ -226,7 +227,9 @@ def main() -> None:
     print(f"Target: h⁴ coefficient of Borromean Markov trace = -3/4 = {float(H4_BORROMEAN_TARGET):.6f}")
     print("=" * 60)
 
-    z_markov = mpf(1) / (mp.sqrt(Q_0) + mpf(1) / mp.sqrt(Q_0))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(q^1/2 + q^-1/2), excised.
+    z_markov = Q_0 ** 3 / (Q_0 ** 2 + 1)
 
     specializations = [
         ("diagonal_1_over_2",       mpf(1) / 2, mpf(1) / 2),

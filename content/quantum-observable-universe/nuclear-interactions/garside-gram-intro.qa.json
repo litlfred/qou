@@ -1195,6 +1195,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.473Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1230,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.515Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1265,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.557Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1300,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.600Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1335,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.643Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1370,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.685Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1405,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.727Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1440,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.766Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1475,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.808Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1510,22 @@
         "reviewed_at": "2026-08-15T10:31:01.295Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.849Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:01:33.849Z"
 }

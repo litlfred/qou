@@ -1552,6 +1552,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:53.789Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1571,6 +1587,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:53.832Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-em-dash": [
@@ -1590,6 +1622,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:53.870Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-triples": [
@@ -1609,6 +1657,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:53.909Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1628,6 +1692,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:53.949Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-meta-commentary": [
@@ -1647,6 +1727,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:53.991Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1666,6 +1762,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.032Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-performed-warmth": [
@@ -1685,6 +1797,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.075Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-superlative": [
@@ -1704,6 +1832,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.115Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "trap-nonspeakable": [
@@ -1723,6 +1867,22 @@
         "reviewed_at": "2026-08-15T10:31:01.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "25e9e9deb3e7",
+          "ts": "9a3857fb5b1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.155Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read: bold-Definition, italic statement, display math for dem(A) and ",
+        "notes": "dem|, plus the standard 'Archimedean specialisation' boilerplate paragraph. Defined terms are bolded. No negation-contrast, pivot, em-dash, triple, closer, meta-narration, warmth, superlative; syntax speakable.|Clean. Math delimiters balanced (one $$ pair)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1746,5 +1906,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:58:54.155Z"
 }

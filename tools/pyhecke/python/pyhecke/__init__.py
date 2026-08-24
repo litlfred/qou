@@ -10,6 +10,7 @@ Stable re-exports:
               ALPHA_FIGURE8, CATALAN_G, VOL_BORROMEAN, VOL_FIGURE8,
               V_HAT_ELECTRON, FIG8_*, E_HARTREE_EV, TWO_Q, E_MOL,
               KAPPA, M_E_MEV, M_P_MEV, M_N_MEV, q2, E_0_CALIBRATION_MEV,
+              Q_BETA_N_MEV, Q_BETA_N_MEV_ERR,
               NOBLE_GAS_Z, PROTON_NF, NEUTRON_NF
   Functions:  hm, hm_exact, nf_tr, nf_net,
               partitions_of, partition_dimension, partition_conjugate,
@@ -99,6 +100,8 @@ _FLATTENED = {
     "E_HARTREE_EV": "constants", "TWO_Q": "constants",
     "E_MOL": "constants", "KAPPA": "constants",
     "M_E_MEV": "constants", "M_P_MEV": "constants", "M_N_MEV": "constants",
+    "Q_BETA_N_MEV": "constants",
+    "Q_BETA_N_MEV_ERR": "constants",
     "E_0_CALIBRATION_MEV": "constants",
     "E_0_CALIBRATION_MEV_ERR": "constants",
 }

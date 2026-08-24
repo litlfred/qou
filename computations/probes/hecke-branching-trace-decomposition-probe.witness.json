@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T19:06:47.421038+00:00",
-  "commitSha": "1fb4c623ea594ce58c7bc522982110cb63672419",
+  "computedAt": "2026-08-24T14:24:17.762141+00:00",
+  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "assertions": [
     {
       "name": "branching_decomposition_lambda_6",
@@ -15,7 +15,7 @@
     },
     {
       "name": "branching_decomposition_lambda_5_1",
-      "computed": 1.3363823550460978e-51,
+      "computed": 7.24454326306137e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -24,7 +24,7 @@
     },
     {
       "name": "branching_decomposition_lambda_4_2",
-      "computed": 2.6727647100921956e-51,
+      "computed": 2.263919769706678e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -33,7 +33,7 @@
     },
     {
       "name": "branching_decomposition_lambda_3_3",
-      "computed": 5.345529420184391e-51,
+      "computed": 7.24454326306137e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -51,17 +51,38 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 85,
   "computation": "hecke-branching-trace-decomposition-probe",
   "scriptFile": "hecke_branching_trace_decomposition_probe.py",
-  "scriptHash": "da015537af0a",
-  "scriptCommitSha": "9c1875adeb2e7558095477d1fc83458c71f15a4c",
+  "scriptHash": "5faa2cdf0172",
+  "scriptCommitSha": "789481516761c41a7310863b11172b81af3b6707",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/hecke_branching_trace_decomposition_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/hecke_branching_trace_decomposition_probe.py"
+  },
   "description": "I1 probe for prop:hecke-branching-trace-decomposition.  Verifies the closed-form (I = 𝟙) branching identity χ^λ(β_1 · β_2) = Σ_(μ,ν) c^λ_{μ,ν} χ_μ(β_1) χ_ν(β_2) for β_1 = β_2 = β_{4_1} on disjoint strand groups, λ ∈ {(6), (5,1), (4,2), (3,3), (1^6)} ⊢ 6 (n_1 = n_2 = 3).  LHS computed directly via canonical H_6 Hoefsmit-seminormal matrices (mpmath, 50 dps); RHS computed from H_3 single-component characters via Wenzl-1988 LR coefficients.  Equality witnesses Wenzl 1988 Thm 3.4 + Hoefsmit 1974 matrix-element formulas on a concrete instance, independent of the operator-extraction path in `sublemma_2_1_A_operator_extract.py`.",
   "contentBlock": "prop:hecke-branching-trace-decomposition",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "chi_3_single": 1.0,
-    "chi_21_single": -0.9106773300269627,
+    "chi_21_single": -0.9106773502706678,
     "chi_111_single": 1.0
   },
   "data": {
@@ -80,27 +101,27 @@
         "dim_H6": 5,
         "dim_check_branching_sum": 5,
         "dim_check_match": true,
-        "lhs_h6_direct_trace": -0.8213546600539254,
-        "rhs_lr_branching_sum": -0.8213546600539254,
-        "residue": 1.3363823550460978e-51
+        "lhs_h6_direct_trace": -0.8213547005413354,
+        "rhs_lr_branching_sum": -0.8213547005413354,
+        "residue": 7.24454326306137e-71
       },
       {
         "lambda": "(4, 2)",
         "dim_H6": 9,
         "dim_check_branching_sum": 9,
         "dim_check_match": true,
-        "lhs_h6_direct_trace": 0.007978539371112139,
-        "rhs_lr_branching_sum": 0.007978539371112139,
-        "residue": 2.6727647100921956e-51
+        "lhs_h6_direct_trace": 0.007978535754668984,
+        "rhs_lr_branching_sum": 0.007978535754668984,
+        "residue": 2.263919769706678e-71
       },
       {
         "lambda": "(3, 3)",
         "dim_H6": 5,
         "dim_check_branching_sum": 5,
         "dim_check_match": true,
-        "lhs_h6_direct_trace": 1.8293331994250375,
-        "rhs_lr_branching_sum": 1.8293331994250375,
-        "residue": 5.345529420184391e-51
+        "lhs_h6_direct_trace": 1.8293332362960044,
+        "rhs_lr_branching_sum": 1.8293332362960044,
+        "residue": 7.24454326306137e-71
       },
       {
         "lambda": "(1, 1, 1, 1, 1, 1)",

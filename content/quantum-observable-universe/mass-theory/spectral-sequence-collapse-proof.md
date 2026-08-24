@@ -18,7 +18,7 @@ $$
   \qquad w_\lambda(q) = \frac{\dim_q^2 V_\lambda}{[n]_q!},
 $$
 
-*q-deformed Wedderburn weights $w_\lambda(q)$, bounded but
+*The $q$-deformed Wedderburn weights $w_\lambda(q)$ are bounded, but
 $\sum w_\lambda(q) \neq 1$ at $q \neq 1$ in general (cf.
 [`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)
 for the classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$

@@ -4,13 +4,14 @@
   "audit_only": true,
   "tier": "symbolic-exact",
   "q0Anchor": "independent",
+  "q0AnchorReason": "q-GENERIC: solves and factors over the symbol `q` and never evaluates at any anchor, so there is no pin to record. Deliberately carries no `q0Value` \u2014 the audit correctly reads one alongside `independent` as a contradiction, since it would mean something did supply a pin. Contrast the step-1 probe `qbeta_d_frame_eigenphase_bar_parity_probe`, which evaluates the ladder at both anchors and so does carry one.",
   "scope": "scope-(a), and NEGATIVE: this narrows where a D-frame ladder derivation may look; it does not supply one. Nothing wired, no c_k value or tier changes, channel stays `disputed`. It does NOT show the decay trace IS the D one \u2014 that is the 2026-08-15 owner ruling.",
-  "computedAt": "2026-08-16T13:46:12.489531+00:00",
-  "commitSha": "0cd6d2c48ac3e6c2d87739dccdc9d43136df6d18",
+  "computedAt": "2026-08-19T15:41:19.317584+00:00",
+  "commitSha": "03d1c95465daea084a6ce28fbb7986843e8d328b",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_d_frame_markov_weights_probe.py",
-  "scriptHash": "190f91bf168d",
+  "scriptHash": "2115027678d1",
   "assertions": [
     {
       "name": "1_threeRow_vanishes_at_zD",

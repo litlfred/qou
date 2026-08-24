@@ -31,8 +31,9 @@ REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "computations"))
 import _path_bridge  # noqa: E402,F401
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 ME = mp.mpf("0.51099895069")          # MeV
 AME_4HE = mp.mpf("28.295674")
 TAU = mp.mpf("2.6423863")              # depth-2 kernel τ(q₀)

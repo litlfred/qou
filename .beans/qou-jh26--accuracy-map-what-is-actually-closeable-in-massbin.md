@@ -1,11 +1,11 @@
 ---
 # qou-jh26
 title: 'Accuracy: map what is actually closeable in mass+binding (Delta_lambda magnitude, c_k under convention D)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-18T20:59:46Z
-updated_at: 2026-08-18T21:06:20Z
+updated_at: 2026-08-19T20:26:34Z
 ---
 
 DELIVERED 2026-08-18. Audit: docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md
@@ -47,3 +47,50 @@ intensive per-block weight; pairwise cap proved); (5) the mu-p residual
 
 NOT DONE: no new physics compute; did not re-derive c_k under D; did not
 re-verify the Delta_lambda magnitude beyond citing the proved value-lemma.
+
+
+## CLOSED 2026-08-19 — everything in this bean is delivered and on main
+
+Verified rather than assumed: per-observable-100x-status.witness.json emits
+data.summary.beats_100x_scoreable = 1, scoreable_total = 5 (and retains
+beats_100x_count = 2 for consumer compatibility). Audit doc and probe both
+present. Ranked item (1), 'the 1/5 recount, blocked by nothing', needs nothing.
+
+## FOLLOW-ON: two NEGATIVE results on ranked item (4), the Delta_lambda
+## extensive term. Probe: probes/collective_term_shape_monotonicity_prune_probe.py
+
+(a) PER-NUCLEON vs PER-BOND is INCONCLUSIVE. A>=12 relative spread 0.1894 vs
+    0.1969 -- indistinguishable. And neither is constant: R/A varies ~19% and is
+    NON-MONOTONE (rises 1.196 -> 1.408 through 56Fe, drops to 1.165 at 208Pb).
+    So 'find the extensive additive term' is UNDER-SPECIFIED as stated -- there
+    is no single extensive constant to find under either normalisation.
+
+(b) THE COULOMB SHAPE LEAD IS AN ARTIFACT OF MONOTONICITY. R/A vs Z^2/A^(4/3)
+    over the five plateau nuclides gives r = 0.985, which looks strong. But on
+    the SAME points log A gives r = 0.9961 -- HIGHER -- and every monotone
+    control clears 0.965. Both series are monotone in A, so the correlation
+    measures that and nothing else. Including 208Pb it reverses to r = -0.1518,
+    so all discriminating power sits in ONE nuclide.
+
+    I nearly reported the 0.985 as a lead. The control is what caught it.
+
+PRESCRIPTION for the next attempt: break the degeneracy by varying Z at fixed or
+near-fixed A (isobars / an isotopic chain). There Z^2/A^(4/3) moves while the
+A-driven surface and volume terms do not, so they separate. That is a different
+data request than the mass ladder every attempt on this axis has used.
+
+Scope-(a): excluded is READING a monotone-in-A correlation on a plateau sample
+as evidence. NOT excluded is the Coulomb term itself -- physically expected, and
+the corpus has def:coulomb-charge (Q = 2Z + eps). Only this route is void.
+
+### Provenance of the landing (from #5280)
+
+MERGED 2026-08-18 in PR #5262 (main 69bc209d).
+1/5 corrected at every NORMATIVE site: AGENTS.md (L1/L2 table + both q0-anchor
+rules), docs/precision-goals.md (L2 table + honest-summary + dashboard list),
+docs/observable-sector-tracker.md (banner + Net line), plus a refresh block on
+the canonical shared-root audit. Producer emits scoreable_total /
+beats_100x_scoreable / calibration_inputs and its HEADLINE line leads with 1/5;
+legacy beats_100x_count retained unchanged for consumers, labelled do-not-quote.
+~15 DATED audit-doc provenance lines ('L2 unchanged (2/7)') deliberately left --
+they are accurate as of their date and rewriting them would falsify the record.

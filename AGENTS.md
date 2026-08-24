@@ -30,6 +30,65 @@ Adapt ALL responses accordingly:
   - **`preview` content** for options that benefit from side-by-side comparison (diff snippets, file-tree mockups, code samples, before/after numbers).
 
   This rule exists because terse questions force the user to type follow-ups asking for the context that should have been provided up front, which is the most painful kind of friction. When in doubt, err toward more context in the chat mirror (where math + multi-paragraph evidence render correctly), less in the structured-option `description` field (which mangles math and gets clipped in the chip UI).
+- **Write the question for someone who was NOT in your session (STRICT, 2026-08-24).**
+  The rule above says *what* to include. This one governs *how it reads*, and it
+  exists because the failure is systematic: an agent that has spent an hour
+  inside one problem asks its question in the private vocabulary it built along
+  the way. The author then has to reconstruct the agent's rabbit hole before
+  they can answer a question that should have been answerable on its own.
+
+  Assume the author has read **none** of your session. Before asking, apply all
+  six:
+
+  1. **Expand every identifier on first use.** Not `qou-cds2`, `y0_star`,
+     `G_PINV`, `the 8 stubs` — instead "bean `qou-cds2` (the convention-D Gram
+     singularity)", "`y0_star`, the shadow price of the LP's net constraint",
+     "eight witness files that carry LP-dual field *names* with `null` values".
+     A bean ID, a witness stem, a field name and a Lean declaration are all
+     opaque without their gloss. If a term needs a definition, give it inline —
+     do not link to one.
+  2. **Lead with the decision, not the investigation.** One or two sentences:
+     what is being decided, and why it needs the author rather than the agent.
+     The narrative of how you got there goes *below* the options, or is omitted.
+     The author is choosing a future action, not grading your search.
+  3. **Mirror the structure.** The chat context must be laid out to match the
+     questions being asked: one clearly-headed section per question, and within
+     it one sub-block per option, in the same order and with the same labels as
+     the structured call. The author should be able to read one option's block
+     and answer without holding the others in their head. Do not write a long
+     shared preamble that all the options depend on.
+  4. **Give every option the same four-part frame**, so options are comparable
+     rather than merely listed:
+     - **What it means** — in plain language, no repo jargon.
+     - **What it costs** — concrete: files touched, producers re-run, hours,
+       whether a long compute is involved.
+     - **What it risks** — what could break, how reversible it is, what numbers
+       could move and who reads them.
+     - **What it commits to** — what this forecloses or obliges later.
+  5. **State the default.** What happens if the author says nothing, or picks
+     none of the above? Name it explicitly ("nothing changes; the eight stay as
+     they are and the audit keeps reporting them"). An author who knows the
+     no-op is safe can defer with confidence.
+  6. **Name the blast radius in real terms.** Not "three consumers" but
+     "`bound_state_observable_validator.py`, `audit_frobenius_pairing.py` and
+     `delta_lambda_master_formula_h3_probe.py` read this field; the last one
+     feeds the Δ_λ master-formula probe." The author needs to know what breaks
+     in terms of the *physics or the paper*, not the call graph.
+
+  **Give a recommendation.** Say which option you would take and why, in one
+  sentence, and mark it clearly as your judgement rather than a finding. An
+  author overruling a stated recommendation is cheaper than an author
+  reverse-engineering the agent's preference from a neutral list.
+
+  **When you cannot make an option legible without a paragraph of background,
+  that is a signal the question is premature** — go do the measurement that
+  would collapse the option space, and ask a smaller question afterwards.
+
+  History: added 2026-08-24 on owner instruction, after a question offered
+  three options ("populate, needing a real LP per producer, or drop the names")
+  whose meaning, cost and consequences were legible only to the agent that had
+  just spent the session measuring them.
+
 - **Default `AskUserQuestion` to `multiSelect: true` + 🟡 marker (2026-05-19).** The repo owner is physically disabled and types with difficulty (see top-of-section reminder). Single-select questions force the user to either pick exactly one option or type "1, 2" as free text — neither is accessibility-friendly. Default rules:
   - **Always set `multiSelect: true`** unless the choices are strictly mutually exclusive (e.g. "switch branch to X" vs "switch branch to Y" — picking both is incoherent). 80% of decision points are not mutually exclusive ("which of these should I do?" — answer is usually "1 and 3"), so multi-select is the safer default.
   - **Prefix the question with 🟡** to mark the agent as waiting / blocked on input ("🟡 [Yellow Circle] Waiting on user — …"). The yellow circle is the agent-state symbol for "blocked, needs user input"; using it consistently lets the user scan the chat history and find every pending decision point.
@@ -359,13 +418,138 @@ user's last message, not the most recently mentioned file.
         one *deletes the field this audit keys on* (measured: 15 keys in, 7
         and 9 out). Fix the producer to emit provenance first.
 
-      **And a `substantive` verdict is not a work order — measured, 39 %.**
-      Of 72 substantive producers actually re-run under a time budget, only
-      **28 moved a single mathematical field**; 44 were byte-identical, 3
-      crashed, 2 timed out. So "the code changed, therefore the payload can
-      move" over-flags by roughly 61 %, and the genuinely actionable queue is
-      ~105 of 268, not 268 — and not the 751 the raw self-stale count suggests.
-      Re-run to decide; do not treat the class as a to-do list.
+      **A `substantive` verdict over-flags — but by ~27 %, not the 61 % this
+      text used to claim. CORRECTED 2026-08-23.** The old figure (39 % move,
+      28 of 72) was measured PER WITNESS, and the queue was then 268 witnesses
+      over only 146 producers with **119 of them from one producer**. So one
+      "did not move" fact was counted ~119 times and dragged the rate down.
+      **Do not quote 39 %.**
+
+      **MEASURED, third attempt: 58 % move, so `substantive` over-flags by
+      ~41 %.** Full sweep, all **152 producers**, baselined from git and
+      calibrated against three hand-verified answers before it was trusted:
+
+          completed (rate denominator)   128
+            moved, substantive field      74   -> 58 %
+            moved, noise only              2
+            identical                     52
+          excluded: 14 crashed, 10 timed out
+
+      **Both earlier figures were wrong, in opposite directions, and both were
+      mine.** 39 % (implying 61 % over-flag) came from PER-WITNESS sampling when
+      119 of 268 witnesses shared one producer, so a single "did not move" fact
+      counted ~119 times. 73 % (implying 27 % over-flag) came from a
+      CONTAMINATED BASELINE: the sweep snapshotted `before` from the working
+      tree it was itself mutating, and producers write sibling witnesses. Two of
+      three spot-checked MOVED verdicts under that method were false.
+
+      **Baseline from git** (`git show origin/main:<witness>`), never from a
+      tree your own sweep writes to. That single change turned both known false
+      positives back to IDENTICAL while leaving the known true positive intact.
+
+      **CORRECTED 2026-08-24: 2 producers are genuinely broken, not 14.** This
+      text said "16 % cannot complete at all — 14 crash". That figure was my
+      harness, not the corpus, and it took six separate defects to unwind:
+
+      - **2 needed `computations/` on `PYTHONPATH`**; one exits 0 with it.
+      - **1 passed only in isolation** — a sweep that already set `PYTHONPATH`
+        still misclassified it, so the runner carried order-dependence.
+      - **1 uses REPO-ROOT-relative paths**; the sweep ran everything with
+        `cwd=<producer dir>`, so any root-relative producer looked broken.
+      - **4 exit non-zero BY DESIGN**, and this is the one worth internalising:
+        a non-zero exit is not a defect. `low_isotope_mass_table` refuses when
+        precision would fall below the committed `target_dps`;
+        `qbeta_braid_nf_sdp_offset_probe` refuses because `mp.lu_solve` would
+        *not* raise and running on "would publish laundered numbers". Both are
+        guards working correctly, and both explain themselves on **stdout** —
+        which a stderr-only harness never sees. Two more
+        (`alpha_em_b2_bring_period_matrix_probe`, `rho_k_h3a_refinement`)
+        **write their witness successfully** and only then exit non-zero, on an
+        environment check and on DeprecationWarnings respectively.
+      - **2 were real and are fixed** (mpf-formatting, PR #5615).
+
+      - **1 raises its guard instead of exiting** — `qbeta_habiro_phase5q_dn`
+        `_refactorize` dies on `AmDifferenceInvalid`, a `ValueError` subclass
+        `habiro_coefficients_atomic` defines for exactly this: *"raised when
+        a_m-differencing would silently build the wrong object"*. The message
+        even names the correct route (`trace_diff_numerator`) and the beans
+        (`qou-0ndb` / `qou-lnog`). **A traceback is not proof of a defect
+        either** — a refusal implemented as a raised domain exception is
+        indistinguishable from a crash by shape alone. The discriminator is
+        whether the exception type is one the producer's own cone defines.
+        This one cost me a wrong entry in the list below, in the very text
+        warning that a non-zero exit is not a defect.
+      - **2 were real and are fixed** (mpf-formatting, PR #5615).
+
+      So a producer-runner must: set `PYTHONPATH`; skip scripts declaring
+      required positionals; clean the tree **before** each run as well as after;
+      try **both** `cwd=<producer dir>` and `cwd=<repo root>`; capture
+      **stdout as well as stderr**; check for a **traceback** rather than
+      trusting the exit code; and then check whether that traceback's exception
+      type is a **guard the corpus defines**. Without all seven its verdicts are
+      about itself.
+
+      **The 2 real defects**, re-verified against `main` on 2026-08-24:
+      `su4_1111_markov_trace_probe` (`scipy.sparse` rejects `dtype object` — an
+      `mpf` reaching a sparse matrix) and `qbeta_habiro_element_probe`
+      (`TypeError: 'NoneType' object is not subscriptable`).
+
+      **`hadron_knot_table` does NOT crash; it is very slow — and getting to
+      that took two wrong turns of mine, in opposite directions.**
+
+      First I wrote that it "runs, slowly" on the strength of a **timeout**
+      after three `A=1` atoms with no traceback. A timeout is not proof of
+      success; that claim had no evidence behind it, whatever its merits.
+
+      Then I retracted it, on the sibling bean `qou-q7lf`, which reports a
+      **second** scipy-sparse boundary in
+      `hecke_core_legacy.unified_iterative_correction` reached via
+      `binding_energy` at `A ≥ 2`. **That bean is stale.** Its last update is
+      2026-08-23T23:08; `da645cf0f32` ("the sparse crossing loop died on mpf
+      coefficients") and `46dcfc62a57` landed on 2026-08-24 and fix exactly
+      that site. The live code computes `exact_chain` **before** the loop,
+      routes an exact chain off scipy entirely, and accumulates over σ's
+      nonzeros in COO — `O(dim·nnz)`, the same complexity the float64 branch
+      gets from sparse BLAS — rather than coercing `c`/`d` to float, which its
+      own comment refuses by citing this file.
+
+      So: **a sibling's bean is not a primary source either.** The corpus-grep
+      discipline this document states for source-file `## Status` notes —
+      *"not authoritative: the corpus is the source of truth"* — applies to
+      beans verbatim, including beans written by other agents that look
+      authoritative because they are specific and recent. I applied that rule
+      to my own claims all session and suspended it for someone else's.
+
+      Measured on `main` 2026-08-24: the three `A=1` atoms complete, then
+      deuterium — the first bound atom — ran for a **full 50 minutes and was
+      killed by its own timeout** (`exit 124`), with **zero tracebacks**. It
+      neither crashed nor finished.
+
+      Keep the two claims separate, because this is the same signal that
+      started the whole confusion. **"Does not crash" is established by the
+      code**, above: an exact chain provably never reaches a scipy call, so
+      there is no boundary left to die at. The 50-minute run **corroborates**
+      that and is not what proves it — a timeout still could not have proved
+      it, and a crash at minute 51 would not be excluded by any run. What the
+      run *does* establish on its own is the **cost**: > 50 min for one bound
+      atom of nineteen. Budget accordingly, and do not expect the table to
+      finish.
+
+      The 10 timeouts are a 240 s budget artifact and may simply be
+      long-compute; re-run with a real budget before calling any of them
+      broken — and, per the paragraph above, before calling any of them fixed.
+
+      Two lessons in the measurement itself, both worth more than the number:
+      **mask volatile keys or you measure your own harness** — `timestamp`,
+      `elapsed_seconds`, `measured_at`, `start_time_monotonic` and the
+      `/invocation/*` block all change every run; and **record WHICH fields
+      moved**, so a mask gap is re-classifiable from the checkpoint instead of
+      costing another full sweep. Both errors were made here before being
+      caught, the first one twice.
+
+      So re-run to decide, and expect roughly 1 in 4 to be a false alarm rather
+      than 3 in 5. Sample is 49 of 152 producers; timeouts and crashes are
+      excluded from the rate.
 
       **Producers write SIBLING witnesses.** The isotope producer rewrote 21
       `canonical-isotope-witness-Z*.json` files that the sampler never targeted.
@@ -373,9 +557,16 @@ user's last message, not the most recently mentioned file.
       `computations/` tree afterwards, not the one file it was looking at, or it
       leaves a dirty tree that reads as real work.
 
-      And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
-      resolves to nothing, because rebase-merge (rule 8) rewrote the branch
-      sha the witness was written under. This is the same effect the
+      And ~49 % of the backlog is `rewritten` — the recorded `commitSha`
+      resolves to nothing. **This text previously named rebase-merge as the
+      cause; that is confirmed for only 46 of 376.** Agent clones here are
+      **shallow**, so a sha can be missing merely because the history was never
+      fetched. Split on the shallow-boundary date, 46 witnesses were computed
+      after it (sha was in the fetched window ⇒ genuinely rewritten) and 330
+      before it (**cause undetermined**). Do not repeat the stronger claim, and
+      note a direct `git fetch origin <sha>` cannot settle it — GitHub refuses
+      arbitrary-sha fetches regardless of whether the object exists. This is
+      the same effect the
       `scriptCommitSha` ruling above describes, one field over: **"diff the
       producer first" is unrunnable for half the queue**, and hand-patching
       the sha (13 such commits on `main` in one 8-day window) buys only the
@@ -590,7 +781,15 @@ ephemeral.
     > |---|---|
     > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
     > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
-    > | Copilot review | Still expected — this is the one review to wait on. |
+    > | Copilot review | **Does not arrive.** Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+    >
+    > **🛑 So the Phase-4 gate table now has ZERO live external gates, not
+    > one.** All three original gates are gone. The agent's own verification
+    > is not the last gate standing — it is the *only* gate. Act accordingly:
+    > state the verification you actually ran, and do **not** wait on Copilot.
+    > `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a
+    > check run that is never created; that wait can only expire, so skip it
+    > and record why (citing `qou-gwe9`) rather than burning the window.
     >
     > **Phase-4 verification gate (replaces "CI green").** Because CI
     > is unavailable, the agent's own verification *is* the gate — this
@@ -1141,12 +1340,28 @@ ask whether a **formalizable structural claim prunes the class first**:
 This is the **forward** complement to the corpus-grep checklist above
 (which prunes *backward* against already-known results). Worked
 precedents where one structural argument killed an entire numerical
-family this session: `dc_3/dq ≈ 4.6e6` impossible for smooth real `f`
+family this session: `dc_3/dq ≈ 3.84e6` impossible for smooth real `f`
 (kills the real-q c_3 family, [PR #1821](https://github.com/litlfred/qou/pull/1821));
 the PSLQ entropy bound `precision > n_terms·log10(2·height)` (kills the
 12-constant basis, [PR #1805](https://github.com/litlfred/qou/pull/1805));
 A is ~4 sig figs from `c_2..c_10` (no high-precision identification
 possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
+
+> **Figure corrected 2026-08-22 — the conclusion is untouched.** This read
+> `≈ 4.6e6` here and in five other places. That value is the **stale-c₃
+> twin** of the "≈ 3 %" swing this document already corrects two sections
+> up: both were computed from the pre-#1422 muon `c_3 = -2.0097` and its
+> 2.88 % swing, and both should have been re-derived at the same time.
+> With the live anchors (`c_3(p) = -2.0693425728`, `c_3(μ) =
+> -2.0202002328`, `Δq = 1.28e-8`) three independent routes agree:
+> **3.8375e6** by secant, **3.8320e6** from `2.37/u³` at `u = 0.00852`,
+> and `3838404.458` recorded in `rem-qstar`'s own witness as
+> `S_prime_qstar`. Reaching 4.7e6 would need `u = 0.0079595`. Since
+> 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
+> **prune stands and the real-q c₃ family stays killed** — only the
+> quoted magnitude was wrong. The five other sites are audit docs and
+> `local/compute-author` §precedent-table; tracked in `qou-3nva`.
+
 **Caveat:** if the formalization is harder than the probe AND the probe
 is cheap and decisive, just run the probe — this rule targets
 wide/expensive searches, not every one-off check. Full protocol +
@@ -1213,7 +1428,7 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
-> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
+> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
 
 The derivation chain:
 
@@ -1290,7 +1505,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -1328,6 +1543,21 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   five. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
   **never** bare `beats_100x_count`. Full analysis:
   [`docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md`](docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md).
+- **🛑 Even the 1/5 is inflated — the UNCONDITIONAL parameter-free count is
+  0/5 (red-team 2026-08-22).** The single "scoreable win" `m_K/m_π` is itself
+  **not** a parameter-free prediction. Its derived core `√([3]_q·[4]_q)` (a
+  legitimate ~0.1 % categorical postdiction of the strong ratio) misses this
+  observable's own — unusually loose, 264 ppb — 100× target by **385×** on its
+  own; the sub-100× result is manufactured by an EM correction
+  `(α_em/π)·(3q²−1)/(2q²)` whose **truncation order beats the untruncated
+  series** (chosen against the data — the same fit signature the `c_k` red-team
+  caught) and whose `α_em` input is **conditional on an open Lean `sorry`**
+  (Witten-κ Gram determinant). So `beats_100x_scoreable = 1` is the dashboard's
+  arithmetic metric; the count of **unconditional, parameter-free** sub-100×
+  predictions is **0**. State it as "1/5 scoreable — and that 1 is
+  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/5 unconditional**". Full
+  analysis:
+  [`docs/audits/2026-08-22-mK-mpi-l2-red-team.md`](docs/audits/2026-08-22-mK-mpi-l2-red-team.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
@@ -1475,10 +1705,20 @@ Do not regress either.
 >   `main` 2026-08-16 — **7 files** returned `1/(√q + 1/√q)`, which is
 >   `√q/(q+1) = z_C` *exactly* (`0.49932…` against D's `0.61268…`).
 >
->   **Status 2026-08-16.** The detector now scans return forms, and those seven
->   are migrated, so *that* spelling is closed: the only return-form C site left
->   in the tree is `pyhecke/gram.py:634` (`z_mp`), which is registered and
->   R10-waived. **The posture does not change.** Closing one shape does not
+>   **Status 2026-08-16, corrected 2026-08-24.** The detector now scans return
+>   forms, and those seven are migrated, so *that* spelling is closed. This then
+>   named `pyhecke/gram.py:634` (`z_mp`) as **the only return-form C site left in
+>   the tree** — stale in both coordinates by the time it was written. `z_mp` is
+>   at **line 645** and is **convention D**: its docstring reads *"z = q³/(q² + 1)
+>   … MIGRATED 2026-08-16 (bean `qou-cds2`)"*, and the module's `_Z_FRAC =
+>   _Q_FRAC**3 / (_Q_FRAC**2 + 1)` is D arithmetic. The paragraph was stamped the
+>   same day as the migration, which is presumably how they crossed.
+>
+>   **Do NOT read that as "the return-form surface is clear."** The named instance
+>   is retired; the count is not. Re-run 2026-08-24, the detector still reports
+>   **1 site in `tools/pyhecke` as "C with NO registry row (unexplained)"**, and
+>   this correction did **not** identify it — so one pyhecke site remains
+>   unaccounted for. **The posture does not change.** Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
 >   catalogues **thirteen** distinct detector-blind spellings, four of which were
@@ -1498,10 +1738,21 @@ Do not regress either.
 >   cannot be stale, mislabelled, re-spelled, or inherited from a stale record
 >   and still factor correctly.
 >
->   Two live examples of why the count is not the answer: `pyhecke/atom.py:691`
->   binds a C `z_mark` consumed at `:713`, in a module no waiver covers; and a
->   *declared* site is not a fixed one — the audit's `DECLARED C in
->   evaluators.z, R10-waived` bucket stays **actionable** by design.
+>   Two examples of why the count is not the answer. The first has since
+>   **moved, and is recorded because the moving is the point**: this named
+>   `pyhecke/atom.py:691` binding a C `z_mark` consumed at `:713`. Measured
+>   2026-08-24, `z_mark` occurs **once** in that file, at **line 720**, and it is
+>   a **comment** — `#   local  z_mark = 1/(q^½ + q^-½) = 0.4993203  ← convention
+>   **C**` — so there is no binding for a waiver to cover, and an AST-verified
+>   detector cannot see it at all. Whether the binding was migrated or merely
+>   re-spelled is **not** settled here. Second, a *declared* site is not a fixed
+>   one — the audit's `DECLARED C in evaluators.z, R10-waived` bucket stays
+>   **actionable** by design.
+>
+>   Three named instances in this one section have now gone stale between being
+>   written and being read (`z_mp`, `z_mark`, and the `y_lambda_at` trap two
+>   sections down). That rate is itself the argument for the posture above:
+>   **cite the rule, re-measure the instance.**
 > - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
 >   immediately below; nothing in that directive changes. The *ideal CAL-2
 >   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin
@@ -1533,22 +1784,72 @@ Do not regress either.
 > **Never straddle the two layers inside one quantity.** Mixing an
 > ideal-layer input with an experimental-layer input in a single computed
 > number is a defect regardless of its size. Worked example + measurement:
-> the μ₃ Fréchet probe took `y_λ` from the muon-built cache while
+> the μ₃ Fréchet probe took `y_λ` from the then-muon-built cache while
 > evaluating `χ_λ` at the proton `q₀` — an 11.54 ppb layer separation (=
 > the μ–p substrate tension itself), ~1e-7 relative on the result. See
 > [`computations/deltalambda/mu3_anchor_consistency_probe.py`](computations/deltalambda/mu3_anchor_consistency_probe.py)
 > and [`docs/audits/2026-08-07-mu3-door-status-consolidated.md` §4ter](docs/audits/2026-08-07-mu3-door-status-consolidated.md).
+> *"then-"* is load-bearing: that cache was re-derived and re-pinned to proton
+> in the 2026-08-09 convention-D cascade, so the incident is history and the
+> **discipline** is what generalises. See the closed-case note below.
 >
-> **The specific trap that caused it (check your call sites).**
-> `wedderburn_jones_markov.y_lambda_at(n, q)` returns the cached
-> **muon-built** `y-lambda-at-q0.witness.json` whenever
-> `|q − q_parameter.Q| < 1e-12` — a gate satisfied **trivially** when the
-> caller passes `q_parameter.Q` itself. So the ideal-layer cache reaches an
-> experimental-layer caller with **no signal that a layer boundary was
-> crossed**. For experimental-anchor compute call
-> `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q)` (live closed form)
-> instead. Audit any other cached-witness accessor with the same
-> "matches the package constant ⇒ serve the cache" shape.
+> **The shape to check for (the rule; its named instance is now closed).**
+> A cached-witness accessor that serves precomputed data **when the caller's
+> `q` matches the value the cache was built at** is a straddle waiting to
+> happen: that gate is satisfied *trivially* when the caller passes the package
+> constant itself, so an ideal-layer cache reaches an experimental-layer caller
+> with **no signal that a layer boundary was crossed**. Audit any accessor with
+> that shape.
+>
+> **🛑 The instance this rule used to name — `y_lambda_at` — no longer has the
+> shape (corrected 2026-08-23, bean `qou-c1ya`/`qou-vu19`).** This paragraph
+> read *"`wedderburn_jones_markov.y_lambda_at(n, q)` returns the cached
+> muon-built `y-lambda-at-q0.witness.json` whenever `|q − q_parameter.Q| <
+> 1e-12`"* and told you to call `y_lambda_at_q0_mpmath` instead. **That
+> describes pre-2026-08-09 behaviour.** Read at the body rather than the
+> docstring — the live function is five statements:
+>
+> ```python
+> if q_val is not None:
+>     return y_lambda_su_n(n, mpf(str(q_val)), 2)   # the CALLER's q
+> return y_lambda_su_n_symbolic(n, Q_SYM, 2)        # symbolic, anchor-free
+> ```
+>
+> No `.witness.json` anywhere in it, and `y_lambda_su_n` is read-only
+> ("writes no witness, runs no producer") — the whole call cone is cache-free.
+> The gate and the cache load moved into
+> `_y_lambda_at_convention_C_HISTORICAL`, which is **dead** (convention C,
+> excised 2026-08-09). So `y_lambda_at` is **anchor-neutral**: calling it says
+> nothing about a producer's layer.
+>
+> **Do not "fix" call sites on the strength of the old wording.** Measured
+> cost of trying: promoting `y_lambda_at` to a muon *identifier* check in
+> `q0_producer_pin_classifier` — which is exactly what the old paragraph
+> invites — reclassified **56 producers** from `proton` to `BOTH`, and `BOTH`
+> shields a producer from triage as a possible deliberate comparison. It would
+> have hidden 56 clean files behind an association the code no longer has.
+> `y_lambda_at` has been removed from that classifier's `MUON_ARTIFACTS`.
+>
+> **The rule above still stands, and has been measured: zero live instances.**
+> [`computations/audits/cached_accessor_shape_audit.py`](computations/audits/cached_accessor_shape_audit.py)
+> keys on **provenance** (a name assigned from a file read, at module level or
+> via `global` in a loader) rather than on a list of constant names, and
+> requires the gate to involve a **caller argument** — without that it returns
+> 34, almost all plain memoisation. Its `--selftest` fails unless the known
+> dead positive is detected, so a future narrowing cannot report a clean tree
+> the way a name-keyed version did. Current result: **2 hits, both the dead
+> historical function and its generated `qou-mass/_internal/` mirror.**
+>
+> **The μ₃ Fréchet incident above is unaffected** — 11.54 ppb, `y_λ` from the
+> muon-built cache against `χ_λ` at the proton `q₀`, is a real measured
+> straddle and the reason the rule exists. Only the *mechanism* has changed.
+>
+> **Two producers bypass the accessor and read the cache file directly** —
+> `probe_theta_carry_binding.py` and `delta_lambda_empirical_tabulation.py`.
+> They get D-at-proton, which is correct; noting them so a future reader does
+> not conclude the accessor is the only path to that file.
+> Independent evidence for the same correction:
+> [`docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md`](docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md).
 
 The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:
@@ -1576,7 +1877,7 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.06 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to

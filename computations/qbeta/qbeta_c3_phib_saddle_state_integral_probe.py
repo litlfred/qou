@@ -50,8 +50,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from qbeta_c3_barodd_gluing_newton_solve import vol_of_m  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 # Evaluate the transcendentals inside an explicit high-precision context so they
 # cannot silently truncate to a stale default dps (Gemini review).
 with mp.workdps(50):

@@ -10,7 +10,7 @@
       "expected": -0.75,
       "passed": true,
       "tolerance": 1e-15,
-      "source": "Borromean Markov trace tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶) / (h² + 4) Taylor-expands to 1 + 0·h² − (3/4)·h⁴ − (1/16)·h⁶ + ...  The h⁴ coefficient extracted numerically from the closed form equals exactly −3/4."
+      "source": "Borromean Markov trace tr_M(\u03b2_Bor) = (4 + h\u00b2 \u2212 3h\u2074 \u2212 h\u2076) / (h\u00b2 + 4) Taylor-expands to 1 + 0\u00b7h\u00b2 \u2212 (3/4)\u00b7h\u2074 \u2212 (1/16)\u00b7h\u2076 + ...  The h\u2074 coefficient extracted numerically from the closed form equals exactly \u22123/4."
     },
     {
       "name": "wenzl_weight_y_2_1_at_q_one_equals_quarter",
@@ -18,7 +18,7 @@
       "expected": 0.25,
       "passed": true,
       "tolerance": 1e-15,
-      "source": "From the Frobenius expansion: h⁴-coeff(tr_M) = −3·y_{(2,1)}(0) since χ^{(2,1)}(β_Bor) at h⁴ is −3 (per T15) and the (3), (1³) contributions have no h⁴ correction (χ^{(3)}=χ^{(1³)}=1 exactly).  Solving −3·y_{(2,1)}(0) = −3/4 gives y_{(2,1)}(0) = 1/4."
+      "source": "From the Frobenius expansion: h\u2074-coeff(tr_M) = \u22123\u00b7y_{(2,1)}(0) since \u03c7^{(2,1)}(\u03b2_Bor) at h\u2074 is \u22123 (per T15) and the (3), (1\u00b3) contributions have no h\u2074 correction (\u03c7^{(3)}=\u03c7^{(1\u00b3)}=1 exactly).  Solving \u22123\u00b7y_{(2,1)}(0) = \u22123/4 gives y_{(2,1)}(0) = 1/4."
     },
     {
       "name": "wenzl_weight_equals_inverse_q_2_squared_at_q_one",
@@ -26,7 +26,7 @@
       "expected": 0.25,
       "passed": true,
       "tolerance": 1e-15,
-      "source": "1/[2]_q²|_{q=1} = 1/(q + q⁻¹)²|_{q=1} = 1/4 = Markov normalization factor for 3-component link closure. The (h² + 4) denominator in tr_M(β_Bor) IS [2]_q² in h-coordinates."
+      "source": "1/[2]_q\u00b2|_{q=1} = 1/(q + q\u207b\u00b9)\u00b2|_{q=1} = 1/4 = Markov normalization factor for 3-component link closure. The (h\u00b2 + 4) denominator in tr_M(\u03b2_Bor) IS [2]_q\u00b2 in h-coordinates."
     },
     {
       "name": "closed_form_wenzl_markov_sum_equals_one",
@@ -34,7 +34,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 1e-15,
-      "source": "Σ_λ y_λ(1)·d_λ = tr_M(1_3) = 1 (Markov normalization for the identity braid) with the CLOSED-FORM weight vector (y_(3), y_(2,1), y_(1³))|_{q=1} = (1/2, 1/4, 0) and d_λ = (1, 2, 1): 1·(1/2) + 2·(1/4) + 1·0 = 1. CORRECTED from the original uniform (1/4,1/4,1/4) claim — the Jones trace is chiral; see prop:h3-markov-wenzl-weights."
+      "source": "\u03a3_\u03bb y_\u03bb(1)\u00b7d_\u03bb = tr_M(1_3) = 1 (Markov normalization for the identity braid) with the CLOSED-FORM weight vector (y_(3), y_(2,1), y_(1\u00b3))|_{q=1} = (1/2, 1/4, 0) and d_\u03bb = (1, 2, 1): 1\u00b7(1/2) + 2\u00b7(1/4) + 1\u00b70 = 1. CORRECTED from the original uniform (1/4,1/4,1/4) claim \u2014 the Jones trace is chiral; see prop:h3-markov-wenzl-weights."
     },
     {
       "name": "borromean_reproduction_from_closed_form_weights",
@@ -42,7 +42,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-15,
-      "source": "The closed-form weights y_(3) = [4]_q/[2]_q³, y_(2,1) = 1/[2]_q², y_(1³) = 0 reproduce tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶)/(h² + 4) exactly at sample q = 1.3 (independent verification of prop:h3-markov-wenzl-weights)."
+      "source": "The closed-form weights y_(3) = [4]_q/[2]_q\u00b3, y_(2,1) = 1/[2]_q\u00b2, y_(1\u00b3) = 0 reproduce tr_M(\u03b2_Bor) = (4 + h\u00b2 \u2212 3h\u2074 \u2212 h\u2076)/(h\u00b2 + 4) exactly at sample q = 1.3 (independent verification of prop:h3-markov-wenzl-weights)."
     }
   ],
   "allPassed": true,
@@ -63,7 +63,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "GAP-A-4 T18 — Markov-trace normalization closes the categorical chain. Derives y_{(2,1)}(q=1) = 1/4 = 1/[2]_q²|_{q=1} from the Frobenius expansion + closed-form h⁴ = −3/4 + T15 polynomial χ^{(2,1)} = 2 − 3h⁴ − h⁶. Identifies 1/4 as the Markov normalization factor for 3-component Borromean link closure. Combined with T17 R-matrix derivation of χ^{(2,1)}, the Borromean h⁴ = −3/4 = (−3)·(1/4) is now derived from first principles within H_3.",
+  "description": "GAP-A-4 T18 \u2014 Markov-trace normalization closes the categorical chain. Derives y_{(2,1)}(q=1) = 1/4 = 1/[2]_q\u00b2|_{q=1} from the Frobenius expansion + closed-form h\u2074 = \u22123/4 + T15 polynomial \u03c7^{(2,1)} = 2 \u2212 3h\u2074 \u2212 h\u2076. Identifies 1/4 as the Markov normalization factor for 3-component Borromean link closure. Combined with T17 R-matrix derivation of \u03c7^{(2,1)}, the Borromean h\u2074 = \u22123/4 = (\u22123)\u00b7(1/4) is now derived from first principles within H_3.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T9-T14-followup-retrospective.md",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
@@ -97,8 +97,11 @@
       "markov_sum_equals_one": true,
       "tl_quotient_identity_residual": "0.0",
       "borromean_reproduction_diff": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
-      "correction_note": "Original T18d claimed uniform weights (1/4, 1/4, 1/4) via bar-involution; WRONG — Jones trace is chiral. Corrected to (1/2, 1/4, 0) per prop:h3-markov-wenzl-weights. Caught by review on PR #2191."
+      "correction_note": "Original T18d claimed uniform weights (1/4, 1/4, 1/4) via bar-involution; WRONG \u2014 Jones trace is chiral. Corrected to (1/2, 1/4, 0) per prop:h3-markov-wenzl-weights. Caught by review on PR #2191."
     },
-    "synthesis_verdict": "T18 CLOSES THE CATEGORICAL CHAIN within H_3 for the Borromean h⁴ = −3/4: combining T17's R-matrix derivation of χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶ with T18's Markov-normalization derivation of y_{(2,1)}(q=1) = 1/4 = 1/[2]_q²|_{q=1} gives h⁴(tr_M) = (−3) · (1/4) = −3/4 from first principles.  The factor 1/4 is structurally the Markov-trace normalization for c=3-component link closure: tr_M = V_{Jones} / [2]_q^{c−1}, and (h² + 4) = [2]_q² is exactly the denominator in the closed form tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶) / (h² + 4).  All five assertions pass.  IMPORTANT SCOPE: this closes the WITHIN-H_3 categorical chain (3-strand side of the Borromean story); it does NOT resolve the CROSS-ALGEBRA h⁴ obstruction linking 5-strand A_5 fiber action to 3-strand H_3 — that was the original GAP-A-4 question and remains open per the T4-T14 retrospective."
-  }
+    "synthesis_verdict": "T18 CLOSES THE CATEGORICAL CHAIN within H_3 for the Borromean h\u2074 = \u22123/4: combining T17's R-matrix derivation of \u03c7^{(2,1)}(\u03b2_Bor) = 2 \u2212 3h\u2074 \u2212 h\u2076 with T18's Markov-normalization derivation of y_{(2,1)}(q=1) = 1/4 = 1/[2]_q\u00b2|_{q=1} gives h\u2074(tr_M) = (\u22123) \u00b7 (1/4) = \u22123/4 from first principles.  The factor 1/4 is structurally the Markov-trace normalization for c=3-component link closure: tr_M = V_{Jones} / [2]_q^{c\u22121}, and (h\u00b2 + 4) = [2]_q\u00b2 is exactly the denominator in the closed form tr_M(\u03b2_Bor) = (4 + h\u00b2 \u2212 3h\u2074 \u2212 h\u2076) / (h\u00b2 + 4).  All five assertions pass.  IMPORTANT SCOPE: this closes the WITHIN-H_3 categorical chain (3-strand side of the Borromean story); it does NOT resolve the CROSS-ALGEBRA h\u2074 obstruction linking 5-strand A_5 fiber action to 3-strand H_3 \u2014 that was the original GAP-A-4 question and remains open per the T4-T14 retrospective."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

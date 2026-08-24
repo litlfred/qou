@@ -15,19 +15,36 @@ whether it is small. `gram.py` says this at length (lines ~100-155):
 under the live convention the Gram is singular, f64 cannot see it
 (`|lambda_min| = 3.9e-17` even driven at 60 dps through that module's
 NF path), and `np.linalg.inv` returns entries up to 7.6e15 with
-`||G G_inv - I|| = 1.64` while raising nothing.
+`||G G_inv - I||_max = 1.64` (4.14 Frobenius) while raising nothing.
 
 So this script carries its own `Q(q)`: `fractions.Fraction`
 coefficients, polynomial gcd cancellation, canonical normal form. `==
 0` is a decision, not a threshold. It is pure standard library and
 runs anywhere.
 
-That also means it emits no `*.witness.json`: `WitnessBuilder` pulls
-in `qou_substrate.precision` -> `mpmath`, which is not importable in
-the environment this was authored in. The results file it writes is
-named `.results.json` and is deliberately NOT in the witness
-namespace. Registering these findings as a witness is follow-up work
-for an environment with the numeric stack present.
+## Witness emission (2026-08-22)
+
+The **arithmetic** stays stdlib-only for the reason above; only the
+*reporting* uses `WitnessBuilder`, which is a JSON writer and touches
+no number this script computes. Every value it emits is a `repr()` of
+a `Fraction`-backed polynomial or a bool, so nothing enters float64.
+
+Until 2026-08-22 this script wrote a `.results.json` outside the
+witness namespace, with a note saying `WitnessBuilder` pulls in
+`qou_substrate.precision -> mpmath`, "not importable in the
+environment this was authored in". **That was wrong.** `mpmath`,
+`numpy`, `sympy` and `scipy` all install from PyPI here, and
+`pyhecke` imports given its sibling paths. Bean `qou/k4f8` carried
+witness registration as blocked on it for six days. A missing path
+read as a missing capability — twice in the same bean.
+
+`q0Anchor` is declared **`independent`**: this computation never
+reads `q_0`. It is the whole point of stage 2 (see "Why symbolic
+before numeric" in `qou/k4f8`) — a numeric check at a pinned `q_0`
+cannot distinguish "the certificate exists" from "the certificate
+exists at this `q_0`", and the sign condition can change across `q`.
+`resolve_q0_anchor` cannot infer `independent` from a manifest, so
+the producer has to say so.
 
 ## What it establishes
 
@@ -66,11 +83,18 @@ firing on a structural identity, not on noise.
 """
 from __future__ import annotations
 
-import json
+import sys
 from fractions import Fraction as F
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+
+# Reporting only — the arithmetic below is `fractions.Fraction`
+# throughout and imports nothing from here. Kept after `HERE` so the
+# path bootstrap has somewhere to point.
+sys.path.insert(0, str(HERE))
+import _path_bridge  # noqa: F401, E402
+from witness_base import Assertion, WitnessBuilder  # noqa: E402
 
 
 # ══════════════════════════════════════════════════════════════
@@ -491,36 +515,79 @@ def main() -> int:
            "not an artifact of the LP formulation.")
 
     ok = all(c["ok"] for c in checks)
-    out = {
-        "computation": "operator-selection-lp-symbolic-qq",
-        "bean": "qou/k4f8",
-        "content_block": "prop:operator-selection-lp",
-        "field": "Q(q) — exact, fractions.Fraction, no floating point",
-        "note": ("Not a *.witness.json: WitnessBuilder requires mpmath, "
-                 "unavailable in the authoring environment. Registering "
-                 "these findings as a witness is follow-up work."),
-        "h3": {
-            "d": 6,
-            "basis": [list(w) for w in NF_BASIS],
-            "names": NF_NAMES,
-            "t": [repr(x) for x in t],
-            "G": [[repr(G[i][j]) for j in range(6)] for i in range(6)],
-            "det_G": repr(dG),
-            "rank": rank,
-            "radical": v_str,
-            "one_dot_radical": repr(one_v),
-            "y_0_forced": "0  (for every q != 1)",
-            "certificate": {"y_0": "0", "s": [repr(x) for x in e0]},
-            "x_star": [repr(x) for x in x_star],
-            "optimal_value": "0",
-        },
-        "h2": {"d": 2, "det_G": repr(d2), "nullity": len(kernel(G2))},
-        "checks": checks,
-        "all_passed": ok,
-    }
-    path = HERE / "operator-selection-lp-symbolic-qq.results.json"
-    path.write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
-    print(f"\nWrote {path.name}")
+
+    # ── Witness ───────────────────────────────────────────────────
+    # Reporting only. Every value below is a `repr()` of a
+    # Fraction-backed polynomial, a bool, or a small int — nothing
+    # reaches float64, which is what `_check_raw_float64` enforces
+    # and what the whole point of this script requires.
+    w = WitnessBuilder("operator-selection-lp-symbolic-qq", engine="python")
+    w.set_content_block("prop:operator-selection-lp")
+    w.set_description(
+        "Dual-certificate existence for the operator-selection LP, exact in "
+        "Q(q). Bean qou/k4f8 stage 2. Self-contained rational-function "
+        "arithmetic (fractions.Fraction, polynomial gcd, canonical normal "
+        "form) — no numpy, mpmath or pyhecke in the computation, because the "
+        "question turns on whether det G is ZERO rather than small: gram.py "
+        "records |lambda_min| = 3.9e-17 through its NF path at 60 dps, and "
+        "np.linalg.inv returning ||G G_inv - I|| = 1.64 without raising. "
+        "For H_3(q) (d = 6): t is row 0 of G structurally (b_0 = 1), "
+        "det G = 0 identically, rank 5, radical v ~ (-1/q)^len(w_i) — the "
+        "q-antisymmetriser — and <1, v> = -(q-1)(q^2-q+1) is nonzero for "
+        "every q != 1, so y_0 = 0 is FORCED for every dual-feasible (y_0, s). "
+        "The certificate y_0 = 0, s = e_0 exists and is unique for q > 0; the "
+        "optimum is attained on the radical with objective 0 and every "
+        "Frobenius constraint tight. For H_2(q) the Gram is non-singular, so "
+        "the degeneracy is a fact about H_3 rather than about how the LP was "
+        "written down. Each assertion names the Lean hypothesis it discharges "
+        "in operator_selection_lp.lean, so the two sides can be audited "
+        "against each other."
+    )
+    for c in checks:
+        extra = {"detail": c["detail"]}
+        if c["lean"]:
+            extra["lean"] = c["lean"]
+        w.assertions.append(Assertion(
+            c["key"], computed=str(c["ok"]), expected="True", extra=extra,
+        ))
+    w.add_parameter("field", "Q(q) — exact, fractions.Fraction, no float64")
+    w.add_parameter("h3_d", 6)
+    w.add_parameter("h2_d", 2)
+    w.add_data("h3", {
+        "basis": [list(word) for word in NF_BASIS],
+        "names": NF_NAMES,
+        "t": [repr(x) for x in t],
+        "G": [[repr(G[i][j]) for j in range(6)] for i in range(6)],
+        "det_G": repr(dG),
+        "rank": rank,
+        "radical": v_str,
+        "one_dot_radical": repr(one_v),
+        "y_0_forced": "0  (for every q != 1)",
+        "certificate": {"y_0": "0", "s": [repr(x) for x in e0]},
+        "x_star": [repr(x) for x in x_star],
+        "optimal_value": "0",
+    })
+    w.add_data("h2", {"det_G": repr(d2), "nullity": len(kernel(G2))})
+    w.add_data("lean_companion", (
+        "content/quantum-observable-universe/lean/QOU/ParticleInteractions/"
+        "operator_selection_lp.lean"))
+    w.add_caveat(
+        "Exact in Q(q) and therefore says nothing about any pinned q_0 that "
+        "a numeric solve would use — deliberately. The committed f64 solves "
+        "(a-K-via-lp-dual-full, a-K-via-lp-dual-hecke-basis) agree: y0_star "
+        "= -0.0, y_star = e_0, dual_obj = 0."
+    )
+    w.add_caveat(
+        "y_0 = 0 being ATTAINED needs only t = G e_0 (the basis contains the "
+        "identity), not the radical — see dualCertificateExists_of_cost_eq_"
+        "gram_row, whose sole hypothesis is ht. The radical is what upgrades "
+        "attained to FORCED, which is what y_0_eq_zero_of_radical proves and "
+        "what this script establishes for H_3. Bean qou/augu found 14 of the "
+        "57 committed witnesses carrying a y0_star report it zero, twelve "
+        "with the e_0 certificate, including one whose Gram is invertible."
+    )
+    path = w.save({"q0Anchor": "independent"})
+    print(f"\nWrote {Path(path).name}")
     print(f"{sum(1 for c in checks if c['ok'])}/{len(checks)} checks passed")
     return 0 if ok else 1
 

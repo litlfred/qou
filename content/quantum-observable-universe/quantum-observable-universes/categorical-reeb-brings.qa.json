@@ -1179,6 +1179,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.619Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1198,6 +1213,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.659Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "trap-em-dash": [
@@ -1217,6 +1247,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.699Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "trap-triples": [
@@ -1236,6 +1281,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.737Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "trap-closing-aphorism": [
@@ -1255,6 +1315,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.773Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "trap-meta-commentary": [
@@ -1274,6 +1349,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.811Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "trap-thesis-restatement": [
@@ -1293,6 +1383,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.848Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "trap-performed-warmth": [
@@ -1312,6 +1417,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.884Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "trap-superlative": [
@@ -1331,6 +1451,22 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.920Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "'precisely matching the fundamental modes' is the block's only strength claim, so it fails the density test for this category. Reported to the caller as an unquantified claim rather than a trap: eight cycles splitting into just two eigenspaces (weights +1 and -1) gives two eigenvalues, and 'fundamental modes' is defined -- if at all -- in def:categorical-reeb-derivation as one mode per eigenvalue of \\xi_q, so what is 'precisely matching' what is not stated."
       }
     ],
     "trap-nonspeakable": [
@@ -1350,6 +1486,21 @@
         "reviewed_at": "2026-08-15T10:30:59.915Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "aab5bdb840ae",
+          "ts": "559c487296f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:14.957Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: example block, interprets: thm:categorical-reeb-exists (not dangling), nine sentences constructing \\xi = e_3 and \\varTheta_A = \\omega_3 on \\mathcal{O}_q(\\mathrm{SU}(2)) via the Woronowicz 3D calculus. All ten trap categories checked; none fires. trap-superlative considered on 'precisely matching the fundamental modes' and PASSED on density (single instance, minor category), though the claim is unquantified -- see notes. VERIFIED NUMERICS: Bring's curve has genus g = 4 with automorphism group S_5, so '8 = 2g independent cycles' and the S_5-equivariance are both correct."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1372,5 +1523,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:02:14.957Z"
 }

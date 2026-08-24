@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0503213v2
-doc_title: "A topological model of composite preons Sundance O. Bilson-Thompson ∗"
+doc_title: "A topological model of composite preons"
 section_id: sec-001-ii-the-helon-model
 section_title: "THE HELON MODEL"
 section_number: II
 pages: 1-2
 source_pdf: 0503213v2.pdf
 source_sha256: 637a9e53b9b30776
-doc_brief: "A topological model of composite preons Sundance O. Bilson-Thompson ∗ — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
+doc_brief: "A topological model of composite preons — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
 ---
 vestigation of such issues will be undertaken in subse-
 quent work, however they are beyond the scope of the

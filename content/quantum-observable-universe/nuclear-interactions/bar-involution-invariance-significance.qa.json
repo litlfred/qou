@@ -936,6 +936,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:25.840Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -955,6 +972,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:25.878Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -974,6 +1008,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:25.915Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -993,6 +1044,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:25.952Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "'Any normal form, mass formula, or LP cost vector must satisfy them' enumerates the three artifact classes the invariance is used to test - substantive, matching the block's stated role as a witness test."
       }
     ],
     "trap-closing-aphorism": [
@@ -1012,6 +1080,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:25.989Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "Final line 'Failure signals a chirality bias incompatible with the symmetric-crystal substrate' states the diagnostic consequence (what a failed test means), which is the block's payload, not a manufactured quotable."
       }
     ],
     "trap-meta-commentary": [
@@ -1031,6 +1116,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:26.025Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1050,6 +1152,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:26.062Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1069,6 +1188,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:26.099Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1088,6 +1224,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:26.135Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1107,6 +1260,23 @@
         "reviewed_at": "2026-08-15T10:31:01.375Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "31fb41e82310",
+          "ts": "35af99942a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:26.173Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bar-involution-invariance-significance (3 sentences, one section). All ten categories judged on the whole text.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1129,5 +1299,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:52:26.173Z"
 }

@@ -222,6 +222,10 @@ interface Hit {
   /** When true the hit is recorded but does NOT count as a defect. */
   exempt?: boolean;
   exempt_reason?: string;
+  /** Set when a `triage pending` exemption was lifted because the review
+   * ledger already carries an agent verdict of `genuine` for this key. Carries
+   * the exemption that was superseded, so the promotion stays auditable. */
+  promoted_from_exempt?: string;
   /** Extra human-readable context for the witness/evidence (e.g. which
    * claimed properties went unencoded). */
   detail?: string;
@@ -1113,6 +1117,131 @@ const ANON_RFL_BODY = /^(?:by\s+exact\s+)?⟨[^⟨⟩]*,\s*rfl⟩$/;
 /** A binder type that looks like a proposition rather than data. */
 const PROP_SHAPED = /[=≤<≥>≠∈∣]|↔|→|∧|∨|¬|Odd\b|Even\b|Prime\b/;
 
+const BINDER_OPEN: Record<string, string> = {
+  "(": ")",
+  "{": "}",
+  "[": "]",
+  "⦃": "⦄",
+};
+
+interface Binder {
+  names: string[];
+  type: string;
+  /** `(…)` — the only kind whose non-use is evidence of decoration. */
+  explicit: boolean;
+}
+
+/**
+ * Every binder in a signature head, at any nesting depth.
+ *
+ * Replaces a regex that admitted exactly ONE level of parentheses inside a
+ * binder's type:
+ *
+ *     /\(\s*([^():]+?)\s*:\s*([^()]*(?:\([^()]*\)[^()]*)*)\)/g
+ *
+ * A hypothesis nesting two deep did not match, so the binder was **dropped
+ * silently** — indistinguishable, in the output, from a signature that binds
+ * nothing. `knot_factor_amphicheiral` (`QOU/BraidKnot/KnotFactorAmphicheiral.lean`)
+ * is the case that exposed it: its `_off_block_norm` hypothesis is
+ *
+ *     (β.partitions.toList.filter (· ≠ altPartition)).foldl
+ *       (fun acc μ => acc + β.weight μ * (β.c μ / β.trivial μ) ^ 2) 0
+ *     = 1 - β.weight altPartition
+ *
+ * — `(β.c μ / β.trivial μ)` inside `(fun acc μ => …)` is two deep. The binder
+ * was invisible, so `proof-no-unused-hypothesis-rfl` reported nothing on a
+ * declaration proved `⟨_, rfl⟩` with an underscored unused hypothesis: the
+ * exact shape it exists to catch.
+ *
+ * The bias is not neutral. It ran against the most elaborate statements,
+ * which are the ones most likely to be hiding a tautology behind
+ * decoration. `scripts/lean-self-assuming-audit.py` carried the identical
+ * defect and was fixed the same way (bean `qou/q407`, 2026-08-21); the two
+ * implementations reached it independently, which is the argument for
+ * balanced scanning over regex here rather than a wider regex.
+ */
+function parseBinders(head: string): Binder[] {
+  const out: Binder[] = [];
+  let i = 0;
+  while (i < head.length) {
+    const close = BINDER_OPEN[head[i]];
+    if (!close) {
+      i++;
+      continue;
+    }
+    // Scan to the matching closer, counting every delimiter kind.
+    const open = head[i];
+    let depth = 0;
+    let j = i;
+    for (; j < head.length; j++) {
+      const c = head[j];
+      if (BINDER_OPEN[c]) depth++;
+      else if (c === ")" || c === "}" || c === "]" || c === "⦄") {
+        depth--;
+        if (depth === 0) break;
+      }
+    }
+    if (j >= head.length) break; // unbalanced — stop rather than guess
+    const inner = head.slice(i + 1, j);
+    i = j + 1;
+    // Split at the FIRST `:` outside any nested group; `:=` and `::` are not it.
+    let d2 = 0;
+    let colon = -1;
+    for (let k = 0; k < inner.length; k++) {
+      const c = inner[k];
+      if (BINDER_OPEN[c]) d2++;
+      else if (c === ")" || c === "}" || c === "]" || c === "⦄") d2--;
+      else if (c === ":" && d2 === 0 && inner[k + 1] !== "=" && inner[k - 1] !== ":") {
+        colon = k;
+        break;
+      }
+    }
+    if (colon < 0) continue; // `[Field R]`-style anonymous instance binder
+    const names = inner
+      .slice(0, colon)
+      .trim()
+      .split(/\s+/)
+      .filter((n) => /^_?[a-zA-Z_][\w']*$/.test(n) || n === "_");
+    if (names.length === 0) continue;
+    out.push({
+      names,
+      type: inner.slice(colon + 1).replace(/\s+/g, " ").trim(),
+      explicit: open === "(",
+    });
+  }
+  return out;
+}
+
+/**
+ * `-- vacuous-by-design: <reason>` immediately above a declaration.
+ *
+ * Some vacuous statements are deliberate and the vacuity IS the content —
+ * `qou_standardPart_image_exists` (`QOU/AppendixSurreals/Conjectures.lean`)
+ * records that a conjunct of the original `VacuumEpsilon` conjecture was
+ * provable for every `SQ`, so the surviving conjecture asserts only what is
+ * irreducibly open, and it is *used* to rebuild the wider statement.
+ *
+ * Such a hit is emitted EXEMPT — tracked, in the ledger, never dropped. A
+ * check that silently excuses cases is indistinguishable from one that never
+ * ran, which is the defect class this whole scanner is for. The marker must
+ * carry a reason; a bare mute is not honoured.
+ *
+ * Only the contiguous run of `--` lines, attributes and blanks directly above
+ * the declaration is searched, so a marker cannot drift onto a neighbour.
+ * Kept byte-identical in meaning to the `VACUOUS_OK` marker in
+ * `scripts/lean-self-assuming-audit.py` so the two agree on the corpus.
+ */
+function vacuousByDesign(origLines: string[], startLine: number): string | undefined {
+  for (let i = startLine - 2; i >= 0; i--) {
+    const t = (origLines[i] ?? "").trim();
+    if (t === "" || t.startsWith("@[")) continue;
+    if (!t.startsWith("--")) return undefined;
+    const m = t.match(/--\s*vacuous-by-design:\s*(\S.*?)\s*$/);
+    if (m) return m[1];
+  }
+  return undefined;
+}
+
 function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
   if (!PROVABLE_KINDS.test(d.kind)) return undefined;
   const body = d.body.trim();
@@ -1125,9 +1254,10 @@ function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
   // Explicit binders only, from the head up to the conclusion `:`.
   const head = d.sig.slice(0, d.sig.length - concl.length);
   const unused: string[] = [];
-  for (const m of head.matchAll(/\(\s*([^():]+?)\s*:\s*([^()]*(?:\([^()]*\)[^()]*)*)\)/g)) {
-    const names = m[1].trim().split(/\s+/);
-    const ty = m[2].trim();
+  for (const b of parseBinders(head)) {
+    if (!b.explicit) continue; // `[…]` / `{…}` / `⦃…⦄` can be load-bearing
+    const names = b.names;
+    const ty = b.type;
     if (!PROP_SHAPED.test(ty)) continue; // data binder, not a hypothesis
     for (const n of names) {
       if (!/^_?[a-zA-Z_][\w']*$/.test(n)) continue;
@@ -1416,6 +1546,168 @@ function detectProvableAxiom(d: Decl, rawLines: string[]): Hit | undefined {
  */
 const LEDGER_TRACKED_EXEMPT = /triage pending/;
 
+/** Default location of the agent-inspection review ledger. */
+const DEFAULT_REVIEW_LEDGER = "docs/audits/lean-vacuity-review-ledger.json";
+
+/**
+ * Keys the review ledger has already adjudicated `genuine`.
+ *
+ * A `triage pending` exemption is a promise, not a verdict: it says a human
+ * call is still owed (see `LEDGER_TRACKED_EXEMPT` and the emit sites, which
+ * describe promotion to a hard failure as "a deliberate follow-up"). Once an
+ * agent has recorded `genuine` for that key, the promise has been kept and the
+ * heuristic is superseded — so the hit must count.
+ *
+ * Without this, an adjudicated defect stays suppressed from `total_defects`
+ * forever, and the committed artifact reads as a smaller backlog than the
+ * ledger records. Measured on 2026-08-22: `total_defects` 53 against 123
+ * ledger-`genuine`, because **76** confirmed defects were still exempt under
+ * the single reason "type-matched projection (field name escapes
+ * CONCLUSION_FIELD; tracked, triage pending)". Bean `qou-v4ht`.
+ *
+ * Only `genuine` promotes. `legit` and `advisory` are verdicts that the hit is
+ * NOT a defect, so they leave the exemption in place.
+ */
+function loadAdjudicatedGenuine(ledgerRel: string): Set<string> {
+  const out = new Set<string>();
+  const p = resolve(REPO_ROOT, ledgerRel);
+  if (!existsSync(p)) return out;
+  try {
+    const r = JSON.parse(readFileSync(p, "utf-8"));
+    for (const [key, e] of Object.entries(
+      (r?.entries ?? {}) as Record<string, { verdict?: string }>,
+    ))
+      if (e?.verdict === "genuine") out.add(key);
+  } catch {
+    /* unreadable ledger: promote nothing, behave exactly as before */
+  }
+  return out;
+}
+
+// ── Statement-shape vacuity: the two shapes the standalone Python sweep
+//    finds and nothing in this pipeline gated on (bean `qou/q407`).
+//
+//    `proof-no-unused-hypothesis-rfl` above needs an *unused explicit
+//    Prop-shaped binder*. That is a good tell, but it is a property of the
+//    decoration, not of the claim. A statement with no hypotheses at all —
+//    `knot_factor_spectral_form`, `habiro_integral`, `q_0_well_defined` —
+//    can be a pure tautology and bind nothing, and then there is no unused
+//    binder to notice. Measured 2026-08-21: over the six pre-fix files
+//    holding eleven such declarations this scanner reported **zero**.
+
+/** `⟨e, rfl⟩` or `⟨_, rfl⟩`, optionally behind `by exact`. */
+const ANON_REFL_WITNESS = /^(?:by\s+)?(?:exact\s+)?⟨\s*(.+?)\s*,\s*rfl\s*⟩$/;
+/** `∃ x, body` / `∃ x : T, body` — a single leading binder. */
+const EXISTS_HEAD = /^∃\s*([A-Za-z_][\w']*)\s*(?::([^,]*))?,\s*([\s\S]+)$/;
+
+/** `(lhs, rhs)` of the first `=` outside every bracket group, or undefined. */
+function splitTopLevelEq(body: string): [string, string] | undefined {
+  let depth = 0;
+  for (let i = 0; i < body.length; i++) {
+    const c = body[i];
+    if (BINDER_OPEN[c] || c === "⟨") depth++;
+    else if (c === ")" || c === "}" || c === "]" || c === "⦄" || c === "⟩") depth--;
+    else if (c === "=" && depth === 0) {
+      if (":<>!=".includes(body[i - 1] ?? "") || body[i + 1] === "=") continue;
+      return [body.slice(0, i).trim(), body.slice(i + 1).trim()];
+    }
+  }
+  return undefined;
+}
+
+/**
+ * `∃ x, e = x := ⟨e, rfl⟩` — true for every `e`, so it asserts nothing.
+ *
+ * "Well-defined" is not a theorem in a total type theory: naming the value of
+ * a total expression is a property of the ambient type being inhabited. The
+ * corpus carried sixteen of these, six of them `lean.ref` targets, all
+ * sorry-free and axiom-clean.
+ *
+ * `⟨_, rfl⟩` counts and is the stronger tell — the author did not name the
+ * witness at all; the elaborator recovered it by unifying `rfl`. Requiring a
+ * spelled-out witness is what kept `knot_factor_amphicheiral` out of the
+ * standalone sweep while its unreferenced sibling thirteen lines below was
+ * reported.
+ */
+function detectTrivialExistential(
+  d: Decl,
+  origLines: string[],
+): Hit | undefined {
+  if (!PROVABLE_KINDS.test(d.kind)) return undefined;
+  const m = d.body.trim().replace(/\s+/g, " ").match(ANON_REFL_WITNESS);
+  if (!m) return undefined;
+  const em = conclusionTypeAscription(d.sig).replace(/\s+/g, " ").trim().match(EXISTS_HEAD);
+  if (!em) return undefined;
+  const wit = m[1].trim();
+  const [v, body] = [em[1], em[3].trim()];
+  let witness: string | undefined;
+  if (body === `${wit} = ${v}` || body === `${v} = ${wit}`) witness = wit;
+  else if (wit === "_") {
+    const sides = splitTopLevelEq(body);
+    if (!sides) return undefined;
+    const [lhs, rhs] = sides;
+    const mentions = (s: string) =>
+      new RegExp(`(^|[^\\w'])${v}([^\\w']|$)`).test(s);
+    if (lhs === v && !mentions(rhs)) witness = rhs;
+    else if (rhs === v && !mentions(lhs)) witness = lhs;
+  }
+  if (witness === undefined) return undefined;
+  const why = vacuousByDesign(origLines, d.startLine);
+  const h = mk(d, "proof-no-trivial-true", "trivial-existential", !!why);
+  if (why) h.exempt_reason = `vacuous-by-design: ${why}`;
+  h.detail =
+    `concludes \`∃ ${v}, … = ${v}\` and proves it \`⟨${wit}, rfl⟩\` — the ` +
+    `witness IS the expression, so the statement holds for every value of ` +
+    `\`${snip(witness)}\` and says nothing about it`;
+  return h;
+}
+
+/** A proof term that is a bare hypothesis reference. */
+const BARE_IDENT = /^[A-Za-z_][\w'.!?]*$/;
+const EXACT_IDENT = /^by\s+exact\s+([A-Za-z_][\w'.!?]*)$/;
+const BY_ASSUMPTION = /^by\s+assumption$/;
+
+/**
+ * `theorem name … (h : P) … : P := h` — the hypothesis IS the conclusion.
+ *
+ * Distinct from `detectSelfAssuming`, which matches a projection out of a
+ * *class field* (`ctx.claim_foo`). Here the conclusion is echoed straight
+ * back from a binder, so there is no field name for `CONCLUSION_FIELD` to
+ * gate on and no carrier to resolve. `by exact h` and `by assumption` are the
+ * same term wearing a tactic block.
+ *
+ * The comparison is on whitespace-normalised text, which is conservative in
+ * the right direction: a genuine re-statement that differs by so much as a
+ * parenthesis is not reported.
+ */
+function detectBinderEcho(d: Decl, origLines: string[]): Hit | undefined {
+  if (!PROVABLE_KINDS.test(d.kind)) return undefined;
+  const proof = d.body.trim().replace(/\s+/g, " ").trim();
+  if (!proof || proof.length > 200) return undefined;
+  const concl = conclusionTypeAscription(d.sig).replace(/\s+/g, " ").trim();
+  if (!concl) return undefined;
+  const head = d.sig.slice(0, d.sig.length - conclusionTypeAscription(d.sig).length);
+  const binders = parseBinders(head);
+  let hyp: string | undefined;
+  const named = proof.match(EXACT_IDENT)?.[1] ?? (BARE_IDENT.test(proof) ? proof : undefined);
+  if (named) {
+    for (const b of binders)
+      if (b.names.includes(named) && b.type === concl) hyp = named;
+  } else if (BY_ASSUMPTION.test(proof)) {
+    for (const b of binders)
+      if (b.type === concl) hyp = b.names[0];
+  }
+  if (!hyp) return undefined;
+  const why = vacuousByDesign(origLines, d.startLine);
+  const h = mk(d, "proof-no-self-assuming-projection", "binder-echo", !!why);
+  if (why) h.exempt_reason = `vacuous-by-design: ${why}`;
+  h.detail =
+    `binds \`(${hyp} : ${snip(concl)})\` and concludes the same proposition, ` +
+    `returning it verbatim — the statement stays true if every definition it ` +
+    `mentions is swapped`;
+  return h;
+}
+
 function mk(
   d: Decl,
   category: Category,
@@ -1633,6 +1925,66 @@ function detectTrueClassField(d: Decl, doc: string): Hit | undefined {
   }
   const h = mk(d, "proof-claims-unencoded", "true-class-field", false);
   h.detail = `carrier field(s) typed \`: True\` carry no content (${names}) — encode the real property as the field type, or demote per §3b-tax`;
+  return h;
+}
+
+/** A class/structure field whose Prop is a **tautology about the subject** —
+ * neither empty (`proof-no-empty-prop-carrier`) nor literally `: True`
+ * (`true-class-field`), but provable for an *arbitrary* substitution of the
+ * subject term, so it constrains nothing.
+ *
+ * This is the third shape in the carrier-vacuity family and the one both
+ * existing detectors structurally miss: the carrier *looks* populated (it has
+ * real-looking Prop fields, and the docstring's claim count does not exceed the
+ * field count), yet every field is a Mathlib theorem for any argument.
+ *
+ * Exemplar — `QOU.Interactions.TransferMatrixEigenphase`, documented as
+ * axiomatising "`M_β` has spectrum `{e^{+iα}, e^{−iα}}` on `V_(2,1)`", whose
+ * two fields are `-2 ≤ 2 cos(α) ∧ 2 cos(α) ≤ 2` and `cos(α) = cos(−α)`. Both
+ * hold for every real. Proved vacuous in
+ * `QOU.QBeta.EigenphaseCarrier.carrier_is_trivial` (`… ↔ True`).
+ *
+ * Deliberately NARROW: it matches only a small library of shapes that are
+ * unconditionally true of the *function applied*, never of the subject —
+ * bounds on a bounded function, and even/odd symmetry identities. Deciding
+ * tautology in general needs the compiler; per this audit's design these are
+ * high-recall candidates for an agent verdict, not verdicts. */
+const BOUNDED_FN = String.raw`(?:Real\.)?(?:cos|sin)`;
+/** `c ≤ k·f(x)` / `f(x) ≤ c` … with `f` bounded and `c` outside its range: the
+ * bound holds for every argument. Matches a chain or a single comparison. */
+const TAUT_BOUND = new RegExp(
+  String.raw`^\s*-?\s*\d+(?:\.\d+)?\s*[≤<]\s*(?:\d+\s*\*\s*)?${BOUNDED_FN}\b[^∧]*` +
+    String.raw`(?:∧\s*(?:\d+\s*\*\s*)?${BOUNDED_FN}\b[^≤<]*[≤<]\s*-?\s*\d+(?:\.\d+)?\s*)?$`,
+);
+/** `f x = f (-x)` (or the reverse): the evenness of `cos`, true for every `x`. */
+const TAUT_EVEN = new RegExp(
+  String.raw`${BOUNDED_FN}\s*\(?\s*([^)=]+?)\s*\)?\s*=\s*${BOUNDED_FN}\s*\(\s*-\s*\1\s*\)` +
+    String.raw`|${BOUNDED_FN}\s*\(\s*-\s*([^)=]+?)\s*\)\s*=\s*${BOUNDED_FN}\s*\(?\s*\2\s*\)?`,
+);
+function detectTautologicalField(d: Decl, doc: string): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  const fields = classFields(d);
+  if (fields.length === 0) return undefined; // empty-carrier detector owns this
+  const taut = fields.filter((f) => {
+    const t = f.type.replace(/--.*$/, "").replace(/\s+/g, " ").trim();
+    return TAUT_BOUND.test(t) || TAUT_EVEN.test(t);
+  });
+  // Only fire when EVERY field is tautological: a carrier with one real field
+  // still constrains something, and flagging it would over-report.
+  if (taut.length !== fields.length) return undefined;
+  const names = taut.map((f) => f.name).join(", ");
+  if (MARKER_OPT_OUT.test(doc)) {
+    const h = mk(d, "proof-claims-unencoded", "tautological-field", true);
+    h.exempt_reason = "explicit @marker / opaque-tag opt-out";
+    h.detail = `all field(s) tautological (${names}) — honestly framed; tracked not counted`;
+    return h;
+  }
+  const h = mk(d, "proof-claims-unencoded", "tautological-field", false);
+  h.detail =
+    `every field is a tautology about the subject (${names}) — each holds for an ` +
+    `arbitrary substitution, so the carrier is equivalent to True and any ` +
+    `[${d.name}]-conditional result is unconditional. Encode the real property, ` +
+    `or demote per §3b-tax`;
   return h;
 }
 
@@ -1918,6 +2270,8 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     }
     push(tt);
     push(detectSelfAssuming(d, carrierDecls));
+    push(detectBinderEcho(d, origLines));
+    push(detectTrivialExistential(d, origLines));
     push(detectDocstringSorryMismatch(d, doc, fileHasSorryCode));
     push(detectUnusedHypothesisRfl(d));
     push(detectTelescopeVacuousRfl(d));
@@ -1933,6 +2287,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectEmptyPropCarrier(d, doc));
     push(detectClaimsUnencoded(d, doc));
     push(detectTrueClassField(d, doc + "\n" + rawSpan));
+    push(detectTautologicalField(d, doc + "\n" + rawSpan));
   }
   const importHit = detectImportOrder(origLines);
   if (importHit && (!onlyCat || onlyCat === "lean-import-after-content"))
@@ -2242,12 +2597,28 @@ function main() {
   const counts: Record<string, number> = {};
   let totalHits = 0;
   let exemptHits = 0;
+  // An adjudicated `genuine` verdict outranks a `triage pending` exemption:
+  // the exemption said a verdict was owed, and one has since been given.
+  const adjudicatedGenuine = loadAdjudicatedGenuine(
+    reviewLedger ?? checkLedger ?? DEFAULT_REVIEW_LEDGER,
+  );
+  let promotedHits = 0;
   for (const f of files) {
     const hits = scanFile(f, onlyCat);
     if (hits.length === 0) continue;
     const rel = relative(REPO_ROOT, f);
     flaggedByLean.set(f, hits);
     for (const h of hits) {
+      if (
+        h.exempt &&
+        LEDGER_TRACKED_EXEMPT.test(h.exempt_reason ?? "") &&
+        adjudicatedGenuine.has(`${rel}::${h.decl ?? "file"}::${h.category}`)
+      ) {
+        h.promoted_from_exempt = h.exempt_reason;
+        h.exempt = false;
+        h.exempt_reason = undefined;
+        promotedHits++;
+      }
       if (h.exempt) {
         exemptHits++;
         continue;
@@ -2300,6 +2671,11 @@ function main() {
     files_flagged: Object.keys(flagged).length,
     total_defects: totalHits,
     total_exempt: exemptHits,
+    /** Of `total_defects`, how many were counted only because the review
+     * ledger already adjudicated them `genuine`, lifting a `triage pending`
+     * exemption. Reported so the artifact cannot silently disagree with the
+     * ledger about the size of the backlog (bean `qou-v4ht`). */
+    total_promoted_from_exempt: promotedHits,
     categories: counts,
     conjecture_graph: graph,
     flagged,
@@ -2518,7 +2894,7 @@ function main() {
   // to prevent, restated in the summary line.
   const wroteReport = !(roots.length > 0 && !jsonExplicit);
   console.log(
-    `\n${wroteReport ? jsonOut : "(partial scan — no report written)"} — scanned ${files.length} .lean, ${totalHits} defect candidate(s) across ${Object.keys(flagged).length} file(s) (${exemptHits} exempt).`,
+    `\n${wroteReport ? jsonOut : "(partial scan — no report written)"} — scanned ${files.length} .lean, ${totalHits} defect candidate(s) across ${Object.keys(flagged).length} file(s) (${exemptHits} exempt${promotedHits ? `, ${promotedHits} promoted from a triage-pending exemption by a ledger \`genuine\` verdict` : ""}).`,
   );
   for (const c of ALL_CATEGORIES)
     if (counts[c]) console.log(`  ${c}: ${counts[c]}`);

@@ -1,13 +1,13 @@
 ---
 doc_id: pjm-v154-n1-p09-s
-doc_title: "Pacific Journal of Mathematics THE PERIOD MA TRIX OF BRING’S CURVE"
+doc_title: "The period matrix of Bring's curve"
 section_id: sec-000-1-introduction-when-studying-the-general-equatio
 section_title: "Introduction. When studying the general equation of degree five,"
 section_number: 1
 pages: 2-2
 source_pdf: pjm-v154-n1-p09-s.pdf
 source_sha256: cbf5c02babe5a61e
-doc_brief: "Pacific Journal of Mathematics THE PERIOD MATRIX OF BRING’S CURVE — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
+doc_brief: "The period matrix of Bring's curve — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
 ---
 Bring constructed a curve of genus four admitting the symmetric group
 ι^5 as a group of automorphisms. Namely he considered the equations

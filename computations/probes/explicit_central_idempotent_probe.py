@@ -56,6 +56,7 @@ from mpmath import mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from hecke_character_symbolic import standard_young_tableaux  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _e_lambda_eigenvalue_on_syt(lam, mu, T_prime, q,
@@ -139,7 +140,7 @@ def main() -> int:
         "explicit-central-idempotent-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     q = Q_MP
     SHAPES = [(3,), (2, 1), (1, 1, 1)]

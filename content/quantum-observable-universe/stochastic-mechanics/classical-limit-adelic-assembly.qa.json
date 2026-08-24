@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.623Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "evidence": "Full read of both paragraphs (adelic-assembly reading; non-fullness / phase decoherence). Two spaced em-dashes: zero. Math consistent with the sibling prop:adelic-reeb-restricted-product (one local Reeb infinitesimal per place, archimedean place carrying rho_infty = L)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.662Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "evidence": "Full read of both paragraphs (adelic-assembly reading; non-fullness / phase decoherence). Two spaced em-dashes: zero. Math consistent with the sibling prop:adelic-reeb-restricted-product (one local Reeb infinitesimal per place, archimedean place carrying rho_infty = L)."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.702Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "evidence": "Full read of both paragraphs (adelic-assembly reading; non-fullness / phase decoherence). Two spaced em-dashes: zero. Math consistent with the sibling prop:adelic-reeb-restricted-product (one local Reeb infinitesimal per place, archimedean place carrying rho_infty = L)."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.739Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "evidence": "Full read of both paragraphs (adelic-assembly reading; non-fullness / phase decoherence). Two spaced em-dashes: zero. Math consistent with the sibling prop:adelic-reeb-restricted-product (one local Reeb infinitesimal per place, archimedean place carrying rho_infty = L)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,23 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.778Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "severity": "major",
+        "evidence": "Block-final line was 'The classical continuum is a low-resolution shadow of the unglued adelic motives.' - a metaphorical quotable closer restating the immediately preceding 'retaining only the real-valued shadow'.",
+        "notes": "FIXED, merged with the preceding sentence: 'This is the rigorous mechanism behind the loss of quantum information. The classical continuum is a low-resolution shadow of the unglued adelic motives.' -> 'That collapse is the loss of quantum information: the classical continuum sees only the archimedean projection of the unglued adelic motives.' Content kept (mechanism = phase collapse; continuum = projection of the unglued adelic motives); the metaphor-as-closer and the announced significance are gone. Math delimiters re-checked."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.816Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "evidence": "Full read of both paragraphs (adelic-assembly reading; non-fullness / phase decoherence). Two spaced em-dashes: zero. Math consistent with the sibling prop:adelic-reeb-restricted-product (one local Reeb infinitesimal per place, archimedean place carrying rho_infty = L)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1437,23 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.855Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "severity": "major",
+        "evidence": "'This is the rigorous mechanism behind the loss of quantum information.' - announces the significance of the sentence before it rather than adding content.",
+        "notes": "FIXED in the same edit (see trap-closing-aphorism): the announcement is now the subject of a substantive sentence rather than a stand-alone 'This is the ... mechanism behind ...' claim."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.894Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "evidence": "Full read of both paragraphs (adelic-assembly reading; non-fullness / phase decoherence). Two spaced em-dashes: zero. Math consistent with the sibling prop:adelic-reeb-restricted-product (one local Reeb infinitesimal per place, archimedean place carrying rho_infty = L)."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1507,23 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.931Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "severity": "minor",
+        "evidence": "'the RIGOROUS mechanism behind the loss of quantum information' - a rigour claim in a remark that supplies no proof, and 'preferred reading' in the lead.",
+        "notes": "FIXED: 'rigorous' removed in the merge above. 'preferred reading' left in the bold lead - it is an editorial signpost about which of two equivalent presentations to use, not a strength claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1543,21 @@
         "reviewed_at": "2026-08-15T10:30:59.561Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f65688aba6a9",
+          "ts": "376ab6e85d17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:20.975Z",
+        "reviewed_sha": "a321af5b12c0ab4e75a3a484cb8101b3db573c07",
+        "evidence": "Full read of both paragraphs (adelic-assembly reading; non-fullness / phase decoherence). Two spaced em-dashes: zero. Math consistent with the sibling prop:adelic-reeb-restricted-product (one local Reeb infinitesimal per place, archimedean place carrying rho_infty = L)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1580,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:28:20.975Z"
 }

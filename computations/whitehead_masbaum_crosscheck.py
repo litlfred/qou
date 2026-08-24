@@ -27,8 +27,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from whitehead_colored_jones import (  # noqa: E402
     r_check_braiding, closure_invariant, qint,
 )
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 
 def masbaum_twist(N, f_coeff, a):

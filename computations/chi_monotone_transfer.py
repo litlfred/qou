@@ -53,6 +53,7 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _TOL = 1e-9
 
@@ -81,6 +82,18 @@ def _add(shape: tuple[int, ...], box: tuple[int, int]) -> tuple[int, ...]:
     return tuple(rows)
 
 
+def _is_symbolic(x) -> bool:
+    """True for a sympy-style expression carrying free symbols.
+
+    Duck-typed so `sympy` stays an optional dependency of this module: only a
+    symbolic expression has non-empty `.free_symbols`. An `mp.mpf`, a `float`
+    and an `int` all answer False, so every numeric caller keeps the existing
+    code path exactly.
+    """
+    fs = getattr(x, "free_symbols", None)
+    return bool(fs)
+
+
 # ── MPFR re-lift of the (float) atom word ──────────────────────────────────
 def word_to_mpfr(word, q: "mp.mpf"):
     """`[(d_mpf, gen0)]` from a `[(c, d_float, gen0)]` atom word.
@@ -92,10 +105,20 @@ def word_to_mpfr(word, q: "mp.mpf"):
     convention drift fails loudly (mirrors chi_cd_mpfr.to_braid_terms).
     """
     h = q - 1 / q
-    h_f = float(h)
+    symbolic = _is_symbolic(q)
+    # The float below is a TEMPLATE CLASSIFIER, not a computation (d is rebuilt
+    # from `q` at full dps just below), but it is what refused a sympy `q` and
+    # blocked every symbolic evaluation of the trace — see bean `qou-j320`. A
+    # symbolic word already carries its `d` EXACTLY at the requested `q`, so
+    # there is nothing to re-identify and nothing to re-lift: pass it through.
+    # The numeric path below is untouched.
+    h_f = None if symbolic else float(h)
     color_deltas = None  # lazy: the live color-weight δ conventions
     out = []
     for c, d, g in word:
+        if symbolic:
+            out.append((d, g))
+            continue
         cf, df = float(c), float(d)
         if abs(cf - 1.0) > _TOL:
             raise ValueError(f"unsupported crossing c={c} at gen={g} (expect c=1)")
@@ -159,8 +182,12 @@ def _alpha_beta(ds, q, qi):
     This is the key that removes the 2×2 matmul + q-power from the per-edge
     inner loop: the block diagonal becomes α·D(δ′) + β, a function of the
     content gap δ′ alone. Empty ds → identity (α=0, β=1)."""
-    e1 = mp.mpf(1)
-    e2 = mp.mpf(1)
+    # Exact Python ints, NOT mp.mpf(1): identical for every numeric q (an int
+    # is exact and mpmath promotes it losslessly), but an mpf seed would drag a
+    # sympy product into `Float` contagion — the same trap `flavor_split_leading`
+    # documents. Keeps this reduction usable over any ring. (bean `qou-j320`)
+    e1 = 1
+    e2 = 1
     for d in ds:
         e1 *= (q + d)
         e2 *= (-qi + d)
@@ -193,7 +220,7 @@ def chi_all_lambda(word, n: int, *, dps: int = 50, q=None):
         last = g
         gen_ds[g].append(d_mp)
     ab = {g: _alpha_beta(ds, q, qi) for g, ds in gen_ds.items()}
-    _ident = (mp.mpf(0), mp.mpf(1))                       # skipped gen → O_g = I
+    _ident = (0, 1)                                       # skipped gen → O_g = I
     hq = q - qi
     Dc: dict[int, "mp.mpf"] = {1: q, -1: -qi}            # D(δ′): self-diagonal
 
@@ -205,10 +232,10 @@ def chi_all_lambda(word, n: int, *, dps: int = 50, q=None):
         return v
 
     # state (s_1=(1), c_this=0): the first box (0,0) has content 0
-    amp = {((1,), 0): mp.mpf(1)}
+    amp = {((1,), 0): 1}
     for g in range(0, n - 1):                             # apply O_g, g=0..n-2
         alpha, beta = ab.get(g, _ident)
-        new = defaultdict(mp.mpf)
+        new = defaultdict(int)
         for (shape, c_this), a in amp.items():
             for (r, c) in _addable(shape):
                 c_other = c - r
@@ -227,7 +254,7 @@ def _self_test() -> int:
     from char_fast import chi_lambda_fast_mp
     from lr_coefficients import partitions_of
     from mass_at_3A_proper import atom_braid_word_3A
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     ok_all = True
 
@@ -245,10 +272,34 @@ def _self_test() -> int:
     print(f"  transfer ≡ char_fast (color-weighted, n=6): "
           f"max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
 
-    # (2) vs cached atom oracles D/T/³He/⁴He (n=6..12). Those witnesses
-    #     (pyhecke_native, kernel PR #1748) used the strict_averaged pn
-    #     convention, so we compare on the MATCHING word — an exact (50-dps)
+    # (2) vs cached atom oracles D/T/³He/⁴He (n=6..12) — an exact (50-dps)
     #     cross-check of the transfer vs the per-basis-vector kernel to n=12.
+    #
+    #     This comparison used `pn_convention="strict_averaged"`, on the stated
+    #     grounds that the oracle witnesses "used the strict_averaged pn
+    #     convention, so we compare on the MATCHING word". That was wrong about
+    #     the witnesses, and it made this self-test FAIL on main — quietly,
+    #     since it is wired into no gate.
+    #
+    #     Measured by recomputing each oracle under both conventions:
+    #
+    #                    strict_averaged      bring_color_weighted
+    #         D             2.625e-04              5.743e-50
+    #         T             5.482e-04              8.257e-50
+    #         3He           5.281e-04              7.487e-50
+    #         4He           1.883e-03              4.079e-49
+    #
+    #     The oracles reproduce EXACTLY — to the full 50-dps working precision
+    #     — under the canonical colour-weighted convention, and miss by 2.6e-4
+    #     .. 1.9e-3 under strict_averaged. So the cached witnesses were always
+    #     canonical; it was this comparison word that was stale. The residuals
+    #     grow with A because the p-n interface `d` differs by 7.19e-05 and
+    #     compounds per interface, which is the colour-weighting scale — not a
+    #     precision scale, and the giveaway that the mismatch was structural.
+    #
+    #     Note the witnesses record no convention field at all (and no
+    #     `scriptFile`), so the old comment could not be checked against them;
+    #     it had to be tested by recomputation. Bean `qou-9ag4`.
     import json
     oracle = {"D": "chi-deuteron-h6-at-q0-50dps.witness.json",
               "T": "chi-tritium-h9-at-q0-50dps.witness.json",
@@ -261,7 +312,7 @@ def _self_test() -> int:
             print(f"  oracle {atom}: witness missing, skip"); continue
         Z, N = zn[atom]
         n = 3 * (Z + N)
-        word = atom_braid_word_3A(Z, N, pn_convention="strict_averaged")
+        word = atom_braid_word_3A(Z, N, pn_convention="bring_color_weighted")
         chi = chi_all_lambda(word, n)
         d = json.loads(f.read_text())
         bp = d.get("by_partition") or d["data"]["by_partition"]
@@ -272,7 +323,7 @@ def _self_test() -> int:
             max_rel = max(max_rel, abs(cv - rv) / (1 + abs(rv)))
         ok = max_rel < mp.mpf(10) ** -12
         ok_all &= ok
-        print(f"  transfer ≡ oracle (strict_averaged) {atom:<4} n={n:<3} "
+        print(f"  transfer ≡ oracle (color-weighted) {atom:<4} n={n:<3} "
               f"λ={len(ref):<4} max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
     return 0 if ok_all else 1
 

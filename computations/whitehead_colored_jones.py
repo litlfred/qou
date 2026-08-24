@@ -34,6 +34,8 @@ import cmath
 import math
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 
 # ────────────────────────── q-integers ──────────────────────────
@@ -256,7 +258,7 @@ def colored_jones_4_1_exact(N: int, q: mp.mpc) -> mp.mpc:
 
 
 if __name__ == "__main__":
-    mp.mp.dps = 30
+    set_compute_dps()
     q = mp.exp(mp.mpc(0, 1) * mp.mpf("0.37"))     # generic q on unit circle, not a root
     print("U_q(sl₂) colored-Jones machinery — self-checks\n")
     print("  V1  generator relations + braid relation:")

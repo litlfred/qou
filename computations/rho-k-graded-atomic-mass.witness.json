@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T13:00:31.115827+00:00",
-  "commitSha": "fc9819f75c7b82f1235a47fe9533978a7100b621",
+  "computedAt": "2026-08-23T09:57:28.321347+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "lo_routed_through_canonical_facade",
@@ -43,11 +43,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 8,
   "computation": "rho-k-graded-atomic-mass",
   "scriptFile": "rho_k_graded_atomic_mass.py",
-  "scriptHash": "796988d073c5",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "559b81227dfa",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,7 +61,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/rho_k_graded_atomic_mass.py"
+    ],
+    "reproduce": "python3 -u computations/rho_k_graded_atomic_mass.py"
   },
   "description": "Production wiring of prop:rho-k-graded-expansion: atomic mass routed through the proved LO (canonical_mass facade, muon-anchored) + single-gen (alpha·sum ln|V_i|) tiers; pair-gen+ reported as the OPEN residual, not wired.",
   "parameters": {
@@ -83,8 +90,8 @@
         "n_generators": 2,
         "n_zero_volumes": 0,
         "lo_MeV": "938.7830883780143",
-        "sum_log_V_full": "0.022637804808811274164104799157301019003706880963659",
-        "single_gen_MeV": "0.08476634689622601458979706753220140240718912631316",
+        "sum_log_V_full": "0.022637804808811274164104799157301019003706880963661",
+        "single_gen_MeV": "0.084766346896226014589797067532201402407189126313168",
         "M_pred_MeV": "938.86785472491052601458979706753220140240718912631",
         "M_obs_MeV": "938.783",
         "err_pct": "0.00903880075699",
@@ -115,7 +122,7 @@
         "lo_MeV": "6574.6109561921725",
         "sum_log_V_full": "-7.4481376247251074677077720502978599728679322590549",
         "single_gen_MeV": "-27.889250877476489164958953315244922403467755890046",
-        "M_pred_MeV": "6546.7217053146960108350410466847550775965322441099",
+        "M_pred_MeV": "6546.72170531469601083504104668475507759653224411",
         "M_obs_MeV": "6535.367",
         "err_pct": "0.173742428156",
         "pair_gen_open_residual_MeV": "-11.3547053147"
@@ -128,7 +135,7 @@
         "n_generators": 26,
         "n_zero_volumes": 0,
         "lo_MeV": "8452.9594673347192",
-        "sum_log_V_full": "-9.801726502357849724456805922885933192950945452281",
+        "sum_log_V_full": "-9.8017265023578497244568059228859331929509454522811",
         "single_gen_MeV": "-36.702169485859543550323720658082680955719183603526",
         "M_pred_MeV": "8416.2572978488596564496762793419173190442808163965",
         "M_obs_MeV": "8394.794",
@@ -173,7 +180,7 @@
         "n_generators": 41,
         "n_zero_volumes": 0,
         "lo_MeV": "13148.4395779978269",
-        "sum_log_V_full": "-15.297010888361495658727837740986067985157949163644",
+        "sum_log_V_full": "-15.297010888361495658727837740986067985157949163645",
         "single_gen_MeV": "-57.279040189157196493483986111032340760141649174763",
         "M_pred_MeV": "13091.160537808669703506516013888967659239858350825",
         "M_obs_MeV": "13043.782",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-26T15:09:11.221373+00:00",
-  "commitSha": "df49d949cd03ec2e2fc817efed7369eabec5b1ec",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:26:06.528014+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "residual_identified",
@@ -14,25 +14,41 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "phase2a-flavor-split-higher-order",
   "scriptFile": "phase2a_flavor_split_higher_order_probe.py",
-  "scriptHash": "1ff974551bfb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "67fb2b0c1d58",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/phase2a_flavor_split_higher_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/phase2a_flavor_split_higher_order_probe.py"
   },
   "description": "Probes higher-order corrections to the flavor-split X formula. At 50 dps, the residual δX = X_current − X_target is analyzed for rational structure in the h-variable. Identifies the leading correction order and coefficient.",
   "contentBlock": "prop:flavor-split-substrate",
   "data": {
-    "delta_X": "-2.0009344572324621365e-6",
-    "delta_X_ppm_of_X": "-1454.472701",
+    "delta_X": "-1.971838230037372362e-6",
+    "delta_X_ppm_of_X": "-1433.32321",
     "best_correction": {
       "order": 3,
-      "coefficient": "-0.000218986840760013"
+      "coefficient": "-0.000215802554974038"
     }
   }
 }

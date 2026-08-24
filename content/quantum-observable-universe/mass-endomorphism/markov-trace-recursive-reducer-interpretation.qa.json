@@ -1426,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.991Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"This contrasts with seminormal/Hoefsmit ascent, which realises the trace via the explicit Wedderburn decomposition\" is a substantive methodological contrast between two real algorithms; false-positive class.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.033Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No setup-then-reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 131 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.077Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 131 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.117Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No reflex list.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.157Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Closes on \"The axiomatic route avoids reliance on Hoefsmit matrix elements\", a scope statement.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1601,22 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.198Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "None.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1636,22 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.238Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Both sections add content.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1671,22 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.279Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1706,23 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.320Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "\"Both routes agree on values.\" Unqualified, and contradicted by a sibling in the same chapter: markov-trace-axiomatic-closed-form-proof.md reports the axiomatic route at 1.63315357 against the seminormal char_fast route at 1.6334, a 1.5e-4 relative discrepancy which it attributes (wrongly) to float64 roundoff. So the corpus's own comparison of these two routes does NOT show agreement to the precision the sentence implies. Two lesser items in the same block: \"This yields an asymptotic speed-up proportional to the duplication factor across atoms\" is true by construction of caching and carries no information; and \"the cache hit rate exceeds 50% on the proton+neutron+deuteron sweep\" is an empirical number with no witness cited.",
+        "notes": "STRUCTURAL / math-adjacent, not edited. Proposed: \"Both routes compute the same rational function; the numerical comparison in prf:markov-trace-axiomatic-closed-form shows a residual 1.5e-4 discrepancy whose source is not yet identified.\" VERIFIED AND CORRECT so a later pass need not re-flag: \"Each S_n has n! basis elements\" and the Wedderburn form H_n(q) = direct-sum M_{f^lambda} with f^lambda the SYT count are both right as written."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1742,23 @@
         "reviewed_at": "2026-08-15T10:31:01.023Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2f8176e590a0",
+          "ts": "d54d59bfe097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:21.359Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "One copular substitution: \"The recursive reducer forms the algorithmic content of the Markov-trace existence theorem\".",
+        "notes": "Single instance, below the fail threshold. Proposed if touched later: \"is the algorithmic content of\"."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1781,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:31:21.359Z"
 }

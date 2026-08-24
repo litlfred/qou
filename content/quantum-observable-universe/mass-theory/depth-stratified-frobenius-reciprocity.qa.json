@@ -1750,6 +1750,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.201Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of the conjecture (FR refinement at k<=3, distinguished knot K_k^*, boxed Phi_k^FR display, k>=4 triviality, closing conditional). 'Empirical tests falsified simpler weight-restriction forms that did not use the distinguished knot ideal' reports a negative result and identifies which feature the survivors have — substantive, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1769,6 +1784,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.247Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Low-rank / high-rank split is a genuine case distinction on k; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1788,6 +1818,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 147 words)"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.295Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1807,6 +1852,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 147 words)"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.334Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "k in {1,2,3} is the mathematical index set of the conjecture, not a rhetorical triple; no prose enumerations."
       }
     ],
     "trap-closing-aphorism": [
@@ -1826,6 +1886,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.370Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Ends 'If true, this conjecture closes the variance on the unified mass formula' — an explicitly conditional consequence, the standard closing move for a conjecture-kind block, and it names the object closed."
       }
     ],
     "trap-meta-commentary": [
@@ -1845,6 +1920,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.406Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No emphasis narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1864,6 +1954,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.442Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "The final paragraph adds the k>=4 boundary, the falsification record and the degeneracy-breaking mechanism; none of it restates the boxed statement."
       }
     ],
     "trap-performed-warmth": [
@@ -1883,6 +1988,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.478Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1902,6 +2022,22 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.513Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'gives the best variance reduction' is a comparison within the tested knot set and is immediately qualified as 'consistent with the Fricke-trace derivation'; no maximum-strength unqualified claim.",
+        "notes": "Verified adjacent: K_3^* = 4_1 is the figure-eight knot, consistent with the corpus Vol(4_1) = 2*Cl_2(pi/3) ~ 2.0299 usage; the block quotes no numeric, so no Lambda-vs-Cl_2 coefficient hazard here."
       }
     ],
     "trap-nonspeakable": [
@@ -1921,6 +2057,21 @@
         "reviewed_at": "2026-08-15T10:31:00.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "58b87822a60c",
+          "ts": "728c0e2bc929"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:44:38.549Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'the Frobenius-reciprocity pullback through the knot-ideal central projector e_{K_k^*} in Z(H_n)' is the densest chain; it is a single named construction and reads aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1944,5 +2095,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:44:38.549Z"
 }

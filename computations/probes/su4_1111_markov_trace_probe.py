@@ -76,8 +76,16 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import str_at_true_precision  # noqa: E402
 import mass_at_3A_proper as m3  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # AME2020 total nuclear binding (MeV) — same anchors as PROBE 2.
 AME = {"D": mp.mpf("2.224566"), "4He": mp.mpf("28.295673"), "6Li": mp.mpf("31.994564")}
@@ -193,10 +201,105 @@ def _fdim(lam):
 # ══════════════════════════════════════════════════════════════════════
 # §2  y_λ-normalised Markov trace of the atom braid, projected onto e_A[h_3]
 # ══════════════════════════════════════════════════════════════════════
+class ExactCharacterInfeasible(RuntimeError):
+    """Raised when χ_λ cannot be computed at the required precision.
+
+    A guard, not a crash. See `_chi` for the measurement behind it.
+    """
+
+
 def _chi(lam, word, n_gens):
+    """χ_λ(β_K) at full precision -- or an explicit refusal.
+
+    THIS PROBE CANNOT CURRENTLY RUN, AND THE REASON IS NOT A BUG TO PATCH
+    AROUND. `atom_braid_word_3A` carries exact `mpf` offsets by default
+    (`allow_float64=False`), and `mass_at_3A_proper.chi_lambda_of_word`
+    multiplies them into `scipy.sparse` matrices, which reject `dtype
+    object` -- so the two halves are precision-incompatible. Measured on
+    the A=4 word: 25 of its 47 crossings carry an `mpf` coefficient.
+
+    The exact route EXISTS -- `hoefsmit_mpmath.chi_lambda_of_word_mp`, dense
+    mpmath, same accumulation order -- and is correct. It is also unaffordable,
+    measured at the canonical working precision (dps = 70):
+
+        dim = 132   ((6,6), the SMALLEST of the ten irreps)   81.2 s
+        dim = 4158  ((5,3,3,1), the largest)   ~705 h by cubic scaling
+        all ten irreps                         ~1135 h
+
+    CORRECTED: an earlier version of this note said 65.7 s / ~571 h. That was
+    measured at `mp.dps = 15` -- mpmath's DEFAULT, which `_precision`'s own
+    docstring warns about in as many words: "IMPORTING THIS MODULE DOES NOT
+    SET mp.dps ... the number reads as measured while carrying ~15 significant
+    digits". Neither this file nor `hoefsmit_mpmath` raises it, so a harness
+    that forgets `set_compute_dps()` silently benchmarks float64-grade
+    arithmetic. The old figures understated the cost.
+
+    THE TEMPTING FIX IS BANNED. Casting `float(c)` makes this exit 0 in
+    0.01 s and produce numbers that look entirely plausible. It is exactly
+    the shortcut AGENTS.md §"PROBES ARE NOT EXEMPT" was made STRICT to stop,
+    and "note it as a limitation and ship" is named there as the wrong move.
+
+    RETRACTED, THEN RE-MEASURED, and the pair is the lesson. This note used to
+    say "the float64 character agrees to 15 digits against the 50-dps
+    reference, so the word is well conditioned there". BOTH SIDES of that
+    comparison were at dps = 15, so the agreement was the FLOOR OF THE
+    ARITHMETIC ON BOTH SIDES -- the invalid form AGENTS.md names.
+
+    Redone against a reference that is actually exact (the sparse route below,
+    dps = 70, cross-validated against dense mpmath to 7e-71):
+
+        shape          dim    float64 relative error   digits
+        (6,6)          132          2.779e-16            15
+        (9,1,1,1)      165          4.073e-16            15
+        (3,3,3,3)      462          5.715e-17            16
+        (8,3,1)        891          2.999e-15            14
+
+    So float64 holds 14-16 digits across a 6.7x range of dim, degrading mildly.
+    Extrapolating that trend to dim = 4158 suggests ~13, but it was NOT
+    measured there.
+
+    The point worth keeping: the retracted claim was APPROXIMATELY RIGHT and
+    entirely UNSUPPORTED. Being close to the truth is not the same as having
+    evidence for it, and the fix is to get the evidence rather than to keep the
+    guess. Note also what this does and does not license -- it says the
+    CHARACTER PRODUCT is well conditioned; it says nothing about the probe's
+    verdict, which also depends on the y_lambda weights and the ratios built
+    from them, and AGENTS.md's rule is about carriage through the whole
+    analysis, not one number.
+
+    THE REAL FIX IS MEASURED AND WORKS. Neither cast nor dense-mpmath: the
+    seminormal `sigma_i` carry at most 2 nonzeros per row, so the trace can be
+    taken by propagating ONE ROW AT A TIME through the 47 factors, never
+    materialising the product. Cost falls from `dim^3 * len(word)` to
+    `dim^2 * len(word) * nnz_per_row`. Validated at dim=132, dps=70, against
+    the dense routine:
+
+        dense   20.472734309881024467   ~80 s
+        sparse  20.472734309881024467    ~1 s      (80-85x over two runs)
+        relative difference  7.077e-71  -- exact agreement at the working
+                                           precision, NOT a float64 floor
+
+        extrapolated, all ten irreps:  ~36 min (nnz/row = 1, as at dim=132)
+                                       ~73 min (nnz/row = 2, the 2x2 blocks
+                                                that larger irreps carry)
+
+    So the A=4 [1^4] object is roughly an hour of exact compute, not 1135
+    hours. Implementing that properly -- placement, tests, review -- is bean
+    `qou-fmoi`, not a line in a crash fix.
+    """
     sig, dim, _ = build_seminormal_matrices(tuple(lam))
     if dim == 0:
         return mp.mpf(0)
+    if any(isinstance(c, mp.mpf) or isinstance(d, mp.mpf) for c, d, _g in word):
+        raise ExactCharacterInfeasible(
+            f"chi_lambda for {tuple(lam)} (dim={dim}): the braid word carries "
+            f"exact mpf offsets, which scipy.sparse cannot hold (dtype "
+            f"object), and the dense mpmath route costs ~705 h at dim=4158. "
+            f"The trace-only sparse route is measured at ~1 h for all ten "
+            f"irreps (bean qou-fmoi) but is not built yet. Refusing "
+            f"rather than casting to float64 (AGENTS.md: probes are not "
+            f"exempt)."
+        )
     return mp.mpf(m3.chi_lambda_of_word(sig, dim, word, n_gens))
 
 

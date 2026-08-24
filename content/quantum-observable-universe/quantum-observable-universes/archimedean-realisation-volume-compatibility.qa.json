@@ -1542,6 +1542,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.362Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Conjecture block; both functors introduced positively, conjecture stated as a coincidence of three values."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1561,6 +1576,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.402Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Setup (two functors) then the conjectural identity; no rhetorical reframe."
       }
     ],
     "trap-em-dash": [
@@ -1580,6 +1610,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 48 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.439Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1599,6 +1644,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 48 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.479Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The three-term equality is a mathematical identity, not a prose triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1618,6 +1678,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.519Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Block ends on the displayed equation."
       }
     ],
     "trap-meta-commentary": [
@@ -1637,6 +1712,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.558Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narration of emphasis; 'Conjecturally' is an honest modality marker."
       }
     ],
     "trap-thesis-restatement": [
@@ -1656,6 +1746,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.599Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1675,6 +1780,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.643Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1694,6 +1814,21 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.690Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'for every QOU braid' is the quantifier of the conjecture, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1713,6 +1848,22 @@
         "reviewed_at": "2026-08-15T10:30:59.973Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d407d97786e0",
+          "ts": "fff58f9f2860"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:55.736Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Prose is two short declaratives plus the conjecture sentence.",
+        "notes": "Non-trap consistency note: the block mixes 'realisation' (local, tau_infty) and 'realization' (global, R_top) in both the .md and the .ts title; worth a spelling-consistency pass."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1736,5 +1887,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:50:55.736Z"
 }

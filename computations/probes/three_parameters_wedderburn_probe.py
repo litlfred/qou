@@ -46,9 +46,10 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from hoefsmit_mpfr import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from hecke_character_symbolic import standard_young_tableaux  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _matrix_max_abs(M, dim: int) -> "mp.mpf":
@@ -69,7 +70,7 @@ def main() -> int:
         "three-parameters-wedderburn-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     q = Q_MP
     h = q - 1 / q

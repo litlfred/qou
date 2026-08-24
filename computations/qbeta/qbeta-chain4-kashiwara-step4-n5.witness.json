@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-21T21:50:22.091791+00:00",
-  "commitSha": "b00f813a65559fced8f1b65a910f0a12a7087251",
+  "computedAt": "2026-08-23T21:12:10.932155+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "step4_enumeration_complete",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 3,
   "computation": "qbeta-chain4-kashiwara-step4-n5",
   "scriptFile": "qbeta_chain4_kashiwara_step4_n5.py",
-  "scriptHash": "f845c27fad15",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "14555641f34b",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,16 +34,26 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py"
   },
   "description": "Step 4 of Chain 4 — Kashiwara crystal probe at n=5. Continuation of PR #1772 NEGATIVE at n ≤ 4. Survey of 50 prefactor candidates derived from partition invariants of the 7 partitions of 5: f^λ, hook products, major index sums (maj_sum, via SYT enumeration), and q-dimensions at proton-pinned q_0. Target computed with corrected ℏ_q = (q − 1)/q, NOT the buggy hard-coded 0.0922502 from Step 2. Best near-match: q-dim_(2,2,1) / f^(2,2,1) → NEAR-CLOSE (ratio 0.503969). Anti-pattern guards respected: TIERED reporting; cross-anchor deferred to Step 6; NO ansatz proposed.",
   "data": {
     "residue_target_A": "0.000000000000001804",
-    "prefactor_target_proton": "2.0717327773613738302527359154788178225948053571385",
-    "prefactor_target_muon": "2.071729518192513231320075931161121943800806056265",
-    "h_q_substrate_proton": "0.099081716044258507839177117518281999748464888241219",
-    "h_q_substrate_muon": "0.099081726435698885820014342688412528468474023957784",
+    "prefactor_target_proton": "2.071732777361373830252735915478817822594805357138621776464328795917553",
+    "prefactor_target_muon": "2.071729518192513231320075931161121943800806056265082373866003257295223",
+    "h_q_substrate_proton": "0.09908171604425850783917711751828199974846488824121838490576573249117677",
+    "h_q_substrate_muon": "0.09908172643569888582001434268841252846847402395778363866766501635650879",
     "q_proton": "1.10997858275138080759166909561",
     "q_muon": "1.1099785955541805752815940796095093779932822799587",
     "partition_invariants_n5": {
@@ -184,16 +194,6 @@
         "ratio": "0.503969",
         "tier": "NEAR-CLOSE"
       },
-      "q-dim²_(5)": {
-        "value": "1.0",
-        "ratio": "0.482688",
-        "tier": "MISS"
-      },
-      "q-dim²_(1,1,1,1,1)": {
-        "value": "1.0",
-        "ratio": "0.482688",
-        "tier": "MISS"
-      },
       "f^(5)": {
         "value": "1.0",
         "ratio": "0.482688",
@@ -210,6 +210,16 @@
         "tier": "MISS"
       },
       "q-dim_(1,1,1,1,1)": {
+        "value": "1.0",
+        "ratio": "0.482688",
+        "tier": "MISS"
+      },
+      "q-dim²_(5)": {
+        "value": "1.0",
+        "ratio": "0.482688",
+        "tier": "MISS"
+      },
+      "q-dim²_(1,1,1,1,1)": {
         "value": "1.0",
         "ratio": "0.482688",
         "tier": "MISS"
@@ -232,5 +242,7 @@
     },
     "near_match_count": 0,
     "next_step": "Step 5: Demazure characters at fundamental weights"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

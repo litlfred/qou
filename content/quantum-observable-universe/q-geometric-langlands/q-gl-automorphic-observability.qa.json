@@ -1396,6 +1396,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not chosen.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.414Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Block-final: 'there is one dual pairing between gauge and matter, and it is forced, not chosen.' The positive claim ('it is forced') stands unaided; 'not chosen' adds only emphasis.",
+        "notes": "fix applied (joint with CA/TH/SU/EM): '...unique - there is one dual pairing between gauge and matter, and it is forced, not chosen.' -> '...unique: it forces a single dual pairing between gauge and matter.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1415,6 +1432,23 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.453Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'Concretely, the correspondence is a dictionary between gauge configurations and matter content, and the burden of this section is that observability forces that dictionary to be unique.' Setup clause then reframe; the second clause carries everything.",
+        "notes": "fix applied: 'and the burden of this section is that observability forces that dictionary to be unique' -> 'and observability forces that dictionary to be unique'"
       }
     ],
     "trap-em-dash": [
@@ -1434,6 +1468,23 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 194 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.496Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'unique - there is one dual pairing between gauge and matter' - dash appending a gloss in the block's final sentence.",
+        "notes": "fix applied jointly with the negation-contrast fix; the dash became a colon."
       }
     ],
     "trap-triples": [
@@ -1453,6 +1504,22 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 194 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.536Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting conj:q-gl-fiber-functor; 4 paragraphs); all ten judged. This block was the densest trap cluster in the batch - 7 of 10 categories fired."
       }
     ],
     "trap-closing-aphorism": [
@@ -1472,6 +1539,23 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.574Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "The block ends with a bolded mini-section ('**Uniqueness from observability.**') whose single sentence is a quotable restatement of what paragraph 3 already established ('The rigidity of tau guarantees that the Langlands equivalence is unique.').",
+        "notes": "fix applied: rewritten to state the claim plainly rather than as a slogan. Section retained."
       }
     ],
     "trap-meta-commentary": [
@@ -1491,6 +1575,23 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.612Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'the burden of this section is that ...' narrates the section's own rhetorical purpose instead of stating the claim.",
+        "notes": "fix applied - see trap-rhetorical-pivot."
       }
     ],
     "trap-thesis-restatement": [
@@ -1510,6 +1611,23 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.652Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Same final sentence: paragraph 3 already says 'The rigidity of tau guarantees that the Langlands equivalence is unique'; the block-final paragraph restates it.",
+        "notes": "fix applied jointly. NOTE the deeper defect, reported as ANOMALY 3: 'Because tau uniquely determines L_q, the automorphic-spectral duality follows from observability' asserts the ANTECEDENT of conj:q-gl-fiber-functor - the very conjecture this remark is declared to interpret - as an established premise."
       }
     ],
     "trap-performed-warmth": [
@@ -1529,6 +1647,22 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.693Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting conj:q-gl-fiber-functor; 4 paragraphs); all ten judged. This block was the densest trap cluster in the batch - 7 of 10 categories fired."
       }
     ],
     "trap-superlative": [
@@ -1548,6 +1682,23 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.733Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'Observability is **exactly** what makes the q-Langlands equivalence unique' - unqualified maximum strength on a conjectural claim.",
+        "notes": "fix applied: 'is exactly what makes' -> 'is what makes'"
       }
     ],
     "trap-nonspeakable": [
@@ -1567,6 +1718,22 @@
         "reviewed_at": "2026-08-15T10:31:00.929Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "dc39fbe09090",
+          "ts": "f738fcd9db7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.773Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting conj:q-gl-fiber-functor; 4 paragraphs); all ten judged. This block was the densest trap cluster in the batch - 7 of 10 categories fired."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1589,5 +1756,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:44.773Z"
 }

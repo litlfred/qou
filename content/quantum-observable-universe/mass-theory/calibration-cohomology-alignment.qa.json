@@ -2135,6 +2135,22 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.916Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 175-word proposition and its three-row alignment table."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2154,6 +2170,22 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.959Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 175-word proposition and its three-row alignment table."
       }
     ],
     "trap-em-dash": [
@@ -2173,6 +2205,22 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.058Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "No spaced dashes."
       }
     ],
     "trap-triples": [
@@ -2192,6 +2240,22 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.102Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 175-word proposition and its three-row alignment table."
       }
     ],
     "trap-closing-aphorism": [
@@ -2211,6 +2275,22 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.140Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 175-word proposition and its three-row alignment table."
       }
     ],
     "trap-meta-commentary": [
@@ -2230,6 +2310,22 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.176Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 175-word proposition and its three-row alignment table."
       }
     ],
     "trap-thesis-restatement": [
@@ -2249,6 +2345,23 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.213Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "FIX APPLIED -- the closing paragraph restated its own preceding sentence.",
+        "notes": "fix applied: deleted 'The three calibration inputs exactly match the three undetermined cohomological data of the Bring Hodge structure.' The paragraph now reads 'The count 2 + 1 = 3 matches the three calibrations. These form the choice of units forced at the substrate-to-archimedean wall.' -- the deleted sentence said nothing the sentence before it had not just said."
       }
     ],
     "trap-performed-warmth": [
@@ -2268,6 +2381,22 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.249Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 175-word proposition and its three-row alignment table."
       }
     ],
     "trap-superlative": [
@@ -2287,6 +2416,22 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.286Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 175-word proposition and its three-row alignment table."
       }
     ],
     "trap-nonspeakable": [
@@ -2306,6 +2451,23 @@
         "reviewed_at": "2026-08-15T10:31:00.393Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "55a09de35e31",
+          "ts": "45156b052ade"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.320Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Table plus short prose.",
+        "notes": "RIGOR (not a trap): (1) NOTATION COLLISION -- the same paragraph uses tau twice for different objects: 'Applying the archimedean realisation tau' (the fibre functor, which AGENTS.md 7 reserves tau for) and, in the table, 'modulus of that plane = SL_2 trace tau = 2 cosh theta'. Proposed: rename the SL_2 trace (t, or Tr B). (2) CURRENCY -- the table's calibration column reads 'CAL-2 q_0'; under the 2026-06-26 decay-width ruling CAL-2 is D_beta and q_0 is what it FIXES (which the 'cohomological datum' column already says). The proof sibling gets this right."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2329,5 +2491,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:41.320Z"
 }

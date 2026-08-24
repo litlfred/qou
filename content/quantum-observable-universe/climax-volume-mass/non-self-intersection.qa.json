@@ -4,14 +4,11 @@
   "kind": "corollary",
   "paths": {
     "ts": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.md",
-    "lean": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean"
+    "md": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.md"
   },
   "source_hashes": {
     "md": "8a5ef84ed4f4",
-    "ts": "b980bb4a9ad5",
-    "lean": "14c763cf7b8c",
-    "lean_statement": "89004f886297"
+    "ts": "b980bb4a9ad5"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1376,7 +1373,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.062296Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim 'Let $\\varrho$ be a knot embedding with categorical Möbius energy' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim 'Let $\\varrho$ be a knot embedding with categorical M\u00f6bius energy' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
       },
@@ -1544,7 +1541,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.062296Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of 'Let $\\varrho$ be a knot embedding with categorical Möbius energy' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of 'Let $\\varrho$ be a knot embedding with categorical M\u00f6bius energy' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
       },
@@ -1748,7 +1745,7 @@
         "reviewed_at": "2026-07-07T14:26:57.062296Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:29:13: error: unexpected token 'section'; expected 'lemma'.",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:1 — content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:29:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:1 \u2014 content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:29:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
       },
       {
@@ -1933,7 +1930,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "The standing boilerplate now reads \"**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall\", dropping both the \"(§7c)\" tag and \"This block\".",
+        "notes": "The standing boilerplate now reads \"**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall\", dropping both the \"(\u00a77c)\" tag and \"This block\".",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -2104,6 +2101,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.253Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no negation-contrast construction present in context."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2123,6 +2135,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.311Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no rhetorical-pivot construction present in context."
       }
     ],
     "trap-em-dash": [
@@ -2142,6 +2169,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 92 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.357Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no load-bearing em-dash construction present in context."
       }
     ],
     "trap-triples": [
@@ -2161,6 +2203,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 92 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.400Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no compulsive-triple construction present in context."
       }
     ],
     "trap-closing-aphorism": [
@@ -2180,6 +2237,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.445Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no closing-aphorism construction present in context."
       }
     ],
     "trap-meta-commentary": [
@@ -2199,6 +2271,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.488Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no meta-commentary construction present in context."
       }
     ],
     "trap-thesis-restatement": [
@@ -2218,6 +2305,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.531Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no thesis-restatement construction present in context."
       }
     ],
     "trap-performed-warmth": [
@@ -2237,6 +2339,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.575Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no performed-warmth construction present in context."
       }
     ],
     "trap-superlative": [
@@ -2256,6 +2373,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.617Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no superlative-inflation construction present in context."
       }
     ],
     "trap-nonspeakable": [
@@ -2275,6 +2407,21 @@
         "reviewed_at": "2026-08-15T10:31:00.130Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8a5ef84ed4f4",
+          "ts": "b980bb4a9ad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:27.659Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no non-speakable-syntax construction present in context."
       }
     ],
     "wall-base-ring-minimal": [

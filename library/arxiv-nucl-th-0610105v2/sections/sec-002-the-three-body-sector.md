@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-0610105v2
-doc_title: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut f¨ ur Strahlen- und Kernphysik (Theori e)"
+doc_title: "Universal Properties of the Four-Body System with Large Scattering Length"
 section_id: sec-002-the-three-body-sector
 section_title: "The Three-Body Sector"
 section_number: null
 pages: 5-6
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
-doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut für Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length — Few-body systems with large scattering length have univers al properties that do not depend on the details of their"
 ---
 The low-energy properties of the three-body system for a given e ﬀective potential can
 be obtained by solving the Faddeev equations. The full wave functio n can be decomposed

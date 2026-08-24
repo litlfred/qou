@@ -47,7 +47,8 @@ tau2_num_b = sp.expand(3*(3*b**2 + 2) - 2*4*(b + 2))                # 9b²−8b�
 min_q = sp.solve(sp.numer(sp.together(sp.diff(tau, q))), q)
 min_q = [c for c in min_q if c.is_positive]
 
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 tau_f = sp.lambdify(q, tau, 'mpmath')
 q0 = mp.mpf('1.10997859555733471')
 tau0 = tau_f(q0); lamp0 = (tau0 + mp.sqrt(tau0**2 - 4))/2

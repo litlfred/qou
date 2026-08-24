@@ -1413,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.141Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): scanned the whole text for assertion-by-denial (not-X-but-Y, 'rather than', bolded denials, negation-first openers), not only the scanner's candidates; none present.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.178Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for setup-then-reframe constructions in which a second clause carries the claim; the block states its claims directly.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 216 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.217Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): spaced em-dash count 0; uses are ranges or true appositives, not substitutes for sentence structure.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1470,6 +1518,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 216 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.257Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): every enumeration checked for reflex-of-three padding; those present enumerate distinct named objects tied to the block's content.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1553,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.297Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): final sentence checked: it carries content (a cross-reference, a technical statement, or a scope note) rather than a quotable flourish placed for cadence.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1588,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.338Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for narrated emphasis ('the key point', 'we emphasize', 'note the framing', 'the takeaway'); none present.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1623,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.378Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): block-final sentence compared against the body; it adds content rather than restating what the text already established.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1658,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.418Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): institutional register throughout; no personal or affective language.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1693,23 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.460Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "The Standard Model weak force violates parity maximally. is followed two sentences later by \"The ratio $q^2 = 1.232$ measures the left-right asymmetry.\" Recomputed q0^2 = 1.2320520 (identical to 7 figures at all three live pins). A 1.232 left/right weight ratio is a graded asymmetry, not maximal violation (V-A couples exclusively to one chirality).",
+        "notes": "proposed: keep the SM statement but say what the categorical map actually supplies -- \"the crossing weights give a graded asymmetry $q^2 = 1.232$; recovering exclusive left-handed coupling requires ...\" Math-adjacent; not edited."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1729,22 @@
         "reviewed_at": "2026-08-15T10:31:01.291Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:18.500Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): read aloud for noun-chain stalls; sentence length and verb placement are conventional for the register.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1767,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:01:18.500Z"
 }

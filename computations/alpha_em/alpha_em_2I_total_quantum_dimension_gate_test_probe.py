@@ -60,8 +60,9 @@ from qou_substrate.constants import q_at  # noqa: E402
 # reuse ONLY the pure-python partition + hook enumerators from the merged keystone gate
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "docs" / "audits" / "scripts"))
 import keystone_wlambda_unitarity_normalization_gate_probe as kg  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 B1 = 8  # dim H¹(M_Bring) = 2g, g=4
 
 

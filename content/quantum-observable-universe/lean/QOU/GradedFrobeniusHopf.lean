@@ -95,39 +95,6 @@ structure SymDim1
 
 /-! ## §2  Channel separation from adjoint vanishing -/
 
-/-- **Theorem (Channel separation from adjoint vanishing).**
-
-    If `Hom(𝟙, Ad(A)) = 0` (the QOU adjoint vanishing axiom), then
-    the adjoint representation `Ad(A)` has no degree-0 (symmetric) component.
-
-    Proof: The degree-0 component of any representation `V` is
-    `Hom(𝟙, V)`.  If `V = Ad(A)` and `Hom(𝟙, Ad(A)) = 0`, then
-    the degree-0 component of `Ad(A)` is trivial.
-
-    Equivalently: `Ad(A) ≅ V₂` (spin-1, dim 3) lies entirely in the
-    degree-≥1 graded piece.
-
-    This IS the categorical channel separation:
-    - **Vector coupling** (symmetric channel, degree 0) → invisible to adjoint
-    - **Axial coupling** (standard channel, degree ≥ 1) → carries all non-trivial structure
-
-    LaTeX: connects to `\label{prop:brings-is-qou}` (item 2) -/
--- Ref: [lusztig1993]
-theorem adjoint_has_no_degree_zero
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (adjointObj : C)
-    (adj_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)) :
-    -- ⚠ The conclusion is the HYPOTHESIS, verbatim: this is a `P → P`, and
-    -- the trailing claim that it shows "the degree-0 (symmetric) component of
-    -- Ad(A) is trivial" is NOT proved here.  `adjointObj` is a bare `C` with
-    -- no graded structure, so it has no `symComponent` for the statement to be
-    -- about.  `GradedFrobeniusHopf` does carry one — the real statement is
-    -- expressible, but only once the adjoint object carries the grading too.
-    -- Bean `qou-fav8`.
-    Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
-  adj_vanishing
-
 /-- **Corollary**: In `Rep(SU_q(2))`, `Ad(A) ≅ V₂` (spin-1, dimension 3),
     which has no trivial (spin-0) sub-object.
 
@@ -181,10 +148,25 @@ structure HeckeIrrepDecomposition where
 theorem hecke_h3_wedderburn :
     1 + 2 * 2 + 1 = (6 : ℕ) := by omega
 
-/-- The degree-0 subspace has dimension 1 (the symmetric eigenspace). -/
+/-- The dimension of the degree-0 subspace (the symmetric eigenspace).
+    A **named constant**, not a theorem.
+
+    Replaced `theorem degree_zero_dim_one : (1 : ℕ) = 1 := rfl`
+    (2026-08-21; vacuity ledger, `reflexive-tautology-ascribed-literal`).
+    `1 = 1` holds whatever that dimension is, so the statement asserted
+    nothing about the graded piece; per Strict Lean Discipline §8 a claim
+    with no falsifiable content is notation and belongs in a `def`. -/
 -- Ref: [mathas1999]
-theorem degree_zero_dim_one :
-    (1 : ℕ) = 1 := rfl
+def degreeZeroDim : ℕ := 1
+
+/-- The two graded pieces exhaust `H₃(q)`: the degree-0 subspace
+    (`degreeZeroDim`) together with the degree-≥1 subspace (dimension 5,
+    `degree_geq1_dim_five`) account for all `3! = 6` dimensions.  False
+    for any other degree-0 dimension, so the constant is load-bearing. -/
+-- Ref: [mathas1999]
+theorem graded_pieces_exhaust_h3 :
+    degreeZeroDim + (2 * 2 + 1) = Nat.factorial 3 := by
+  decide
 
 /-- The degree-≥1 subspace has dimension 5 (standard × 2 + alternating). -/
 -- Ref: [mathas1999]

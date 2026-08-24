@@ -2324,6 +2324,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not used as input.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.554Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Header: 'The value $\\mathfrak{Q}_\\beta(n)$ ($H^2$) is the $\\beta$-decay datum being predicted, not used as input.' Plus 'These two forms are not competing predictions; they describe the same observable in two bases.'",
+        "notes": "The first is assertion-by-denial whose positive half is SUPERSEDED. AGENTS.md's 2026-06-26 owner ruling states verbatim that 'Q_beta is the proxy for CAL-2 (D_beta), not \"derived, not a calibration\"', explicitly superseding the 'three measured masses / Q_beta derived' wording this sentence carries. The same header also labels the inputs H^0/H^1/H^2, which the same cheat-sheet rules out ('not three distinct degrees H^0/H^1/H^2' -- all three are DOF of the single H^1(Bring)=2W). Both need the owner's current framing, so structural. VERIFIED SOUND separately: the derivation itself is exact -- Delta(net)=h(h-2)/2 follows from the two displayed NFs and times E_0 gives precisely m_e|q^2-2q-1|(q+1)/(2q^3), reproducing 0.7836 MeV, +0.17%, +1.3 keV."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2343,6 +2360,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.602Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2362,6 +2396,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 189 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.654Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -2381,6 +2432,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 189 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.700Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -2400,6 +2468,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.747Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -2419,6 +2504,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.796Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2438,6 +2540,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.837Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -2457,6 +2576,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.880Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -2476,6 +2612,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.921Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The $L_+$ and $L_-$ contributions cancel exactly because both nucleons share the same Hopf content at single wrap.' and 'The entire $Q$-value arises from the vacuum channel and the two crossing channels.'",
+        "notes": "NO $L_-$ TERM APPEARS ANYWHERE IN THIS BLOCK. The displayed proton NF is L_+ - (h/2)sigma_0 and the neutron NF is L_+ - h*sigma_0 - (h/2)sigma_1 + (h^2/2)gamma; neither contains L_-. So 'the L_+ and L_- contributions cancel' names a cancellation between one present term and one absent one. What the algebra actually shows is that the two L_+ coefficients are both 1 and subtract. Also flags a CROSS-BLOCK DISAGREEMENT: this block gives Q_calc = 0.7836 MeV (+0.17%) for n->p, while prf:parity-regime-selection's table gives 0.7816 MeV (-0.10%) for the same decay -- 0.25% apart, with opposite error signs. Reported, not resolved."
       }
     ],
     "trap-nonspeakable": [
@@ -2495,6 +2648,23 @@
         "reviewed_at": "2026-08-15T10:31:01.481Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.963Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'We derive the $Q$-value of free neutron $\\beta^-$-decay ... symbolically from the categorical three-calibration inputs' -- five-noun subject.",
+        "notes": "Dense but each noun is a defined term of the framework; reads as standard technical prose."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2518,5 +2688,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:56.963Z"
 }

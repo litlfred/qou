@@ -79,8 +79,32 @@ _add_to_path(_HERE)
 #    Filter out: leading-underscore dirs (`_deprecated`,
 #    `__pycache__`), leading-dot dirs, and any dir without
 #    `__init__.py` (so untracked tmp dirs don't pollute sys.path).
+#
+#    SORTED, and that is load-bearing rather than cosmetic. `iterdir()`
+#    yields in `os.scandir` order — filesystem-dependent, and NOT sorted.
+#    Measured on this checkout before the fix, the cluster tail came out
+#    `phase5, a_operator, markov, probes, substrate, alpha, audits,
+#    habiro, sweeps, qbeta, hecke`. Since `witness_path` returns the FIRST
+#    existing match, an unsorted search order means a stem duplicated
+#    across two cluster dirs resolves differently on different machines,
+#    and can flip on the same machine after unrelated file churn — the
+#    worst failure shape for a witness read: silent, and not reproducible
+#    from the source. `_HERE` stays first so the package root keeps
+#    priority over every cluster; only the tail is ordered.
+#
+#    Today exactly one duplicated stem is cluster-vs-cluster — the qβ Φ_b
+#    two-loop b-dictionary probe, which exists in both `probes/` and
+#    `qbeta/` — and `probes` precedes `qbeta` under both the old fs order
+#    and the sorted one, so this changes no resolution on this checkout:
+#    it removes the nondeterminism, it does not move a number.
+#
+#    (That stem is described rather than spelled on purpose. The
+#    duplicate-stem audit's consumer scan is TEXTUAL, so writing the
+#    literal filename here would register this module as one of its
+#    "consumers" and pollute the very report that tracks it.)
+#    Bean `qou-kcii`.
 _WITNESS_DIRS: list[Path] = [_HERE]
-for _child in _HERE.iterdir():
+for _child in sorted(_HERE.iterdir()):
     if not _child.is_dir():
         continue
     name = _child.name
@@ -123,4 +147,31 @@ def witness_path(name: str, prefer_dir: "Path | None" = None) -> Path:
         candidate = d / name
         if candidate.exists():
             return candidate
+
+    # LAST RESORT: `_deprecated/`.
+    #
+    # `_WITNESS_DIRS` skips `_`-prefixed directories on purpose, so a witness
+    # moved to `_deprecated/` becomes invisible here and every live reader dies
+    # on `FileNotFoundError`. That is not hypothetical:
+    # `beta-decay-energy-scale.witness.json` was deprecated while NINE live
+    # scripts still read it, and `derived_masses.py` / `q_beta_predicted.py`
+    # have been failing outright with "Run the beta-decay-energy-scale compute
+    # first" while `derive_e_0_lp_dual_h3.py` could not run at all — its
+    # witness sat frozen for three months carrying a maximally-violated duality
+    # certificate because nothing could refresh it.
+    #
+    # `_deprecated/README.md` requires that NOTHING live consume a witness
+    # before it moves, and documents the same failure once already
+    # (`hecke_core_legacy.py`, moved back out because nine importers depended
+    # on it). So this is a policy violation upstream, not a resolution rule —
+    # but a resolver that turns it into a crash helps nobody, and a live
+    # directory always wins because it is searched first.
+    #
+    # Deliberately NOT a general un-deprecation: it fires only when no live
+    # copy exists, which is precisely the broken-dependency case. Bean
+    # `qou/ftuv`.
+    deprecated = _HERE / "_deprecated" / name
+    if deprecated.exists():
+        return deprecated
+
     return (prefer_dir if prefer_dir is not None else _HERE) / name

@@ -945,6 +945,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a parameter-free derivation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.644Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'derives the composite structure ... **not** the absolute cluster base'; 'must not be cited as an ab-initio prediction'.",
+        "notes": "Both are the block's anti-laundering scope, mandated by the repo's fit-vs-derivation discipline; removing them would weaken an honest epistemic label."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -964,6 +980,21 @@
         "reviewed_at": "2026-08-15T10:31:00.721Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.691Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, Model G phenomenological closure with an explicit not-a-derivation banner); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -984,6 +1015,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "5 stylistic spaced dashes in 255 words (1.96/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.738Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three spaced dashes ('the composite structure - which alpha.alpha pairs activate ... - not the absolute cluster base'; 'only for $k\\ge3$ - the gate's Hopf-spectator closure ... suppresses'; 'the separate bond-count tower - $^3$H to ~0.16% with no fit').",
+        "notes": "All three gloss a preceding noun; none substitutes for a missing clause boundary."
       }
     ],
     "trap-triples": [
@@ -1003,6 +1050,21 @@
         "reviewed_at": "2026-08-15T10:31:00.721Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 255 words)"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.781Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, Model G phenomenological closure with an explicit not-a-derivation banner); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1022,6 +1084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.721Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.826Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, Model G phenomenological closure with an explicit not-a-derivation banner); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1041,6 +1118,21 @@
         "reviewed_at": "2026-08-15T10:31:00.721Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.876Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, Model G phenomenological closure with an explicit not-a-derivation banner); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1060,6 +1152,21 @@
         "reviewed_at": "2026-08-15T10:31:00.721Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.013Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, Model G phenomenological closure with an explicit not-a-derivation banner); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1079,6 +1186,21 @@
         "reviewed_at": "2026-08-15T10:31:00.721Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.144Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, Model G phenomenological closure with an explicit not-a-derivation banner); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1098,6 +1220,21 @@
         "reviewed_at": "2026-08-15T10:31:00.721Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.226Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, Model G phenomenological closure with an explicit not-a-derivation banner); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1117,6 +1254,21 @@
         "reviewed_at": "2026-08-15T10:31:00.721Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "379bd2165898",
+          "ts": "ae8106f64349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.277Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, Model G phenomenological closure with an explicit not-a-derivation banner); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1143,5 +1295,5 @@
     "md": "379bd2165898",
     "ts": "ae8106f64349"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:26:02.277Z"
 }

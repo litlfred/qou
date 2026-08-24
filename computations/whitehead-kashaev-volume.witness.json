@@ -1,14 +1,14 @@
 {
-  "description": "Whitehead link colored Jones / Kashaev reconstruction — Part 0 harness (asymptotic machinery self-test vs Vol(4₁)); Vol(Whitehead)=4G validator target",
+  "description": "Whitehead link colored Jones / Kashaev reconstruction \u2014 Part 0 harness (asymptotic machinery self-test vs Vol(4\u2081)); Vol(Whitehead)=4G validator target",
   "computation": "whitehead_kashaev_volume",
   "audit_only": true,
   "precision_dps": 50,
   "reconstruction_of": "lost stalled session on branch claude/whitehead-habiro-kashaev-lupmgo (uncommitted, container-reclaimed)",
-  "vol_whitehead_target": "3.663862376708876",
-  "vol_4_1_target": "2.0298832128193074",
-  "harness_best_richardson": "2.0304323951865711558386393573288173574055973324964",
-  "harness_err_vs_vol_4_1": "0.00054918236726376380005797379783551870244181491823951",
+  "vol_whitehead_target": "3.663862376708876060218414000000000000000000000000001298581002660412481",
+  "vol_4_1_target": "2.029883212819307250042405108549040571883378615060597706226778463961846",
+  "harness_best_richardson": "2.030432395186571155838639357328817357405597332496021326692812293894692",
+  "harness_err_vs_vol_4_1": "0.0005491823672639057962342487797767855222187174354236204660338299328457814",
   "harness_ok": true,
   "status": "part-0-harness-only",
-  "timestamp": "2026-07-25T18:20:18+00:00"
+  "timestamp": "2026-08-23T10:00:02+00:00"
 }

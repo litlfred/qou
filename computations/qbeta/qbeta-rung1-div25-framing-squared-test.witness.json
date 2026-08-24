@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:27:40.366300+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-24T12:10:11.481550+00:00",
+  "commitSha": "c679568568a3c38a9df794d34334a9c14b770945",
   "assertions": [
     {
       "name": "div25_q_deformation_test_decisive",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 44,
   "computation": "qbeta-rung1-div25-framing-squared-test",
   "scriptFile": "qbeta_rung1_div25_framing_squared_test.py",
-  "scriptHash": "957753961205",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "a9c789f80f63",
+  "scriptCommitSha": "b3440cbcebfad9716b80219a51ed9c37f5e5186f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -28,8 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_rung1_div25_framing_squared_test.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_rung1_div25_framing_squared_test.py"
   },
   "description": "Test the audit-doc conjecture /25 = (T(2,5) framing)². Compares the q-undeformed /25 c_3 closure (current main) to a q-deformed /[5]_q² candidate. If the q-deformation gives a worse c_3 fit, /25 is not a framing² in the categorical sense (it does not deform with q).",
   "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
@@ -58,6 +68,6 @@
       "conclusion": "/25 in c_3 closure is q-undeformed empirical constant; q-deformation /[5]_q² gives WORSE precision. /25 is NOT a categorical framing² that deforms with q. The structural source remains OPEN (classical-limit framing, integer-denominator Habiro element, or unreduced Markov normalization at 5 strands)."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate value. PROVED by running this producer underQOU_Q0_ANCHOR=muon and =proton and diffing the emitted witness:the only non-ephemeral leaves that differ are q0Anchor andq0Value THEMSELVES -- every substantive field is byte-identical,so the pin changes the label and nothing else. Its previous`muon` label was therefore a false claim that this producercomputed at that anchor. `independent` is the honestdisposition; a q0_anchor_manifest entry would be the WRONG fix,promoting a false claim into a declared one. Bean qou-o922,class (ii)."
 }

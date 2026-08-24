@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
   "engineVersion": "python",
-  "computedAt": "2026-08-01T23:54:17.228904+00:00",
+  "computedAt": "2026-08-24T10:52:09.264631+00:00",
   "computation": "habiro-magnitude-a3",
   "scriptFile": "habiro_magnitude_a3_probe.py",
-  "scriptHash": "fdbbc18b29fd",
-  "scriptCommitSha": "500a41be78ec585e90446ba501577ee008fb4c45",
+  "scriptHash": "385544fe6651",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "audit_only": true,
   "tier": "two-part honest negative: REFUTE(scope-b) infinite-Habiro divergence at q0>1 + WALL(scope-a) finite-Laurent bracket; 0 fit; nothing wired",
   "description": "GAP-A-3 ROUTE 4: does a Habiro-ring cyclotomic-completion fibre element supply the A=3 magnitude r* = mu3/c3 = 0.4708/0.297 = 1.5852? NO derived element found. (1) REFUTE(scope-b): the substrate anchor q0=1.10998>1 is OUTSIDE the Habiro ring's evaluation locus (roots of unity / |q|<1). The cyclotomic basis magnitude |(q;q)_n|=prod(q^k-1) is UNBOUNDED for q>1 (|(q;q)_40|~1.8e31); an integer-coefficient completion series Sum a_n (q;q)_n has non-vanishing terms and diverges there, so a genuine infinite Habiro element has no canonical archimedean value at the substrate. Cited Lean invariant: pochAbs_unbounded, habiro_terms_not_tendsto_zero (HabiroMagnitudeA3.lean, sorry-free, lean-direct exit 0). (2) WALL(scope-a): the only Habiro-shape elements evaluable at q0>1 are FINITE (Laurent) \u2014 the alpha_EM shape [k]_q(1-h^2 X). r* in (3/2,2) lies STRICTLY between [1]_q=1 and [2]_q~2.011; the (1-h^2 X) correction is negligible (h^2 X ~ 6e-5); no derived (0-fit) integer k or categorical X lands on r*. Best quantum-integer fit-scan match [6]_q/[4]_q=1.554 (-1.9%) is a scan match, not a forced value. 0 fit; mu3/c3/AME/CODATA/q0 never inverted; nothing wired. Parallels alpha_EM [2]_q(1-h^2 alpha) PR#1511 and the Q_beta Habiro element \u2014 those are FINITE Laurent objects, consistent with this finding.",
@@ -43,10 +43,10 @@
   ],
   "result": {
     "q0": "1.10997859555733471",
-    "h0": "0.20906032199559366104691961615112123791819925022069",
+    "h0": "0.2090603219955936610469196161511212379181992502206940460469258399056875",
     "mu3_MeV": "0.4708",
     "c3_MeV": "0.297",
-    "rstar": "1.5851851851851851851851851851851851851851851851852",
+    "rstar": "1.585185185185185185185185185185185185185185185185185185185185185185185",
     "pochAbs_n40_magnitude": "1.8368998e+31",
     "qInt1_q0": "1.0",
     "qInt2_q0": "2.0108969",
@@ -62,5 +62,8 @@
   },
   "lean": "QOU/MassTheory/HabiroMagnitudeA3.lean",
   "verdict": "no DERIVED Habiro element supplies r*; REFUTE(scope-b) infinite-completion divergence at q0>1 + WALL(scope-a) finite-Laurent bracket; nothing wired, no fit",
-  "allPassed": true
+  "allPassed": true,
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

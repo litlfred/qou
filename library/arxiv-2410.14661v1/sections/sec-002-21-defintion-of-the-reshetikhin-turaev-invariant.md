@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2410.14661v1
-doc_title: "(r is odd). Contents 1. Introduction 2 2. Preliminaries 4 2.1. Defintion of the Reshetikhin-Turaev invariants 4 2.2. Dilogarithm and Lobachevsky functions 6 2.3. Quantum dilogrithm"
+doc_title: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eigh"
 section_id: sec-002-21-defintion-of-the-reshetikhin-turaev-invariant
 section_title: "Defintion of the Reshetikhin-Turaev invariants"
 section_number: 2.1
 pages: 4-6
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
-doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
+doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
 ---
 proach of Reshetikhin-Turaev invariants [1, 12] following the concise illustration given in
 [24]. We focus on the SO(3) TQFT theory and consider the root of unity e

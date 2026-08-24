@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-29T19:40:46.190643+00:00",
-  "commitSha": "08f9d5c428462216b70353e21cf58681a02b3ad8",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:33.118118+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "bond_dilog_O1_arg_worse_than_geometric",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "the O(1)-argument bond-log α is farther from α_true than the geometric self-energy — the bond-dilog does not derive α"
+      "source": "the O(1)-argument bond-log \u03b1 is farther from \u03b1_true than the geometric self-energy \u2014 the bond-dilog does not derive \u03b1"
     }
   ],
   "allPassed": true,
-  "durationMs": 87,
+  "durationMs": 4,
   "computation": "flavor-split-alpha-bond-dilog",
   "scriptFile": "flavor_split_alpha_bond_dilog_probe.py",
-  "scriptHash": "6c75bc21d181",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c8a9dc0426fa",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,71 +27,81 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
-  "description": "Bond-dilog derivation of the flavor-split coefficient α: RULED OUT. The dilog/log at the O(1) bond arguments (z≈0.5, h≈0.21) gives α≈0.03–0.07 (worse than the geometric self-energy α=1, which is closest at +7.8%). Any single −ln(1−a·x) has 2nd-order ratio 1/2, so normalized α ∝ bond-sensitivity A≈0.13. α is a resummed self-energy, not a single bond-dilog; exact 0.929 is mass-functor-limited, not fitted. Anchor-stable.",
+  "invocation": {
+    "argv": [
+      "computations/probes/flavor_split_alpha_bond_dilog_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/flavor_split_alpha_bond_dilog_probe.py"
+  },
+  "description": "Bond-dilog derivation of the flavor-split coefficient \u03b1: RULED OUT. The dilog/log at the O(1) bond arguments (z\u22480.5, h\u22480.21) gives \u03b1\u22480.03\u20130.07 (worse than the geometric self-energy \u03b1=1, which is closest at +7.8%). Any single \u2212ln(1\u2212a\u00b7x) has 2nd-order ratio 1/2, so normalized \u03b1 \u221d bond-sensitivity A\u22480.13. \u03b1 is a resummed self-energy, not a single bond-dilog; exact 0.929 is mass-functor-limited, not fitted. Anchor-stable.",
   "data": {
-    "codata_dmn_over_mn": "0.0013774699387394029668339406551297433261342328109031",
+    "codata_dmn_over_mn": "0.001377469938739402966833940655129743326134232810903099235092864918057108",
     "proton_anchor": {
       "anchor": "proton_q0",
-      "q0": "1.1099785955573347198997632204832250266562084087802",
-      "A_bond_sensitivity": "0.13238698445050625514326631063122837089357059950873",
-      "alpha_true": "0.92925393990605075655018287293454515835292690106954",
+      "q0": "1.1099785827513808075916690956107688798744991218736",
+      "A_bond_sensitivity": "0.1028520386261565656239082167058411439403633676158620969810925584363441",
+      "alpha_true": "0.929488583611072672830936827202565922991873803901636696553425098972009",
       "forms": {
         "geometric_full_resummation": {
-          "alpha": "1.0013776064386523062065748231354511170217942920758",
-          "rel_err_vs_true_pct": "7.7614593207851647063164378333336114593113733461036"
+          "alpha": "1.001377605994481529558750779193382957996551415235701465246723068176189",
+          "rel_err_vs_true_pct": "7.734255552028328098620585164292108395898229798867660702952666360137763"
         },
         "single_log": {
-          "alpha": "0.50045904408334649754937071197156496109088997205241",
-          "rel_err_vs_true_pct": "-46.14399545791069700829433546445702918491445121182"
+          "alpha": "0.5004590439353914698532771510443415116992791948905555696238027161138325",
+          "rel_err_vs_true_pct": "-46.15759109260891022409470423841763893182423306732706264417210818123757"
         },
         "li2q_leading_arg": {
-          "alpha": "0.24879604958577309984680110602584936387188086458465",
-          "rel_err_vs_true_pct": "-73.226258302340173277612281347014411787336307246656"
+          "alpha": "0.2487960498359053255328048754515463809487503757019713995145841504970725",
+          "rel_err_vs_true_pct": "-73.233017142681825931541103874177533992347037080964324577626820649766"
         },
         "bond_log_O1_arg": {
-          "alpha": "0.066201530372185224083681798003693050881061917666779",
-          "rel_err_vs_true_pct": "-92.875840765455531155811229664780815614297491807848"
+          "alpha": "0.05143087083271169453447286621550592648555631774637208995599943420091567",
+          "rel_err_vs_true_pct": "-94.46675604848181843394685700815214018067770840866785498070521333312051"
         },
         "bond_li2q_O1_arg": {
-          "alpha": "0.032920038638747290477336697934979258284290677225447",
-          "rel_err_vs_true_pct": "-96.457368946740697645027784272740723049308998440766"
+          "alpha": "0.02557526710996582329532708849845037405513853971466023323213995145513195",
+          "rel_err_vs_true_pct": "-97.24845817787178746457102436766329309564219665537818527017987211170406"
         }
       }
     },
     "muon_anchor": {
       "anchor": "muon_q0",
-      "q0": "1.1099785955541805752815940796095093779932822799587",
-      "A_bond_sensitivity": "0.13238698444591725047736412469180438320474506673184",
-      "alpha_true": "0.92925399769946319680466495075424995516267060921356",
+      "q0": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+      "A_bond_sensitivity": "0.1028520497487774969983818463273627829953789329670926585215609477811755",
+      "alpha_true": "0.929252375042019201919884141484811953651153405972509016644719039757795",
       "forms": {
         "geometric_full_resummation": {
-          "alpha": "1.0013776064385429056095565751915454339990051585049",
-          "rel_err_vs_true_pct": "7.7614526187280100770400346970933722145075941366163"
+          "alpha": "1.001377606441614530668469292194474025953985126831154472211492207275449",
+          "rel_err_vs_true_pct": "7.761640791753042248829586870968074109915956036421222175926822785318647"
         },
         "single_log": {
-          "alpha": "0.50045904408331005578144944515814631266279024471093",
-          "rel_err_vs_true_pct": "-46.143998807399571705202145240488168582313497964371"
+          "alpha": "0.5004590440843332261350745827481238218981832186667160891708316396040231",
+          "rel_err_vs_true_pct": "-46.14390476411714043434714271622489349259730949798674840628639466915428"
         },
         "li2q_leading_arg": {
-          "alpha": "0.24879604958583470816195910033860367475585755662088",
-          "rel_err_vs_true_pct": "-73.226259967482039226962977422225598951704001801138"
+          "alpha": "0.2487960495841049402287014477072391042919405309097254943255733734056663",
+          "rel_err_vs_true_pct": "-73.22621321545131281498175571624605040967132591616125426898254539819808"
         },
         "bond_log_O1_arg": {
-          "alpha": "0.066201530369889526904448445396401494598318367728886",
-          "rel_err_vs_true_pct": "-92.875841208777856020572439805267400337486131089891"
+          "alpha": "0.05143087639664419236409967408515291036688552823830818493954689118617128",
+          "rel_err_vs_true_pct": "-94.46534894308786930343495068976021528039870460685347889607164014712704"
         },
         "bond_li2q_O1_arg": {
-          "alpha": "0.032920038637615590353865389341429736239388211441693",
-          "rel_err_vs_true_pct": "-96.457369167190551080329795698292161840639456341213"
+          "alpha": "0.02557526984553054131177276421461871512976906814621654316771215227884949",
+          "rel_err_vs_true_pct": "-97.24775846342345141886823347455800375081893635181873846559164067660628"
         }
       }
     },
-    "alpha_true_anchor_drift": "0.000000057793412440254482077819704796809743708144020490164"
+    "alpha_true_anchor_drift": "0.000236208569053470911052685717753969340720397929127679908706059214214002"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.proton_anchor.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T21:31:19.485993+00:00",
-  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
+  "computedAt": "2026-08-23T08:55:20.576284+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "derived_heat_kernel_weight_closes_or_refutes_A3plus",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "binding-heat-kernel-weight-probe",
   "scriptFile": "binding_heat_kernel_weight_probe.py",
-  "scriptHash": "a1fd4a6a7cdf",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "1e0a88072857",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_heat_kernel_weight_probe.py"
+    ],
+    "reproduce": "python3 -u computations/binding_heat_kernel_weight_probe.py"
   },
   "description": "EXPLORATORY de-fit probe: tests the DERIVED q-heat-kernel eigenvalue weight C_λ(q)=Σ_□[c]_q[c+1]_q (prop:q-heat-kernel-peter-weyl, μ_λ shape) as the per-block binding measure B=E·Σ_λ w_λ|Δθ_λ|, replacing the FITTED per-depth α_k assignment. C_λ is parameter-free (ℏ_q² absorbed into E); heat-kernel e^{−C_λ·τ} variants are 1-param and reported tiered (no τ tuned to AME). Active set reported for the weight-form diagnostic; binding sum is FULL p(3A) (no truncation). Asserts the refutation if no zero-fit weight closes A≥3 to 5%.",
   "parameters": {
@@ -88,25 +95,25 @@
         }
       },
       "y_lambda": {
-        "global_scale": 50.0188637363583,
-        "worst_err": 1.9881550829877215,
-        "S_4He_over_S_D": 0.04190391279941638,
+        "global_scale": 57.17152963368355,
+        "worst_err": 2.8724717724945346,
+        "S_4He_over_S_D": 0.09846810023661737,
         "per_isotope": {
           "D": {
-            "B_pred": 6.64734879797268,
-            "err": 1.9881550829877215
+            "B_pred": 8.614569815545432,
+            "err": 2.8724717724945346
           },
           "T": {
-            "B_pred": 1.6731980329686043,
-            "err": -0.8027306960088708
+            "B_pred": 3.3670235039622565,
+            "err": -0.6030294262479148
           },
           "3He": {
-            "B_pred": 1.6937286462467558,
-            "err": -0.7805482448501223
+            "B_pred": 3.2683640734892783,
+            "err": -0.5765270700324854
           },
           "4He": {
-            "B_pred": 0.2785499243775525,
-            "err": -0.9901557376378101
+            "B_pred": 0.8482603240924659,
+            "err": -0.9700215420971213
           }
         }
       },
@@ -163,7 +170,7 @@
         "per_isotope": {
           "D": {
             "B_pred": 2.2245662,
-            "err": -2.1628029659250316e-42
+            "err": -1.6283047146588332e-71
           },
           "T": {
             "B_pred": 2.8657731483611074e-82,
@@ -190,27 +197,27 @@
               5,
               1
             ],
-            "frac": 0.43881565123583754
+            "frac": 0.44149866917935643
           },
           {
             "partition": [
               6
             ],
-            "frac": 0.21363910320301446
+            "frac": 0.3127598930091901
           },
           {
             "partition": [
               4,
               2
             ],
-            "frac": 0.1560829898594564
+            "frac": 0.13400596038967902
           },
           {
             "partition": [
               3,
               3
             ],
-            "frac": 0.13885134729160709
+            "frac": 0.11173547742177448
           }
         ]
       },
@@ -223,42 +230,27 @@
               6,
               3
             ],
-            "frac": 0.33660560210272666
+            "frac": 0.3389516821078193
           },
           {
             "partition": [
               8,
               1
             ],
-            "frac": 0.20301496805996158
+            "frac": 0.2714193208636044
           },
           {
             "partition": [
               7,
               2
             ],
-            "frac": 0.1485839858895721
+            "frac": 0.16532738672631248
           },
           {
             "partition": [
               9
             ],
-            "frac": 0.07677662442147748
-          },
-          {
-            "partition": [
-              5,
-              4
-            ],
-            "frac": 0.07545351482605459
-          },
-          {
-            "partition": [
-              6,
-              2,
-              1
-            ],
-            "frac": 0.07439546850348612
+            "frac": 0.15212992612219087
           }
         ]
       },
@@ -271,42 +263,27 @@
               6,
               3
             ],
-            "frac": 0.31918695629029
+            "frac": 0.30415795863779077
           },
           {
             "partition": [
               8,
               1
             ],
-            "frac": 0.21393720165109187
+            "frac": 0.2706678085104956
           },
           {
             "partition": [
               7,
               2
             ],
-            "frac": 0.21152767550560742
-          },
-          {
-            "partition": [
-              5,
-              4
-            ],
-            "frac": 0.0787659164776757
+            "frac": 0.22272942144557514
           },
           {
             "partition": [
               9
             ],
-            "frac": 0.06994265947939679
-          },
-          {
-            "partition": [
-              5,
-              3,
-              1
-            ],
-            "frac": 0.03364242822548258
+            "frac": 0.1311491190429693
           }
         ]
       },
@@ -319,72 +296,35 @@
               9,
               3
             ],
-            "frac": 0.25994268841616
+            "frac": 0.2961703488766319
           },
           {
             "partition": [
               8,
               4
             ],
-            "frac": 0.21130342944245323
+            "frac": 0.22451817710357705
           },
           {
             "partition": [
               10,
               2
             ],
-            "frac": 0.12069748698155476
-          },
-          {
-            "partition": [
-              7,
-              5
-            ],
-            "frac": 0.09234723511316509
+            "frac": 0.15407394889454665
           },
           {
             "partition": [
               11,
               1
             ],
-            "frac": 0.09183139012881246
+            "frac": 0.14235066537441576
           },
           {
             "partition": [
-              8,
-              3,
-              1
+              7,
+              5
             ],
-            "frac": 0.0363305780498325
-          },
-          {
-            "partition": [
-              6,
-              6
-            ],
-            "frac": 0.02907281786243333
-          },
-          {
-            "partition": [
-              12
-            ],
-            "frac": 0.025736754669153393
-          },
-          {
-            "partition": [
-              9,
-              2,
-              1
-            ],
-            "frac": 0.025415166662332452
-          },
-          {
-            "partition": [
-              8,
-              2,
-              2
-            ],
-            "frac": 0.019527965779109015
+            "frac": 0.09418188741145894
           }
         ]
       }

@@ -31,6 +31,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # atom knots; empirical first-order chirality coefficient (coeff of h in a_K)
 ISO = [("D", 1, 1, 1), ("3H", 1, 2, 0), ("3He", 2, 1, 0), ("4He", 2, 2, 0)]
@@ -78,7 +79,7 @@ def writhe(word) -> int:
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q0 = mp.mpf(str(Q0)); h = q0 - 1 / q0
     print("\n  CHIRALITY FACTOR FROM THE RIBBON EIGENVALUE  a_K = 1 + w·h·⟨κ⟩")
     print(f"  q₀={float(q0):.6f}  h={float(h):.6f}\n")

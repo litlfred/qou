@@ -904,6 +904,21 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.020Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'empty without electromagnetism rather than a statement about the strong sector' is the theorem's content; 'no evidence for this framework, or for any other' is the proved null-result claim."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -923,6 +938,22 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.061Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Fixed adjacent construction; remaining prose states claims directly.",
+        "notes": "fix applied: 'rests on a conjunction, and that is a real difference.' -> 'rests on a conjunction.' (significance was narrated; the section header and the cg_needs_both_premises sentence already carry it)"
       }
     ],
     "trap-em-dash": [
@@ -942,6 +973,22 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 469 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.102Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Post-fix density acceptable: remaining dashes are paired parentheticals (charge values, premise gloss, percentage comparators).",
+        "notes": "fix applied: 'each at fixed charge --- which is why the pairing is the one it is:' -> 'each at fixed charge, which is why the relation pairs the states it does:'"
       }
     ],
     "trap-triples": [
@@ -961,6 +1008,21 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 469 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.142Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'three strong, three electromagnetic' and the three U-spin pairs are the actual structure."
       }
     ],
     "trap-closing-aphorism": [
@@ -980,6 +1042,21 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.186Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Final lines are factual status (nothing fitted/wired; V-spin yields no independent relation)."
       }
     ],
     "trap-meta-commentary": [
@@ -999,6 +1076,21 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.227Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Section headers are noun/why-it-vanishes academic register; no emphasis narration post-fix."
       }
     ],
     "trap-thesis-restatement": [
@@ -1018,6 +1110,21 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.266Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Bold 'Reproducing Coleman--Glashow would be no evidence...' extends the identity claim to an evidence claim (new scope), not a pure restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1037,6 +1144,21 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.307Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1056,6 +1178,21 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.349Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'tightest of the three' is a data-backed comparative (0.8 vs 6 vs 9.2 pct)."
       }
     ],
     "trap-nonspeakable": [
@@ -1075,6 +1212,21 @@
         "reviewed_at": "2026-08-15T10:31:00.203Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fab694400e5c",
+          "ts": "81b0bd924907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.391Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Experimental combination re-verified: -1.293-(-8.08)+(-6.85) = -0.06 MeV, approx 0.8 pct of 8.1 MeV; cancellation pattern a/b/c checks."
       }
     ],
     "wall-base-ring-minimal": [

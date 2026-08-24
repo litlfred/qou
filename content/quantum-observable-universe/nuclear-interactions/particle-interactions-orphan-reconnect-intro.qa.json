@@ -1195,6 +1195,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.077Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph, 566 bytes) + .ts.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1231,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.117Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph, 566 bytes) + .ts.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1267,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 69 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.163Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (single paragraph, 566 bytes) + .ts.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1303,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 69 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.230Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Six-item enumeration of supporting principles.",
+        "notes": "Substantive list of the section's actual blocks."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1339,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.269Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph, 566 bytes) + .ts.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1375,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.324Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph, 566 bytes) + .ts.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1411,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.378Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph, 566 bytes) + .ts.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1447,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.433Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (single paragraph, 566 bytes) + .ts.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1483,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.472Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The sequence begins with the Geom universality **proposition**, which **establishes** the role of categorical geometry in the chapter's physical predictions.'",
+        "notes": "PROMOTES A CONJECTURE TO A PROPOSITION IN READER-FACING PROSE. I first suspected the referent did not exist and checked before writing it: the block IS present in this same directory, but as `conj:geom-universality` (content/quantum-observable-universe/nuclear-interactions/geom-universality.ts:4) -- a conjecture. A conjecture cannot 'establish' anything, and calling it a proposition in the section roadmap is exactly the conditional-proved-vs-premise-established confusion AGENTS.md flags. PROPOSED: 'begins with the Geom universality conjecture, which frames the role of...'. Separately: the label `sec:particle-interactions-orphan-reconnect-intro` carries internal editorial scaffolding ('orphan-reconnect') into a published section identifier."
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1519,23 @@
         "reviewed_at": "2026-08-15T10:31:01.302Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5463768c5c8a",
+          "ts": "4ebe3de3cc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.513Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (single paragraph, 566 bytes) + .ts.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1558,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:04.513Z"
 }

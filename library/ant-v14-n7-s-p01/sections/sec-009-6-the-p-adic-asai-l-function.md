@@ -1,13 +1,13 @@
 ---
 doc_id: ant-v14-n7-s-p01
-doc_title: "p-adic Asai L-functions of Bianchi modular forms David Loeﬄerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the"
+doc_title: "p-adic Asai L-functions of Bianchi modular forms"
 section_id: sec-009-6-the-p-adic-asai-l-function
 section_title: "The p-adic Asai L-function"
 section_number: 6
 pages: 27-30
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
-doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction"
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms — 13 sections: Introduction; Preliminaries and notation; Siegel units and weight 2 Asai–Eis"
 ---
 In this short section, we put together the norm-compatibility and p-adic interpolation relations proved
 above in order to deﬁne a measure on Z×

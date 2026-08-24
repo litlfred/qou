@@ -1324,6 +1324,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.084Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1343,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.122Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1362,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 292 words)"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.160Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1381,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 292 words)"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.198Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Six-role list is substantive (each role carries distinct math)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1400,6 +1460,22 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.296Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Fixed: closing summary line removed.",
+        "notes": "fix applied: deleted final sentence 'The maximal torus T determines the gauge bundle, the grading, the contact geometry, the commutative sector, the harmonic backbone, and the clock.' — pure restatement of the six-item list immediately above, with '...and the clock' as the quotable tail."
       }
     ],
     "trap-meta-commentary": [
@@ -1419,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.339Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1438,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.441Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Post-fix the block ends on role 6, no restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1457,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.487Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1476,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.588Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'six simultaneous roles' is a count, instantiated."
       }
     ],
     "trap-nonspeakable": [
@@ -1495,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:31:00.058Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "52c9052a3a28",
+          "ts": "59428abe54d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:38.629Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Role list is dense but speakable technical prose."
       }
     ],
     "wall-base-ring-minimal": [

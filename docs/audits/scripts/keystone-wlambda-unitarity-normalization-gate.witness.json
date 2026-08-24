@@ -3,12 +3,12 @@
   "description": "Observable-side reduction of the W_\u03bb geometric wall: W_\u03bb=d_q\u00b2/[n]_q! is sub-normalized (\u03a3_\u03bb W_\u03bb=Z(q)<1 at q\u22601, Z(1)=1 RSK/Burnside, n=5 Z=0.98222). A unitary modular S-matrix has \u03a3W=1 \u21d2 compact/unitary realization excluded by normalization; the geometric object must be non-unitary with defect Z(q). Complements the fibre-\u03b6 colored-LR modulus spec. No q\u2080 derivation; nothing wired.",
   "auditOnly": "docs/audits/2026-07-17-keystone-wlambda-unitarity-normalization-gate.md",
   "tier": "symbolic-exact (sympy; q-symbolic identity + RSK/Burnside q=1 anchor)",
-  "computedAt": "2026-07-17T20:51:13.543576+00:00",
-  "commitSha": "08a8e14b695cae15be681ed3d98c370ca9e221e8",
+  "computedAt": "2026-08-21T14:58:09.979377+00:00",
+  "commitSha": "8ba73cc915af09920d0345ede34ec1de63f65bbe",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "keystone_wlambda_unitarity_normalization_gate_probe.py",
-  "scriptHash": "6e216f59f35c",
+  "scriptHash": "c56221185ff6",
   "assertions": [
     {
       "name": "Z_equals_one_at_q1_rsk_burnside",
@@ -39,10 +39,10 @@
   "allPassed": true,
   "result": {
     "Z_at_q0": {
-      "2": 0.9945809589698911,
-      "3": 0.9874399257823825,
-      "4": 0.9821648951619864,
-      "5": 0.9822237221524119
+      "2": "0.99458096",
+      "3": "0.98743993",
+      "4": "0.98216490",
+      "5": "0.98222372"
     },
     "Z2_exact": "2*q/(q**2 + 1)",
     "Z3_exact": "(q**5 + 4*q**3 + q)/(q**6 + 2*q**4 + 2*q**2 + 1)",

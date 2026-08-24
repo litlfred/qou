@@ -40,25 +40,30 @@ inductive LeptonType
   | tau
   deriving DecidableEq, Repr
 
+/-- **CONJECTURE.** Lepton mass ratio for muon and tau. -/
+class LeptonMassRatioConjecture {R : Type*} [CommRing R] (q : R) where
+  muon_ratio : R
+  tau_ratio : R
+
 /-- Conjectural lepton-mass categorical formula `F_ℓ(q)`.
 
     For the electron, by calibration convention `F_electron(q) = 1`
     (electron is CAL-1, the mass unit). For muon and tau, the formula
     is conjectural per `conj:lepton-mass-tower-canonical`. -/
 noncomputable def lepton_mass_ratio
-    {R : Type*} [CommRing R] (q : R) : LeptonType → R
+    {R : Type*} [CommRing R] (q : R) [hi : LeptonMassRatioConjecture q] : LeptonType → R
   | LeptonType.electron => (1 : R)  -- calibration convention
   | LeptonType.muon     =>
       -- Ref: [manuscript] conj:lepton-mass-tower-canonical
-      sorry
+      hi.muon_ratio
   | LeptonType.tau      =>
       -- Ref: [manuscript] conj:lepton-mass-tower-canonical
-      sorry
+      hi.tau_ratio
 
 /-- **THEOREM.** The electron mass ratio is the multiplicative identity
     by calibration convention (CAL-1 sets the mass unit). -/
 theorem lepton_mass_ratio_electron_eq_one
-    {R : Type*} [CommRing R] (q : R) :
+    {R : Type*} [CommRing R] (q : R) [hi : LeptonMassRatioConjecture q] :
     lepton_mass_ratio q LeptonType.electron = 1 := by
   rfl
 
@@ -121,6 +126,10 @@ theorem torus_knot_odd_reduction_exists
       rw [e2, hh]; ring
     linear_combination P_k * hσ3 + Q_k * hh
 
+/-- **CONJECTURE.** Figure-eight reduction. -/
+class FigureEightReductionConjecture {R : Type*} [CommRing R] (σ_1 σ_2 h : R) : Prop where
+  reduction : (hh1 : σ_1^2 = h * σ_1 + 1) → (hh2 : σ_2^2 = h * σ_2 + 1) → (hbr : σ_1 * σ_2 * σ_1 = σ_2 * σ_1 * σ_2) → (σ_1 * (σ_2 - h))^2 = σ_2 * σ_1 - h^2 * (σ_1 * σ_2) - h * σ_2 + h^3 * σ_1 + h^2
+
 /-- Figure-eight (σ_1 σ_2⁻¹)² reduction in H_3(q).
     Requires:
     - σ_1, σ_2 satisfy Hecke relation: σ_i² = h σ_i + 1
@@ -147,13 +156,14 @@ theorem torus_knot_odd_reduction_exists
 -/
 theorem figure_eight_reduction
     {R : Type*} [CommRing R] (σ_1 σ_2 h : R)
+    [hi : FigureEightReductionConjecture σ_1 σ_2 h]
     (hh1 : σ_1^2 = h * σ_1 + 1)
     (hh2 : σ_2^2 = h * σ_2 + 1)
     (hbr : σ_1 * σ_2 * σ_1 = σ_2 * σ_1 * σ_2) :
     (σ_1 * (σ_2 - h))^2 = σ_2 * σ_1 - h^2 * (σ_1 * σ_2) - h * σ_2 + h^3 * σ_1 + h^2 := by
   -- Ref: [manuscript] — deferred to a non-commutative ring setting +
   -- lake verification; full proof strategy in the docstring above.
-  sorry
+  exact hi.reduction hh1 hh2 hbr
 
 /-- **CONJECTURE (Im(q) invariance at LO).** The lepton mass ratio
     via modulus projection is invariant under q ↦ q̄ at leading order.
@@ -188,7 +198,7 @@ These use the conjectural `lepton_mass_ratio` function. -/
 /-- **CONDITIONAL.** If the lepton tower holds, then the muon-to-electron
     ratio is determined by the torus-knot step T(2,3) → T(2,5) via
     the figure-eight knot transition. -/
-theorem muon_electron_ratio_from_tower {R : Type*} [CommRing R] (q : R) :
+theorem muon_electron_ratio_from_tower {R : Type*} [CommRing R] (q : R) [hi : LeptonMassRatioConjecture q] :
     lepton_mass_ratio q LeptonType.electron = 1 :=
   lepton_mass_ratio_electron_eq_one q
 

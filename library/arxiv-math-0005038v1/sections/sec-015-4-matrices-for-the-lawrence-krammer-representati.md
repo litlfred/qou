@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0005038v1
-doc_title: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW"
+doc_title: "Braid groups are linear"
 section_id: sec-015-4-matrices-for-the-lawrence-krammer-representati
 section_title: "Matrices for the Lawrence-Krammer representation"
 section_number: 4
 pages: 10-12
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
-doc_brief: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
+doc_brief: "Braid groups are linear — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 In this section we give an explicit description of the Lawrence-Kramm er repre-
 sentation in terms of matrices.

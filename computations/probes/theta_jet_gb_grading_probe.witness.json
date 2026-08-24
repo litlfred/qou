@@ -56,5 +56,8 @@
     ],
     "route_b": "computations/probes/qlift_routeB_connection_matrix_probe.py (measured C1 decay leg gamma ~ -1/4)",
     "discipline": "scope-(a); pre-stated discriminants; no AME data; the GS-bridge identification is leading-q-order + conjectural (C1 = binding module is the standing keystone conjecture)"
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347199",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -895,7 +895,177 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.767Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.806Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.845Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.884Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.925Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.963Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.002Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.040Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.079Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "25fd47ffc363",
+          "ts": "f11d1b92c5f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.117Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (silver/golden k-sweep), no prose sentences. Checked the one arithmetic claim in it: 13 = F_7 under F_1=F_2=1 (1,1,2,3,5,8,13), correct; 11 is prime hence 'inert' is at least self-consistent."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:04.117Z"
 }

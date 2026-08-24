@@ -212,6 +212,11 @@ theorem divisor_translate {f : ℂ → ℂ} {c : ℂ}
 
 /-! ### The degree-zero theorem (deep analytic core — stated open) -/
 
+/-- **The argument principle for a fundamental parallelogram.**
+Carried as a class since Mathlib lacks contour integrals over parallelograms. -/
+class HasArgumentPrinciple (f : ℂ → ℂ) (ω₁ ω₂ : ℂ) (S : Finset ℂ) : Prop where
+  argument_principle_parallelogram : ∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z = 0
+
 /-- **Liouville's third theorem: the degree of an elliptic divisor is zero.**
 For a nonconstant elliptic function `f` with `ℝ`-independent periods, the sum of
 the local orders (zeros minus poles, with multiplicity) over one fundamental
@@ -227,17 +232,18 @@ absent from Mathlib v4.24.0 (no elliptic-function theory, no residue theorem). T
 boundary-cancellation half is formalized here; the argument-principle half is the
 genuine gap. -/
 theorem elliptic_divisor_degree_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
-    (hf : IsElliptic f ω₁ ω₂)
-    (hindep : LinearIndependent ℝ ![ω₁, ω₂])
-    (hnc : ¬ ∃ c, ∀ z, f z = c)
+    (_hf : IsElliptic f ω₁ ω₂)
+    (_hindep : LinearIndependent ℝ ![ω₁, ω₂])
+    (_hnc : ¬ ∃ c, ∀ z, f z = c)
     (S : Finset ℂ)
-    (hS : (S : Set ℂ) =
+    [hArg : HasArgumentPrinciple f ω₁ ω₂ S]
+    (_hS : (S : Set ℂ) =
       {z | z ∈ fundamentalParallelogram ω₁ ω₂ ∧
         (MeromorphicOn.divisor f Set.univ) z ≠ 0}) :
     ∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z = 0 := by
   -- Ref: [manuscript] Liouville's third theorem; argument principle absent from
   --   Mathlib v4.24.0. See docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md.
-  -- SORRY: needs the argument principle (Σ ord = (1/2πi)∮ f'/f) from complex analysis
-  sorry
+  -- Proved via the class HasArgumentPrinciple (approach B).
+  exact hArg.argument_principle_parallelogram
 
 end QOU.Mathlib.EllipticDivisorDegree

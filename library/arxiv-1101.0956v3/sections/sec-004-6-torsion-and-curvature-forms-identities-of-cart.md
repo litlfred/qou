@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1101.0956v3
-doc_title: "CONSTANTIN M. ARCUS ¸"
+doc_title: "Algebraic constructions in the category of vector bundles"
 section_id: sec-004-6-torsion-and-curvature-forms-identities-of-cart
 section_title: "Torsion and curvature forms. Identities of Cartan and Bianchi type"
 section_number: 6
 pages: 38-44
 source_pdf: 1101.0956v3.pdf
 source_sha256: 28fffdb404e88501
-doc_brief: "CONSTANTIN M. ARCUS ¸ — In this paper we present the category of generalized Lie algebroids ."
+doc_brief: "Algebraic constructions in the category of vector bundles — In this paper we present the category of generalized Lie algebroids ."
 ---
 Bianchi type
 Using the theory of linear connections of Eresmann type pres ented in [1] for the diagram:

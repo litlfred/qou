@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.307Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.348Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.388Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.428Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.466Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.504Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.544Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.586Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.627Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "634fd40e1096",
+          "ts": "fa9d5ee44cb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.668Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row character table for the Coxeter element. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED against the standard Hecke-algebra result that chi_lambda(Coxeter) vanishes off hooks and equals (-1)^r q^{n-1-2r} on the hook with leg length r: n = 4 gives (4) -> q^3, (3,1) -> -q, (2,2) -> 0 (not a hook), (2,1,1) -> q^-1, (1^4) -> -q^-3. All five stated entries are correct, and they numerically reproduce table7's chi column at q_0."
+      }
     ]
   },
   "source_hashes": {
     "md": "634fd40e1096",
     "ts": "fa9d5ee44cb1"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:06.668Z"
 }

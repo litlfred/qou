@@ -1039,6 +1039,21 @@
         "notes": "The statement matches the formal definition, but the Lean sibling fails compilation.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7",
+          "lean": "b3df4dcdf079"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'warn' verdict is grounded on 'recursive-brane-tower.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-false-claim": [
@@ -1432,7 +1447,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower.lean:1 — ../lifting-and-descent/recursive-brane-tower.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Basic.olean' of module Mathlib.LinearAlgebra.Basic does not exist"
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower.lean:1 \u2014 ../lifting-and-descent/recursive-brane-tower.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Basic.olean' of module Mathlib.LinearAlgebra.Basic does not exist"
       },
       {
         "result": "pass",
@@ -1884,6 +1899,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:47.977Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no assert-by-denial construction; contrasts present are substantive mathematical distinctions or absent."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1903,6 +1933,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.019Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no setup-then-reframe pivot construction."
       }
     ],
     "trap-em-dash": [
@@ -1922,6 +1967,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.060Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no load-bearing spaced dashes; any dashes are ranges or true parentheticals."
       }
     ],
     "trap-triples": [
@@ -1941,6 +2001,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.102Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no reflex three-item list; enumerations present are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1960,6 +2035,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.143Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no quotable-sounding final line."
       }
     ],
     "trap-meta-commentary": [
@@ -1979,6 +2069,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.185Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no narration of emphasis (no 'we emphasize'/'note the framing')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1998,6 +2103,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.226Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no block-final restatement of already-established content."
       }
     ],
     "trap-performed-warmth": [
@@ -2017,6 +2137,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.267Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no personal register in institutional prose."
       }
     ],
     "trap-superlative": [
@@ -2036,6 +2171,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.309Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -2055,6 +2205,21 @@
         "reviewed_at": "2026-08-15T10:31:00.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "37806e501d03",
+          "ts": "cd481607e1b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.349Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): prose parses aloud; no stalling noun chains."
       }
     ],
     "wall-base-ring-minimal": [

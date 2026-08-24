@@ -1394,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.236Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1413,6 +1429,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.273Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-em-dash": [
@@ -1432,6 +1464,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 160 words)"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.310Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-triples": [
@@ -1451,6 +1499,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 160 words)"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.348Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-closing-aphorism": [
@@ -1470,6 +1534,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.389Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-meta-commentary": [
@@ -1489,6 +1569,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.427Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-thesis-restatement": [
@@ -1508,6 +1604,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.464Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-performed-warmth": [
@@ -1527,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.501Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-superlative": [
@@ -1546,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.538Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "trap-nonspeakable": [
@@ -1565,6 +1709,22 @@
         "reviewed_at": "2026-08-15T10:31:00.928Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "668c60befc90",
+          "ts": "e78a0e3ca950"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.577Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark titled 'Proof sketch for classical recovery', 4 bolded ingredient paragraphs + conclusion); all ten judged. Section 7a check: this block correctly writes the degeneration as 'the eigenvalues q and -q^{-1} degenerate to 1 and -1' without introducing a generator symbol. Content-wise the four limits are internally consistent. The terminal QED box on a conjecture sketch is reported as ANOMALY 15."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1587,5 +1747,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:45.577Z"
 }

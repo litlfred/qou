@@ -1365,6 +1365,22 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.255Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The negatives in the closing sentence ('excludes any hidden global symmetry: there is no non-trivial invariant section') restate a conclusion that is itself a vanishing statement, Hom(1, Ad(A)) = 0, so the negative form is the mathematics. False-positive class 1.",
+        "notes": "See the thesis-restatement entry for the separate objection to that sentence."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1384,6 +1400,21 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.296Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Proof by contradiction with an explicit 'Suppose there exists ... Therefore f = 0, contradicting our assumption'; standard structure, no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1403,6 +1434,21 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.336Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No dashes in the block."
       }
     ],
     "trap-triples": [
@@ -1422,6 +1468,21 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.377Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No enumerated list; the labelled step '(3) Observability' is a section marker (see the structural flag)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1441,6 +1502,21 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.417Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'The non-degeneracy of int_A excludes any hidden global symmetry: there is no non-trivial invariant section of the adjoint bundle.' reads as interpretation rather than a quotable flourish; recorded as thesis restatement instead, where the objection is sharper."
       }
     ],
     "trap-meta-commentary": [
@@ -1460,6 +1536,21 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.457Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narration of emphasis; 'By Schur's lemma', 'Therefore', 'Hence' are ordinary proof connectives."
       }
     ],
     "trap-thesis-restatement": [
@@ -1479,6 +1570,23 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.501Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The proof reaches its conclusion at 'Hence Hom(1, Ad(A)) = 0.' The next and final sentence - 'The non-degeneracy of int_A excludes any hidden global symmetry: there is no non-trivial invariant section of the adjoint bundle.' - proves nothing further; its second clause is the displayed equation restated in prose, and its first clause is interpretation. Worse, it MIS-ATTRIBUTES the result: the vanishing was derived from the SU(2) emergence theorem plus Schur's lemma, not from non-degeneracy of int_A (non-degeneracy was used only for the Frobenius isomorphism A = A-dual in the opening paragraph).",
+        "notes": "NOT FIXED (structural: the fix has to choose between deleting and re-attributing, and the mis-attribution is a mathematical judgement). PROPOSED: end the proof at 'Hence Hom(1, Ad(A)) = 0. square' and move the interpretation to a follow-on remark, e.g. 'Vanishing of Hom(1, Ad(A)) says the adjoint object admits no non-trivial invariant section, i.e. no hidden global symmetry.' - stated without crediting it to int_A."
       }
     ],
     "trap-performed-warmth": [
@@ -1498,6 +1606,21 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.540Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'contradicting our assumption' is the standard first-person-plural of proof writing, not performed warmth."
       }
     ],
     "trap-superlative": [
@@ -1517,6 +1640,21 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.579Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No maximum-strength claim; 'any hidden global symmetry' is the scope of the vanishing, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1536,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:00.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fb8a37103a24",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:21.617Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "All sentences parse aloud.",
+        "notes": "STRUCTURAL FLAG (not a trap): the proof's step labels are broken - the only label present is '*(3) Observability.*', with no (1) and no (2). The two unlabelled opening paragraphs are evidently the missing steps (Frobenius self-duality; the projector involution imported from lem:fai-projector-coadjoint-orbit). The sibling proof prf:fai-projector-coadjoint-orbit does label its (1) and (2), so this looks like lost markup rather than intent. MATH CHECKED and correct: Ad(A) = su(2) is the 3-dimensional irreducible adjoint representation, so Schur's lemma gives Hom(1, Ad(A)) = 0."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1558,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:02:21.617Z"
 }

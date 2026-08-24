@@ -1,12 +1,6 @@
 {
-  "computedAt": "2026-04-27T21:20:43.384482+00:00",
   "computation": "paper-six-term-shadow-price-sweep",
   "description": "BW shadow-price decomposition B = \u03a3_\u03bb C_\u03bb \u00b7 S_\u03bb for each isotope.  Markov-invariant by construction: C_\u03bb depends only on partition (no braid-word ordering); S_\u03bb depends only on (Z, N, A, content_sum).  Replaces the non-Markov-invariant per-generator V\u0302_i sum of paper_six_term_isotope_sweep.py.",
-  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
-  "parameters": {
-    "q_0": 1.1099785955541805,
-    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate \u03bb; approximate q^{c\u0304} \u2212 q^{\u2212c\u0304} for non-self-conjugate (coarse \u2014 exact via Hoefsmit available in pyhecke)."
-  },
   "reference_blocks": [
     "thm:knot-mass-formula-unified",
     "prop:mass-coefficient-shadow-price",
@@ -14,11 +8,16 @@
     "prop:content-scaling-correspondence",
     "conj:shell-correction-term-seven"
   ],
+  "timestamp": "2026-08-24T07:51:04.299142+00:00",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate \u03bb; approximate q^{c\u0304} \u2212 q^{\u2212c\u0304} for non-self-conjugate (coarse \u2014 exact via Hoefsmit available in pyhecke)."
+  },
   "results": {
     "p   (Z=1, N=0)": {
       "Z": 1,
       "N": 0,
-      "B_shadow": 0.06906033578870716,
+      "B_shadow": "0.0690603282640236981679410634875076708474191112283563381482619",
       "n_partitions_nonzero": 3,
       "top_5_contributions": [
         {
@@ -29,9 +28,9 @@
           "height": 2,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.06906033578870716,
+          "C_lambda": "0.0690603282640236981679410634875076708474191112283563381482619",
           "S_lambda": 1,
-          "contribution": 0.06906033578870716
+          "contribution": "0.0690603282640236981679410634875076708474191112283563381482619"
         },
         {
           "shape": [
@@ -40,9 +39,9 @@
           "height": 1,
           "content_sum": 3,
           "self_conjugate": false,
-          "C_lambda": 0.05135162815674618,
-          "S_lambda": 0.75,
-          "contribution": 0.038513721117559636
+          "C_lambda": "0.0513516226590361896744890309805426915159325664559132990624351",
+          "S_lambda": "0.750000000000000000000000000000000000000000000000000000000000",
+          "contribution": "0.0385137169942771422558667732354070186369494248419349742968263"
         },
         {
           "shape": [
@@ -53,17 +52,17 @@
           "height": 3,
           "content_sum": -3,
           "self_conjugate": false,
-          "C_lambda": -0.05135162815674618,
-          "S_lambda": 0.75,
-          "contribution": -0.038513721117559636
+          "C_lambda": "-0.0513516226590361896744890309805426915159325664559132990624351",
+          "S_lambda": "0.750000000000000000000000000000000000000000000000000000000000",
+          "contribution": "-0.0385137169942771422558667732354070186369494248419349742968263"
         }
       ],
-      "walltime_sec": 0.00072479248046875
+      "walltime_sec": 0.001016855239868164
     },
     "n   (Z=0, N=1)": {
       "Z": 0,
       "N": 1,
-      "B_shadow": 0.06906033578870716,
+      "B_shadow": "0.0690603282640236981679410634875076708474191112283563381482619",
       "n_partitions_nonzero": 3,
       "top_5_contributions": [
         {
@@ -74,9 +73,9 @@
           "height": 2,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.06906033578870716,
+          "C_lambda": "0.0690603282640236981679410634875076708474191112283563381482619",
           "S_lambda": 1,
-          "contribution": 0.06906033578870716
+          "contribution": "0.0690603282640236981679410634875076708474191112283563381482619"
         },
         {
           "shape": [
@@ -85,9 +84,9 @@
           "height": 1,
           "content_sum": 3,
           "self_conjugate": false,
-          "C_lambda": 0.05135162815674618,
-          "S_lambda": 0.75,
-          "contribution": 0.038513721117559636
+          "C_lambda": "0.0513516226590361896744890309805426915159325664559132990624351",
+          "S_lambda": "0.750000000000000000000000000000000000000000000000000000000000",
+          "contribution": "0.0385137169942771422558667732354070186369494248419349742968263"
         },
         {
           "shape": [
@@ -98,17 +97,17 @@
           "height": 3,
           "content_sum": -3,
           "self_conjugate": false,
-          "C_lambda": -0.05135162815674618,
-          "S_lambda": 0.75,
-          "contribution": -0.038513721117559636
+          "C_lambda": "-0.0513516226590361896744890309805426915159325664559132990624351",
+          "S_lambda": "0.750000000000000000000000000000000000000000000000000000000000",
+          "contribution": "-0.0385137169942771422558667732354070186369494248419349742968263"
         }
       ],
-      "walltime_sec": 0.0005447864532470703
+      "walltime_sec": 0.0006690025329589844
     },
     "D   (Z=1, N=1)": {
       "Z": 1,
       "N": 1,
-      "B_shadow": 0.07497648289486407,
+      "B_shadow": "0.0749764744407808885900999363752658344202292331567264540772561",
       "n_partitions_nonzero": 1,
       "top_5_contributions": [
         {
@@ -120,17 +119,17 @@
           "height": 3,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.037488241447432034,
+          "C_lambda": "0.0374882372203904442950499681876329172101146165783632270386280",
           "S_lambda": 2,
-          "contribution": 0.07497648289486407
+          "contribution": "0.0749764744407808885900999363752658344202292331567264540772561"
         }
       ],
-      "walltime_sec": 0.002999544143676758
+      "walltime_sec": 0.004488468170166016
     },
     "T   (Z=1, N=2)": {
       "Z": 1,
       "N": 2,
-      "B_shadow": 0.0008740677314373878,
+      "B_shadow": "0.000874067684129039461848085004361757945188953521455266848975555",
       "n_partitions_nonzero": 29,
       "top_5_contributions": [
         {
@@ -143,9 +142,9 @@
           "height": 4,
           "content_sum": -1,
           "self_conjugate": false,
-          "C_lambda": -0.0038154968815414655,
-          "S_lambda": 1.3867225487012693,
-          "contribution": -0.0052910355601329265
+          "C_lambda": "-0.00381549635521774073514974765381018191863673856920492439296115",
+          "S_lambda": "1.38672254870126940968670454957192359089187022691550807313173",
+          "contribution": "-0.00529103483026794940373556904570548126708297869049555122714881"
         },
         {
           "shape": [
@@ -158,9 +157,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0014417276851054703,
+          "C_lambda": "0.00144172751858716762361801839268864355587962744878978745130782",
           "S_lambda": 3,
-          "contribution": 0.004325183055316411
+          "contribution": "0.00432518255576150287085405517806593066763888234636936235392347"
         },
         {
           "shape": [
@@ -171,9 +170,9 @@
           "height": 3,
           "content_sum": 8,
           "self_conjugate": false,
-          "C_lambda": 0.01677279551708543,
-          "S_lambda": 0.25,
-          "contribution": 0.0041931988792713575
+          "C_lambda": "0.0167727932892908242901619858661237745488591351521053623944224",
+          "S_lambda": "0.250000000000000000000000000000000000000000000000000000000000",
+          "contribution": "0.00419319832232270607254049646653094363721478378802634059860559"
         },
         {
           "shape": [
@@ -186,9 +185,9 @@
           "height": 5,
           "content_sum": -8,
           "self_conjugate": false,
-          "C_lambda": -0.01677279551708543,
-          "S_lambda": 0.25,
-          "contribution": -0.0041931988792713575
+          "C_lambda": "-0.0167727932892908242901619858661237745488591351521053623944224",
+          "S_lambda": "0.250000000000000000000000000000000000000000000000000000000000",
+          "contribution": "-0.00419319832232270607254049646653094363721478378802634059860559"
         },
         {
           "shape": [
@@ -200,17 +199,17 @@
           "height": 4,
           "content_sum": 4,
           "self_conjugate": false,
-          "C_lambda": 0.011093964000429852,
-          "S_lambda": 0.25,
-          "contribution": 0.002773491000107463
+          "C_lambda": "0.0110939625925030592050080149043445916080654531587870976389450",
+          "S_lambda": "0.250000000000000000000000000000000000000000000000000000000000",
+          "contribution": "0.00277349064812576480125200372608614790201636328969677440973626"
         }
       ],
-      "walltime_sec": 0.011742830276489258
+      "walltime_sec": 0.013445377349853516
     },
     "\u00b3He (Z=2, N=1)": {
       "Z": 2,
       "N": 1,
-      "B_shadow": 0.01145613885170324,
+      "B_shadow": "0.0114561373446649382693192230957727204793549109024463693032732",
       "n_partitions_nonzero": 29,
       "top_5_contributions": [
         {
@@ -223,9 +222,9 @@
           "height": 4,
           "content_sum": 1,
           "self_conjugate": false,
-          "C_lambda": 0.0038154968815414655,
-          "S_lambda": 1.3867225487012693,
-          "contribution": 0.0052910355601329265
+          "C_lambda": "0.00381549635521774073514974765381018191863673856920492439296115",
+          "S_lambda": "1.38672254870126940968670454957192359089187022691550807313173",
+          "contribution": "0.00529103483026794940373556904570548126708297869049555122714881"
         },
         {
           "shape": [
@@ -238,9 +237,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0014417276851054703,
+          "C_lambda": "0.00144172751858716762361801839268864355587962744878978745130782",
           "S_lambda": 3,
-          "contribution": 0.004325183055316411
+          "contribution": "0.00432518255576150287085405517806593066763888234636936235392347"
         },
         {
           "shape": [
@@ -251,9 +250,9 @@
           "height": 3,
           "content_sum": 8,
           "self_conjugate": false,
-          "C_lambda": 0.01677279551708543,
-          "S_lambda": 0.25,
-          "contribution": 0.0041931988792713575
+          "C_lambda": "0.0167727932892908242901619858661237745488591351521053623944224",
+          "S_lambda": "0.250000000000000000000000000000000000000000000000000000000000",
+          "contribution": "0.00419319832232270607254049646653094363721478378802634059860559"
         },
         {
           "shape": [
@@ -266,9 +265,9 @@
           "height": 5,
           "content_sum": -8,
           "self_conjugate": false,
-          "C_lambda": -0.01677279551708543,
-          "S_lambda": 0.25,
-          "contribution": -0.0041931988792713575
+          "C_lambda": "-0.0167727932892908242901619858661237745488591351521053623944224",
+          "S_lambda": "0.250000000000000000000000000000000000000000000000000000000000",
+          "contribution": "-0.00419319832232270607254049646653094363721478378802634059860559"
         },
         {
           "shape": [
@@ -280,17 +279,17 @@
           "height": 4,
           "content_sum": 4,
           "self_conjugate": false,
-          "C_lambda": 0.011093964000429852,
-          "S_lambda": 0.25,
-          "contribution": 0.002773491000107463
+          "C_lambda": "0.0110939625925030592050080149043445916080654531587870976389450",
+          "S_lambda": "0.250000000000000000000000000000000000000000000000000000000000",
+          "contribution": "0.00277349064812576480125200372608614790201636328969677440973626"
         }
       ],
-      "walltime_sec": 0.011924982070922852
+      "walltime_sec": 0.013120889663696289
     },
     "\u2074He (Z=2, N=2)": {
       "Z": 2,
       "N": 2,
-      "B_shadow": 0.094617772880196,
+      "B_shadow": "0.0946177538889047602495448530088191779340581226045926482870449",
       "n_partitions_nonzero": 7,
       "top_5_contributions": [
         {
@@ -304,9 +303,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.019865503904309783,
+          "C_lambda": "0.0198654999173569455138954134358588425910633439982305910440834",
           "S_lambda": 4,
-          "contribution": 0.07946201561723913
+          "contribution": "0.0794619996694277820555816537434353703642533759929223641763334"
         },
         {
           "shape": [
@@ -318,9 +317,9 @@
           "height": 4,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0025354163130576,
+          "C_lambda": "0.00253541576063152104141323434877180216602171951680103935766054",
           "S_lambda": 4,
-          "contribution": 0.0101416652522304
+          "contribution": "0.0101416630425260841656529373950872086640868780672041574306422"
         },
         {
           "shape": [
@@ -334,9 +333,9 @@
           "height": 6,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.001253523002681617,
+          "C_lambda": "0.00125352279423772350707756546757414972642946713611653167001735",
           "S_lambda": 4,
-          "contribution": 0.005014092010726468
+          "contribution": "0.00501409117695089402831026187029659890571786854446612668006938"
         },
         {
           "shape": [
@@ -348,9 +347,9 @@
           "height": 4,
           "content_sum": 2,
           "self_conjugate": false,
-          "C_lambda": 0.002515141410432247,
-          "S_lambda": 1.5874010519681996,
-          "contribution": 0.00399253812076893
+          "C_lambda": "0.00251514088504905399600914144556892240228456366712257929023758",
+          "S_lambda": "1.58740105196819947475170563927230826039149332789985300980829",
+          "contribution": "0.00399253728677509658365169506629313388057817537061243003867259"
         },
         {
           "shape": [
@@ -363,24 +362,12 @@
           "height": 5,
           "content_sum": -2,
           "self_conjugate": false,
-          "C_lambda": -0.002515141410432247,
-          "S_lambda": 1.5874010519681996,
-          "contribution": -0.00399253812076893
+          "C_lambda": "-0.00251514088504905399600914144556892240228456366712257929023758",
+          "S_lambda": "1.58740105196819947475170563927230826039149332789985300980829",
+          "contribution": "-0.00399253728677509658365169506629313388057817537061243003867259"
         }
       ],
-      "walltime_sec": 0.038066864013671875
+      "walltime_sec": 0.04889559745788574
     }
-  },
-  "engine": "python",
-  "scriptFile": "paper_six_term_shadow_price_sweep.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
-  "y0_star": null,
-  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "dual_obj": null,
-  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "duality_gap": null,
-  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "y_star": null,
-  "active_set": null,
-  "primal_obj": null
+  }
 }

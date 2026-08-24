@@ -67,6 +67,7 @@ from _li_2_q_util import (  # noqa: E402
     per_knot_density_borromean,
     per_knot_density_per_block,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 
 @functools.lru_cache(maxsize=1)
@@ -333,7 +334,7 @@ def _emit_witness() -> None:
 
 
 if __name__ == "__main__":
-    mp.mp.dps = 50
+    set_compute_dps()
     from q_parameter import Q_50_DIGIT_STR as Qs
     q = mp.mpf(Qs)
     print("Mass = Vol × Density — wired-up compute")

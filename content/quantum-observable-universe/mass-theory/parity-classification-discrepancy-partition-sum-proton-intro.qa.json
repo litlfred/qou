@@ -1385,6 +1385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.791Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial in the three-sentence preamble."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.880Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No reframe."
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1453,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.982Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1487,23 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:11.068Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The block IS a triple: three sentences, each opening 'We now resolve ... / We trace ... / We document ...', with no other content. The anaphora makes the tricolon the whole structure rather than an enumeration inside a sentence.",
+        "notes": "Proposed: fold into one sentence — 'We resolve the empirical chirality discrepancy using the partition-sum proton residual, tracing the substrate-level mechanism that distinguishes proton from neutron and recording the resulting corrections to the binding-energy formula.'"
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1523,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:11.153Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Third sentence is a roadmap item, not a closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1557,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:11.236Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Section-preamble roadmapping, which is standard."
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1591,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:11.314Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Nothing established yet to restate."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1625,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:11.407Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register beyond the mathematical 'we'."
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1659,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:11.511Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflated claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1693,21 @@
         "reviewed_at": "2026-08-15T10:31:00.313Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f09308209c48",
+          "ts": "e09f944d62fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:11.572Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three short sentences; speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1730,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:49:11.572Z"
 }

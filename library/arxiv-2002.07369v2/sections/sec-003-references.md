@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2002.07369v2
-doc_title: "GR¨OBNER-SHIRSHOV BASES FOR THE COXETER GROUPS OF THE TYPESG 2,F 4,E 6,E 7 ANDE 8"
+doc_title: "Groebner-Shirshov bases for the Coxeter groups of the types G2, F4, E6, E7 and E8"
 section_id: sec-003-references
 section_title: "References"
 section_number: null
 pages: 13-14
 source_pdf: 2002.07369v2.pdf
 source_sha256: 6b8b1e509553b90c
-doc_brief: "GRÖBNER-SHIRSHOV BASES FOR THE COXETER GROUPS OF THE TYPESG 2,F 4,E 6,E 7 ANDE 8 — It is known that the finite Coxeter groups are classified in terms of Coxeter-Dynkin diagrams."
+doc_brief: "Groebner-Shirshov bases for the Coxeter groups of the types G2, F4, E6, E7 and E8 — It is known that the finite Coxeter groups are classified in terms of Coxeter-Dynkin diagrams."
 ---
 [1] L. A. Bokut and Y. Chen and A. Obul, Some new results on Gr¨ obner-Shirshov bases for Lie
 algebras and around,Internat. J. Algebra Comput.28(2018), 1403–1423.

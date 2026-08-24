@@ -194,7 +194,7 @@ if __name__ == "__main__":
         classical_sum = sum(Fraction(1, dim_specht(lam)) for lam in parts)
         print(f"  Classical Σ 1/d_λ = {classical_sum} = {float(classical_sum):.6f}")
         print(f"  q-symbolic  Σ 1/dim_q(λ) = {sp.nsimplify(total_simpl)}")
-        print(f"  at q_0 = {total_q0:.6f}")
+        print(f"  at q_0 = {mp.nstr(total_q0, 7)}")  # display only; mpf has no %f
 
         print(f"\n  Filtration decomposition (level = height − 1):")
         for level in sorted(by_level.keys()):
@@ -202,7 +202,7 @@ if __name__ == "__main__":
             level_q0 = mp.mpf(str(level_sum.subs(q, q0).evalf(50)))
             level_q0_polynomial_q = expose_polynomial(level_sum, q)
             print(f"    level {level}: Σ = {sp.nsimplify(level_sum)} "
-                  f"(at q_0: {level_q0:.6f})")
+                  f"(at q_0: {float(level_q0):.6f})")
             for entry in by_level[level]:
                 mark = "★" if entry["self_dual"] else " "
                 print(f"      {mark} λ={entry['partition']!s:<20} "

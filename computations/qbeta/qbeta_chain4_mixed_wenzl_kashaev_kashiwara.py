@@ -59,15 +59,23 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: E402, F401
+from q0_stamp import pin_value_for_anchor  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 RESIDUE_A = mp.mpf("1.804e-15")
 Q_PROTON_50 = mp.mpf("1.10997858275138080759166909561")
-Q_MUON_50 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+# The NAME says muon, so the muon pin is taken explicitly rather
+# than through the manifest, which would hand this stem proton.
+Q_MUON_50 = mp.mpf(pin_value_for_anchor("muon"))
 
 # Kashaev series truncation (p = q^-1 ≈ 0.90; p^120 ≈ 4e-6, p^200 ≈ 8e-10).
 KASHAEV_TRUNC = 400

@@ -3,8 +3,9 @@
 title: Cite 9408099v1.pdf at prop:mi-sw-abelianisation
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:36Z
-updated_at: 2026-08-08T23:36:36Z
+updated_at: 2026-08-21T17:05:08Z
 ---
 
 prop:mi-sw-abelianisation states the SW-period identity with an empty cites list; the existing seiberg1994 entry is itself cited nowhere in the corpus despite the machinery being used across two chapters. Fix the primary citation first.
@@ -17,3 +18,10 @@ Source: `library/arxiv-hep-th-9408099v1/9408099v1.pdf` — no `references.ts` en
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-hep-th-9408099v1/  ->  [seiberg-witten1994b]
+  Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [seiberg-witten1994b] as the citation key when you do it.

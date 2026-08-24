@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T12:24:20.224783+00:00",
-  "commitSha": "dc72de26dd4f66d2fcfc7ec263da3bf5c6c3a6c5",
+  "computedAt": "2026-08-22T15:22:38.765021+00:00",
+  "commitSha": "e36d2af08c752b721d3f55e2568d682155a28db7",
   "assertions": [
     {
       "name": "c3_ratio_equals_cosine_residual_ratio",
@@ -10,7 +10,7 @@
       "expected": "470.889594851513600526235770854599460056548379046401260554070",
       "passed": true,
       "tolerance": "1.0e-40",
-      "source": "The 1/u³ divisor is identical for both conventions, so the c₃ ratio is exactly the ratio of the raw cosine residuals. This is what makes c₃ the wrong unit for comparing conventions."
+      "source": "The 1/u\u00b3 divisor is identical for both conventions, so the c\u2083 ratio is exactly the ratio of the raw cosine residuals. This is what makes c\u2083 the wrong unit for comparing conventions."
     },
     {
       "name": "zD_phase_outside_ladder_window_by_over_100x",
@@ -18,7 +18,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "|α_D − α_req| = 0.0118729 rad vs window 1.09189e-5 rad. Scope-(a): the one-parameter class α = (z−1)h/2 cannot supply a D-frame ladder; the functional form must change."
+      "source": "|\u03b1_D \u2212 \u03b1_req| = 0.0118729 rad vs window 1.09189e-5 rad. Scope-(a): the one-parameter class \u03b1 = (z\u22121)h/2 cannot supply a D-frame ladder; the functional form must change."
     },
     {
       "name": "alpha_required_and_alpha_C_slopes_have_opposite_sign",
@@ -26,23 +26,23 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "dα_req/dq = 41.525766, dα_C/dq = -0.45475458 (central difference, ±1e-4 relative in q). Opposite signs ⇒ the two curves cross transversally at q₀ rather than coincide, so the 2.3e-5 rad agreement there is a point coincidence, not a functional identity. A phase derived from the representation would track α_req as q moves. Scope-(a): this is a statement about the committed ansatz, not a proved exclusion of any frame."
+      "source": "d\u03b1_req/dq = 41.525766, d\u03b1_C/dq = -0.45475458 (central difference, \u00b11e-4 relative in q). Opposite signs \u21d2 the two curves cross transversally at q\u2080 rather than coincide, so the 2.3e-5 rad agreement there is a point coincidence, not a functional identity. A phase derived from the representation would track \u03b1_req as q moves. Scope-(a): this is a statement about the committed ansatz, not a proved exclusion of any frame."
     },
     {
       "name": "cross_anchor_c3_swing_is_the_slope_mismatch",
-      "computed": "0.0492829876998026093518272127880790450683865089327771237738563",
-      "expected": "0.0491423420939126664973927673638660701199703848027522636578830",
+      "computed": "0.0496238839206232935873709900715454296935506103757455722573653",
+      "expected": "0.0494822652411623743864995613731682915482550767508353761256743",
       "passed": true,
       "tolerance": "0.001",
-      "source": "Predicted from the two slopes ALONE — Δc₃ = [tan(α−u/2)/u³]·(dα_C/dq − dα_req/dq)·Δq — with no fibre content: 0.049282988 vs measured 0.049142342, agreeing to 0.29%. Scope-(a): removes the cross-anchor swing as EVIDENCE FOR a complex-analytic fibre-level c₃(q) (the reading in AGENTS.md's fibre-vs-observable banner and registry §9g's 'REFUTED-as-real-q survives'); does NOT refute fibre structure, which stands or falls on other grounds. Also fixes the S_leak genericity window width, which is |c₃(p) − c₃(m)| by definition."
+      "source": "Predicted from the two slopes ALONE \u2014 \u0394c\u2083 = [tan(\u03b1\u2212u/2)/u\u00b3]\u00b7(d\u03b1_C/dq \u2212 d\u03b1_req/dq)\u00b7\u0394q \u2014 with no fibre content: 0.049623884 vs measured 0.049482265, agreeing to 0.29%. Scope-(a): removes the cross-anchor swing as EVIDENCE FOR a complex-analytic fibre-level c\u2083(q) (the reading in AGENTS.md's fibre-vs-observable banner and registry \u00a79g's 'REFUTED-as-real-q survives'); does NOT refute fibre structure, which stands or falls on other grounds. Also fixes the S_leak genericity window width, which is |c\u2083(p) \u2212 c\u2083(m)| by definition."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 61,
   "computation": "qbeta-ladder-required-phase",
   "scriptFile": "qbeta_ladder_required_phase_probe.py",
   "scriptHash": "fd7462029b7d",
-  "scriptCommitSha": "0b6a90c5dd3ad36269665ac468ca24baef71ed49",
+  "scriptCommitSha": "03f2cebd35f242460e2ee8addd487bd805ab74bf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,12 +53,18 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Inverts the Q_β precision ladder for the phase α it requires (α_req = u/2 − arccos(Q_codata/(Q_A(1+c₂u²))), c₂ = −1 hardcoded as in the committed extraction), and reports each Markov convention's distance from it in RADIANS rather than in c₃ units. Shows that the reported c₃ swing −2.07 → −974 under C → D is a phase-error growth from ~4e-4 to ~29% magnified by the fixed 1/u³ factor, not a three-orders-of-magnitude failure. Establishes scope-(a) that the class 'α = (z−1)h/2 with z a convention parameter' cannot yield a D-frame ladder: the required window is ~1e-5 rad and z_D sits ~1e-2 away, so the functional form must change. Does NOT claim C's α is derived — the ladder inverts against CODATA and the eigenphase identification is axiomatised. No fit; nothing wired.",
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ladder_required_phase_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ladder_required_phase_probe.py"
+  },
+  "description": "Inverts the Q_\u03b2 precision ladder for the phase \u03b1 it requires (\u03b1_req = u/2 \u2212 arccos(Q_codata/(Q_A(1+c\u2082u\u00b2))), c\u2082 = \u22121 hardcoded as in the committed extraction), and reports each Markov convention's distance from it in RADIANS rather than in c\u2083 units. Shows that the reported c\u2083 swing \u22122.07 \u2192 \u2212974 under C \u2192 D is a phase-error growth from ~4e-4 to ~29% magnified by the fixed 1/u\u00b3 factor, not a three-orders-of-magnitude failure. Establishes scope-(a) that the class '\u03b1 = (z\u22121)h/2 with z a convention parameter' cannot yield a D-frame ladder: the required window is ~1e-5 rad and z_D sits ~1e-2 away, so the functional form must change. Does NOT claim C's \u03b1 is derived \u2014 the ladder inverts against CODATA and the eigenphase identification is axiomatised. No fit; nothing wired.",
   "data": {
     "c2_hardcoded": "-1.0",
     "anchors": [
@@ -91,28 +97,28 @@
       },
       {
         "anchor": "muon (ideal CAL-2 pin)",
-        "q": "1.10997859555418057528159407960950937799328227995868622546675",
-        "u": "0.00851723634004395810711354481100800446027960281897626531559873",
-        "Q_A_MeV": "0.783645803903104078377230302042164820371889222242803593607099",
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "u": "0.00851723635242482310735822116750811832077898606325755114370897",
+        "Q_A_MeV": "0.783645803740748837458177007581843905419000234584922785266931",
         "Q_codata_MeV": "0.782333409999999999999999999999999999999999999999999409829604",
-        "alpha_required": "-0.0523581536288456681027991078402551668787783609371824727806447",
-        "alpha_window_for_c3_le_1": "0.0000109190042727659332525777657057021566770790567410206102954728",
+        "alpha_required": "-0.0523581499635160434626895776333973382680583331992507089800460",
+        "alpha_window_for_c3_le_1": "0.0000109190050253229102323936350853989865658702781152094102327814",
         "conventions": [
           {
             "convention": "C",
-            "z": "0.499320334033598250020669084676721506369316362634457905011652",
-            "alpha": "-0.0523361260903606214984978719186009478482274064726426866441063",
-            "alpha_minus_required": "0.0000220275384850466043012359216542190305509544645397861365384260",
-            "rel_dev_from_required": "-0.000420708847779364330186795332721358324030750085528804299403171",
-            "c3_implied": "-2.02020023502125517138232674988576251890206061330068660325496"
+            "z": "0.499320334032560016888283520491754597884981667929951720485360",
+            "alpha": "-0.0523361261306329914387156968056517003995486652718903362771579",
+            "alpha_minus_required": "0.0000220238328830520239738808277456378685096679273603727028881475",
+            "rel_dev_from_required": "-0.000420638103110949608527371827067965966119529064043546481836104",
+            "c3_implied": "-2.01986031187400546349321995587646029747377592135260349078716"
           },
           {
             "convention": "D",
-            "z": "0.612688050545589099835762887388501763970911626503900470956967",
-            "alpha": "-0.0404857804317335307291900127654839904527031602782650757509316",
-            "alpha_minus_required": "0.0118723731971121373736090950747711764260752006589173970297131",
-            "rel_dev_from_required": "-0.226753091433905968693727657714579433573877900524187703429076",
-            "c3_implied": "-974.382488777801185312024896009083898234779926137542346873587"
+            "z": "0.612688050638272415220888927646110664831964631360779679271089",
+            "alpha": "-0.0404857804531149677547457030413503104416742328894548552388957",
+            "alpha_minus_required": "0.0118723695104010757079438745920470278263841003097958537411503",
+            "rel_dev_from_required": "-0.226753036894426629869529049977690584006967352726600008968986",
+            "c3_implied": "-974.382147079536184945277477315145234783021511164620054144175"
           }
         ]
       }
@@ -129,23 +135,26 @@
         "d_alpha_required_dq": null,
         "d_alpha_C_dq": null,
         "slope_ratio": null,
-        "note": "no real phase solves the ladder at this step (Q_A < Q_codata ⇒ arccos argument leaves [−1, 1])"
+        "note": "no real phase solves the ladder at this step (Q_A < Q_codata \u21d2 arccos argument leaves [\u22121, 1])"
       },
       {
         "rel_step": "1e-2",
         "d_alpha_required_dq": null,
         "d_alpha_C_dq": null,
         "slope_ratio": null,
-        "note": "no real phase solves the ladder at this step (Q_A < Q_codata ⇒ arccos argument leaves [−1, 1])"
+        "note": "no real phase solves the ladder at this step (Q_A < Q_codata \u21d2 arccos argument leaves [\u22121, 1])"
       }
     ],
     "cross_anchor_swing": {
       "dc3_dalpha": "-91694.7038579826962696408427586630615026977797393010128404697",
       "slope_mismatch_rad_per_q": "-41.9805208760726034228137860987146136833735372807761577629272",
-      "delta_q_muon_minus_proton": "0.0000000128027997676899249839987404981187831580851074893939374489719",
-      "predicted_swing": "0.0492829876998026093518272127880790450683865089327771237738563",
-      "observed_swing": "0.0491423420939126664973927673638660701199703848027522636578830",
-      "rel_agreement": "0.00286200453411773450088765944288294753986446471684415734925024"
+      "delta_q_muon_minus_proton": "0.0000000128913582390901260337692328728255664391554328209012315298173",
+      "predicted_swing": "0.0496238839206232935873709900715454296935506103757455722573653",
+      "observed_swing": "0.0494822652411623743864995613731682915482550767508353761256743",
+      "rel_agreement": "0.00286200881812322776206246245770439667049248743000103372214306"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357873607281",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.anchors[].q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

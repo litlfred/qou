@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-039-67-mtis-symmetries-su3c-and-u1em
 section_title: "MTIS symmetries: su(3)c and u(1)em"
 section_number: 6.7
 pages: 57-58
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Having obtained these minimal left ideals, we would now like to know how they transform,
 so as to justify the labels we gave to their coeﬃcients in equations (6.19) and (6.21). Up

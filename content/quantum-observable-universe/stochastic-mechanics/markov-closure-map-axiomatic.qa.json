@@ -1327,6 +1327,21 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.420Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read (250 words, zero em-dashes): the two atomic axioms, the Lean-encoding paragraph, the Result table, and the trailing banner. No warmth, no pivot, no compulsive triple. Axiom 1 verified by computing the closure rather than reading the label: sigma_1^2 in B_2 has permutation (1 2)^2 = identity, so the closure has 2 components, and it is the Hopf link - correct. All three Lean names cited in the 'Lean encoding' paragraph resolve in the sibling markov-closure-map-axiomatic.lean (MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1346,6 +1361,21 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.460Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read (250 words, zero em-dashes): the two atomic axioms, the Lean-encoding paragraph, the Result table, and the trailing banner. No warmth, no pivot, no compulsive triple. Axiom 1 verified by computing the closure rather than reading the label: sigma_1^2 in B_2 has permutation (1 2)^2 = identity, so the closure has 2 components, and it is the Hopf link - correct. All three Lean names cited in the 'Lean encoding' paragraph resolve in the sibling markov-closure-map-axiomatic.lean (MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two)."
       }
     ],
     "trap-em-dash": [
@@ -1365,6 +1395,21 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 201 words)"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.501Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read (250 words, zero em-dashes): the two atomic axioms, the Lean-encoding paragraph, the Result table, and the trailing banner. No warmth, no pivot, no compulsive triple. Axiom 1 verified by computing the closure rather than reading the label: sigma_1^2 in B_2 has permutation (1 2)^2 = identity, so the closure has 2 components, and it is the Hopf link - correct. All three Lean names cited in the 'Lean encoding' paragraph resolve in the sibling markov-closure-map-axiomatic.lean (MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two)."
       }
     ],
     "trap-triples": [
@@ -1384,6 +1429,21 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 201 words)"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.545Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read (250 words, zero em-dashes): the two atomic axioms, the Lean-encoding paragraph, the Result table, and the trailing banner. No warmth, no pivot, no compulsive triple. Axiom 1 verified by computing the closure rather than reading the label: sigma_1^2 in B_2 has permutation (1 2)^2 = identity, so the closure has 2 components, and it is the Hopf link - correct. All three Lean names cited in the 'Lean encoding' paragraph resolve in the sibling markov-closure-map-axiomatic.lean (MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1403,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.587Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read (250 words, zero em-dashes): the two atomic axioms, the Lean-encoding paragraph, the Result table, and the trailing banner. No warmth, no pivot, no compulsive triple. Axiom 1 verified by computing the closure rather than reading the label: sigma_1^2 in B_2 has permutation (1 2)^2 = identity, so the closure has 2 components, and it is the Hopf link - correct. All three Lean names cited in the 'Lean encoding' paragraph resolve in the sibling markov-closure-map-axiomatic.lean (MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two)."
       }
     ],
     "trap-meta-commentary": [
@@ -1422,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.630Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read (250 words, zero em-dashes): the two atomic axioms, the Lean-encoding paragraph, the Result table, and the trailing banner. No warmth, no pivot, no compulsive triple. Axiom 1 verified by computing the closure rather than reading the label: sigma_1^2 in B_2 has permutation (1 2)^2 = identity, so the closure has 2 components, and it is the Hopf link - correct. All three Lean names cited in the 'Lean encoding' paragraph resolve in the sibling markov-closure-map-axiomatic.lean (MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1441,6 +1531,23 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.672Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "severity": "minor",
+        "evidence": "Block-final paragraph is a stranded banner: '**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. ...' - nothing follows it, so 'What follows' refers to the end of the block.",
+        "notes": "STRUCTURAL, not fixed inline: the banner carries a real scope predicate (generic coefficient ring vs archimedean realisation) that a deletion would lose, and AGENTS.md 4d's disposition is to move it into the .ts authorNotes, which is a structural edit rather than a prose fix. MEASURED, corpus-wide: the banner appears in 130 .md files under content/ and is the FINAL paragraph in 128 of them, so this is a systematic template placement rather than damage local to this block."
       }
     ],
     "trap-performed-warmth": [
@@ -1460,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.713Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read (250 words, zero em-dashes): the two atomic axioms, the Lean-encoding paragraph, the Result table, and the trailing banner. No warmth, no pivot, no compulsive triple. Axiom 1 verified by computing the closure rather than reading the label: sigma_1^2 in B_2 has permutation (1 2)^2 = identity, so the closure has 2 components, and it is the Hopf link - correct. All three Lean names cited in the 'Lean encoding' paragraph resolve in the sibling markov-closure-map-axiomatic.lean (MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two)."
       }
     ],
     "trap-superlative": [
@@ -1479,6 +1601,23 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.753Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "severity": "major",
+        "evidence": "'Already proved in Lean (F3-eps6-leading-eq-neg-2b-cubed.lean) via unfold + norm_num', repeated in the Result table as 'jones_at_one 2 = -2 ",
+        "notes": " Jones 1985 | proved (unfold + norm_num)', and concluded as 'the second is already closed'.|STRUCTURAL, do not fix inline. The claim is false in three independent ways, all checkable. (a) The cited file contains no Jones value at all: lean/QOU/BraidKnot/F3_eps6_leading_eq_neg_2b_cubed.lean declares only b_at_one, b_at_one_sq, b_at_one_cubed and the two F3_eps6_leading_eq_neg_2b_cubed statements, and uses rw/ring, not norm_num. (b) J_Hopf(1) = -2 is not proved anywhere in the chain: in the sibling markov-closure-map-axiomatic.lean it is 'jones_hopf_at_one_eq_neg_two : jones_at_one 2 = -2', a FIELD of class MarkovClosureMap2Strand - an assumption; and the only other occurrence, jonesHopfLocal := -2 in mass-theory/ck-extraction-from-algebraic-rules.lean:54, is a bare def. So BOTH atoms are axioms and 'a full formalisation therefore targets only the first atom' is wrong. (c) The relative link [F3-eps6-leading-eq-neg-2b-cubed.lean](F3-eps6-leading-eq-neg-2b-cubed.lean) is dead - there is no .lean sibling in stochastic-mechanics/; the declaration lives in the library tree. SECOND STRUCTURAL FINDING, same sibling: 'theorem track_C_c_3_eq_neg_two ... : MarkovClosureMap2Strand.jones_at_one 2 = -2 := TrackCReducedAxiom.c_3_eq_jones_hopf_at_one q' is a self-assuming projection - TrackCReducedAxiom's only field has EXACTLY the theorem's statement (and is verbatim the MarkovClosureMap2Strand field already assumed), so nothing is derived. This is the AGENTS.md 3b-cond item-5 non-degeneracy failure. The field's docstring further claims c_3 'factors as the Hopf-link Jones at q=1, scaled by the Hoefsmit b^3 substrate factor', but neither c_3 nor b^3 appears in its type. THIRD, minor: the notation \\widehat{\\sigma_1^2 \\in B_2} puts the membership under the closure hat."
       }
     ],
     "trap-nonspeakable": [
@@ -1498,6 +1637,21 @@
         "reviewed_at": "2026-08-15T10:30:59.577Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "59ad12ba07ec",
+          "ts": "c3279a345446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:39:03.794Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read (250 words, zero em-dashes): the two atomic axioms, the Lean-encoding paragraph, the Result table, and the trailing banner. No warmth, no pivot, no compulsive triple. Axiom 1 verified by computing the closure rather than reading the label: sigma_1^2 in B_2 has permutation (1 2)^2 = identity, so the closure has 2 components, and it is the Hopf link - correct. All three Lean names cited in the 'Lean encoding' paragraph resolve in the sibling markov-closure-map-axiomatic.lean (MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1521,5 +1675,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:39:03.794Z"
 }

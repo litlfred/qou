@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.693Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.729Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.765Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.802Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.838Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.872Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.906Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.943Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.977Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2e577ec69ff5",
+          "ts": "f7c234f242c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:36.014Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 Wedderburn-channel rows); read in full. No trap construction of this category present. VERIFIED (not a trap): with the section-7a relation (sigma-q)(sigma+q^{-1})=0 the eigenvalues are q and -q^{-1}; the tabulated traces follow — 1-dim symmetric q / q^{-1}, 2-dim standard q-q^{-1}=h and its inverse -h, 1-dim alternating -q^{-1} / -q. Dimensions 1,2,1 sum-of-squares to 6 = |S_3|."
+      }
     ]
   },
   "source_hashes": {
     "md": "2e577ec69ff5",
     "ts": "f7c234f242c7"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:07:36.014Z"
 }

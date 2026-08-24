@@ -1437,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:11.586Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'no cancellation is possible in an ordered field' and 'we do not need a limit, only an inequality inside No' are both substantive: the first is the order-theoretic fact, the second the block's actual point about replacing a limit argument."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1456,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:11.630Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Two sentences of exposition; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1475,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 90 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:11.685Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes in 94 words."
       }
     ],
     "trap-triples": [
@@ -1494,6 +1539,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 90 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:11.736Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The parenthetical lists four perturbations (RH, NS, Collatz, oracle separation), matching the four downstream remarks."
       }
     ],
     "trap-closing-aphorism": [
@@ -1513,6 +1573,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:11.795Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Closing clause 'we do not need a limit, only an inequality inside No' is the block's substantive claim, not a manufactured quotable."
       }
     ],
     "trap-meta-commentary": [
@@ -1532,6 +1607,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:11.854Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis; the bolded 'strictly exceeds' places emphasis rather than announcing it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1551,6 +1641,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:11.910Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "94-word block with no closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1570,6 +1675,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:11.958Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1589,6 +1709,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.010Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'every millennium-problem squeeze in Chapter 8 and Chapter 7' is scoped to the squeeze-shaped remarks, so it survives the millennium-unification correction that the NS row is a rate comparison rather than a squeeze."
       }
     ],
     "trap-nonspeakable": [
@@ -1608,6 +1743,21 @@
         "reviewed_at": "2026-08-15T10:30:59.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a9e6edb11f62",
+          "ts": "6b031f07f8eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.063Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Both sentences read aloud in one pass."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1630,5 +1780,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:27:12.063Z"
 }

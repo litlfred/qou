@@ -1192,6 +1192,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no negation-contrast construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.310Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The generators are not involutions at generic q' is a substantive fact, immediately given its exact condition (sigma^{-1} = sigma iff q = q^{-1})."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1227,6 +1242,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no rhetorical-pivot construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.388Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Unitarity, universality, bandwidth, stability, in order; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1262,6 +1292,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no em-dash construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.470Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes in 220 words."
       }
     ],
     "trap-triples": [
@@ -1297,6 +1342,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no triples construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.565Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'three elementary crossings, three Planck steps' are counts."
       }
     ],
     "trap-closing-aphorism": [
@@ -1332,6 +1392,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no closing-aphorism construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.625Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on the stability evaluation and a QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1367,6 +1442,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no meta-commentary construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.669Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1402,6 +1492,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no thesis-restatement construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.741Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1437,6 +1542,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no performed-warmth construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.813Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1472,6 +1592,22 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no superlative construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.861Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No intensifiers.",
+        "notes": "Rigor flag (verified, reported separately): 'Both inequalities hold for q > 1/varphi^2' is false. 1/varphi^2 = 0.381966, but Phi(q) = (q-1)(q^{3/2}+q^{1/2}-1)(q^{3/2}+q+1)/2(q+1)^2 vanishes at q = 0.465571 (the root of x^3+x-1 at x = sqrt q) and is negative on (0.465571, 1) -- e.g. Phi(0.5) = -0.0125, Phi(0.8) = -0.0474. Also the proof tests non-vanishing while the statement block requires strict positivity."
       }
     ],
     "trap-nonspeakable": [
@@ -1507,6 +1643,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no nonspeakable construction present"
+      },
+      {
+        "field_hash": {
+          "md": "0c6e7d780d26",
+          "ts": "e6f1cde490c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.921Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Proof prose parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1529,5 +1680,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:41:23.921Z"
 }

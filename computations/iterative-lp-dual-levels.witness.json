@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:19:38.538431+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:51:11.028982+00:00",
+  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
   "assertions": [
     {
       "name": "u_levels_computed_for_proton",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 14,
   "computation": "iterative-lp-dual-levels",
   "scriptFile": "iterative_lp_dual_levels.py",
-  "scriptHash": "9613fd589e3d",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "ee30fbcfc6c2",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,59 +32,61 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Item (c) — Full iterative LP-dual u^{(ℓ)*}(β) extraction per term7-alpha5's prop:mass-formula-iterative-lp-dual. Computes u^{(ℓ)*} = m_e · tr_M(P_ℓ·β)/[n]_q! for the proton at H_3, ℓ ∈ {0, 1, 2, 3}, where P_ℓ = e_ℓ(J_1,…,J_n) acts on V_λ as c_ℓ(λ) = e_ℓ({q^{2c(□)}}). Reveals that Σ_ℓ u^{(ℓ)*}(p) at H_3 does NOT recover m_p — the sum-of-shadow-prices captures only H_3-internal structure (descended trace + JM iterates), not the gluon dressing or higher-order corrections that bring m_p to its CODATA value. Confirms that the proper iterative LP-dual is at the FULL Hecke level (which for compounds is H_6, H_9, H_12). Neutron level extraction documented as requiring the σ⁻¹-aware closed-form chain (a separate scope).",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",
   "parameters": {
-    "q_0": 1.1099785955573347,
+    "q_0": 1.1099785827513808,
     "M_p_codata": 938.27208816,
     "M_n_codata": 939.56542052,
-    "M_e_codata": 0.51099895,
+    "M_e_codata": 0.51099895069,
     "hecke_level_n": 3
   },
   "data": {
     "y_lambda_at_q0_h3": {
-      "(3,)": 0.41130299570206125,
-      "(2, 1)": 0.2850224246108722,
-      "(1, 1, 1)": 0.0186521550761944
+      "(3,)": 0.5018014088346436,
+      "(2, 1)": 0.2509007044173218,
+      "(1, 1, 1)": -0.003602817669287202
     },
     "c_ell_at_q0": {
       "(3,)": {
         "0": 1.0,
-        "1": 3.7500058024650036,
-        "2": 4.620203958674288,
-        "3": 1.870198156209284
+        "1": 3.75000570398511,
+        "2": 4.620203730734218,
+        "3": 1.870198026749108
       },
       "(2, 1)": {
         "0": 1.0,
-        "1": 3.0437062182329013,
-        "2": 3.0437062182329013,
+        "1": 3.043706208532522,
+        "2": 3.043706208532522,
         "3": 1.0
       },
       "(1, 1, 1)": {
         "0": 1.0,
-        "1": 2.470435522211725,
-        "2": 2.0051382202546457,
-        "3": 0.5347026980429208
+        "1": 2.4704355713417883,
+        "2": 2.0051383063982793,
+        "3": 0.5347027350564907
       }
     },
     "chi_lambda_proton_at_q0": {
-      "(3,)": 3.151088820530268,
-      "(2, 1)": 1.2034862379224929,
-      "(1, 1, 1)": -0.31735062289730037
+      "(3,)": 3.151088420630976,
+      "(2, 1)": 1.2034860665075826,
+      "(1, 1, 1)": -0.31735066317173016
     },
     "u_levels_proton_MeV": {
-      "0": 0.1363497987504894,
-      "1": 0.49171765194354355,
-      "2": 0.5861079678389908,
-      "3": 0.23074011464593655
+      "0": 0.1573193037473461,
+      "1": 0.5720204309274219,
+      "2": 0.6868543257093073,
+      "3": 0.27215319852923137
     },
-    "sum_u_levels_proton_MeV": 1.4449155331789603,
-    "sum_vs_codata_pct": -99.84600250274816,
+    "sum_u_levels_proton_MeV": 1.6883472589133066,
+    "sum_vs_codata_pct": -99.82005781902517,
     "interpretation": "Σ_ℓ u^{(ℓ)*}(p) at H_3 does NOT recover m_p; the sum captures only the H_3-internal structure. The full iterative LP-dual unification (per term7-alpha5) is at H_n with n = 3A, where atomic-braid binding and gluon dressing are encoded. The H_3 levels reported here are necessary infrastructure but not sufficient for absolute mass."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

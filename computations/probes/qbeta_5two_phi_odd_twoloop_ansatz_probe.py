@@ -44,8 +44,9 @@ import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 45
+set_compute_dps()
 P0 = [-81, 112, -78, -70, 94, -38, 5]
 P1 = [138, -254, 127, 44, -89, 38, -5]
 P2 = [135, -101, -11, 61, -33, 5]

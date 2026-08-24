@@ -47,7 +47,46 @@ import math
 from .codata import codata as _codata
 
 # ── Input measurements with uncertainties ────────────────────────
-VOL_FIGURE_EIGHT     = 2.029883212819307   # 2·Cl₂(π/3): math constant (SnapPy-verified)
+# Vol(4_1) = 2·Cl₂(π/3), the figure-eight hyperbolic volume. COMPUTED, not
+# transcribed.
+#
+# This was the hand-typed literal `2.029883212819307` until 2026-08-21. That
+# is not merely f64-truncated — it is not even the correctly-rounded f64 of
+# the true value, which is `2.0298832128193074`. The exact constant runs
+# 2.02988321281930725004240510854904057188337861506...
+#
+# A decimal literal cannot be checked by reading it; an expression can, and
+# `vol_4_1_at()` further down this module already computes the same thing.
+# Having both meant one of them was free to be wrong, and it was the one every
+# f64 path used.
+#
+# Measured blast radius before changing it: `Q` is IDENTICAL either way — the
+# f64 Newton solve in `_solve_q_proton_f64` returns the same bits, because the
+# discrepancy (1.23e-16 relative) is below what that solve resolves. So this
+# corrects the constant without moving the substrate pin. What it does fix is
+# every consumer that lifts this value into mpmath, where 1.23e-16 is real:
+# the round-trip q_0 -> m_p/m_e improves from 1.2e-16 to 4.0e-49 when the
+# exact form is used (`computations/probes/q0_roundtrip_exactness_probe.py`).
+try:
+    import mpmath as _mp_vol
+
+    _prev_dps = _mp_vol.mp.dps
+    try:
+        _mp_vol.mp.dps = 60
+        _VOL_4_1_EXACT = 2 * _mp_vol.clsin(2, _mp_vol.pi / 3)
+        #: 50-digit decimal for mpmath consumers, mirroring Q_50_DIGIT_STR.
+        VOL_FIGURE_EIGHT_50_STR = _mp_vol.nstr(
+            _VOL_4_1_EXACT, 50, strip_zeros=False
+        )
+        VOL_FIGURE_EIGHT = float(_VOL_4_1_EXACT)
+    finally:
+        _mp_vol.mp.dps = _prev_dps
+    del _mp_vol, _prev_dps
+except ImportError:  # pragma: no cover — mpmath is a hard dependency
+    # Correctly-rounded f64 of 2·Cl₂(π/3), i.e. float(exact), NOT a truncation.
+    VOL_FIGURE_EIGHT = 2.0298832128193074
+    VOL_FIGURE_EIGHT_50_STR = "2.0298832128193072500424051085490405718833786150606"
+
 VOL_FIGURE_EIGHT_ERR = 1e-12               # storage precision (math value is exact)
 
 # The two mass ratios are READ from the NIST table (qou_substrate/data/
@@ -294,6 +333,63 @@ try:
     # This is what witness scripts import.
     Q_50_DIGIT_STR = _mp.nstr(Q_MP, _DPS_DEFAULT, strip_zeros=False)
 
+    # ── THE MUON PIN'S ONE NAMED HOME (bean qou-5op4) ──────────────
+    #
+    # Until now the muon pin had NO canonical source. The proton pin has
+    # exactly one — Q_50_DIGIT_STR above. The muon pin had a live derivation
+    # (q_muon_at) plus hand-typed copies with two different truncations, and a
+    # fixed-string grep for the 17-digit ancestor `1.1099785955541805` finds
+    # **336 files** (222 .json, 73 .py, 41 .md). A literal cannot drift from a
+    # source it does not have; these had none. That is the defect.
+    #
+    # THIS IS A FROZEN STRING, NOT A DERIVATION, AND THAT IS THE POINT.
+    # `q_muon_at()` re-derives from MASS_RATIO_MU_E_STR and vol_4_1_at(), so it
+    # RE-VALUES whenever CODATA moves — and it has. Three values are live today:
+    #
+    #   frozen (this constant, and AGENTS.md)  1.10997859555733471989976322048…
+    #   17-digit ancestor (336 files)          1.1099785955541805…
+    #   q_muon_at() as of 2026-08-24           1.10997859564273904668179512938…
+    #
+    #   rel(derived, frozen)   = 7.694e-11   (0.0769 ppb)
+    #   rel(ancestor, frozen)  = 2.842e-12   (0.00284 ppb)
+    #
+    # Scale, so nobody mis-files this: both are far BELOW the 11.5 ppb μ–p
+    # substrate tension (no layer is confused) and far ABOVE the 1 ppQ (1e-15)
+    # L1 compute target. A precision defect, not a physics one.
+    #
+    # WHICH TO USE. A witness that must stay reproducible against its own
+    # history imports this constant — it cannot re-value under it. A caller that
+    # genuinely wants "the muon pin implied by today's CODATA" calls
+    # q_muon_at(). Do not hand-type either; that is what produced the 336.
+    #
+    # REFRESH PROCEDURE (it goes stale BY DESIGN — that is the trade):
+    # this string is only updated by a deliberate, owner-authorised re-pin that
+    # also migrates the witnesses recording the old value. Never edit it to
+    # silence a drift check. Sequenced behind PR #5500 (muon anchor -> CODATA
+    # 2022, audit red, 53 witnesses outstanding) and behind the qou-1c4y
+    # migration, whose four constraints — in particular "never re-pin an
+    # anchor-DEFINING witness" and "do not split the change" — govern it.
+    Q_MUON_50_DIGIT_STR = (
+        "1.1099785955573347198997632204832250266562084087801536866079811461449"
+    )
+
+    def q_muon_frozen_at(dps: int = _DPS_DEFAULT):
+        """The FROZEN muon pin as an mpf — reproducible, does not re-value.
+
+        The counterpart to `q_muon_at()`, which derives and therefore moves
+        with CODATA. Use this when a recorded value must still mean the same
+        thing when read back later; use `q_muon_at()` when you want the pin
+        implied by today's inputs. Bean qou-5op4.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)
+            q = _mp.mpf(Q_MUON_50_DIGIT_STR)
+            _mp.mp.dps = max(prev, dps)
+            return +q
+        finally:
+            _mp.mp.dps = prev
+
     HAS_MPMATH = True
 except ImportError:
     HAS_MPMATH = False
@@ -311,18 +407,58 @@ except ImportError:
     # work requires mpmath; this string carries f64 precision only.
     Q_50_DIGIT_STR = repr(Q)
 
+    # The frozen muon pin is a STRING, so it survives the no-mpmath path intact
+    # — unlike Q_50_DIGIT_STR above, which degrades to f64 here. Bean qou-5op4.
+    Q_MUON_50_DIGIT_STR = (
+        "1.1099785955573347198997632204832250266562084087801536866079811461449"
+    )
+
+    def q_muon_frozen_at(dps: int = _DPS_DEFAULT):
+        raise RuntimeError(
+            "q_muon_frozen_at requires mpmath; the frozen string is still "
+            "available as Q_MUON_50_DIGIT_STR"
+        )
+
 # ── Experimental observable anchors (CODATA 2022) ─────────────
 # Mirrored from `computations/substrate/experimental_constants.py`
 # so consumers running outside the repo (Pyodide, Sage, PyPI installs)
 # can reach the same MeV anchors without depending on the flat-name
 # `experimental_constants` shim that only `_legacy` puts on sys.path.
 # Authoritative source is the substrate cluster file; values match.
-M_E_MEV     = 0.51099895069   # ± 0.00000000015 MeV (CODATA 2022, full 11 sig figs)
-M_E_MEV_ERR = 0.00000000015
-M_P_MEV     = 938.27208816    # ± 0.00000029   MeV (CODATA 2022)
-M_P_MEV_ERR = 0.00000029
-M_N_MEV     = 939.56542052    # ± 0.00000054   MeV (CODATA 2022)
-M_N_MEV_ERR = 0.00000054
+# READ from the NIST table, not transcribed -- same discipline as the two
+# mass ratios above (PR #5149). This block was left on literals by that pass
+# and three of the six were the CODATA-**2018** values under a "CODATA 2022"
+# comment: M_P_MEV 938.27208816 (2022: ...943), M_N_MEV 939.56542052
+# (2022: ...194), and M_N_MEV_ERR 0.00000054 (2022: 0.00000048). M_E_MEV_ERR
+# was 0.00000000015 against the table's 0.00000000016. Q_NEUTRON_MEV below is
+# DERIVED from all three, so it inherited the drift.
+_E_MEV  = _codata("electron mass energy equivalent in MeV")
+_P_MEV  = _codata("proton mass energy equivalent in MeV")
+
+M_E_MEV     = float(_E_MEV.value)
+M_E_MEV_ERR = float(_E_MEV.uncertainty)
+M_P_MEV     = float(_P_MEV.value)
+M_P_MEV_ERR = float(_P_MEV.uncertainty)
+
+# M_N is NOT read from the table, deliberately. The table's neutron entry is
+# the CODATA-DIRECT value 939.56542194; the corpus canonically uses the
+# AME-DERIVED 939.56542179 (codata_2022_source.M_N_MEV = M_N_MEV_AME_DERIVED),
+# and this block documents itself as a mirror of
+# computations/substrate/experimental_constants.py. Layer 2a cannot import
+# from computations/, so the AME value is carried as a literal here.
+#
+# The distinction is load-bearing, not cosmetic: Q_NEUTRON_MEV below is
+# m_n - m_p - m_e, and AME pins that DIFFERENCE rather than the absolute
+# masses. Reading the CODATA-direct neutron from the table while taking the
+# 2022 proton shifts Q_beta by +0.15 eV -- an artifact of mixing the two
+# determinations, not a real change. A first pass of this drain did exactly
+# that before the cancellation was noticed.
+#
+# Excluded from codata_table_vintage_audit by design: AME-derived quantities
+# are not CODATA-adjustment outputs and checking them against the table is a
+# category error (AGENTS.md).
+M_N_MEV     = 939.56542179    # noqa: P31 - AME-derived, NOT CODATA; mirrors codata_2022_source.M_N_MEV
+M_N_MEV_ERR = 0.00000060
 # β-decay endpoint Q-value (n → p + e⁻ + ν̄):
 #   Q_β = m_n − m_p − m_e   (m_ν ≈ 0 in the rest mass budget)
 Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV         # ≈ 0.78233341 MeV

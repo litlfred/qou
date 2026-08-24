@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-q-alg-9504020v1
-doc_title: "∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, et ` a "
+doc_title: "A link invariant from quantum dilogarithm"
 section_id: sec-004-4-three-dimensional-description
 section_title: "Three-Dimensional Description"
 section_number: 4
 pages: 5-9
 source_pdf: 9504020v1.pdf
 source_sha256: 0baef40fa9934c91
-doc_brief: "A Link Invariant from Quantum Dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Théoriqueenslapp† — The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix"
+doc_brief: "A link invariant from quantum dilogarithm — The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of"
 ---
 In this section we establish the connection of the link invar iant constructed in
 Sect. 3 with the invariant of triangulated links of [14], rel ated in turn to cyclic

@@ -3,8 +3,9 @@
 title: Remark interpreting 0302267v2.pdf at conj:gb-depth-period-correspondence
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:37Z
-updated_at: 2026-08-08T16:12:37Z
+updated_at: 2026-08-21T17:04:40Z
 ---
 
 Record the §6.2 caveat that the D-degree grading refining the depth filtration exists only in the omega-realisation and is not stable under the involution u -> u^{-1} — relevant to whether the corpus's GS-depth <-> period-depth correspondence should be stated at the level of the filtration or the grading. This is a caveat to flag, not a proof aid; I have not checked which side the corpus intends.
@@ -17,3 +18,10 @@ Source: `library/arxiv-math-0302267v2/0302267v2.pdf` — no `references.ts` entr
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0302267v2/  ->  [deligne-goncharov2005]
+  Groupes fondamentaux motiviques de Tate mixte
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [deligne-goncharov2005] as the citation key when you do it.

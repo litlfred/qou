@@ -3,12 +3,12 @@
   "description": "Computes the deferred genus-4 Epstein det'\u0394 measures on Jac(Bring) at the principally polarized period \u03c4\u2080\u00b7M (Thm 2.12) and the diagonal period \u03c4\u2080\u00b7diag(5,5,5,1), via Fincke\u2013Pohst norm-cutoff enumeration (unblocks the thin Bring modulus that stalled the 2026-07-18 box enumeration). Validated genus-1 exact (\u03b7-form) + independent factorized-theta cross-checks at genus 2 and genus 4. No q\u2080; no 8\u03c0; nothing wired.",
   "auditOnly": "docs/audits/2026-07-19-bring-genus4-polarized-epstein-detprime.md",
   "tier": "structural-exact machinery (genus-1 exact + factorized-theta cross-checks) + scope-(a) genus-4 numbers",
-  "computedAt": "2026-07-19T00:45:20.116160+00:00",
-  "commitSha": "a2215e3240b9f06da189559aaf354ada82330ab5",
+  "computedAt": "2026-08-23T08:52:46.728742+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "numpy+mpmath",
   "engineVersion": "2.4.6/1.4.1",
   "scriptFile": "bring_genus4_polarized_epstein_detprime_probe.py",
-  "scriptHash": "8cd363e2e7f8",
+  "scriptHash": "a9bd0b89dd9d",
   "assertions": [
     {
       "name": "genus1_fp_reproduces_eta_form",
@@ -28,7 +28,7 @@
     {
       "name": "genus4_diag_fp_eq_factorized_theta",
       "passed": true,
-      "detail": "FP=1472396096180.93847656 vs factorized=1472396096130.50122070 (pts 22106/1032604)"
+      "detail": "FP=1472396096180.93847656 vs factorized=1472396096170.22558594 (pts 22106/1032604)"
     },
     {
       "name": "genus4_polarized_cutoff_converged",

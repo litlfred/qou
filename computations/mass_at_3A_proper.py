@@ -48,6 +48,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
+import os
 import sys
 import math
 import json
@@ -60,7 +61,22 @@ import mpmath as _mpm
 from mpmath import mpf
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL
+# QI / HA_VAL come from the PROTON package constants, not the shim. The shim
+# rebinds its whole derived family (HA, Q_INV, HBAR_Q, LN_Q, E_CROSS, …) when
+# the entry-point stem is manifest-listed, so importing any of them here made
+# this module's `h = q − q⁻¹` a function of whoever is __main__ (bean qou-wee5).
+from qou_substrate.constants import Q_INV as QI, HA as HA_VAL  # noqa: E402
+# ANCHOR-INDEPENDENT proton q0. `q_parameter.Q` above is the SHIM's Q, which the
+# shim REBINDS to the muon value when the running process's argv stem is listed
+# in `q0_anchor_manifest.json::ideal_muon` (or QOU_Q0_ANCHOR=ideal). That makes
+# it a function of the ENTRY POINT, not of this module — which is how a probe
+# that never references the manifest moved 113 ppb when a stem was added to it
+# (bean `qou-wee5`). `qou_substrate.constants.Q` is not rebound: measured under
+# QOU_Q0_ANCHOR=ideal, the shim gives 1.1099785955573347 while this gives
+# 1.1099785827513808. Use THIS for anything that must not track its caller.
+from qou_substrate.constants import (  # noqa: E402
+    Q as Q0_PROTON, HA as HA_PROTON,
+)
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                          E_0_CALIBRATION_MEV)
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # F6
@@ -70,10 +86,16 @@ from hecke_characters import partitions_of, dim_q, qfac
 
 h = HA_VAL
 
-# Markov parameter z for the Ocneanu/Jones-Wenzl trace.
-# Standard convention: z such that tr_M(T_i) = z, tr_M(1) = 1.
-# Matches mass_endomorphism.z_mark = 1/(q^½ + q^(-½)).
-Z_MARKOV = Q0**3 / (Q0**2 + 1)
+# Markov parameter z for the Ocneanu trace: z such that tr_M(sigma_i) = z,
+# tr_M(1) = 1.  This is q^3/(q^2+1) — CONVENTION D, canonical per the owner
+# ruling of 2026-08-15.
+#
+# The comment here previously read "Matches mass_endomorphism.z_mark =
+# 1/(q^1/2 + q^-1/2)", which is convention C and is NOT what the line below
+# computes (0.4993 vs 0.6127 at the live q0, a 23% gap).  Same declared-vs-actual
+# mismatch as `computations/ocneanu_weights.py` (bean qou-pc7l); the code is
+# right and the prose was stale.  Corrected 2026-08-23.
+Z_MARKOV = Q0_PROTON**3 / (Q0_PROTON**2 + 1)
 
 
 # ── Jones–Wenzl Ocneanu weights ω_λ(q, z) ───────────────────
@@ -82,25 +104,62 @@ Z_MARKOV = Q0**3 / (Q0**2 + 1)
 # (Jones 1985 Thm 5.1; Wenzl 1988) gives the Markov-trace weights
 #     ω_λ(q, z) = z^(n−1) · Π_{x ∈ λ} (1 − z·q^{2·c(x)}) / (1 − q^{2·h(x)})
 # where c(x) = j − i is the cell content and h(x) is its hook length.
-# These satisfy Σ_λ ω_λ = 1 and Σ_λ ω_λ · χ_λ(T_i)/d_λ = z.
+# These satisfy Σ_λ d_λ ω_λ = 1 and Σ_λ ω_λ · χ_λ(σ_i) = z.
 #
 # Falls back to Plancherel w_λ = d_q²/[n]_q! for comparison audits.
 
 def jones_wenzl_weight(shape: tuple[int, ...],
-                        q: float = Q0, z: float = Z_MARKOV) -> float:
-    """Ocneanu/Jones–Wenzl weight ω_λ(q, z) for H_n(q) Markov trace.
+                        q=Q0_PROTON, z=Z_MARKOV):
+    """Ocneanu/Markov weight w_lam(q, z) for the H_n(q) Markov trace.
 
-    Σ_λ ω_λ = 1 (normalization) — unlike the Plancherel weight
-    d_q(λ)²/[n]_q!, which does not sum to 1 at q ≠ 1.
+        w_lam = prod_{(i,j) in lam} [ q^{2i}(q^2 - 1 - q z) + q^{2j+1} z ]
+                / prod_{(i,j) in lam} [ q^{2 h(i,j)} - 1 ]
+
+    Normalisation is  **sum_lam d_lam w_lam = 1**  (the identity's character in
+    block lam is d_lam), NOT sum_lam w_lam = 1.
+
+    CORRECTED 2026-08-23 (bean qou-bsec).  The previous body was
+
+        z^{n-1} * prod (1 - z q^{2c}) / (1 - q^{2h})
+
+    with a docstring claiming `sum_lam w_lam = 1`.  Both were wrong.  Measured in
+    exact rational arithmetic at the live q0 and convention-D z, the old formula
+    gave sum_lam d_lam w_lam = -1.205 (n=3), 0.377 (n=6), -0.0549 (n=9) — not 1,
+    and NEGATIVE at two of the three, so the functional it defined was not even a
+    positive trace.  It also failed to reproduce the Lean-proved n=3 weights
+    `QOU.SchurWeyl.HeckeMarkov3.markovWeight0/1/2` under any of 160 convention
+    combinations (`computations/schurweyl/ocneanu_weight_validation.py`).
+
+    The formula above was derived from the Markov defining conditions in exact
+    Q(q,z) (`computations/schurweyl/ocneanu_weight_general_n.py`) and is
+    Lean-proved against those n=3 weights, plus the n=3 and n=4 normalisations,
+    in `QOU/SchurWeyl/OcneanuWeightMarkov3.lean`.
+
+    Carried in `mpmath.mpf` end to end per AGENTS.md NO-FLOAT64; returns `mpf`.
+
+    Superseding note (merge with main, 2026-08-23).  main landed a docstring-only
+    correction on this same function, recording that the OLD body was a failed
+    guess — measured over all lam |- 3A via `ocneanu_weights_3A`, its total came
+    to -0.8230 / +0.0547 / -0.0009 at A = 1, 2, 3 against Plancherel's 1.0000 —
+    and noting that `ocneanu_weights.py::omega_lambda_formula_guess` carries the
+    same wrong hook-content shape under its own FAILED GUESS docstring.  That
+    diagnosis is right and those measurements stand.  Its prescription — use the
+    p(n) x p(n) linear inversion `omega_lambda_via_inversion` instead, because
+    the closed form has to be guessed — is what this change supersedes: the
+    formula above was DERIVED from the Markov defining conditions, not guessed,
+    and agrees with the inversion route to the limit of that path's float64
+    arithmetic (1.5e-16).  The inversion remains the general fallback and keeps
+    its own feasibility ceiling.
     """
     n = sum(shape)
     if n == 0:
-        return 1.0
+        return mpf(1)
+    qm = q if isinstance(q, mpf) else mpf(q)
+    zm = z if isinstance(z, mpf) else mpf(z)
     cells: list[tuple[int, int]] = []
     for i, r in enumerate(shape):
         for j in range(r):
             cells.append((i, j))
-    # Hooks
     rows = list(shape)
     max_col = rows[0] if rows else 0
     cols = [sum(1 for r in rows if r > j) for j in range(max_col)]
@@ -108,19 +167,17 @@ def jones_wenzl_weight(shape: tuple[int, ...],
         (rows[i] - j - 1) + (cols[j] - i - 1) + 1
         for (i, j) in cells
     ]
-    product = z ** (n - 1)
-    for k, (i, j) in enumerate(cells):
-        c = j - i
-        hk = hooks[k]
-        numer = 1.0 - z * q ** (2 * c)
-        denom = 1.0 - q ** (2 * hk)
-        if abs(denom) < 1e-15:
-            return 0.0
-        product *= numer / denom
-    return product
+    numer = mpf(1)
+    denom = mpf(1)
+    for idx, (i, j) in enumerate(cells):
+        numer *= qm ** (2 * i) * (qm ** 2 - 1 - qm * zm) + qm ** (2 * j + 1) * zm
+        denom *= qm ** (2 * hooks[idx]) - 1
+    if denom == 0:
+        return mpf(0)
+    return numer / denom
 
 
-def ocneanu_weights_3A(A: int, *, q: float = Q0, z: float = Z_MARKOV):
+def ocneanu_weights_3A(A: int, *, q: float = Q0_PROTON, z: float = Z_MARKOV):
     """Return list of (λ, ω_λ) for all λ ⊢ 3A; Jones–Wenzl normalized."""
     return [(shape, jones_wenzl_weight(shape, q=q, z=z))
              for shape in partitions_of(3 * A)]
@@ -158,10 +215,53 @@ _SEMINORMAL_CACHE: dict[tuple[int, tuple[int, ...]], tuple] = {}
 _BLOCK_CACHE: BlockCache | None = None
 
 
+#: Build the seminormal matrices at full mpf precision instead of float64.
+#:
+#: `BlockCache(float(Q0), float(HA_VAL))` is named verbatim in
+#: `f64_into_mpmath_audit`'s own prose as the shape that "seeds a cache with
+#: doubles". Every seminormal entry therefore descends from a binary64 q, and
+#: the whole H_{3A} character sum is capped at 53 bits — while the braid word
+#: it multiplies against has been mpf since `efcaf79ed`, so the products leave
+#: BLAS for dtype=object anyway. Measured: 642x slower at dim=162, carrying
+#: float64 information. Worst of both (bean qou-d8gq).
+#:
+#: OFF BY DEFAULT, and deliberately so. Turning it on changes every value this
+#: module produces beyond digit ~16 and costs the full 642x, so it is not a
+#: change to make silently on behalf of ~20 consumers. It exists so the
+#: correct-and-slow path can be MEASURED — which is what the A-dependence
+#: question needs (bean qou-2tuv) — and so the choice between it and a declared
+#: float64 tier is made on numbers rather than on principle alone.
+_H3A_MPF = os.environ.get("QOU_H3A_MPF", "0") in ("1", "true", "yes")
+
+
+def _q_pair():
+    """(q, h) at the precision this run is configured for.
+
+    `set_compute_dps()` FIRST, and it is not optional. Without it mpmath sits
+    at its default `mp.dps = 15` / `mp.prec = 53`, so every mpf built here —
+    and every product of them — carries exactly 53 bits. The first version of
+    this flag did that: it built `dtype=object` arrays of mpf, paid the full
+    642x object-matmul cost, and returned values with a 52-bit mantissa that
+    compared EQUAL to their own float64 round-trip. mpf-typed, float64-valued.
+
+    That is the laundering pattern `pyhecke.atom.reject_float64_q` is written to
+    catch ("an mpf whose VALUE is a float64's decimal expansion"), and shipping
+    it under a flag named QOU_H3A_MPF would have been worse than not having the
+    flag: it would have let a caller believe the precision question was
+    answered. Caught by an adversarial review of this diff, not by a gate.
+    """
+    if _H3A_MPF:
+        from _precision import set_compute_dps
+        set_compute_dps()
+        from q_parameter import Q_MP as _q_mp, HA_MP as _h_mp
+        return _q_mp, _h_mp
+    return float(Q0_PROTON), float(HA_PROTON)
+
+
 def _ensure_block_cache() -> BlockCache:
     global _BLOCK_CACHE
     if _BLOCK_CACHE is None:
-        _BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))
+        _BLOCK_CACHE = BlockCache(*_q_pair())
     return _BLOCK_CACHE
 
 # Disk cache for seminormal matrices: standard_young_tableaux is slow
@@ -170,7 +270,48 @@ def _ensure_block_cache() -> BlockCache:
 _SEMINORMAL_DISK = Path(__file__).parent / ".cache" / "seminormal"
 
 
-def _cached_seminormal(shape: tuple[int, ...]):
+def _q_cache_key(q):
+    """Hashable identity for the q a seminormal build was made at.
+
+    The in-memory cache was keyed `(n, shape)` alone, which was correct only
+    while there was exactly one q in the process. Once `q` is a parameter,
+    that key would serve a build made at one q to a caller asking for another
+    — silently, and with no way to notice. Keys on the TYPE as well as the
+    value so an mpf and the float64 that rounds to it never collide.
+    """
+    if type(q).__module__.startswith("sympy"):
+        return ("sym", str(q))
+    return (type(q).__name__, repr(q))
+
+
+def _cached_seminormal(shape: tuple[int, ...], q):
+    """Seminormal (Young orthogonal) matrices for `shape`, built AT `q`.
+
+    `q` is REQUIRED (bean `qou-wee5`, 2026-08-24). It used to default to the
+    module-level `Q0` — the shim's `Q`, which the shim rebinds to muon when the
+    entry-point stem is manifest-listed. A defaulted `q` therefore silently
+    picked an anchor from whoever happened to be `__main__`, three modules up.
+    Callers that want the experimental pin pass `Q0_PROTON`, which is not
+    rebound. Pass:
+
+      * an `mpmath.mpf`   — high-precision numeric build;
+      * a `sympy.Symbol`  — SYMBOLIC build, matrices are expressions in q.
+
+    Before this parameter existed the matrices were always built at `Q0` and
+    the value was baked in irrecoverably: `char_fast._compiled_sigmas` wrapped
+    them in `lambdify(Q_SYM, ...)`, producing something that LOOKED like a
+    function of q and ignored its argument entirely — `sigma(q=0.5)`,
+    `sigma(q=2.0)` and `sigma(q=7.0)` all returned the q0 matrices, bit for
+    bit. A q-sweep through that path returned the q0 answer at every point
+    with no error and no warning. Bean `qou-v6vp`.
+
+    The disk cache is used for NUMERIC q only. Its filename already carried
+    `q{...:.10f}`, so no cache format changes and no existing archive is
+    invalidated — the q was simply never allowed to vary. A symbolic build is
+    held in memory only: it is cheap (the block values depend on the content
+    distance rho, of which there are only a few per shape) and it has no
+    sensible npz representation.
+    """
     # P14 fix (2026-05-08, audit F8): replaced pickle (RCE on tampered cache)
     # with numpy.savez_compressed for the dense σ matrices + JSON sidecar
     # for dim and the SYT entry→cell maps. Densify any sparse matrices
@@ -178,16 +319,44 @@ def _cached_seminormal(shape: tuple[int, ...]):
     # the build_seminormal_matrices sparse threshold of 500).
     import json
     n = sum(shape)
-    key = (n, shape)
+    key = (n, shape, _q_cache_key(q))
     if key in _SEMINORMAL_CACHE:
         return _SEMINORMAL_CACHE[key]
+
+    symbolic = type(q).__module__.startswith("sympy")
+    if symbolic:
+        # No disk round-trip: sympy expressions have no npz form, and the
+        # build is cheap because the block values are keyed on the content
+        # distance rho and there are only a few distinct rho per shape.
+        #
+        # `sparse=False` is forced: scipy's csr_matrix requires a numeric
+        # dtype and cannot hold sympy expressions, so the dim > 500 default
+        # would raise. Dense is the only representation available here.
+        data = build_seminormal_matrices_cached(
+            shape, cache=BlockCache(q, q - 1 / q), sparse=False)
+        _SEMINORMAL_CACHE[key] = data
+        return data
+
     _SEMINORMAL_DISK.mkdir(parents=True, exist_ok=True)
     # Bug fix (2026-05-16): Path.with_suffix replaces everything after
     # the FIRST dot in the filename, so `q{Q0:.10f}` (e.g. "1.1099785955")
     # collided every shape at the same n into a single n{n}_q1.npz file
     # that held only the LAST-written shape's data.  Construct the
     # filename by direct string concat to avoid with_suffix.
-    stem_name = f"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}"
+    # Two independent fixes to this stem, both kept.
+    #
+    # main: the q here was always the module `Q0`; it is now the q this build is
+    # actually AT. Same format, so every existing archive still resolves — the
+    # field simply becomes meaningful instead of constant.
+    #
+    # this branch: `_mpf` in the stem, because the cache is keyed on q to 10 dp,
+    # which CANNOT distinguish an f64 build from an mpf one (they agree to far
+    # more than 10 dp). Without the suffix, flipping QOU_H3A_MPF would silently
+    # load the truncated float64 .npz and report it as full precision — the exact
+    # class of error that flag exists to remove. The two are orthogonal: one names
+    # WHICH q, the other names AT WHAT PRECISION.
+    _prec_tag = "_mpf" if _H3A_MPF else ""
+    stem_name = f"n{n}_q{float(q):.10f}{_prec_tag}_shape{'-'.join(map(str, shape))}"
     npz_path = _SEMINORMAL_DISK / (stem_name + ".npz")
     json_path = _SEMINORMAL_DISK / (stem_name + ".json")
     if npz_path.exists() and json_path.exists():
@@ -229,7 +398,13 @@ def _cached_seminormal(shape: tuple[int, ...]):
     # rebuild path. Composes with the .npz disk cache below; the
     # in-memory BlockCache amortises content-distance arithmetic
     # across shape calls within a single run.
-    cache = _ensure_block_cache()
+    # `_ensure_block_cache()` is the shared float64 cache and is correct only
+    # for the default q. Any other q gets its own cache at that q, so the
+    # shared one is never polluted with values from a different anchor.
+    if _q_cache_key(q) == _q_cache_key(Q0_PROTON):
+        cache = _ensure_block_cache()
+    else:
+        cache = BlockCache(q, q - 1 / q)
     data = build_seminormal_matrices_cached(shape, cache=cache)
     _SEMINORMAL_CACHE[key] = data
     try:
@@ -389,9 +564,31 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
     ``sigmas`` is the list from build_seminormal_matrices.
     ``word`` is the list of (c, d, gen_idx) triples from
     atom_braid_word_3A.
+
+    **This is a float64 kernel, and the return annotation is the contract.**
+    ``build_seminormal_matrices`` fills a numpy array or a scipy sparse
+    matrix, and both branches below end in ``float(...)``, so no caller has
+    ever received more than 53 bits from here. The word coefficients are
+    therefore coerced to ``float`` on the way in, which loses nothing the
+    return type was not already discarding — and without it an ``mpf``
+    coefficient CRASHES the sparse branch outright:
+
+        c * <csr_matrix>  ->  _mul_scalar  ->  dtype object
+        ValueError: scipy.sparse does not support dtype object
+
+    The dense branch did not crash; it silently built an object-dtype array
+    and ran the whole product in Python-level mpf arithmetic, at 53-bit
+    inputs, for no gain.  So the two branches disagreed on the same input,
+    one loudly and one expensively.
+
+    If you need χ_λ at true precision, this is not the function — see
+    ``hecke_characters.chi_lambda_braid_mpf``.  Note that at A = 4 the
+    largest irrep is f^λ = 4158, i.e. ~7.2e10 mpf operations per matrix
+    multiply, so that route is not a drop-in for the A ≥ 4 producers.
     """
     if dim == 0:
         return 0.0
+    word = [(float(c), float(d), g) for (c, d, g) in word]
     try:
         from scipy import sparse as sp_sparse
         is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
@@ -409,10 +606,105 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
             raise IndexError(
                 f"word uses generator σ_{g} but only {len(sigmas)} "
                 f"seminormal matrices were provided (partition too small)")
-        M = c * sigmas[g] + d * I
-        product = product @ M
-    if is_sparse:
-        return float(product.diagonal().sum())
+
+    # Both storage formats go through the structured path; it reads the
+    # generators' nonzeros, not their container.
+    #
+    # The sparse branch was additionally BROKEN, not merely slow: for large n
+    # `build_seminormal_matrices` returns scipy sparse matrices, and 11 of the
+    # 23 letters in the A=2 word carry an `mpmath.mpf` coefficient, so
+    # `d * I` raised "scipy.sparse does not support dtype object". That is why
+    # ⁴He (n = 12) produced nothing from `alpha_5_lp_dual_crystal.py` — the
+    # caller wraps `per_atom_lp` in `except Exception: continue`, so the
+    # heaviest atom was dropped in silence rather than reported. Bean
+    # `qou/ftuv`.
+    return _chi_of_word_structured(sigmas, dim, word)
+
+
+def _chi_of_word_structured(sigmas, dim, word) -> float:
+    """`tr(Π_k (c_k·σ_{g_k} + d_k·I))` in O(|word|·dim²) instead of O(|word|·dim³).
+
+    The generic form multiplied a dense `dim × dim` product by a dense
+    `dim × dim` matrix for every letter — `dim³` per letter. A Hoefsmit
+    seminormal generator is nowhere near a general matrix: it is diagonal plus
+    off-diagonal entries with **at most two nonzeros per column**, one of which
+    is the diagonal. So each column of the product takes its own scaling plus a
+    contribution from exactly ONE other column, which is a `dim²` update.
+
+    Verified across 48 generators spanning six partitions before relying on it,
+    and re-checked per generator below rather than assumed — a wrong structural
+    assumption here would silently drop a term.
+
+    That is an asymptotic change, not a constant: at `dim = 7700` (λ ⊢ 12, the
+    ⁴He stratum) the old form needed ~4.6e11 flops per letter where this needs
+    ~5.9e7. `alpha_5_lp_dual_crystal.py` was not hanging — it was doing dim³
+    work per letter, three q-values deep. Bean `qou/ftuv`.
+
+    Falls back to the dense product for any generator that violates the
+    structure, so correctness never depends on the assumption holding.
+    """
+    try:
+        from scipy import sparse as _sp
+    except ImportError:
+        _sp = None
+
+    split = []
+    for S in sigmas:
+        if _sp is not None and _sp.issparse(S):
+            coo = S.tocoo()
+            ii = coo.row.astype(np.int64)
+            jj = coo.col.astype(np.int64)
+            vals = np.asarray(coo.data, dtype=np.float64)
+        else:
+            A = np.asarray(S, dtype=np.float64)
+            ii, jj = np.nonzero(A)
+            vals = A[ii, jj]
+        on_diag = ii == jj
+        diag = np.zeros(dim, dtype=np.float64)
+        diag[jj[on_diag]] = vals[on_diag]
+        io, jo = ii[~on_diag], jj[~on_diag]
+        if len(np.unique(jo)) != len(jo):
+            return _chi_of_word_dense(sigmas, dim, word)
+        split.append((diag, io, jo, vals[~on_diag]))
+
+    # Work on the transpose: row j of PT is column j of the product, so every
+    # update is contiguous.
+    PT = np.ascontiguousarray(np.eye(dim))
+    for (c, d, g) in word:
+        # `c` and `d` arrive as a mix of int and mpmath.mpf — 11 of the 23
+        # letters in the A=2 word carry an mpf `d`. Multiplying a float64
+        # seminormal matrix by an mpf promoted the whole product to
+        # **object dtype**, so every `product @ M` ran as a Python-level
+        # object matmul. That, not dim³ float work, is what made this slow:
+        # 0.025 s per letter on a 27×27 matrix.
+        #
+        # Coercing to float64 is consistent with what this path already
+        # claims to be — the docstring of
+        # `global_wedderburn_sum_q_hecke_seminormal` calls it "χ^λ_q via
+        # Hoefsmit seminormal matrices at q_val (numerical, float64)", and
+        # `build_seminormal_matrices` returns float64. The mpf coefficients
+        # were carrying extra digits on top of f64 inputs, which is precision
+        # in the accumulator only.
+        cf = float(c)
+        df = float(d)
+        diag, io, jo, vo = split[g]
+        tmp = PT[io] * (cf * vo)[:, None] if len(io) else None
+        PT *= (df + cf * diag)[:, None]
+        if tmp is not None:
+            PT[jo] += tmp
+    return float(np.trace(PT))
+
+
+def _chi_of_word_dense(sigmas, dim, word) -> float:
+    """Generic dense fallback — `dim³` per letter, used only when a generator
+    does not have the one-off-diagonal-per-column structure."""
+    product = np.eye(dim)
+    I = np.eye(dim)
+    for (c, d, g) in word:
+        S = sigmas[g]
+        A = S.toarray() if hasattr(S, "toarray") else np.asarray(S)
+        product = product @ (float(c) * np.asarray(A, dtype=np.float64)
+                             + float(d) * I)
     return float(np.trace(product))
 
 
@@ -452,7 +744,7 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     total = 0.0
     per_partition = []
     for shape in partitions_of(n_strands):
-        sigmas, dim, _syts = _cached_seminormal(shape)
+        sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         dq = dim_q(shape)
@@ -478,6 +770,26 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                              include_inter: bool = True,
                              weight_scheme: str = "normalized_plancherel",
+                             # NOT changed to "jones_wenzl", and the attempt
+                             # is recorded here so nobody repeats it. That
+                             # scheme's weights DO NOT SUM TO 1 — measured
+                             # Sigma_lambda omega_lambda = -0.8230 at A=1,
+                             # +0.0547 at A=2, -0.0009 at A=3 — against the
+                             # "normalized to Sigma = 1 for the Markov identity
+                             # tr_M(1) = 1" three lines below. It appears to fix
+                             # the Phi_q pole (max|V_hat| 1.08837 -> 0.06979,
+                             # binding_3A_tower 1e7 -> 0.331) only because the
+                             # near-cancelling weights drive every V_hat toward
+                             # zero, not because the volumes become right.
+                             #
+                             # So the Phi_q-pole problem documented on bean
+                             # qou-2tuv is REAL and still OPEN: normalized_
+                             # plancherel puts V_hat at 1.08837 against a cap of
+                             # 1.087779, and docs/audits/2026-05-11-plancherel-
+                             # usage-audit.md marked this scheme DEPRECATED in
+                             # May. Both schemes are wrong for the tower; that
+                             # is the finding, and picking between them is not
+                             # the fix.
                              verbose: bool = False):
     """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
 
@@ -514,7 +826,11 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             word_by_gen[g].append((c, d))
 
     nfac = qfac(n_strands)
-    V_hat = [0.0] * n_gens
+    # Under QOU_H3A_MPF the accumulator must NOT start as a float: `0.0 + mpf`
+    # is fine, but `float(np.trace(M))` two lines down would still truncate the
+    # mpf trace, so building the matrices at mpf would buy nothing. Both are
+    # conditioned on the flag; the f64 path is byte-identical to before.
+    V_hat = [(mpf(0) if _H3A_MPF else 0.0)] * n_gens
 
     # Weight table — normalized to Σ = 1 for the Markov identity
     # tr_M(𝟏) = 1; alternate schemes available for audit.
@@ -531,7 +847,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         raise ValueError(f"unknown weight_scheme: {weight_scheme}")
 
     for (shape, w_lam) in weight_table:
-        sigmas, dim, _syts = _cached_seminormal(shape)
+        sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         try:
@@ -557,9 +873,11 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             for (c, d) in w_i_steps:
                 M = M @ (c * sigmas[i] + d * I_lam)
             if is_sparse:
-                tr = float(M.diagonal().sum())
+                _t = M.diagonal().sum()
+                tr = _t if _H3A_MPF else float(_t)
             else:
-                tr = float(np.trace(M))
+                _t = np.trace(M)
+                tr = _t if _H3A_MPF else float(_t)
             V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
@@ -572,7 +890,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     return out
 
 
-def phi_q_safe(z_val: float, *, q: float = Q0, cap_frac: float = 0.98,
+def phi_q_safe(z_val: float, *, q: float = Q0_PROTON, cap_frac: float = 0.98,
                  max_k: int = 2000) -> float:
     """Saturation-safe Φ_q: clips |z| ≤ cap_frac · q before evaluation.
 
@@ -599,7 +917,7 @@ def phi_q_safe(z_val: float, *, q: float = Q0, cap_frac: float = 0.98,
     return product
 
 
-def log_phi_q(z_val: float, *, q: float = Q0,
+def log_phi_q(z_val: float, *, q: float = Q0_PROTON,
                 cap_frac: float = 0.9999, max_k: int = 2000) -> float:
     """log Φ_q(|z|) = −Σ_k log(1 − q^{−k} |z|).
 
@@ -621,8 +939,74 @@ def log_phi_q(z_val: float, *, q: float = Q0,
     return total
 
 
+#: Cached (q, q^-1) for the Li_2^q tower term, loaded once from the canonical
+#: pinning witness.
+_LI2Q_Q_CACHE: tuple | None = None   # (dps, q, q_inv)
+
+
+def tower_term_li2q(v_abs: float) -> "mpmath.mpf":
+    """Lean-mandated per-generator tower term: ``towerTerm q V = -Li_2^q(-|V|)``.
+
+    This is `QOU.BraidKnot.QuantumDilogarithm.towerTerm`, the form the Lean
+    class `HasCorrectedMassEndomorphismTower` requires of any consumer of the
+    mass-endomorphism tower ("should assert `f = towerTerm`, not `f = phi_q`.
+    The latter is the historical pathological form preserved only as a
+    diagnostic").
+
+    Lean proves these are genuinely different functions, not two spellings of
+    one: `phi_q_ne_li2_q` refutes the historical identity claim
+    `Phi_q(z) = -Li_2^q(-z)` by counter-example at z = 0, where Phi_q is the
+    empty PRODUCT (1) and -Li_2^q(-0) is the empty SUM (0). No `sorry`.
+
+    Note the minus signs: outside AND on the argument. The negative argument is
+    what makes the series alternate and converge; the positive-argument form
+    diverges here because |V_hat| can exceed 1.
+    """
+    global _LI2Q_Q_CACHE
+    import mpmath as _mp
+    from _li_2_q_util import li_2_q, load_q_50dps
+    # Built at >= COMPUTE_DPS regardless of the caller's ambient precision, for the
+    # reason `_q_h_at_precision` gives above: an mpf keeps the precision it was
+    # CREATED at, so loading q under the mpmath default (dps = 15) would bake in
+    # a 15-digit q and silently undo everything below. It matters twice here --
+    # `li_2_q` also sets its own truncation from the ambient dps
+    # (`eps = 10**(5 - mp.dps)`), so at the default it would stop the series at
+    # 1e-10 and hand back an mpf-typed, float64-valued answer. That is the exact
+    # "precision theatre" this module already carries a warning about.
+    # Callers already inside a higher workdps keep theirs.
+    from _precision import COMPUTE_DPS
+    with _mp.workdps(max(_mp.mp.dps, COMPUTE_DPS)):
+        dps = _mp.mp.dps
+        if _LI2Q_Q_CACHE is None or _LI2Q_Q_CACHE[0] != dps:
+            q, q_inv, _z = load_q_50dps()
+            _LI2Q_Q_CACHE = (dps, q, q_inv)
+        _, q, q_inv = _LI2Q_Q_CACHE
+        # Returns mpf, NOT float. `mpf(v_abs)` on a Python float is exact -- it
+        # takes the binary64 value verbatim, no decimal round-trip -- so nothing
+        # is lost on the way in and nothing is truncated on the way out. The sums
+        # in `mass_from_tower_safe` promote to mpf on contact, which is the
+        # point: a downcast here would cap the whole tower at 53 bits.
+        return -li_2_q(-abs(_mp.mpf(v_abs)), q, q_inv)
+
+
+def _tower_spec(term: str, cap_frac: float):
+    """Resolve the archimedean specialisation function by name.
+
+    ``"tower_term"`` -> `tower_term_li2q`  (Lean-mandated, DEFAULT)
+    ``"phi_q"``      -> `phi_q_safe`       (historical; MASS context only --
+                        absolute masses and ratios, per `_li_2_q_util`'s rule
+                        that Li_2^q is canonical for BINDING context)
+    """
+    if term == "tower_term":
+        return tower_term_li2q
+    if term == "phi_q":
+        return lambda x: phi_q_safe(x, cap_frac=cap_frac)
+    raise ValueError(f"unknown term: {term!r} (want 'tower_term' or 'phi_q')")
+
+
 def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
-                            cross_mode: str = "adjacent"):
+                            cross_mode: str = "adjacent",
+                            term: str = "tower_term"):
     """Tower mass using phi_q_safe — Φ_q evaluations clipped at cap_frac·q₀.
 
     Mirrors mass_endomorphism.mass_from_tower but regularizes the
@@ -641,31 +1025,28 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
     Returns (desc, single, cross, total).
     """
     from mass_endomorphism import z_mark as _zm
+    _spec = _tower_spec(term, cap_frac)
     n = len(vols)
     desc = 1.0
     for v in vols:
         desc *= v["full"]
     desc = abs(desc)
-    single = sum(phi_q_safe(abs(v["full"]), cap_frac=cap_frac)
-                  for v in vols)
+    single = sum(_spec(abs(v["full"])) for v in vols)
     cross = 0.0
     if cross_mode == "adjacent":
         for i in range(n - 1):
-            cross += _zm * _zm * phi_q_safe(
-                abs(vols[i]["full"] * vols[i + 1]["full"]),
-                cap_frac=cap_frac)
+            cross += _zm * _zm * _spec(
+                abs(vols[i]["full"] * vols[i + 1]["full"]))
     elif cross_mode == "full":
         for i in range(n):
             for j in range(i + 1, n):
-                cross += _zm * _zm * phi_q_safe(
-                    abs(vols[i]["full"] * vols[j]["full"]),
-                    cap_frac=cap_frac)
+                cross += _zm * _zm * _spec(
+                    abs(vols[i]["full"] * vols[j]["full"]))
     elif cross_mode == "full_z2pow":
         for i in range(n):
             for j in range(i + 1, n):
-                cross += (_zm ** (2 * (j - i))) * phi_q_safe(
-                    abs(vols[i]["full"] * vols[j]["full"]),
-                    cap_frac=cap_frac)
+                cross += (_zm ** (2 * (j - i))) * _spec(
+                    abs(vols[i]["full"] * vols[j]["full"]))
     else:
         raise ValueError(f"unknown cross_mode: {cross_mode}")
     return desc, single, cross, desc + single + cross
@@ -677,7 +1058,8 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
                        cross_mode: str = "full",
-                       verbose: bool = False) -> dict:
+                       verbose: bool = False,
+                       term: str = "tower_term") -> dict:
     """FULL-TOWER + H_{3A} binding.
 
     Combines the Φ_q tower formula (prop:mass-endomorphism-tower)
@@ -706,9 +1088,11 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         return {"status": "trivial", "Z": Z, "N": N}
     if use_safe_phi_q:
         desc_a, sgl_a, cross_a, total_a = mass_from_tower_safe(
-            vols_atom, cap_frac=cap_frac, cross_mode=cross_mode)
+            vols_atom, cap_frac=cap_frac, cross_mode=cross_mode,
+            term=term)
         desc_f, sgl_f, cross_f, total_f = mass_from_tower_safe(
-            vols_free, cap_frac=cap_frac, cross_mode=cross_mode)
+            vols_free, cap_frac=cap_frac, cross_mode=cross_mode,
+            term=term)
     else:
         desc_a, sgl_a, cross_a, total_a = mass_from_tower(vols_atom)
         desc_f, sgl_f, cross_f, total_f = mass_from_tower(vols_free)
@@ -793,7 +1177,7 @@ if __name__ == "__main__":
 
     print("=" * 116)
     print("H_{3A} WEDDERBURN-CHARACTER BINDING — task-1 fix")
-    print(f"q₀ = {Q0}")
+    print(f"q₀ = {Q0_PROTON}")
     print(f"E_0 = {args.E0:.4f} MeV  (free-neutron β-decay Q, "
           f"hecke_core.E_0_CALIBRATION_MEV)")
     print(f"No ALPHA · Catalan anywhere.")
@@ -878,7 +1262,7 @@ if __name__ == "__main__":
             "E_0 = 0.78233341 MeV (free-neutron β-decay Q). No Catalan."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "parameters": {"q0": Q0, "E_0_MeV": args.E0,
+        "parameters": {"q0": Q0_PROTON, "E_0_MeV": args.E0,
                         "max_A": args.max_A},
         "markov_path": results_mk,
         "tower_path": results_tw,

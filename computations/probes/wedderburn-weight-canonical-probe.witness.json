@@ -1,25 +1,25 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:27:08.980237+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:41:08.122923+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "dim_q_at_q_to_1_equals_classical_f_lambda",
-      "computed": 1.199999999999846e-24,
+      "computed": 1.19999999999988e-24,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
-      "unit": "max over λ ⊢ n (n=1..6) of |dim_q(λ)|_{q=1+1e-13} − f_λ classical|",
-      "source": "q-deformed Frame-Robinson-Thrall: dim_q(λ) = [n]_q!/∏ [h_x]_q  →  n!/∏ h_x  at q→1."
+      "unit": "max over \u03bb \u22a2 n (n=1..6) of |dim_q(\u03bb)|_{q=1+1e-13} \u2212 f_\u03bb classical|",
+      "source": "q-deformed Frame-Robinson-Thrall: dim_q(\u03bb) = [n]_q!/\u220f [h_x]_q  \u2192  n!/\u220f h_x  at q\u21921."
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 35,
   "computation": "wedderburn-weight-canonical-probe",
   "scriptFile": "wedderburn_weight_canonical_probe.py",
-  "scriptHash": "5d37b228f53f",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "579872983b7f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,14 +29,24 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
-  "description": "I1 probe for prop:wedderburn-weight-canonical.  Verifies (1) dim_q(λ)|_{q→1} = f_λ classical for all λ ⊢ n with n = 1…6 via q-deformed Frame-Robinson-Thrall and classical hook-length formula; also confirms f_λ = |SYT(λ)|.  Documents (2) at q_0 the q-deformed Wedderburn weights w̃_λ = dim_q(λ)² / [n]_q! do NOT sum to 1 — the deviation is recorded for n = 3, 4, 5 (empirical evidence for the 'not a probability measure at q ≠ 1' property called out in AGENTS.md's notation register).  Max residue on (1): 1.20e-24 at q = 1+1e-13 — small enough to confirm the limit while avoiding the 0/0 singularity in [k]_q at q = 1 exactly.",
+  "invocation": {
+    "argv": [
+      "computations/probes/wedderburn_weight_canonical_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/wedderburn_weight_canonical_probe.py"
+  },
+  "description": "I1 probe for prop:wedderburn-weight-canonical.  Verifies (1) dim_q(\u03bb)|_{q\u21921} = f_\u03bb classical for all \u03bb \u22a2 n with n = 1\u20266 via q-deformed Frame-Robinson-Thrall and classical hook-length formula; also confirms f_\u03bb = |SYT(\u03bb)|.  Documents (2) at q_0 the q-deformed Wedderburn weights w\u0303_\u03bb = dim_q(\u03bb)\u00b2 / [n]_q! do NOT sum to 1 \u2014 the deviation is recorded for n = 3, 4, 5 (empirical evidence for the 'not a probability measure at q \u2260 1' property called out in AGENTS.md's notation register).  Max residue on (1): 1.20e-24 at q = 1+1e-13 \u2014 small enough to confirm the limit while avoiding the 0/0 singularity in [k]_q at q = 1 exactly.",
   "contentBlock": "prop:wedderburn-weight-canonical",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
-    "max_classical_limit_residue": 1.199999999999846e-24
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "max_classical_limit_residue": 1.19999999999988e-24
   },
   "data": {
     "classical_limit_q_to_1": [
@@ -94,7 +104,7 @@
             "dim_q_at_q_near_1": 2.0,
             "syt_count": 2,
             "f_lam_matches_syt": true,
-            "residue": 9.999999999994856e-27
+            "residue": 9.999999999999e-27
           },
           {
             "shape": "(1, 1, 1)",
@@ -124,7 +134,7 @@
             "dim_q_at_q_near_1": 3.0,
             "syt_count": 3,
             "f_lam_matches_syt": true,
-            "residue": 3.999999999999279e-26
+            "residue": 3.9999999999996e-26
           },
           {
             "shape": "(2, 2)",
@@ -132,7 +142,7 @@
             "dim_q_at_q_near_1": 2.0,
             "syt_count": 2,
             "f_lam_matches_syt": true,
-            "residue": 3.9999999999999473e-26
+            "residue": 3.9999999999996e-26
           },
           {
             "shape": "(2, 1, 1)",
@@ -140,7 +150,7 @@
             "dim_q_at_q_near_1": 3.0,
             "syt_count": 3,
             "f_lam_matches_syt": true,
-            "residue": 3.999999999999279e-26
+            "residue": 3.9999999999996e-26
           },
           {
             "shape": "(1, 1, 1, 1)",
@@ -162,7 +172,7 @@
             "dim_q_at_q_near_1": 1.0,
             "syt_count": 1,
             "f_lam_matches_syt": true,
-            "residue": 0.0
+            "residue": 1.8111358157653425e-71
           },
           {
             "shape": "(4, 1)",
@@ -170,7 +180,7 @@
             "dim_q_at_q_near_1": 4.0,
             "syt_count": 4,
             "f_lam_matches_syt": true,
-            "residue": 9.999999999998866e-26
+            "residue": 9.999999999999e-26
           },
           {
             "shape": "(3, 2)",
@@ -178,7 +188,7 @@
             "dim_q_at_q_near_1": 5.0,
             "syt_count": 5,
             "f_lam_matches_syt": true,
-            "residue": 1.9999999999997732e-25
+            "residue": 1.9999999999998e-25
           },
           {
             "shape": "(3, 1, 1)",
@@ -186,7 +196,7 @@
             "dim_q_at_q_near_1": 6.0,
             "syt_count": 6,
             "f_lam_matches_syt": true,
-            "residue": 1.99999999999984e-25
+            "residue": 1.9999999999998e-25
           },
           {
             "shape": "(2, 2, 1)",
@@ -194,7 +204,7 @@
             "dim_q_at_q_near_1": 5.0,
             "syt_count": 5,
             "f_lam_matches_syt": true,
-            "residue": 1.9999999999997732e-25
+            "residue": 1.9999999999998e-25
           },
           {
             "shape": "(2, 1, 1, 1)",
@@ -202,7 +212,7 @@
             "dim_q_at_q_near_1": 4.0,
             "syt_count": 4,
             "f_lam_matches_syt": true,
-            "residue": 9.999999999998866e-26
+            "residue": 9.999999999999e-26
           },
           {
             "shape": "(1, 1, 1, 1, 1)",
@@ -210,7 +220,7 @@
             "dim_q_at_q_near_1": 1.0,
             "syt_count": 1,
             "f_lam_matches_syt": true,
-            "residue": 0.0
+            "residue": 1.8111358157653425e-71
           }
         ]
       },
@@ -224,7 +234,7 @@
             "dim_q_at_q_near_1": 1.0,
             "syt_count": 1,
             "f_lam_matches_syt": true,
-            "residue": 0.0
+            "residue": 1.8111358157653425e-71
           },
           {
             "shape": "(5, 1)",
@@ -232,7 +242,7 @@
             "dim_q_at_q_near_1": 5.0,
             "syt_count": 5,
             "f_lam_matches_syt": true,
-            "residue": 1.9999999999997732e-25
+            "residue": 1.9999999999998e-25
           },
           {
             "shape": "(4, 2)",
@@ -240,7 +250,7 @@
             "dim_q_at_q_near_1": 9.0,
             "syt_count": 9,
             "f_lam_matches_syt": true,
-            "residue": 5.99999999999942e-25
+            "residue": 5.9999999999994e-25
           },
           {
             "shape": "(4, 1, 1)",
@@ -248,7 +258,7 @@
             "dim_q_at_q_near_1": 10.0,
             "syt_count": 10,
             "f_lam_matches_syt": true,
-            "residue": 5.99999999999952e-25
+            "residue": 5.9999999999994e-25
           },
           {
             "shape": "(3, 3)",
@@ -256,7 +266,7 @@
             "dim_q_at_q_near_1": 5.0,
             "syt_count": 5,
             "f_lam_matches_syt": true,
-            "residue": 3.999999999999691e-25
+            "residue": 3.9999999999996e-25
           },
           {
             "shape": "(3, 2, 1)",
@@ -264,7 +274,7 @@
             "dim_q_at_q_near_1": 16.0,
             "syt_count": 16,
             "f_lam_matches_syt": true,
-            "residue": 1.199999999999846e-24
+            "residue": 1.19999999999988e-24
           },
           {
             "shape": "(3, 1, 1, 1)",
@@ -272,7 +282,7 @@
             "dim_q_at_q_near_1": 10.0,
             "syt_count": 10,
             "f_lam_matches_syt": true,
-            "residue": 5.99999999999952e-25
+            "residue": 5.9999999999994e-25
           },
           {
             "shape": "(2, 2, 2)",
@@ -280,7 +290,7 @@
             "dim_q_at_q_near_1": 5.0,
             "syt_count": 5,
             "f_lam_matches_syt": true,
-            "residue": 3.999999999999691e-25
+            "residue": 3.9999999999996e-25
           },
           {
             "shape": "(2, 2, 1, 1)",
@@ -288,7 +298,7 @@
             "dim_q_at_q_near_1": 9.0,
             "syt_count": 9,
             "f_lam_matches_syt": true,
-            "residue": 5.99999999999942e-25
+            "residue": 5.9999999999994e-25
           },
           {
             "shape": "(2, 1, 1, 1, 1)",
@@ -296,7 +306,7 @@
             "dim_q_at_q_near_1": 5.0,
             "syt_count": 5,
             "f_lam_matches_syt": true,
-            "residue": 1.9999999999997732e-25
+            "residue": 1.9999999999998e-25
           },
           {
             "shape": "(1, 1, 1, 1, 1, 1)",
@@ -304,7 +314,7 @@
             "dim_q_at_q_near_1": 1.0,
             "syt_count": 1,
             "f_lam_matches_syt": true,
-            "residue": 0.0
+            "residue": 1.8111358157653425e-71
           }
         ]
       }
@@ -312,107 +322,110 @@
     "q_deformed_sum_at_q_0": [
       {
         "n": 3,
-        "n_q_factorial_at_q0": 6.120579304762804,
-        "sum_w_tilde_lambda_at_q0": 0.9874402270271896,
-        "deviation_from_one": 0.01255977297281036,
+        "n_q_factorial_at_q0": 6.120579277915064,
+        "sum_w_tilde_lambda_at_q0": 0.9874402297736877,
+        "deviation_from_one": 0.01255977022631227,
         "per_lambda": [
           {
             "shape": "(3,)",
             "dim_q": 1.0,
-            "w_tilde": 0.1633832273395817
+            "w_tilde": 0.16338322805625738
           },
           {
             "shape": "(2, 1)",
-            "dim_q": 2.0108968691190756,
-            "w_tilde": 0.6606737723480263
+            "dim_q": 2.0108968667071223,
+            "w_tilde": 0.660673773661173
           },
           {
             "shape": "(1, 1, 1)",
             "dim_q": 1.0,
-            "w_tilde": 0.1633832273395817
+            "w_tilde": 0.16338322805625738
           }
         ]
       },
       {
         "n": 4,
-        "n_q_factorial_at_q0": 25.153637264748195,
-        "sum_w_tilde_lambda_at_q0": 0.9821653199589623,
-        "deviation_from_one": 0.017834680041037672,
+        "n_q_factorial_at_q0": 25.153637004851337,
+        "sum_w_tilde_lambda_at_q0": 0.9821653238356108,
+        "deviation_from_one": 0.017834676164389215,
         "per_lambda": [
           {
             "shape": "(4,)",
             "dim_q": 1.0,
-            "w_tilde": 0.039755681831408915
+            "w_tilde": 0.0397556822421796
           },
           {
             "shape": "(3, 1)",
-            "dim_q": 3.0437062182329013,
-            "w_tilde": 0.36830250215514393
+            "dim_q": 3.043706208532522,
+            "w_tilde": 0.36830250361300276
           },
           {
             "shape": "(2, 2)",
-            "dim_q": 2.0437062182329013,
-            "w_tilde": 0.16604895198585665
+            "dim_q": 2.043706208532522,
+            "w_tilde": 0.166048952125246
           },
           {
             "shape": "(2, 1, 1)",
-            "dim_q": 3.0437062182329013,
-            "w_tilde": 0.36830250215514393
+            "dim_q": 3.043706208532522,
+            "w_tilde": 0.36830250361300276
           },
           {
             "shape": "(1, 1, 1, 1)",
             "dim_q": 1.0,
-            "w_tilde": 0.039755681831408915
+            "w_tilde": 0.0397556822421796
           }
         ]
       },
       {
         "n": 5,
-        "n_q_factorial_at_q0": 131.31308744281998,
-        "sum_w_tilde_lambda_at_q0": 0.9822241444316945,
-        "deviation_from_one": 0.017775855568305566,
+        "n_q_factorial_at_q0": 131.31308484471597,
+        "sum_w_tilde_lambda_at_q0": 0.9822241482832541,
+        "deviation_from_one": 0.017775851716745946,
         "per_lambda": [
           {
             "shape": "(5,)",
             "dim_q": 1.0,
-            "w_tilde": 0.0076153871596039355
+            "w_tilde": 0.007615387310278697
           },
           {
             "shape": "(4, 1)",
-            "dim_q": 4.109682435643728,
-            "w_tilde": 0.12862000315995203
+            "dim_q": 4.109682411207941,
+            "w_tilde": 0.12862000417524688
           },
           {
             "shape": "(3, 2)",
-            "dim_q": 5.220441324676728,
-            "w_tilde": 0.2075422043233869
+            "dim_q": 5.220441275326898,
+            "w_tilde": 0.207542204505855
           },
           {
             "shape": "(3, 1, 1)",
-            "dim_q": 6.220441324676728,
-            "w_tilde": 0.29466895514580865
+            "dim_q": 6.220441275326898,
+            "w_tilde": 0.2946689563004929
           },
           {
             "shape": "(2, 2, 1)",
-            "dim_q": 5.220441324676728,
-            "w_tilde": 0.2075422043233869
+            "dim_q": 5.220441275326898,
+            "w_tilde": 0.207542204505855
           },
           {
             "shape": "(2, 1, 1, 1)",
-            "dim_q": 4.109682435643728,
-            "w_tilde": 0.12862000315995203
+            "dim_q": 4.109682411207941,
+            "w_tilde": 0.12862000417524688
           },
           {
             "shape": "(1, 1, 1, 1, 1)",
             "dim_q": 1.0,
-            "w_tilde": 0.0076153871596039355
+            "w_tilde": 0.007615387310278697
           }
         ]
       }
     ],
     "notation_register_remark": {
-      "convention": "tilde w_λ is the q-deformed Wedderburn-block weight; distinct from bare w_λ which is the classical Plancherel probability measure (sums to 1 exactly).",
-      "non_probability_measure_at_q_neq_1": "The probe records Σ_λ tilde w_λ at q_0 for n=3,4,5; these are NOT equal to 1.  At q = 1 the deformation collapses and the sum becomes the classical Plancherel normalisation = 1 (verified by (1) above)."
+      "convention": "tilde w_\u03bb is the q-deformed Wedderburn-block weight; distinct from bare w_\u03bb which is the classical Plancherel probability measure (sums to 1 exactly).",
+      "non_probability_measure_at_q_neq_1": "The probe records \u03a3_\u03bb tilde w_\u03bb at q_0 for n=3,4,5; these are NOT equal to 1.  At q = 1 the deformation collapses and the sum becomes the classical Plancherel normalisation = 1 (verified by (1) above)."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

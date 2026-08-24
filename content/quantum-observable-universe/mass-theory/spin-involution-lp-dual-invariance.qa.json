@@ -1775,6 +1775,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.767Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1794,6 +1809,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.847Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-em-dash": [
@@ -1813,6 +1843,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 40 words)"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.902Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-triples": [
@@ -1832,6 +1877,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 40 words)"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.977Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-closing-aphorism": [
@@ -1851,6 +1911,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:42.045Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-meta-commentary": [
@@ -1870,6 +1945,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:42.099Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-thesis-restatement": [
@@ -1889,6 +1979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:42.145Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-performed-warmth": [
@@ -1908,6 +2013,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:42.236Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-superlative": [
@@ -1927,6 +2047,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:42.295Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "trap-nonspeakable": [
@@ -1946,6 +2081,21 @@
         "reviewed_at": "2026-08-15T10:31:00.494Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "efbe0950f29a",
+          "ts": "822086bd3d8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:42.338Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (76w, prop). Pure LP statement plus displayed math; LP-dual field convention (y_0^* on the net constraint) matches AGENTS.md. No trap constructions."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1969,5 +2119,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:16:42.338Z"
 }

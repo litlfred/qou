@@ -1470,6 +1470,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.467Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No negation-contrast constructions in the three paragraphs."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1489,6 +1504,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.509Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Three declarative paragraphs; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1508,6 +1538,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 109 words)"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.556Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1527,6 +1572,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 109 words)"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.600Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1546,6 +1606,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.645Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Closing 'the regular-value tower converges too slowly; the holonomy residues supply the missing binding energy' is the remark's substantive payload claim, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1565,6 +1640,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.691Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'The residue explicitly pairs this monodromy with the Markov trace' — 'explicitly' modifies the pairing, not the author's emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1584,6 +1674,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.736Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No restatement; each paragraph adds content."
       }
     ],
     "trap-performed-warmth": [
@@ -1603,6 +1708,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.782Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1622,6 +1742,21 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.824Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1641,6 +1776,22 @@
         "reviewed_at": "2026-08-15T10:31:00.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "955ee74fff40",
+          "ts": "e71242baef82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:52.867Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'operates gauge-theoretically as the holonomy of the braid loop' is the heaviest phrase and still parses aloud; the rest is short-clause.",
+        "notes": "No numerics to recompute. TWO SMALL NON-TRAP ITEMS: (a) notation — the block calls $T_w$ 'the braid loop' and speaks of 'the braid word'. $T_w$ is sanctioned corpus notation for the canonical transfer operator (the derivation chain's 'canonical T_w'), so this is not an AGENTS.md 7a violation, but giving $T$ the braid reading is exactly what 7a reserves $\\sigma_i$ for; suggest 'the canonical operator $T_w$ of the braid word $w$'. (b) typography — 'Reshetikhin-Turaev' carries a hyphen where the corpus uses an en-dash, the stripped-character sweep-damage class."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1663,5 +1814,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:25:52.867Z"
 }

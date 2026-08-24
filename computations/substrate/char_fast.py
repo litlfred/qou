@@ -50,19 +50,38 @@ import sympy as sp
 warnings.filterwarnings("ignore", category=UserWarning)
 sys.path.insert(0, str(Path(__file__).parent))
 
-from mass_at_3A_proper import _cached_seminormal
+from mass_at_3A_proper import _cached_seminormal, Q0_PROTON
 
 Q_SYM = sp.Symbol("q")
 
 
 @lru_cache(maxsize=1024)
 def _compiled_sigmas(shape: tuple, precision: str = "double"):
-    """Build lambdified σ_i^λ matrices for a given partition.
+    """Build lambdified σ_i^λ(q) matrices for a given partition.
 
     Returns a tuple of compiled functions σ_i(q) → numpy/mpmath matrix.
     Cached per (shape, precision).
+
+    The matrices are built SYMBOLICALLY in q and only then lambdified, so the
+    returned callables are genuinely functions of their argument.
+
+    They were not, until 2026-08-23 (bean `qou-v6vp`). `_cached_seminormal`
+    took only a shape and built the Hoefsmit blocks numerically at the module
+    `Q0` — its disk cache was even keyed `q{Q0:.10f}` — so wrapping the result
+    in `lambdify(Q_SYM, ...)` produced a closure over CONSTANTS. Measured at
+    the time: `sigma(q=0.5) == sigma(q=2.0) == sigma(q=7.0) == sigma(q=q0)`,
+    all four bit-identical. A q-sweep through this path returned the q0 answer
+    at every point, silently; and `precision="mpmath50"` widened float64 data
+    to 50 digits rather than computing 50 of them.
+
+    The fix is upstream, in `pyhecke.syt_prefix_cache`: `BlockCache` now
+    dispatches its arithmetic on the operand type rather than assuming float,
+    so passing `q = sympy.Symbol("q")` yields blocks that are expressions.
+    Measured on this path afterwards: the lambdified σ differs between q0 and
+    q=2 at every shape tested, and evaluating the symbolic form at q0 agrees
+    with the old float64 build to 3.3e-16.
     """
-    sigmas, dim, _ = _cached_seminormal(shape)
+    sigmas, dim, _ = _cached_seminormal(shape, q=Q_SYM)
     if dim == 0:
         return (), 0
 
@@ -177,7 +196,7 @@ if __name__ == "__main__":
           f"{'t_fast (ms)':>12}")
     t_total = time.time()
     for shape in parts:
-        _, dim, _ = _cached_seminormal(shape)
+        _, dim, _ = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         t0 = time.time()
@@ -202,7 +221,7 @@ if __name__ == "__main__":
     # Sym and alt only (small, fast)
     print(f"\n  {'partition':>14} {'dim':>5} {'χ (fast)':>14} {'t (ms)':>8}")
     for shape in [(12,), (1,) * 12]:
-        _, dim, _ = _cached_seminormal(shape)
+        _, dim, _ = _cached_seminormal(shape, Q0_PROTON)
         t0 = time.time()
         chi = chi_lambda_fast(shape, word)
         dt = (time.time() - t0) * 1000
@@ -211,7 +230,7 @@ if __name__ == "__main__":
 
     # Mid-sized: (6, 6)
     shape = (6, 6)
-    _, dim, _ = _cached_seminormal(shape)
+    _, dim, _ = _cached_seminormal(shape, Q0_PROTON)
     t0 = time.time()
     chi = chi_lambda_fast(shape, word)
     dt = (time.time() - t0) * 1000

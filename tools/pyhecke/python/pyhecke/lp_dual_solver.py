@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import json
 import os
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
@@ -70,6 +71,29 @@ class LpDualResult:
     primal_obj_str: Optional[str] = None
     dual_obj_str: Optional[str] = None
     duality_gap_str: Optional[str] = None
+    #: Set only when the false-infeasible rescue fired: the power of two the
+    #: cost vector was scaled by before re-solving. `None` on a normal solve.
+    #: Present so a witness records that the raw solve was rejected rather
+    #: than the rescue happening silently.
+    rescaled_by_pow2: Optional[int] = None
+    #: Set when the Rust tolerance ladder had to loosen to converge; carries
+    #: the full ladder so a witness records the tolerance its numbers actually
+    #: meet rather than the one that was requested.
+    loosened_status: Optional[str] = None
+    # WHICH SOLVER PRODUCED THIS, and at what width.
+    #
+    # `backend="auto"` picks clarabel-MPFR when the Rust binary is on disk and
+    # falls through to scipy f64 when it is not — silently, by default. So the
+    # same producer run in CI, in a fresh container, and on a developer box
+    # could write witnesses differing by ~28 orders of magnitude in residual
+    # with nothing in the file saying which had happened. A witness that does
+    # not record how it was solved cannot be told apart from one solved the
+    # other way.
+    #
+    # `"clarabel-mpfr"` with `precision_bits` set, or `"scipy-highs"` with
+    # `precision_bits = 53`. Always emitted by `to_dict()`.
+    backend: Optional[str] = None
+    precision_bits: Optional[int] = None
 
     def to_dict(self) -> dict:
         """Serialize both sides of the LP.
@@ -98,6 +122,14 @@ class LpDualResult:
             "duality_gap": float(self.duality_gap),
             "feasible": bool(self.feasible),
         }
+        if self.backend is not None:
+            d["backend"] = self.backend
+        if self.precision_bits is not None:
+            d["precision_bits"] = int(self.precision_bits)
+        if self.rescaled_by_pow2 is not None:
+            d["rescaled_by_pow2"] = int(self.rescaled_by_pow2)
+        if self.loosened_status is not None:
+            d["loosened_status"] = str(self.loosened_status)
         for key, val in (
             ("x_star_str", self.x_star_str),
             ("y0_star_str", self.y0_star_str),
@@ -109,6 +141,62 @@ class LpDualResult:
             if val is not None:
                 d[key] = list(val) if isinstance(val, (list, tuple)) else str(val)
         return d
+
+
+#: Every full-precision companion either result class can carry. Kept as one
+#: tuple so a new `*_str` field is picked up by `provenance()` automatically
+#: rather than needing a matching edit in ten producers.
+PROVENANCE_STR_FIELDS = (
+    "x_star_str", "y0_star_str", "y_star_str",
+    "X_star_str", "Z_star_str", "eigenvalues_str",
+    "primal_obj_str", "dual_obj_str", "duality_gap_str",
+)
+
+
+def provenance(res) -> dict:
+    """Solver provenance + full-precision companions, to spread into a witness row.
+
+    Producers do not all serialize via `to_dict()`. Most cherry-pick the
+    numeric fields off the result and `float()`-cast each one, which drops
+    `backend`, `precision_bits` and every `*_str` companion at the last
+    step. That is the *same* truncation `qou-t0rf` fixed on the dataclass
+    and this module's `to_dict` docstring describes fixing again one layer
+    up — recurring a third time, in the producers. Spreading `provenance(res)`
+    into the row keeps "which solver, at what precision, with what digits"
+    attached to the numbers it describes.
+
+    Keys are omitted rather than emitted as null, so a reader can ask
+    `"backend" in row` / `"y_star_str" in row` and get a truthful answer;
+    an all-f64 scipy solve contributes `backend`/`precision_bits` only.
+    """
+    # Accepts either a result dataclass or its `to_dict()`: producers hold
+    # both forms, and a helper that silently returned `{}` for the dict form
+    # would be an absent check indistinguishable from a passing one.
+    if isinstance(res, dict):
+        def _get(key):
+            return res.get(key)
+    else:
+        def _get(key):
+            return getattr(res, key, None)
+
+    out: dict = {}
+    backend = _get("backend")
+    if backend is not None:
+        out["backend"] = str(backend)
+    bits = _get("precision_bits")
+    if bits is not None:
+        out["precision_bits"] = int(bits)
+    resc = _get("rescaled_by_pow2")
+    if resc is not None:
+        out["rescaled_by_pow2"] = int(resc)
+    loose = _get("loosened_status")
+    if loose is not None:
+        out["loosened_status"] = str(loose)
+    for key in PROVENANCE_STR_FIELDS:
+        val = _get(key)
+        if val is not None:
+            out[key] = list(val) if isinstance(val, (list, tuple)) else str(val)
+    return out
 
 
 def solve_frobenius_dual_lp(
@@ -166,6 +254,8 @@ def solve_frobenius_dual_lp(
             dual_obj=float("nan"),
             duality_gap=float("nan"),
             feasible=False,
+            backend="scipy-highs",
+            precision_bits=53,
         )
 
     x_star = np.asarray(res.x)
@@ -187,6 +277,14 @@ def solve_frobenius_dual_lp(
         dual_obj=dual_obj,
         duality_gap=duality_gap,
         feasible=True,
+        # This is the SUCCESS path and it recorded nothing until 2026-08-23,
+        # while the infeasible branch above already set `backend`. So a
+        # successful f64 solve through this entry point was invisible to the
+        # float64 gate and only a FAILED one was caught — an absent check
+        # indistinguishable from a passing one, in the gate itself.
+        # `solve_frobenius_dual_lp` is public and has live callers
+        # (`frobenius_repose_probe.py`, `all_nuclides_sdp_admissibility.py`).
+        backend="scipy-highs",
     )
 
 
@@ -216,6 +314,133 @@ def _find_clarabel_lp_bin(explicit: Optional[str] = None) -> str:
     )
 
 
+def _mpf_or_float(x):
+    """Decimal string / mpf / number -> mpmath mpf when available, else float."""
+    try:
+        import mpmath as mp
+    except ImportError:
+        return float(x)
+    return mp.mpf(x) if not isinstance(x, mp.mpf) else x
+
+
+def _rescale_mpfr_result(out: dict, s, G_str, d: int) -> dict:
+    """Undo the objective normalisation, and re-derive the active set.
+
+    TWO DISTINCT DEFECTS, both found on the H_9 (triton, 28-pair) LP of
+    `wedderburn_lp_ew_wiring.py` while porting it off float64 (bean qou-q7f1).
+
+    (1) ACCURACY — the objective was normalised before the solve because
+        `operator_selection_lp.rs` hardcodes ABSOLUTE Clarabel tolerances
+        (`tol_gap_abs = tol_feas = 1e-12`). On an LP whose optimum is
+        1.67e-9 that is a *relative* tolerance of 6e-4, so the solver
+        returns `Solved` four significant figures short — measured 1.4e-5
+        relative on the primal, 6.4e-6 on the dual, i.e. WORSE than the f64
+        scipy answer it was supposed to improve on. `prec_bits` never helped
+        (identical results from 167 to 384 bits) because the arithmetic was
+        never the limit; the stopping rule was. Scaling `t -> t*s` leaves
+        the argmin `x` and the active set invariant and scales the objective
+        and every dual by `s`, so it is an exact reformulation. Measured on
+        that LP: 6.4e-6 -> 4.7e-11 relative dual error.
+
+    (2) CORRECTNESS — `active_set` came back as ALL 28 indices where scipy
+        reported none. It is thresholded as `y_i > dual_tol` with an
+        absolute `dual_tol` (default 1e-9), and an interior-point method
+        never drives `y` to exactly zero: the residual centring terms were
+        ~4e-8, above the threshold, so every constraint was labelled
+        binding. Complementary slackness settles it — `min (Gx)_i = 2.4e-9`
+        with `(Gx)_i / sum_j |G_ij x_j| = 0.96..0.997`, i.e. no cancellation
+        at all, so every Frobenius row is genuinely strictly slack and the
+        true `y` is zero. Per AGENTS.md the active set IS the deliverable
+        ("the active demand channels are the most receptive sub-braids"), so
+        shipping 28 false ones as a precision upgrade would have been a
+        substantive wrong claim dressed as a refinement.
+
+        The active set is therefore re-derived from PRIMAL SLACK — a row is
+        active iff `(Gx)_i` is negligible against its own term scale — which
+        is what "tight Frobenius constraint" means, and is scale-free. This
+        corrects an IPM artifact on the clarabel path only; the scipy path
+        is a vertex method whose `y` is exactly zero or genuinely positive,
+        and is left alone.
+    """
+    try:
+        import mpmath as mp
+    except ImportError:
+        return out
+
+    with mp.workdps(50):
+        inv = 1 / _mpf_or_float(s)
+        # (1) unscale every quantity carrying one power of the objective.
+        for key in ("y0_star", "primal_obj", "dual_obj", "duality_gap"):
+            if key in out:
+                out[key] = float(_mpf_or_float(out[key]) * inv)
+            ks = key + "_str"
+            if ks in out and out[ks] is not None:
+                out[ks] = mp.nstr(_mpf_or_float(out[ks]) * inv, 50)
+        if "y_star" in out:
+            out["y_star"] = [float(_mpf_or_float(v) * inv) for v in out["y_star"]]
+        if out.get("y_star_str"):
+            out["y_star_str"] = [mp.nstr(_mpf_or_float(v) * inv, 50)
+                                 for v in out["y_star_str"]]
+
+        # (2) active set from the DUAL, gated on the dual being non-zero.
+        #
+        # SUPERSEDES the primal-slack rule described in (2) above, 2026-08-24,
+        # by owner ruling after the primal rule was measured against scipy's
+        # vertex method on 27 constructed LPs:
+        #
+        #     primal slack   9/27      (0 of 18 with a DIAGONAL G)
+        #     dual           27/27
+        #
+        # The primal rule is not merely inaccurate for a diagonal `G`, it is
+        # VACUOUS: row `i` then has exactly one non-zero term, so
+        # `|(Gx)_i| / sum_j |G_ij x_j|` is identically 1 whenever `x_i != 0`
+        # and 0/0 otherwise. It can never report a row tight. On `G = I` with
+        # d=12, where the truth is that the eleven zero components of `x` are
+        # binding, scipy reports eleven and the primal rule reports none.
+        # The `x_i` sit at ~1e-42 rather than 0 (an IPM never reaches the
+        # bound exactly), which is what makes the ratio 1 instead of 0/0.
+        #
+        # THE GATE IS NOT OPTIONAL, and this is the subtle half. A bare
+        # relative dual test -- active iff `|y_i| > 1e-8 * max_j |y_j|` --
+        # scores 27/27 on that suite and still REINTRODUCES the exact bug
+        # defect (2) was written to fix, because normalising `y` by its own
+        # maximum turns an all-noise dual into an all-active answer. Measured
+        # on the committed corpus: `wedderburn-lp-ew-wiring` carries
+        # `max|y| = 1.19e-105` against `y0_star = 5.24e-06`, i.e. the row
+        # duals ARE zero and no Frobenius row is binding (scipy agrees, and
+        # `active_set: []` is what ships) -- yet the bare relative rule calls
+        # all 28 rows active. Six other blocks behave the same way
+        # (`r5-full-canonical-knot-solver` x2, `option-b-proton-mass-full-chain`
+        # x2, `two-quark-active-set-mahler-sweep`, and a second wedderburn
+        # deliverable block).
+        #
+        # So the row duals are first compared against `y0_star`, the NET-row
+        # dual, which prices the one constraint that is always binding and is
+        # therefore the natural scale for "is `y` anything at all". If the
+        # whole row-dual vector is negligible against it, nothing is active.
+        # Only then does the relative test choose among the rows.
+        #
+        # Both constants are `1e-8`, and it is the solver's own
+        # `reduced_tol_feas` from `operator_selection_lp.rs` -- its statement
+        # of what it will not distinguish -- not a fitted value. Separation is
+        # not marginal in either direction: on the ground-truth suite the
+        # active rows sit at 1e-2..1e0 of `max|y|` and the inactive at 1e-42.
+        ys = out.get("y_star_str") or out.get("y_star")
+        if ys is not None and len(ys) == d:
+            y = [abs(_mpf_or_float(v)) for v in ys]
+            y0 = abs(_mpf_or_float(out.get("y0_star_str")
+                                   or out.get("y0_star") or 0))
+            ymax = max(y) if y else mp.mpf(0)
+            tol = mp.mpf("1e-8")
+            if ymax == 0 or ymax <= tol * y0:
+                active = []          # the dual is numerically zero: nothing binds
+            else:
+                active = [i for i, v in enumerate(y) if v > tol * ymax]
+            out["active_set"] = active
+
+    return out
+
+
 def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
     """Build an ``LpDualResult`` from the clarabel binding/CLI output dict."""
     if not out or "error" in out or not out.get("feasible", False):
@@ -224,6 +449,11 @@ def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
             y_star=[float("nan")] * d, active_set=[],
             primal_obj=float("nan"), dual_obj=float("nan"),
             duality_gap=float("nan"), feasible=False,
+            # An infeasible verdict is a claim about the LP, and which solver
+            # made it matters — clarabel returns false infeasibles on
+            # badly-conditioned costs where HiGHS succeeds. Recording the
+            # backend is what let that be diagnosed rather than believed.
+            backend="clarabel-mpfr", precision_bits=None,
         )
     return LpDualResult(
         x_star=[float(v) for v in out["x_star"]],
@@ -252,6 +482,8 @@ def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
         # That is worse than an absent field: a reader takes `*_str` as the
         # authoritative value precisely because it is a string.
         **_str_fields_if_decimal(out),
+        backend="clarabel-mpfr",
+        precision_bits=int(out["precision_bits"]) if out.get("precision_bits") else None,
     )
 
 
@@ -279,6 +511,182 @@ def _str_fields_if_decimal(out: dict) -> dict:
     return {f"{k}_str": v for k in _STR_KEYS if (v := _pick(k)) is not None}
 
 
+
+
+def _input_dps(rows) -> int:
+    """Significant decimal digits actually present in a decimal-string matrix.
+
+    Rank determination cannot be sharper than the data. Returns at least 15 so
+    an all-integer matrix (``"1"``, ``"0"``) is not treated as one-digit data.
+    """
+    best = 0
+    for row in rows:
+        cells = row if isinstance(row, (list, tuple)) else [row]
+        for cell in cells:
+            digits = str(cell).lstrip("-").replace(".", "")
+            # strip a leading exponent-free zero run, then drop any exponent
+            digits = digits.split("e")[0].split("E")[0].lstrip("0")
+            best = max(best, len(digits))
+    return max(best, 15)
+
+
+def gram_pseudo_inverse_solve(G_str, rhs_str, *, dps: int = 50,
+                              cutoff_rel_dps: float = 0.8):
+    """Minimum-norm solve of ``G y = rhs`` for a SYMMETRIC, possibly SINGULAR G.
+
+    Use this instead of an inverse whenever `G` is a Gram matrix that may be
+    rank-deficient. Measured 2026-08-23 on the H_3 six-channel Gram (bean
+    `qou/ftuv`), `G` is **exactly singular**: its determinant tracks the
+    working precision rather than converging to a value ---
+
+        dps= 60   det(G) = -2.008684335e-57   |eig|min = 1.478983446e-57
+        dps=120   det(G) = +5.724314033e-117  |eig|min = 4.215451518e-117
+
+    --- sign flip included, which is what a determinant of exactly zero looks
+    like when it is computed in floating point. `G` has a one-dimensional
+    kernel, so `G^-1` does not exist and no amount of precision creates it:
+    at 120 dps the condition number is 1e117 and an inverse-based solve still
+    has zero correct digits.
+
+    What that cost: `frobenius_repose_probe.py` computed `y = G^-T t` through
+    `numpy.linalg.inv` and recorded the result. The committed values
+
+        f64 (via the nonexistent inverse)   0.75, 0.5,    0.25,  0.5,    0.154, -0.311
+        minimum-norm (this function)        0.777, 0.201, 0.201, -0.181, -0.181, 0.163
+
+    differ by factors of 1e7--1e8, and the f64 row BREAKS a symmetry the true
+    solution has exactly (`y[1] == y[2]`, `y[3] == y[4]`) --- independent
+    evidence that it is round-off, not an approximation.
+
+    The minimum-norm solution IS well defined whenever `rhs` lies in
+    `range(G)`, which for symmetric `G` means orthogonal to the kernel; `t` is
+    (`v . t = -3.4e-76` at 80 dps). It is unique only up to a kernel vector,
+    and this returns the representative with no kernel component.
+
+    Raises `ValueError` when `rhs` is NOT in `range(G)`, because then no
+    solution exists and returning a vector would present "no solution" as an
+    answer --- the failure this whole arc keeps finding.
+    """
+    from mpmath import mp as _mp
+
+    with _mp.workdps(dps):
+        G = _mp.matrix([[_mp.mpf(str(v)) for v in row] for row in G_str])
+        b = _mp.matrix([_mp.mpf(str(v)) for v in rhs_str])
+        d = G.rows
+        E, V = _mp.eigsy(G)
+        # RELATIVE rank cutoff, scaled by the working precision. An absolute
+        # threshold is wrong twice: it is not scale-invariant (a Gram scaled
+        # by 1e-6 would read as all-kernel), and a fixed 1e-40 is TIGHTER than
+        # the arithmetic below ~50 dps, so a genuinely zero eigenvalue
+        # computed as 1e-31 at dps=30 would be classified as nonzero and the
+        # kernel missed entirely. Caught by
+        # `test_pseudo_inverse_refuses_an_out_of_range_rhs`.
+        emax = max((abs(E[j]) for j in range(G.rows)), default=_mp.mpf(1))
+        if emax == 0:
+            emax = _mp.mpf(1)
+        # Bound the cutoff by the precision of the INPUT, not just the working
+        # precision. Rank is a property of the data: asking for 80 dps from
+        # 50-dps decimal strings invents 30 digits, and the exactly-zero
+        # eigenvalue then reads as ~1e-50 input noise rather than zero — so
+        # the kernel is missed, and the H_3 solve silently returned
+        # `y[0] = 1.0` with its exact `y[1] == y[2]` symmetry broken. A helper
+        # that answers a question its inputs cannot support is the same absent
+        # check this whole arc keeps turning up, so cap it and mean it.
+        eff_dps = min(dps, _input_dps(G_str))
+        cut = emax * _mp.mpf(10) ** (-cutoff_rel_dps * eff_dps)
+
+        kernel = [j for j in range(d) if abs(E[j]) < cut]
+        # Range test: for symmetric G, range(G) = kernel-perp.
+        nb = _mp.sqrt(sum(x ** 2 for x in b))
+        for j in kernel:
+            ip = sum(V[r, j] * b[r] for r in range(d))
+            frac = abs(ip) / nb if nb > 0 else _mp.mpf(0)
+            if nb > 0 and frac > _mp.mpf(10) ** (-cutoff_rel_dps * eff_dps):
+                exc = ValueError(
+                    f"right-hand side is not in range(G): kernel component "
+                    f"{_mp.nstr(frac, 6)} of ||rhs||. No solution "
+                    f"exists; do not record one."
+                )
+                # The size of the violation is the evidence behind the verdict,
+                # and it is the only nucleus-dependent quantity this test
+                # yields — carry it rather than making a caller re-derive it.
+                exc.kernel_fraction = float(frac)
+                # ...and its full-precision companion. It is computed in MPFR
+                # here, so emitting only the f64 view would be the same
+                # truncation-at-the-last-step this module exists to stop.
+                exc.kernel_fraction_str = _mp.nstr(frac, dps)
+                raise exc
+
+        y = _mp.matrix(d, 1)
+        for j in range(d):
+            if abs(E[j]) < cut:
+                continue
+            coeff = sum(V[r, j] * b[r] for r in range(d)) / E[j]
+            for r in range(d):
+                y[r] += coeff * V[r, j]
+        return ([_mp.nstr(y[i], dps) for i in range(d)],
+                [float(y[i]) for i in range(d)],
+                len(kernel))
+
+
+def _certifies_optimality(t_str, G_str, n_str, m_str, res) -> tuple[bool, str]:
+    """Check `(x*, y*)` against the ORIGINAL data, for a loosened solve.
+
+    A rescaled or tolerance-loosened solve answers a problem that is NOT
+    quite the one asked about, and it answers it *well* — so its own reported
+    `duality_gap` is small and cannot detect the substitution. Measured
+    2026-08-23 (bean `qou/ftuv`) on two solves the rescue accepted:
+
+        uniform 1e6 costs   primal 104901.11715303971  rel gap 3.3e-41  CORRECT
+        rho_k 1e15 range    primal      1.4571747644   rel gap 1.2e-30  WRONG
+                                        (scipy: 1.2745481388661641)
+
+    Both gaps are tiny; only one answer is right. What separates them is DUAL
+    FEASIBILITY in the original `t`: the LP dual requires `y0·1 + Gᵀy ≤ t`
+    with `y ≥ 0`, and a `y` optimal for a rescaled `t` violates it. Measured
+    on the same pair, normalised by the objective the duality theorem ties it
+    to:
+
+        max(y0·1 + Gᵀy − t) / max(|primal_obj|, 1)   =  1.4e-16   vs   1.1e-01
+
+    Eight orders apart, so this is a discriminating test rather than a
+    threshold fitted to two points. Returns `(ok, reason)`.
+    """
+    import numpy as _np
+
+    try:
+        t = _np.array([float(x) for x in t_str], dtype=float)
+        G = _np.array([[float(v) for v in row] for row in G_str], dtype=float)
+        n_target = float(n_str)
+        m_bound = float(m_str)
+        x = _np.asarray(res.x_star, dtype=float)
+        y = _np.asarray(res.y_star, dtype=float)
+        y0 = float(res.y0_star)
+    except (TypeError, ValueError):
+        return False, "certificate unreadable"
+    if not (_np.all(_np.isfinite(x)) and _np.all(_np.isfinite(y))
+            and _np.isfinite(y0)):
+        return False, "certificate non-finite"
+
+    d = len(t)
+    scale = max(abs(float(res.primal_obj)), 1.0)
+    tol = 1e-9 * scale
+
+    dual_viol = float(_np.max(y0 * _np.ones(d) + G.T @ y - t))
+    if dual_viol > tol:
+        return False, (f"dual infeasible in the original t: "
+                       f"max(y0·1 + Gᵀy − t) = {dual_viol:.3e} > {tol:.3e}")
+    if float(_np.min(y)) < -tol:
+        return False, f"dual sign violated: min(y) = {float(_np.min(y)):.3e}"
+    if abs(float(x.sum()) - n_target) > tol:
+        return False, "primal net constraint violated"
+    if float(_np.min(G @ x)) < -tol:
+        return False, "primal Frobenius positivity violated"
+    if float(_np.min(x)) < -m_bound - tol:
+        return False, "primal bound violated"
+    return True, "ok"
+
+
 def _solve_operator_selection_lp_clarabel(
     t: np.ndarray,
     G: np.ndarray,
@@ -299,9 +707,29 @@ def _solve_operator_selection_lp_clarabel(
     f64 truncation (the *inputs* are still f64 here because callers pass
     ``np.ndarray``; pass 50-dps strings upstream for full precision).
 
-    NOT yet cross-checked against the scipy backend to 1e-25 — that needs a
-    scipy+numpy environment.  The scipy backend therefore remains the
-    default; this path is opt-in via ``backend="clarabel"``.
+    CROSS-CHECKED 2026-08-23 (bean ``qou/ftuv``), and it passes by 20 orders
+    of margin.  On the H_3 operator-selection LP with 50-dps string inputs,
+    against ``backend="scipy"`` at ``n_target`` in {1.0, 0.6614, 3.0}::
+
+        |Δ y0_star|   ≤ 7.5e-46          active_set   identical, [0]
+        max |Δ y_star| ≤ 2.8e-47
+        primal_obj     scipy 1.07e-10    clarabel 3.6e-44
+
+    The stated precondition — "that needs a scipy+numpy environment" — was
+    stale; both install from PyPI.
+
+    Reaching that needed a fix in ``operator_selection_lp.rs``: the solver
+    tolerance was hardcoded ``1e-12``/``1e-8``, so ``prec_bits`` widened the
+    arithmetic and never tightened termination.  The residual sat at
+    3.81482e-16 identically at 167 and 333 bits.  It now derives from ``F``'s
+    probed working precision and tracks it: 3.6e-44 at 167 bits, 3.8e-84 at
+    333, 3.8e-124 at 500.
+
+    The scipy backend nonetheless REMAINS the default, and changing it is an
+    owner call rather than a consequence of this fix: ``to_dict()``'s f64
+    fields feed arithmetic in 56 producers, and switching the default moves
+    every LP/SDP witness in the corpus at once.  This path stays opt-in via
+    ``backend="clarabel"``.
     """
     # STRINGS IN, not just strings out. Callers may pass decimal strings (or
     # mpmath mpf) for `t`, `G` and `n_target` — e.g. from
@@ -329,30 +757,156 @@ def _solve_operator_selection_lp_clarabel(
     m_str = repr(float(M_bound))
     dt_str = repr(float(dual_tol))
 
-    # Prefer the in-process PyO3 binding if the installed wheel carries it.
+    # OBJECTIVE NORMALISATION (from `origin/main`, bean `qou-q7f1`) — see
+    # `_rescale_mpfr_result` for the two defects it fixes: an absolute
+    # Clarabel tolerance that is a *relative* 6e-4 on an LP whose optimum is
+    # 1.67e-9, and an active set of all-28 rows that an IPM's non-zero
+    # centring residuals produced against a `dual_tol` threshold.
+    #
+    # This branch reached the SAME LP (`wedderburn_lp_ew_wiring`, H_9 triton)
+    # from the other side and fixed the tolerance in the Rust solver instead —
+    # a ladder that loosens on `InsufficientProgress` rather than reporting an
+    # LP infeasible. The two are complementary and BOTH are kept: normalising
+    # makes the tolerance mean what it says, so the ladder should rarely fire;
+    # the ladder catches what normalisation does not. Note that
+    # `_rescale_mpfr_result`'s docstring describes the Rust tolerances as
+    # hardcoded `1e-12` — true of `main`, no longer true here.
+    t_str_orig = list(t_str)
+    _scale = None
     try:
-        import pyhecke_native
-        _binding = getattr(pyhecke_native, "operator_selection_lp", None)
+        import mpmath as _mp
+        with _mp.workdps(50):
+            _tmax = max((abs(_mp.mpf(v)) for v in t_str), default=_mp.mpf(0))
+            if _tmax > 0:
+                # Normalise the OBJECTIVE, not `t`: the tolerance is absolute
+                # and applies to the gap, so what must reach O(1) is
+                # `t . x ~ n_target * t`. `n_target` is NOT scaled — it is the
+                # equality right-hand side, and moving it would change the
+                # feasible set rather than the units.
+                _nt = abs(_mp.mpf(n_str))
+                _scale = 1 / (_tmax * _nt) if _nt > 0 else 1 / _tmax
+                t_str = [_mp.nstr(_mp.mpf(v) * _scale, 50) for v in t_str]
     except ImportError:
-        _binding = None
-    if _binding is not None:
-        out = _binding(t_str, G_str, n_str, m_str, dt_str, int(prec_bits))
-        return _lp_result_from_dict(dict(out), d)
+        _scale = None
 
-    # Fall back to the CLI binary.
-    import json as _json
-    import subprocess
+    def _finish(out: dict) -> LpDualResult:
+        if _scale is not None:
+            out = _rescale_mpfr_result(out, _scale, G_str, d)
+        return _lp_result_from_dict(out, d)
 
-    payload = {
-        "t": t_str, "G": G_str, "n_target": n_str,
-        "m_bound": m_str, "dual_tol": dt_str, "prec_bits": int(prec_bits),
-    }
-    binp = _find_clarabel_lp_bin(clarabel_bin)
-    proc = subprocess.run(
-        [binp], input=_json.dumps(payload), capture_output=True, text=True,
-    )
-    out = _json.loads(proc.stdout) if proc.stdout.strip() else {}
-    return _lp_result_from_dict(out, d)
+    def _solve(t_vals: list) -> dict:
+        """One trip through the binding, else the CLI."""
+        try:
+            import pyhecke_native
+            _binding = getattr(pyhecke_native, "operator_selection_lp", None)
+        except ImportError:
+            _binding = None
+        if _binding is not None:
+            return dict(_binding(t_vals, G_str, n_str, m_str, dt_str,
+                                 int(prec_bits)))
+
+        import json as _json
+        import subprocess
+
+        payload = {
+            "t": t_vals, "G": G_str, "n_target": n_str,
+            "m_bound": m_str, "dual_tol": dt_str, "prec_bits": int(prec_bits),
+        }
+        binp = _find_clarabel_lp_bin(clarabel_bin)
+        proc = subprocess.run(
+            [binp], input=_json.dumps(payload), capture_output=True, text=True,
+        )
+        return _json.loads(proc.stdout) if proc.stdout.strip() else {}
+
+    out = _solve(t_str)
+    if out.get("feasible", False):
+        res = _finish(out)
+        # A solve the Rust tolerance ladder had to loosen answers a slightly
+        # different question than the one asked. Verify it like a rescued one,
+        # against the ORIGINAL (un-normalised) cost vector.
+        if "after [" in str(out.get("status", "")):
+            ok, why = _certifies_optimality(t_str_orig, G_str, n_str, m_str, res)
+            if not ok:
+                return _lp_result_from_dict(
+                    {"feasible": False,
+                     "error": f"loosened solve failed certification: {why}"}, d)
+            res.loosened_status = str(out.get("status"))
+        return res
+    # ── False-infeasible rescue ───────────────────────────────────────
+    # `t` appears ONLY in the objective: the feasible set is
+    # {x : Σx = n_target, G-positivity, x ≥ -M_bound} and does not mention
+    # `t` at all. So rescaling the cost vector CANNOT change whether the
+    # problem is feasible. If the unscaled solve says infeasible and a
+    # scaled one says feasible, the unscaled verdict was a numerical
+    # artifact, not a fact about the LP — this rescue corrects that and can
+    # never manufacture a feasible answer for a genuinely infeasible LP.
+    #
+    # Measured 2026-08-23 (bean `qou/ftuv`): with the default M_bound=1e6,
+    # cost magnitudes at or above ~1e6 drive the interior-point method to a
+    # spurious infeasible. `rho_k_h3a_gg_trajectory.py` builds
+    # t = 1/(dim_q · |y·χ|) with a 1e-15 floor, so its costs reach 1e15 and
+    # every nucleon came back NaN under clarabel while scipy solved it.
+    # Raising prec_bits does not help (167/333/500 all fail): it is
+    # conditioning, not precision.
+    #
+    # The scale is a POWER OF TWO so both the f64 and the MPFR scaling are
+    # exact — no rounding is introduced in either direction.
+    _mags = [abs(float(v)) for v in t_str if float(v) != 0.0]
+    if not _mags:
+        return _lp_result_from_dict(out, d)
+    import math as _math
+    _k = -_math.frexp(max(_mags))[1]          # 2**_k · max|t| ∈ [0.5, 1)
+    if _k == 0:
+        return _lp_result_from_dict(out, d)
+
+    from mpmath import mp as _mp_mod, mpf as _mpf
+    _dps = max(60, int(prec_bits * 0.30103) + 10)
+    with _mp_mod.workdps(_dps):
+        _scale = _mpf(2) ** _k
+        t_scaled = [_mp_mod.nstr(_mpf(v) * _scale, _dps) for v in t_str]
+        out2 = _solve(t_scaled)
+        if not out2.get("feasible", False):
+            # Genuinely infeasible (or a failure the rescale cannot reach) —
+            # return the ORIGINAL verdict rather than the rescaled one, so
+            # the reported numbers match the inputs the caller passed.
+            return _lp_result_from_dict(out, d)
+
+        # Undo the scaling on every t-linear quantity. `x_star` and
+        # `active_set` are scale-INVARIANT (the argmin does not move), so
+        # they pass through untouched.
+        _inv = _mpf(2) ** (-_k)
+        for _key in ("y0_star", "primal_obj", "dual_obj", "duality_gap"):
+            if _key in out2:
+                out2[_key] = float(_mpf(str(out2[_key])) * _inv)
+            _sk = _key + "_str"
+            if _sk in out2 and out2[_sk] is not None:
+                out2[_sk] = _mp_mod.nstr(_mpf(str(out2[_sk])) * _inv, _dps)
+        if "y_star" in out2:
+            out2["y_star"] = [float(_mpf(str(v)) * _inv) for v in out2["y_star"]]
+        if out2.get("y_star_str") is not None:
+            out2["y_star_str"] = [_mp_mod.nstr(_mpf(str(v)) * _inv, _dps)
+                                  for v in out2["y_star_str"]]
+
+    res = _finish(out2)
+
+    # CERTIFY BEFORE ACCEPTING. Scaling `t` cannot change the feasible set,
+    # but it can change which vertex a finite-precision solver lands on: on a
+    # cost vector spanning 1.1 … 1e15, scaling the max to 1 pushes the small
+    # entries to ~1e-15, where the solver treats them as zero and optimises a
+    # DIFFERENT objective — returning 1.4572 where the true optimum is
+    # 1.2745, with a reported duality gap of 1.2e-30 because it solved that
+    # other problem well. The gap cannot catch this; dual feasibility in the
+    # original `t` can, and does, by eight orders.
+    ok, why = _certifies_optimality(t_str, G_str, n_str, m_str, res)
+    if not ok:
+        return _lp_result_from_dict(
+            {"feasible": False,
+             "error": f"rescaled solve failed certification: {why}"}, d)
+
+    # Say so. A silent rescue is an absent check indistinguishable from a
+    # passing one; the witness should record that the raw solve was rejected.
+    res.rescaled_by_pow2 = _k
+    return res
 
 
 def solve_operator_selection_lp(
@@ -405,6 +959,21 @@ def solve_operator_selection_lp(
                     "unavailable; refusing to fall back to scipy float64. "
                     f"Build it (see _find_clarabel_lp_bin). Cause: {_e!r}"
                 ) from _e
+            # Not strict — but say so. The downgrade is ~28 orders of
+            # magnitude in residual (3.6e-44 -> 1.07e-10 on H_3), and it used
+            # to happen with nothing printed, so a CI run and a local run
+            # could write materially different witnesses and look identical
+            # in the log. The result records `backend` either way; this makes
+            # it visible at the moment it happens too.
+            warnings.warn(
+                "clarabel-MPFR unavailable — falling back to scipy float64. "
+                "Duals will carry ~16 digits instead of ~46, and the witness "
+                'will record backend="scipy-highs". Build the binary, or set '
+                "QOU_REQUIRE_CLARABEL=1 to make this an error. "
+                f"Cause: {_e!r}",
+                RuntimeWarning,
+                stacklevel=2,
+            )
         else:
             # Return clarabel when forced, or in auto mode when it actually
             # solved; otherwise (auto + infeasible/error) fall back to scipy.
@@ -446,6 +1015,9 @@ def solve_operator_selection_lp(
             dual_obj=float("nan"),
             duality_gap=float("nan"),
             feasible=False,
+            # Which solver returned the infeasible verdict is part of the
+            # verdict: the two backends disagree on badly-conditioned costs.
+            backend="scipy-highs",
         )
 
     x_star = np.asarray(res.x)
@@ -474,6 +1046,8 @@ def solve_operator_selection_lp(
         dual_obj=dual_obj,
         duality_gap=duality_gap,
         feasible=True,
+        backend="scipy-highs",
+        precision_bits=53,
     )
 
 
@@ -622,9 +1196,40 @@ class SdpDualResult:
     duality_gap: float
     eigenvalues: list[float]
     feasible: bool
+    # Full-precision decimal companions, mirroring `LpDualResult`. Populated
+    # by `_solve_psd_via_clarabel_lp` from the MPFR solve; `None` on the
+    # cvxpy/SCS f64 path, so `X_star_str is not None` answers "was this
+    # solved at precision?".
+    X_star_str: Optional[list] = None
+    Z_star_str: Optional[list] = None
+    primal_obj_str: Optional[str] = None
+    dual_obj_str: Optional[str] = None
+    duality_gap_str: Optional[str] = None
+    eigenvalues_str: Optional[list] = None
+    # Which solver produced this, and at what width — same reason as
+    # `LpDualResult`: `backend="auto"` silently picks clarabel-MPFR or
+    # cvxpy/SCS f64 depending on whether a Rust binary happens to be built,
+    # and a witness that does not say which cannot be told apart from one
+    # solved the other way.
+    backend: Optional[str] = None
+    precision_bits: Optional[int] = None
 
     def to_dict(self) -> dict:
-        return {
+        """Serialize the SDP, f64 fields verbatim plus `*_str` companions.
+
+        The f64 fields stay f64 for the same reason `LpDualResult.to_dict`
+        gives: consumers do arithmetic on them, so replacing them with
+        strings breaks readers silently.
+
+        **The `*_str` half was missing entirely until 2026-08-23.** The
+        diagonal-lift path solves through `_solve_operator_selection_lp_clarabel`
+        at 167 bits, and every digit past f64 was discarded here — a ~50-dps
+        solve reaching its witness as f64. That is exactly the defect
+        `qou-t0rf` fixed for `LpDualResult` and never for this one, and it is
+        why the LP-dual float64 carve-out looked structurally necessary on
+        the SDP side (bean `qou/ftuv`).
+        """
+        out = {
             "X_star": self.X_star,
             "Z_star": self.Z_star,
             "primal_obj": float(self.primal_obj),
@@ -633,6 +1238,21 @@ class SdpDualResult:
             "eigenvalues": list(self.eigenvalues),
             "feasible": bool(self.feasible),
         }
+        if self.backend is not None:
+            out["backend"] = self.backend
+        if self.precision_bits is not None:
+            out["precision_bits"] = int(self.precision_bits)
+        for key, val in (
+            ("X_star_str", self.X_star_str),
+            ("Z_star_str", self.Z_star_str),
+            ("primal_obj_str", self.primal_obj_str),
+            ("dual_obj_str", self.dual_obj_str),
+            ("duality_gap_str", self.duality_gap_str),
+            ("eigenvalues_str", self.eigenvalues_str),
+        ):
+            if val is not None:
+                out[key] = val
+        return out
 
 
 def _solve_psd_via_clarabel_lp(
@@ -667,10 +1287,39 @@ def _solve_psd_via_clarabel_lp(
             X_star=[float("nan")] * d, Z_star=[],
             primal_obj=float("nan"), dual_obj=float("nan"),
             duality_gap=float("nan"), eigenvalues=[], feasible=False,
+            backend=lp.backend, precision_bits=lp.precision_bits,
         )
-    G = np.asarray(G, dtype=float)
+    G_f = np.asarray(G, dtype=float)
     x_star = np.asarray(lp.x_star, dtype=float)
-    gx = (G @ x_star).tolist()
+    gx = (G_f @ x_star).tolist()
+
+    # The eigenvalues of `diag(Gx)` ARE `(Gx)_i`, and recomputing them through
+    # numpy would re-truncate an MPFR solve to f64 — the second leak on this
+    # path. When both `G` and `x*` are available as decimals, redo the product
+    # with `mpmath` at the same working precision so `eigenvalues_str` is as
+    # good as the solve that produced it.
+    gx_str = None
+    if lp.x_star_str is not None:
+        try:
+            import mpmath as _mp
+            with _mp.workdps(max(60, int(prec_bits * 0.30103) + 10)):
+                if isinstance(G[0][0], str):
+                    G_m = [[_mp.mpf(G[i][j]) for j in range(len(G))]
+                           for i in range(len(G))]
+                else:
+                    G_m = [[_mp.mpf(repr(float(G_f[i, j]))) for j in range(G_f.shape[1])]
+                           for i in range(G_f.shape[0])]
+                x_m = [_mp.mpf(v) for v in lp.x_star_str]
+                gx_m = [sum((G_m[i][j] * x_m[j] for j in range(len(x_m))), _mp.mpf(0))
+                        for i in range(len(G_m))]
+                gx_str = [_mp.nstr(v, _mp.mp.dps) for v in sorted(gx_m)]
+        except Exception:  # noqa: BLE001 — companions are best-effort
+            gx_str = None
+
+    z_str = None
+    if lp.y0_star_str is not None and lp.y_star_str is not None:
+        z_str = [lp.y0_star_str, *lp.y_star_str]
+
     return SdpDualResult(
         X_star=lp.x_star,
         Z_star=[lp.y0_star, *lp.y_star],
@@ -679,6 +1328,14 @@ def _solve_psd_via_clarabel_lp(
         duality_gap=lp.duality_gap,
         eigenvalues=sorted(gx),
         feasible=True,
+        X_star_str=lp.x_star_str,
+        Z_star_str=z_str,
+        primal_obj_str=lp.primal_obj_str,
+        dual_obj_str=lp.dual_obj_str,
+        duality_gap_str=lp.duality_gap_str,
+        eigenvalues_str=gx_str,
+        backend=lp.backend,
+        precision_bits=lp.precision_bits,
     )
 
 

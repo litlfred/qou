@@ -1,7 +1,7 @@
 {
   "computation": "nf-qvalues",
   "description": "NF-based Q-value computation (corrected Hecke \u03c3\u207b\u00b9 = \u03c3\u2212h). Stage 1: free neutron quark-level calibration of E_q. Stage 2: nucleon-level NF for \u03b2\u207b decay isotopes.",
-  "timestamp": "2026-08-08T00:24:21.051851+00:00",
+  "timestamp": "2026-08-24T10:55:59.096335+00:00",
   "q0": 1.1099785827513808,
   "HA": 0.20906029879563937,
   "crossing_convention": {
@@ -12,8 +12,8 @@
   },
   "free_neutron": {
     "codata_source": {
-      "Q_NEUTRON_MEV": 0.7823334093100222,
-      "Q_NEUTRON_MEV_ERR": 6.129437351829285e-07,
+      "Q_NEUTRON_MEV": 0.7823334093099085,
+      "Q_NEUTRON_MEV_ERR": 6.664083024692894e-07,
       "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mnmpm",
       "citation": "CODATA 2022, NIST Physics Laboratory, Gaithersburg MD 20899 USA. Q = m_n - m_p - m_e derived from individual mass-energy equivalents; cross-checked against direct CODATA entry m_n-m_p = 1.2933321 MeV."
     },
@@ -23,10 +23,10 @@
     "net_neutron": 0.8108345227471176,
     "net_proton": 0.9991251242185005,
     "delta_q": -0.18829060147138288,
-    "E_q_MeV": -4.1549254354520935,
-    "E_q_over_me": -8.130986237528889,
-    "Q_pred_MeV": 0.7823334093100222,
-    "Q_obs_MeV": 0.7823334093100222,
+    "E_q_MeV": -4.15492543545149,
+    "E_q_over_me": -8.13098623752771,
+    "Q_pred_MeV": 0.7823334093099086,
+    "Q_obs_MeV": 0.7823334093099085,
     "status": "exact by construction (E_q is calibrated from this)",
     "neutron_nf_terms": {
       "1": 1.0089954472120495,
@@ -53,10 +53,10 @@
       "net_daughter": 0.9890734478668695,
       "delta_A": -0.18949150278313664,
       "r_suppression": 1.0063779142579046,
-      "Q_pred_MeV": 0.7873230647156956,
+      "Q_pred_MeV": 0.7873230647155813,
       "Q_exp_MeV": 0.01861,
       "Q_exp_err_MeV": 1e-05,
-      "error_pct": 4130.6451623626845
+      "error_pct": 4130.645162362071
     },
     {
       "name": "\u00b9\u2074C\u2192\u00b9\u2074N",
@@ -67,10 +67,10 @@
       "net_daughter": 0.6167858885988221,
       "delta_A": -0.49053632039373063,
       "r_suppression": 2.6052087388349237,
-      "Q_pred_MeV": 2.038141834616989,
+      "Q_pred_MeV": 2.038141834616693,
       "Q_exp_MeV": 0.15648,
       "Q_exp_err_MeV": 4e-05,
-      "error_pct": 1202.493503717401
+      "error_pct": 1202.493503717212
     }
   ],
   "diagnosis": {
@@ -79,10 +79,10 @@
     "next_step": "Quark-level (L1) computation for \u00b3H and 14C via Rust hecke-engine with corrected crossing convention."
   },
   "scriptHash": "21c71202c03e",
-  "scriptCommitSha": "6f485d0ba5e5c56c73f5d285890d58aff49dd753",
-  "commitSha": "99b4d47699a81766a4574d023e66c5dfbd68f39d",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "engine": "python",
-  "computedAt": "2026-08-08T00:24:21.107727+00:00",
+  "computedAt": "2026-08-24T10:55:59.561230+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "Mathematics Department, California Institute of Technolog y"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-007-5-a-network-flow-approach
 section_title: "A NETWORK FLOW APPROACH"
 section_number: 5

@@ -1,29 +1,29 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-28T17:34:45.512360+00:00",
-  "commitSha": "e0f59cdea63c1f62ddf337320a1908d6eedd90a6",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:15:29.232379+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "per_knot_density_equiv_per_knot_density",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
-      "source": "per_knot_density_equiv_per_knot_density: |Δ| = 2.737e-48 < 1.0e-40"
+      "passed": false,
+      "source": "per_knot_density_equiv_per_knot_density: |Δ| = 1139.0 < 1.0e-40"
     },
     {
       "name": "h_eq_2sinh_log_q",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "h_eq_2sinh_log_q: |Δ| = 0.0 < 1.0e-40"
+      "source": "h_eq_2sinh_log_q: |Δ| = 2.264e-72 < 1.0e-40"
     },
     {
       "name": "bracket2_eq_2cosh_log_q",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "bracket2_eq_2cosh_log_q: |Δ| = 0.0 < 1.0e-40"
+      "source": "bracket2_eq_2cosh_log_q: |Δ| = 3.622e-71 < 1.0e-40"
     },
     {
       "name": "pair_average_eq_cosh",
@@ -37,7 +37,7 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "pair_half_diff_eq_sinh: |Δ| = 4.918e-49 < 1.0e-40"
+      "source": "pair_half_diff_eq_sinh: |Δ| = 2.898e-69 < 1.0e-40"
     },
     {
       "name": "parity_average_even",
@@ -58,15 +58,15 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "per_knot_density_vd(density=tr_M) ≡ per_knot_density_per_block: |Δ| = 2.737e-48 < 1.0e-40"
+      "source": "per_knot_density_vd(density=tr_M) ≡ per_knot_density_per_block: |Δ| = 5.564e-68 < 1.0e-40"
     }
   ],
-  "allPassed": true,
-  "durationMs": 9,
+  "allPassed": false,
+  "durationMs": 5,
   "computation": "mass-per-knot-density",
   "scriptFile": "mass_per_knot_density.py",
-  "scriptHash": "fb0dac23c711",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "41f87573a7eb",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,25 +74,34 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mass_per_knot_density.py"
+    ],
+    "reproduce": "python3 -u computations/mass_per_knot_density.py"
   },
   "auditOnly": "docs/workplans/2026-06-04-mass-per-knot-density-stokes-delta-formalization.md",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802"
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "bracket_2_q_at_q0": "2.010896869119076",
+    "bracket_2_q_at_q0": "2.010896866707122",
     "su2_density_loss": {
-      "density_global_H4_scalar": "1.006730454652734",
-      "density_per_block_H3_trM_proton": "1.065306238075878",
-      "ratio_global_over_per_block": "0.9450150751684868",
+      "density_global_H4_scalar": "1.006730453487707",
+      "density_per_block_H3_trM_proton": "1.145759692457301",
+      "ratio_global_over_per_block": "0.8786575929622567",
       "gate_verdict": "RED — global SU(2)-blind scalar ≠ per-block Markov trace"
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

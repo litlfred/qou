@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "Steklov Mathematical Institute"
+doc_title: "Dilogarithm identities"
 section_id: sec-004-6-anatol-n-kirillov
 section_title: "Anatol N. Kirillov"
 section_number: 6
 pages: 6-6
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 B. Feigin, A. Kato, A. Kuniba, B. Leclerc, N.A. Liskova, T. Mi wa, W. Nahm, M. Noumi,
 R. Sasaki, E. Sklyanin, M. Suzuki, V. Tarasov, J.-Y. Thibon, A.Yu. Volkov and M. Waki-

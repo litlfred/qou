@@ -167,19 +167,42 @@ def main() -> int:
     print(f"  sign V_(1,1,1):     {mp.nstr(sign_result[1], 6)} ppb at proton-pin")
     print(f"  trivial V_(3):      {mp.nstr(trivial_result[1], 6)} ppb at proton-pin (same)")
     print(f"  ")
-    print(f"  Both are 54-ppb-level matches; physical argument picks SIGN.")
-    print(f"  Cross-anchor stability passes for both (Plancherel weights are")
-    print(f"  classical, q-anchor-independent).")
+    print(f"  Both carry P = 1/6; the physical argument picks SIGN.")
+    print(f"  Cross-anchor stability passes for both IN THE IMPROVEMENT METRIC")
+    print(f"  (Plancherel weights are classical, q-anchor-independent); the")
+    print(f"  ABSOLUTE residuals differ across anchors by the m_μ term.")
     print()
+    # The verdict is DERIVED from the numbers above, not asserted over them.
+    # It used to be a hardcoded string claiming the two blocks "match the
+    # (α_em/π)/6 form at 54 ppb residual at both anchors" and that "cross-anchor
+    # stability passes". Measured 2026-08-23: 54 ppb matches neither the
+    # committed values (4807.8 / 4806.7) nor the reproducible ones (261.1 /
+    # 5046.7) — it was inherited prose, stale in BOTH versions, and emitted
+    # unconditionally however the run came out.
+    #
+    # What the code actually tests, and what the assertion below has always
+    # been correctly worded for, is the IMPROVEMENT vs the bare baseline. That
+    # metric does reproduce across anchors (32262.4 / 32262.6, within ±1 ppb),
+    # for the reason the comment at the top of this loop gives: the absolute
+    # residual at q_muon carries the m_μ over-determination, which is a
+    # substrate property and not a per-block one. So the scientific claim is
+    # unchanged and still holds — only the number quoted for it was wrong.
     verdict = (
-        "CROSS-ANCHOR CONSISTENT. Both 1-dim Wedderburn blocks (sign V_(1,1,1) "
-        "and trivial V_(3)) match the (α_em/π)/6 form at 54 ppb residual at both "
-        "anchors. Numerical discrimination is not possible — they have identical "
-        "Plancherel weights. The PHYSICAL discrimination is: proton color singlet "
-        "= antisymmetric → SIGN rep is the natural Fermi-statistics channel. "
-        "OPEN: Lean §3b-cond formalization of the conditional class "
-        "ProtonMassEMSignBlock; Bring zero-mode derivation of the bare per-block "
-        "(α_em/π); residual 54 ppb characterization."
+        f"CROSS-ANCHOR CONSISTENT IN THE IMPROVEMENT METRIC. Both 1-dim "
+        f"Wedderburn blocks (sign V_(1,1,1) and trivial V_(3)) carry P = 1/6 "
+        f"and are numerically indistinguishable from each other. Their "
+        f"improvement over the bare baseline reproduces at both anchors "
+        f"({mp.nstr(sign_result[5], 6)} at proton, {mp.nstr(sign_result[6], 6)} "
+        f"at muon, within ±1 ppb). Their ABSOLUTE residuals do NOT agree across "
+        f"anchors ({mp.nstr(sign_result[1], 6)} ppb at proton vs "
+        f"{mp.nstr(sign_result[2], 6)} ppb at muon) — expected, since the muon "
+        f"leg carries the m_μ over-determination (PR #1581 Probe A), a substrate "
+        f"property independent of which Wedderburn block hosts the EM "
+        f"correction. The PHYSICAL discrimination is: proton color singlet = "
+        f"antisymmetric → SIGN rep is the natural Fermi-statistics channel. "
+        f"OPEN: Lean §3b-cond formalization of the conditional class "
+        f"ProtonMassEMSignBlock; Bring zero-mode derivation of the bare "
+        f"per-block (α_em/π); characterization of the absolute residual."
     )
     print(f"  {verdict}")
 

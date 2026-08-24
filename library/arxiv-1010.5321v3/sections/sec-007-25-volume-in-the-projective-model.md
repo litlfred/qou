@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry"
+doc_title: "Formulas on hyperbolic volume"
 section_id: sec-007-25-volume-in-the-projective-model
 section_title: "Volume in the projective model"
 section_number: 2.5
 pages: 6-6
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume ∗ Á.G.Horváth Department of Geometry — This paper collects some important formulas on hyperbolic volume."
+doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
 ---
 At the origin of the projective (Kayley-Clein) model we cons ider a Cartesian system of coor-
 dinates. Regarding the factor k we assume that the radius of the sphere is k. The considered

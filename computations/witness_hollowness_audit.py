@@ -82,6 +82,29 @@ def _find(w: dict, key: str):
     return None, False
 
 
+def _occurrences(obj, key: str, out: list) -> None:
+    """EVERY occurrence of `key`, at any depth, including inside lists.
+
+    `_find` above is shallow by design -- top level, then one level into
+    `witness`/`data`/`result`. That is enough for H1 but not for H2: a
+    witness can nest its dual block per-target inside a list, where a
+    shallow lookup cannot see it.
+
+    Measured 2026-08-24: switching H2 to this walk gains two offences the
+    shallow lookup missed -- `option-b-proton-mass-full-chain` and
+    `r5-full-canonical-knot-solver`, both with an empty `active_set` nested
+    past the head of a list.
+    """
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k == key:
+                out.append(v)
+            _occurrences(v, key, out)
+    elif isinstance(obj, list):
+        for x in obj:
+            _occurrences(x, key, out)
+
+
 def audit_one(path: str) -> list[dict]:
     try:
         with open(path) as f:
@@ -114,16 +137,70 @@ def audit_one(path: str) -> list[dict]:
         null_fields = []
         any_present = False
         for fld in DUAL_FIELDS:
-            v, present = _find(w, fld)
+            # A field counts as POPULATED if ANY occurrence is non-empty --
+            # one real nested value outweighs a top-level placeholder, which
+            # is the only reading under which "this witness carries duals" is
+            # true. `e-0-lp-dual-h3` is the shape that forces this: a
+            # top-level `y0_star: None` above eight per-target blocks whose
+            # other five fields are all real.
+            occ: list = []
+            _occurrences(w, fld, occ)
+            present = bool(occ)
+            v = next((x for x in occ if not _is_empty(x)), None)
             if present:
                 any_present = True
-                if _is_empty(v):
+                if all(_is_empty(x) for x in occ):
                     null_fields.append(fld)
         if any_present and null_fields:
             offences.append({"path": path, "kind": "null-dual",
                              "detail": "LP/SDP dual fields present but null/empty: "
                                        + ", ".join(null_fields)})
     return offences
+
+
+def dual_readers(stems: list[str]) -> list[tuple[str, list[str], list[str]]]:
+    """Python files that name one of `stems` AND touch a dual field name.
+
+    Answers the question an H2 list raises but does not settle: is it safe to
+    DROP the empty names, or does something read them?
+
+    Deliberately OVER-reports -- textual co-occurrence, so a file reading
+    duals from a *different* witness while merely mentioning one of these
+    counts as a hit, and the caller adjudicates at the call site. A scan that
+    under-reported would licence a deletion that breaks a reader, which is the
+    expensive direction to be wrong in.
+
+    Measured 2026-08-24 over ~3700 files: three hits on the confinement
+    witness, all adjudicated as NOT reading duals from it --
+      * `onepb_status_dashboard.py` loads it for its Gram matrix; its dual
+        reads come from `lp-confinement-nf-forcing`.
+      * `deuteron_from_scratch_ledger.py` lists it in `PRODUCTION_WITNESSES`;
+        its dual reads come from `deuteron-real-sdp`.
+      * `lp_dual_solver.py` names it in prose.
+    Re-run rather than trusting that sentence -- it ages with the tree.
+    """
+    out: list[tuple[str, list[str], list[str]]] = []
+    self_name = os.path.basename(__file__)
+    for f in sorted(glob.glob(os.path.join(ROOT, "**", "*.py"), recursive=True)):
+        parts = f.split(os.sep)
+        if "_deprecated" in parts or "_internal" in parts or ".git" in parts:
+            continue
+        if os.path.basename(f) == self_name:
+            continue  # names every stem by construction
+        try:
+            with open(f, errors="ignore") as fh:
+                text = fh.read()
+        except OSError:
+            continue
+        ws = [w for w in stems if w in text]
+        if not ws:
+            continue
+        ds = [d for d in DUAL_FIELDS
+              if re.search(r"""["']""" + d + r"""["']""", text)
+              or re.search(r"\." + d + r"\b", text)]
+        if ds:
+            out.append((os.path.relpath(f, ROOT), ws, ds))
+    return out
 
 
 def main() -> int:
@@ -149,6 +226,26 @@ def main() -> int:
                   f"{len(paths)} witnesses:\n")
             for o in all_off:
                 print(f"  [{o['kind']}] {rel(o['path'])}\n      {o['detail']}")
+    nulls = [o for o in all_off if o["kind"] == "null-dual"]
+    if nulls and not as_json:
+        stems = [os.path.basename(o["path"]).replace(".witness.json", "")
+                 for o in nulls]
+        readers = dual_readers(stems)
+        print()
+        print("  Can the empty names simply be DROPPED? -- co-occurrence scan")
+        print(f"    files naming a null-dual witness AND a dual field: "
+              f"{len(readers)}")
+        for f, ws, ds in readers:
+            print(f"      {f}")
+            print(f"          names: {', '.join(ws)}")
+            print(f"          duals: {', '.join(ds)}")
+        if readers:
+            print("    Over-reports by design: a file reading duals from a")
+            print("    DIFFERENT witness while mentioning one of these counts.")
+            print("    Adjudicate each at the call site before deleting.")
+        else:
+            print("    Nothing reads a dual field anywhere near these.")
+
     return 1 if (strict and all_off) else 0
 
 

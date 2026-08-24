@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "Department of Physics"
+doc_title: "The stretched horizon and black hole complementarity"
 section_id: sec-019-52-thermal-entropy-vs-entropy-of-entanglement
 section_title: "Thermal entropy vs. entropy of entanglement"
 section_number: 5.2
 pages: 40-44
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
+doc_brief: "The stretched horizon and black hole complementarity — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for"
 ---
 Given our assumptions about the microstructure of the stret ched horizon, it is evident
 that no real loss of information takes place during black hol e evaporation. Nevertheless,

@@ -883,7 +883,188 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.512Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.551Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.589Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.630Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.670Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.710Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.747Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:29.784Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.702Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure table, no prose.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d06a6adc12e7",
+          "ts": "c3e1bd07f5e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.740Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "The 'rel err' column asserts agreement at 3.96e-15 / 4.21e-15 / 7.01e-15 / 1.07e-14 / 1.03e-14.",
+        "notes": "REPORT ONLY, not fixed (data table). Refuted by the parent block's own cited witness computations/tr-m-q-hecke-seminormal.witness.json, per atom (table value vs witness canonical_abs_tr_M, table rel err vs witness rel_err_vs_canonical): p 1.0653062286 vs 1.14575978172, 3.96e-15 vs 7.79e-08; n 0.9232332972 vs 0.98774375637, 4.21e-15 vs 6.91e-08; D 0.3882864715 vs 0.57517232917, 7.01e-15 vs 1.48e-07; T 0.1040521187 vs 0.22931014586, 1.07e-14 vs 1.91e-07; He-3 0.2065408586 vs 0.40376713624, 1.03e-14 vs 2.46e-07. All ten numbers stale; the error column overstates agreement by seven orders of magnitude. The D pair 0.388 -> 0.575 is the tr_M_atom import-cone drift AGENTS.md records (48%), so this is the known stale class. Same defect as q-hecke-seminormal-character-closure.md, which prints the identical five values -- fix both together. The Z/N/n = 3A columns are correct (3,3,6,9,9)."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:12:30.740Z"
 }

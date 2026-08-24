@@ -1,13 +1,13 @@
 ---
 doc_id: aif-2009-59-1-347-0
-doc_title: "L’INSTITUT FOURIER"
+doc_title: "On q-summation and confluence"
 section_id: sec-006-23-applications
 section_title: "Applications"
 section_number: 2.3
 pages: 17-19
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
-doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
+doc_brief: "On q-summation and confluence — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 Notice that the assumptions of Theorem 2.6 are veriﬁed in the following
 two natural situations.

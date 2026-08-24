@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2510.04782v2
-doc_title: "q-Hodge complexes over the Habiro ring Ferdinand Wagner"
+doc_title: "q-Hodge complexes over the Habiro ring"
 section_id: sec-011-4-functorial-q-hodge-filtrations
 section_title: "Functorial q-Hodge filtrations"
 section_number: 4
 pages: 53-53
 source_pdf: 2510.04782v2.pdf
 source_sha256: 591d0bdf2c48d12f
-doc_brief: "q-Hodge complexes over the Habiro ring Ferdinand Wagner — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm∈N Z[q]∧"
+doc_brief: "q-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm∈N Z[q]∧ (qm−1)."
 ---
 §4. Functorial q-Hodge filtrations
 Fix a perfectly covered Λ-ring A. We’ve seen in Lemma 3.3 that it’s impossible to get a

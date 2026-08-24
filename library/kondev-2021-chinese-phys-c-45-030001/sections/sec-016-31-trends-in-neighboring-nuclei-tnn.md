@@ -1,13 +1,13 @@
 ---
 doc_id: kondev-2021-chinese-phys-c-45-030001
-doc_title: "Chinese Physics C PAPER • OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001"
+doc_title: "The NUBASE2020 evaluation of nuclear physics properties"
 section_id: sec-016-31-trends-in-neighboring-nuclei-tnn
 section_title: "Trends in neighboring nuclei (TNN)"
 section_number: 3.1
 pages: 13-13
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
-doc_brief: "Chinese Physics C PAPER • OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001 — 31 sections: Physics Division"
+doc_brief: "The NUBASE2020 evaluation of nuclear physics properties — 31 sections: Physics Division, Argonne National; Institute of Modern Physics, Chine; Advanced Energy Science and Techno"
 ---
 In general, N UBASE 2020 contains numerical and biblio-
 graphical information for all known nuclei for which at least

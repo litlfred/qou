@@ -895,7 +895,178 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:25.972Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.009Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.050Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.091Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.130Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.170Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.209Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.248Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.288Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No claim language in the table; recorded here because this criterion is the batch's defect channel.",
+        "notes": "STRUCTURAL FINDING (not a trap, do not fix inline). Row 'Markov parameter z = q^3/(q^2+1) (convention D; z(q_0)=0.61268803714646525160)' sits in the bar-SYMMETRIC table but convention-D z is NOT bar-invariant: at the 50-dps proton q_0, z_D(q)=0.6126880371464652515958 while z_D(1/q)=0.4036277383508259361650, ratio exactly q^{-4}. Convention-C z=sqrt(q)/(q+1)=1/(q^{1/2}+q^{-1/2}) IS bar-invariant (0.4993203341836944524134 at both q and 1/q, 40 dps) - i.e. this row's membership is true for C and false for D. The quoted NUMBER is correct: z_D at Q_50_DIGIT_STR = 1.1099785827513808075916690956107688798744991218736 (proton pin) is 0.612688037146465251595829863946, rounding to the printed 20 digits exactly; it is NOT the float64 value (0.61268803714646524749...) nor the 16-digit-q value (...2436...). Proposed: move the row to bar-involution-table3-data (anti/non-symmetric) or annotate it 'bar-symmetric under convention C only; z_D obeys bar(z_D) = q^{-4} z_D'. Other rows verified bar-even: [2]_q, [n]_q, b^2 = 1 - 1/[2]_q^2 (= (q^4+q^2+1)/(q^2+1)^2 = 0.75270211325196540159 at q and at 1/q, and = 3/4 at q=1, matching the Hoefsmit b of rem:F3-eps6-leading-eq-neg-2b-cubed), sigma_avg = sigma - h/2 (from sigma - sigma^{-1} = h), cosh(h) (h bar-odd), Li_2^q as the symmetrised log-Phi_q."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "327c602adcb7",
+          "ts": "da09ced6e708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:26.327Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 12-row data table (bar-SYMMETRIC objects), no prose sentences: none of the ten trap constructions can occur. Every row recomputed at 40 dps against bar: q -> q^{-1}."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:26.327Z"
 }

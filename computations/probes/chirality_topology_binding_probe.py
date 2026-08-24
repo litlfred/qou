@@ -47,8 +47,16 @@ sys.path.insert(0, str(HERE))
 
 # Reuse the canonical channel construction (no duplication) — PR #2461/#2481.
 from hecke_channel_binding_probe import channels, BONDS, E0, Q0  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # Low isotopes (closed form ⇒ no feasibility wall; extend freely).
 NUC = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
@@ -174,7 +182,19 @@ def main() -> int:
         "chirality-topology-binding", witness,
         script_path=__file__, engine="mpmath", start_time=_T0,
         output_dir=str(HERE.parent),
-    ).save()
+    ).save({"q0Anchor": "independent",
+         "q0AnchorReason": (
+            'Reads no substrate value. PROVED by running this producer'
+            'under QOU_Q0_ANCHOR=muon and =proton and diffing the emitted'
+            'witness: the only non-ephemeral leaves that differ are'
+            'q0Anchor and q0Value THEMSELVES -- every substantive field is'
+            'byte-identical, so the pin changes the label and nothing else.'
+            'Its previous `muon` label was therefore a false claim that'
+            'this producer computed at that anchor. `independent` is the'
+            'honest disposition; a q0_anchor_manifest entry would be the'
+            'WRONG fix, promoting a false claim into a declared one. Bean'
+            'qou-o922, class (ii).'
+         )})
     print(f"\n  witness: {out}")
     return 0
 

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0006111v2
-doc_title: "APPROXIMA TE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane"
+doc_title: "Approximate factorization and concentration for characters of symmetric groups"
 section_id: sec-007-2-proof-of-theorems-1-and-2
 section_title: "Proof of Theorems 1 and 2"
 section_number: 2
 pages: 5-6
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
-doc_brief: "APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
+doc_brief: "Approximate factorization and concentration for characters of symmetric groups — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 We shall rely heavily on results of [B], especially Section 4 . Let ψ be a normalized
 positive deﬁnite function, then mn(ψ ) =∑

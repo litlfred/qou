@@ -25,7 +25,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Numeric cache of y_λ(q_0) at 50 dps for n ∈ {2, ..., 12}, evaluated from y-lambda-wenzl-bridge-symbolic-witness.json in parallel via multiprocessing.Pool. Pre-computes the expensive symbolic-to-numeric step so downstream consumers (delta_lambda_empirical_tabulation.py and other ρ_K Wedderburn-weighted formulas) can load instantly. Output strings trimmed to exactly 50 dps via mp.nstr.",
+  "description": "Numeric cache of y_\u03bb(q_0) at 50 dps for n \u2208 {2, ..., 12}, evaluated from y-lambda-wenzl-bridge-symbolic-witness.json in parallel via multiprocessing.Pool. Pre-computes the expensive symbolic-to-numeric step so downstream consumers (delta_lambda_empirical_tabulation.py and other \u03c1_K Wedderburn-weighted formulas) can load instantly. Output strings trimmed to exactly 50 dps via mp.nstr.",
   "contentBlock": "prop:y-lambda-closed-form-wenzl-bridge",
   "parameters": {
     "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
@@ -2641,5 +2641,8 @@
         "agrees_to_1e_minus_15": true
       }
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

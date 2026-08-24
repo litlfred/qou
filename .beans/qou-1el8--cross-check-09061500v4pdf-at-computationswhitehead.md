@@ -3,8 +3,9 @@
 title: Cross-check 0906.1500v4.pdf at computations/whitehead_c_sigma_torsion.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:01Z
-updated_at: 2026-08-08T16:13:01Z
+updated_at: 2026-08-21T17:04:39Z
 ---
 
 Recompute |tau_adjoint| for 4_1 and for the Whitehead link L5a1 by the Theorem-5 derivative formula on the Wirtinger presentation, and compare against the corpus values sqrt(3) and 2^{5/2}. This is the highest-value item in the slice: it adjudicates a refuted computation (bean qou-fl4t) with a method that is triangulation-independent by construction, and it either restores or kills the c_sigma = 2^{-3/4} derivation.
@@ -21,3 +22,10 @@ Source: `library/arxiv-0906.1500v4/0906.1500v4.pdf` — no `references.ts` entry
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-0906.1500v4/  ->  [dubois-yamaguchi2012]
+  Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [dubois-yamaguchi2012] as the citation key when you do it.

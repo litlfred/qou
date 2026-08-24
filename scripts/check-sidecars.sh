@@ -21,18 +21,55 @@ set -uo pipefail
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
 cd "$ROOT"
 
+# Shared changed-file collection. ONE definition, so the fifth gate script
+# cannot repeat the defect the first four shared (bean qou-pt9b).
+. "$ROOT/scripts/lib/changed-files.sh"
+
 # Collect target files.
 if [ "$#" -gt 0 ]; then
   files=("$@")
 else
-  mapfile -t files < <( { git diff --name-only HEAD 2>/dev/null; git diff --cached --name-only 2>/dev/null; } | sort -u )
+  # THE MERGE-BASE DIFF IS NOT OPTIONAL -- same defect as precision-gates.sh
+  # --changed (bean qou-s2gm, defect 1), found here by running this script on
+  # a branch with three commits and being told "no changed files".
+  #
+  # Both `git diff HEAD` and `--cached` see only UNCOMMITTED work, so once a
+  # change is committed this exits 0 having examined nothing. It is worse here
+  # than there: AGENTS.md names this script the pre-commit preflight AND the
+  # merge-time verification gate for content blocks ("Content blocks changed ->
+  # check-sidecars.sh clean"), and at merge time the changes are ALWAYS
+  # committed -- so as the merge gate it has been reading an empty set and
+  # reporting success.
+  #
+  # On `main` the merge-base IS HEAD, so this adds nothing on a clean checkout.
+  mapfile -t files < <(changed_files)
 fi
 mapfile -t files < <(printf '%s\n' "${files[@]:-}" | sort -u | grep -v '^$' || true)
-[ "${#files[@]}" -eq 0 ] && { echo "check-sidecars: no changed files."; exit 0; }
+if [ "${#files[@]}" -eq 0 ]; then
+  # A SKIP IS NOT A PASS (#5495, requested by the sibling on #5453). "0 files
+  # considered" and "N considered, none relevant" were the same sentence, and
+  # they are not the same fact: the first means this gate examined NOTHING.
+  # The scope line says what was compared, so a caller can tell a genuine skip
+  # from the merge-base half having been dropped.
+  echo "check-sidecars: 0 changed file(s) — this check examined NOTHING."
+  echo "  scope: $(changed_files_scope)"
+  exit 0
+fi
 
 # Code-level archimedean markers (the §7c wall). Prose in /- -/ docstrings is ignored
 # by stripping comment lines first; we scan the CODE body only.
-ARCH='(\(q : ℝ\)|: ℝ\b|\(ℝ\)|Real\.(sqrt|rpow|log|exp|cos|sin|pi)|\blinarith\b|\bpositivity\b|\bnlinarith\b|\bnorm_num\b|LinearOrderedField|0 < q\b|\bCODATA\b|MeV)'
+# NOTE (bean qou-akb4, class 1): the former `ARCH` marker regex lived here and
+# listed `\bnorm_num\b` as an archimedean marker.  It was wrong — `norm_num`
+# discharges a concrete numeric goal over ANY semiring, and closing `2 + 2 = 4`
+# in ℕ does not cross the substrate→archimedean wall, so it produced §7c
+# advisories that were routinely dispositioned "not a defect".
+#
+# It was ALSO already dead: the §7c checks below use `JUST`, which correctly
+# omits `norm_num`, and `ARCH` was referenced nowhere (verified: one occurrence
+# in the file, its own definition, with no `eval`/indirect expansion).  Removed
+# rather than repaired, so it cannot be wired back in and silently reintroduce
+# the false positive.  `linarith`/`positivity`/`nlinarith` remain defensible
+# markers in `JUST` — they want an order; `norm_num` alone does not.
 
 action=0
 echo "check-sidecars: ${#files[@]} changed file(s)"
@@ -75,17 +112,90 @@ for f in "${files[@]}"; do
         # folio-assistant's q-usage-audit now sweeps orphans content-based). This authoring
         # gate mirrors that with CONTENT-BASED checks (NOT a path heuristic — a path heuristic
         # over-fires on catch-all dirs like BraidKnot/; see the audit). Strip /- -/ + -- first.
-        body=$(sed '\#/-#,\#-/#d' "$f" | sed 's|--.*||')
+        # Comment stripping, in three passes. The FIRST pass is load-bearing and
+        # was missing (bean qou-akb4, class 3 — the dominant defect):
+        #
+        # `sed '\#/-#,\#-/#d'` is a RANGE delete. Given a complete one-line
+        # docstring `/-- Archimedean shim of markovZ. -/` it opens the range on
+        # that line and then searches the FOLLOWING lines for `-/` — the closer
+        # on the same line does not end it. So everything from a one-line
+        # docstring to the next block-comment terminator was deleted AS IF IT
+        # WERE COMMENT, including the declarations in between.
+        #
+        # Measured over the 3037 `.lean` files under `content/`: 1578 of them
+        # (52%) lost at least one declaration, 5723 declarations and 54213 code
+        # lines in total, invisible to every §7c check below. Worked case:
+        # `BraidKnot/HoefsmitV21CosSymmetrization.lean` (329 lines -> 161) lost
+        # `noncomputable def markovZ_real (q : ℝ) (_hq : 0 < q)`, so the file
+        # read as archimedean-only and flagged §7c MIXED while in fact carrying
+        # the prescribed generic + `_real` pair the branch below now recognises.
+        #
+        # Pass 1 removes complete one-line `/- ... -/` blocks; pass 2 is the
+        # range delete, now seeing only genuinely multi-line comments; pass 3
+        # takes `--` line comments. `@` is the delimiter because the pattern
+        # contains `|`.
+        body=$(sed -E 's@/-([^-]|-+[^-/])*-+/@@g' "$f" \
+               | sed '\#/-#,\#-/#d' | sed 's|--.*||')
         GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero|\(R\s*:=)'
         RTYPE='(:\s*ℝ|\(ℝ\)|→\s*ℝ|ℝ\s*\))'      # ℝ used as a type
-        # Genuine archimedean JUSTIFICATION (a statement that actually needs ℝ):
-        JUST='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|0\s*<|<\s*1|≤|≥|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
-        printf '%s\n' "$body" | grep -qE "$RTYPE" && hasR=1   || hasR=0
-        printf '%s\n' "$body" | grep -qE "$JUST"  && hasJ=1   || hasJ=0
-        printf '%s\n' "$body" | grep -qE "$GEN"   && hasGen=1 || hasGen=0
-        if [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; }; then
+        # Archimedean justification, in two strengths.
+        #
+        # STRONG signals mean archimedean content wherever they appear: a
+        # `Real.*` function, a tactic that needs an ordered field, an
+        # explicit `LinearOrdered`, or a physical constant.
+        #
+        # WEAK signals are the bare relational operators. `0 < q` IS the §7c
+        # tell when `q : ℝ` — the §7c table lists it — and means nothing at
+        # all when there is no ℝ in the file, because `≤` on ℕ or ℤ is
+        # ordinary. So they count only alongside RTYPE.
+        #
+        # Lumping them together over-fired on exactly the files that COMPLY:
+        # `hasGen` is 1 only when a file uses the generic ring §7c asks for,
+        # so any compliant file that also compared two naturals was reported
+        # as "MIXED generic + archimedean" with no ℝ anywhere in it. Measured
+        # over the 2063 library files: 258 MIXED, of which 129 contained no
+        # ℝ at all. Splitting the strengths drops those 129 and changes no
+        # other verdict — base-ring-minimal stays at 163, and every one of
+        # the 129 has hasR=0 (bean qou-mr3q).
+        #
+        # MERGED 2026-08-23 with main's `_real`-pair detection (qou-akb4).
+        # The two fixes are ORTHOGONAL and neither subsumes the other: the
+        # strength split clears a compliant generic file that merely compares
+        # two naturals, while the pair detection clears a file that genuinely
+        # carries both a generic decl and its ℝ specialisation. Resolving this
+        # conflict to either side alone would have silently dropped the other
+        # half of the false-positive reduction.
+        STRONG='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
+        WEAK='(0\s*<|<\s*1|≤|≥)'
+        printf '%s\n' "$body" | grep -qE "$RTYPE"  && hasR=1  || hasR=0
+        printf '%s\n' "$body" | grep -qE "$STRONG" && hasS=1  || hasS=0
+        printf '%s\n' "$body" | grep -qE "$WEAK"   && hasW=1  || hasW=0
+        printf '%s\n' "$body" | grep -qE "$GEN"    && hasGen=1 || hasGen=0
+        # A weak operator justifies ℝ only when ℝ is there to justify.
+        if [ "$hasS" = 1 ] || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
+        # §7c `_real`-suffix convention (bean qou-akb4, class 2): a generic
+        # declaration `foo` sitting beside its archimedean specialisation
+        # `foo_real` is the PRESCRIBED §7c pattern — the generic result and the
+        # ℝ-instantiation that consumes it — not a file that needs splitting.
+        # Detect the pair and downgrade to informational.  The undiscriminated
+        # MIXED flag stays for every other file: the discrimination is the
+        # useful half, so this narrows the branch rather than silencing it.
+        decls=$(printf '%s\n' "$body" \
+          | grep -oE '^[[:space:]]*(noncomputable[[:space:]]+)?(theorem|lemma|def|abbrev|instance)[[:space:]]+[A-Za-z_][A-Za-z0-9_'"'"'.]*' \
+          | awk '{print $NF}' | sort -u)
+        pairedReal=0
+        for d in $decls; do
+          case "$d" in
+            *_real)
+              if printf '%s\n' "$decls" | grep -qx "${d%_real}"; then pairedReal=1; break; fi
+              ;;
+          esac
+        done
+        if [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; } && [ "$pairedReal" = 1 ]; then
+          echo "▸ $f  [§7c generic + _real specialisation — prescribed pattern, informational]"
+        elif [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; }; then
           echo "▸ $f  [⚠ §7c MIXED generic + archimedean → split into two files per §7c]"
-          printf '%s\n' "$body" | grep -nE "$RTYPE|$JUST" | head -6 | sed 's/^/         /'
+          printf '%s\n' "$body" | grep -nE "$RTYPE|$STRONG" | head -6 | sed 's/^/         /'
           action=1
         elif [ "$hasR" = 1 ] && [ "$hasJ" = 0 ]; then
           echo "▸ $f  [⚠ §7c base-ring-minimal: ℝ in type but NO archimedean construct → likely gratuitous; generalize to {R}/[Field R]]"
@@ -107,6 +217,14 @@ for f in "${files[@]}"; do
     content/*.md|content/*.ts)
       base="${f%.*}"
       qa="$base.qa.json"
+      # A chapter/paper MANIFEST is `<dir>/<dir>.ts` with no `.md` sibling — it
+      # lists blocks, it is not one. 47 of them exist, and without this the arm
+      # below reports "(no sidecar yet)" and prints a qa-sweep line that cannot
+      # do anything. Same misclassification as the content-tree code arm above.
+      if [ ! -f "$base.md" ] && [ "$(basename "$base")" = "$(basename "$(dirname "$base")")" ]; then
+        echo "▸ $f  [chapter/paper manifest — lists blocks, is not one; no sidecar applies]"
+        continue
+      fi
       echo "▸ $f  [content block]"
       if [ -f "$qa" ]; then
         crits=$(grep -oE '"(q-usage-[a-z0-9-]+|wall-side-correct|one-voice-[a-z0-9-]+|da-[a-z0-9-]+|[a-z-]+-integrity|remark-[a-z-]+)"' "$qa" 2>/dev/null | tr -d '"' | sort -u | paste -sd', ' -)
@@ -239,6 +357,77 @@ if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.(md|ts)$'; then
     action=1
     echo "⚠ block-manifest-audit: a changed block's manifest does not load."
     printf '%s\n' "$bma_out" | sed 's/^/    /'
+  fi
+fi
+
+# ── computation.status vs. the witness it cites ──────────────────────────
+# `ComputationStatus` is explicit: "verified" = witness matches expected values
+# within tolerance; "failed" = it does not. NOTHING compared the two — no
+# constraint, no sweep, no CI step — and 12 of 166 blocks marked `verified`
+# cited a witness whose own `allPassed` was false, one of them contradicting a
+# number the block states by a factor of three.
+if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.ts$'; then
+  mapfile -t statusfiles < <(printf '%s\n' "${files[@]}" | grep -E '^content/.*\.ts$')
+  if ! st_out=$(python3 "$ROOT/scripts/check-computation-status.py" \
+        --files "${statusfiles[@]}" --strict 2>&1); then
+    action=1
+    echo "⚠ computation.status disagrees with the cited witness:"
+    printf '%s\n' "$st_out" | grep -E '✗|witness :|failing :' | sed 's/^/    /'
+  fi
+fi
+
+# ── A content .md added without its .ts manifest ─────────────────────────
+# NOTHING detects this. The platform's `orphan QA sidecar` error is a PROXY:
+# it fires only once a file has happened to get QA-swept, so it caught 4 of
+# the 9 manifests the 52c68267f2 bulk import dropped and was blind to the
+# other 5 (bean `qou-cauj`). An unregistered .md is invisible to the rendered
+# paper, to every per-block checker, and to validate.
+# Restricted to CHAPTER dirs -- `*/audit/`, `lean/`, and paper-root notes are
+# legitimately not blocks -- and to CHANGED files, so it flags what a commit
+# adds rather than reprinting the standing backlog.
+if printf '%s\n' "${files[@]}" | grep -qE '^content/[^/]+/[^/]+/[^/]+\.md$'; then
+  unreg=()
+  while read -r m; do
+    case "$m" in */audit/*|*/lean/*|*.qa.md) continue;; esac
+    # `files` comes from `git diff --name-only`, which lists DELETIONS too. A
+    # removed .md has no .ts either, so without this guard every deletion is
+    # reported as unregistered. Caught by the gate flagging
+    # ns-kummer-specialisation-divisibility.md, deleted long ago.
+    [ -f "$m" ] || continue
+    [ -f "${m%.md}.ts" ] || unreg+=("$m")
+  done < <(printf '%s\n' "${files[@]}" | grep -E '^content/[^/]+/[^/]+/[^/]+\.md$')
+  if [ ${#unreg[@]} -gt 0 ]; then
+    action=1
+    echo "⚠ content .md with no .ts manifest — unregistered, so absent from the"
+    echo "  rendered paper and from every per-block checker:"
+    printf '    %s\n' "${unreg[@]}"
+    echo "    → add the sibling .ts and list it in the chapter manifest,"
+    echo "      or move the file to docs/audits/ if it is not a block."
+  fi
+fi
+
+# ── Dangling citation keys in the files this commit touches ──────────────
+# AGENTS.md §1: "A `sorry` without `-- Ref:` is always a review failure" and
+# the key "must match an entry in content/schema/references.ts exactly".
+# NOTHING enforced that. `run-validate` prints
+#   "no reference registry configured — cites-resolve did not run"
+# and exits 0 over a corpus that carried 54 dangling sites; the platform's
+# `cites-resolve` constraint is real but qou never calls
+# `configureReferenceRegistry`, so it no-ops. Wiring it as-is is NOT the fix:
+# measured, it flags `[manuscript]` — the sentinel AGENTS.md §1 sanctions — as
+# an unresolved citation on two blocks. check-citation-keys.py knows all four
+# live conventions (manuscript / cross-paper label / same-paper label /
+# `[tag] <in-repo-path>`), so it is the gate.
+# Scoped to CHANGED files on purpose: a standing backlog remains, and a gate
+# that reprints all of it every commit is one that gets learned-ignored.
+if printf '%s\n' "${files[@]}" | grep -qE '\.(ts|lean)$'; then
+  mapfile -t citefiles < <(printf '%s\n' "${files[@]}" | grep -E '\.(ts|lean)$')
+  if ! cite_out=$(python3 "$ROOT/scripts/check-citation-keys.py" \
+        --files "${citefiles[@]}" --strict 2>&1); then
+    action=1
+    echo "⚠ dangling citation key(s) in files you changed — add the entry to"
+    echo "  content/schema/references.ts, or use a documented convention."
+    printf '%s\n' "$cite_out" | grep -A1 -E '^\s+[0-9]+\s+(ts-cites|lean-ref|md-cite)' | sed 's/^/    /'
   fi
 fi
 

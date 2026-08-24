@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-053-94-a-sample-calculation
 section_title: "A sample calculation"
 section_number: 9.4
 pages: 84-89
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 We introduce to the reader how calculations are carried out in C⊗← −O by working through
 an example. Let us ﬁnd the action of the ﬁrst SU (3) generator of the form Λ ν, which we

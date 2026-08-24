@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T10:44:01.844021+00:00",
-  "commitSha": "1e4ac40fb8d04be6e23af336aaec965c50325ec8",
+  "computedAt": "2026-08-24T14:27:39.685936+00:00",
+  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "assertions": [
     {
       "name": "S_squared_is_identity",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 3,
   "computation": "keystone-valuemap-sigma345-dm6",
   "scriptFile": "keystone_valuemap_sigma345_dm6.py",
-  "scriptHash": "d57ec81ee2e8",
-  "scriptCommitSha": "85063382d33a98e24f9bee4bbf648bc2fc3367c7",
+  "scriptHash": "a78693ca630b",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,8 +33,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_valuemap_sigma345_dm6.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_valuemap_sigma345_dm6.py"
   },
   "description": "s013 redirect (i): extend the validated Hikami eq.3.1/3.8 machinery to Σ(3,4,5) (D=6, γ=4 flat connections) and test whether its D=6 modular vacuum row reproduces the 4-class keystone target bwS0=d_q/D = (1,4.110,5.220,6.220). S²=I + unit-row anchors; q₀-robustness softener. No fit; nothing wired.",
   "data": {
@@ -44,7 +54,7 @@
       5
     ],
     "P": 60,
-    "q0": 1.1099785955541805,
+    "q0": 1.1099785827513808,
     "num_independent_components_D": 6,
     "D_formula": 6,
     "representatives": [
@@ -84,7 +94,7 @@
       1,
       1
     ],
-    "S_squared_minus_I_maxabs": "4.44583e-50",
+    "S_squared_minus_I_maxabs": "1.81114e-70",
     "S_squared_is_identity": true,
     "vacuum_row_norm_sq": "1.0",
     "vacuum_row_is_unit": true,
@@ -133,15 +143,15 @@
     ],
     "bwS0_targets": {
       "(5)": "1.0",
-      "(4,1)": "4.10968243564",
-      "(3,2)": "5.22044132466",
-      "(3,1,1)": "6.22044132466"
+      "(4,1)": "4.10968241121",
+      "(3,2)": "5.22044127533",
+      "(3,1,1)": "6.22044127533"
     },
     "bwS0_targets_sorted": [
       "1.0",
-      "4.10968243564",
-      "5.22044132466",
-      "6.22044132466"
+      "4.10968241121",
+      "5.22044127533",
+      "6.22044127533"
     ],
     "best_4subset": [
       "1.0",
@@ -149,13 +159,13 @@
       "1.618033989",
       "2.288245611"
     ],
-    "best_4subset_max_relerr": "0.69005801",
+    "best_4subset_max_relerr": "0.690058",
     "value_match_within_1pct": false,
     "bwS0_dtarget_dq0": [
       "0.0",
-      "1.9081584",
-      "3.8536632",
-      "3.8536632"
+      "1.9081582",
+      "3.8536628",
+      "3.8536628"
     ],
     "bwS0_is_q0_dependent": true,
     "geometric_row_is_q0_independent": true,

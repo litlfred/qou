@@ -7,7 +7,7 @@ section_number: null
 pages: 25-26
 source_pdf: neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf
 source_sha256: cf021725c96e29ec
-doc_brief: "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS — 2 sections: ( ‘A2 35A ,)($)“+ . ..I"
+doc_brief: "Volumes of hyperbolic three-manifolds — 2 sections: ( ‘A2 35A ,)($)“+ . ..I; References"
 duplicate_of: "1-s20-0040938385900047-main"
 ---
 S. BLOCH: Applications of the dilogarithm function in algebraic K-theory and algebraic geometry, Proc. of the 

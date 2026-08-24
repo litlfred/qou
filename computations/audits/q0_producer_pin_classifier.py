@@ -78,7 +78,101 @@ from qou_substrate.witness import q0_anchor_is_declared  # noqa: E402
 
 PROTON_MODULES = {"q_parameter", "qou_substrate.constants", "constants"}
 PROTON_NAMES = {"Q_50_DIGIT_STR", "q_at", "Q_MP", "Q_PROTON"}
-MUON_ARTIFACTS = ("q-pinning-50-digit", "y-lambda-at-q0", "y_lambda_at")
+# Artifacts whose mere NAME implies the ideal layer. `y_lambda_at` was here and
+# is REMOVED (2026-08-23): it is anchor-neutral now, so keeping it produced a
+# muon verdict for any file that merely mentions it.
+#
+# AGENTS.md still warns that `wedderburn_jones_markov.y_lambda_at(n, q)` serves
+# the cached MUON-built y-lambda-at-q0.witness.json whenever
+# |q - q_parameter.Q| < 1e-12 -- "a gate satisfied TRIVIALLY when the caller
+# passes q_parameter.Q itself". THAT IS OUT OF DATE. Read at the body rather
+# than the docstring: the live function is
+#
+#     if q_val is not None:
+#         return y_lambda_su_n(n, mpf(str(q_val)), 2)     # the CALLER's q
+#     return y_lambda_su_n_symbolic(n, Q_SYM, 2)
+#
+# The cache-serving code moved into `_y_lambda_at_convention_C_HISTORICAL`,
+# which is dead (convention C, excised 2026-08-09). So the function no longer
+# reads that witness on any path, and calling it says nothing about a producer's
+# anchor.
+#
+# Measured cost of getting this wrong in the other direction: promoting
+# y_lambda_at to an identifier check -- which is what its presence here
+# suggests -- reclassified 56 producers from `proton` to `BOTH`. `BOTH` shields
+# a producer from triage as a possible deliberate comparison, so that would have
+# hidden 56 clean files behind a muon association that no longer exists.
+MUON_ARTIFACTS = ("q-pinning-50-digit", "y-lambda-at-q0")
+
+
+_ARTIFACT_PIN_CACHE: dict[str, str] = {}
+
+
+def _artifact_pin(name: str) -> str:
+    """The pin a named witness ACTUALLY carries today, or "" if unresolvable.
+
+    Keyed on the 50-digit prefixes rather than on `q0Anchor`, because most of
+    these artifacts predate that field. 11 digits after the point, not 12: the
+    corpus carries two muon values agreeing to 11 (see
+    q0_muon_population_partition.py).
+    """
+    if name in _ARTIFACT_PIN_CACHE:
+        return _ARTIFACT_PIN_CACHE[name]
+    stem = name.rsplit("/", 1)[-1]
+    if not stem.endswith(".witness.json"):
+        _ARTIFACT_PIN_CACHE[name] = ""
+        return ""
+    verdict = ""
+    for cand in COMPUTE_DIR.rglob(stem):
+        if "_deprecated" in cand.parts:
+            continue
+        try:
+            raw = cand.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        has_mu = "1.10997859555" in raw
+        has_pr = "1.109978582751" in raw
+        verdict = ("" if (has_mu and has_pr)
+                   else "muon" if has_mu
+                   else "proton" if has_pr else "")
+        break
+    _ARTIFACT_PIN_CACHE[name] = verdict
+    return verdict
+
+# Literal q₀ pins written directly into producer source.
+#
+# MUON_LITERAL is deliberately 11 digits after the point, NOT 12. The corpus
+# carries TWO muon values that agree to 11 digits and diverge at the 12th —
+#     current     1.10997859555733471989…
+#     superseded  1.10997859555418057528…   ("the old muon value")
+# — as `q0_muon_population_partition.py` documents. Both are the muon anchor for
+# classification purposes, so the shared prefix is the correct test here; a
+# 12-digit prefix silently drops every producer still on the superseded value.
+MUON_LITERAL = "1.10997859555"
+PROTON_LITERAL = "1.109978582751"
+
+# The two pins first differ at the 9th digit after the point
+# (1.10997859… vs 1.10997858…), so a literal shorter than that cannot be
+# attributed to either. Anything at or beyond it can.
+_PIN_DISCRIMINATING_LEN = len("1.10997859")
+
+
+def _pin_of_literal(s: str) -> str:
+    """Which pin a decimal literal denotes, matching in BOTH directions.
+
+    `s.startswith(PIN)` alone is wrong for a TRUNCATED pin: the corpus writes
+    the proton value as `1.10997858275` in 12 places, which is a prefix OF the
+    canonical string rather than the other way round, so a one-directional test
+    misses every one of them. Requiring `_PIN_DISCRIMINATING_LEN` is what keeps
+    the reverse direction from matching coarse values like `1.10998`, which
+    genuinely denote neither pin.
+    """
+    if len(s) < _PIN_DISCRIMINATING_LEN:
+        return ""
+    for pin, lit in (("muon", MUON_LITERAL), ("proton", PROTON_LITERAL)):
+        if s.startswith(lit) or lit.startswith(s):
+            return pin
+    return ""
 MUON_ENV = ("ideal", "muon", "canonical")
 # Explicit muon ACCESSORS. A producer importing one of these is reaching for the
 # ideal layer on purpose -- typically a cross-anchor comparison probe -- so its
@@ -103,6 +197,30 @@ def strip_main_block(tree: ast.Module) -> list[ast.stmt]:
     return out
 
 
+def _docstrings(mod: ast.Module) -> set[str]:
+    """Every docstring in `mod`, so prose can be told apart from code.
+
+    A docstring that NAMES a muon artifact is not evidence that the producer
+    reads one. Measured 2026-08-23 over every .py in the live tree: of the 401
+    producers this function calls `muon`, **20 rest on a docstring mention
+    alone** -- no read, no accessor, no literal. The list is characteristic:
+    `tnjb_stale_stamp_migrate`, `chi_dual_path_xref_audit`,
+    `mpf_mixed_arithmetic_audit`, `witness_staleness_triage` are AUDIT tools
+    whose docstrings discuss the muon artifacts because that is their subject,
+    and `_precision.py` / `y_lambda_su_n.py` are library modules, not producers
+    at all. Same shape as an audit containing the muon literal because it
+    SCANS for it.
+    """
+    out: set[str] = set()
+    for n in ast.walk(mod):
+        if isinstance(n, (ast.Module, ast.FunctionDef, ast.AsyncFunctionDef,
+                          ast.ClassDef)):
+            d = ast.get_docstring(n, clean=False)
+            if d:
+                out.add(d)
+    return out
+
+
 def classify(path: Path) -> tuple[str, list[str]]:
     try:
         src = path.read_text(encoding="utf-8")
@@ -111,8 +229,15 @@ def classify(path: Path) -> tuple[str, list[str]]:
         return "unreadable", [repr(exc)[:60]]
 
     body = strip_main_block(tree)
+    module = ast.Module(body=body, type_ignores=[])
+    docs = _docstrings(module)
     proton: list[str] = []
     muon: list[str] = []
+    # Prose mentions: reported so a reader can see WHY a file looked muon, but
+    # never decisive. Kept separate rather than dropped, because "this file
+    # talks about the muon layer" is real information -- it is just not
+    # evidence about which pin the file COMPUTES at.
+    muon_prose: list[str] = []
 
     class V(ast.NodeVisitor):
         def visit_ImportFrom(self, n):  # noqa: N802
@@ -138,23 +263,84 @@ def classify(path: Path) -> tuple[str, list[str]]:
                 muon.append(f".{n.attr}")
             self.generic_visit(n)
 
+
         def visit_Constant(self, n):  # noqa: N802
+            # FLOAT literals were invisible (fixed 2026-08-23). This visitor
+            # inspected only `str` constants, so a producer writing the pin as a
+            # bare float — `q0 = 1.1099785955573347`, which is also a NO-FLOAT64
+            # violation in its own right — reached the `none` verdict.
+            # Found by following the residual of an 887-producer adjudication:
+            # `deltalambda_cyclotomic_sign_map_probe.py:168` is exactly this.
+            if isinstance(n.value, float):
+                fp = _pin_of_literal(repr(n.value))
+                if fp == "muon":
+                    muon.append(f"hardcoded muon FLOAT literal {n.value!r}")
+                elif fp == "proton":
+                    proton.append(f"hardcoded proton FLOAT literal {n.value!r}")
             if isinstance(n.value, str):
                 s = n.value
+                is_prose = s in docs
                 for art in MUON_ARTIFACTS:
                     if art in s:
-                        muon.append(f'"{s[:48]}"')
+                        # RESOLVE, do not assume (2026-08-23), composed with
+                        # main's prose/code split.
+                        #
+                        # These names were hardcoded as muon evidence, but two
+                        # of them are FILES and a file's pin is not a constant:
+                        # `y-lambda-at-q0.witness.json` was regenerated to the
+                        # PROTON pin in the convention-D cascade (7665e0e4b,
+                        # 506ac9135) and nothing updated the tuple. So when the
+                        # artifact names a witness that exists, believe the
+                        # witness. A PROSE mention still resolves to prose --
+                        # main is right that a docstring naming an artifact is
+                        # not evidence about the producer.
+                        resolved = _artifact_pin(s)
+                        if resolved == "proton" and not is_prose:
+                            proton.append(f'"{s[:48]}" (resolved: proton)')
+                        else:
+                            (muon_prose if is_prose else muon).append(
+                                f'"{s[:48]}"')
                 if s.strip().lower() in MUON_ENV and "ANCHOR" in src:
                     muon.append(f'env-like "{s}"')
-                if s.startswith("1.10997859555"):
+                if _pin_of_literal(s) == "muon":
                     muon.append("hardcoded muon 50-digit")
+                # SYMMETRIC PROTON CHECK (added 2026-08-23).
+                # This branch did not exist. A producer hardcoding the PROTON
+                # pin — `mp.mpf("1.109978582751380808")` — reached the `none`
+                # verdict, which this module's own docstring defines as "no
+                # numeric q₀ reached at all (purely symbolic producer)". It is
+                # not symbolic; it is pinned, in the most literal way available.
+                #
+                # Measured on the 2026-08-23 tree: 137 producers carry a LIVE
+                # (non-comment, non-`__main__`) proton literal, and classify()
+                # called 53 of them `none`. Those 53 were therefore invisible to
+                # the manifest proposal path, so they stayed UNDETERMINED —
+                # the same gap that let the 30.4 ppb `qbeta-ck-cache` mislabel
+                # survive, one pin over.
+                #
+                # Safe by construction: the extra evidence can only turn `none`
+                # into `proton` (or `muon` into `BOTH`, which is never
+                # auto-proposed). It cannot manufacture an `ideal_muon` entry,
+                # which is the only behaviourally live direction.
+                if _pin_of_literal(s) == "proton":
+                    proton.append("hardcoded proton 50-digit")
             self.generic_visit(n)
 
     V().visit(ast.Module(body=body, type_ignores=[]))
 
-    # de-dup, keep order
+    # de-dup, keep order. Operative evidence first: the list is capped at 3
+    # and was ordered by SOURCE POSITION, so docstring mentions near the top of
+    # a file crowded out the real read further down -- q1_mass_gap_probe showed
+    # two docstrings before its line-177 read. The verdict was right; the
+    # report made it look unfounded.
     proton = list(dict.fromkeys(proton))
     muon = list(dict.fromkeys(muon))
+    muon_prose = [e for e in dict.fromkeys(muon_prose) if e not in muon]
+    if muon:
+        muon = muon + [f"(prose only) {e}" for e in muon_prose]
+    elif muon_prose:
+        # No operative muon evidence anywhere -- prose alone does not decide.
+        muon = []
     if proton and muon:
         return "BOTH", [f"proton: {proton[:2]}", f"muon: {muon[:2]}"]
     if proton:
@@ -165,8 +351,16 @@ def classify(path: Path) -> tuple[str, list[str]]:
 
 
 def find_producer(script_name: str) -> Path | None:
+    # `_deprecated/` holds 890 retired copies; 37 share a name with a live
+    # file. The tie-break below sorts by (computations-first, fewest parts),
+    # which TIES when the live copy is as deeply nested as the retired one --
+    # `computations/probes/x.py` and `computations/_deprecated/x.py` are both
+    # 3 parts. Measured: 3 of the 7 colliding `.py` names resolved to the
+    # DEPRECATED copy (path_b_habiro_mass_probe, rho_k_markov_multiplicativity_probe,
+    # term5_aK_audit). A retired copy is by definition not the producer.
     hits = [p for p in REPO.rglob(script_name)
-            if ".git" not in p.parts and p.is_file()]
+            if ".git" not in p.parts and "_deprecated" not in p.parts
+            and ".claude" not in p.parts and p.is_file()]
     if not hits:
         return None
     # prefer the computations/ copy over vendored duplicates

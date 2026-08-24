@@ -215,7 +215,7 @@ def test_open_subquestions() -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     w = WitnessBuilder("gap-a4-T9-klein-mckay-scaffold-probe",
                        engine="mpmath")
     w.set_audit_only(

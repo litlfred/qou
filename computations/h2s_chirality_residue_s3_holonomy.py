@@ -44,7 +44,7 @@ for _p in (str(_HERE),
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
 from q_parameter import Q as q0, HA as h
-from mass_at_3A_proper import _cached_seminormal
+from mass_at_3A_proper import _cached_seminormal, Q0_PROTON
 
 
 def signed_content(lam):
@@ -78,7 +78,7 @@ def main() -> None:
     print("    the q-Dirac kernel) — the block the chiral p-orbital occupies.")
 
     # the chiral p-lone occupies the (2,1) block; its S³ holonomy = the residue
-    sig, dim, _ = _cached_seminormal((2, 1))
+    sig, dim, _ = _cached_seminormal((2, 1), Q0_PROTON)
     s0, s1 = sig[0], sig[1]
     p_lone = s0 @ s0 @ s1            # chiral 3p_z word σ₀σ₀σ₁ (defect 2)
     s_lone = s0 @ s1 @ s0            # self-dual 3s² word (palindrome, defect 0)

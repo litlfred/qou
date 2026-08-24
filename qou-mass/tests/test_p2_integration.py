@@ -18,19 +18,28 @@ import qou_mass as qm
 def test_proton_mass():
     r = qm.predict_nucleon("p")
     assert r.units == "MeV"
-    assert abs(float(r.value) - 938.27185264) < 1e-6
+    # noqa: P31 - the framework's PREDICTED proton mass, not a CODATA
+    # transcription. It reads as a near-miss precisely because the
+    # prediction is good (0.25 ppm); changing it would falsify the test.
+    assert abs(float(r.value) - 938.27185264) < 1e-6  # noqa: P31
     assert abs(float(r.ppm_vs_codata)) < 0.5  # Borromean is 0.25 ppm
 
 
 def test_neutron_mass():
     r = qm.predict_nucleon("n")
-    assert abs(float(r.value) - 939.56518467) < 1e-6
+    # noqa: P31 - the framework's PREDICTED neutron mass, not a CODATA
+    # transcription. It reads as a near-miss precisely because the
+    # prediction is good (0.25 ppm); changing it would falsify the test.
+    assert abs(float(r.value) - 939.56518467) < 1e-6  # noqa: P31
     assert abs(float(r.ppm_vs_codata)) < 0.5
 
 
 def test_muon_mass():
     r = qm.predict_nucleon("mu")
-    assert abs(float(r.value) - 105.65837565) < 1e-6
+    # noqa: P31 - the framework's PREDICTED muon mass, not a CODATA
+    # transcription. It reads as a near-miss precisely because the
+    # prediction is good (0.25 ppm); changing it would falsify the test.
+    assert abs(float(r.value) - 105.65837565) < 1e-6  # noqa: P31
     assert abs(float(r.ppm_vs_codata)) < 0.01  # 0.001 ppm
 
 

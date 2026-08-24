@@ -62,11 +62,13 @@
   },
   "verdict": "scope-(a) NEGATIVE for the simplest dilog identification: no natural Bring/4_1/golden bare Bloch-Wigner D-value reproduces 2/(3pi) or 1/(8pi) as a clean rational multiple, and 2/(3pi)'s single power of pi is the gauge-loop 1/(4pi) signature, not the dilog pi^2/O(1) signature. Leading order favours #3810 (gauge). Any dilog content must be at the regulator-normalisation or next-order B_n(C) level (NOT evidenced here).",
   "scope": "scope-(a) negative; discriminates AGAINST simplest dilog reading, FOR #3810 gauge at leading order; anti-laundering: numerical, not a derivation",
-  "scriptHash": "e25ca9bcf653",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "scriptHash": "ef7a1f5e79ab",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "engine": "python",
-  "computedAt": "2026-07-18T19:19:15.944056+00:00",
+  "computedAt": "2026-08-24T10:50:30.673652+00:00",
   "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "alphaem_dilog_bloch_probe.py"
 }

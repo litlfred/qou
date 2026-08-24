@@ -2137,6 +2137,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.531Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Computed every braid word's closure (see trap-superlative).",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2156,6 +2173,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.571Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Computed every braid word's closure (see trap-superlative).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2175,6 +2209,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 137 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.618Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Computed every braid word's closure (see trap-superlative).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -2194,6 +2245,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 137 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.659Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Computed every braid word's closure (see trap-superlative).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -2213,6 +2281,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.704Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Computed every braid word's closure (see trap-superlative).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -2232,6 +2317,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.753Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Computed every braid word's closure (see trap-superlative).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2251,6 +2353,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.796Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Computed every braid word's closure (see trap-superlative).",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -2270,6 +2389,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.838Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Computed every braid word's closure (see trap-superlative).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -2289,6 +2425,23 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.883Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'$\\Phi_k = T_{2,5} = (\\sigma_0\\sigma_1)^2\\sigma_0$'; '$L_+ = \\sigma_0\\sigma_1$, $L_- = \\sigma_1\\sigma_0$'; 'The $\\mathcal{B}_3$ Borromean operator is **never** selected at the nuclear level'; 'the demand-minimizing operator', 'the optimal operator'.",
+        "notes": "THREE BRAID WORDS COMPUTED, THREE WRONG (inherited from compute, do not fix locally). (sigma_0 sigma_1)^2 sigma_0 closes with permutation (1)(2 3) = 2 components, so it is not the cinquefoil T(2,5), which is a knot; T(2,5) is sigma_0^5 in B_2, and this word destabilises to T(2,4). sigma_0 sigma_1 closes to 1 component, so it is not the Hopf link; sigma_0^2 in B_2 is. sigma_1 sigma_0 is CONJUGATE to sigma_0 sigma_1, so L_+ and L_- have identical closures and 'mirror' is wrong. SEPARATELY, the optimality language is not earned: in computations/confinement-operator-selection.witness.json the candidates L_+ = sigma_0 sigma_1, (sigma_0 sigma_1)^2 and e^- = sigma_0 sigma_1 sigma_0 ALL have demand_magnitude exactly 0 for BOTH the proton and the neutron -- a three-way tie at the minimum -- so 'the demand-minimizing operator' is not singled out by the stated objective, and T_{2,5} is not among the witness's candidates at all."
       }
     ],
     "trap-nonspeakable": [
@@ -2308,6 +2461,22 @@
         "reviewed_at": "2026-08-15T10:31:01.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0e3f6a2ebc48",
+          "ts": "e8c10b6e76f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.926Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Statement is in the standard italic-proposition register."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2331,5 +2500,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:59.926Z"
 }

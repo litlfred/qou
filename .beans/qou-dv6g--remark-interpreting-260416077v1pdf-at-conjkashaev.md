@@ -3,8 +3,9 @@
 title: Remark interpreting 2604.16077v1.pdf at conj:kashaev-volume-conjecture
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:09Z
-updated_at: 2026-08-08T23:37:09Z
+updated_at: 2026-08-21T17:04:53Z
 ---
 
 Record the epistemic status honestly: a rigid semi-classical volume limit is proved for the figure-eight complement, for the quantum hyperbolic invariants and subject to a parity condition. What would need checking before it could touch the Lean class: whether the invariants here and the Kashaev invariant the class axiomatises are the same object at the relevant limit, and whether the parity condition holds at the corpus's chosen longitude/logarithm branch. Until both are settled this is a scope statement, never a discharge of the conjecture.
@@ -17,3 +18,10 @@ Source: `library/arxiv-2604.16077v1/2604.16077v1.pdf` — no `references.ts` ent
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-2604.16077v1/  ->  [baseilhac2026]
+  VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [baseilhac2026] as the citation key when you do it.

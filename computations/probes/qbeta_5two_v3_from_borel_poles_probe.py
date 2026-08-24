@@ -229,7 +229,7 @@ def measure_V3(P, m, n, V1, vol):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     P = load_basis()
     V1, V2, _ = saddle_values("ggm")
     vol = volume()

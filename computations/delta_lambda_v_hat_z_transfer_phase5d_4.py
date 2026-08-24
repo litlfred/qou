@@ -50,6 +50,7 @@ import mpmath as mp
 
 from witness_base import WitnessBuilder
 from mass_at_3A_proper import per_generator_V_hat_3A
+from _precision import set_compute_dps  # noqa: E402
 
 
 # (Z, N, label, expected_interface_generators) — interface gens are at
@@ -63,7 +64,7 @@ ATOMS = [
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     builder = WitnessBuilder("v-hat-z-transfer-phase5d-4")
     builder.set_description(
         "Phase 5d.4: probe whether the Phase 5c.1 z-exactness finding "
@@ -88,8 +89,11 @@ def main() -> int:
     # 2026-08-08): two layers meeting inside one quantity, invisible because
     # each half is individually reasonable. Take q_0 from the same place the
     # V̂ side takes it, so the pair is single-layer by construction.
-    from q_parameter import Q as _Q_RUNTIME  # noqa: E402
-    q = mp.mpf(str(_Q_RUNTIME))
+    from q_parameter import Q_MP as _Q_RUNTIME  # noqa: E402
+    # Q_MP, not mpf(str(Q)): the f64 constant carries ~16 significant digits,
+    # so mpf(str(...)) LAUNDERS it — the value looks 50-digit and is accurate
+    # to 16. Read the high-precision name instead.
+    q = _Q_RUNTIME
     q_inv = mp.mpf(1) / q
     z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
     h = q - q_inv

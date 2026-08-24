@@ -48,11 +48,9 @@ for p in (str(HERE / "substrate"), str(HERE)):
         sys.path.insert(0, p)
 
 import mpmath as mp  # noqa: E402
-try:
-    from _precision import set_compute_dps
-    set_compute_dps()
-except Exception:
-    mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps
+set_compute_dps()
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
 # literal rounded there cannot be recovered by raising dps afterwards.

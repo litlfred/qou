@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0603217v3
-doc_title: "K; exp(2π √−1) would determine the simplicial volume of the knot complement S3 \ K. In [15]"
+doc_title: "A version of the volume conjecture"
 section_id: sec-002-3-proof
 section_title: "Proof"
 section_number: 3
 pages: 3-4
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
-doc_brief: "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume"
+doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
 ---
 In this section we prove Conjecture 2.1 for torus knots. (To be ho nest, (2.3) is
 proved only up to a constant, that is, we prove (2.4) instead.)

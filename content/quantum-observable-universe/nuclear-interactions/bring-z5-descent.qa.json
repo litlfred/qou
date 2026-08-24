@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.689Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.732Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 133 words)"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.773Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "Single matched spaced-dash pair enclosing a genuine appositive ('the non-abelian structure that accommodates three color tubes'); not an appended afterthought."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 133 words)"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.816Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.853Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.892Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.931Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.978Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:21.021Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.379Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:21.062Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:03:21.062Z"
 }

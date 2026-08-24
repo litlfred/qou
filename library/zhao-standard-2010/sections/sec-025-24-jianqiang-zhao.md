@@ -1,13 +1,13 @@
 ---
 doc_id: zhao-standard-2010
-doc_title: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao"
+doc_title: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity"
 section_id: sec-025-24-jianqiang-zhao
 section_title: "Jianqiang Zhao"
 section_number: 24
 pages: 24-26
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
-doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm Values at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
 Theorem 8.3. If p ≥ 5 is a prime then ker βp2 ⁄= 0 and
 d(2, p2) < D (2, p2) = ( p2 − p + 2)2/4.

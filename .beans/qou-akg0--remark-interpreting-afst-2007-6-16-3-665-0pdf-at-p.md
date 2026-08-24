@@ -3,8 +3,9 @@
 title: Remark interpreting AFST_2007_6_16_3_665_0.pdf at prop:binding-genfun-qdifference
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:56Z
-updated_at: 2026-08-08T23:36:56Z
+updated_at: 2026-08-21T17:04:49Z
 ---
 
 Recording that the corpus's q-difference modules canonically determine bundles on the Tate curve of the substrate parameter, with an explicit note on the |q| < 1 convention and on the symbol collision with the reserved calligraphic E_q, would let the connection be used without introducing a notation defect.
@@ -17,3 +18,10 @@ Source: `library/afst-2007-6-16-3-665-0/AFST_2007_6_16_3_665_0.pdf` — no `refe
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/afst-2007-6-16-3-665-0/  ->  [vanderput-reversat2007]
+  Galois theory of q-difference equations
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [vanderput-reversat2007] as the citation key when you do it.

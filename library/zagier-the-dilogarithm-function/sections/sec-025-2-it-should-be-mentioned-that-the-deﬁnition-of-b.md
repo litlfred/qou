@@ -1,13 +1,13 @@
 ---
 doc_id: zagier-the-dilogarithm-function
-doc_title: "The Dilogarithm Function Don Zagier"
+doc_title: "The dilogarithm function"
 section_id: sec-025-2-it-should-be-mentioned-that-the-deﬁnition-of-b
 section_title: "It should be mentioned that the deﬁnition of BF w h i c hw eg a v ef o rF = C or"
 section_number: 2
 pages: 16-17
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
-doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The dilogarithm function — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 Q must be modiﬁed slightly when F is a number ﬁeld because F × is no longer
 divisible; however, this is a minor point, aﬀecting only the torsion in the Bloch

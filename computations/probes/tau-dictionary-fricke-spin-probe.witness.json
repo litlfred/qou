@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-24T21:13:29.554760+00:00",
-  "commitSha": "61f069e9ebf299c1a34c3d587249428eefa77ba9",
+  "computedAt": "2026-08-23T09:40:21.876873+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "cusp_coefficients_exact",
@@ -21,7 +21,7 @@
     },
     {
       "name": "fricke_fixed_point_exact_value",
-      "computed": 1.4967482376516296e-49,
+      "computed": 1.448908652612274e-70,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -29,7 +29,7 @@
     },
     {
       "name": "w5_circle_family_excluded",
-      "computed": 4.960651301931115e-48,
+      "computed": 4.9842457649862225e-68,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -51,11 +51,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2063,
+  "durationMs": 3175,
   "computation": "tau-dictionary-fricke-spin-probe",
   "scriptFile": "tau_dictionary_fricke_spin_probe.py",
-  "scriptHash": "61f0446e141a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "57fc9dd50af7",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,8 +65,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/tau_dictionary_fricke_spin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/tau_dictionary_fricke_spin_probe.py"
   },
   "description": "W8b+A6 follow-up to the tau-dictionary hauptmodul validator. TASK 1: the nome dictionary's t5 ~ 1.7e-31 is factored EXACTLY through the Fricke chart: t5(iy) = 125*qt*(1 + 6qt + 27qt^2 + 98qt^3 + ...), qt = exp(-2pi/(5y)) = exp(-4pi^2/(5 ln q0)) at the nome dictionary — integer coefficients from exact series arithmetic, verified to >= 60 digits at both q0 pins: the map is a cusp-0 chart, exponentially cusp-suppressed (theorem-level, not a numeric accident). TASK 2: natural bar<->Fricke candidates (falsifier-first, zero free parameters): the W5-fixed point has t5 = +5*sqrt(5) exactly; the bar<->Fricke-equivariant circle family tau(q0) = e^{i(pi/2 - ln q0)}/sqrt5 satisfies tau(1/q0) = W5(tau(q0)) exactly but the PROVED invariant |t5| = 5*sqrt(5) != 10 on the whole W5-fixed circle excludes the family; sign invariant: real nome => sign t5 = sign(nome), so t5 = -10 requires the odd-nome half-period chart Re tau = 1/2 mod 1 — every purely-imaginary dictionary is excluded, every half-shifted variant acquires t5 < 0 but none lands on -10 (spin-twisted nome: t5 = -7.6e-7). 10/10 gated candidates FAIL, verdicts pin-stable; no proposal. TASK 3: BN12/BDH22 printed spin data re-verified exactly (M order 5 symplectic, SNF diag (1,...,1,5,5), K_Q 2N-torsion SHARPENED to exactly 5-torsion via the 5-eigenvector (1,-2,-2,1); unique invariant characteristic Delta = 3a+b-c is EVEN (= Szego divisor, the theta-frame origin); the briefing's 'odd characteristic' framing corrected). Audit-only; NO FIT; nothing wired.",
   "auditOnly": "docs/audits/2026-07-24-tau-dictionary-fricke-cusp-spin.md",
@@ -131,18 +141,18 @@
           "muon-pin": {
             "tau": "(-0.5 + 0.4472135955j)",
             "im_tau": "0.4472136",
-            "t5": "(-23.1076695563 - 4.05261527872e-51j)",
+            "t5": "(-23.1076695563 + 8.41253931319e-70j)",
             "abs_residual_t5_plus_10": "13.1077",
-            "j_5tau": "(-1263050.90945 + 8.88484114408e-49j)",
+            "j_5tau": "(-1263050.90945 - 5.98920033301e-69j)",
             "abs_residual_j5_plus_25_over_2": "1.26304e+6",
             "verdict": "FAIL"
           },
           "proton-pin": {
             "tau": "(-0.5 + 0.4472135955j)",
             "im_tau": "0.4472136",
-            "t5": "(-23.1076695563 - 4.05261527872e-51j)",
+            "t5": "(-23.1076695563 + 8.41253931319e-70j)",
             "abs_residual_t5_plus_10": "13.1077",
-            "j_5tau": "(-1263050.90945 + 8.88484114408e-49j)",
+            "j_5tau": "(-1263050.90945 - 5.98920033301e-69j)",
             "abs_residual_j5_plus_25_over_2": "1.26304e+6",
             "verdict": "FAIL"
           }
@@ -246,18 +256,18 @@
           "muon-pin": {
             "tau": "(-0.5 + 0.104530160998j)",
             "im_tau": "0.10453016",
-            "t5": "(-4.69702810056 - 5.89017104868e-51j)",
+            "t5": "(-4.69702810056 - 7.97678790661e-71j)",
             "abs_residual_t5_plus_10": "5.30297",
-            "j_5tau": "(1679.86101795 - 1.11922387248e-51j)",
+            "j_5tau": "(1679.86101795 + 1.24867590289e-72j)",
             "abs_residual_j5_plus_25_over_2": "1692.36",
             "verdict": "FAIL"
           },
           "proton-pin": {
             "tau": "(-0.5 + 0.104530149398j)",
             "im_tau": "0.10453015",
-            "t5": "(-4.69702693445 - 4.76426546491e-51j)",
+            "t5": "(-4.69702693445 - 9.06208009927e-71j)",
             "abs_residual_t5_plus_10": "5.30297",
-            "j_5tau": "(1679.86125613 - 6.93118313849e-52j)",
+            "j_5tau": "(1679.86125613 + 4.74313850307e-71j)",
             "abs_residual_j5_plus_25_over_2": "1692.36",
             "verdict": "FAIL"
           }
@@ -292,18 +302,18 @@
           "muon-pin": {
             "tau": "(-0.5 + 1.00544843456j)",
             "im_tau": "1.0054484",
-            "t5": "(-560.15702251 - 2.02537368408e-49j)",
+            "t5": "(-560.15702251 + 1.75019812372e-68j)",
             "abs_residual_t5_plus_10": "550.157",
-            "j_5tau": "(-5.22517320623e+13 + 5.68245344069e-41j)",
+            "j_5tau": "(-5.22517320623e+13 - 6.40409779378e-61j)",
             "abs_residual_j5_plus_25_over_2": "5.22517e+13",
             "verdict": "FAIL"
           },
           "proton-pin": {
             "tau": "(-0.5 + 1.00544843335j)",
             "im_tau": "1.0054484",
-            "t5": "(-560.157018311 - 2.15758993004e-48j)",
+            "t5": "(-560.157018311 + 1.78358066205e-68j)",
             "abs_residual_t5_plus_10": "550.157",
-            "j_5tau": "(-5.22517300826e+13 - 7.45342966647e-42j)",
+            "j_5tau": "(-5.22517300826e+13 - 6.63091585494e-61j)",
             "abs_residual_j5_plus_25_over_2": "5.22517e+13",
             "verdict": "FAIL"
           }
@@ -315,18 +325,18 @@
           "muon-pin": {
             "tau": "(-0.5 + 0.0166063432408j)",
             "im_tau": "0.016606343",
-            "t5": "(-7.60177228041e-7 - 1.4554335629e-55j)",
+            "t5": "(-7.60177228041e-7 + 1.02593020988e-75j)",
             "abs_residual_t5_plus_10": "10.0",
-            "j_5tau": "(-164434588.747 - 1.95325701427e-46j)",
+            "j_5tau": "(-164434588.747 - 3.35480644226e-66j)",
             "abs_residual_j5_plus_25_over_2": "1.64435e+8",
             "verdict": "FAIL"
           },
           "proton-pin": {
             "tau": "(-0.5 + 0.0166063414046j)",
             "im_tau": "0.016606341",
-            "t5": "(-7.60175637907e-7 - 1.54065971714e-55j)",
+            "t5": "(-7.60175637907e-7 + 1.06193627676e-75j)",
             "abs_residual_t5_plus_10": "10.0",
-            "j_5tau": "(-164434932.713 + 2.44028297509e-46j)",
+            "j_5tau": "(-164434932.713 - 9.67768276626e-68j)",
             "abs_residual_j5_plus_25_over_2": "1.64435e+8",
             "verdict": "FAIL"
           }

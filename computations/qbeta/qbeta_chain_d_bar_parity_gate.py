@@ -33,6 +33,7 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def hbar(q):
@@ -45,7 +46,7 @@ def c3(q):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(str(Q0))
     qb = 1 / q                      # bar image
 

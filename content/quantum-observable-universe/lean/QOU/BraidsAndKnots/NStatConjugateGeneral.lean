@@ -50,7 +50,7 @@
   for all `n` verbatim (see `chiralityParity_eq_w0_sign_general`).
 
   Primary source: the identity `n(λ) = Σ_i C(λ'_i,2)` is standard;
-  -- Ref: [macdonald1995symmetric] https://doi.org/10.1093/oso/9780198534891.001.0001
+  -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001
   (I.1, Ex. 3: `n(λ) = Σ_i (i-1)λ_i = Σ_i C(λ'_i,2)`).
   -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
 -/

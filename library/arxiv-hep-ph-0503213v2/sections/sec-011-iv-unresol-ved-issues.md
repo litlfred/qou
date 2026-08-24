@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0503213v2
-doc_title: "A topological model of composite preons Sundance O. Bilson-Thompson ∗"
+doc_title: "A topological model of composite preons"
 section_id: sec-011-iv-unresol-ved-issues
 section_title: "UNRESOL VED ISSUES"
 section_number: IV
 pages: 5-6
 source_pdf: 0503213v2.pdf
 source_sha256: 637a9e53b9b30776
-doc_brief: "A topological model of composite preons Sundance O. Bilson-Thompson ∗ — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
+doc_brief: "A topological model of composite preons — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
 ---
 There are three signiﬁcant issues the helon model has
 not yet addressed: the origin of spin, the origin of mass,

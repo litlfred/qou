@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1007.1250v4
-doc_title: "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES AMNON YEKUTIELI"
+doc_title: "Nonabelian Multiplicative Integration on Surfaces"
 section_id: sec-000-0-introduction
 section_title: "Introduction"
 section_number: 0
 pages: 3-137
 source_pdf: 1007.1250v4.pdf
 source_sha256: 541ba4fb3068de8b
-doc_brief: "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES AMNON YEKUTIELI — We construct a 2 -dimensional twisted nonabelian multiplicative integral ."
+doc_brief: "Nonabelian Multiplicative Integration on Surfaces — We construct a 2 -dimensional twisted nonabelian multiplicative integral ."
 ---
 necessary to devise a theory of 2 -dimensional nonabelian multiplicative integration .
 Our work was guided by the problem at hand, plus ideas borrowed from the

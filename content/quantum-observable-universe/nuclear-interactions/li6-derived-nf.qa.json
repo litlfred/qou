@@ -1183,6 +1183,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a deficit-bearer.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.134Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'The positive $e^-$ means the nucleus is a trefoil supplier, not a deficit-bearer.'",
+        "notes": "Assertion-by-denial whose positive half contradicts the same item's opening sentence ('The nucleus absorbs the trefoil deficit'). PROPOSED: state which of absorb/supply is meant and drop the other; math-adjacent, so flagged not fixed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1202,6 +1219,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.173Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Recomputed the NF coefficient sum: 0.087+0.130+0.455+0.205+1.288+0.589 = 2.754, matching the stated net EXACTLY; L_- is indeed the largest coefficient. He-4/Li-6 shell facts correct.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1221,6 +1255,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 184 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.216Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Recomputed the NF coefficient sum: 0.087+0.130+0.455+0.205+1.288+0.589 = 2.754, matching the stated net EXACTLY; L_- is indeed the largest coefficient. He-4/Li-6 shell facts correct.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1240,6 +1291,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 184 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.257Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Four-item numbered 'Physical interpretation' list.",
+        "notes": "Four substantive items, not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1259,6 +1327,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.298Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Recomputed the NF coefficient sum: 0.087+0.130+0.455+0.205+1.288+0.589 = 2.754, matching the stated net EXACTLY; L_- is indeed the largest coefficient. He-4/Li-6 shell facts correct.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1278,6 +1363,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.341Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Recomputed the NF coefficient sum: 0.087+0.130+0.455+0.205+1.288+0.589 = 2.754, matching the stated net EXACTLY; L_- is indeed the largest coefficient. He-4/Li-6 shell facts correct.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1297,6 +1399,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.385Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Recomputed the NF coefficient sum: 0.087+0.130+0.455+0.205+1.288+0.589 = 2.754, matching the stated net EXACTLY; L_- is indeed the largest coefficient. He-4/Li-6 shell facts correct.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1316,6 +1435,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.423Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Recomputed the NF coefficient sum: 0.087+0.130+0.455+0.205+1.288+0.589 = 2.754, matching the stated net EXACTLY; L_- is indeed the largest coefficient. He-4/Li-6 shell facts correct.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1335,6 +1471,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.468Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'Lithium-6 ... is the lightest nucleus beyond the doubly-magic helium-4 core'; 'The fifth nucleon still uses a Hopf link, riding the stability of the doubly-magic core'; and item 4's internal contradiction.",
+        "notes": "THREE separate problems, none fixable inline. (1) A=5 nuclides DO exist (5He, 5Li, both particle-unbound), so 'the lightest nucleus beyond He-4' is false as written -- the true claim needs 'stable'. (2) The block's own extracted table builds A=5 as pppnn = 5Li, which is proton-unbound with a ~10^-22 s lifetime, so 'riding the stability' describes an unbound intermediate. (3) Item 4 says 'The nucleus absorbs the trefoil deficit' and two sentences later 'the nucleus is a trefoil supplier, not a deficit-bearer' -- absorbing and supplying are opposite. VERIFIED SOUND separately: the NF coefficients sum to exactly the stated net 2.754 and L_- is genuinely the largest."
       }
     ],
     "trap-nonspeakable": [
@@ -1354,6 +1507,23 @@
         "reviewed_at": "2026-08-15T10:31:01.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9b52dfb0c149",
+          "ts": "87963234566e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.525Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Recomputed the NF coefficient sum: 0.087+0.130+0.455+0.205+1.288+0.589 = 2.754, matching the stated net EXACTLY; L_- is indeed the largest coefficient. He-4/Li-6 shell facts correct.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1376,5 +1546,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:52.525Z"
 }

@@ -1413,6 +1413,36 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:34.634Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.477Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Two 'X, not Y' constructions ('the Markov trace of all 10 crossings, not s^2'; 'the accumulated effect of 10 such relations, not 1') are substantive corrections of a named prior approximation, which the whole section exists to overturn. Documented false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:34.734Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 662 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:34.837Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
       }
     ],
     "trap-triples": [
@@ -1470,6 +1530,37 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 662 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:34.878Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.725Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The three-row crossing-budget table and the three numbered explanations are each substantive. LEPTON-NUMBER FINDING in notes.",
+        "notes": "STANDING-TRAP FINDING, report only, spans this block and def:beta-decay-skein: the antineutrino is named three different ways across the section - T_{1,0}^sigma in def:antineutrino-knot and in this block's L_0^- display, K_{0_1}^sigma in this block's Z/2 table, and K_{0_1} in this block's crossing-budget table. In def:beta-decay-skein the beta-minus reduction emits an unadorned K_{0_1}, i.e. the NEUTRINO, which contradicts the lepton-number argument def:antineutrino-knot makes ('each smoothing conserves lepton number') and contradicts this block's own L_0^- display. Proposed fix: pick one symbol for the unknot (T_{1,0} or K_{0_1}) and carry the sigma consistently - beta-minus emits the barred one, beta-plus the unbarred."
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1580,21 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:34.945Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1614,21 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.017Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1648,21 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.160Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1682,21 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.300Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1716,37 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.337Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.662Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No inflation; the block is unusually well hedged and ends on an explicit 'Open computation' note. SECTION 7a AND PROVENANCE FINDINGS recorded here (see notes).",
+        "notes": "STANDING-TRAP FINDINGS, report only, never fix math inline. (1) SECTION 7a GENERATOR VIOLATION, two sites: the Hecke relation is written 'T^2 = (q - q^{-1})T + 1' under 'The T_{3,5} weak vertex' and again in 'Re-reduction cost' item 2. AGENTS.md 7a is explicit that the generator is sigma_i and never T. Proposed fix: sigma_i^2 = (q - q^{-1}) sigma_i + 1 at both sites. (2) SECTION 7a SKEIN FORM: the block writes q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0], whereas 7a's canonical relation is L_+ - L_- = (q - q^{-1}) L_0. The block's form is self-consistent with its own single-crossing amplitude s = q^{1/2} - q^{-1/2}, so this is a convention deviation to reconcile, not an arithmetic error. (3) UNPROVENANCED EXPERIMENTAL TARGETS: 'Predictions for heavy-nucleus half-lives overshoot by 10-17%' and 'The error for A = 3 is < 2%' carry no citation, no witness field and no producer. Two numbers doing load-bearing work in the argument for the 10-crossing correction. (4) CHECKED AND CORRECT: (sigma_1 sigma_2)^5 has 10 crossings; the budget 3 + 0 + 7 = 10; binom(A-1,1)*3 = 3(A-1); and the weak asymmetry S_ab - S_ba = (q - q^{-1})(mu_a - mu_b)/(q^{1/2} + q^{-1/2}) recomputed symbolically from the given S_ab, together with S_ab(q^{-1}) = S_ba(q)."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1766,38 @@
         "reviewed_at": "2026-08-15T10:31:01.131Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.377Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the eight-section properties remark: setup, T_{3,5} weak vertex, crossing budget, Skein relation, Z/2 symmetry, lepton pair, Q-value, single-crossing insufficiency. All ten categories judged; the algebra recomputed."
+      },
+      {
+        "field_hash": {
+          "md": "6ed75f038084",
+          "ts": "9ea371a63b34"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:35.581Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Opening sentence is a five-item table of contents disguised as a claim: 'The beta-decay Skein operation requires the T_{3,5} weak vertex, the 10-crossing budget, the Z/2 involution relating beta-plus-minus, the lepton-pair decomposition, and the 10-crossing Q-value.' It also does not say a true thing - the Q-value is an OUTPUT of the operation, not something it requires.",
+        "notes": "SWEEP DAMAGE suspected (a section list flattened into a declarative). Proposed fix: 'This remark develops five aspects of the beta-decay Skein operation: the T_{3,5} weak vertex, the 10-crossing budget, the Z/2 involution relating beta-plus and beta-minus, the lepton-pair decomposition, and the resulting Q-value.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1820,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:34:35.725Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0911.4494v2
-doc_title: "The geometry of Markov traces Ben Webster Geordie Williamson"
+doc_title: "The geometry of Markov traces"
 section_id: sec-003-3-hecke-algebras-and-geometry
 section_title: "Hecke algebras and geometry"
 section_number: 3
 pages: 4-9
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
-doc_brief: "The geometry of Markov traces Ben Webster Geordie Williamson — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on"
+doc_brief: "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn."
 ---
 G denote a split semi-simple algebraic group over Fq with ﬁxed split maximal torus
 T and Borel subgroup B. If Γdenotes the Dynkin diagram of the root system of G,

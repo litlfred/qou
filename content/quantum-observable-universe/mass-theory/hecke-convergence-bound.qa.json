@@ -2117,6 +2117,21 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.135Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read; no assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2136,6 +2151,21 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.170Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -2155,6 +2185,21 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.206Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2174,6 +2219,21 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.242Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "No reflex list; the closing paragraph is three sentences of distinct content, not an enumeration."
       }
     ],
     "trap-closing-aphorism": [
@@ -2193,6 +2253,21 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.278Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Final line asserts a specific growth claim about Delta rather than a quotable maxim (its support is a separate, epistemic issue, reported as a finding)."
       }
     ],
     "trap-meta-commentary": [
@@ -2212,6 +2287,21 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.312Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2231,6 +2321,21 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.347Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "\"This bounds the error introduced by truncating the trace to the dominant channels\" is an opening gloss on the display, not a block-final restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2250,6 +2355,21 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.383Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2269,6 +2389,22 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.418Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "severity": "minor",
+        "evidence": "\"rapid decay\" is the only intensifier and is standard analytic usage."
       }
     ],
     "trap-nonspeakable": [
@@ -2288,6 +2424,22 @@
         "reviewed_at": "2026-08-15T10:31:00.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.454Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Three short declarative sentences; reads aloud cleanly.",
+        "notes": "Separate (non-trap) findings: (1) title-vs-statement mismatch — title claims MAE(H_k) <= C * r^{-(k-3)} while the body proves |tr_M(W) - sum_{lambda in A} W_lambda tr_{rho_lambda}(W)| <= C q^{-Delta}; MAE, r and k appear nowhere in the .md, so the advertised bound is not the one stated. (2) uses[] is empty although the statement depends on the Hoefsmit trace, the active set, content norm, quantum dimensions and Coxeter length. (3) Symbol collision: W is the Coxeter/braid element AND W_lambda is the per-partition weight, and the commentary then calls W_lambda a \"quantum dimension\" while the display uses it as a Markov weight (cf. the y_lambda / w_lambda / tilde-w_lambda distinction in the notation register)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2311,5 +2463,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:10:41.454Z"
 }

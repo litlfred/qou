@@ -1,13 +1,13 @@
 ---
 doc_id: 5s032x
-doc_title: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗"
+doc_title: "The standard model symmetry and qubit entanglement"
 section_id: sec-007-three-qubits-and-the-octonionic-hopf-fibration
 section_title: "Three Qubits and the Octonionic Hopf Fibration"
 section_number: null
 pages: 12-16
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
-doc_brief: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description."
+doc_brief: "The standard model symmetry and qubit entanglement — quantum description."
 ---
 Due to the normalization|o0|2 +|o1|2 = 1, an octonionic qubit defines a point on the sphere S15. There again exists
 a map taking points of the sphere to the extended octonionic plane,

@@ -1,12 +1,12 @@
 {
-  "description": "Probe 1 — cinquefoil-as-muon T(2,2m+1) lepton-tower hypothesis test",
+  "description": "Probe 1 \u2014 cinquefoil-as-muon T(2,2m+1) lepton-tower hypothesis test",
   "computation": "lepton_tower_probe_1_cinquefoil_muon",
   "audit_only": true,
   "precision_dps": 50,
   "context": {
     "source_audit": "docs/audits/2026-05-25-lepton-tower-structure.md",
     "lean_theorem": "qou:QOU.BraidKnot.LeptonMassTowerCanonical.torus_knot_odd_reduction_exists",
-    "method": "Algebraic closed-form via Hecke recursion P_{m+1} = h²P_m + P_m + hQ_m; Q_{m+1} = hP_m + Q_m"
+    "method": "Algebraic closed-form via Hecke recursion P_{m+1} = h\u00b2P_m + P_m + hQ_m; Q_{m+1} = hP_m + Q_m"
   },
   "constants": {
     "q_0": "1.1099785955541805752806677289528087346650276795181",
@@ -89,7 +89,7 @@
     "xi_4_1_canonical_muon": "756.8989809265565624910909148254402647864699012042"
   },
   "verdict": {
-    "cinquefoil_as_muon_uniform_xi_tower": "REFUTED — ξ_3/ξ_2 ≠ m_τ/m_μ, simple T(2,2m+1) tower does not close lepton mass ratios",
+    "cinquefoil_as_muon_uniform_xi_tower": "REFUTED \u2014 \u03be_3/\u03be_2 \u2260 m_\u03c4/m_\u03bc, simple T(2,2m+1) tower does not close lepton mass ratios",
     "ratio_xi_3_xi_2_match_codata_tau_mu": 12.853560525192634,
     "expected_if_uniform": 16.817037649821756,
     "relative_diff_percent": 23.56822412579383

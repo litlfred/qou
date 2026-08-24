@@ -1172,7 +1172,7 @@
         "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1192,8 +1192,22 @@
         "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 — content/quantum-observable-universe/mass-theory/skein-generation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Polynomial/Basic.olean' of module Mathlib.Data.Polynomial.Basic does not exist",
+        "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 \u2014 content/quantum-observable-universe/mass-theory/skein-generation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Polynomial/Basic.olean' of module Mathlib.Data.Polynomial.Basic does not exist",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'skein_generation.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1731,7 +1745,7 @@
         "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 — content/quantum-observable-universe/mass-theory/skein-generation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Polynomial/Basic.olean' of module Mathlib.Data.Polynomial.Basic does not exist",
+        "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 \u2014 content/quantum-observable-universe/mass-theory/skein-generation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Polynomial/Basic.olean' of module Mathlib.Data.Polynomial.Basic does not exist",
         "severity": "minor"
       },
       {
@@ -2084,6 +2098,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:03.899Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No assert-by-denying constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2103,6 +2132,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:03.943Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "A let-clause, a two-item generator list, and a closing statement; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -2122,6 +2166,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:03.986Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2141,6 +2200,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.028Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Two generators, not three."
       }
     ],
     "trap-closing-aphorism": [
@@ -2160,6 +2234,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.071Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Closes on the terminal-resolution statement, which is the proposition's second clause."
       }
     ],
     "trap-meta-commentary": [
@@ -2179,6 +2268,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.115Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2198,6 +2302,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.158Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No echo."
       }
     ],
     "trap-performed-warmth": [
@@ -2217,6 +2336,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.202Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2236,6 +2370,21 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.246Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "'Every hadron admits a terminal Skein resolution' is the claim itself; termination follows by induction on crossing number and is not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -2255,6 +2404,22 @@
         "reviewed_at": "2026-08-15T10:31:00.886Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:04.289Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Short numbered statement.",
+        "notes": "NOTES: uses[] carries no conj:, so no SS3b issue, and the tuple notation follows AGENTS.md 7 (C, A, tau). The substantive problems are in the PROOF sibling and are recorded there: the Skein relation is written in the HOMFLY form q L_+ - q^{-1} L_- = (q - q^{-1}) L_0 rather than the 7a form L_+ - L_- = (q - q^{-1}) L_0, and the claim that zero-volume knots are 'precisely the torus knots (and the unknot)' omits the graph-manifold class (connected sums such as the granny knot 3_1 # 3_1, and iterated cables), which also have vanishing simplicial volume and are not torus knots since torus knots are prime."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2278,5 +2443,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:53:04.289Z"
 }

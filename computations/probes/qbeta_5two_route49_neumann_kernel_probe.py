@@ -62,6 +62,14 @@ from itertools import product
 
 from mpmath import (arg, fabs, im, log, mp, mpf, nint, nstr, pi, polylog,
                     polyroots, pslq, re)
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 Y_CUBIC = [1, -2, 3, -1]
 EPS = [1, -1, 0]
@@ -96,7 +104,7 @@ def is_rational_multiple_of_pi(v):
 
 
 def main() -> int:
-    mp.dps = 45
+    set_compute_dps()
     gates = []
     Y = roots()
     y1 = Y[0]

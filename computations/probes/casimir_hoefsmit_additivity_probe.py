@@ -65,8 +65,9 @@ from experimental_constants import (  # noqa: E402
 )
 from q_parameter import Q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # Hyperbolic volumes — sourced from the canonical registry
 # (`experimental_constants.py`) per the README convention.  The
@@ -82,7 +83,7 @@ def _hbar_q(q: "mpf") -> "mpf":
 
 
 def _geom_leading(vol: "mpf", q: "mpf") -> "mpf":
-    """Geom_leading = Vol / ℏ_q² (per _li_2_q_util.vol_density_borromean)."""
+    """Geom_leading = Vol / ℏ_q² (per _li_2_q_util.per_knot_density_borromean)."""
     return vol / _hbar_q(q) ** 2
 
 

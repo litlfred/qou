@@ -1,6 +1,6 @@
 ## The six birthday axioms constrain only from above
 
-The appendix's surreal carrier axiomatises a birthday function by six conditions. Attempting to instantiate them at Mathlib's hyperreals exposed what they do and do not say, and the answer is sharper than "they are incomplete".
+The appendix's surreal carrier axiomatises a birthday function by six conditions. Attempting to instantiate them at Mathlib's hyperreals exposed what they do and do not say.
 
 The two-valued function
 
@@ -12,7 +12,7 @@ satisfies **all six**. So the axioms admit a model in which every nonzero elemen
 
 > **No lower bound on birthday is derivable from these axioms.** Any statement $\mathrm{birthday}(x) \ge f(x)$ with $f$ unbounded is refuted by the flat model.
 
-Upper bounds are untouched, which is exactly why the bounds actually proved in the appendix survive — they are all upper bounds, and correspondingly weak. That is the honest reading of what the surreal apparatus currently buys.
+Upper bounds are untouched, which is exactly why the bounds actually proved in the appendix survive — they are all upper bounds, and correspondingly weak.
 
 ## The gap in one pair of statements
 
@@ -34,13 +34,13 @@ Strengthening the carrier itself would touch every user of it, most of which nev
 
 Combined with the inequality above, the mixin pins $\mathrm{birthday}(n)$ exactly. It supplies only the missing half.
 
-## The independence is a theorem, not a remark
+## The independence is a theorem
 
 The flat model fails the mixin at $n = 2$: two is nonzero, so $\mathrm{birthday}_{\flat}(2) = 1 \neq 2$. Since the flat model *does* satisfy all six original axioms, this is a proof that
 
 > the mixin is **not derivable** from them — the six axioms are satisfiable together with the *negation* of the added equation.
 
-An earlier form of this claim asserted that adding the matching $\ge$ "would kill the flat model outright". That assertion is now checked rather than asserted, which is the difference between a design note and a result.
+An earlier form of this claim asserted that adding the matching $\ge$ "would kill the flat model outright". That assertion is now checked rather than asserted.
 
 ## ⚠ What is not claimed
 

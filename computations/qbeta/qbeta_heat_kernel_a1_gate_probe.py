@@ -31,7 +31,8 @@ sys.path.insert(0, str(HERE.parent))  # computations/ — for _path_bridge, q_pa
 import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
 
-mp.mp.dps = 40
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 from q_parameter import Q_MP as Q0_STR  # noqa: E402
 q0 = mp.mpf(str(Q0_STR))

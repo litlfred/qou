@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1604.01247v2
-doc_title: "EXCEPTIONAL QUANTUM GEOMETRY"
+doc_title: "Exceptional quantum geometry and particle physics"
 section_id: sec-002-24-gauge-theoretical-aspect
 section_title: "Gauge theoretical aspect"
 section_number: 2.4
 pages: 9-11
 source_pdf: 1604.01247v2.pdf
 source_sha256: 5a402405aadf5d54
-doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an"
+doc_brief: "Exceptional quantum geometry and particle physics — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3"
 ---
 Up to now, the discussion is over each spacetime point. One knows ho wever
 that the color group SU (3) is the structure group of an SU (3)-gauge theory

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9310164v2
-doc_title: ""
+doc_title: "SPHERICAL CATEGORIES"
 section_id: sec-007-8-john-w-barrett-bruce-w-westbury
 section_title: "JOHN W. BARRETT & BRUCE W. WESTBURY"
 section_number: 8
 pages: 8-10
 source_pdf: 9310164v2.pdf
 source_sha256: e0972e04667ccc47
-doc_brief: "This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative. The motivating examples are categories of representations of Hopf algebras."
+doc_brief: "SPHERICAL CATEGORIES — This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative."
 ---
 The proof of the coherence theorem 1.9 now follows. It is only necessary to con-
 sider reduced iterated natural transformations. A reduced iterated natural transfor-

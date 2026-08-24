@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T12:20:18.211253+00:00",
-  "commitSha": "de28fb6c594bd4045e666d4cf6c91c340cf8e8a9",
+  "computedAt": "2026-08-24T10:51:14.368334+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [
     {
       "name": "a<0 and b<0 (fermionic channel sums)",
@@ -15,8 +15,8 @@
   "durationMs": 0,
   "computation": "branching-qvalue-chain",
   "scriptFile": "branching-qvalue-chain.py",
-  "scriptHash": "ec89188a8f3f",
-  "scriptCommitSha": "c2e96b0af9ac61f7457508f8ef75b0e29c3e60d5",
+  "scriptHash": "7fcef80adc9b",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,26 +26,35 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/branching-qvalue-chain.py"
+    ],
+    "reproduce": "python3 -u computations/branching-qvalue-chain.py"
   },
   "description": "Full chain: γγ → e⁻ → quarks → nucleon → Q-values via S₃ᴬ branching",
-  "timestamp": "2026-06-29T12:20:18.156201+00:00",
-  "git_sha": "a817486be6003da8ffc60b54092ffbd5772274ea",
-  "q0": 1.1099785955573347,
-  "q0_err": 3.1664979061507416e-12,
+  "timestamp": "2026-08-24T10:51:13.510801+00:00",
+  "git_sha": "unknown",
+  "q0": 1.1099785827513808,
+  "q0_err": 9.211630166162856e-13,
   "symbolic": {
     "a": "-q/2 + 1/(2*q)",
     "b": "(3 - 3*q**2)*(q**2 + 1)**2/(4*q**3)",
     "delta": "(3*q**6 + q**4 - q**2 - 3)/(4*q**3)"
   },
   "numeric": {
-    "a": -0.10453016099779683,
-    "a_err": 2.868298880283106e-12,
-    "b": -0.6340338930295155,
-    "b_err": 1.7773924517383418e-11,
-    "delta": 0.5295037320317186,
-    "delta_err": 1.800387544992124e-11
+    "a": -0.10453014939781968,
+    "a_err": 8.344142187178905e-13,
+    "b": -0.634033821148193,
+    "b_err": 5.170596180613379e-12,
+    "delta": 0.5295036717503733,
+    "delta_err": 5.237490997736631e-12
   },
   "results": {
     "n→p": {
@@ -55,14 +64,14 @@
       "regime": "odd",
       "formula": "(SΔ + 1) × m_e",
       "S": 1.0,
-      "S_delta": 0.5295037320317186,
-      "Q_me": 1.5295037320317186,
-      "Q_MeV": 0.7815748021446471,
-      "Q_MeV_err": 2.3704268895440853e-10,
-      "Q_obs_MeV": 0.7823334093100222,
-      "Q_obs_MeV_err": 6.129437351829285e-07,
-      "error_pct": -0.09696724648945598,
-      "sigma": 1237.6455865405637
+      "S_delta": 0.5295036717503733,
+      "Q_me": 1.5295036717503732,
+      "Q_MeV": 0.7815747713409429,
+      "Q_MeV_err": 2.4693681468181645e-10,
+      "Q_obs_MeV": 0.7823334093099085,
+      "Q_obs_MeV_err": 6.664083024692894e-07,
+      "error_pct": -0.09697118388881933,
+      "sigma": 1138.3980572745195
     },
     "³H→³He": {
       "Z": 1,
@@ -70,15 +79,15 @@
       "A": 3,
       "regime": "odd",
       "formula": "|SΔ| × m_e",
-      "S": 0.06627566491643515,
-      "S_delta": 0.035093211916136055,
-      "Q_me": 0.035093211916136055,
-      "Q_MeV": 0.01793259446548733,
-      "Q_MeV_err": 6.763615537932838e-12,
+      "S": 0.0662756500478911,
+      "S_delta": 0.03509320004800114,
+      "Q_me": 0.03509320004800114,
+      "Q_MeV": 0.017932588400882844,
+      "Q_MeV_err": 6.051205370229206e-12,
       "Q_obs_MeV": 0.01861,
       "Q_obs_MeV_err": 1e-05,
-      "error_pct": -3.640008245634995,
-      "sigma": 67.74055345125177
+      "error_pct": -3.640040833515088,
+      "sigma": 67.74115991170338
     },
     "⁶He→⁶Li": {
       "Q_MeV": 3.637,
@@ -88,6 +97,6 @@
       "source": "handover"
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

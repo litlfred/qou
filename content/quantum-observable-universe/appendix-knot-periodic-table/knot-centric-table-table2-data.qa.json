@@ -895,7 +895,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.635Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.676Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.718Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.757Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.799Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.838Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.880Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.921Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.960Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "93ce41336f43",
+          "ts": "2deb005abaa1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.001Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table2-data (legend, 7-row table, closing reading instruction). No constructions from the ten categories - the paired dashes in the closer are a true parenthetical. VERIFIED all fifteen sub-shell capacities against 2j+1 and every row total; cumulative totals reproduce the magic numbers 2, 20, 28, 50, 82 exactly and the element counts of sibling table 1 exactly.",
+        "notes": "NOT A TRAP, reported separately, two small legend/data mismatches. (1) 'each sub-level nl_j carrying its proton capacity 2j+1' is contradicted by three of the fifteen entries: 1d_{5/2} is split as (2) in row 2 and (4) in row 3 (correctly summing to 2j+1 = 6 across rows), and 1h_{9/2} carries (2) where 2j+1 = 10 (truncated because the table stops at U). (2) 'the row total giving the shell capacity that closes at the next magic number' holds for rows 1,3,4,5,6 but not row 2 (total 8 closes at Z=10 = Ne, while its magic number is 8) or row 7 (total 10 closes at Z=92, not at magic 126)."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:16:57.001Z"
 }

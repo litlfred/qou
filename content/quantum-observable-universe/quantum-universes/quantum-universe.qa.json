@@ -1562,6 +1562,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.945Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). L26 '$R$ is a commutative ring, not a field' and L28 'is a genuine hypothesis and not a consequence of $R$-linearity' - both substantive: each names a real strengthening that the definition depends on.",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1581,6 +1598,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.986Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1600,6 +1634,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 181 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.025Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). 1 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -1619,6 +1670,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 181 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.065Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no reflex three-item list; enumerations present are content-determined",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1638,6 +1706,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.103Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). final sentence is \"It is stated here because the rest of the paper uses it silently — for instance in taking the substrate parameter $q \\in \\mathrm{End}(\\mathbf{1})$.\" - a substantive statement, not a placed quotable closer",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -1657,6 +1742,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.142Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). L26 read 'The two clauses coincide only over a field, which is what allowed the weaker reading to pass unnoticed.' - the trailing clause narrates the manuscript's own drafting history inside scholarly prose (an authorNotes-class status remark per AGENTS.md 4d / one-voice Category H).",
+        "notes": "FIX APPLIED: 'The two clauses coincide only over a field, which is what allowed the weaker reading to pass unnoticed.' -> 'The two clauses coincide only over a field.' Follow-up (not applied, touches the .ts): the deleted clause could be migrated to authorNotes with kind 'note' if the drafting history is worth keeping."
       }
     ],
     "trap-thesis-restatement": [
@@ -1676,6 +1778,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.181Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). final sentence is \"It is stated here because the rest of the paper uses it silently — for instance in taking the substrate parameter $q \\in \\mathrm{End}(\\mathbf{1})$.\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1695,6 +1814,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.218Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1714,6 +1850,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.257Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -1733,6 +1886,23 @@
         "reviewed_at": "2026-08-15T10:31:00.197Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9a56d42df7d3",
+          "ts": "e7bef645a48c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.293Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe.md (28 lines, kind=definition, title=\"Quantum Universe\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1756,5 +1926,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-16T13:49:41.958Z"
+  "updated_at": "2026-08-22T06:08:14.293Z"
 }

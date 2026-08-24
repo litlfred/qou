@@ -1545,6 +1545,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.981Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1564,6 +1579,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.021Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "trap-em-dash": [
@@ -1583,6 +1613,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 452 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.062Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "trap-triples": [
@@ -1602,6 +1647,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 452 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.103Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "trap-closing-aphorism": [
@@ -1621,6 +1681,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.142Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "trap-meta-commentary": [
@@ -1640,6 +1715,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.181Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "trap-thesis-restatement": [
@@ -1659,6 +1749,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.222Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "trap-performed-warmth": [
@@ -1678,6 +1783,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.262Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "trap-superlative": [
@@ -1697,6 +1817,23 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.345Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "severity": "minor",
+        "evidence": "Inside a block whose kind is CONJECTURE, the 'Naturality' and 'Relation to confinement' sections assert the conjecture as settled: 'The mass gap IS a topological consequence of the Frobenius-Hopf structure', 'The Skein relation FORCES every non-trivial braid word to carry strictly positive crossing energy', 'Confinement FOLLOWS: all finite-energy excitations are colour singlets'. Same pattern as sec:headline-conjectures-preamble ('We derive the mass gap'), which introduces this block - so the chapter's prose twice states as derived what its manifest kind states as conjectural. The Lean is QOU.Torsion.YangMillsMassGap, a structure with the gap as a field plus class HasYangMillsMassGap, i.e. axiomatised. Recorded minor because the numbered conjecture statement itself is correctly hedged and the displayed bound is written as a bound.",
+        "notes": "PROPOSED (not applied - these are the chapter's epistemic claims): mark the motivating sections as conditional ('IF the bound below is attained, the mass gap is a topological consequence ...'), or move them into a remark that interprets the conjecture, which is what AGENTS.md sec 3b prescribes for material downstream of a conjecture."
       }
     ],
     "trap-nonspeakable": [
@@ -1716,6 +1853,21 @@
         "reviewed_at": "2026-08-15T10:31:01.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3379eaee9ca1",
+          "ts": "8e01bb898bb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:47.302Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (conjecture, ~4.3kB, the chapter's longest block). Verified the zero locus: (1/2)(q - q^-1)(q-1)^2 vanishes exactly at q = 1 and q = -1, since q - q^-1 = 0 iff q^2 = 1 - so 'vanishes precisely on mu_2' is correct, and positivity for all q > 1 follows. The Kummer argument is internally consistent (chi(A) = -6 = -2.3, so the obstruction persists at primes > 3). Nine categories clean; trap-superlative recorded separately."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1739,5 +1891,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:29:47.345Z"
 }

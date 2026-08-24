@@ -891,11 +891,182 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:06.818Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Pure-data table, read in full."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:06.882Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:06.951Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:07.002Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Seven mapping rows."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:07.086Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:07.142Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:07.220Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:07.270Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:07.319Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Forced prefactor' in the column header asserts forcing, but that is the parent proposition's claim and is challenged there."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0558a448a8fe",
+          "ts": "1c5d20702f86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:07.392Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only.",
+        "notes": "Two structural notes. (1) The stratification is not a partition as tabulated: Lambda_2 appears twice, once for lambda_pair ('Lambda_2 contains (n-2,2), (n-2,1,1)') and once for a_K ('Lambda_2 chirality projection'), while the proof sibling's argument turns on 'every lambda enters exactly one stratum'. Either a_K is a projection WITHIN Lambda_2 rather than a stratum assignment, in which case the column is overloaded, or the partition claim needs weakening. Lambda_3 is likewise given as a 'chirality-cell sub-stratum' and Lambda_{>=4} as a 'universal tail', so three of the seven rows are not plain strata. (2) The lambda_shell prefactor is given as 'm_e * 8 G from gravity prefactor'. G is not defined anywhere in this table or its parent, and if it is the gravitational constant then m_e*8G is not an energy, so the row is dimensionally unreadable as written; the cited prop:gravity-spectral-prefactor presumably fixes the normalisation, but a reader of the table cannot tell."
+      }
     ]
   },
   "source_hashes": {
     "md": "0558a448a8fe",
     "ts": "1c5d20702f86"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:47:07.392Z"
 }

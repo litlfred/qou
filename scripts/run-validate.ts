@@ -62,6 +62,35 @@ function platformVersion(): string {
 console.log(`Validating content objects in: ${dir}${strict ? " [strict]" : ""}`);
 console.log(`  platform (folio-assistant): ${platformVersion()}\n`);
 
+/**
+ * The bibliography has to PARSE before anything else is worth reporting.
+ *
+ * `validateObjects` checks content blocks and never imports
+ * `content/schema/references.ts`, so a syntactically broken bibliography —
+ * every `\cite{}` in the paper unresolvable, `references.bib`
+ * un-regenerable — was reported as "✓ Valid". Measured by breaking it on
+ * purpose: `bun` refused the file with `Expected ";"` while this script
+ * printed `Valid — 27 issue(s)` (bean qou-3vgs).
+ *
+ * One dynamic import settles it, because importing is exactly what fails.
+ * Counting the entries as well, since a file that parses to an empty array
+ * would also pass a bare import.
+ */
+try {
+  const bib = await import("../content/schema/references");
+  const n = bib.references?.length ?? 0;
+  if (n === 0) {
+    console.error("  ✗ content/schema/references.ts parsed but holds no entries");
+    process.exit(1);
+  }
+  console.log(`  bibliography: ${n} entries, parses\n`);
+} catch (err) {
+  console.error("  ✗ content/schema/references.ts DOES NOT PARSE — every citation "
+    + "in the paper is unresolvable until this is fixed:");
+  console.error(`    ${err instanceof Error ? err.message : String(err)}`);
+  process.exit(1);
+}
+
 const result = await validateObjects(dir, { strict });
 
 for (const issue of result.issues) {

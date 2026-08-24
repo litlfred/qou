@@ -1359,6 +1359,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.930Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.969Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1429,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 33 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.008Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1464,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 33 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.045Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1499,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.085Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1534,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.125Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1569,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.164Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1604,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.204Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.242Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:00.899Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4a6e5142faae",
+          "ts": "679a3d791a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.287Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro, two sentences); all ten judged. Nothing beyond a scope statement."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:53.287Z"
 }

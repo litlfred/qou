@@ -23,7 +23,177 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.525Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Three-sentence prose intro; 'replaces the phenomenological Bethe-Weizsaecker coefficients with substrate-derived invariants' is a positive replacement claim, not assert-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.571Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.614Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.657Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No three-item list; two coordinated verbs ('trace ... and isolate')."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.709Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Closes on a scope statement about what the section does, not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.758Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "'We now detail' is standard roadmap prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.801Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No block-final restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.844Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.880Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "'the full six-term mass formula' is a count descriptor, not inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:23.919Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "All three sentences are short and read aloud cleanly."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.939118Z"
+  "updated_at": "2026-08-21T16:33:23.919Z"
 }

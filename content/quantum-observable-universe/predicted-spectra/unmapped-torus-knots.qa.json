@@ -1423,6 +1423,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a standalone carrier.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.079Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "Six contrasts ('binds rather than acts as a standalone particle', 'the production vertex ... rather than a weak mediator', 'not T_{3,5}', 'a channel, not a mass', 'a threaded constituent leg, not a standalone carrier', 'They do not factor through a lower generator'). Each names a real distinction the block is arguing for, so all sit in the substantive-contrast class.",
+        "notes": "note: the concentration in one paragraph is worth the author's eye even though no single instance is manufactured."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1442,6 +1459,21 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.117Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~6.7kB, five tables). Verified: T_{2,9} = 9_1 with 9 crossings, T_{3,5} = 10_124 with 10 crossings, both genus 4; the knot-group relations x^2 = y^9 and x^3 = y^5 are the correct torus-knot presentations; 9 = 3x3 is the unique composite longitudinal winding among T_{2,n} in G; torus knots have zero hyperbolic volume; five assigned + two unassigned = seven generators, self-consistent. W = T(2,4) IS corpus-backed (conj:electroweak-higgs-torus-link-triplet, sm-open-problems.md) - I checked before writing, and my first reading that it was unsourced was wrong; the real issue is that the corpus marks it conjectural while this block uses it as a settled premise. Reported, with the T_{3,5} weak-vertex conflict, as anomalies."
       }
     ],
     "trap-em-dash": [
@@ -1461,6 +1493,23 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 713 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.157Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "The 'Production reading' paragraph carries four spaced dashes in nine sentences, two of them doing sentence work rather than parenthesis: '... assignment W = T_{2,4} - the charged weak boson is a genus-zero torus link, not T_{3,5}.' and 'The identification fixes a channel, not a mass - T_{3,5} has zero hyperbolic volume, so ...'. Density is the tell; the paragraph is also the longest in the block at ~180 words with no full stop between clauses that want one.",
+        "notes": "proposed: split at the two load-bearing dashes into full sentences ('... assignment W = T_{2,4}. The charged weak boson is a genus-zero torus link rather than T_{3,5}.'). Structural - the paragraph needs re-punctuating throughout, and it is math-adjacent."
       }
     ],
     "trap-triples": [
@@ -1480,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 713 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.195Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~6.7kB, five tables). Verified: T_{2,9} = 9_1 with 9 crossings, T_{3,5} = 10_124 with 10 crossings, both genus 4; the knot-group relations x^2 = y^9 and x^3 = y^5 are the correct torus-knot presentations; 9 = 3x3 is the unique composite longitudinal winding among T_{2,n} in G; torus knots have zero hyperbolic volume; five assigned + two unassigned = seven generators, self-consistent. W = T(2,4) IS corpus-backed (conj:electroweak-higgs-torus-link-triplet, sm-open-problems.md) - I checked before writing, and my first reading that it was unsourced was wrong; the real issue is that the corpus marks it conjectural while this block uses it as a settled premise. Reported, with the T_{3,5} weak-vertex conflict, as anomalies."
       }
     ],
     "trap-closing-aphorism": [
@@ -1499,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.235Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~6.7kB, five tables). Verified: T_{2,9} = 9_1 with 9 crossings, T_{3,5} = 10_124 with 10 crossings, both genus 4; the knot-group relations x^2 = y^9 and x^3 = y^5 are the correct torus-knot presentations; 9 = 3x3 is the unique composite longitudinal winding among T_{2,n} in G; torus knots have zero hyperbolic volume; five assigned + two unassigned = seven generators, self-consistent. W = T(2,4) IS corpus-backed (conj:electroweak-higgs-torus-link-triplet, sm-open-problems.md) - I checked before writing, and my first reading that it was unsourced was wrong; the real issue is that the corpus marks it conjectural while this block uses it as a settled premise. Reported, with the T_{3,5} weak-vertex conflict, as anomalies."
       }
     ],
     "trap-meta-commentary": [
@@ -1518,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.273Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~6.7kB, five tables). Verified: T_{2,9} = 9_1 with 9 crossings, T_{3,5} = 10_124 with 10 crossings, both genus 4; the knot-group relations x^2 = y^9 and x^3 = y^5 are the correct torus-knot presentations; 9 = 3x3 is the unique composite longitudinal winding among T_{2,n} in G; torus knots have zero hyperbolic volume; five assigned + two unassigned = seven generators, self-consistent. W = T(2,4) IS corpus-backed (conj:electroweak-higgs-torus-link-triplet, sm-open-problems.md) - I checked before writing, and my first reading that it was unsourced was wrong; the real issue is that the corpus marks it conjectural while this block uses it as a settled premise. Reported, with the T_{3,5} weak-vertex conflict, as anomalies."
       }
     ],
     "trap-thesis-restatement": [
@@ -1537,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.312Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~6.7kB, five tables). Verified: T_{2,9} = 9_1 with 9 crossings, T_{3,5} = 10_124 with 10 crossings, both genus 4; the knot-group relations x^2 = y^9 and x^3 = y^5 are the correct torus-knot presentations; 9 = 3x3 is the unique composite longitudinal winding among T_{2,n} in G; torus knots have zero hyperbolic volume; five assigned + two unassigned = seven generators, self-consistent. W = T(2,4) IS corpus-backed (conj:electroweak-higgs-torus-link-triplet, sm-open-problems.md) - I checked before writing, and my first reading that it was unsourced was wrong; the real issue is that the corpus marks it conjectural while this block uses it as a settled premise. Reported, with the T_{3,5} weak-vertex conflict, as anomalies."
       }
     ],
     "trap-performed-warmth": [
@@ -1556,6 +1665,21 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.353Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~6.7kB, five tables). Verified: T_{2,9} = 9_1 with 9 crossings, T_{3,5} = 10_124 with 10 crossings, both genus 4; the knot-group relations x^2 = y^9 and x^3 = y^5 are the correct torus-knot presentations; 9 = 3x3 is the unique composite longitudinal winding among T_{2,n} in G; torus knots have zero hyperbolic volume; five assigned + two unassigned = seven generators, self-consistent. W = T(2,4) IS corpus-backed (conj:electroweak-higgs-torus-link-triplet, sm-open-problems.md) - I checked before writing, and my first reading that it was unsourced was wrong; the real issue is that the corpus marks it conjectural while this block uses it as a settled premise. Reported, with the T_{3,5} weak-vertex conflict, as anomalies."
       }
     ],
     "trap-superlative": [
@@ -1575,6 +1699,21 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.392Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~6.7kB, five tables). Verified: T_{2,9} = 9_1 with 9 crossings, T_{3,5} = 10_124 with 10 crossings, both genus 4; the knot-group relations x^2 = y^9 and x^3 = y^5 are the correct torus-knot presentations; 9 = 3x3 is the unique composite longitudinal winding among T_{2,n} in G; torus knots have zero hyperbolic volume; five assigned + two unassigned = seven generators, self-consistent. W = T(2,4) IS corpus-backed (conj:electroweak-higgs-torus-link-triplet, sm-open-problems.md) - I checked before writing, and my first reading that it was unsourced was wrong; the real issue is that the corpus marks it conjectural while this block uses it as a settled premise. Reported, with the T_{3,5} weak-vertex conflict, as anomalies."
       }
     ],
     "trap-nonspeakable": [
@@ -1594,6 +1733,21 @@
         "reviewed_at": "2026-08-15T10:31:01.269Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5602b0f90506",
+          "ts": "d48252f0a193"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.431Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~6.7kB, five tables). Verified: T_{2,9} = 9_1 with 9 crossings, T_{3,5} = 10_124 with 10 crossings, both genus 4; the knot-group relations x^2 = y^9 and x^3 = y^5 are the correct torus-knot presentations; 9 = 3x3 is the unique composite longitudinal winding among T_{2,n} in G; torus knots have zero hyperbolic volume; five assigned + two unassigned = seven generators, self-consistent. W = T(2,4) IS corpus-backed (conj:electroweak-higgs-torus-link-triplet, sm-open-problems.md) - I checked before writing, and my first reading that it was unsourced was wrong; the real issue is that the corpus marks it conjectural while this block uses it as a settled premise. Reported, with the T_{3,5} weak-vertex conflict, as anomalies."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1616,5 +1770,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:41.431Z"
 }

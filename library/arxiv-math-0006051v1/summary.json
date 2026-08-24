@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0006051v1",
  "source_sha256": "10483e75bd3655ea",
- "brief": "FINITE AND p-ADIC POLYLOGARITHMS AMNON BESSER 1. Introduction The finite logarithm was introduced by Kontsevich (under the name “ The 1 1 logarithm”) in [Kon]. The finite logarithm is the case n = 1 o",
- "extended": "**FINITE AND p-ADIC POLYLOGARITHMS AMNON BESSER 1. Introduction The finite logarithm was introduced by Kontsevich (under the name “ The 1 1 logarithm”) in [Kon]. The finite logarithm is the case n = 1 of the n-th poly-**\n\n8 pp, 8 sections.\n\n**Outline.** 2 AMNON BESSER; 1 Introduction; 2 The proof; 4 AMNON BESSER; 3 Another proof of the main result; 6 AMNON BESSER; 8 AMNON BESSER; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition 2.3: Let α be a root of unity in X. Set ~Lin(α ) = p− n Lin(α ). Then\n- Proposition 3.1: We deﬁne a sequence of functions fk(z, S ) inductively as fol-\n- Corollary 2.2: Let α ∈ X be a root of unity. Then we have Lin(α ) ∈ pnW and\n- Lemma 2.4: In the situation above we have vp(ak) ≥ − vp(k!), where vp is the\n- Lemma 3.2: Suppose z ∈ X and w ∈ W . Then\n- Lemma 3.3: If z, S ∈ X and z ≡ S (mod p) then pk|Dfk(z, S ).",
+ "brief": "Finite and p-adic polylogarithms — 8 sections: AMNON BESSER; Introduction; The proof",
+ "extended": "**Finite and p-adic polylogarithms**\n\n8 pp, 8 sections.\n\n**Outline.** 2 AMNON BESSER; 1 Introduction; 2 The proof; 4 AMNON BESSER; 3 Another proof of the main result; 6 AMNON BESSER; 8 AMNON BESSER; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition 2.3: Let α be a root of unity in X. Set ~Lin(α ) = p− n Lin(α ). Then\n- Proposition 3.1: We deﬁne a sequence of functions fk(z, S ) inductively as fol-\n- Corollary 2.2: Let α ∈ X be a root of unity. Then we have Lin(α ) ∈ pnW and\n- Lemma 2.4: In the situation above we have vp(ak) ≥ − vp(k!), where vp is the\n- Lemma 3.2: Suppose z ∈ X and w ∈ W . Then\n- Lemma 3.3: If z, S ∈ X and z ≡ S (mod p) then pk|Dfk(z, S ).",
  "tokens": {
-  "brief": 50,
-  "extended": 218
+  "brief": 21,
+  "extended": 172
  },
  "sections": [
   {

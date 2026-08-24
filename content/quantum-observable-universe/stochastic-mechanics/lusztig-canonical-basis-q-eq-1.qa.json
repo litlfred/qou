@@ -1830,6 +1830,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.037Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1849,6 +1864,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.075Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "trap-em-dash": [
@@ -1868,6 +1898,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 211 words)"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.113Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "trap-triples": [
@@ -1887,6 +1932,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 211 words)"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.150Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "trap-closing-aphorism": [
@@ -1906,6 +1966,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.187Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "trap-meta-commentary": [
@@ -1925,6 +2000,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.230Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "trap-thesis-restatement": [
@@ -1944,6 +2034,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.273Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "trap-performed-warmth": [
@@ -1963,6 +2068,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.314Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "trap-superlative": [
@@ -1982,6 +2102,22 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.356Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "No superlative language; used as the defect channel.",
+        "notes": "STRUCTURAL FINDINGS (report only). (1) TERMINOLOGY: 'The Kazhdan-Lusztig basis polynomials {P_{y,w}(q)} are the STRUCTURE CONSTANTS of this decategorification.' P_{y,w} are change-of-basis coefficients - C'_w = sum_{y <= w} P_{y,w}(q) T_y expresses the KL basis in the standard basis - not structure constants of the algebra. The downstream claim that they are integers at q = 1 is correct either way. (2) The conjecture has NO formal content anywhere in the tree. The sibling lusztig-canonical-basis-q-eq-1.lean declares 'class LusztigCanonicalBasisQEq1 where holds : Prop', the bare holds:Prop placeholder that AGENTS.md 3b-tax flags as proof-claims-unencoded (inhabited by <True>). Its docstring says the substantive class 'lives at ../lean/QOU/BraidsAndKnots/LusztigCanonicalBasisQEq1.lean (file pending; class structure sketched in the .md \"Lean axiomatisation (sketch)\" section)'. I ran both checks: that path does not exist (ls: No such file or directory), and the .md has no section of that name (grep for 'Lean axiomatisation' returns nothing). So both pointers in the stub's docstring are dead in the present tree. (3) Minor: the stub's -- Ref line points at 'quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.ts'; the only copy of that .ts is under stochastic-mechanics/. (4) Minor notation: 'q = q_0 (substrate approx 1.11)' puts a numerical q outside the introduction and Ch 7, which AGENTS.md's notation rule reserves it to."
       }
     ],
     "trap-nonspeakable": [
@@ -2001,6 +2137,21 @@
         "reviewed_at": "2026-08-15T10:30:59.534Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.394Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2024,5 +2175,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:32:48.394Z"
 }

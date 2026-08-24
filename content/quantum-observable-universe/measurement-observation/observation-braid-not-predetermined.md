@@ -5,4 +5,4 @@ The initial conditions $\mathcal{S}_0$ specify fibre data without horizontal tra
 
 Suppose the flow winds three colour fibres into $\sigma_1\sigma_2$. An observer measuring the first and third strands injects a single inverse crossing $\sigma_1^{-1}$, completing the word to $\sigma_1\sigma_2\sigma_1^{-1}$. No autonomous continuation of $\mathcal{S}_0$ would have produced this finite braid. The observation does not perturb the flow; it appends a crossing the flow could not.
 
-The open map structure of observation implies that the set of reachable sections is larger than the set determined by the initial conditions alone. Observers expand the computable fragment of the universe.
+The open map structure of observation implies that the set of reachable sections is larger than the set determined by the initial conditions alone.

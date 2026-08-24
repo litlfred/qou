@@ -6,4 +6,4 @@ $$
 
 *has at most $\ell(K, q_0) + 1$ nonzero terms, where $\ell(K, q_0)$ is the confinement level at $q_0$.*
 
-This bound drastically reduces computational cost. Canonical evaluation only needs to enumerate degrees $d \le \ell(K, q_0)$, instead of all $p(n)$ partitions. It enables stratified caching and limits combinatorial explosion.
+This bound reduces computational cost. Canonical evaluation only needs to enumerate degrees $d \le \ell(K, q_0)$, instead of all $p(n)$ partitions. It enables stratified caching and limits combinatorial explosion.

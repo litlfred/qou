@@ -1359,6 +1359,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.813Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose section intro); all ten judged. Roadmap register throughout."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.852Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'A further remark refines this picture: the obstruction classes kappa_n vanish identically at q=1 but persist on the full non-torsion locus' is a substantive mathematical contrast, not a rhetorical reframe. NOTE: 'we verify that the q -> 1 degeneration recovers familiar geometry' says 'verify' of an unproved conjecture - reported as ANOMALY 13."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1429,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 118 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.895Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro); all ten judged. Roadmap register throughout."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1464,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 118 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.936Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro); all ten judged. Roadmap register throughout."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1499,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.975Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose section intro); all ten judged. Roadmap register throughout."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1534,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.015Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Sectional signposting ('The section closes with two interpretive remarks') is the block's genre, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1569,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.057Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (prose section intro); all ten judged. Roadmap register throughout."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1604,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.108Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro); all ten judged. Roadmap register throughout."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.155Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro); all ten judged. Roadmap register throughout."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:00.927Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c5e6c82c4701",
+          "ts": "2a3471d1768d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.198Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (prose section intro); all ten judged. Roadmap register throughout."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:45.198Z"
 }

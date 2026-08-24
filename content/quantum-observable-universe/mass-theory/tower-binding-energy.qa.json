@@ -1775,6 +1775,21 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.005Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "No assert-by-denying constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1794,6 +1809,21 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.048Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1813,6 +1843,21 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.089Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1832,6 +1877,23 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.131Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "severity": "minor",
+        "evidence": "\"Each channel contributes independently. The symmetric channel provides the volume baseline. The standard channel encodes adjacent-nucleon correlation. The alternating channel captures parity structure.\" is three parallel one-clause sentences with three different verbs. The count is forced by the mathematics - H_3(q) has exactly three Wedderburn blocks, the partitions (3), (2,1), (1,1,1) - so it passes the substantive-enumeration carve-out, but the uniform parallel construction is the register tell.",
+        "notes": "If the register is revised, merging the three into one sentence with a colon list would keep the content and drop the cadence."
       }
     ],
     "trap-closing-aphorism": [
@@ -1851,6 +1913,21 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.173Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Ends on an empirical claim, not a quotable line (the claim itself is flagged under trap-superlative)."
       }
     ],
     "trap-meta-commentary": [
@@ -1870,6 +1947,21 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.218Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1889,6 +1981,21 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.260Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Opens on the thesis and does not restate it."
       }
     ],
     "trap-performed-warmth": [
@@ -1908,6 +2015,21 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.302Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1927,6 +2049,23 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.343Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "severity": "minor",
+        "evidence": "\"This evaluation relies on zero fitted parameters. The derived values track observed Z=1 to 20 data tightly.\" Both are maximum-strength claims with nothing behind them in the block: the .ts carries no computation and no witness field (only a lean ref at validation \"not_checked\"), \"tightly\" is unquantified, and no table or witness is cited for the Z=1..20 comparison. \"Zero fitted parameters\" is exactly the claim the anti-fit discipline requires evidence for.",
+        "notes": "Reported, not edited (evidence, not wording). Route: cite the producer + witness that computes B(Z,N) over Z=1..20 and replace \"tightly\" with the measured residual, or scope the sentence to what the block can support. Separately, \"analytical continuation\" should read \"analytic continuation\" - a copy-edit outside the trap axes."
       }
     ],
     "trap-nonspeakable": [
@@ -1946,6 +2085,21 @@
         "reviewed_at": "2026-08-15T10:31:00.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.387Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Short declarative sentences; reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1969,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:07:58.387Z"
 }

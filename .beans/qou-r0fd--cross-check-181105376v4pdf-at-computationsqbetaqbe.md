@@ -3,8 +3,9 @@
 title: Cross-check 1811.05376v4.pdf at computations/qbeta/qbeta_c3_borel_pade_resummation_probe.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:24Z
-updated_at: 2026-08-08T23:37:24Z
+updated_at: 2026-08-21T17:05:02Z
 ---
 
 The corpus's Borel-Pade probe locates a singularity at A = Vol(4_1)/pi ~ 0.646; Thm 2 says (in its own class) such singularities are exactly complex-CS actions. Cross-checking the probe's numerically located singularity against the 4_1 complex-CS spectrum is a cross-check to run, not a number to adopt.
@@ -17,3 +18,10 @@ Source: `library/arxiv-1811.05376v4/1811.05376v4.pdf` — no `references.ts` ent
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1811.05376v4/  ->  [andersen-mistegard2020]
+  Resurgence analysis of quantum invariants of Seifert fibered homology spheres
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [andersen-mistegard2020] as the citation key when you do it.

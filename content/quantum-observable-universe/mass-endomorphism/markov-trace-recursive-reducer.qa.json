@@ -2146,6 +2146,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.567Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Several negations, all load-bearing: \"no step below evaluates the Markov parameter\"; \"They are *not* nucleon mass inputs: these braid words are not the canonical nucleon words, so the values must not be used for mass predictions\"; \"The remainder ... need not lie in H_{n-1}\". Each prevents a real misreading and is stated directly rather than narrated.",
+        "notes": "No change. The mass-input disclaimer in particular is exactly the load-bearing-disambiguation class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2165,6 +2181,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.609Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No setup-then-reframe. The \"This is worth stating explicitly because ...\" sentence explains a past defect being corrected, which is content.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -2184,6 +2216,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 580 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.649Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Three em-dashes, all structural rather than prose punctuation: the section header \"## Proof - the algorithm\"; \"the closed forms the Markov axioms force - tr_M(sigma_i) = z, ...\" introducing a displayed list; and \"frame-general\" style usage in the parametric-z paragraph. None is substituting for a comma-vs-full-stop decision.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -2203,6 +2251,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 580 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.691Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "The axiom list has four bullets, the correctness argument three cases, the table three rows; counts follow content, not a reflex.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -2222,6 +2286,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.733Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Ends on the References list.",
+        "notes": "Noted, not a trap: the hand-written \"## References\" section duplicates cites: [jones1987, kassel1995, wenzl1988] from the .ts - the third instance of this in the batch."
       }
     ],
     "trap-meta-commentary": [
@@ -2241,6 +2321,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.776Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"This is worth stating explicitly because the statement previously fixed z to 1/(q^{1/2}+q^{-1/2}) inside a claim that never used it\" narrates an editorial history, which is borderline, but it is doing real work: it records WHY the parametric-z framing exists and prevents the convention being re-fixed. Judged content, not emphasis narration.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -2260,6 +2356,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.819Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Each section closes on new content; the final paragraph adds the nine-check inventory.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -2279,6 +2391,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.862Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -2298,6 +2426,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.906Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No inflation, and the block is unusually disciplined about scope (\"These are the substantive checks ... whereas the two table entries above have no independent reference to be checked against\"). FULLY VERIFIED, so a later pass need not re-check any of it. I re-derived both table entries from scratch in sympy via the Hecke-power recurrence at q_0 = 1.1099785827513808 under z = q^3/(q^2+1): proton sigma_1^7 sigma_2^4 -> 1.88431946725 (printed 1.884319...) and neutron sigma_1^6 sigma_2^4 sigma_1^{-1} -> 1.46403413634 (printed 1.464034...), using sigma^{-1} = sigma - h for the neutron. Both match, and both are the convention-D values - under convention C the same words give 1.63315 and 1.24825, so this block's numbers genuinely track the convention it declares. The cited witness is real and non-vacuous: computations/markov/markov-trace-recursive.witness.json carries 9 assertions, all passed, with closed_form::sigma_1 = 0.6126880371464652 = z_D exactly; \"All nine agree\" is the right count.",
+        "notes": "No change. IMPORTANT CROSS-BLOCK FINDING this block establishes: its 1.884319 for sigma_1^7 sigma_2^4 contradicts the 1.63315 printed for the SAME word in the sibling markov-trace-axiomatic-closed-form.md, which also declares convention D. This block is the one that is right for D; the sibling is carrying convention-C numbers under a D label. The .ts of THIS block already diagnoses that exact mechanism in a comment (\"A block citing a witness that disowns itself is how the convention-C values reached this proposition's table\"), so the fix has been applied here and not to the sibling."
       }
     ],
     "trap-nonspeakable": [
@@ -2317,6 +2461,22 @@
         "reviewed_at": "2026-08-15T10:31:01.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c9742e22c96e",
+          "ts": "63118da6e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:20.947Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "The prose around the algorithm is plain; the pseudocode block is code, not prose.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2340,5 +2500,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:31:20.947Z"
 }

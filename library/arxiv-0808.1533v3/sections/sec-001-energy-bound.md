@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0808.1533v3
-doc_title: "The third order helicity of magnetic ﬁelds via link maps. R. Komendarczyk ∗†"
+doc_title: "On the third order helicity of magnetic fields on invariant domains in S³"
 section_id: sec-001-energy-bound
 section_title: "Energy bound."
 section_number: null
 pages: 21-25
 source_pdf: 0808.1533v3.pdf
 source_sha256: 3e003cc35a4e5711
-doc_brief: "The third order helicity of magnetic fields via link maps. R. Komendarczyk ∗† — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us"
+doc_brief: "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a"
 ---
 In this section we indicate how the quantity H123(B; T ) invariant under frozen-in-ﬁeld de-
 formations provides a lower bound for the L2-energy E2(B) of a volume preserving ﬁeld B

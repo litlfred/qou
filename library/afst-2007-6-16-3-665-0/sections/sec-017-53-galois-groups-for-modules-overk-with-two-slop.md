@@ -1,6 +1,6 @@
 ---
 doc_id: afst-2007-6-16-3-665-0
-doc_title: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques"
+doc_title: "Galois theory of q-difference equations"
 section_id: sec-017-53-galois-groups-for-modules-overk-with-two-slop
 section_title: "Galois groups for modules overK with two slopes"
 section_number: 5.3

@@ -1,0 +1,74 @@
+{
+  "compute": "per_knot_density_borromean_q_locality_probe",
+  "description": "q-locality discipline test applied to canonical `per_knot_density_borromean(q)` near q_0. Tests whether the linking weight inside PerKnotDensity has the same local q-derivative as the CODATA-implied target.",
+  "historical_baselines": {
+    "bare_replace_5_2_minus_G_h2": "-1.7e7 ppm/q (PR #951)",
+    "faddeev_x_bring_1_over_1_minus_hq_q010": "-1.5e7 ppm/q",
+    "family_a_canonical_5_2_plus_3h2_over_4": "-1.69e7 ppm/q (PR #951)",
+    "strategy_g_5_2_minus_hbar2_borr_trace": "-1.69e7 ppm/q (PR #916)",
+    "upstream_q_locality_tolerance": "\u2264 1e5 ppm/q",
+    "v_7_strategy_h": "-1.86e7 ppm/q (PR #916)",
+    "yekutieli_purged_5_2_plus_3_4_minus_G_h2": "-1.69e7 ppm/q (PR #951)"
+  },
+  "parameters": {
+    "M_E_MEV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
+    "M_P_CODATA_MEV": "938.2720894299999999999999999999999999999999999999994592249096324098442",
+    "Q_0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 50,
+    "precision": "mpfr",
+    "sweep_deltas": [
+      "0.00100000000000000000000000000000000000000000000000000000000000",
+      "0.0100000000000000000000000000000000000000000000000000000000000",
+      "0.0500000000000000000000000000000000000000000000000000000000000"
+    ],
+    "tolerance_ppm_per_q": "100000.000000000000000000000000000000000000000000000000000000"
+  },
+  "results": {
+    "gap_at_q0": "0.0728273846956011314266916870862265996419345877575087735004395",
+    "gap_ppm_at_q0": "29605.2023176693883956939211790043039846881037097488014919963",
+    "lambda_p_codata_at_q0": "2.45995227170379036062482281467181463268422588277763288868170",
+    "linking_weight_at_q0": "2.53277965639939149205151450175804123232616047053514166218214",
+    "m_p_codata_MeV": "938.272089429999999999999999999999999999999999999999459224910",
+    "m_p_pred_MeV": "966.049824466597535657977931039374097346676181794609985451487",
+    "per_knot_density_at_q0": "1890.51234481429759833383725776545409631176904637375140296420",
+    "relative_error": "0.0296052023176693883956939211790043039846881037097488014919963",
+    "relative_error_pct": "2.96052023176693883956939211790043039846881037097488014919963",
+    "slopes_by_delta": [
+      {
+        "abs_slope_ppm_per_q": "15688021.9130624367681434492555865599769383500975258702691811",
+        "delta": "0.00100000000000000000000000000000000000000000000000000000000000",
+        "pass_q_locality": false,
+        "slope_ppm_per_q": "-15688021.9130624367681434492555865599769383500975258702691811"
+      },
+      {
+        "abs_slope_ppm_per_q": "15677742.2294641630906552427437019363643890270508713744416777",
+        "delta": "0.0100000000000000000000000000000000000000000000000000000000000",
+        "pass_q_locality": false,
+        "slope_ppm_per_q": "-15677742.2294641630906552427437019363643890270508713744416777"
+      },
+      {
+        "abs_slope_ppm_per_q": "15427458.9550345568779268623193175546530564871046538053872594",
+        "delta": "0.0500000000000000000000000000000000000000000000000000000000000",
+        "pass_q_locality": false,
+        "slope_ppm_per_q": "-15427458.9550345568779268623193175546530564871046538053872594"
+      }
+    ]
+  },
+  "scriptCommitSha": "cb29ea3319f6b0c51b5ca5ed3221c9c98ed57a21",
+  "status": "exploratory",
+  "tags": [
+    "q-locality",
+    "per-knot-density-refinement",
+    "smooth-crossing",
+    "family-a-gap",
+    "borromean"
+  ],
+  "verdict": {
+    "all_deltas_pass": false,
+    "interpretation": "FAIL \u2014 PerKnotDensity's linking weight does NOT track \u03bb_p_codata locally; slope dominated by \u210f_q\u00b2 prefactor as in all prior bare-polynomial probes. Production Family A linking weight (5/2 + 3h\u00b2/4) is not structurally q-local with respect to the CODATA target near q_0. Closure requires refinement of PerKnotDensity at higher h\u00b2 orders (S_4\u2193S_3 bijection + S_5\u2194SO(3) fiber action \u2014 see docs/audits/2026-05-24-family-a-gap-audit.md).",
+    "max_abs_slope_ppm_per_q": "15688021.9130624367681434492555865599769383500975258702691811"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.Q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

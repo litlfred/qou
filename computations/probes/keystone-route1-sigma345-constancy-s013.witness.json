@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T00:36:14.327165+00:00",
-  "commitSha": "50a85d7703245c3595defb45f0ae9e0cfba26a89",
+  "computedAt": "2026-08-24T14:24:25.159340+00:00",
+  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "assertions": [
     {
       "name": "route1_sigma345_refuted_and_constancy_exclusion_established",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "keystone-route1-sigma345-constancy-s013",
   "scriptFile": "keystone_route1_sigma345_constancy_s013.py",
-  "scriptHash": "5f2e311fd113",
-  "scriptCommitSha": "50a85d7703245c3595defb45f0ae9e0cfba26a89",
+  "scriptHash": "89ce79e0247f",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_route1_sigma345_constancy_s013.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_route1_sigma345_constancy_s013.py"
   },
   "description": "s013 route 1 (owner redirect): larger-D Seifert executed on the count-matching Sigma(3,4,5) (D=6, gamma=4 flat connections = 4 bwS0 classes) and closed as a class. Transcription from library/arxiv-math-ph-0405028v2/0405028v2.pdf machine-validated: chi^(111)_120 = printed table; Sum n*chi selection (0 for the two non-flat, 4P for the 4 flat); CS phases from (P/2)(1+Sum l/p)^2 mod 2 = printed (119/240,-49/240,-1/60,11/60) and reproduce Sigma(2,3,5)'s -1/120,-49/120; phi(3,4,5)=49/60 from Dedekind sums; Theorem 9 EXACT to ~1e-30 at N=3,5,7; S(6x6)^2=1; flat vacuum-row entries = printed Cor-11 weights (1/sqrt5)(sin pi/5, sin 2pi/5, sqrt2 sin 2pi/5, sqrt2 sin pi/5); Prop 8 assembled mechanically with decreasing residuals. VALUE SCREEN: flat-row ratios (1, sqrt2, phi, sqrt2*phi) ~ (1,1.414,1.618,2.288) vs d_q (1,4.110,5.220,6.220) and classical (1,4,5,6): REFUTED — the gamma=4 count match does not extend to values; flat channel functions at 1/q0 likewise refuted. CONSTANCY EXCLUSION (scope (b), invariant cited): every fixed Seifert/plumbed S-matrix entry is a constant algebraic number (no q in eq. 3.8) while d_q(4,1)/d_q(5)=[4]_q is nonconstant in q (numerically witnessed at two anchors; trivially provable) — no constant geometric vacuum row can realize the fibre-level BWVacuumRowIsHecke; single-anchor matches are the fitted-coincidence mode the discipline rejects. Route 1 CLOSED; route 2 (colored Zhat/F_K blocks, q-functions) is the surviving type-correct carrier class. No fit; nothing wired.",
   "data": {
@@ -38,7 +48,7 @@
       5
     ],
     "P": 60,
-    "q0": 1.1099785955541805,
+    "q0": 1.1099785827513808,
     "chi111_matches_printed_table": true,
     "all_weights_pm1": true,
     "sum_n_chi": {
@@ -62,9 +72,9 @@
     "phi_345": 0.8166666666666667,
     "phi_equals_49_over_60": true,
     "theorem9_residuals": {
-      "3": 3.997037108977472e-39,
-      "5": 7.184513670356711e-39,
-      "7": 1.1443428382080048e-38
+      "3": 4.697454041699623e-69,
+      "5": 3.560770856777155e-69,
+      "7": 1.0287255419320615e-68
     },
     "theorem9_exact": true,
     "S_squared_is_identity": true,
@@ -91,9 +101,9 @@
     ],
     "dq_ratios_sorted": [
       1.0,
-      4.109682435637709,
-      5.220441324664574,
-      6.220441324664574
+      4.109682411207941,
+      5.220441275326898,
+      6.220441275326898
     ],
     "classical_ratios": [
       1.0,
@@ -104,19 +114,19 @@
     "value_screen_refuted": true,
     "classical_screen_refuted": true,
     "flat_channels_at_inv_q0": {
-      "(1, 1, 3)": -2.4314300595989358,
-      "(1, 1, 4)": -2.342013404709526,
-      "(1, 2, 1)": -2.3161581844478984,
-      "(1, 2, 2)": -2.506085411285196
+      "(1, 1, 3)": -2.431430087430047,
+      "(1, 1, 4)": -2.342013410154226,
+      "(1, 2, 1)": -2.3161582184901226,
+      "(1, 2, 2)": -2.506085466981786
     },
     "channel_ratios_sorted": [
       1.0,
-      1.0111629768792285,
-      1.049768567589659,
-      1.0820009739026397
+      1.0111629643681932,
+      1.0497685641765306,
+      1.0820009820466732
     ],
     "channel_screen_refuted": true,
-    "dq41_at_q0": 4.109682435637709,
+    "dq41_at_q0": 4.109682411207941,
     "dq41_at_1p05": 4.023843550912429,
     "dq_ratios_nonconstant_in_q": true
   }

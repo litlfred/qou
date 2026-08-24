@@ -51,8 +51,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 ORD = 240          # series order in x = q^{1/2}  (⇒ q-order 120)
 ORD_SUB = 1700     # deep order for the substrate evaluation (q ≈ 0.9)

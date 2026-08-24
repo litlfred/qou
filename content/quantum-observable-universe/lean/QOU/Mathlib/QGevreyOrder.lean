@@ -179,11 +179,13 @@ theorem prod_adds {q s t : ℝ} {a b : ℕ → K}
     the exact dominant-balance inequality
     `s k² + t j² ≤ E(s,t)·(k+j)²` (`k,j ≥ 0`) — the mathematical heart, an
     identity-plus-sign completing-the-square argument in each regime.  The
-    remaining `ε`-`δ` assembly into the order LIMIT (upper bound), and the
-    matching lower bound (which additionally needs a non-cancellation
-    hypothesis on the leading coefficients), are the residual cited `sorry` in
-    `cauchyMul_order`.  It is stated with the CORRECT `cauchyEnvelope` law and is
-    NOT vacuous. -/
+    `ε`-`δ` assembly into the order LIMIT (upper bound) and the matching lower
+    bound are now both **proved sorry-free**: the positive-coefficient case in
+    `cauchyMul_order_of_pos` (interior saddle included), and the general
+    normed-field case in `cauchyMul_order`, which reduces to it by a
+    factor-`(n+1)` squeeze under a non-cancellation hypothesis plus everywhere-
+    nonzero factors.  `NoCancellation` alone is insufficient — see
+    `cauchyMul_order_noCancellation_insufficient`. -/
 
 /-- The Cauchy (convolution) product of two coefficient sequences. -/
 def cauchyMul (a b : ℕ → K) : ℕ → K :=
@@ -437,39 +439,30 @@ theorem not_noCancellation_of_cauchyMul_eventually_zero {a b : ℕ → K}
   rw [hzn, norm_zero] at this
   exact absurd this (not_le.mpr (mul_pos hc hpos))
 
-/-- **[MI-2, analytic — residual cited `sorry`] Convolution order = envelope,
-    given non-cancellation.**  Under the Cauchy product the q-Gevrey order is the
-    dominant-balance ENVELOPE `cauchyEnvelope s t` (`= max s t` when not both
-    `≤ 0`; `= s·t/(s+t)` when both `≤ 0`), NOT the additive `s + t` of the MI-1
-    stub.
+/-! **[MI-2] The general convolution order law `cauchyMul_order` moved below.**
+    The general (normed-field) statement is stated-and-proved **sorry-free** as
+    `cauchyMul_order`, after `cauchyMul_order_of_pos` — because its proof
+    *reduces to* the positive case (a factor-`(n+1)` squeeze of `‖a⋆b‖` between
+    `(c/(n+1))·(‖a‖⋆‖b‖)` and `‖a‖⋆‖b‖`), so it must follow it in the file.
 
-    **`hnc` is load-bearing and was added 2026-08-08 to repair a FALSE
-    statement.**  This theorem previously carried no such hypothesis, and in that
-    form it is refuted by `a n = q^{n²}` together with its formal inverse: both
-    have the same positive order, yet `a ⋆ b` is the unit sequence, of order `0`.
-    The refutation is normalization-robust — whatever positive order the
-    convention assigns `a`, it assigns the same to `b`, and `cauchyEnvelope` is
-    positive on `s, t > 0` — so no rescaling of the definition rescues it.
-    Witness: `computations/qbeta/cauchymul_order_cancellation_witness.py`;
-    the failure of `hnc` on that pair is
-    `not_noCancellation_of_cauchyMul_eventually_zero`.
+    Two hypotheses are load-bearing there, and **`NoCancellation` alone is NOT
+    sufficient** — the `2026-08-08` repair added `hnc` but that did not close the
+    gap: the degenerate `b ≡ 0` witness satisfies `NoCancellation` *vacuously*
+    (`a ⋆ b = 0`) while breaking the conclusion, so the everywhere-nonzero
+    hypotheses `∀ n, a n ≠ 0` / `∀ n, b n ≠ 0` are also required. That
+    insufficiency is machine-proved as
+    `cauchyMul_order_noCancellation_insufficient` (final section), and the `≤`
+    half remains unconditional (`cauchyMul_bound`).
 
-    What remains deferred is analytic, not a question of what is true.  The `≤`
-    direction is unconditional and now proved sorry-free, in bound form, as
-    `cauchyMul_bound` above; `envelope_shift_le` is the algebraic step that
-    carries a bound back to the limit form.  The residual is the `≥` half: pick
-    `k ≈ θ*·n` attaining the envelope, then apply `hnc` to transfer that single
-    summand's growth to the convolution. -/
-theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
-    (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b)
-    (hq : 1 < q) (hnc : NoCancellation a b) :
-    IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
-  -- Ref: [ramis-sauloy-zhang2013] Newton-polygon / dominant-balance slopes of
-  --      q-difference systems.  Upper: cauchyMul_order_le (sorry-free).
-  --      Lower: hnc applied at k ≈ θ*·n, where θ* attains the envelope.
-  -- SORRY: needs the ≥ half — attainment of the sup at a near-optimal index,
-  --        then hnc to transfer that summand's growth to the convolution.
-  sorry
+    A sibling agent independently identified the same second defect on `main`
+    (2026-08-21) and added *existential* non-vanishing hypotheses
+    (`∃ n, a n ≠ 0`) while keeping the `sorry`; this branch supersedes that with
+    the *everywhere*-nonzero hypotheses (`∀ n, a n ≠ 0`) and a completed
+    sorry-free proof (the `∀` form is what the reduction to
+    `cauchyMul_order_of_pos` needs — the norm sequences must be strictly positive
+    at every index). The endpoint `≥`-brick below
+    (`cauchyMul_leadingCoeff_ge_endpoint`) predates the full proof and is kept as
+    a standalone `θ*=1` lemma. -/
 
 /-- **[MI-2, sorry-free] Endpoint `≥`-brick for the convolution order law.**
     The lower (`≥`) half of `cauchyMul_order`, discharged unconditionally at the
@@ -1464,6 +1457,131 @@ theorem cauchyMul_order_of_pos {q s t : ℝ} {a b : ℕ → ℝ}
 
 end Positive
 
+/-- **[MI-2, PROVED — the general convolution order law, sorry-free] Convolution
+    order = envelope, for everywhere-nonzero factors with non-cancellation.**
+    Over any normed field `K`, under the Cauchy product the q-Gevrey order is the
+    dominant-balance ENVELOPE `cauchyEnvelope s t` (`= max s t` when not both
+    `≤ 0`; `= s·t/(s+t)` when both `≤ 0`), NOT the additive `s + t` of the MI-1
+    stub.
+
+    **Both hypotheses are load-bearing, and `NoCancellation` alone is NOT
+    sufficient.** The theorem needs:
+
+    * `hnc : NoCancellation a b` — else the `q^{n²}` / formal-inverse pair (equal
+      positive orders, unit-sequence product of order `0`) refutes the `≥` half
+      (`not_noCancellation_of_cauchyMul_eventually_zero`);
+    * `ha0`/`hb0`, the factors are **everywhere nonzero** — else the degenerate
+      `b ≡ 0` witness satisfies `NoCancellation` *vacuously* (`a ⋆ b = 0`, so
+      `c·‖a_k‖·‖b_{n-k}‖ = 0 ≤ 0`) yet breaks the conclusion (order `0 ≠ max s 0`),
+      as `cauchyMul_order_noCancellation_insufficient` proves. `NoCancellation`
+      controls the product's norm against its summands; it says nothing when a
+      *factor* vanishes.
+
+    **Proof — reduction to the positive case, no separate saddle argument.** With
+    the factors nonzero the norm sequences `A = ‖a‖`, `B = ‖b‖` are strictly
+    positive, so `cauchyMul_order_of_pos` gives `A ⋆ B` order `cauchyEnvelope s t`
+    (that lemma already carries the interior-saddle `θ* = t/(s+t)` construction).
+    The genuine product's norm is sandwiched
+    `(c/(n+1))·(A ⋆ B)_n ≤ ‖(a⋆b)_n‖ ≤ (A ⋆ B)_n` — upper by the triangle bound
+    `cauchyMul_norm_le_sum`, lower by summing `hnc` over the `n+1` indices — and
+    the `n+1` factor contributes `O(log n)` to the exponent, washed out by the
+    `n²` denominator. Sorry-free; axioms `[propext, Classical.choice, Quot.sound]`. -/
+theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
+    (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b)
+    (hq : 1 < q) (hnc : NoCancellation a b)
+    (ha0 : ∀ n, a n ≠ 0) (hb0 : ∀ n, b n ≠ 0) :
+    IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
+  set A : ℕ → ℝ := fun n => ‖a n‖ with hAdef
+  set B : ℕ → ℝ := fun n => ‖b n‖ with hBdef
+  have hA0 : ∀ n, 0 < A n := fun n => norm_pos_iff.mpr (ha0 n)
+  have hB0 : ∀ n, 0 < B n := fun n => norm_pos_iff.mpr (hb0 n)
+  have hlogq : 0 < Real.log q := Real.log_pos hq
+  -- the norm sequences carry the same orders (definitionally)
+  have haA : IsQGevreyOrder q s A := by rw [isQGevreyOrder_pos hA0]; exact ha
+  have hbB : IsQGevreyOrder q t B := by rw [isQGevreyOrder_pos hB0]; exact hb
+  -- positive-case law applied to the norm sequences (includes the interior saddle)
+  have hP : IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul A B) :=
+    cauchyMul_order_of_pos haA hbB hq hA0 hB0
+  have hPpos : ∀ n, 0 < cauchyMul A B n := fun n => cauchyMul_pos hA0 hB0 n
+  have hPR : Tendsto (fun n : ℕ => 2 * logb q (cauchyMul A B n) / (n : ℝ) ^ 2)
+      atTop (𝓝 (cauchyEnvelope s t)) := (isQGevreyOrder_pos hPpos).mp hP
+  -- upper: ‖a⋆b‖ ≤ A⋆B  (triangle bound; the two sums coincide)
+  have hUpper : ∀ n, ‖cauchyMul a b n‖ ≤ cauchyMul A B n := by
+    intro n
+    have h := cauchyMul_norm_le_sum a b n
+    simpa [cauchyMul, hAdef, hBdef] using h
+  -- lower: c·(A⋆B) ≤ (n+1)·‖a⋆b‖  (sum hnc over the n+1 indices)
+  obtain ⟨c, hc, hbound⟩ := hnc
+  have hLower : ∀ᶠ n : ℕ in atTop,
+      c * cauchyMul A B n ≤ ((n : ℝ) + 1) * ‖cauchyMul a b n‖ := by
+    filter_upwards [hbound] with n hn
+    have hsum : ∑ k ∈ Finset.range (n + 1), c * (‖a k‖ * ‖b (n - k)‖)
+        ≤ ∑ _k ∈ Finset.range (n + 1), ‖cauchyMul a b n‖ :=
+      Finset.sum_le_sum (fun k hk => hn k hk)
+    rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul, ← Finset.mul_sum] at hsum
+    have hAB : ∑ k ∈ Finset.range (n + 1), (‖a k‖ * ‖b (n - k)‖) = cauchyMul A B n := by
+      simp [cauchyMul, hAdef, hBdef]
+    rw [hAB] at hsum
+    push_cast at hsum ⊢
+    linarith [hsum]
+  -- eventual positivity of the genuine convolution norm (from the lower bound)
+  have hMpos : ∀ᶠ n : ℕ in atTop, 0 < ‖cauchyMul a b n‖ := by
+    filter_upwards [hLower] with n hn
+    have hcp : 0 < c * cauchyMul A B n := mul_pos hc (hPpos n)
+    have hn1' : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+    nlinarith [hn, hcp, hn1']
+  -- the `n+1` factor is `O(log n)` in the exponent: 2·log_q(n+1)/n² → 0
+  have hlogn : Tendsto (fun n : ℕ => 2 * logb q ((n : ℝ) + 1) / (n : ℝ) ^ 2)
+      atTop (𝓝 0) := by
+    have hmaj : Tendsto (fun n : ℕ => (2 / Real.log q) * (1 / (n : ℝ))) atTop (𝓝 0) := by
+      simpa using (tendsto_one_div_atTop_nhds_zero_nat).const_mul (2 / Real.log q)
+    refine tendsto_of_tendsto_of_tendsto_of_le_of_le' tendsto_const_nhds hmaj ?_ ?_
+    · filter_upwards [eventually_ge_atTop 1] with n hn
+      have hn1 : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+      have hln : 0 ≤ Real.log ((n : ℝ) + 1) := Real.log_nonneg (by linarith)
+      have hlb : (0 : ℝ) ≤ logb q ((n : ℝ) + 1) := div_nonneg hln hlogq.le
+      positivity
+    · filter_upwards [eventually_ge_atTop 1] with n hn
+      have hn1 : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+      have hnpos : (0 : ℝ) < (n : ℝ) := by linarith
+      have hn2pos : (0 : ℝ) < (n : ℝ) ^ 2 := pow_pos hnpos 2
+      have hDpos : (0 : ℝ) < Real.log q * (n : ℝ) ^ 2 := mul_pos hlogq hn2pos
+      have hlog_le : Real.log ((n : ℝ) + 1) ≤ (n : ℝ) := by
+        have := Real.log_le_sub_one_of_pos (show (0 : ℝ) < (n : ℝ) + 1 by linarith)
+        linarith
+      have e1 : 2 * logb q ((n : ℝ) + 1) / (n : ℝ) ^ 2
+          = 2 * Real.log ((n : ℝ) + 1) / (Real.log q * (n : ℝ) ^ 2) := by
+        unfold logb; field_simp
+      have e2 : 2 / Real.log q * (1 / (n : ℝ))
+          = 2 * (n : ℝ) / (Real.log q * (n : ℝ) ^ 2) := by
+        field_simp
+      rw [e1, e2, div_le_iff₀ hDpos, div_mul_cancel₀ _ (ne_of_gt hDpos)]
+      linarith [hlog_le]
+  -- squeeze the log-coefficient of `‖a⋆b‖` between two sequences → envelope
+  rw [IsQGevreyOrder]
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le'
+    (g := fun n : ℕ => 2 * logb q c / (n : ℝ) ^ 2
+            + 2 * logb q (cauchyMul A B n) / (n : ℝ) ^ 2
+            - 2 * logb q ((n : ℝ) + 1) / (n : ℝ) ^ 2)
+    ?_ hPR ?_ ?_
+  · -- lower majorant → 0 + envelope − 0 = envelope
+    simpa using (((tendsto_logb_const (q := q) c).add hPR).sub hlogn)
+  · -- lower ≤ actual
+    filter_upwards [hLower, hMpos] with n hn hMn
+    have hcp : 0 < c * cauchyMul A B n := mul_pos hc (hPpos n)
+    have hn1pos : (0 : ℝ) < (n : ℝ) + 1 := by positivity
+    have hmono : logb q (c * cauchyMul A B n)
+        ≤ logb q (((n : ℝ) + 1) * ‖cauchyMul a b n‖) := logb_le_logb hq hcp hn
+    rw [logb_mul' (ne_of_gt hc) (ne_of_gt (hPpos n)),
+        logb_mul' (ne_of_gt hn1pos) (ne_of_gt hMn)] at hmono
+    rw [← add_div, ← sub_div]
+    gcongr
+    linarith [hmono]
+  · -- actual ≤ upper
+    filter_upwards [hMpos] with n hMn
+    gcongr
+    exact logb_le_logb hq hMn (hUpper n)
+
 /-! ### The unhypothesised law, refuted inside Lean
 
 `not_noCancellation_of_cauchyMul_eventually_zero` above shows `NoCancellation`
@@ -1516,6 +1634,55 @@ theorem cauchyMul_order_unhypothesised_false :
       = fun _ : ℕ => (0 : ℝ) := by
     funext n; simp [cauchyMul]
   have hc := h 2 2 0 _ _ ha hb one_lt_two
+  rw [hE, hprod] at hc
+  have : (2 : ℝ) = 0 := order_unique hc (isQGevreyOrder_zero (K := ℝ) 2)
+  norm_num at this
+
+/-- **`NoCancellation` alone does NOT rescue the convolution law** (machine-proved,
+no `sorry`, no external witness).  Adding `hnc : NoCancellation a b` to the
+hypothesis-free `cauchyMul_order_unhypothesised_false` does **not** make the law
+true — the same `b ≡ 0` witness satisfies `NoCancellation` *vacuously*.  Over `ℝ`
+with `q = 2`: `a n = 2^{n²}` (order `2`), `b ≡ 0` (order `0`); then `a ⋆ b = 0`, so
+`c·‖a_k‖·‖b_{n-k}‖ = c·‖a_k‖·0 = 0 ≤ 0 = ‖(a⋆b)_n‖` — `NoCancellation` holds — yet
+`a ⋆ b = 0` has order `0` while `cauchyEnvelope 2 0 = max 2 0 = 2`.  `order_unique`
+gives `0 = 2`.
+
+This is why the fixed `cauchyMul_order` carries the **everywhere-nonzero**
+hypotheses `∀ n, a n ≠ 0` / `∀ n, b n ≠ 0` in addition to `hnc`: non-cancellation
+bounds the *product's* norm below by its summands, but is vacuous when a *factor*
+vanishes, so it cannot by itself force the `≥` half.  Axioms
+`[propext, Classical.choice, Quot.sound]`. -/
+theorem cauchyMul_order_noCancellation_insufficient :
+    ¬ ∀ (q s t : ℝ) (a b : ℕ → ℝ),
+        IsQGevreyOrder q s a → IsQGevreyOrder q t b → 1 < q → NoCancellation a b →
+        IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
+  intro h
+  have ha : IsQGevreyOrder (2 : ℝ) 2 (fun n : ℕ => (2 : ℝ) ^ (n ^ 2)) := by
+    unfold IsQGevreyOrder
+    refine Tendsto.congr' ?_ (tendsto_const_nhds (x := (2 : ℝ)))
+    filter_upwards [eventually_ge_atTop 1] with n hn
+    have hn0 : ((n : ℝ)) ^ 2 ≠ 0 := by
+      have : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+      positivity
+    show (2 : ℝ) = 2 * logb 2 ‖(2 : ℝ) ^ (n ^ 2)‖ / (n : ℝ) ^ 2
+    rw [Real.norm_of_nonneg (by positivity)]
+    unfold logb
+    rw [Real.log_pow]
+    push_cast
+    field_simp
+  have hb : IsQGevreyOrder (2 : ℝ) 0 (fun _ : ℕ => (0 : ℝ)) := isQGevreyOrder_zero (K := ℝ) 2
+  have hprod : cauchyMul (fun n : ℕ => (2 : ℝ) ^ (n ^ 2)) (fun _ : ℕ => (0 : ℝ))
+      = fun _ : ℕ => (0 : ℝ) := by
+    funext n; simp [cauchyMul]
+  -- `NoCancellation` holds VACUOUSLY: the product is `0`, so every summand-bound is `≤ 0`.
+  have hnc : NoCancellation (fun n : ℕ => (2 : ℝ) ^ (n ^ 2)) (fun _ : ℕ => (0 : ℝ)) := by
+    refine ⟨1, one_pos, ?_⟩
+    filter_upwards with n
+    intro k _
+    rw [hprod]
+    simp
+  have hE : cauchyEnvelope 2 0 = 2 := by norm_num [cauchyEnvelope]
+  have hc := h 2 2 0 _ _ ha hb one_lt_two hnc
   rw [hE, hprod] at hc
   have : (2 : ℝ) = 0 := order_unique hc (isQGevreyOrder_zero (K := ℝ) 2)
   norm_num at this

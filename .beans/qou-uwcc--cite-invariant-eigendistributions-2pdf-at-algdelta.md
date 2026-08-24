@@ -3,8 +3,9 @@
 title: Cite Invariant_eigendistributions_2.pdf at alg:delta-lambda-closure
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:40Z
-updated_at: 2026-08-08T23:36:40Z
+updated_at: 2026-08-21T17:05:06Z
 ---
 
 alg:delta-lambda-closure calls Delta_lambda 'the signed Springer dimension' with nothing behind the name. A citation should be added; a reviewer should also decide whether this construction or a more canonical Springer-correspondence source is the right primary for the sign convention.
@@ -19,3 +20,10 @@ Source: `library/invariant-eigendistributions-2/Invariant_eigendistributions_2.p
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/invariant-eigendistributions-2/  ->  [rossmann-invariant-eigendistributions-2]
+  Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [rossmann-invariant-eigendistributions-2] as the citation key when you do it.

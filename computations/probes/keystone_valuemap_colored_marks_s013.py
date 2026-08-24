@@ -52,8 +52,9 @@ from mpmath import mpf, mpc  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 import keystone_valuemap_genuine_smatrix_s013 as s013  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 PVEC = s013.PVEC          # (2, 3, 5)
 P = s013.P                # 30
 Q0 = s013.Q0

@@ -49,13 +49,29 @@ from pathlib import Path
 _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 import _path_bridge  # noqa: F401
+from mpmath import mp  # noqa: E402
+mp.dps = 50
 
 # Canonical substrate q₀ (fallback to the documented pinned value).
 try:
     from qou_substrate.constants import q_at  # type: ignore
-    Q0 = float(q_at())
-except Exception:
-    Q0 = 1.1099780333553254  # documented substrate q₀ (proton-anchor pin)
+    Q0 = q_at()
+    # EXCISED: was Q0 = float(q_at()). q_at() ALREADY returns mpf at 50 dps, so
+    # the cast was a pure downgrade to 53 bits -- a NO-FLOAT64 violation with
+    # nothing bought: mpf supports every arithmetic operator this file uses.
+except Exception as _exc:  # pragma: no cover - fail loudly, never substitute
+        # Was: Q0 = 1.1099780333553254 — a value that is NEITHER pin, sitting
+        # 506 ppb from muon and 495 ppb from proton, i.e. ~44x the ~11.5 ppb
+        # mu-p substrate tension the two-layer discipline exists to manage. It
+        # was substituted silently on any import hiccup, so a bare container
+        # produced numbers that looked fine and were wrong by 44 tensions.
+        # AGENTS.md q0-anchor: never straddle the two layers inside one quantity;
+        # q0_cross_layer_fallback_scan.py: "fail loudly" rather than substitute.
+        raise RuntimeError(
+            "q_at() unavailable and there is no safe fallback: this producer "
+            "must compute at a declared pin, not at a hardcoded approximation. "
+            "Install/point at qou-substrate rather than substituting a literal."
+        ) from _exc
 
 try:
     from qou_substrate.witness import WitnessBuilder  # canonical
@@ -104,11 +120,11 @@ def main() -> None:
     print("=" * 74)
     print("Hydrogen bond as the h²-suppressed weak crossing  (no fit)")
     print("=" * 74)
-    print(f"  q₀ = {Q0:.10f}")
-    print(f"  h  = q₀ − q₀⁻¹ = {h:.6f}   (q-deformation parameter)")
-    print(f"  h² = {h2:.6f}   ← predicted E_HB / E_covalent ratio")
+    print(f"  q₀ = {float(Q0):.10f}")
+    print(f"  h  = q₀ − q₀⁻¹ = {float(h):.6f}   (q-deformation parameter)")
+    print(f"  h² = {float(h2):.6f}   ← predicted E_HB / E_covalent ratio")
     print(f"     measured H-bond/covalent ratio ≈ 0.044  (20.1 / 460 kJ/mol)")
-    print(f"  ℏ_q = (q₀−1)/q₀ = {hbar_q:.6f}   (= T_q, quantum temperature)")
+    print(f"  ℏ_q = (q₀−1)/q₀ = {float(hbar_q):.6f}   (= T_q, quantum temperature)")
     print()
     hdr = f"  {'mol':5s} {'per':>3s} {'sp3':>4s} {'E_cov':>7s} {'h²Ecov':>7s} " \
           f"{'n_HB':>4s} {'L_pred':>7s} {'L_obs':>7s} {'err%':>7s}  tier"
@@ -133,8 +149,8 @@ def main() -> None:
             tier = "dispersion(no-HB)"
         rows.append((name, period, sp3, ecov, e_hb, n_hb, l_pred, lobs, err, tier))
         print(f"  {name:5s} {period:>3d} {('sp3' if sp3 else 'p'):>4s} "
-              f"{ecov:7.0f} {e_hb:7.2f} {n_hb:4d} {l_pred:7.2f} {lobs:7.2f} "
-              f"{err:+7.1f}  {tier}")
+              f"{float(ecov):7.0f} {float(e_hb):7.2f} {n_hb:4d} {float(l_pred):7.2f} {float(lobs):7.2f} "
+              f"{float(err):+7.1f}  {tier}")
 
     # Headline near-matches (period-2 hydrogen-bonders), no fit.
     # row = (name, period, sp3, ecov, e_hb, n_hb, l_pred, lobs, err, tier)
@@ -143,8 +159,8 @@ def main() -> None:
     print()
     print(f"  HEADLINE (no fit): the sp³ flip gates the H-bond, so E_HB = h²·E_cov")
     print(f"    reproduces the latent heat of the period-2 (sp³) hydrogen-bonders:")
-    print(f"    H₂O to {abs(h2o[8]):.1f}%  ({h2o[6]:.1f} vs {h2o[7]:.1f} kJ/mol)")
-    print(f"    HF  to {abs(hf[8]):.1f}%  ({hf[6]:.1f} vs {hf[7]:.1f} kJ/mol)")
+    print(f"    H₂O to {float(abs(h2o[8])):.1f}%  ({float(h2o[6]):.1f} vs {float(h2o[7]):.1f} kJ/mol)")
+    print(f"    HF  to {float(abs(hf[8])):.1f}%  ({float(hf[6]):.1f} vs {float(hf[7]):.1f} kJ/mol)")
     print(f"  Period-3+ (H₂S/Se/Te) are pure-p ⇒ H-bond correctly OFF; their L is")
     print(f"    dispersion (separate physics). SAME flip as the bond-angle base.")
 
@@ -153,8 +169,8 @@ def main() -> None:
     dS_water = 0.10902  # kJ/mol/K, measured ΔS_vap(H₂O) (Trouton-violating)
     t_boil_water = h2o[6] / dS_water
     print()
-    print(f"  T_boil(H₂O) ≈ L_pred/ΔS_vap = {h2o[6]:.1f}/{dS_water:.4f} "
-          f"= {t_boil_water:.0f} K  (obs 373 K; ΔS_vap is the next q-quantity)")
+    print(f"  T_boil(H₂O) ≈ L_pred/ΔS_vap = {float(h2o[6]):.1f}/{float(dS_water):.4f} "
+          f"= {float(t_boil_water):.0f} K  (obs 373 K; ΔS_vap is the next q-quantity)")
 
     w.set_description(
         "Models the hydrogen bond as the h²-suppressed weak crossing of the "

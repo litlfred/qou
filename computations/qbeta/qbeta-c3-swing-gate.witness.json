@@ -1,20 +1,20 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-15T02:55:29.837678+00:00",
-  "commitSha": "17049eaefecd65347f4d7dc8ab9255609eb836a0",
+  "computedAt": "2026-08-23T21:12:09.753233+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "swing_matches_o2",
-      "computed": "6.08733350260723e-12",
+      "computed": "0.000339923141162374",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "tolerance": "1e-6",
       "source": "swing from c3_target_at at both anchors vs O2 probe value"
     },
     {
       "name": "common_mode_cancellation",
-      "computed": "6.0008419471697e-7",
+      "computed": "6.04235048626796e-7",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-4",
@@ -29,12 +29,12 @@
       "source": "4*swing/sqrt(3) > 0 (muon-minus-proton orientation)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 19,
+  "allPassed": false,
+  "durationMs": 13,
   "computation": "qbeta-c3-swing-gate",
   "scriptFile": "qbeta_c3_swing_gate_probe.py",
   "scriptHash": "54dd8cc59c66",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "87193feed82818b78130db79125350dbb25683f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,24 +43,35 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_swing_gate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_swing_gate_probe.py"
   },
   "description": "A3 swing-difference gate (post-O2): the resolved observable is the swing dS = S(muon)-S(proton) = c3(muon)-c3(proton) (Vol(4_1) and the CAL-3 common-mode error cancel). Derives the resolved gate (Re^2u-Im^2u)|_mu - (Re^2u-Im^2u)|_p = 4*dS/sqrt(3) replacing the conditional two-sided sign gate as the PRIMARY candidate-map filter under the corrected NZ leading form. Common-mode cancellation is measured (perturb Q_beta by +/-delta: individual shifts are CAL-3-amplified, swing shift suppressed by orders). The swing is a FILTER not a target (registry 9d: circular, mu-p tension x dc3/dq). Scope-(a); no fit; no c_k wired; conditional diagonal gate kept as secondary.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "anchors": {
-      "q_muon": "1.10997859555418057528159407961",
+      "q_muon": "1.10997859564273904668179512938",
       "q_proton": "1.10997858275138080759166909561"
     },
     "swing": {
-      "S_muon": "0.00968297779805208",
+      "S_muon": "0.0100229009453018",
       "S_proton": "-0.0394593642958606",
-      "swing": "0.0491423420939127",
+      "swing": "0.0494822652411624",
       "o2_reference": "0.0491423421"
     },
     "gate": {
-      "delta_quad_required": "0.113489377746117",
+      "delta_quad_required": "0.11427439662839",
       "kappa": "sqrt(3)/4 (corrected NZ leading form)",
       "role": "primary resolved filter; conditional diagonal gate secondary"
     },

@@ -124,7 +124,9 @@ def main() -> int:
         .add_assertion(
             "axkia_chain_matches_codata_alpha_em_inv",
             computed=chain,
-            expected=137.035999084,
+            # noqa: P31 - deliberately the CODATA-2018 Cs-recoil value; the
+            # `source` field below says so, and the tolerance is 1.0.
+            expected=137.035999084,  # noqa: P31
             tolerance=1.0,  # broad — closed-form match TBD; v1 sanity gate
             source="CODATA 2018 α_EM⁻¹",
         )

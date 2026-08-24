@@ -19,4 +19,12 @@ export default proposition({
     "prop:a2-from-three-strands",
     "rem:flavor-charge-assignments",
   ],
+  // Lean backs the DIMENSION shadow the block states — "(9 = 8 + 1)":
+  // meson_octet_at_three proves sorry-free that the fundamental ⊗ anti-
+  // fundamental (dim N² = 9) splits as adjoint (octet, dim N²−1 = 8) ⊕ singlet
+  // (1), i.e. 9 = 8 + 1 at N = 3. It does NOT formalise the rep-level Clebsch-
+  // Gordan 𝟑⊗𝟑̄ = 𝟖⊕𝟏 nor the weight/quantum-number assignments (SU(3) content,
+  // a Mathlib gap — as on the baryon side, RowCapObstruction); this backs the
+  // dimension arithmetic only.
+  lean: { ref: "qou:QOU.Eightfold.MesonOctet.meson_octet_at_three" },
 });

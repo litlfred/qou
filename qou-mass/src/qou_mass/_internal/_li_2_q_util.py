@@ -57,6 +57,36 @@ from pathlib import Path
 from mpmath import mp, mpf
 
 
+#: [n]_q cache, keyed by (working precision, q). [n]_q depends ONLY on q and n
+#: — never on z — and q is a pinned substrate constant, so every caller of
+#: `li_2_q` at a given precision wants the same ladder. Keyed on `mp.prec` as
+#: well as q because an mpf keeps the precision it was CREATED at: a ladder
+#: built at dps 15 must not be served to a caller running at 70.
+_QINT_CACHE: dict = {}
+
+
+def _q_int_ladder(q: mpf, q_inv: mpf, upto: int) -> list:
+    """Return [[0]_q, [1]_q, ..., [upto]_q], extending the cache in place.
+
+    Powers are built INCREMENTALLY (q^n from q^{n-1}) rather than by `q**n`.
+    The naive form costs two full mpf exponentiations per term; at the
+    ~7,000 terms the series needs near the disc edge that dominates the whole
+    evaluation. Measured 3.4x on its own.
+    """
+    key = (mp.prec, q)
+    st = _QINT_CACHE.get(key)
+    if st is None:
+        st = {"vals": [mpf(0)], "qp": mpf(1), "qip": mpf(1), "h": q - q_inv}
+        _QINT_CACHE[key] = st
+    vals = st["vals"]
+    while len(vals) <= upto:
+        n = len(vals)
+        st["qp"] = st["qp"] * q
+        st["qip"] = st["qip"] * q_inv
+        vals.append(mpf(1) if n == 1 else (st["qp"] - st["qip"]) / st["h"])
+    return vals
+
+
 def _q_int(n: int, q: mpf, q_inv: mpf) -> mpf:
     """Symmetric q-integer [n]_q = (q^n − q^{-n})/(q − q^{-1}).
 
@@ -67,14 +97,14 @@ def _q_int(n: int, q: mpf, q_inv: mpf) -> mpf:
         return mpf(0)
     if n == 1:
         return mpf(1)
-    return (q**n - q_inv**n) / (q - q_inv)
+    return _q_int_ladder(q, q_inv, n)[n]
 
 
 def li_2_q(
     z_val: mpf,
     q: mpf,
     q_inv: mpf | None = None,
-    max_k: int = 2000,
+    max_k: int = 50_000,
     eps: mpf | None = None,
 ) -> mpf:
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
@@ -91,6 +121,23 @@ def li_2_q(
         q_inv = mpf(1) / q
     if eps is None:
         eps = mpf(10) ** (5 - mp.dps)
+    # DISPATCH TO THE CLOSED FORM for negative z near the disc edge.
+    #
+    # The series and the q-product are the SAME function (see
+    # `li_2_q_negative_continuation` for the derivation), but their costs run in
+    # opposite directions:
+    #
+    #   series      terms ~ dps·ln10 / ln(q/|z|)   -> explodes as |z| -> q
+    #   closed form terms ~ dps·ln10 / (2·ln q)    -> independent of z
+    #
+    # Equating them puts the crossover at ln(q/|z|) = 2·ln q, i.e. |z| = 1/q.
+    # That is DERIVED, not tuned, and it matches measurement: at dps 70 the
+    # series needs 180 terms at z = -0.5 but 7,083 at z = -1.08837, while the
+    # product sits at ~717 throughout. At the brane tower's largest argument
+    # (max|V_hat| = 1.08837) this is a 29.6x speedup, and the two agree to the
+    # full 65 digits.
+    if z_val < 0 and mp.fabs(z_val) >= q_inv:
+        return li_2_q_negative_continuation(z_val, q, q_inv, eps=eps)
     if mp.fabs(z_val) >= q:
         # OUTSIDE THE SERIES DISC. The series has radius |z| < q, but the
         # FUNCTION does not stop there — see `li_2_q_negative_continuation`.
@@ -115,13 +162,39 @@ def li_2_q(
         term = z_pow / (mpf(n) * qn)
         total = total + term
         if mp.fabs(term) < eps:
-            break
-    return total
+            return total
+    raise RuntimeError(
+        f"li_2_q: series did not reach eps={mp.nstr(eps, 3)} within "
+        f"max_k={max_k} at z={mp.nstr(z_val, 10)} (|z|/q="
+        f"{mp.nstr(mp.fabs(z_val) / q, 6)}). The old max_k=2000 default "
+        f"returned SILENTLY here, correct to ~21 digits rather than mp.dps; "
+        f"raise max_k or use li_2_q_negative_continuation for z < 0.")
 
 
 # ── Shared helpers (centralized per gemini #687 review) ─────────
 
-_Q_WITNESS_DEFAULT = Path(__file__).parent / "q-pinning-50-digit.witness.json"
+def _find_q_witness() -> Path:
+    """Locate q-pinning-50-digit.witness.json in whichever layout we are in.
+
+    `Path(__file__).parent / ...` is right for computations/ but WRONG for the
+    vendored copy: the sync flattens this module into qou-mass/.../_internal/
+    while the witness lands one level up in qou-mass/.../qou_mass/. Same class
+    of bug as the fixed-`.parent`-count in `_precision.py` — a path tuned for
+    one layout, silently wrong in the other. Searched, not counted.
+    """
+    here = Path(__file__).resolve().parent
+    for base in (here, *here.parents):
+        cand = base / "q-pinning-50-digit.witness.json"
+        if cand.is_file():
+            return cand
+        cand = base / "computations" / "q-pinning-50-digit.witness.json"
+        if cand.is_file():
+            return cand
+    # preserve the historical value so the error names the expected location
+    return here / "q-pinning-50-digit.witness.json"
+
+
+_Q_WITNESS_DEFAULT = _find_q_witness()
 
 
 def li_2_q_negative_continuation(
@@ -180,14 +253,57 @@ def li_2_q_negative_continuation(
     return -h * total
 
 
-def load_q_50dps(path: Path | None = None) -> tuple[mpf, mpf, mpf]:
-    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at full
-    ``mp.dps`` precision from the canonical pinning witness.
+def load_q_50dps(
+    path: Path | None = None,
+    anchor: str = "proton",
+) -> tuple[mpf, mpf, mpf]:
+    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at full ``mp.dps``.
 
     Returns ``(q, q_inv, z)``.  Shared by every script that ingests
     per-generator Wedderburn volumes — centralized per gemini #687.
+
+    Resolution order:
+
+    ``path``    an explicit witness file — wins over ``anchor``, for a
+                caller that must read one particular pinning witness.
+    ``anchor``  ``"proton"`` (default) takes the experimental pin from
+                ``q_parameter.Q_MP``; ``"muon"`` reads the ideal/CAL-2
+                pin from ``q-pinning-50-digit.witness.json``.
+
+    The default was ``None`` -> the muon witness until 2026-08-22.  That
+    made the ideal pin reachable without naming it: a caller writing
+    ``load_q_50dps()`` got muon while the 2026-08-07 owner directive says
+    compute defaults to proton, and with no signal that a layer boundary
+    had been crossed.  Measured at the time: 28 live no-arg call sites in
+    26 files, of which **nine were declared ``physical_proton``** in
+    ``q0_anchor_manifest.json`` and emitting witnesses stamped ``proton``
+    while carrying muon data — and **zero** were declared ``ideal_muon``.
+    So no caller wanted the old default.  Beans ``qou-dkm2`` / ``qou-v90i``.
+
+    A muon-layer caller must now say ``anchor="muon"``, which is the
+    point: the ideal layer stays reachable but has to be asked for.
     """
     if path is None:
+        if anchor == "proton":
+            # `q_parameter` lives in computations/substrate/.  This module
+            # sets up no path bridge of its own, and a caller need not have
+            # one either, so resolve it relative to this file rather than
+            # relying on the caller's sys.path.
+            try:
+                from q_parameter import Q_MP
+            except ModuleNotFoundError:  # pragma: no cover - path setup
+                import sys as _sys
+                _sub = str(Path(__file__).resolve().parent / "substrate")
+                if _sub not in _sys.path:
+                    _sys.path.insert(0, _sub)
+                from q_parameter import Q_MP
+            q = Q_MP
+            qi = mpf(1) / q
+            return q, qi, mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+        if anchor != "muon":
+            raise ValueError(
+                f"load_q_50dps: anchor must be 'proton' or 'muon', got {anchor!r}"
+            )
         path = _Q_WITNESS_DEFAULT
     with path.open() as fh:
         d = _json.load(fh)
@@ -228,8 +344,18 @@ def flavor_split_leading(q: mpf, q_inv: mpf | None = None) -> mpf:
     """Δm / M_N leading-order substrate formula (prop:flavor-split-substrate).
 
     Δm / M_N = (q − 1)² · (1 − q⁻⁴) / 3 = ℏ_q² · h_q · [2]_q / 3
+
+    Exact for a SYMBOLIC `q` as well as an `mpf` one. The reciprocal is
+    ``1 / q``, not ``mpf(1) / q``: for an mpf argument the two are identical
+    (mpmath promotes the int exactly), but for a sympy `q` the latter drags
+    `mpf(1)` in as a `Float(1.0)` and the whole expression inherits float
+    contagion — `(q**2 - 1)*(-6*q**4 + (q - 1)**2*(q**4 - 1.0))/(12*q**5)`
+    instead of a rational function. That matters because this is the closed
+    form q-symbolic callers pass as `d_for_ctype(..., delta=...)` precisely to
+    avoid a pinned constant; returning one with a `Float` in it defeats half
+    the point.
     """
-    qi = mpf(1) / q if q_inv is None else q_inv
+    qi = 1 / q if q_inv is None else q_inv
     return (q - 1) ** 2 * (1 - qi ** 4) / 3
 
 
@@ -301,7 +427,7 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
 # was REMOVED on 2026-05-24 (PR #1089 review-cycle, Copilot finding).
 # Per owner directive: "no lambda-scale ANYWHERE in production".  All
 # call sites now import `linking_weight_family_a` (or use the
-# `vol_density_borromean` wrapper when the full VolDensity evaluation is
+# `per_knot_density_borromean` wrapper when the full VolDensity evaluation is
 # wanted).  Any future caller attempting `from _li_2_q_util import
 # lambda_scale_family_a` will raise ImportError — by design, to force
 # migration.
@@ -350,8 +476,8 @@ def bring_color_weighted_linking_weight(
     close m_avg — consistent with the 5+ refuted routes documented
     in the canonical reference.
 
-    Status: PROBE, NOT WIRED into production `vol_density_borromean`.
-    Use via `vol_density_borromean_bring_color_weighted(Z, N, q)`.
+    Status: PROBE, NOT WIRED into production `per_knot_density_borromean`.
+    Use via `per_knot_density_borromean_bring_color_weighted(Z, N, q)`.
     """
     qi = mpf(1) / q if q_inv is None else q_inv
     base = linking_weight_family_a(q, qi)
@@ -366,19 +492,19 @@ def bring_color_weighted_linking_weight(
     return base * (1 + delta * asym + delta ** 2 * sym)
 
 
-def vol_density_borromean_bring_color_weighted(
+def per_knot_density_borromean_bring_color_weighted(
     Z: int, N: int, q: mpf, q_inv: mpf | None = None,
 ) -> mpf:
-    """Bring-color-tube extension of vol_density_borromean for atom (Z, N).
+    """Bring-color-tube extension of per_knot_density_borromean for atom (Z, N).
 
-    [PROBE — parallels `vol_density_borromean` but uses the per-atom
+    [PROBE — parallels `per_knot_density_borromean` but uses the per-atom
     Bring-color-tube linking_weight instead of the H_4 Wedderburn
     average.]
 
     m(K) = m_e · VolDensity_bring(Z, N, q₀)
 
     Status: PROBE.  NOT wired into production mass computation;
-    the existing `vol_density_borromean` (H_4 average, acknowledged
+    the existing `per_knot_density_borromean` (H_4 average, acknowledged
     CAL-4) remains in production until a categorical Bring-color-tube
     formulation is found that closes the +2.89% m_avg gap.
     """
@@ -389,7 +515,7 @@ def vol_density_borromean_bring_color_weighted(
     return geom_leading * bring_color_weighted_linking_weight(Z, N, q, qi)
 
 
-def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
+def per_knot_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     """[SHORTCUT — global-scalar collapse, NOT the paper's per-block sum.]
 
     VolDensity(𝓑₃, q) — the complete per-knot Geom evaluation for the
@@ -407,7 +533,7 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     NOT compute the formula in `prop:hoefsmit-scattering-pipeline`
     Stage 4 — the 2.53 is a CODATA-implied-λ near-match that lands
     near `λ = m_p/(m_e·Vol/ℏ²) ≈ 2.46` (the value that round-trips m_p).
-    Use `vol_density_per_block(vol_K, tr_M_K, q, ...)` for the
+    Use `per_knot_density_per_block(vol_K, tr_M_K, q, ...)` for the
     paper-faithful per-block evaluation.  This routine is retained ONLY until the
     per-block version is validated and the owner approves a production
     switch (the switch changes the m_p computation).
@@ -456,7 +582,7 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     """
     import warnings as _warnings
     _warnings.warn(
-        "vol_density_borromean is the λ_A fit (Vol(𝓑₃)·ρ_global/ℏ_q² → 966 MeV) "
+        "per_knot_density_borromean is the λ_A fit (Vol(𝓑₃)·ρ_global/ℏ_q² → 966 MeV) "
         "— NOT the canonical absolute nucleon mass. Use the canonical_mass "
         "facade (muon-anchored Hecke energy). See "
         "docs/canonical-mass-formula-guardrail.md.",
@@ -475,7 +601,7 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     # The exploratory spectral-phase correction (spectral_correction_
     # borromean, −819 ppm on m_avg) is NOT applied here: it is unproved
     # (trivial Lean stub) so it must not enter production. Use it only
-    # via the explicitly-exploratory vol_density_borromean_spectral().
+    # via the explicitly-exploratory per_knot_density_borromean_spectral().
     return geom_leading * linking_weight
 
 
@@ -493,7 +619,7 @@ def geom_leading(vol_K: mpf, q: mpf, q_inv: mpf | None = None) -> mpf:
     return vol_K / hbar_q ** 2
 
 
-def vol_density_per_block(
+def per_knot_density_per_block(
     vol_K: mpf,
     tr_M_K: mpf,
     q: mpf,
@@ -511,10 +637,10 @@ def vol_density_per_block(
     Markov trace over the partitions of the KNOT'S OWN strand count
     (H₃ for the 3-strand Borromean baryons, H₆ for the deuteron at
     n=6, etc.).  This is the `Σ_λ` factor that the legacy
-    `vol_density_borromean` shortcut DROPPED and replaced with a global
+    `per_knot_density_borromean` shortcut DROPPED and replaced with a global
     H₄ scalar.
 
-    The mass is then `m(K) = m_e · vol_density_per_block(...)`.
+    The mass is then `m(K) = m_e · per_knot_density_per_block(...)`.
 
     Arguments
     ---------
@@ -577,16 +703,16 @@ def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     return theta / (8 * hbar_q ** 2)
 
 
-def vol_density_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
+def per_knot_density_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
     """EXPLORATORY (not production): proved Family-A vol_density × the
     UNPROVED spectral-phase correction. m_e × this = m_avg ≈ 938.15 MeV
     (−819 ppm vs CODATA m_avg) — a no-fit ~35× improvement over the bare
     +2.89 %, but the correction is not proved (trivial Lean stub) and the
     sinh(θ) refinement is an open lead, so this must NOT feed production.
-    Production uses vol_density_borromean (proved Family A, +2.89 %).
+    Production uses per_knot_density_borromean (proved Family A, +2.89 %).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
-    return vol_density_borromean(q, qi) * spectral_correction_borromean(q, qi)
+    return per_knot_density_borromean(q, qi) * spectral_correction_borromean(q, qi)
 
 
 def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
@@ -644,3 +770,99 @@ def borromean_markov_trace_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
     jones = -ti**3 + 3*ti**2 - 2*ti + 4 - 2*t + 3*t**2 - t**3
     norm = (sq + sqi) ** 2
     return jones / norm
+
+
+# ---------------------------------------------------------------------------
+# `per_knot_density_*` aliases — a half-applied rename, repaired
+#
+# Commit a4d9906659 migrated the terminology "VolDensity" -> "PerKnotDensity"
+# across CALLERS but never renamed the functions here. The result: four
+# modules on `main` raise ImportError at import time and cannot run at all.
+#
+#     computations/mass_per_knot_density.py                  (both names)
+#     computations/per_knot_density_per_block_wiring.py       (both names)
+#     computations/per_knot_density_deuteron_perknot_probe.py (per_block)
+#     computations/probes/per_knot_density_borromean_q_locality_probe.py
+#
+# Aliasing rather than renaming is deliberate. 71 call sites still use the
+# `vol_density_*` spelling, so flipping which name is canonical is a churn
+# with a real chance of a partial second pass -- i.e. exactly the failure
+# being repaired. These two lines un-break all four modules, change no
+# number, and prejudge nothing about which spelling should win.
+#
+# There is no behavioural difference: the alias IS the function object.
+# ---------------------------------------------------------------------------
+# Back-compat aliases, OLD -> NEW. Owner ruling 2026-08-22: `per_knot_density_*`
+# is the canonical spelling. These keep the 170-odd historical call sites and
+# any out-of-tree caller working; they are the deprecated direction now.
+vol_density_per_block = per_knot_density_per_block
+vol_density_borromean = per_knot_density_borromean
+vol_density_borromean_spectral = per_knot_density_borromean_spectral
+vol_density_borromean_bring_color_weighted = per_knot_density_borromean_bring_color_weighted
+
+
+# ── self-test ──────────────────────────────────────────────────
+#
+# The docstring above has long referenced `--self-test`, but no entry point
+# existed: `python3 _li_2_q_util.py --self-test` imported the module, did
+# nothing, and exited 0 — so the claim "verified against li_2_q" was never
+# actually being checked by anything. It is now, and it matters more than it
+# did, because `li_2_q` dispatches between two DIFFERENT algorithms at
+# |z| = 1/q. This pins them together across that boundary.
+
+def _self_test() -> int:
+    """Series and q-product must agree to full precision, especially at 1/q."""
+    # `_precision` lives in computations/substrate/ in the source layout and
+    # flat beside this file in the vendored one. Resolve it here rather than at
+    # module scope: this is a LIBRARY module, and the vendor sync strips
+    # `import _path_bridge`, so a module-scope bare import would break the
+    # shipped copy (exactly the regression the qou-fl9i sweep hit).
+    try:
+        from _precision import COMPUTE_DPS
+    except ModuleNotFoundError:
+        import sys as _s2
+        _s2.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
+        from _precision import COMPUTE_DPS
+    mp.dps = COMPUTE_DPS
+    q, q_inv, _z = load_q_50dps()
+    eps = mpf(10) ** (5 - mp.dps)
+
+    def pure_series(z):
+        """The series with NO dispatch — the reference implementation."""
+        tot = mpf(0)
+        z_pow = mpf(1)
+        for n in range(1, 50_000):
+            z_pow = z_pow * z
+            term = z_pow / (mpf(n) * _q_int(n, q, q_inv))
+            tot = tot + term
+            if mp.fabs(term) < eps:
+                return tot
+        raise RuntimeError(f"reference series did not converge at z={z}")
+
+    # straddle the |z| = 1/q dispatch boundary deliberately
+    cases = ["-0.5", "-0.9", "-0.90091", "-0.90092", "-0.91", "-1", "-1.05",
+             "-1.08837"]
+    worst = mpf(0)
+    fails = 0
+    print(f"Li_2^q self-test at dps={mp.dps}, dispatch threshold 1/q="
+          f"{mp.nstr(q_inv, 10)}")
+    for c in cases:
+        z = mpf(c)
+        got = li_2_q(z, q, q_inv)
+        ref = pure_series(z)
+        rel = mp.fabs(got - ref) / mp.fabs(ref) if ref else mp.fabs(got - ref)
+        worst = max(worst, rel)
+        path = "closed" if mp.fabs(z) >= q_inv else "series"
+        ok = rel < mpf(10) ** (10 - mp.dps)
+        fails += not ok
+        print(f"  z={c:>10}  path={path:>6}  rel={mp.nstr(rel, 4):>12}  "
+              f"{'ok' if ok else 'FAIL'}")
+    print(f"worst relative disagreement: {mp.nstr(worst, 4)}")
+    return 1 if fails else 0
+
+
+if __name__ == "__main__":
+    import sys as _s
+    if "--self-test" in _s.argv:
+        _s.exit(_self_test())
+    print("usage: python3 _li_2_q_util.py --self-test")

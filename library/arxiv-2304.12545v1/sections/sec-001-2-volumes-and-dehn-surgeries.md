@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-2304.12545v1
-doc_title: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
+doc_title: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN"
 section_id: sec-001-2-volumes-and-dehn-surgeries
 section_title: "Volumes and Dehn surgeries"
 section_number: 2

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T16:18:28Z
+updated_at: 2026-08-24T00:26:41Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -403,3 +403,300 @@ sign-rep identity and the quotient re-posing answer.
 
 **Gates GREEN.** The raw-float64 RED I had been carrying and attributing to
 main is fixed on main (55ac29d94). Nothing red on this branch now.
+
+── CORRECTION 2026-08-22 (branch n24484): the 'missing detector' EXISTS ──
+The remaining-item note 'the detector-class question of committed witnesses whose
+producers crash — a detector class the campaign does not currently have' is STALE.
+Corpus-grep found computations/witness_producer_executes_audit.py (committed
+witness dated 2026-08-10, i.e. it PREDATES the 2026-08-19 note): 'Coverage-complete
+check that every *.witness.json names a producer that exists, parses, and (with
+--smoke) still runs and still emits the committed values.' Its tally already
+classifies static PRODUCER_NOT_FOUND (11) + smoke CRASHED (6) / DIFFERS (5) /
+TIMEOUT (5) / ENV_MISSING (6) / REPRODUCES (18) — precisely the crashing/stale-value
+class this item wanted. I started building a redundant static-only version
+(scripts/witness_producer_integrity.py), caught the duplication by corpus-grep, and
+DISCARDED it (mine over-counted 'absent' at 89 vs the authoritative audit's 11
+because it did not resolve producer basenames tree-wide, and it could not smoke-test).
+NET: this cds2 sub-item is not open work — the tool is built. The genuinely
+actionable subset is that audit's smoke CRASHED(6)/DIFFERS(5) rows, not a new
+detector. Caveat learned: running that audit re-emits its own witness (side effect);
+inspect its committed witness or run read-only rather than executing it in a clean
+tree.
+
+
+## MEASURED 2026-08-23 — the TL-ideal identification is CONFIRMED EXACTLY (the repair is correctly aimed)
+
+The bean asserts *"the radical is exactly ker(H_n -> TL_n) ... on the
+5-dimensional TL_3 quotient the form is genuinely NON-SINGULAR"* and cites Lean.
+[`probes/gram_radical_cellular_revalidation.py`](../computations/probes/gram_radical_cellular_revalidation.py)
+tests exactly that, independently (it does **not** import `pyhecke.gram`), and
+had **never been run to a recorded result** — it prints JSON to stdout and
+writes no witness, so nothing durable existed. Run 2026-08-23, exit 0, 192 s:
+
+| n | dim | ideal dim | rank_ℚ | corank | n! − Catalan(n) |
+|---|---:|---:|---:|---:|---:|
+| 3 | 6 | 1 | 5 | **1** | 1 ✓ |
+| 4 | 24 | 10 | 14 | **10** | 10 ✓ |
+| 5 | 120 | 78 | 42 | **78** | 78 ✓ |
+
+**Rank pinned from both sides at every n**: the exhibited TL ideal is annihilated
+by G *exactly over ℚ* (upper bound), and the GF(p) rank forces the lower bound;
+they meet at Catalan(n). GF(p) is used only for the inequality it always
+satisfies, never as an approximation. No float64 anywhere.
+
+- **H1 confirmed** — corank(n) = n! − Catalan(n) at n = 3, 4, 5.
+- **H2 confirmed** — corank constant at **all 12 rational q spanning [1/3, 5]**,
+  so the degeneracy is **generic in q**, not a Jantzen/Graham-Lehrer
+  special-parameter reducibility.
+- **H3 confirmed** — at n=3 the null vector **equals the q-antisymmetriser
+  `(-1/q)^len(w)` identically in q**.
+
+**Consequence for this bean.** Quotient-by-the-radical is the classical
+Jones/TL construction, not a repair invented here, and the quotient has
+dimension Catalan(n) where the form has full rank by construction. The named
+repair is **correctly aimed**, now on exact-arithmetic evidence rather than on
+the Lean alone.
+
+**Gap worth closing:** the probe emits no witness. Its result is not durable and
+had to be re-derived to be known. Worth a `WitnessBuilder` so the next reader
+does not repeat this.
+
+## Two currency corrections to this bean
+
+1. **Finding 1 is STALE.** It says *"pyhecke/gram.py is internally
+   CONVENTION-SPLIT ... z_mp / tr_m_mp (L622-652) and gram_matrix_mp (L746) are
+   still convention C"*. Measured: `gram.py` now has **zero** convention-C —
+   `z_mp`'s docstring reads `z = q³/(q² + 1)` — **convention D**, MIGRATED
+   2026-08-16 (bean qou-cds2)`. This bean's own work fixed it; the finding was
+   never updated.
+2. **A NEW unregistered C site exists in the shipped package.**
+   `tools/pyhecke/python/pyhecke/regime_scanner.py:94` —
+   `z = mp.mpf(1.0) / (mp.sqrt(q) + mp.sqrt(qi))` in `scan_h2_molecule`,
+   classified *"C with NO registry row (unexplained)"*. It has **no importers**.
+   Invisible until 2026-08-23, when `scripts/convention-c-producer-audit.py`
+   learned to see an `mpf(1)` numerator (bean `qou-324i`, PR #5494) — the
+   detector had accepted only a bare literal, so **complying with NO-FLOAT64
+   hid the site from the convention gate**. That fix took actionable C sites
+   **1 -> 31** corpus-wide, which also re-sizes the C-excision tranche
+   (`qou-cdx1`).
+
+
+## Currency correction, 2026-08-23: finding 1 ("gram.py is internally
+## CONVENTION-SPLIT") is CLOSED — measured, not assumed
+
+That finding is from the PR #5241 survey (2026-08-16) and is recorded above as
+live. It is not, and an agent reading this bean will chase a fixed defect (I
+did). Measured on `main` today at the proton pin:
+
+    float64 z            0.6126880371464652
+    z_mp(50)             |z_mp - z_D|/z_D = 1.29679e-17
+                         |z_mp - z_C|/z_C = 0.227044        -> convention D
+    gram_matrix_mp(50)   worst relative entry difference vs float64 G
+                         = 1.90062e-16                      -> the SAME form
+
+`z_mp` was migrated on 2026-08-16 under this very bean, and its docstring
+records the fix and the reason (the C justification "in lockstep with the
+module's float64 z" outlived the 2026-08-15 move of that z to D). So the
+50-dps and float64 paths now build the same object; nothing reading
+`gram_matrix_mp` is reading a different form from `G`.
+
+**The singularity is untouched by this** — it is convention-D's own property,
+not an artefact of the split, and remains this bean's subject. Only the
+"internally split" half is stale.
+
+### A methods note, because it nearly went the other way
+
+My first detector reported `z_mp -> C`. It was wrong: I compared against
+`z_D` with an absolute `1e-20` tolerance, while `q0` enters as a float64,
+so agreement caps at ~1e-16 and a **correct** value cannot pass. A false
+positive here is worse than a false negative — the indicated remedy is to
+change a correct value to the wrong one, inside a campaign whose purpose is
+excising C. Use a two-way relative comparison (which candidate is closer),
+never a threshold, when the result is numerical rather than exact-symbolic.
+Written up as a new section in
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md`, which previously
+catalogued only the false-negative direction.
+
+
+## Worked 2026-08-23 — two stale claims corrected, and one live defect found
+
+Owner directed this bean. Attacked the **consumer-side** hazard rather than the
+quotient build (that is `qou-8iru`, running in parallel).
+
+### 1. The Blast-radius section is STALE — `G_INV` is already gone
+
+This bean says *"G_INV is exported at import, so every consumer of
+pyhecke.gram is affected -- that is the 13 re-exporters + 13 consumers of
+qou-cdh2"*. Measured today: `pyhecke.gram.G_INV` is **ABSENT**, and
+`gram_inverse()` raises a clear `NotImplementedError` naming the
+singularity. The deletion happened; the bean did not record it.
+
+**The singularity itself is unchanged**, exactly as recorded:
+det 3.998e-17, cond 4.94e16, eigenvalues −0.752702, ~0, +0.752702×3, +4.230339.
+
+### 2. The DELETED function has an unguarded general-n successor — the live defect
+
+`computations/pyhecke_n_generic.py::gram_inverse_n` did a bare
+`np.linalg.inv(G)`. Its own docstring said it *"replaces 6×6 hardcoded
+pn.gram_inverse"* — i.e. it is the generalisation of the very function this
+bean had deleted for being unsafe, and **the guard did not come with it**.
+Worse, the module header actively recommended migrating onto it
+("Replace: ... gram_inverse / With: ... gram_inverse_n").
+
+    n=3   dim 3   rank 2   corank 1   cond 2.54e16   max|G^-1| 5.03e16
+    n=4   dim 5   rank 3   corank 2   cond 1.83e16   max|G^-1| 3.27e16
+
+### 3. 🛑 A WARNING WOULD NOT HAVE BEEN ENOUGH — the residual check is deceptive
+
+    n=3   ||G . G^-1 - I|| = 1.11e-16
+    n=4   ||G . G^-1 - I|| = 0          <- EXACTLY zero
+
+numpy raises nothing, and the entries are large enough that the product rounds
+to the identity in float64. **A consumer validating `G @ G_inv ≈ I` is handed
+a clean bill of health on a meaningless inverse.** There is no downstream check
+that would notice, which is why the fix raises rather than warns.
+
+### 4. The rank is the Temperley-Lieb structure, reached independently
+
+rank = the number of partitions of n with **at most two rows** — n=3: 2 of 3
+({(3),(2,1)}); n=4: 3 of 5 ({(4),(3,1),(2,2)}). That is `qou-8iru`'s
+`y_λ = 0 for ≥3 rows` result, arriving here from the numerical rank of a
+Gram rather than from the weights. Two independent routes to the same
+structure.
+
+### Shipped
+
+- `gram_inverse_n` now raises, naming rank/corank/cond and pointing at the
+  TL_n quotient. **No external callers** — verified before changing it, so the
+  guard breaks nothing.
+- The module no longer advertises an inverse that cannot exist; the migration
+  recipe says so explicitly.
+- `computations/qbeta/gram_inverse_n_singular_guard_probe.py`, 8/8, asserting
+  all four facts above including the deceptive residual, so a future
+  un-guarding is caught.
+
+**Not done, deliberately:** the quotient build. That is `qou-8iru`.
+
+
+## The uniqueness result closes off "maybe the weights are wrong" (from qou-uer7 / PR #5575)
+
+Adding a finding rather than taking the bean — the repair decision stays yours.
+
+PR #5575 proves, sorry-free, at convention D and every `n`:
+
+- `ocneanuWeight q z_D` satisfies both Markov trace properties
+  (`markov_conventionD`, `sum_dim_weight_eq_one`);
+- **a Markov trace is determined by its parameter** (`markovTrace_unique`, generic `[CommRing K]`:
+  any two families satisfying cyclicity + normalisation + Markov + tower-consistency agree);
+- the instance exists, so `eq_wtrace_of_markov` says **every** Markov trace with parameter `z_D`
+  *is* the Ocneanu-weighted seminormal trace.
+
+**What that means here.** The singularity you measured is a property of *the* Markov trace at
+`z_D`, not of a particular choice of weights — because at `z_D` there is no other choice. So
+"try a different weight family and the form stops being singular" is **not** available as an
+escape route, and the corank ladder (1, 10, 78) is intrinsic to the convention rather than to
+`pyhecke.gram`'s basis or normalisation. That strengthens the case for the named repair —
+quotient by the radical — over any hope of re-choosing weights.
+
+**One conditional, stated because it is the only way this could fail to apply.** Uniqueness is
+against four axioms: linearity, cyclicity `tr(xy) = tr(yx)`, normalisation `tr(1) = 1`, and
+tower-consistency `tr_{n+1}(ι x) = tr_n x`, plus the Markov relation. If the form behind `G` is
+built from something that drops one of those — a *non*-normalised functional, say — the inference
+does not reach it. Worth one check against `gram.py` before quoting this.
+
+Hypotheses on my side: `q ≠ 0`, `q² ≠ 1`, `q² + 1 ≠ 0`, `q²` not a root of unity. The proton pin
+satisfies all four.
+
+
+### The conditional on that inference is now DISCHARGED — measured, not assumed
+
+I flagged one way the uniqueness inference could fail to reach your form: if `G` were built from
+something that drops one of the four axioms (a non-normalised functional, say). Checked it rather
+than leaving it as a to-do:
+
+    _TR_M_FRAC = [1, z, z, z², z², 344379115289871/498227041000000]
+    _Z_FRAC    = 1367631/2232100        # = q³/(q²+1) at q = 111/100 — convention D
+    tr_m_mp()[0] = 1.0                   # 50 dps, at the real q₀
+
+- **Normalisation holds exactly**: `tr(1) = 1` in the exact-rational path *and* at 50 dps.
+- **Markov holds at the visible levels**: `tr(σ₀) = tr(σ₁) = z`, and `tr(σ₀σ₁) = z²` exactly
+  (`1870414552161/4982270410000 = (1367631/2232100)²`), which is `tr(ι(σ₀)·σ₁) = z·tr₂(σ₀)`.
+
+So the form behind `G` is a normalised Markov trace at `z_D`, and the inference applies: **the
+singularity is a property of *the* Markov trace at that parameter, not of a weight choice.**
+Re-choosing weights is not an escape route, and the radical quotient is the way.
+
+Also noticed while looking, and reported to the AGENTS.md-currency branch (#5599) rather than
+edited here: AGENTS.md lines 1545–1548 still name `pyhecke/gram.py:634` (`z_mp`) as *"the only
+return-form C site left in the tree … registered and R10-waived"*. It is at line 645 and its
+docstring says **convention D, MIGRATED 2026-08-16 (bean `qou-cds2`)** — this bean. The AGENTS.md
+paragraph is stamped the same day, which is presumably how they crossed. The surrounding posture
+("treat the remaining C surface as UNMEASURED") is unaffected, and I did not re-run the detector.
+
+## Rust increment landed — PR #5625 (2026-08-24)
+
+The Rust counterpart to #5592, additive at n = 3.
+
+`gram.rs` gains `TL_BASIS_INDICES`, `gram_matrix_tl`, `gram_tl_inverse`,
+`det_gram_tl`, `det_gram_tl_closed_form`. `gram_quotient_inverse`,
+`gram_radical`, `gram_matrix_markov` and every consumer are UNTOUCHED —
+nothing repointed, per this module's own header on why `gram_inverse` was
+deleted rather than rebound.
+
+**What n = 3 is, recorded so n >= 4 is not mis-scoped.** The TL quotient
+form is the principal 5x5 submatrix of the full form, dropping
+`e- = s0 s1 s0` — the longest element of S_3, whose permutation (3,2,1) is
+the unique 321 pattern. Confirmed to 0.0 difference against `pyhecke.tl` in
+exact Q(q) before the Rust was written. At n >= 4 the quotient is NOT
+obtained by deleting one basis element, so this shortcut does not
+generalise.
+
+**A hazard checked rather than assumed.** Rust's `NF_BASIS` order and
+Python's `tl_basis_words(3)` = `((), s1, s0, s0s1, s1s0)` swap positions 1
+and 2. The matrices agree anyway because the form is invariant under exactly
+that swap. Test `tl_gram_matches_python_at_q0` pins it entrywise; the doc
+comment flags it as a coincidence not to carry forward.
+
+`cargo test --lib` 206 passed (gram: 21, was 16).
+
+### Still open on this bean
+
+1. **General-n Rust TL form.** `gram.rs` is hard-coded at n = 3 throughout
+   (`[[f64;6];6]`, six-word `NF_BASIS`). Matching Python's general-n
+   `pyhecke.tl` is a NEW Rust module, not an extension of this file — a
+   separate, larger increment.
+2. **Consumer migration.** `gram.py::G_PINV` (module-import time),
+   `gram.rs::gram_quotient_inverse`, `gram_inverse()`'s raise, and
+   `confinement-operator-selection.py::_pg_safe_inverse` all still use the
+   pseudoinverse. Deliberately out of scope in both #5592 and #5625:
+   `G_PINV` is computed at import, so changing what it means is the
+   documented failure mode. Needs its own PR with per-consumer adjudication.
+
+## The general-n Rust module: DO NOT BUILD IT — no consumer (measured 2026-08-24)
+
+The remaining item I listed after PR #5625 was "general-n Rust TL form", to
+give `gram.rs` parity with Python's `pyhecke.tl`. I raised the objection
+twice that it "buys nothing until something calls it" and did not check.
+Checked now, and the objection holds:
+
+  * `gram_inverse_n` — the general-n inverse, guarded in #5591 — has ZERO
+    callers anywhere outside its own module and the probe written to test
+    the guard.
+  * `gram_matrix_n` at general n appears once outside its module, in a
+    DOCSTRING comment in `per_atom_audit_witnesses.py` ("pn.gram_matrix_n(
+    n=3A, q_0) -> diagonal Gram"). Not a call.
+  * Nothing in `tools/hecke-engine/src/*.rs` asks for an n >= 4 Gram,
+    Markov or quotient form.
+
+So a Rust general-n port would be a second implementation of code nothing
+runs. It is not blocked and not hard -- it is unwanted, which is a different
+and better reason not to do it. Build it when a consumer exists, and let
+that consumer define the interface.
+
+Two things this also settles, worth recording so they are not re-derived:
+
+  * The #5591 guard broke nothing, because nothing calls the function it
+    guards. It is preventive, not load-bearing. That is the correct reading
+    of it and slightly less impressive than it sounded when landed.
+  * The n = 3 Rust form in #5625 IS used -- it is additive beside
+    `gram_quotient_inverse`, which the SDP/confinement path exercises.

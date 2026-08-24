@@ -17,7 +17,7 @@ $$
   T + \alpha\,H\,\bigl(1 - h^2\alpha\bigr).
 $$
 
-*Then $\alpha$ constitutes a root of the characteristic cubic:*
+*Then $\alpha$ is a root of the characteristic cubic:*
 
 $$
   P(\alpha)
@@ -26,4 +26,4 @@ $$
   \;=\; 0,
 $$
 
-*and its inverse yields CODATA-consistency: $\lvert \alpha^{-1} - 137.035999084\rvert < 10^{-3}$.*
+*and its inverse yields CODATA-consistency: $\lvert \alpha^{-1} - 137.035999177\rvert < 10^{-3}$.*

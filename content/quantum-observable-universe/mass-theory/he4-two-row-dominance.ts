@@ -85,6 +85,12 @@ export default proposition({
     "verified-empirically",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-08-23",
+      body:
+        "**The empirical table was wrong and is corrected (bean `qou-bm4i`).** It gave `tr_M(\u03b2_\u2074He)(q\u2080) = 0.05534835` and a two-row ratio of 86.6 %; the canonical producer computes **0.160974145442** and a ratio of **exactly 1** \u2014 all 70 partitions with more than two rows contribute 0. Diagnosed, not assumed: re-running `probe_he4_canonical_tr_m_fingerprint.py` reproduces the committed witness byte-for-byte, the Hoefsmit characters \u03c7^\u03bb AGREE with the old table to 3+ digits, and only `y_\u03bb` differed \u2014 by a NON-uniform factor (2.66\u20134.04), so a different weight formula rather than a normalisation. AGENTS.md records that `y_\u03bb` / `w_\u03bb` / `w\u0303_\u03bb` are distinct at q \u2260 1 and must not be conflated; the old table appears to have used another family under the `y_\u03bb` label. The proposition itself is unaffected and in fact strengthened \u2014 the \u2265 80 % bound holds at 100 % and the top block \u03bb* = (9,3) is unchanged. The producer's CITED_* constants track the block's prose, so they were corrected with it and the cross-check stays live.",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

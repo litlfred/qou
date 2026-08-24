@@ -3,8 +3,9 @@
 title: Remark interpreting 1704.01735v4.pdf at content/quantum-observable-universe/mass-theory/cyclotomi…
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:14Z
-updated_at: 2026-08-08T16:13:14Z
+updated_at: 2026-08-21T17:05:03Z
 ---
 
 Not a cite-in-block on the coincidence itself: attaching this citation directly to the E_8-marks paragraph would read as evidence for a claim it does not support. The honest artifact is a remark recording the classical Bring/W(E_8) fact and stating explicitly that it is a distinct E_8 appearance from the quantum-dimension coincidence.
@@ -17,3 +18,10 @@ Source: `library/arxiv-1704.01735v4/1704.01735v4.pdf` — no `references.ts` ent
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1704.01735v4/  ->  [yang2017]
+  Modular curves, invariant theory and E8
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [yang2017] as the citation key when you do it.

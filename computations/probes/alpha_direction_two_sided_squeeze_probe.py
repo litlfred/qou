@@ -88,6 +88,7 @@ del _Path, _bridge
 import sys
 
 import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
 
 # (label, A, B_AME/A, chain/A) from collective_term_budget_probe.py at alpha = E_0
 ROWS = [
@@ -108,7 +109,7 @@ ALPHA_MAX = "1.5516"   # from the two-nucleon floor: nature_total / log 4
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     E0 = mp.mpf(E0_STR)
     amax = mp.mpf(ALPHA_MAX)
     scale = amax / E0

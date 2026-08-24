@@ -3,8 +3,9 @@
 title: Remark interpreting 2205.01282v2.pdf at QOU.QBeta.StokesDTBPSBridge
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:35:19Z
-updated_at: 2026-08-08T23:35:19Z
+updated_at: 2026-08-21T17:04:46Z
 ---
 
 Record what would have to be checked before this changes any epistemic tier: whether the knot complements / 3-manifolds the folio's A_omega argument uses fall inside this document's plumbed, negative-definite-linking-matrix class. If they do not, the GPPV identification stays conjectural for the folio's purposes and the bridge's class fields must remain as they are.
@@ -17,3 +18,10 @@ Source: `library/arxiv-2205.01282v2/2205.01282v2.pdf` — no `references.ts` ent
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-2205.01282v2/  ->  [murakami-y2022]
+  Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [murakami-y2022] as the citation key when you do it.

@@ -44,4 +44,4 @@ Evaluation at $q_0 \approx 1.1099786$ yields an exact match to within $10^{-12}$
 
 The witness assertion validates this match: [`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json).
 
-Expressing the relationship as a trace ratio on the $q$-dimension layer reformulates existing projection identities. This closes the categorical framework. The empirical electromagnetic coupling reduces to a structural trace-algebraic constraint.
+Expressing the relationship as a trace ratio on the $q$-dimension layer reformulates existing projection identities.

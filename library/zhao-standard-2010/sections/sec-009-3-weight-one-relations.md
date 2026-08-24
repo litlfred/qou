@@ -1,13 +1,13 @@
 ---
 doc_id: zhao-standard-2010
-doc_title: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao"
+doc_title: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity"
 section_id: sec-009-3-weight-one-relations
 section_title: "Weight one relations"
 section_number: 3
 pages: 10-10
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
-doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm Values at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
 When N ≥ 4 there exist linear relations among MPVs of weight one by a
 theorem of Bass [1]. These relations are important because b y multiplying any

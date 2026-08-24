@@ -61,10 +61,11 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 try:
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     HAVE_MP = True
 except Exception:
     HAVE_MP = False
@@ -72,8 +73,19 @@ except Exception:
 try:
     from q_parameter import q_at
     Q0 = str(q_at())
-except Exception:
-    Q0 = "1.1099780333553254"
+except Exception as _exc:  # pragma: no cover - fail loudly, never substitute
+        # Was: Q0 = 1.1099780333553254 — a value that is NEITHER pin, sitting
+        # 506 ppb from muon and 495 ppb from proton, i.e. ~44x the ~11.5 ppb
+        # mu-p substrate tension the two-layer discipline exists to manage. It
+        # was substituted silently on any import hiccup, so a bare container
+        # produced numbers that looked fine and were wrong by 44 tensions.
+        # AGENTS.md q0-anchor: never straddle the two layers inside one quantity;
+        # q0_cross_layer_fallback_scan.py: "fail loudly" rather than substitute.
+        raise RuntimeError(
+            "q_at() unavailable and there is no safe fallback: this producer "
+            "must compute at a declared pin, not at a hardcoded approximation. "
+            "Install/point at qou-substrate rather than substituting a literal."
+        ) from _exc
 
 CODATA_INV_ALPHA = "137.035999177"
 

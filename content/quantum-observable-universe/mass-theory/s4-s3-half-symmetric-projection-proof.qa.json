@@ -1163,6 +1163,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.438Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'The reading is purely structural - WHICH cell is identified, not HOW MUCH per-cell curvature it carries' is a substantive scope distinction and the block's honest limit."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1182,6 +1197,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.504Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Linear proof: branching table -> half-symmetric dimension -> trivial factor -> cell count."
       }
     ],
     "trap-em-dash": [
@@ -1201,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.571Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "One dash, introducing the scope caveat in the closing sentence."
       }
     ],
     "trap-triples": [
@@ -1220,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.659Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No reflex triples; the five-row table is the partitions of 4."
       }
     ],
     "trap-closing-aphorism": [
@@ -1239,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.736Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Closes on the scope caveat and a QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1258,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.798Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1277,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.855Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "The closing sentence restricts rather than restates."
       }
     ],
     "trap-performed-warmth": [
@@ -1296,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.918Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1315,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:06.970Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'exactly one' and 'purely structural' are the claim and its scope, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1334,6 +1469,22 @@
         "reviewed_at": "2026-08-15T10:31:00.669Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:34:07.023Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proof reads in short steps.",
+        "notes": "TABLE RECOMPUTED ROW BY ROW AND IT IS CORRECT: (4)->(3), dim 1, trivial 1; (3,1)->(3)+(2,1), dim 3, trivial 1; (2,2)->(2,1), dim 2, trivial 0; (2,1,1)->(2,1)+(1^3), dim 3, trivial 0; (1^4)->(1^3), dim 1, trivial 0. Independent invariant: sum of dim^2 = 1+9+4+9+1 = 24 = 4!, passes. Conjugate pairing {(4),(1^4)}, {(3,1),(2,1,1)} and self-conjugate (2,2) also correct. TWO FINDINGS OUTSIDE THE TABLE. (1) UNEXPLAINED FACTOR OF 2: the proof derives dim_half-sym = 1+3+1 = 5 and the trivial factor 2/5, then writes 'effective cell count = (5/2) x (2/5) = 1' calling 5/2 the half-sym count. Its own half-sym count is 5, and 5 x (2/5) = 2, not 1. The 5/2 appears nowhere above it, and the sibling witness reports h0_equals_5_over_2 = FALSE. (2) THREE HYPERBOLIC-GEOMETRY ERRORS IN ONE PARENTHETICAL, recomputed at 20 dps: G = Cl_2(pi/2) = 0.9159655942, while Lambda(pi/4) = 0.4579827971 = G/2, so G = Lambda(pi/4) is wrong by a factor 2 (correct: G = 2 Lambda(pi/4)); V_oct = 8 Lambda(pi/4) = 4G = 3.6638624, so G = (1/2) V_oct is wrong (correct: G = V_oct/4); and Vol(B_3) = 8G = 7.3277248 = 2 V_oct, i.e. the Borromean complement is TWO regular ideal octahedra, not eight — the 8 in 8G counts Catalan-constant units. Consequently the 8-fold tessellation, the per-cell ratio 1/8, and one of the EIGHT ideal octahedral cells are all wrong; with 2 cells the ratio is 1/2. This is the documented Lambda-vs-Cl_2 hazard (right value, wrong function name) with a cell count inferred from the wrong name. PROPOSED: Vol(B_3) = 8G = 2 V_oct with G = Cl_2(pi/2) = 2 Lambda(pi/4) = V_oct/4, and rebuild the cell argument on 2 cells."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1356,5 +1507,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:34:07.023Z"
 }

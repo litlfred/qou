@@ -26,8 +26,28 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from codata_table import codata  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
+
+# Two mpf built from the SAME decimal string can differ in the last bit when
+# they are constructed at different working precisions, so `==` on mpf is the
+# wrong equality here: it reported all 8 constants as disagreeing by ~1e-17
+# relative while their printed digits were identical. Compare with a relative
+# tolerance instead. 1e-15 is far below any real edition difference (those are
+# ~1e-9) and far above float-construction noise (~1e-17), so this keeps full
+# detection power. Fixes a defect in the version merged by PR #5149.
+_SAME_TOL = mp.mpf("1e-15")
+
+
+def _same(a, b) -> bool:
+    """True when two mpf denote the same printed decimal value."""
+    if a == b:
+        return True
+    if b == 0:
+        return abs(a) < _SAME_TOL
+    return abs(a - b) / abs(b) < _SAME_TOL
 
 # ── Registry symbol → NIST quantity name ────────────────────────────
 #
@@ -44,6 +64,14 @@ CHECKS = [
     ("computations/codata_2022_source.py", "M_MU_MEV", "muon mass energy equivalent in MeV"),
     ("computations/codata_2022_source.py", "M_MU_OVER_M_E", "muon-electron mass ratio"),
     ("computations/codata_2022_source.py", "U_MEV", "atomic mass constant energy equivalent in MeV"),
+    ("computations/codata_2022_source.py", "M_N_MINUS_P_MEV",
+     "neutron-proton mass difference energy equivalent in MeV"),
+    ("computations/codata_2022_source.py", "M_DEUTERON_MEV_VALIDATION",
+     "deuteron mass energy equivalent in MeV"),
+    ("computations/codata_2022_source.py", "M_HE3_MEV_VALIDATION",
+     "helion mass energy equivalent in MeV"),
+    ("computations/codata_2022_source.py", "M_HE4_MEV_VALIDATION",
+     "alpha particle mass energy equivalent in MeV"),
     ("tools/qou-substrate/.../constants.py", "MASS_RATIO_P_E_STR", "proton-electron mass ratio"),
     ("tools/qou-substrate/.../constants.py", "MASS_RATIO_MU_E_STR", "muon-electron mass ratio"),
 ]
@@ -58,12 +86,26 @@ def _load_registry_values() -> dict[tuple[str, str], tuple[str, str]]:
     out: dict[tuple[str, str], tuple[str, str]] = {}
 
     import codata_2022_source as c22
+    # Some VALIDATION symbols are defined in the codata_constants facade
+    # rather than in codata_2022_source itself, so resolve across both
+    # rather than assuming one module holds everything.
+    import codata_constants as cc
+
+    def _get(sym, default=...):
+        for mod in (c22, cc):
+            if hasattr(mod, sym):
+                return getattr(mod, sym)
+        if default is ...:
+            raise AttributeError(
+                f"{sym!r} is in neither codata_2022_source nor codata_constants"
+            )
+        return default
 
     for mod, sym, _ in CHECKS:
         if not mod.startswith("computations/"):
             continue
-        val = getattr(c22, sym)
-        err = getattr(c22, f"{sym}_ERR", None)
+        val = _get(sym)
+        err = _get(f"{sym}_ERR", None)
         out[(mod, sym)] = (mp.nstr(val, 20, strip_zeros=False), "" if err is None else mp.nstr(err, 10))
 
     repo = Path(__file__).resolve().parent.parent
@@ -96,7 +138,7 @@ def main() -> int:
         want = entry.value
 
         checked += 1
-        agree = have == want
+        agree = _same(have, want)
 
         # Check the UNCERTAINTY as well as the value. A value-only check is
         # not enough: `m_p/m_e` prints identically in CODATA-2018 and -2022,
@@ -105,7 +147,7 @@ def main() -> int:
         # entirely in the uncertainty.
         err_agree = True
         if have_err and entry.uncertainty is not None:
-            err_agree = mp.mpf(have_err) == entry.uncertainty
+            err_agree = _same(mp.mpf(have_err), entry.uncertainty)
         # Express any disagreement in units of the table's own uncertainty.
         if entry.uncertainty and entry.uncertainty != 0:
             sigma = float(abs(have - want) / entry.uncertainty)

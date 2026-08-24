@@ -188,7 +188,7 @@ channels. Reading the `z` each one's production code actually evaluates:
 | `mass` | D | `q³/(q²+1)` via `m_p_substrate_identity_50dps::trM_borromean` → `canonical_mass` | **2** | agreed |
 | `binding` | D | `closed_form_tau_M::markov_z`, `wedderburn_jones_markov::y_lambda_at` | **2** | agreed |
 | `borromean-binding-single-pipeline` | D | `borromean_binding_recompute.py:110` | **2** | agreed |
-| `qbeta-decay` | C | `qbeta/qbeta_utils::markov_parameter` | **none** (formal `2.5995` at `q₀`) | disputed (bean `qou-b3nk`) |
+| `qbeta-decay` | C | `qbeta/qbeta_utils::markov_parameter` | **none** (formal `2.5995` at `q₀`) | agreed-migration-pending (bean `qou-cds1`) |
 
 **Finding: every channel that is in the family at all is at `r = 2`. No QOU
 channel sits at `r = 3` or above.** The one channel that is not at `r = 2` is

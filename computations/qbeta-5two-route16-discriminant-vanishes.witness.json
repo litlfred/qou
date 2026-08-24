@@ -3,12 +3,12 @@
   "bean": "qou-trns",
   "roast_item": "qou-rstq item 2",
   "parent_bean": "qou-0yqu",
-  "dps": 50,
+  "dps": 70,
   "gates": [
     {
       "gate": "G1",
       "claim": "disc(x) = x^8-6x^7+11x^6-12x^5-11x^4-12x^3+11x^2-6x+1, checked against a direct recomputation from the cubic, and disc(1) = -23 matches the 5_2 polynomial y^3-2y^2+3y-1",
-      "worst_abs_diff": "3.4807566e-49",
+      "worst_abs_diff": "1.4489087e-69",
       "disc_at_1": "-23.0",
       "pass": true
     },
@@ -16,7 +16,7 @@
       "gate": "G2",
       "claim": "disc is palindromic, so disc(x)/x^4 = Q(u) with u = x + 1/x and Q(u) = u^4 - 6u^3 + 7u^2 + 6u - 31",
       "palindromic": true,
-      "worst_identity_residual": "1.7105694e-49",
+      "worst_identity_residual": "3.4773808e-69",
       "pass": true
     },
     {
@@ -33,8 +33,8 @@
       "theta_deg": "137.9206708879635",
       "u0": "-1.4844353317658568752",
       "abs_x0": "1.0",
-      "abs_disc_at_x0": "1.0867509e-49",
-      "min_branch_separation": "9.3941032e-26",
+      "abs_disc_at_x0": "3.9886129e-70",
+      "min_branch_separation": "5.2026565e-36",
       "colliding_value": "-1.1322418823119001957",
       "pass": true
     },

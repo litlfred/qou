@@ -1302,6 +1302,22 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.146Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'no chirality-odd channel'; 'the ledger is an open input, not part of this proposition's proved content'; 'labelled as a structural/phenomenological model, **not** a parameter-free derivation'.",
+        "notes": "All three are substantive: the first states the Schur-lemma vanishing that is part (3); the other two are anti-laundering scope statements required by the repo's fit-vs-derivation discipline. False-positive classes 'substantive mathematical contrast' and 'temporal/scope status'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1321,6 +1337,21 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.188Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, alpha-cluster activation gate, four numbered parts + Lean structure + scope); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1341,6 +1372,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "8 stylistic spaced dashes in 399 words (2.01/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.228Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Four spaced dashes: two appositive glosses inside the numbered claims ('carries no invariant triple content - the bond channel is inactive'; '$\\ell_{12}=\\ell_{13}=\\ell_{23}=0$ - the Brunnian/Borromean pattern') and two paired parentheticals in the Scope paragraph.",
+        "notes": "Density 4 in 3.6 kB, all carrying a real gloss; sentence structure survives without them."
       }
     ],
     "trap-triples": [
@@ -1360,6 +1407,22 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 399 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.273Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Four numbered parts, and 'Brunnian (2) ... Vol != 0 (4) ... chirality-even (3)' in the synthesis.",
+        "notes": "The synthesis enumerates exactly the parts proved above; it is a four-part statement summarised as three conditions because part (1) is the negative case, not a cadence."
       }
     ],
     "trap-closing-aphorism": [
@@ -1379,6 +1442,21 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.361Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, alpha-cluster activation gate, four numbered parts + Lean structure + scope); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1398,6 +1476,21 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.400Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, alpha-cluster activation gate, four numbered parts + Lean structure + scope); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1417,6 +1510,22 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.445Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Together (1)-(4) are a topological selection rule: ...' followed by 'This is the categorical origin of the \"k>=3, alpha-only\" activation pattern'.",
+        "notes": "Not a restatement: the first sentence states the conjunction of the four parts (new content - none of (1)-(4) alone is the selection rule), the second makes a fresh identification with the phenomenology. Kept."
       }
     ],
     "trap-performed-warmth": [
@@ -1436,6 +1545,21 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.498Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, alpha-cluster activation gate, four numbered parts + Lean structure + scope); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1455,6 +1579,21 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.543Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, alpha-cluster activation gate, four numbered parts + Lean structure + scope); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1474,6 +1613,21 @@
         "reviewed_at": "2026-08-15T10:31:00.526Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d4fced46a14d",
+          "ts": "55d024d246cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:01.591Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, alpha-cluster activation gate, four numbered parts + Lean structure + scope); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1503,5 +1657,5 @@
     "lean": "a370a93ad745",
     "lean_statement": "ededb6b8e88e"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:26:01.591Z"
 }

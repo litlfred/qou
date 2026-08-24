@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-045-2-fd-deling-p-milne-js-tannakian-categories-in-h
 section_title: "FD] Deling, P., Milne, J.S.: Tannakian Categories in Hodge cicles, motives and simura"
 section_number: 2
 pages: 25-25
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 varieties. Lecture Notes in Mathematics, vol. 900. Berlin, Heidelberg, New York: Springer 
 1982 

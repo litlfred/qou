@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.257Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.298Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.338Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.376Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.416Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.457Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.498Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.539Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.580Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d3d242871e98",
+          "ts": "b6d149a1e187"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.620Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row quantity/value table at q_0. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. RECOMPUTED at the proton pin q_0 = 1.1099785827513808 (mpmath, 40 dps): h = q - 1/q = 0.2090603 (stated 0.209, ok); h^4 = 0.0019102327 (stated 0.00191, ok); 1/(q^2 (q^9-q^-9)^2 (q^10-q^-10)^2) = 0.0279636710 (stated 0.0280, ok) -- and this identity implies alpha_EM = 0.0073087016, i.e. 1/alpha = 136.8232, so the row 'alpha_EM^2 = 5.34e-5' is the FRAMEWORK-DERIVED alpha, not CODATA (5.3251e-5); the row is unlabelled as a prediction. Consequently E_HARTREE = 27.30 eV is m_e c^2 times the framework alpha^2 (27.2961), 0.33 percent ABOVE the physical Hartree energy 27.2114 eV, and the cited witness h2-molecular-binding.witness.json itself records E_hartree_eV = 27.211467573 and alpha_EM = 0.0072973560 (CODATA). STALE-WITNESS DEFECT reported separately: the rows 'Phi_1 binding 0.687' and 'E_bind 4.64 eV' are the PRE-proton-pin values; the current witness gives binding_Phi_diff = 0.12847273 and E_bind_eV_predicted = 0.86453646 with allPassed FALSE. The pins are indistinguishable at this printed precision (proton and muon q_0 agree to 8 significant figures)."
+      }
     ]
   },
   "source_hashes": {
     "md": "d3d242871e98",
     "ts": "b6d149a1e187"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:02.620Z"
 }

@@ -77,8 +77,9 @@ from alpha_em_zeta_anomaly_b1_count_probe import (  # noqa: E402
     epstein_zero_cubic,
     theta_pi_1,  # noqa: F401  (imported to document the shared machinery)
 )
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 B1 = 8  # dim H¹(M_Bring) = b₁ (Jac(Bring) ~ E⁴, photon target J(M) = T^8)
 

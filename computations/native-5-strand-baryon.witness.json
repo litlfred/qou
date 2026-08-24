@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:53.423262+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:57:22.326445+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "baryon_h4_eq_minus_3_4",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1076,
+  "durationMs": 1769,
   "computation": "native-5-strand-baryon",
   "scriptFile": "native_5_strand_baryon.py",
-  "scriptHash": "430f9aca3896",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "c34eb2dfda91",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,13 +62,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Escape 2 of the Young's-lattice synthesis (reframe #2 of the 5<->3 keystone, PRs #1684/#1691): test whether the 3-strand Borromean baryon B_3=(sigma_1^-1 sigma_2)^3 is a Markov-destabilized SHADOW of a canonical NATIVE-5-strand object so h^4=-3/4 lives natively at n=5 and the keystone DISSOLVES. THREE forced 5-strand candidates (C-A canonical Brunnian-5, C-B icosahedral A5 dim-5 ell=2 carrier, C-C S5-symmetric 5-braid). For each: forced-vs-chosen status; whether it Markov-destabilizes to B_3 (axiom-3 disjointness); whether h^4=-3/4 appears canonically at n=5. RAW Markov traces from the Jones-poly normalization tr_M=V(q^2)/[2]_q^{c-1}; exact h-expansion via q=(h+sqrt(h^2+4))/2. h^4=-3/4 is a FALSIFICATION reference, NOT a target -- NO fit, NO tuning. Environment: sympy exact closed forms + mpmath RAW substrate eval at compute_dps; engine=python+mpmath.",
   "auditOnly": "docs/audits/2026-06-02-native-5-strand-baryon.md",
   "parameters": {
-    "q0_falsification_ref": "1.10997859555733471989976322048322502665620840878015405145269053872699",
+    "q0_falsification_ref": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "q0_source": "q_parameter.Q_MP (proton-pinned)",
     "dps": 70,
     "h4_borromean_falsification_ref": "-3/4"
@@ -124,64 +126,64 @@
       "verdict_CC": "NO canonical destabilization. w_5 -> B_3 only by a chosen strand deletion (fit). Same Brunnian obstruction as B_3, now at n=5."
     },
     "destabilization_arithmetic": {
-      "z_at_q0": "0.4993203340335612717689663862757371401611757978998956061698587681762445",
-      "z_squared_at_q0": "0.2493207959793872068594164926226985899936569194735793349271125284456959",
-      "trM_B3_raw_at_q0": "0.9985621631974125557576868990700851220976828163236754928759464280722419",
-      "required_if_native5": "tr_M(native5) = z^2 . tr_M(B_3) = 0.2489623133632776482338990264109336216521914200770568135451215127242859 (ONLY valid if the two removed strands are disjoint from the closure -- which fails for every Brunnian / Borromean-pattern candidate)"
+      "z_at_q0": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
+      "z_squared_at_q0": "0.375386630862388383999372303379009911453307219880302673593224106882741",
+      "trM_B3_raw_at_q0": "0.9985621638367872659512131351466502020940258800594111341275349852658654",
+      "required_if_native5": "tr_M(native5) = z^2 . tr_M(B_3) = 0.3748468863893478525864630591537915910515164089747507619828025212866476 (ONLY valid if the two removed strands are disjoint from the closure -- which fails for every Brunnian / Borromean-pattern candidate)"
     },
     "raw_trM_w5_at_H5": {
       "available": true,
-      "trM_w5_raw_at_q0": 0.008799428305998447,
+      "trM_w5_raw_at_q0": 0.0438360405735181,
       "per_block": {
         "(5,)": {
           "dim": 1,
-          "y_at_q0": 0.11814840463756486,
+          "y_at_q0": 0.19427718737799285,
           "chi_q_at_q0": 1.0000000000000027,
-          "contribution": 0.11814840463756518
+          "contribution": 0.19427718737799338
         },
         "(4, 1)": {
           "dim": 4,
-          "y_at_q0": 0.10937853396615942,
-          "chi_q_at_q0": -1.1370163334008931,
-          "contribution": -0.12436517964296763
+          "y_at_q0": 0.12498539716794711,
+          "chi_q_at_q0": -1.137016301644775,
+          "contribution": -0.14211043404750257
         },
         "(3, 2)": {
           "dim": 5,
-          "y_at_q0": 0.06172371572204642,
-          "chi_q_at_q0": -0.13622017987890045,
-          "contribution": -0.00840801565845128
+          "y_at_q0": 0.061156244790043744,
+          "chi_q_at_q0": -0.1362201486630349,
+          "contribution": -0.008330712756972712
         },
         "(3, 1, 1)": {
           "dim": 6,
-          "y_at_q0": 0.016766607068683284,
-          "chi_q_at_q0": 1.3919152411581093,
-          "contribution": 0.02333769592140955
+          "y_at_q0": 0.0,
+          "chi_q_at_q0": 1.3919151548186215,
+          "contribution": 0.0
         },
         "(2, 2, 1)": {
           "dim": 5,
-          "y_at_q0": 0.007749588356829839,
-          "chi_q_at_q0": -0.13622017987889945,
-          "contribution": -0.0010556503199547855
+          "y_at_q0": 0.0,
+          "chi_q_at_q0": -0.1362201486630346,
+          "contribution": -0.0
         },
         "(2, 1, 1, 1)": {
           "dim": 4,
-          "y_at_q0": -0.000928725230258796,
-          "chi_q_at_q0": -1.137016333400895,
-          "contribution": 0.0010559757560457581
+          "y_at_q0": 0.0,
+          "chi_q_at_q0": -1.137016301644776,
+          "contribution": -0.0
         },
         "(1, 1, 1, 1, 1)": {
           "dim": 1,
-          "y_at_q0": 8.619761235165205e-05,
-          "chi_q_at_q0": 1.000000000000005,
-          "contribution": 8.619761235165249e-05
+          "y_at_q0": 0.0,
+          "chi_q_at_q0": 1.0000000000000044,
+          "contribution": 0.0
         }
       },
       "word": "(sigma_1^-1 sigma_2 sigma_3^-1 sigma_4)^3"
     },
     "destabilization_test_w5_vs_z2_B3": {
-      "trM_w5_raw": 0.008799428305998447,
-      "z2_times_trM_B3": 0.24896231336327762,
-      "relative_mismatch": 0.9646555810511023,
+      "trM_w5_raw": 0.0438360405735181,
+      "z2_times_trM_B3": 0.3748468863893479,
+      "relative_mismatch": 0.8830561432808962,
       "reading": "If w_5 were a genuine native-5 carrier with B_3 as its Markov shadow, tr_M(w_5) would equal z^2 . tr_M(B_3) (two clean destabilizations H5->H3). The large mismatch confirms w_5 does NOT destabilize to B_3 -- consistent with the axiom-3 disjointness failure (the word uses s3,s4 non-trivially)."
     },
     "verdict": {
@@ -194,6 +196,6 @@
   "caveats": [
     "h^4=-3/4 is RAW from the (2,1) block of tr_M(B_3) (3-strand Borromean) and is a FALSIFICATION reference only. NO 5-strand carrier, braid word, or multiplicity is chosen to reproduce it. The Brunnian-property argument (C-A) and the multiplicity-2 / chosen-deletion arguments (C-B/C-C) are structural facts, not fits. No production wiring; L1/L2 dashboards unaffected; no Lean sorry discharged; no LP/SDP solve."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

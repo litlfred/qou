@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:23:58.209036+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T17:51:44.144731+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "linear_unit_invisibility",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 742,
+  "durationMs": 503,
   "computation": "r2core-schwinger-measure-explore",
   "scriptFile": "r2core_schwinger_measure_explore_probe.py",
-  "scriptHash": "9fe415470110",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "02731f2eede2",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -104,7 +104,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/r2core_schwinger_measure_explore_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/r2core_schwinger_measure_explore_probe.py"
   },
   "description": "R2-core Schwinger proper-time measure exploration (bean qou-lecl; EXPLORATION TIER, audit-only, NO FIT, nothing wired; owner ruling 2026-07-19 stands: R2 not derived-proved, 1/(8π) phase-4). Cheap exact falsifier checks for the candidate table: B1 linear units (Reeb period, Planck step) are invisible to the multiplicative measure (exact); B2 the bar quotient carries exactly ½ for bar-even integrands and 0 for bar-odd (the ½-only-in-bar-even falsifier); B3 the raw Z⁸ heat trace reflects with weight 4, not bar-evenly — the ½'s bar-even home is per-channel; B4 the q-rung is an exact ln q₀ e-fold lattice; every intrinsic per-step unit (1 nat, η_q, ℏ_q, 𝔅) is pin-dependent and thereby excluded — the unique pin-stable per-step weight is the step's own e-fold width (Haar restated); the bar-pair ½ is scale-free in the chart; B5 the keystone-forced N(n) = (n−1)! equals the c = 1 Schwinger moment — conditional on the (unproved) Borel-variable = proper-time identification, n·N(n) = n! forces c = 1 and distinguishes the ρ-split reading from the E-Jacobian reading; B6 the q-rung and Reeb step charts agree only classically. Owner premises P1 (substrate scale-free; q₀ local) and P2 (proper time = computational time) recorded and tiered in the audit doc. No-4th-calibration prune applied: every candidate adds zero calibration DOF; any data-pinned ½ is discipline-excluded.",
   "auditOnly": "docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md",
@@ -149,11 +156,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

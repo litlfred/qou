@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.660Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.702Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.743Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.785Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.830Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.871Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.913Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.953Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.994Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "dfd2a792c816",
+          "ts": "e418f3713629"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.031Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row method/value table for binding_Phi at q_0. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Recomputed the second row: with theta = ln q_0 = 0.1043609, -9 theta = -0.9392478, matching the stated -0.939. STALE-WITNESS DEFECT reported separately: row 1 is labelled 'Witness (numerical) | +0.687', but computations/h2-molecular-binding.witness.json now records binding_Phi_diff = 0.12847273 (a 5.35x change) with allPassed FALSE; git shows 0.687012518563036 was the value at commit 230cdd113 and it moved at 4326460a4 ('migration: batch to 116/254 at the proton pin'). The row's own provenance label is therefore no longer true of the cited witness."
+      }
     ]
   },
   "source_hashes": {
     "md": "dfd2a792c816",
     "ts": "e418f3713629"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:03.031Z"
 }

@@ -10,7 +10,7 @@
  "metadata": {
   "arxiv": null,
   "doi": "10.1109/TIT.2014.2333734",
-  "title": "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces:",
+  "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
   "authors_raw": "Existence and Uniqueness Conditions",
   "abstract": "The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of left quaternion Hilbert spaces, which makes it possible to generalise standard RKHS to quaternion RKHS. Quaternion versions of the Riesz repre- sentation and Moore–Aronszajn theorems are next introduced, thus underpinning kernel estimation algorithms operating on quaternion-valued feature spaces. The difference between the proposed quaternion kernel concept and the existing real and vector approaches is also established in terms of both theoretical advantages and computational complexity. The enhanced estima- tion ability of the so-introduced quaternion-valued kernels over their real- and vector-valued counterparts is validated through kernel ridge regression applications. Simulations on real world 3D inertial body sensor data and nonlinear channel equalisation using novel quaternion cubic and Gaussian kernels support the approach. Index Terms— Quaternion RKHS, support vector regression, quaternion kernel ridge regression, high-dimensional kernels, vector kernels, multikernel. I. I NTRODUCTION S INCE their introduction in the early 1980s [1], support vector machines (SVM) have become a de facto standard for classiﬁcation and regression with application in areas including semantic analysis [2], gene selection [3], and ﬁnancial prediction [4]. An extension of the original SVM algorithm to nonlinear classiﬁca tion [5] employs the so-called kernel trick [6], which enables operation in higher dimensional spaces through the evaluation of a kernel function. The kernel trick has also made it possible to efﬁciently implement support vector regression (SVR) algorithms [7], whereby the output of a system is modelled as an inner product between a nonlinear transformation of the input and an optimal (ﬁxed)",
   "docinfo": {
@@ -21,7 +21,8 @@
   "title_lines": [
    "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014",
    "Quaternion Reproducing Kernel Hilbert Spaces:"
-  ]
+  ],
+  "title_prev": "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces:"
  },
  "toc": [
   {

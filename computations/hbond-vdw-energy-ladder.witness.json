@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:35.523570+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-23T20:05:23.251462+00:00",
+  "commitSha": "8fc423a79a855b1728b7f6ee83414756a3163a61",
   "assertions": [
     {
       "name": "even-power ladder: H-bond rung is h² (the verified rung)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "hbond-vdw-energy-ladder",
   "scriptFile": "hbond_vdw_energy_ladder.py",
-  "scriptHash": "a802a8c88121",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "f7eac8905562",
+  "scriptCommitSha": "de48ab178411871a0b6297d5b719aa51ce7a11f8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,30 +34,40 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hbond_vdw_energy_ladder.py"
+    ],
+    "reproduce": "python3 -u computations/hbond_vdw_energy_ladder.py"
   },
   "description": "The even-power h-ladder of interaction energies (h = q₀−q₀⁻¹): covalent h⁰=1, hydrogen bond h²≈0.044 (verified, H₂O/HF latent heat ~1–2%), van der Waals (the Hopf symmetric block) h⁴≈0.0019. Per-contact dispersion test on non-H-bonding liquids (CH₄, N₂; L_vap/Z over coordination Z≈12) lands at the right ORDER h⁴. The bare categorical symmetric block e₊ is ℏ_q-scale (≈0.10), far above h⁴; the suppression to the molecular per-contact vdW is the ARCHIMEDEAN 1/r⁶ inter-molecular separation (e₊ is the touching limit), NOT fixed by the Hecke decomposition. Tiered: the h-ladder is a structural near-match (order of magnitude); the exact vdW energy (coordination Z + 1/r⁶ archimedean separation) is OPEN, not fitted.",
   "contentBlock": "def:van-der-waals-hopf-channel",
   "parameters": {
-    "q": 1.1099785955573347
+    "q": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "h": 0.20906032199559366,
-    "h_squared_hbond_rung": 0.0437062182329013,
-    "h_fourth_vdw_rung": 0.001910233512221994,
-    "hbar_q": 0.09908172643825894,
-    "e_plus_qdim": 0.6963254203129335,
-    "archimedean_suppression_h4_over_eplus": 0.0027433057253080343,
+    "h": "0.20906029879563931543084621312967494385975749526302",
+    "h_squared_hbond_rung": "0.043706208532521989402019335677388309768213960713506",
+    "h_fourth_vdw_rung": "0.0019102326642882979503365746069599023913784986556201",
+    "hbar_q": "0.099081716044258507839177117518906063985258373389445",
+    "e_plus_qdim": "0.69632542639163312323294034049170185342474969052223",
+    "archimedean_suppression_h4_over_eplus": "0.0027433044836336753950906133413578178594672277397337",
     "CH4_vdw_per_contact_kJmol": 0.6808333333333333,
     "CH4_per_contact_over_Ecov": 0.0015508731966590735,
-    "CH4_ratio_over_h4": 0.8118762375051672,
+    "CH4_ratio_over_h4": "0.81187659788913081693060492596228086281713272660659",
     "Ar_vdw_per_contact_kJmol": 0.5441666666666667,
     "N2_vdw_per_contact_kJmol": 0.46416666666666667,
     "N2_per_contact_over_Ecov": 0.0004911816578483246,
-    "N2_ratio_over_h4": 0.2571317353117627,
+    "N2_ratio_over_h4": "0.25713184945003850506413267377016331919960942434758",
     "finding": "Interaction energies form an even-power h-ladder (h = q₀−q₀⁻¹): covalent h⁰, hydrogen bond h² (verified), van der Waals h⁴. The vdW = Hopf symmetric block sits at the h⁴ rung; the per-contact dispersion of close-packed non-H-bonding liquids (CH₄, N₂) is the right ORDER h⁴. The bare categorical e₊ is ℏ_q-scale; the suppression to the molecular per-contact h⁴ is the archimedean 1/r⁶ inter-molecular separation (e₊ = touching limit), which the framework does not yet carry at molecular scale. Tier: h-ladder structural near-match (order of magnitude); exact vdW energy (coordination Z + 1/r⁶ archimedean separation) OPEN, not fitted."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

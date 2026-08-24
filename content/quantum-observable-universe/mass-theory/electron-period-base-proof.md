@@ -4,7 +4,7 @@ $(a_D^{(0)}, a_D^{(1)})$. By
 [`prop:jet-sw-tau-decomposition`](#prop:jet-sw-tau-decomposition) the $n=0$
 period is the unprolonged Seiberg--Witten period, i.e. the electron period
 $a_D^{(e)}$; the calibration $a_D^{(0)} = m_e$ sets the leptonic scale (CAL-1).
-The base value is then literally $a_D^{(0)} = m_e$
+The base value is then $a_D^{(0)} = m_e$
 ([`QOU.Mass.electron_period_is_base`](#prop:electron-period-base), the structure
 projection `base0`). Evaluating the recurrence at $n=0$,
 $$

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2506.10206v2
-doc_title: "5), and Q(√−7)"
+doc_title: "Analytic dilogarithm identities"
 section_id: sec-023-61-related-dilogarithm-identities
 section_title: "Related dilogarithm identities"
 section_number: 6.1
 pages: 18-19
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
-doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
+doc_brief: "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 In this section, we provide some further dilogarithm identities that we have obtained fol-
 lowing a similar approach, relative to the material given above, and we encourage further

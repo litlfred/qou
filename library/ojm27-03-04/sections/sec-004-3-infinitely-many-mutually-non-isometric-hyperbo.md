@@ -1,6 +1,6 @@
 ---
 doc_id: ojm27-03-04
-doc_title: "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka"
+doc_title: "Hyperbolic 3-manifolds with totally geodesic boundary"
 section_id: sec-004-3-infinitely-many-mutually-non-isometric-hyperbo
 section_title: "Infinitely many mutually non-isometric hyperbolic 3-manifolds"
 section_number: 3

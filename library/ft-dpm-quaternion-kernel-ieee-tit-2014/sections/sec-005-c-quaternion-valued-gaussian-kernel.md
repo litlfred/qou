@@ -1,13 +1,13 @@
 ---
 doc_id: ft-dpm-quaternion-kernel-ieee-tit-2014
-doc_title: "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces:"
+doc_title: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions"
 section_id: sec-005-c-quaternion-valued-gaussian-kernel
 section_title: "Quaternion-Valued Gaussian Kernel"
 section_number: C
 pages: 8-10
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
-doc_brief: "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces: — The existence and uniqueness conditions of quater- nion reproducing"
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 Recent complex-valued extensions of kernel estimation
 algorithms [17], [18] consider a complex-valued positive def-

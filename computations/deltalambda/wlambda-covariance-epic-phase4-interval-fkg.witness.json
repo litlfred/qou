@@ -1,8 +1,8 @@
 {
   "engine": "python-exact+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-24T20:46:12.462615+00:00",
-  "commitSha": "1bc44fa18d7923c48f03ebf2bb841e3dc9c241f4",
+  "computedAt": "2026-08-23T09:06:18.233650+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "covariance_epic_phase4_interval_fkg_reframing",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "wlambda-covariance-epic-phase4-interval-fkg",
   "scriptFile": "wlambda_covariance_epic_phase4_interval_fkg.py",
-  "scriptHash": "108a66b82848",
-  "scriptCommitSha": "1bc44fa18d7923c48f03ebf2bb841e3dc9c241f4",
+  "scriptHash": "38710c113c69",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/wlambda_covariance_epic_phase4_interval_fkg.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/wlambda_covariance_epic_phase4_interval_fkg.py"
   },
   "description": "Phase 4 of the covariance-kernel proof epic (qou-x631): sharpen the kernel to a compact-interval correlation inequality, by analogy with Fulman's Stein/eigenfunction-drift method. The kernel cov(k)=Σ(f^λ)³ω₃≤0 is H(3)≤0 for H(β)=E_β[C₂]−C(k,2). β=3 lies inside the monotone-decreasing window (E_β[C₂] decreases 2→3→4; only rises 4→5, Phase 1), so the kernel needs only the INTERVAL statement d/dβ E_β[C₂]=Cov_β(C₂,ln f)≤0 on [2,3], integrated from H(2)=0. Since ln f=ln k!−Σln h, this is Cov_β(Σc², Σln h)≥0 on [2,3] — a POSITIVE correlation between two explicit box-sum statistics (content-spread, log-hook-sum). NOTE (Phase 4b): this LOWERS THE DIMENSION POWER (from (f)³-weighting to a ln f-covariance) but does NOT sidestep the dimension — Σln h=ln k!−ln f still contains the log-dimension (∉A); and both off-the-shelf closers (FKG-on-dominance, Chebyshev-comonotone) are eliminated in Phase 4b. Verified 40 dps on a fine β-grid over [2,3], all k≤14: (a) E_β[C₂] monotone non-increasing; (b) Cov_β(C₂,ln f)≤0; (c) Cov_β(Σc²,Σln h)≥0. This SHARPENS the open target; it does not close it. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
   "data": {

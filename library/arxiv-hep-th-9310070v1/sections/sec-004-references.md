@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9310070v1
-doc_title: "September, 1993 Quantum Dilogarithm"
+doc_title: "Quantum dilogarithm"
 section_id: sec-004-references
 section_title: "References"
 section_number: null
 pages: 8-9
 source_pdf: 9310070v1.pdf
 source_sha256: b979ebf2f47a4653
-doc_brief: "September, 1993 Quantum Dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity."
+doc_brief: "Quantum dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity."
 ---
 [1] H.W.J. Bl¨ ote, J.L. Cardy and M.P. Nightingale, Phys. Re v. Lett. 56 (1986) 742
 A.B. Zamolodchikov, Int. J. Mod. Phys. A 4 (1989) 4235

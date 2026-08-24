@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15 + mpmath 1.4.1",
-  "computedAt": "2026-07-06T21:58:57.625598+00:00",
-  "commitSha": "52d7e805050f8001b0b0972bf65aee7de3517b21",
+  "computedAt": "2026-08-23T07:51:29.181471+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "no_candidate_within_1pct_of_needed_unit",
@@ -16,7 +16,7 @@
   "computation": "reeb-5g-unit-anchor-scan",
   "scriptFile": "reeb_5g_unit_anchor_scan.py",
   "scriptHash": "3c4e118446d6",
-  "scriptCommitSha": "52d7e805050f8001b0b0972bf65aee7de3517b21",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,16 +25,28 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/reeb_5g_unit_anchor_scan.py"
+    ],
+    "reproduce": "python3 -u computations/probes/reeb_5g_unit_anchor_scan.py"
   },
   "description": "Bounded (preregistered 10-candidate) unit-anchor audit for the linear deuteron law B = 5·g_reeb [MeV]. Honest negative; no fit, no open-ended search. audit-only.",
   "tier": "exploratory (bounded audit; negative result)",
   "result": {
     "constants": {
-      "g_reeb": "0.446727067798",
-      "5g": "2.233635339",
+      "g_reeb": "0.446727067906",
+      "5g": "2.23363534",
       "B_AME_2H": "2.224566",
-      "E_unit_needed_MeV": "0.995939651"
+      "E_unit_needed_MeV": "0.9959396508"
     },
     "candidates": [
       {
@@ -67,7 +79,7 @@
       },
       {
         "candidate": "m_e*q",
-        "E_unit_MeV": "0.5671979",
+        "E_unit_MeV": "0.56719789",
         "dev_from_1MeV_pct": "-43.28",
         "B_pred_MeV": "1.2669133",
         "err_vs_AME_pct": "-43.049"
@@ -81,30 +93,30 @@
       },
       {
         "candidate": "m_e*(q-1)^2/hbar_q^2",
-        "E_unit_MeV": "0.62957753",
+        "E_unit_MeV": "0.62957751",
         "dev_from_1MeV_pct": "-37.042",
         "B_pred_MeV": "1.4062466",
         "err_vs_AME_pct": "-36.786"
       },
       {
         "candidate": "E0=m_e/(q(q-1))",
-        "E_unit_MeV": "4.1859808",
+        "E_unit_MeV": "4.1859814",
         "dev_from_1MeV_pct": "318.6",
-        "B_pred_MeV": "9.3499547",
+        "B_pred_MeV": "9.3499559",
         "err_vs_AME_pct": "320.3"
       },
       {
         "candidate": "E0/[2]_v^2",
-        "E_unit_MeV": "1.0436521",
+        "E_unit_MeV": "1.0436522",
         "dev_from_1MeV_pct": "4.3652",
-        "B_pred_MeV": "2.3311381",
+        "B_pred_MeV": "2.3311384",
         "err_vs_AME_pct": "4.7907"
       },
       {
         "candidate": "Q_beta",
         "E_unit_MeV": "0.78233341",
         "dev_from_1MeV_pct": "-21.767",
-        "B_pred_MeV": "1.7474475",
+        "B_pred_MeV": "1.7474476",
         "err_vs_AME_pct": "-21.448"
       }
     ],

@@ -6,6 +6,8 @@ import json
 # Adjust path to import _li_2_q_util
 sys.path.append(str(Path(__file__).parent))
 from _li_2_q_util import load_q_50dps, li_2_q
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 def euler_coeff_limit(z_val: mpf, q: mpf, max_k: int = 2000, eps: mpf | None = None) -> mpf:
     if eps is None:
@@ -22,7 +24,7 @@ def euler_coeff_limit(z_val: mpf, q: mpf, max_k: int = 2000, eps: mpf | None = N
     return total
 
 def main():
-    mp.dps = 50
+    set_compute_dps()
     q, q_inv, z_anchor = load_q_50dps()
     
     # physical z_i from the doc

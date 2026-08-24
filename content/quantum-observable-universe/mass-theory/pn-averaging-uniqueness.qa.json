@@ -1771,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.028Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Proposition with Setting / Derivation chain / Lean structure sections. No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1790,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.120Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot; each section advances the uniqueness argument."
       }
     ],
     "trap-em-dash": [
@@ -1809,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 177 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.214Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1828,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 177 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.287Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Hypotheses (a),(b),(c) and the three Lean classes are the actual structure of the uniqueness statement, not rhetorical triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1847,6 +1907,21 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.386Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the conditional Lean theorem, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1866,6 +1941,22 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.469Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'We stage the uniqueness via the conditional-class pattern' describes the formalisation route rather than narrating emphasis; standard in this corpus's Lean-structure sections."
       }
     ],
     "trap-thesis-restatement": [
@@ -1885,6 +1976,22 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.524Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'Once we fix color-flavor compatibility, the averaging is uniquely determined' restates the statement's final line, but the Setting paragraph earns it by naming the two production candidates in between."
       }
     ],
     "trap-performed-warmth": [
@@ -1904,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.604Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1923,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.659Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'uniquely determined' is the theorem's content; no inflation. Derivation-chain numerics check out: Bring's curve has genus 4; T(2,9) and T(3,5) both have genus (p-1)(k-1)/2 = 4; alpha_shift(T(3,5)) = k(p-1) = 5*2 = 10, matching the q^10 pole in w = 1/(1 - h_q q^10)."
       }
     ],
     "trap-nonspeakable": [
@@ -1942,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:31:00.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6c1f20b78772",
+          "ts": "8f4699a2f2eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:44.709Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1965,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:05:44.709Z"
 }

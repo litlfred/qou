@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-08-09T14:54:51Z
+updated_at: 2026-08-23T21:30:35Z
 ---
 
 
@@ -182,3 +182,135 @@ partition confirmed >= 3 rows.
       confinement-operator-selection. Own PR. Overlaps qou-cds2.
 
 Deliberately NOT attempted: any wholesale rewrite of the binding chain.
+
+
+## Formalize-first brick, 2026-08-23: the TL_3 target is WELL-POSED (exact)
+
+Owner directed me onto this. Before the 2-3 day engine move, the question
+worth settling first is whether the repair actually lands on a non-singular
+form. It does, and the proof is symbolic over Q(q) at zero engine cost.
+
+    det G_TL  =  -(q^4 + 1)(q^2 - q + 1)^4 (q^2 + q + 1)^4 / (q^2 + 1)^10
+
+Probe: `computations/qbeta/tl3_gram_nonsingular_probe.py`, 7/7, exact sympy,
+no float64, no q_0 evaluation, no anchor — so it is pin-independent.
+
+**1. Non-singular for EVERY real q > 0, not merely generically.** The
+numerator's bracket has all-positive coefficients, so it is strictly positive
+on q > 0 and the determinant strictly negative. Confirmed independently: the
+numerator has **no real roots at all**.
+
+**2. The exponents ARE this bean's result.** Factor multiplicities are
+`[1, 4, 4]` = dim(3)^2 = 1 and dim(2,1)^2 = 4. Exactly the two partitions of
+3 with fewer than three rows — the surviving blocks. The three-row block
+(1^3), the one convention D kills, is absent, which is what makes the
+quotient Temperley-Lieb. So the determinant independently exhibits the
+Catalan structure this bean established from the y_lambda side.
+
+**3. Cross-checked against the closed form.** `y_(3)^1 * y_(2,1)^4` from
+`y_(n-k,k) = [n-2k+1]/[2]^n` differs from det G_TL by exactly `-(J^2)`,
+`J = (q^4+q^2+1)^2/q^4` — the change-of-basis law
+`det_B(G) = det(P)^2 det_W(G)`, since the NF basis is not the matrix-unit
+basis. A mismatch of any *other* shape would have meant one of the two routes
+is wrong; a perfect square is the only thing that can appear here.
+
+**Basis choice, stated because it looks arbitrary and is not.** The quotient
+basis is the first five NF cosets. Any five work: `v` has a nonzero
+coefficient on every NF element (`(-1/q)^len != 0`), so no five of the six
+are dependent mod the radical.
+
+### What this does and does not buy
+
+It **removes the risk** that the engine move lands on a form that is still
+degenerate — the single largest unknown in the 2-3 day estimate. It does
+**not** perform the migration, does not touch gram.rs or gram.py, and wires
+nothing.
+
+Also relevant to `qou-yof3`, closed earlier today: that bean's fix option 2
+was 'solve on the TL_3 quotient', and for THAT system it does not work — the
+all-ones RHS does not annihilate the radical (`<v,1> = (q-1)(q^2-q+1)/q^3`
+!= 0), so it never descends. **Non-singularity of the quotient form and
+solvability of a particular system on it are different questions**; this
+brick establishes the first and says nothing about the second.
+
+
+## PR #5592, 2026-08-23: the Python-side quotient form is BUILT and it INVERTS
+
+Branch `claude/8iru-tl3-quotient-gram-2026-08-23`. This is the first
+increment of the 2-3 day move, deliberately scoped to the Python path.
+It does **not** touch the Rust engine, `gram.py`, or
+`confinement-operator-selection.py`.
+
+### What landed
+
+`tools/pyhecke/python/pyhecke/tl.py` — new, **additive**, general `n`:
+
+- `tl_basis(n)` = the 321-avoiding (fully commutative) permutations,
+  `Catalan(n)` of them (verified n = 2..8).
+- A general-`n` Ocneanu/Markov trace on the `T_w` basis by a **coset
+  recursion**: `w = u·d` with `d` the minimal rep of `S_{n-1}w`, so
+  `T_w = a·T_{n-2}·b` with `a, b ∈ H_{n-1}` and the Markov axiom is only
+  ever applied inside the subalgebra.
+- Generic in the scalar type — one implementation, exact over `Fraction`,
+  sympy ℚ(q), or `mpmath.mpf`. **No float64 path exists in the module.**
+  The mpmath default `q` is the proton-pinned 50-digit string.
+- `tl_gram` / `_exact` / `_mp`, `gram_rank_exact`, and a genuine
+  `tl_gram_inverse_*` — not pinv, not a rank-one shift.
+
+### The measurements
+
+`computations/qbeta/tl_quotient_gram_probe.py`, 10/10, exact:
+
+- **The general recursion reproduces `pyhecke.gram`'s hard-coded `TR_M`**
+  `[1, z, z, z², z², h z² + z]` exactly, symbolically, on all six n=3 NF
+  words. Cross-*implementation*, not internal consistency.
+- **`det G_TL(3)` re-derives PR #5572's closed form exactly** from
+  general-`n` code rather than a transcribed 6×6 table.
+- **`rank G_full(n) = Catalan(n)` exactly over ℚ at n = 3,4,5** — coranks
+  **1 / 10 / 78** = `1`, `3²+1²`, `6²+5²+4²+1²`. That is `qou-cds2`'s
+  corank accounting, now measured rather than quoted.
+- **`G_TL · G_TL⁻¹ = I` entry-by-entry with exact 1s and 0s** at n = 3,4,5.
+  The residual on the singular form via pinv is `1.64`.
+- Inverting the full form **raises**; `np.linalg.inv` does not.
+
+`tools/pyhecke/tests/test_tl.py` — 27 passed.
+
+### Why "the first five NF cosets" worked
+
+`tl_basis(3)` is exactly `NF_BASIS` minus `(0,1,0)`, whose permutation
+`(3,2,1)` is the **only** 321 pattern in `S_3`. #5572 said any five work
+because `v` has a nonzero coefficient on every NF element. True, but the
+first five are also the *canonical* five, and that generalises: at every
+`n` the quotient basis is the fully commutative words.
+
+### Scope — NOT overstated
+
+- **n = 3: scope-(b), every real q > 0**, citing #5572's root-free numerator.
+- **n ≥ 4: non-singular over ℚ(q) ONLY.** A determinant nonzero at a
+  rational point cannot vanish identically — that is all it gives. Nothing
+  here rules out a real `q > 0` at which the n=4 or n=5 quotient form
+  degenerates. The symbolic n≥4 determinant was attempted and abandoned
+  (sympy's unsimplified rational-function sums blow up; killed at >10 min).
+- The rank is likewise exact **at a point**, so it is a generic *lower*
+  bound. The matching upper bound is the established `y_λ` vanishing
+  (`conventionD_weight_eq_zero_iff`), not this probe.
+
+### Currency correction to this bean's own brief
+
+The task brief (and the older text above) says `G_INV` *"is exported at
+module import"* and that `gram.py:407` uses `np.linalg.pinv`. **Both are
+stale.** `G_INV` no longer exists anywhere in `pyhecke.gram` — it was
+deleted rather than rebound, and `test_gram_values.py` asserts
+`not hasattr(gram, "G_INV")`. The module-import export to be careful about
+is **`G_PINV = np.linalg.pinv(G)` at line 429**. The blast-radius concern
+is unchanged and still real; only the name and line number were wrong.
+
+### What remains (the rest of the 2-3 days)
+
+1. `hecke-engine/src/gram.rs:339` — the rank-one-shift Moore-Penrose.
+2. `pyhecke.gram` — decide whether `G_PINV` gains a TL-quotient sibling,
+   and migrate consumers deliberately (13 re-exporters + 13 consumers,
+   `qou-cdh2`). Do **not** rebind `G_PINV`.
+3. `computations/confinement-operator-selection.py:195` — `_pg_safe_inverse`.
+4. Open: the symbolic `det G_TL(n)` for n ≥ 4, which is what would upgrade
+   those to the n=3 scope-(b) statement.

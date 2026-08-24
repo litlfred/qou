@@ -1,9 +1,13 @@
-# archimedean_by_design: scipy LP/SDP solver wrapper + numpy
-#   float64 Hoefsmit matrices (the `_hoefsmit_f64_matrices` helper
-#   makes this explicit in its name). Substrate precision is the
-#   input q-arithmetic; the LP/SDP solve and the Gram matrix
-#   assembly are float64 by necessity (scipy.optimize.linprog +
-#   numpy.linalg).
+# NOT archimedean_by_design. This file used to carry that marker, reading
+#   "the LP/SDP solve and the Gram matrix assembly are float64 by necessity
+#   (scipy.optimize.linprog + numpy.linalg)". The necessity was real when it
+#   was written and is now gone: the Gram/supply assembly runs in mpmath via
+#   `hoefsmit_mpmath` (#5264), the solve goes to the Clarabel-MPFR backend
+#   over decimal strings, and deliverable B's eigensolve is `mp.eig`. numpy
+#   is no longer imported at all. The marker is an agent-facing convention
+#   with no script reading it, so a stale one is pure misdirection — it would
+#   have gone on excusing float64 here long after the reason expired.
+#   Bean qou-q7f1; owner directive "no f64 path".
 """Wedderburn pair-volume LP/SDP wiring for the EW-sector + alt-Δ_I
 Weinberg-angle probe.
 
@@ -29,26 +33,217 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
+from functools import lru_cache
 from pathlib import Path
 
-import numpy as np
 import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+import mpmath as mp  # noqa: E402
+from _precision import COMPUTE_DPS, fmt  # noqa: E402
+
+#: Working precision for the whole pipeline: the package's COMPUTE_DPS.
+#:
+#: WAS a hardcoded 50, reasoning that 50 dps "matches the substrate constant
+#: `Q_50_DIGIT_STR`". That is true of the INPUT and wrong about the output:
+#: `_precision` serializes at OUTPUT_DPS = 60 with 10 guard digits, so a
+#: 50-dps computation wrote 10 unbacked digits into every value in the
+#: witness. Harmless to any consumer reading 50 digits, but it is precisely
+#: the tail that made the sparse rewrite below look like it changed answers —
+#: reassociating a sum moves the first unbacked digit, and there were ten of
+#: them on display.
+#:
+#: Computing at COMPUTE_DPS (70) backs every serialized digit. It was not a
+#: realistic option while the producer took 46 min; the sparse assembly makes
+#: it free (21 s), which is the useful kind of thing a speed-up buys.
+_MP_DPS = COMPUTE_DPS
+
+
+def _as_strings(x):
+    """mpf scalar / vector / matrix -> full-precision decimal string(s).
+
+    The marshalling format the MPFR solver accepts, and the only one that
+    reaches it without an f64 hop: `repr(float(v))` would put the truncation
+    back exactly where the port removed it.
+    """
+    if isinstance(x, list):
+        return [_as_strings(v) for v in x]
+    return mp.nstr(x, _MP_DPS)
+
+
+def _mpf_or(v, default):
+    """Decimal string / number -> mpf, with a default when absent.
+
+    The serialization port turned several witness fields into decimal strings
+    to keep them out of float64, and every downstream COMPARISON on them has
+    to move with the type. Two did not, and the first was found the expensive
+    way: `r.get("duality_gap", float("inf")) < 1e-6` raised TypeError after
+    the entire H_9 compute had already finished.
+    """
+    if v is None:
+        return default
+    return mp.mpf(str(v))
+
+
+def _nonzeros(M, dim: int) -> dict:
+    """``{(i, j): value}`` for the nonzero entries of an ``mp.matrix``.
+
+    mpmath already stores a matrix as a dict of its nonzeros, so the fast path
+    reads that directly. It is a name-mangled private attribute, hence the
+    O(dim^2) fallback: if a future mpmath renames it the result stays correct
+    and only the speed regresses, which is the right way round for a private
+    attribute this useful.
+    """
+    data = getattr(M, "_matrix__data", None)
+    if data is None:
+        return {(i, j): M[i, j] for i in range(dim) for j in range(dim)
+                if M[i, j] != 0}
+    return {k: v for k, v in data.items() if v != 0}
+
+
+def _sparse_product(A_nz: dict, B_nz: dict) -> dict:
+    """Nonzeros of ``A.B`` from the nonzeros of A and B.
+
+    The pair matrices ``M_k = sigma_i . sigma_j`` were built with mpmath's
+    ``*``, which is a DENSE O(dim^3) matmul — 840 of them per atom (30
+    partitions x 28 pairs), at dim up to 216. Sparse contraction of the outer
+    trace alone therefore fixed the smaller half: the products are ~420M mpf
+    operations against the traces' ~147M.
+
+    At 1.13% density the product costs ``sum_j nnz(A[:,j]) * nnz(B[j,:])``
+    instead of dim^3. Same construction as the trace: seminormal form is
+    sparse, and nothing here is an approximation — the arithmetic is
+    identical, only the zeros are skipped.
+    """
+    brow: dict = {}
+    for (j, k), v in B_nz.items():
+        brow.setdefault(j, []).append((k, v))
+    out: dict = {}
+    for (i, j), a in A_nz.items():
+        row = brow.get(j)
+        if not row:
+            continue
+        for k, b in row:
+            key = (i, k)
+            prev = out.get(key)
+            out[key] = a * b if prev is None else prev + a * b
+    return {k: v for k, v in out.items() if v != 0}
+
+
+def _mp_trace_of_product(A, B, dim: int):
+    """tr(A.B) as ``sum_ij A[i,j]*B[j,i]`` -- O(dim^2), never forming A.B.
+
+    The diagonal of a matrix product needs only the row-column contraction, so
+    building the full product to take its trace does dim^3 work for a dim^2
+    answer. In numpy that waste was invisible; in mpmath it is the difference
+    between a session and a day. Measured over the partitions of 9, with 28
+    pairs and 406 pair-pair traces:
+
+        forming the products : 434 * sum(dim^3) = 2.59e10 mpf ops
+        contracting instead  :  28 * sum(dim^3) + 406 * sum(dim^2) = 1.82e9
+                               (sum(dim^2) over partitions of n is n! = 362880)
+
+    a 14.2x reduction. The 28 pair matrices M_k = sigma_i.sigma_j are still
+    formed, because G contracts them against each other; only the outer trace
+    is contracted rather than multiplied.
+
+    SPARSE. The two bounds above are both O(dim^2) in the contraction, and
+    that is 128x more work than the matrices contain. Measured over the
+    partitions of 9: the Hoefsmit generator matrices are 1.13% dense (1.56
+    nonzeros per ROW), and a pair product sigma_i.sigma_j is 0.78% dense --
+    366 nonzeros in the 216x216 block, against 46656 index pairs the dense
+    loop walks. Seminormal form is sparse by construction; nothing here
+    needed to be discovered, only used.
+
+    So iterate the nonzeros instead. tr(A.B) = tr(B.A), so it is valid to
+    walk whichever side has fewer.
+
+    Accepts an ``mp.matrix`` or an already-extracted ``{(i, j): value}``
+    dict, which lets `_full_wedderburn_gram` extract each pair matrix ONCE
+    and reuse it across every pair-pair combination rather than per trace.
+    """
+    a = A if isinstance(A, dict) else _nonzeros(A, dim)
+    b = B if isinstance(B, dict) else _nonzeros(B, dim)
+    if len(b) < len(a):
+        a, b = b, a          # tr(A.B) = tr(B.A)
+    acc = mp.mpf(0)
+    for (i, j), v in a.items():
+        w = b.get((j, i))
+        if w is not None:
+            acc += v * w
+    return acc
+
+
+def _mp_trace(M, dim: int):
+    """tr(M) for an ``mp.matrix``, staying in mpf.
+
+    `mp.matrix` has no `.trace()`; summing the diagonal explicitly keeps the
+    value an `mpf`. Do NOT reach for `float(np.trace(...))` here — that was the
+    old path, and it discarded 34 of the 50 digits the inputs carry.
+    """
+    acc = mp.mpf(0)
+    for i in range(dim):
+        acc += M[i, i]
+    return acc
 from wedderburn_pair_volumes import wedderburn_pair_volumes  # noqa: E402
 from hecke_character_symbolic import _hoefsmit_build  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import (  # noqa: E402
+    PROVENANCE_STR_FIELDS,
+    provenance,
+    solve_operator_selection_lp,
+)
 from partition_utils import hook_lengths  # noqa: E402
 
 
-def _hoefsmit_f64_matrices(n: int, q0_value: float) -> dict:
-    """Pre-compute f64 Hoefsmit generator matrices ``M^λ_g`` for every
+@lru_cache(maxsize=None)
+def _hoefsmit_mp_matrices(n: int, q_str: str) -> dict:
+    """Hoefsmit generator matrices ``M^λ_g`` in **mpmath**, for every
     partition ``λ ⊢ n`` and every generator ``g ∈ {0, …, n-2}``.
 
-    Returns a dict ``{λ: {"matrices": [M_0, M_1, …], "y": y_λ(q_0)}}``
-    where each ``M_g`` is an ``np.ndarray`` of dtype ``np.float64`` and
-    ``y_λ`` is the canonical Plancherel weight on ``λ`` at ``q_0``.
+    Returns ``{λ: {"matrices": [M_0, M_1, …], "y": y_λ(q_0), "dim": d}}``
+    with each ``M_g`` an ``mp.matrix`` and ``y_λ`` an ``mpf``.
+
+    PORTED FROM FLOAT64 (owner directive "no f64 path", bean qou-q7f1). The
+    previous version took ``q0_value: float`` — the 50-dps substrate constant
+    truncated to f64 at the door — built ``np.float64`` matrices, and returned
+    an f64 ``y_λ``. Everything downstream inherited that, so the LP saw 16
+    digits no matter what the witness said. The construction now runs end to
+    end in mpmath via ``hoefsmit_mpmath`` (landed on main in #5264), whose
+    docstring records why a shortcut is not available: the numpy fast path is
+    float64 *by construction* — ``BlockCache`` uses ``math.sqrt`` against a
+    fixed ``1e-15`` degeneracy threshold — so handing it an ``mpf`` q does not
+    make it exact; numpy coerces on contact.
+
+    MEMOISED on ``(n, q_str)``. The sweep called this again for the
+    headline atom with identical arguments — triton is both the headline
+    and a sweep entry — so the H_9 build ran twice. The existing
+    ``hoefsmit_cache=`` parameter reuses a cache WITHIN one atom (supply
+    vector + Gram); it does nothing ACROSS the headline/sweep boundary,
+    which is where the duplication was. Pure function of its arguments,
+    and callers only read traces, so nothing mutates the cached matrices.
+
+    MEASURED IN ISOLATION: the H_9 build is 2.77 s cold, 0.003 ms memoised.
+    So this saves ~2.8 s. Keep it — it is free and correct — but it is not
+    a performance fix.
+
+    TWO WRONG CLAIMS PRECEDED THAT NUMBER, both mine, and the second is the
+    instructive one. First I said the duplicated build "dominated the wall
+    clock: 28 min becomes ~14", inferred from which step the progress line
+    narrates. Then I "corrected" that to "55.7 min -> 46.3 min, saving 9.4
+    min (17%)" from a before/after of two full runs — but those ran with
+    different background load (I had crosschecks and audits going during
+    the first), so 9.4 min of it was noise and ~3 s was the change. A
+    before/after wall-clock comparison is not a measurement unless the load
+    is controlled; timing the function directly is.
+
+    WHERE THE TIME ACTUALLY GOES, per atom at n=9 (one process, so the
+    ratio holds even if absolute numbers carry load):
+
+        build   2.9 s     supply  19.9 s     gram  1390.9 s  (98.4%)
+
+    i.e. 406 pair-pair traces at 3.43 s each. That is the only thing worth
+    optimising here, and `_mp_trace_of_product` below now does it sparsely.
 
     The caller then evaluates Markov traces of arbitrary 4-letter
     words via three matrix multiplications + one trace + sum over
@@ -56,39 +251,35 @@ def _hoefsmit_f64_matrices(n: int, q0_value: float) -> dict:
     ``tr_M_via_wenzl_bridge_mpfr`` mpfr assembly when many words
     share the same ``n``.
     """
-    import sympy as _sp
-    from hecke_character_symbolic import _hoefsmit_build  # noqa: E402
+    from hecke_character_symbolic import partitions_of  # noqa: E402
+    from hoefsmit_mpmath import BlockCacheMP, seminormal_matrices_mp  # noqa: E402
 
     # y_λ(q) = (q − q⁻¹)^(n − ℓ(λ)) · ∏_{x ∈ λ} [h_x(λ)]_q⁻¹
-    # (canonical Plancherel weight on the Hecke algebra at q).
-    q = q0_value
-    qi = 1.0 / q
+    # (canonical Plancherel weight on the Hecke algebra at q), in mpf.
+    with mp.workdps(_MP_DPS):
+        q = mp.mpf(q_str)
+        qi = 1 / q
 
-    def q_int_f(k: int) -> float:
-        if k == 0:
-            return 0.0
-        return (q ** k - qi ** k) / (q - qi)
+        def q_int(k: int):
+            if k == 0:
+                return mp.mpf(0)
+            return (q ** k - qi ** k) / (q - qi)
 
-    # Enumerate partitions of n.
-    from hecke_character_symbolic import partitions_of  # noqa: E402
-
-    out = {}
-    q_sp = _sp.Float(q0_value, 50)
-    for shape in partitions_of(n):
-        sp_mats, dim, _ = _hoefsmit_build(list(shape), q_sp)
-        if dim == 0:
-            continue
-        np_mats = [
-            np.array(m.tolist(), dtype=np.float64) for m in sp_mats
-        ]
-        ell = len(shape)
-        prefactor = (q - qi) ** (n - ell)
-        denom = 1.0
-        for h in hook_lengths(shape):
-            denom *= q_int_f(h)
-        y_lam = prefactor / denom
-        out[tuple(shape)] = {"matrices": np_mats, "y": y_lam, "dim": dim}
-    return out
+        cache = BlockCacheMP(q)
+        out = {}
+        for shape in partitions_of(n):
+            mats, dim, _ = seminormal_matrices_mp(list(shape), cache=cache)
+            if dim == 0:
+                continue
+            ell = len(shape)
+            prefactor = (q - qi) ** (n - ell)
+            denom = mp.mpf(1)
+            for h in hook_lengths(shape):
+                denom *= q_int(h)
+            out[tuple(shape)] = {"matrices": mats,
+                                 "y": +(prefactor / denom),
+                                 "dim": dim}
+        return out
 
 
 def _klr_positive_supply_vector(
@@ -97,7 +288,7 @@ def _klr_positive_supply_vector(
     q_str: str,
     *,
     hoefsmit_cache: dict | None = None,
-) -> np.ndarray:
+) -> list:
     """KLR-positive supply vector ``t_k = tr_M(σ_i σ_j)`` per pair.
 
     Replaces the signed `pair["full"]` matrix-entry sum used on PR
@@ -126,20 +317,23 @@ def _klr_positive_supply_vector(
 
     Returns
     -------
-    numpy.ndarray
+    list[mpmath.mpf]
         Real ``(n_pairs,)`` vector of pair Markov traces.
     """
     if hoefsmit_cache is None:
-        q0_value = float(__import__("sympy").Float(q_str, 50))
-        hoefsmit_cache = _hoefsmit_f64_matrices(n_strands, q0_value)
-    t = np.zeros(len(pairs), dtype=float)
-    for k, p in enumerate(pairs):
-        i, j = p["i"], p["j"]
-        for shape, info in hoefsmit_cache.items():
-            mats = info["matrices"]
-            M_ij = mats[i] @ mats[j]
-            t[k] += info["y"] * float(np.trace(M_ij))
-    return t
+        hoefsmit_cache = _hoefsmit_mp_matrices(n_strands, q_str)
+    with mp.workdps(_MP_DPS):
+        t = []
+        for p in pairs:
+            i, j = p["i"], p["j"]
+            acc = mp.mpf(0)
+            for shape, info in hoefsmit_cache.items():
+                mats = info["matrices"]
+                # tr(sigma_i . sigma_j) without forming the product
+                acc += info["y"] * _mp_trace_of_product(
+                    mats[i], mats[j], info["dim"])
+            t.append(+acc)
+        return t
 
 
 def _full_wedderburn_gram(
@@ -195,38 +389,47 @@ def _full_wedderburn_gram(
 
     Returns
     -------
-    numpy.ndarray
+    list[list[mpmath.mpf]]
         Real ``(n_pairs, n_pairs)`` Gram matrix.
     """
     n_pairs = len(pairs)
-    G = np.zeros((n_pairs, n_pairs), dtype=float)
     if hoefsmit_cache is None:
-        q0_value = float(__import__("sympy").Float(q_str, 50))
-        hoefsmit_cache = _hoefsmit_f64_matrices(n_strands, q0_value)
+        hoefsmit_cache = _hoefsmit_mp_matrices(n_strands, q_str)
 
     # Pre-compute the σ_i σ_j matrix per pair per partition.  This
     # turns the pair-pair Markov trace into a single matrix product
     # + trace per λ (factor-of-2 speed-up over recomputing).
-    pair_mats_per_lambda: dict[tuple, list] = {}
-    for shape, info in hoefsmit_cache.items():
-        mats = info["matrices"]
-        pair_mats_per_lambda[shape] = [
-            mats[p["i"]] @ mats[p["j"]] for p in pairs
-        ]
+    with mp.workdps(_MP_DPS):
+        pair_mats_per_lambda: dict[tuple, list] = {}
+        for shape, info in hoefsmit_cache.items():
+            mats = info["matrices"]
+            # Extract the nonzeros once per (lambda, pair). The dense loop
+            # this replaces re-walked dim^2 index pairs for every one of the
+            # n_pairs*(n_pairs+1)/2 combinations; there are only n_pairs
+            # matrices to extract.
+            # Sparse throughout: extract each GENERATOR's nonzeros once, then
+            # build every pair product sparsely. The dense `mats[i] * mats[j]`
+            # this replaces was O(dim^3) and ran 840 times per atom.
+            gen_nz = [_nonzeros(M, info["dim"]) for M in mats]
+            pair_mats_per_lambda[shape] = [
+                _sparse_product(gen_nz[p["i"]], gen_nz[p["j"]]) for p in pairs
+            ]
 
-    for k in range(n_pairs):
-        for kp in range(k, n_pairs):
-            val = 0.0
-            for shape, info in hoefsmit_cache.items():
-                # χ_λ(σ_i σ_j σ_{i'} σ_{j'}) = tr(M_ij^λ · M_i'j'^λ)
-                M_kkp = pair_mats_per_lambda[shape][k] @ \
-                        pair_mats_per_lambda[shape][kp]
-                val += info["y"] * float(np.trace(M_kkp))
-            G[k, kp] = val
-            G[kp, k] = val
-
-    G = G + eps * np.eye(n_pairs)
-    return G
+        G = [[mp.mpf(0)] * n_pairs for _ in range(n_pairs)]
+        eps_mp = mp.mpf(eps)
+        for k in range(n_pairs):
+            for kp in range(k, n_pairs):
+                val = mp.mpf(0)
+                for shape, info in hoefsmit_cache.items():
+                    # χ_λ(σ_i σ_j σ_{i'} σ_{j'}) = tr(M_ij^λ · M_i'j'^λ)
+                    val += info["y"] * _mp_trace_of_product(
+                        pair_mats_per_lambda[shape][k],
+                        pair_mats_per_lambda[shape][kp], info["dim"])
+                G[k][kp] = +val
+                G[kp][k] = +val
+        for k in range(n_pairs):
+            G[k][k] = +(G[k][k] + eps_mp)
+        return G
 
 
 def beta_ew_word(delta_I):
@@ -234,45 +437,68 @@ def beta_ew_word(delta_I):
     return [0]*4 + delta_I + [2]*6 + delta_I + [4]*8 + delta_I
 
 
-def beta_matrix_at_q0(shape, q_0, word):
-    """Build β_EW matrix on V_λ at q_0 (Float specialization).
+def beta_matrix_at_q0(shape, q_str, word):
+    """Build β_EW matrix on V_λ at q_0, in **mpmath** at 50 dps.
 
-    Converts each Hoefsmit generator matrix to numpy *once* up front,
-    then runs the per-generator multiplication in numpy.  Symbolic
-    matrix multiplication for a 3·A-letter word can dominate runtime
-    on V_(3,2,1) (dim 16); the numpy path matches the eventual
-    eigvals consumer at the cost of a one-time elaboration.
+    PORTED FROM FLOAT64 (owner directive "no f64 path", bean qou-q7f1).
+    The previous version elaborated the Hoefsmit generators to
+    ``np.complex128`` "once up front" and multiplied in numpy, then fed
+    ``np.linalg.eigvals``. That truncated the 50-dps substrate constant at
+    the first ``np.array(...)`` call, so every ``ratio`` and ``rel_err``
+    this probe reported carried 16 digits regardless of what the witness
+    claimed — the last 31 raw float64 fields in the witness were all
+    downstream of this one line.
+
+    "It is only a percent-level probe" is not an exemption (AGENTS.md
+    §PROBES ARE NOT EXEMPT): a probe conclusion is an *argument* that gets
+    written into a bean and a PR body, where nothing re-derives it.
+
+    The mpmath-native ``seminormal_matrices_mp`` (main #5264) replaces the
+    sympy ``_hoefsmit_build`` + numpy round trip (this file's last caller of
+    either), so no coercion point
+    remains. Measured cost on V_(3,2,1) (dim 16, 27-letter word): the
+    eigensolve is ~1 s per candidate, 14 candidates — the numpy path was
+    never the bottleneck this docstring claimed it was.
     """
-    matrices, dim, _ = _hoefsmit_build(list(shape), q_0)
-    if dim == 0:
-        return None, 0
-    np_mats = [
-        np.array(m.tolist(), dtype=np.complex128) for m in matrices
-    ]
-    M = np.eye(dim, dtype=np.complex128)
-    for gen_idx in word:
-        M = M @ np_mats[gen_idx]
-    return M, dim
+    from hoefsmit_mpmath import BlockCacheMP, seminormal_matrices_mp  # noqa: E402
+
+    with mp.workdps(_MP_DPS):
+        matrices, dim, _ = seminormal_matrices_mp(
+            list(shape), cache=BlockCacheMP(mp.mpf(q_str)))
+        if dim == 0:
+            return None, 0
+        M = mp.eye(dim)
+        for gen_idx in word:
+            M = M * matrices[gen_idx]
+        return M, dim
 
 
-def compute_321_max_plus_ratio(q_0, delta_I):
-    """For β_EW(Δ_I) on V_(3,2,1), return max+/2nd-max+ eigenvalue ratio."""
+def compute_321_max_plus_ratio(q_str, delta_I):
+    """For β_EW(Δ_I) on V_(3,2,1), return max+/2nd-max+ eigenvalue ratio.
+
+    Real parts of the spectrum, as before — the Hoefsmit seminormal form is
+    real at real q, so ``mp.eig`` returns a numerically-real spectrum and
+    ``.real`` discards only the residual imaginary part.
+    """
     word = beta_ew_word(delta_I)
-    M_np, dim = beta_matrix_at_q0((3, 2, 1), q_0, word)
-    if M_np is None:
+    M, dim = beta_matrix_at_q0((3, 2, 1), q_str, word)
+    if M is None:
         return None, []
-    eigs = np.linalg.eigvals(M_np).real
-    pos = sorted([e for e in eigs if e > 0])
-    if len(pos) < 2:
-        return None, eigs.tolist()
-    return pos[-1] / pos[-2], eigs.tolist()
+    with mp.workdps(_MP_DPS):
+        eigs = [mp.mpmathify(e).real for e in mp.eig(M, left=False,
+                                                     right=False)]
+        pos = sorted(e for e in eigs if e > 0)
+        if len(pos) < 2:
+            return None, eigs
+        return +(pos[-1] / pos[-2]), eigs
 
 
 def main() -> int:
+    # Recorded as a witness parameter only — every compute path below takes
+    # the 50-dps STRING directly, so nothing elaborates through sympy.
     q_0 = sp.Float(Q_50_DIGIT_STR, 50)
-    q_0_float = float(q_0)
     print(f"Wedderburn LP/SDP-EW wiring + alt-Δ_I Weinberg probe")
-    print(f"  q_0 ≈ {q_0_float:.10f}")
+    print(f"  q_0 ≈ {mp.nstr(mp.mpf(Q_50_DIGIT_STR), 12)}")
     print()
 
     # ── (A) LP/SDP wiring with Wedderburn pair volumes ──────────
@@ -343,9 +569,10 @@ def main() -> int:
           f"{n_pairs} pairs ({n_pairs} pair Markov traces + "
           f"{n_pairs * (n_pairs + 1) // 2} unique pair-pair traces; "
           f"shared Hoefsmit cache)...")
-    q_0_for_cache = float(sp.Float(Q_50_DIGIT_STR, 50))
-    hoefsmit_cache_h = _hoefsmit_f64_matrices(n_strands_headline,
-                                              q_0_for_cache)
+    # No `float(...)` of the substrate constant. It used to be truncated to
+    # f64 here and at two more sites; the 50-dps string now goes straight in.
+    hoefsmit_cache_h = _hoefsmit_mp_matrices(n_strands_headline,
+                                             Q_50_DIGIT_STR)
     t = _klr_positive_supply_vector(
         pairs, n_strands_headline, Q_50_DIGIT_STR,
         hoefsmit_cache=hoefsmit_cache_h,
@@ -354,32 +581,48 @@ def main() -> int:
     # numerical noise is tolerated; a substantive negative entry is
     # a bug or a non-canonical-basis pair (would need separate
     # investigation).
-    if t.min() < -1e-9:
-        print(f"  WARN: KLR positivity violation — min(t) = {t.min():.3e}")
-    # Keep the legacy signed matrix-entry sum for diff/comparison.
-    t_legacy_matrix_entries = np.array(
-        [p["full"] for p in pairs], dtype=float
-    )
+    if min(t) < mp.mpf("-1e-9"):
+        print(f"  WARN: KLR positivity violation — min(t) = {mp.nstr(min(t), 4)}")
+    # Keep the legacy signed matrix-entry sum for diff/comparison — in mpf.
+    # The sweep's copy of this line was ported and the headline's was not,
+    # which is its own small lesson: a duplicated expression only gets half
+    # ported when you fix the one the traceback names.
+    with mp.workdps(_MP_DPS):
+        t_legacy_matrix_entries = [mp.mpf(str(p["full"])) for p in pairs]
     G = _full_wedderburn_gram(
         pairs, n_strands_headline, Q_50_DIGIT_STR,
         hoefsmit_cache=hoefsmit_cache_h,
     )
     # Total target: half the sum of available KLR-positive amplitudes
     # (loose constraint to ensure feasibility).
-    n_target = float(t.sum() * 0.5)
-    print(f"  t (KLR pair Markov traces, top 3): {t[:3].tolist()}")
-    print(f"  t.min = {t.min():.4e}, t.max = {t.max():.4e}")
-    print(f"  legacy(matrix-entry) t.min = {t_legacy_matrix_entries.min():.4e}, "
-          f"t.max = {t_legacy_matrix_entries.max():.4e}")
-    print(f"  G shape: {G.shape}, n_target = {n_target:.6f}")
+    with mp.workdps(_MP_DPS):
+        n_target = +(mp.fsum(t) / 2)
+    print(f"  t (KLR pair Markov traces, top 3): "
+          f"{[mp.nstr(v, 12) for v in t[:3]]}")
+    print(f"  t.min = {mp.nstr(min(t), 6)}, t.max = {mp.nstr(max(t), 6)}")
+    print(f"  legacy(matrix-entry) t.min = "
+          f"{mp.nstr(min(t_legacy_matrix_entries), 6)}, "
+          f"t.max = {mp.nstr(max(t_legacy_matrix_entries), 6)}")
+    print(f"  G shape: ({len(G)}, {len(G[0])}), "
+          f"n_target = {mp.nstr(n_target, 12)}")
     # M_bound=0 enforces x ≥ 0 (operator coefficients are non-negative,
     # the natural interpretation of "operator selection" in
     # prop:knot-operator-lp-selection).  With KLR-positive t and x ≥ 0
     # the LP is bounded for every atom and strong duality holds; the
     # default M_bound=1e6 in `solve_operator_selection_lp` is intended
     # for problems with signed coefficients (not this case).
-    # Pin scipy: committed-witness producer → byte-deterministic.
-    res = solve_operator_selection_lp(t, G, n_target, M_bound=0.0, backend="scipy")
+    # CLARABEL-MPFR, not scipy. The pin used to read "Pin scipy:
+    # committed-witness producer -> byte-deterministic", and determinism is a
+    # real requirement — but scipy/HiGHS is float64, so pinning it truncated
+    # the 50-dps Gram at the solver door and made the mpmath port above
+    # pointless. The MPFR backend is equally deterministic and takes decimal
+    # STRINGS, so nothing crosses as f64. Its equivalence to scipy is
+    # cross-checked in clarabel_lp_crosscheck.py (13/13, worst 2.00e-12), and
+    # the solve certifies itself oracle-free in
+    # lp_dual_kkt_residual_50dps.py. Bean qou-q7f1.
+    res = solve_operator_selection_lp(
+        _as_strings(t), _as_strings(G), mp.nstr(n_target, _MP_DPS),
+        M_bound="0", backend="clarabel")
     res_dict = res.to_dict()
 
     # Also run LP for each atom in atoms_to_test (sweep)
@@ -418,18 +661,24 @@ def main() -> int:
             })
             continue
         # Reuse Hoefsmit cache for both supply vector + Gram.
-        cache_a = _hoefsmit_f64_matrices(n_strands_a, q_0_for_cache)
+        cache_a = _hoefsmit_mp_matrices(n_strands_a, Q_50_DIGIT_STR)
         ta = _klr_positive_supply_vector(
             ps, n_strands_a, Q_50_DIGIT_STR, hoefsmit_cache=cache_a
         )
-        ta_legacy = np.array([p["full"] for p in ps], dtype=float)
+        # `full` comes from wedderburn_pair_volumes; keep it in mpf rather
+        # than round-tripping the pair amplitudes through a numpy f64 array.
+        with mp.workdps(_MP_DPS):
+            ta_legacy = [mp.mpf(str(p["full"])) for p in ps]
         Ga = _full_wedderburn_gram(
             ps, n_strands_a, Q_50_DIGIT_STR, hoefsmit_cache=cache_a
         )
-        ntarget_a = float(ta.sum() * 0.5)
+        with mp.workdps(_MP_DPS):
+            ntarget_a = +(mp.fsum(ta) / 2)
         try:
             ra = solve_operator_selection_lp(
-                ta, Ga, ntarget_a, M_bound=0.0, backend="scipy"
+                _as_strings(ta), _as_strings(Ga),
+                mp.nstr(ntarget_a, _MP_DPS),
+                M_bound="0", backend="clarabel"
             ).to_dict()
         except Exception as e:
             lp_results_per_atom.append({
@@ -442,19 +691,31 @@ def main() -> int:
             "atom": atom_name, "Z": Za, "N": Na,
             "n_pairs": npairs_a,
             "n_strands": n_strands_a,
-            "t_min_klr": float(ta.min()),
-            "t_max_klr": float(ta.max()),
-            "t_legacy_matrix_entries_min": float(ta_legacy.min()),
-            "t_legacy_matrix_entries_max": float(ta_legacy.max()),
-            "primal_obj": float(ra["primal_obj"]),
-            "dual_obj": float(ra["dual_obj"]),
-            "duality_gap": float(ra["duality_gap"]),
-            "y0_star": float(ra["y0_star"]),
+            # Serialize as strings, not floats. `ta` is now a list of mpf, so
+            # `ta.min()` would not even resolve — but the deeper point is that
+            # `float(...)` here would put back at the witness door exactly the
+            # truncation this port removed upstream. The solver's own `*_str`
+            # keys carry the MPFR decimals; prefer them over the f64 twins.
+            "t_min_klr": fmt(min(ta)),
+            "t_max_klr": fmt(max(ta)),
+            "t_legacy_matrix_entries_min": fmt(min(ta_legacy)),
+            "t_legacy_matrix_entries_max": fmt(max(ta_legacy)),
+            "primal_obj": ra.get("primal_obj_str") or fmt(ra["primal_obj"]),
+            "dual_obj": ra.get("dual_obj_str") or fmt(ra["dual_obj"]),
+            "duality_gap": (ra.get("duality_gap_str")
+                            or fmt(ra["duality_gap"])),
+            "y0_star": ra.get("y0_star_str") or fmt(ra["y0_star"]),
             "n_active": len(ra.get("active_set", [])),
-            "n_target": ntarget_a,
+            "n_target": fmt(ntarget_a),
+            # `ra` is already a to_dict(); carry its provenance + `*_str`
+            # through the formatting above rather than dropping them.
+            **{k: v for k, v in ra.items()
+               if k in ("backend", "precision_bits")
+               or k in PROVENANCE_STR_FIELDS},
         })
         print(f"    {atom_name:<12} (Z={Za}, N={Na}): pairs={npairs_a}, "
-              f"primal={ra['primal_obj']:.4f}, y_0={ra['y0_star']:.4f}")
+              f"primal={mp.nstr(mp.mpf(str(ra['primal_obj'])), 8)}, "
+              f"y_0={mp.nstr(mp.mpf(str(ra['y0_star'])), 8)}")
     print(f"  LP solve:")
     print(f"    primal_obj = {res_dict['primal_obj']:.6f}")
     print(f"    dual_obj   = {res_dict['dual_obj']:.6f}")
@@ -469,9 +730,13 @@ def main() -> int:
     print("=" * 72)
     print("(B) Alternative Δ_I words to close the 2.19% Weinberg gap")
     print("=" * 72)
-    cot_codata = float(sp.sqrt(sp.Rational(1) - sp.Rational("0.23129"))
-                       / sp.sqrt(sp.Rational("0.23129")))
-    print(f"  CODATA cot θ_W = {cot_codata:.6f}")
+    # sin²θ_W = 0.23129 (PDG) is an EXACT rational input; the old code
+    # wrapped the exact sympy surd in `float(...)`, throwing away 34 digits
+    # before the comparison it feeds.
+    with mp.workdps(_MP_DPS):
+        _s2w = mp.mpf(23129) / 100000
+        cot_codata = +(mp.sqrt(1 - _s2w) / mp.sqrt(_s2w))
+    print(f"  CODATA cot θ_W = {mp.nstr(cot_codata, 12)}")
     print()
 
     # Candidate Δ_I words — all use generators σ_2 (idx 1) and σ_4 (idx 3)
@@ -496,7 +761,7 @@ def main() -> int:
     for name, delta in delta_candidates:
         t0 = time.time()
         try:
-            ratio, eigs = compute_321_max_plus_ratio(q_0, delta)
+            ratio, eigs = compute_321_max_plus_ratio(Q_50_DIGIT_STR, delta)
         except Exception as e:
             print(f"  {name:<35} FAILED ({type(e).__name__}: {e})")
             continue
@@ -504,31 +769,39 @@ def main() -> int:
         if ratio is None:
             print(f"  {name:<35} (insufficient + eigvals)")
             continue
-        rel_err = abs(ratio - cot_codata) / cot_codata
-        flag = "★" if rel_err < 0.001 else ("✓" if rel_err < 0.01 else "·" if rel_err < 0.05 else " ")
-        print(f"  {flag} {name:<35} ratio = {ratio:>9.4f}  "
-              f"rel_err = {rel_err*100:>6.2f}%  ({elapsed:.2f}s)")
+        with mp.workdps(_MP_DPS):
+            rel_err = +(abs(ratio - cot_codata) / cot_codata)
+        flag = ("★" if rel_err < mp.mpf("0.001")
+                else "✓" if rel_err < mp.mpf("0.01")
+                else "·" if rel_err < mp.mpf("0.05") else " ")
+        print(f"  {flag} {name:<35} ratio = {mp.nstr(ratio, 8):>12s}  "
+              f"rel_err = {mp.nstr(rel_err * 100, 4):>8s}%  ({elapsed:.2f}s)")
         results.append({
             "delta_I_name": name,
             "delta_I_word": delta,
-            "ratio": ratio,
-            "rel_err": rel_err,
+            "ratio": fmt(ratio),
+            "rel_err": fmt(rel_err),
+            "_ratio_mp": ratio,        # popped before serialization
+            "_rel_err_mp": rel_err,
         })
 
     print()
-    best = min(results, key=lambda r: r["rel_err"])
+    # Order on the mpf twin, never on the serialized string: decimal string
+    # comparison would rank "1e-3" above "9e-4".
+    best = min(results, key=lambda r: r["_rel_err_mp"])
+    best_rel_err = best["_rel_err_mp"]
     print(f"Best Δ_I (3,2,1)max+/2nd-max+ vs CODATA cot θ_W:")
     print(f"  {best['delta_I_name']}")
     print(f"  Δ_I word: {best['delta_I_word']}")
-    print(f"  ratio = {best['ratio']:.6f}")
-    print(f"  rel err = {best['rel_err']*100:.4f}%")
+    print(f"  ratio = {mp.nstr(best['_ratio_mp'], 12)}")
+    print(f"  rel err = {mp.nstr(best_rel_err * 100, 6)}%")
     print()
 
-    if best["rel_err"] < 0.001:
+    if best_rel_err < mp.mpf("0.001"):
         verdict = "candidate-found-precision-1e-3"
-    elif best["rel_err"] < 0.01:
+    elif best_rel_err < mp.mpf("0.01"):
         verdict = "near-miss-precision-1e-2"
-    elif best["rel_err"] < 0.05:
+    elif best_rel_err < mp.mpf("0.05"):
         verdict = "near-miss-precision-5pct"
     else:
         verdict = "no-clean-fit"
@@ -538,7 +811,7 @@ def main() -> int:
     # ── Witness assembly via WitnessBuilder ────────────────────
     from witness_base import WitnessBuilder
     w = (
-        WitnessBuilder("wedderburn-lp-ew-wiring", engine="numpy+sympy")
+        WitnessBuilder("wedderburn-lp-ew-wiring", engine="mpmath+clarabel-mpfr")
         .set_description(
             "Two deliverables: (A) wires wedderburn_pair_volumes into "
             "prop:knot-operator-lp-selection via concrete LP/SDP-dual "
@@ -558,19 +831,32 @@ def main() -> int:
     # basis cone) and the full H_n Wedderburn Gram on the pair-
     # operator algebra, strong duality holds on every atom in the
     # computable sweep.
+    # `duality_gap` is now a decimal STRING (the MPFR value, not its f64
+    # twin), so compare it as an mpf. The bare `< 1e-6` here survived the
+    # serialization port and raised
+    # `TypeError: '<' not supported between instances of 'str' and 'float'`
+    # AFTER the whole H_9 compute had finished — a five-minute run thrown away
+    # at the reporting step. Widening a value's precision changes its type, and
+    # every comparison on it has to move with it.
+    def _gap_mp(r):
+        return abs(_mpf_or(r.get("duality_gap"), mp.inf))
+
     n_strong_dual = sum(
         1 for r in lp_results_per_atom
-        if r.get("n_pairs", 0) > 0
-        and r.get("duality_gap", float("inf")) < 1e-6
+        if r.get("n_pairs", 0) > 0 and _gap_mp(r) < mp.mpf("1e-6")
     )
     n_expected = sum(
         1 for r in lp_results_per_atom if r.get("n_pairs", 0) > 0
     )
+    # STRINGS, per add_assertion's own docstring ("the drained convention,
+    # qou-t0rf"). These two are integer COUNTS — `float(...)` on them was
+    # never meaningful, and it put three raw float64 fields into the witness
+    # per assertion (computed/expected/tolerance), nine across the three.
     w.add_assertion(
         "lp_strong_duality_all_klr_atoms",
-        float(n_strong_dual),
-        float(n_expected),
-        tolerance=0.5,
+        str(n_strong_dual),
+        str(n_expected),
+        tolerance="0.5",
     )
     # KLR positivity assertion: every atom's KLR supply vector
     # min(t) ≥ -ε (tiny numerical noise tolerated; substantive
@@ -578,20 +864,20 @@ def main() -> int:
     n_klr_positive = sum(
         1 for r in lp_results_per_atom
         if r.get("n_pairs", 0) > 0
-        and r.get("t_min_klr", -1.0) >= -1e-9
+        and _mpf_or(r.get("t_min_klr"), mp.mpf(-1)) >= mp.mpf("-1e-9")
     )
     w.add_assertion(
         "klr_positivity_supply_vector_all_atoms",
-        float(n_klr_positive),
-        float(n_expected),
-        tolerance=0.5,
+        str(n_klr_positive),
+        str(n_expected),
+        tolerance="0.5",
     )
     # Weinberg verdict: best rel_err < 2.5% (the σ_2 σ_4 σ_2 baseline)
     w.add_assertion(
         "weinberg_minimal_delta_I_optimal",
-        float(best["rel_err"]),
-        0.0219,  # baseline 2.19% rel_err
-        tolerance=0.005,
+        fmt(best_rel_err),
+        "0.0219",  # baseline 2.19% rel_err
+        tolerance="0.005",
     )
 
     # (A) LP/SDP-EW deliverable
@@ -602,30 +888,57 @@ def main() -> int:
             "max_full_gram_n_strands": MAX_FULL_GRAM_N,
         },
         "n_pair_amplitudes": n_pairs,
-        "primal_obj": float(res_dict["primal_obj"]),
-        "dual_obj": float(res_dict["dual_obj"]),
-        "duality_gap": float(res_dict["duality_gap"]),
-        "y0_star": float(res_dict["y0_star"]),
-        "y_star": [float(y) for y in res_dict.get("y_star", [])],
+        # Prefer the solver's MPFR `*_str` decimals over their f64 twins;
+        # `float(...)` here would reintroduce the truncation at the witness
+        # door that the mpmath port removes upstream.
+        "primal_obj": (res_dict.get("primal_obj_str")
+                       or fmt(res_dict["primal_obj"])),
+        "dual_obj": res_dict.get("dual_obj_str") or fmt(res_dict["dual_obj"]),
+        "duality_gap": (res_dict.get("duality_gap_str")
+                        or fmt(res_dict["duality_gap"])),
+        "y0_star": res_dict.get("y0_star_str") or fmt(res_dict["y0_star"]),
+        "y_star": (res_dict.get("y_star_str")
+                   or [fmt(y) for y in res_dict.get("y_star", [])]),
         "active_set": list(res_dict.get("active_set", [])),
         "n_target": n_target,
-        "supply_matrix_shape": list(G.shape),
+        # `G` is list[list[mpf]], not an ndarray — `.shape` was the THIRD
+        # consumer the port broke, and the first two were value comparisons,
+        # so the grep that caught them (fields that became strings) could not
+        # see this one at all: it is a CONTAINER-API consumer of the
+        # ndarray -> list change. Both categories move when a type widens.
+        "supply_matrix_shape": [len(G), len(G[0]) if G else 0],
+        # Solver, precision, and the full-precision decimals.
+        **provenance(res),
         "atom_sweep": lp_results_per_atom,
     })
 
     # Top-level LP-dual fields for lp_dual_witness_validator
-    w.add_data("primal_obj", float(res_dict["primal_obj"]))
-    w.add_data("dual_obj", float(res_dict["dual_obj"]))
-    w.add_data("duality_gap", float(res_dict["duality_gap"]))
-    w.add_data("y0_star", float(res_dict["y0_star"]))
-    w.add_data("y_star", [float(y) for y in res_dict.get("y_star", [])])
+    w.add_data("primal_obj", res_dict.get("primal_obj_str")
+               or fmt(res_dict["primal_obj"]))
+    w.add_data("dual_obj", res_dict.get("dual_obj_str")
+               or fmt(res_dict["dual_obj"]))
+    w.add_data("duality_gap", res_dict.get("duality_gap_str")
+               or fmt(res_dict["duality_gap"]))
+    w.add_data("y0_star", res_dict.get("y0_star_str")
+               or fmt(res_dict["y0_star"]))
+    # The solver's MPFR decimals, not their f64 twins — 28 raw float64 fields
+    # entered here alone. Same `*_str`-first rule as the other numerics.
+    w.add_data("y_star", res_dict.get("y_star_str")
+               or [fmt(y) for y in res_dict.get("y_star", [])])
     w.add_data("active_set", list(res_dict.get("active_set", [])))
+    for _k, _v in provenance(res).items():
+        w.add_data(_k, _v)
 
-    # (B) Alt-Δ_I Weinberg probe
+    # (B) Alt-Δ_I Weinberg probe. Drop the `_*_mp` working twins — they exist
+    # only so ordering and the verdict thresholds compare mpf against mpf; the
+    # serialized form is the `fmt()` string beside them.
+    def _shed(rec: dict) -> dict:
+        return {k: v for k, v in rec.items() if not k.startswith("_")}
+
     w.add_data("deliverable_B_alt_delta_I_weinberg_probe", {
-        "codata_cot_theta_W": cot_codata,
-        "candidates": results,
-        "best": best,
+        "codata_cot_theta_W": fmt(cot_codata),
+        "candidates": [_shed(r) for r in results],
+        "best": _shed(best),
         "verdict": verdict,
     })
 

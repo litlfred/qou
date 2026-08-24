@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:35.558Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'well-defined regardless of analytic convergence' and 'does not need analytic continuation' state the actual scope of the algebraic construction; substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:35.621Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Linear proof: degree -> Habiro membership -> projection -> identification -> comparison with the analytic definition."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 163 words)"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:35.710Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "One dash remains after the fix, an appositive ('gives an element of the cyclotomic ring - the residue')."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 163 words)"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:35.785Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:35.838Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Closes on the scope of the algebraic projection, a technical statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:35.896Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "FIX APPLIED: 'well-defined *regardless* of analytic convergence — which is the point: the algebraic-side derivation does not need analytic continuation.' -> '... *regardless* of analytic convergence: the algebraic-side derivation does not need analytic continuation.' 'which is the point' announced the significance instead of leaving the colon to carry it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:35.962Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "After the fix the closing colon-clause glosses the preceding claim in concrete terms rather than echoing it."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:36.022Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:36.077Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No maximum-strength claims; the one emphasis (*regardless*) marks a real scope distinction."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1664,22 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "864c40822fc3",
+          "ts": "d6ee8981cece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:36.130Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Proof steps are short and sequential.",
+        "notes": "NON-TRAP FINDING, not fixed (attribution/convention, needs the author): 'Equivalence with the analytic definition ... is the content of the Habiro-completion theorem \\cite{habiro2002}: the cyclotomic projections agree with the analytic residue at zeta_l for any element of Zhat[q] that converges as a complex function on |q| > 1.' The convergence region looks inverted — Habiro-ring elements are sums a_n(q)(q;q)_n and (q;q)_n converges for |q| < 1 while growing for |q| > 1 — and I could not match the quoted equivalence to habiro2002, whose content is the cyclotomic completion and the unified WRT invariant rather than an analytic-residue comparison. Also inherits the zeta_l vs zeta_{n_l} index inconsistency recorded on residue-at-root.md, and identifies Z[q]/Phi_{n_l}(q) with Z[zeta_l] (a ring) where the proposition calls it the field Q(zeta_l)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:29:36.130Z"
 }

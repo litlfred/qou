@@ -1,13 +1,13 @@
 ---
 doc_id: ant-v14-n7-s-p03
-doc_title: "Nouvelles cohomologies de Weil en caractéristique positive Joseph Ayoub"
+doc_title: "Nouvelles cohomologies de Weil en caractéristique positive"
 section_id: sec-005-3-calcul-du-complexe-des-périodes-abstraites-ak
 section_title: "Calcul du complexe des périodes abstraites AK et applications"
 section_number: 3
 pages: 29-38
 source_pdf: ant-v14-n7-s-p03.pdf
 source_sha256: e32fde16c3ce0940
-doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive Joseph Ayoub — periods” admitting an explicit description by generators and relations."
+doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive — periods” admitting an explicit description by generators and relations."
 ---
 Tout au long de la section, on ﬁxe un corps K muni d’une valuation de hauteur 1 et on note ˆK son
 complété. On désigne par K◦ et ˆK◦ les anneaux de valuation de K et ˆK , et on note k le corps résiduel de
