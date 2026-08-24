@@ -4624,3 +4624,43 @@ on the first attempt (`List.Pairwise.reverse` flips the relation;
 It is **not** in the file, because nothing there would consume it yet — the
 consumer is the strictly-interior case. Recorded here so the next agent does not
 re-derive it, and so the prediction is on record as *tested* rather than assumed.
+
+## §4m's antichain, generalised (2026-08-24, §4bb)
+
+`lm_infix_antichain` and `inclusion_contexts_empty_general` — §4m's two
+`decide`-at-`n = 4` theorems, now proved for every `n`.
+
+The third case landed with the two tools §4az named:
+
+- **`descWord_nodup`** — the two-line fact §4ba recorded as tested. Now it has
+  its consumer.
+- **`descWord_adjacent`** — the one that needed work. Route: `descWord_split`
+  above the letter exhibits its successor as the head of the second piece
+  (`descWord_last`, `descWord_head`), and `nodup_split_unique` — a letter pins
+  its own position in a duplicate-free list — matches that against the
+  decomposition in hand. It needs the letter not to be the run's bottom, which
+  is `descWord_last`'s second use.
+
+`lm_not_proper_interior` then has two outcomes and no arithmetic: three of the
+four families repeat their head as their last letter, so inside a
+duplicate-free run they would place one letter twice
+(`repeat_of_head_eq_last`); far-commutation's two letters are adjacent but drop
+by ≥ 2, which `descWord_adjacent` forbids.
+
+### The antichain, complete
+
+| case | closed by |
+|---|---|
+| `right = []` — proper suffix | §4az |
+| `left = []` — proper prefix | §4ba |
+| both non-empty — strictly interior | §4bb |
+
+### This is NOT the inclusion half of the criterion
+
+It says every inclusion composition has **empty contexts and a shared leading
+monomial**. `inclusion_resolves` additionally needs the classification of *rule
+pairs* on a shared leading monomial — either the same rule
+(`InclusionComposition.spoly_isZero_of_self`) or §4j's Yang–Baxter/Bokut–Shiao
+pair (`DegenerateYbBs`) — **and that those are the only two**.
+`mem_heckeCompletedRewritingSystem_rules` (§4at) is the tool; it would be that
+lemma's first non-`lm_cases` consumer.

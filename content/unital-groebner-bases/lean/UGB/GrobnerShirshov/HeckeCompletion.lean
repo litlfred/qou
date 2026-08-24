@@ -15806,4 +15806,222 @@ theorem lm_not_proper_prefix (hn : 0 < n) (hp : HeckeParams)
       have hcontra : i'.val + 1 < i.val := hfar
       omega
 
+/-! ## §4bb  §4m's antichain, for every `n`
+
+§4az and §4ba closed two of the three cases of `lm₂ = left ++ lm₁ ++ right` and
+named what the third needed: that a descending run has no repeated letter, and
+that adjacent letters in it drop by exactly one. Both are proved here, and the
+third case with them.
+
+`descWord_nodup` is the two-line fact §4ba recorded as tested. `descWord_adjacent`
+is the one that needed work, and the route is `descWord_split` plus uniqueness:
+splitting the run just above a letter exhibits its successor as the head of the
+second piece (`descWord_last`, `descWord_head`), and `nodup_split_unique` — a
+letter pins its own position in a duplicate-free list — matches that against the
+decomposition in hand. `descWord_adjacent` needs the letter not to be the run's
+bottom, which is where `descWord_last` earns its second use.
+
+With those, `lm_not_proper_interior` is a case analysis with two outcomes and no
+arithmetic: three of the four families repeat their head as their last letter, so
+they would put the same letter twice in a duplicate-free run
+(`repeat_of_head_eq_last`); the fourth is far-commutation, whose two letters are
+adjacent but drop by at least two, which `descWord_adjacent` forbids.
+
+`lm_infix_antichain` assembles the three cases, and
+`inclusion_contexts_empty_general` is §4m's `inclusion_contexts_empty` with the
+`n = 4` hypothesis removed — same argument, general antichain underneath.
+
+**This is not yet the inclusion half of the criterion.** It says every inclusion
+composition has empty contexts and a shared leading monomial; turning that into
+`inclusion_resolves` still needs the classification of *rule pairs* on a shared
+leading monomial — either the same rule (`InclusionComposition.spoly_isZero_of_self`)
+or §4j's Yang–Baxter/Bokut–Shiao pair (`DegenerateYbBs`) — and that those are the
+only two. `mem_heckeCompletedRewritingSystem_rules` (§4at) is the tool for it. -/
+
+theorem descWord_nodup {n : ℕ} (i j : Fin n) : (descWord i j).Nodup := by
+  unfold descWord
+  refine List.Nodup.map ?_ ?_
+  · intro a b hab
+    injection hab
+  · exact List.nodup_reverse.mpr ((List.nodup_finRange n).filter _)
+
+/-- **The descending run ends on its bottom letter.** -/
+theorem descWord_last {n : ℕ} {i j : Fin n} (hj : j.val ≤ i.val) :
+    ∃ C, descWord i j = C ++ [(⟨j⟩ : HeckeGen n)] := by
+  rcases Nat.eq_or_lt_of_le hj with heq | hlt
+  · have : j = i := Fin.ext heq
+    subst this
+    exact ⟨[], by rw [descWord_self]; rfl⟩
+  · have hlt' : j.val + 1 < n := by omega
+    refine ⟨descWord i ⟨j.val + 1, hlt'⟩, ?_⟩
+    exact descWord_snoc (j := ⟨j.val + 1, hlt'⟩) rfl (by simpa using hlt)
+
+/-- **In a duplicate-free list, a letter pins its own position.** -/
+theorem nodup_split_unique {α : Type*} {L A C T S : List α} {z : α}
+    (hnd : L.Nodup) (h₁ : L = A ++ (z :: T)) (h₂ : L = C ++ (z :: S)) :
+    A = C ∧ T = S := by
+  have hzT : z ∉ T :=
+    (List.nodup_cons.mp ((h₁ ▸ hnd : (A ++ (z :: T)).Nodup).of_append_right)).1
+  have hzS : z ∉ S :=
+    (List.nodup_cons.mp ((h₂ ▸ hnd : (C ++ (z :: S)).Nodup).of_append_right)).1
+  have heq : A ++ (z :: T) = C ++ (z :: S) := h₁ ▸ h₂
+  rcases List.append_eq_append_iff.mp heq with ⟨a, ha, hb⟩ | ⟨c, hc, hd⟩
+  · rcases haa : a with _ | ⟨w, ws⟩
+    · rw [haa] at ha hb
+      simp at ha hb
+      exact ⟨ha.symm, hb⟩
+    · exfalso
+      rw [haa] at hb
+      injection hb with hw hws
+      exact hzT (by rw [hws]; simp)
+  · rcases hcc : c with _ | ⟨w, ws⟩
+    · rw [hcc] at hc hd
+      simp at hc hd
+      exact ⟨hc, hd.symm⟩
+    · exfalso
+      rw [hcc] at hd
+      injection hd with hw hws
+      exact hzS (by rw [hws]; simp)
+
+/-- **Adjacent letters of a descending run drop by exactly one.** -/
+theorem descWord_adjacent {n : ℕ} {i j : Fin n} {A B : Monomial (HeckeGen n)}
+    {a b : HeckeGen n} (hdec : descWord i j = A ++ (a :: b :: B)) :
+    b.index.val + 1 = a.index.val := by
+  have hamem : a ∈ descWord i j := by rw [hdec]; simp
+  have hale : a.index.val ≤ i.val := descWord_index_le hamem
+  have hage : j.val ≤ a.index.val := descWord_index_ge hamem
+  -- `a` cannot be the bottom letter: the bottom letter is last, and `a` is not.
+  have hgt : j.val < a.index.val := by
+    rcases Nat.eq_or_lt_of_le hage with heq | hlt
+    · exfalso
+      have haj : a = (⟨j⟩ : HeckeGen n) := by
+        cases a with | mk idx => exact congrArg HeckeGen.mk (Fin.ext heq.symm)
+      obtain ⟨C, hC⟩ := descWord_last (i := i) (j := j) (le_trans hage hale)
+      have hC' : descWord i j = C ++ ((⟨j⟩ : HeckeGen n) :: []) := by simpa using hC
+      have hd' : descWord i j = A ++ ((⟨j⟩ : HeckeGen n) :: (b :: B)) := by
+        rw [hdec, haj]
+      obtain ⟨_, hTS⟩ := nodup_split_unique (descWord_nodup i j) hd' hC'
+      simp at hTS
+    · exact hlt
+  -- Split the run just above `a`; the piece below begins one step down.
+  have hlt : a.index.val - 1 < n := by omega
+  set x' : Fin n := ⟨a.index.val - 1, hlt⟩ with hx'
+  have hxk : x'.val + 1 = a.index.val := by simp [hx']; omega
+  have hjx' : j.val ≤ x'.val := by simp [hx']; omega
+  have hsplit : descWord i j = descWord i a.index ++ descWord x' j :=
+    descWord_split (k := a.index) hxk hjx' hale
+  obtain ⟨C, hC⟩ := descWord_last (i := i) (j := a.index) hale
+  obtain ⟨u, hu⟩ := descWord_head (i := x') (j := j) hjx'
+  have hC2 : descWord i j = C ++ (a :: ((⟨x'⟩ : HeckeGen n) :: u)) := by
+    rw [hsplit, hC, hu]
+    have : a = (⟨a.index⟩ : HeckeGen n) := by cases a with | mk idx => rfl
+    rw [← this]
+    simp
+  obtain ⟨_, hTS⟩ := nodup_split_unique (descWord_nodup i j) hdec hC2
+  injection hTS with hb _
+  rw [hb]
+  exact hxk
+
+/-- Inside a duplicate-free run, a word cannot repeat its own head as its last
+letter: `nodup_split_unique` reads the head's position two ways. -/
+theorem repeat_of_head_eq_last {n : ℕ} {i j : Fin n}
+    {left' mid₁ right' : Monomial (HeckeGen n)} {h₁ l₁ : HeckeGen n}
+    (hmid : descWord i j = left' ++ (h₁ :: (mid₁ ++ [l₁])) ++ right')
+    (heq : l₁ = h₁) : left' = left' ++ (h₁ :: mid₁) := by
+  have h1 : descWord i j
+      = left' ++ (h₁ :: ((mid₁ ++ [l₁]) ++ right')) := by rw [hmid]; simp
+  have h2 : descWord i j
+      = (left' ++ (h₁ :: mid₁)) ++ (h₁ :: right') := by
+    rw [hmid, heq]; simp
+  exact (nodup_split_unique (descWord_nodup i j) h1 h2).1
+
+
+/-- **A leading monomial is not strictly interior to another.** -/
+theorem lm_not_proper_interior (hn : 0 < n) (hp : HeckeParams)
+    {r₁ r₂ : ReductionRule (HeckeGen n) ℝ}
+    (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : r₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {left right : Monomial (HeckeGen n)}
+    (hdec : r₂.lm (heckeOrder n) = left ++ r₁.lm (heckeOrder n) ++ right)
+    (hlne : left ≠ []) (hrne : right ≠ []) : False := by
+  obtain ⟨h₁, l₁, mid₁, hlm₁⟩ := lm_cons_snoc hn hp hr₁
+  obtain ⟨h₂, l₂, mid₂, hlm₂⟩ := lm_cons_snoc hn hp hr₂
+  obtain ⟨a, left', hL⟩ : ∃ a left', left = a :: left' := by
+    cases hlc : left with
+    | nil => exact absurd hlc hlne
+    | cons a left' => exact ⟨a, left', rfl⟩
+  obtain ⟨right', rl, hR⟩ : ∃ right' rl, right = right' ++ [rl] := by
+    rcases hrr : right.reverse with _ | ⟨z, zs⟩
+    · exact absurd (by simpa using congrArg List.reverse hrr) hrne
+    · exact ⟨zs.reverse, z, by simpa using congrArg List.reverse hrr⟩
+  rw [hlm₁, hlm₂, hL, hR] at hdec
+  -- Peel the heads, then match on the last letter to put all of `lm₁` inside
+  -- `lm₂`'s interior.
+  have hcons : h₂ :: (mid₂ ++ [l₂])
+      = a :: (left' ++ (h₁ :: (mid₁ ++ [l₁])) ++ (right' ++ [rl])) := by
+    simpa using hdec
+  obtain ⟨-, htail⟩ := List.cons.inj hcons
+  have htail' : mid₂ ++ [l₂]
+      = (left' ++ (h₁ :: (mid₁ ++ [l₁])) ++ right') ++ [rl] := by
+    rw [htail]; simp
+  obtain ⟨hmid₂, -⟩ := List.append_inj' htail' (by simp)
+  -- `lm₂`'s interior is non-empty and at least two long, so it is the
+  -- Bokut–Shiao descending run.
+  rcases lm_split hn hp hr₂ hlm₂ with
+    ⟨hm, -⟩ | ⟨i, j, hj, -, hm, -⟩ | ⟨i, j, hj, -, hm, -⟩
+    | ⟨i', i, j, hb₁, hb₂, -, hm, -⟩
+  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this; omega
+  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this; omega
+  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this; omega
+  rw [hm] at hmid₂
+  -- Inside a duplicate-free strictly-descending run, `lm₁` has nowhere to sit:
+  -- three of its four shapes repeat their head as their last letter, and the
+  -- fourth is far-commutation, whose two letters are adjacent but drop by two.
+  rcases lm_split hn hp hr₁ hlm₁ with
+    ⟨hm₁, hlh⟩ | ⟨p, q, hq, hph, hm₁, hlh⟩ | ⟨p, q, hq, hph, hm₁, hlh⟩
+    | ⟨p', p, q, hc₁, hc₂, hph, hm₁, hlh⟩
+  · exact absurd (repeat_of_head_eq_last hmid₂ hlh) (by simp)
+  · exact absurd (repeat_of_head_eq_last hmid₂ (by rw [hph, hlh])) (by simp)
+  · -- far-commutation: adjacent, but a drop of at least two
+    rw [hm₁] at hmid₂
+    have hadj : l₁.index.val + 1 = h₁.index.val :=
+      descWord_adjacent (A := left') (B := right') (by simpa using hmid₂)
+    rw [hph, hlh] at hadj
+    have : q.val + 1 = p.val := hadj
+    omega
+  · exact absurd (repeat_of_head_eq_last hmid₂ (by rw [hph, hlh])) (by simp)
+
+/-- **The leading monomials of the completed system form an infix antichain, for
+every `n`.** §4m's `completedLMSet_four_infix_antichain` decides this at `n = 4`;
+this is the same statement proved, and it is the three cases above assembled. -/
+theorem lm_infix_antichain (hn : 0 < n) (hp : HeckeParams)
+    {r₁ r₂ : ReductionRule (HeckeGen n) ℝ}
+    (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : r₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {left right : Monomial (HeckeGen n)}
+    (hdec : r₂.lm (heckeOrder n) = left ++ r₁.lm (heckeOrder n) ++ right) :
+    left = [] ∧ right = [] := by
+  by_cases hl : left = []
+  · subst hl
+    exact ⟨rfl, lm_not_proper_prefix hn hp hr₁ hr₂ (by simpa using hdec)⟩
+  · by_cases hrr : right = []
+    · subst hrr
+      exact absurd (lm_not_proper_suffix hn hp hr₁ hr₂ (by simpa using hdec)) hl
+    · exact (lm_not_proper_interior hn hp hr₁ hr₂ hdec hl hrr).elim
+
+/-- **Every inclusion composition of the completed system has empty contexts, for
+every `n`.** §4m proves this at `n = 4` off a `decide`d antichain; with
+`lm_infix_antichain` the same argument runs at every `n`, and needs no hypothesis
+about which rules are involved. -/
+theorem inclusion_contexts_empty_general (hn : 0 < n) (hp : HeckeParams)
+    (ic : InclusionComposition (HeckeGen n) ℝ (heckeOrder n))
+    (hin : ic.inner ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hout : ic.outer ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    ic.left = [] ∧ ic.right = [] ∧
+      ic.inner.lm (heckeOrder n) = ic.outer.lm (heckeOrder n) := by
+  obtain ⟨hl, hr⟩ := lm_infix_antichain hn hp hin hout ic.decomposition
+  refine ⟨hl, hr, ?_⟩
+  rw [ic.decomposition, hl, hr]
+  simp
+
 end UGB.GrobnerShirshov.Hecke
