@@ -153,7 +153,41 @@ def main() -> int:
     e_lo = err_n_mp(a_lo); e_hi = err_n_mp(a_hi)
     print(f"  Bracket: err({a_lo}) = {float(e_lo):+.6f}%, err({a_hi}) = {float(e_hi):+.6f}%")
     if e_lo * e_hi >= 0:
-        print("  ERROR: no sign change in bracket")
+        # The bracket is hardcoded and no longer contains the root. Say WHERE
+        # the root actually is instead of just that it is missing: the old
+        # message reported nothing actionable, and it went to stdout, so a
+        # harness capturing stderr recorded rc=1 with an empty error.
+        #
+        # This does NOT move the bracket. err_n_mp is monotone here, so the
+        # scan is a diagnostic, not a search -- re-centring it would replace a
+        # PUBLISHED alpha* and needs a deliberate decision, not a silent widen.
+        # See bean qou-2zjp: the committed alpha* = 0.30580743... is a
+        # CONVENTION-C value, and the root moved +14.741% when convention D
+        # landed (z 0.4993 -> 0.6127, commit 6086572c4e). This producer imports
+        # `z as Z_MARKOV`, so it consumes the parameter that moved.
+        print("  ERROR: no sign change in bracket", file=sys.stderr)
+        print(f"  bracket [{a_lo}, {a_hi}]: err = {mp.nstr(e_lo, 6)}%, "
+              f"{mp.nstr(e_hi, 6)}% -- same sign, so no root inside",
+              file=sys.stderr)
+        prev = None
+        for i in range(0, 41):
+            a = mp.mpf(i) / 50
+            try:
+                e = err_n_mp(a)
+            except Exception:  # noqa: BLE001 - a diagnostic must not itself crash
+                prev = None
+                continue
+            if (prev is not None and mp.isfinite(e) and mp.isfinite(prev[1])
+                    and (e > 0) != (prev[1] > 0)):
+                print(f"  the root is between {mp.nstr(prev[0], 4)} and "
+                      f"{mp.nstr(a, 4)}, outside the hardcoded bracket. "
+                      f"Do NOT widen without reading bean qou-2zjp: the "
+                      f"committed alpha* is convention-C and re-centring "
+                      f"changes a published value.", file=sys.stderr)
+                break
+            prev = (a, e)
+        else:
+            print("  no sign change anywhere in [0, 0.8] either", file=sys.stderr)
         return 1
     for it in range(80):
         a_mid = (a_lo + a_hi) / 2
