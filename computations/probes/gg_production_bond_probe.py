@@ -32,7 +32,7 @@ production (owner-gated — the canonical gg bond needs the keystone color-weigh
 from __future__ import annotations
 
 import sys
-from math import comb, log
+from math import comb
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -49,7 +49,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from tr_m_atom_via_transfer import _trM  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402 — mpf q0, NOT the float64 `Q`
 from witness_base import WitnessBuilder  # noqa: E402
 
 EXPERIMENTAL_CSB_BOUND = 0.01
@@ -67,7 +67,7 @@ def _gg_symmetrize(word, h_half):
     out = []
     for (c, d, g) in word:
         if g % 3 == 2:  # inter-nucleon arc at gen 3k+2
-            out.append((1.0, float(-h_half), g))
+            out.append((mp.mpf(1), -h_half, g))
         else:
             out.append((c, d, g))
     return out
@@ -78,11 +78,11 @@ def _trM_of(word, n, y):
     return _trM(chi, y)
 
 
-# This producer never raised working precision, so every mpmath value in
-# it was built at mpmath's default 15 dps and the numbers it emits are
-# HONESTLY float64 — no fake precision to detect, no constant built too
-# early, so the padding / raw-float64 / import-time gates all pass it.
-# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+# This producer USED to run at mpmath's default 15 dps, which is why the
+# padding / raw-float64 / import-time gates all passed it: the numbers it
+# emitted were honestly float64, with no fake precision to detect. It now
+# raises working precision on the next line, and the L values below are mpf
+# end to end. Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
 set_compute_dps()
 
 def _bond_L_gg(Z, N, gg, q, h):
@@ -96,7 +96,7 @@ def _bond_L_gg(Z, N, gg, q, h):
         atom = _gg_symmetrize(atom, h / 2)
     ta = _trM_of(atom, n, y)
     tf = _trM_of(free, n, y)
-    return log(float(tf) / float(ta))
+    return mp.log(tf / ta)
 
 
 def run():
@@ -104,7 +104,7 @@ def run():
     q = mp.mpf(str(q0))
     h = q - mp.mpf(1) / q
     from _li_2_q_util import flavor_split_leading
-    delta_lead = float(flavor_split_leading(q))
+    delta_lead = flavor_split_leading(q)
 
     # Production (flavor-only) L, for reference.
     Lprod = mbd._bond_type_L()
@@ -136,12 +136,43 @@ def run():
 
     asym_prod = Lprod["nn"] / Lprod["pp"] - 1.0
     asym_gg = Lgg["nn"] / Lgg["pp"] - 1.0
+
+    # `asym_gg` IS ZERO BY CONSTRUCTION. _gg_symmetrize forces every
+    # inter-nucleon crossing to the same flavor-blind sigma_avg, and the
+    # intra-nucleon chains cancel in the free/atom ratio, so L_pp, L_pn and
+    # L_nn are the SAME NUMBER. Whatever is left is the arithmetic's own
+    # residue, not a physical asymmetry.
+    #
+    # So `if asym_gg` was the wrong guard: a truthiness test on a residue is
+    # true for any residue that is not exactly 0.0. It read -3.33e-16 --
+    # float64 epsilon -- and published
+    #     collapse_factor = 0.301 / 3.33e-16 = 904080051203560
+    # as if it were a measurement. Raising precision does NOT fix that; it
+    # only moves the residue and makes the manufactured ratio bigger. The
+    # guard has to be a RESOLUTION FLOOR, and the honest report when the
+    # collapse is total is "not resolvable", not a number.
+    #
+    # The floor is NOT derived from mp.mp.dps, because dps is not what binds
+    # here. Measured, by cleaning one input at a time:
+    #     float64 h/2 in the word + math.log   ->  |asym_gg| = 3.3e-16
+    #     mpf word + mp.log, float64 q0        ->  |asym_gg| = 8.1e-19
+    #     ... + Q_MP instead of Q              ->  |asym_gg| = 4.4e-33
+    # The last is y_lambda_at's own ~30-digit cap, not dps (70). A dps-derived
+    # floor would track a number that is not the constraint and would start
+    # admitting y_lambda residue again the moment anyone raised dps.
+    floor = mp.mpf("1e-25")
+    resolved = abs(asym_gg) > floor
+
     return {
-        "q0": q0, "E0_MeV": E0, "h": float(h), "delta_lead": delta_lead,
+        "q0": q0, "E0_MeV": E0, "h": h, "delta_lead": delta_lead,
         "L_prod": Lprod, "L_gg": Lgg,
         "asym_prod": asym_prod, "asym_gg": asym_gg,
         "asym_gg_over_delta": (abs(asym_gg) / delta_lead) if delta_lead else None,
-        "collapse_factor": (abs(asym_prod) / abs(asym_gg)) if asym_gg else None,
+        # Recorded so a reader can see WHY collapse_factor is null, instead of
+        # having to guess whether the producer crashed or the value is absent.
+        "asym_gg_resolved": resolved,
+        "asym_gg_resolution_floor": floor,
+        "collapse_factor": (abs(asym_prod) / abs(asym_gg)) if resolved else None,
         "mirror_pairs": pairs,
         "experimental_csb_bound": EXPERIMENTAL_CSB_BOUND,
     }
@@ -213,12 +244,18 @@ def main(argv=None):
         "fit, no production rewire."
     )
     for k in ("q0", "E0_MeV", "h", "delta_lead", "L_prod", "L_gg",
-              "asym_prod", "asym_gg", "collapse_factor", "mirror_pairs"):
+              "asym_prod", "asym_gg", "asym_gg_over_delta",
+              "asym_gg_resolved", "asym_gg_resolution_floor",
+              "collapse_factor", "mirror_pairs"):
         w.add_data(k, res[k])
     w.add_assertion(
         "gg_flavor_blind_bond_collapses_charge_asymmetry",
-        computed=round(abs(res["asym_gg"]), 4),
-        expected=0.0, tolerance=0.05,
+        # `round(..., 4)` used to record a flat "0.0" here, which cannot tell
+        # 3.3e-16 (float64 noise) from 4.4e-33 (the real residue) -- the whole
+        # distinction this fix turns on. Record the value; the tolerance still
+        # sets the claim.
+        computed=abs(res["asym_gg"]),
+        expected=mp.mpf(0), tolerance=mp.mpf("0.05"),
         source="The flavor-blind gg inter-nucleon bond (sigma_avg for every bond type) collapses "
                "the production charge asymmetry L_nn/L_pp-1 from ~78% to within 5% of zero "
                "(O(delta) flavor scale), confirming the 78% is a flavor-only-projection artifact. "

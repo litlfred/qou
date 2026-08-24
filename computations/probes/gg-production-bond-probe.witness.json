@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T00:37:49.334751+00:00",
-  "commitSha": "f45e92b543adb1fc2579be8dcffd2a3cc4bfbd07",
+  "computedAt": "2026-08-24T07:06:33.495024+00:00",
+  "commitSha": "899d21fd38b6116ef51ac4f96011efab487e41d4",
   "assertions": [
     {
       "name": "gg_flavor_blind_bond_collapses_charge_asymmetry",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "4.3942471668791186993827330006652021046394876798105e-33",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "The flavor-blind gg inter-nucleon bond (sigma_avg for every bond type) collapses the production charge asymmetry L_nn/L_pp-1 from ~78% to within 5% of zero (O(delta) flavor scale), confirming the 78% is a flavor-only-projection artifact. The residual + Coulomb is what a correct color-tube gg build must carry."
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 18,
   "computation": "gg-production-bond-probe",
   "scriptFile": "gg_production_bond_probe.py",
-  "scriptHash": "10affb22a484",
+  "scriptHash": "fe3064be5a66",
   "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -45,38 +45,41 @@
   "data": {
     "q0": 1.1099785955573347,
     "E0_MeV": 4.185980827582891,
-    "h": 0.20906032199559366,
-    "delta_lead": 0.0013757112499766114,
+    "h": "0.20906032199559364293038225977644035771894821644089",
+    "delta_lead": "0.0013757112499766113252089650882188918364795530118247",
     "L_prod": {
       "pp": 0.6071661496537017,
       "pn": 0.6767409261593202,
       "nn": 0.7899955025335293
     },
     "L_gg": {
-      "pp": 0.676963073490958,
-      "pn": 0.6769630734909579,
-      "nn": 0.6769630734909577
+      "pp": "0.67696307349095777278995150032944765836809762126388",
+      "pn": "0.67696307349095777278995150032941919573355266402946",
+      "nn": "0.6769630734909577727899515003294506331111653906857"
     },
     "asym_prod": 0.30111914668514483,
-    "asym_gg": -3.3306690738754696e-16,
-    "collapse_factor": 904080051203560.0,
+    "asym_gg": "4.3942471668791186993827330006652021046394876798105e-33",
+    "asym_gg_over_delta": "3.1941638675658325533868423079256611213697262776533e-30",
+    "asym_gg_resolved": false,
+    "asym_gg_resolution_floor": "1.0e-25",
+    "collapse_factor": null,
     "mirror_pairs": [
       {
         "pair": "3H-3He",
         "dB_sym_prod": 0.7653201658743445,
-        "dB_sym_gg": -1.7763568394002505e-15,
+        "dB_sym_gg": "1.2452217448667912077493584670279248202775247984292e-32",
         "dB_AME": 0.7637548800000014
       },
       {
         "pair": "7Li-7Be",
         "dB_sym_prod": 2.2959604976230352,
-        "dB_sym_gg": -7.105427357601002e-15,
+        "dB_sym_gg": "3.7356652346003736189716518649362614270077160478451e-32",
         "dB_AME": 1.644239799999994
       },
       {
         "pair": "13C-13N",
         "dB_sym_prod": 4.591920995246056,
-        "dB_sym_gg": -2.842170943040401e-14,
+        "dB_sym_gg": "7.4713304692007472892603861636426792599137322649987e-32",
         "dB_AME": 3.0028192999999987
       }
     ]
