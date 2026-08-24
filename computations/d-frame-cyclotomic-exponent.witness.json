@@ -26,7 +26,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "0.06"
+      "elapsed_sec": "0.05"
     },
     {
       "atom": "neutron",
@@ -43,7 +43,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "0.05"
+      "elapsed_sec": "0.04"
     },
     {
       "atom": "neutron",
@@ -60,7 +60,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "0.03"
+      "elapsed_sec": "0.02"
     },
     {
       "atom": "D",
@@ -77,7 +77,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "2.40"
+      "elapsed_sec": "1.85"
     },
     {
       "atom": "T",
@@ -94,7 +94,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "18.10"
+      "elapsed_sec": "15.28"
     },
     {
       "atom": "3He",
@@ -111,7 +111,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "10.50"
+      "elapsed_sec": "9.00"
     },
     {
       "atom": "D",
@@ -128,7 +128,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "1.85"
+      "elapsed_sec": "1.57"
     },
     {
       "atom": "T",
@@ -145,7 +145,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "2.96"
+      "elapsed_sec": "2.42"
     },
     {
       "atom": "3He",
@@ -162,7 +162,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "2.51"
+      "elapsed_sec": "2.07"
     }
   ],
   "assertions": [
@@ -195,9 +195,9 @@
   "allPassed": true,
   "scriptHash": "ee93fe5d93cc",
   "scriptCommitSha": "29ad606b294f950da1f97b80c678b52b24f0df06",
-  "commitSha": "01936413df92f06301163373513442dc18e7a34c",
+  "commitSha": "39be56fb01d3e6babe855cd8907c6073d31f422b",
   "engine": "sympy",
-  "computedAt": "2026-08-24T09:28:27.912890+00:00",
+  "computedAt": "2026-08-24T10:52:28.817543+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
