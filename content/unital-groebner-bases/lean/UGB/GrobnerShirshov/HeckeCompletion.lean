@@ -14927,4 +14927,106 @@ theorem sPoly_gt_resolves (hn : 0 < n) (hp : HeckeParams)
 
 end CornerGt
 
+
+/-! ## §4as  The corner against the criterion
+
+`IsGrobnerShirshovBasis.overlap_resolves` asks, for each composition, for
+`∃ nf, ReducesToNF … oc.spoly nf ∧ nf.isZero`. The five corner theorems give
+something one step short of that: a chain out of `T0` ending coefficientwise
+zero. Three things close the gap, and all three were already in the file —
+
+* `CornerGeneral.oc_spoly_coeff`, which identifies `oc.spoly` with `T0` and is
+  **regime-independent**: it relates neither depth to the other, asking only
+  `j₁ ≤ i₁` and `j₂ ≤ i₁`;
+* `reducesToZero_congr`, which carries the obligation across that `CoeffEq`;
+* `isNormalForm_of_isZero`, since a zero element is trivially a normal form.
+
+So the only new content here is the **case analysis**: which of the five
+theorems applies at which depth, and the `Fin n` witnesses each needs. -/
+
+namespace CornerCriterion
+
+open CornerGeneral CornerLe CornerGt
+
+variable {n : ℕ}
+
+/-- **From a `T0` chain to the criterion's obligation.** Every corner theorem
+ends `∃ E, T0 →* E ∧ CoeffEq E 0`; this is that, restated for `oc.spoly`. -/
+theorem resolves_of_T0 (hn : 0 < n) (hp : HeckeParams) {i i₁ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (hj₁ : j₁.val ≤ i₁.val) (hj₂ : j₂.val ≤ i₁.val)
+    (h : ∃ E : AlgElement (HeckeGen n) ℝ,
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (T0 i i₁ j₁ j₂) E
+      ∧ AlgElement.CoeffEq E
+          (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ)))) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i i₁ j₁ j₂ h₁ hj₁ hj₂).spoly nf ∧ nf.isZero := by
+  obtain ⟨E, hchain, hce⟩ := h
+  have hz : E.isZero := by
+    intro m
+    have hm := hce m
+    simpa using hm
+  exact reducesToZero_congr
+    ⟨E, ⟨hchain, isNormalForm_of_isZero hz⟩, hz⟩
+    (fun m => oc_spoly_coeff h₁ hj₁ hj₂ m)
+
+/-- **Every Bokut–Shiao × Bokut–Shiao overlap at top `i − 1` resolves.**
+
+The case analysis is on the two depths, and it is the only new content:
+
+| | |
+|---|---|
+| `j₁ < j₂` | `sPoly_gt_resolves` — the `a > b` corner, uniform in `a` |
+| `j₂ ≤ j₁`, `j₁ = i₁` | `sPoly_le_resolves₁` |
+| `j₂ ≤ j₁`, `j₁ + 1 = i₁` | `sPoly_le_resolves₂` |
+| `j₂ ≤ j₁`, `j₁ + 2 = i₁` | `sPoly_le_resolves₃` |
+| `j₂ ≤ j₁`, `j₁ + 3 ≤ i₁` | `sPoly_le_resolves` |
+
+`jm` is a hypothesis rather than a construction because it does not always
+exist: it is `j₁ − 1`, and the `a ≥ 2` branches need it. So this covers every
+overlap with `j₁ ≥ 1`, and `j₁ = 0` — which forces `j₂ = 0`, the deep diagonal
+— is **not** covered. That is a real gap, not a stylistic one, and it is stated
+here rather than hidden behind a `Fin` construction that would not typecheck.
+
+`hq` is needed only by the `a = 1` branch, where the first term carries
+coefficient `h` and a `SingleStepReduction` needs it nonzero to transport. -/
+theorem bsbs_overlap_resolves (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val)
+    (hj₁ : j₁.val ≤ i₁.val) (hj₂ : j₂.val ≤ i₁.val)
+    (hq : hp.q - hp.q⁻¹ ≠ 0) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i i₁ j₁ j₂ h₁ hj₁ hj₂).spoly nf ∧ nf.isZero := by
+  have hin : i.val < n := i.isLt
+  refine resolves_of_T0 hn hp h₁ hj₁ hj₂ ?_
+  rcases le_or_gt j₂.val j₁.val with hle | hgt
+  · -- the `a ≤ b` regime, split on the depth `i₁ − j₁`
+    rcases Nat.lt_or_ge (i₁.val) (j₁.val + 1) with hd1 | hd1
+    · -- a = 1
+      exact sPoly_le_resolves₁ (i₂ := i₂) hn hp h₁ h₂ hle
+        (Fin.ext (by omega)) hq
+    rcases Nat.lt_or_ge (i₁.val) (j₁.val + 2) with hd2 | hd2
+    · -- a = 2
+      exact sPoly_le_resolves₂ hn hp h₁ h₂ hjm hle (Fin.ext (by omega))
+    -- a ≥ 3 needs the three ascending witnesses
+    obtain ⟨jp, hjp⟩ : ∃ jp : Fin n, j₁.val + 1 = jp.val :=
+      ⟨⟨j₁.val + 1, by omega⟩, rfl⟩
+    obtain ⟨jpp, hjpp⟩ : ∃ jpp : Fin n, jp.val + 1 = jpp.val :=
+      ⟨⟨jp.val + 1, by omega⟩, rfl⟩
+    obtain ⟨jppp, hjppp⟩ : ∃ jppp : Fin n, jpp.val + 1 = jppp.val :=
+      ⟨⟨jpp.val + 1, by omega⟩, rfl⟩
+    rcases Nat.lt_or_ge (i₁.val) (j₁.val + 3) with hd3 | hd3
+    · -- a = 3
+      exact sPoly_le_resolves₃ hn hp h₁ h₂ hjm hjp hjpp hjppp hle
+        (Fin.ext (by omega))
+    · -- a ≥ 4
+      exact sPoly_le_resolves hn hp h₁ h₂ hjm hjp hjpp hjppp hle (by omega)
+  · -- the `a > b` regime: `j₂ ≥ 1`, so its predecessor exists
+    obtain ⟨j₂', hj₂'⟩ : ∃ j₂' : Fin n, j₂'.val + 1 = j₂.val :=
+      ⟨⟨j₂.val - 1, by omega⟩, by show j₂.val - 1 + 1 = j₂.val; omega⟩
+    exact sPoly_gt_resolves (i₂ := i₂) hn hp h₁ h₂ hj₂' hj₂ (by omega)
+
+end CornerCriterion
+
 end UGB.GrobnerShirshov.Hecke
