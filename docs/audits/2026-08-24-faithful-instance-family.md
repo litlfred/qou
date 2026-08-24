@@ -230,8 +230,46 @@ which is the "must-fail probe accepts any error" trap logged on `qou-lo1t`.
 Its docstring no longer claims a `sorry` it does not have; the comment-stripped
 `sorry`-term count for the file is **0**, as stated.
 
-**Findings B and C are recorded, not actioned.** `QIntegerMassFormula`'s vacuity
-is split across two declarations, so the fix is a design question — whether
-`IsAMEValue` should carry `fits_bound` at all — rather than a demotion.
-`MassEndomorphism` already has an owner per `VolumeBridge.lean`. Both stay on
-`qou-hjf4`.
+**Finding B is half-actioned, and the half that remains is the author's call.**
+
+`QIntegerMassFormula.canonical` is now a `def`, on the same measurement: the
+library file, its content-block sibling, and `wigner_coefficient_conditional`
+— the only outside consumer, and it binds `[inst : QIntegerMassFormula]` as a
+*hypothesis* — all build at **exit 0, 0 errors**, with the paired control
+failing specifically on `failed to synthesize
+QOU.Interactions.QIntegerMassFormula` and succeeding again when restored.
+
+**That does not discharge the finding**, because the laundering is one level up,
+in the *hypothesis* class. While `IsAMEValue.fits_bound` exists,
+`fits_AME_conditional` reduces to `∀ …, [claim] → [claim]` however `canonical`
+is declared.
+
+### Why the rest is not mine to decide
+
+A first draft of this note gave the wrong reason — that changing `IsAMEValue`
+would change the meaning of every theorem binding it. **Measured, that is
+false**: `IsAMEValue` is bound in exactly two places, *both inside its own
+file*. There is no downstream sprawl. The actual reason is narrower and harder:
+
+**Two rival versions of this class exist and they disagree about the claim.**
+
+| | library `QOU/Interactions/QIntegerMassFormula.lean` | sibling `mass-theory/q-integer-mass-formula.lean` |
+|---|---|---|
+| AME gate | `[IsAMEValue Z N B_AME]` | **none** — quantifies over an arbitrary real `B_AME` |
+| instance | global `canonical` (now a `def`) | **none** — honestly uninhabited |
+| conjecture lives in | `IsAMEValue.fits_bound` | `QIntegerMassFormula.fits_AME` |
+
+Per AGENTS.md §0a the **sibling shadows the library file**, so a content block's
+`lean.ref` resolves to the version with no gate — whose `fits_AME` is *false as
+written*, since it asserts the 1 % bound for every real number.
+
+So the library file's `IsAMEValue` did two things at once, one good and one not:
+it added a genuine restriction on `B_AME`, and it put the conjecture inside that
+restriction. **Simply deleting `fits_bound` moves this file toward the sibling's
+statement, which is worse.** The likely right shape keeps `IsAMEValue`'s two
+real invariants and relocates the conjecture into `QIntegerMassFormula`, where
+the class docstring already says it belongs — but choosing that, and deciding
+which of the two files is the paper's declaration, is authorial.
+
+**Finding C is untouched** — `MassEndomorphism` already has an owner per
+`VolumeBridge.lean`. Both remain on `qou-hjf4`.
