@@ -48,6 +48,11 @@ from math import factorial
 from pathlib import Path
 from typing import Iterable
 
+from _precision import set_compute_dps  # noqa: E402 — before any mpf is built
+import mpmath as mp  # noqa: E402
+
+set_compute_dps()
+
 HERE = Path(__file__).parent
 
 DEFAULT_WITNESS = _pb.witness_path("gb-filtration-jet-order.witness.json", HERE)
@@ -76,11 +81,17 @@ class SparsityPattern:
         return sum(self.filtration_shape.values())
 
     @property
-    def reduction_factor(self) -> float:
-        """`|H_n| / Σ multiplicity` — speed-up estimate."""
+    def reduction_factor(self) -> "mp.mpf":
+        """`|H_n| / Σ multiplicity` — speed-up estimate.
+
+        mpf, not float: both operands are INTEGER basis sizes, so this is an
+        exact rational (24/5, 6/5, 120/1 ...). Python's `/` turned each one
+        into a raw float64 on the way into the witness for no gain — mpmath's
+        shortest-repr writes them back as "4.8", "1.2", "120.0".
+        """
         if self.filtered_basis_size == 0:
-            return 0.0
-        return self.total_basis_size / self.filtered_basis_size
+            return mp.mpf(0)
+        return mp.mpf(self.total_basis_size) / self.filtered_basis_size
 
 
 def load_jet_order_witness(
