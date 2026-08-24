@@ -67,9 +67,11 @@ Draining the in-repo-wiring class is separate work.
 from __future__ import annotations
 
 import argparse
+import ast
 import collections
 import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -134,6 +136,155 @@ def _repo_basename_index(root: Path) -> "dict[str, list[Path]]":
     return _basename_index
 
 
+_reverse_index: "dict[str, list[Path]] | None" = None
+_py_src: "dict[Path, str]" = {}
+
+
+def _writes(src: str, name: str) -> bool:
+    """Does this producer WRITE `name`, or merely READ it?
+
+    The distinction is the whole point. A witness name appearing as a string
+    literal proves a RELATIONSHIP, not a direction: `option_e_a4_full_
+    reconciliation.py` names `chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json`
+    because it LOADS it, and writes something else entirely. Resolving a witness
+    to a reader would make this audit import the wrong file and then report the
+    witness refreshable on the strength of it — a false clean, which is the exact
+    defect class this audit exists to detect.
+
+    So: AST taint from the literal to a write sink. Three propagation rules,
+    each one observed in the corpus rather than guessed at:
+      assignment      OUT = HERE / "x.witness.json";  OUT.write_text(...)
+      for-target      for path in TARGETS: ...        (TARGETS holds the names)
+      one call level  process(path)  ->  def process(path): path.write_text(...)
+    Sinks: open(p, 'w'|'a'), p.open('w'|'a'), p.write_text/​write_bytes.
+
+    Under-claiming is deliberate. A producer whose write we cannot see is
+    reported as unresolved with the candidate named, not silently attached.
+    """
+    try:
+        tree = ast.parse(src)
+    except Exception:  # noqa: BLE001 — a producer that will not parse is a
+        return False   # separate defect; do not guess at its outputs
+    def has_lit(node) -> bool:
+        for n in ast.walk(node):
+            if isinstance(n, ast.Constant) and isinstance(n.value, str) \
+                    and name in n.value:
+                return True
+        return False
+    funcs = {n.name: n for n in ast.walk(tree)
+             if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))}
+    tainted: "set[str]" = set()
+
+    def expr_tainted(val) -> bool:
+        return val is not None and (has_lit(val) or any(
+            isinstance(x, ast.Name) and x.id in tainted for x in ast.walk(val)))
+
+    def add_targets(t) -> bool:
+        grew = False
+        for x in ast.walk(t):
+            if isinstance(x, ast.Name) and x.id not in tainted:
+                tainted.add(x.id)
+                grew = True
+        return grew
+
+    for _ in range(6):  # shallow fixpoint; the shapes here are not deep
+        grew = False
+        for n in ast.walk(tree):
+            if isinstance(n, (ast.Assign, ast.AnnAssign)):
+                if not expr_tainted(n.value):
+                    continue
+                for t in (n.targets if isinstance(n, ast.Assign) else [n.target]):
+                    grew |= add_targets(t)
+            elif isinstance(n, (ast.For, ast.AsyncFor)):
+                if expr_tainted(n.iter):
+                    grew |= add_targets(n.target)
+            elif isinstance(n, ast.Call) and isinstance(n.func, ast.Name):
+                fn = funcs.get(n.func.id)
+                if fn is None:
+                    continue
+                params = [a.arg for a in fn.args.args]
+                for i, a in enumerate(n.args):
+                    if i < len(params) and expr_tainted(a) \
+                            and params[i] not in tainted:
+                        tainted.add(params[i])
+                        grew = True
+                for kw in n.keywords:
+                    if kw.arg in params and expr_tainted(kw.value) \
+                            and kw.arg not in tainted:
+                        tainted.add(kw.arg)
+                        grew = True
+        if not grew:
+            break
+
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Call):
+            continue
+        f = n.func
+        if isinstance(f, ast.Name) and f.id == "open" and n.args:
+            mode = n.args[1] if len(n.args) > 1 else None
+            kw = {k.arg: k.value for k in n.keywords}
+            mode = kw.get("mode", mode)
+            mv = mode.value if isinstance(mode, ast.Constant) else ""
+            if isinstance(mv, str) and ("w" in mv or "a" in mv) \
+                    and expr_tainted(n.args[0]):
+                return True
+        elif isinstance(f, ast.Attribute):
+            if f.attr in ("write_text", "write_bytes") and expr_tainted(f.value):
+                return True
+            if f.attr == "open" and expr_tainted(f.value):
+                mv = n.args[0].value if n.args and isinstance(
+                    n.args[0], ast.Constant) else ""
+                if isinstance(mv, str) and ("w" in mv or "a" in mv):
+                    return True
+    return False
+
+
+def _reverse_reference_index(root: Path) -> "dict[str, list[Path]]":
+    """Producers keyed by the witness filename they NAME IN THEIR OWN SOURCE.
+
+    Most witnesses with no `scriptFile` are written by hand — the producer does
+    `json.dump({...})` to a path it spells out literally, instead of routing
+    through `WitnessBuilder`, which is what would have stamped `scriptFile`,
+    `engine` and `commitSha`. Those producers are not guessable from the witness
+    name, but they are not lost either: the source says which file it writes.
+
+    This index records every producer that MENTIONS a witness. Direction is
+    decided separately by `_writes` — see the docstring there for why naming is
+    not enough.
+    """
+    global _reverse_index
+    if _reverse_index is None:
+        idx: "dict[str, list[Path]]" = {}
+        skip = {"_deprecated", ".git", "__pycache__", "node_modules"}
+        for f in root.parent.rglob("*.py"):
+            if skip & set(f.parts):
+                continue
+            try:
+                src = f.read_text(encoding="utf-8", errors="ignore")
+            except Exception:  # noqa: BLE001
+                continue
+            _py_src[f] = src
+            for m in re.finditer(r'["\']([A-Za-z0-9_.\-]+\.witness\.json)["\']',
+                                 src):
+                idx.setdefault(m.group(1), []).append(f)
+        _reverse_index = idx
+    return _reverse_index
+
+
+def _resolve_by_reverse_reference(root: Path, wf: Path):
+    """(producer | None, reason). Only a UNIQUE confirmed writer resolves."""
+    named = _reverse_reference_index(root).get(wf.name, [])
+    if not named:
+        return None, "unnamed"
+    writers = [f for f in named if _writes(_py_src.get(f, ""), wf.name)]
+    if len(writers) == 1:
+        return writers[0], "reverse_reference"
+    if len(writers) > 1:
+        return None, f"written by {len(writers)} producers"
+    return None, ("named by " + ", ".join(
+        f.name for f in named[:3]) + " — none of which visibly writes it")
+
+
 def _resolve_producer(root: Path, sf: str, wf: Path) -> "tuple[Path | None, str]":
     """Locate the producer a witness names. Returns (path, how).
 
@@ -184,6 +335,7 @@ def _producers(root: Path):
         "no_script_file": [],
         "producer_not_beside_witness": [],
         "ambiguous_basename": [],
+        "reverse_reference_unresolved": [],
         "resolved_by": {},
     }
     for wf in root.rglob("*.witness.json"):
@@ -202,7 +354,18 @@ def _producers(root: Path):
             continue
         sf = d.get("scriptFile")
         if not sf:
-            scope["no_script_file"].append(rel)
+            # No declared producer — but a hand-written witness is usually named
+            # verbatim in the producer that writes it. Try that before giving up.
+            cand, why = _resolve_by_reverse_reference(root, wf)
+            if cand is not None:
+                scope["resolved_by"]["reverse_reference"] = (
+                    scope["resolved_by"].get("reverse_reference", 0) + 1)
+                out.setdefault(cand, []).append(wf)
+                continue
+            if why == "unnamed":
+                scope["no_script_file"].append(rel)
+            else:
+                scope["reverse_reference_unresolved"].append(f"{rel}  ->  {why}")
             continue
         cand, how = _resolve_producer(root, str(sf), wf)
         if cand is not None:
@@ -216,7 +379,8 @@ def _producers(root: Path):
     scope["witnesses_unresolved"] = (len(scope["unparseable"])
                                      + len(scope["no_script_file"])
                                      + len(scope["producer_not_beside_witness"])
-                                     + len(scope["ambiguous_basename"]))
+                                     + len(scope["ambiguous_basename"])
+                                     + len(scope["reverse_reference_unresolved"]))
     # Deliberately NO ratio stored: a float64 in a witness violates the corpus's
     # no-float64 rule (the repo's own raw-float64 guard fires on it), and a
     # coverage ratio needs no precision policy anyway — the two integers above
@@ -241,6 +405,8 @@ def _print_scope(scope: dict) -> None:
           f"{len(scope['producer_not_beside_witness'])}")
     print(f"      ambiguous basename (>1 match)  "
           f"{len(scope['ambiguous_basename'])}")
+    print(f"      named, writer unconfirmed      "
+          f"{len(scope['reverse_reference_unresolved'])}")
     print(f"      unparseable                    {len(scope['unparseable'])}")
     if scope.get("resolved_by"):
         print("    resolved by: " + ", ".join(
@@ -250,7 +416,9 @@ def _print_scope(scope: dict) -> None:
               "\n          case of this audit's thesis, not an exemption from it."
               "\n          It is excluded from the counts below, not cleared by them.")
         for label, key in (("no scriptFile", "no_script_file"),
-                           ("producer missing", "producer_not_beside_witness")):
+                           ("producer missing", "producer_not_beside_witness"),
+                           ("writer unconfirmed",
+                            "reverse_reference_unresolved")):
             for ex in scope[key][:3]:
                 print(f"      e.g. [{label}] {ex}")
 
