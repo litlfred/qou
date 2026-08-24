@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T15:10:01Z
+updated_at: 2026-08-24T15:23:56Z
 ---
 
 ## Landed — PR #5645
@@ -228,3 +228,45 @@ Two steps, both shape-preserving rather than arithmetic:
 
 Then sub-brick (b) — the Vandermonde ratio under `x_i -> Q*x_i` — feeds
 `sum_eq_bracket_mul_of_qratio_scaling` and general-r branching closes.
+
+
+## Sub-brick (a) is DONE — and the remaining list is longer than I said
+
+Two more commits: `694c4066b` (full FRT hook product in any commutative
+monoid) and `4947465a3` (β-gap denominator as the Vandermonde pair product).
+
+    prod_c (1 - Q^{h(c)}) * prod_{i<j} (1 - Q^{b_i - b_j})
+      = prod_i prod_{k<=b_i} (1 - Q^k)
+
+sorry-free, axiom-clean, and it cost almost nothing beyond the monoid
+generalisation: the assembly is arithmetic-free for the same reason the
+per-row step was, and `colLen_eq_succ_add_cnt_drop` / `drop_sorted` /
+`drop_le_getD` are facts about **indices**, reused verbatim.
+
+`betaGap_eq_betaNum_sub` is the one place the weak-decrease hypothesis earns
+its keep: without `l[j] <= l[i]` the two truncated `N` subtractions part
+company.
+
+### Correction to my own scoping
+
+I wrote earlier that after sub-bricks (a) and (b) "general-r branching
+closes". **That was too fast.** (a) is the HOOK side only — the denominator.
+Four things stand between here and branching for `schurPrincipal`:
+
+1. **The numerator side.** `schurPrincipal` is `Q^{nPart} * prod (1 - Q^{r +
+   content}) / prod (1 - Q^{hook})`. I have the denominator; the numerator
+   `prod_c (1 - Q^{r + content(c)})` needs its own beta-number form.
+2. **List-partition <-> YoungDiagram.** `prodHooks` and the whole
+   `SYTBeta` namespace are List-encoded; `schurPrincipal` is YoungDiagram-
+   encoded. `hookLength_eq` in `BraidKnot/HookProductHLF.lean` and
+   `HookLengthFormula.lean` are the candidate bridges — corpus-grep before
+   writing anything.
+3. **Sub-brick (b)**, unchanged: the Vandermonde ratio under `x_i -> Q*x_i`.
+   Best done as a `Finset` pair product over `range n` with `i < j`, split
+   once into pairs containing `a` and pairs not. The signs cancel: for
+   `j < a` the pair is `(j,a)` and `(x_j - y)/(x_j - x_a) = (y - x_j)/(x_a -
+   x_j)`, same as for `j > a`.
+4. Only then does `sum_eq_bracket_mul_of_qratio_scaling` fire.
+
+Estimating (b) at ~100 lines of Finset surgery; (1) and (2) unknown until
+grepped.
