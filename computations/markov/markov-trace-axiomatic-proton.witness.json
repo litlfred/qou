@@ -1,31 +1,39 @@
 {
-  "engine": "sympy",
-  "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T23:54:35.562868+00:00",
-  "commitSha": "5218280df85b6efebc5a4d740cbe8ef77436dc57",
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T06:49:41.355014+00:00",
+  "commitSha": "1e18c44fd444b6c7a1248c797808207c521f452c",
   "assertions": [
     {
-      "name": "anti_self_reciprocal",
-      "computed": 0.0,
-      "expected": 1.0,
-      "passed": false,
-      "tolerance": 0.0,
-      "source": "prop:markov-trace-axiomatic-closed-form § anti-self-reciprocal"
+      "name": "block_word_denominator_is_convention_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "prop:markov-trace-axiomatic-closed-form: the denominator factors as q^7(q^2+1)^2, one (q^2+1) per Markov peel -- the convention-D signature, which C cannot produce"
     },
     {
-      "name": "symmetric_under_q_inv",
-      "computed": 0.0,
-      "expected": 1.0,
-      "passed": false,
-      "tolerance": 0.0,
-      "source": "prop:markov-trace-axiomatic-closed-form § q-inverse symmetry"
+      "name": "block_word_tr_M_at_q0",
+      "computed": "1.88431946725497502509029472310815626347249744177191389544517",
+      "expected": "1.88432",
+      "passed": true,
+      "tolerance": "1e-5",
+      "source": "prop:markov-trace-axiomatic-closed-form: numerical evaluation at q_0"
+    },
+    {
+      "name": "block_word_rho_p",
+      "computed": "974.438095733764827809223931522313849460550185112633207505751",
+      "expected": "974.44",
+      "passed": true,
+      "tolerance": "1e-2",
+      "source": "prop:markov-trace-axiomatic-closed-form: the categorical-mass anchor"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 0,
   "computation": "markov-trace-axiomatic-proton",
   "scriptFile": "markov_trace_axiomatic_proton.py",
-  "scriptHash": "e559ea78594a",
+  "scriptHash": "dbfe5bf4b8e7",
   "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -49,12 +57,15 @@
     ],
     "reproduce": "python3 -u computations/markov/markov_trace_axiomatic_proton.py"
   },
-  "description": "Symbolic Markov trace of σ_1σ_2σ_1 (the H_3 longest element w_0, used as a proton-equivalent demo word) via direct Markov-axiom reduction in ℚ(q). Gives the categorically-clean closed form tr_M(σ_1σ_2σ_1)(q) = z(1 + hz) where z = 1/(q^{1/2}+q^{-1/2}) and h = q-q^{-1}. Bypasses PR #546's IndexError on σ_2; uses pure Markov axioms + Hecke quadratic + cyclicity, no rep theory. Demonstrates that the canonical Markov-trace closed form is FULLY SYMMETRIC under q ↔ 1/q (in contrast to the Plancherel-trace form's anti-self-reciprocity).",
+  "description": "Symbolic Markov trace by direct Markov-axiom reduction in Q(q), convention D (z = q^3/(q^2+1)). Reports the content block's word sigma_1^7 sigma_2^4 -- its closed form, exact denominator, value at q_0 and the rho_p anchor -- plus the H_3 longest element sigma_1 sigma_2 sigma_1 as a demo. Pure Markov axioms + Hecke quadratic + cyclicity, no representation theory.",
   "reference_blocks": [
+    "prop:markov-trace-axiomatic-closed-form",
     "prop:categorical-mass-markov",
     "prop:atomic-mass-gb-nf",
     "prop:markov-trace-antipode-polynomial-symmetry"
   ],
+  "convention": "D",
+  "z_symbolic": "q**3/(q**2 + 1)",
   "h_3_markov_basis_table": {
     "()": "1",
     "(1,)": "q**3/(q**2 + 1)",
@@ -63,11 +74,15 @@
     "(2, 1)": "q**6/(q**4 + 2*q**2 + 1)",
     "(1, 2, 1)": "(q**7 + q**3)/(q**4 + 2*q**2 + 1)"
   },
-  "tr_M_proton_demo_symbolic": "(q**7 + q**3)/(q**4 + 2*q**2 + 1)",
-  "tr_M_proton_at_q0": 0.6911664783584446,
-  "tr_M_proton_at_inv_q0": 0.369568606357623,
-  "anti_self_reciprocal": false,
-  "symmetric_under_q_inv": false,
-  "rho_p_codata": 2656.5994711742933,
-  "rho_p_over_8G": 362.52722041133916
+  "block_word": "sigma_1^7 sigma_2^4",
+  "tr_M_block_word_symbolic": "(q**22 + 2*q**18 - 2*q**16 + 3*q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 3*q**6 - 3*q**4 + 2*q**2 - 1)/(q**11 + 2*q**9 + q**7)",
+  "tr_M_block_word_denominator": "q**7*(q**2 + 1)**2",
+  "tr_M_block_word_at_q0": "1.88431946725497502509029472310815626347249744177191389544517",
+  "rho_p_from_block_word": "974.438095733764827809223931522313849460550185112633207505751",
+  "demo_word": "sigma_1 sigma_2 sigma_1",
+  "tr_M_demo_at_q0": "0.691166478358444526147719530979046206614241118678141951155491",
+  "tr_M_demo_at_inv_q0": "0.369568606357623072330408713830913380171509096426948791532523",
+  "bar_behaviour_note": "Under q -> 1/q the H_3 longest-element trace is NEITHER symmetric NOR anti-symmetric, in convention C or D. This witness asserted both `anti_self_reciprocal` and `symmetric_under_q_inv` with expected=1.0 until 2026-08-23. That pair is unsatisfiable by construction -- f(1/q)=f(q) together with f(1/q)=-f(q) forces f == 0 -- so the witness could never go green, and both cited sections of prop:markov-trace-axiomatic-closed-form that do not exist in that block. The ratio is reported here as data instead.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

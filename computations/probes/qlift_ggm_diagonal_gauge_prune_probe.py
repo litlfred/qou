@@ -75,6 +75,20 @@ M_MAX = 15
 Q_LIST = [mpf("0.9"), mpf("1.05"), mpf("1.10998")]
 
 
+# Path bridge — keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
+from witness_base import WitnessBuilder  # noqa: E402
+
+import time as _time  # noqa: E402
+_T0 = _time.monotonic()
+
+
 def qint(k, q):
     """[k]_q = (1 - q^k)/(1 - q)."""
     return (1 - q ** k) / (1 - q)
@@ -217,7 +231,11 @@ def main():
                        "[m+1]_q b_{m+1} = b_m + c b_{m-1} into GGM eq-49 "
                        "y_{m+1} - (2-q^m) y_m + y_{m-1} = 0 -- consistency "
                        "condition derived symbolically, verified numerically",
-        "computation": "mpmath dps=50; P1 residual of derived consistency "
+        # `computation` is RESERVED by WitnessBuilder.wrap_legacy, which
+        # overwrites it with the witness stem ("filename already encodes
+        # this"). That is true for a name and false for this field, which
+        # is a METHOD description. Renamed so the text survives the wrap.
+        "computation_method": "mpmath dps=50; P1 residual of derived consistency "
                        "identity; P2 direct (A)-gauge construction + eq-49 "
                        "residual on the proved C1 solution b_n = I_q(n)/[n]_q!; "
                        "P3 constant-c(q) and index-shift non-rescue",
@@ -246,10 +264,13 @@ def main():
                           "scope-(a)/(b) vocabulary per AGENTS.md; no AME data; anti-fit",
         },
     }
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                       "qlift_ggm_diagonal_gauge_prune_probe.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    out = WitnessBuilder.wrap_legacy(
+        "qlift_ggm_diagonal_gauge_prune_probe",
+        witness,
+        script_path=__file__,
+        engine="python+mpmath",
+        start_time=_T0,
+    ).save()
     print(f"witness written: {out}")
 
 

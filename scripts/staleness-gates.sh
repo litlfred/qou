@@ -187,6 +187,33 @@ fi
 #     stale against it, so the packaged `qou-mass` shipped a char_fast WITHOUT
 #     that guard. Re-synced here with `--apply`. This one was real.
 #
+#     2026-08-23, STANDING (third red, and the first one a human never saw):
+#     two files, both drifted because the arc that moved their SOURCE never ran
+#     `--apply`.
+#
+#       ame-2020-binding-energies.witness.json          src 03c25e8dbf 08-19
+#                                                       mirror synced 08-23
+#                                                       -> FOUR DAYS standing
+#       data/m-p-borromean-verification-50dps.witness   src f0ef496482 08-23
+#                                                       mirror synced 08-23
+#
+#     Neither self-corrected, so both are STANDING by the test above, not
+#     transient. Re-synced with `--apply` in e563c491d9.
+#
+#     THE INSTRUCTIVE PART IS NOT THE DRIFT. This gate DID fire -- the agent
+#     that caused it ran this script, saw `RED: ... qou-mass vendor mirror` in
+#     its own output, read past it, rediscovered the same drift by hand an hour
+#     later, and then wrote in a merged PR body that `--check` "is simply not
+#     wired into precision-gates.sh or staleness-gates.sh". It is wired, at the
+#     array entry 20 lines above, blocking, and had been for a day.
+#
+#     So the qou-j6gb pattern this file was built to close ("the checker
+#     exists, works, ships --check, and is in no array") has a successor mode:
+#     the checker exists, works, IS in the array, fires -- and the reader
+#     skims the summary line. A gate that is not read is not a gate. If you are
+#     an agent running this script, the RED list at the end is the deliverable,
+#     not the exit code.
+#
 #   The two look identical from a single `--check`. Only the git history
 #   separates them, which is why the rule below is re-measure, not re-run.
 #

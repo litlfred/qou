@@ -200,7 +200,23 @@ def main() -> int:
         "engine": "python+sympy+markov_peel",
         "results": results,
     }
-    out_path = HERE / "habiro-coefficients-extended.witness.json"
+    # Write to the CONSUMERS' location, not beside this script.
+    #
+    # This previously wrote `HERE / ...`, i.e. computations/habiro/. Every
+    # consumer that matters reads the computations/ root — cross_check_trM_1ppb
+    # (the L1 gate), d_u_closed_form_proof, mass_formula_6term_mpfr_50dps — so
+    # the producer refreshed a copy nobody reads while the copy everybody reads
+    # went stale. That is how the top-level witness stayed convention C through
+    # the 25-atom convention-D sweep (cde2fbcd894), which touched only the
+    # per-isotope files: the L1 gate's Habiro column did not move because its
+    # input was never written by this producer. Bean qou-kcii.
+    #
+    # `_path_bridge.witness_path` is deliberately NOT used here: it searches
+    # prefer_dir first, which is what handed a habiro/-local probe the dead
+    # error-record copy and made it report the wrong q0Anchor (667c9ab3f6).
+    # For OUTPUT the canonical location is not a search result.
+    _COMPUTATIONS = HERE.parent
+    out_path = _COMPUTATIONS / "habiro-coefficients-extended.witness.json"
     import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
     _d = _os.path.dirname(_os.path.abspath(__file__))
     while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):

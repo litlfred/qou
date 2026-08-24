@@ -13,7 +13,7 @@ import Mathlib.Tactic.Positivity
 
 The mass gap is formulated as a regular function on 𝔾_m = Spec ℤ[q, q⁻¹].
 It vanishes precisely on the torsion locus (roots of unity).  The
-`not_root_of_unity` axiom in `SubstrateParameter` is equivalent to
+`not_root_of_unity` axiom in `ArchimedeanSubstrateField` is equivalent to
 torsion avoidance, which is equivalent to positivity of the mass gap.
 
 ## Architecture

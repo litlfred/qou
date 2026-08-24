@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:40:43.928363+00:00",
-  "commitSha": "b7f8a26324bb376c3d8ee18ddcfe3ce2f8dcd73a",
+  "computedAt": "2026-08-23T20:33:51.026289+00:00",
+  "commitSha": "d9ae51e30c201d02aafe1ee00819eebb68866388",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -29,6 +29,12 @@
       "expected": "0.3882864715477134",
       "passed": true,
       "tolerance": "0.0000000003882864715477134"
+    },
+    {
+      "name": "chain_valid[a-operator-extract-h9.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     },
     {
       "name": "chain_valid[alpha-k-h3-0.derivation]",
@@ -201,6 +207,12 @@
       "passed": true
     },
     {
+      "name": "chain_valid[derived-chi-catalogue-matrix-m.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
       "name": "chain_valid[habiro-coefficients-mass-table.derivation]",
       "computed": true,
       "expected": true,
@@ -294,6 +306,12 @@
       "expected": "1.0653062285923893",
       "passed": true,
       "tolerance": "0.0000000010653062285923893"
+    },
+    {
+      "name": "chain_valid[probe-topological-mass-formula.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     },
     {
       "name": "chain_valid[bwhk-st-matrix-corroboration.derivation]",
@@ -616,6 +634,12 @@
       "expected": "-0.99124115660574",
       "passed": true,
       "tolerance": "0.000000000099124115660574"
+    },
+    {
+      "name": "chain_valid[wenzl-y-lambda-orphans-conventionD.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     }
   ],
   "allPassed": true,
@@ -623,7 +647,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "df4baa7af374",
-  "scriptCommitSha": "90f58b2c7045e7dfdb83fc41f0604ac44d8e1b71",
+  "scriptCommitSha": "ed6454562744867e5a22417d725454f9b59dd1bb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -633,9 +657,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
@@ -680,6 +706,21 @@
           "script-cited": 4,
           "derived": 1,
           "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "a-operator-extract-h9.derivation.json",
+        "target": "the Sub-lemma 2.1 interface operator A^lambda_{xi nu}(I) at the H_9 peel level (A = 3), for the pn and pp interfaces",
+        "target_value": "A^lambda_{xi nu}(I) recovered from chi^lambda(W_inner . I . beta_block) by least-squares inversion of a bilinear system on K_inner x K_block = 216 test pairs -- NOT a derivation, and NOT consumed by production; see the frontier step",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "derived": 1,
+          "script-cited": 1
         },
         "has_script_frontier": true
       },
@@ -1356,6 +1397,21 @@
         "has_script_frontier": true
       },
       {
+        "chain": "derived-chi-catalogue-matrix-m.derivation.json",
+        "target": "the matrix-M factorisation of the Hecke character chi^lambda at the substrate anchor -- computing chi^lambda(beta_atom; q_0) block-by-block over the per-nucleon H_3 factors instead of over the full dim V_lambda representation",
+        "target_value": "chi^lambda(q_0) = sum over mu_p blocks of the matrix-M product, agreeing with the whole-representation Geck-Pfeiffer character to absolute 1e-45, and with its own two-level (mu_p, mu_n) refinement to absolute 1e-40, on all 18 tested partitions of 2H/3H/3He/4He",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "derived": 2,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "habiro-coefficients-mass-table.derivation.json",
         "target": "Habiro / cyclotomic expansion of the mass-table trace: tr_M(K, q) = Σ_m a_m·(u;u)_m, u = q^{1/2}",
         "target_value": "tr_M(K, q) = Σ_m a_m(u)·(u;u)_m with every a_m ∈ ℤ[u] (all_integral), reconstruction exact (reconstruction_matches), per canonical atom K = (Z, N)",
@@ -1507,6 +1563,21 @@
           "script-cited": 4,
           "derived": 1,
           "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "probe-topological-mass-formula.derivation.json",
+        "target": "the Step-3 combine behind prop:topological-mass-formula and its algebraic twin -- that baseline + exceptional reassembles to Vol(K)/hbar_q^2, and that the Q(q)-side restatement mass_alg = Phi_1/hbar_sq is the same identity",
+        "target_value": "Vol(K) + Vol(K)(1/hbar_q^2 - 1) = Vol(K)/hbar_q^2, exact in Q(q) for ALL q and not merely at q_0; verified symbolically and, at the proton pin, numerically to <= 1e-25 across the sample knots",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 2,
+          "script-cited": 1
         },
         "has_script_frontier": true
       },
@@ -2248,11 +2319,28 @@
           "computational": 1
         },
         "has_script_frontier": true
+      },
+      {
+        "chain": "wenzl-y-lambda-orphans-conventionD.derivation.json",
+        "target": "the Jones-Markov weights y_lambda under the canonical convention D, at H_9 and H_12",
+        "target_value": "y_lambda = [n - 2k + 1]_q / [2]_q^n for lambda = (n-k, k) with l(lambda) <= 2, and y_lambda = 0 exactly for l(lambda) >= 3; 30 weights at n = 9 and 77 at n = 12",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "lean-proven": 1,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
       }
     ],
     "witness_trust": {
       "derivation-fully-trusted": [],
       "derivation-backed": [
+        "A-operator-extract-h9-pn.witness.json",
+        "A-operator-extract-h9-pp.witness.json",
         "alpha-cluster-recursion.witness.json",
         "atom-chi-rust-3he.witness.json",
         "atom-chi-rust-4he.witness.json",
@@ -2399,6 +2487,8 @@
         "chi-proton-h3-at-q0-50dps.witness.json",
         "chi-tritium-h9-at-q0-50dps.witness.json",
         "chi-via-rust-lossless-general.witness.json",
+        "derived-chi-catalogue-matrix-m-mpfr.witness.json",
+        "derived-chi-catalogue-matrix-m-mu-n-mpfr.witness.json",
         "deuteron-binding-interface-closure.witness.json",
         "habiro-coefficients-beryllium-10.witness.json",
         "habiro-coefficients-beryllium-6.witness.json",
@@ -2438,8 +2528,12 @@
         "nucleus-real-sdp-neutron.witness.json",
         "nucleus-real-sdp-proton.witness.json",
         "nucleus-real-sdp-tritium.witness.json",
+        "probe-topological-mass-formula-algebraic.witness.json",
+        "probe-topological-mass-formula.witness.json",
         "bwhk-st-matrix-corroboration.witness.json",
-        "term7-alpha5-crystal-derivation.witness.json"
+        "term7-alpha5-crystal-derivation.witness.json",
+        "wenzl-y-lambda-h12.witness.json",
+        "wenzl-y-lambda-h9.witness.json"
       ],
       "audit-only-exempt": [
         "a5-so3-branching.witness.json",
@@ -2531,6 +2625,7 @@
         "muon-pin-three-values.witness.json",
         "proton-identity-extension-audit.witness.json",
         "proton-m_e-anomaly-audit.witness.json",
+        "q0-consistency-audit.witness.json",
         "q0-literal-classification.witness.json",
         "undeclared-muon-pin-flip-risk.witness.json",
         "balanced-head-dominance-binding-period-probe.witness.json",
@@ -3225,8 +3320,6 @@
         "a-K-via-lp-dual.witness.json",
         "a3-magnitude-berezinian-crossterm.witness.json",
         "a3-mirror-residual-reconciliation.witness.json",
-        "A-operator-extract-h9-pn.witness.json",
-        "A-operator-extract-h9-pp.witness.json",
         "cyclic-intertwiner-verify.witness.json",
         "ab-methodology-metrics.witness.json",
         "active-set-lr-scaling-profile.witness.json",
@@ -3323,7 +3416,6 @@
         "per-knot-density-compute-vs-paper-audit.witness.json",
         "producer-importability-audit.witness.json",
         "q0-anchor-consistency-audit.witness.json",
-        "q0-consistency-audit.witness.json",
         "q0-hardcoded-pin-audit.witness.json",
         "qbeta-multiblock-order-audit.witness.json",
         "rho-k-proton-substrate-audit.witness.json",
@@ -3657,8 +3749,6 @@
         "derived-chi-catalogue-bridge-factor-omega.witness.json",
         "derived-chi-catalogue-consumer-demo.witness.json",
         "derived-chi-catalogue-consumer-q0.witness.json",
-        "derived-chi-catalogue-matrix-m-mpfr.witness.json",
-        "derived-chi-catalogue-matrix-m-mu-n-mpfr.witness.json",
         "derived-chi-catalogue-matrix-m-mu-n-prototype.witness.json",
         "derived-chi-catalogue-matrix-m-multi-a-benchmark.witness.json",
         "derived-chi-catalogue-matrix-m-numerical.witness.json",
@@ -3736,7 +3826,6 @@
         "h4-residual-higher-precision-pslq.witness.json",
         "du-law-reparametrisation.witness.json",
         "habiro-coefficients-atomic.witness.json",
-        "habiro-coefficients-extended.witness.json",
         "habiro-coefficients-interpolate.witness.json",
         "habiro-exact-mass-endomorphism.witness.json",
         "habiro-exact-qbeta.witness.json",
@@ -3769,19 +3858,25 @@
         "he4-sdp-compositional-probe.witness.json",
         "hecke-crossed-module-q8.witness.json",
         "phi0-normalization-disproof.witness.json",
+        "hecke-agtb-corner-shape.witness.json",
+        "hecke-agtb-lineage-schedule.witness.json",
         "hecke-block-transport-shape.witness.json",
         "hecke-chain-cancellation.witness.json",
         "hecke-channel-binding.witness.json",
+        "hecke-closing-from-topen.witness.json",
         "hecke-conjugation-duality-sign.witness.json",
         "hecke-core-symbolic-migration.witness.json",
         "hecke-corner-le-regime.witness.json",
         "hecke-gs-confluence-n4.witness.json",
         "hecke-gs-confluence-range.witness.json",
+        "hecke-opening-coverage.witness.json",
+        "hecke-opening-trio-shape.witness.json",
         "hecke-prefix-head-separation.witness.json",
         "hecke-prefix-loop-fit.witness.json",
         "hecke-prefix-phases.witness.json",
         "hecke-prefix-schedule-check.witness.json",
         "hecke-quad-pair-shape.witness.json",
+        "hecke-small-a-decomposition.witness.json",
         "hecke-tail-assembly-fit.witness.json",
         "hecke-tail-collision-check.witness.json",
         "hecke-tail-diagonal-check.witness.json",
@@ -4092,8 +4187,6 @@
         "probe-q6j-jm-spectral-delta-lambda.witness.json",
         "probe-sparse-interface-magnitude-the3-prune.witness.json",
         "probe-theta-carry-binding.witness.json",
-        "probe-topological-mass-formula-algebraic.witness.json",
-        "probe-topological-mass-formula.witness.json",
         "probe-volume-wedderburn-delta-lambda.witness.json",
         "additive-composition-categorical-probe.witness.json",
         "alpha-em-4pi-derived-form-probe.witness.json",
@@ -4944,8 +5037,6 @@
         "weak-isospin-t3-grading.witness.json",
         "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-pair-volumes.witness.json",
-        "wenzl-y-lambda-h12.witness.json",
-        "wenzl-y-lambda-h9.witness.json",
         "witness-float64-padding-audit.witness.json",
         "witness-producer-executes-audit.witness.json",
         "witness-raw-float64--docs-audits-audit.witness.json",

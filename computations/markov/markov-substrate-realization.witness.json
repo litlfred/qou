@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T22:37:14.720037+00:00",
-  "commitSha": "1ca6fe52b601d383fcbe29c47a389b301e32b88e",
+  "computedAt": "2026-08-24T06:49:40.301107+00:00",
+  "commitSha": "1e18c44fd444b6c7a1248c797808207c521f452c",
   "assertions": [
     {
       "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(2)]",
@@ -114,11 +114,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 17,
   "computation": "markov-substrate-realization",
   "scriptFile": "markov_substrate_realizer.py",
-  "scriptHash": "4c73a8982fdd",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "729de506a7d6",
+  "scriptCommitSha": "3a47febca402f1297fdfe2c726e76398cacd48a4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -144,7 +144,7 @@
   "description": "Place-by-place realization of the Habiro Markov trace via the Lean MotivicSubstrate.realize map: Place.infty → ℝ (numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p coefficient reduction).  Free consistency check: the tail_in_ideal axiom is re-verified in 𝔽_p[u].",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "finite_places": [
       2,
       3,
@@ -176,8 +176,8 @@
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.0535552110598574,
-            "tr_M_at_q0": 1.145759692457301
+            "u_0": "1.05355521105985746417046869867071918258388297317047921653686",
+            "tr_M_at_q0": "1.14575969245730086968908159577411930594372806194352229672576"
           },
           {
             "place": "finite(2)",
@@ -232,8 +232,8 @@
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.0535552110598574,
-            "tr_M_at_q0": 0.9877436881158097
+            "u_0": "1.05355521105985746417046869867071918258388297317047921653686",
+            "tr_M_at_q0": "0.987743688115809571634020165501294982055048759062789717292928"
           },
           {
             "place": "finite(2)",
@@ -288,8 +288,8 @@
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.0535552110598574,
-            "tr_M_at_q0": 0.5751722439177721
+            "u_0": "1.05355521105985746417046869867071918258388297317047921653686",
+            "tr_M_at_q0": "0.575172243917771870826535343986180889152494352892844837018008"
           },
           {
             "place": "finite(2)",

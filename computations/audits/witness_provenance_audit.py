@@ -66,6 +66,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from mpmath import mpf  # noqa: E402
 
 
 REQUIRED_FIELDS = ("engine", "scriptFile", "commitSha")
@@ -275,9 +277,15 @@ def main(argv: list[str] | None = None) -> int:
     n_no_reader = len(by_verdict["PROV_EXEMPT_NO_READER"])
     n_ack = len(by_verdict["PROV_EXEMPT_ACKNOWLEDGED"])
     n_parse_err = len(by_verdict["PROV_PARSE_ERROR"])
-    completeness_ratio = (
-        (n_ok + n_audit + n_no_reader + n_ack) / n_total if n_total > 0 else 0.0
-    )
+    # Carry the ratio as mpmath.mpf and serialize with `_precision.fmt`.
+    # A bare Python `/` here produces a float64, which the raw-float64 ratchet
+    # correctly flags on this audit's OWN witness (`.data.counts
+    # .completeness_ratio`) — a provenance auditor tripping a precision gate on
+    # its own output. The quantity is an exact rational (a ratio of counts), so
+    # there is nothing to lose by carrying it exactly to the serializer.
+    set_compute_dps()
+    n_clean = n_ok + n_audit + n_no_reader + n_ack
+    completeness_ratio = mpf(n_clean) / mpf(n_total) if n_total > 0 else mpf(0)
 
     print("=" * 70)
     print("I14 audit — witness provenance completeness")
@@ -289,7 +297,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  PROV_EXEMPT_ACKNOWLEDGED: {n_ack}")
     print(f"  PROV_MISSING           : {n_missing}")
     print(f"  PROV_PARSE_ERROR       : {n_parse_err}")
-    print(f"  completeness ratio     : {completeness_ratio:.3f}")
+    print(f"  completeness ratio     : {float(completeness_ratio):.3f}")
     print(f"  legacy_removed_skipped: {len(legacy_removed)}")
     if n_missing:
         print()
@@ -323,7 +331,7 @@ def main(argv: list[str] | None = None) -> int:
             "prov_exempt_acknowledged": n_ack,
             "prov_missing": n_missing,
             "prov_parse_error": n_parse_err,
-            "completeness_ratio": completeness_ratio,
+            "completeness_ratio": fmt(completeness_ratio),
         })
         .add_data("by_verdict", by_verdict)
         .add_assertion(

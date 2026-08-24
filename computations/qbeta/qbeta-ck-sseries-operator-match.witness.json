@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T01:53:54.219609+00:00",
-  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
+  "computedAt": "2026-08-24T06:49:45.533422+00:00",
+  "commitSha": "1e18c44fd444b6c7a1248c797808207c521f452c",
   "assertions": [
     {
       "name": "validate_object_at_q0",
@@ -18,14 +18,14 @@
       "expected": 1,
       "passed": false,
       "tolerance": 0,
-      "source": "operator s-series match reproduces proved c_2 = -1"
+      "source": "Does the operator s-series reproduce c_2 = -1? EXPECTED RED, and red is the result. The scalar u-reversion is singular, so the c_k are not scalar-q Taylor coefficients -- docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md blocker 2. Do NOT relax this gate to make the witness green: it records a refutation, and the extracted quadratic is input-sensitive at ~7e5 amplification (see the data fields). ('proved c_2 = -1' until 2026-08-23: c_2 = -1 is STRUCTURAL, not proved -- N2_factor is a bare def with no theorem deriving it, per the AGENTS.md correction of 2026-08-16.)"
     }
   ],
   "allPassed": false,
-  "durationMs": 23,
+  "durationMs": 19,
   "computation": "qbeta-ck-sseries-operator-match",
   "scriptFile": "qbeta_ck_sseries_operator_match_probe.py",
-  "scriptHash": "f53deb839350",
+  "scriptHash": "0c3b2215b8fb",
   "scriptCommitSha": "2b48a3bf718539b8f05027e54e402f42f6e3245a",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -52,15 +52,12 @@
   "description": "Hoefsmit Stage B path-1: exact s=q-1 numeric series-match of the canonical operator ladder R=Q_beta/[Q_A cos(alpha_eff)] vs prod(1+c_k u^k), Q_beta=|Delta(net)|*E_0 from GB-reduced symbolic net. c_2=-1 gate; residual test for constant-c_k consistency.",
   "data": {
     "delta_net_q_symbolic": "(q**14 + 2*q**13 - 5*q**12 - 10*q**11 + 10*q**10 + 24*q**9 - 16*q**8 - 32*q**7 + 16*q**6 + 24*q**5 - 10*q**4 - 10*q**3 + 5*q**2 + 2*q - 1)/(4*q**7)",
-    "validate_delta_net_at_q0": -0.1882906200156893,
-    "validate_Qbeta_at_q0_MeV": 0.7881809253993708,
-    "R_at_q1": 1.0,
+    "validate_delta_net_at_q0": "-0.188290620015689313544800645166813912718478469709970678764420",
+    "validate_Qbeta_at_q0_MeV": "0.788180925399370797340479711272984605182631749675403256074970",
+    "R_at_q1": "1.00000000000000000000000000000000000000000000000000000000000",
     "c2_gate_pass": false,
-    "c_k": {
-      "2": -7.45876032789888
-    },
-    "max_odd_order_logR": 9860.407546961053,
-    "residual_next_even": null,
-    "constant_ck_exact": null
+    "extracted_quadratic_is_a_named_c2_variant": false,
+    "why_c2_gate_is_red": "NOT a defect and NOT a number to be fixed. The scalar u-reversion is singular (u is quadratic in q-1), so R(q) is not analytic in u and the c_k are not scalar-q Taylor coefficients. See docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md blocker 2. Making this gate green would delete a recorded refutation.",
+    "extracted_quadratic_input_sensitivity": "The 2026-06-16 witness carried -8.006410058709255, matching the registry's c_2^even = -1049/144 - 5*sqrt(3)/12 to 15 digits. The coincidence did NOT survive: a byte-identical producer now yields -7.45876032789888, because free-neutron-decay.witness.json was regenerated in 52c68267f2 (Delta(net) -0.18829060147138277 -> -0.1882906200111204). A 9.8e-8 relative input change moved the output 6.8% -- ~7e5 amplification, which is the audit's blocker-3 sigma(c_k) = sigma_R/u^k measured rather than argued. Do not identify the extracted quadratic with c_2, c_2-tilde or c_2^even."
   }
 }

@@ -334,18 +334,30 @@ structure QuantumObservableUniverse (R : Type*) [CommRing R]
   adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
   /-- The fundamental object `V` of categorical dimension 2. -/
   fundamentalObj : C
-  /-- The exterior square `Λ²V` as an object of `C`. -/
+  /-- The exterior square `Λ²V` as an object of `C`, presented as a quotient
+      of `V ⊗ V` by the two fields below.  Previously a free field with no tie
+      to `fundamentalObj`; bean `qou-n1dj` item 3. -/
   exteriorSquare : C
-  /-- **Volume constraint** (condition iii): the non-degenerate epimorphism
-      `ε : Λ²V → 𝟙` that forces `det(g_V) = 1` for all
+  /-- The antisymmetrisation `π : V ⊗ V ↠ Λ²V`. -/
+  exteriorSquareProj : (fundamentalObj ⊗ fundamentalObj) ⟶ exteriorSquare
+  /-- `Λ²V` is a **quotient** of `V ⊗ V`.  No braiding-eigenvalue condition:
+      on the `q`-exterior square the braiding acts by `-q⁻¹`, not `-1`, so
+      demanding `β ≫ π = -π` would silently impose `q = 1`. -/
+  exteriorSquare_epi : CategoryTheory.Epi exteriorSquareProj
+  /-- **Volume constraint** (condition iii), under the **strong (iso)
+      reading**: `ε : Λ²V ≅ 𝟙`, which forces `det(g_V) = 1` for all
       `g ∈ Aut⊗(ω)`, restricting the gauge group from `GL(2)` to `SL(2)`.
+
+      Was `volumeForm : exteriorSquare ⟶ (𝟙_ C)` plus a separate
+      `volumeForm_epi` field.  Both are subsumed: an isomorphism is epi, so
+      `volumeForm_epi` is now a theorem
+      (`QOU.epi_of_iso_unit`, `CategoricalFoundations.lean`) rather than a
+      hypothesis, and the bare-morphism version admitted `volumeForm := 0`.
+      Bean `qou-n1dj` item 2 — the editorial choice between the epi and iso
+      readings of "non-degenerate epimorphism", resolved to iso.
+
       LaTeX: `\label{eq:categorical-volume-constraint}` -/
-  volumeForm : exteriorSquare ⟶ (𝟙_ C)
-  /-- **Non-degeneracy**: the volume form is an epimorphism —
-      if two morphisms agree after precomposition with `volumeForm`,
-      they are equal.  This forces the pairing to be non-degenerate. -/
-  volumeForm_epi : ∀ (f g : (𝟙_ C) ⟶ (𝟙_ C)),
-    volumeForm ≫ f = volumeForm ≫ g → f = g
+  volumeIso : exteriorSquare ≅ (𝟙_ C)
 /-- The **quantum gauge group** `G_q = Aut⊗(ω)`: the group of monoidal
     natural automorphisms of the fibre functor.
 

@@ -1436,11 +1436,42 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                 # Cost: dense × sparse = O(dim · nnz) = O(dim²) vs
                 # dense × dense = O(dim³).
                 M_run = s['M']
+                _sig_coo = {}   # gen -> (row, col, data) of σ, for the object path
                 for c, d, gen in chain:
                     sig_sparse = sigmas[gen]
-                    # scipy sparse: dense @ sparse returns dense ndarray,
-                    # computed as a sparse BLAS operation in O(dim·nnz).
-                    Msig = sig_sparse.T.dot(M_run.T).T  # = M_run @ sig_sparse
+                    # The scipy path is a FLOAT64 optimisation. `_PROTON_G1` /
+                    # `_NEUTRON_G1` carry `d = -h` as an `mpf` (correctly — it
+                    # is ℏ_q), so the first such crossing promotes `M_run` to
+                    # dtype object and scipy then raises
+                    #   TypeError: no supported conversion for types:
+                    #              (dtype('float64'), dtype('O'))
+                    # which is why this producer had been dead: its witness is
+                    # from 2026-06-17 and the script has changed since.
+                    # Densify and multiply with object arithmetic rather than
+                    # coercing c/d to float — that would silently discard the
+                    # precision the mpf exists to carry (AGENTS.md: never
+                    # compute in float). The densified σ is cached per
+                    # generator, so the COO decomposition is done once per generator.
+                    if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                        # Keep the SPARSITY, lose only the BLAS. Densifying σ
+                        # and doing `M_run @ sig_d` is O(dim³) in object
+                        # arithmetic and does not finish — measured, >10 min on
+                        # the A=2 atom alone. Accumulating over σ's nonzeros is
+                        # O(dim·nnz), the same complexity the float64 branch
+                        # gets from sparse BLAS.
+                        coo = _sig_coo.get(gen)
+                        if coo is None:
+                            m = sig_sparse.tocoo()
+                            coo = (m.row, m.col, m.data)
+                            _sig_coo[gen] = coo
+                        rows_i, cols_j, vals = coo
+                        Msig = np.zeros_like(M_run)
+                        for i, j, v in zip(rows_i, cols_j, vals):
+                            Msig[:, j] += M_run[:, i] * v
+                    else:
+                        # scipy sparse: dense @ sparse returns dense ndarray,
+                        # computed as a sparse BLAS operation in O(dim·nnz).
+                        Msig = sig_sparse.T.dot(M_run.T).T  # = M_run @ sig_sparse
                     M_run = c * Msig + d * M_run
                 s['M'] = M_run
             else:

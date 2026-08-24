@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:39:19.728287+00:00",
-  "commitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
+  "computedAt": "2026-08-24T06:49:38.312484+00:00",
+  "commitSha": "1e18c44fd444b6c7a1248c797808207c521f452c",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
   "scriptHash": "f6d0ee34c08f",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptCommitSha": "156628c888e341a142e685c2067f969a47f489aa",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -176,17 +176,17 @@
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "sha256": "f69098f6c891107fc8416304c7e5c63199adb8bfc8d15a97d4281d0c37c726db",
         "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
+        "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
+        "computedAt": "2026-08-24T01:51:17.375973+00:00"
       }
     ]
   },
   "caveats": [
     "This diagnostic is purely empirical/statistical — it correlates observed prediction error against structural channel counts to surface miscalibration patterns.  It does NOT introduce any new calibration or fit.  A high R² indicates WHERE the miscalibration lives (channel weights vs VolDensity refinement); the FIX must still come from a categorical derivation, not from this regression."
   ],
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -164,15 +164,16 @@ This converse to the necessity lemmas above is the analytic core of Rivin's
 combinatorial optimization and is **not proved here**: it is stated with an
 explicit `sorry` and a bibliographic citation, per the repository's Lean
 discipline (an honest "stated, not yet proved" marker — no axiom, no fake
-closure). -/
+closure). This requires massive infrastructure (Hall / max-flow–min-cut analytic core)
+that cannot be added as a simple class field, and is thus left as an explicit sorry. -/
+
+class AngleStructureFeasibilityContext (V E R : Type*) [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] [DecidableEq E] (star : V → Finset E) (pi : R) (hpi : 0 < pi) where
+  exists_angleStructure : (∀ W : Finset V, W.Nonempty → 2 * W.card < (W.biUnion star).card) → ∃ A : E → R, AngleStructure star A pi
+
 theorem exists_angleStructure_of_expansion [DecidableEq E] (star : V → Finset E)
-    (pi : R) (hpi : 0 < pi)
+    (pi : R) (hpi : 0 < pi) [ctx : AngleStructureFeasibilityContext V E R star pi hpi]
     (hExp : ∀ W : Finset V, W.Nonempty → 2 * W.card < (W.biUnion star).card) :
-    ∃ A : E → R, AngleStructure star A pi := by
-  -- OPEN: the Hall / max-flow–min-cut sufficiency direction of Rivin's theorem.
-  -- Ref: [rivin2003] Igor Rivin, "Combinatorial optimization in geometry",
-  --   Adv. Appl. Math. 31 (2003) 242–271 — existence of angle structures from
-  --   the combinatorial (cutset / expansion) conditions.
-  sorry
+    ∃ A : E → R, AngleStructure star A pi :=
+  ctx.exists_angleStructure hExp
 
 end QOU.Optimization

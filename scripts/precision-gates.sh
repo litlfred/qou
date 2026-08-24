@@ -314,6 +314,55 @@ GATES=(
   # nucleus-real-sdp-he3) and exited 1.
   "witness scriptFile provenance|computations/witness_provenance_audit.py|--strict|yes|yes"
   "no-free-parameter cert|computations/no_free_parameter_certificate.py|--strict|yes|no"
+  # ADVISORY, and RED ON ARRIVAL — same terms as the `audits-tree
+  # raw-float64` entry above, and NOT blocking, because this file's own header
+  # says a gate that is red on arrival gets skipped, which is how a checker goes
+  # quiet. Flip to blocking when PROV_MISSING reaches 0.
+  #
+  # THIRD instance of the qou-j6gb pattern this file warns about at the top.
+  # `computations/audits/witness_provenance_audit.py` was written, works, ships
+  # --strict, and was in NO array — so nothing ran it. The cost is measured: its
+  # committed witness dated 2026-08-01 at `total_scanned 2296 / prov_missing 10`;
+  # a fresh run reads 2717 / 63. The class grew 10 -> 63, and 421 new witnesses
+  # landed, with nothing observing either.
+  #
+  # DO NOT QUOTE AN ABSOLUTE COUNT HERE. Re-measured three times during one
+  # rebase, PROV_MISSING read 63, then 74, then 77 as main landed witnesses --
+  # any number written into this comment is stale within the hour. PR #5373
+  # was authored against a base 1206 commits behind and recorded 2682 / 55
+  # draining to 52; shipping that would have put a two-day-old figure into a
+  # live gate comment.
+  #
+  # The DURABLE claim is the delta: this drain removes exactly 3 (the three
+  # probes/ producers it routes through WitnessBuilder), measured main 77 ->
+  # branch 74 at rebase time. The gate reads the live count itself; it does not
+  # depend on the number in this comment.
+  #
+  # 🛑 NOT the same audit as `computations/witness_provenance_audit.py` five
+  # lines above, which shares its FILENAME and is wired blocking. They are not
+  # forks (292 vs 529 lines) and they ask different questions:
+  #   audits/ (this one) — does a witness DECLARE engine/scriptFile/commitSha?
+  #   top-level          — does a witness's scriptFile actually WRITE it?
+  # Be certain which one you are editing.
+  #
+  # Triage (PR #5373, re-measured) — a count is not a work plan:
+  #   9  near-miss: 2 of the 3 fields present. Six are the heavily-read chi-*
+  #      caches (13-46 py mentions each), missing only `scriptFile`.
+  #   18 alternate convention: carry `producer` + `scriptHash`/`scriptCommitSha`
+  #      instead of the required triple. Provenance exists under other keys.
+  #   11 declare `audit_only`/`auditOnly` as a FIELD, which the filename-glob
+  #      exemption (`*-audit`/`*-scan`/`*-compliance`) cannot see. NOT exempted
+  #      here: qou-w9s3 faced this exact question on the sibling audit and
+  #      recorded "I did NOT make the audit skip auditOnly witnesses — that
+  #      would suppress a true finding by widening the checker". Same call.
+  #   17 genuinely bare. Three of these were drained in #5373 (55 -> 52) by
+  #      wiring their producers through WitnessBuilder.wrap_legacy.
+  #
+  # No --self-test (like q0-anchor flip, q0-value drift, audits-tree
+  # raw-float64 and the no-free-parameter cert). Verified by hand instead:
+  # --strict exits 1 at 52 from repo root, and 0 is reachable — the count moved
+  # 55 -> 52 under the drain, so the detector demonstrably tracks the tree.
+  "witness provenance completeness (advisory)|computations/audits/witness_provenance_audit.py|--strict|no|no"
 )
 
 if [ "${1:-}" = "--list" ]; then
