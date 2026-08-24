@@ -61,7 +61,7 @@ theorem prod_pairs_split {r a : ℕ} (ha : a < r) (g : ℕ → ℕ → M) :
 row-`a` and column-`a` factors. -/
 theorem prod_pairs_split_ne {r a : ℕ} (ha : a < r) (g h : ℕ → ℕ → M)
     (hoff : ∀ i j, i < a → j ≠ a → h i j = g i j)
-    (hbelow : ∀ i j, a < i → h i j = g i j) :
+    (hbelow : ∀ i j, a < i → a < j → h i j = g i j) :
     (∏ i ∈ Finset.range r, ∏ j ∈ Finset.Ico (i + 1) r, h i j)
         * ((∏ j ∈ Finset.Ico (a + 1) r, g a j) * ∏ i ∈ Finset.range a, g i a)
       = (∏ i ∈ Finset.range r, ∏ j ∈ Finset.Ico (i + 1) r, g i j)
@@ -77,7 +77,9 @@ theorem prod_pairs_split_ne {r a : ℕ} (ha : a < r) (g h : ℕ → ℕ → M)
       exact Finset.prod_congr rfl fun j hj => hoff i j hi (Finset.ne_of_mem_erase hj)
     · refine Finset.prod_congr rfl fun i hi => ?_
       rw [Finset.mem_Ico] at hi
-      exact Finset.prod_congr rfl fun j _ => hbelow i j (by omega)
+      refine Finset.prod_congr rfl fun j hj => ?_
+      rw [Finset.mem_Ico] at hj
+      exact hbelow i j (by omega) (by omega)
   rw [prod_pairs_split ha h, prod_pairs_split ha g, hrest]
   ac_rfl
 
