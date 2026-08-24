@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T11:19:46Z
-updated_at: 2026-08-24T13:37:50Z
+updated_at: 2026-08-24T13:46:58Z
 ---
 
 The largest remaining convention-C site (`qou-cds1`, PR #5622). **Not attempted
@@ -116,3 +116,46 @@ and ready to convert after the z_bar maths was settled — the maths *is* settle
 (`z_bar = z(q^-1)`, see `qou-cds1`), but settling it does not make the site
 independently convertible, and converting it on that basis would have
 introduced a defect.
+
+
+## Refined again: 16 real users, not 21 — and probe_9b is NOT in the unit after all
+
+Measured the difference between *binding* the helper's third return and *using*
+it. Of the 21 binders, **16 use it and 5 never do**:
+
+    BINDS BUT NEVER USES (5)
+      delta_lambda_q_dilog_categorical_action.py            z
+      deltalambda/deltalambda_k4_complete_graph_...py       z
+      e0_lambda_composite.py                                ZMARK   (module level, nothing imports it)
+      probe_9b_perlambda_brane_tower.py                     z_loaded
+      zhabiro_realq_saddle_probe.py                         z_anchor
+
+Verified by hand for the two that matter: `z_loaded` occurs **exactly once** in
+`probe_9b_perlambda_brane_tower.py` — at the binding, line 241 — and `ZMARK`
+once in `e0_lambda_composite.py`, with no module importing it.
+
+## 🛑 This corrects my previous note on this bean
+
+The note above puts `probe_9b_perlambda_brane_tower.py` **in** this atomic unit,
+on the grounds that line 241 is a *live* `load_q_50dps` call rather than a
+comment. That is true and the inference was still wrong: **the call is live, its
+`z` result is dead.** The producer's actual z is its own local site at line 204,
+so it is not entangled with this helper and can be converted independently — it
+remains blocked, but on `qou-5t68` (17–23 % stale upstream witness) alone.
+
+Same error class as the one it was correcting: last time I counted
+`load_q_50dps` *mentions* and had to separate calls from comments; this time I
+counted *calls* and had to separate live results from dead ones. Checking one
+level deeper each time. `convergence_safe_vhat_tower.py` survives both checks —
+10 real uses — and stays in the unit.
+
+## Current unit
+
+    _li_2_q_util.py:312                +  16 producers that actually use its z
+    of which convergence_safe_vhat_tower.py also carries a local C `z_bar`
+    that must convert in the same change
+
+Not in the unit: `probe_9b` (dead z), and the 4 other bind-and-discard callers,
+which are unaffected by the conversion because they never read the value. Those
+5 are mild dead code; `probe_9b`'s is actively misleading, since a reader
+reasonably concludes the producer is anchored to this helper — I did, twice.
