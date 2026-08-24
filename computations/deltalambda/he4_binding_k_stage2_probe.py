@@ -67,6 +67,7 @@ never consulted).
 from __future__ import annotations
 
 import datetime
+import hashlib
 import json
 import os
 import sys
@@ -124,6 +125,38 @@ def classify(triples, h_f64):
 
 def shifted_nucleon_kinds(Z1, N1, off, h_f64):
     return [(k, g0 + off) for (k, g0) in classify(atom_braid_word_3A(Z1, N1), h_f64)]
+
+
+def _cache_stamp(K_kinds, q_str: str, dps: int) -> str:
+    """Identify the PARAMETERS a cached entry was computed under.
+
+    Both resume caches key on the item (a shape, a partition) and, before this,
+    only Leg A carried any parameter check at all — `nf = len(K_kinds)`. That is
+    a COUNT: two different K-factor words of the same length collide, and the
+    pin does not appear in it, even though Leg A's characters come from
+    `chi_lambdas_braid_mpfr(..., w, q_str, 50)` and move with `q_str`. Leg B
+    carried nothing, so a changed word or pin had Leg A recompute correctly
+    while Leg B silently served stale blocks.
+
+    Hashing the word, the pin and the precision closes both. The failure this
+    prevents is the expensive kind: a cache gate that answers "is this entry
+    PRESENT?" when the question is "is this entry CURRENT?" — the same shape as
+    the `chi_via_rust_lossless` reuse branch (PR #5623), which held two
+    witnesses at convention C across the whole 2026-08-09 cascade and made
+    re-running the producer a silent no-op.
+    """
+    return hashlib.sha256(
+        f"{K_kinds!r}|{q_str}|{dps}".encode()
+    ).hexdigest()[:12]
+
+
+def _legacy_cache_warning(path, n: int, leg: str) -> None:
+    """An unstamped entry predates `_cache_stamp` and cannot be verified."""
+    print(f"  ⚠ Leg {leg}: {n} cached entr{'y' if n == 1 else 'ies'} in "
+          f"{path.name} predate the parameter stamp and CANNOT be checked "
+          f"against this run's K-factor word / pin.\n"
+          f"    They are being reused. If you changed either since they were "
+          f"written, delete {path.name} and re-run.", flush=True)
 
 
 def main() -> int:
@@ -203,6 +236,8 @@ def main() -> int:
     chi_exact: dict[tuple, mp.mpf] = {}
     legA_prog = HERE / ".he4_stage2_legA_progress.jsonl"
     branch_chi: dict[int, dict[tuple, mp.mpf]] = {1: {}, -1: {}}
+    _stamp = _cache_stamp(K_kinds, q_str, 50)
+    _legA_dropped = _legA_legacy = 0
     if legA_prog.exists():
         for _line in legA_prog.read_text().splitlines():
             if not _line.strip():
@@ -213,7 +248,18 @@ def main() -> int:
                 continue
             if _r.get("nf") != len(K_kinds):
                 continue
+            _st = _r.get("st")
+            if _st is not None and _st != _stamp:
+                _legA_dropped += 1
+                continue          # different word / pin / dps -> recompute
+            if _st is None:
+                _legA_legacy += 1
             branch_chi[_r["br"]][tuple(_r["lam"])] = mp.mpf(_r["chi"])
+        if _legA_dropped:
+            print(f"  Leg A: dropped {_legA_dropped} cached characters computed "
+                  f"under different parameters", flush=True)
+        if _legA_legacy:
+            _legacy_cache_warning(legA_prog, _legA_legacy, "A")
         _n = len(branch_chi[1]) + len(branch_chi[-1])
         if _n:
             print(f"  Leg A resumed: {_n}/{2 * len(shapes)} characters from "
@@ -229,8 +275,9 @@ def main() -> int:
             with open(legA_prog, "a") as _pf:
                 for lam, chi in zip(grp, res):
                     branch_chi[br][lam] = mp.mpf(chi)
-                    _pf.write(json.dumps({"nf": len(K_kinds), "br": br,
-                                          "lam": list(lam), "chi": chi}) + "\n")
+                    _pf.write(json.dumps({"nf": len(K_kinds), "st": _stamp,
+                                          "br": br, "lam": list(lam),
+                                          "chi": chi}) + "\n")
             print(f"  branch {br:+d}: {len(branch_chi[br])}/{len(shapes_t)} "
                   f"chars at {time.time()-t0:.0f}s", flush=True)
     for lam in shapes_t:
@@ -296,6 +343,7 @@ def main() -> int:
     # run skips them (the full compute can outlive one session).
     legB_prog = HERE / ".he4_stage2_legB_progress.jsonl"
     done_lambdas = set()
+    _legB_dropped = _legB_legacy = 0
     if legB_prog.exists():
         for _line in legB_prog.read_text().splitlines():
             if not _line.strip():
@@ -306,10 +354,21 @@ def main() -> int:
                 continue
             if tuple(_b["lambda"]) in done_lambdas:
                 continue
+            _st = _b.get("st")
+            if _st is not None and _st != _stamp:
+                _legB_dropped += 1
+                continue          # different word / pin / dps -> recompute
+            if _st is None:
+                _legB_legacy += 1
             per_block.append(_b)
             done_lambdas.add(tuple(_b["lambda"]))
             xcheck_worst = max(xcheck_worst, _b["chi_exact_rel_diff"])
             min_eig_overall = min(min_eig_overall, _b["min_eig_sym"])
+        if _legB_dropped:
+            print(f"  Leg B: dropped {_legB_dropped} cached blocks computed "
+                  f"under different parameters", flush=True)
+        if _legB_legacy:
+            _legacy_cache_warning(legB_prog, _legB_legacy, "B")
         if per_block:
             print(f"  Leg B resumed: {len(per_block)} blocks from "
                   f"{legB_prog.name}", flush=True)
@@ -402,7 +461,7 @@ def main() -> int:
             "near_zero_flagged": bool(abs(mn) < NEAR_ZERO_FLAG),
         })
         with open(legB_prog, "a") as _pf:  # resume checkpoint
-            _pf.write(json.dumps(per_block[-1]) + "\n")
+            _pf.write(json.dumps({**per_block[-1], "st": _stamp}) + "\n")
         done_d2 += dim * dim
         el = time.time() - t0
         print(f"  λ={str(lam):26s} d={dim:5d}  min_eig={mn:+.3e}  "
