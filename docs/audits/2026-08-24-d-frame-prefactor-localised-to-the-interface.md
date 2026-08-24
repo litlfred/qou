@@ -234,6 +234,49 @@ had not checked the other counts. I then corrected that to "not placement; the
 neutron trades one identity for one full crossing", which the count-matched
 controls refute. Placement was right all along, sharpened to *co-location*.
 
+## Q1 DERIVED: the 12 is the denominator of `½ − δ/4`
+
+Producer:
+[`d_frame_interface_twelve_derivation_probe.py`](../../computations/markov/d_frame_interface_twelve_derivation_probe.py)
+— 6 atoms, 5/5 assertions. This supersedes the "localised, not derived"
+framing above.
+
+The colour-weighted interface crossing `σ − h·(½ − δ/4)` has exact coefficient
+
+`(q−1)(q+1)(q⁶ − 2q⁵ − 5q⁴ − q² + 2q − 1) / (12 q⁵)`
+
+with **denominator integer content 12** and **numerator integer content 1** —
+nothing cancels, which is what lets the 12 survive into the prefactor.
+
+**`12 = 4 · 3`**: the colour-averaging quarter in `δ/4`, times `δ`'s own third.
+`½ − X/(3·4) = (6 − X)/12`, with `δ = (q−1)²(1−q⁻⁴)/3`.
+
+**The prefactor is the product of per-crossing denominator contents:**
+
+| atom | A | #avg | `2^#avg` | × iface | predicted | measured |
+|---|---|---|---|---|---|---|
+| proton | 1 | 2 | 4 | 1 | 4 | 4 |
+| neutron | 1 | 2 | 4 | 1 | 4 | 4 |
+| D | 2 | 4 | 16 | 12 | 192 | 192 |
+| T | 3 | 6 | 64 | 12 | 768 | 768 |
+| ³He | 3 | 6 | 64 | 12 | 768 | 768 |
+| ⁴He | 4 | 8 | 256 | 12 | 3072 | 3072 |
+
+`A = 1` has no interface, so the model gives `2^(2A)` with no 12 — the same
+statement the switch made, now as an arithmetic consequence.
+
+**The uniform 6, with a reason.** Convention C gives that crossing the
+colour-blind `−h/2`, denominator content **2**. `12/2 = 6` is the ratio of the
+two conventions' interface denominators.
+
+**Trap, recorded.** `atom_braid_word_3A(…, q=q)` labels that crossing with a
+float (`0.41666…` = 5/12 at ~60 dps), so denominator content read off the
+*word* is 1 and the model appears to fail. The float is a template label;
+`crossing_from_cd` substitutes the exact form. An earlier attempt to vary `δ`'s
+denominator by patching `markov_peel._COLOR_DELTA` **did not take** — measured
+stayed 192 for every `k` — and is inconclusive, not confirming; the table above
+is the evidence.
+
 ## An exact relation worth recording
 
 $$
