@@ -1,11 +1,11 @@
 ---
 # qou-zf9n
 title: Convention-D migration for the H_3 Gram Lean file and its spectrahedral-phase-collapse consumer
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-23T21:34:56Z
+updated_at: 2026-08-24T06:43:25Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).

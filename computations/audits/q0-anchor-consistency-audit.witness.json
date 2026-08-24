@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:31:30.771199+00:00",
-  "commitSha": "62531b2bb8d0efe48f5508a29dc56df2f281d1a3",
+  "computedAt": "2026-08-24T06:56:54.897604+00:00",
+  "commitSha": "7aa29fce3837ce6f2a214bc23115915549044413",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -52,7 +52,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1879,
+      "Q0_ANCHOR_MISSING": 1880,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -5179,6 +5179,10 @@
         },
         {
           "witness": "six-fifths-deviation-h4-correction-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "spectrahedral-phase-collapse-frame-probe.witness.json",
           "detail": ""
         },
         {
