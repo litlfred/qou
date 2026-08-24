@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T10:01:14Z
-updated_at: 2026-08-24T10:13:39Z
+updated_at: 2026-08-24T13:49:11Z
 ---
 
 Found while converting `probe_9b_perlambda_brane_tower.py` for the convention-C
@@ -110,3 +110,31 @@ antisymmetric assembly IS the block home of the ι-odd off-diagonal
 contraction"*. It shows no such thing; it shows `Bm = Bm^T`. Cosmetic, no
 number moves, not worth a commit on this branch — noted here so the next reader
 of that probe does not inherit the stronger reading.
+
+
+## Two notes for whoever unblocks this (2026-08-24)
+
+**1. probe_9b is NOT entangled with `_li_2_q_util` / `qou-37xc`.** It calls
+`load_q_50dps()` at line 241, but the `z_loaded` it binds occurs **exactly
+once** in the file — at that binding — and is never read. Its live z is the
+local site at line 204 inside `make_tower`, verified used (`z2 = z*z`,
+`f_pp = z`, `f_pn = z`, `f_nn = z - h`, returned in the tuple and re-bound at
+the call site). So this converts independently once the stale upstream is
+resolved; it does not have to wait for the `_li_2_q_util` campaign.
+
+I got this wrong once in the other direction — see the correction on
+`qou-37xc`. The live call made it look anchored to the helper; the dead result
+means it isn't.
+
+**2. Expect the conversion to IMPROVE the structure here, not just move
+numbers.** Line 208 is `f_nn = z - h`, so this producer carries the swap ratio
+`z/(z-h)`. Under convention D that closes exactly:
+
+    z_D - h = q^3/(q^2+1) - (q^2-1)/q = 1/(q(q^2+1))
+    z_D/(z_D - h) = q^4        exactly, identically in q
+
+Under C it is an irrational with no closed form. The same structure showed up in
+`delta_lambda_borromean_ascaling` (converted, 1c768a5ad3) and is the one place
+the excision makes a result *cleaner* rather than merely different. Worth
+checking whether the deuteron/³He ratios in this tower pick up the `q^4` when
+it is converted.
