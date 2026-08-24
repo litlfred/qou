@@ -404,6 +404,7 @@ def references_canonical_anchor(tree: ast.AST) -> bool:
 def scan():
     values, frame, by_base, census = build_witness_index()
     edges = []          # one per (consumer, resolved stale-frame witness) pair
+    c_reads = []        # every foreign READ of a convention-C witness
     stats = {
         "witnesses_scanned": len(values),
         "witnesses_frame_C": sum(1 for t in frame.values() if "C" in t),
@@ -417,8 +418,16 @@ def scan():
         "ambiguous_name_references": 0,
     }
 
+    self_path = Path(__file__).resolve()
     for path in sorted(REPO.rglob("*.py")):
         if any(x in path.parts for x in SKIP):
+            continue
+        # Self-exclude. This module names the known positive's witness as a
+        # string constant, so it reads as a foreign consumer of a convention-C
+        # artifact -- of itself. Bean `qou-a6yh` names the cost directly: "a
+        # detector that flags its own control arm trains the reader to ignore
+        # it."
+        if path.resolve() == self_path:
             continue
         try:
             src = path.read_text(encoding="utf-8")
@@ -470,6 +479,13 @@ def scan():
                     stats["self_written_pairs_dropped"] += 1
                     continue
                 shared = set(literals) & values[wpath]
+                if "C" in frame[wpath]:
+                    c_reads.append({
+                        "consumer": str(path.relative_to(REPO)),
+                        "witness": str(wpath.relative_to(REPO)),
+                        "transcribes": bool(shared),
+                        "dual_anchor_reference": dual_anchor,
+                    })
                 if not shared:
                     continue
                 specific = sorted(v for v in shared if census[v] <= SPECIFICITY_MAX)
@@ -495,11 +511,21 @@ def scan():
             continue
         seen.add(key)
         deduped.append(e)
-    return deduped, stats
+
+    seen_c, c_ded = set(), []
+    for r in c_reads:
+        key = (r["consumer"], r["witness"])
+        if key in seen_c:
+            continue
+        seen_c.add(key)
+        c_ded.append(r)
+    stats["convention_C_foreign_read_edges"] = len(c_ded)
+    stats["convention_C_consumers"] = len({r["consumer"] for r in c_ded})
+    return deduped, stats, c_ded
 
 
 # ---------------------------------------------------------------- output
-def _print_report(edges, stats) -> None:
+def _print_report(edges, stats, c_reads) -> None:
     print("=" * 78)
     print("consumer-side convention-C / muon control-arm audit")
     print("=" * 78)
@@ -542,6 +568,20 @@ def _print_report(edges, stats) -> None:
         print(f"  {e['consumer']}")
         print(f"      reads {e['witness']} [{e['witness_frame']}]  shares {vals}")
 
+    print("\n" + "-" * 78)
+    print("DRAIN SCOPE -- every foreign READ of a convention-C witness.")
+    print("This is the population a qou-q0zk drain touches. A row marked")
+    print("transcribes=False is NOT cleared: it only means this detector")
+    print("has nothing to say about it, so it needs a hand verdict.")
+    print("-" * 78)
+    if not c_reads:
+        print("  (none)")
+    for r in sorted(c_reads, key=lambda x: (x["witness"], x["consumer"])):
+        mark = "TRANSCRIBES" if r["transcribes"] else "unmeasured "
+        print(f"  [{mark}] {r['consumer']}")
+        print(f"                reads {r['witness']}"
+              f"   dual-anchor={r['dual_anchor_reference']}")
+
     print("\n" + "=" * 78)
     print("SCOPE. This reports transcription, not control arms. A control arm")
     print("that reads its reference at run time is invisible here -- PR #5616")
@@ -550,7 +590,7 @@ def _print_report(edges, stats) -> None:
     print("=" * 78)
 
 
-def _write_witness(edges, stats) -> Path:
+def _write_witness(edges, stats, c_reads) -> Path:
     doc = {
         "compute": "consumer_control_arm_audit",
         "description": (
@@ -576,6 +616,7 @@ def _write_witness(edges, stats) -> Path:
         },
         "counts": stats,
         "control_arms": [e for e in edges if e["verdict"] == "CONTROL-ARM"],
+        "convention_C_foreign_reads": c_reads,
         "shared_constant_only": [e for e in edges if e["verdict"] != "CONTROL-ARM"],
         "known_blind_spots": [
             "a control arm that reads its reference value at run time instead of "
@@ -607,7 +648,7 @@ def main(argv=None) -> int:
                     help="write consumer-control-arm-audit.witness.json")
     args = ap.parse_args(argv)
 
-    edges, stats = scan()
+    edges, stats, c_reads = scan()
 
     if args.selftest:
         hit = [e for e in edges
@@ -629,9 +670,9 @@ def main(argv=None) -> int:
               f"{e['specific_values'][:6]}")
         return 0
 
-    _print_report(edges, stats)
+    _print_report(edges, stats, c_reads)
     if args.witness:
-        out = _write_witness(edges, stats)
+        out = _write_witness(edges, stats, c_reads)
         print(f"\nwrote {out.relative_to(REPO)}")
     return 0
 
