@@ -76,7 +76,15 @@ BASE_LEAN_PATH="$LEAN_PATH"
 # build) may be supplied via LEAN_EXTRA_ROOTS, colon-separated.
 BASE_LEAN_PATH="${LEAN_EXTRA_ROOTS:+$LEAN_EXTRA_ROOTS:}$BASE_LEAN_PATH"
 
-roots() { printf '%s' "$BASE_LEAN_PATH" | tr ':' '\n' | while read -r r; do [ -n "$r" ] && [ -d "$r" ] && printf '%s\n' "$r"; done; }
+# LOAD-BEARING newline: `printf '%s'` emits no trailing newline, so `read`
+# hits EOF on the final field and bash DISCARDS it.  That silently dropped the
+# LAST LEAN_PATH root — which is the QOU package's own build directory — so the
+# farm was built from Mathlib alone and every `check` of a file importing
+# another QOU module died with "object file ... does not exist".  The failure
+# reads like a real Lean error, and the natural workaround (point
+# LEAN_EXTRA_ROOTS at some other agent's QOU overlay) reintroduces exactly the
+# partial-overlay trap this script exists to prevent.
+roots() { printf '%s\n' "$BASE_LEAN_PATH" | tr ':' '\n' | while read -r r; do [ -n "$r" ] && [ -d "$r" ] && printf '%s\n' "$r"; done; }
 
 farm_init() {
   mkdir -p "$OVL"
