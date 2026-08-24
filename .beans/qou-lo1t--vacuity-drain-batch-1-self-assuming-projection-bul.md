@@ -1,11 +1,11 @@
 ---
 # qou-lo1t
 title: 'VACUITY drain batch 1: self-assuming-projection bulk (118 genuine remaining)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T21:28:27Z
-updated_at: 2026-08-24T14:35:01Z
+updated_at: 2026-08-24T15:14:01Z
 ---
 
 ## Batch 2 (2026-08-23) — Instanton.lean cluster, 4 defects
