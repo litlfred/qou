@@ -1,11 +1,11 @@
 ---
 # qou-aj91
 title: 'ARCHITECTURE: 85 producers read the anchor-defining witness directly, bypassing q_parameter'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-24T18:07:44Z
+updated_at: 2026-08-24T19:33:27Z
 ---
 
 ## What
@@ -105,3 +105,46 @@ computed at rather than whatever `q_parameter` resolves to. That fixes the
 STRADDLE (the witness lying about its own layer) for all 85 at once, without
 moving a single number, and leaves the layer question to be settled per
 producer afterwards.
+
+
+## Narrow fix implemented — PR #5699 (draft, 2026-08-24)
+
+Branch `claude/aj91-witnessbuilder-anchor-stamp-2026-08-24`, tip 234d0ee2f9.
+Implements the bean's own recommendation: fix the STAMP, not the 85 producers.
+
+**`resolve_q0_anchor_payload_first()`** in `qou_substrate.witness` consults
+`_q0_anchor_from_payload` (already present, previously used only to DROP a
+stale pin) before the manifest, and is wired into both writers of the field
+(`stamp_staleness_metadata` and `build`). Precedence: explicit declaration >
+manifest `ambiguous` > payload evidence > manifest/env.
+
+**Two findings that change what this bean says.**
+
+1. **The upstream-hash signal is UNSOUND — do not use it.** `record_upstream(Q_PIN)`
+   looks like a ready-made detector for the same 85. `alpha_k_jones_markov_h12`
+   still records that upstream deliberately ("for provenance ... it remains the
+   canonical 3-CAL pin document") while computing from `q_parameter.Q_50_DIGIT_STR`,
+   i.e. PROTON. Inferring muon from it would have flipped a CORRECT proton stamp
+   to a false muon one. Consequence for this bean: **the census of 85 is an idiom
+   grep, not a list of 85 live muon producers** — at least one has migrated and
+   keeps the read only in a comment.
+
+2. **`_q0_anchor_from_payload` matched only `isinstance(v, str)`**, which misses
+   the commonest producer shape: stamp BEFORE `json.dump(..., default=str)`, so
+   at stamp time `parameters.q0` is still an `mpf`. It failed SILENTLY — fell back
+   to the manifest and looked like an ordinary answer. Found only by RE-RUNNING a
+   producer; re-reading its committed output could not show it.
+
+**Measured over 2737 committed witnesses:** 6 stamps contradict their own
+payload q0; 154 unstamped witnesses carry readable evidence and gain a correct
+stamp; 1931 record no q0 and keep the manifest path. The 6 are invisible to
+`q0_anchor_consistency_audit.py`, which compares anchor against the value beside
+it, never against the payload.
+
+**Verified:** `meson_mass_from_hecke` re-run under old vs new code — stamp
+proton -> muon, payload BYTE-IDENTICAL, zero differing non-anchor keys.
+`precision-gates.sh --changed` EXIT=0, all blocking green. Tests 24/0.
+
+**Still open (NOT done here):** which layer each of the 85 producers' quantity
+actually belongs to. This makes each witness state the layer it was computed at
+— a precondition for that question, not an answer. No sweep.
