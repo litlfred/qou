@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T16:15:24Z
-updated_at: 2026-08-24T16:16:10Z
+updated_at: 2026-08-24T16:26:57Z
 ---
 
 ## Not a new class — a RECURRENCE of the one `producer_upstream_edge_gap_audit`
@@ -93,3 +93,72 @@ and `computations/witness_upstream_declaration_audit.py`. **Do not build a
 third detector** — extend one of those. This bean exists to carry the measured
 cost (65.6 %, 2.5 months) that the existing retraction's "self-closing" framing
 leaves out, plus the unresolved post-port count.
+
+
+---
+
+## STEP 1 ANSWERED — it is a live bug, not an aging backlog
+
+And the "52" above is **superseded**. Do not use it.
+
+`witness_upstream_declaration_audit.py` now carries
+`declaration_reaches_witness`, which answers the question the name-based count
+could not: the producer declares — does the declaration REACH the witness?
+
+    declares, but the declaration CANNOT REACH the witness:  21
+        ATTACHED_TOO_EARLY  19
+        NEVER_ATTACHED       2
+
+**ATTACHED_TOO_EARLY.** `add_upstream_records(_UPSTREAM_RECORDS)` sits
+immediately after `WitnessBuilder(...)` — the natural place, and wrong,
+because the records are gathered LATER by the loaders and
+`add_upstream_records` COPIES (`for r in records or []`):
+
+    builder = WitnessBuilder("delta-lambda-categorical-verification")
+    builder.add_upstream_records(_UPSTREAM_RECORDS)   # 248 — list is EMPTY
+    ...
+    tr_M, partitions = load_chi_deuteron()            # 256 — populates it
+
+The comment on that line reads *"declare upstreams read **before** this
+builder existed"*. It states the correct use while the placement contradicts
+it, which is presumably how it survived review 19 times.
+
+**NEVER_ATTACHED.** `record_upstream` fills a list no `add_upstream_records`
+consumes: `l2_row_independence_probe`, `codata_registry_triangulation_probe`.
+
+## The false positive that halved it — 40 -> 21
+
+The first run said 40. A function that populates the list is **not** a "later
+populator" when it is the very function CONTAINING the
+`add_upstream_records` call: a module-level `raise SystemExit(main())` is
+trivially after every line inside `main`. Without excluding the owner, every
+producer whose `main` does both is flagged — **including `q_weighted_block_swap`,
+which I had verified as correct an hour earlier.**
+
+Validated 6/6 against WITNESS ground truth rather than against the detector:
+the four spot-checked flagged producers carry no `data.upstream_witness_hashes`;
+both controls do. Guard case is in the self-tests (18/18), not only in a commit
+message — third detector of mine to over-fire this session, and the first two
+lessons lived only in commit messages.
+
+## What this does and does not supersede
+
+* **Superseded**: the 52 name-based count for the *declared-but-unreachable*
+  half. Use the audit's 21.
+* **Still open**: the *never-declared* half — the same audit's long-standing
+  `undeclared (invisible to drift): 211 (270 edges)`. Different defect, same
+  consequence.
+* **Step 2** (rebuild the mapping AST-side) is therefore mostly moot for the
+  declared half and unnecessary for the undeclared half, which the audit
+  already measures correctly.
+
+## Remaining work, re-scoped
+
+1. Fix the 21. Each fix moves `add_upstream_records` after the loaders, which
+   **changes witness content** (it records the upstream hash) — 21
+   regenerations, sequenced, never a sweep. That is the whole remaining task
+   for this half.
+2. Consider making `add_upstream_records` on an empty list a WARNING at the
+   library level. It is almost never intentional, and it would have caught all
+   19 at authoring time instead of two months later. (Owner call — it touches
+   `qou_substrate/witness.py`, which every producer imports.)
