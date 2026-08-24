@@ -105,31 +105,52 @@ Measured alongside, from
 `k_D = 3Z + N − 1` exactly (fitted on three, exact on held-out ⁴He), and
 `k_C − k_D = 2N` exactly on all four. The two agree only when `N = 0`.
 
-**A caution against the tempting reading.** The C derivation obtains `3A − 1` as
-`n_strands − 1` with `n_strands = 3A`. Applying that reading to `k_D` would give
-`n_strands = 3Z + N` — three strands per proton, **one** per neutron — which is
-not a plausible strand count, since the atomic braid word carries three strands
-per nucleon regardless of isospin. So **the "cyclotomic power = strand count −
-1" reading does not survive the frame change**, and `3Z + N` must not be read as
-a strand count.
+**ANSWERED 2026-08-24, and my first hypothesis here was wrong.** This section
+originally offered cyclotomic aliasing as the "likely reason" — that each
+frame's exponent mixed the `z`-count with additional sources of its own
+cyclotomic (`[2]_q` supplying `Φ₈`, `[2]_√q` supplying `Φ₄`). It was flagged as
+a hypothesis rather than a measurement, and it is now **refuted**. The
+mechanism is **cancellation**, not extra sources.
 
-The likely reason is that quantum integers alias onto different cyclotomics in
-the two frames. At `q = u²`,
+Measured by
+[`d_frame_cyclotomic_exponent_probe.py`](../../computations/markov/d_frame_cyclotomic_exponent_probe.py):
 
-$$
-[2]_q = \frac{u^4+1}{u^2}, \qquad [2]_{\sqrt q} = \frac{u^2+1}{u},
-$$
+| atom | Z | N | A | `m = deg_z` | `3A−1` | naive | actual | cancelled | `2N` |
+|---|---|---|---|---|---|---|---|---|---|
+| proton | 1 | 0 | 1 | 2 | 2 | 2 | 2 | **0** | 0 |
+| D | 1 | 1 | 2 | 5 | 5 | 5 | 3 | **2** | 2 |
+| T | 1 | 2 | 3 | 8 | 8 | 8 | 4 | **4** | 4 |
+| ³He | 2 | 1 | 3 | 8 | 8 | 8 | 6 | **2** | 2 |
 
-so a `[2]_q` factor contributes `Φ₈ = 1 + u⁴` — the **D** cyclotomic — while
-`[2]_{\sqrt q}` contributes `Φ₄ = 1 + u²` — the **C** one. The total power of
-each frame's cyclotomic therefore mixes the `z` count with different additional
-sources, and the two need not decompose the same way. That is a hypothesis, not
-a measurement, and is flagged as the next thing to test.
+1. **The `z`-count really is `3A − 1`, in both frames.** Substituting a free
+   symbol for `hecke_symbolic.z_markov` makes `tr_M_atomic` polynomial in that
+   symbol; its degree is the `z`-count and is convention-independent by
+   construction. **The C derivation's counting is correct.**
+2. Substituting `z_D = q³/(q²+1)` into a degree-`m` polynomial gives
+   `(q²+1)^m` naively — but exactly **`2N`** factors **cancel against the
+   numerator**, leaving `m − 2N = 3A − 1 − 2N = 3Z + N − 1`.
+3. The proton (`N = 0`) is the control: zero cancellation.
 
-Either way it is independent corroboration of `qou-cxon`'s verdict from the
-exponent side: **the D law cannot be obtained by substituting `z_D` into the C
-derivation**, because the step that produces the exponent — clearing `z^(n−1)` —
-is precisely the step that does not transfer.
+So the caution above stands, and now with a reason: **`3Z + N` is not a strand
+count and not a peel count.** The exponent is `3A − 1` reduced by two per
+neutron, and `3Z + N − 1` is arithmetic rewriting of that.
+
+**A note on how the first attempt failed**, because the failure mode is
+reusable. The free-symbol substitution is sound only if putting `z_D` back
+reproduces the unpatched function exactly. My first attempt bound
+`sp.Symbol("q")` while `hecke_symbolic` uses `sp.Symbol('q', positive=True)` —
+different objects. The round-trip then built a two-`q` expression: it reported
+the deuteron denominator as `192·q²⁵·(q²+1)⁵` against the true
+`192·q²³·(q²+1)³`, and reported the cancellation as **zero**. Its `z`-count was
+nonetheless *correct*, which is worse than wrong — a coincidence that would
+have been recorded as evidence. The producer therefore asserts
+`round_trip_reproduces_unpatched` **first**, and reports no degree unless it
+holds.
+
+The corroboration of `qou-cxon`'s verdict survives unchanged, and is now
+sharper: the D law cannot be obtained by substituting `z_D` into the C
+derivation, because the C derivation stops at `z^(n−1)` and never sees that
+`2N` of those factors cancel once `z` is concrete.
 
 ## An exact relation worth recording
 
