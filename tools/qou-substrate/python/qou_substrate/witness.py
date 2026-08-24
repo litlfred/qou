@@ -1739,6 +1739,29 @@ class WitnessBuilder:
                 if _forbids_value:
                     witness.pop("q0Value", None)
 
+        # The forbidding above is a property of the NEW witness's declared
+        # anchor, NOT of whether the OLD record was stale -- but until
+        # 2026-08-24 the pop lived inside the `if not _stale:` carry-forward
+        # branch, so it was skipped in exactly the case that produces the
+        # contradiction. When the existing witness already says `independent`
+        # and the new payload carries anchor evidence, line ~1700 sets
+        # `_stale = True`, the whole branch is skipped, and a `q0Value`
+        # stamped earlier (e.g. by `stamp_staleness_metadata`) rides through
+        # next to `independent` -- which the vocabulary note at the top of
+        # this module states cannot exist, and which the anchor audit reports
+        # as Q0_FLIP.
+        #
+        # Measured before the fix: `q0_anchor_consistency_audit` reported
+        # Q0_FLIP: 3, all three qbeta producers that declare `independent`,
+        # each carrying the 50-digit MUON value. All three provably do not
+        # read q0 -- re-verified here by running one under QOU_Q0_ANCHOR=muon
+        # and =proton and diffing: `.q0Value` was the ONLY differing
+        # non-ephemeral leaf, everything else byte-identical. So the audit's
+        # message ("the producer reads q0 after all") was a false inference,
+        # while the state it flagged was genuinely invalid.
+        if witness.get("q0Anchor") in ("independent", "comparison"):
+            witness.pop("q0Value", None)
+
         # If an existing witness is substantively identical (ignoring
         # ephemeral meta fields), preserve it — avoids CI drift loops
         # when only commitSha/computedAt/durationMs would change.
