@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:43:57.761732+00:00",
-  "commitSha": "9e354a93168c2dc5e8fb6943a74144c185903147",
+  "computedAt": "2026-08-24T12:43:27.896284+00:00",
+  "commitSha": "93375f81a61e9bd8ff7dae682f1e7d06e22c6933",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 74,
+      "computed": 75,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -59,13 +59,13 @@
   "data": {
     "counts": {
       "total_scanned": 2726,
-      "prov_ok": 2349,
+      "prov_ok": 2346,
       "prov_audit_exempt": 78,
-      "prov_exempt_no_reader": 222,
+      "prov_exempt_no_reader": 224,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 74,
+      "prov_missing": 75,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972853998532648569332355099046221570066030814380044020542920"
+      "completeness_ratio": "0.972487160674981658107116654438738077769625825385179750550257"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2510,10 +2510,6 @@
           "missing_fields": []
         },
         {
-          "witness": "he4-stage2-ranking-seminormal-xcheck.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "he4-vol4-prediction-test.witness.json",
           "missing_fields": []
         },
@@ -3551,6 +3547,10 @@
         },
         {
           "witness": "phi0-normalization-disproof.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "hecke-a1-tail-schedule.witness.json",
           "missing_fields": []
         },
         {
@@ -5726,10 +5726,6 @@
           "missing_fields": []
         },
         {
-          "witness": "h3-gram-degeneracy-block-identification.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "h4-categorical-drivers-probe.witness.json",
           "missing_fields": []
         },
@@ -6782,10 +6778,6 @@
           "missing_fields": []
         },
         {
-          "witness": "rho-f-categorical-probe.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "rho-k-h3a-co-casimir-perknot-rerun.witness.json",
           "missing_fields": []
         },
@@ -6827,10 +6819,6 @@
         },
         {
           "witness": "six-fifths-deviation-h4-correction-probe.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "spectrahedral-phase-collapse-frame-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -9887,6 +9875,14 @@
           ]
         },
         {
+          "witness": "rho-f-categorical-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "qbeta-5two-enhanced-dilog.witness.json",
           "missing_fields": [
             "engine",
@@ -10554,6 +10550,13 @@
           ]
         },
         {
+          "witness": "he4-stage2-ranking-seminormal-xcheck.witness.json",
+          "missing_fields": [
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "helium-four-body-cluster.witness.json",
           "missing_fields": [
             "engine",
@@ -11140,6 +11143,14 @@
         },
         {
           "witness": "habiro_tail_membership_gate.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "pentagon-rt-torus-knot-higgs-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

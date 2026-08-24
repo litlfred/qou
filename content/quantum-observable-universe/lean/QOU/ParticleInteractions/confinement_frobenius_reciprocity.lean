@@ -85,7 +85,8 @@ class ConfinementFrobeniusReciprocityContext where
   A_star_nonempty : A_star.Nonempty
   /-- Active ⇔ positive shadow price. -/
   active_iff_pos_shadow : ∀ i : Fin d, i ∈ A_star ↔ 0 < u_star i
-  /-- Strong duality. -/
+  /-- Strong duality.
+      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
   strong_duality : primal_obj = dual_obj
 
 /-- **Confinement Frobenius reciprocity** ([`prop:confinement-frobenius-reciprocity`]).

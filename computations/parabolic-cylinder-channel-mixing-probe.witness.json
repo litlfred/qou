@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T19:18:06.192668+00:00",
-  "commitSha": "2d62b1c4f8211c5d2ca5175dfe2266e9fdcebcee",
+  "computedAt": "2026-08-23T20:53:55.757207+00:00",
+  "commitSha": "173e3480f31035a9291e53516e6e7c7ba6201701",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "parabolic-cylinder-channel-mixing-probe",
   "scriptFile": "parabolic_cylinder_channel_mixing_probe.py",
-  "scriptHash": "cc411431c3ea",
-  "scriptCommitSha": "ef31c01765506fbe7fa38f39ebd465a8988abfff",
+  "scriptHash": "30d8bf71d34f",
+  "scriptCommitSha": "457481eee446e0025107678e01e5e2bbaec7c2aa",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,9 +19,17 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/parabolic_cylinder_channel_mixing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/parabolic_cylinder_channel_mixing_probe.py"
   },
   "description": "Weber/parabolic-cylinder channel-mixing index nu extracted from B_odd/B_even per isotope (classical Gamma and Gamma_q at substrate q_0); structural question: is nu N-organized?",
   "audit_only": true,
@@ -29,40 +37,34 @@
   "precision_dps": 50,
   "source_witness": "binding-bar-even-odd-probe.witness.json",
   "constants": {
-    "q_0": "1.1099785955573347"
+    "q_0": "1.1099785827513808076"
   },
   "isotopes": {
     "2H": {
       "N": 1,
-      "mixing_ratio_rho": "0.29643292779165554772856084935827734061580561003419",
-      "nu_classical": "0.20166147923727742529147880764676412226331695831038",
-      "nu_q_deformed": "0.20779300227586007318578220251454392147893028881719"
+      "mixing_ratio_rho": "0.000024252916749064535705806480268877460233559218111716",
+      "nu_classical": "0.000019350768273285888627813185427057318469504704483694",
+      "nu_q_deformed": "0.000019996658836685807004349302648971629153491126922798"
     },
     "3H": {
       "N": 2,
-      "mixing_ratio_rho": "0.436826194451955139061872843772992525825931230862",
-      "nu_classical": "0.2765628197672822089989133760523414379695082708271",
-      "nu_q_deformed": "0.28452184681227370995036829989325387858539334441084"
-    },
-    "3He": {
-      "N": 1,
-      "mixing_ratio_rho": "0.15055251172285108979599784121291584019906860764234",
-      "nu_classical": "0.11064702188608527863916325117658747212244392568939",
-      "nu_q_deformed": "0.11418661204069323725076420969018458079781574762067"
+      "mixing_ratio_rho": "0.1517376610760244896601749644591812244114557381128",
+      "nu_classical": "0.11144695458132780651558848797324565484176645201452",
+      "nu_q_deformed": "0.11501078215269237169603272092276816619312144379011"
     },
     "4He": {
       "N": 2,
-      "mixing_ratio_rho": "0.29906024513754218982763633635960500407534254709529",
-      "nu_classical": "0.20317068767763078022829675121569743962485446792147",
-      "nu_q_deformed": "0.20934203473518084067709495684291288574595753953082"
+      "mixing_ratio_rho": "0.0000079145429982711086734194546378172930055138841480295",
+      "nu_classical": "0.0000063148640229849036736987234179017982862859345519022",
+      "nu_q_deformed": "0.0000065256425832866389009709292914789268525021354139796"
     }
   },
   "structure": {
-    "nu_spread_within_N_classes": "0.091014457351192146652",
-    "nu_spread_across_N_classes": "0.083712503160775142648",
-    "nu_is_N_organized": false
+    "nu_spread_within_N_classes": "0.11144063971730482161",
+    "nu_spread_across_N_classes": "0.055707283954402109821",
+    "nu_is_N_organized": null
   },
-  "timestamp": "2026-07-03T19:18:06+00:00",
+  "timestamp": "2026-08-23T20:53:55+00:00",
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -1,11 +1,11 @@
 ---
 # qou-uer7
 title: 'SW-8 general: the Ocneanu Markov weights w_lam(q,z) at every n'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-24T00:16:13Z
+updated_at: 2026-08-24T06:42:37Z
 parent: qou-59vq
 ---
 

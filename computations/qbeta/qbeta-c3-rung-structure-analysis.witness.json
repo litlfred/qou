@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T15:52:25.608483+00:00",
-  "commitSha": "ba5b1110482f77d0dda78b8a9a9b27576720a091",
+  "computedAt": "2026-08-24T12:10:08.752072+00:00",
+  "commitSha": "c679568568a3c38a9df794d34334a9c14b770945",
   "assertions": [
     {
       "name": "rung_decomposition_equals_closure",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 270,
+  "durationMs": 275,
   "computation": "qbeta-c3-rung-structure-analysis",
   "scriptFile": "qbeta_c3_rung_structure_analysis.py",
   "scriptHash": "049f11902ebe",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptCommitSha": "b3440cbcebfad9716b80219a51ed9c37f5e5186f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -30,9 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

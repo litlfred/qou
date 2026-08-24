@@ -84,7 +84,22 @@ def evaluate_form(q, form_name, m_e, m_mu, m_p, alpha_em):
     return (k_pred - k_req) / k_req * mp.mpf("1e9"), f
 
 
-def main() -> int:
+def main(argv=None) -> int:
+    # --force is the LOCAL half of the freeze (bean qou-tean). The enforcing
+    # half lives in `WitnessBuilder.save()`, which refuses to overwrite any
+    # witness marked `"preserved": true`. This flag exists so the escape hatch
+    # is discoverable from the producer you are actually running, rather than
+    # only from an env var you would have to already know about.
+    import argparse
+    import os as _os
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--force", action="store_true",
+                    help="overwrite the PRESERVED frozen witness (destroys the "
+                         "committed record — say so in the commit message)")
+    args = ap.parse_args(argv)
+    if args.force:
+        _os.environ["QOU_ALLOW_OVERWRITE_PRESERVED"] = "1"
+
     DPS = 80
     set_compute_dps(DPS)
 

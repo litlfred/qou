@@ -206,9 +206,30 @@ def main() -> int:
 
     results, t0 = [], time.time()
     for i, name in enumerate(a.producers, 1):
-        hits = list(comp.rglob(name))
+        # Resolve the producer DETERMINISTICALLY, and refuse an ambiguous
+        # basename rather than blind-picking one.
+        #
+        # `rglob` yields in os.scandir order — filesystem-dependent, not
+        # sorted — so the bare `hits[0]` here could run a different copy on a
+        # different machine, or on the same machine after unrelated churn, with
+        # nothing in the output saying which one ran. Four basenames under
+        # computations/ are genuinely duplicated today, two of them named by a
+        # witness `scriptFile` and so reachable as an argument here:
+        # qbeta_phib_2loop_bdictionary_probe.py and witness_provenance_audit.py
+        # (the latter is the qou-2r42 pair — two DIFFERENT audits sharing a
+        # name, where picking the wrong one swaps the check being run).
+        # `sorted()` alone would only make the wrong pick reproducible, so
+        # ambiguity is reported instead. Bean qou-kcii.
+        hits = sorted(p for p in comp.rglob(name) if "_deprecated" not in p.parts)
         if not hits:
             results.append({"producer": name, "status": "not_found", "fields": []})
+            continue
+        if len(hits) > 1:
+            rels = [p.relative_to(wt).as_posix() for p in hits]
+            print(f"[{i:3}/{len(a.producers)}] {name}: AMBIGUOUS — "
+                  + " | ".join(rels), flush=True)
+            results.append({"producer": name, "status": "ambiguous_basename",
+                            "candidates": rels, "fields": []})
             continue
         src = hits[0]
         pristine()

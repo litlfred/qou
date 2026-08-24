@@ -11,8 +11,19 @@ numeric matching is performed beyond restating the ledger's own numbers;
 predicted-first gate respected (every identity is derived below BEFORE any
 evaluation, and none touches E_unit).
 
-(1) THE BOND FACTOR IS THE CANONICAL MARKOV PARAMETER. The corpus Markov-
-    Ocneanu-Wenzl trace normalization (pyhecke.gram) sets
+(1) THE BOND FACTOR IS THE CANONICAL MARKOV PARAMETER.
+
+    !! STALE AS WRITTEN (noted 2026-08-23). This paragraph calls
+    z = 1/[2]_v "the canonical Markov parameter". That is convention C,
+    which owner ruling 2026-08-09 excised and 2026-08-15 (R1) re-affirmed:
+    the canonical parameter is D's q^3/(q^2+1). The paragraph predates the
+    ruling and is kept because the FILE ITSELF contradicts it — `z_formula`
+    below is D, and the resulting mismatch is a deliberate live detector for
+    the pyhecke C/D split (`qou-5wpk` / `qou-9d6h`), not a bug. Read identity
+    (1) as "the bond factor is pyhecke.gram's z", which is true and is what
+    is actually tested; do NOT read it as a claim that C is canonical.
+
+    The corpus Markov-Ocneanu-Wenzl trace normalization (pyhecke.gram) sets
         z = 1/(sqrt(q0) + 1/sqrt(q0)) = 1/[2]_v,  v = sqrt(q0)
     — identical to the reeb-flow bond factor z = 1/[2]_v = delta^{-1}.
     The 2H law's z is not a modeling choice; it is THE trace parameter of

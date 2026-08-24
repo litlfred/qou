@@ -1,4 +1,11 @@
-"""Binding vs mass ℏ_q-rung — forward test + critical-distance re-scope of the b_αα result.
+"""Binding vs mass ℏ_q-rung — EXPLORATORY forward test, not wired into production.
+
+Critical-distance re-scope of the b_αα result. The scope marker above is load-bearing,
+not decoration: this file compares against the DEPRECATED `Vol(𝓑₃)·ρ` absolute-mass form
+(deliberately — that form is its subject), and `canonical_mass_status_guard` reads the
+first two docstring lines to decide whether such a comparison is a live status claim.
+Verified before asserting it: the only importer is `binding_mass_rung_derivation_probe.py`
+(itself a probe), and this module is absent from the no-free-parameter production closure.
 
 Follows Lane 2 (`b_alpha_alpha_voldensity_scaling_probe.py`), which found the AME-implied α–α
 density ρ_αα ≈ ℏ_q² and floated "binding residuals are ℏ_q²-suppressed vs their VolDensity" as a

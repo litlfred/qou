@@ -143,12 +143,34 @@ class WenzlBridge (R : Type u) [CommRing R] (n : ℕ) (q z : R)
   bridge_identity : Prop
   bridge_holds : bridge_identity
 
-/-- **Trivial canonical instance** — every class field is filled
-    with the structurally-trivial value (`carrier := PUnit`,
-    `trace := constant 0`, etc.).  Discharges the §3b-cond
-    hypothesis at the audit level; genuine instances at
-    `R = ℚ(q)` arrive when Mathlib's Iwahori–Hecke library lands. -/
-instance triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
+/-- **Trivial model of the Hecke class** — every field is filled with the
+    structurally-trivial value (`carrier := PUnit`, all three relations
+    `:= True`).  Genuine models at `R = ℚ(q)` arrive when Mathlib's
+    Iwahori–Hecke library lands.
+
+    **A `def`, not an `instance`, since 2026-08-23.**  It was declared
+    `instance`, and its docstring said so plainly: *"Discharges the §3b-cond
+    hypothesis at the audit level."*  That is what §3b-tax forbids — *"an
+    unproved primary is honestly represented by a content-bearing class with
+    **no** instance; do not fabricate a trivial instance to 'close' it."*
+
+    The defect was not the placeholder but its **globality**.  Being an
+    `instance`, typeclass resolution supplied it for **every** `R`, `n`, `q`,
+    so every downstream `[IwahoriHeckeAlgebra R n q]` was discharged silently
+    with `carrier = PUnit` and the author of that theorem never learned the
+    hypothesis was free.  Measured before the change:
+
+        #synth IwahoriHeckeAlgebra ℤ 3 1                     -- triv_hecke ℤ 3 1
+        (inferInstance : IwahoriHeckeAlgebra ℤ 3 1).carrier = PUnit  -- rfl
+
+    As a `def` the trivial model stays available to anyone who deliberately
+    wants it (`letI := triv_hecke R n q`), and nothing is discharged behind
+    a caller's back.  Blast radius of the demotion, measured: **one** error,
+    `triv_wedderburn` below, fixed in place.  Nothing else in the corpus
+    depended on the global resolution.
+
+    Probe: `docs/audits/2026-08-23-trivial-global-instance-probe.lean`. -/
+def triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
     IwahoriHeckeAlgebra R n q where
   carrier := PUnit
   carrier_addCommGroup := by infer_instance
@@ -162,10 +184,32 @@ instance triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
   far_commute := True
   far_commute_holds := True.intro
 
-/-- Trivial Wedderburn decomposition over the trivial Hecke carrier. -/
-instance triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R) :
+/-- Trivial Wedderburn decomposition over the trivial Hecke carrier.
+
+    Demoted from `instance` to `def` alongside `triv_hecke`, for the same
+    reason and with the same evidence — before the change,
+    `#synth WedderburnDecomposition ℤ 3 1` answered `triv_wedderburn ℤ 3 1`,
+    so this step of the canonical derivation chain also had an inert Lean
+    hypothesis.
+
+    The instance binder is what the demotion cost: `WedderburnDecomposition
+    R n q` takes an `[IwahoriHeckeAlgebra R n q]`, which resolution used to
+    supply from the global `triv_hecke`. It is now a hypothesis, so a caller
+    wanting the fully-trivial pair writes `triv_wedderburn R n q
+    (self := triv_hecke R n q)` and the dependence is visible at the use site
+    rather than inferred behind it.
+
+    (A `letI := triv_hecke R n q` in the *type* does not work: it binds for the
+    ascription but not for the `where` fields, which elaborate against the
+    class and need the instance again.) -/
+def triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R)
+    [self : IwahoriHeckeAlgebra R n q] :
     WedderburnDecomposition R n q where
-  block_proj _ := PUnit.unit
+  -- Was `PUnit.unit`, which only type-checked while the carrier was pinned to
+  -- `PUnit` by the global `triv_hecke`. Over an arbitrary Hecke model the
+  -- projector must land in `self.carrier`, and its unit is the only element
+  -- the class provides — which is the honest reading of "trivial projector".
+  block_proj _ := self.one
   blocks_sum_to_one := True
   blocks_sum_holds := True.intro
   blocks_orthogonal := True
