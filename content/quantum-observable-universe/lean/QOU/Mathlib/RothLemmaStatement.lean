@@ -164,6 +164,82 @@ theorem rothGrowth_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d
   nlinarith
 
 
+/-! ### ⚠ The eleventh correction: `c_m = 2^{m+1} − 3`, and the conclusion is not linear in `t`
+
+§11 and §14 have now been **read from the page scans** rather than from the PDF's OCR layer,
+which garbled exactly these two sections.  Three findings, two of them corrections.
+
+**1. `RothGrowth` *is* the source's condition.**  Property `Γ_M`'s first clause is
+
+    max(s₂/s₁, s₃/s₂, …, s_M/s_{M−1}) ≤ t,
+
+i.e. `s_h ≥ (1/t)·s_{h+1}` — which is `RothGrowth o ω d` with **`ω = 1/t`**.  The arc
+reconstructed that condition from what the row-cost bound needed, and the reconstruction was
+right.  ⚠ Every "this is a fact about `RothGrowth` as this arc defines it, not established as
+the source's" caveat in this arc can now be dropped.
+
+**2. ⚠ `c_m = 2^{m+1} − 3`, not `2^m − 3`.**  §14 derives `c_m = 2c_{m−1} + 3` from `c₁ = 1`,
+which closes to `2^{m+1} − 3` — see `rothConstant_rec` and `rothConstant_one` below, where the
+recurrence and the closed form are checked against each other rather than asserted.  The value
+this arc had been carrying was wrong; it was never asserted, which is the only reason that
+cost nothing.
+
+⚠ **It is the base case, not the recurrence, that pins the constant** — and getting that
+backwards is how the wrong value survived.  `c_m = 2c_{m−1} + 3` has general solution
+`A·2^m − 3`, so **both** `2^m − 3` and `2^{m+1} − 3` satisfy it (`two_pow_sub_three_rec`
+below checks the first one does).  Only `c₁ = 1` selects `A = 2`, and the old value fails
+exactly there: `2^1 − 3 = −1 ≠ 1` (`two_pow_sub_three_ne_one`).  A check against the
+recurrence alone would have passed the wrong constant.
+
+**3. ⚠ The conclusion is `Θ_m ≤ c_m · t^{2^{−(m−1)}}` — the exponent, not a linear factor.**
+That is what iterating §13's *square-root* branch produces: each step halves the exponent, so
+after `m − 1` steps `t` has become `t^{2^{−(m−1)}}`.  For small `t` this is **much larger**
+than `t`.
+
+⚠ **Consequence for `RothLemmaUniform` below.**  Its conclusion is `index ≤ m·ε`, linear in
+the small parameter.  Mahler's is not, and no linear-in-`ε` invariant can absorb a square root
+taken once per induction step — so the recursion could never have closed on this statement's
+shape.  The module header already warned it was "false for small `ω` when `m ≥ 2`" on other
+grounds; this says *what the right shape is*, which the warning did not.
+
+Fixing that is the next piece of work and is deliberately **not** done in this commit: it
+changes the statement every downstream theorem is aimed at, and is worth doing once, against
+the read text, rather than twice. -/
+
+/-- **Mahler's `c_m`, closed form.**  §14 gives the recurrence `c_m = 2c_{m−1} + 3` with
+`c₁ = 1`; this is its solution. -/
+def rothConstant (m : ℕ) : ℕ := 2 ^ (m + 1) - 3
+
+/-- The base case `c₁ = 1`. -/
+theorem rothConstant_one : rothConstant 1 = 1 := by decide
+
+/-- **The recurrence the closed form must satisfy**, checked rather than asserted.
+
+⚠ This is necessary but **not** sufficient to identify the constant: the recurrence's general
+solution is `A·2^m − 3`, so the discarded value `2^m − 3` satisfies it too
+(`two_pow_sub_three_rec`).  `rothConstant_one` is what does the separating. -/
+theorem rothConstant_rec (m : ℕ) (hm : 1 ≤ m) :
+    rothConstant (m + 1) = 2 * rothConstant m + 3 := by
+  obtain ⟨k, rfl⟩ := Nat.exists_eq_add_of_le hm
+  simp only [rothConstant]
+  have h : 3 ≤ 2 ^ (1 + k + 1) := by
+    calc (3 : ℕ) ≤ 2 ^ 2 := by norm_num
+      _ ≤ 2 ^ (1 + k + 1) := Nat.pow_le_pow_right (by norm_num) (by omega)
+  have hpow : 2 ^ (1 + k + 1 + 1) = 2 * 2 ^ (1 + k + 1) := by ring
+  omega
+
+/-- ⚠ **The discarded value satisfies the recurrence.**  Landed as the record of the eleventh
+correction, so the wrong constant stays visible rather than being quietly replaced — and so
+that the reason it survived stays visible with it.  Stated over `ℤ`: at `m = 0` the value
+`2^0 − 3` is negative, and `ℕ` subtraction would truncate the counterexample away. -/
+theorem two_pow_sub_three_rec (m : ℕ) : (2 : ℤ) ^ (m + 1) - 3 = 2 * ((2 : ℤ) ^ m - 3) + 3 := by
+  ring
+
+/-- ⚠ **… and fails the base case, which is what actually rules it out.**  §14's `c₁ = 1` is the
+only part of the derivation that distinguishes `2^{m+1} − 3` from `2^m − 3`. -/
+theorem two_pow_sub_three_ne_one : (2 : ℤ) ^ 1 - 3 ≠ 1 := by decide
+
+
 /-- **Roth's lemma, uniform-parameter form.**
 
 ⚠ A `def`, not a theorem: only `m = 1` is proved (`rothLemmaUniform_one`).  ⚠ False for small
