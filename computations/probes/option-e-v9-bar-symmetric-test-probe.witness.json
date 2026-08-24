@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:08.249541+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:13:55.469021+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "v9_original_factor_is_bar_asymmetric",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -110,6 +110,6 @@
     },
     "verdict": "BAR-SYMMETRIC REPLACEMENT FAILS — best candidate is C2: (2 + [2]_q)/4 [bar-symmetric avg] at err -5.05% vs v9 original at -0.1031%. The (1+q)/2 v9 form is INHERENTLY bar-asymmetric near-match — NOT a structural derivation. The 0.11% closure was anchor-coincidental, violating the bar-discipline of prop:li2q-phiq-bar-symmetrization."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
