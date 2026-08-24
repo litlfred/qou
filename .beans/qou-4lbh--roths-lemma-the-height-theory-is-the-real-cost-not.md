@@ -3184,3 +3184,38 @@ the `p/q` route, and stop — the entry would have read as a finding. It is a fi
 route is not taken; taking it turns the same paragraph into a solved problem. The arc has now
 twice written "two ways out, neither taken here" style prose where one of the ways was ten
 minutes of work. **A recommendation in a docstring is a bet that nobody will check it.**
+
+### §11's descent lemma, in full — all four clauses in one theorem
+
+`RothGammaFull` is `Γ_M` case (ii) faithfully: `t = p/q`, so `ω = 1/t = q/p`, and **both**
+clauses that had a rational exponent become `ℕ` inequalities with nothing rounded.
+
+- clause 3 is `2^F ≤ K₁` plus `q·(M−1)M(2M+1) ≤ F·p` — the floor cleared of division, no
+  `Nat.ceil` and so no slack to lose;
+- clause 4 is `b^{Mq} ≤ K₁^{s₁p}`.
+
+`rothGammaFull_descend` proves the whole of §11's descent lemma: from `Γ_{n+1}` and
+`b ≤ 2^c·a^r`, the sub-system has `Γ_n`. This is what Lemma 4 asserts exists and what
+`rothGamma_descend` supplied three quarters of.
+
+### ⚠ Two independently derived inequalities turned out to be the same one
+
+`height_descend_pq`'s hypothesis `hF` is `q·(n(n+1)(2n+3)) ≤ F·p`. `RothGammaFull`'s
+`floorExp` at arity `n+1` is `q·((n+1−1)(n+1)(2(n+1)+1)) ≤ F·p`. Those are **literally the same
+inequality** — the descent's clause-4 proof discharges `hF` with `hg.floorExp` and nothing else.
+
+They were derived from different places: `hF` from §11's height chain (what it takes to absorb
+`2^{(2m+1)ρ₁}`), `floorExp` from §11's floor clause (transcribed from `Γ_M`'s definition). That
+they coincide is the strongest confirmation yet that clause 3's exponent is not a chosen
+constant but a derived one — and it is now checked by the compiler rather than argued.
+
+`rothGammaFull_descend_witness` satisfies the largest hypothesis stack in this arc. ⚠ Four of
+its hypotheses hold with **equality** (`2^F = K`, `q·n(n+1)(2n+3) = F·p`, `c = (2n+3)ρ₁`,
+`b = 2^c·a^r`), for the same reason: the calibration leaves no room.
+
+### What is left
+
+`RothGamma` (clauses 1–3, `ω : ℚ`) and `RothGammaFull` (all four, `p/q`) now coexist.
+`RothLemmaUniform` still takes the former. Migrating it is a deliberate one-off that touches
+every use site, and is worth doing on evidence — which `rothGammaFull_descend` now supplies:
+the `p/q` idiom carries everything the `ω : ℚ` one does and clause 4 besides.

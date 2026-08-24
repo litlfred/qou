@@ -182,6 +182,94 @@ theorem rothGamma_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (ω : ℚ) (hω : 0
     refine le_trans ?_ h
     exact_mod_cast rothDenomFloor_mono hω (Nat.le_succ n)
 
+/-- **§11's descent lemma, in full** — all four clauses of `Γ_{m}` from `Γ_{m+1}`.
+
+This is what Lemma 4 asserts exists and what `rothGamma_descend` supplies only three quarters
+of.  The sub-system is §11's: first `n` variables, degrees rescaled by `r` (`ρ_h = r·s_h`),
+denominators unchanged, and the new height `b` bounded by `2^c·a^r` — which is
+`b = 2^{2r∑s}·r!·a^r` with `c` absorbing the first two factors.
+
+Where each clause comes from:
+
+* **1–3** as in `rothGamma_descend`; clause 3a is now a `ℕ` inequality and descends by
+  monotonicity of `q·(M−1)M(2M+1)` in `M`, with no ceiling in the way.
+* **4** is `height_descend_pq`, and its hypothesis `hF` is *literally* `Γ_{n+1}`'s `floorExp`:
+  `q·((n+1−1)(n+1)(2(n+1)+1)) = q·(n(n+1)(2n+3))`.  The two were derived independently — one
+  from §11's height chain, one from §11's floor clause — and they are the same inequality.
+
+⚠ `hc : c ≤ (2n+3)·(r·s₁)` is the one hypothesis about the *construction* rather than about
+`Γ`: it says the accumulated `2`-power in `b` is what §11 says it is.  Discharging it is
+`WronskianHeight`'s business. -/
+theorem rothGammaFull_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (p q F : ℕ)
+    (d : σ → ℕ) (qd : σ → ℤ) (a b : ℤ) {r c : ℕ} (hr : r ≠ 0)
+    (ha0 : 0 ≤ a) (hb0 : 0 ≤ b)
+    (hq2 : ∀ j, 2 ≤ qd j)
+    (hg : RothGammaFull o p q F d qd a)
+    (hb : b ≤ 2 ^ c * a ^ r)
+    (hc : ∀ j : Fin (n + 1), (j : ℕ) = 0 → c ≤ (2 * n + 3) * (r * d (o.symm j))) :
+    RothGammaFull (Equiv.refl (Fin n)) p q F
+      (fun k => r * splitLeft o d k) (splitLeft o qd) b where
+  growth := by
+    intro j k hjk
+    have h := hg.growth j.castSucc k.castSucc (by simpa using hjk)
+    have hrQ : (0 : ℚ) < (r : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hr
+    simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply] at *
+    push_cast at *
+    nlinarith
+  height := by
+    intro j k hj
+    have h := hg.height j.castSucc k.castSucc (by simpa using hj)
+    have h0 : (0 : ℤ) ≤ qd (o.symm j.castSucc) ^ d (o.symm j.castSucc) :=
+      pow_nonneg (le_trans (by norm_num) (hq2 _)) _
+    simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
+    calc qd (o.symm j.castSucc) ^ (r * d (o.symm j.castSucc))
+        = (qd (o.symm j.castSucc) ^ d (o.symm j.castSucc)) ^ r := by rw [← pow_mul, mul_comm]
+      _ ≤ (qd (o.symm k.castSucc) ^ d (o.symm k.castSucc)) ^ r := pow_le_pow_left₀ h0 h r
+      _ = qd (o.symm k.castSucc) ^ (r * d (o.symm k.castSucc)) := by rw [← pow_mul, mul_comm]
+  floorExp := by
+    have h := hg.floorExp
+    have hmono : q * ((n - 1) * n * (2 * n + 1)) ≤ q * (n * (n + 1) * (2 * n + 3)) :=
+      Nat.mul_le_mul_left _ (Nat.mul_le_mul (Nat.mul_le_mul (Nat.sub_le _ _) (Nat.le_succ n))
+        (by omega))
+    have hsimp : (n + 1 - 1) * (n + 1) * (2 * (n + 1) + 1) = n * (n + 1) * (2 * n + 3) := by
+      simp only [Nat.add_sub_cancel]; ring
+    rw [hsimp] at h
+    exact le_trans hmono h
+  floor := by
+    intro j hj
+    have h := hg.floor j.castSucc (by simpa using hj)
+    simpa using h
+  heightBound := by
+    intro j hj
+    have hjc : (j.castSucc : ℕ) = 0 := by simpa using hj
+    have ha := hg.heightBound j.castSucc hjc
+    have hK := hg.floor j.castSucc hjc
+    have hFe := hg.floorExp
+    have hsimp : (n + 1 - 1) * (n + 1) * (2 * (n + 1) + 1) = n * (n + 1) * (2 * n + 3) := by
+      simp only [Nat.add_sub_cancel]; ring
+    rw [hsimp] at hFe
+    simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
+    exact height_descend_pq ha0 hb0 hK rfl ha hb (hc j.castSucc hjc) hFe
+
+/-- **Non-vacuity of the full descent** — the largest hypothesis stack in this arc, satisfied.
+
+Arity `2 → 1`, `t = 1` (`p = q = 1`), `F = 10`, `K = 1024 = 2^F`, `d ≡ 1`, `a = 1`, `r = 1`,
+`c = 5`, `b = 32`.  ⚠ As with `height_descend_pq_witness`, several hypotheses hold with
+**equality** — `2^F = K`, `q·(n(n+1)(2n+3)) = F·p`, `c = (2n+3)ρ₁`, `b = 2^c·a^r` — because
+clause 3's calibration leaves no room. -/
+theorem rothGammaFull_descend_witness :
+    RothGammaFull (Equiv.refl (Fin 1)) 1 1 10
+      (fun k => 1 * splitLeft (Equiv.refl (Fin 2)) (fun _ : Fin 2 => 1) k)
+      (splitLeft (Equiv.refl (Fin 2)) (fun _ : Fin 2 => (1024 : ℤ))) 32 :=
+  rothGammaFull_descend (Equiv.refl (Fin 2)) 1 1 10 (fun _ => 1) (fun _ => 1024) 1 32
+    (r := 1) (c := 5) one_ne_zero (by norm_num) (by norm_num) (fun _ => by norm_num)
+    { growth := by intro j k hjk; norm_num
+      height := by intro j k _; exact le_rfl
+      floorExp := by norm_num
+      floor := by intro j _; norm_num
+      heightBound := by intro j _; norm_num }
+    (by norm_num) (by intro j _; norm_num)
+
 /-- **Non-vacuity of the descent**, and a demonstration that clause 3 bites.
 
 `n + 1 = 2`, `d ≡ 1`, `r = 1`, `ω = 1`.  ⚠ The denominators cannot be `2`: at arity `2` the

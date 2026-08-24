@@ -280,6 +280,32 @@ theorem rothGamma_first_two_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : �
     (j : Fin m) (hj : (j : ℕ) = 0) : 2 ≤ qd (o.symm j) :=
   le_trans (by exact_mod_cast rothDenomFloor_two_le hm hω) (hg.floor j hj)
 
+/-- **Property `Γ_M`, case (ii), in full** — all four clauses, in the `t = p/q` idiom.
+
+`RothGamma` above carries clauses 1–3 with `ω : ℚ` and leaves clause 4 to `RothLemmaUniform`.
+This is the faithful object: `t = p/q`, so `ω = 1/t = q/p`, and both of the clauses that had a
+rational exponent become `ℕ` inequalities with nothing rounded.
+
+* **clause 3** is `2^F ≤ K₁` together with `q·(M−1)M(2M+1) ≤ F·p`, which is
+  `K₁ ≥ 2^{(1/t)(M−1)M(2M+1)}` cleared of division.  No `Nat.ceil`, so no slack to lose.
+* **clause 4** is `b^{Mq} ≤ K₁^{s₁p}`, which is `b ≤ K₁^{(1/M)s₁t}` raised to `Mq`.
+
+⚠ Still case (ii) only; `Γ₁` is case (i) and is not this. -/
+structure RothGammaFull {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (p q F : ℕ)
+    (d : σ → ℕ) (qd : σ → ℤ) (b : ℤ) : Prop where
+  /-- Clause 1, with `ω = 1/t = q/p`. -/
+  growth : RothGrowth o ((q : ℚ) / (p : ℚ)) d
+  /-- Clause 2: the first variable's `K^s` is the smallest. -/
+  height : ∀ j k : Fin m, (j : ℕ) = 0 →
+    qd (o.symm j) ^ d (o.symm j) ≤ qd (o.symm k) ^ d (o.symm k)
+  /-- Clause 3a: the floor's exponent is large enough, cleared of division. -/
+  floorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p
+  /-- Clause 3b: the first denominator is at least `2^F`. -/
+  floor : ∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ qd (o.symm j)
+  /-- Clause 4, raised to `m·q` so that it is integral. -/
+  heightBound : ∀ j : Fin m, (j : ℕ) = 0 →
+    b ^ (m * q) ≤ qd (o.symm j) ^ (d (o.symm j) * p)
+
 /-- **Rescaling the degree vector preserves `Γ_m`** — the companion to `rothGrowth_scale`.
 
 The induction step measures its sub-problems against `r·d`, and all three clauses survive.
