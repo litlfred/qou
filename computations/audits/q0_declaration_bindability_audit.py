@@ -149,7 +149,7 @@ def _computes(src: str, mods: "set[str]", idx=None) -> str:
         return "unknown"
     layers = _layer_of_source(src)
     if not layers and idx is not None:
-        layers = _helper_layer(src, idx) | _call_site_layer(src)
+        layers = _helper_layer(src, idx) | _call_site_layer(src, _SIGS)
     if layers == {"muon"}:
         return "muon"
     if layers == {"proton"}:
@@ -251,12 +251,61 @@ def _helper_layer(src: str, idx) -> "set[str]":
     return layers
 
 
-def _call_site_layer(src: str) -> "set[str]":
-    """Layers named EXPLICITLY at a helper call site, e.g. `anchor="muon"`.
+def _anchor_signature(idx) -> "dict[str, tuple[str, list[str]]]":
+    """Helper functions that take an `anchor`, and the DEFAULT they apply.
 
-    Only an explicit argument counts. A bare `load_q_50dps()` takes that
-    helper's own default, which this audit does not model and must not guess —
-    guessing it is what produced the 31-item false finding.
+    Read from the helper's own `def` line, not assumed. `load_q_50dps` is the
+    case that matters: `anchor: str = "proton"`. Verified by execution rather
+    than by reading —
+
+        load_q_50dps()               -> 1.10997858275138…   proton
+        load_q_50dps(anchor="muon")  -> 1.10997859555733…   muon
+
+    which is the check that should have preceded the 31-item false finding, and
+    is why a bare call is now resolvable instead of being guessed.
+    """
+    seen: "dict[str, set]" = {}
+    params_of: "dict[str, list[str]]" = {}
+    # Duplicated helpers are the norm here, not the exception — `_li_2_q_util`
+    # exists under both `computations/` and `qou-mass/src/qou_mass/_internal/`.
+    # Skipping every duplicated stem is what kept this resolution from firing at
+    # all. Collect from EVERY candidate and accept only where they agree.
+    for cands in idx.values():
+        for f in cands:
+            try:
+                tree = ast.parse(f.read_text(encoding="utf-8", errors="ignore"))
+            except Exception:  # noqa: BLE001
+                continue
+            for node in tree.body:
+                if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    continue
+                params = [a.arg for a in node.args.args]
+                if "anchor" not in params:
+                    continue
+                n_def = len(node.args.defaults)
+                defaults = dict(zip(params[len(params) - n_def:],
+                                    node.args.defaults))
+                d = defaults.get("anchor")
+                if isinstance(d, ast.Constant) and d.value in ("muon", "proton"):
+                    seen.setdefault(node.name, set()).add(d.value)
+                    params_of[node.name] = params
+    out: "dict[str, tuple[str, list[str]]]" = {}
+    for name, vals in seen.items():
+        if len(vals) == 1:
+            out[name] = (next(iter(vals)), params_of[name])
+    return out
+
+
+def _call_site_layer(src: str, sigs=None) -> "set[str]":
+    """Layers determined at a helper CALL SITE.
+
+    An explicit `anchor="muon"` settles it. A bare call takes the helper's own
+    signature default, which is READ from that helper rather than assumed — see
+    `_anchor_signature`.
+
+    One exception is honoured because the helper documents it: `load_q_50dps`
+    says an explicit ``path`` "wins over ``anchor``". A call passing `path` is
+    therefore left undetermined rather than credited to the default.
     """
     out: "set[str]" = set()
     try:
@@ -266,11 +315,30 @@ def _call_site_layer(src: str) -> "set[str]":
     for n in ast.walk(tree):
         if not isinstance(n, ast.Call):
             continue
+        explicit = None
+        kwargs = {kw.arg for kw in n.keywords}
         for kw in n.keywords:
             if kw.arg == "anchor" and isinstance(kw.value, ast.Constant) \
                     and kw.value.value in ("muon", "proton"):
-                out.add(kw.value.value)
+                explicit = kw.value.value
+        if explicit:
+            out.add(explicit)
+            continue
+        if not sigs or not isinstance(n.func, ast.Name):
+            continue
+        sig = sigs.get(n.func.id)
+        if not sig:
+            continue
+        default, params = sig
+        if "path" in kwargs:
+            continue                  # an explicit path overrides the anchor
+        if "path" in params and len(n.args) > params.index("path"):
+            continue                  # …positionally, too
+        out.add(default)
     return out
+
+
+_SIGS: "dict[str, tuple[str, list[str]]]" = {}
 
 
 #: What each manifest layer CLAIMS a producer computes at.
@@ -363,6 +431,8 @@ def main() -> int:
     man = json.loads(MANIFEST.read_text())
     stems = man.get(args.layer, [])
     idx = _index()
+    global _SIGS
+    _SIGS = _anchor_signature(idx)
     expect = _LAYER_CLAIM.get(args.layer)
     if expect is None:
         print(f"  NOTE: layer {args.layer!r} claims no single compute layer, so"

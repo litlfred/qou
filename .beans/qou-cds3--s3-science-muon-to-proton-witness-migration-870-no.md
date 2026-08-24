@@ -1595,3 +1595,54 @@ and stamp all agree on muon, and only the declaration says proton. The audit's
 output said the declaration "mislabels the witness", which is the other case;
 corrected to state that which side is wrong is not the audit's call and the
 producer must be read.
+
+
+## 2026-08-24 (3) — the same mechanism, read correctly, drains 13 and finds 1
+
+The retraction above left `load_q_50dps` callers deliberately undetermined: I had
+guessed its default once and inverted 13 answers, so I refused to guess again.
+But the default does not have to be guessed — it can be **read from the helper's
+own signature**, and then checked by running it:
+
+    load_q_50dps()               -> 1.10997858275138…   proton
+    load_q_50dps(anchor="muon")  -> 1.10997859555733…   muon
+
+`anchor: str = "proton"`. Executed, not inferred — the check that should have
+preceded the false finding.
+
+One more obstacle first: `_anchor_signature` skipped every duplicated stem, and
+`_li_2_q_util` exists **twice** (`computations/` and
+`qou-mass/src/qou_mass/_internal/`), so the resolution silently did nothing —
+the run came back byte-identical and I nearly took that for "no effect". Same
+agreement rule as before: collect from every copy, accept where they agree.
+
+### Result — and it is the exact mirror of the false finding
+
+| | before | after |
+|---|---|---|
+| `physical_proton` undetermined | 44 | **31** |
+| `physical_proton` agrees with declaration | 26 | **39** |
+| `physical_proton` contradicts | 18 | 18 |
+| `ideal_muon` contradicts | 6 | **7** |
+| `ideal_muon` undetermined | 2 | 1 |
+
+The **+13 to "agrees"** are precisely the 13 `load_q_50dps` callers. Read wrongly
+they were 13 false contradictions; read correctly they are 13 confirmations that
+the declaration is right. Same producers, same call, opposite verdict — which is
+what a defaulted keyword argument does to an audit that will not read it.
+
+### The seventh, and the six are still the six
+
+`binding_via_interface_knot` — declared `ideal_muon`, calls `load_q_50dps()` bare
+at `:194`, so it computes **proton**. Verified by hand.
+
+This is **not** the six changing: they are still byte-identical. The seventh came
+out of the `undetermined` bucket, which is the bucket shrinking rather than the
+finding moving. Checked against `6be1198585` (the main merge, before my
+declarations) — it was already `ideal_muon` there, so it is **pre-existing and
+not one of the 32 I added**.
+
+Worth stating plainly: the single mechanism I got wrong yesterday produced, once
+read properly, **13 correct clearances and 1 genuine finding**. The lesson is not
+"be more cautious about helpers" — it is that a default argument is behaviour,
+and behaviour is executable.
