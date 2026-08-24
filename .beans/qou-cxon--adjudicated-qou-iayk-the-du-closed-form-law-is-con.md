@@ -366,3 +366,54 @@ table above is the evidence.
 What remains unproved is the Hecke-collapse INTERPRETATION of why co-location
 produces the cancellation — flagged as interpretation in the Q2 producer, not
 claimed as proved.
+
+
+## 2026-08-24 — the Q2 co-location rule is PROVED, not just interpreted
+
+`content/quantum-observable-universe/lean/QOU/BraidsAndKnots/AveragedCrossingCollapse.lean`
+— 7 theorems, sorry-free, `lean`-direct exit 0, `#print axioms` clean on all
+seven (propext / Classical.choice / Quot.sound only).
+
+The Q2 residue producer offered a Hecke-collapse READING and flagged it as an
+interpretation. It is a theorem:
+
+    (sigma + d)^2 = (h + 2d)*sigma + (1 + d^2)          [Hecke: sigma^2 = h*sigma + 1]
+
+At the colour-averaged coefficient, characterised division-free by
+`2*d = -h`, the sigma coefficient is **exactly zero** — the product is a
+SCALAR. And that scalar is the cyclotomic square that was measured cancelling:
+
+    q^2 * (4 + h^2) = (q^2 + 1)^2                        [with q*h = q^2 - 1]
+
+Three things it explains rather than restates:
+
+* **Only the averaged coefficient collapses.** Controls in the same file:
+  `d = -h` leaves sigma-coefficient `-h`, `d = 0` leaves `h`, both nonzero
+  whenever h is.
+* **Co-location is forced.** The identity is about a PRODUCT of two factors on
+  the SAME generator; two averaged crossings on different generators are never
+  multiplied by it. That is why the measured rule is
+  `max(gen0_avg, gen1_avg) >= 2` and not a total count.
+* **Saturation follows.** A third averaged crossing multiplies the scalar by
+  `(sigma + d)` again, reintroducing sigma (`cube_eq_scalar_mul`), so no second
+  `(q^2+1)^2` appears — the measured "three still cancels 2, not 3".
+
+### A characteristic-2 bug in my own first draft
+
+The first version stated these over a `Field` using `h/2` and `h^2/4`. `ring`
+refused, and the refusal was RIGHT: at characteristic 2, `2 = 0` and `h/2` is
+not the averaged coefficient at all — the statement is unsound there, not
+merely unprovable. Fixed by carrying the hypothesis as `2 * d = -h` and
+scaling the cyclotomic identity by `q^2`, which removes the characteristic
+assumption rather than patching it with `(2 : K) != 0`. The file is now
+division-free over a generic `CommRing` (§7c), which is strictly stronger than
+the Field version I set out to write.
+
+## qou-cxon is now fully closed
+
+* **Q1** — DERIVED: the interface 12 is the denominator of `1/2 - delta/4`,
+  `12 = 4*3` (PR #5666).
+* **Q2** — ANSWERED (`3A-1` minus 2 per neutron, by cancellation), residue
+  CLOSED (co-location rule, 12/12), and the mechanism now PROVED in Lean.
+
+Nothing in this bean is left at "interpretation".
