@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T11:19:46Z
-updated_at: 2026-08-24T20:27:44Z
+updated_at: 2026-08-24T21:19:11Z
 ---
 
 The largest remaining convention-C site (`qou-cds1`, PR #5622). **Not attempted
@@ -326,3 +326,50 @@ Also confirms the frame is unchanged: both runs print z_M = 0.499320, i.e.
 convention C. Correct — this producer is in the qou-37xc unit and has NOT been
 converted yet. The conversion is the next step, and it must be measured against
 a baseline from THIS code, not against the shallow-boundary witness.
+
+HARNESS BUG — 'exit=0' in commit 5f106068f0 was measuring basename. CORRECTED.
+
+My baseline sweep script wrote:
+
+    echo "$(basename $p) exit=$?" >> summary.txt
+
+The command substitution runs BEFORE $? is expanded, so $? held basename's
+status, which is always 0. Demonstrated:
+
+    $ false; echo "$(basename /x/y) exit=$?"    -> exit=0
+    $ false; s=$?; echo "correct: exit=$s"      -> exit=1
+
+So the commit message's '21/21 exit=0' is not a measurement. Re-derived from the
+logs, which DO record the truth:
+
+  * BASELINE sweep: 0 tracebacks across 21. The baseline itself is sound — that
+    claim survives, just on different evidence (log contents, not exit codes).
+  * CONVERTED sweep: 2 crashes, silently reported as clean.
+
+The two crashes are ONE physics finding plus one latent bug:
+
+  1. wlambda_cumulant_specification RAISES BY DESIGN:
+       ValueError: Determinant for 3H is non-positive (det <= 0); cannot compute
+       a collective binding — the magnitude exceeds the physicality ceiling.
+     Under z_D = 0.6127 > z_C = 0.4993 the determinant crosses zero and the
+     producer refuses rather than emit a laundered number. A guard working, not
+     a defect. NOT 'fixed'. Consequence: its witness CANNOT be regenerated under
+     D, so it stays a C-frame record beside D-frame code. That must be stated,
+     not papered over.
+
+  2. b4_1four_pairtype_magnitude_profile had a REAL latent bug. It marks a row
+     'UNPHYSICAL (some det <= 0)' and continues past the block that sets
+     B4_ratio, then indexes a['B4_ratio'] unconditionally. Convention C never
+     triggered it because option A was always physical. Fixed at the producer to
+     report the refusal. All four options are now UNPHYSICAL under D:
+       A_uniform_g   det4 = -0.26513168
+       B_pn_g_like_z det4 = -0.29176533
+       C_pn_z_like_g det4 = -0.56309856
+       D_uniform_z   det4 = -0.54774417
+     Also flagged in-code that its comparison target 0.9399185 is a
+     CONVENTION-C-FROZEN transcribed constant, left as the C-frame record rather
+     than silently re-fitted — the compound_shift_nf trap.
+
+Lesson for the next harness: capture $? into a variable on the line after the
+command, before ANY substitution. And do not trust an exit code you did not
+cross-check against the log — grepping for 'Traceback' is what caught this.
