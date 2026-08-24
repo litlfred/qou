@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T17:17:26Z
+updated_at: 2026-08-24T17:21:24Z
 ---
 
 ## Landed — PR #5645
@@ -813,3 +813,58 @@ by mistake times out at whnf rather than failing to unify.
 Only the **trace instance** at general r. `markovTrace_unique` is already
 generic in the coefficient ring; what is r-specific is the weight system it is
 applied to, and that system is now fully proved.
+
+
+## CORRECTION: the trace instance is NOT assembly
+
+I ended the last turn saying the trace instance at general r "should be
+assembly rather than new mathematics, since `markovTrace_unique` is already
+ring-generic". **That is wrong.** The Markov property does not rest on
+branching; it rests on the CORNER IDENTITY, which is a different and harder
+statement:
+
+    sum_{s addable to nu} w_{nu+s} * seminormalParam q (c(s) - c(corner))
+      = z * w_nu
+
+Branching is the same sum WITHOUT the `seminormalParam` factor. At r=2 the
+corpus proves it via `corner_identity_twoRow` and the telescoping closed form;
+`markov_of_corner_identity` takes it as a hypothesis. So it is real remaining
+content, not plumbing.
+
+### But it does generalise, and I now have the constant — measured, not guessed
+
+**11/11 exactly zero**, exact sympy, `r = 2,3,4,5`, every corner of
+`[2,1] [1,1] [3,1] [2,2] [3,2,1]`, with
+
+    z = Q^r (1-Q) / ((1-Q^r) * q)   =   z_W / q
+
+The `1/q` is the Hecke normalisation shift (`sigma = g/q`), r-independent, and
+the r=2 row reproduces convention D's `z_D = q^3/(q^2+1)`. **My first attempt
+used `z_W` with no `/q` and every residual was nonzero** — worth recording,
+because that is the version anyone would write down from Wenzl's parameter
+relation directly.
+
+### A route, with its open detail
+
+In ratio form the target is
+
+    sum_a (q-ratio_a) * a(c(s_a) - c(corner))  =  Q^r / q
+
+With `x_i = Q^{beta_i}` at level r: `c(s_a) = beta_a - (r-1)`, and for a corner
+in row b, `c(corner) = beta_b - r`, so `d = beta_a - beta_b + 1` and
+
+    a(d) = (q - 1/q) * Q x_a / (Q x_a - x_b)
+
+so the `(Q x_a - x_b)` **cancels the j = b factor** of the q-ratio numerator.
+Each term is then `f(x_a) / prod_{j != a}(x_a - x_j)` with
+
+    f(t) = (q - 1/q) * Q * t * prod_{j != b} (Q t - x_j)
+
+— degree r, one above what `sum_eval_div_prod_eq_coeff` takes directly, but the
+same `divX` subtraction that `sum_prod_qratio` uses handles that.
+
+**Open detail:** `a = b` is possible (a row can carry a removable corner AND be
+addable, when `nu_b < nu_{b-1}`). There the `j = b` factor is absent from the
+product, no cancellation happens, and the term is `f(x_b)` over
+`(Q-1) x_b * prod_{j != b}(x_b - x_j)` — off by `1/((Q-1) x_b)` from the
+uniform shape. Resolve that before writing Lean.
