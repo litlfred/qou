@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-23T22:25:49Z
-updated_at: 2026-08-23T22:41:33Z
+updated_at: 2026-08-24T12:43:55Z
 ---
 
 ## What
@@ -201,3 +201,28 @@ decision below governs three producers, not one.
 
 The audit restores every witness it touches and exits 1 when any straddle is
 found, so it can gate.
+
+
+## The named carrier is WRONG — measured 2026-08-24 (PR #5634)
+
+This bean names a defaulted `_cached_seminormal` as the carrier of the 113 ppb.
+It is not. Three hypotheses tested and refuted in order:
+
+1. the defaulted call site         -> fixed (q now REQUIRED, 18 sites named)
+2. the module's defaulted params   -> fixed (9 repointed to constants.Q)
+3. `QI` / `HA_VAL`                 -> fixed (repointed)
+
+After all three: `xi_ell_phi_q_probe` still moves **36** fields,
+`t6_tau_h5_embedding_probe` still **15**.
+
+**The real carrier**, from a cross-anchor diff of every module-level float in
+the cone: the shim rebinds ~**20** derived constants (HA, Q_INV, HBAR_Q, LN_Q,
+E_CROSS + _MP/_ERR variants), so every module importing ANY of them tracks the
+entry point. `hecke_core` alone carries a dozen that move —
+ALPHA_EM_INV_DERIVED 137.03593509 -> 137.03594594, E_HARTREE_EV, E_MOL,
+FIG8_A_BULK. That is **qou-1c4y territory** with its sign-off gate.
+
+**Blanket 'default to proton' is wrong for a muon producer.** Forcing proton at
+`vhat_per_crossing_chain` flipped its internal `scalar_vs_matrix_agree`
+True -> False (17 fields). Both muon producers now pass their own q; re-measured,
+each moves 0.
