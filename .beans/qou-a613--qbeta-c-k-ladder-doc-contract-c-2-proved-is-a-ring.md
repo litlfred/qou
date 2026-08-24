@@ -1,10 +1,10 @@
 ---
 # qou-a613
 title: 'qbeta c_k ladder doc contract: mba sidecar names a canonical c_k compute that records no c_k (F1/F2 superseded by the red-team audit; F3a RETRACTED)'
-status: todo
+status: done
 type: task
 created_at: 2026-08-16T16:47:05Z
-updated_at: 2026-08-24T03:50:00Z
+updated_at: 2026-08-24T15:10:00Z
 ---
 
 > **⚠ REWRITTEN 2026-08-16T21:05Z after `origin/main` moved.** The first version
@@ -232,3 +232,91 @@ verification is now complete and the decision is still the owner's** — which i
 what this bean concluded in August and remains the honest position. What is added
 today is that the defect is **two files wide, not one**, and that option A is
 larger than a link swap.
+
+---
+
+## F3b REPAIRED 2026-08-24 — option A, owner-chosen
+
+Commit `b19342fcc8` on `claude/anchor-followups-2026-08-08`, two files:
+`mba-sidecar-ck-truncation-ladder.md` and `.ts`. **No compute ran, no witness
+was regenerated, no number changed.**
+
+### Every line number in this bean re-verified before editing
+
+| bean's cite | state in this tree |
+|---|---|
+| `.md:51-57` Python API "records each $c_k$ with its tier" | **exact**, reproduced |
+| `.md:59-63` witness contract "**Must** record each $c_k$ alongside its tier" | **exact**, reproduced |
+| `.ts:23` `script: "computations/q_beta_predicted.py"` | **exact** |
+| `.ts:24` `witness: "computations/q-beta-predicted.witness.json"` | **exact** |
+| `.ts:12-13` authorNote naming the same witness | **exact** |
+| `q_beta_predicted.py` has no c_k logic | **confirmed** — 0 hits; the file is the single-wrap closed form + typed-crossings legacy + observable/virtual split |
+| `q-beta-predicted.witness.json` has no `c_k`, no `tier` | **confirmed** — `data` keys are exactly the four listed |
+| `qbeta_ck_cache.py:118` `"tier": "derived"`, `:168` `"tier": "cal-anchored"` | **exact**, both |
+| registry `:230` "**Q_β: c_2 only** … wires **no** c_3+" | **exact** |
+
+**Nothing had been fixed by someone else in the interim; every claim still
+reproduced.** The only number that had moved since the 2026-08-16 filing was
+the registry line (`:211` → `:230`), which the 2026-08-23 re-verification had
+already caught.
+
+### What the repair actually did
+
+Both files now point at `computations/qbeta/qbeta_ck_cache.py` and
+`computations/qbeta/qbeta-ck-cache.witness.json` — `computation.script`,
+`computation.witness`, the maintenance-contract authorNote, and the `.md`
+*Python API* / *Witness contract* sections.
+
+The contract was **relaxed to what that witness holds**, read off the file
+rather than assumed:
+
+- Per rung: `k`, `c_k`, `tier`, `q0_dependent`, `Q_pred_after_this_rung_MeV`,
+  `err_ppb_after_this_rung`; above `k = 2` also `structural_candidates`,
+  `closest_structural`, `closest_structural_err_pct`. Plus `data.q_0` and the
+  top-level `q0Anchor` / `q0Value` stamp.
+- **Bound to the rungs the extraction reaches, not to `N`.** The cache holds
+  **exactly two rows** (k=2, k=3) — measured, matching the bean's prediction and
+  `AGENTS.md`'s greedy-guard correction.
+- The `tier` vocabulary is stated as the producer's own two-value
+  production-semantics axis (`derived` / `cal-anchored`) and stated to be a
+  **different axis** from the `.md`'s editorial tier column
+  (`structural` / `near-match` / `fitted`). That is the vocabulary
+  reconciliation option A required, done without rewriting a published tier.
+
+### Registry consistency
+
+`ck-dk-canonical-registry.md:230` is untouched and uncontradicted:
+`q_beta_predicted.py` keeps its place as the **step-11** production script
+(`alg:q-beta-truncation`, whose own `.ts` still points at it), and the repaired
+sidecar says in as many words that no c_3-or-beyond rung reaches production.
+Only the **c_k-ladder sidecar** moved.
+
+### Validators run
+
+| what | result |
+|---|---|
+| `scripts/check-computation-status.py --files <ts> --strict-unbacked` | **exit 0** — 1 block/witness pair, 0 disagreements, unbacked: none. The new witness path resolves and is backed by a real assertion (`c2_extraction_matches_lean_proved_value`, `allPassed: true`), so `status: "verified"` stays honest. |
+| `content/pipeline/block-manifest-audit.ts --diff <ts> <md>` | **exit 0** — manifest loads and is listed |
+| `scripts/run-validate.ts content/quantum-observable-universe` | **Valid — 4 issue(s)**, all in unrelated blocks; this block does not appear (baseline unchanged) |
+| `scripts/check-sidecars.sh <md> <ts>` | **no flags** |
+
+### Two things left deliberately, both reported rather than fixed
+
+1. **`.qa.json` not refreshed.** `qa-sweep.ts` on this block alone recomputes
+   `cone_size` 130 → 1 and `depth` 34 → 1 — an artifact of loading one block
+   instead of the corpus `uses` graph, so landing it would replace real metrics
+   with garbage. Reverted; a corpus-wide sweep is the way to refresh it.
+2. **Pre-existing `voice-unicode-crash` critical at `.md:23`** (the `→` in the
+   `N=4→N=5` table row). Recorded as `fail` in the committed sidecar since
+   2026-08-09, outside this change's diff, and inside the very sentence F3a
+   established must not be "fixed" on content grounds. Left alone.
+
+### Adjacent inconsistency found, NOT fixed
+
+`.md:14-15` (algorithm **Output**) still lists the tier vocabulary as
+`proved` / `near-match` / `fitted`, while the tier table nine lines below says
+**structural** — `67f0ed0d4` swept the table, the pseudo-code and the
+correctness conditions but missed this line. That is F1's territory (the
+"proved" label), which this bean records as superseded and which was
+deliberately scoped by that commit; it is not F3b and not a pointer defect, so
+it was left for whoever owns the F1 sweep.

@@ -34,7 +34,26 @@ import mpmath as mp
 
 from partition_utils import hook_lengths
 
-# Substrate parameter (proton-mass-anchored q_0, 50 dps).
+# Substrate parameter, 50 dps.
+#
+# ⚠ THIS LITERAL IS THE MUON PIN, NOT THE PROTON PIN. The label here read
+# "proton-mass-anchored q_0" until 2026-08-24; that was false. Measured at
+# mpmath dps=60:
+#
+#     this literal vs the canonical muon pin A : 4.5e-24 ppb  (identical)
+#     this literal vs the proton pin           : 11.5371 ppb  (the mu-p tension)
+#
+# The VALUE is unchanged and deliberately so — only the false label is
+# corrected. Whether the muon anchor is what this probe series INTENDS is a
+# separate, open question: 17 producers import this constant (T4-T18 plus
+# borromean_trace_cross_validator), so answering it moves all of them by
+# 11.5 ppb. Tracked in bean `qou-fd0e`; do not resolve it by editing this
+# number on your own authority.
+#
+# Why no detector caught this: the four q0 pin audits ratchet on literals that
+# DIVERGE from the canonical pin, and this one matches it exactly. No detector
+# compares a literal's LABEL against its VALUE.
+#
 # Authoritative source: T4-T8 use this exact 50-dps decimal; T9-T12
 # extend it without re-deriving.  Do not edit without updating the
 # whole probe series.

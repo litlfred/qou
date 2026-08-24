@@ -562,3 +562,70 @@ one (`lever1_binding_core_characterization`, `murakami_deformed_vc_q0` in
 - **19 with no q0 route found** — need reading; several are the `gap_a4_T*` family.
 - **7 contradictions** — unchanged, each needs reading rather than a bucket.
 - **15 UNRESOLVED** (no `scriptFile`) — `qou-0uqm`'s class, not this one's.
+
+
+## 2026-08-24 — the "no q0 route found" residue: a FIFTH route, and a 17-producer mislabel
+
+Chasing the 19 stems my route triage could not classify. Eight of them are the
+`gap_a4_T*` family, and they share a cause.
+
+### A fifth q0 route the mechanism note does not list
+
+Beyond `q_parameter` (governed), `qou_substrate.constants` (never governed),
+direct reads of `q-pinning-50-digit.witness.json`, and hardcoded literals, there
+is a **shared local constants module**:
+
+    computations/probes/_gap_a4_qsafe.py  ->  Q_0_50DPS
+
+`from _gap_a4_qsafe import Q_0_50DPS`. My triage classified these stems
+"none-found" because it looked for the four known routes and a bare literal in
+the producer's own source. The pin is one import away. **Same shape as the
+sibling's `qou-cq2n`: a value supplied by a shared helper is invisible to a
+detector that inspects the caller.**
+
+### The constant was labelled PROTON and holds the MUON pin
+
+    # Substrate parameter (proton-mass-anchored q_0, 50 dps).
+    Q_0_50DPS: str = "1.1099785955573347198997632204832250266562084087802"
+
+Measured at `mp.dps = 60`:
+
+    vs the canonical muon pin A : 4.5e-24 ppb   (identical)
+    vs the proton pin           : 11.5371 ppb   (exactly the mu-p tension)
+
+The label was false. **17 producers import it**, resolved by AST rather than
+`grep -rl`: `gap_a4_T4` through `T18` (incl. `T4_..._perknot_rerun`) and
+`borromean_trace_cross_validator`.
+
+This is the second instance of this exact shape in this bean —
+`he_nu_sdp_psd_count_test` is already recorded as *"source comment claims proton,
+the literal is the muon value"*. One instance is a typo; two, one of them
+reaching 17 producers through a module written specifically to de-duplicate, is
+a class.
+
+### FIXED: the label. NOT touched: the value.
+
+The comment now states the measured fact and names the open question. The
+literal is unchanged. **Whether the muon anchor is what this probe series
+INTENDS is not something I can settle** — answering it moves all 17 producers by
+11.5 ppb. Evidence that the value is intended: the module calls the decimal
+authoritative (*"T4-T8 use this exact 50-dps decimal; T9-T12 extend it without
+re-deriving"*), and every one of these witnesses classifies `canonical` (muon) in
+the drift audit. Evidence for proton: the comment alone. Owner's call.
+
+### A FOURTH anchor-checking seam, uncovered
+
+Ran all four q0 pin audits — `q0_hardcoded_pin_audit`,
+`undeclared_muon_pin_flip_risk_audit`, `hardcoded_q0_literal_families_audit`,
+`hardcoded_literal_audit`. **None flags `_gap_a4_qsafe.py`.** Not a scope gap:
+`_SCAN_ROOT` covers it. They ratchet on literals that **DIVERGE** from the
+canonical pin, and this one **matches it exactly**.
+
+The three seams already known are `Q0_OK`/`Q0_FLIP` (envelope vs envelope),
+`payload_mislabels` (field name vs field value), and `envelope_vs_payload`
+(envelope vs payload). This is a fourth, and nothing covers it:
+
+  **a literal's LABEL in source versus that literal's VALUE.**
+
+A hardcoded pin that matches canonical perfectly is exactly the case every
+existing detector is built to pass over.
