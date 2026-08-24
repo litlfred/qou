@@ -433,9 +433,14 @@ def main() -> int:
     # serialization as stale):
     #
     #     scanned 55   ->   3 ->   2 q0-stale   (as shipped)
-    #     scanned 2849 -> 454 -> 432 q0-stale   (--tree)
+    #     scanned 2849 -> 453 -> 431 q0-stale   (--tree)
     #
-    # 22 of the 454 were that artifact. 31 witnesses carried such a value;
+    # The absolute counts drift as main lands q0 work -- they read 454 -> 432
+    # an hour earlier, before b2cbd495d92 removed a genuinely stale witness.
+    # The DELTA is the stable quantity and has held at 22 across every
+    # re-measurement; quote it, not the endpoints.
+    #
+    # 22 of them were that artifact. 31 witnesses carried such a value;
     # 22 leave the flagged set outright and 9 stay flagged because they ALSO
     # carry a genuine muon literal. Every freed value sits ~1e-12 from the
     # proton pin and ~1.28e-8 from the muon one — four orders of magnitude
@@ -445,6 +450,11 @@ def main() -> int:
     #
     # By declared anchor the freed 22 are: 18 `none`, 4 `proton`. So four of
     # the contradictory `proton` class were this artifact, not a straddle.
+    # That class is what bean qou-bdkx hand-triaged: 49 flagged -> 5 REAL.
+    # Four of the 44 it dismissed are these, and they are dismissed here
+    # mechanically instead. The bean was closed on the WITNESS side while
+    # this comparator fix was still unmerged, so until it lands a --tree run
+    # keeps manufacturing those four candidates for the next reader.
     # (The breakdown above says 49 proton; measured here it is 42 before the
     # fix and 38 after — the difference is b047e4ae8d6's own manifest repairs
     # landing in between, not a disagreement.)
