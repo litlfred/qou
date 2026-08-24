@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T09:10:00Z
+updated_at: 2026-08-24T11:05:00Z
 updated_at: 2026-08-24T02:55:00Z
 ---
 
@@ -1161,3 +1161,63 @@ numbers may not be hand-edited. The real repair is one of:
    ever catch a stamp that contradicts itself.
 
 (3) is the general fix and is the one that would have caught me.
+
+---
+
+## 2026-08-24 — the THIRD seam, and a detector for it
+
+The regression above (six witnesses stamped `muon` while computing at proton)
+passed **both** existing anchor checks. Verified by calling them directly:
+
+```
+witness                                              classify()        payload_mislabels
+option-e-v9-bar-symmetric-test-probe                 Q0_OK             0
+qbeta-c6-c10-crossanchor-falsification               Q0_OK             0
+qbeta-cosh-q-sinh-q-candidate-scan                   Q0_AUDIT_EXEMPT   0
+qbeta-signed-vs-abs-tower-diagnostic                 Q0_OK             0
+yekutieli-a2-em-gauge-coupling-h2-probe              Q0_OK             0
+yekutieli-per-cell-qlambert-decomposition-probe      Q0_OK             0
+```
+
+Because they test different things, and neither is this:
+
+| check | compares | blind to |
+|---|---|---|
+| `Q0_OK` / `Q0_FLIP` | envelope ↔ envelope (`q0Anchor` vs `q0Value`) | what the payload actually used |
+| `payload_mislabels` | field NAME ↔ field VALUE inside `data` | a field whose name and value **agree** |
+| **(missing)** | **envelope ↔ payload** | — |
+
+A witness stamped `muon`, whose `q0Value` is the canonical muon pin, and whose
+payload holds only proton values in fields correctly named `q_proton`, is
+self-consistent on every axis anyone was measuring. That is exactly the shape I
+produced.
+
+### `envelope_vs_payload` added
+
+Reports only when the evidence is unambiguous — the other anchor's pin is present
+**and** the stamped anchor's is absent. A witness with no q0-shaped payload gives
+no evidence either way and is not reported (`zhabiro-phiq-production-crosscheck`
+is correctly silent for this reason, despite being a known stamp/compute
+contradiction: its payload carries no q0 field at all).
+
+Corpus sweep: **9 mismatches — 8 `muon` stamp / proton payload, 1 the other way.**
+
+| | |
+|---|---|
+| mine, introduced today | 6 |
+| **pre-existing** | **3** — `derivation-chain-audit`, `casimir-macdonald-probe`, and `h4-form-AB-cross-anchor-stability` (**proton** stamp / **muon** payload) |
+
+So the class is real and bidirectional, and it existed before my six. `h4_form_AB`
+is the file this bean already excluded from regeneration as *"preserved as-is by
+design"* — it turns out to carry the mirror-image defect.
+
+### Diagnostic, not a gate — deliberately
+
+Wired under the existing `--payload-check` flag: printed, never written to the
+witness, cannot change the exit code. `Q0_FLIP` remains the only gate. Making
+this fatal would fail CI on 9 witnesses including 3 nobody has triaged, which is
+the same trap `payload_mislabels` documents for its own 22. Same
+visible-not-fatal criterion applied throughout `qou-i5jy`.
+
+**This is the fix that would have caught me**, and it is now in the tree rather
+than in a recommendation.
