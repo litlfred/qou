@@ -15059,4 +15059,136 @@ theorem bsbs_overlap_resolves (hn : 0 < n) (hp : HeckeParams)
 
 end CornerCriterion
 
+/-! ## §4au  The overlap of a proper composition is one letter
+
+Every composition namespace above is indexed by the **shape** of the composition
+rather than by the kinds of its two rules — `CyclicQuad` wants
+`r.lm = u' ++ [σₓ]`, `BraidSelfOverlap` wants both rules on the braid word,
+`BokutShiaoBraid` wants `rule₂` on it — and every single one of them fixes
+`overlap` to **one letter**. `IsGrobnerShirshovBasis.overlap_resolves`, by
+contrast, quantifies over every `OverlapComposition`. So the gap between that
+machinery and the criterion is exactly the multi-letter overlaps, and the
+question worth answering before writing any more chains is whether any exist.
+
+Measured first, in
+[`hecke_overlap_length_probe.py`](../../../../../../computations/hecke_overlap_length_probe.py):
+at `n = 2 … 8` there are 1351 compositions with both contexts non-empty and the
+overlap-length histogram is `len1` only — zero exceptions. (The same probe
+reproduces §4k's shape counts from an independent implementation: 16 rules → 13
+distinct leading monomials → 58 shapes = 45 proper + 13 degenerate at `n = 4`.)
+
+The reason is a single invariant. **Every rule's leading monomial begins with its
+largest letter** — `[σᵢ, σᵢ]`, `[σⱼ, σᵢ, σⱼ]` at `j = i + 1`, `[σᵢ, σⱼ]` at
+`j + 1 < i`, and `descWord i j ++ [σᵢ]`, which `descWord_cons` opens as
+`σᵢ :: (descWord i' j ++ [σᵢ])`. That is `lm_head_is_max`. Apply it to `rule₂`
+and the overlap's head dominates every letter of the overlap; but the overlap is
+a *suffix* of `lm₁`, so for a Bokut–Shiao `rule₁` its head lies strictly inside
+the descending run once the overlap is longer than one letter, where every index
+is at most `i − 1`. The trailing `σᵢ` is in the overlap either way, and the two
+bounds collide.
+
+`overlap_length_one_of_bs_left` is that argument for a Bokut–Shiao `rule₁` — the
+one shape whose leading monomial has unbounded length, and the one
+`CornerGeneral` composes. The other three `rule₁` shapes have leading monomials
+of length 2 or 3 and are **not** proved here. -/
+
+theorem lm_head_is_max (hn : 0 < n) (hp : HeckeParams)
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {h : HeckeGen n} {t : Monomial (HeckeGen n)}
+    (hlm : r.lm (heckeOrder n) = h :: t)
+    {y : HeckeGen n} (hy : y ∈ h :: t) :
+    y.index.val ≤ h.index.val := by
+  rcases heckeCompletedRewritingSystem_lm_cases hn hp r hr with
+    ⟨i, hw⟩ | ⟨i, j, hj, hw⟩ | ⟨i, j, hj, hw⟩ | ⟨i', i, j, h₁, h₂, hw⟩
+  · rw [hlm] at hw
+    obtain ⟨rfl, rfl⟩ : h = (⟨i⟩ : HeckeGen n) ∧ t = [(⟨i⟩ : HeckeGen n)] := by
+      simpa using hw
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+    rcases hy with rfl | rfl
+    · exact le_rfl
+    · exact le_rfl
+  · rw [hlm] at hw
+    obtain ⟨rfl, rfl⟩ : h = (⟨j⟩ : HeckeGen n)
+        ∧ t = [(⟨i⟩ : HeckeGen n), (⟨j⟩ : HeckeGen n)] := by simpa using hw
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+    rcases hy with rfl | rfl | rfl
+    · exact le_rfl
+    · show i.val ≤ j.val
+      omega
+    · exact le_rfl
+  · rw [hlm] at hw
+    obtain ⟨rfl, rfl⟩ : h = (⟨i⟩ : HeckeGen n) ∧ t = [(⟨j⟩ : HeckeGen n)] := by
+      simpa using hw
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+    rcases hy with rfl | rfl
+    · exact le_rfl
+    · show j.val ≤ i.val
+      omega
+  · obtain ⟨u, hu⟩ := descWord_head (i := i) (j := j) (by omega)
+    rw [hlm, bsWord₁, hu] at hw
+    obtain ⟨rfl, rfl⟩ : h = (⟨i⟩ : HeckeGen n) ∧ t = u ++ [(⟨i⟩ : HeckeGen n)] := by
+      simpa using hw
+    have hyw : y ∈ descWord i j ++ [(⟨i⟩ : HeckeGen n)] := by rw [hu]; simpa using hy
+    rcases List.mem_append.mp hyw with hmem | hmem
+    · exact descWord_index_le hmem
+    · simp at hmem; subst hmem; simp
+
+theorem overlap_length_one_of_bs_left (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    (hr₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {i' i j : Fin n} (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val)
+    (hrule₁ : oc.rule₁ = bokutShiaoRelation i' i j)
+    (hleft : oc.left ≠ []) :
+    oc.overlap.length = 1 := by
+  -- `lm₁` is the Bokut–Shiao word, and its head is `σᵢ` by `descWord_cons`.
+  have hlm₁ : oc.left ++ oc.overlap
+      = (⟨i⟩ : HeckeGen n) :: (descWord i' j ++ [(⟨i⟩ : HeckeGen n)]) := by
+    rw [← oc.lm₁_decomp, hrule₁, bokutShiaoRelation_lm hi hj, bsWord₁,
+      descWord_cons hi hj]
+    rfl
+  -- Peel that head off the left context, which is non-empty by hypothesis.
+  obtain ⟨l, hl⟩ : ∃ l, oc.left = (⟨i⟩ : HeckeGen n) :: l := by
+    cases hleftc : oc.left with
+    | nil => exact absurd hleftc hleft
+    | cons a l =>
+      refine ⟨l, ?_⟩
+      rw [hleftc] at hlm₁
+      simpa [hleftc] using congrArg (List.take 1) hlm₁
+  have hsplit : l ++ oc.overlap = descWord i' j ++ [(⟨i⟩ : HeckeGen n)] := by
+    rw [hl] at hlm₁; simpa using hlm₁
+  -- Suppose the overlap were longer than one letter.
+  by_contra hne
+  have hlen : 2 ≤ oc.overlap.length := by
+    have h0 : oc.overlap.length ≠ 0 := fun h =>
+      oc.overlap_nonempty (List.eq_nil_of_length_eq_zero h)
+    omega
+  -- Then its head sits strictly inside the descending run, so its index is < i.
+  obtain ⟨a, ha, hov⟩ : ∃ a, descWord i' j = l ++ a
+      ∧ oc.overlap = a ++ [(⟨i⟩ : HeckeGen n)] := by
+    rcases List.append_eq_append_iff.mp hsplit with ⟨a, ha, hb⟩ | ⟨c, hc, hd⟩
+    · exact ⟨a, ha, hb⟩
+    · exfalso
+      have : oc.overlap.length ≤ 1 := by
+        have := congrArg List.length hd
+        simp at this; omega
+      omega
+  have hane : a ≠ [] := by
+    intro hnil; rw [hnil] at hov; simp [hov] at hlen
+  obtain ⟨z, zs, hz⟩ : ∃ z zs, a = z :: zs := by
+    cases a with
+    | nil => exact absurd rfl hane
+    | cons z zs => exact ⟨z, zs, rfl⟩
+  have hzmem : z ∈ descWord i' j := by rw [ha, hz]; simp
+  have hzlt : z.index.val ≤ i'.val := descWord_index_le hzmem
+  -- But `σᵢ` is in the overlap, hence in `lm₂`, whose head is that same letter —
+  -- and `lm_head_is_max` on rule₂ makes the head maximal.
+  have hlm₂ : oc.rule₂.lm (heckeOrder n) = z :: (zs ++ [(⟨i⟩ : HeckeGen n)] ++ oc.right) := by
+    rw [oc.lm₂_decomp, hov, hz]; simp
+  have hymem : (⟨i⟩ : HeckeGen n)
+      ∈ z :: (zs ++ [(⟨i⟩ : HeckeGen n)] ++ oc.right) := by simp
+  have := lm_head_is_max hn hp hr₂ hlm₂ hymem
+  simp only at this
+  omega
+
 end UGB.GrobnerShirshov.Hecke
