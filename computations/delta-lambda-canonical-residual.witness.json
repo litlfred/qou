@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:45:21.917290+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-08-24T17:28:50.285063+00:00",
+  "commitSha": "303db476d988cf30443ba50358204e8545871e9b",
   "assertions": [
     {
       "name": "deuteron_exponent_matches_15",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "delta-lambda-canonical-residual",
   "scriptFile": "delta_lambda_canonical_residual.py",
-  "scriptHash": "116120d8b9cf",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "a95bac7baf8c",
+  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,12 +38,22 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_canonical_residual.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_canonical_residual.py"
   },
   "description": "Canonical-binding residual Δ_λ(K)=B_AME/B_pred on the Jones–Markov trace-canonical path (binding_canonical.py, per the trace-convention reconciliation). NEAR-MATCH TIER observation: log_q0 Δ_λ ≈ 10A−5 (D exact to 0.01; T −0.07; ⁴He +0.27; ³He −1.40 Z-dependent). NOT wired; the open question is a categorical derivation of 10A−5.",
   "data": {
     "q0": 1.1099785827513808,
+    "q0_exact": "1.10997858275138080759166909561076887987449912187357873607281",
+    "precision_note": "Computed in mpmath end to end. The rounded row fields are retained byte-identical for existing consumers; *_exact carry full precision. Upstream binding-canonical.witness.json stores B_MeV as float64, so even the exact fields are bounded at ~1e-16 relative by their inputs.",
     "trace_convention": "Jones–Markov (markov/markov_trace_canonical.tr_M_element; prop:categorical-mass-markov)",
     "binding_path": "B_pred = E_0 · (tr_M(W_free) − tr_M(W_atom)) — binding_canonical.py",
     "rows": [
@@ -53,11 +63,14 @@
         "N": 1,
         "A": 2,
         "B_AME_MeV": 2.2245662,
-        "B_pred_canonical_MeV": 0.43540348160749265,
+        "B_pred_canonical_MeV": 0.43540348160742937,
         "Delta_lambda": 5.1092,
         "log_q0_Delta": 15.632,
         "law_10A_minus_5": 15,
-        "deviation_from_law": 0.632
+        "deviation_from_law": 0.632,
+        "Delta_lambda_exact": "5.10920627411455640547473641992544452240755463042342605341117",
+        "log_q0_Delta_exact": "15.6319034332363372027056160423050834939173702477354175597739",
+        "deviation_from_law_exact": "0.631903433236337202705616042305083493917370247735417559773882"
       },
       {
         "atom": "T",
@@ -65,11 +78,14 @@
         "N": 2,
         "A": 3,
         "B_AME_MeV": 8.4817962,
-        "B_pred_canonical_MeV": 0.6951314974322007,
+        "B_pred_canonical_MeV": 0.6951314974320997,
         "Delta_lambda": 12.2017,
         "log_q0_Delta": 23.975,
         "law_10A_minus_5": 25,
-        "deviation_from_law": -1.025
+        "deviation_from_law": -1.025,
+        "Delta_lambda_exact": "12.2017146846787791940101153464234226202025240885283542289325",
+        "log_q0_Delta_exact": "23.9750739895916266863233453354924864443977277235554396042171",
+        "deviation_from_law_exact": "-1.02492601040837331367665466450751355560227227644456039578290"
       },
       {
         "atom": "3He",
@@ -77,11 +93,14 @@
         "N": 1,
         "A": 3,
         "B_AME_MeV": 7.71804132,
-        "B_pred_canonical_MeV": 0.6985522099897643,
+        "B_pred_canonical_MeV": 0.6985522099896627,
         "Delta_lambda": 11.0486,
         "log_q0_Delta": 23.024,
         "law_10A_minus_5": 25,
-        "deviation_from_law": -1.976
+        "deviation_from_law": -1.976,
+        "Delta_lambda_exact": "11.0486248695916557902872139269317264296205881814058206275056",
+        "log_q0_Delta_exact": "23.0236667589832711364806383590189639683187461730080070656859",
+        "deviation_from_law_exact": "-1.97633324101672886351936164098103603168125382699199293431412"
       },
       {
         "atom": "4He",
@@ -89,11 +108,14 @@
         "N": 2,
         "A": 4,
         "B_AME_MeV": 28.2956624,
-        "B_pred_canonical_MeV": 0.8760639975075147,
+        "B_pred_canonical_MeV": 0.8760639975073875,
         "Delta_lambda": 32.2986,
         "log_q0_Delta": 33.305,
         "law_10A_minus_5": 35,
-        "deviation_from_law": -1.695
+        "deviation_from_law": -1.695,
+        "Delta_lambda_exact": "32.2986248499058927586181513151905416672016930742934079909084",
+        "log_q0_Delta_exact": "33.3045875510013221236310742323210728951099965231184011549817",
+        "deviation_from_law_exact": "-1.69541244899867787636892576767892710489000347688159884501829"
       },
       {
         "atom": "6Li",
@@ -101,11 +123,14 @@
         "N": 3,
         "A": 6,
         "B_AME_MeV": 31.994526,
-        "B_pred_canonical_MeV": 1.0987340092145652,
+        "B_pred_canonical_MeV": 1.0987340092144056,
         "Delta_lambda": 29.1194,
         "log_q0_Delta": 32.312,
         "law_10A_minus_5": 55,
-        "deviation_from_law": -22.688
+        "deviation_from_law": -22.688,
+        "Delta_lambda_exact": "29.1194463188375082329337934826889391826115654359331456224811",
+        "log_q0_Delta_exact": "32.3115098213562141044877647309101554772754879363767158889462",
+        "deviation_from_law_exact": "-22.6884901786437858955122352690898445227245120636232841110538"
       },
       {
         "atom": "7Li",
@@ -113,11 +138,14 @@
         "N": 4,
         "A": 7,
         "B_AME_MeV": 39.244531,
-        "B_pred_canonical_MeV": 1.1060295215798448,
+        "B_pred_canonical_MeV": 1.106029521579684,
         "Delta_lambda": 35.4824,
         "log_q0_Delta": 34.206,
         "law_10A_minus_5": 65,
-        "deviation_from_law": -30.794
+        "deviation_from_law": -30.794,
+        "Delta_lambda_exact": "35.4823539826939638385077356956356337083801520966738824613992",
+        "log_q0_Delta_exact": "34.2055861897568845997038645782100912136347085722838160227338",
+        "deviation_from_law_exact": "-30.7944138102431154002961354217899087863652914277161839772662"
       },
       {
         "atom": "7Be",
@@ -125,11 +153,14 @@
         "N": 3,
         "A": 7,
         "B_AME_MeV": 37.60035,
-        "B_pred_canonical_MeV": 1.274526001775903,
+        "B_pred_canonical_MeV": 1.2745260017757178,
         "Delta_lambda": 29.5014,
         "log_q0_Delta": 32.436,
         "law_10A_minus_5": 65,
-        "deviation_from_law": -32.564
+        "deviation_from_law": -32.564,
+        "Delta_lambda_exact": "29.5014381406215104031612386991096393262610329618840857881249",
+        "log_q0_Delta_exact": "32.4364160255265690194264076668296084324685907453832406480352",
+        "deviation_from_law_exact": "-32.5635839744734309805735923331703915675314092546167593519648"
       }
     ],
     "law": {

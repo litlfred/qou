@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath(exact at the production floor)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T17:21:01.708009+00:00",
-  "commitSha": "0d785ade17e4e207cdd882466fba7378af4b338a",
+  "computedAt": "2026-08-24T17:30:09.177638+00:00",
+  "commitSha": "303db476d988cf30443ba50358204e8545871e9b",
   "assertions": [
     {
       "name": "residual_witness_is_a_single_run",
@@ -50,7 +50,7 @@
   "computation": "mirror-penalty-decomposition",
   "scriptFile": "mirror_penalty_decomposition_probe.py",
   "scriptHash": "b4aa7b5dc62d",
-  "scriptCommitSha": "0d785ade17e4e207cdd882466fba7378af4b338a",
+  "scriptCommitSha": "303db476d988cf30443ba50358204e8545871e9b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -76,9 +76,9 @@
   "description": "Exact decomposition of the mirror proton-excess penalty into an experimental and a model half. Shows the penalty is not one quantity across A: experiment-dominated at A=3, model-dominated at A=7, with the model's asymmetry sign-backwards at both.",
   "source_witness": "computations/delta-lambda-canonical-residual.witness.json",
   "source_provenance": {
-    "computedAt": "2026-08-21T14:45:21.917290+00:00",
-    "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
-    "scriptHash": "116120d8b9cf",
+    "computedAt": "2026-08-24T17:28:50.285063+00:00",
+    "commitSha": "303db476d988cf30443ba50358204e8545871e9b",
+    "scriptHash": "a95bac7baf8c",
     "q0Anchor": "proton"
   },
   "identity": "penalty = log_q[B_AME(pr)/B_AME(mir)] - log_q[B_pred(pr)/B_pred(mir)]",
@@ -89,15 +89,15 @@
       "proton_rich": "3He",
       "mirror": "T",
       "experimental_asymmetry_logq": "-0.9043605056881075141250639330175473045731807804106683845472622107840634",
-      "model_asymmetry_logq": "0.04704672492024951099043802240063853071183538070828269329343170444760214",
-      "penalty_logq": "-0.9514072306083570251155019554181858352850161611189510778406939152316656",
+      "model_asymmetry_logq": "0.04704672492024809808183332120949055042622316108707443844744683520214165",
+      "penalty_logq": "-0.9514072306083556122068972542270378549994039414977428229947090459862051",
       "penalty_from_witness_deviations": "-0.951",
       "recorded_penalty": "-0.951",
       "experimental_mirror_energy_MeV": "-0.7637548799999999999999999999999999999999999999999999999999999999999999",
       "dominated_by": "experiment",
-      "dominant_share_pct": "95.05503811546959886182351051247053126022826969523664000059196359655818",
+      "dominant_share_pct": "95.05503811546974002543563449119765820766136222243156441812009445783137",
       "model_sign_matches_experiment": false,
-      "abs_model_over_abs_exp": "0.05202209143847200511163883660043253927834580664430535766693244077010104"
+      "abs_model_over_abs_exp": "0.05202209143847044278268283454586048550930395031870693186661307161303068"
     },
     {
       "A": 7,
@@ -105,15 +105,15 @@
       "proton_rich": "7Be",
       "mirror": "7Li",
       "experimental_asymmetry_logq": "-0.4101825054129652794706566393573531139284412870763045506629043561920052",
-      "model_asymmetry_logq": "1.358987658817349688532867383872409810174691414325383076059930154441535",
-      "penalty_logq": "-1.76917016423031496800352402322976292410313270140168762672283451063354",
+      "model_asymmetry_logq": "1.358987658817350416774874936784732540462175782734807419770600412492318",
+      "penalty_logq": "-1.769170164230315696245531576142085654390617069811111970433504768684324",
       "penalty_from_witness_deviations": "-1.77",
       "recorded_penalty": "-1.770",
       "experimental_mirror_energy_MeV": "-1.644181",
       "dominated_by": "model",
-      "dominant_share_pct": "76.81497723021929157421476606542525588516609020275027758259352436638658",
+      "dominant_share_pct": "76.81497723021930111784593755913511029607975014860284018610994824997199",
       "model_sign_matches_experiment": false,
-      "abs_model_over_abs_exp": "3.31312925559597511252525733406408904724664912400520386185904950465603"
+      "abs_model_over_abs_exp": "3.313129255595976887934978476924024196371938014995580295918211716191788"
     }
   ],
   "q0Anchor": "proton",

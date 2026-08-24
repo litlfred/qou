@@ -38,7 +38,6 @@ Output: delta-lambda-canonical-residual.witness.json
 from __future__ import annotations
 
 import json
-import math
 import sys
 import time
 from pathlib import Path
@@ -50,32 +49,59 @@ sys.path.insert(0, str(HERE.parent / "tools" / "qou-substrate" / "python"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from q_parameter import q_at  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+import mpmath as mp  # noqa: E402
 
 SRC = HERE / "binding-canonical.witness.json"
 
 
 def main() -> int:
     t0 = time.monotonic()
-    q0 = float(q_at(30))
-    lnq = math.log(q0)
+    # mpmath end to end. This used to run in float64 — float(q_at(30)),
+    # math.log, float division — which the precision discipline forbids in a
+    # computations/ script. Note what it does and does NOT buy:
+    #
+    #   * it removes the float64 arithmetic HERE (log, division, ratio);
+    #   * it does NOT recover precision upstream. binding-canonical.witness.json
+    #     stores B_MeV as a JSON float (e.g. 0.43540348160742937), so the inputs
+    #     are float64 at source and everything below is bounded at ~1e-16
+    #     relative by them. Fixing that belongs in binding_canonical.py.
+    #
+    # And the dominant loss was never float64 anyway: `round(x, 3)` on x ~ 23
+    # discards ~4e-5 relative, ELEVEN orders worse than the float64 it sat next
+    # to. That rounding is why a consumer could only ever reproduce these
+    # numbers to ~1e-3.
+    #
+    # The rounded fields are kept BYTE-IDENTICAL so that the ~6 consumers of
+    # this witness (probe_9b_*, h1_exponent_location, delta_lambda_z_*,
+    # qlommel_*) do not move. Full precision is added ALONGSIDE, as strings,
+    # under *_exact — migrate a consumer deliberately, not by surprise.
+    set_compute_dps()
+    q0 = q_at(50)
+    q0 = q0 if isinstance(q0, mp.mpf) else mp.mpf(str(q0))
+    lnq = mp.log(q0)
     rows_in = json.loads(SRC.read_text())["data"]["results"]
 
     rows = []
     for r in rows_in:
-        B_pred = float(r["B_MeV"])
-        B_ame = float(r["B_AME_MeV"])
+        B_pred = mp.mpf(str(r["B_MeV"]))
+        B_ame = mp.mpf(str(r["B_AME_MeV"]))
         A = int(r["A"])
         delta = B_ame / B_pred
-        x = math.log(delta) / lnq
+        x = mp.log(delta) / lnq
         law = 10 * A - 5
         rows.append({
             "atom": r["atom"], "Z": r["Z"], "N": r["N"], "A": A,
-            "B_AME_MeV": B_ame,
-            "B_pred_canonical_MeV": B_pred,
-            "Delta_lambda": round(delta, 4),
-            "log_q0_Delta": round(x, 3),
+            "B_AME_MeV": float(B_ame),
+            "B_pred_canonical_MeV": float(B_pred),
+            "Delta_lambda": round(float(delta), 4),
+            "log_q0_Delta": round(float(x), 3),
             "law_10A_minus_5": law,
-            "deviation_from_law": round(x - law, 3),
+            "deviation_from_law": round(float(x - law), 3),
+            # full precision, carried as strings; bounded by the float64 inputs
+            "Delta_lambda_exact": fmt(delta),
+            "log_q0_Delta_exact": fmt(x),
+            "deviation_from_law_exact": fmt(x - law),
         })
 
     devs = [abs(r["deviation_from_law"]) for r in rows]
@@ -91,7 +117,14 @@ def main() -> int:
         "(D exact to 0.01; T −0.07; ⁴He +0.27; ³He −1.40 Z-dependent). NOT "
         "wired; the open question is a categorical derivation of 10A−5."
     )
-    w.add_data("q0", q0)
+    w.add_data("q0", float(q0))
+    w.add_data("q0_exact", fmt(q0))
+    w.add_data("precision_note", (
+        "Computed in mpmath end to end. The rounded row fields are retained "
+        "byte-identical for existing consumers; *_exact carry full precision. "
+        "Upstream binding-canonical.witness.json stores B_MeV as float64, so "
+        "even the exact fields are bounded at ~1e-16 relative by their inputs."
+    ))
     w.add_data("trace_convention",
                "Jones–Markov (markov/markov_trace_canonical.tr_M_element; "
                "prop:categorical-mass-markov)")
