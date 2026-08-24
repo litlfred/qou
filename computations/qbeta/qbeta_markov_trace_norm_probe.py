@@ -245,10 +245,16 @@ def main() -> None:
         _pb.witness_path("qbeta-decay-sdp-knot-operator.witness.json", here),
         encoding="utf-8",
     ))
-    S_num = sp.Float(sdp["data"]["tau_M_at_q0"], 50)
+    # `repr()` and NO 50: the SDP witness carries RAW FLOAT64 -- legitimately,
+    # since LP/SDP duals are carved out of the no-float64 rule because the
+    # solvers are float64. Declaring 50 digits for a ~17-digit value does not
+    # create the other 33; it prints the binary64 tail, and the padding audit
+    # correctly reads that as fake precision. Note the `q_0` nearby IS built
+    # from a STRING at 50 and is honest -- which is why this looked right.
+    S_num = sp.Float(repr(sdp["data"]["tau_M_at_q0"]))
     coords_witness = sdp["data"]["T_beta_nf_coefficients"]
     keys_unicode = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
-    x_L2_at_q0 = [sp.Float(coords_witness[k], 50) for k in keys_unicode]
+    x_L2_at_q0 = [sp.Float(repr(coords_witness[k])) for k in keys_unicode]
 
     print(f"  q_0 = {sp.N(q_0, 12)}")
     print(f"  S   = τ_M(T_β)(q_0) = {sp.N(S_num, 12)}")

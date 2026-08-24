@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-24T02:25:51.387649+00:00",
-  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
+  "computedAt": "2026-08-24T08:34:07.022845+00:00",
+  "commitSha": "4932cbe16f2eef58cd31fe39a67d2b0a0b6249ef",
   "assertions": [
     {
       "name": "column-identity-symbolic",
@@ -14,17 +14,17 @@
     },
     {
       "name": "S-at-q0-matches-sdp-witness",
-      "computed": "0.18689366772151219664443999590730527415871620178223",
-      "expected": "0.18689366772151219664443999590730527415871620178223",
+      "computed": "0.1868936677215122",
+      "expected": "0.1868936677215122",
       "passed": true,
       "source": "S(q_0) loaded from qbeta-decay-sdp-knot-operator.witness.json tau_M_at_q0"
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 20,
   "computation": "qbeta-markov-trace-steps-4-5",
   "scriptFile": "qbeta_markov_trace_steps_4_5.py",
-  "scriptHash": "ae505282d4c9",
+  "scriptHash": "c0ac2c5b0e85",
   "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -71,7 +71,7 @@
       ]
     },
     "step_4_pointer": {
-      "S_at_q0": "0.18689366772151219664443999590730527415871620178223",
+      "S_at_q0": "0.1868936677215122",
       "structural_note": "Under Markov collapse T_β = S · I, the c_k Taylor coefficients of Q_β(q)/E_0(q) are the w-Taylor coefficients of S(q), not of a 6-channel L2 projection. Re-extracting c_k from S(q) directly is the runnable next-probe; this script does NOT propose c_k values (forbidden ansatz pattern per AGENTS.md)."
     }
   }

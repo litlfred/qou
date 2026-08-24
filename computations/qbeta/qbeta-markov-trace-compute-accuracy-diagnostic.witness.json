@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-24T02:25:48.430119+00:00",
-  "commitSha": "7ebe171675b51071fc4409bed68f61300f48142d",
+  "computedAt": "2026-08-24T08:34:03.668294+00:00",
+  "commitSha": "4932cbe16f2eef58cd31fe39a67d2b0a0b6249ef",
   "assertions": [
     {
       "name": "tau_M_T_beta_L2_Markov_delta",
@@ -38,10 +38,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 82,
   "computation": "qbeta-markov-trace-compute-accuracy-diagnostic",
   "scriptFile": "qbeta_markov_trace_compute_accuracy_diagnostic.py",
-  "scriptHash": "c37c0b554cb0",
+  "scriptHash": "546a3578040c",
   "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -68,14 +68,14 @@
   "description": "PR #1750 compute-accuracy diagnostic answering the user's question 'impact on compute accuracy?'. The Markov-trace SHAPE collapse changes T_β-as-operator (from 6-channel SHAPE × S to scalar × identity) but does NOT change any observable derived from τ_M(T_β) = S (the SDP constraint). All four canonical observables — τ_M(T_β), Q_β, c_k Taylor coefficients, m_n / Δ_pn downstream — are L2/Markov-INVARIANT. The 'compute accuracy' question therefore has a clean answer: ZERO impact.",
   "data": {
     "per_channel_NF_coordinate_deltas": {
-      "γ": "0.11244337087767290739304115732011268846690654754639",
-      "σ₀": "0.045614806238223573608969729775708401575684547424316",
-      "σ₁": "0.045614806238223573608969729775708401575684547424316",
-      "L₊": "0.027947646098913536683028269180795177817344665527344",
-      "L₋": "0.027947646098913536683028269180795177817344665527344",
-      "e⁻": "0.051457549482297221254967212189512792974710464477539"
+      "γ": "0.1124433708776729",
+      "σ₀": "0.045614806238223574",
+      "σ₁": "0.045614806238223574",
+      "L₊": "0.027947646098913537",
+      "L₋": "0.027947646098913537",
+      "e⁻": "0.05145754948229722"
     },
-    "max_per_channel_delta": "0.11244337087767290739304115732011268846690654754639",
+    "max_per_channel_delta": "0.1124433708776729",
     "compute_accuracy_verdict": {
       "observable_impact": "zero",
       "per_channel_NF_impact": "non-zero (basis-dep, no observable)",
