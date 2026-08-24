@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 12,
-    "distinct_values": 10,
-    "files": 5,
-    "live_files": 0,
-    "new_not_baselined": 0,
+    "occurrences": 13,
+    "distinct_values": 11,
+    "files": 6,
+    "live_files": 1,
+    "new_not_baselined": 1,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -80,6 +80,12 @@
         "field": "m_e_mev_50dps",
         "value": "0.51099894999999995182093925905064679682254791259766",
         "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/ame-registry-routing-triage.witness.json",
+        "field": "unsafe_near_matches.witness_float64_padding_audit.py[0][0]",
+        "value": "8.4817962000000015621026250300928950309753417968750000000000",
+        "real_value": "8.481796200000002"
       }
     ]
   }

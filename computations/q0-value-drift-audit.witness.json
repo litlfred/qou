@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 254,
-      "proton-pin": 1403,
+      "proton-pin": 1409,
       "unknown": 25,
-      "canonical": 225
+      "canonical": 224
     },
     "stale_total": 254,
     "new_stale": 0,
@@ -1840,6 +1840,13 @@
         "ppb_vs_canonical": 0.0
       },
       {
+        "file": "computations/ame-registry-routing-triage.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/atom-braid-active-partitions.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
@@ -2486,7 +2493,7 @@
       {
         "file": "computations/binding-per-block-magnitude-a3.witness.json",
         "field": "data.q_0",
-        "value": "1.10997858275138080759166909561",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -9379,11 +9386,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/probes/charge-symmetry-bond-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/clambda-shape-invariant-probe.witness.json",
         "field": "data.q0",
         "value": "1.1099785955573347",
         "class": "canonical",
         "ppb_vs_canonical": -1.792806032488518e-08
+      },
+      {
+        "file": "computations/probes/clambda-shape-invariant-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/probes/commutative-chirality-vanishes-probe.witness.json",
@@ -9398,6 +9419,13 @@
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/probes/coulomb-mirror-killswitch-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/d14-theta-bar-side.witness.json",
@@ -10245,6 +10273,13 @@
         "value": "1.10997858275",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.53836188477944
+      },
+      {
+        "file": "computations/probes/light-series-open-loop-decomposition.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/m-p-bring-plus-phi-q-h4-probe.witness.json",
@@ -12671,16 +12706,16 @@
       {
         "file": "computations/substrate/z2bn-tau-derivation-probe.witness.json",
         "field": "q0",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/substrate/z2bn-tau-derivation-probe.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/substrate/zeropoint-unit-candidate-gate-probe.witness.json",
