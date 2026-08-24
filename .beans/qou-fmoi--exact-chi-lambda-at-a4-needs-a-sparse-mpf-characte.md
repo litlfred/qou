@@ -157,3 +157,48 @@ Implementation is unchanged in shape but now has a measured target: placement
 dense routine at small dims, and a decision about whether `su4`'s guard lifts
 or the probe routes to the new function. The prototype lives in this session's
 scratchpad; it is ~30 lines.
+
+## 2026-08-24, later — the retracted conditioning question, now actually answered
+
+The retraction above said *"there is currently no evidence here about
+conditioning, in either direction."* With the sparse route validated, getting
+that evidence costs about a minute, so here it is — float64 against the sparse
+exact route at dps=70 (itself cross-validated against dense mpmath to 7e-71):
+
+| shape | dim | float64 rel. error | digits |
+|---|---:|---:|---:|
+| (6,6) | 132 | 2.779e-16 | 15 |
+| (9,1,1,1) | 165 | 4.073e-16 | 15 |
+| (3,3,3,3) | 462 | 5.715e-17 | 16 |
+| (8,3,1) | 891 | 2.999e-15 | 14 |
+
+**float64 holds 14–16 digits across a 6.7× range of dim, degrading mildly.**
+Extrapolating to dim=4158 (another 4.7×) suggests ~13 digits — **not measured
+there**, and the largest irrep is exactly where a 47-factor product is densest.
+
+### Why this is worth recording rather than quietly dropping
+
+**The retracted claim was approximately right and entirely unsupported.** It
+said "15 digits"; the truth is 14–16. Had I not re-measured, I would have
+carried a correct-looking number whose evidence was worthless — and would have
+had no way to know the difference. Being close to the truth is not the same as
+having evidence for it, and the repair is to get the evidence, not to keep the
+guess because it turned out fine.
+
+### What it licenses — narrower than it looks
+
+It says the **character product** is well conditioned. It does **not** say the
+probe may use float64:
+
+- The `su4` verdict also depends on the `y_λ` Wenzl weights and the ratios
+  built from them; none of that is measured here.
+- AGENTS.md's rule is about **carriage through the analysis**, not the accuracy
+  of one number. A probe conclusion gets written into beans, audit docs and
+  content blocks where nothing re-derives it.
+- dim=4158 is untested, and it is the case that matters.
+
+So the guard stays, and the sparse implementation remains the right fix. What
+changed is that we now know float64 was not *silently* wrong here — which is
+useful for triaging the OTHER float64-into-sparse sites (`qou-q7lf`,
+`hecke_core_legacy`), where the same question will come up and can now be asked
+the same cheap way.
