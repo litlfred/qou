@@ -4230,3 +4230,63 @@ is what this arc has repeatedly paid for:
 
 So both small cases need their own tail argument. Neither is a rewrite of this
 one, and the obstruction in each is a specific index bound rather than effort.
+
+## The corner meets the criterion (2026-08-24, §4as)
+
+`CornerCriterion.bsbs_overlap_resolves`: every Bokut–Shiao × Bokut–Shiao
+overlap at top `i − 1` satisfies the criterion's obligation,
+`∃ nf, ReducesToNF … oc.spoly nf ∧ nf.isZero` — for every pair of depths with
+`j₁ ≥ 1`.
+
+**Correction to this bean's own open list.** It carried "`OverlapComposition` +
+`spoly` joining the two" as remaining work. That was **wrong, and the corpus
+already said so**: `CornerGeneral.oc` and `oc_spoly_coeff` have been in the file
+throughout, and the latter's docstring records the same correction in as many
+words — *"both were in the corpus, generic in both depths, the whole time"*. I
+repeated the stale item from this list instead of grepping, which is exactly
+what the corpus-grep discipline exists to prevent. The item is struck.
+
+What was genuinely missing was narrower: `CornerGeneral.resolves` existed but
+only for `a > b` with `b ≥ 2` (its `hed`/`hj₁`/`hj₂` pin that regime). The five
+`sPoly_*_resolves` theorems now cover every regime, so what remained was the
+**case analysis** — which theorem applies at which depth, and the `Fin n`
+witnesses each needs.
+
+Three pieces do the joining and all three were already present:
+`oc_spoly_coeff` (regime-independent — it relates neither depth to the other),
+`reducesToZero_congr` (carries the obligation across that `CoeffEq`), and
+`isNormalForm_of_isZero`. `resolves_of_T0` packages them; the case split is the
+only new content.
+
+| depth | theorem |
+|---|---|
+| `j₁ < j₂` | `sPoly_gt_resolves` |
+| `j₂ ≤ j₁`, `j₁ = i₁` | `sPoly_le_resolves₁` |
+| `j₂ ≤ j₁`, `j₁ + 1 = i₁` | `sPoly_le_resolves₂` |
+| `j₂ ≤ j₁`, `j₁ + 2 = i₁` | `sPoly_le_resolves₃` |
+| `j₂ ≤ j₁`, `j₁ + 3 ≤ i₁` | `sPoly_le_resolves` |
+
+### The gap, stated rather than hidden
+
+`jm` is a **hypothesis**, not a construction, because it is `j₁ − 1` and does
+not always exist. The `a ≥ 2` branches need it. So `j₁ = 0` is **not covered**,
+and since `j₂ ≤ j₁` forces `j₂ = 0` there, the uncovered set is exactly the
+deep diagonal `j₁ = j₂ = 0`.
+
+It is not degenerate and there is no shortcut: `OverlapComposition.spoly_isZero_of_self`
+needs `left = []`, and this `oc`'s `left` is `descWord i j₁`, which is non-empty
+whenever `j₁ ≤ i₁ < i`. So that case needs a chain of its own, or a
+generalisation of one of the `a ≥ 2` tails that does not reference `jm`.
+
+`hq : q − q⁻¹ ≠ 0` is needed only by the `a = 1` branch, where the first term
+carries coefficient `h` and a `SingleStepReduction` needs it nonzero to
+transport.
+
+### Still open, after this
+
+- the deep diagonal `j₁ = j₂ = 0` above;
+- this is **one** composition family. `IsGrobnerShirshovBasis` quantifies over
+  *every* `oc` and every `ic` in the system. The other families
+  (`ybBs`, `bsYb`, `quadSelf`, the far-commutation pairs) have their own
+  `_resolves` lemmas in the file; assembling all of them into the structure
+  itself is a separate tranche and is **not** claimed here.
