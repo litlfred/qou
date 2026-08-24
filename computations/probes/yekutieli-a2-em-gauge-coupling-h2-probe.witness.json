@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:27:23.850460+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T18:51:28.038735+00:00",
+  "commitSha": "7f0ff38b0a17c853a617665526e4fbea29113be0",
   "assertions": [
     {
       "name": "shape_match_target_recovered",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 11,
   "computation": "yekutieli-a2-em-gauge-coupling-h2-probe",
   "scriptFile": "yekutieli_a2_em_gauge_coupling_h2_probe.py",
   "scriptHash": "69b9c4587291",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,24 +28,36 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/yekutieli_a2_em_gauge_coupling_h2_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/yekutieli_a2_em_gauge_coupling_h2_probe.py"
   },
   "description": "Yekutieli Session A.2 — abelian U(1) EM gauge coupling at h² order, per-ideal-octahedron Stokes integration. Pre-stated comparison to empirical (α_em/π)/dim H_3 factor.",
   "auditOnly": "docs/audits/2026-06-02-yekutieli-A2-qbeta-mn-he4-workplan.md",
   "data": {
-    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-    "h": "0.2090603219955936789818626364659673502616233016474798267897442369867373",
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "h": "0.2090602987956393154308462131296749438597574952630245553816960544589759",
     "G": "0.915965594177219015054603514932384110774149374281672134266498119621763",
     "alpha_em": "0.00729735256843177932505765924685406259792066565084064833880574086316856",
     "n_cells": 8,
     "dim_H3": 6,
     "target_per_cell_weight": "0.00004839207219792733759867062168085995357090917802380843174479986698950578",
     "u1_ansatz_h0_weight": "0.00004839207219792733759867062168085995357090917802380843174479986698950578",
-    "u1_ansatz_h2_weight": "0.000002115034468224928384320282849390699379682076623949467643806845169122718",
+    "u1_ansatz_h2_weight": "0.000002115033998803471944100134927254498595072003173161025071731421131338385",
     "ratio_h0_to_target": 1.0,
-    "ratio_h2_to_target": 0.04370621823290131,
+    "ratio_h2_to_target": 0.04370620853252199,
     "verdict": "U(1) abelian h⁰ ansatz MATCHES the target structure: α_em / (48π) gives the per-cell weight that sums over 8 ideal octahedra to (α_em/π)/dim H_3. This means the τ_q EM coupling enters at h⁰ (leading order), and the (α_em/π)/6 correction is a clean per-cell abelian U(1) gauge holonomy.",
     "note": "This is a SHAPE-MATCH probe, not a derivation. The α_em/(48π) per-cell weight matches the empirical (α_em/π)/dim H_3 over 8 octahedra BY CONSTRUCTION (target was set to that value). The non-trivial content: the h⁰ vs h² coupling distinction. Next session must derive the (8, π, 6) factors STRUCTURALLY from Yekutieli, NOT decompose them empirically."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

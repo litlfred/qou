@@ -4,7 +4,7 @@ title: 'qbeta c_k ladder doc contract: mba sidecar names a canonical c_k compute
 status: todo
 type: task
 created_at: 2026-08-16T16:47:05Z
-updated_at: 2026-08-16T21:05:00Z
+updated_at: 2026-08-24T03:50:00Z
 ---
 
 > **⚠ REWRITTEN 2026-08-16T21:05Z after `origin/main` moved.** The first version
@@ -43,6 +43,17 @@ It also goes a step further than I did: under D the *implied empirical*
 c₂ = **−9.299** (registry §9g:713), so **even c₂ is a C-frame object**. I had
 concluded the "PROVED" label overstates the Lean; the audit had already concluded
 that *and* that the value itself does not survive the convention ruling.
+
+> **⚠ The −9.299 itself is RETRACTED UPSTREAM (2026-08-21, PR #5348 /
+> `qou-cds1`).** The cds1 state synthesis records the sensitivity-table
+> `c₃ ≈ −974` and `c₂ ≈ −9.299` as **naive-z-swap artifacts** — the C-frame
+> extractor fed `z_D`, which S1 proves invalid — and states they are *not*
+> proposed D values and must not be wired or quoted. The paragraph above is
+> accurate as a report of what the 2026-08-16 red-team audit said, and is
+> **superseded as a statement about convention D**. Flagged rather than
+> deleted so the reattribution still reads straight. Note the direction: this
+> does not restore `c₂ = −1` under D — it removes a number that was standing
+> in for the open question.
 
 ## F2 (superseded) — the ladder closes at k=3; c_4 is identically zero
 
@@ -159,3 +170,65 @@ decision is the owner's, and claiming would block a sibling for nothing.
 
 `qou-cds1` is ACTIVE with a sibling — not claimed here. F2 bears on it only as
 already-recorded context, not as new input.
+
+---
+
+## F3b RE-VERIFIED 2026-08-23 — still live, unchanged in shape, and one element the original write-up missed
+
+Every claim re-checked against the current tree. **All of it reproduces.**
+
+| claim | state |
+|---|---|
+| sidecar `.md` says `q_beta_predicted.py` "records each $c_k$ with its tier" | **still there**, `:51-57` |
+| sidecar `.md` witness contract "**Must** record each $c_k$ alongside its tier" | **still there**, `:59-63` |
+| `q_beta_predicted.py` has no c_k logic | **confirmed** — 0 matches for `c_k` / `tier` / `c_3` |
+| `q-beta-predicted.witness.json` has no `c_k`, no `tier` | **confirmed** — 0 matches; `data` keys are exactly the four originally listed |
+| real producer is `qbeta/qbeta_ck_cache.py` | **confirmed**, and it *does* record tiers (`:118` `"tier": "derived"`, `:168` `"tier": "cal-anchored"`) |
+| registry says "**Q_β: c_2 only** … wires **no** c_3+" | **still there**, now `:230` (was `:211`) |
+
+The only commit to the sidecar since (`67f0ed0d4`, 2026-08-17) touched the tier
+table, the pseudo-code and the correctness conditions — the two false paragraphs
+were not in that diff.
+
+### NEW — the machine-readable half carries the same error
+
+The original F3b was written about the `.md` only. Its companion
+`mba-sidecar-ck-truncation-ladder.ts` repeats the mispointing in the fields the
+STRICT banner actually names:
+
+```
+:23   script:  "computations/q_beta_predicted.py"
+:24   witness: "computations/q-beta-predicted.witness.json"
+:12-13 authorNote … "must update both that ledger and the canonical witness
+       `computations/q-beta-predicted.witness.json`"
+```
+
+with `status: "verified"`. The banner tells reviewers to keep
+`computation.script`, `computation.witness` and the `.md` *Python API* section in
+sync with the actual compute — **all three are wrong**, and one of them is a
+`status: verified` machine field, not prose. That widens the finding: this is not
+a stale sentence in a document, it is a stale pointer in the metadata a tool would
+read.
+
+### Repair options, and why this still is not mine to pick
+
+- **A — repoint at the real producer** (docs + `.ts`, no compute change). But to
+  be *accurate* the contract sentence must also weaken: the cache witness holds
+  only **k=2 and k=3** (the greedy guard fires at k=4), and its tier vocabulary is
+  `derived` / `cal-anchored`, which does **not** match the sidecar table's
+  `structural` / `near-match` / `fitted`. So A is a repoint **plus** a vocabulary
+  reconciliation, not a link swap.
+- **B — make `q_beta_predicted.py` satisfy the contract.** Regenerates the
+  canonical witness and imports cal-anchored (Q_codata-derived) values into the
+  one script the registry says deliberately wires **no** c_3+, and which feeds the
+  L2 dashboard headline. Cuts against `:230`.
+- **C — minimal honesty edit.** Delete the two false clauses, cross-reference the
+  cache. Smallest diff, but leaves `computation.script` / `computation.witness`
+  in the `.ts` pointing at a script implementing none of the algorithm above it —
+  precisely what the banner tells reviewers to diff.
+
+Each option trades a different thing away, and B changes published numbers. **The
+verification is now complete and the decision is still the owner's** — which is
+what this bean concluded in August and remains the honest position. What is added
+today is that the defect is **two files wide, not one**, and that option A is
+larger than a link swap.

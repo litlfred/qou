@@ -59,8 +59,31 @@ PRODUCTION_STEMS = {
 PRODUCTION_CONST = re.compile(r"\b(LAMBDA_[A-Z_]+|ALPHA_[A-Z_]+|Q_[A-Z0-9_]+)\s*=")
 
 
+class _SearchHealth:
+    """Records whether the reachability searches actually ran.
+
+    `_rg` returned an empty set both when a pattern genuinely matched nothing
+    and when neither `rg` nor `grep` could be run at all.  Those are opposite
+    facts: "no readers" is evidence toward NOT-PRODUCTION, "never searched" is
+    no evidence whatsoever — and they were indistinguishable in the output, so
+    a broken search tool produced a confident-looking empty reader list.
+    """
+
+    def __init__(self) -> None:
+        self.attempted = 0
+        self.failed = 0
+
+    @property
+    def degraded(self) -> bool:
+        return self.failed > 0
+
+
+SEARCH = _SearchHealth()
+
+
 def _rg(pattern: str, *, fixed: bool = False) -> set[str]:
     """Stems of live .py files matching `pattern` (ripgrep, else grep)."""
+    SEARCH.attempted += 1
     for cmd in (["rg", "-l"] + (["-F"] if fixed else []) + ["--glob", "*.py",
                                 pattern, str(HERE)],
                 ["grep", "-rl"] + (["-F"] if fixed else []) +
@@ -72,6 +95,10 @@ def _rg(pattern: str, *, fixed: bool = False) -> set[str]:
         if out.returncode in (0, 1):
             return {Path(l).stem for l in out.stdout.splitlines()
                     if l and "_deprecated" not in l}
+    # Neither tool ran — absent, timed out, or exited outside {0,1}.  The empty
+    # set below means "not searched", NOT "no matches"; record it so the caller
+    # cannot present the difference as a measurement.
+    SEARCH.failed += 1
     return set()
 
 
@@ -103,6 +130,7 @@ def readers_of(stem: str, wnames: set[str]) -> set[str]:
 
 def classify(stem: str, depth: int = 3) -> dict:
     """Walk outward from `stem` looking for a production location."""
+    failed_before = SEARCH.failed
     frontier, seen, path = {stem}, set(), []
     for _ in range(depth):
         nxt: set[str] = set()
@@ -111,7 +139,8 @@ def classify(stem: str, depth: int = 3) -> dict:
             hit = PRODUCTION_STEMS & {s}
             if hit:
                 return {"stem": stem, "production": True,
-                        "via": path + [s], "reason": "named production location"}
+                        "via": path + [s], "reason": "named production location",
+                        "search_degraded": SEARCH.failed > failed_before}
             r = readers_of(s, witnesses_of(s))
             nxt |= r
         if not nxt:
@@ -127,6 +156,7 @@ def classify(stem: str, depth: int = 3) -> dict:
             defines_const = True
     return {"stem": stem, "production": defines_const,
             "via": path, "direct_readers": sorted(readers_of(stem, witnesses_of(stem))),
+            "search_degraded": SEARCH.failed > failed_before,
             "reason": ("defines a LAMBDA_/ALPHA_/Q_ production constant"
                        if defines_const else
                        "reaches no production location within depth")}
@@ -163,12 +193,27 @@ def main() -> int:
         print(f"  verdict : {verdict}  ({r['reason']})")
         if r.get("direct_readers") is not None:
             print(f"  readers : {r['direct_readers'] or 'NONE (leaf)'}")
+        if r.get("search_degraded"):
+            print("  SEARCH  : *** INCOMPLETE *** one or more reachability searches"
+                  "\n            could not be run (rg and grep both absent, timed"
+                  "\n            out, or errored). An empty 'readers' above is NOT"
+                  "\n            evidence of non-reachability — it is no evidence.")
         if r["production"]:
             print("  action  : convert to mpmath — do NOT deprecate-and-tier")
         else:
             print("  action  : eligible for precision_tier='float64' + deprecated,"
                   "\n            AFTER checking the skill's non-reachability arms"
                   "\n            (cheat-sheet 'closed' status, production constants)")
+
+    ran = SEARCH.attempted - SEARCH.failed
+    print(f"\nsearch coverage: {ran}/{SEARCH.attempted} reachability searches ran")
+    if SEARCH.degraded:
+        print(f"WARNING: {SEARCH.failed} search(es) did NOT run. This is not a"
+              "\n         classification failure — it means part of the evidence"
+              "\n         was never gathered. Any NOT-PRODUCTION verdict above that"
+              "\n         rests on an empty reader set is unsupported. Re-run with"
+              "\n         rg or grep available before acting on it.")
+        return 3
     return 0
 
 

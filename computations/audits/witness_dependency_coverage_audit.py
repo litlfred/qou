@@ -163,9 +163,14 @@ def main() -> int:
     )
     agg_total = results["aggregator_total"]
     agg_untracked = results["aggregator_without_upstream"]
+    # An EMPTY aggregator set is not full coverage. `else 100.0` reported
+    # nothing-measured as everything-tracked, and --strict passes vacuously in
+    # that state (no untracked aggregators exist to fail on), so a heuristic
+    # that stopped matching would read as a clean 100% gate. Print no
+    # percentage at all rather than a flattering one.
     agg_pct = (
         100.0 * results["aggregator_with_upstream"] / agg_total
-        if agg_total else 100.0
+        if agg_total else None
     )
 
     print(f"Witness dependency coverage audit")
@@ -174,9 +179,16 @@ def main() -> int:
           f"({pct_tracked:.1f}%)")
     print(f"  without: {results['without_upstream']}")
     print()
-    print(f"  aggregator witnesses: {agg_total}")
-    print(f"  aggregator with upstream tracking: "
-          f"{results['aggregator_with_upstream']} ({agg_pct:.1f}%)")
+    print(f"  aggregator witnesses: {agg_total}"
+          f"   (of {total} scanned, by a {len(AGGREGATOR_PATTERNS)}-pattern "
+          "name heuristic)")
+    if agg_pct is None:
+        print("  aggregator with upstream tracking: n/a — NO witness matched the"
+              "\n    aggregator heuristic, so nothing was measured. This is NOT"
+              "\n    100% coverage, and --strict below passes vacuously.")
+    else:
+        print(f"  aggregator with upstream tracking: "
+              f"{results['aggregator_with_upstream']} ({agg_pct:.1f}%)")
     print(f"  aggregator WITHOUT tracking: {len(agg_untracked)}")
 
     if agg_untracked and (args.list or args.strict):

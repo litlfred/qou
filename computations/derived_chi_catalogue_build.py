@@ -55,6 +55,7 @@ chi value matches the 1-dim-rep evaluation.
 """
 from __future__ import annotations
 
+import argparse
 import sys
 import time
 from pathlib import Path
@@ -345,6 +346,18 @@ def derive_h3_knot(
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
+    ap.add_argument(
+        "--refresh", action="store_true",
+        help="Replace this builder's OWN 12 cells in an existing catalogue "
+             "instead of raising on the duplicate. Use when the committed "
+             "artefact has drifted from what this script now emits — e.g. a "
+             "field this builder has since withdrawn to '?' but the witness "
+             "still asserts. Only the (knot, partition, atom) keys this script "
+             "derives are touched; every other cell in the catalogue is left "
+             "exactly as loaded.",
+    )
+    a = ap.parse_args()
     t0 = time.monotonic()
     wb = WitnessBuilder(
         "derived-chi-catalogue", engine="sympy", start_time=t0
@@ -377,6 +390,13 @@ def main() -> int:
         cat = DerivedChiCatalogue()
         print("  no existing catalogue — starting fresh")
 
+    # `add` raises on a duplicate key by design, which makes a re-run over a
+    # populated catalogue impossible; `--refresh` swaps in `upsert` so this
+    # script can bring its own cells back in line without disturbing the rest.
+    record = cat.upsert if a.refresh else cat.add
+    if a.refresh:
+        print("  --refresh: replacing this builder's own cells in place")
+
     # ── B_3 knots: Borromean + Figure-eight ──
     # T17's value used as the cross-check on the (2,1) block of Borromean.
     h = q - 1 / q
@@ -389,7 +409,7 @@ def main() -> int:
         derivation_self, cross_check_t17_chi_21=t17_chi_21,
     )
     for c in bor_cells:
-        cat.add(c)
+        record(c)
     print(f"  borromean (B_3, β = {bor_pretty})")
     print(f"    tr_{{V⊗³}} = {tr_bor}")
     print(f"    χ⁽²,¹⁾   = {chi21_bor}   (matches T17 ✓)")
@@ -402,7 +422,7 @@ def main() -> int:
         derivation_self,
     )
     for c in fig8_cells:
-        cat.add(c)
+        record(c)
     print(f"  figure-eight (B_3, β = {fig8_pretty})")
     print(f"    tr_{{V⊗³}} = {tr_fig8}")
     print(f"    χ⁽²,¹⁾   = {chi21_fig8}")
@@ -415,7 +435,7 @@ def main() -> int:
     ]:
         b2_cells = derive_b2_torus_knot(knot_name, atom, crossings, q, derivation_self)
         for c in b2_cells:
-            cat.add(c)
+            record(c)
         chi_2 = chi_trivial_rep_at_braid([1] * crossings, q)
         chi_11 = chi_sign_rep_at_braid([1] * crossings, q)
         print(f"  {knot_name} (B_2, σ_1^{crossings}) → {atom}")

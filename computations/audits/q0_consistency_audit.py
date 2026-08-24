@@ -4,14 +4,25 @@
 # polynomial_q_not_applicable: source-scanning audit, no q-arithmetic.
 """Audit: stale substrate-q₀ literals + float64-leak risk in compute scripts.
 
-Canonical q₀ is the proton-anchored, habiro-refined value
-C = 1.10997859555733471… (`q_parameter.Q`). The stale value is the
-pre-habiro proton solution A = 1.10997858275138…, differing from C at
-the 8th sig-fig (~1.2e-8). Scripts that hardcoded A — instead of
-importing the canonical q₀ from `q_parameter` — silently keep computing
-at the stale constant. (Direction verified empirically: only C
-reproduces m_p/m_e to 10 sig-figs; A→C is exactly the habiro_ratio−1
-≈ 2.42e-7 correction. See docs/audits/2026-06-21-q0-clusterA-migration-plan.md.)
+POLARITY INVERTED 2026-08-22 (bean `qou-ivhc`). This audit was written
+when the MUON-anchored value was the pin, and it flagged the proton
+solution as stale. The 2026-05-28 supersession (`q_muon_at`: "was the pin
+until 2026-05-28; now superseded by `q_at()` (m_p anchor)") and the
+2026-08-15 owner ruling reversed that, and the audit was never revisited —
+so until today it classified **use of the canonical pin** as
+`production-hardcode — a real bug`, and its `--strict` mode would have
+failed CI for correct code.
+
+Canonical q₀ is the PROTON pin, read from `q_parameter` at runtime rather
+than quoted here — quoting it is the very defect this audit exists to
+catch, and the previous literal went stale exactly that way. The STALE
+values are now the pre-ruling muon-anchored ones (`1.10997859555733…`
+hand-typed, and the `1.10997859555418…` variant; both are additionally
+~8.5e-11 adrift from what `q_muon_at()` now derives — bean `qou-khac`).
+
+Intentional muon cross-checks are still classified `legit-muon-xcheck`
+and are NOT bugs; that escape hatch is unchanged and now carries more of
+the load, since every muon literal matches the stale pattern.
 
 This audit scans `computations/**/*.py` (and the
 `tools/qou-substrate` package) and flags:
@@ -67,13 +78,19 @@ HERE = Path(__file__).resolve().parent
 # "scans computations/**/*.py".  Restored to the full tree.)
 ROOTS = [HERE.parent, HERE.parent.parent / "tools" / "qou-substrate"]
 
-OLD_Q0_PATTERNS = [re.compile(r"10997858275"), re.compile(r"(?<!\d)858275(?!\d)")]
-# stale-A tr_M leaf literals (proton / neutron / deuteron) — tr_M evaluated at
-# the stale A q₀.  Canonical (at C) is …062286 / …332971 / …864715.
+# Stale = the pre-ruling MUON-anchored q₀ family. `10997859555` covers both
+# the hand-typed `…55733…` and the `…55418…` variant (bean `qou-khac`).
+OLD_Q0_PATTERNS = [re.compile(r"10997859555"), re.compile(r"(?<!\d)9555733(?!\d)")]
+# Stale tr_M leaf literals (proton / neutron / deuteron) — tr_M evaluated at the
+# now-stale MUON q₀. These are the values this file previously called canonical;
+# the canonical set is now tr_M at the proton pin (…0614425445 / …2332299 /
+# …2864240), which the pre-inversion version scanned for as "stale".
+# NOT recomputed here: both sets are taken verbatim from this file's own prior
+# text, so the swap introduces no new numeric claim.
 STALE_TRM_PATTERNS = [
-    re.compile(r"1\.0653061442"),
-    re.compile(r"0\.9232332299"),
-    re.compile(r"0\.3882864240"),
+    re.compile(r"1\.0653062286"),
+    re.compile(r"0\.9232332971"),
+    re.compile(r"0\.3882864715"),
 ]
 ASSIGN_RE = re.compile(r"=\s*['\"]?[-\d.]|q_val\s*=|Rational\(|mpf\(|mpmathify\(")
 MUON_RE = re.compile(r"muon|q_muon|cross[-_ ]?check|crosscheck|prediction|9\.5\s*σ", re.I)
@@ -124,6 +141,22 @@ def scan_file(p: Path) -> list[dict]:
                 "text": line.strip()[:160],
             })
     return hits
+
+
+def _canonical_q0() -> str:
+    """The canonical proton pin, from `q_parameter` — never a literal here."""
+    try:
+        from q_parameter import Q_50_DIGIT_STR
+        return str(Q_50_DIGIT_STR)
+    except Exception as exc:  # noqa: BLE001 — recorded, not guessed
+        return f"UNAVAILABLE: q_parameter import failed ({exc})"
+
+
+def _script_hash() -> str:
+    import hashlib
+    return hashlib.sha256(
+        Path(__file__).resolve().read_bytes()
+    ).hexdigest()[:12]
 
 
 def main() -> int:
@@ -178,9 +211,21 @@ def main() -> int:
             "legit-muon-xcheck are the intentional muon cross-check."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "canonical_q0_source": "q_parameter.q_at() / Q_50_DIGIT_STR (proton pin, habiro-refined)",
-        "stale_pre_habiro_q0": "1.10997858275138080759…",
-        "canonical_proton_q0": "1.10997859555733471989…",
+        # Provenance: absent before 2026-08-22, so no staleness gate could see
+        # this witness at all (bean `qou-ivhc`).
+        "computedAt": datetime.now(timezone.utc).isoformat(),
+        "scriptFile": "computations/audits/q0_consistency_audit.py",
+        "scriptHash": _script_hash(),
+        "engine": "python-re",
+        # Read at runtime from the source this audit already named. The previous
+        # version hardcoded a literal here and it was the WRONG one — it held a
+        # muon value in a field called `canonical_proton_q0`. Quoting the pin is
+        # the defect this audit exists to catch; it should not commit it itself.
+        "canonical_q0_source": "q_parameter.Q_50_DIGIT_STR (proton pin), read at runtime",
+        "canonical_proton_q0": _canonical_q0(),
+        "stale_muon_q0_hand_typed": "1.10997859555733471989…",
+        "stale_muon_q0_variant": "1.10997859555418057528…",
+        "polarity_inverted": "2026-08-22, bean qou-ivhc — stale is now the muon family",
         "counts_by_classification": by_class,
         "total_hits": len(all_hits),
         "production_hardcode_count": len(prod),

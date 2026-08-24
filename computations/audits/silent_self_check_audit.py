@@ -310,16 +310,23 @@ def main() -> int:
     now = datetime.now(timezone.utc).isoformat()
     findings: list[dict] = []
     adjudicated: list[dict] = []
+    scanned: list[str] = []
+    unparseable: list[str] = []
 
     for p in sorted((ROOT / "computations").rglob("*.py")):
         if "_deprecated" in p.parts or p.name == Path(__file__).name:
             continue
         src = p.read_text()
+        rel = str(p.relative_to(ROOT))
+        scanned.append(rel)
         try:
             tree = ast.parse(src)
-        except SyntaxError:
+        except SyntaxError as exc:
+            # NOT clean: a file that does not parse is a file no criterion ran
+            # against. It also silently satisfies the regression check below,
+            # which reads "fixed" from ABSENCE among the findings.
+            unparseable.append(f"{rel}: {exc.__class__.__name__}")
             continue
-        rel = str(p.relative_to(ROOT))
         for crit, fn, sev in (("self-check-not-gated", detect_not_gated, "critical"),
                               ("resume-cache-unvalidated", detect_resume_cache, "major")):
             ev = fn(p, src, tree)
@@ -345,6 +352,11 @@ def main() -> int:
         print(f"  {c:<28} {n} candidate(s)")
     print(f"  {'total':<28} {len(findings)}")
     print(f"  {'adjudicated legit':<28} {len(adjudicated)} (agent-reviewed, excluded above)")
+    print(f"  {'scripts scanned':<28} {len(scanned) - len(unparseable)} of {len(scanned)}")
+    if unparseable:
+        print(f"  {'UNPARSEABLE (no criterion ran)':<28} {len(unparseable)}")
+        for u in unparseable:
+            print(f"      {u}")
 
     # Regression check. Both scripts below carried a REAL defect found by hand,
     # and both have since been repaired — matrix-M got the q₀ resume guard,
@@ -358,9 +370,18 @@ def main() -> int:
             "exits 1 when allPassed is False (qou-9d6h)",
     }
     flagged = {f["script"] for f in findings}
+    # "fixed" is read from ABSENCE among the findings, and a script that failed
+    # to parse is also absent. Without this third state a syntax error in a
+    # watched file reports as a repair.
+    unparsed_scripts = {u.split(":", 1)[0] for u in unparseable}
     print("\n  regression check — each hand-found defect is flagged or fixed:")
     for s, how in sorted(REPAIRED.items()):
-        state = "still FLAGGED" if s in flagged else f"fixed — {how}"
+        if s in unparsed_scripts:
+            state = "UNKNOWN — this file did not parse, so no criterion ran on it"
+        elif s in flagged:
+            state = "still FLAGGED"
+        else:
+            state = f"fixed — {how}"
         print(f"    {s}\n        {state}")
 
     print("\n  candidates:")
@@ -380,6 +401,11 @@ def main() -> int:
         "computedAt": now,
         "scriptFile": SELF_ID,
         "data": {"by_criterion": by_crit, "total": len(findings),
+                 "scan_coverage": {
+                     "scripts_seen": len(scanned),
+                     "scripts_parsed": len(scanned) - len(unparseable),
+                     "unparseable": unparseable,
+                 },
                  "regression_repaired_still_flagged": sorted(flagged & set(REPAIRED)),
                  "adjudicated_legit": adjudicated,
                  "findings": findings},

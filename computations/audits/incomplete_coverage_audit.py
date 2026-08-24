@@ -81,16 +81,30 @@ def _collect_error_kinds(obj: Any,
             _collect_error_kinds(v, results, path + [i])
 
 
-def _audit_witness(path: Path) -> dict[str, Any] | None:
-    """Audit one witness file for error_kind entries."""
+def _audit_witness(path: Path, stats: dict | None = None) -> dict[str, Any] | None:
+    """Audit one witness file for error_kind entries.
+
+    Returns None for TWO different facts, which is why `stats` exists: the file
+    could not be read at all, or it read fine and is genuinely clean. Both used
+    to be an indistinguishable `None`, so an unreadable witness was counted
+    exactly like a passing one — and since the closure assertion below fires on
+    an EMPTY `rows`, a corpus nobody could parse would have reported perfect
+    coverage. Pass `stats` to keep the two apart.
+    """
     try:
         d = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        if stats is not None:
+            stats["unparseable"] += 1
+            stats["unparseable_files"].append(
+                f"{path.name}: {exc.__class__.__name__}")
         return None
 
     results: list[dict[str, Any]] = []
     _collect_error_kinds(d, results, [])
     if not results:
+        if stats is not None:
+            stats["clean"] += 1
         return None
 
     rel = path.relative_to(REPO_ROOT)
@@ -114,13 +128,16 @@ def main() -> int:
     SELF_OUTPUT = "incomplete-coverage-audit.witness.json"
 
     rows: list[dict[str, Any]] = []
+    stats: dict = {"scanned": 0, "clean": 0, "unparseable": 0,
+                   "unparseable_files": []}
     # Scan the whole compute tree's witnesses (reorg scan-root fix).
     for w in sorted((HERE.parent).rglob("*.witness.json")):
         if "_deprecated" in w.parts:
             continue
         if w.name == SELF_OUTPUT:
             continue
-        result = _audit_witness(w)
+        stats["scanned"] += 1
+        result = _audit_witness(w, stats)
         if result is None:
             continue
         rows.append(result)
@@ -143,8 +160,19 @@ def main() -> int:
         print(f"  {k:<40s} {n}")
     print()
     print(f"Summary:")
+    print(f"  witnesses scanned:                 {stats['scanned']}")
     print(f"  witnesses with error_kind entries: {len(rows)}")
+    print(f"  witnesses clean (read, no entries):{stats['clean']:>4}")
+    print(f"  witnesses UNPARSEABLE:             {stats['unparseable']}"
+          f"   <- not clean; not read at all")
     print(f"  total error_kind entries:          {sum(r['total_error_entries'] for r in rows)}")
+    if stats["unparseable"]:
+        print()
+        print("  *** The closure assertion below fires on an EMPTY row set, so an")
+        print("      unreadable witness raises it exactly like a passing one.")
+        print(f"      {stats['unparseable']} witness(es) were NOT read:")
+        for f in stats["unparseable_files"][:10]:
+            print(f"        {f}")
 
     b = (
         WitnessBuilder("incomplete-coverage-audit", engine="python")
@@ -163,6 +191,7 @@ def main() -> int:
         .add_parameter("total_witnesses_with_errors", len(rows))
         .add_parameter("total_error_entries",
                        sum(r["total_error_entries"] for r in rows))
+        .add_data("scan_coverage", stats)
         .add_data("error_kind_totals", dict(total_by_kind))
         .add_data("rows", rows)
         .add_assertion(
@@ -170,9 +199,15 @@ def main() -> int:
             computed=1.0 if not rows else 0.0,
             expected=1.0, tolerance=0.0,
             unit="boolean (1.0 = every witness covers its enumerated scope)",
-            source="Closure gate: when this passes, every production "
-                   "witness has a complete row set for its declared "
-                   "atom / partition / block scope.",
+            source=(
+                "Closure gate: when this passes, every production witness "
+                "READ BY THIS RUN has a complete row set for its declared "
+                "atom / partition / block scope. It is computed from an empty "
+                "row set, so it is conditional on the scan having actually read "
+                f"the corpus: {stats['scanned']} scanned, {stats['clean']} clean, "
+                f"{stats['unparseable']} UNPARSEABLE. A non-zero unparseable "
+                "count means this assertion passed over files it never opened."
+            ),
         )
     )
     out = b.save()

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:27:24.082433+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T18:51:29.003751+00:00",
+  "commitSha": "7f0ff38b0a17c853a617665526e4fbea29113be0",
   "assertions": [
     {
       "name": "qlambert_identity_verified_n_1_to_6",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 15,
   "computation": "yekutieli-per-cell-qlambert-decomposition-probe",
   "scriptFile": "yekutieli_per_cell_qlambert_decomposition_probe.py",
   "scriptHash": "9290d90c1165",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,21 +28,31 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/yekutieli_per_cell_qlambert_decomposition_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/yekutieli_per_cell_qlambert_decomposition_probe.py"
   },
   "description": "Yekutieli Session A first sub-probe — q-Lambert decomposition of the Borromean per-crossing curvature, checking for natural α_em/π factor per ideal octahedron. Pre-stated failure signature applies.",
   "auditOnly": "docs/audits/2026-06-01-yekutieli-mp-substrate-derivation-scaffolding.md",
   "data": {
-    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-    "h": "0.2090603219955936789818626364659673502616233016474798267897442369867373",
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "h": "0.2090602987956393154308462131296749438597574952630245553816960544589759",
     "G": "0.915965594177219015054603514932384110774149374281672134266498119621763",
     "alpha_em": "0.00729735256843177932505765924685406259792066565084064833880574086316856",
     "n_cells": 8,
     "dim_H3": 6,
     "correction_54ppb_value": "0.0003871365775834187007893649734468796285672734241904674539583989359160462",
-    "qlambert_kernel_at_n_cells": "0.1117856751350811717156648019464937021508099677592740701613517609168047",
-    "qlambert_kernel_alpha_em_ratio": 15.318661677203876,
+    "qlambert_kernel_at_n_cells": "0.1117856778359357972745806964277686835078793514966151364729206021535608",
+    "qlambert_kernel_alpha_em_ratio": 15.318662047318188,
     "per_cell_hypotheses": [
       {
         "name": "(α_em/π)/6 / 8 [uniform]",
@@ -62,14 +72,16 @@
       },
       {
         "name": "h²/8 [q-substrate, NO α_em]",
-        "value": "0.00546327727911266377728063569295037895829271898558398637344544"
+        "value": "0.00546327606656524867525241695967353872102674508918826362949385"
       },
       {
         "name": "h²·G/π/8 [q-substrate, sym norm]",
-        "value": "0.00159287806246912011005200124130339728331534690323222636564523"
+        "value": "0.00159287770893769958267216936052366665349035978559006397611629"
       }
     ],
     "verdict": "Q-LAMBERT INDEXING ALONE INSUFFICIENT for the per-cell α_em factor. The Lambert kernel 1/[8]_q at n_cells=8 is O(1) (no α_em scaling), so the 54 ppb (α_em/π)/6 correction cannot factorise as a clean (per-cell α_em-weight)·(sum over 8 cells). The α_em coupling must enter the per-cell weight via an EXTERNAL structural input — most plausibly the τ_q (Yekutieli) connection carrying the EM holonomy at h² order, NOT the Hecke algebra's internal q-Lambert decomposition.\n\nThis matches the pre-stated Session A failure signature (\"weight comes out as rational times G\"). Re-aim: Session A's next sub-probe should explore the τ_q connection's α_em coupling channel (the Yekutieli 2015 non-abelian Stokes integrand's gauge-coupling factor) rather than per-cell q-decomposition.",
     "next_subprobe": "Explore the τ_q (Yekutieli 2015) connection's α_em coupling channel — i.e., the gauge-coupling factor in the non-abelian Stokes integrand, NOT q-Lambert indexing of cells."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

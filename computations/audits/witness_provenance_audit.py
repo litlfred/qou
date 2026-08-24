@@ -76,6 +76,11 @@ REQUIRED_FIELDS = ("engine", "scriptFile", "commitSha")
 # refresh IS the signal, not a regression. They are exempt from
 # provenance-completeness checks (though most do carry the fields
 # anyway via WitnessBuilder).
+# Verdicts returned WITHOUT examining the witness's fields.
+_EXEMPT_VERDICTS = frozenset({
+    "PROV_AUDIT_EXEMPT", "PROV_EXEMPT_NO_READER", "PROV_EXEMPT_ACKNOWLEDGED",
+})
+
 AUDIT_SUFFIXES = (
     "-audit.witness.json",
     "-scan.witness.json",
@@ -192,7 +197,7 @@ def load_acknowledged_floor() -> "dict[str, str]":
 
 
 def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
-    """Return (paper_referenced_names, py_mention_counts).
+    """Return (paper_referenced_names, py_mention_counts, index_health).
 
     A witness's provenance only matters if something depends on it. This indexes
     two cheap single-pass greps: witness names cited under `content/` (the paper),
@@ -208,31 +213,133 @@ def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
 
     repo = HERE.parent.parent
     pat = r"[a-z0-9][a-z0-9._-]*\.witness\.json"
-    paper: set[str] = set()
-    try:
-        out = subprocess.run(
-            ["grep", "-rhoE", pat, str(repo / "content")],
-            capture_output=True, text=True, timeout=120,
-        ).stdout
-        paper = set(out.split())
-    except Exception:  # noqa: BLE001
-        pass
-    py_counts: "dict[str, int]" = {}
-    try:
-        out = subprocess.run(
-            ["grep", "-rhoE", "--include=*.py", pat, str(HERE.parent)],
-            capture_output=True, text=True, timeout=120,
-        ).stdout
-        py_counts = dict(Counter(out.split()))
-    except Exception:  # noqa: BLE001
-        pass
-    return paper, py_counts
+    health: dict = {}
+
+    def _grep(label: str, cmd: list[str]) -> str:
+        """Run one index grep, recording whether it actually ran.
+
+        Both greps used to sit under `except Exception: pass`, and neither
+        checked the return code. That fails OPEN in the worst direction: an
+        empty index makes `has_reader` False for EVERY witness, so every one is
+        exempted as PROV_EXEMPT_NO_READER — which *raises* the completeness
+        ratio. A timeout on the `content/` tree therefore looked like an
+        improvement. grep exits 0 with matches, 1 with none, >=2 on error.
+        """
+        try:
+            r = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        except Exception as exc:  # noqa: BLE001
+            health[f"{label}_ok"] = False
+            health[f"{label}_error"] = f"{exc.__class__.__name__}: {exc}"
+            return ""
+        health[f"{label}_ok"] = r.returncode in (0, 1)
+        health[f"{label}_returncode"] = r.returncode
+        if r.returncode not in (0, 1):
+            health[f"{label}_error"] = (r.stderr or "").strip()[:200]
+            return ""
+        return r.stdout
+
+    # `content/` is ~6.8 GB, nearly all of it untracked build output, and the
+    # plain recursive grep TIMES OUT at 120 s on it — measured on this tree, not
+    # hypothesised, which is how every name silently vanished from the index.
+    # `git grep` searches TRACKED files only: ~2 s instead of >120 s, and it is
+    # the more correct semantics anyway — an untracked build artifact is not the
+    # paper citing a witness.
+    paper: set[str] = set(
+        _grep("paper_index",
+              ["git", "-C", str(repo), "grep", "-hoE", pat, "--", "content/"]).split()
+    )
+    if not health.get("paper_index_ok"):
+        # Fall back to the original recursive grep rather than losing the index
+        # entirely (e.g. outside a git checkout).
+        health["paper_index_fallback"] = True
+        paper = set(
+            _grep("paper_index", ["grep", "-rhoE", pat, str(repo / "content")]).split()
+        )
+    py_counts: "dict[str, int]" = dict(Counter(
+        _grep("py_index",
+              ["grep", "-rhoE", "--include=*.py", pat, str(HERE.parent)]).split()
+    ))
+    health["paper_names"] = len(paper)
+    health["py_names"] = len(py_counts)
+    health["ok"] = bool(health.get("paper_index_ok") and health.get("py_index_ok"))
+    return paper, py_counts, health
 
 
-def has_reader(name: str, paper: set[str], py_counts: "dict[str, int]") -> bool:
-    """A witness has a reader if the paper cites it or a non-producer `.py`
-    mentions it (>1 `.py` mention ⇒ something beyond the producer reads it)."""
-    return name in paper or py_counts.get(name, 0) > 1
+# A witness name built by an f-string, e.g. `chi-{atom}-h{n}-at-q0-50dps.witness.json`.
+_DYNAMIC_NAME_RX = (r'[a-z0-9][a-zA-Z0-9._{}-]*\{[a-zA-Z0-9_]+\}'
+                    r'[a-zA-Z0-9._{}-]*\.witness\.json')
+# Minimum literal (non-placeholder) characters, excluding the `.witness.json`
+# suffix, before a pattern is trusted to identify a family. Measured: at 12 the
+# six weak patterns are rejected and 42 witnesses gain a reader with none
+# spurious; at 0, `chi-{atom_label}.witness.json` compiles to `chi-[^.]+` and
+# claims every chi-* witness in the corpus, including `chi-convention-audit`.
+_MIN_LITERAL_ANCHOR = 12
+
+
+def build_dynamic_readers(repo: Path) -> tuple[list, list[str], list[str]]:
+    """Compile f-string-built witness names into family matchers.
+
+    `has_reader` matches literal filenames, so a consumer that builds its input
+    path — `f"chi-{atom}-h{n}-at-q0-50dps.witness.json"` — is invisible to it and
+    every witness in that family looks reader-less. Returns
+    `(matchers, used_patterns, rejected_patterns)`; the rejected list is returned
+    rather than dropped so the report can say which families remain unreachable.
+    """
+    import re as _re
+    import subprocess as _sp
+    try:
+        out = _sp.run(["git", "-C", str(repo), "grep", "-hoE", _DYNAMIC_NAME_RX,
+                       "--", "computations/"],
+                      capture_output=True, text=True, timeout=120)
+        pats = sorted(set(out.stdout.split())) if out.returncode in (0, 1) else []
+    except Exception:  # noqa: BLE001
+        return [], [], []
+    suffix = ".witness.json"
+    used, rejected, matchers = [], [], []
+    for pat in pats:
+        parts = _re.split(r"\{[^{}]*\}", pat[: -len(suffix)])
+        if sum(len(x) for x in parts) < _MIN_LITERAL_ANCHOR:
+            rejected.append(pat)
+            continue
+        full = _re.split(r"\{[^{}]*\}", pat)
+        matchers.append(_re.compile(r"[^.]+".join(_re.escape(x) for x in full) + r"$"))
+        used.append(pat)
+    return matchers, used, rejected
+
+
+def _sidecar_only_citations(repo: Path, paper: set[str]) -> list[str]:
+    """Witness names the paper index only sees inside a machine `*.qa.json`.
+
+    `qou-0uqm` item (3): a QA sidecar is generated from a block, not authored,
+    so a name appearing only there is not really "the paper cites this". This is
+    MEASURED and reported, not enforced -- excluding them would move witnesses
+    INTO the exempt class, i.e. reduce what the audit evaluates, and this bean's
+    whole thesis is that unevaluated is the thing to avoid. The number belongs in
+    front of whoever decides.
+    """
+    import subprocess as _sp
+    try:
+        out = _sp.run(
+            ["git", "-C", str(repo), "grep", "-hoE",
+             r"[a-z0-9][a-z0-9._-]*\.witness\.json", "--", "content/",
+             ":(exclude)content/**/*.qa.json", ":(exclude)content/*.qa.json"],
+            capture_output=True, text=True, timeout=120)
+        if out.returncode not in (0, 1):
+            return []
+        authored = set(out.stdout.split())
+    except Exception:  # noqa: BLE001
+        return []
+    return sorted(paper - authored)
+
+
+def has_reader(name: str, paper: set[str], py_counts: "dict[str, int]",
+               dynamic: list | None = None) -> bool:
+    """A witness has a reader if the paper cites it, a non-producer `.py`
+    mentions it (>1 `.py` mention ⇒ something beyond the producer reads it),
+    or a consumer builds its name by f-string (see `build_dynamic_readers`)."""
+    if name in paper or py_counts.get(name, 0) > 1:
+        return True
+    return any(rx.fullmatch(name) for rx in (dynamic or ()))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -245,7 +352,9 @@ def main(argv: list[str] | None = None) -> int:
 
     legacy_removed = load_legacy_removed_set()
     acknowledged_floor = load_acknowledged_floor()
-    paper_refs, py_counts = build_reference_index()
+    paper_refs, py_counts, index_health = build_reference_index()
+    dyn_matchers, dyn_used, dyn_rejected = build_dynamic_readers(HERE.parent.parent)
+    sidecar_only = _sidecar_only_citations(HERE.parent.parent, paper_refs)
     by_verdict: dict[str, list[dict]] = {
         "PROV_OK": [], "PROV_MISSING": [],
         "PROV_AUDIT_EXEMPT": [], "PROV_EXEMPT_NO_READER": [],
@@ -260,14 +369,23 @@ def main(argv: list[str] | None = None) -> int:
         verdict, missing = classify(wp)
         # A missing triple on a witness nothing consumes is not a real gap
         # (owner directive 2026-07-18): exempt no-reader witnesses.
-        if verdict == "PROV_MISSING" and not has_reader(wp.name, paper_refs, py_counts):
+        if verdict == "PROV_MISSING" and not has_reader(
+                wp.name, paper_refs, py_counts, dyn_matchers):
             verdict, missing = "PROV_EXEMPT_NO_READER", missing
         # Investigated, documented floor: load-bearing but no attributable
         # producer (hand-authored / legacy orphan). On the record, not a gap.
         elif verdict == "PROV_MISSING" and wp.name in acknowledged_floor:
             verdict, missing = "PROV_EXEMPT_ACKNOWLEDGED", [acknowledged_floor[wp.name]]
+        # `evaluated` distinguishes "checked and found complete" from "never
+        # checked". Without it an exempt entry — which `classify()` returns as
+        # `(verdict, [])` BEFORE reading a single field — is byte-identical to a
+        # passing one, and reads as a pass in every aggregate view. That is how
+        # `q0-consistency-audit.witness.json` reported `missing_fields: []` on
+        # 2026-08-21 while carrying no computedAt/scriptFile/scriptHash/engine
+        # at all (bean `qou-ivhc`). Additive: no verdict changes.
         by_verdict[verdict].append(
-            {"witness": wp.name, "missing_fields": missing}
+            {"witness": wp.name, "missing_fields": missing,
+             "evaluated": verdict not in _EXEMPT_VERDICTS}
         )
 
     n_total = sum(len(v) for v in by_verdict.values())
@@ -277,15 +395,24 @@ def main(argv: list[str] | None = None) -> int:
     n_no_reader = len(by_verdict["PROV_EXEMPT_NO_READER"])
     n_ack = len(by_verdict["PROV_EXEMPT_ACKNOWLEDGED"])
     n_parse_err = len(by_verdict["PROV_PARSE_ERROR"])
-    # Carry the ratio as mpmath.mpf and serialize with `_precision.fmt`.
+    # Carry every ratio as mpmath.mpf and serialize with `_precision.fmt`.
     # A bare Python `/` here produces a float64, which the raw-float64 ratchet
-    # correctly flags on this audit's OWN witness (`.data.counts
-    # .completeness_ratio`) — a provenance auditor tripping a precision gate on
-    # its own output. The quantity is an exact rational (a ratio of counts), so
-    # there is nothing to lose by carrying it exactly to the serializer.
+    # correctly flags on this audit's OWN witness — a provenance auditor
+    # tripping a precision gate on its own output. These are exact rationals
+    # (ratios of counts), so there is nothing to lose by carrying them exactly.
     set_compute_dps()
+    # Kept as-is for continuity with prior runs: it counts every EXEMPT class in
+    # the numerator, i.e. it answers "what share is not a known gap?".
     n_clean = n_ok + n_audit + n_no_reader + n_ack
     completeness_ratio = mpf(n_clean) / mpf(n_total) if n_total > 0 else mpf(0)
+    # What the name suggests: of the witnesses actually CHECKED, what share has
+    # complete provenance — and what share of the corpus was checked at all.
+    n_excluded = n_audit + n_no_reader + n_ack
+    n_evaluated = n_ok + n_missing + n_parse_err
+    completeness_ratio_evaluated = (
+        mpf(n_ok) / mpf(n_evaluated) if n_evaluated else mpf(0))
+    evaluated_coverage = (
+        mpf(n_evaluated) / mpf(n_total) if n_total else mpf(0))
 
     print("=" * 70)
     print("I14 audit — witness provenance completeness")
@@ -297,8 +424,37 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  PROV_EXEMPT_ACKNOWLEDGED: {n_ack}")
     print(f"  PROV_MISSING           : {n_missing}")
     print(f"  PROV_PARSE_ERROR       : {n_parse_err}")
-    print(f"  completeness ratio     : {float(completeness_ratio):.3f}")
+    print(f"  excluded (NOT evaluated): {n_excluded}"
+          f"  = {n_audit} audit + {n_no_reader} no-reader + {n_ack} acknowledged")
+    print(f"  completeness ratio     : {float(completeness_ratio):.3f}"
+          f"   (counts all exempt classes as complete)")
+    print(f"  ├─ of those EVALUATED  : {float(completeness_ratio_evaluated):.3f}"
+          f"   ({n_ok}/{n_evaluated})")
+    print(f"  └─ corpus evaluated    : {float(evaluated_coverage):.3f}"
+          f"   ({n_evaluated}/{n_total}) — the rest was never checked")
     print(f"  legacy_removed_skipped: {len(legacy_removed)}")
+    print(f"  reader index           : paper={index_health.get('paper_names', 0)} "
+          f"name(s), py={index_health.get('py_names', 0)} name(s)")
+    print(f"  dynamic name patterns  : {len(dyn_used)} used, "
+          f"{len(dyn_rejected)} rejected as too weakly anchored")
+    if dyn_rejected:
+        print("    rejected (a family here can still look reader-less):")
+        for pat in dyn_rejected:
+            print(f"      {pat}")
+    if sidecar_only:
+        print(f"  paper citations that come ONLY from a machine `*.qa.json`")
+        print(f"  sidecar, not from a block: {len(sidecar_only)} name(s). These")
+        print(f"  count as readers today; a sidecar is generated, not authored.")
+    if not index_health.get("ok"):
+        print("  *** READER INDEX DID NOT BUILD ***")
+        for _k in ("paper_index", "py_index"):
+            if not index_health.get(f"{_k}_ok"):
+                print(f"      {_k}: {index_health.get(f'{_k}_error', 'failed')}")
+        print(f"      An empty index makes EVERY witness look reader-less, so the")
+        print(f"      {n_no_reader} PROV_EXEMPT_NO_READER verdict(s) above are")
+        print( "      UNSUPPORTED -- and they RAISE the completeness ratio, so this")
+        print( "      failure reads as an improvement. Re-run before quoting any")
+        print( "      number on this page.")
     if n_missing:
         print()
         print("PROV_MISSING witnesses (need WitnessBuilder migration "
@@ -332,8 +488,22 @@ def main(argv: list[str] | None = None) -> int:
             "prov_missing": n_missing,
             "prov_parse_error": n_parse_err,
             "completeness_ratio": fmt(completeness_ratio),
+            # Added 2026-08-22 (bean `qou-ivhc`): the ratio above counts every
+            # EXEMPT class as complete, so it cannot fall when coverage does.
+            # These two separate "passed" from "never checked". Carried as mpf
+            # and serialized with fmt, same as completeness_ratio above.
+            "excluded_not_evaluated": n_excluded,
+            "completeness_ratio_evaluated": fmt(completeness_ratio_evaluated),
+            "evaluated_coverage": fmt(evaluated_coverage),
         })
         .add_data("by_verdict", by_verdict)
+        .add_data("reader_index_health", index_health)
+        .add_data("dynamic_readers", {
+            "patterns_used": dyn_used,
+            "patterns_rejected_weak_anchor": dyn_rejected,
+            "min_literal_anchor": _MIN_LITERAL_ANCHOR,
+        })
+        .add_data("paper_citations_only_from_machine_sidecar", sidecar_only)
         .add_assertion(
             "no_missing_provenance",
             computed=n_missing,

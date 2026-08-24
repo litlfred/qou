@@ -227,11 +227,93 @@ def classify(path: Path) -> tuple[str, str]:
     return "Q0_OK", ""
 
 
+def payload_mislabels(path: Path) -> list[dict]:
+    """Fields whose NAME says one anchor while the VALUE is the other one's pin.
+
+    The `Q0_OK`/`Q0_FLIP` verdicts compare the *envelope* (`q0Anchor` vs
+    `q0Value`) and never look inside `data`. That is correct for what they
+    test, and it leaves a seam: a probe that evaluates BOTH anchors and labels
+    one of them wrong is Q0_OK, because its envelope is self-consistent.
+
+    Measured instance (bean `qou-cds3`, 22 witnesses):
+    `probes/flavor-split-alpha-dilog-expansion.witness.json` is Q0_OK with
+    `q0Anchor: "muon"` matching its `q0Value`, while `data/proton_anchor/q0`
+    holds that same *muon* value.
+
+    Diagnostic only — printed, never written to the witness and never able to
+    change the exit code. The `Q0_FLIP` gate is CI-failing, and 22 known hits
+    would fail the build before the migration that fixes them is authorised.
+    """
+    out: list[dict] = []
+    try:
+        doc = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001 — classify() already reports parse errors
+        return out
+
+    def walk(node, jp=""):
+        if isinstance(node, dict):
+            for k, v in node.items():
+                # Use the NEAREST anchor-bearing path segment, not just the
+                # immediate key: `/data/proton_anchor/q0` names its anchor on
+                # the parent, and keying on `k` alone silently misses it.
+                named = _anchor_in_path(f"{jp}/{k}")
+                if named is not None and not isinstance(v, (dict, list)):
+                    got = _anchor_of_value(str(v))
+                    if got is not None and got != named:
+                        out.append({
+                            "witness": path.name,
+                            "field": f"{jp}/{k}",
+                            "name_says": named,
+                            "value_is": got,
+                            "value": str(v)[:34],
+                        })
+                walk(v, f"{jp}/{k}")
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                walk(v, f"{jp}[{i}]")
+
+    walk(doc)
+    return out
+
+
+def _anchor_in_path(jp: str) -> str | None:
+    """Innermost path segment naming an anchor wins.
+
+    `/data/proton_anchor/q0` -> proton.  `/q0_pins/muon` -> muon.  Innermost so
+    that a correctly-labelled pair nested under a differently-named parent is
+    read by its own label rather than its container's.
+    """
+    for seg in reversed(jp.split("/")):
+        sl = seg.lower()
+        if "proton" in sl:
+            return "proton"
+        if "muon" in sl:
+            return "muon"
+    return None
+
+
+def _anchor_of_value(v: str) -> str | None:
+    """Which anchor's pin does this literal carry, if any?"""
+    pref = v[:_MATCH_PREFIX]
+    for anchor, want in _EXPECTED_PREFIX.items():
+        if pref == want:
+            return anchor
+    return None
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--strict", action="store_true",
         help="Exit 1 if any Q0_FLIP witnesses are found (CI gate).",
+    )
+    parser.add_argument(
+        "--payload-check", action="store_true",
+        help="Also report fields INSIDE data whose name says one anchor while "
+             "the value carries the other's pin — the seam Q0_OK/Q0_FLIP "
+             "cannot see, since they compare only q0Anchor vs q0Value. "
+             "Diagnostic: printed, not written to the witness, and cannot "
+             "change the exit code.",
     )
     args = parser.parse_args(argv)
 
@@ -299,6 +381,22 @@ def main(argv: list[str] | None = None) -> int:
         source="every witness's q0Value must match its q0Anchor's canonical pin",
     )
     builder.save()
+
+    if args.payload_check:
+        mis = [m
+               for w in sorted((HERE.parent).rglob("*.witness.json"))
+               for m in payload_mislabels(w)]
+        print("\n" + "=" * 74)
+        print("  payload anchor-label check (--payload-check, diagnostic only)")
+        print("=" * 74)
+        print(f"  fields whose NAME and VALUE disagree on the anchor: {len(mis)}")
+        print(f"  witnesses affected: {len({m['witness'] for m in mis})}")
+        for m in mis[:25]:
+            print(f"    {m['witness'][:44]:46} {m['field'][:30]:32} "
+                  f"name={m['name_says']:6} value={m['value_is']}")
+        if len(mis) > 25:
+            print(f"    … and {len(mis) - 25} more")
+        print("\n  Exit code unchanged — Q0_FLIP remains the only gate.")
 
     if args.strict and n_flip:
         print(f"\nFAIL (--strict): {n_flip} Q0_FLIP witness(es).")

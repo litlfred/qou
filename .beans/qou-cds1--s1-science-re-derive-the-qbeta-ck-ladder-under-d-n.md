@@ -836,6 +836,63 @@ zD_bar_eq_negative_loop, zD_bar_mean_eq_loop_mean. Probe now 5/5.
 Incidentally an argument FOR the 2026-08-15 D ruling on structural grounds,
 reached independently of it. Scope unchanged — still closes nothing.
 
+
+── State synthesis 2026-08-21 (session, PR #5348, branch n24484) → docs/audits/2026-08-21-cds1-d-frame-ladder-state-synthesis.md ──
+NET: structurally determined, numerically fenced. BOTH legs of the D re-derivation are already FORCED + FORMALIZED symbolically (corpus-grepped, not re-derived here):
+• Phase leg (forced): bar-odd projection α_D − h²/4, LadderPhaseMirrorCovariance.lean sorry-free (phaseTwiceD_sub_hsq_bar_odd; forced via zD_sub_bar_eq_h + loop-mean=bar-mean). This IS why it is not a z-swap: the formula re-derives to give −h²/4.
+• Weight leg (forced, exact ℚ(q)): z_D·[2]_q=q² (zD_eq_qsq_div_bracketTwo) = Jones/two-row; S2 (#5185) solved the D weights y_(3)=(q⁴+1)/(q²+1)², y_(2,1)=q²/(q²+1)², y_(1³)=0; PSD (5,0,1). Resolves the horn in decayLadder_zC_threeRow_ne_zero: under D the decay trace IS two-row TL.
+OPEN = the c_k assembly only, and it is anti-fit FENCED: forced phase closes 92.03% of the D gap, residual 41.94×C (qbeta-eigenphase-branch-and-barodd-projection.witness). Any c_k absorbing the residual is a fit until one lands with c₂=−1's standing — the same magnitude wall as C.
+CORRECTION: the sensitivity-table c₃≈−974 / c₂≈−9.299 are NAIVE-Z-SWAP artifacts (C-extractor fed z_D, which S1 proves invalid). NOT proposed D values; do not wire/quote.
+FORMALIZE-FIRST NEXT: state the invariant a forced D c₂ must satisfy (D analogue of c₂=−1=1−b²ℏ⁴) and check if exact weights + α_D−h²/4 determine it. Do NOT run the extractor on z_D and report the output.
+
+── Executed 2026-08-21 (part 2, new PR): convention is localised to the N=1 phase (FORCED, sorry-free) ──
+Read Q_beta_categorical factor by factor: ONLY N1_factor=cos(α−bℏ²/2) reads markovZ' (via α=(z−1)h/2). N2..N5 — carrying c₂=−1, c₃=−2, c₄, c₅ — are closed forms in q via hoefsmitB + hbarQ' ALONE (pure Kashiwara/Hopf tails b^k·ℏ^{2k}), NO z.
+Formalized: QOU/BraidKnot/LadderConventionLocalisation.lean (lean-direct EXIT=0): Q_beta_categorical_eq_ofPhase (ladder = φ=α q instance of phase-parameterised family) + Q_beta_categorical_ofPhase_tail_common (two phases differ only by cos factors, ckTail common).
+CONSEQUENCE: distinguishes CATEGORICAL c_k (structural, z-free — C→D moves ONLY the N=1 phase to α_D−h²/4, higher rungs unchanged) from EXTRACTED c_k (inverted from full Q_β, z-dependent). The S1 c₃≈−974 is EXACTLY the N=1 phase change mis-attributed to the higher rungs by the extractor — reconciled, not a categorical value.
+SCOPE: localises z-dependence + explains the −974 artifact; does NOT claim the physical D re-derivation leaves the Kashiwara tails untouched (open). Fence unchanged: closing the 41.94×C residual by adjusting N2..N5 is a fit until a rung lands with c₂=−1's standing.
+
+── Explored 2026-08-21: what is Lean-provable about N2..N5 (PR #5364) ──
+Solved the three H₃ Markov eqns exactly over ℚ(q) at BOTH z_C and z_D (hoefsmit_b_vs_d_weights_probe.py, 7/7):
+• At z_D the system FORCES y_(1³)=0 (two-row TL) + y_(2,1)ᴰ=q²/(q²+1)², and b² = 1 − y_(2,1)ᴰ = y_(3)ᴰ+y_(2,1)ᴰ EXACTLY.
+• At z_C the weights are genuinely three-row (√q powers) and b² ≠ 1 − y_(2,1)ᶜ. So the identity is CONVENTION-D SPECIFIC.
+⇒ The Hoefsmit coupling b that generates ALL of N2..N5 is a D-frame object (b = √(1−y_(2,1)ᴰ)) — a POSITIVE structural reason the tails are correctly D-framed, beyond 'b is z-free'.
+PROVABLE (formalized, EXIT=0): hoefsmitB_sq_eq_one_sub_stdWeightD (b²=1−y_(2,1)ᴰ) + the c₂=−1 Taylor form. NOT provable-as-forced: c₃/c₄/c₅ VALUES (fitted near-matches; only the form J_Hopf·b^k is structural). The provable content of N2..N5 = the coupling identity + c₂; fence holds on the higher-rung values.
+
+── Lean-proved the full provable D-weight structure 2026-08-21 (PR #5364, all EXIT=0) ──
+Formalized S2 in Lean (turned the Python symbolic result into proved theorems) + characterized the D weights:
+• dWeights_normalised (y₃+2y₂₁=1), trivWeightD_eq (y₃=1−2y₂₁)
+• dWeights_markov_sigma + dWeights_markov_sigmasigma — the S2 weights SOLVE the σ and σσ Markov equations at z_D=q³/(q²+1)
+• stdWeightD_eq_jones (y₂₁ᴰ=1/[2]_q²) — matches markovWeights_eq_jones_of_threeRow_eq_zero's (q+q⁻¹)²y₂₁=1
+• hoefsmitB_sq_eq_trivWeightD_add_stdWeightD (b²=y₃+y₂₁), dWeights_at_one (q=1: y₂₁=¼,y₃=½,b²=¾)
+Combined with the prior b²=1−y₂₁ᴰ and the existing uniqueness lemma, the D weights are now FULLY characterized in Lean.
+HONEST BOUNDARY (stated in dWeights_at_one docstring): c₃=−2=J_Hopf(1) is a TOPOLOGICAL input (Jones of Hopf link), NOT derivable from these weights — no forced-c₃ lemma exists. Provable D-structure = weight/coupling algebra + c₂ Taylor form; c₃/c₄/c₅ values stay fitted.
+
+── J_Hopf(1)=−2 now DERIVED, not asserted 2026-08-21 (PR #5364, EXIT=0) ──
+Built the Hopf-link Jones value from the skein relation: JonesHopfSkein.lean (sorry-free).
+jonesHopf_of_skein: over any CommRing, the cleared Jones axioms (V(unknot)=1, s·V(2-unlink)=−(s²+1), cleared skein V₊−s⁴V₋=(s³−s)V₀) FORCE V(Hopf)=−(s+s⁵) at the Hopf crossing (one linear_combination).
+jonesHopf_at_one: hence V(Hopf)=−2 at s=1 (q=1).
+jonesHopfClassicalLimit_eq_jonesHopfValue_one: the ladder's c₃ constant = jonesHopfValue 1 = −2 — the wired constant is now the classical-point value of the skein-derived Hopf polynomial, no longer a bare def.
+This addresses the c₃-input provability gap flagged in dWeights_at_one: c₃'s value −2 is derived from the Jones skein axioms (the polynomial's DEFINITION applied to the Hopf link), conditional-class style. Still NOT derived: that −2 is the right coupling for the ladder's N3 rung (the c₃ near-match, 3.47%) — that remains the fitted step. What is now proved: −2 IS J_Hopf(1), from the axioms.
+
+---
+
+### Merge note 2026-08-21 — both entries kept, and one number I repeated is retracted upstream
+
+The synthesis directly above (PR #5348) and the takeover entry below landed the
+same day from different sessions and were a git conflict. **Both are kept**: the
+synthesis states the *science* position (both legs forced, `c_k` assembly the
+only open piece), the takeover entry states the *blocker* position (H_3 route
+closed universally, internal contradiction repaired, formal target vacuous).
+They agree on the bottom line — S1 does not close — and neither supersedes the
+other.
+
+**One thing I must propagate.** The synthesis' CORRECTION says the
+sensitivity-table `c₃ ≈ −974` and `c₂ ≈ −9.299` are **naive-z-swap artifacts**
+(the C-frame extractor fed `z_D`, which S1 proves invalid) and must not be
+wired or quoted as D values. I repeated the `c₂ = −9.299` figure in `qou-a613`
+when reattributing findings to the 2026-08-16 red-team audit — accurate as a
+report of what that audit said, now superseded as a statement about D. Flagged
+in `qou-a613` rather than silently dropped.
 ---
 
 ## STATE 2026-08-21 — taken over; two blockers retire, a third is new
@@ -964,27 +1021,31 @@ OPEN = the c_k assembly only, and it is anti-fit FENCED: forced phase closes 92.
 CORRECTION: the sensitivity-table c₃≈−974 / c₂≈−9.299 are NAIVE-Z-SWAP artifacts (C-extractor fed z_D, which S1 proves invalid). NOT proposed D values; do not wire/quote.
 FORMALIZE-FIRST NEXT: state the invariant a forced D c₂ must satisfy (D analogue of c₂=−1=1−b²ℏ⁴) and check if exact weights + α_D−h²/4 determine it. Do NOT run the extractor on z_D and report the output.
 
-── Executed 2026-08-21 (part 2, new PR): convention is localised to the N=1 phase (FORCED, sorry-free) ──
-Read Q_beta_categorical factor by factor: ONLY N1_factor=cos(α−bℏ²/2) reads markovZ' (via α=(z−1)h/2). N2..N5 — carrying c₂=−1, c₃=−2, c₄, c₅ — are closed forms in q via hoefsmitB + hbarQ' ALONE (pure Kashiwara/Hopf tails b^k·ℏ^{2k}), NO z.
-Formalized: QOU/BraidKnot/LadderConventionLocalisation.lean (lean-direct EXIT=0): Q_beta_categorical_eq_ofPhase (ladder = φ=α q instance of phase-parameterised family) + Q_beta_categorical_ofPhase_tail_common (two phases differ only by cos factors, ckTail common).
-CONSEQUENCE: distinguishes CATEGORICAL c_k (structural, z-free — C→D moves ONLY the N=1 phase to α_D−h²/4, higher rungs unchanged) from EXTRACTED c_k (inverted from full Q_β, z-dependent). The S1 c₃≈−974 is EXACTLY the N=1 phase change mis-attributed to the higher rungs by the extractor — reconciled, not a categorical value.
-SCOPE: localises z-dependence + explains the −974 artifact; does NOT claim the physical D re-derivation leaves the Kashiwara tails untouched (open). Fence unchanged: closing the 41.94×C residual by adjusting N2..N5 is a fit until a rung lands with c₂=−1's standing.
 
-── Explored 2026-08-21: what is Lean-provable about N2..N5 (PR #5364) ──
-Solved the three H₃ Markov eqns exactly over ℚ(q) at BOTH z_C and z_D (hoefsmit_b_vs_d_weights_probe.py, 7/7):
-• At z_D the system FORCES y_(1³)=0 (two-row TL) + y_(2,1)ᴰ=q²/(q²+1)², and b² = 1 − y_(2,1)ᴰ = y_(3)ᴰ+y_(2,1)ᴰ EXACTLY.
-• At z_C the weights are genuinely three-row (√q powers) and b² ≠ 1 − y_(2,1)ᶜ. So the identity is CONVENTION-D SPECIFIC.
-⇒ The Hoefsmit coupling b that generates ALL of N2..N5 is a D-frame object (b = √(1−y_(2,1)ᴰ)) — a POSITIVE structural reason the tails are correctly D-framed, beyond 'b is z-free'.
-PROVABLE (formalized, EXIT=0): hoefsmitB_sq_eq_one_sub_stdWeightD (b²=1−y_(2,1)ᴰ) + the c₂=−1 Taylor form. NOT provable-as-forced: c₃/c₄/c₅ VALUES (fitted near-matches; only the form J_Hopf·b^k is structural). The provable content of N2..N5 = the coupling identity + c₂; fence holds on the higher-rung values.
+### Independent check 2026-08-21 — `b² = 1 − y_(2,1)ᴰ` CONFIRMED
 
-── Lean-proved the full provable D-weight structure 2026-08-21 (PR #5364, all EXIT=0) ──
-Formalized S2 in Lean (turned the Python symbolic result into proved theorems) + characterized the D weights:
-• dWeights_normalised (y₃+2y₂₁=1), trivWeightD_eq (y₃=1−2y₂₁)
-• dWeights_markov_sigma + dWeights_markov_sigmasigma — the S2 weights SOLVE the σ and σσ Markov equations at z_D=q³/(q²+1)
-• stdWeightD_eq_jones (y₂₁ᴰ=1/[2]_q²) — matches markovWeights_eq_jones_of_threeRow_eq_zero's (q+q⁻¹)²y₂₁=1
-• hoefsmitB_sq_eq_trivWeightD_add_stdWeightD (b²=y₃+y₂₁), dWeights_at_one (q=1: y₂₁=¼,y₃=½,b²=¾)
-Combined with the prior b²=1−y₂₁ᴰ and the existing uniqueness lemma, the D weights are now FULLY characterized in Lean.
-HONEST BOUNDARY (stated in dWeights_at_one docstring): c₃=−2=J_Hopf(1) is a TOPOLOGICAL input (Jones of Hopf link), NOT derivable from these weights — no forced-c₃ lemma exists. Provable D-structure = weight/coupling algebra + c₂ Taylor form; c₃/c₄/c₅ values stay fitted.
+Verified `e401bc427`'s identity from the two sides separately, without using the
+Lean:
+
+- `b² = (h²+3)/(h²+4)` taken from the *ladder substrate*
+  (`qbeta_utils.substrate_ladder_quantities`, where `u = b·ℏ_q²`);
+- `y_(2,1)ᴰ = q²/(q²+1)²` taken from the *D weight solve* (`fcffeee29`).
+
+Both simplify to **`(q²−q+1)(q²+q+1)/(q²+1)²`**; sympy difference exactly `0`.
+
+Worth stating why this is more than a tidy identity: `b` is not a free parameter
+of the ladder, it is the N2..N5 coupling that `u` is built from, and it was
+introduced on the C side. Finding it equal to `1 − y_(2,1)ᴰ` means the ladder's
+own coupling was **already a convention-D object** — so at least one substrate
+quantity does not need re-deriving under D, it needs *recognising*. That narrows
+what "re-derive the ladder under D" has left to cover, which is the opposite
+direction from the phase leg (where the C formula genuinely had to move by
+−h²/4).
+
+Both blockers recorded in §STATE 2026-08-21 re-checked and **still stand**:
+`qbeta-ck-truncation-canonical.lean:87` still carries the one `sorry` guarding a
+vacuous statement (`qou-7hfy`), and `RadicalPairingIsSignRep.lean` is still
+sorry-free, so the `G x = nf` route stays universally closed.
 
 ── J_Hopf(1)=−2 now DERIVED, not asserted 2026-08-21 (PR #5364, EXIT=0) ──
 Built the Hopf-link Jones value from the skein relation: JonesHopfSkein.lean (sorry-free).

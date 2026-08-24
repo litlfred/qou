@@ -70,30 +70,51 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
 
     hits = []
+    # Scope bookkeeping. The `continue` after ast.parse used to drop files that
+    # had ALREADY passed both pre-filters -- i.e. exactly the candidate
+    # population this scan exists to examine -- and the run still printed
+    # "None. No producer switches q0 layer on its error path." A candidate that
+    # does not parse is unexamined, not clean.
+    n_files = n_unreadable = 0
+    candidates: list[str] = []
+    unparseable: list[str] = []
     for p in sorted(REPO.rglob("*.py")):
         if ".git" in p.parts:
             continue
         if not args.include_deprecated and "_deprecated" in p.parts:
             continue
+        n_files += 1
         try:
             src = p.read_text(encoding="utf-8")
         except Exception:  # noqa: BLE001
+            n_unreadable += 1
             continue
         if not any(m in src for m in MUON_PREFIXES):
             continue
         if not any(t in src for t in PROTON_TOKENS):
             continue          # no proton primary => not a cross-LAYER fallback
+        rel_p = str(p.relative_to(REPO))
+        candidates.append(rel_p)
         try:
             tree = ast.parse(src)
-        except Exception:  # noqa: BLE001
+        except Exception as exc:  # noqa: BLE001
+            unparseable.append(f"{rel_p}: {exc.__class__.__name__}")
             continue
         lits = muon_literals_in_handlers(tree)
         if lits:
-            hits.append((str(p.relative_to(REPO)), sorted(set(lits))))
+            hits.append((rel_p, sorted(set(lits))))
 
     print("=" * 72)
     print("q₀ cross-layer fallback scan")
     print("=" * 72)
+    print(f"  .py files walked                      : {n_files}")
+    if n_unreadable:
+        print(f"    unreadable (never pre-filtered)     : {n_unreadable}")
+    print(f"  CANDIDATES (muon prefix + proton token): {len(candidates)}")
+    print(f"    of those, AST-scanned               : "
+          f"{len(candidates) - len(unparseable)}")
+    print(f"    of those, UNPARSEABLE (unexamined)  : {len(unparseable)}")
+    print()
     print(f"  files with a MUON literal inside an `except` handler")
     print(f"  AND a proton accessor in the same file : {len(hits)}")
     for rel, lits in hits:
@@ -103,8 +124,20 @@ def main(argv=None) -> int:
         print("  Each of these silently computes at the IDEAL pin whenever its")
         print("  proton accessor is unavailable, under proton labelling. Fix by")
         print("  raising instead of substituting the other layer.")
+    elif unparseable:
+        print(f"  No hit among the {len(candidates) - len(unparseable)} candidate(s)")
+        print(f"  actually scanned — but {len(unparseable)} candidate(s) did NOT parse")
+        print("  and were never examined. This is NOT 'no producer switches layer';")
+        print("  it is 'none found in what was read':")
+        for u in unparseable:
+            print(f"    {u}")
     else:
-        print("  None. No producer switches q₀ layer on its error path.")
+        print(f"  None, over all {len(candidates)} candidate(s), every one AST-scanned.")
+        print("  No producer switches q₀ layer on its error path.")
+    if unparseable:
+        print()
+        print("  NOTE: --strict exits 0 here. An unexamined candidate cannot")
+        print("        produce a hit, so silence below is not evidence.")
     print("=" * 72)
     return 1 if (args.strict and hits) else 0
 

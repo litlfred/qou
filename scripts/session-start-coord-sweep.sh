@@ -28,16 +28,42 @@ git fetch origin main >/dev/null 2>&1 || {
   exit 0
 }
 
+# 1b. Fetch the refs step 3 reads. A clone whose configured refspec is
+# `+refs/heads/main:refs/remotes/origin/main` -- the default in ephemeral
+# containers here -- NEVER updates refs/remotes/origin/claude/*, so step 3 read a
+# frozen snapshot (usually empty) and step 4 then omitted the sibling section
+# altogether: absence of refs rendered as absence of siblings. Pass the refspec
+# explicitly so this does not depend on how the clone happens to be configured.
+if command -v timeout >/dev/null 2>&1; then
+  _fetch_siblings() { timeout 45 git fetch --quiet --prune origin "$1" >/dev/null 2>&1; }
+else
+  _fetch_siblings() { git fetch --quiet --prune origin "$1" >/dev/null 2>&1; }
+fi
+SIBLING_REFS="unrefreshed"
+if _fetch_siblings '+refs/heads/claude/*:refs/remotes/origin/claude/*'; then
+  SIBLING_REFS="fresh"
+fi
+
 CURRENT_BRANCH="$(git symbolic-ref --short HEAD 2>/dev/null || echo "DETACHED")"
 
 # 2. Did main change since this branch was created?
 NEW_COMMITS_ON_MAIN="$(git log --oneline HEAD..origin/main 2>/dev/null | wc -l | tr -d ' ')"
 
-# 3. Find sibling claude/* branches updated in last 24h
-RECENT_SIBLINGS="$(git for-each-ref --sort=-committerdate \
-  --format='%(refname:short) %(committerdate:relative) %(subject)' \
+# 3. Sibling claude/* branches updated in the last 24h. The window is applied
+# HERE now; it used to be asserted only in the heading while the code sorted by
+# date and took the top 8 regardless of age.
+SIBLING_CUTOFF="$(( $(date -u +%s) - 86400 ))"
+SIBLING_ALL="$(git for-each-ref --sort=-committerdate \
+  --format='%(committerdate:unix)|%(refname:short)|%(committerdate:relative)|%(subject)' \
   refs/remotes/origin/claude 2>/dev/null \
-  | grep -v "$CURRENT_BRANCH" \
+  | grep -v "|origin/$CURRENT_BRANCH|" || true)"
+SIBLING_TOTAL="$(printf '%s' "$SIBLING_ALL" | grep -c . || true)"
+SIBLING_RECENT="$(printf '%s\n' "$SIBLING_ALL" \
+  | awk -F'|' -v c="$SIBLING_CUTOFF" 'NF && $1 >= c' || true)"
+SIBLING_RECENT_N="$(printf '%s' "$SIBLING_RECENT" | grep -c . || true)"
+# Rebuild the subject from field 4 onward: commit subjects may contain `|`.
+RECENT_SIBLINGS="$(printf '%s\n' "$SIBLING_RECENT" \
+  | awk -F'|' 'NF { s=$4; for (i=5; i<=NF; i++) s=s"|"$i; print $2" "$3" "s }' \
   | head -8 || true)"
 
 # 4. Emit the markdown block
@@ -57,11 +83,21 @@ if [ "$NEW_COMMITS_ON_MAIN" -gt 0 ]; then
   echo
 fi
 
-if [ -n "$RECENT_SIBLINGS" ]; then
-  echo "**Recent sibling branches on origin (last 24h):**"
-  echo "$RECENT_SIBLINGS" | sed 's/^/- /'
-  echo
+# Always emit this section, including when it is empty. Omitting it on an empty
+# list is what let "the refs were never fetched" look identical to "no siblings
+# are active" -- the reader cannot tell a measured zero from an unmeasured one.
+echo "**Sibling \`claude/*\` branches on origin:**"
+if [ "$SIBLING_REFS" != "fresh" ]; then
+  echo "- **NOT REFRESHED** (sibling fetch failed or timed out) - the list below is"
+  echo "  whatever this clone already had. Do NOT read an empty list as \"no siblings\"."
 fi
+if [ -n "$RECENT_SIBLINGS" ]; then
+  echo "_${SIBLING_RECENT_N} updated in the last 24h, of ${SIBLING_TOTAL} known; showing up to 8:_"
+  echo "$RECENT_SIBLINGS" | sed 's/^/- /'
+else
+  echo "_0 of ${SIBLING_TOTAL} known sibling branch(es) updated in the last 24h._"
+fi
+echo
 
 # 4b. Active beans — the bean work-plan (anti-stall). Read .beans/ directly
 # so this works even when the `beans` CLI is absent (fresh containers) and

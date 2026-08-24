@@ -129,14 +129,30 @@ def _has_rationale(lines: list[str], i: int) -> bool:
     return bool(RATIONALE_RX.search("\n".join(lines[start:end])))
 
 
-def _classify_script(path: Path) -> dict[str, Any] | None:
-    """Audit one Python script for I3 guard shapes."""
+def _classify_script(path: Path, stats: dict | None = None) -> dict[str, Any] | None:
+    """Audit one Python script for I3 guard shapes.
+
+    Returns None for THREE different facts, which is why `stats` exists: the file
+    could not be read, it was pre-filtered out as a non-candidate, or it was read
+    and scanned and simply has no guard shapes. Only the third is a clean result.
+    They were one indistinguishable `None`, and the closure assertion below fires
+    on an EMPTY row set — so a corpus nobody could read would have asserted that
+    every canonical-witness consumer runs unconditionally.
+    """
     try:
         text = path.read_text(encoding="utf-8")
-    except (OSError, UnicodeDecodeError):
+    except (OSError, UnicodeDecodeError) as exc:
+        if stats is not None:
+            stats["unreadable"] += 1
+            stats["unreadable_files"].append(
+                f"{path.name}: {exc.__class__.__name__}")
         return None
     if "import" not in text:
+        if stats is not None:
+            stats["no_import_prefilter"] += 1
         return None
+    if stats is not None:
+        stats["scanned"] += 1
 
     lines = text.splitlines()
     hits: list[dict[str, Any]] = []
@@ -182,6 +198,8 @@ def main() -> int:
     strict = "--strict" in sys.argv
 
     rows: list[dict[str, Any]] = []
+    stats: dict = {"seen": 0, "scanned": 0, "no_import_prefilter": 0,
+                   "unreadable": 0, "unreadable_files": []}
     # Scan the compute tree (computations/), not just audits/ (reorg
     # scan-root fix). Skip _deprecated and the audits/ dir itself.
     for py in sorted((HERE.parent).rglob("*.py")):
@@ -191,7 +209,8 @@ def main() -> int:
             continue
         if py.name == "guarded_off_audit.py":
             continue
-        result = _classify_script(py)
+        stats["seen"] += 1
+        result = _classify_script(py, stats)
         if result is None:
             continue
         rows.append(result)
@@ -207,8 +226,18 @@ def main() -> int:
         print(f"  … and {len(rows) - 20} more")
     print()
     print(f"Summary:")
+    print(f"  python files seen:                {stats['seen']}")
+    print(f"  scanned for guard shapes:         {stats['scanned']}")
+    print(f"  pre-filtered (no `import`):       {stats['no_import_prefilter']}")
+    print(f"  UNREADABLE (not scanned at all):  {stats['unreadable']}")
     print(f"  scripts with guard-shape hits:    {len(rows)}")
     print(f"  total guard-shape lines flagged:  {sum(r['hit_count'] for r in rows)}")
+    if stats["unreadable"]:
+        print()
+        print("  *** The closure assertion below fires on an EMPTY row set, so an")
+        print("      unreadable file raises it exactly like a clean one:")
+        for f in stats["unreadable_files"][:10]:
+            print(f"        {f}")
 
     b = (
         WitnessBuilder("guarded-off-audit", engine="python")
@@ -227,14 +256,19 @@ def main() -> int:
         .add_parameter("scripts_with_hits", len(rows))
         .add_parameter("total_guard_lines_flagged",
                        sum(r["hit_count"] for r in rows))
+        .add_data("scan_coverage", stats)
         .add_data("rows", rows)
         .add_assertion(
             name="no_guarded_off_candidates",
             computed=1.0 if not rows else 0.0,
             expected=1.0, tolerance=0.0,
             unit="boolean (1.0 = no script contains guarded-off shapes)",
-            source="Closure gate: when this passes, every canonical-witness "
-                   "consumer runs unconditionally (or behind a gate the "
+            source=f"[scope: {stats['seen']} file(s) seen, {stats['scanned']} "
+                   f"scanned, {stats['no_import_prefilter']} pre-filtered, "
+                   f"{stats['unreadable']} UNREADABLE — a non-zero unreadable "
+                   "count means this passed over files it never opened] "
+                   "Closure gate: when this passes, every canonical-witness "
+                   "consumer READ BY THIS RUN runs unconditionally (or behind a gate the "
                    "watcher has explicitly approved).",
         )
     )

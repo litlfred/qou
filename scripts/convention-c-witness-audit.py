@@ -130,6 +130,42 @@ def _nonzero_expr(expr: str) -> bool:
     return expr.strip().lower() not in _TRIVIAL_EXPR
 
 
+def cas_zero(expr: str):
+    """Is `expr` IDENTICALLY zero as a rational function of q?
+
+    Returns True / False, or None if no CAS is available or it gave up.
+
+    `scan_doc_symbolic` screens 3+-row weights syntactically and says why:
+    a CAS "does not belong in a scan over a 7 MB witness", so it over-reports
+    rather than under-reports. That is the right default and is not changed
+    here. This runs the CAS on the handful of expressions the scan has ALREADY
+    flagged, which is the one place the cost argument does not apply — tens of
+    expressions, not millions of JSON nodes.
+
+    Proving `simplify(expr) == 0` is not a tolerance and cannot hide a live
+    convention-C weight: under D, `y_λ = 0` identically for `ℓ(λ) ≥ 3`, so
+    algebraic zero IS the property being tested. A genuine C weight is a
+    nonzero rational function and no amount of simplification makes it vanish.
+
+    Why it matters in practice: a witness can be correctly D and still be
+    flagged, because its D-ness is spelled as an unsimplified vanishing factor.
+    Measured on `y-lambda-macdonald-telescope.witness.json`, where every one of
+    the 14 flagged weights carries the factor
+    `(1 - 1/((q**2 + 1)*(q**4/(q**2 + 1) - q**2 + 1)))` and
+    `(q**2 + 1)*(q**4/(q**2 + 1) - q**2 + 1) = 1` exactly, so the factor — and
+    the whole weight — is 0.
+    """
+    try:
+        import sympy as sp
+    except ImportError:
+        return None
+    try:
+        q = sp.symbols("q")
+        return sp.simplify(sp.sympify(expr, locals={"q": q})) == 0
+    except Exception:              # noqa: BLE001 — a CAS failure is not a verdict
+        return None
+
+
 def scan_doc(doc, tol: float = DEAD_TOL):
     """Yield (partition, key, value) for every nonzero weight on a 3+ row block."""
     found = []
@@ -329,6 +365,21 @@ def selftest() -> int:
         ("plain numeric string -> clear here (the numeric test owns it)",
          {"weights": [{"partition": [1, 1, 1], "y_lambda": "0.0227449"}]}, False),
     ]
+    # `cas_zero` decides the question `_nonzero_expr` deliberately cannot.
+    # Its failure mode would be clearing a LIVE convention-C weight, so the
+    # negative cases matter more than the positive ones.
+    cas_cases = [
+        ("the telescope's vanishing factor -> identically zero (correctly D)",
+         "1 - 1/((q**2 + 1)*(q**4/(q**2 + 1) - q**2 + 1))", True),
+        ("a full telescope weight carrying that factor -> identically zero",
+         "q**6*(1 - q**2)**2*(1 - 1/((q**2 + 1)*(q**4/(q**2 + 1) - q**2 + 1)))",
+         True),
+        ("the committed convention-C root's [1,1,1] -> NOT zero (stays flagged)",
+         "(1 - q**6)/((1 - q**2)*(q**2 + (1 - q**6)/(1 - q**2)))", False),
+        ("a live two-row D weight -> NOT zero", "q**2/(q**2 + 1)", False),
+        ("a written-down zero -> zero", "0", True),
+        ("unparseable -> None, never a verdict", "?", None),
+    ]
     bad = 0
     for name, doc, want in cases:
         got = bool(scan_doc(doc))
@@ -340,7 +391,12 @@ def selftest() -> int:
         ok = got == want
         bad += not ok
         print(f"  {'ok  ' if ok else 'FAIL'}  [symbolic] {name}")
-    n = len(cases) + len(sym_cases)
+    for name, expr, want in cas_cases:
+        got = cas_zero(expr)
+        ok = got == want
+        bad += not ok
+        print(f"  {'ok  ' if ok else 'FAIL'}  [cas] {name}")
+    n = len(cases) + len(sym_cases) + len(cas_cases)
     print(f"selftest: {n-bad}/{n}"
           + ("" if bad else " — flags a 3+row nonzero weight at any n, and a "
                             "sqrt-q weight expression at any n; clears convention D."))
@@ -352,6 +408,12 @@ def main() -> int:
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--json", metavar="OUT")
     ap.add_argument("--selftest", action="store_true")
+    ap.add_argument(
+        "--cas-verify", action="store_true",
+        help="Run a CAS over the 3+-row symbolic hits already flagged and "
+             "report which are provably identically zero (i.e. correctly "
+             "convention D, merely unsimplified). Triage only: the exit "
+             "code is unchanged, so no gate flips on this flag.")
     a = ap.parse_args()
 
     if a.selftest:
@@ -379,6 +441,31 @@ def main() -> int:
             for part, k, v in entries[:3]:
                 where = list(part) if part else "-"
                 print(f"      {where}  {k} = {str(v)[:38]}")
+
+    if a.cas_verify and sym:
+        proved, survived, unknown = [], [], []
+        for path, entries in sym:
+            for part, k, v in entries:
+                if not (part and len(part) >= 3):
+                    survived.append((path, part, k))
+                    continue
+                verdict = cas_zero(v)
+                if verdict is True:
+                    proved.append((path, part, k))
+                elif verdict is False:
+                    survived.append((path, part, k))
+                else:
+                    unknown.append((path, part, k))
+        print("\n  CAS triage of the symbolic hits "
+              "(3+-row weights only; --cas-verify)\n")
+        print(f"    provably identically zero (correctly D) : {len(proved)}")
+        print(f"    algebraically nonzero (genuine C)       : {len(survived)}")
+        print(f"    CAS unavailable / gave up               : {len(unknown)}")
+        if proved and not survived and not unknown:
+            print("\n    ⇒ every symbolic hit is an unsimplified zero; no "
+                  "convention-C weight survives this pass.")
+        print("\n    Exit code deliberately unchanged — this is triage, "
+              "not a relaxed gate.")
 
     if a.json:
         pathlib.Path(a.json).write_text(json.dumps(

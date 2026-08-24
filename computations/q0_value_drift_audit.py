@@ -128,12 +128,86 @@ def scan() -> list[dict]:
     return rows
 
 
+def layer_mismatches(canonical_rows: list) -> list:
+    """`canonical`-classed values whose PRODUCER is no longer in the muon layer.
+
+    `canonical` here means "matches the CAL-2 muon pin", which the header table
+    defines as *the `computations/` layer convention* — not as the framework's
+    canonical anchor.
+
+    The class definition does not follow manifest membership, and `canonical` is
+    the one class that can never be `STALE`. So a witness written by a
+    proton-layer producer, still carrying the muon pin, is invisible to this
+    audit's staleness test. That is the gap this function reports.
+
+    CORRECTED 2026-08-23. This docstring previously said `_migration_2026_08_19`
+    moved 255 producers out of `ideal_muon` "on owner authorisation, leaving 3",
+    and that acting on the result would move ~162 witnesses into `STALE` and fail
+    a blocking gate. **Both figures were artefacts.** `ideal_muon` held 3 because
+    `q0_anchor_manifest.json`'s producer lookup was root-only and never read the
+    ~700 witnesses whose producers live in `probes/`, `qbeta/`, `substrate/` etc
+    (fixed in `8b4825920`). The manifest now holds 110 / 513 / 22, and
+    `_migration_2026_08_19` no longer exists in it.
+
+    Re-measured 2026-08-23 against the fixed manifest: 156 canonical-classed
+    witness files = 66 mismatch + 76 legitimately muon-layer + 14 unresolved.
+    The 66 are 50 producers simply **undeclared** in the manifest (a declaration
+    gap, not a stale value), 9 `physical_proton` and 7 `ambiguous`. Current
+    `STALE` is 292 against a 329-key baseline, so NEW = 0 and `--strict` exits 0.
+
+    Diagnostic only: printed, never written to the witness, and it cannot change
+    the exit code. Bean `qou-fd0e`.
+    """
+    try:
+        man = json.loads((HERE / "q0_anchor_manifest.json").read_text())
+    except Exception as exc:  # noqa: BLE001 — reported, never silently empty
+        return [{"error": f"manifest unreadable: {exc}"}]
+    ideal = set(man.get("ideal_muon", []))
+    repo = HERE.parent
+    out, legit, unresolved, seen = [], [], [], set()
+    for r in canonical_rows:
+        f = r.get("file")
+        if not f or f in seen:
+            continue
+        seen.add(f)
+        # Resolve relative to the repo, not the process cwd.
+        cand = Path(f) if Path(f).is_absolute() else (repo / f)
+        if not cand.exists():
+            hits = list(repo.rglob(Path(f).name))
+            if not hits:
+                unresolved.append({"witness": f, "why": "file not found"})
+                continue
+            cand = hits[0]
+        try:
+            sf = json.loads(cand.read_text()).get("scriptFile") or ""
+        except Exception as exc:  # noqa: BLE001
+            unresolved.append({"witness": f, "why": f"unreadable ({type(exc).__name__})"})
+            continue
+        stem = Path(str(sf)).stem
+        if not stem:
+            unresolved.append({"witness": f, "why": "no scriptFile"})
+        elif stem in ideal:
+            legit.append({"witness": f, "producer": stem})
+        else:
+            out.append({"witness": f, "producer": stem})
+    # Three explicit classes. An UNRESOLVED witness is not evidence of either
+    # verdict — reporting it by subtraction would count "could not check" as
+    # "legitimately muon", which is the exact defect this session has been
+    # cataloguing (beans qou-0uqm, qou-i5jy).
+    return {"mismatch": out, "legit": legit, "unresolved": unresolved}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on stale values NOT already in the baseline")
     ap.add_argument("--rebaseline", action="store_true",
                     help="regenerate the baseline (only when draining — count must go DOWN)")
+    ap.add_argument("--layer-check", action="store_true",
+                    help="report `canonical`-classed values whose producer is no "
+                         "longer in the manifest's ideal_muon layer. Diagnostic: "
+                         "printed, not written to the witness, cannot change the "
+                         "exit code.")
     args = ap.parse_args()
 
     rows = scan()
@@ -192,6 +266,27 @@ def main() -> int:
                  "rows": rows},
     }, indent=2) + "\n")
     print(f"\nWrote {out.name}")
+
+    if args.layer_check:
+        mism = layer_mismatches(by.get("canonical", []))
+        print("\n" + "=" * 66)
+        print("  producer-layer check (--layer-check, diagnostic only)")
+        print("=" * 66)
+        if isinstance(mism, list) and mism and "error" in mism[0]:
+            print(f"  {mism[0]['error']}")
+        else:
+            n_canon_files = len({r["file"] for r in by.get("canonical", [])})
+            bad, ok, unk = mism["mismatch"], mism["legit"], mism["unresolved"]
+            print(f"  canonical-classed witness files            : {n_canon_files}")
+            print(f"  producer NOT in ideal_muon (blind to STALE): {len(bad)}")
+            print(f"  legitimately muon-layer                    : {len(ok)}")
+            print(f"  UNRESOLVED (not evidence either way)       : {len(unk)}")
+            mism = bad
+            for m in mism[:20]:
+                print(f"    {m['witness'][:52]:54} <- {m['producer']}")
+            if len(mism) > 20:
+                print(f"    … and {len(mism) - 20} more")
+        print("\n  Exit code unchanged — `new_stale` remains the only gate.")
 
     return 1 if (args.strict and new_stale) else 0
 

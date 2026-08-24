@@ -1,15 +1,34 @@
 {
   "computation": "silent-self-check-audit",
   "description": "Producers whose self-check does not reach their exit status, and producers that reuse their own prior output without re-validating it. High-recall candidates; the legit/genuine verdict is an agent call. Motivated by qou-9d6h and qou-7bv5, both of which reported a real defect into a channel nothing gates on.",
-  "computedAt": "2026-08-16T02:57:09.439144+00:00",
+  "computedAt": "2026-08-23T15:36:02.499893+00:00",
   "scriptFile": "computations/audits/silent_self_check_audit.py",
   "data": {
     "by_criterion": {
       "self-check-not-gated": 65,
-      "resume-cache-unvalidated": 3
+      "resume-cache-unvalidated": 4
     },
-    "total": 68,
+    "total": 69,
+    "scan_coverage": {
+      "scripts_seen": 3074,
+      "scripts_parsed": 3074,
+      "unparseable": []
+    },
     "regression_repaired_still_flagged": [],
+    "adjudicated_legit": [
+      {
+        "script": "computations/qbeta/qbeta_kashaev_habiro_chain_beta.py",
+        "criterion": "self-check-not-gated",
+        "verdict": "legit",
+        "why": "same existential shape as the alpha probe"
+      },
+      {
+        "script": "computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py",
+        "criterion": "self-check-not-gated",
+        "verdict": "legit",
+        "why": "assertion is existential (at_least_one_passes); per-k False is the measurement, not a failed check"
+      }
+    ],
     "findings": [
       {
         "script": "computations/alpha_em/alpha_em_count_carrying_object_probe.py",
@@ -37,6 +56,16 @@
           "line 246: assigns verdict `mismatch`"
         ],
         "source_hash": "467c024d1267"
+      },
+      {
+        "script": "computations/chi_via_rust_lossless.py",
+        "criterion": "resume-cache-unvalidated",
+        "severity": "major",
+        "evidence": [
+          "line 130: loads the file it also WRITES, when it exists",
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
+        ],
+        "source_hash": "6433a7b10bd7"
       },
       {
         "script": "computations/delta_lambda_2row_stratum_analysis.py",
@@ -97,6 +126,16 @@
         "source_hash": "43cbad1d0d66"
       },
       {
+        "script": "computations/markov/markov_trace_canonical.py",
+        "criterion": "self-check-not-gated",
+        "severity": "critical",
+        "evidence": [
+          "line 444: assigns verdict `failures`",
+          "line 456: tallies `failures`"
+        ],
+        "source_hash": "fed145cc8e30"
+      },
+      {
         "script": "computations/mass_tower_operator_valued_chain.py",
         "criterion": "self-check-not-gated",
         "severity": "critical",
@@ -130,7 +169,7 @@
         "evidence": [
           "line 209: records verdict field `allPassed`"
         ],
-        "source_hash": "d66a5499d99a"
+        "source_hash": "b751d57a20fd"
       },
       {
         "script": "computations/ordering_cache.py",
@@ -176,7 +215,7 @@
         "evidence": [
           "line 164: assigns verdict `mismatches`"
         ],
-        "source_hash": "ea1a31982db1"
+        "source_hash": "2a217d47b99e"
       },
       {
         "script": "computations/probes/keystone_lr_modulus_d2_collapse_test.py",
@@ -232,6 +271,16 @@
           "line 159: assigns verdict `all_passed`"
         ],
         "source_hash": "13427ccbcde8"
+      },
+      {
+        "script": "computations/psl27_irrep_verification.py",
+        "criterion": "self-check-not-gated",
+        "severity": "critical",
+        "evidence": [
+          "line 252: records verdict field `allPassed`",
+          "line 262: records verdict field `allPassed`"
+        ],
+        "source_hash": "f30d722a9985"
       },
       {
         "script": "computations/qbeta/qbessel_jackson_contiguity.py",
@@ -373,15 +422,6 @@
         "source_hash": "1763bc3c3027"
       },
       {
-        "script": "computations/qbeta/qbeta_kashaev_habiro_chain_beta.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 214: records verdict field `all_passed`"
-        ],
-        "source_hash": "78279bb1a153"
-      },
-      {
         "script": "computations/qbeta/qbeta_klr_composite3_preflight_run.py",
         "criterion": "self-check-not-gated",
         "severity": "critical",
@@ -407,15 +447,6 @@
           "line 75: assigns verdict `all_passed`"
         ],
         "source_hash": "8921ad09870b"
-      },
-      {
-        "script": "computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 180: records verdict field `all_passed`"
-        ],
-        "source_hash": "db473bf9b57a"
       },
       {
         "script": "computations/qbeta/qbk2_reeb_vs_lp_dual_active_channel.py",
@@ -469,9 +500,9 @@
         "criterion": "self-check-not-gated",
         "severity": "critical",
         "evidence": [
-          "line 117: records verdict field `allPassed`"
+          "line 123: records verdict field `allPassed`"
         ],
-        "source_hash": "38ae6ad0b3eb"
+        "source_hash": "2d7bb2eaad1c"
       },
       {
         "script": "computations/substrate/gauss_linking_channel_slope_probe.py",
@@ -514,27 +545,27 @@
         "criterion": "self-check-not-gated",
         "severity": "critical",
         "evidence": [
-          "line 63: assigns verdict `all_passed`"
+          "line 69: assigns verdict `all_passed`"
         ],
-        "source_hash": "02f2c8a84449"
+        "source_hash": "538d5d1d282c"
       },
       {
         "script": "computations/substrate/lever1_lw_depth2_recurrence_test.py",
         "criterion": "self-check-not-gated",
         "severity": "critical",
         "evidence": [
-          "line 59: assigns verdict `all_passed`"
+          "line 65: assigns verdict `all_passed`"
         ],
-        "source_hash": "3d3851f3890e"
+        "source_hash": "6ca725d0d29d"
       },
       {
         "script": "computations/substrate/lever1_qinvolution_kernel_test.py",
         "criterion": "self-check-not-gated",
         "severity": "critical",
         "evidence": [
-          "line 166: assigns verdict `all_passed`"
+          "line 172: assigns verdict `all_passed`"
         ],
-        "source_hash": "6d33852778db"
+        "source_hash": "ff91e74c5ec5"
       },
       {
         "script": "computations/substrate/lever1_trB_geometric_target.py",
@@ -622,9 +653,9 @@
         "criterion": "self-check-not-gated",
         "severity": "critical",
         "evidence": [
-          "line 92: assigns verdict `n_fail`"
+          "line 98: assigns verdict `n_fail`"
         ],
-        "source_hash": "7d2901109036"
+        "source_hash": "c144fa0ac462"
       },
       {
         "script": "computations/y_lambda_pole_order_cache.py",

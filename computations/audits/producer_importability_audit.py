@@ -110,25 +110,82 @@ _LOADER = (
 
 
 def _producers(root: Path):
-    """witness -> producer path, for producers that exist beside their witness."""
+    """witness -> producer path, plus an accounting of what could NOT be resolved.
+
+    Returns `(out, scope)`. Every witness this function declines to map is
+    counted in `scope` rather than merely skipped: the audit's thesis is that a
+    witness whose producer cannot run is unrefreshable and invisible to every
+    staleness check, and *a producer that does not exist at all* is the maximal
+    case of that thesis. The header discloses the `scriptFile` precondition, but
+    the printed report used to show only `producers checked N` with no
+    denominator, so a reader could not tell what fraction of the corpus that N
+    covered. `scope` supplies the denominator.
+    """
     out = {}
+    scope = {
+        "witnesses_scanned": 0,
+        "unparseable": [],
+        "no_script_file": [],
+        "producer_not_beside_witness": [],
+    }
     for wf in root.rglob("*.witness.json"):
         s = str(wf)
         if "_deprecated" in s or "/data/" in s:
             continue
+        scope["witnesses_scanned"] += 1
+        rel = str(wf.relative_to(root.parent))
         try:
             d = json.loads(wf.read_text())
         except Exception:
+            scope["unparseable"].append(rel)
             continue
         if not isinstance(d, dict):
+            scope["unparseable"].append(rel)
             continue
         sf = d.get("scriptFile")
         if not sf:
+            scope["no_script_file"].append(rel)
             continue
         cand = wf.parent / os.path.basename(str(sf))
         if cand.exists():
             out.setdefault(cand, []).append(wf)
-    return out
+        else:
+            scope["producer_not_beside_witness"].append(f"{rel}  ->  {sf}")
+    scope["witnesses_resolved"] = sum(len(v) for v in out.values())
+    scope["witnesses_unresolved"] = (len(scope["unparseable"])
+                                     + len(scope["no_script_file"])
+                                     + len(scope["producer_not_beside_witness"]))
+    # Deliberately NO ratio stored: a float64 in a witness violates the corpus's
+    # no-float64 rule (the repo's own raw-float64 guard fires on it), and a
+    # coverage ratio needs no precision policy anyway — the two integers above
+    # are exact and the fraction is derivable from them. _print_scope computes
+    # the percentage for display only.
+    return out, scope
+
+
+def _print_scope(scope: dict) -> None:
+    """The denominator, printed whether or not it is flattering."""
+    print("\n  SCOPE — which witnesses this audit could even look at")
+    print("  (counts here are WITNESSES; 'producers checked' below counts distinct")
+    print("   producer files, which is smaller — one producer can emit several.)")
+    print(f"    witnesses scanned                {scope['witnesses_scanned']}")
+    pct = (100.0 * scope["witnesses_resolved"] / scope["witnesses_scanned"]
+           if scope["witnesses_scanned"] else 0.0)
+    print(f"    witnesses w/ producer resolved   {scope['witnesses_resolved']}"
+          f"   [{pct:.1f}% EVALUATED]")
+    print(f"    witnesses NOT evaluated          {scope['witnesses_unresolved']}")
+    print(f"      no scriptFile field            {len(scope['no_script_file'])}")
+    print(f"      producer not beside witness    "
+          f"{len(scope['producer_not_beside_witness'])}")
+    print(f"      unparseable                    {len(scope['unparseable'])}")
+    if scope["witnesses_unresolved"]:
+        print("    NOTE: a witness whose producer cannot be located is the MAXIMAL"
+              "\n          case of this audit's thesis, not an exemption from it."
+              "\n          It is excluded from the counts below, not cleared by them.")
+        for label, key in (("no scriptFile", "no_script_file"),
+                           ("producer missing", "producer_not_beside_witness")):
+            for ex in scope[key][:3]:
+                print(f"      e.g. [{label}] {ex}")
 
 
 def _classify(err: str) -> tuple[str, str]:
@@ -146,10 +203,15 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any in-repo-wiring failure is found")
+    ap.add_argument("--scope-only", action="store_true",
+                    help="print the coverage accounting and exit; imports nothing")
     args = ap.parse_args()
 
     root = HERE.parent
-    prod = _producers(root)
+    prod, scope = _producers(root)
+    if args.scope_only:
+        _print_scope(scope)
+        return 0
     items = sorted(prod)
     if args.limit:
         items = items[: args.limit]
@@ -182,6 +244,7 @@ def main() -> int:
     print("\n" + "=" * 74)
     print(" producers that cannot be imported — their witnesses are unrefreshable")
     print("=" * 74)
+    _print_scope(scope)
     print(f"\n  producers checked        {len(items)}")
     print(f"  UNIMPORTABLE             {len(bad)}")
     print(f"    in-repo-wiring         {n_wiring}   <- real, fixable defects")
@@ -214,6 +277,7 @@ def main() -> int:
         "cleanly under ast.parse, inflating 90 real findings to 109. This is a "
         "DETECTOR: it fixes nothing and does not claim every hit is a defect."
     )
+    wb.add_data("scope", scope)
     wb.add_data("producers_checked", len(items))
     wb.add_data("unimportable_total", len(bad))
     wb.add_data("counts", {k: len(v) for k, v in buckets.items()})

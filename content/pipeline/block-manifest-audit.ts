@@ -263,6 +263,8 @@ function findPaperDir(chapterDir: string): string | null {
 }
 
 const _listedCache = new Map<string, Set<string> | null>();
+/** Why a paper listing came back null, so a skip can say what went wrong. */
+const _listedError = new Map<string, string>();
 
 /** Every block root-name reachable from a paper manifest, through its listed chapters. */
 async function listedInPaper(paperDir: string): Promise<Set<string> | null> {
@@ -280,7 +282,14 @@ async function listedInPaper(paperDir: string): Promise<Set<string> | null> {
       const ch = (await import(chPath)).default as { sections?: unknown[] };
       for (const sec of ch.sections ?? []) listedBlocks(sec as never, out);
     }
-  } catch {
+  } catch (err) {
+    // Deliberately null, NOT the partial set: one unreadable chapter would
+    // otherwise leave a half-built listing, and every block in the missing
+    // chapters would be reported "unlisted" — false positives worse than the
+    // gap. The listing is unusable, so the honest value is "unknown"; what was
+    // missing is that "unknown" then read as "fine". Recorded here so the
+    // caller can say which paper failed and why.
+    _listedError.set(paperDir, String(err).slice(0, 300));
     out = null;
   }
   _listedCache.set(paperDir, out);
@@ -338,14 +347,39 @@ async function main(argv: string[]): Promise<number> {
     // 2026-07-18 clarity drain moved five fluid-dynamics remarks out of the
     // paper while reporting itself "manifest-safe".
     const unlisted: string[] = [];
+    // Blocks this check could not evaluate. They are NOT passes: an unreadable
+    // paper listing used to `continue` silently and the run then printed
+    // "every manifest in this diff loads and is listed" — a clean headline over
+    // a population it never compared, which is the same silence the comment
+    // above blames for the 2026-07-18 drain.
+    const unchecked: { md: string; why: string }[] = [];
     for (const md of candidates) {
       const chapterDir = dirname(md);
       const paperDir = findPaperDir(chapterDir);
-      if (!paperDir) continue;
+      if (!paperDir) {
+        unchecked.push({ md, why: "no paper manifest found in any parent directory" });
+        continue;
+      }
       const listed = await listedInPaper(paperDir);
-      if (listed === null) continue; // paper manifest unreadable; not this check's business
+      if (listed === null) {
+        unchecked.push({
+          md,
+          why:
+            `the paper listing at ${rel(paperDir)} could not be built: ` +
+            (_listedError.get(paperDir) ?? "unknown error"),
+        });
+        continue;
+      }
       const root = basename(md, ".md");
       if (!listed.has(root)) unlisted.push(md);
+    }
+    if (unchecked.length) {
+      console.log(
+        `\n⚠ block-manifest-audit: ${unchecked.length} of ${candidates.length} block(s) were\n` +
+          `  NOT checked against a paper manifest. This is not a pass — nothing was\n` +
+          `  compared for them, so a block missing from the paper would not show up here:`,
+      );
+      for (const u of unchecked) console.log(`    ${rel(u.md)}\n      ${u.why}`);
     }
     if (unlisted.length) {
       console.log(
@@ -359,7 +393,15 @@ async function main(argv: string[]): Promise<number> {
       );
     }
     if (!quiet && !unlisted.length) {
-      console.log("block-manifest-audit: every manifest in this diff loads and is listed.");
+      if (unchecked.length) {
+        console.log(
+          `block-manifest-audit: ${candidates.length - unchecked.length} of ` +
+            `${candidates.length} block(s) checked and listed; ` +
+            `${unchecked.length} NOT checked (above).`,
+        );
+      } else {
+        console.log("block-manifest-audit: every manifest in this diff loads and is listed.");
+      }
     }
     return 0;
   }
