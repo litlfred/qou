@@ -333,6 +333,63 @@ try:
     # This is what witness scripts import.
     Q_50_DIGIT_STR = _mp.nstr(Q_MP, _DPS_DEFAULT, strip_zeros=False)
 
+    # ── THE MUON PIN'S ONE NAMED HOME (bean qou-5op4) ──────────────
+    #
+    # Until now the muon pin had NO canonical source. The proton pin has
+    # exactly one — Q_50_DIGIT_STR above. The muon pin had a live derivation
+    # (q_muon_at) plus hand-typed copies with two different truncations, and a
+    # fixed-string grep for the 17-digit ancestor `1.1099785955541805` finds
+    # **336 files** (222 .json, 73 .py, 41 .md). A literal cannot drift from a
+    # source it does not have; these had none. That is the defect.
+    #
+    # THIS IS A FROZEN STRING, NOT A DERIVATION, AND THAT IS THE POINT.
+    # `q_muon_at()` re-derives from MASS_RATIO_MU_E_STR and vol_4_1_at(), so it
+    # RE-VALUES whenever CODATA moves — and it has. Three values are live today:
+    #
+    #   frozen (this constant, and AGENTS.md)  1.10997859555733471989976322048…
+    #   17-digit ancestor (336 files)          1.1099785955541805…
+    #   q_muon_at() as of 2026-08-24           1.10997859564273904668179512938…
+    #
+    #   rel(derived, frozen)   = 7.694e-11   (0.0769 ppb)
+    #   rel(ancestor, frozen)  = 2.842e-12   (0.00284 ppb)
+    #
+    # Scale, so nobody mis-files this: both are far BELOW the 11.5 ppb μ–p
+    # substrate tension (no layer is confused) and far ABOVE the 1 ppQ (1e-15)
+    # L1 compute target. A precision defect, not a physics one.
+    #
+    # WHICH TO USE. A witness that must stay reproducible against its own
+    # history imports this constant — it cannot re-value under it. A caller that
+    # genuinely wants "the muon pin implied by today's CODATA" calls
+    # q_muon_at(). Do not hand-type either; that is what produced the 336.
+    #
+    # REFRESH PROCEDURE (it goes stale BY DESIGN — that is the trade):
+    # this string is only updated by a deliberate, owner-authorised re-pin that
+    # also migrates the witnesses recording the old value. Never edit it to
+    # silence a drift check. Sequenced behind PR #5500 (muon anchor -> CODATA
+    # 2022, audit red, 53 witnesses outstanding) and behind the qou-1c4y
+    # migration, whose four constraints — in particular "never re-pin an
+    # anchor-DEFINING witness" and "do not split the change" — govern it.
+    Q_MUON_50_DIGIT_STR = (
+        "1.1099785955573347198997632204832250266562084087801536866079811461449"
+    )
+
+    def q_muon_frozen_at(dps: int = _DPS_DEFAULT):
+        """The FROZEN muon pin as an mpf — reproducible, does not re-value.
+
+        The counterpart to `q_muon_at()`, which derives and therefore moves
+        with CODATA. Use this when a recorded value must still mean the same
+        thing when read back later; use `q_muon_at()` when you want the pin
+        implied by today's inputs. Bean qou-5op4.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)
+            q = _mp.mpf(Q_MUON_50_DIGIT_STR)
+            _mp.mp.dps = max(prev, dps)
+            return +q
+        finally:
+            _mp.mp.dps = prev
+
     HAS_MPMATH = True
 except ImportError:
     HAS_MPMATH = False
@@ -349,6 +406,18 @@ except ImportError:
     # No-mpmath fallback: only the f64-precision q is available. 50-dps
     # work requires mpmath; this string carries f64 precision only.
     Q_50_DIGIT_STR = repr(Q)
+
+    # The frozen muon pin is a STRING, so it survives the no-mpmath path intact
+    # — unlike Q_50_DIGIT_STR above, which degrades to f64 here. Bean qou-5op4.
+    Q_MUON_50_DIGIT_STR = (
+        "1.1099785955573347198997632204832250266562084087801536866079811461449"
+    )
+
+    def q_muon_frozen_at(dps: int = _DPS_DEFAULT):
+        raise RuntimeError(
+            "q_muon_frozen_at requires mpmath; the frozen string is still "
+            "available as Q_MUON_50_DIGIT_STR"
+        )
 
 # ── Experimental observable anchors (CODATA 2022) ─────────────
 # Mirrored from `computations/substrate/experimental_constants.py`
