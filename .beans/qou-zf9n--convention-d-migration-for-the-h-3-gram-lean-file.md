@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-24T06:43:25Z
+updated_at: 2026-08-24T07:02:15Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -226,3 +226,31 @@ over R (det = 0 with an explicit radical, full NF basis, n=3), sympy (exactly
 one degenerate direction, indefinite signature, same basis), and numpy general-n
 (corank = block count, partition-indexed). The third is a different matrix, not
 a generalisation of the first two.
+
+
+## Progress 2026-08-24 — item 1 of 4 done (PR #5618)
+
+**DONE: `prop:spectrahedral-phase-collapse` scoped to convention C.** The
+threshold reading does not survive D; the theorem does, and stays. Probe
+`computations/probes/spectrahedral_phase_collapse_frame_probe.py` (7/7, exact
+over Q(u)/Q(q), parses the Gram out of the committed .lean so it cannot drift).
+
+Two findings beyond the scoping:
+
+- **The block was understating itself.** On u > 0, det G_C has TWO positive real
+  zeros: u = 1/psi (multiplicity 5) and u = 1, i.e. q = 1, the classical limit
+  (multiplicity 1). Only the first was in the corpus. The remaining real root
+  u = -psi from (u^3+u^2+1)^5 is negative, and both sextic factors are
+  real-rootless, so those two are all there are.
+- **No collision with `gramMatrix_det_ne_zero`**, which assumes 1 < u: both
+  zeros are at or below 1, and the substrate u_0 = 1.0536 is above both.
+
+REMAINING on this bean:
+  2. Convention-D migration of the H_3 Gram Lean file itself (the C
+     declarations are scoped but still the default the file leads with).
+  3. Untraced Delta_lambda residual drift.
+  4. The A=3 mirror pair fails to cancel while A=7 cancels exactly.
+
+My judgement on order: item 2 is now the natural next — #5592 has the general-n
+TL picture and #5502 landed the n=3 anchor, so the migration has both ends
+pinned. Items 3 and 4 are independent of the convention work.
