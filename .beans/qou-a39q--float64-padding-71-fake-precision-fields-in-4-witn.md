@@ -50,3 +50,50 @@ DETECTOR GAP WORTH CLOSING
   inspects LITERALS passed to mp.mpf(). None of these are literals: they are
   float64 VARIABLES reaching mpf, or correct literals evaluated before dps
   rose. A source audit over literals cannot see either.
+
+## Summary of Changes
+
+DONE. witness_float64_padding_audit is back at its baseline:
+  new_not_baselined  76 -> 71 -> 55 -> 0
+  live_files          5 ->  4 ->  1 -> 0
+  occurrences        88 -> 83 -> 67 -> 12   (12 = the original baseline)
+All 12 remaining rows are in _deprecated/ and were never mine.
+
+Three causes, three fixes, all verified representational — no asserted
+quantity moved in any of them:
+  10b577df2  inverse-markov-qvalues    set_compute_dps() sat ~96 lines below
+             the 5 module constants it was written to protect.
+  ed6d2167e  qbeta-markov-trace x3     sp.Float(<float64>, 50) on values read
+             out of the SDP witness, which is float64 legitimately (LP/SDP
+             duals are carved out because the solvers are float64).
+  14964256a  delta-lambda-categorical  mp.mpf(<float64>) on a contour integral
+             the producer's own docstring documents as float64. Also needed
+             float() before repr(): NumPy 2.x reprs a numpy.float64 as
+             "np.float64(...)" and mp.mpf chokes on the parenthesis.
+
+## CORRECTION to what this bean first claimed
+
+I wrote that a detector gap "let all of this through". That is WRONG for the
+inverse-markov case, and only testing it rather than assuming showed it.
+
+Restoring the pre-fix file and re-running mpf_import_time_dps_audit.py:
+    module-scope mpf built before precision is raised: 25   (12 files)
+      computations/inverse-markov-qvalues.py  (5)
+against 20 / 11 files after the fix. The gate SAW it, named the file, and
+counted all five sites. Not a gap -- an ADVISORY finding in the
+"position-risky (expr arg, not statically provable)" bucket that nobody
+acted on. The gate exits 0, so nothing forced it.
+
+The gap claim IS accurate for the other two causes, which that gate cannot
+see at all (verified -- it names neither): the qbeta ones are sympy rather
+than mpmath, and the delta-lambda one is function-scope rather than module
+scope. It also still holds for mpf_float_source_audit.py, which reports
+DEFECT 0 because it only inspects LITERALS passed to mp.mpf().
+
+## Follow-up worth having
+
+20 sites in 11 files remain in that same advisory bucket, 0 "proven lossy".
+inverse-markov was ALSO in that bucket and WAS a real defect, so the bucket
+is not empty of real ones. None pad a witness today -- but neither did
+inverse-markov, until the drain regenerated its stale witness. The risk is
+not "these are fine", it is "their witnesses are not fresh enough to tell".
