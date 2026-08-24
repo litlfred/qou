@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:53:43Z
-updated_at: 2026-08-24T17:52:15Z
+updated_at: 2026-08-24T17:58:35Z
 ---
 
 ## What happens
@@ -104,3 +104,45 @@ count — importing `hecke_core` does not prove the value depends on z, and
 `computedAt` is a proxy for the code version rather than proof of it. alpha* is
 the one confirmed instance, measured at 14.741 %. Worth converting the bound
 into a real number before anyone regenerates in bulk.
+
+
+## CORRECTION to the scope figure above: 9 candidates, not 30
+
+The section above reported "30 witnesses predate 2026-08-15" as the upper
+bound. That number counted **any** `hecke_core` importer, which is exactly the
+over-count it warned about. Re-measured against the z-dependent symbols only:
+
+`hecke_core` re-exports `pyhecke.gram`, where `z = q0**3 / (q0**2 + 1)`
+(gram.py:199, convention D). The symbols whose value moves with z are
+`z, TR_M, W_SYM, W_STD, W_ALT, NF_BASIS, hm, hm_exact, nf_tr, nf_net,
+G, G_PINV, G_INV, RADICAL, INV_TREFOIL_G0/G1, _H_FRAC, _Z_FRAC, _TR_M_FRAC,
+_SYM_EIG_FRAC, _ALT_EIG_FRAC`. Everything else `hecke_core` exports (braid
+chains, partition helpers) does not.
+
+    importers of hecke_core                       112
+    of those, importing a z-DEPENDENT symbol       41
+    of those, witness computed before 2026-08-15    9
+
+The nine:
+
+    2026-04-17  toffoli-lp-stability
+    2026-05-03  brane_tower_two_avenues_probe
+    2026-05-19  paper_six_term_isotope_sweep
+    2026-05-19  qbeta_decay_sdp_solver
+    2026-06-09  h2o_bond_angle_magnitude_vsepr
+    2026-06-12  wedderburn_pair_volumes
+    2026-06-17  hadron_knot_table
+    2026-06-22  alpha_high_precision          <- the confirmed 14.741 % case
+    2026-07-11  qbeta_c3_barodd_binding_sdp_dual_probe
+
+**These are CANDIDATES, not confirmed.** Importing a z-dependent symbol proves
+the dependency exists; it does not prove the recorded number moved. Deciding
+that needs a re-run per producer, which is real compute and its own tranche.
+
+The causal chain on alpha* is now closed rather than inferred: it imports
+`z as Z_MARKOV` from hecke_core directly (alpha_high_precision.py:43-44), so it
+consumes the very parameter that moved 0.4993 -> 0.6127 (+22.70 %).
+
+Note `hadron_knot_table` appears here AND in the qou-1c4y keep-on-muon /
+timeout set -- it is slow (>240 s per leg) and z-dependent, so whoever re-runs
+it for one reason should record both.
