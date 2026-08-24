@@ -25,6 +25,12 @@ NF coordinates), so a negative here would close Obstruction A outright.
 
 WHAT IT REPORTS
 ---------------
+0. The Markov trace `t(q)` DERIVED from the H_3(q) structure constants --
+   normalisation, cyclicity, and the Markov property `t(x sigma_n) = z t(x)`
+   -- rather than copied from `pyhecke.gram.TR_M`, so the only
+   convention-dependent input is the single scalar `z`.  `G(q)` is then
+   `t(T_i . T_j)`, also from the structure constants.  The shipped `TR_M`
+   is checked against the derived one.
 1. `det G(q) = 0` and `rank G(q) = 5` symbolically (the convention-D
    singularity of `qou-cds2`, confirmed over `Q(q)` rather than at a pin).
 2. `G(q) . v(q) = 0` symbolically -- the closed-form radical.
@@ -86,8 +92,7 @@ NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 
 q = sp.symbols("q", positive=True)
 h = q - 1 / q
-z = q ** 3 / (q ** 2 + 1)
-TR_M = [sp.Integer(1), z, z, z ** 2, z ** 2, h * z ** 2 + z]
+z = q ** 3 / (q ** 2 + 1)          # convention D (owner ruling 2026-08-15)
 
 
 def _reduce_nf(terms):
@@ -133,14 +138,53 @@ def _reduce_nf(terms):
     return terms
 
 
-def build_gram() -> sp.Matrix:
+def derive_trace(C):
+    """Solve for the Markov trace `t(q)` from the H_3(q) structure constants.
+
+    `t` is NOT taken from `pyhecke` here -- it is DERIVED, so that the only
+    convention-dependent input to this probe is the single scalar `z`.  The
+    Markov-Ocneanu-Wenzl trace is the unique linear functional on H_3(q)
+    satisfying
+
+        (N)  t(1) = 1                              normalisation
+        (C)  t(T_i T_j) = t(T_j T_i)  for all i,j  cyclicity
+        (M)  t(x . sigma_n) = z . t(x)  for x in H_n   Markov property
+
+    and each condition is expressed through the structure constants
+    `C[i][j] = NF(T_i . T_j)`, i.e. through the Gröbner-Shirshov reduction
+    itself.  The solution is then CHECKED against the convention-D vector
+    `[1, z, z, z^2, z^2, h z^2 + z]` that `pyhecke.gram.TR_M` ships, which
+    makes the shipped constant a verified consequence rather than an input.
+    """
+    ts = sp.symbols("t0:6")
+    T = list(ts)
+    eqs = [sp.Eq(T[0], 1)]                                   # (N)
+    for i in range(6):                                       # (C)
+        for j in range(i + 1, 6):
+            d = sp.expand(sum((C[i][j][k] - C[j][i][k]) * T[k] for k in range(6)))
+            if d != 0:
+                eqs.append(sp.Eq(d, 0))
+    # (M): H_1 = <1> with last generator sigma_0; H_2 = <sigma_0> with sigma_1.
+    for sub, gen in (([()], 0), ([(), (0,)], 1)):
+        for w in sub:
+            x = [sp.Integer(1) if b == w else sp.Integer(0) for b in NF_BASIS]
+            xg = rmul_gen(x, gen)
+            eqs.append(sp.Eq(
+                sp.expand(sum(xg[k] * T[k] for k in range(6))),
+                sp.expand(z * sum(x[k] * T[k] for k in range(6))),
+            ))
+    sol = sp.solve(eqs, ts, dict=True)
+    if len(sol) != 1:
+        raise RuntimeError(f"trace not uniquely determined: {len(sol)} solutions")
+    return [sp.cancel(sp.together(sol[0][x])) for x in ts]
+
+
+def build_gram(C, t) -> sp.Matrix:
+    """G[i][j] = t(T_i . T_j), from the structure constants and the trace."""
     G = sp.zeros(6, 6)
     for i in range(6):
         for j in range(6):
-            nf = _reduce_nf({NF_BASIS[i] + NF_BASIS[j]: sp.Integer(1)})
-            G[i, j] = sp.simplify(
-                sum(nf.get(b, 0) * TR_M[k] for k, b in enumerate(NF_BASIS))
-            )
+            G[i, j] = sp.simplify(sum(C[i][j][k] * t[k] for k in range(6)))
     return G
 
 
@@ -180,8 +224,18 @@ def main() -> int:
     print(f"  z(q) = {sp.simplify(z)}")
     print(f"  h(q) = {sp.simplify(h)}")
 
-    G = build_gram()
-    print("\n-- Gram matrix G(q) over Q(q) --")
+    C = structure_constants()
+    t = derive_trace(C)
+    print("\n-- Markov trace t(q), DERIVED from the structure constants --")
+    for i, (b, e) in enumerate(zip(NF_BASIS, t)):
+        print(f"   t[{i}]  ({b or '()'})  =  {sp.factor(e)}")
+    shipped = [sp.Integer(1), z, z, z ** 2, z ** 2, h * z ** 2 + z]
+    same = all(sp.simplify(a - b) == 0 for a, b in zip(t, shipped))
+    print(f"   agrees with pyhecke.gram.TR_M (convention D) : {same}")
+    assert same, "derived trace must reproduce the shipped convention-D TR_M"
+
+    G = build_gram(C, t)
+    print("\n-- Gram matrix G(q) over Q(q), built as t(T_i . T_j) --")
     for i in range(6):
         print("   [" + ", ".join(str(sp.factor(G[i, j])) for j in range(6)) + "]")
 
@@ -275,8 +329,6 @@ def main() -> int:
     print("\n" + "=" * 72)
     print("IS ANY POINT OF THE COSET  Phi* + span(v)  A BRAID IMAGE?")
     print("=" * 72)
-
-    C = structure_constants()
 
     def Lmat(y):
         """Left-multiplication matrix of y = sum y_i T_i on the NF basis."""

@@ -7069,13 +7069,6 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
-        "file": "computations/h4-markov-weights-closed-form.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
         "file": "computations/h4-residual-higher-precision-pslq.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11606,6 +11599,13 @@
       },
       {
         "file": "computations/probes/six-fifths-deviation-h4-correction-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
