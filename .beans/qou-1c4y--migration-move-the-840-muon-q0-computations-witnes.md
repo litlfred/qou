@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-22T20:20:42Z
+updated_at: 2026-08-24T17:52:46Z
 ---
 
 
@@ -534,3 +534,56 @@ will not take effect: `qbeta_dladder_ecalle_acceleration_probe`,
 `qbeta_trm_crosscheck_convention_pin_split_probe`.
 
 Together: 101 producers covered (49 + 56 - 4); neither audit sees the other's set.
+
+
+## STOPPING POINT 2026-08-24 — bulk migration done, PR #5664
+
+    ideal_muon      120 -> 37
+    physical_proton 514 -> 597
+
+~130 producers migrated, each verified by the muon value actually LEAVING its
+witness rather than by the witness merely changing. Manifest moved LAST, after
+the data, and re-verified: both anchors still resolve distinctly, a
+keep-on-muon stem still resolves to muon (so the guard stays reachable), a
+migrated stem resolves to proton, the lists do not overlap.
+
+**Five mechanisms by which a producer holds a muon value**, each found only
+after the detector built for the previous one came back clean:
+
+  1. manifest tag                      -> the manifest move
+  2. local source literal              -> resolve through q_parameter (23)
+  3. shared-module literal             -> one constant, 22 importers
+  4. provenance stamp moving alone     -> detect and revert
+  5. direct read of the anchor witness -> architectural, bean qou-aj91
+
+Mechanism 3 is the sharpest: `_gap_a4_qsafe.py` held the MUON value under a
+comment reading "proton-mass-anchored q_0", imported by 22 modules — which is
+how the T5-T12 series came to be tagged physical_proton over muon witnesses.
+
+**Two self-corrections, recorded because the numbers were reported wrong
+first.** I claimed 89 migrated; 36 were stamp-only flips and were reverted. The
+revert then OVER-reached, because its file list came from the journal's
+per-producer `files` and producers write SIBLING witnesses — genuine
+migrations were rolled back with the bad ones and had to be re-run. Nothing
+false entered the corpus either time; the failure was over-claiming, then
+over-correcting.
+
+## What is left, and why it is not "unfinished"
+
+The 37 remaining are the correct end state: `q_pinning_50_digit` DEFINES the
+anchor; five producers refuse a proton run by design;
+`q0_anchor_consistency_audit` needs BOTH pins (moving it would disable the
+audit that detects anchor corruption). A run that drove ideal_muon to zero
+would be a bug.
+
+Genuinely open, tracked elsewhere:
+  * qou-aj91 — 85 producers read the anchor witness directly (67 untagged);
+    needs an architectural decision, not a sweep.
+  * qou-y82a — single_anchor_near_matches 25 -> 4 between anchors.
+  * qou-2zjp — alpha_high_precision, now diagnosed as convention C->D drift,
+    unrelated to the anchor.
+  * ~6 slow producers needing a deliberate long compute (20-40 min per leg).
+
+Keeping this bean IN-PROGRESS rather than closing on the manifest number: the
+mechanism-5 question and the slow producers are real remaining work, and
+closing on "120 -> 37" would read as done when it is not.
