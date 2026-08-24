@@ -4339,3 +4339,61 @@ Verified lean-direct: HeckeGS exit 0 (4 s), HeckeCompletion exit 0 (100 s), 0
 errors and 0 warnings on both. `#print axioms` on both new declarations, both
 re-proved `lm_cases`, `_lm_ne_nil` and `bsbs_overlap_resolves`: propext,
 Classical.choice, Quot.sound only. PR #5626.
+
+## The overlap of a proper composition is one letter (2026-08-24, §4au)
+
+**The inventory that reframed the remaining work.** Reading the ~20 composition
+namespaces in `HeckeCompletion.lean`, they are indexed by the **shape** of the
+composition, not by the kinds of the two rules — and several take a *generic*
+rule in one or both slots, so they already cover whole rows and columns of the
+rule-kind table:
+
+| namespace | rule₁ | rule₂ | `overlap` | gated on |
+|---|---|---|---|---|
+| `CyclicQuad` | `r` | `heckeRelation x` | `[σₓ]` | `r.lm = u' ++ [σₓ]` |
+| `CyclicQuadLeft` | `heckeRelation x` | `r` | `[σₓ]` | `r.lm = σₓ :: u''` |
+| `BraidSelfOverlap` | `r₁` | `r₂` | `[σᵢ]` | both on `wHi i' i` |
+| `FarCommCyclic` | `farCommRelation x m` | `r` | `[σ_m]` | `r.lm = σ_m :: u''` |
+| `CyclicFarCommLow` | `r` | `farCommRelation i j₀` | `[σᵢ]` | `r.lm = (σᵢ :: D') ++ [σᵢ]` |
+| `BokutShiaoBraid` | BS | `r₂` | `[σᵢ]` | `r₂.lm = wHi i' i` |
+| `BraidBokutShiao` | `r₁` | BS | `[σᵢ]` | `r₁.lm = wHi i' i` |
+| `BokutShiaoFarComm`, `CornerGeneral` + 5 corner namespaces | | | `[σᵢ]` | |
+
+**Every one fixes `overlap` to one letter.** So the gap between this machinery
+and the criterion's `∀ oc` is exactly the multi-letter overlaps — a much
+narrower thing than "the other fifteen rule-kind pairs", which is how §4at
+framed it.
+
+**Measured** ([`hecke_overlap_length_probe.py`](../computations/hecke_overlap_length_probe.py),
+PR #5627): at `n = 2 … 8`, **1351** compositions with both contexts non-empty,
+overlap-length histogram `len1` only, zero exceptions. The same probe reproduces
+§4k's shape counts independently — 16 rules → 13 distinct lms → 58 shapes = 45
+proper + 13 degenerate at `n = 4`.
+
+**Proved** (PR #5629): the invariant is that every rule's leading monomial begins
+with its largest letter (`lm_head_is_max`, off the *leading-monomial* inversion —
+the one §4at said `spoly` cannot use, which is the right tool here because this
+claim is about leading monomials). Then `overlap_length_one_of_bs_left`: the
+overlap's head is `lm₂`'s head so it dominates the overlap; the overlap is a
+suffix of `lm₁` so once longer than one letter its head is strictly inside the
+descending run, capped at `i − 1` by `descWord_index_le`; and the trailing `σᵢ`
+is in the overlap either way.
+
+### Not proved
+
+Only Bokut–Shiao as `rule₁` is machine-checked — the shape `CornerGeneral`
+composes and the only one whose lm is not of length 2 or 3. The other three
+`rule₁` shapes are covered by the enumeration but not by Lean; for them
+`left ≠ []` forces the overlap short by a length bound, which is easier but
+unwritten.
+
+### The remaining chain to `overlap_resolves`, as it now stands
+
+1. **Rule-level inversion** — done, §4at.
+2. **Single-letter overlap** — measured for all four shapes, proved for BS.
+3. **The shape bridge** — from an arbitrary `oc` to the constructed
+   `CornerGeneral.oc`, i.e. recovering `left`/`right` once `overlap` is known to
+   be `[σᵢ]`. Step 2 is what makes this tractable: with a one-letter overlap the
+   two `lm_decomp`s determine `left` and `right` outright.
+4. **The other cells**, and every `ic`.
+5. The deep diagonal `j₁ = j₂ = 0`, still open from §4as.
