@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:16:13.998805+00:00",
-  "commitSha": "35d18af5f783dc2e7ec449a94da4f9037c50d671",
+  "computedAt": "2026-08-23T19:43:21.713320+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
@@ -48,14 +48,14 @@
         "shard_filename": "canonical-isotope-witness-Z00.witness.json",
         "element": "n",
         "rows_total": 1,
-        "rows_with_prediction": 0,
+        "rows_with_prediction": 1,
         "rows_with_composite_mass": 1
       },
       "1": {
         "shard_filename": "canonical-isotope-witness-Z01.witness.json",
         "element": "H",
         "rows_total": 7,
-        "rows_with_prediction": 2,
+        "rows_with_prediction": 3,
         "rows_with_composite_mass": 3
       },
       "2": {

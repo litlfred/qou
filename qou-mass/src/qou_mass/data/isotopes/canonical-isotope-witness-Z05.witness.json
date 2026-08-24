@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:15:56.981357+00:00",
-  "commitSha": "35d18af5f783dc2e7ec449a94da4f9037c50d671",
+  "computedAt": "2026-08-23T19:43:03.801666+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 28,
   "computation": "canonical-isotope-witness-Z05",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "e56cabeee1ea",
@@ -571,11 +571,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "184d7e1287bdbc1558347f117ec102db4054cd5eb690ddda6914a50ce6df38b3",
-        "size_bytes": 65295,
-        "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
-        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
-        "computedAt": "2026-08-22T09:49:32.663084+00:00"
+        "sha256": "49bbb87abb59763acaf6e3870ddb0eb6b54d64b41b3750ae710bf40c2f9519f6",
+        "size_bytes": 72808,
+        "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
+        "scriptCommitSha": "1eb1651aa24d31071eb407d2ee2d9cfdaba23ae9",
+        "computedAt": "2026-08-23T19:42:36.593762+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",

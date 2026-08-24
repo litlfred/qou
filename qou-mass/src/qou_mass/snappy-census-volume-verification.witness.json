@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-08-08T08:54:04.662024+00:00",
-  "commitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "computedAt": "2026-08-23T19:35:52.419685+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "s1_VOL_4_1_matches_census",
@@ -54,49 +54,49 @@
     },
     {
       "name": "s2_Vol_p_matches_named_census",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-12,
       "source": "per-atom-hyperbolic-volume.witness.json Vol_p (B_3 (Borromean)) vs ManifoldHP('L6a4')"
     },
     {
       "name": "s2_Vol_n_matches_named_census",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-12,
       "source": "per-atom-hyperbolic-volume.witness.json Vol_n (B_3 (Borromean)) vs ManifoldHP('L6a4')"
     },
     {
       "name": "s2_Vol_D_matches_named_census",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-12,
       "source": "per-atom-hyperbolic-volume.witness.json Vol_D (6_2) vs ManifoldHP('6_2')"
     },
     {
       "name": "s2_Vol_T_matches_named_census",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-12,
       "source": "per-atom-hyperbolic-volume.witness.json Vol_T (8_11) vs ManifoldHP('8_11')"
     },
     {
       "name": "s2_Vol_3He_matches_named_census",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-12,
       "source": "per-atom-hyperbolic-volume.witness.json Vol_3He (L6a4) vs ManifoldHP('L6a4')"
     },
     {
       "name": "s2_Vol_4He_matches_4x8G_formula",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-12,
       "source": "per-atom witness Vol_4He vs 4·8·Catalan (magic-A formula)"
     },
@@ -133,8 +133,8 @@
       "source": "orphan 3.16396 (conj table ²H row + MostowRigidity.lean:264) equals census Vol(6_1)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 991,
+  "allPassed": false,
+  "durationMs": 823,
   "computation": "snappy-census-volume-verification",
   "scriptFile": "snappy_census_volume_verification.py",
   "scriptHash": "467c024d1267",
@@ -152,7 +152,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/snappy_census_volume_verification.py"
+    ],
+    "reproduce": "python3 -u computations/audits/snappy_census_volume_verification.py"
   },
   "description": "Live SnapPy (ManifoldHP) verification of every hyperbolic-volume constant the mass pipeline consumes: substrate/knot_volumes.py constants (S1), the per-atom-hyperbolic-volume production atlas (S2), and the conj:canonical-knot-id-sdp historical volume-matching table (S3 — documents the thread-4 fork: all three claimed volumes belong to OTHER census manifolds than the knots they name; orphan numbers census-identified by volume scan). Diagnostic only; fork resolution is owner-gated.",
   "data": {
@@ -175,17 +182,17 @@
     "s1_VOL_7_SQ_1_absdiff": "4.6924e-50",
     "s1_VOL_7_SQ_1_solution_type": "all tetrahedra positively oriented",
     "s2_Vol_p_census": "7.3277247534177521204368281194590728861931949942534",
-    "s2_Vol_p_absdiff": "8.7956e-16",
+    "s2_Vol_p_absdiff": "7.3051",
     "s2_Vol_n_census": "7.3277247534177521204368281194590728861931949942534",
-    "s2_Vol_n_absdiff": "8.7956e-16",
+    "s2_Vol_n_absdiff": "7.447",
     "s2_Vol_D_census": "4.4008325161230461014412038656409280339834854185165",
-    "s2_Vol_D_absdiff": "2.1014e-15",
+    "s2_Vol_D_absdiff": "5.5763",
     "s2_Vol_T_census": "8.2863168178065925881268247977511671629487442454111",
-    "s2_Vol_T_absdiff": "5.8813e-16",
+    "s2_Vol_T_absdiff": "11.027",
     "s2_Vol_3He_census": "7.3277247534177521204368281194590728861931949942534",
-    "s2_Vol_3He_absdiff": "1.2044e-16",
+    "s2_Vol_3He_absdiff": "9.2913",
     "s2_Vol_4He_formula_4x8G": "29.310899013671008481747312477836291544772779977014",
-    "s2_Vol_4He_absdiff": "1.5183e-15",
+    "s2_Vol_4He_absdiff": "32.84",
     "s3_2H_table_value": "3.16396",
     "s3_2H_named_knot": "6_2",
     "s3_2H_census_of_named": "4.4008325161230461014412038656409280339834854185165",
@@ -205,11 +212,11 @@
     "upstream_witness_hashes": [
       {
         "path": "per-atom-hyperbolic-volume.witness.json",
-        "sha256": "8c2141558c7744e24a81136882c75f2ceeb68a9cacb0e564fde4cfbef3ebd091",
-        "size_bytes": 2931,
-        "commitSha": "078d896bb95c493b1efe6d05d10ce4b413426612",
-        "scriptCommitSha": "078d896bb95c493b1efe6d05d10ce4b413426612",
-        "computedAt": "2026-06-02T15:50:49.742233+00:00"
+        "sha256": "4d2caed804a323e764df0d64a67aa81507c82eca29e9dd5c4d97b96cf2b0d7d1",
+        "size_bytes": 2943,
+        "commitSha": "fc9819f75c7b82f1235a47fe9533978a7100b621",
+        "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+        "computedAt": "2026-08-16T13:00:29.067389+00:00"
       }
     ]
   }

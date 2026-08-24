@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:15:58.117811+00:00",
-  "commitSha": "35d18af5f783dc2e7ec449a94da4f9037c50d671",
+  "computedAt": "2026-08-23T19:43:04.710813+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 29,
   "computation": "canonical-isotope-witness-Z13",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "e56cabeee1ea",
@@ -700,10 +700,10 @@
         "err_ppm": "-482944.355965549850425058251084148714478078012725775937691326",
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": "38364.0410021113141561946431702952616791093363656818625651993",
+          "M_pred_MeV": "38364.0541706078805561946431702952616791093363656818625651993",
           "M_AME_MeV": "38225.8483545675384800000000000000000000000000000000139980773",
-          "err_MeV": "138.192647543775676194643170295261679109336365681848567121987",
-          "err_ppm": "3615.16234412789122772711531126459975572361963905981653826072",
+          "err_MeV": "138.205816040342076194643170295261679109336365681848567121987",
+          "err_ppm": "3615.50683606549989350886303433012089001770911628808317191345",
           "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -732,10 +732,10 @@
         "err_ppm": "-465434.073072838943846572595111295470740278118900165446362722",
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": "39298.2542790562310201961862585846315443267850895067076603456",
+          "M_pred_MeV": "39298.2679178562462201961862585846315443267850895067076603456",
           "M_AME_MeV": "39164.7422474474901600000000000000000000000000000000143418946",
-          "err_MeV": "133.512031608740860196186258584631544326785089506693318451013",
-          "err_ppm": "3408.98532576050155888886372786050209378227436817647198232371",
+          "err_MeV": "133.525670408756060196186258584631544326785089506693318451013",
+          "err_ppm": "3409.33356755229041945771479179937891195406898114705514900016",
           "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -764,10 +764,10 @@
         "err_ppm": "-450236.474739386572286648667491325254582055682238985597817468",
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": "40232.4722822435406949470833918166763296764545827850870746505",
+          "M_pred_MeV": "40232.4863913470046949470833918166763296764545827850870746505",
           "M_AME_MeV": "40102.5164844147704000000000000000000000000000000000146853019",
-          "err_MeV": "129.955797828770294947083391816676329676454582785072389348513",
-          "err_ppm": "3240.58959939024345000774093528377686547852891946877021644358",
+          "err_MeV": "129.969906932234294947083391816676329676454582785072389348513",
+          "err_ppm": "3240.94142527801493904235407455992000035624834038174521875151",
           "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -785,11 +785,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "184d7e1287bdbc1558347f117ec102db4054cd5eb690ddda6914a50ce6df38b3",
-        "size_bytes": 65295,
-        "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
-        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
-        "computedAt": "2026-08-22T09:49:32.663084+00:00"
+        "sha256": "49bbb87abb59763acaf6e3870ddb0eb6b54d64b41b3750ae710bf40c2f9519f6",
+        "size_bytes": 72808,
+        "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
+        "scriptCommitSha": "1eb1651aa24d31071eb407d2ee2d9cfdaba23ae9",
+        "computedAt": "2026-08-23T19:42:36.593762+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",

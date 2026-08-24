@@ -207,6 +207,75 @@ def hoefsmit_matrices_symbolic(shape, q):
     return _hoefsmit_build(shape, q)
 
 
+def build_hoefsmit_mpfr(shape: tuple[int, ...], q_val) -> tuple[list, int]:
+    """Build [σ_1, σ_2, …, σ_{n-1}] for V_shape at `q_val` (mpmath).
+
+    Returns `(sigmas, dim)`; each σ_k is an `mp.matrix`. The mpmath sibling of
+    `hoefsmit_matrices_symbolic` above — same seminormal construction, numeric
+    rather than symbolic, so it stays beside the `standard_young_tableaux` it
+    is built on.
+
+    RESTORED HERE, and the reason is worth recording. This function lived in
+    `_deprecated/probes/probe_staircase_ew_k3_categorical.py`, in ROOT-LEVEL
+    agent scratch, and was untracked wholesale by `0763606e4` ("untrack the
+    five root-level agent-scratch dirs (2,344 files)"). Ten TRACKED producers
+    import it at module scope, so every one of them has raised
+    `ModuleNotFoundError` ever since and cannot run at all — their witnesses
+    can never be refreshed by any amount of draining.
+
+    That commit anticipated exactly this: "They are recoverable from history if
+    any turns out to be wanted." One did. Recovered verbatim from
+    `0763606e4^` and placed here rather than restoring the whole probe: the
+    probe was scratch, this function is library code that happened to live in
+    it, and `build_hoefsmit_mpfr` needs only `standard_young_tableaux` and
+    mpmath — both already in this module.
+    """
+    n = sum(shape)
+    syts, _cells, contents = standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], 0
+
+    h = q_val - 1 / q_val
+    sigmas: list = []
+    for k in range(1, n):  # σ_k swaps entries k and k+1
+        M = mp.zeros(dim, dim)
+        processed: set[int] = set()
+        for i in range(dim):
+            if i in processed:
+                continue
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+            a = h / (1 - q_val ** (-2 * rho))
+
+            swap_map = dict(syts[i])
+            swap_map[k], swap_map[k + 1] = ci_k1, ci_k
+            j_partner = None
+            for jj in range(dim):
+                if jj == i:
+                    continue
+                if syts[jj] == swap_map:
+                    j_partner = jj
+                    break
+
+            if j_partner is None:
+                M[i, i] = a
+                processed.add(i)
+            else:
+                a_prime = h / (1 - q_val ** (2 * rho))
+                b_sq = a * a_prime + 1
+                b = mp.sqrt(b_sq)
+                M[i, i] = a
+                M[j_partner, j_partner] = a_prime
+                M[i, j_partner] = b
+                M[j_partner, i] = b
+                processed.add(i)
+                processed.add(j_partner)
+        sigmas.append(M)
+    return sigmas, dim
+
+
 # In-memory cache for χ^λ_q(T_w) keyed by (shape, frozen braid word, q symbol).
 # Avoids recomputing the Hoefsmit-matrix-product trace when the same
 # (partition, braid_word) pair is queried twice in a single process —
@@ -269,48 +338,26 @@ def _q_character_compute(shape, braid_crossings, q):
 # first request only.  Backed by chi-{atom}-h{n}.witness.json caches that
 # already exist for atoms whose Hoefsmit-matrix products are too
 # expensive to recompute (n ≥ 6).
-_CHI_WITNESS_STRINGS: dict[str, dict[tuple, str]] = {}
-
-
-def _load_chi_witness(atom_label: str) -> dict[tuple, str]:
-    """Read chi-{atom_label}-h{n}.witness.json (n implied by atom_label)
-    and return {partition_tuple: chi_q_symbolic_string}.  Cached per
-    atom_label; lazy on first request."""
-    if atom_label in _CHI_WITNESS_STRINGS:
-        return _CHI_WITNESS_STRINGS[atom_label]
-    out: dict[tuple, str] = {}
-    here = Path(__file__).parent
-    # Try canonical naming patterns.  chi-deuteron-h6, chi-tritium-h9,
-    # chi-helium-3-h9, etc.
-    for pattern in (
-        f"chi-{atom_label}-h*.witness.json",
-        f"chi-{atom_label}.witness.json",
-    ):
-        for path in sorted(here.glob(pattern)):
-            try:
-                with path.open() as f:
-                    doc = json.load(f)
-                entries = doc.get("chi_lambda_symbolic")
-                if not isinstance(entries, list):
-                    continue
-                for w in entries:
-                    try:
-                        lam = tuple(w["partition"])
-                        out[lam] = w["chi_q_symbolic"]
-                    except (KeyError, TypeError):
-                        continue
-            except Exception:
-                continue
-            if out:
-                break
-        if out:
-            break
-    _CHI_WITNESS_STRINGS[atom_label] = out
-    return out
-
-
-def q_character_on_braid_word(shape, braid_crossings, q,
-                                *, atom_cache_label: str | None = None):
+# The witness-backed chi cache was REMOVED here (bean qou-tnrz).
+#
+# `_load_chi_witness` globbed `Path(__file__).parent` for chi-*.witness.json.
+# Phase-6 moved this module into computations/hecke/ while those witnesses
+# stayed in flat computations/, so the glob matched nothing and the cache had
+# been silently inert ever since — every call fell through to recompute.
+#
+# It was deleted rather than repointed. The cache is a pure optimisation (a
+# miss costs time, never correctness), and it has a documented history of the
+# opposite: 026a8514b drained chi-deuteron-h6 for carrying colour-BLIND
+# symbolic chi, moving every nonzero pole order by +8, with a stored tag that
+# was 'accurate about the bytes and silent about the drift'. The fingerprint
+# guard added for that (45789ddf, 'chi caches could not tell that the question
+# had changed') does NOT cover this path. Repointing the glob would have
+# reactivated an unguarded cache in exactly the configuration that produced
+# the error — and the sympify here is wrapped in a bare except, so a stale
+# string fails silently into recompute while a plausible one is trusted.
+#
+# If the recompute cost is ever measured to matter, the guard must land first.
+def q_character_on_braid_word(shape, braid_crossings, q):
     """Compute χ^λ_q(T_w) symbolically for a braid word represented as
     a list of (gen_index, (c, d)) pairs.  Each crossing contributes
     c · ρ_λ(T_gen) + d · I_dim to the product; the final trace is the
@@ -322,8 +369,6 @@ def q_character_on_braid_word(shape, braid_crossings, q,
     Optimizations:
 
     - **Witness-cache lookup** (preferred for n ≥ 6): if
-      `atom_cache_label` is supplied (e.g. ``"deuteron"``,
-      ``"tritium"``, ``"helium-3"``) the function consults the
       committed `chi-{label}-h{n}.witness.json` cache for the
       requested partition.  These caches store the closed-form
       symbolic χ^λ_q(β_atom) values (155+ s first-run compute) and
@@ -336,20 +381,6 @@ def q_character_on_braid_word(shape, braid_crossings, q,
 
     Returns sympy expression for χ^λ_q(T_w).
     """
-    # 1. Witness-cache hit — most expensive computations skipped.
-    if atom_cache_label is not None:
-        cache = _load_chi_witness(atom_cache_label)
-        lam = tuple(shape)
-        if lam in cache:
-            try:
-                # Bind q-string to the caller's q symbol.  The cached
-                # strings always use the bare name "q"; sympify via
-                # `locals={"q": q}` ensures the returned expression
-                # composes with downstream callers' q.
-                return sp.sympify(cache[lam], locals={"q": q})
-            except (sp.SympifyError, SyntaxError, ValueError):
-                pass  # fall through to recompute
-
     # 2. In-memory lru_cache for pure-Symbol q (Symbols are cheap to key
     # by name; non-Symbol q goes straight to compute since cache keys
     # would be unstable).
