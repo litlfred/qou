@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:16:05Z
-updated_at: 2026-08-24T14:29:17Z
+updated_at: 2026-08-24T14:54:25Z
 ---
 
 Opened by the `F64_ENGINE_ENTRY` tier added to
@@ -188,3 +188,41 @@ publishes 50 digits of a 15-digit value.
 At that ratio the `averaged_block_swap_binding` producer goes 78 s -> ~40 min.
 A 600 s timeout kills it; budget 3300 s and use the compute-audit teed-log
 discipline.
+
+
+## Head-of-3 triaged: the real head is 2
+
+Verdicts recorded here because standalone `computations/*.py` has no `.qa.json`
+sidecar to hold them.
+
+**`all_nuclides_wedderburn_spectral_v2.py:314` — LEGITIMATE, do not fix.**
+The f64 call is a cross-check assertion, and it floats BOTH sides:
+
+    mine = float(m_tr(m))                              # its own mpmath value
+    ref  = float(nat.chi_lambda_braid([2, 1], word, qf))
+    w.add_assertion(name="chi_std_vs_native_hoefsmit", ..., tolerance=1e-9)
+
+Symmetric f64 for an f64-tolerance agreement test is the correct arithmetic.
+Switching to MPFR would tighten the assertion past its intent and change no
+published value. This is the second instance of the same class as
+`chi_4he_binding_lossless` — the "deliberate" proxy misses both because
+neither module calls an `_mpfr` entry anywhere.
+
+**So the actionable head is 2**, not 3:
+
+    gap10_tjon_correlation_probe  -> tjon_external_cross_check_probe
+    fr_pullback_cosh_h_test       -> convention_frame_staleness_audit
+
+and `fr_pullback_cosh_h_test` imports the f64 `dim_q` from
+`mass_at_3A_proper`, so it carries the HALF-FIX WARNING: the engine swap alone
+leaves it capped. Fixing it properly needs an mpf-capable `dim_q` first, which
+is its own change with 8 importers.
+
+### Running total for the class
+
+    71  candidates (AST, both hops)
+    18  serialise wide from an f64 value
+     3  ... and their witness is read by another module
+     2  ... and the call is not a deliberate f64-tolerance cross-check
+
+Two of the four reductions came from measurement catching my own over-claim.
