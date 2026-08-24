@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T18:15:56.245603+00:00",
-  "commitSha": "5d1aaff33eea642300cb2b61a9dcfd470261bf36",
+  "computedAt": "2026-08-24T19:24:35.596366+00:00",
+  "commitSha": "23b9c4f5bad6278e62e08dd00b276c2ac4c4bc6e",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "909e02527c90e773"
   },
   "invocation": {
     "argv": [
@@ -59,9 +59,9 @@
   "data": {
     "counts": {
       "total_scanned": 2737,
-      "prov_ok": 2324,
+      "prov_ok": 2323,
       "prov_audit_exempt": 79,
-      "prov_exempt_no_reader": 239,
+      "prov_exempt_no_reader": 240,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 92,
       "prov_parse_error": 0,
@@ -3935,10 +3935,6 @@
         },
         {
           "witness": "lepton-tower-bend-screening.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "lepton-tower-probe-1-cinquefoil-muon.witness.json",
           "missing_fields": []
         },
         {
@@ -10995,6 +10991,14 @@
         },
         {
           "witness": "keystone-wrt-schurweyl-plancherel-4count.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "lepton-tower-probe-1-cinquefoil-muon.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
