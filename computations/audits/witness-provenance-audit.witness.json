@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T22:48:21.638105+00:00",
-  "commitSha": "cbd405726f3933e4401760b0d6254c1d673fd9d6",
+  "computedAt": "2026-08-24T06:28:44.125431+00:00",
+  "commitSha": "122b020d8470de168790caa653459a4f44d32fdf",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 74,
+      "computed": 76,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 10,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2723,
+      "total_scanned": 2725,
       "prov_ok": 2346,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 222,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 74,
+      "prov_missing": 76,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972824091076019096584649283878075651854572163055453543885420"
+      "completeness_ratio": "0.972110091743119266055045871559633027522935779816513761467890"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -9627,6 +9627,18 @@
         },
         {
           "witness": "codata-2022-validation-masses.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ]
+        },
+        {
+          "witness": "d-frame-cyclotomic-exponent.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ]
+        },
+        {
+          "witness": "d-frame-prefactor-localisation.witness.json",
           "missing_fields": [
             "scriptFile"
           ]
