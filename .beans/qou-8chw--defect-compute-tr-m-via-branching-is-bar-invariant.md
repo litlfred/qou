@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:42:01Z
-updated_at: 2026-08-24T08:01:48Z
+updated_at: 2026-08-24T08:14:52Z
 ---
 
 MEASURED 2026-08-19. computations/canonical_tr_m_via_branching.compute_tr_m_via_branching(Z, N, q_val) returns IDENTICAL values at q and 1/q:
@@ -136,3 +136,52 @@ classify it. Neither is touched here.
 
 NOT CLAIMED: this does not adjudicate tr_M^atom(1/q0). That still rests on a
 single method. The fix makes the combiner's unusability LOUD, not fixed.
+
+
+RETRACTION 2026-08-24, SAME DAY: "the replacement does not exist" WAS WRONG.
+
+I wrote, in PR #5619 and in two source comments, that A^lambda cannot currently
+be built at arbitrary q because the closed-form construction
+`a_operator_categorical.categorical_A_interface` is a `raise
+NotImplementedError` stub with zero callers. The stub part is TRUE. The
+conclusion is FALSE.
+
+The working construction exists under a DIFFERENT NAME:
+
+    a_operator_gauge_align.gauge_aligned_A_combiner_general(
+        lam, n_inner, n_block, q_str, dps)
+
+It takes q_str and builds the exact seminormal matrices, the class-sum isotypic
+projectors, and the interface I_pn = sigma_{n_inner-1} - (h/2)*1 all AT THE
+REQUESTED q. Verified by running it: 4 (xi,nu) blocks for lam=(4,2) at q_0, at
+the bar image 1/q_0, and at q = 1.5 -- all fine. The closure-b design doc
+(docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md)
+records the deuteron categorical A as DONE, exact, 891/891 PASS at 1e-25.
+
+HOW I GOT IT WRONG. I read the stub, saw zero callers, grepped for the 1e-49
+figure, found it belonged to a different result, and concluded the replacement
+was vapour. Every one of those observations was correct; the INFERENCE from
+them was not. I never opened the design doc's verification plan, which says in
+plain text that step 2 is done -- and the working function is two files away
+under a name my greps for "categorical_A_interface" and "def categorical_A"
+could not hit. A stale stub is not evidence of absence.
+
+WHAT CHANGES:
+  * The refusal guard in compute_tr_m_via_branching is now INTERIM, not
+    permanent. It is still the right thing to have RIGHT NOW -- a loud refusal
+    beats a silent hybrid -- but it should be lifted, not defended.
+  * The remaining work is a WIRING job, not the ~500 LOC crux I claimed. Step 6
+    (the operator-level V_xi (x) V_nu embedding) is what
+    gauge_aligned_A_combiner_general already solved.
+  * Both source comments and the PR body are corrected. A_operator_extract_at_level's
+    header now carries a NAVIGATION WARNING pointing at the real function and
+    away from the stale stub, since that stub is what misled me.
+
+NEXT, CONCRETELY: replace `load_A_extract` in the A=2 path with a call to
+gauge_aligned_A_combiner_general at q_val; regression-check tr_M^atom(D) at q_0
+against 0.5751722439177718708 (four methods agree there); then cross-check the
+bar-image value against the fine-Bratteli transfer's -0.0014808531711619370338.
+If those agree, the guard comes out and qou-8chw's main finding closes -- AND
+tr_M^atom(1/q_0) gains the SECOND independent method it has been missing.
+
+The stale stub should also be deleted or made to delegate.
