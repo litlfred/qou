@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T21:16:30Z
+updated_at: 2026-08-24T00:22:01Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -576,3 +576,33 @@ structure.
   un-guarding is caught.
 
 **Not done, deliberately:** the quotient build. That is `qou-8iru`.
+
+
+## The uniqueness result closes off "maybe the weights are wrong" (from qou-uer7 / PR #5575)
+
+Adding a finding rather than taking the bean — the repair decision stays yours.
+
+PR #5575 proves, sorry-free, at convention D and every `n`:
+
+- `ocneanuWeight q z_D` satisfies both Markov trace properties
+  (`markov_conventionD`, `sum_dim_weight_eq_one`);
+- **a Markov trace is determined by its parameter** (`markovTrace_unique`, generic `[CommRing K]`:
+  any two families satisfying cyclicity + normalisation + Markov + tower-consistency agree);
+- the instance exists, so `eq_wtrace_of_markov` says **every** Markov trace with parameter `z_D`
+  *is* the Ocneanu-weighted seminormal trace.
+
+**What that means here.** The singularity you measured is a property of *the* Markov trace at
+`z_D`, not of a particular choice of weights — because at `z_D` there is no other choice. So
+"try a different weight family and the form stops being singular" is **not** available as an
+escape route, and the corank ladder (1, 10, 78) is intrinsic to the convention rather than to
+`pyhecke.gram`'s basis or normalisation. That strengthens the case for the named repair —
+quotient by the radical — over any hope of re-choosing weights.
+
+**One conditional, stated because it is the only way this could fail to apply.** Uniqueness is
+against four axioms: linearity, cyclicity `tr(xy) = tr(yx)`, normalisation `tr(1) = 1`, and
+tower-consistency `tr_{n+1}(ι x) = tr_n x`, plus the Markov relation. If the form behind `G` is
+built from something that drops one of those — a *non*-normalised functional, say — the inference
+does not reach it. Worth one check against `gram.py` before quoting this.
+
+Hypotheses on my side: `q ≠ 0`, `q² ≠ 1`, `q² + 1 ≠ 0`, `q²` not a root of unity. The proton pin
+satisfies all four.
