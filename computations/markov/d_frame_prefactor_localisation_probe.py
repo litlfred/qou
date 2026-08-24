@@ -215,6 +215,11 @@ def main() -> int:
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(
         witness, script_path=__file__, engine="sympy")
+    # stamp_staleness_metadata does NOT set scriptFile; without it the witness
+    # lands in witness_provenance_audit's PROV_MISSING list.
+    witness["scriptFile"] = str(
+        pathlib.Path(__file__).resolve().relative_to(
+            REPO / "computations"))
     out = REPO / "computations" / "d-frame-prefactor-localisation.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n  allPassed = {witness['allPassed']}   "
