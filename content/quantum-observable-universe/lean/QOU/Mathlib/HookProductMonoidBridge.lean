@@ -18,7 +18,8 @@ This is the encoding bridge the general-`r` branching route needs: everything pr
 List-encoded, and `QBeta.WenzlWeight.schurPrincipal` is `YoungDiagram`-encoded.
 
 The three reindexing lemmas are re-proved here rather than reused because the corpus versions are
-`private`, and `row_prod` is `ℕ`-valued.
+`private`, and `row_prod` is `ℕ`-valued.  They are left **public** here — unlike the corpus versions —
+because the content side (`ContentProductRows`) needs exactly the same reindexing.
 
 ## Base ring (§7c)
 
@@ -34,7 +35,7 @@ open YoungDiagram
 variable {M : Type*} [CommMonoid M]
 
 /-- Cells partition into rows `{0, …, colLen 0 − 1}`. -/
-private theorem cells_biUnion' (μ : YoungDiagram) :
+theorem cells_biUnion' (μ : YoungDiagram) :
     μ.cells = (Finset.range (μ.colLen 0)).biUnion μ.row := by
   ext ⟨i, j⟩
   simp only [mem_cells, Finset.mem_biUnion, Finset.mem_range, mem_row_iff]
@@ -44,7 +45,7 @@ private theorem cells_biUnion' (μ : YoungDiagram) :
       (μ.colLen_anti 0 j (Nat.zero_le j)), hij, rfl⟩
   · rintro ⟨i', _, hij, rfl⟩; exact hij
 
-private theorem rows_disjoint (μ : YoungDiagram) (n : ℕ) :
+theorem rows_disjoint (μ : YoungDiagram) (n : ℕ) :
     (↑(Finset.range n) : Set ℕ).PairwiseDisjoint μ.row := by
   intro i _ i' _ hne
   rw [Function.onFun, Finset.disjoint_left]
@@ -53,7 +54,7 @@ private theorem rows_disjoint (μ : YoungDiagram) (n : ℕ) :
   exact hne (hc.2.symm.trans hc'.2)
 
 /-- Product over a row = product over its column range, valued in any commutative monoid. -/
-private theorem row_prodF (μ : YoungDiagram) (g : ℕ × ℕ → M) (i : ℕ) :
+theorem row_prodF (μ : YoungDiagram) (g : ℕ × ℕ → M) (i : ℕ) :
     ∏ c ∈ μ.row i, g c = ∏ j ∈ Finset.range (μ.rowLen i), g (i, j) := by
   rw [show μ.row i = (Finset.range (μ.rowLen i)).image (fun j => (i, j)) from ?_,
     Finset.prod_image (fun a _ b _ h => by simpa using h)]
