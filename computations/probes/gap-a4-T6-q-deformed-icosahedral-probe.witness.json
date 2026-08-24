@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:36.347891+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T16:41:08.821495+00:00",
+  "commitSha": "52f887ce7bd432ece74f5853cee770cb13f37dfe",
   "assertions": [
     {
       "name": "A4_clifford_excess_identity",
@@ -14,7 +14,7 @@
     },
     {
       "name": "A5_clifford_excess_identity",
-      "computed": "0.0",
+      "computed": "1.014236056828591785161021360579432679436443494191583477233252867672776e-69",
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 52,
+  "durationMs": 38,
   "computation": "gap-a4-T6-q-deformed-icosahedral-probe",
   "scriptFile": "gap_a4_T6_q_deformed_icosahedral_probe.py",
   "scriptHash": "e428ff3b9e15",
@@ -38,10 +38,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -52,7 +52,7 @@
   "description": "GAP-A-4 T6 \u2014 q-deformed icosahedral character matrix. Tabulates per-A_n-irrep dim_q sums Q_R(q) for n=4 (A_4) and n=5 (A_5), extracts h\u2070/h\u00b2/h\u2074 coefficients, and shows Q_H(q) = 2\u00b7[5]_q has h\u2074 coefficient +2 \u2014 NOT the Borromean \u22123/4 (which lives on H_3 not H_5). Complements T5 by exhibiting the H-sector's OWN h\u2074 structure for comparison.",
   "auditOnly": "docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "discipline": "EXPLORATORY",
@@ -78,9 +78,9 @@
       ],
       "Q_R_at_q0": [
         "2.0",
-        "2.043706218232901310218245085543603031666341751884706972910854704277435",
-        "2.043706218232901310218245085543603031666341751884706972910854704277435",
-        "6.087412436465802620436490171087206063332683503769413945821709408554869"
+        "2.043706208532521989402019335677388309768213960713522216242847344641826",
+        "2.043706208532521989402019335677388309768213960713522216242847344641826",
+        "6.087412417065043978804038671354776619536427921427044432485694689283652"
       ],
       "h_expansion_coeffs_per_irrep": [
         {
@@ -110,11 +110,11 @@
           2
         ]
       ],
-      "self_conjugate_dimq_sum": "2.043706218232901310218245085543603031666341751884706972910854704277435",
+      "self_conjugate_dimq_sum": "2.043706208532521989402019335677388309768213960713522216242847344641826",
       "clifford_excess_identity_holds": true,
-      "sum_Q_at_q0": "12.17482487293160524087298034217441212666536700753882789164341881710974",
-      "sum_dimq_at_q0": "10.1311186546987039306547352566308090949990252556541209187325641128323",
-      "actual_excess": "2.043706218232901310218245085543603031666341751884706972910854704277435"
+      "sum_Q_at_q0": "12.1748248341300879576080773427095532390728558428540888649713893785673",
+      "sum_dimq_at_q0": "10.13111862559756596820605800703216492930464188214056664872854203392548",
+      "actual_excess": "2.043706208532521989402019335677388309768213960713522216242847344641826"
     },
     "A5_per_irrep_table": {
       "irreps": [
@@ -140,10 +140,10 @@
       ],
       "Q_R_at_q0": [
         "2.0",
-        "6.22044132467672854601923694259178511624261416491834425104594493843936",
-        "6.22044132467672854601923694259178511624261416491834425104594493843936",
-        "8.219364871287455660655479862790219308793351456240075601115211914273649",
-        "10.44088264935345709203847388518357023248522832983668850209188987687872"
+        "6.220441275326898244960433252993901451232448302223232617797601555360284",
+        "6.220441275326898244960433252993901451232448302223232617797601555360284",
+        "8.219364822415882323521137578192660486728656157172847184742027234388448",
+        "10.44088255065379648992086650598780290246489660444646523559520311072057"
       ],
       "h_expansion_coeffs_per_irrep": [
         {
@@ -179,11 +179,11 @@
           1
         ]
       ],
-      "self_conjugate_dimq_sum": "6.22044132467672854601923694259178511624261416491834425104594493843936",
+      "self_conjugate_dimq_sum": "6.220441275326898244960433252993901451232448302223232617797601555360284",
       "clifford_excess_identity_holds": true,
-      "sum_Q_at_q0": "33.10113016999436984473242763315735977376380811591345260529899166803109",
-      "sum_dimq_at_q0": "26.88068884531764129871319069056557465752119395099510835425304672959173",
-      "actual_excess": "6.22044132467672854601923694259178511624261416491834425104594493843936"
+      "sum_Q_at_q0": "33.10112992372347530336287059016826629165844936606577765593243345582959",
+      "sum_dimq_at_q0": "26.8806886483965770584024373371743648404260010638425450381348319004693",
+      "actual_excess": "6.220441275326898244960433252993901451232448302223232617797601555360285"
     },
     "H_sector_closed_form": {
       "Q_H_closed_form": "2\u00b7[5]_q = 2h\u2074 + 10h\u00b2 + 10",
@@ -192,9 +192,8 @@
       "h4_coeff": 2,
       "comparison": "Q_H(q) h\u2074 = +2 (on H_5) vs Borromean h\u2074 = \u22123/4 (on H_3); ratio \u22128/3 not structurally interpretable \u2014 different group algebras, confirms T5 negative."
     },
-    "synthesis_verdict": "Q_R(q) = \u03a3_\u03bb dim_q(V_\u03bb)\u00b7mult_R(\u03bb) defines the q-deformed icosahedral character matrix's row sums; for A_5 the H-sector Q_H(q) = 2\u00b7[5]_q has closed-form h-expansion 10 + 10h\u00b2 + 2h\u2074 (by algebraic identity [5]_q = h\u2074+5h\u00b2+5). The structural h\u2074 coefficient is +2 \u2014 DIFFERENT in sign AND magnitude from the Borromean H_3 reference h\u2074 = \u22123/4. This complements T5: the H-sector carries its own h\u2074 structure, but in a different group algebra than the Borromean trace coefficient \u2014 the ratio +2/(\u22123/4) = \u22128/3 has no clean structural meaning. The Clifford excess identity \u03a3_R Q_R \u2212 \u03a3_\u03bb dim_q = dim_q(\u03bb_self-conj) holds to machine precision for both A_4 (excess = dim_q((2,2))) and A_5 (excess = dim_q((3,1,1))) \u2014 this is the Wedderburn decomposition's q-deformed signature: self-conjugate partitions split into 2 conjugate A_n irreps under Res^{S_n}_{A_n}, and the excess weighting tracks this splitting at q \u2260 1. The q-deformed icosahedral matrix is a well-defined object at q_0; its H-sector's h\u2074 structure is internally clean but NOT linked to the 3-strand h\u2074 obstruction."
+    "synthesis_verdict": "Q_R(q) = Σ_λ dim_q(V_λ)·mult_R(λ) defines the q-deformed icosahedral character matrix's row sums; for A_5 the H-sector Q_H(q) = 2·[5]_q has closed-form h-expansion 10 + 10h² + 2h⁴ (by algebraic identity [5]_q = h⁴+5h²+5). The structural h⁴ coefficient is +2 — DIFFERENT in sign AND magnitude from the Borromean H_3 reference h⁴ = −3/4. This complements T5: the H-sector carries its own h⁴ structure, but in a different group algebra than the Borromean trace coefficient — the ratio +2/(−3/4) = −8/3 has no clean structural meaning. The Clifford excess identity Σ_R Q_R − Σ_λ dim_q = dim_q(λ_self-conj) holds to machine precision for both A_4 (excess = dim_q((2,2))) and A_5 (excess = dim_q((3,1,1))) — this is the Wedderburn decomposition's q-deformed signature: self-conjugate partitions split into 2 conjugate A_n irreps under Res^{S_n}_{A_n}, and the excess weighting tracks this splitting at q ≠ 1. The q-deformed icosahedral matrix is a well-defined object at q_0; its H-sector's h⁴ structure is internally clean but NOT linked to the 3-strand h⁴ obstruction."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
