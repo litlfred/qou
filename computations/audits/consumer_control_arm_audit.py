@@ -67,7 +67,7 @@ WHAT THIS CANNOT SEE -- read before quoting its counts.
     witness that serialises neither is not in the candidate set at all.
 
 Arithmetic: `decimal.Decimal` end to end. Literals are recovered as SOURCE TEXT
-via `ast.get_source_segment` and witnesses are parsed with `parse_float=Decimal`,
+from a pre-split line index and witnesses are parsed with `parse_float=Decimal`,
 so no float64 exists anywhere in the comparison path.
 
 Usage:
@@ -647,7 +647,7 @@ def _write_witness(edges, stats, c_reads) -> Path:
         "bean": "qou-okkz",
         "arithmetic": (
             "decimal.Decimal end to end; source literals recovered as text via "
-            "ast.get_source_segment and witnesses parsed with parse_float=Decimal, "
+            "a pre-split line index and witnesses parsed with parse_float=Decimal, "
             "so no float64 exists on the comparison path"
         ),
         "parameters": {
