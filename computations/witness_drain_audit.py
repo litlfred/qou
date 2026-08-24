@@ -104,6 +104,7 @@ def classify(witness: Path, index, head_cache: dict) -> tuple[str, dict]:
         return "UNREADABLE", {"witness": rel}
 
     head_raw = _git_show(f"HEAD:{rel}")
+    at_head = head_raw is not None
     head = None
     if head_raw is not None:
         try:
@@ -144,7 +145,16 @@ def classify(witness: Path, index, head_cache: dict) -> tuple[str, dict]:
                           f"scriptHash={c_sh!r}")
         return "LOST_PROV", info
     if not (c_sf and c_sh):
-        return "NO_PROV", info
+        # A witness that did not exist at HEAD and is born without provenance
+        # is NOT the pre-existing backlog — it is the backlog GROWING, right
+        # now, under whoever just ran the producer. It can never appear as
+        # self-stale and can never be drained. Measured 2026-08-23:
+        # `probes/motivic_obstruction_symbolic.py` minted one during an
+        # unrelated fix (bean qou-nb4s). Unlike NO_PROV this is gateable —
+        # it is zero on arrival, so failing on it cannot be red-on-arrival.
+        info["detail"] = (f"created since HEAD with scriptFile={c_sf!r} "
+                          f"scriptHash={c_sh!r}")
+        return ("NEW_NO_PROV" if not at_head else "NO_PROV"), info
 
     prod = _resolve(c_sf, witness, index)
     if prod is None:
@@ -180,8 +190,18 @@ def self_test() -> int:
             lost_sh = bool(head.get("scriptHash")) and not now.get("scriptHash")
             return lost_sf or lost_sh
 
+        def born_rule(at_head, now):
+            return (not at_head) and not (now.get("scriptFile")
+                                          and now.get("scriptHash"))
+
         H = {"scriptFile": "x.py", "scriptHash": "aaaaaaaaaaaa"}
         cases = [
+            ("NEW_NO_PROV fires on a witness born with no provenance",
+             born_rule(False, {}), True),
+            ("...and NOT on one born WITH provenance",
+             born_rule(False, {"scriptFile": "x.py", "scriptHash": "b"*12}), False),
+            ("...and NOT on the pre-existing backlog (present at HEAD)",
+             born_rule(True, {}), False),
             ("fires on a stripped witness",
              rule(H, {}), True),
             ("fires when only scriptHash is stripped",
@@ -228,8 +248,8 @@ def main() -> int:
         kind, info = classify(w, index, head_cache)
         buckets.setdefault(kind, []).append(info)
 
-    order = ["DRAINED", "STILL_STALE", "FRESH", "LOST_PROV", "NO_PROV",
-             "UNRESOLVABLE", "UNREADABLE"]
+    order = ["DRAINED", "STILL_STALE", "FRESH", "LOST_PROV", "NEW_NO_PROV",
+             "NO_PROV", "UNRESOLVABLE", "UNREADABLE"]
     total = sum(len(v) for v in buckets.values())
     print(f"  witnesses examined : {total}")
     for k in order:
@@ -237,6 +257,13 @@ def main() -> int:
         if n:
             print(f"  {k:13s}: {n}")
 
+    born = buckets.get("NEW_NO_PROV", [])
+    if born:
+        print(f"\n  *** {len(born)} WITNESS(ES) CREATED WITHOUT PROVENANCE —")
+        print("      unverifiable from birth: never stale, never drainable:")
+        for i in born:
+            print(f"      {i['witness']}")
+            print(f"        {i.get('detail','')}")
     lost = buckets.get("LOST_PROV", [])
     if lost:
         print(f"\n  *** {len(lost)} WITNESS(ES) LOST PROVENANCE vs HEAD —")
@@ -268,8 +295,8 @@ def main() -> int:
 
     if args.json:
         print(json.dumps({k: v for k, v in buckets.items()}, indent=1))
-    if lost:
-        print("\n  FAIL — provenance lost. Re-run through "
+    if lost or born:
+        print("\n  FAIL — provenance lost or born missing. Stamp via "
               "WitnessBuilder.stamp_staleness_metadata().")
         return 1 if args.strict else 0
     print("\n  OK — no witness left the audit.")
