@@ -14703,8 +14703,9 @@ export const references: Reference[] = [
       "arXiv:0908.3425v1 [hep-ph], stamped 24 Aug 2009; dated 10 April 2009 on " +
       "page 1. An 85-page pedagogical review, and the cleanest extracted text in " +
       "this tranche. For the chiral-limit question: the lowest-order Goldstone " +
-      "masses are eqs. (105)-(107) on p. 26, named there as 'the Gell-Mann, " +
-      "Oakes, and Renner relations' with B_0 = -<qq>_0/(3 F_0^2) at eq. (103); " +
+      "masses are eqs. (105)-(107) on p. 26; the sentence naming them 'the " +
+      "Gell-Mann, Oakes, and Renner relations', together with B_0 = " +
+      "-<qq>_0/(3 F_0^2) at eq. (103), is on p. 27; " +
       "the O(q^4) masses with their chiral logarithms are eqs. (162)-(164), " +
       "pp. 44-45. Registered from library intake.",
   }),
