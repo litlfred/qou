@@ -18,6 +18,8 @@ and they measure β against different things.  This file lands both on one commo
 | `contentSide_betaR` | `∏_c f(r − c₁ + c₂) · ∏_{i<r} descFactF f (r−1−i) = ∏_{i<r} descFactF f β_i` |
 | `contentProd_mul_descFactF_eq` | the two, equated — the `∏_i descFactF f β_i` cancels |
 | `schurPrincipal_mul_const` | **`s_μ · C = Q^{n(μ)} · ∏_{i<j<r}(1 − Q^{β_i−β_j})`**, `C` independent of `μ` |
+| `betaR_lt` | the β-numbers strictly decrease across the `r` rows |
+| `nPart_addCell` | `n(μ + □) = n(μ) + row index` |
 
 The last row is the point: the right-hand sides are *the same product*, so the numerator over the
 denominator is the Vandermonde `∏_{i<j} f(β_i − β_j)` over the **`μ`-independent** constant
@@ -32,7 +34,7 @@ LaTeX label: `lem:schur-principal-beta-form`
 
 namespace QOU.SchurWeyl
 
-open YoungDiagram Finset QOU.Mathlib.SYTBeta
+open YoungDiagram Finset QOU.Mathlib QOU.Mathlib.SYTBeta
 
 variable {M : Type*} [CommMonoid M]
 
@@ -140,5 +142,45 @@ theorem schurPrincipal_mul_const {R : Type*} [Field R] (Q : R) {r : ℕ} {μ : Y
   rw [QOU.QBeta.WenzlWeight.schurPrincipal, Finset.prod_div_distrib, hnum]
   field_simp
   linear_combination (Q ^ QOU.QBeta.WenzlWeight.nPart μ) * hkey
+
+/-! ## Two facts for the branching ratio
+
+With `schurPrincipal_mul_const` in hand the branching ratio is
+
+`s_ν/s_μ = Q^{n(ν)−n(μ)} · P(β')/P(β)`,   `P(β) = ∏_{i<j<r}(1 − Q^{β_i−β_j})`,  `β' = β + e_a`,
+
+and the `μ`-independent `C` has already cancelled.  Two ingredients remain, and both are here.
+
+**No monomial bookkeeping is needed on this route.**  Going through `vandPairProd` would introduce
+`(−1)^{C(r,2)}` and `∏_{i<j} x_i`; comparing `P(β')/P(β)` against the `q`-ratio directly does not.
+Per pair, with `x_i = Q^{β_i}`:
+
+* `j > a` (so `β_j < β_a`): `(Q·x_a − x_j)/(x_a − x_j) = (1 − Q^{β_a+1−β_j})/(1 − Q^{β_a−β_j})`
+  after cancelling `Q^{β_j}` — an exact match, no leftover factor;
+* `j < a` (so `β_j > β_a`): the same cancellation of `Q^{β_a}` leaves an extra `Q`.
+
+So the `q`-ratio is `Q^{#{j < a}} = Q^a` times `P(β')/P(β)` — and `Q^a` is exactly what
+`nPart_addCell` supplies. -/
+
+/-- **The β-numbers strictly decrease.**  `β_i = μ_i + (r−1−i)`: the row lengths are weakly
+decreasing and the shift `r−1−i` strictly decreases, so the sum strictly decreases. -/
+theorem betaR_lt {r : ℕ} {μ : YoungDiagram} {i j : ℕ} (hij : i < j) (hj : j < r) :
+    betaR r μ j < betaR r μ i := by
+  have hanti := μ.rowLen_anti i j (le_of_lt hij)
+  unfold betaR
+  omega
+
+/-- **Adding a box at row `a` raises `n(λ)` by `a`.**  `n(λ) = ∑_c c₁`, and the new cell contributes
+its row index. -/
+theorem nPart_addCell {μ : YoungDiagram} {s : ℕ × ℕ} (hs : IsAddableCell μ s) :
+    QOU.QBeta.WenzlWeight.nPart (addCell μ s hs)
+      = QOU.QBeta.WenzlWeight.nPart μ + s.1 := by
+  have hnot : s ∉ μ.cells := fun h => hs.1 (by simpa using h)
+  have hcells : (addCell μ s hs).cells = insert s μ.cells := by
+    ext c
+    simp only [YoungDiagram.mem_cells, mem_addCell, Finset.mem_insert]
+  rw [QOU.QBeta.WenzlWeight.nPart, QOU.QBeta.WenzlWeight.nPart, hcells,
+    Finset.sum_insert hnot]
+  omega
 
 end QOU.SchurWeyl
