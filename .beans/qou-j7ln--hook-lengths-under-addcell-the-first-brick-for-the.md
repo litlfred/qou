@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T14:55:22Z
+updated_at: 2026-08-24T15:10:01Z
 ---
 
 ## Landed — PR #5645
@@ -181,3 +181,50 @@ Two sub-bricks, in order:
 
 (a) is the hard half. #5645's `hookLength_addCell_of_mem` is the local
 version of it and should feed the induction.
+
+
+## Same day, later — sub-brick (a) is half done, and the corpus had the skeleton
+
+**Corpus-grep paid.** I had just written "(a) is the hard half" and budgeted it
+as a multi-hour job. `QOU/Mathlib/SYTHookFormulaBeta.lean` already proves,
+sorry-free over `N`, the divisor-free per-row FRT identity
+
+    rowHookProd a t * betaGapProd a t = (a + |t|)!
+
+with `rowHookProd a t = prod_{j<a} ((a-j) + cnt t j)` — the row's hook lengths.
+
+**Reading its proof is what mattered.** The arithmetic is incidental: every
+step reindexes the *multiset of hook lengths* against `{1,...,a+|t|}`, and the
+only numerical moves are `omega` facts about the **arguments**. So the whole
+thing generalises to any commutative monoid with each factor `n` replaced by
+`f n`. `QOU/Mathlib/SYTHookFormulaBetaMonoid.lean`:
+
+    rowHookProdF_mul_betaGapProdF (f : N -> M) :
+      rowHookProdF f a t * betaGapProdF f a t = descFactF f (a + |t|)
+
+and `f n = 1 - Q^n` gives the q-analogue with **no separate proof**
+(`rowHookProdF_one_sub_pow`). Conservativity checked, not asserted:
+`rowHookProdF_id` / `descFactF_id` / `betaGapProdF_id` recover the `N` originals.
+
+**Correction to the commit message of `51f998b85`.** It says two of the
+original `omega`s "had been closing goals over an opaque `cnt` by luck of the
+argument shape". That is wrong and I should not have written it — both failing
+`omega`s were in tactic steps *I* wrote (`congr 2 <;> omega`), not inherited.
+The original proof's `omega`s are fine; what changes in the monoid version is
+that the values are `f (...)`, so `congr` peels to a different goal and the
+argument has to be rewritten rather than `omega`'d. The code and the result
+are unaffected.
+
+### What is still open for sub-brick (a)
+
+Two steps, both shape-preserving rather than arithmetic:
+
+1. **Assemble the rows.** `SYTHookFormulaBetaProd.prodHooks_eq_prod_rowHookProd`
+   is the `N` version and looks equally arithmetic-free; generalise it the same
+   way.
+2. **Recognise the assembled `betaGapProdF (fun n => 1 - Q^n)` as the
+   Vandermonde denominator** `prod_{i<j} (1 - Q^{l_i - l_j})`, i.e. as
+   `prod_{i<j}(x_i - x_j)` up to a monomial with `x_i = Q^{l_i}`.
+
+Then sub-brick (b) — the Vandermonde ratio under `x_i -> Q*x_i` — feeds
+`sum_eq_bracket_mul_of_qratio_scaling` and general-r branching closes.
