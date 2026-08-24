@@ -155,6 +155,41 @@ def census(word: tuple, rs: list) -> tuple:
             elt[nw] = sp.cancel(elt.get(nw, 0) + c * rc)
 
 
+def chain(word: tuple, rs: list) -> list:
+    """The greedy reduction as a list of (family, index, position)."""
+    elt = {word: sp.Integer(1)}
+    out = []
+    while True:
+        target = None
+        for w in elt:
+            if sp.simplify(elt[w]) == 0:
+                continue
+            for lm, rep in rs:
+                k = _find(w, lm)
+                if k is not None:
+                    target = (w, lm, rep, k)
+                    break
+            if target:
+                break
+        if target is None:
+            return out
+        w, lm, rep, k = target
+        c = elt.pop(w)
+        family, idx = _classify(lm)
+        out.append((family, idx, k))
+        pre, post = w[:k], w[k + len(lm):]
+        for rw, rc in rep.items():
+            nw = pre + rw + post
+            elt[nw] = sp.cancel(elt.get(nw, 0) + c * rc)
+
+
+def chain_render(i: int, side: int) -> list:
+    """`chain` with generator indices written relative to `i`, so that chains at
+    different `i` are comparable."""
+    return [f"{f}({idx - i:+d})@{p}"
+            for f, idx, p in chain(deep_spoly(i)[side], rules(i + 1))]
+
+
 def deep_spoly(i: int):
     """The two monomials of the deep self-overlap's S-polynomial."""
     return (descWord(i, 0) + bsWord2(i, 0),
@@ -260,6 +295,52 @@ def main() -> int:
     print("The quadratic count is measured under the reversed rule order too, so")
     print("it is not an artefact of the strategy (the YB/FC/BS split is).")
     print("i = 1 is degenerate: three quadratic steps, hence H^2 and four terms.")
+    print()
+    print("=== does chain(i-1) sit inside chain(i)? ===")
+    for side in (0, 1):
+        prev = None
+        for i in range(2, min(top, 8) + 1):
+            cur = chain_render(i, side)
+            if prev is not None:
+                lcp = 0
+                while lcp < min(len(prev), len(cur)) and prev[lcp] == cur[lcp]:
+                    lcp += 1
+                # THE NEGATIVE RESULT, and the reason this section exists: the
+                # shared opening grows, but chain(i-1) is never a prefix of
+                # chain(i) -- 5i-6 steps always differ.  So "chain(i) extends
+                # chain(i-1)" does not hold and the obvious induction on i does
+                # not fit the greedy chain.
+                assert lcp < len(prev), \
+                    f"side {'AB'[side]} i={i}: chain({i-1}) IS a prefix -- rerun the analysis"
+                # The two sides grow differently; one fit does not cover both.
+                # A: (i^2-5i+12)/2 from i = 4.   B: (i-3)(i-2)/2 from i = 3.
+                if side == 0 and i >= 4:
+                    assert lcp == (i * i - 5 * i + 12) // 2, \
+                        f"side A i={i}: shared opening {lcp}"
+                    assert len(cur) - lcp == 5 * i - 6, \
+                        f"side A i={i}: differing tail {len(cur) - lcp}"
+                if side == 1 and i >= 3:
+                    assert lcp == (i - 3) * (i - 2) // 2, \
+                        f"side B i={i}: shared opening {lcp}"
+                    assert len(cur) - lcp == 5 * i - 2, \
+                        f"side B i={i}: differing tail {len(cur) - lcp}"
+                print(f"  side {'AB'[side]} i={i-1}->{i}: len {len(prev):>2} -> {len(cur):>2}, "
+                      f"shared opening {lcp:>2}, tail that differs {len(cur) - lcp:>2}")
+            prev = cur
+    print()
+    print("chain(i-1) is NEVER a prefix of chain(i).  The shared opening grows")
+    print("quadratically -- (i^2-5i+12)/2 on side A, (i-3)(i-2)/2 on side B -- but")
+    print("the differing tail grows linearly, 5i-6 and 5i-2, and never vanishes.")
+    print("The two sides need separate fits; one does not cover both.")
+    print("So the greedy chain does NOT satisfy")
+    print("'chain(i) extends chain(i-1)', and an induction on i has to be built on a")
+    print("hand-designed chain rather than on this one.  Recorded because reading the")
+    print("traces by eye suggests the opposite: the openings do agree, at length.")
+    print()
+    print("Shape of the greedy chain, side A: a nested cascade.  BS(-1)@1 FC(0)@0,")
+    print("then for k = 0 .. i-2 a block BS(-k)@(2k+1) followed by FC steps sweeping")
+    print("down, then YB(-(i-1))@(2i-1), then the single QUAD on sigma_0 at 2i+1,")
+    print("then an FC tail with every step doubled -- one per branch of the split.")
     print()
     print("Step counts are i(i+5)/2 and one more, checked for every i >= 2 tested.")
     print("That is strategy-dependent -- a size estimate for the chain, not a")

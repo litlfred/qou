@@ -5159,3 +5159,43 @@ Not started. Recorded so it is not re-derived.
   lemma has to be general in `i`.
 - **`i = 1` needs its own case** (three splits, `H²`, four terms), as does
   `i = 2` (its YB/FC/BS counts do not follow the `i ≥ 3` pattern).
+
+### The chain's shape — and why the obvious induction does NOT fit (PR pending)
+
+Two findings, one positive and one negative. The negative one is the useful one.
+
+**Positive: the per-step machinery already exists.** `monicStep` (one step by any
+monic two-word rule, arbitrary contexts and surrounding terms), `quadStep` (the
+split, output one term longer) and `bsStep` (`monicStep` at Bokut–Shiao) are
+already in `HeckeCompletion.lean`. Since every non-quadratic rule here is monic
+and two-word, each step of the chain is a one-liner. Per-step cost is not the
+problem.
+
+**Negative, and measured: `chain(i−1)` is NEVER a prefix of `chain(i)`.** The
+shared opening grows — `(i²−5i+12)/2` on side A, `(i−3)(i−2)/2` on side B — but
+the differing tail grows too, `5i−6` and `5i−2`, and never vanishes. So the
+greedy reduction does **not** satisfy "chain(i) extends chain(i−1)", and an
+induction on `i` has to be built on a **hand-designed** chain, not on this one.
+
+Recorded because reading the traces by eye suggests the opposite: the openings
+do visibly agree, at length, and I read that as "chain(i−1) is a prefix". It is
+not. The assertion is now in the probe so the claim cannot rot.
+
+**A second error the assertions caught.** I fitted the shared-opening formula on
+side A and applied it to side B; side B follows triangular numbers instead. One
+fit does not cover both sides. Both are now asserted separately.
+
+**Shape of the greedy chain (side A):** a nested cascade —
+`BS(-1)@1 FC(0)@0`, then for `k = 0 … i−2` a block `BS(-k)@(2k+1)` followed by
+`FC` steps sweeping down, then `YB(-(i-1))@(2i-1)`, the single `QUAD` on `σ₀` at
+`2i+1`, and an `FC` tail with every step doubled — one per branch of the split.
+
+**So the next tranche is: design the chain, don't transcribe this one.** The
+target normal form and the one-quadratic-step fact still hold and still apply.
+
+**Starting points for the designed chain** (corpus-grepped, not guessed):
+`descWord_split` / `descWord_split_aux` (which already inducts *on the gap*,
+`HeckeCompletion.lean:3963`), `descWord_snoc`, `descWord_cons`, `descWord_at_pred`.
+The cascade sweeps a descending run downward one index at a time, which is the
+same motion `descWord_split_aux` already formalises — so the induction variable
+is the gap, not `i`.
