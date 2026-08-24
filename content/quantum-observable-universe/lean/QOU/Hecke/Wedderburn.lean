@@ -178,6 +178,61 @@ theorem trace_exhaustive (x : A) :
     _ = WD.all_parts.sum (fun lam => MT.trace (x * WD.pi_lambda lam)) :=
           map_sum MT.trace _ WD.all_parts
 
+/-! ### The `y_λ` this class carries are inert, and that is machine-checked
+
+`trace_exhaustive` above **derives** `tr_M(x) = Σ_λ tr_M(x·π_λ)` from `complete`
+alone. The field `trace_decomp` **assumes** `tr_M(x) = Σ_λ y_λ • tr_M(x·π_λ)` —
+the same terms, weighted. Both cannot be informative at once, and the two
+theorems below say exactly how much room is left: none.
+
+`weight_one_or_block_trace_zero` concludes `(1 − y_μ) • tr_M(π_μ) = 0` for every
+block. So in any instance, each `y_μ` is either `1` or multiplies a vanishing
+block trace. That is the opposite of what `y_lambda`'s own docstring says it is
+— *"a rational function in q given by `s_λ(1, Q, …) / Σ d_μ s_μ(…)`"*.
+
+**The mathematics is not at fault; the encoding is.** The true statement is
+`tr_M(x) = Σ_λ y_λ · χ^λ(x)` with `χ^λ` the **block character** — the matrix
+trace on the `λ` block — and the `y_λ` enter through
+`tr_M(x·π_λ) = y_λ · χ^λ(x)`, which is the sentence in this class's own header
+docstring (*"The Markov trace's restriction to each block is the matrix trace
+scaled by the central coefficient `y_λ`"*). `trace_decomp` substituted
+`tr_M(x·π_λ)` for `χ^λ(x)` and then applied `y_λ` on top, so it applies the
+weight twice. Its docstring's stated justification — *"Follows from Σ π_λ = 1,
+trace linearity, and `y_λ` as central coefficients"* — is the derivation of the
+**unweighted** identity, which is `trace_exhaustive`.
+
+`QOU/QBeta/WedderburnTraceDecomposition.lean` diagnosed `trace_decomp` as
+self-assuming and prescribed the repair (encode the block scaling, delete the
+field). It did not notice that the field is also inconsistent with
+`trace_exhaustive` unless the weights are trivial. These two theorems are that
+observation, machine-checked; they are deleted by the repair, which is why they
+are recorded here first.
+-/
+
+/-- **Subtracting the two decompositions this class carries.** `trace_exhaustive`
+is derived from `complete`; `trace_decomp` is assumed. Their difference is
+identically zero, which is a constraint on the weights, not on `x`. -/
+theorem weights_inert (x : A) :
+    WD.all_parts.sum
+      (fun lam => (1 - WD.y_lambda lam) • MT.trace (x * WD.pi_lambda lam)) = 0 := by
+  have h1 := trace_exhaustive (WD := WD) x
+  have h2 := WD.trace_decomp x
+  simp only [sub_smul, one_smul]
+  rw [Finset.sum_sub_distrib, ← h1, ← h2, sub_self]
+
+/-- **Every weight is `1`, or its block trace vanishes.** Instantiate
+`weights_inert` at `x = π_μ`: idempotence keeps the `μ` term and orthogonality
+kills the rest. -/
+theorem weight_one_or_block_trace_zero (mu : Partition n) (hmu : mu ∈ WD.all_parts) :
+    (1 - WD.y_lambda mu) • MT.trace (WD.pi_lambda mu) = 0 := by
+  have h := weights_inert (WD := WD) (WD.pi_lambda mu)
+  rw [Finset.sum_eq_single mu] at h
+  · simpa [WD.idempotent mu] using h
+  · intro lam _ hne
+    rw [pi_mul_pi (WD := WD) mu lam, if_neg (Ne.symm hne)]
+    simp
+  · intro hcon; exact absurd hmu hcon
+
 /-- Auxiliary product shift: `(a·π_λ)·(b·π_μ) = (a·b)·(π_λ·π_μ)`, from
 centrality of the idempotents. The noncommutative bookkeeping behind both
 L-3 theorems below. -/
