@@ -84,4 +84,20 @@ theorem prodHooksF_append_replicate_zero (f : ℕ → M) (l : List ℕ) (m : ℕ
   refine List.map_congr_left fun j _ => ?_
   rw [colLen_append_replicate_zero]
 
+/-- Padding with empty rows preserves weak decrease. -/
+theorem sorted_append_replicate_zero {l : List ℕ} (hl : List.Sorted (· ≥ ·) l) (m : ℕ) :
+    List.Sorted (· ≥ ·) (l ++ List.replicate m 0) := by
+  rw [List.Sorted, List.pairwise_append]
+  refine ⟨hl, ?_, ?_⟩
+  · simp [List.pairwise_replicate]
+  · intro a _ b hb
+    rw [List.eq_of_mem_replicate hb]
+    exact Nat.zero_le a
+
+/-- The padded list has length `r` when `r` is at least the number of nonzero rows. -/
+theorem length_append_replicate_zero (l : List ℕ) (r : ℕ) (hr : l.length ≤ r) :
+    (l ++ List.replicate (r - l.length) 0).length = r := by
+  rw [List.length_append, List.length_replicate]
+  omega
+
 end QOU.Mathlib.SYTBeta
