@@ -152,6 +152,91 @@ pub fn pn_interface_factor(q: f64, conv: PnConvention) -> f64 {
     }
 }
 
+/// The **additive offset** of the p-n bond factor from the p-p factor `z`,
+/// i.e. `pn_interface_factor(q, conv) - markov_z(q)`.
+///
+/// This is the `d` coefficient in [`crate::gram`]'s per-crossing
+/// `(c, d)` parameterisation, where a bond contributes `c*z + d`:
+///
+/// | bond | `(c, d)` in `gram` | factor |
+/// |---|---|---|
+/// | p-p | `(1, 0)` | `z` |
+/// | n-n | `(1, -h)` | `z - h` |
+/// | p-n | `(1, pn_offset(q, conv))` | `z + pn_offset` |
+///
+/// It exists so that the `gram` p-n sites can *name* their convention
+/// instead of open-coding `-0.5 * h`. See [`GRAM_PN_CONVENTION`].
+#[inline]
+pub fn pn_offset(q: f64, conv: PnConvention) -> f64 {
+    let h = hecke_h(q);
+    match conv {
+        // Written as `-(0.5 * h)` rather than `-h / 2.0` so that it is
+        // *syntactically* the expression the `gram` sites used before they
+        // were wired here — the two are bit-identical (scaling by a power of
+        // two is exact), and `pn_offset_is_bit_identical_to_the_open_coded_form`
+        // asserts it.
+        PnConvention::StrictAveraged => -(0.5 * h),
+        PnConvention::BringColorWeighted => {
+            -(h * (0.5 - flavor_split_leading(q) / 4.0))
+        }
+    }
+}
+
+/// [`pn_offset`] for a caller that holds only `h`, not `q`.
+///
+/// [`crate::gram::build_atom_nf`] is parameterised by `h = q - 1/q` alone, so
+/// it cannot reach `delta(q)` directly. `h` *is* invertible for `q > 0` —
+///
+/// ```text
+///   q = (h + sqrt(h^2 + 4)) / 2
+/// ```
+///
+/// — so the canonical convention is reachable from that signature; it just
+/// costs an archimedean square root that the `q`-carrying [`pn_offset`] does
+/// not. The [`PnConvention::StrictAveraged`] arm needs no inversion at all
+/// and is returned exactly.
+///
+/// Prefer [`pn_offset`] wherever `q` is in scope. This exists so that the
+/// `h`-only signature is not mistaken for a *structural* obstruction to the
+/// colour weighting — it is a soft one.
+#[inline]
+pub fn pn_offset_from_h(h: f64, conv: PnConvention) -> f64 {
+    match conv {
+        PnConvention::StrictAveraged => -(0.5 * h),
+        PnConvention::BringColorWeighted => {
+            let q = (h + (h * h + 4.0).sqrt()) / 2.0;
+            pn_offset(q, conv)
+        }
+    }
+}
+
+/// The p-n convention the [`crate::gram`] atomic-braid path **currently**
+/// evaluates at — deliberately a named constant rather than an inline
+/// `-0.5 * h`, so the discrepancy below is visible at the call site.
+///
+/// # This is NOT the canonical convention
+///
+/// The owner ruling of 2026-08-15 (R3) makes
+/// [`PnConvention::BringColorWeighted`] canonical for the p-n interface;
+/// `gram` evaluates [`PnConvention::StrictAveraged`], which is the same
+/// expression with `delta` forced to zero. The two differ by exactly
+/// `h*delta/4` per p-n bond — about `7.19e-05` absolute at
+/// [`crate::gram::Q_0`], which is ~1e11 times the f64 floor, so it is a
+/// real shift and not rounding.
+///
+/// # Why it has not simply been flipped
+///
+/// Flipping this constant moves every number downstream of the atomic-braid
+/// normal form. Measured 2026-08-25 on `main`: **51 Python files** and
+/// **18 committed `*.witness.json`** consume those two `gram` sites. That is
+/// an owner-scoped corpus migration, not an agent-side edit, so this constant
+/// records the live state honestly instead of pre-empting it.
+///
+/// When the migration is authorised, the flip is this one token — and
+/// `gram_pn_convention_is_still_the_blind_one` is the test that must be
+/// updated in the same commit, by design.
+pub const GRAM_PN_CONVENTION: PnConvention = PnConvention::StrictAveraged;
+
 /// Per-bond factor for a labelled bond kind.
 ///
 /// Port of `closed_form_tau_M.py::interface_factor`, extended so that the
@@ -579,6 +664,83 @@ mod tests {
     };
     use super::*;
     use crate::gram::Q_0;
+
+    /// Wiring the two `gram` p-n sites to [`pn_offset`] must not move a
+    /// single bit — that is the whole premise on which the change was made
+    /// without owner sign-off. `-(0.5 * h)` is exact (scaling by a power of
+    /// two), so this is `assert_eq!` on `f64` deliberately, not a tolerance.
+    #[test]
+    fn pn_offset_is_bit_identical_to_the_open_coded_form() {
+        for &q in &[Q_0, 1.0, 1.5, 2.0, 0.75] {
+            let h = hecke_h(q);
+            let open_coded = -(0.5 * h); // what gram.rs:726/888 used to inline
+            assert_eq!(pn_offset(q, PnConvention::StrictAveraged), open_coded);
+            assert_eq!(pn_offset_from_h(h, PnConvention::StrictAveraged), open_coded);
+        }
+    }
+
+    /// The `h`-only entry point must agree with the `q`-carrying one under
+    /// *both* conventions — i.e. the `q = (h + sqrt(h^2+4))/2` inversion is
+    /// the genuine inverse of `h = q - 1/q` on `q > 0`, not an approximation
+    /// that happens to be close at the anchor.
+    #[test]
+    fn pn_offset_from_h_round_trips_the_q_carrying_form() {
+        for &q in &[Q_0, 1.0, 1.5, 2.0, 0.75] {
+            let h = hecke_h(q);
+            for conv in [PnConvention::StrictAveraged, PnConvention::BringColorWeighted] {
+                let via_q = pn_offset(q, conv);
+                let via_h = pn_offset_from_h(h, conv);
+                assert!(
+                    (via_q - via_h).abs() <= 1e-15 * via_q.abs().max(1.0),
+                    "q={q}: via_q={via_q:.17e} via_h={via_h:.17e} ({conv:?})"
+                );
+            }
+        }
+    }
+
+    /// The offset is the `gram` `d` coefficient: `factor = z + d`.
+    #[test]
+    fn pn_offset_is_the_factor_minus_z() {
+        for conv in [PnConvention::StrictAveraged, PnConvention::BringColorWeighted] {
+            let lhs = pn_interface_factor(Q_0, conv);
+            let rhs = markov_z(Q_0) + pn_offset(Q_0, conv);
+            assert!((lhs - rhs).abs() < 1e-16, "{conv:?}: {lhs} vs {rhs}");
+        }
+    }
+
+    /// **This test records a live defect, and is meant to be edited.**
+    ///
+    /// `gram` evaluates the p-n interface at [`PnConvention::StrictAveraged`]
+    /// while the owner ruling of 2026-08-15 (R3) makes
+    /// [`PnConvention::BringColorWeighted`] canonical. The gap is exactly
+    /// `h*delta/4` per p-n bond.
+    ///
+    /// It is asserted rather than merely commented so that the discrepancy
+    /// cannot be lost: flipping [`GRAM_PN_CONVENTION`] breaks this test, which
+    /// forces the flip and the corpus migration it implies (measured
+    /// 2026-08-25: 51 Python files, 18 committed witnesses) into the same
+    /// commit instead of letting the constant drift ahead of the numbers.
+    #[test]
+    fn gram_pn_convention_is_still_the_blind_one() {
+        assert_eq!(
+            GRAM_PN_CONVENTION,
+            PnConvention::StrictAveraged,
+            "GRAM_PN_CONVENTION changed. If this is the authorised colour-weighting \
+             migration, update this test AND re-run the 51 Python consumers / 18 \
+             witnesses in the same commit (bean qou-cblw)."
+        );
+
+        // And the gap it leaves on the table, at the substrate anchor.
+        let gap = pn_offset(Q_0, PnConvention::BringColorWeighted)
+            - pn_offset(Q_0, GRAM_PN_CONVENTION);
+        let expected = hecke_h(Q_0) * flavor_split_leading(Q_0) / 4.0;
+        assert!(
+            (gap - expected).abs() < 1e-18,
+            "gap {gap:.17e} != h*delta/4 {expected:.17e}"
+        );
+        // ~7.19e-05 absolute: ~1e11 x the f64 floor, so a real shift.
+        assert!(gap > 7.0e-5 && gap < 7.4e-5, "gap out of recorded band: {gap:.6e}");
+    }
 
     #[test]
     fn census_matches_python_at_the_light_isotopes() {
