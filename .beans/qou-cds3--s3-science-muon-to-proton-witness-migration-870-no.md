@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T08:22:10Z
+updated_at: 2026-08-25T08:32:01Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -109,3 +109,41 @@ its whole call cone is cache-free. The gate and the cache load moved into
 Measured cost of following the stale wording: promoting `y_lambda_at` to a
 muon identifier reclassified **56 producers** from `proton` to `BOTH`, hiding
 56 clean files behind an association the code no longer has.
+
+
+## CORRECTION, same day — both "confirmed" are STALE WITNESSES, not defects
+
+The section above names two confirmed both-pin defects and diagnoses them
+differently (one a mis-stamp, one the meson class). **Both diagnoses are
+wrong.** Reading the producers instead of the witnesses:
+
+`computations/probes/he3_brane_tower_structural_gap.py:46` carries a comment I
+had not found:
+
+    # q0 comes from the pin table, never a literal. This held
+    # `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+    # neither current pin, so nothing could compare it against
+    # anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+    Q0 = Q_MP
+
+`Q_MP` is the PROTON pin. So the producer was already fixed by an owner ruling
+on 2026-08-24; only its committed witness was stale. And
+`he3_tower_charge_asymmetry_probe.py:55` IMPORTS `Q0` from that same module, so
+one ruling fixed both.
+
+Verified by re-running, not inferred:
+
+    he3-brane-tower-structural-gap   q_0_50dps  1.1099785955573347 -> 1.1099785827513808
+    he3-tower-charge-asymmetry       q_0_50dps  1.1099785955541805 -> 1.1099785827513808
+
+Both now match their own `q0Value: proton` stamp, and both leave the both-pin
+population. Regenerated and committed; gates green.
+
+**So the both-pin count is 105 -> 103, and the confirmed-defect count is ZERO.**
+Every one of the 105 is a deliberate comparison, an audit reporting the pins as
+data, or -- in these two -- a witness stale against a fix already applied at the
+producer.
+
+The lesson for whoever drains the remaining 48-by-hand: **read the producer,
+not the witness.** Both of these looked like live stamp/payload contradictions
+from the witness alone, and both had been fixed upstream a day earlier.

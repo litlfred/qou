@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 229,
-      "canonical": 167,
-      "proton-pin": 1656,
+      "STALE": 228,
+      "canonical": 166,
+      "proton-pin": 1658,
       "unknown": 25
     },
-    "stale_total": 229,
+    "stale_total": 228,
     "new_stale": 0,
     "rows": [
       {
@@ -7652,9 +7652,9 @@
       {
         "file": "computations/he3-brane-tower-structural-gap.witness.json",
         "field": "parameters.q_0_50dps",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/he3-brane-tower-structural-gap.witness.json",
@@ -7687,9 +7687,9 @@
       {
         "file": "computations/he3-tower-charge-asymmetry.witness.json",
         "field": "parameters.q_0_50dps",
-        "value": "1.1099785955541805752815940796095093779932822799587",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416265239649993
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/he3-tower-charge-asymmetry.witness.json",
