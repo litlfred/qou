@@ -89,6 +89,52 @@ and **all** of the content is in the scale. Deriving `E_EM` therefore reduces to
 deriving that scale — which is a different and better-posed question than
 "find the topological invariant", and it is *not* answered by anything above.
 
+## The other front, checked — and it refutes a hypothesis of mine
+
+The same invariant gates the ³He mirror residual, so the mirror data is a
+second constraint on one unknown. I went looking for a specific agreement and
+**did not find it**; recording that because a hoped-for confirmation that fails
+is worth as much as one that lands.
+
+**The hypothesis.** Point 3 above says the topological factor contributes a
+*constant*. `mirror-nuclei-coulomb-systematics.witness.json` describes its
+ratio as *"≈constant across A=3–39"*, `0.84 ± 0.06`, from a canonical
+uniform-sphere Coulomb with no free parameter. Two independent routes both
+saying "constant" would have been a real cross-check.
+
+**It is not constant.** Re-reading the witness's own eight rows
+([`mirror_ratio_a_trend_probe.py`](../computations/audits/mirror_ratio_a_trend_probe.py),
+exact `Fraction` arithmetic, read-only):
+
+| statistic | value |
+|---|---|
+| Pearson `r` (ratio vs `A`) | **0.830** |
+| `t`, 6 dof | **3.65** (crit 2.447 ⇒ **p < 0.05**) |
+| slope | `+0.0044` per unit `A` |
+| line at `A=3` → `A=39` | `0.774` → `0.934` |
+| rms about the line | `0.0329` |
+| rms about the mean | `0.0589` — **44 % worse** |
+
+The ratio rises monotonically with `A`. The scatter the witness reports as
+`± 0.06` is not noise about a constant; it is a trend, and a straight line
+describes the eight points substantially better than their mean does.
+
+**Two consequences.**
+
+1. **The cross-check does not land.** The mirror data does *not* corroborate
+   "the correction is a constant". It does not refute the Lean either — the
+   mirror ratio is an *inter*-nucleon Coulomb comparison across a nucleus,
+   while `E_EM` is *intra*-nucleon, and the `A`-trend is at least as likely to
+   be the uniform-sphere model improving with `A` as anything about `E_EM`.
+   **Do not read the trend as evidence that `E_EM` is `A`-dependent.** What is
+   established is only that the hoped-for agreement is absent.
+2. **The `A=3` number is not the quoted one**, and `A=3` is exactly the case
+   4-B needs. The ³H/³He datum is **0.765**, against the chain mean of
+   **0.838** — 1.15 sd away. Anyone reaching for the headline `0.84` for the
+   ³He case is off by that much. The witness's `description` field should say
+   which `A` its number applies to; correcting it is a producer edit and is
+   *not* done here.
+
 ## Honest status
 
 `E_EM` is **not derived**. What this session added is: one invariant identified
