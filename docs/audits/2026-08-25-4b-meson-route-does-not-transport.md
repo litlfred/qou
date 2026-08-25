@@ -129,11 +129,46 @@ describes the eight points substantially better than their mean does.
    **Do not read the trend as evidence that `E_EM` is `A`-dependent.** What is
    established is only that the hoped-for agreement is absent.
 2. **The `A=3` number is not the quoted one**, and `A=3` is exactly the case
-   4-B needs. The ³H/³He datum is **0.765**, against the chain mean of
-   **0.838** — 1.15 sd away. Anyone reaching for the headline `0.84` for the
-   ³He case is off by that much. The witness's `description` field should say
-   which `A` its number applies to; correcting it is a producer edit and is
-   *not* done here.
+   4-B needs. Anyone reaching for the chain mean for the ³He case is off by
+   ~1.15 sd.
+
+### Follow-up (same day): the witness is numerically stale, and the trend survives it
+
+Correcting the numbers above, and adding a finding the first pass missed.
+
+`coulomb_energy.mirror_displacement_mev` **has changed on `main`** since the
+witness was computed (2026-07-11). The committed `coulomb_canonical` column no
+longer reproduces — and the change is an **exactly uniform rescale**, factor
+`1.178176504688906`, identical across all eight pairs to 19 significant figures.
+A normalisation change, not a model change.
+
+| | committed (stale) | live recompute |
+|---|---|---|
+| chain mean | 0.8376 | **0.9868** |
+| `A=3` (³H/³He) | 0.7650 | **0.9013** |
+| Pearson `r` | 0.83049 | **0.83049** |
+| `t` (6 dof) | 3.6520 | **3.6520** |
+
+**The trend finding is untouched.** Pearson `r` and `t` are invariant under
+rescaling one variable, so they are *identical* on the stale and live numbers —
+the monotone trend is real either way. What moves is only the absolute level.
+
+**But the witness's interpretation is now stale too**, and that is new. Its
+narrative explains "the ~0.8 factor" as *"the known uniform-sphere
+over-estimate"*. At the live normalisation the mean is **0.987** — there is no
+over-estimate left to explain.
+
+**The producer was also broken.** It raised `TypeError: unsupported format
+string passed to mpf.__format__` and could not run **at all**, on `main`,
+before this branch — a third instance of the mpf-formatting class fixed in
+PR #5615. Fixed here, along with the "≈constant" wording and a trend block that
+puts per-`A` statistics into the witness so no consumer has to take a mean on
+trust.
+
+**The witness is deliberately NOT regenerated on this branch.** Regenerating
+moves every number by the factor above, and that is an upstream `coulomb_energy`
+change this branch has not audited. Baking it into an SM-front PR would
+misattribute it. Whoever regenerates should audit that change and say so.
 
 ## Honest status
 
