@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T16:31:28Z
-updated_at: 2026-08-25T18:04:47Z
+updated_at: 2026-08-25T18:27:50Z
 ---
 
 ## Result 2026-08-25 (PR #5767): 14 -> 11, and 11 is the FLOOR for a mechanical drain
@@ -29,3 +29,22 @@ The remaining 11 are **not a queue**:
 
 So the detector's ACTIONABLE count overstates the drainable surface. Treat it as
 an alarm, not a work queue.
+
+
+## Merged-tree state 2026-08-25: 9 actionable, and braid-registry retired
+
+Post-merge the count is 9 (main's work removed 2 more and added a
+'BLOCKED on C by design (registry)' bucket that formalises the distinction).
+
+Additionally retired `computations/braid-registry/` -> `_deprecated/`: 269 JSON
+records, 268 carrying z_markov = 0.4993200830735895 at q = 1.11 — which is C
+evaluated at a rounded q that is NEITHER pin, so not even C's value at a real
+anchor (z_C at the proton pin is 0.49932033418369445). Dead producer, zero
+readers. Changes no detector count (the audit is AST-over-*.py; these are JSON)
+— the risk it closes is the next person to grep the corpus for a C value and
+conclude axis B reopened. Found by the sibling on PR #5765, verified here first.
+
+CORROBORATION: their bean qou-lp5d reaches this bean's 'unmigratable by
+substitution' conclusion by symbolic measurement — z_C is bar-EVEN, z_D is
+neither, and ord(z - 1/2) at q=1 is 2 for C against 1 for D — where this bean
+argued it from decayLadder_zC_threeRow_ne_zero. Two independent routes.
