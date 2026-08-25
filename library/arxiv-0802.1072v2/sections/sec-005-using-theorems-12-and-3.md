@@ -5,7 +5,7 @@ section_id: sec-005-using-theorems-12-and-3
 section_title: "Using Theorems 1,2, and 3"
 section_number: null
 pages: 6-9
-source_pdf: 0802.1072v2.pdf
+source_pdf: 0802.1072v2 (1).pdf
 source_sha256: 6f4d93f0b7ba5cd7
 doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
@@ -22,22 +22,17 @@ u syllables of length 1. For example, Table I tells us that a 3-b raid X whose X
 torus knot. Therefore the closure of X has braid index 2.
 W Σ ⋆(W )
 ak
-1a2, k = 1 and 2
-(1; ( k− 1))
+1a2, k = 1 and 2 (1; ( k− 1))
 ak
-1a2, k≥ 3
-(−1; ( k + 1))
+1a2, k≥ 3 (−1; ( k + 1))
 ak
 1a−1
-2 , k≥ 2
-(−1; (1 , k))
+2 , k≥ 2 (−1; (1 , k))
 ak
-1a2, k≤− 2
-(k; (1−k−1, 2))
+1a2, k≤− 2 (k; (1−k−1, 2))
 ak
 1a−1
-2 , k≤− 1,
-(k; (1 −k−1))
+2 , k≤− 1, (k; (1 −k−1))
 a−1
 1 a2 and a1a−1
 2 (−1; (2))
@@ -62,47 +57,39 @@ given in Table II.
 pos ap
 1aq
 2ar
-1a2
-(3 ; ( p− 2, q − 1, r − 2))
+1a2 (3 ; ( p− 2, q − 1, r − 2))
 a−p
 1 aq
 2ar
-1a2
-(1− p ; ( q, r − 1, 1p))
+1a2 (1− p ; ( q, r − 1, 1p))
 ap
 1a−q
 2 ar
-1a2
-(2− q ; ( p− 1, 1q−1, r − 1))
+1a2 (2− q ; ( p− 1, 1q−1, r − 1))
 ap
 1aq
 2a−r
-1 a2
-(1− r ; ( p− 1, q, 1r))
+1 a2 (1− r ; ( p− 1, q, 1r))
 neg ap
 1aq
 2ar
 1a−1
-2
-(0 ; ( p, q − 1, r ))
+2 (0 ; ( p, q − 1, r ))
 a−p
 1 aq
 2ar
 1a−1
-2
-(−p ; ( q, r + 1, 1p−2))
+2 (−p ; ( q, r + 1, 1p−2))
 ap
 1a−q
 2 ar
 1a−1
-2
-(−q− 1 ; ( r + 1, p + 1, 1q−1))
+2 (−q− 1 ; ( r + 1, p + 1, 1q−1))
 ap
 1aq
 2a−r
 1 a−1
-2
-(−r ; ( p + 1, q, 1r−2))
+2 (−r ; ( p + 1, q, 1r−2))
 T able II: Conjugacy classes admitting non-degenerate ﬂypes
 We remark that the data in Table II is only given up to cyclic pe rmutation of the tail symbol,
 because the lexicographically smallest choice depends upo n the relative numerical values of p, q, r.

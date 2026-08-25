@@ -5,7 +5,7 @@ section_id: sec-029-43-q-polynomial-21
 section_title: "Q polynomial 21"
 section_number: 4.3
 pages: 21-23
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -93,8 +93,7 @@ except two of valence 1), so χ(IG) = 1. We have △ = 1 if k = 3, and otherwise
 V0V2 = 1 for k = 3, and V0V2 = 2 otherwise. ✷
 To explain what such a property has to do with Q, now we must introduce J. Murakami’s formula [Mr]. (See also
 Kanenobu [K, Theorem 2].)
-Let i = √
-−1, u = √−t and x = u + u−1. Let further2 for a braid β of exponent sum e,
+Let i = √−1, u = √−t and x = u + u−1. Let further2 for a braid β of exponent sum e,
 χ(β,t) = ieu−2eVˆβ(t) +u−e(x2 − 2) .(24)
 Then Murakami’s formula is
 1Note that these are exactly the 3-braids which are reducible in the terminology of dynamic properties; this reducibilit y has nothing to do,

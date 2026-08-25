@@ -5,7 +5,7 @@ section_id: sec-067-77-knots-with-unsharp-mwf-inequality
 section_title: "Knots with unsharp MWF inequality"
 section_number: 7.7
 pages: 60-64
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -67,16 +67,11 @@ Proposition 7.9 The tuples (x,y,z,w) for which Kx,y,z,w has braid index 4 (and s
 in Z4, in the sense that
 lim
 n→∞
-⏐
-⏐ { (x,y,z,w) ∈ Z4 : b(Kx,y,z,w) = 4 } ∩ [−n,n]4 ⏐
-⏐
-⏐
-⏐ [−n,n]4 ⏐
-⏐ = 1 .(74)
+⏐⏐ { (x,y,z,w) ∈ Z4 : b(Kx,y,z,w) = 4 } ∩ [−n,n]4 ⏐⏐
+⏐⏐ [−n,n]4 ⏐⏐ = 1 .(74)
 Proof. Extending the argument for proposition 7.8, we see that
 ˜P(x,y,z,w) := [P(ˆβ[2]
-x,y,z,w)]v4[βx,y,z,w]+7(√
-q − 1/ √q) · √q4[βx,y,z,w]+7 =
+x,y,z,w)]v4[βx,y,z,w]+7(√q − 1/ √q) · √q4[βx,y,z,w]+7 =
 7
 ∑
 ix,iy,iz,iw=1

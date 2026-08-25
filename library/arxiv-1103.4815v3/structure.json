@@ -1,0 +1,372 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1103.4815v3",
+ "source": {
+  "file": "1103.4815v3.pdf",
+  "sha256": "28647b02ea1441e38e2dd7192885b9b64840b290b7f43aafeb1c48e27206ed23",
+  "bytes": 636640,
+  "pages": 65,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1103.4815",
+   "version": "3",
+   "primary_class": "math.DG",
+   "stamp_date": "17 Jul 2013"
+  },
+  "doi": null,
+  "title": "Four Equivalent Versions of Non-Abelian Gerbes",
+  "authors_raw": "Thomas Nikolaus a and Konrad Waldorf b",
+  "title_lines": [
+   "Four Equivalent Versions of Non-Abelian Gerbes"
+  ],
+  "abstract": "We recall and partially improve four versions of smooth, non -abelian gerbes: \u02c7Cech cocycles, classifying maps, bundle gerbes, and principal 2-bundles. We prove that all these four ver- sions are equivalent, and so establish new relations betwee n interesting recent developments. Prominent partial results that we prove are a bijection betw een the continuous and smooth non- abelian cohomology, and an explicit equivalence between bu ndle gerbes and principal 2-bundles as 2-stacks.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20130717213749-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Lie Groupoids and Groupoid Actions on Manifolds",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Principal Groupoid Bundles",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Anafunctors",
+   "page": 9,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Lie 2-Groups and crossed Modules",
+   "page": 13,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Version I: Groupoid-valued Cohomology",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Version II: Classifying Maps",
+   "page": 18,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Version III: Groupoid Bundle Gerbes",
+   "page": 21,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Definition via the Plus Construction",
+   "page": 21,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Properties of Groupoid Bundle Gerbes",
+   "page": 27,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Classification by Cech Cohomology",
+   "page": 31,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Version IV: Principal 2-Bundles",
+   "page": 33,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Definition of Principal 2-Bundles",
+   "page": 33,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Properties of Principal 2-Bundles",
+   "page": 36,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Equivalence between Bundle Gerbes and 2-Bundles",
+   "page": 38,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "From Principal 2-Bundles to Bundle Gerbes",
+   "page": 39,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "From Bundle Gerbes to Principal 2-Bundles",
+   "page": 48,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 1,
+   "title": "A Equivariant Anafunctors and Group Actions",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Constructing Equivalences between 2-Stacks",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 8566,
+   "n_words": 1630
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 208,
+   "n_words": 33
+  },
+  {
+   "id": "sec-002-21-lie-groupoids-and-groupoid-actions-on-manifol",
+   "number": "2.1",
+   "title": "Lie Groupoids and Groupoid Actions on Manifolds",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2350,
+   "n_words": 505
+  },
+  {
+   "id": "sec-003-22-principal-groupoid-bundles",
+   "number": "2.2",
+   "title": "Principal Groupoid Bundles",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 5513,
+   "n_words": 1061
+  },
+  {
+   "id": "sec-004-23-anafunctors",
+   "number": "2.3",
+   "title": "Anafunctors",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 7986,
+   "n_words": 1528
+  },
+  {
+   "id": "sec-005-24-lie-2-groups-and-crossed-modules",
+   "number": "2.4",
+   "title": "Lie 2-Groups and crossed Modules",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 7053,
+   "n_words": 1329
+  },
+  {
+   "id": "sec-006-3-version-i-groupoid-valued-cohomology",
+   "number": "3",
+   "title": "Version I: Groupoid-valued Cohomology",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4203,
+   "n_words": 834
+  },
+  {
+   "id": "sec-007-4-version-ii-classifying-maps",
+   "number": "4",
+   "title": "Version II: Classifying Maps",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 5971,
+   "n_words": 1083
+  },
+  {
+   "id": "sec-008-5-version-iii-groupoid-bundle-gerbes",
+   "number": "5",
+   "title": "Version III: Groupoid Bundle Gerbes",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 27,
+   "n_chars": 12211,
+   "n_words": 2222
+  },
+  {
+   "id": "sec-009-52-properties-of-groupoid-bundle-gerbes",
+   "number": "5.2",
+   "title": "Properties of Groupoid Bundle Gerbes",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 33,
+   "n_chars": 13361,
+   "n_words": 2551
+  },
+  {
+   "id": "sec-010-6-version-iv-principal-2-bundles",
+   "number": "6",
+   "title": "Version IV: Principal 2-Bundles",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 6218,
+   "n_words": 1174
+  },
+  {
+   "id": "sec-011-62-properties-of-principal-2-bundles",
+   "number": "6.2",
+   "title": "Properties of Principal 2-Bundles",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 4583,
+   "n_words": 823
+  },
+  {
+   "id": "sec-012-7-equivalence-between-bundle-gerbes-and-2-bundle",
+   "number": "7",
+   "title": "Equivalence between Bundle Gerbes and 2-Bundles",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1856,
+   "n_words": 321
+  },
+  {
+   "id": "sec-013-71-from-principal-2-bundles-to-bundle-gerbes",
+   "number": "7.1",
+   "title": "From Principal 2-Bundles to Bundle Gerbes",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 48,
+   "n_chars": 21310,
+   "n_words": 4460
+  },
+  {
+   "id": "sec-014-72-from-bundle-gerbes-to-principal-2-bundles",
+   "number": "7.2",
+   "title": "From Bundle Gerbes to Principal 2-Bundles",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 57,
+   "n_chars": 15979,
+   "n_words": 3303
+  },
+  {
+   "id": "sec-015-a-equivariant-anafunctors-and-group-actions",
+   "number": null,
+   "title": "A Equivariant Anafunctors and Group Actions",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 59,
+   "n_chars": 4528,
+   "n_words": 922
+  },
+  {
+   "id": "sec-016-b-constructing-equivalences-between-2-stacks",
+   "number": null,
+   "title": "B Constructing Equivalences between 2-Stacks",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 62,
+   "n_chars": 6299,
+   "n_words": 1218
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 65,
+   "n_chars": 4977,
+   "n_words": 706
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 18,
+  "chars_total": 133172
+ }
+}

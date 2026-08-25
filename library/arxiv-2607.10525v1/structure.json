@@ -1,0 +1,267 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2607.10525v1",
+ "source": {
+  "file": "2607.10525v1.pdf",
+  "sha256": "b893cb4c87ea1d6623ff7b97fa4cc883df4874fa50c6d334c8aced8b6d899c1f",
+  "bytes": 610956,
+  "pages": 34,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2607.10525",
+   "version": "1",
+   "primary_class": "math.QA",
+   "stamp_date": "12 Jul 2026"
+  },
+  "doi": null,
+  "title": "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES",
+  "authors_raw": "C\u00c9SAR GALINDO, CLAUDIA GALLEGO, AND YIBY MORALES",
+  "title_lines": [
+   "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE",
+   "TENSOR CATEGORIES"
+  ],
+  "abstract": "LetGbe a finite group acting on a finite tensor categoryC. We classify fiber functors on the equivariantizationCG in terms of equivariant exact module categories overC, indexed by subgroups ofG. The data are a subgroupH\u2286G and anH-equivariantC-module categoryMwhose underlyingC-module category is indecomposable, exact, and semisimple; they give a fiber functor precisely whenH acts transitively on the simple objects ofMand the stabilizer cocycle of one, hence every, simple object is non-degenerate. Through Tannaka\u2013Krein reconstruction this describes realizations ofC G as the representation category of a finite-dimensional Hopf algebra, with no semisimplicity hypothesis onC. As applications, for odd primespwe determine the fiber functors onRep(Hp), whereHp denotes Nikshych\u2019s semisimple Hopf algebra of dimension4p2 [Nik08]: there is one equivalence class if p\u22613 (mod 4)and two ifp\u22611 (mod 4). We also use the classification for gaugings to determine which non-pointed entries in the small-dimensional list of [GN25] are representation categories of semisimple factorizable Hopf algebras. 1.Introduction LetCbe a finite tensor category over an algebraically closed fieldkof characteristic zero. Afiber functoronCis ak-linear exact faithful tensor functorF:C\u2192Vec k. Classical neutral Tannakian duality reconstructs affine group schemes from symmetric tensor categories equipped with a fiber functor [SR72, DM82]. In the non-symmetric setting relevant here, Tannaka\u2013Krein reconstruction instead produces a Hopf alge- bra [JS91, Sch92, BV07]: for every fiber functorFon a finite tensor categoryC, there is a finite-dimensional Hopf algebraAF withC\u2243Rep(A F ), under whichFbecomes the forgetful functor [EGNO15, Theorem 5.3.12]. The fiber-functor problem is thus the problem ofHopf realization: deciding when a finite tensor category is the repre- sentation category of a finite-dimensional Hopf algebra, and counting the realizations arising from inequivalent forgetful functors. For group-theoretic",
+  "docinfo": {
+   "Author": "C\u00e9sar Galindo; Claudia Gallego; Yiby Morales",
+   "Creator": "arXiv GenPDF (tex2pdf:8def8d8)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Fiber Functors of Equivariantizations of Finite Tensor Categories"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Finite tensor categories and their module categories",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Equivariant tensor categories and their module categories",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The equivariant category CG and its module categories",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Fiber functors for CG",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The correspondence between fiber functors and rank-one module categories",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Rank-one equivariantizations",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Classification of fiber functors",
+   "page": 11,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Fiber functors for the Hopf algebras Hp",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Tambara\u2013Yamagami categories and fiber functors",
+   "page": 12,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Hopf algebras Hp",
+   "page": 12,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Classification of fiber functors for Rep(Hp)",
+   "page": 13,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Fiber functors on gaugings",
+   "page": 18,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "First reductions for small radical gaugings",
+   "page": 21,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 8721,
+   "n_words": 1172
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 189,
+   "n_words": 27
+  },
+  {
+   "id": "sec-002-21-finite-tensor-categories-and-their-module-cat",
+   "number": "2.1",
+   "title": "Finite tensor categories and their module categories",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 961,
+   "n_words": 133
+  },
+  {
+   "id": "sec-003-22-equivariant-tensor-categories-and-their-modul",
+   "number": "2.2",
+   "title": "Equivariant tensor categories and their module categories",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 9324,
+   "n_words": 1278
+  },
+  {
+   "id": "sec-004-31-the-correspondence-between-fiber-functors-and",
+   "number": "3.1",
+   "title": "The correspondence between fiber functors and rank-one module categories",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 829,
+   "n_words": 117
+  },
+  {
+   "id": "sec-005-32-rank-one-equivariantizations",
+   "number": "3.2",
+   "title": "Rank-one equivariantizations",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3748,
+   "n_words": 538
+  },
+  {
+   "id": "sec-006-33-classification-of-fiber-functors",
+   "number": "3.3",
+   "title": "Classification of fiber functors",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2132,
+   "n_words": 284
+  },
+  {
+   "id": "sec-007-41-tambarayamagami-categories-and-fiber-functors",
+   "number": "4.1",
+   "title": "Tambara\u2013Yamagami categories and fiber functors",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 18,
+   "n_chars": 11480,
+   "n_words": 1683
+  },
+  {
+   "id": "sec-008-5-fiber-functors-on-gaugings",
+   "number": "5",
+   "title": "Fiber functors on gaugings",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 5960,
+   "n_words": 841
+  },
+  {
+   "id": "sec-009-51-first-reductions-for-small-radical-gaugings",
+   "number": "5.1",
+   "title": "First reductions for small radical gaugings",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 33,
+   "n_chars": 26387,
+   "n_words": 3741
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 4692,
+   "n_words": 586
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "sections": 11,
+  "chars_total": 74423
+ }
+}

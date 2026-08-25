@@ -5,7 +5,7 @@ section_id: sec-006-some-open-questions-and-a-survey-of-known-result
 section_title: "Some open questions and a survey of known results about links of braid index 3"
 section_number: null
 pages: 9-14
-source_pdf: 0802.1072v2.pdf
+source_pdf: 0802.1072v2 (1).pdf
 source_sha256: 6f4d93f0b7ba5cd7
 doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
