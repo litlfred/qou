@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T11:38:59Z
+updated_at: 2026-08-25T11:47:33Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -291,3 +291,55 @@ co-molecular-binding, cited by molecular-construction/co-triple-bond-energy.md;
 mass-qvalue-by-level, cited by mass-theory/unified-iterative-correction-proof.md).
 The latter two are NOT triaged. Recover each with a basename search before
 saying anything about it.
+
+
+=== THE OTHER TWO RECOVERED (commit b562732c2a) — a migration class ===
+
+All three REMOVED citations recover from the SAME place, SAME cause: added
+under folio-assistant/computations/, lost when the platform moved out in miga.
+
+  atom-mass-complete-wedderburn   2026-04-10  1359fe23ac
+  co-molecular-binding            2026-04-13  a3e8c2c82d
+  mass-qvalue-by-level            2026-04-15  e2814e577f
+
+Retrieve any with:  git show <commit>:folio-assistant/computations/<name>
+
+mass-qvalue-by-level — I FIRST READ IT WRONG. I reported "no results rows, no
+1H" after reading `assertions` and stopping. It has data.mass_by_level with 19
+rows H..208Pb, so the citing block's range claim is fair, and its BW(k=5)
+column is ACCURATE (3H->3He 0.018228 vs 0.01861 exp, ~2%). allPassed honestly
+false. Read `data` before judging a witness.
+
+The real defect: 7 assertions test the INACCURATE NF-trace column with a
+tolerance set just above each miss —
+  Q(3H->3He)  2.4412 vs 0.0186  tol 2.6648  13017% err  PASSED
+  Q(14C->14N) 3.0678 vs 0.1565  tol 3.2024   1861% err  PASSED
+  Q(60Co)     ... 508% ... Q(137Cs) 280% ... Q(90Sr) 258% ... Q(210Bi) 68%
+  B(D) k=5    2.8435 vs 2.2242  tol 1.5551     28% err  PASSED
+A tolerance ~10% wider than its own miss is a bound chosen after the fact. The
+argument is the contrast INSIDE the file: B(T) and B(3He) carry tolerances of
+0.0004/0.0001 and are recorded FAILING at 0.0% error.
+
+co-molecular-binding — three findings:
+  1. FITTED SCALE, ON H2. calibration_factor = 0.23879110765149733;
+     0.687012518457808 * 27.296143240836667 * 0.23879110765149733 = 4.478000 eV
+     = H2's measured bond energy. Its own H2_cross_check records the
+     UNcalibrated 18.75279 eV (4.19x too large), and 4.478/18.753 = 0.23879
+     exactly. A FOURTH CALIBRATION on a molecular observable — outside
+     CAL-1/2/3, so this one needs an OWNER decision.
+  2. "E_hartree_eV" = 27.296143240836667 vs CODATA 27.211386245988, +0.31%.
+     Not the Hartree.
+  3. WITNESS CONTRADICTS ITS BLOCK. co-triple-bond-energy.md says sigma
+     contributes the largest |V| and pi smaller; the witness gives all three
+     the IDENTICAL delta_Phi1_per_bond and k=3 = exactly 3x k=1. The block also
+     claims the witness records LP duals y1,y2,y3 — it records NONE (y0_star,
+     y_star, active_set, primal_obj, dual_obj, duality_gap all absent, the
+     fields AGENTS.md requires of every LP/SDP witness).
+  Its assertion "CO triple bond within 25% of observed" (D_0 = 11.09 eV) passes
+  at +21.1% — inside a loose bar, reached via a factor fitted on H2.
+
+NOTHING restored, re-fitted, or edited in a citing block. Each needs an
+authoring decision; the co calibration needs an owner one.
+
+SWEEP NOW FULLY TRIAGED: 144 cited, 137 resolve, 3 REMOVED (all recovered
+above), 4 NEVER EXISTED (all corrupt-with-space, targets unknown, recorded).
