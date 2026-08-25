@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-25T22:50:46.941171+00:00",
-  "commitSha": "7f86e7845d55288f070f3155e0b8b5ee7e70d4fb",
+  "computedAt": "2026-08-25T22:54:50.601701+00:00",
+  "commitSha": "547b9648ff3adc961f745d71f16cd97fc3410929",
   "assertions": [
     {
       "name": "reconstruction_exact_proton",
@@ -119,11 +119,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 104389,
+  "durationMs": 104891,
   "computation": "habiro-coefficients-via-peel",
   "scriptFile": "habiro_coefficients_via_peel.py",
-  "scriptHash": "4dd5cb4d08bd",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d691c96cf86e",
+  "scriptCommitSha": "547b9648ff3adc961f745d71f16cd97fc3410929",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -146,6 +146,9 @@
   },
   "description": "Atomic Habiro cyclotomic coefficients for A=1..4 (through helium-4) obtained via markov_peel.tr_M_atomic instead of the Wedderburn partition sum. The partition route was measured at ~18.1 days for A=3; this one does A=3 in seconds and A=4 in under a minute. Gated on exact reproduction of every committed A<=2 value.",
   "contentBlock": "prop:markov-pair-z2",
+  "parameters": {
+    "max_a": 4
+  },
   "data": {
     "results": {
       "proton": {
@@ -226,8 +229,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 171,
-        "elapsed_cancel_ms": 24
+        "elapsed_trace_ms": 156,
+        "elapsed_cancel_ms": 28
       },
       "neutron": {
         "Z": 0,
@@ -423,8 +426,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 218,
-        "elapsed_cancel_ms": 561
+        "elapsed_trace_ms": 216,
+        "elapsed_cancel_ms": 555
       },
       "helium-3": {
         "Z": 2,
@@ -560,8 +563,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 1854,
-        "elapsed_cancel_ms": 2261
+        "elapsed_trace_ms": 1802,
+        "elapsed_cancel_ms": 2145
       },
       "tritium": {
         "Z": 1,
@@ -697,8 +700,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 3664,
-        "elapsed_cancel_ms": 4975
+        "elapsed_trace_ms": 3803,
+        "elapsed_cancel_ms": 5119
       },
       "helium-4": {
         "Z": 2,
@@ -848,8 +851,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 24582,
-        "elapsed_cancel_ms": 18588
+        "elapsed_trace_ms": 24576,
+        "elapsed_cancel_ms": 18015
       }
     },
     "method": "markov_peel.tr_M_atomic + sp.cancel + to_u_polynomial + cyclotomic_expansion",
