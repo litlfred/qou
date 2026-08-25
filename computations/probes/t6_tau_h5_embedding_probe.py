@@ -61,7 +61,10 @@ def main() -> int:
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # Convention D (canonical, 2026-08-15 owner ruling): z = q^3/(q^2+1) = q^2/[2]_q.
+    # Convention C, 1/(sqrt q + 1/sqrt q), is excised. Under D no square root is
+    # needed, so a surviving mp.sqrt here would be z_C showing through.
+    z = q0**3 / (q0**2 + 1)
 
     print(f"=== Substrate ===")
     print(f"  q_0 = {float(q0):.10f}, h = {float(h):.6f}, z = {float(z):.6f}")

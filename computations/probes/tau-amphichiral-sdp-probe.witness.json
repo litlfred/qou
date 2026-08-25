@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:40:17.997884+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-25T01:09:22.873310+00:00",
+  "commitSha": "1334cff77426d0afb6bf86d19448162ff270c61c",
   "assertions": [
     {
       "name": "muon_canonical_pin_consistency",
@@ -41,8 +41,8 @@
   "durationMs": 6,
   "computation": "tau-amphichiral-sdp-probe",
   "scriptFile": "tau_amphichiral_sdp_probe.py",
-  "scriptHash": "d80c49e8bcd6",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "0bddc62db85c",
+  "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +57,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
