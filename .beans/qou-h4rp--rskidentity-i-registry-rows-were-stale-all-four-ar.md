@@ -48,7 +48,8 @@ regression can be caught.
 
 ## Still open (unchanged)
 
-The Specht core still carries ~500 sorry tokens across 36 modules; the four
+RETRACTED — see the correction appended below. (Original text: "The Specht
+core still carries ~500 sorry tokens across 36 modules"; the four
 headline results simply do not route through them. Getting to zero repo-wide
 remains the multi-session program in
 `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`.
@@ -62,3 +63,19 @@ toolchain has `FDRep.char_orthonormal` yet **no** `Irrep` type, no completeness,
 regular-rep decomposition — so `Σ dim² = |G|` is not available off the shelf.
 Fetching oleans does not unblock it, and a future reader of that doc would think it
 does.
+
+
+## RETRACTION 2026-08-25 — the "~500 sorry tokens" figure was mine and was wrong
+
+It counted the WORD `sorry` in comments and docstrings. Re-measured with a
+comment-stripping parser, validated by a 7-case selftest (term-mode, tactic-mode,
+line comment, block comment, docstring, `sorryAx` mention):
+
+**The QOU Lean tree has ZERO `sorry` in code across all 2200 files.** Also zero
+`sorryAx` and zero `: True :=`. `SpechtStandardBasisCore` supplied 101 of the
+phantom hits and has none; its docstring says "its single honest straightening
+stub" and I read past that too.
+
+The real residual assumption surface is **24 `axiom` declarations in 15 files**
+plus **1 `native_decide`** — the vector a sorry count cannot see. Clusters:
+Hecke/Markov trace 7, SDP 5, Hoefsmit 3, central idempotents 3, analysis 4, misc 2.
