@@ -647,3 +647,55 @@ The reading. Ito's threshold still sits at 18 crossings, and a genuinely hyperbo
 knot still cannot reach it — now as a theorem rather than a sample. Addendum 4's
 split stands, and its point (1) is untouched, being about *kind* rather than reach.
 Obstruction A is unchanged.
+
+---
+
+## Addendum 6 — the bridge claim that cannot hold (2026-08-25)
+
+Addendum 4 makes a falsifiable prediction: if the atom object is not a link,
+**no consumer may read a topological quantity off it.** Checked, on the 6 files
+of 276 atom-word consumers that actually pair it with a topology call
+(`snappy`, `knot_volumes`, `binding_link_volumes`, `_hyp_volume`).
+
+**No consumer violates it.** The nearest candidate,
+[`vol_t_he3_snappy_probe.py`](../../computations/deltalambda/vol_t_he3_snappy_probe.py),
+is clean and got there first: it comments the averaged letters as *"Hecke element
+`σ−h/2·1`, not a topological crossing"* and sweeps three readings
+(`pos`/`neg`/`drop`) rather than silently picking one. It samples 2 corners of the
+`2^(2A+1)`, which the sibling's later 32/32 SnapPy sweep completed — convergent,
+and its `Vol = 0` verdict is unaffected.
+
+### What the check did turn up
+
+[`per_atom_hyperbolic_volume_witness.py`](../../computations/per_atom_hyperbolic_volume_witness.py)
+does not read the atom object's volume — it uses a separate atlas of genuine
+knots, correctly. But its docstring justified the substitution with:
+
+> *"…distinct from the `atom_braid_word_3A(Z, N)` Hecke-algebra braid words which
+> carry intra-block g₀/g₁ generators. **Same Markov class**, different topological
+> realization."*
+
+**A Markov class is a property of a braid, and this object is not one.** It sits
+outside `im(ρ)` because `2A+1` of its letters are genuine averages, so there is
+no class for the atlas knot to share. What it has is `2^(2A+1)` branch closures
+whose classes generally differ. The sentence is not loose phrasing — it was the
+**only stated bridge** between the two objects.
+
+**No number moves.** The volumes are computed from the atlas knots directly and
+never from the atom element, so this corrects a justification, not a value.
+Corrected in place, with the census probe as its witness.
+
+**And it cuts the opposite way from a reprieve.** A sibling established today
+that three of the six atlas entries are an
+[**admitted fit**](2026-08-25-knot-id-is-an-admitted-fit.md) — the knot chosen for
+volume proximity to `B_AME`. That is a *different* defect from this one, and the
+two compose badly: this removes the one principle that had been offered in place
+of the fit. Whether `p`/`n`'s `"principled-derivation"` tag rests on a derivation
+elsewhere is **not established here** and is the obvious next question.
+
+### Scope
+
+Isolated, not propagated: corpus-grep finds this the **only** live instance of the
+claim. **(a)** — a documentation defect in a stated justification. It is *not* a
+claim that the atlas assignment is wrong, that any volume is wrong, or that the
+binding numbers move; none of that follows, and none is asserted.
