@@ -3,17 +3,17 @@
 
 A functional invariant under an involution contributes exactly zero to the split across it, and a sum of such sectors splits exactly like its remainder (`QOU.MassTheory.InvolutionSelectionRule`). The rule consumes an enumeration: that the sectors listed are all of them, and that each is invariant. Omitting one non-invariant sector makes the conclusion false rather than weaker.
 
-Sector by sector, that enumeration does not hold up. The unified mass formula ([`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md)) carries three terms — descended trace, brane tower, Frobenius co-Casimir — and the four sectors named above overlap them only partly.
+Sector by sector, one entry of that enumeration fails. The unified mass formula ([`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md)) carries three terms — descended trace, brane tower, Frobenius co-Casimir — and the four sectors named above overlap them only partly; the brane tower is missing from the list, though invariance holds for it anyway.
 
 | sector | status under generator sign-flip |
 |---|---|
 | Frobenius co-Casimir | **invariant**, by arity: $\tau(C_{\dim_q}) = \sum_\lambda 1/\dim_q(\lambda)$ takes no braid word at all, so it factors through $(n, q)$ (`QOU.MassTheory.InvolutionSelectionRule.coCasimir_sector_contributes_zero`) |
 | descended trace | **not invariant** at the substrate — see below |
-| brane tower | a term of the formula, **absent from the list above**, with no invariance result |
+| brane tower | **invariant** — its trace-invariant form takes no braid word either (`QOU.Mass.BraneTowerIsospinBlind.braneTowerR_eq_binom_sum`); the general form is invariant once the per-subset weight is Markov-invariant (`braneTowerW_isospin_blind`). Absent from the list above, but benignly so |
 | shell correction | invariant in the **crystal limit** $q \to 0$ only ([`prop:crystal-isospin-degeneracy`](crystal-isospin-degeneracy.md)) |
 | chirality | no invariance result in either direction |
 
-The descended trace is the case that fails outright. The Hecke relation gives $\sigma^{-1} = \sigma - (q - q^{-1})$, so a generator flip moves the trace by $(q - q^{-1})\,\mathrm{tr}(1)$ — about $0.209\,\mathrm{tr}(1)$ at $q_0$ — which vanishes only where $q^2 = 1$, the symmetric-braiding locus the framework sits off (`QOU.MassTheory.TraceSignFlipRegime`). A $q \to 0$ invariance does not transfer to $q_0$.
+The descended trace is the one entry that fails outright, and it is the sector the argument can least afford to lose. The Hecke relation gives $\sigma^{-1} = \sigma - (q - q^{-1})$, so a generator flip moves the trace by $(q - q^{-1})\,\mathrm{tr}(1)$ — about $0.209\,\mathrm{tr}(1)$ at $q_0$ — which vanishes only where $q^2 = 1$, the symmetric-braiding locus the framework sits off (`QOU.MassTheory.TraceSignFlipRegime`). A $q \to 0$ invariance does not transfer to $q_0$.
 
 The split is also not Coulomb-dominated. Writing it as the free-nucleon term minus the binding difference,
 
