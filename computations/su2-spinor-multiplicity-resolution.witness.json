@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:27:02.774245+00:00",
-  "commitSha": "00d0aa91d77bd9c21f2b1fcac9b98561543caf30",
+  "computedAt": "2026-08-25T22:23:02.282540+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
   "assertions": [
     {
       "name": "spin_ladder_(2)",
@@ -67,22 +67,14 @@
       "passed": true,
       "tolerance": 0,
       "source": "Okounkov-Vershik content separation on the m=2 spaces"
-    },
-    {
-      "name": "no_h4_fit_performed",
-      "computed": 0.0,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 0,
-      "source": "discipline: no spin/content chosen to produce h^4"
     }
   ],
   "allPassed": true,
-  "durationMs": 54,
+  "durationMs": 52,
   "computation": "su2-spinor-multiplicity-resolution",
   "scriptFile": "su2_spinor_multiplicity_resolution.py",
-  "scriptHash": "23c9c1bbc18b",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "2378023a184e",
+  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -108,7 +100,8 @@
   "auditOnly": "docs/audits/2026-06-02-su2-spinor-multiplicity-resolution.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
-    "compute_dps": 70
+    "compute_dps": 70,
+    "no_h4_fit_performed": "0 (DISCIPLINE, not a measurement -- the source field already said so: no spin/content was chosen to produce h^4)"
   },
   "data": {
     "task0_spin_ladder_check": {

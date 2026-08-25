@@ -449,7 +449,12 @@ def main():
             "modulus w.r.t. the section, not a forced selector. 'The cross-ratio "
             "that gives h^4' would be THE fit."),
     })
-    w.add_assertion("cross_ratio_is_forced_selector", 0, 0)  # documented: free
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("cross_ratio_is_forced_selector", "0 (documented: the cross-ratio is a FREE modulus)")
 
     # --- TASK 5: falsification (only if a line were forced) ------------------
     w.add_data("task5_h4_falsification", {
@@ -465,7 +470,12 @@ def main():
         "h4_borromean_block_invariant_RAW": str(H4_BORROMEAN),
         "fit_performed": False,
     })
-    w.add_assertion("no_h4_fit_performed", 0, 0)
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("no_h4_fit_performed", "0 (declared; see task5_h4_falsification.fit_performed)")
 
     # --- VERDICT -------------------------------------------------------------
     verdict = {
@@ -499,7 +509,12 @@ def main():
             "representation theory nor the icosahedral rigidity supplies."),
     }
     w.add_data("VERDICT", verdict)
-    w.add_assertion("verdict_code_ii", 1, 1)
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("verdict_code_ii", "1 (a verdict LABEL, not a measured quantity; see VERDICT)")
 
     w.add_caveat(
         "All A5/S3 group-theoretic facts (centralizer trivial, normalizer = S3, "

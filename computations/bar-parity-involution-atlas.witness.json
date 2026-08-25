@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T21:10:27.688958+00:00",
-  "commitSha": "f3ed541b157c16ee8f7f3faa1ff07891089b3e6d",
+  "computedAt": "2026-08-25T22:21:45.130375+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
   "assertions": [
     {
       "name": "checks_failed",
@@ -17,21 +17,14 @@
       "expected": 2,
       "passed": true,
       "source": "sympy exact"
-    },
-    {
-      "name": "n_distinct_involutions_behind_the_four_gradings",
-      "computed": 1,
-      "expected": 1,
-      "passed": true,
-      "source": "sympy exact; the halves are halves of def:bar-involution"
     }
   ],
   "allPassed": true,
-  "durationMs": 863,
+  "durationMs": 1189,
   "computation": "bar-parity-involution-atlas",
   "scriptFile": "bar_parity_involution_atlas_probe.py",
-  "scriptHash": "3fdd8d3dc546",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6ef7f20e78ae",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,15 +33,27 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/bar_parity_involution_atlas_probe.py"
+    ],
+    "reproduce": "python3 -u computations/bar_parity_involution_atlas_probe.py"
   },
   "description": "The four corpus gradings labelled bar-even/bar-odd are aspects of one involution (def:bar-involution) applied by halves: A and D are graded by the coefficient half q -> 1/q, C by the diagram half (mirror), and B is swapped, not graded. Under the full involution both crossing-energy channels are odd.",
   "contentBlock": "obs:crossing-energy-decomposition",
   "parameters": {
     "q_0_pin": "experimental/proton",
     "uses_muon_built_cache": false,
-    "dps": 50
+    "dps": 50,
+    "n_distinct_involutions_behind_the_four_gradings": "1 (DECLARED, not counted. The source field read 'sympy exact; the halves are halves of def:bar-involution' -- but no count was performed here.)"
   },
   "data": {
     "checks": {
@@ -131,6 +136,6 @@
     "Grading D is verified on the sym/alt Hecke block only, where electroweak-triplet-charge-spin-from-involution-proof.md:3 states the spin involution acts as the eigenvalue swap. The spin involution of def:spin-involution is defined on a general Frobenius *-algebra; that it coincides with the bar involution elsewhere is not checked here."
   ],
   "q0Anchor": "proton",
-  "q0Value": "1.10997858275138080759166909561",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.numerics_at_q0.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,15 +1,16 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T21:17:47.050874+00:00",
-  "commitSha": "00d0aa91d77bd9c21f2b1fcac9b98561543caf30",
+  "computedAt": "2026-08-25T22:21:53.064324+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
   "assertions": [
     {
-      "name": "detG_closed_form_ok",
-      "computed": 1,
-      "expected": 1,
+      "name": "detG_closed_form_max_deviation",
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
-      "source": "detG(m)=(1-5m^2)(1-m^2)=1-6m^2+5m^4 verified to 40dps"
+      "tolerance": "1e-40",
+      "source": "detG(m)=(1-5m^2)(1-m^2)=1-6m^2+5m^4, measured at m=0.3"
     },
     {
       "name": "canonical_mstar_physical",
@@ -20,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "b4-nonsaturating-mstar-diagnostic",
   "scriptFile": "b4_nonsaturating_mstar_diagnostic.py",
-  "scriptHash": "535ddf793ee3",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "1359a6584110",
+  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

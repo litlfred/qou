@@ -183,16 +183,28 @@ def main() -> int:
         "(H_3) weights — the same convention as the prop's Table 1; re-baseline when "
         "the Tier-2 fix lands."
     )
-    w.add_assertion("lo_routed_through_canonical_facade", "pass", "pass",
-                    source="structural: constituents imported from canonical_mass")
-    w.add_assertion("alpha_derived_not_fit", "pass", "pass",
-                    source="alpha = m_e*8*Catalan (prop:binding-scale-catalan)")
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("lo_routed_through_canonical_facade", "pass (STRUCTURAL declaration, not measured: structural: constituents imported from canonical_mass)")
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("alpha_derived_not_fit", "pass (STRUCTURAL declaration, not measured: alpha = m_e*8*Catalan (prop:binding-scale-catalan))")
     w.add_assertion("single_gen_mean_abs_err_pct", float(mean_err), 0.0,
                     tolerance=0.5, unit="%")
     w.add_assertion("single_gen_max_abs_err_pct", float(max_err), 0.0,
                     tolerance=1.0, unit="%")
-    w.add_assertion("pair_gen_not_wired", "pass", "pass",
-                    source="pair-gen reported as residual column only")
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # a DECLARATION about wiring that the code cannot verify about itself, wearing a
+    # "passed": true badge beside real checks. Bean qou-ploj (LITERAL class).
+    w.add_parameter("pair_gen_not_wired",
+                    "pass (STRUCTURAL declaration, not measured: pair-gen is reported "
+                    "as a residual column only)")
     out = w.save()
     print(f"\n  witness -> {out}")
     return 0
