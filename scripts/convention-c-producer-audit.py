@@ -87,10 +87,19 @@ import re
 import sys
 from collections import Counter, defaultdict
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "lib"))
+from convention_c_names import (  # noqa: E402
+    deliberate_c_kind, is_deliberate_c_name, selftest_rows)
+
 ROOTS = ("computations", "qou-mass", "tools")
 
 #: A target whose own name declares it convention C is a labelled comparison.
-DELIBERATE = re.compile(r"(_c\b|_C\b|C_|_c_|zc$|z_c)", re.I)
+#:
+#: This was a single case-folded regex until 2026-08-25, and `re.I` folded its
+#: `C_` alternative into `c_`, so it matched ordinary identifiers -- `c_k`,
+#: `q_fac_n`, `desc_tr_M`, `__doc__`. See `scripts/lib/convention_c_names.py`
+#: for the measurement and for why the obvious widening was rejected.
+DELIBERATE = is_deliberate_c_name
 
 #: The registry blocks this path on C by design (`blocked_migrations`).
 BLOCKED_BY_DESIGN = "tools/pyhecke/"
@@ -508,7 +517,7 @@ def scan_closed_forms(roots=ROOTS):
                     continue
                 if not any(TRACE_OR_WEIGHT.search(nm) for nm in names):
                     continue
-                if any(DELIBERATE.search(nm) for nm in names):
+                if any(DELIBERATE(nm) for nm in names):
                     continue
                 hit = _half_power_in(value)
                 if hit:
@@ -737,7 +746,7 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=()):
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
                        classify(sp, blocked_files, declared_files),
-                       bool(DELIBERATE.search(nm)))
+                       bool(DELIBERATE(nm)))
 
             # RETURNED, not assigned. The scan above keys off an assignment
             # TARGET, so a function that computes the convention straight into
@@ -788,7 +797,7 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=()):
                            ast.unparse(val),
                            "convention dispatcher (returns C and D) — labelled comparison"
                            if dispatcher else classify(sp, blocked_files, declared_files),
-                           bool(DELIBERATE.search(fn.name)) or dispatcher)
+                           bool(DELIBERATE(fn.name)) or dispatcher)
 
 
 def selftest() -> int:
@@ -1016,6 +1025,41 @@ def selftest() -> int:
          not _defines_convention_d("z = 1 / (q ** 0.5 + q ** (-0.5))", "z")),
         ("a mere comment mentioning D does not count as a definition",
          not _defines_convention_d("# convention D: q**3/(q**2+1)\nz = 0.4993", "z")),
+    ]
+    # ------------------------------------------------------------------
+    # The DELIBERATE name classifier (bean `qou-4bq3`). Until 2026-08-25 this
+    # was `re.compile(r"(_c\b|_C\b|C_|_c_|zc$|z_c)", re.I)`, and `re.I` folded
+    # the `C_` alternative into `c_`, so it matched ordinary identifiers.
+    # Measured over every identifier in `computations/`, `qou-mass/` and
+    # `tools/`: 1112 distinct names / 5316 occurrences matched ONLY through
+    # that collision, including `c_k` (128 uses), `__doc__` (96),
+    # `exec_module`, `cyclotomic_poly`, `MAGIC_NUMBERS` and `basic_edges`.
+    #
+    # These fixtures are the regression lock. EVERY entry in the MUST-NOT half
+    # matched the old pattern, so this block fails against it -- a guard that
+    # cannot fail on its own known positive is worth nothing.
+    checks += list(selftest_rows())
+
+    # The two ends of the classifier's own reasoning, pinned separately from
+    # the name list so a future narrowing cannot quietly drop either:
+    checks += [
+        # Bare `C` is a Wedderburn block label (`A, C, D = 1.0, 1.0, 1.0`) and
+        # the multiplicative Jucys-Murphy Casimir `C = sum_k L_k` -- 598 uses
+        # across 162 files. The old regex did not match it; nor may this one.
+        ("a bare `C` is a block label / Casimir, not a convention",
+         not is_deliberate_c_name("C")),
+        # The trailing camelCase widening was MEASURED at ~45 % precision (22
+        # genuine against 26 false of 50 candidate names) and REJECTED. If a
+        # later change adopts it, this fixture fails and the docstring in
+        # `scripts/lib/convention_c_names.py` has to be re-argued first.
+        ("the ~45 %-precision camelCase widening stays rejected",
+         not any(map(is_deliberate_c_name,
+                     ("detC", "okC", "aC", "coefsC", "CShR4", "SL2C")))),
+        # The kind tag is what lets a B3 verdict name its basis.
+        ("a z-anchored name reports the strongest basis",
+         deliberate_c_kind("z_c") == "z_C"),
+        ("a plain `_C_` token is reported as the weaker basis",
+         deliberate_c_kind("pin_C") == "_C_"),
     ]
     for name, ok in checks:
         print(f"  {'ok  ' if ok else 'FAIL'}  reexport: {name}")
