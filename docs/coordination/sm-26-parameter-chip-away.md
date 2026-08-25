@@ -133,3 +133,52 @@ NOT yet *the* gauged weak isospin. Chiral-EFT lit for the binding-side template 
 Every "closest hit" was gated against search-space entropy; every scaffold is a
 content-bearing conjecture with **no instance** (open); no anchor-inversion was
 wired as canonical; negatives are scope-tagged (a)/(b) with cited invariants.
+
+---
+
+## 2026-08-25 — 4-B (two-like-charge EM-linking): the kernel is not identified
+
+PR [#5770](https://github.com/litlfred/qou/pull/5770), bean `qou-17mq`. Two
+findings, both negative, both scope-tagged. **The route is untouched; what is
+gone is the belief that its kernel has been selected.**
+
+4-B gates `m_d − m_u` — the one honestly extractable quark quantity — and 69 %
+of the ³He mirror residual, and is rank 1 in the cheat sheet's near-term table
+because it needs no `SU(3)`.
+
+1. **The contest's winner is not an admissible kernel.** `H_coth` is scored on
+   an *unsubtracted* `coth(α)`, which the round-2 **O2** obstruction excludes:
+   on a finite-volume quotient the admissible kernel has zero mean, hence takes
+   both signs, so none saturates at `κ → +1` — and saturation is what separated
+   `H_coth` from its rivals. O2 had been recorded 2026-08-01 and applied to
+   nothing (four mentions corpus-wide, all in one file, zero in
+   `computations/`). Re-scored, scatter rises monotonically with neutralisation
+   (3.505 % → 11.15 % → 22.32 %) and the best admissible member carries residual
+   structure `r = −0.904`, more than the `r = +0.799` that got `H_FH_Z`
+   rejected for carrying structure. Scope: **(b)** on the kernel as written,
+   invariant cited (`∫Δu = 0`); **(a)** on the parameterisation.
+2. **The test could not have discriminated.** The series spans
+   `α ∈ [0.317, 0.873]`; `coth` reaches within 10 % of its limit only at
+   `α = 1.522`, i.e. **`A = 334`** — past the heaviest known nuclide (294). Over
+   the measured range `coth` is within 0.97 % of `1/α + α/3` against 3.505 %
+   scatter, so its advantage tracks the curvature term, not saturation; and the
+   two hypotheses differ by at most 1.79 × that scatter. Scope: **(a)** on a
+   *test*, not on a hypothesis.
+
+**Consequence for the ledger.** With round 5's withdrawal of the two `H_FH`
+warrants, no member of that contest carried a live structural warrant when it
+was scored. `qou-i6rg` is `completed` and its ranking has been read as a
+settled selection; it is not one, and its own premise — *"needs NO new theory,
+only more AME data"* — is wrong, since more data cannot reach `A = 334`.
+
+**Next on 4-B changes.** Not "extend the series". Either derive the kernel
+(zero-mean Green's function of an actual finite-volume quotient, *predicting*
+`κ(A)` instead of scoring parameterisations against it), or find an observable
+probing `α ≳ 1.5`, which no nucleus supplies under `α ∝ A^{1/3}`.
+
+Recorded independently: on `H³` the decaying Green's function is
+`−(coth r − 1)/4π`, so the subtraction O2 forces is also just the ordinary
+boundary condition — a route needing neither compactness nor finite volume.
+
+**Carried confound** (`qou-gcmn`): `B_pp` frozen at its `A = 3` value bounds
+every scatter number above. Neither structural argument depends on it.
