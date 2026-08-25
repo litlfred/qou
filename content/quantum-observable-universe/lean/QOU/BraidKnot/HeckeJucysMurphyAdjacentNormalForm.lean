@@ -138,4 +138,73 @@ theorem jmRaw_adjacent_iff_normal_forms (H : HeckeGenerators R A q) (k : ℕ) :
             * H.σ k := by
   rw [jmRaw_adjacent_left H k, jmRaw_adjacent_right H k]
 
+/-! ## A proved SUFFICIENT condition
+
+Measurement in the faithful regular representations of `H₄` and `H₅`
+([`jm_adjacent_h4_structure_probe.py`](../../../../../computations/hecke/jm_adjacent_h4_structure_probe.py))
+showed the identity holds for some `N` and fails for others, with the pattern **independent of `q`**
+but **dependent on `k`** — `s₀` fails at `k = 1` and holds at `k = 2`.  The explanation is that at
+`k = 2` the element `s₀` commutes with *both* `u = σ₂` and `v = σ₃`, and that is enough. -/
+
+/-- **`(uv)³ = (uvu)(uv)u`** at every index — both sides are `(uvu)²`.
+
+The left side regroups as `(uvu)(vuv)` and one braid move turns the second factor into `uvu`; the
+right side is `(uvu)(uvu)` by associativity alone.  This is the index-`k` form of the half-twist
+identity `fullTwist3_symm`. -/
+theorem braid_cube_eq (H : HeckeGenerators R A q) (k : ℕ) :
+    (H.σ k * H.σ (k + 1)) ^ 3
+      = (H.σ k * H.σ (k + 1) * H.σ k) * (H.σ k * H.σ (k + 1)) * H.σ k := by
+  have hb : H.σ k * H.σ (k + 1) * H.σ k = H.σ (k + 1) * H.σ k * H.σ (k + 1) := H.braid k
+  calc (H.σ k * H.σ (k + 1)) ^ 3
+      = (H.σ k * H.σ (k + 1) * H.σ k) * (H.σ (k + 1) * H.σ k * H.σ (k + 1)) := by noncomm_ring
+    _ = (H.σ k * H.σ (k + 1) * H.σ k) * (H.σ k * H.σ (k + 1) * H.σ k) := by rw [← hb]
+    _ = _ := by noncomm_ring
+
+/-- **Sufficient condition: an `N` commuting with both `u` and `v` satisfies the identity.**
+
+If `N` commutes with `σ_k` and `σ_{k+1}` it commutes with everything in sight, so both normal forms
+collapse to `N² · (uv)³` and `N² · (uvu)(uv)u` respectively, and `braid_cube_eq` finishes.
+
+**This is sufficient, NOT necessary** — and the distinction is measured, not guessed.  At `k = 2` in
+`H₅`, `N = σ₃² = v²` satisfies the identity while *not* commuting with `u = σ₂` (they are adjacent).
+So this condition explains part of the data and cannot be the characterisation.
+
+It also does **not** apply to the case that matters: `N = L_k` does not commute with `σ_k` — the
+hook word `L_k` ends in `σ_{k-1}`, adjacent to `σ_k` — which is exactly why adjacent commutativity
+is hard and why this lemma does not close it. -/
+theorem jmRaw_adjacent_of_comm (H : HeckeGenerators R A q) (k : ℕ) (N : A)
+    (hu : N * H.σ k = H.σ k * N) (hv : N * H.σ (k + 1) = H.σ (k + 1) * N) :
+    (H.σ k * H.σ (k + 1)) * N * (H.σ k * H.σ (k + 1)) * N * (H.σ k * H.σ (k + 1))
+      = (H.σ k * H.σ (k + 1) * H.σ k) * N * (H.σ k * H.σ (k + 1)) * N * H.σ k := by
+  have hcu : Commute N (H.σ k) := hu
+  have hcv : Commute N (H.σ (k + 1)) := hv
+  have hcw : Commute N (H.σ k * H.σ (k + 1)) := hcu.mul_right hcv
+  have hcx : Commute N (H.σ k * H.σ (k + 1) * H.σ k) := hcw.mul_right hcu
+  have e1 : (H.σ k * H.σ (k + 1)) * N = N * (H.σ k * H.σ (k + 1)) := hcw.eq.symm
+  have e2 : (H.σ k * H.σ (k + 1) * H.σ k) * N = N * (H.σ k * H.σ (k + 1) * H.σ k) := hcx.eq.symm
+  have hcube := braid_cube_eq H k
+  have hL : (H.σ k * H.σ (k + 1)) * N * (H.σ k * H.σ (k + 1)) * N * (H.σ k * H.σ (k + 1))
+      = N * N * ((H.σ k * H.σ (k + 1)) ^ 3) := by
+    calc (H.σ k * H.σ (k + 1)) * N * (H.σ k * H.σ (k + 1)) * N * (H.σ k * H.σ (k + 1))
+        = ((H.σ k * H.σ (k + 1)) * N) * ((H.σ k * H.σ (k + 1)) * N)
+            * (H.σ k * H.σ (k + 1)) := by noncomm_ring
+      _ = (N * (H.σ k * H.σ (k + 1))) * (N * (H.σ k * H.σ (k + 1)))
+            * (H.σ k * H.σ (k + 1)) := by rw [e1]
+      _ = (N * (H.σ k * H.σ (k + 1))) ^ 2 * (H.σ k * H.σ (k + 1)) := by noncomm_ring
+      _ = (N ^ 2 * (H.σ k * H.σ (k + 1)) ^ 2) * (H.σ k * H.σ (k + 1)) := by rw [hcw.mul_pow]
+      _ = _ := by noncomm_ring
+  have hR : (H.σ k * H.σ (k + 1) * H.σ k) * N * (H.σ k * H.σ (k + 1)) * N * H.σ k
+      = N * N * ((H.σ k * H.σ (k + 1) * H.σ k) * (H.σ k * H.σ (k + 1)) * H.σ k) := by
+    calc (H.σ k * H.σ (k + 1) * H.σ k) * N * (H.σ k * H.σ (k + 1)) * N * H.σ k
+        = ((H.σ k * H.σ (k + 1) * H.σ k) * N) * ((H.σ k * H.σ (k + 1)) * N)
+            * H.σ k := by noncomm_ring
+      _ = (N * (H.σ k * H.σ (k + 1) * H.σ k)) * (N * (H.σ k * H.σ (k + 1)))
+            * H.σ k := by rw [e1, e2]
+      _ = N * ((H.σ k * H.σ (k + 1) * H.σ k) * N) * (H.σ k * H.σ (k + 1))
+            * H.σ k := by noncomm_ring
+      _ = N * (N * (H.σ k * H.σ (k + 1) * H.σ k)) * (H.σ k * H.σ (k + 1))
+            * H.σ k := by rw [e2]
+      _ = _ := by noncomm_ring
+  rw [hL, hR, hcube]
+
 end QOU.BraidKnot.Hecke
