@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T11:10:20Z
+updated_at: 2026-08-25T11:27:47Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -179,3 +179,64 @@ NEW OPEN ITEM: the pn-splitting proof's +0.63 % needs either a derivation
 that reproduces Phi_n from the pinned reading, or retraction of the figure.
 Under the canonical convention D the same construction gives -2.87 %. That
 is a question about the block's numbers, NOT a licence to fit Phi_n.
+
+
+=== RETRACTION (commit 40d7a8e427): the witness DID exist ===
+
+I asserted in THREE PRs — #5743 and #5753 (both MERGED) and #5758 — that
+`atom-mass-complete-wedderburn.witness.json` never existed in git history.
+FALSE. Added 2026-04-10, commit 1359fe23ac, at
+folio-assistant/computations/atom-mass-complete-wedderburn.witness.json;
+left the tree with the platform code in the miga migration.
+
+WHY EVERY SEARCH MISSED IT — mine and the 2026-07-12 audit's alike: they
+looked under `computations/`. It lived under `folio-assistant/computations/`.
+A negative existence claim about history is only as good as the paths it
+searched, and this repo has moved whole subtrees between repos. Search by
+BASENAME across all refs:
+    git log --all --diff-filter=A -- "*/<name>"
+Also: the clone here is SHALLOW, which can only manufacture FALSE "never
+existed" verdicts, never false "exists" ones. A negative from a shallow clone
+is weak evidence; I treated it as strong.
+
+I found it only because a sweep I wrote to generalise the defect
+(computations/audits/content_witness_citation_audit.py) classified it REMOVED
+rather than NEVER EXISTED, contradicting what I had asserted all session. The
+tool was right and I was wrong.
+
+THE RECOVERED ARTIFACT IS WORSE NEWS THAN THE PHANTOM CLAIM WAS.
+
+It reproduces the published table exactly (20 rows; 1H 938.910, 4He 3734.624,
+7Li 6534.188; mean 0.074 %, max 0.1917 %). So the table HAS a producer. But
+its own parameters show that producer did not compute the published formula:
+
+  alpha    3.74446      = m_e*8G                       matches
+  beta2   -6.087415     = -2[3]_q = -6.0874146         matches
+  beta3    0.0499       vs h_A^2  =  0.043707282       MISMATCH, 14.2 %
+  Vol_B3   7.32772475   is exactly 8G                  MISLABELLED
+  m_p    938.230457     CODATA 938.27208816            -44 ppm
+  m_n    939.532005     CODATA 939.56542052            -36 ppm
+  fitted   0            asserts zero fitted parameters
+
+beta3 has NO stated derivation anywhere and sits beside a no-fits flag. The
+base masses are not CODATA and their error (-0.042 MeV) is ~1/3 of 1H's whole
+quoted delta of 0.127 MeV. A field named for the Borromean volume holds
+8*Catalan to 16 digits.
+
+DO NOT, on picking this up: reconstruct beta3, fit it, or adjust the
+published formula to match. Which of the two is correct is an authoring
+question about published content. Do NOT restore the witness into
+computations/ — that would imply it certifies the current formula, which it
+demonstrably does not.
+
+SWEEP RESULT (the generalisation): 143 witnesses cited across content/**.md —
+137 resolve, 3 REMOVED, 3 NEVER EXISTED. The NEVER EXISTED three are
+evaluation-phiq-pair-knot-markov-trace, evaluation, representation
+(.witness.json), cited by spin-involution-lp-dual-invariance-proof.md,
+he4-channel-active-set.md + markov-pair-z2.md, and
+six-term-mass-formula-complete-table-data.md. NOT yet triaged — and after
+today, verify each with a BASENAME search before calling any of them a
+phantom.
+
+The pn-splitting Phi_n finding is UNAFFECTED: that block's numbers are
+quark-level and appear nowhere in this atomic-mass witness.
