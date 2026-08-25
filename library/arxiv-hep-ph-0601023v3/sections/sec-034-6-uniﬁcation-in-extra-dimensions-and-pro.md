@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "Proton Stability Grand Unified Theories, in Strings and in Branes"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-034-6-uniﬁcation-in-extra-dimensions-and-pro
 section_title: "Uniﬁcation in Extra Dimensions and Pro-"
 section_number: 6
 pages: 72-73
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
-doc_brief: "Proton Stability Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non"
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 ton Decay
 Over the recent past models based on large extra dimensions h ave received

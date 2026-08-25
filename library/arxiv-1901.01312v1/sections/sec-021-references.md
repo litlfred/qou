@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1901.01312v1
-doc_title: "Braided fermions from Hurwitz algebras Niels G Gresnigt"
+doc_title: "Braided fermions from Hurwitz algebras"
 section_id: sec-021-references
 section_title: "References"
 section_number: null
 pages: 9-10
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
-doc_brief: "Braided fermions from Hurwitz algebras Niels G Gresnigt — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a"
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 [1] Haim Harari. A Schematic Model of Quarks and Leptons. Physics Letters B , 86(1):83–86, 1979.
 [2] Michael A Shupe. A Composite Model of Leptons and Quarks. Physics Letters B , 86(1):87–92, 1979.

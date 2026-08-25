@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "Proton Stability Grand Unified Theories, in Strings and in Branes"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-038-3-matter-on-the-sm-brane
 section_title: "Matter on the SM brane"
 section_number: 3
 pages: 81-81
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
-doc_brief: "Proton Stability Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non"
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 Let us begin by discussing case (1). We need to assign paritie s to the quark
 and lepton ﬁelds. For Z2 transformations, P is + for color and + for SU(2).

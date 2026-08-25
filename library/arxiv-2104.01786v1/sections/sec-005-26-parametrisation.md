@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2104.01786v1
-doc_title: "Spin(11, 3), particles and octonions Kirill Krasnov"
+doc_title: "Spin(11, 3), particles and octonions"
 section_id: sec-005-26-parametrisation
 section_title: "Parametrisation"
 section_number: 2.6
 pages: 9-9
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
-doc_brief: "Spin(11, 3), particles and octonions Kirill Krasnov — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of"
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 For later purposes, we now give a parametrisation of an octonion by its (1, 0) and (0, 1) coor-
 dinates. The (1 , 0) coordinates of eigenvalue of E4 of −i are given by

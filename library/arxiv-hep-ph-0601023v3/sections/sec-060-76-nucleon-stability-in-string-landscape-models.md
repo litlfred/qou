@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "Proton Stability Grand Unified Theories, in Strings and in Branes"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-060-76-nucleon-stability-in-string-landscape-models
 section_title: "Nucleon stability in string landscape models"
 section_number: 7.6
 pages: 117-118
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
-doc_brief: "Proton Stability Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non"
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 The natural scale of vacuum energy density ρV is the Planck scale while ρobs
 is much smaller.

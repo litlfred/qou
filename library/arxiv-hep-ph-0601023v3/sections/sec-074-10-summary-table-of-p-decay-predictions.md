@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "Proton Stability Grand Unified Theories, in Strings and in Branes"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-074-10-summary-table-of-p-decay-predictions
 section_title: "Summary Table of p decay predictions"
 section_number: 10
 pages: 144-154
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
-doc_brief: "Proton Stability Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non"
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 It is useful to summarize in a tabular form the range of theory predictions
 for the proton lifetime vs the current experimental limits. As the report

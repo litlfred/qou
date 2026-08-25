@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "Proton Stability Grand Unified Theories, in Strings and in Branes"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-028-53-constraints-from-gauge-coupling-uniﬁcation
 section_title: "Constraints from gauge coupling uniﬁcation"
 section_number: 5.3
 pages: 62-62
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
-doc_brief: "Proton Stability Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non"
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 The analysis of the previous sections exhibits that the prot on lifetime from
 dimension ﬁve operators depends critically on the mass of th e Higgs triplet

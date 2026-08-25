@@ -1,13 +1,13 @@
 ---
 doc_id: quaternioms
-doc_title: "3.01.3"
+doc_title: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations"
 section_id: sec-019-complexity-landscape-and-feasibility
 section_title: "Complexity Landscape and Feasibility"
 section_number: null
 pages: 19-20
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
-doc_brief: "3.01.3 — 40 sections: Introduction; Extended Related Work; Introduction: Bridging Theory and"
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging"
 ---
 We summarize asymptotic resource implications and practical constraints for the
 quaternionic and octonionic settings. For platform-level details and additional complexity

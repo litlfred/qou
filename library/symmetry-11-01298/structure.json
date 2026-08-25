@@ -11,21 +11,22 @@
  "metadata": {
   "arxiv": null,
   "doi": "10.3390/sym11101298",
-  "title": "symmetryS S Article Braids, 3-Manifolds, Elementary Particles:",
+  "title": "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics",
   "authors_raw": "Number Theory and Symmetry in Particle Physics",
   "title_lines": [
    "symmetryS S",
    "Article",
    "Braids, 3-Manifolds, Elementary Particles:"
   ],
-  "abstract": "In this paper, we will describe a topological model for elementary particles based on 3-manifolds. Here, we will use Thurston\u2019s geometrization theorem to get a simple picture: fermions as hyperbolic knot complements (a complement C(K) = S3\\ (K\u00d7 D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyperbolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace \ufb01elds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions. The whole approach will uncover new symmetries as induced by quantum and discrete groups. Using the Drinfeld\u2013Turaev quantization, we will also construct a quantization so that quantum states correspond to knots. Particle properties like the electric charge must be expressed by topology, and we will obtain the right spectrum of possible values. Finally, we will get a connection to recent models of Furey, Stoica and Gresnigt using octonionic and quaternionic algebras with relations to 3-braids (Bilson\u2013Thompson model).",
+  "abstract": "In this paper, we will describe a topological model for elementary particles based on 3-manifolds. Here, we will use Thurston’s geometrization theorem to get a simple picture: fermions as hyperbolic knot complements (a complement C(K) = S3\\ (K× D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyperbolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace ﬁelds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions. The whole approach will uncover new symmetries as induced by quantum and discrete groups. Using the Drinfeld–Turaev quantization, we will also construct a quantization so that quantum states correspond to knots. Particle properties like the electric charge must be expressed by topology, and we will obtain the right spectrum of possible values. Finally, we will get a connection to recent models of Furey, Stoica and Gresnigt using octonionic and quaternionic algebras with relations to 3-braids (Bilson–Thompson model).",
   "docinfo": {
    "Author": "Torsten Asselmeyer-Maluga",
    "Title": "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics",
    "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
    "CreationDate": "D:20191015112102+02'00'"
-  }
+  },
+  "title_prev": "symmetryS S Article Braids, 3-Manifolds, Elementary Particles:"
  },
  "toc": [
   {
@@ -156,7 +157,7 @@
   },
   {
    "level": 1,
-   "title": "Drinfeld\u2013Turaev Quantization and Quantum States",
+   "title": "Drinfeld–Turaev Quantization and Quantum States",
    "page": 20,
    "source": "outline",
    "number": null
@@ -419,5 +420,7 @@
   "toc_entries": 23,
   "sections": 22,
   "chars_total": 85180
- }
+ },
+ "duplicate_of": "arxiv-1910.09966v1",
+ "duplicate_note": "Same work as library/arxiv-1910.09966v1/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
 }

@@ -180,13 +180,13 @@ def main() -> int:
                 "here — but skipped by the ranking and the summary index so one work is "
                 "not counted twice."
             )
-            json.dump(art, open(sj, "w"), indent=1)
+            json.dump(art, open(sj, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
             marked += 1
         sjc = os.path.join(LIB, canon, "structure.json")
         if os.path.exists(sjc):
             art = json.load(open(sjc))
             art["duplicate_copies"] = others
-            json.dump(art, open(sjc, "w"), indent=1)
+            json.dump(art, open(sjc, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 
     # Anything the detector proposes that nobody has read yet. Without
     # this the ledger silently goes stale as documents are added, and a

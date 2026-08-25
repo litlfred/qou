@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1901.01312v1
-doc_title: "Braided fermions from Hurwitz algebras Niels G Gresnigt"
+doc_title: "Braided fermions from Hurwitz algebras"
 section_id: sec-016-62-equivalence-classes-of-braids-from-h
 section_title: "Equivalence classes of braids from H"
 section_number: 6.2
 pages: 7-8
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
-doc_brief: "Braided fermions from Hurwitz algebras Niels G Gresnigt — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a"
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 The braid generators in (10) and their products correspond to unit quaternions, which we write
 asa +bI +cJ +dK witha2 +b2 +c2 +d2 = 1. It is not diﬃcult to show that any even product

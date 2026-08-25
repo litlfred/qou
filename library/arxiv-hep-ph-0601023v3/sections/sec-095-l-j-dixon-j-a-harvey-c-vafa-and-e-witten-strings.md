@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "Proton Stability Grand Unified Theories, in Strings and in Branes"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-095-l-j-dixon-j-a-harvey-c-vafa-and-e-witten-strings
 section_title: "J. Dixon, J. A. Harvey, C. Vafa and E. Witten, “Strings On Or b-"
 section_number: L
 pages: 231-238
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
-doc_brief: "Proton Stability Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non"
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 ifolds,” Nucl. Phys. B 261 (1985) 678.
 L. J. Dixon, J. A. Harvey, C. Vafa and E. Witten, “Strings On Or b-

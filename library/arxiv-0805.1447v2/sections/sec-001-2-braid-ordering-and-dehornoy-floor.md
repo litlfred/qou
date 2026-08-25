@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0805.1447v2
-doc_title: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID TETSUYA ITO"
+doc_title: "Braid ordering and the geometry of closed braid"
 section_id: sec-001-2-braid-ordering-and-dehornoy-floor
 section_title: "Braid ordering and Dehornoy floor"
 section_number: 2
 pages: 4-6
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
-doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID TETSUYA ITO — The relationships between braid ordering and the ge- ometry of its closure is studied."
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this section we review some of fundamental facts of Dehornoy
 ordering and Dehornoy ﬂoor. Braid group Bn is, by deﬁnition, a group

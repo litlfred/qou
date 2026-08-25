@@ -1,13 +1,14 @@
 ---
 doc_id: s10052-023-11923-y-a
-doc_title: "Eur. Phys. J. C (2023) 83:747 Regular Article - Theoretical Physics Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions"
+doc_title: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions"
 section_id: sec-008-53-two-additional-generations-from-an-s3-automor
 section_title: "Two additional generations from an S3 automorphism"
 section_number: 5.3
 pages: 9-10
 source_pdf: s10052-023-11923-y_a.pdf
 source_sha256: 73d1a03532d62ef7
-doc_brief: "Eur. Phys. J. C (2023) 83:747 Regular Article - Theoretical Physics Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions — An algebraic representation of three"
+doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
+duplicate_of: "arxiv-2306.13098v2"
 ---
 Having constructed one generation of electrocolor states, we
 now proceed to apply ψ to the ladder operators eqns. ( 30)–

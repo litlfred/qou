@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2104.01786v1
-doc_title: "Spin(11, 3), particles and octonions Kirill Krasnov"
+doc_title: "Spin(11, 3), particles and octonions"
 section_id: sec-020-73-evaluating-the-mass-terms
 section_title: "Evaluating the mass terms"
 section_number: 7.3
 pages: 23-24
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
-doc_brief: "Spin(11, 3), particles and octonions Kirill Krasnov — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of"
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 We now evaluate (94) on the particle states. Every element of O splits into 8 diﬀerent states
 L, ¯L,Q i, ¯Qi, and we have computed the relevant pairings in this basis in (18), (19 ), (53), (54).

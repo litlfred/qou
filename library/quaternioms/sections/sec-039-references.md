@@ -1,13 +1,13 @@
 ---
 doc_id: quaternioms
-doc_title: "3.01.3"
+doc_title: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations"
 section_id: sec-039-references
 section_title: "References"
 section_number: null
 pages: 38-41
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
-doc_brief: "3.01.3 — 40 sections: Introduction; Extended Related Work; Introduction: Bridging Theory and"
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging"
 ---
 1. Hurwitz, A. Über die Composition der quadratischen Formen von beliebig vielen Variablen. In Nachrichten der Gesellschaft
 der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse ; Gesellschaft der Wissenschaften: Göttingen, Germany , 1898;

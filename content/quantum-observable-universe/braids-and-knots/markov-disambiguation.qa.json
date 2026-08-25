@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/markov-disambiguation.md"
   },
   "source_hashes": {
-    "md": "14684bc8f261",
+    "md": "a352e6ac8e6c",
     "ts": "952efa9e8938"
   },
   "criteria": {
@@ -272,7 +272,7 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "14684bc8f261",
+          "md": "a352e6ac8e6c",
           "ts": "952efa9e8938"
         },
         "result": "n/a",
@@ -280,11 +280,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+          "script_hash": "37b3fa59a3bc",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "reviewed_at": "2026-08-25T19:45:06.722Z",
+        "reviewed_sha": "4ec590b24e837788f3c957b63a6f487301163bbf",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1574,5 +1574,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-25T19:45:06.722Z"
 }

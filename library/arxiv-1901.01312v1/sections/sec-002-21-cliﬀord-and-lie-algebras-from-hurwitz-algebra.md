@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1901.01312v1
-doc_title: "Braided fermions from Hurwitz algebras Niels G Gresnigt"
+doc_title: "Braided fermions from Hurwitz algebras"
 section_id: sec-002-21-cliﬀord-and-lie-algebras-from-hurwitz-algebra
 section_title: "Cliﬀord and Lie algebras from Hurwitz algebras"
 section_number: 2.1
 pages: 3-3
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
-doc_brief: "Braided fermions from Hurwitz algebras Niels G Gresnigt — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a"
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 Unlike Lie and Cliﬀord algebras, there are only a ﬁnite number of Hurwitz algebras 4. These
 algebras are very generative. Given a Hurwitz algebra identiﬁed with a spinor space, one acts on

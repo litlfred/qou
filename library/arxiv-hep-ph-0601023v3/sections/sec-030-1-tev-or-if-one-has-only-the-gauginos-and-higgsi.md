@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "Proton Stability Grand Unified Theories, in Strings and in Branes"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-030-1-tev-or-if-one-has-only-the-gauginos-and-higgsi
 section_title: "TeV, or if one has only the gauginos and higgsinos at the 10 2-103 GeV"
 section_number: 1
 pages: 66-67
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
-doc_brief: "Proton Stability Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non"
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 scale [214, 215, 216]. See Figure. (9) where we show the value s of the gauge
 couplings at diﬀerent scales in the context of the MSSM.

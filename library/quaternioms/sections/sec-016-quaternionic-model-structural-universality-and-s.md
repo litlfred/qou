@@ -1,13 +1,13 @@
 ---
 doc_id: quaternioms
-doc_title: "3.01.3"
+doc_title: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations"
 section_id: sec-016-quaternionic-model-structural-universality-and-s
 section_title: "Quaternionic Model: Structural, Universality, and Simulation Results"
 section_number: null
 pages: 16-17
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
-doc_brief: "3.01.3 — 40 sections: Introduction; Extended Related Work; Introduction: Bridging Theory and"
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging"
 ---
 We begin by securing the structural backbone over H: A well-deﬁned multipartite
 composition. This provides the substrate on which universality and simulation statements

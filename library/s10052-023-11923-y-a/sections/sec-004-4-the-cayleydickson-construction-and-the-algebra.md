@@ -1,13 +1,14 @@
 ---
 doc_id: s10052-023-11923-y-a
-doc_title: "Eur. Phys. J. C (2023) 83:747 Regular Article - Theoretical Physics Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions"
+doc_title: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions"
 section_id: sec-004-4-the-cayleydickson-construction-and-the-algebra
 section_title: "The Cayley–Dickson construction and the algebra of sedenions"
 section_number: 4
 pages: 5-5
 source_pdf: s10052-023-11923-y_a.pdf
 source_sha256: 73d1a03532d62ef7
-doc_brief: "Eur. Phys. J. C (2023) 83:747 Regular Article - Theoretical Physics Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions — An algebraic representation of three"
+doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
+duplicate_of: "arxiv-2306.13098v2"
 ---
 sedenions
 The CD process is an iterative construction that generates at

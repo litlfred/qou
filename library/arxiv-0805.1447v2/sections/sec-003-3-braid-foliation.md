@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0805.1447v2
-doc_title: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID TETSUYA ITO"
+doc_title: "Braid ordering and the geometry of closed braid"
 section_id: sec-003-3-braid-foliation
 section_title: "Braid Foliation"
 section_number: 3
 pages: 8-10
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
-doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID TETSUYA ITO — The relationships between braid ordering and the ge- ometry of its closure is studied."
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this section, we summarize basic machinery of Birman-Menasco’s
 braid foliation theory in case of an embedded essential surface. Fo r

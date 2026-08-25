@@ -1,13 +1,13 @@
 ---
 doc_id: quaternioms
-doc_title: "3.01.3"
+doc_title: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations"
 section_id: sec-017-octonionic-model-formal-obstructions-and-limits
 section_title: "Octonionic Model: Formal Obstructions and Limits"
 section_number: null
 pages: 17-18
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
-doc_brief: "3.01.3 — 40 sections: Introduction; Extended Related Work; Introduction: Bridging Theory and"
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging"
 ---
 We now switch to O, where the loss of associativity reverses the previous narrative.
 The next results make precise how ordering and parenthesization cease to be benign choices.

@@ -1,13 +1,13 @@
 ---
 doc_id: quaternioms
-doc_title: "3.01.3"
+doc_title: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations"
 section_id: sec-001-extended-related-work
 section_title: "Extended Related Work"
 section_number: null
 pages: 4-4
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
-doc_brief: "3.01.3 — 40 sections: Introduction; Extended Related Work; Introduction: Bridging Theory and"
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging"
 ---
 Background on quantum computation, topological phases, and materials that motivate
 robust encodings (see e.g., [ 10– 24]).

@@ -664,6 +664,30 @@ def self_test() -> int:
         ({"elapsed_sec": 0.54, "tau": 0.54, "E0_MeV": 4.185981357642159}, 2),
         # A near-miss name is NOT carved: only the reserved names are.
         ({"elapsed": 0.54, "seconds": 0.54, "elapsed_ms": 0.54}, 3),
+
+        # THE TRAP ANY WIDENING OF THIS FILTER WILL WALK INTO. The current
+        # filter is `"dur" or "elapsed"` over _EPHEMERAL_META_FIELDS, which is
+        # safe. But it covers only the 5 declared duration names, while the
+        # corpus carries ~495 timing-shaped float fields under names the mask
+        # does not declare (walltime_sec 99, rust_secs 46, time_sec 42,
+        # compute_time_sec 38, wall_sec 36, solve_time_s 33 ...). The obvious
+        # next step is to broaden the substring test to "time"/"wall"/"_sec".
+        #
+        # DO NOT, without keeping these cases green. `_times_` is
+        # MULTIPLICATION, and `y_times_chi` is the Frobenius pairing
+        # y_lambda . chi_lambda -- 177 fields corpus-wide, the framework's
+        # central object. A /time/ substring test excuses every one of them
+        # from this gate, silently, and the gate stays green while doing it.
+        # Measured on this corpus: broadening to /time|wall|_sec|elapsed|dur/
+        # matches 84 distinct names, of which 19 are physics or ratios, and
+        # excusing them would remove 361 REAL float64 fields from the gate.
+        ({"y_times_chi": 0.123}, 1),
+        ({"y_times_chi_abs": 0.123, "E0_times_f_MeV": 938.272}, 2),
+        ({"rho_q_times_Vol": 2.0299, "m_e_times_hbar_q2": 0.00501}, 2),
+        ({"Delta_lambda_D_times_h_minus_1": -1.585}, 1),
+        ({"bracket_2_q_times_3_q": 4.44, "delta_net_times_E0": 0.78}, 2),
+        # A ratio is not a duration either, however it is spelled.
+        ({"time_speedup": 1.37}, 1),
     ]
     bad = [(p, e, count_raw_floats(p)) for p, e in cases
            if count_raw_floats(p) != e]

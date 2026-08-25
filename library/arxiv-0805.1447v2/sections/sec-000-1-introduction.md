@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0805.1447v2
-doc_title: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID TETSUYA ITO"
+doc_title: "Braid ordering and the geometry of closed braid"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-4
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
-doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID TETSUYA ITO — The relationships between braid ordering and the ge- ometry of its closure is studied."
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this paper we study an application of left-invariant total orderin g
 of braid group Bn to knot theory. An left-invariant total ordering,

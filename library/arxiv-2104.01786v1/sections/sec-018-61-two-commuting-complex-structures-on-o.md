@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2104.01786v1
-doc_title: "Spin(11, 3), particles and octonions Kirill Krasnov"
+doc_title: "Spin(11, 3), particles and octonions"
 section_id: sec-018-61-two-commuting-complex-structures-on-o
 section_title: "Two commuting complex structures on O"
 section_number: 6.1
 pages: 21-22
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
-doc_brief: "Spin(11, 3), particles and octonions Kirill Krasnov — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of"
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 We have already introduced the complex structures J, ˜J on O, ˜O in sections 2, 3. They extend
 to two commuting complex structures on O × ˜O.

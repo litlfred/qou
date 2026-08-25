@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2104.01786v1
-doc_title: "Spin(11, 3), particles and octonions Kirill Krasnov"
+doc_title: "Spin(11, 3), particles and octonions"
 section_id: sec-006-27-the-group-of-automorphisms-of-the-octonions
 section_title: "The group of automorphisms of the octonions"
 section_number: 2.7
 pages: 9-10
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
-doc_brief: "Spin(11, 3), particles and octonions Kirill Krasnov — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of"
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 The group G2 of automorphisms of the octonions is the subgroup of SO(7) that p reserves the
 3-form in (9), and thus the cross-product. The 3-form (9) can b e written as

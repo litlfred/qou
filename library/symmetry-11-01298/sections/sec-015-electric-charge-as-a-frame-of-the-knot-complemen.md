@@ -1,13 +1,14 @@
 ---
 doc_id: symmetry-11-01298
-doc_title: "symmetryS S Article Braids, 3-Manifolds, Elementary Particles:"
+doc_title: "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics"
 section_id: sec-015-electric-charge-as-a-frame-of-the-knot-complemen
 section_title: "Electric Charge as a Frame of the Knot Complement"
 section_number: null
 pages: 18-19
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
-doc_brief: "symmetryS S Article Braids, 3-Manifolds, Elementary Particles: — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
+duplicate_of: "arxiv-1910.09966v1"
 ---
 However, what does change in the knot complement and in the branched covering? As a toy
 example, we consider the complement of the unknot D2× S1. Then, the Dehn twist along the meridian

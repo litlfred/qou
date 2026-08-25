@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2104.01786v1
-doc_title: "Spin(11, 3), particles and octonions Kirill Krasnov"
+doc_title: "Spin(11, 3), particles and octonions"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-5
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
-doc_brief: "Spin(11, 3), particles and octonions Kirill Krasnov — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of"
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 The suggestion that octonions may provide a useful language for d escribing elementary particles
 is almost as old as the Standard Model (SM) itself, see [1] and refere nces therein. 1 Thus, it

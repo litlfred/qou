@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1901.01312v1
-doc_title: "Braided fermions from Hurwitz algebras Niels G Gresnigt"
+doc_title: "Braided fermions from Hurwitz algebras"
 section_id: sec-017-3-written-in-pure-twist-form-σ2
 section_title: "Written in pure twist form, σ2"
 section_number: 3
 pages: 8-8
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
-doc_brief: "Braided fermions from Hurwitz algebras Niels G Gresnigt — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a"
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 1 = [1, 1,−1], σ2
 2 = [1,−1, 1], and σ2

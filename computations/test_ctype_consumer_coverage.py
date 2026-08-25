@@ -586,8 +586,6 @@ PN_CONVENTION_BASELINE: dict[str, str] = {
     # convention is legitimate under R3.
     "binding_bring_enhancement_compare.py::build_witness":
         "named comparison; measures the bring-enhancement delta against strict_averaged",
-    "binding_combiner_markov_peel_fallback.py::<module>":
-        "named fallback; PN_CONVENTION const, non-canonical by design",
     # Phase 5q validates the closed form against the empirical slow path TO
     # 1e-49 *under* chi_lambda_braid. That is a self-consistency check within
     # the legacy frame — it is not evidence FOR the frame, and it will need

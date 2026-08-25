@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "Proton Stability Grand Unified Theories, in Strings and in Branes"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-020-43-eﬀect-of-cp-violating-phases-on-proton-lifeti
 section_title: "Eﬀect of CP violating phases on proton lifetime"
 section_number: 4.3
 pages: 36-40
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
-doc_brief: "Proton Stability Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non"
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 CP phases aﬀect proton lifetime. As is well known the CP phase that appears
 in the SM via the CKM matrix is not suﬃcient to generate the des ired

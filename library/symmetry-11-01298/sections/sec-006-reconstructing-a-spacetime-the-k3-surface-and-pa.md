@@ -1,13 +1,14 @@
 ---
 doc_id: symmetry-11-01298
-doc_title: "symmetryS S Article Braids, 3-Manifolds, Elementary Particles:"
+doc_title: "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics"
 section_id: sec-006-reconstructing-a-spacetime-the-k3-surface-and-pa
 section_title: "Reconstructing a Spacetime: The K3 Surface and Particle Physics"
 section_number: null
 pages: 5-9
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
-doc_brief: "symmetryS S Article Braids, 3-Manifolds, Elementary Particles: — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
+duplicate_of: "arxiv-1910.09966v1"
 ---
 After so many years of experimental research, the standard model of particle physics and of
 cosmology as well general relativity are conﬁrmed with high precision. There is no real contradicting
