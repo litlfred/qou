@@ -26,11 +26,27 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
-import math
 import os
 
-Q0 = 1.1099785955573347
-H = Q0 - 1.0 / Q0            # Hecke h = q − q⁻¹ ≈ 0.209
+from mpmath import mp, mpf
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+# BEFORE the first mpf: an mpf built at the default dps carries float64-grade
+# precision for the whole run, and fmt() then renders it to the full
+# serialization width so it READS as measured. (bean qou-j6gb)
+set_compute_dps()
+
+# The MUON pin (1.10997859555733471...), not proton (1.1099785827513808).
+# Re-pinning belongs to the gated bulk migration (bean qou-1c4y).
+Q0 = mpf("1.1099785955573347")
+H = Q0 - 1 / Q0              # Hecke h = q − q⁻¹ ≈ 0.209
 
 # ---- 2×2 matrix helpers (pure python) ----
 def mul(A, B):
@@ -38,16 +54,16 @@ def mul(A, B):
             [A[1][0]*B[0][0]+A[1][1]*B[1][0], A[1][0]*B[0][1]+A[1][1]*B[1][1]]]
 def sub(A, B): return [[A[i][j]-B[i][j] for j in range(2)] for i in range(2)]
 def commutator(A, B): return sub(mul(A, B), mul(B, A))
-def fro(A): return math.sqrt(sum(A[i][j]**2 for i in range(2) for j in range(2)))
-def is_zero(A, tol=1e-14): return fro(A) < tol
-I2 = [[1.0, 0.0], [0.0, 1.0]]
+def fro(A): return mp.sqrt(sum(A[i][j]**2 for i in range(2) for j in range(2)))
+def is_zero(A, tol=mpf("1e-14")): return fro(A) < tol
+I2 = [[mpf(1), mpf(0)], [mpf(0), mpf(1)]]
 
 # Trefoil (right-handed) Seifert matrix, genus 1
 V = [[-1, 1], [0, -1]]
 
 def surface2Form(Vmat, A):
     """∑_{i,j} V_ij [A_i, A_j]  — the discretized (doubled) Yekutieli surface 2-form."""
-    out = [[0.0, 0.0], [0.0, 0.0]]
+    out = [[mpf(0), mpf(0)], [mpf(0), mpf(0)]]
     for i in range(2):
         for j in range(2):
             c = commutator(A[i], A[j])
@@ -62,14 +78,14 @@ def main() -> None:
 
     # (A) ABELIAN handles: deuteron's own trefoil is σ₁³ in H₂ (single generator ⇒ commuting).
     #     Model both handles as the SAME diagonal (commuting) germ increment.
-    d1 = [[q - 1.0, 0.0], [0.0, 1.0 / q - 1.0]]       # δq for σ₁ (diagonal, H₂ shadow)
+    d1 = [[q - 1, mpf(0)], [mpf(0), 1 / q - 1]]        # δq for σ₁ (diagonal, H₂ shadow)
     A_abelian = [d1, d1]                               # both handles commute
     s_abelian = surface2Form(V, A_abelian)
 
     # (B) NON-ABELIAN germ: reduced Burau of B₃ (σ₁,σ₂ do NOT commute), increments δq_i = ρ(σ_i) − I.
     t = q
-    b1 = [[-t, 1.0], [0.0, 1.0]]                       # reduced Burau σ₁
-    b2 = [[1.0, 0.0], [t, -t]]                         # reduced Burau σ₂
+    b1 = [[-t, mpf(1)], [mpf(0), mpf(1)]]              # reduced Burau σ₁
+    b2 = [[mpf(1), mpf(0)], [t, -t]]                   # reduced Burau σ₂
     dq1 = sub(b1, I2)
     dq2 = sub(b2, I2)
     A_nonabelian = [dq1, dq2]
@@ -77,20 +93,21 @@ def main() -> None:
 
     # Lean cross-checks: surface2Form_trefoil = [A_0, A_1]; skew-only = (V01−V10)[A0,A1]=[A0,A1].
     direct_comm = commutator(A_nonabelian[0], A_nonabelian[1])
-    skew_ok = is_zero(sub(s_nonabelian, direct_comm), tol=1e-10)
+    skew_ok = is_zero(sub(s_nonabelian, direct_comm), tol=mpf("1e-10"))
 
     fro_nonabelian = fro(s_nonabelian)
     # h²-order check: the germ increments are O(h)…O(1); report the commutator scale vs h².
-    order_ratio = fro_nonabelian / (H * H) if H > 0 else float("nan")
+    assert H > 0, "h must be positive"
+    order_ratio = fro_nonabelian / (H * H)
 
     witness = {
         "computation": "yekutieli-trefoil-surface2form-discretization",
         "scriptFile": "yekutieli_trefoil_surface2form_discretization_probe.py",
         "computedAt": _dt.datetime.now(_dt.timezone.utc).isoformat(),
-        "engine": "python (pure 2x2 matrices; 0 free params; structural validation)",
+        "engine": f"python-mpmath (pure 2x2 matrices, dps={mp.dps}; 0 free params; structural validation)",
         "free_parameters": 0,
         "inputs": {
-            "q0": Q0, "h": H,
+            "q0": fmt(Q0), "h": fmt(H), "q0_pin": "muon",
             "seifert_matrix_trefoil": V,
             "genus": 1, "h1_rank_2g": 2, "intersection_a_dot_b": V[0][1] - V[1][0],
             "knot_determinant": abs((V[0][0]+V[0][0]) * (V[1][1]+V[1][1]) - (V[0][1]+V[1][0])**2) // 1,
@@ -98,10 +115,10 @@ def main() -> None:
         "results": {
             "abelian_surface2form_is_zero": is_zero(s_abelian),
             "abelian_note": "deuteron σ₁³ trefoil in H₂ (commuting handles) ⇒ 0 (matches Lean commutator_zero)",
-            "nonabelian_surface2form_fro_norm": fro_nonabelian,
+            "nonabelian_surface2form_fro_norm": fmt(fro_nonabelian),
             "nonabelian_equals_single_commutator": skew_ok,
             "skew_only_validated": skew_ok,
-            "nonabelian_over_h2_ratio": order_ratio,
+            "nonabelian_over_h2_ratio": fmt(order_ratio),
         },
         "verdict": (
             f"The canonical discretization surface2Form(V,A)=∑V_ij[A_i,A_j] is BUILT and validated: "
