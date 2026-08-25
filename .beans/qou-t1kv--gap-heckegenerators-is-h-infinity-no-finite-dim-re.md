@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T16:33:12Z
+updated_at: 2026-08-25T17:48:28Z
 ---
 
 ## The defect
@@ -161,3 +161,26 @@ shrink the refactor, it only removes the possibility of avoiding it.
 The cost question above — *"whether that is worth it for one dim=2 witness at n=3"* — is
 now a cleaner decision: the alternative of finding some other instantiation is provably
 empty, so the choice is the refactor or no `dim > 1` witness at all.
+
+
+## SHARPNESS — the exclusion does NOT reach reducible reps (2026-08-25, #5766 d9deb89ac)
+
+Raised from sibling PR #5764 (Sym2 gate), where an irrep-level exclusion was being read as
+covering arbitrary objects. Answered with a proof, not a caveat:
+
+    constGenerators                  any Hecke-quadratic unit gives an instance
+    existsNonscalar_heckeGenerators  a HeckeGenerators on 2x2 matrices with
+                                     NON-SCALAR generators: diag(q, -q^-1)
+
+The load-bearing hypothesis of `sigma_scalar_of_schur` is the CENTRALIZER CONDITION, not
+"irreducible" and not "dim > 1". A reducible rep has a non-scalar idempotent in its
+centralizer, fails the hypothesis, and the cascade never reaches it. Needs q^2 != -1; at
+q^2 = -1 the two Hecke eigenvalues collide and the diagonal is scalar.
+
+**This directly re-refutes the claim this bean's title used to make.** `dim > 1` instances
+DO exist, now by explicit construction in matrix form — so the retracted "no finite-dim rep
+can instantiate it" is refuted a second time, and from the opposite direction (the first
+refutation was `scalarGenerators`, dimension 1; this one is dimension 2 and non-scalar).
+What H_infinity cannot host is an IRREDUCIBLE action, not a big one.
+
+All 23 declarations re-checked: [propext, Classical.choice, Quot.sound], no sorryAx.
