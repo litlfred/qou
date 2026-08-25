@@ -103,6 +103,7 @@ pub mod operator_selection_lp;
 pub mod operator_selection_sdp;
 pub mod sdp_verifier;
 pub mod seminormal;
+pub mod seminormal_exact;
 #[cfg(feature = "mpfr")]
 pub mod seminormal_mn;
 #[cfg(feature = "mpfr")]
