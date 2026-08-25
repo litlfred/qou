@@ -1,6 +1,34 @@
 {
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T19:11:10.744025+00:00",
+  "commitSha": "ff136a8c12b173bac1a7f16cdd997f05727333c6",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "habiro-frobenius-norm-probe",
-  "computedAt": "2026-08-25T18:59:33.531354+00:00",
+  "scriptFile": "habiro_frobenius_norm_probe.py",
+  "scriptHash": "1493a8beb6c6",
+  "scriptCommitSha": "19e6bb4e41ec4d78bcb97ea17b3463b8e0e364a5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/habiro_frobenius_norm_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/habiro_frobenius_norm_probe.py"
+  },
   "description": "Route A probe: compute the algebraic norm N(Frob_p) = ∏_σ σ(Frob_p) for each (atom, prime). If Frob_p is a unit in Z[ζ_{2p}], N(Frob_p) = ±1. Any |N| > 1 proves non-unitality at that prime.",
   "coefficients_source": "computations/habiro/habiro-coefficients-atomic.witness.json",
   "primes": [
