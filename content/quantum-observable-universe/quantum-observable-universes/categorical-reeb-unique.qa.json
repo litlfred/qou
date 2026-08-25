@@ -1507,7 +1507,8 @@
         "reviewed_at": "2026-07-07T14:26:55.839678Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Uniqueness of the categorical Reeb derivation' as verified, but the sibling Lean file fails to compile."
+        "notes": "The prose presents 'Uniqueness of the categorical Reeb derivation' as verified, but the sibling Lean file fails to compile.",
+        "evidence": "The prose presents 'Uniqueness of the categorical Reeb derivation' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1611,7 +1612,8 @@
         "reviewed_at": "2026-07-07T14:26:55.839678Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1822,7 +1824,8 @@
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

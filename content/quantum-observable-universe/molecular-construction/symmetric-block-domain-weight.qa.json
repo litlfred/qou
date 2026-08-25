@@ -1513,7 +1513,8 @@
         "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Symmetric-block domain weight: lone/bond $= q^2$' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Symmetric-block domain weight: lone/bond $= q^2$' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1617,7 +1618,8 @@
         "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1828,7 +1830,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation: content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean contains compilation errors: content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation: content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist"
       },
       {
         "result": "pass",

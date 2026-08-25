@@ -1045,7 +1045,8 @@
         "reviewed_at": "2026-06-28T23:15:19.148Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "Potential post-hoc fitting detected via keyword (residual/extracted from)."
+        "notes": "Potential post-hoc fitting detected via keyword (residual/extracted from).",
+        "evidence": "Potential post-hoc fitting detected via keyword (residual/extracted from)."
       },
       {
         "field_hash": {
@@ -1502,7 +1503,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

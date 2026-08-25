@@ -1133,7 +1133,8 @@
         "reviewed_at": "2026-07-07T14:26:55.492504Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Molecular braid $H_{N_{\\\\mathrm{mol}}}(q)$' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Molecular braid $H_{N_{\\\\mathrm{mol}}}(q)$' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1237,7 +1238,8 @@
         "reviewed_at": "2026-07-07T14:26:55.492504Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/molecular-braid.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/molecular-construction/molecular-braid.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1448,7 +1450,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/molecular-braid.lean fails compilation: content/quantum-observable-universe/molecular-construction/molecular-braid.lean:22:28: error(lean.unknownIdentifier): Unknown identifier `Finset.univ.sum`",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/molecular-construction/molecular-braid.lean contains compilation errors: content/quantum-observable-universe/molecular-construction/molecular-braid.lean:22:28: error(lean.unknownIdentifier): Unknown identifier `Finset.univ.sum`, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/molecular-braid.lean fails compilation: content/quantum-observable-universe/molecular-construction/molecular-braid.lean:22:28: error(lean.unknownIdentifier): Unknown identifier `Finset.univ.sum`"
       },
       {
         "result": "pass",

@@ -1550,7 +1550,8 @@
         "reviewed_at": "2026-07-07T14:26:57.245751Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1677,7 +1678,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing entirely, preventing formal verification of the claims in 'Nucleon derivation from 4-term photon pair production'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing entirely, preventing formal verification of the claims in 'Nucleon derivation from 4-term photon pair production'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing."
       }
     ],
     "milnor-amalgamated-flow": [

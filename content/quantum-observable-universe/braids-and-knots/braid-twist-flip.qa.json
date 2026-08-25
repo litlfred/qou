@@ -1067,7 +1067,8 @@
         "reviewed_at": "2026-07-07T14:26:55.350218Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles."
       },
       {
         "result": "pass",
@@ -1434,7 +1435,8 @@
         "notes": "Referee verdict: survivable-objection.",
         "verdict": "survivable-objection",
         "referee_argument": "The block uses a postulated context class rather than deriving the relations from first principles.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Referee verdict: survivable-objection."
       },
       {
         "result": "pass",

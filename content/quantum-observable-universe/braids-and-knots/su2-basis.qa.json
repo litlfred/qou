@@ -1230,7 +1230,8 @@
         "reviewed_at": "2026-07-07T14:26:55.356404Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Lean sibling fails to compile, leading to divergence from the stated narrative."
       },
       {
         "result": "pass",
@@ -1435,7 +1436,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/su2-basis.lean:29:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/su2-basis.lean:29:13: error: unexpected token 'section'; expected 'lemma'"
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/su2-basis.lean:29:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/su2-basis.lean:29:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

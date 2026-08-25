@@ -1183,7 +1183,8 @@
         "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Electron shell number equals writhe level of the trefoil embedding' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Electron shell number equals writhe level of the trefoil embedding' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1287,7 +1288,8 @@
         "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1498,7 +1500,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

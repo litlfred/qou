@@ -1600,7 +1600,8 @@
         "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Lean sibling fails to compile, leading to divergence from the stated narrative."
       },
       {
         "result": "pass",
@@ -1805,7 +1806,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at"
       },
       {
         "result": "pass",

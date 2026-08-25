@@ -1312,7 +1312,8 @@
         },
         "reviewed_at": "2026-06-22T02:57:24.035Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Substrate statement contains archimedean constructs."
+        "notes": "Substrate statement contains archimedean constructs.",
+        "evidence": "Substrate statement contains archimedean constructs."
       },
       {
         "field_hash": {
@@ -2121,7 +2122,8 @@
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -2386,7 +2388,8 @@
         "reviewed_at": "2026-06-28T23:15:19.148Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "critical",
-        "notes": "By defining the shell contribution as a residual, the theory is unfalsifiable and totally dependent on AME 2020 empirical data to derive its own parameter."
+        "notes": "By defining the shell contribution as a residual, the theory is unfalsifiable and totally dependent on AME 2020 empirical data to derive its own parameter.",
+        "evidence": "By defining the shell contribution as a residual, the theory is unfalsifiable and totally dependent on AME 2020 empirical data to derive its own parameter."
       },
       {
         "field_hash": {
@@ -2619,7 +2622,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation."
       },
       {
         "field_hash": {

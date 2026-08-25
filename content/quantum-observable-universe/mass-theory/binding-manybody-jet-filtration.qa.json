@@ -1085,7 +1085,8 @@
         "reviewed_at": "2026-06-28T10:58:40.982Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$' as verified, but the sibling Lean proof contains sorry stubs.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
@@ -1183,7 +1184,8 @@
         "reviewed_at": "2026-06-28T10:58:41.000Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry, causing divergence from the fully-verified narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1347,7 +1349,8 @@
         "reviewed_at": "2026-06-28T10:58:41.031Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry, indicating incomplete verification.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1381,7 +1384,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

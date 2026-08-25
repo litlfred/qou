@@ -1011,7 +1011,8 @@
         "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/q-value-transition.lean:91:61: error: mod_cast has type",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/q-value-transition.lean:91:61: error: mod_cast has type"
       }
     ],
     "da-false-claim": [
@@ -1241,7 +1242,8 @@
         "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1452,7 +1454,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation."
       },
       {
         "result": "pass",

@@ -1601,7 +1601,8 @@
         "reviewed_at": "2026-07-07T14:26:56.294049Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Divergence detected: Lean reference 'qou:QOU.FluidDynamics.p1_nonlinear_uniqueness' is specified but the file content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.lean is missing.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Divergence detected: Lean reference 'qou:QOU.FluidDynamics.p1_nonlinear_uniqueness' is specified but the file content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.lean is missing."
       },
       {
         "result": "pass",
@@ -1799,7 +1800,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean file is missing for 'prop:q-ns-nonlinear-uniqueness'.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing for 'prop:q-ns-nonlinear-uniqueness', preventing formal verification of the claims.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: Lean file is missing for 'prop:q-ns-nonlinear-uniqueness'."
       },
       {
         "result": "pass",

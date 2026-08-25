@@ -1460,7 +1460,8 @@
         "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Existence of the atom-knot for any (Z, N)' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Existence of the atom-knot for any (Z, N)' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1540,7 +1541,8 @@
         "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1703,7 +1705,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean for 'Existence of the atom-knot for any (Z, N)' fails compilation with error: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean for 'Existence of the atom-knot for any (Z, N)' fails compilation with error: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'"
       },
       {
         "field_hash": {

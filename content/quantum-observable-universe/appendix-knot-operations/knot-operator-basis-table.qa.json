@@ -983,7 +983,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The claim that T_{2,3} being the unique lowest-crossing operator that unconditionally produces the electron channel 'confirms T_{2,3} as the universal pair-production operator' is a speculative physical overclaim.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The claim that T_{2,3} being the unique lowest-crossing operator that unconditionally produces the electron channel 'confirms T_{2,3} as the universal pair-production operator' is a speculative physical overclaim."
       },
       {
         "result": "pass",
@@ -1133,7 +1134,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The basis elements like L+, L-, e- are not mathematically defined in this block.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The basis elements like L+, L-, e- are not mathematically defined in this block."
       },
       {
         "result": "pass",
@@ -1193,7 +1195,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Interpreting Hecke multiplication of basis elements as physical 'pair-production' and 'opening the electron channel' is physically speculative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Interpreting Hecke multiplication of basis elements as physical 'pair-production' and 'opening the electron channel' is physically speculative."
       },
       {
         "result": "pass",
@@ -1255,7 +1258,8 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "severity": "major",
         "verdict": "survivable-objection",
-        "referee_argument": "The markdown text references a witness file `knot-operator-table.witness.json` that does not exist in the repository, and the physical interpretation of Hecke multiplication as universal pair-production is a speculative overclaim."
+        "referee_argument": "The markdown text references a witness file `knot-operator-table.witness.json` that does not exist in the repository, and the physical interpretation of Hecke multiplication as universal pair-production is a speculative overclaim.",
+        "evidence": "The markdown text references a witness file `knot-operator-table.witness.json` that does not exist in the repository, and the physical interpretation of Hecke multiplication as universal pair-production is a speculative overclaim."
       },
       {
         "result": "pass",

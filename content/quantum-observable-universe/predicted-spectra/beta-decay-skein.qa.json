@@ -1153,7 +1153,8 @@
         "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1257,7 +1258,8 @@
         "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1468,7 +1470,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize"
       },
       {
         "result": "pass",

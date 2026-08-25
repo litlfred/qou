@@ -1548,7 +1548,8 @@
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Spectrahedral collapse and conformal rigidity' as verified, but the sibling Lean proof contains sorry stubs.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Spectrahedral collapse and conformal rigidity' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
@@ -1652,7 +1653,8 @@
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1826,7 +1828,8 @@
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1862,7 +1865,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

@@ -1282,7 +1282,8 @@
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress"
       },
       {
         "field_hash": {
@@ -1350,7 +1351,8 @@
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean proof contains compilation errors.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Lean proof contains compilation errors."
       },
       {
         "field_hash": {
@@ -1840,7 +1842,8 @@
         "reviewed_at": "2026-06-28T23:15:19.148Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "critical",
-        "notes": "Claims a direct physical mapping of silver ratio conjugates to particle physics observables without justification."
+        "notes": "Claims a direct physical mapping of silver ratio conjugates to particle physics observables without justification.",
+        "evidence": "Claims a direct physical mapping of silver ratio conjugates to particle physics observables without justification."
       },
       {
         "field_hash": {
@@ -2069,7 +2072,8 @@
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -2567,7 +2571,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation."
       },
       {
         "field_hash": {

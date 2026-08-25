@@ -983,7 +983,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The claim that the hadron-level representation captures 'the same Markov trace and Frobenius stability as the full quark-level braid word' is stated without mathematical proof or citation.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The claim that the hadron-level representation captures 'the same Markov trace and Frobenius stability as the full quark-level braid word' is stated without mathematical proof or citation."
       },
       {
         "result": "pass",
@@ -1133,7 +1134,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The six-element basis {\\gamma, \\sigma_0, \\sigma_1, L_+, L_-, e^-}, the matrix G, and the 'physical cone of H_3(q)' are not defined mathematically.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The six-element basis {\\gamma, \\sigma_0, \\sigma_1, L_+, L_-, e^-}, the matrix G, and the 'physical cone of H_3(q)' are not defined mathematically."
       },
       {
         "result": "pass",
@@ -1193,7 +1195,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Mapping physical hadrons and atoms to a physical cone of H_3(q) lacks any physical mechanism or backing.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Mapping physical hadrons and atoms to a physical cone of H_3(q) lacks any physical mechanism or backing."
       },
       {
         "result": "pass",
@@ -1254,7 +1257,8 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The six-element basis and the 'physical cone' are not mathematically defined, and the claim that hadron-level representations capture the same Markov trace as the full quark-level braid word is stated without proof."
+        "referee_argument": "The six-element basis and the 'physical cone' are not mathematically defined, and the claim that hadron-level representations capture the same Markov trace as the full quark-level braid word is stated without proof.",
+        "evidence": "The six-element basis and the 'physical cone' are not mathematically defined, and the claim that hadron-level representations capture the same Markov trace as the full quark-level braid word is stated without proof."
       },
       {
         "result": "pass",

@@ -1174,7 +1174,8 @@
         "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
-        "notes": "Asserts the formula is 'forced' by G_Planck = 1, but G_Planck itself was likely derived from these internal definitions, bordering on circular self-consistency rather than independent physical derivation."
+        "notes": "Asserts the formula is 'forced' by G_Planck = 1, but G_Planck itself was likely derived from these internal definitions, bordering on circular self-consistency rather than independent physical derivation.",
+        "evidence": "Asserts the formula is 'forced' by G_Planck = 1, but G_Planck itself was likely derived from these internal definitions, bordering on circular self-consistency rather than independent physical derivation."
       },
       {
         "result": "pass",
@@ -1205,7 +1206,8 @@
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Operational entropy of the Reeb dynamics' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Operational entropy of the Reeb dynamics' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1351,7 +1353,8 @@
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1646,7 +1649,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/operational-entropy.lean:41:3: error: unknown tactic",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/operational-entropy.lean:41:3: error: unknown tactic, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/operational-entropy.lean:41:3: error: unknown tactic, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/operational-entropy.lean:41:3: error: unknown tactic"
       },
       {
         "field_hash": {

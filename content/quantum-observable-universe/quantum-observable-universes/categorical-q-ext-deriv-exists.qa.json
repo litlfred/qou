@@ -1798,7 +1798,8 @@
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The sibling Lean file categorical-q-ext-deriv-exists.lean contains sorry placeholders, meaning the main result of 'Existence of the categorical $q$-exterior derivative' is unproved and the formalization of 'Let $(\\mathbf{C}, A, \\tau)$ be a' is currently vacuous."
+        "referee_argument": "The sibling Lean file categorical-q-ext-deriv-exists.lean contains sorry placeholders, meaning the main result of 'Existence of the categorical $q$-exterior derivative' is unproved and the formalization of 'Let $(\\mathbf{C}, A, \\tau)$ be a' is currently vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

@@ -1122,7 +1122,8 @@
         "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose presents '$q$-deformed Navier--Stokes equation' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents '$q$-deformed Navier--Stokes equation' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1223,7 +1224,8 @@
         "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1428,7 +1430,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize"
       },
       {
         "result": "pass",

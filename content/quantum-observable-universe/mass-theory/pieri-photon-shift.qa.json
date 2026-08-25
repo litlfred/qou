@@ -1738,7 +1738,8 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -2039,7 +2040,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier"
       },
       {
         "field_hash": {

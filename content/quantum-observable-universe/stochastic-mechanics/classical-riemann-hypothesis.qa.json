@@ -1133,7 +1133,8 @@
         "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose in 'Conjecture (Riemann, 1859). All non-trivial zeros of the Riemann' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
+        "notes": "The prose in 'Conjecture (Riemann, 1859). All non-trivial zeros of the Riemann' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
+        "evidence": "The prose in 'Conjecture (Riemann, 1859). All non-trivial zeros of the Riemann' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
       },
       {
         "result": "pass",

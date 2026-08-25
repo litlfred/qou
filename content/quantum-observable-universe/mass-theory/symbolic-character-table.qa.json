@@ -1760,7 +1760,8 @@
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims."
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
       },
       {
         "result": "pass",
@@ -1791,7 +1792,8 @@
         "reviewed_at": "2026-06-28T10:58:53.117Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/symbolic-character-table.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/symbolic-character-table.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",

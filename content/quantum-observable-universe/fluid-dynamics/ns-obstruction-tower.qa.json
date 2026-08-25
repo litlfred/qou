@@ -1617,7 +1617,8 @@
         "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1816,7 +1817,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, preventing formal verification of the claims in 'The NS obstruction class in the Yekutieli tower'.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing."
       },
       {
         "result": "pass",
@@ -1862,7 +1864,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

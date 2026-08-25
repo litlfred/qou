@@ -1625,7 +1625,8 @@
         "reviewed_at": "2026-07-07T14:26:55.086358Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1819,7 +1820,8 @@
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
       },
       {
         "result": "pass",

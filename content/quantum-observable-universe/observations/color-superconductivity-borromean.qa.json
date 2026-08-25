@@ -744,7 +744,7 @@
           "in_degree": 1,
           "cone_size": 100,
           "depth": 27,
-          "pagerank": 9.5e-05,
+          "pagerank": 0.000095,
           "edge_span_max": 7,
           "edge_span_mean": 5,
           "worst_target": ""
@@ -1096,7 +1096,8 @@
         "reviewed_at": "2026-07-07T14:26:56.543280Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1309,7 +1310,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' remain unproven and are represented as sorry stubs in the formalization.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       }
     ],
     "bib-cite-resolves": [
@@ -1565,7 +1567,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

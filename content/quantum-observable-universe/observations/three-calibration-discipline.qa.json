@@ -1142,7 +1142,8 @@
         },
         "reviewed_at": "2026-06-22T02:56:53.627Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Contains borderline interpretive prose."
+        "notes": "Contains borderline interpretive prose.",
+        "evidence": "Contains borderline interpretive prose."
       },
       {
         "field_hash": {
@@ -1746,7 +1747,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-06-24T03:58:58Z",
-        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "evidence": "The 'exactly three calibrations, Q_beta derived' claim presents as settled what the corpus's own audits flag as open — Q_beta's derivation rests on a relation the corpus labels 'POSTULATED, NOT DERIVED', and the Lean sibling proves only a tautological factorisation, not the count."
       },
       {
         "field_hash": {
@@ -2014,7 +2016,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

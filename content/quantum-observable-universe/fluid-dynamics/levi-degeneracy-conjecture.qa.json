@@ -1442,7 +1442,8 @@
         "notes": "Conjecture 'conj:levi-degeneracy' is open; sibling Lean file contains sorry stubs.",
         "verdict": "survivable-objection",
         "referee_argument": "The conjecture 'Let $\\{q_\\kappa = e^{i\\pi/\\kappa}\\}_{\\kappa \\geq 2}$ be the' is only partially formalized in Lean and relies on sorry stubs.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjecture 'conj:levi-degeneracy' is open; sibling Lean file contains sorry stubs."
       },
       {
         "result": "pass",

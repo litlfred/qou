@@ -96,7 +96,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
-        }
+        },
+        "evidence": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md."
       }
     ],
     "da-vacuous": [

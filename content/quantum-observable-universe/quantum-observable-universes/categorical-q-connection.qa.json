@@ -1151,7 +1151,8 @@
         "reviewed_at": "2026-07-07T14:26:55.855704Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Categorical $q$-deformed connection' as verified, but the sibling Lean file fails to compile."
+        "notes": "The prose presents 'Categorical $q$-deformed connection' as verified, but the sibling Lean file fails to compile.",
+        "evidence": "The prose presents 'Categorical $q$-deformed connection' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1255,7 +1256,8 @@
         "reviewed_at": "2026-07-07T14:26:55.855704Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1466,7 +1468,8 @@
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean:28:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean:28:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean:28:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean:28:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

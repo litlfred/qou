@@ -1512,7 +1512,8 @@
         "reviewed_at": "2026-07-07T14:26:57.381469Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Fermions are knots, bosons are links' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Fermions are knots, bosons are links' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1616,7 +1617,8 @@
         "reviewed_at": "2026-07-07T14:26:57.381469Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1827,7 +1829,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean for 'Fermions are knots, bosons are links' fails compilation with error: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean for 'Fermions are knots, bosons are links' fails compilation with error: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument"
       },
       {
         "result": "pass",
