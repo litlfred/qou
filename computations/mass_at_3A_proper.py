@@ -441,9 +441,16 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     name stays and this docstring carries the correction.
 
     Each triple `(c, d, g)` denotes the HECKE ELEMENT `c*sigma_g + d*1`, not a braid
-    generator. Only the `d == 0` letters are braid generators. Under this module's
-    convention `sigma^-1 = sigma - h`, the averaged interfaces are EXACTLY weight-1
-    averages over crossing sign:
+    generator. The letters OUTSIDE the image of rho are exactly the AVERAGED ones,
+    `d in {-h/2, -h(1/2 - delta/4)}` -- NOT merely the `d != 0` ones. Under this
+    module's convention `sigma^-1 = sigma - h`, a `d == -h` letter IS a braid
+    generator (it is sigma^-1), as the next sentence's identity itself says. Measured
+    on 2H: of 23 letters, 11 are `d = 0` (sigma) and 7 are `d = -h` (sigma^-1), so 18
+    are braid generators and 5 are not -- and 5 = 2A + 1, the count this docstring
+    gives below. Getting this wrong invalidates the wrong objects: under a `d == 0`
+    rule the figure-eight `(s1 s2^-1)^2` -- the muon carrier, a genuine hyperbolic
+    LINK the mass law reads Vol from -- would read as "not a braid word".
+    The averaged interfaces are EXACTLY weight-1 averages over crossing sign:
 
         sigma - (h/2)*1          == (sigma + sigma^-1)/2
         sigma - h*(1/2 - d/4)*1  == (1/2 + d/4)*sigma + (1/2 - d/4)*sigma^-1

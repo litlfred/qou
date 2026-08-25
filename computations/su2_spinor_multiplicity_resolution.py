@@ -443,10 +443,14 @@ def main():
                 "which copy embeds, not the h^4 value. No per-copy h^4 chosen "
                 "(would be a fit).",
     })
-    w.add_assertion(
-        "no_h4_fit_performed", 0.0, 0.0, tolerance=0,
-        source="discipline: no spin/content chosen to produce h^4",
-    )
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("no_h4_fit_performed",
+                    "0 (DISCIPLINE, not a measurement -- the source field already said so: "
+                    "no spin/content was chosen to produce h^4)")
 
     # -------------------------------------------------------------------
     # SUMMARY for the audit doc.

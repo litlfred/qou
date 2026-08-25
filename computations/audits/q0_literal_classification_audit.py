@@ -47,6 +47,13 @@ Output:
     computations/audits/q0-literal-classification.witness.json
 """
 
+# This module READS q0 in order to AUDIT it: it compares literals and anchor
+# values, and does not compute at the substrate pin. The q0-independence checker
+# cannot separate the two statically -- this file imports `_q0_value_for_anchor`,
+# a signal as strong as any, for exactly the opposite purpose -- so the role is
+# DECLARED here rather than guessed by a pattern in the checker.
+Q0_ROLE = "auditor"
+
 from __future__ import annotations
 
 import argparse
