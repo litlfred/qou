@@ -35,10 +35,19 @@ and then measures whether that candidate closes.
     (an `h`-proportional shift is the only shift that can change a bar parity;
     a bar-even shift cannot). Bar-oddness of `α_t` forces
 
-        bar-defect(2α_t) = h²·(2t + 1) = 0   ⟹   t = −1/2, UNIQUELY,
+        bar-defect(2α_t) = h²·(2t + 1) = 0   ⟹   t = −1/2,
 
-    and the computation never uses `z_D` itself — only `bar(z) = z − h`. The
-    surviving candidate is therefore parameter-free and derived, not fitted:
+    and the computation never uses `z_D` itself — only `bar(z) = z − h`.
+
+    ⚠ THE PRUNING IS TO AN AFFINE FAMILY, NOT A POINT. For a GENERAL shift
+    `c = ce + co` (bar-even plus bar-odd) the defect is `h·(h + 2·co)`
+    (`QOU.QBeta.DFrameEigenphaseBarOdd.generalShift_bar_defect`): the bar-even
+    part cancels identically. So parity pins the shift's bar-ODD part to
+    `−h/2` — uniquely — and leaves its bar-EVEN part FREE. What follows
+    measures the canonical member `ce = 0`; §5 reports the `ce` that would be
+    needed, precisely so the remaining freedom is visible rather than hidden.
+
+    The canonical member is parameter-free and derived, not fitted:
 
         z_D^even := z_D − h/2 = (q⁴+1) / (2q(q²+1)),   bar-even,
         α_D^odd  := (z_D^even − 1)·h/2.
@@ -108,6 +117,7 @@ set_compute_dps()
 
 ME = mp.mpf(str(C.M_E_MEV))
 QCOD = mp.mpf(str(C.Q_BETA_MEV))
+QCOD_ERR = mp.mpf(str(C.Q_BETA_MEV_ERR))
 
 # The tolerance band at which the C frame's implied c_2 agrees with the
 # structural -1.  Measured in §2, not assumed; this is the reporting band.
@@ -317,6 +327,37 @@ def main() -> int:
     print(f"     z*        = {mp.nstr(z_star, 12)}")
     for lbl, val in (("z_C", Pp["z_C"]), ("z_D^even", Pp["z_D_even"]), ("z_D", Pp["z_D"])):
         print(f"     |z* − {lbl:8s}| / z* = {mp.nstr(abs(z_star - val) / z_star, 6)}")
+    # The residual is a BAR-EVEN shift, so bar-parity does not exclude it.
+    # Reported as the open target, NOT proposed as a value: choosing it to hit
+    # c_2 = -1 would be a fit (AGENTS.md "no seventh fit-based ansatz").
+    ce_needed = z_star - Pp["z_D_even"]
+    print(f"     required bar-even shift ce = z* − z_D^even = {mp.nstr(ce_needed, 10)}")
+    print(f"       ce / h²  = {mp.nstr(ce_needed / hp**2, 8)}"
+          f"     ce / u = {mp.nstr(ce_needed / up, 8)}")
+    print("       parity does NOT exclude this shift — it is bar-even. Whether any")
+    print("       DERIVED convention-D object equals it is the open question. The")
+    print(f"       window is {mp.nstr(mp.mpf(1)/mp.mpf(str(results['proton']['window']['relative_demand'])),6)}"
+          "× tighter than 1 relative, so a 1% near-match is not evidence.")
+
+    # ── §6 does `ce` even HAVE the precision a near-match would need? ──────
+    print("\n§6  experimental resolution on the required bar-even shift ce")
+    ce_hi = required_z(phase_for_c2(mp.mpf(-1), up, (QCOD + QCOD_ERR)
+                                    / (ME * Pp["Q_A_over_me"])), up, hp) \
+        - Pp["z_D_even"]
+    ce_lo = required_z(phase_for_c2(mp.mpf(-1), up, (QCOD - QCOD_ERR)
+                                    / (ME * Pp["Q_A_over_me"])), up, hp) \
+        - Pp["z_D_even"]
+    d_ce = abs(ce_hi - ce_lo) / 2
+    print(f"     Q_β = {mp.nstr(QCOD,12)} ± {mp.nstr(QCOD_ERR,4)} MeV"
+          f"   (σ/Q = {mp.nstr(QCOD_ERR/QCOD,4)})")
+    print(f"     ce = {mp.nstr(ce_needed,10)} ± {mp.nstr(d_ce,4)}")
+    print(f"     ⇒ ce is resolved to {mp.nstr(d_ce/abs(ce_needed),4)} relative"
+          f"  ({mp.nstr(abs(ce_needed)/d_ce,6)} σ)")
+    print("     Any identification of ce quoted to more digits than this is")
+    print("     reporting the arithmetic, not the measurement.")
+    print("     Admissibility, separately: a shift must be BAR-EVEN. h² is")
+    print("     (bar(h²)/h² = 1); u is NOT (bar(u)/u = q²), so the tempting")
+    print("     ce ≈ −u (6.3% away) is excluded by parity, not merely missed.")
 
     # ── verdict ────────────────────────────────────────────────────────────
     pr = results["proton"]
@@ -356,6 +397,15 @@ def main() -> int:
         "rel_gap_to_z_C": fmt(abs(z_star - Pp["z_C"]) / z_star),
         "rel_gap_to_z_D_even": fmt(abs(z_star - Pp["z_D_even"]) / z_star),
         "rel_gap_to_z_D": fmt(abs(z_star - Pp["z_D"]) / z_star),
+        "required_bar_even_shift_ce": fmt(ce_needed),
+        "ce_over_h_squared": fmt(ce_needed / hp ** 2),
+        "ce_over_u": fmt(ce_needed / up),
+        "ce_experimental_sigma": fmt(d_ce),
+        "ce_relative_resolution": fmt(d_ce / abs(ce_needed)),
+        "ce_significance_sigma": fmt(abs(ce_needed) / d_ce),
+        "u_is_not_bar_even": "bar(u)/u = q^2; so ce = -u is parity-inadmissible",
+        "note": ("ce is BAR-EVEN, so bar-parity does not exclude it. Reported as "
+                 "an open target; selecting it to hit c_2 = -1 would be a fit."),
     })
     w.add_assertion("bar_odd_shift_unique",
                     computed=str(s1["bar_odd_shift_unique"]), expected="True")
@@ -373,6 +423,11 @@ def main() -> int:
     w.add_caveat(
         "The CODATA inversion is a measuring stick applied AFTER the eigenphase "
         "is chosen by the §1 bar-parity argument. No phase is selected by fitting."
+    )
+    w.add_caveat(
+        "Bar-parity prunes the D eigenphase class to an AFFINE FAMILY, not a "
+        "point: generalShift_bar_defect shows the bar-even part of the shift "
+        "cancels. The canonical member (bar-even part zero) is what is measured."
     )
     w.add_caveat(
         "Scope-(a) negative: the derived bar-odd D eigenphase alone does not "
