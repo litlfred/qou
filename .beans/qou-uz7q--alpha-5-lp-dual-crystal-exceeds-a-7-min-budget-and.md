@@ -556,3 +556,96 @@ have measured my own over-truncation.
 
 Re-running N=9 at the minimal sufficient degree, with the ground-truth residual
 check attached so a cheaper truncation cannot pass by being wrong.
+
+## VERIFIED — and the verification found a SECOND, larger defect
+
+The perf fix was applied to both probes and `c3even` re-run. It completed in
+**360.9 s** (from > 1800 s censored). Then every value in its witness moved, and
+its own gate went **FAIL**:
+
+| quantity | committed (2026-07-02) | re-run |
+|---|---|---|
+| `c2_even` | −8.00641005870925 | **−7.45876032789888** |
+| `c3_even` | +86.6611630646910 | **+78.5944241201959** |
+| `[s^3] log R` | −33/8 + √3/8 | **−37/8 + √3/8** |
+| `allPassed` | `true` | **`false`** |
+| gate `c_2^even ≈ −8.006` | PASS | **FAIL** |
+
+### The movement is NOT the perf fix — measured, not argued
+
+Numeric Taylor of `log(R(1+s)/R(1))` with the **LIVE `cos`** (i.e. the perf change
+absent), mpmath 60 dps, under each `z`:
+
+| probe source | `[s^3]` | matches |
+|---|---|---|
+| **D** — today's `z = q**3/(q**2+1)` | −4.4084936490538903383 | the **re-run** value, `\|diff\| = 0.0` |
+| **C** — witness-era `z = 1/(sqrt(q)+1/sqrt(q))` | −3.9084936490538903383 | the **committed** value, `\|diff\| = 3.1e-61` |
+
+So the perf change contributes **exactly nothing**: the live-`cos` function under
+D already gives the new value. **The entire movement is the C→D convention
+migration.** `70d1ade383` ("excise C tiers 2+3: 176 producer sites to convention
+D") swapped this probe's `z` on 2026-08-09 and did not regenerate its witness.
+
+The gate threshold tells the same story: `−8.006` **is** the convention-C value —
+the committed C witness carries `−8.00641005870925` exactly. The gate is
+C-calibrated, so a correctly-migrated D producer must fail it.
+
+### Already known as a class — this is candidate #33, now CONFIRMED
+
+Corpus-grepped before declaring anything.
+[`convention-frame-staleness-audit.witness.json`](computations/convention-frame-staleness-audit.witness.json)
+already tracks this: **73 suspect witnesses** of 140 examined against 139 D-form
+producers, and `qbeta-c3even-exact-sseries.witness.json` is **candidate 33**. Two
+entries carry `confirmed_by_decisive_test` with beans (`qou-h4ab`,
+`qou-g49k-followup`), and the `fr-pullback-cosh-h` entry has exactly the shape
+measured above (committed / convention_D / convention_C).
+
+**So the finding is not a new class — it is candidate 33 promoted from suspect to
+confirmed**, by the audit's own decisive-test method.
+
+### Why the D witness was NOT committed
+
+The re-run's D numbers are correct arithmetic and are **not** a valid ladder.
+AGENTS.md, the 2026-08-15 convention ruling:
+
+> **The ladder must be RE-DERIVED under D, and that is not a z-swap** —
+> `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` … makes the C-frame ladder and the
+> mass channel's three-row forcing mutually exclusive, so substituting `z_D` into
+> the existing ladder is not a valid move.
+
+`70d1ade383` substituted `z_D` into this ladder. Whether it intended to claim
+D-frame ladder values or was draining C-form sites mechanically is not something
+this bean can establish — but either way the producer now emits numbers from the
+move the ruling names as invalid. **Committing them would enshrine that.** The
+committed C witness is restored; nothing was landed.
+
+Tranche `qou-cds1` (§S1) owns the re-derivation. This adds a measured instance.
+
+### The two defects were hiding each other
+
+The probe times out in the sweep, so its verdict reads TIMEOUT rather than FAIL —
+which is why a producer that **fails its own gate on `main`** went unnoticed for
+16 days. Fixing the timeout is what made the convention staleness visible. That is
+the argument for the perf fix independent of any speedup: it turns an unmeasurable
+producer into one whose failures are legible.
+
+### Status of the perf change
+
+**Kept.** Validated value-neutral twice over — the `s^N` residual check, and the
+live-`cos` numeric Taylor above, which reproduces the D value the perf-fixed
+probe emits. It makes the probe *measurable*, not *correct*: its output is still
+C-conditional per the ruling.
+
+`c4even` carries the identical edit and has **not** been re-run — under the ruling
+its D output would be no more landable than `c3even`'s.
+
+### Not landed, deliberately
+
+`scripts/precision-gates.sh --changed` regenerated three audit witnesses
+(`q0-anchor-consistency`, `witness-provenance`, `mpf-float-source`) showing real
+drains — `prov_missing` 94→79, `Q0_ANCHOR_MISSING` 1646→1639, `benign` 13→12.
+**But `total_scanned` fell by 7 in two of them**, so the population changed and
+not merely the verdicts; this session's snapshot/restore cycles have been adding
+and removing untracked witnesses all along. The gate says attribute the movement
+before claiming it, and I cannot attribute this cleanly to main either. Restored
+rather than committed. All blocking precision gates were green.
