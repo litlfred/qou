@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T07:39:31Z
+updated_at: 2026-08-25T08:19:16Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1675,3 +1675,35 @@ the open item. Two guards for whoever tries:
 Artifacts: `computations/qbeta/qbeta_d_frame_eigenphase_window_probe.py`;
 `QOU/QBeta/DFrameEigenphaseBarOdd.lean` (9 theorems, sorry-free, axioms clean);
 `docs/audits/2026-08-25-qbeta-ck-ladder-convention-d-eigenphase-window.md`.
+
+
+---
+
+### Adjudication, 2026-08-25: `qbeta_h_frame_rungs_probe.py:73` — the sibling is RIGHT, I was wrong
+
+Recorded because two records in this bean disagreed and the merge coordinator
+declined to adjudicate. Adjudicating my own side against it: **the sibling's
+"this bean owns it" is correct, and my contrary claim is retracted.**
+
+I reported that file as "a frame-change probe that disclaims carrying physics",
+and named only `qbeta_utils.py::substrate_ladder_quantities` and
+`markov_parameter` as the live C eigenphase sites. Read at the body:
+
+    73:    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    74:    alpha = (z - 1) * hh / 2
+
+That is an independent inline C spelling of the ladder eigenphase — a third
+genuine site, not a consumer of the other two, and squarely a B2-class site:
+swapping z there is exactly the substitution `naivePhase_not_barOdd` shows is
+never bar-odd.
+
+**How I got it wrong, since the mode recurs.** I read the docstring's "WHAT THIS
+DOES NOT ESTABLISH. Nothing physical." and stopped. That disclaimer is about the
+probe's *conclusion* — it is a change of variable — not about what the file
+*contains*. AGENTS.md's own instruction covers this exactly ("Read at the body
+rather than the docstring"), and it is the same failure the `y_lambda_at`
+correction documents one section over. A docstring saying a file establishes
+nothing physical is not evidence about which convention its arithmetic carries.
+
+My "two live sites" count is therefore also retracted as incomplete. It should
+not be used as a denominator anywhere.
