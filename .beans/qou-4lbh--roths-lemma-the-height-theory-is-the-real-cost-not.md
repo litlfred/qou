@@ -4516,3 +4516,31 @@ New module `QOU/Mathlib/RothRealLadder.lean`, registered in `QOU.lean`. All five
 ⚠ The `ℝ`-free route is **kept**, not replaced: `rothLemmaTheta_of_seq` and
 `rothLemmaTheta_three` still stand in `RothVariableSplit`, and a reader who wants Roth's Lemma
 without an analysis import can have it at any `t` that is a `2^{M−1}`-th power.
+
+## Arc status — Roth's Lemma is proved
+
+**`MvPolynomial.index_le_rothBound`** (`QOU/Mathlib/RothRealLadder.lean`): if
+`a; r₁,…,r_m; H₁,…,H_m` has property `Γ_m` with `t = p/q`, then every `A ∈ R(a;r)` has index at
+most `c_m·t^{2^{−(m−1)}}` at every `κ ∈ Q(H)`, `c_m = 2^{m+1} − 3`. Every arity `m ≥ 1`, every
+`p, q, F`. No `sorry`; `[propext, Classical.choice, Quot.sound]`.
+
+Non-vacuous where it matters: `index_le_rothBound_witness` at `m = 2`, where clause 3 forces
+`H ≥ 1024` — the one hypothesis every earlier witness in this arc dodged.
+
+Twenty-six corrections. What the last six say about how the arc failed:
+
+* **24** (`2t` vs `t`) — a weaker true theorem is invisible to a build, to `#print axioms`, and
+  to every witness. Only reading the source's step symbol-by-symbol found it.
+* **25** (`w² = Ψ`) — a hypothesis nobody has had to *discharge* is indistinguishable from an
+  unsatisfiable one. Four instances now (9, 10, 22, 25).
+* **26** (correction 21 unpropagated) — a correction to a lemma is not a correction to its
+  consumers, and a green build after one says only that the corrected file still compiles.
+* The **assembly itself** found 24, 25 and 26. Three separate defects that only appeared when
+  two green theorems had to meet. An unexercised interface is exactly as untested as an
+  undischarged hypothesis, and this arc now has three data points saying the composition is the
+  experiment, not the components.
+* **Correction 23's closure** needed a *negative* result first: I checked that a root-free
+  reformulation loses a factor `2^{2^n}` before reaching for `ℝ`. "It's just an encoding
+  artifact" was true about the restriction and false about the remedy.
+* The status paragraph in `RothVariableSplit` was wrong **three times in one session**, in three
+  directions. Prose that names what is open is a claim about the whole file.
