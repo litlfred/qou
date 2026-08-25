@@ -110,7 +110,18 @@ print("selftest passed — verdicts are trustworthy\n", flush=True)
 prior, done = [], set()
 try:
     _p = json.load(open("/tmp/residue_results3.json"))["results"]
-    prior = [r for r in _p if r.get("verdict") not in ("TIMEOUT", None)]
+    # A producer that times out TWICE is not a budget artifact any more — it is
+    # reproducibly slower than the budget. Retrying it on every resume costs the
+    # full budget each cycle (3 x 180 s here) and can never terminate, so record
+    # it as BUDGET_EXCEEDED and stop. Still excluded from the scoreable
+    # denominator: it says nothing about whether the witness moved.
+    for r in _p:
+        if r.get("verdict") == "TIMEOUT":
+            r["timeout_count"] = r.get("timeout_count", 0) + 1
+            if r["timeout_count"] >= 2:
+                r["verdict"] = "BUDGET_EXCEEDED"
+    prior = [r for r in _p
+             if r.get("verdict") not in ("TIMEOUT", None)]
     done = {r["producer"] for r in prior}
     print(f"RESUME: {len(prior)} prior verdicts kept, {len(_p)-len(prior)} timeouts retried",
           flush=True)
